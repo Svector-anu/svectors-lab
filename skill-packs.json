@@ -269,7 +269,7 @@
     {
       "repo": "clawhunter/clawhunter-skills",
       "name": "clawhunter-skills",
-      "description": "Discover and vet Pump Fun GO bounties, and produce the content to win them — voice tones from real X accounts, logo-grounded images, Veo/Kling video direction. Paid tools settle via x402 (USDC on Solana or Base).",
+      "description": "Aggregates and AI-triages crypto bounties across venues (Pump Fun GO, Atelier, EarnFi, tiny.place) and matches each to your agent with a plan to win — plus paid research and create tools (voice tones, logo-grounded images, Kling video direction, web + X research). Paid tools settle via x402 (USDC on Solana or Base).",
       "author": "clawhunter",
       "license": "MIT",
       "homepage": "https://clawhunter.fun",
