@@ -9,10 +9,7 @@
 skills:
   # --- Morning aggregation (7 AM UTC) ---
   hn-digest: { enabled: false, schedule: "0 7 * * *" } # top HN stories filtered by MEMORY.md interests
-  paper-digest: { enabled: false, schedule: "0 7 * * *" }
 
-  reddit-digest: { enabled: false, schedule: "0 7 * * *", var: "" } # cross-sub narrative scan or single-sub deep digest. var: empty=narratives(memory/subreddits.yml) | <sub[,sub]> | vibecoding[:week] | <sub>:month
-  telegram-digest: { enabled: false, schedule: "30 7 * * *", var: "" } # public Telegram intel. var: empty=multi-channel digest (channels.md) | <channel>=single-channel recap article
 
   # --- Mid-morning (9 AM UTC) ---
   issue-triage: { enabled: false, schedule: "0 9 * * *" }
@@ -47,10 +44,8 @@ skills:
   digest: { enabled: false, schedule: "0 14 * * *", var: "" } # topic digest across web + X + RSS. var: empty=web | <topic> | rss[:<topic>] | "<topic> +rss" (RSS feeds from memory/feeds.yml)
   deep-research: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — var: research topic; prefix `shallow:` (or `depth=shallow`) for a fast cited brief, else deep multi-source synthesis
   last30: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — cross-platform 30-day social research
-  paper-pick: { enabled: false, schedule: "0 14 * * *" }
   search-skill: { enabled: false, schedule: "0 14 * * *" }
 
-  security-digest: { enabled: false, schedule: "0 14 * * *" }
   deal-flow: { enabled: false, schedule: "0 14 * * 1" } # weekly funding round tracker
   reg-monitor: { enabled: false, schedule: "0 14 * * 3" } # regulatory developments tracker
 
@@ -72,10 +67,8 @@ skills:
   # --- X / social (5 PM UTC) ---
   fetch-tweets: { enabled: false, schedule: "0 17 * * *", var: "" } # curate X/Twitter. var: keyword:<q> | topic:<t> | account:<handle> (empty=digest tracked accounts) | list:<ids>[|topic] | agent-buzz[:<t>]. Optional XAI_API_KEY.
   reply-maker: { enabled: false, schedule: "0 17 * * *", var: "" } # draft X replies. var: empty=discover reply-worthy tweets | @handle | <listID> | <topic> | from-logs (reply to flagged log opportunities). Optional XAI_API_KEY.
-  farcaster-digest: { enabled: false, schedule: "0 17 * * *" } # trending Farcaster casts
 
   # --- Content distribution (runs 30 min after article-generating skills) ---
-  syndicate-article: { enabled: false, schedule: "30 15 * * *", var: "" } # distribute latest article across channels. var: empty=all | comma-list of {gallery,devto,farcaster} | gallery[,file=<name>]. Optional DEVTO_API_KEY, NEYNAR_API_KEY/NEYNAR_SIGNER_UUID.
 
   # --- Evening / meta (6 PM UTC) ---
   goal-tracker: { enabled: false, schedule: "0 18 * * *", var: "" } # progress vs goals + milestone threshold alerts. var: empty=combined | goals | milestones | <goal>
@@ -109,7 +102,6 @@ skills:
   fork-health: { enabled: false, schedule: "45 10 * * 1", var: "" } # Monday — fork intelligence: per-fork health tier + activation-stage cohort buckets + state-of-the-fleet narrative (folds in fork-cohort + fleet-state). var: empty=health | cohort | fleet | dry-run | owner/repo
   capabilities-map: { enabled: false, schedule: "30 11 * * 1", var: "" } # Monday — capability coverage matrix (default, non-mutating) + backfill sweep + Mermaid dependency graph. var: empty/dry-run=coverage audit | sweep[:slug=…|propose-only]=backfill capabilities: frontmatter (PR) | graph[:path]=regen docs/skill-graph.md (folds in capabilities-sweep + skill-graph)
   workflow-audit: { enabled: false, schedule: "0 16 * * 0" } # Sunday — scan workflows for injection vectors
-  product-hunt: { enabled: false, schedule: "workflow_dispatch", var: "" } # one-shot launch copy from live repo state. var: empty/producthunt=full PH asset pack | producthunt:<section> | showhn=Show HN post | reddit[:<sub>]=Reddit variants
 
   # --- Paid ads (AdManage.ai) ---
   schedule-ads: { enabled: false, schedule: "0 8 * * *", var: "" } # daily 08:00 UTC — paid ads via AdManage.ai. var: empty=schedule ad launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn from config.yaml (PAUSED by default) | create=provision Meta campaigns/ad sets on-demand from config.create.yaml (PAUSED, IDs written back to state so the schedule branch can launch into them; folds in create-campaign)
@@ -212,8 +204,8 @@ chains:
   #   schedule: "0 7 * * *"
   #   on_error: fail-fast
   #   steps:
-  #     - parallel: [token-movers, paper-pick, issue-triage, hn-digest]
-  #     - skill: routine, consume: [token-movers, paper-pick, issue-triage, hn-digest]
+  #     - parallel: [token-movers, hn-digest, issue-triage, github-trending]
+  #     - skill: routine, consume: [token-movers, hn-digest, issue-triage, github-trending]
 
 # Default model for all skills. Override per-run via workflow_dispatch.
 # Options: claude-opus-4-8, claude-fable-5, claude-sonnet-5, claude-sonnet-4-6, claude-haiku-4-5-20251001

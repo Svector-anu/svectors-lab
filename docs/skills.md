@@ -63,11 +63,6 @@ Install any skill into your own agent:
 | `last30` | Cross-platform social research — narrative-first intelligence on what people are saying about a topic across Reddit, X, HN, Polymarket, and the web over the last 30 days |
 | `launch-radar` | Two-branch launch radar. BACKLOG branch searches ProductHunt + HN Show HN for launches matching the operator's startup-idea backlog and flags when someone ships an idea from the list. CATEGORY branch scans Product Hunt RSS + HN Algolia for brand-new entrants in the operator's tracked category, suppressing the framework-watch cohort and deduping via LRU state so each launch fires once. The selector picks the branch. |
 | `narrative-convergence` | Cross-skill signal detector — finds entities or themes surfaced independently by 3+ different skill categories within 48h and surfaces them as high-confidence write opportunities |
-| `paper-digest` | Find and summarize new papers matching tracked research interests |
-| `paper-pick` | Find the one paper most worth reading from Hugging Face Papers |
-| `reddit-digest` | Reddit intelligence — cross-subreddit narrative detection over a tracked set, or a decision-ready single-sub deep digest (signal-scored, verdict + tools leaderboard, spicy threads), including a curated r/vibecoding preset |
-| `security-digest` | Lead with confirmed exploitation (CISA KEV), enrich with EPSS, filter GitHub Advisories to your tracked stack, output one action per item |
-| `telegram-digest` | Public Telegram intelligence — a cross-channel signal digest across tracked channels (var empty), or a single-channel engagement-ranked recap article (var=channel) |
 
 ---
 
@@ -134,13 +129,10 @@ Install any skill into your own agent:
 
 | Skill | Description |
 |-------|-------------|
-| `farcaster-digest` | Clustered, signal-scored digest of Farcaster casts with conversation-shape lead and insight-first editorial notes |
 | `mention-radar` | Monitor external web and social mentions of the operator's active projects — surface what people are discovering, where they're confused, and where to engage |
-| `product-hunt` | Draft paste-ready launch copy from live repo state for any channel — a full Product Hunt asset pack (tagline, description, first + maker comment, six feature bullets), a Show HN post, or Reddit launch variants (r/MachineLearning + r/selfhosted). The agent writes now under zero pressure; the operator reviews, pastes, ships. |
 | `reply-maker` | Draft copy-paste-ready X replies — either two reply options per reply-worthy tweet from tracked accounts/topics/lists (default), or (from-logs mode) ready-to-post responses to engagement opportunities flagged in recent logs |
 | `schedule-ads` | Manage paid ads on AdManage.ai from declarative config. Default branch schedules ad launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn (PAUSED by default, never auto-activates live spend); `create` branch provisions Meta campaigns + ad sets (created PAUSED, IDs written back to state so the schedule branch can launch into them). |
 | `soul-builder` | Build a SOUL from an X handle — read a wide sample of someone's public X account, then draft soul/SOUL.md (identity, worldview, opinions, influences), soul/STYLE.md (voice), and soul/examples/good-outputs.md so every content skill can speak in that voice. |
-| `syndicate-article` | Distribute articles across the GitHub Pages gallery (Jekyll sync + PR), Dev.to, and Farcaster — per-channel selectable, with hash-based gallery dedup and hook-driven, CTR-optimized syndication |
 | `write-tweet` | Multi-format tweet studio — standalone drafts (10 across 5 size tiers), a 5–10 tweet thread, or 10 remixes of past tweets, selected via ${var} |
 
 ---

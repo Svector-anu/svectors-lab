@@ -11,7 +11,6 @@ Each template wraps one of Aeon's battle-tested skills as a portable `.md` workf
 | [issue-triage.md](issue-triage.md) | Labels and prioritizes new issues automatically | On issue opened |
 | [pr-review.md](pr-review.md) | Reviews PR diffs for bugs, security issues, and quality | On PR opened/updated |
 | [changelog.md](changelog.md) | Generates a categorized changelog from recent commits | Weekly (Monday 9am UTC) |
-| [security-digest.md](security-digest.md) | Monitors GitHub Advisory DB for relevant vulnerabilities | Daily (8am UTC) |
 | [code-health.md](code-health.md) | Audits TODOs, dead code, test gaps, and large files | Weekly (Friday 3pm UTC) |
 
 ## Usage
