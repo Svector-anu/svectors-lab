@@ -6,7 +6,7 @@ permalink: /skills/
 
 # Skills
 
-Aeon ships with **102 skills** across **10 packs**. Each skill is a self-contained markdown instruction file in `skills/<name>/SKILL.md`. Enable any skill in `aeon.yml` and it runs on its schedule (schedules live in `aeon.yml`; many skills also accept a `var` selector — see the skill's frontmatter).
+Aeon ships with **94 skills** across **10 packs**. Each skill is a self-contained markdown instruction file in `skills/<name>/SKILL.md`. Enable any skill in `aeon.yml` and it runs on its schedule (schedules live in `aeon.yml`; many skills also accept a `var` selector — see the skill's frontmatter).
 
 Install any skill into your own agent:
 ```bash
