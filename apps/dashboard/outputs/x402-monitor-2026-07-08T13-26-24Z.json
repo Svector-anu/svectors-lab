@@ -1,0 +1,324 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "x402 pulse — 2026-07-08"
+      },
+      "children": [
+        "momentum-section",
+        "sep1",
+        "integrations-heading",
+        "integrations-list",
+        "sep2",
+        "npm-heading",
+        "npm-stats",
+        "sep3",
+        "signals-heading",
+        "signals-stack",
+        "sep4",
+        "state-text"
+      ]
+    },
+    "momentum-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "momentum-label",
+        "momentum-badge"
+      ]
+    },
+    "momentum-label": {
+      "type": "Text",
+      "props": {
+        "text": "momentum:",
+        "variant": "body"
+      }
+    },
+    "momentum-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "breakout (14 pts)",
+        "variant": "default"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "integrations-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "New integrations (6)",
+        "level": "h2"
+      }
+    },
+    "integrations-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "integration-1",
+        "integration-2",
+        "integration-3",
+        "integration-4",
+        "integration-5",
+        "integration-6"
+      ]
+    },
+    "integration-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "integration-1-link",
+        "integration-1-desc"
+      ]
+    },
+    "integration-1-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "cloudflare/agents",
+        "href": "https://github.com/cloudflare/agents",
+        "score": "5234★"
+      }
+    },
+    "integration-1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "official Cloudflare agents framework — x402 as native pay-per-call",
+        "variant": "body"
+      }
+    },
+    "integration-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "integration-2-link",
+        "integration-2-desc"
+      ]
+    },
+    "integration-2-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "x402-rs/x402-rs",
+        "href": "https://github.com/x402-rs/x402-rs",
+        "score": "277★"
+      }
+    },
+    "integration-2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Rust x402 toolkit — Permit2 + usage-based payments, EVM/Solana/Aptos",
+        "variant": "body"
+      }
+    },
+    "integration-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "integration-3-link",
+        "integration-3-desc"
+      ]
+    },
+    "integration-3-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "voidly-ai/voidly-pay",
+        "href": "https://github.com/voidly-ai/voidly-pay",
+        "score": "11★"
+      }
+    },
+    "integration-3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "AI agent hire marketplace with x402 adapter + MCP server",
+        "variant": "body"
+      }
+    },
+    "integration-4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "integration-4-link",
+        "integration-4-desc"
+      ]
+    },
+    "integration-4-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "solvela-ai/solvela",
+        "href": "https://github.com/solvela-ai/solvela",
+        "score": "9★"
+      }
+    },
+    "integration-4-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Solana-native agent payment infra via x402",
+        "variant": "body"
+      }
+    },
+    "integration-5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "integration-5-link",
+        "integration-5-desc"
+      ]
+    },
+    "integration-5-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "gordonmurray/Sluice",
+        "href": "https://github.com/gordonmurray/Sluice",
+        "score": "1★"
+      }
+    },
+    "integration-5-desc": {
+      "type": "Text",
+      "props": {
+        "text": "self-hostable pay-per-request gateway, USDC on Base",
+        "variant": "body"
+      }
+    },
+    "integration-6": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "integration-6-link",
+        "integration-6-desc"
+      ]
+    },
+    "integration-6-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "XR-Utilities/h-series-mcp",
+        "href": "https://github.com/XR-Utilities/h-series-mcp",
+        "score": "0★"
+      }
+    },
+    "integration-6-desc": {
+      "type": "Text",
+      "props": {
+        "text": "MCP server with x402 payment middleware",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "npm-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "npm downloads",
+        "level": "h2"
+      }
+    },
+    "npm-stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "npm-stat-1",
+        "npm-stat-2"
+      ]
+    },
+    "npm-stat-1": {
+      "type": "Stat",
+      "props": {
+        "label": "@coinbase/x402 (first data point)",
+        "value": "38,134/wk"
+      }
+    },
+    "npm-stat-2": {
+      "type": "Stat",
+      "props": {
+        "label": "x402 (first data point)",
+        "value": "245,941/wk"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "signals-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Signals",
+        "level": "h2"
+      }
+    },
+    "signals-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "signal-1",
+        "signal-2"
+      ]
+    },
+    "signal-1": {
+      "type": "Text",
+      "props": {
+        "text": "cloudflare/agents (5234★) ships x402 as a first-class feature — highest-signal institutional adoption yet",
+        "variant": "body"
+      }
+    },
+    "signal-2": {
+      "type": "Text",
+      "props": {
+        "text": "x402view directory live: investment-focused tracker of the x402 ecosystem",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "state-text": {
+      "type": "Text",
+      "props": {
+        "text": "State: memory/topics/protocol-state-x402.md",
+        "variant": "caption"
+      }
+    }
+  }
+}
