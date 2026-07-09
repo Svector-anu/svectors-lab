@@ -1,14 +1,18 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-07-06T18:28:22Z",
-  "quality_score": 4,
-  "assessment": "Substantive, well-sourced output with clear regime call and fresh data; lacks explicit position calls (front-run/ride/fade/watch) required by strategy, and partial data unavailability.",
+  "last_analyzed": "2026-07-09T14:11:22Z",
+  "quality_score": 3,
+  "assessment": "Complete regime verdict with verifiable signals; Facet A skipped and position calls implicit rather than explicit per strategy.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 3.5,
   "history": [
     {
       "date": "2026-07-06",
       "score": 4
+    },
+    {
+      "date": "2026-07-09",
+      "score": 3
     }
   ]
 }

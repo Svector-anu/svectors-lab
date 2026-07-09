@@ -1,0 +1,605 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Crypto — 2026-07-09",
+        "description": "DeFi overview"
+      },
+      "children": [
+        "verdict_section",
+        "sep1",
+        "tvl_section",
+        "sep2",
+        "protocols_section",
+        "sep3",
+        "movers_section",
+        "sep4",
+        "fees_section",
+        "sep5",
+        "dex_section",
+        "sep6",
+        "stables_section",
+        "sep7",
+        "yields_section",
+        "sep8",
+        "macro_section",
+        "sep9",
+        "sources_section"
+      ]
+    },
+    "verdict_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "verdict_text",
+        "verdict_badges"
+      ]
+    },
+    "verdict_text": {
+      "type": "Text",
+      "props": {
+        "text": "chop (conviction low) | DeFi verdict: DEX volume surging, breadth strong, sentiment stuck",
+        "variant": "lead"
+      }
+    },
+    "verdict_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_chop",
+        "badge_dex",
+        "badge_breadth",
+        "badge_sentiment"
+      ]
+    },
+    "badge_chop": {
+      "type": "Badge",
+      "props": {
+        "text": "Chop",
+        "variant": "outline"
+      }
+    },
+    "badge_dex": {
+      "type": "Badge",
+      "props": {
+        "text": "DEX volume surging",
+        "variant": "secondary"
+      }
+    },
+    "badge_breadth": {
+      "type": "Badge",
+      "props": {
+        "text": "Breadth strong",
+        "variant": "secondary"
+      }
+    },
+    "badge_sentiment": {
+      "type": "Badge",
+      "props": {
+        "text": "Sentiment stuck",
+        "variant": "outline"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "tvl_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tvl_heading",
+        "tvl_stats",
+        "tvl_note"
+      ]
+    },
+    "tvl_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TVL (top chains)",
+        "level": "h3"
+      }
+    },
+    "tvl_stats": {
+      "type": "Grid",
+      "props": {
+        "columns": 5,
+        "gap": "md"
+      },
+      "children": [
+        "tvl_eth",
+        "tvl_sol",
+        "tvl_bsc",
+        "tvl_tron",
+        "tvl_base"
+      ]
+    },
+    "tvl_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "Ethereum",
+        "value": "$39.0B"
+      }
+    },
+    "tvl_sol": {
+      "type": "Stat",
+      "props": {
+        "label": "Solana",
+        "value": "$4.95B"
+      }
+    },
+    "tvl_bsc": {
+      "type": "Stat",
+      "props": {
+        "label": "BSC",
+        "value": "$4.88B"
+      }
+    },
+    "tvl_tron": {
+      "type": "Stat",
+      "props": {
+        "label": "Tron",
+        "value": "$4.87B"
+      }
+    },
+    "tvl_base": {
+      "type": "Stat",
+      "props": {
+        "label": "Base",
+        "value": "$4.36B"
+      }
+    },
+    "tvl_note": {
+      "type": "Alert",
+      "props": {
+        "message": "chain-level 1d/7d deltas unavailable this run",
+        "type": "info"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "protocols_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "protocols_heading",
+        "protocols_table"
+      ]
+    },
+    "protocols_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Top DeFi protocols (7d)",
+        "level": "h3"
+      }
+    },
+    "protocols_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Protocol",
+          "TVL",
+          "Change"
+        ],
+        "rows": [
+          [
+            "Lido",
+            "$15.95B",
+            "+6.0%"
+          ],
+          [
+            "Aave V3",
+            "$12.27B",
+            "+1.6%"
+          ],
+          [
+            "SSV Network",
+            "$8.50B",
+            "+5.2%"
+          ],
+          [
+            "LayerZero V2",
+            "$7.22B",
+            "−1.2%"
+          ]
+        ]
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "movers_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "movers_heading",
+        "movers_content"
+      ]
+    },
+    "movers_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Movers — protocols",
+        "level": "h3"
+      }
+    },
+    "movers_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "movers_up",
+        "movers_down"
+      ]
+    },
+    "movers_up": {
+      "type": "Text",
+      "props": {
+        "text": "↑ Poloniex +50.4% ($1.8B) — no obvious catalyst"
+      }
+    },
+    "movers_down": {
+      "type": "Text",
+      "props": {
+        "text": "↓ Spark Savings −9.4% ($1.16B) — 7d −25.3%, structural outflow"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fees_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "fees_heading",
+        "fees_table"
+      ]
+    },
+    "fees_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Fees leaders (24h)",
+        "level": "h3"
+      }
+    },
+    "fees_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Protocol",
+          "Fees (24h)",
+          "vs Prior Day"
+        ],
+        "rows": [
+          [
+            "Lido",
+            "$1.10M",
+            "−2.1%"
+          ],
+          [
+            "Sky Lending",
+            "$0.99M",
+            "−0.5%"
+          ],
+          [
+            "Raydium AMM",
+            "$0.11M",
+            "−15.7%"
+          ]
+        ]
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "dex_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "dex_heading",
+        "dex_vol_stat",
+        "dex_top_text"
+      ]
+    },
+    "dex_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "DEX vol (24h)",
+        "level": "h3"
+      }
+    },
+    "dex_vol_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "DEX Volume",
+        "value": "$7.92B",
+        "delta": "+6.5% 1d, +67% since Jul 6",
+        "trend": "up"
+      }
+    },
+    "dex_top_text": {
+      "type": "Text",
+      "props": {
+        "text": "Top: Orca $171.6M · Curve $83.6M · Raydium $81.7M",
+        "variant": "caption"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stables_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stables_heading",
+        "stables_stat",
+        "stables_detail"
+      ]
+    },
+    "stables_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Stables",
+        "level": "h3"
+      }
+    },
+    "stables_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Stablecoins",
+        "value": "$343.6B"
+      }
+    },
+    "stables_detail": {
+      "type": "Text",
+      "props": {
+        "text": "USDS −1.1%, USD1 −1.2% — only notable single-issuer moves",
+        "variant": "caption"
+      }
+    },
+    "sep7": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "yields_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "yields_real",
+        "yields_incentive"
+      ]
+    },
+    "yields_real": {
+      "type": "Alert",
+      "props": {
+        "title": "Real yield",
+        "message": "yields API payload too large — n/a this run",
+        "type": "info"
+      }
+    },
+    "yields_incentive": {
+      "type": "Alert",
+      "props": {
+        "title": "Incentive yield",
+        "message": "yields API payload too large — n/a this run",
+        "type": "info"
+      }
+    },
+    "sep8": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "macro_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "macro_heading",
+        "macro_grid",
+        "macro_fg_detail",
+        "macro_breadth",
+        "macro_polymarket"
+      ]
+    },
+    "macro_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Macro",
+        "level": "h3"
+      }
+    },
+    "macro_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "btc_stat",
+        "eth_stat",
+        "fg_stat"
+      ]
+    },
+    "btc_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "BTC",
+        "value": "$62,999",
+        "delta": "+1.7%",
+        "trend": "up"
+      }
+    },
+    "eth_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "$1,747",
+        "delta": "+0.6%",
+        "trend": "up"
+      }
+    },
+    "fg_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Fear & Greed",
+        "value": "22"
+      }
+    },
+    "macro_fg_detail": {
+      "type": "Text",
+      "props": {
+        "text": "Extreme Fear, day 4+",
+        "variant": "caption"
+      }
+    },
+    "macro_breadth": {
+      "type": "Text",
+      "props": {
+        "text": "Breadth: 17/20",
+        "variant": "caption"
+      }
+    },
+    "macro_polymarket": {
+      "type": "Alert",
+      "props": {
+        "message": "No crypto Polymarket markets in top vol today (FIFA World Cup dominates)",
+        "type": "info"
+      }
+    },
+    "sep9": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "sources_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "sources_heading",
+        "sources_table",
+        "sources_var_note"
+      ]
+    },
+    "sources_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Sources & Status",
+        "level": "h4"
+      }
+    },
+    "sources_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Source",
+          "Status"
+        ],
+        "rows": [
+          [
+            "llama_tvl",
+            "ok"
+          ],
+          [
+            "llama_dex",
+            "ok"
+          ],
+          [
+            "llama_fees",
+            "ok"
+          ],
+          [
+            "llama_stables",
+            "ok"
+          ],
+          [
+            "llama_yields",
+            "fail"
+          ],
+          [
+            "coingecko",
+            "ok"
+          ],
+          [
+            "fng",
+            "ok"
+          ],
+          [
+            "polymarket",
+            "ok"
+          ],
+          [
+            "websearch",
+            "fail"
+          ]
+        ]
+      }
+    },
+    "sources_var_note": {
+      "type": "Text",
+      "props": {
+        "text": "Vars: none",
+        "variant": "muted"
+      }
+    }
+  }
+}
