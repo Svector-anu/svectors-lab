@@ -1,0 +1,40 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "token-pick"
+      },
+      "children": [
+        "stack-content"
+      ]
+    },
+    "stack-content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge-tag",
+        "text-prompt"
+      ]
+    },
+    "badge-tag": {
+      "type": "Badge",
+      "props": {
+        "text": "token-movers::deep-dive",
+        "variant": "secondary"
+      }
+    },
+    "text-prompt": {
+      "type": "Text",
+      "props": {
+        "text": "Want a deeper report on a token? Reply with a ticker or contract.",
+        "variant": "lead"
+      }
+    }
+  }
+}
