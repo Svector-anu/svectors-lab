@@ -1,10 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-07-11T09:52:36Z",
+  "last_analyzed": "2026-07-11T12:45:18Z",
   "quality_score": 4,
-  "assessment": "Substantive, decision-grade output with explicit position calls aligned to strategy; well-structured narrative scoring with reflexivity checks, though first baseline run limits signal persistence assessment",
+  "assessment": "Substantive narrative analysis with clear position calls (FRONT-RUN/RIDE/FADE/WATCH), specific catalysts, and sourced data; well-aligned to strategy but operational friction (log write blocked) prevented memory persistence.",
   "flags": [],
-  "avg_score": 3.67,
+  "avg_score": 3.75,
   "history": [
     {
       "date": "2026-07-06",
@@ -12,6 +12,10 @@
     },
     {
       "date": "2026-07-09",
+      "score": 4
+    },
+    {
+      "date": "2026-07-11",
       "score": 4
     },
     {

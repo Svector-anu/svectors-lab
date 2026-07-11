@@ -1,0 +1,321 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker 2026-07-11"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "section_frontrun",
+        "sep1",
+        "section_promoted",
+        "sep2",
+        "section_new",
+        "sep3",
+        "section_ride",
+        "sep4",
+        "section_fade",
+        "sep5",
+        "section_reflexivity"
+      ]
+    },
+    "section_frontrun": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_frontrun",
+        "heading_privacy",
+        "grid_frontrun_meta",
+        "text_catalyst",
+        "grid_frontrun_perf"
+      ]
+    },
+    "badge_frontrun": {
+      "type": "Badge",
+      "props": {
+        "text": "FRONT-RUN",
+        "variant": "destructive"
+      }
+    },
+    "heading_privacy": {
+      "type": "Heading",
+      "props": {
+        "text": "Privacy Coin Resurgence",
+        "level": "h3"
+      }
+    },
+    "grid_frontrun_meta": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat_mindshare",
+        "badge_bull1",
+        "text_zcash"
+      ]
+    },
+    "stat_mindshare": {
+      "type": "Stat",
+      "props": {
+        "label": "Mindshare",
+        "value": "2"
+      }
+    },
+    "badge_bull1": {
+      "type": "Badge",
+      "props": {
+        "text": "Bull",
+        "variant": "default"
+      }
+    },
+    "text_zcash": {
+      "type": "Text",
+      "props": {
+        "text": "Zcash Ironwood",
+        "variant": "body"
+      }
+    },
+    "text_catalyst": {
+      "type": "Text",
+      "props": {
+        "text": "July 28 hard-dated catalyst",
+        "variant": "caption"
+      }
+    },
+    "grid_frontrun_perf": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_zec",
+        "stat_nock"
+      ]
+    },
+    "stat_zec": {
+      "type": "Stat",
+      "props": {
+        "label": "ZEC 7d",
+        "value": "+9.6%",
+        "delta": "+9.6%",
+        "trend": "up"
+      }
+    },
+    "stat_nock": {
+      "type": "Stat",
+      "props": {
+        "label": "NOCK",
+        "value": "+26.4%",
+        "delta": "+26.4%",
+        "trend": "up"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_promoted": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_promoted",
+        "heading_ai",
+        "badge_rising"
+      ]
+    },
+    "badge_promoted": {
+      "type": "Badge",
+      "props": {
+        "text": "PROMOTED",
+        "variant": "secondary"
+      }
+    },
+    "heading_ai": {
+      "type": "Heading",
+      "props": {
+        "text": "AI Agents",
+        "level": "h3"
+      }
+    },
+    "badge_rising": {
+      "type": "Badge",
+      "props": {
+        "text": "To Rising",
+        "variant": "secondary"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_new": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_new",
+        "heading_celebrity"
+      ]
+    },
+    "badge_new": {
+      "type": "Badge",
+      "props": {
+        "text": "NEW",
+        "variant": "outline"
+      }
+    },
+    "heading_celebrity": {
+      "type": "Heading",
+      "props": {
+        "text": "Celebrity Meme Rotation",
+        "level": "h3"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_ride": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_ride",
+        "heading_rwadefi",
+        "grid_ride_meta"
+      ]
+    },
+    "badge_ride": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "secondary"
+      }
+    },
+    "heading_rwadefi": {
+      "type": "Heading",
+      "props": {
+        "text": "RWA/DeFi",
+        "level": "h3"
+      }
+    },
+    "grid_ride_meta": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_rating",
+        "badge_bull2"
+      ]
+    },
+    "stat_rating": {
+      "type": "Stat",
+      "props": {
+        "label": "Rating",
+        "value": "4"
+      }
+    },
+    "badge_bull2": {
+      "type": "Badge",
+      "props": {
+        "text": "Bull",
+        "variant": "default"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_fade": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_fade",
+        "heading_solmeme"
+      ]
+    },
+    "badge_fade": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "heading_solmeme": {
+      "type": "Heading",
+      "props": {
+        "text": "SOL Memes + CASHCAT",
+        "level": "h3"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_reflexivity": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_reflexivity",
+        "text_reflexivity"
+      ]
+    },
+    "heading_reflexivity": {
+      "type": "Heading",
+      "props": {
+        "text": "Reflexivity",
+        "level": "h3"
+      }
+    },
+    "text_reflexivity": {
+      "type": "Text",
+      "props": {
+        "text": "BUIDL closed loop running",
+        "variant": "body"
+      }
+    }
+  }
+}
