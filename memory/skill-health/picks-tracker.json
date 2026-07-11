@@ -1,0 +1,14 @@
+{
+  "skill": "picks-tracker",
+  "last_analyzed": "2026-07-11T11:50:21Z",
+  "quality_score": 3,
+  "assessment": "Skill executed correctly and examined logs properly, but no picks found — output is appropriate but not actionable.",
+  "flags": [],
+  "avg_score": 3,
+  "history": [
+    {
+      "date": "2026-07-11",
+      "score": 3
+    }
+  ]
+}
