@@ -1,0 +1,370 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker 2026-07-11"
+      },
+      "children": [
+        "transitions-section",
+        "sep1",
+        "reflexivity-section",
+        "sep2",
+        "positions-section",
+        "sep3",
+        "map-section"
+      ]
+    },
+    "transitions-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "trans-heading",
+        "trans-item1",
+        "trans-item2",
+        "trans-item3",
+        "trans-item4"
+      ]
+    },
+    "trans-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TRANSITIONS",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "trans-item1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-new1",
+        "text-item1"
+      ]
+    },
+    "badge-new1": {
+      "type": "Badge",
+      "props": {
+        "text": "NEW",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text-item1": {
+      "type": "Text",
+      "props": {
+        "text": "x402 payments (Cloudflare-native 38K npm/wk)"
+      },
+      "children": []
+    },
+    "trans-item2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-new2",
+        "text-item2"
+      ]
+    },
+    "badge-new2": {
+      "type": "Badge",
+      "props": {
+        "text": "NEW",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text-item2": {
+      "type": "Text",
+      "props": {
+        "text": "ETH centralization risk (Cambridge 31% nodes US)"
+      },
+      "children": []
+    },
+    "trans-item3": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-new3",
+        "text-item3"
+      ]
+    },
+    "badge-new3": {
+      "type": "Badge",
+      "props": {
+        "text": "NEW",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text-item3": {
+      "type": "Text",
+      "props": {
+        "text": "tokenized equities surge (8.4B +105% MoM)"
+      },
+      "children": []
+    },
+    "trans-item4": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-promoted",
+        "text-item4"
+      ]
+    },
+    "badge-promoted": {
+      "type": "Badge",
+      "props": {
+        "text": "PROMOTED",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "text-item4": {
+      "type": "Text",
+      "props": {
+        "text": "DeFi blue-chips Emerging→Rising (Bitwise, YFI +43%)"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "reflexivity-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "refl-heading",
+        "refl-item1",
+        "refl-item2"
+      ]
+    },
+    "refl-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "refl-item1": {
+      "type": "Text",
+      "props": {
+        "text": "stablecoin OCC charter loop active"
+      },
+      "children": []
+    },
+    "refl-item2": {
+      "type": "Text",
+      "props": {
+        "text": "BTC treasury narrative vs Empery 87M dump"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "positions-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pos-heading",
+        "pos-item1",
+        "pos-item2",
+        "pos-item3",
+        "pos-item4"
+      ]
+    },
+    "pos-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "pos-item1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-frontrun",
+        "text-pos1"
+      ]
+    },
+    "badge-frontrun": {
+      "type": "Badge",
+      "props": {
+        "text": "FRONT-RUN",
+        "variant": "destructive"
+      },
+      "children": []
+    },
+    "text-pos1": {
+      "type": "Text",
+      "props": {
+        "text": "x402+DeFi blue-chips"
+      },
+      "children": []
+    },
+    "pos-item2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-ride",
+        "text-pos2"
+      ]
+    },
+    "badge-ride": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text-pos2": {
+      "type": "Text",
+      "props": {
+        "text": "RWA/equities+AI agents+L2"
+      },
+      "children": []
+    },
+    "pos-item3": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-fade",
+        "text-pos3"
+      ]
+    },
+    "badge-fade": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "text-pos3": {
+      "type": "Text",
+      "props": {
+        "text": "stablecoins+BTC range"
+      },
+      "children": []
+    },
+    "pos-item4": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-watch",
+        "text-pos4"
+      ]
+    },
+    "badge-watch": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "text-pos4": {
+      "type": "Text",
+      "props": {
+        "text": "regulation+ETH centralization"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "map-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "map-heading",
+        "map-item1",
+        "map-item2",
+        "map-item3"
+      ]
+    },
+    "map-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "map-item1": {
+      "type": "Text",
+      "props": {
+        "text": "Emerging: x402/ETH-centralization"
+      },
+      "children": []
+    },
+    "map-item2": {
+      "type": "Text",
+      "props": {
+        "text": "Rising: DeFi/AI/RWA/L2"
+      },
+      "children": []
+    },
+    "map-item3": {
+      "type": "Text",
+      "props": {
+        "text": "Peak: BTC/Regulation/Stablecoins"
+      },
+      "children": []
+    }
+  }
+}

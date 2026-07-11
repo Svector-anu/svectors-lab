@@ -1,10 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-07-09T14:10:05Z",
+  "last_analyzed": "2026-07-11T09:52:36Z",
   "quality_score": 4,
-  "assessment": "Substantive output with 7 detected transitions and actionable position calls (FRONT-RUN/RIDE/FADE/WATCH). Well-structured, transparent about data gaps, aligned with strategy. Good but not excellent due to partial data coverage and 3-day baseline.",
+  "assessment": "Substantive, decision-grade output with explicit position calls aligned to strategy; well-structured narrative scoring with reflexivity checks, though first baseline run limits signal persistence assessment",
   "flags": [],
-  "avg_score": 3.5,
+  "avg_score": 3.67,
   "history": [
     {
       "date": "2026-07-06",
@@ -12,6 +12,10 @@
     },
     {
       "date": "2026-07-09",
+      "score": 4
+    },
+    {
+      "date": "2026-07-11",
       "score": 4
     }
   ]
