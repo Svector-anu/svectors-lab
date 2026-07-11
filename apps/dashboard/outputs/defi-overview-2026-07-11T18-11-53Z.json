@@ -1,0 +1,499 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Crypto — 2026-07-11",
+        "description": "DeFi Sideways: TVL flat, vol −4.8%, stables unchanged; breadth 15/20 intraday bounce"
+      },
+      "children": [
+        "status-badge",
+        "tvl-stat",
+        "separator-1",
+        "chains-section",
+        "separator-2",
+        "movers-section",
+        "separator-3",
+        "fees-section",
+        "separator-4",
+        "fees-beating-alert",
+        "separator-5",
+        "dex-section",
+        "separator-6",
+        "stables-stat",
+        "separator-7",
+        "yield-section",
+        "separator-8",
+        "macro-section",
+        "separator-9",
+        "sources-section"
+      ]
+    },
+    "status-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "chop (conviction low)",
+        "variant": "outline"
+      }
+    },
+    "tvl-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Value Locked",
+        "value": "$74.6B"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "chains-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "chains-heading",
+        "chains-table"
+      ]
+    },
+    "chains-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Top Chains",
+        "level": "h3"
+      }
+    },
+    "chains-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Chain",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "Ethereum",
+            "$40.5B"
+          ],
+          [
+            "BSC",
+            "$5.0B"
+          ],
+          [
+            "Solana",
+            "$4.9B"
+          ]
+        ]
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "movers-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "movers-heading",
+        "movers-table"
+      ]
+    },
+    "movers-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Movers (protocols)",
+        "level": "h3"
+      }
+    },
+    "movers-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Protocol",
+          "Change",
+          "TVL Change",
+          "Note"
+        ],
+        "rows": [
+          [
+            "BlackRock BUIDL",
+            "↑ +15.7%",
+            "$3.14B→$3.69B",
+            "RWA institutional accumulation, second consecutive session"
+          ],
+          [
+            "Robinhood Chain Bridge",
+            "↑ +22.4%",
+            "$0.11B→$0.13B",
+            "institutional DeFi rail inflows"
+          ],
+          [
+            "SparkLend",
+            "↓ −6.3%",
+            "$3.62B→$3.39B",
+            "no obvious catalyst"
+          ],
+          [
+            "K3 Capital",
+            "↓ −21.4%",
+            "$0.29B→$0.23B",
+            "no obvious catalyst"
+          ]
+        ]
+      }
+    },
+    "separator-3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "fees-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "fees-heading",
+        "fees-table"
+      ]
+    },
+    "fees-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Fees Leaders (24h)",
+        "level": "h3"
+      }
+    },
+    "fees-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Rank",
+          "Protocol",
+          "24h Fees",
+          "vs 7d Avg"
+        ],
+        "rows": [
+          [
+            "1",
+            "Tether",
+            "$15.92M",
+            "flat"
+          ],
+          [
+            "2",
+            "Circle USDC",
+            "$6.38M",
+            "flat"
+          ],
+          [
+            "3",
+            "Uniswap V3",
+            "$2.86M",
+            "+154%"
+          ]
+        ]
+      }
+    },
+    "separator-4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "fees-beating-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Fees Beating TVL",
+        "message": "Uniswap V3 — fees +154% vs 7d avg / TVL modest — real demand surge; V4 at $953M vol (+3.3%) confirms protocol momentum",
+        "type": "info"
+      }
+    },
+    "separator-5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "dex-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "dex-heading",
+        "dex-stat",
+        "dex-top"
+      ]
+    },
+    "dex-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "DEX Volume (24h)",
+        "level": "h3"
+      }
+    },
+    "dex-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Volume",
+        "value": "$6.44B",
+        "delta": "−4.8% (1d), +13.9% (7d)"
+      }
+    },
+    "dex-top": {
+      "type": "Text",
+      "props": {
+        "text": "Top: Uniswap V4 $953M, Uniswap V3 $726M, Kalshi $363M",
+        "variant": "caption"
+      }
+    },
+    "separator-6": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stables-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Stables",
+        "value": "$311.0B",
+        "delta": "flat"
+      }
+    },
+    "separator-7": {
+      "type": "Separator",
+      "props": {}
+    },
+    "yield-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "real-yield-subsection",
+        "incentive-yield-subsection"
+      ]
+    },
+    "real-yield-subsection": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "real-yield-heading",
+        "real-yield-table"
+      ]
+    },
+    "real-yield-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Real Yield (sustainable, ≥$10M)",
+        "level": "h3"
+      }
+    },
+    "real-yield-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Pool",
+          "Protocol",
+          "Chain",
+          "APY Base",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "UNI-WETH",
+            "Uniswap V3",
+            "ETH",
+            "25.1%",
+            "$15M"
+          ],
+          [
+            "REUSDE",
+            "re",
+            "ETH",
+            "22.9%",
+            "$20M"
+          ],
+          [
+            "MSUSD",
+            "mainstreet",
+            "ETH",
+            "12.0%",
+            "$74M"
+          ]
+        ]
+      }
+    },
+    "incentive-yield-subsection": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "incentive-yield-heading",
+        "incentive-yield-table"
+      ]
+    },
+    "incentive-yield-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Incentive Yield (points/emissions, ≥$25M)",
+        "level": "h3"
+      }
+    },
+    "incentive-yield-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Pool",
+          "Protocol",
+          "Chain",
+          "APY",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "USDC-AERO",
+            "Aerodrome",
+            "Base",
+            "24.4% via AERO",
+            "$31M"
+          ],
+          [
+            "CVXCRV",
+            "Convex",
+            "ETH",
+            "18.2% via CRV",
+            "$31M"
+          ]
+        ]
+      }
+    },
+    "separator-8": {
+      "type": "Separator",
+      "props": {}
+    },
+    "macro-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "macro-heading",
+        "macro-grid"
+      ]
+    },
+    "macro-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Macro",
+        "level": "h3"
+      }
+    },
+    "macro-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "btc-stat",
+        "eth-stat",
+        "sol-stat",
+        "fear-greed-stat",
+        "breadth-stat",
+        "polymarket-stat"
+      ]
+    },
+    "btc-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "BTC",
+        "value": "$64,265",
+        "delta": "+0.6%",
+        "trend": "up"
+      }
+    },
+    "eth-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "$1,823",
+        "delta": "+1.9%",
+        "trend": "up"
+      }
+    },
+    "sol-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "SOL",
+        "value": "$78.0",
+        "delta": "+0.4%",
+        "trend": "up"
+      }
+    },
+    "fear-greed-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Fear & Greed Index",
+        "value": "26",
+        "delta": "Fear"
+      }
+    },
+    "breadth-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Breadth",
+        "value": "15/20",
+        "delta": "recovery from 7/20 morning"
+      }
+    },
+    "polymarket-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Hot Market",
+        "value": "Norway vs. England: Team to Advance — YES",
+        "delta": "35%"
+      }
+    },
+    "separator-9": {
+      "type": "Separator",
+      "props": {}
+    },
+    "sources-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "sources-heading",
+        "sources-text"
+      ]
+    },
+    "sources-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Data Sources",
+        "level": "h4"
+      }
+    },
+    "sources-text": {
+      "type": "Text",
+      "props": {
+        "text": "llama_tvl=ok, llama_dex=ok, llama_fees=ok, llama_stables=ok, llama_yields=ok, coingecko=ok, fng=ok, polymarket=ok, websearch=fail",
+        "variant": "caption"
+      }
+    }
+  }
+}
