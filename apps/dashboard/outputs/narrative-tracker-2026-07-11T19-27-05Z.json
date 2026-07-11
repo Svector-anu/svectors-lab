@@ -1,0 +1,296 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker — 2026-07-11"
+      },
+      "children": [
+        "transitions-section",
+        "sep1",
+        "reflexivity-section",
+        "sep2",
+        "positions-section",
+        "sep3",
+        "map-section"
+      ]
+    },
+    "transitions-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "transitions-heading",
+        "trans-uniswap",
+        "trans-ai",
+        "trans-rwa",
+        "trans-sentiment"
+      ]
+    },
+    "transitions-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TRANSITIONS",
+        "level": "h2"
+      }
+    },
+    "trans-uniswap": {
+      "type": "Text",
+      "props": {
+        "text": "NEW: Uniswap fee surge / V4 — V3 fees +144% 1d, V4 leads DEX vol $953M, UNI trending +4.4%. First tracker entry with on-chain fundamentals confirmed."
+      }
+    },
+    "trans-ai": {
+      "type": "Text",
+      "props": {
+        "text": "NEW: AI agent / micro-cap speculation — HOODIE +1653%, CASHCAT +35.6% trending; no named sector protocol yet."
+      }
+    },
+    "trans-rwa": {
+      "type": "Text",
+      "props": {
+        "text": "PROMOTED: RWA / institutional DeFi — Emerging → Rising — BUIDL +15.7% 1d (2nd session, $3.69B TVL); Robinhood Chain Bridge +22.4% 1d."
+      }
+    },
+    "trans-sentiment": {
+      "type": "Text",
+      "props": {
+        "text": "DEMOTED: Sentiment-price divergence — Rising → Fading — F&G 22→26, breadth 7→15/20; divergence closing."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "reflexivity-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "reflexivity-heading",
+        "reflexivity-alert"
+      ]
+    },
+    "reflexivity-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY ALERT",
+        "level": "h2"
+      }
+    },
+    "reflexivity-alert": {
+      "type": "Alert",
+      "props": {
+        "message": "Uniswap fee surge — UNI +4.4% trending concurrently with fee spike; data organic but token bid amplifying on narrative. Crowding risk as V4 mindshare builds.",
+        "type": "warning"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "positions-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "positions-heading",
+        "pos-frontrun",
+        "pos-ride",
+        "pos-watch-ai",
+        "pos-watch-btc",
+        "pos-fade"
+      ]
+    },
+    "positions-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h2"
+      }
+    },
+    "pos-frontrun": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-frontrun-badge",
+        "pos-frontrun-text"
+      ]
+    },
+    "pos-frontrun-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FRONT-RUN",
+        "variant": "default"
+      }
+    },
+    "pos-frontrun-text": {
+      "type": "Text",
+      "props": {
+        "text": "Uniswap fee surge / V4 (mindshare 3 ↑↑, Bull) — @Uniswap / @haydenzadams / on-chain fee data — bear: single-LP wash or V4 cannibalizing V3 TVL. 3-session surge + trending = pre-peak window."
+      }
+    },
+    "pos-ride": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-ride-badge",
+        "pos-ride-text"
+      ]
+    },
+    "pos-ride-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "secondary"
+      }
+    },
+    "pos-ride-text": {
+      "type": "Text",
+      "props": {
+        "text": "RWA / institutional DeFi (mindshare 4 ↑, Bull) — BlackRock BUIDL / Robinhood Chain / @MapleFinance — bear: yield compression as institutions crowd."
+      }
+    },
+    "pos-watch-ai": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-watch-ai-badge",
+        "pos-watch-ai-text"
+      ]
+    },
+    "pos-watch-ai-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "pos-watch-ai-text": {
+      "type": "Text",
+      "props": {
+        "text": "AI agent / micro-cap speculation (mindshare 2 ↑, speculative) — HOODIE / CASHCAT / @pump_fun — no sector leader; micro-cap pumps alone ≠ sector rotation."
+      }
+    },
+    "pos-watch-btc": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-watch-btc-badge",
+        "pos-watch-btc-text"
+      ]
+    },
+    "pos-watch-btc-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "pos-watch-btc-text": {
+      "type": "Text",
+      "props": {
+        "text": "Fear-base / BTC chop (mindshare 3 →, Mixed) — BTC dominance 56.2%. F&G crossing 30 = regime flip. No trade yet."
+      }
+    },
+    "pos-fade": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-fade-badge",
+        "pos-fade-text"
+      ]
+    },
+    "pos-fade-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "pos-fade-text": {
+      "type": "Text",
+      "props": {
+        "text": "Solana memecoin (mindshare 3 ↓, Cope) — @PumpSwap / @MeteoraAG — SOL +0.4% vs ETH +1.9%; PumpSwap −17.3%, Meteora −8.4% 1d."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "map-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "map-heading",
+        "map-emerging",
+        "map-rising",
+        "map-fading",
+        "map-dead"
+      ]
+    },
+    "map-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h2"
+      }
+    },
+    "map-emerging": {
+      "type": "Text",
+      "props": {
+        "text": "Emerging: AI agent / micro-cap speculation"
+      }
+    },
+    "map-rising": {
+      "type": "Text",
+      "props": {
+        "text": "Rising: RWA / institutional DeFi | Uniswap fee surge / V4 | Fear-base / BTC chop"
+      }
+    },
+    "map-fading": {
+      "type": "Text",
+      "props": {
+        "text": "Fading: Solana memecoin"
+      }
+    },
+    "map-dead": {
+      "type": "Text",
+      "props": {
+        "text": "Dead: DeFi blue-chip revival (absorbed into RWA)"
+      }
+    }
+  }
+}
