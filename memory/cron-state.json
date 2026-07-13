@@ -84,15 +84,17 @@
     "last_error": "9e77c07\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "token-pick": {
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-07-11T12:57:14Z",
-    "total_runs": 3,
+    "total_runs": 4,
     "total_successes": 3,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
+    "total_failures": 1,
+    "consecutive_failures": 1,
+    "success_rate": 0.75,
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-12T12:39:27Z"
+    "last_dispatch": "2026-07-12T12:39:27Z",
+    "last_failed": "2026-07-13T12:29:42Z",
+    "last_error": "85d90be\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "skill-health": {
     "last_dispatch": "2026-07-13T03:48:24Z",
