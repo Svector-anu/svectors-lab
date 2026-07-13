@@ -1,7 +1,7 @@
 {
   "heartbeat": {
-    "last_dispatch": "2026-07-13T03:48:24Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-07-13T15:22:44Z",
+    "last_status": "dispatched",
     "last_failed": "2026-07-13T12:29:59Z",
     "total_runs": 37,
     "total_successes": 1,
@@ -12,7 +12,7 @@
     "last_success": "2026-07-11T09:49:29Z"
   },
   "defi-overview": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-11T18:12:55Z",
     "total_runs": 46,
     "total_successes": 5,
@@ -20,12 +20,12 @@
     "consecutive_failures": 19,
     "success_rate": 0.11,
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-13T03:48:24Z",
+    "last_dispatch": "2026-07-13T15:22:44Z",
     "last_failed": "2026-07-13T12:29:40Z",
     "last_error": "b050943\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "narrative-tracker": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-07-13T12:29:44Z",
     "total_runs": 51,
     "total_successes": 5,
@@ -35,7 +35,7 @@
     "last_error": "501df6a\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
     "last_success": "2026-07-11T19:27:44Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-13T03:48:24Z"
+    "last_dispatch": "2026-07-13T15:22:44Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -48,7 +48,7 @@
     "last_quality_score": 4
   },
   "fear-divergence": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-11T09:48:56Z",
     "total_runs": 25,
     "total_successes": 2,
@@ -56,7 +56,7 @@
     "consecutive_failures": 22,
     "success_rate": 0.08,
     "last_quality_score": 3,
-    "last_dispatch": "2026-07-13T03:48:24Z",
+    "last_dispatch": "2026-07-13T15:22:44Z",
     "last_failed": "2026-07-13T12:29:48Z",
     "last_error": "10c0303\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
@@ -71,7 +71,7 @@
     "last_quality_score": 4
   },
   "picks-tracker": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-11T11:50:22Z",
     "total_runs": 27,
     "total_successes": 1,
@@ -79,12 +79,12 @@
     "consecutive_failures": 26,
     "success_rate": 0.04,
     "last_quality_score": 3,
-    "last_dispatch": "2026-07-13T03:48:24Z",
+    "last_dispatch": "2026-07-13T15:22:44Z",
     "last_failed": "2026-07-13T12:29:52Z",
     "last_error": "d4f17f8\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "token-pick": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-11T12:57:14Z",
     "total_runs": 4,
     "total_successes": 3,
@@ -92,7 +92,7 @@
     "consecutive_failures": 1,
     "success_rate": 0.75,
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-12T12:39:27Z",
+    "last_dispatch": "2026-07-13T15:22:44Z",
     "last_failed": "2026-07-13T12:29:42Z",
     "last_error": "85d90be\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
