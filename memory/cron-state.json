@@ -86,15 +86,15 @@
   "token-pick": {
     "last_status": "failed",
     "last_success": "2026-07-11T12:57:14Z",
-    "total_runs": 7,
+    "total_runs": 8,
     "total_successes": 3,
-    "total_failures": 4,
-    "consecutive_failures": 4,
-    "success_rate": 0.43,
+    "total_failures": 5,
+    "consecutive_failures": 5,
+    "success_rate": 0.38,
     "last_quality_score": 4,
     "last_dispatch": "2026-07-13T15:22:44Z",
-    "last_failed": "2026-07-13T18:54:25Z",
-    "last_error": "8f61fb6\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-07-13T20:05:51Z",
+    "last_error": "d8bdba8\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "skill-health": {
     "last_dispatch": "2026-07-13T03:48:24Z",
