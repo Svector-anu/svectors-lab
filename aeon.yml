@@ -190,7 +190,7 @@ chains:
 # (Grok harness models: grok-composer-2.5-fast — fast single-agent default;
 #  grok-build — reasoning/multi-agent coding model, run with --no-subagents in CI.
 #  Use the bare CLI id `grok-build`, not the API id `grok-build-0.1`.)
-model: claude-sonnet-4-6
+model: grok-composer-2.5-fast
 
 # Agent harness — which coding-agent CLI runs your skills.
 #   claude (default) — Claude Code (`claude -p`); uses the AI Gateway below.
@@ -200,7 +200,7 @@ model: claude-sonnet-4-6
 # Override per-skill with `harness: "grok"` in the skill entry, or per-run via
 # the workflow_dispatch `harness` input. Default stays claude — everything
 # already configured keeps working unchanged.
-harness: claude
+harness: grok
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
