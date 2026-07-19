@@ -1,10 +1,12 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-07-11T18:11:53Z",
+  "last_analyzed": "2026-07-19T18:35:38Z",
   "quality_score": 4,
-  "assessment": "Substantive DeFi analysis with specific regime verdict (chop), dated metrics, actionable signals (Uniswap V3 +144% fees, BlackRock BUIDL +15.7%), explicit position calls, and documented memory updates",
-  "flags": [],
-  "avg_score": 3.8,
+  "assessment": "Substantive DeFi macro with regime take, concrete deltas, fees/yield signals, and memory+PR delivery; minor gap on empty chain 1d deltas and no position config.",
+  "flags": [
+    "stale_data"
+  ],
+  "avg_score": 3.83,
   "history": [
     {
       "date": "2026-07-06",
@@ -24,6 +26,10 @@
     },
     {
       "date": "2026-07-11",
+      "score": 4
+    },
+    {
+      "date": "2026-07-19",
       "score": 4
     }
   ]
