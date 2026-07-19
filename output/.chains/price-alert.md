@@ -1,23 +1,23 @@
-I'll read the price-alert skill and the usual memory/context files, then run it.MEMORY.md has no Tracked Token section — I'll confirm state/logs, then exit with `PRICE_ALERT_NO_TOKEN` per the skill.No tracked token in MEMORY.md — logging `PRICE_ALERT_NO_TOKEN` and exiting without notify or state write.## Summary
+I'll read the skill definition and the usual Aeon context (memory, strategy, soul) so we can run price-alert correctly.No Tracked Token in MEMORY.md yet — checking env, state, soul, and today's log before we exit cleanly.No Tracked Token configured — logging `PRICE_ALERT_NO_TOKEN` and exiting without notify or state write.## Summary
 
 **Status:** `PRICE_ALERT_NO_TOKEN`
 
 **What happened**
-1. Parsed `var` (empty) → `MODE=execute`, no operator targets.
-2. Looked for **Tracked Token** in `memory/MEMORY.md` — section missing; no `0x…` contract.
-3. Exited per skill rules: **no notify**, **no state write**.
+1. Parsed `var` — empty → `MODE=execute`, no targets.
+2. Resolved tracked token from `memory/MEMORY.md` — **no "Tracked Token" section** (and no `0x…` contract).
+3. Per skill rules: exit with no notify and no state write.
 
-**Files**
-- Appended run log to `memory/logs/2026-07-19.md`
+**Files modified**
+- `memory/logs/2026-07-19.md` — appended this run’s log block
 
 **Follow-up**
-To enable alerts, add a Tracked Token table to `memory/MEMORY.md`, e.g.:
+Add a **Tracked Token** table to `memory/MEMORY.md`, e.g.:
 
 ```markdown
 ## Tracked Token
-| Token | Contract | Chain |
-|-------|----------|-------|
-| SYMBOL | 0x… | base |
+| Symbol | Contract | Chain |
+|--------|----------|-------|
+| TOKEN  | 0x…40hex… | base  |
 ```
 
-Until that exists, every 30‑minute run will stay silent with `PRICE_ALERT_NO_TOKEN`.
+Until that exists, every `price-alert` run will keep logging `PRICE_ALERT_NO_TOKEN` and stay silent.

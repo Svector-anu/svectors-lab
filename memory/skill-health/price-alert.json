@@ -1,14 +1,18 @@
 {
   "skill": "price-alert",
-  "last_analyzed": "2026-07-19T19:44:55Z",
+  "last_analyzed": "2026-07-19T21:26:19Z",
   "quality_score": 4,
-  "assessment": "Correct no-token early exit: clear status, no false notify, actionable setup follow-up.",
+  "assessment": "Correct no-token exit: clear status, structured summary, actionable MEMORY.md fix, no false notify.",
   "flags": [],
-  "avg_score": 3.5,
+  "avg_score": 3.67,
   "history": [
     {
       "date": "2026-07-19",
       "score": 3
+    },
+    {
+      "date": "2026-07-19",
+      "score": 4
     },
     {
       "date": "2026-07-19",
