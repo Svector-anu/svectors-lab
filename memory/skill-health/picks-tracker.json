@@ -1,14 +1,18 @@
 {
   "skill": "picks-tracker",
-  "last_analyzed": "2026-07-11T11:50:21Z",
-  "quality_score": 3,
-  "assessment": "Skill executed correctly and examined logs properly, but no picks found — output is appropriate but not actionable.",
+  "last_analyzed": "2026-07-19T18:34:05Z",
+  "quality_score": 4,
+  "assessment": "Clean no-pick skip: correct window scan, clear table, root-cause note, and actionable follow-up without spurious notify.",
   "flags": [],
-  "avg_score": 3,
+  "avg_score": 3.5,
   "history": [
     {
       "date": "2026-07-11",
       "score": 3
+    },
+    {
+      "date": "2026-07-19",
+      "score": 4
     }
   ]
 }
