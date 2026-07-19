@@ -1,13 +1,18 @@
-**Skill executed. Skipped.**
+F&G is 26 (Fear) — at/above the 25 threshold, so this run skips. Logging and stopping.## Summary
 
-F&G is 22 (Extreme Fear), which clears the sentiment trigger, but neither divergence condition is met:
-- BTC 24h = +1.7% (threshold requires < -3%)
-- BTC 7d not available in market-context.md (only 3-day delta of -1.1%)
+**Fear Divergence Scout — skipped**
 
-No divergence baseline, no diverging assets to surface. No notification sent. Skip reason logged to `memory/logs/2026-07-11.md`.
+| Field | Value |
+|-------|--------|
+| **F&G** | 26 (Fear) |
+| **Threshold** | fire only if F&G **&lt; 25** |
+| **Action** | `FEAR_DIVERGENCE_SKIP: F&G 26 (Fear) — above threshold` |
+| **Notification** | none (by design) |
 
-## Summary
-- Read `memory/topics/market-context.md` (dated 2026-07-09, 2 days old — borderline stale but not flagged)
-- F&G = 22 → sentiment trigger met, but BTC performance does not confirm a capitulation baseline
-- No qualifying diverging assets → clean skip per skill logic
-- Logged `FEAR_DIVERGENCE_SKIP` to today's log
+**Source note:** `memory/topics/market-context.md` is dated **2026-07-11** (8 days old vs today 2026-07-19). Still used for the gate; staleness is only flagged when the skill continues past the F&G check.
+
+**Also from context (not used because of skip):** BTC +2.2% 7d / +0.6% 24h — no capitulation baseline.
+
+**Files modified:** `memory/logs/2026-07-19.md` (append only)
+
+**Follow-up:** Re-enable when F&G drops below 25; refresh `market-context` first if the file stays stale.

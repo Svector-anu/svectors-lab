@@ -1,12 +1,12 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-07-11T09:48:55Z",
-  "quality_score": 3,
-  "assessment": "Skill executed correctly with sound logic; avoided false signals by skipping when thresholds unmet, but market data is 2 days stale for crypto signal generation.",
+  "last_analyzed": "2026-07-19T18:33:12Z",
+  "quality_score": 4,
+  "assessment": "Correct threshold skip with clear gate logic, structured summary, staleness note, and follow-up; limited insight by design.",
   "flags": [
     "stale_data"
   ],
-  "avg_score": 3.5,
+  "avg_score": 3.67,
   "history": [
     {
       "date": "2026-07-08",
@@ -15,6 +15,10 @@
     {
       "date": "2026-07-11",
       "score": 3
+    },
+    {
+      "date": "2026-07-19",
+      "score": 4
     }
   ]
 }
