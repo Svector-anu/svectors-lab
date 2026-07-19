@@ -1,0 +1,14 @@
+{
+  "skill": "price-alert",
+  "last_analyzed": "2026-07-19T18:33:11Z",
+  "quality_score": 3,
+  "assessment": "Correct no-token silent exit with clear status, logging, and actionable follow-up; no price analysis possible.",
+  "flags": [],
+  "avg_score": 3,
+  "history": [
+    {
+      "date": "2026-07-19",
+      "score": 3
+    }
+  ]
+}
