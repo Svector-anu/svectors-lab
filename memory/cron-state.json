@@ -145,11 +145,11 @@
   },
   "digest": {
     "last_status": "failed",
-    "last_failed": "2026-07-23T17:43:15Z",
-    "total_runs": 58,
+    "last_failed": "2026-07-23T18:49:43Z",
+    "total_runs": 59,
     "total_successes": 0,
-    "total_failures": 58,
-    "consecutive_failures": 58,
+    "total_failures": 59,
+    "consecutive_failures": 59,
     "success_rate": 0
   }
 }
