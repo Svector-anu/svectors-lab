@@ -87,6 +87,11 @@ if [ -n "${GROK_CREDENTIALS:-}" ]; then
     log "::notice::restored grok OAuth session from GROK_CREDENTIALS to ${dest}"
   fi
   rm -f "$tmp_creds"
+  # aeon.yml's workflow sets XAI_API_KEY as an ambient step env var regardless of
+  # which auth branch we take here. If it's stale/invalid, the grok CLI prefers it
+  # over the restored session file and 401s instead of falling back — so once we've
+  # chosen the OAuth path, remove the conflicting API key from the environment.
+  unset XAI_API_KEY
 elif [ -n "${XAI_API_KEY:-}" ]; then
   export XAI_API_KEY
   log "::notice::authenticating grok with XAI_API_KEY"
