@@ -21,6 +21,14 @@ fi
 
 mkdir -p "$BIN_DIR"
 export PATH="$BIN_DIR:$PATH"
+# `export` here only affects this script's own process — GitHub Actions runs
+# each step in a fresh shell, so without this the "Run" step (where Claude
+# actually invokes the tools by bare name) would never see $BIN_DIR on PATH
+# even though the binaries installed fine. $GITHUB_PATH is the documented
+# mechanism for a step to add a directory to PATH for every later step.
+if [ -n "${GITHUB_PATH:-}" ]; then
+  echo "$BIN_DIR" >> "$GITHUB_PATH"
+fi
 
 # --- Semgrep OSS (pip-installed elsewhere on PATH; symlinked into BIN_DIR so
 #     the sandboxed run finds it via the bare `semgrep` name from one dir) ---
