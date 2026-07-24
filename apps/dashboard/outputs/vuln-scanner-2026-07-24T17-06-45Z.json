@@ -1,0 +1,194 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner Blocked",
+        "description": "Configuration gap preventing scan execution"
+      },
+      "children": [
+        "alert",
+        "sep1",
+        "modeStack",
+        "sep2",
+        "scannerStack",
+        "sep3",
+        "fixStack"
+      ]
+    },
+    "alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Scan Blocked: Tools Unavailable",
+        "message": "No scanners available. Missing configuration scripts and allowlist entries.",
+        "type": "error"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "modeStack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "modeLine",
+        "targetLine",
+        "errorLine"
+      ]
+    },
+    "modeLine": {
+      "type": "Text",
+      "props": {
+        "text": "Mode: scan"
+      }
+    },
+    "targetLine": {
+      "type": "Text",
+      "props": {
+        "text": "Target: none selected — aborted before target pick (tools unavailable)"
+      }
+    },
+    "errorLine": {
+      "type": "Text",
+      "props": {
+        "text": "SCAN_TOOLS_MISSING: no scripts/prefetch-vuln-scanner.sh in repo; scanner bare names (semgrep, trufflehog, osv-scanner, slither) not granted by scripts/skill_mode.sh allowlist. semgrep --version returns \"requires approval\" under non-interactive claude -p, so the binaries are neither staged nor runnable.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scannerStack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scannerHead",
+        "countersLine",
+        "statusLabel",
+        "badgeRow"
+      ]
+    },
+    "scannerHead": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "countersLine": {
+      "type": "Text",
+      "props": {
+        "text": "Candidates: 0 | Confirmed: 0",
+        "variant": "body"
+      }
+    },
+    "statusLabel": {
+      "type": "Text",
+      "props": {
+        "text": "All scanners unavailable:"
+      }
+    },
+    "badgeRow": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badgeSemgrep",
+        "badgeTrufflehog",
+        "badgeOsv",
+        "badgeSlither"
+      ]
+    },
+    "badgeSemgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep=fail",
+        "variant": "destructive"
+      }
+    },
+    "badgeTrufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog=fail",
+        "variant": "destructive"
+      }
+    },
+    "badgeOsv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv=fail",
+        "variant": "destructive"
+      }
+    },
+    "badgeSlither": {
+      "type": "Badge",
+      "props": {
+        "text": "slither=fail",
+        "variant": "destructive"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fixStack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "fixHead",
+        "actionLine",
+        "fixLine",
+        "issueRef"
+      ]
+    },
+    "fixHead": {
+      "type": "Heading",
+      "props": {
+        "text": "Fix Needed",
+        "level": "h3"
+      }
+    },
+    "actionLine": {
+      "type": "Text",
+      "props": {
+        "text": "Action: Skipped scan cleanly per SKILL Sandbox note (do not fork/scan a repo with no working scanner). This is a config gap blocking the whole scan arm.",
+        "variant": "caption"
+      }
+    },
+    "fixLine": {
+      "type": "Text",
+      "props": {
+        "text": "Operator must add scripts/prefetch-vuln-scanner.sh to stage binaries into /tmp/bin AND ensure the scanner bare names are on the write-tier allowlist in scripts/skill_mode.sh.",
+        "variant": "body"
+      }
+    },
+    "issueRef": {
+      "type": "Badge",
+      "props": {
+        "text": "ref ISS-001",
+        "variant": "outline"
+      }
+    }
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Skill Health — CRITICAL",
+        "description": "2026-07-19"
+      },
+      "children": [
+        "alert",
+        "sep1",
+        "crit_heading",
+        "crit_stack",
+        "sep2",
+        "deg_heading",
+        "deg_stack",
+        "sep3",
+        "no_heading",
+        "no_stack",
+        "sep4",
+        "healthy_heading",
+        "healthy_text",
+        "sep5",
+        "summary_stack"
+      ]
+    },
+    "alert": {
+      "type": "Alert",
+      "props": {
+        "title": "HEALTH: CRITICAL(7)",
+        "message": "Systemic zero-token harness/model failure (input_tokens=0) — 7 skills affected",
+        "type": "error"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "crit_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "🔴 CRITICAL",
+        "level": "h2"
+      }
+    },
+    "crit_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "crit_1",
+        "crit_2",
+        "crit_3",
+        "crit_4",
+        "crit_5",
+        "crit_more"
+      ]
+    },
+    "crit_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_1_info",
+        "crit_1_action"
+      ]
+    },
+    "crit_1_info": {
+      "type": "Text",
+      "props": {
+        "text": "fear-divergence — 150 fails, 8d down"
+      }
+    },
+    "crit_1_action": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_1_badge",
+        "crit_1_link"
+      ]
+    },
+    "crit_1_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FIX CONFIG (zero-token)",
+        "variant": "destructive"
+      }
+    },
+    "crit_1_link": {
+      "type": "Link",
+      "props": {
+        "label": "ISS-001",
+        "href": "memory/issues/ISS-001.md"
+      }
+    },
+    "crit_2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_2_info",
+        "crit_2_action"
+      ]
+    },
+    "crit_2_info": {
+      "type": "Text",
+      "props": {
+        "text": "picks-tracker — 149 fails, 8d down"
+      }
+    },
+    "crit_2_action": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_2_badge",
+        "crit_2_link"
+      ]
+    },
+    "crit_2_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FIX CONFIG (zero-token)",
+        "variant": "destructive"
+      }
+    },
+    "crit_2_link": {
+      "type": "Link",
+      "props": {
+        "label": "ISS-001",
+        "href": "memory/issues/ISS-001.md"
+      }
+    },
+    "crit_3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_3_info",
+        "crit_3_action"
+      ]
+    },
+    "crit_3_info": {
+      "type": "Text",
+      "props": {
+        "text": "narrative-tracker — 146 fails, 8d down"
+      }
+    },
+    "crit_3_action": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_3_badge",
+        "crit_3_link"
+      ]
+    },
+    "crit_3_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FIX CONFIG (zero-token)",
+        "variant": "destructive"
+      }
+    },
+    "crit_3_link": {
+      "type": "Link",
+      "props": {
+        "label": "ISS-001",
+        "href": "memory/issues/ISS-001.md"
+      }
+    },
+    "crit_4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_4_info",
+        "crit_4_action"
+      ]
+    },
+    "crit_4_info": {
+      "type": "Text",
+      "props": {
+        "text": "x402-monitor — 119 fails, 11d down"
+      }
+    },
+    "crit_4_action": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_4_badge",
+        "crit_4_link"
+      ]
+    },
+    "crit_4_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FIX CONFIG (zero-token)",
+        "variant": "destructive"
+      }
+    },
+    "crit_4_link": {
+      "type": "Link",
+      "props": {
+        "label": "ISS-001",
+        "href": "memory/issues/ISS-001.md"
+      }
+    },
+    "crit_5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_5_info",
+        "crit_5_action"
+      ]
+    },
+    "crit_5_info": {
+      "type": "Text",
+      "props": {
+        "text": "token-pick — 128 fails, 8d down"
+      }
+    },
+    "crit_5_action": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_5_badge",
+        "crit_5_link"
+      ]
+    },
+    "crit_5_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FIX CONFIG (zero-token)",
+        "variant": "destructive"
+      }
+    },
+    "crit_5_link": {
+      "type": "Link",
+      "props": {
+        "label": "ISS-001",
+        "href": "memory/issues/ISS-001.md"
+      }
+    },
+    "crit_more": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "crit_more_text",
+        "crit_more_link"
+      ]
+    },
+    "crit_more_text": {
+      "type": "Text",
+      "props": {
+        "text": "+2 more (skill-health, defi-overview)"
+      }
+    },
+    "crit_more_link": {
+      "type": "Link",
+      "props": {
+        "label": "see memory/issues/INDEX.md",
+        "href": "memory/issues/INDEX.md"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "deg_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "🟡 DEGRADED / FLAPPING",
+        "level": "h2"
+      }
+    },
+    "deg_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deg_1"
+      ]
+    },
+    "deg_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "deg_1_info",
+        "deg_1_action"
+      ]
+    },
+    "deg_1_info": {
+      "type": "Text",
+      "props": {
+        "text": "heartbeat — 1% success (159 runs), recovered today (0 consec)"
+      }
+    },
+    "deg_1_action": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "deg_1_badge",
+        "deg_1_link"
+      ]
+    },
+    "deg_1_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "INVESTIGATE",
+        "variant": "secondary"
+      }
+    },
+    "deg_1_link": {
+      "type": "Link",
+      "props": {
+        "label": "ISS-001",
+        "href": "memory/issues/ISS-001.md"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "no_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "⚪ NO DATA (3)",
+        "level": "h2"
+      }
+    },
+    "no_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "no_skills",
+        "no_action"
+      ]
+    },
+    "no_skills": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "no_1",
+        "no_2",
+        "no_3"
+      ]
+    },
+    "no_1": {
+      "type": "Text",
+      "props": {
+        "text": "github-trending"
+      }
+    },
+    "no_2": {
+      "type": "Text",
+      "props": {
+        "text": "price-alert"
+      }
+    },
+    "no_3": {
+      "type": "Text",
+      "props": {
+        "text": "digest"
+      }
+    },
+    "no_action": {
+      "type": "Badge",
+      "props": {
+        "text": "DISPATCH-SKILL",
+        "variant": "outline"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "healthy_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "🟢 HEALTHY",
+        "level": "h2"
+      }
+    },
+    "healthy_text": {
+      "type": "Text",
+      "props": {
+        "text": "0 healthy skills",
+        "variant": "muted"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "summary_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "summary_issues",
+        "summary_resolved"
+      ]
+    },
+    "summary_issues": {
+      "type": "Stat",
+      "props": {
+        "label": "Open issues",
+        "value": "1"
+      }
+    },
+    "summary_resolved": {
+      "type": "Stat",
+      "props": {
+        "label": "Resolved this run",
+        "value": "0"
+      }
+    }
+  }
+}

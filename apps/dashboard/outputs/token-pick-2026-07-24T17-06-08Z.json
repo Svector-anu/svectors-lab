@@ -1,0 +1,390 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Daily Pick — 2026-07-19"
+      },
+      "children": [
+        "token-section",
+        "sep1",
+        "market-section",
+        "sep2",
+        "sources-section"
+      ]
+    },
+    "token-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "token-header",
+        "token-price-row",
+        "token-metrics-row",
+        "token-score-block",
+        "token-catalyst-block",
+        "token-risk-alert",
+        "token-comparison"
+      ]
+    },
+    "token-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "token-title",
+        "token-signal-badge",
+        "token-signal-stat"
+      ]
+    },
+    "token-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Token: KAITO",
+        "level": "h2"
+      }
+    },
+    "token-signal-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "HIGH",
+        "variant": "secondary"
+      }
+    },
+    "token-signal-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "signal",
+        "value": "9/10"
+      }
+    },
+    "token-price-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "price-base",
+        "price-24h-stat",
+        "price-7d-stat"
+      ]
+    },
+    "price-base": {
+      "type": "Text",
+      "props": {
+        "text": "Price: $0.95",
+        "variant": "lead"
+      }
+    },
+    "price-24h-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "24h",
+        "value": "+15.8%",
+        "trend": "up"
+      }
+    },
+    "price-7d-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "7d",
+        "value": "+43.6%",
+        "trend": "up"
+      }
+    },
+    "token-metrics-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "mcap-stat",
+        "vol-stat",
+        "vol-ratio-text"
+      ]
+    },
+    "mcap-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "mcap",
+        "value": "$229M"
+      }
+    },
+    "vol-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "24h vol",
+        "value": "$73M"
+      }
+    },
+    "vol-ratio-text": {
+      "type": "Text",
+      "props": {
+        "text": "vol/mcap: 0.32",
+        "variant": "muted"
+      }
+    },
+    "token-score-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "score-breakdown-heading",
+        "score-breakdown-formula"
+      ]
+    },
+    "score-breakdown-heading": {
+      "type": "Text",
+      "props": {
+        "text": "Score breakdown:",
+        "variant": "body"
+      }
+    },
+    "score-breakdown-formula": {
+      "type": "Text",
+      "props": {
+        "text": "[24h+1, 7d+1, both>5%+2, vol/mcap≥0.20+3, RS vs BTC/ETH+2] = 9/10",
+        "variant": "caption"
+      }
+    },
+    "token-catalyst-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "catalyst-heading",
+        "catalyst-text"
+      ]
+    },
+    "catalyst-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Catalyst",
+        "level": "h4"
+      }
+    },
+    "catalyst-text": {
+      "type": "Text",
+      "props": {
+        "text": "InfoFi rotation — KAITO +14% through the Jul 17 broad sell-off; OI hit a 2026 high and volume ~3× week-on-week (AMBCrypto / CMC)"
+      }
+    },
+    "token-risk-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Risk",
+        "message": "CoinGecko flags a Jul 20 unlock — ~17.6M KAITO (~$15–17M, ~1.8% max supply) landing tomorrow",
+        "type": "warning"
+      }
+    },
+    "token-comparison": {
+      "type": "Text",
+      "props": {
+        "text": "Vs recent picks: first time (no Token Pick dedup hits in last 7 days)",
+        "variant": "caption"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "market-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "market-header",
+        "market-question",
+        "market-odds-row",
+        "market-meta",
+        "market-fair-block",
+        "market-thesis-block",
+        "market-risk-alert"
+      ]
+    },
+    "market-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "market-title",
+        "market-medium-badge",
+        "market-edge-stat"
+      ]
+    },
+    "market-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Market: Fed Interest Rates",
+        "level": "h2"
+      }
+    },
+    "market-medium-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "MEDIUM",
+        "variant": "outline"
+      }
+    },
+    "market-edge-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "edge",
+        "value": "7pp"
+      }
+    },
+    "market-question": {
+      "type": "Text",
+      "props": {
+        "text": "Will there be no change in Fed interest rates after the July 2026 meeting?",
+        "variant": "lead"
+      }
+    },
+    "market-odds-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "odds-yes-stat",
+        "odds-no-stat"
+      ]
+    },
+    "odds-yes-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Current: YES",
+        "value": "94¢"
+      }
+    },
+    "odds-no-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Current: NO",
+        "value": "6¢"
+      }
+    },
+    "market-meta": {
+      "type": "Text",
+      "props": {
+        "text": "24h vol: $188k | Resolves: 2026-07-29",
+        "variant": "body"
+      }
+    },
+    "market-fair-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fair-value-stat",
+        "fair-inputs-text"
+      ]
+    },
+    "fair-value-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Fair YES",
+        "value": "~87%"
+      }
+    },
+    "fair-inputs-text": {
+      "type": "Text",
+      "props": {
+        "text": "Inputs: CME FedWatch via Growbeansprout 18 Jul = 86.7% hold; June FOMC held 3.50–3.75% but hawkish SEP split on 2026 hikes; Polymarket cut legs ≈0.4% so residual non-hold is mostly hike",
+        "variant": "caption"
+      }
+    },
+    "market-thesis-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "thesis-heading",
+        "thesis-text"
+      ]
+    },
+    "thesis-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Thesis",
+        "level": "h4"
+      }
+    },
+    "thesis-text": {
+      "type": "Text",
+      "props": {
+        "text": "Polymarket overprices a pure hold vs futures — fade YES / lean NO (or the +25bps hike leg at ~5¢)"
+      }
+    },
+    "market-risk-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Risk",
+        "message": "If July CPI/PCE print soft and FedWatch re-converges to ≥94% hold, the edge collapses",
+        "type": "warning"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "sources-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "sources-heading",
+        "sources-list",
+        "disclaimer-text"
+      ]
+    },
+    "sources-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Sources & Verification",
+        "level": "h4"
+      }
+    },
+    "sources-list": {
+      "type": "Text",
+      "props": {
+        "text": "cg=CoinGecko ✓ | dex=DEX data ✓ | poly=Polymarket ✓",
+        "variant": "body"
+      }
+    },
+    "disclaimer-text": {
+      "type": "Text",
+      "props": {
+        "text": "Not financial advice — pattern-matching only",
+        "variant": "caption"
+      }
+    }
+  }
+}

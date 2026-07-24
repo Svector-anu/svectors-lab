@@ -14,3 +14,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-07-19,price-alert,grok-4.5,0,0,0,0
 2026-07-19,price-alert,grok-4.5,0,0,0,0
 2026-07-20,narrative-tracker,grok-4.5,0,0,0,0
+2026-07-24,vuln-scanner,claude-opus-4-8,1571879,10708,0,0

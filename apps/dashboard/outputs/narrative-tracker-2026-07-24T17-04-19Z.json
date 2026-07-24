@@ -1,0 +1,628 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker — 2026-07-20"
+      },
+      "children": [
+        "section_transitions",
+        "sep1",
+        "section_reflexivity",
+        "sep2",
+        "section_positions",
+        "sep3",
+        "section_map"
+      ]
+    },
+    "section_transitions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_transitions",
+        "trans_new",
+        "trans_promoted1",
+        "trans_promoted2",
+        "trans_demoted1",
+        "trans_demoted2",
+        "trans_dead"
+      ]
+    },
+    "heading_transitions": {
+      "type": "Heading",
+      "props": {
+        "text": "TRANSITIONS",
+        "level": "h2"
+      }
+    },
+    "trans_new": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "trans_new_label",
+        "trans_new_text",
+        "trans_new_link"
+      ]
+    },
+    "trans_new_label": {
+      "type": "Badge",
+      "props": {
+        "text": "NEW",
+        "variant": "secondary"
+      }
+    },
+    "trans_new_text": {
+      "type": "Text",
+      "props": {
+        "text": "InfoFi / attention (KAITO) — split from AI; Analytics +26% / SocialFi +43% on DefiLlama; KAITO +15% 24h / +45% 7d into Jul 20 unlock"
+      }
+    },
+    "trans_new_link": {
+      "type": "Link",
+      "props": {
+        "label": "View on DefiLlama",
+        "href": "https://defillama.com/narrative-tracker"
+      }
+    },
+    "trans_promoted1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "trans_p1_label",
+        "trans_p1_title",
+        "trans_p1_text1",
+        "trans_p1_text2",
+        "trans_p1_text3"
+      ]
+    },
+    "trans_p1_label": {
+      "type": "Badge",
+      "props": {
+        "text": "PROMOTED",
+        "variant": "secondary"
+      }
+    },
+    "trans_p1_title": {
+      "type": "Text",
+      "props": {
+        "text": "Solana memecoin Rising → Peak",
+        "variant": "lead"
+      }
+    },
+    "trans_p1_text1": {
+      "type": "Text",
+      "props": {
+        "text": "Meme cat +75.6% mcap-wtd ($40.1B)"
+      }
+    },
+    "trans_p1_text2": {
+      "type": "Text",
+      "props": {
+        "text": "CG trending top4: PUMP +23.5%, CASHCAT +30.7%, ANSEM +22.6%, PENGU"
+      }
+    },
+    "trans_p1_text3": {
+      "type": "Text",
+      "props": {
+        "text": "pump.fun fees $783k (+39% 7d), PumpSwap $1.27M"
+      }
+    },
+    "trans_promoted2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "trans_p2_label",
+        "trans_p2_title",
+        "trans_p2_text"
+      ]
+    },
+    "trans_p2_label": {
+      "type": "Badge",
+      "props": {
+        "text": "PROMOTED",
+        "variant": "secondary"
+      }
+    },
+    "trans_p2_title": {
+      "type": "Text",
+      "props": {
+        "text": "Tokenized yield (BANK) Emerging → Rising",
+        "variant": "lead"
+      }
+    },
+    "trans_p2_text": {
+      "type": "Text",
+      "props": {
+        "text": "Lorenzo BANK +105% 24h, still #5 CG trending after yday +79%"
+      }
+    },
+    "trans_demoted1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "trans_d1_label",
+        "trans_d1_title",
+        "trans_d1_text"
+      ]
+    },
+    "trans_d1_label": {
+      "type": "Badge",
+      "props": {
+        "text": "DEMOTED",
+        "variant": "outline"
+      }
+    },
+    "trans_d1_title": {
+      "type": "Text",
+      "props": {
+        "text": "Perp DEX Rising → Peak",
+        "variant": "lead"
+      }
+    },
+    "trans_d1_text": {
+      "type": "Text",
+      "props": {
+        "text": "HYPE $60.3 (−1% 24h / −10% 7d) still #10; HL perps fees $825k (+16% 1d but −4% 7d); LIT −16% 7d"
+      }
+    },
+    "trans_demoted2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "trans_d2_label",
+        "trans_d2_title",
+        "trans_d2_text"
+      ]
+    },
+    "trans_d2_label": {
+      "type": "Badge",
+      "props": {
+        "text": "DEMOTED",
+        "variant": "outline"
+      }
+    },
+    "trans_d2_title": {
+      "type": "Text",
+      "props": {
+        "text": "RWA liquid Peak → Fading",
+        "variant": "lead"
+      }
+    },
+    "trans_d2_text": {
+      "type": "Text",
+      "props": {
+        "text": "RWA cat −4.0% DefiLlama; ONDO $0.344 flat 24h; fund TVL ≠ token beta"
+      }
+    },
+    "trans_dead": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "trans_dead_label",
+        "trans_dead_text"
+      ]
+    },
+    "trans_dead_label": {
+      "type": "Badge",
+      "props": {
+        "text": "DEAD",
+        "variant": "destructive"
+      }
+    },
+    "trans_dead_text": {
+      "type": "Text",
+      "props": {
+        "text": "none vs Jul 19 set"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_reflexivity": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_reflexivity",
+        "alert_reflexivity"
+      ]
+    },
+    "heading_reflexivity": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY ALERT",
+        "level": "h2"
+      }
+    },
+    "alert_reflexivity": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "message": "Solana memes — airdrop lore → mcap → more bull posting (@blknoiz06 $ANSEM; @PumpfunEco amplifying). Launchpad fees — pump.fun + PumpSwap fee stack rising with meme mindshare (story↔revenue loop). BANK — single-name melt-up without category breadth = price manufacturing the \"tokenized yield\" story. Meme×RWA/AI cosplay — trenches rebranding as RWA/AI agents (e.g. RH-chain CASHCAT framing)."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_positions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_positions",
+        "pos_ride",
+        "pos_fade1",
+        "pos_fade2",
+        "pos_watch1",
+        "pos_watch2",
+        "pos_watch3",
+        "pos_fade3",
+        "pos_watch4"
+      ]
+    },
+    "heading_positions": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h2"
+      }
+    },
+    "pos_ride": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_ride_label",
+        "pos_ride_text",
+        "pos_ride_link"
+      ]
+    },
+    "pos_ride_label": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "default"
+      }
+    },
+    "pos_ride_text": {
+      "type": "Text",
+      "props": {
+        "text": "Tokenized yield / Lorenzo BANK (mindshare 3 ↑↑, Bull) — BANK CG #5 — single-name; no sector confirm"
+      }
+    },
+    "pos_ride_link": {
+      "type": "Link",
+      "props": {
+        "label": "View BANK on CoinGecko",
+        "href": "https://www.coingecko.com/en/search_redirect?id=lorenzo-protocol&type=coin"
+      }
+    },
+    "pos_fade1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_f1_label",
+        "pos_f1_text"
+      ]
+    },
+    "pos_f1_label": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "pos_f1_text": {
+      "type": "Text",
+      "props": {
+        "text": "Solana memecoin / trench (5 ↑↑, Cope/Bull) — @blknoiz06 + pump.fun — zero fundies; Peak + FOMO = late entry poison"
+      }
+    },
+    "pos_fade2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_f2_label",
+        "pos_f2_text"
+      ]
+    },
+    "pos_f2_label": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "pos_f2_text": {
+      "type": "Text",
+      "props": {
+        "text": "AI crypto basket (4 →, Cope) — AI cat $24.1B −1.2% period; agents mcap ~$3.3B −2% — long-window gains baked"
+      }
+    },
+    "pos_watch1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_w1_label",
+        "pos_w1_text"
+      ]
+    },
+    "pos_w1_label": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "pos_w1_text": {
+      "type": "Text",
+      "props": {
+        "text": "InfoFi / KAITO (3 ↑, Mixed) — unlock day overhang (~17.6M cited prior) while price still bid"
+      }
+    },
+    "pos_watch2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_w2_label",
+        "pos_w2_text"
+      ]
+    },
+    "pos_w2_label": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "pos_w2_text": {
+      "type": "Text",
+      "props": {
+        "text": "Perp DEX HYPE complex (4 ↓, Bull/Mixed) — structural fees real; momentum rolling over"
+      }
+    },
+    "pos_watch3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_w3_label",
+        "pos_w3_text"
+      ]
+    },
+    "pos_w3_label": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "pos_w3_text": {
+      "type": "Text",
+      "props": {
+        "text": "Fear-base BTC chop (3 →, Mixed) — F&G 29 Fear (need >30); BTC ~$64.6k flat"
+      }
+    },
+    "pos_fade3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_f3_label",
+        "pos_f3_text"
+      ]
+    },
+    "pos_f3_label": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "pos_f3_text": {
+      "type": "Text",
+      "props": {
+        "text": "Uniswap fee surge (2 ↓, Cope) — V3 $1.21M / V4 $1.07M (−24% 1d V4); mean-reversion intact"
+      }
+    },
+    "pos_watch4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos_w4_label",
+        "pos_w4_text"
+      ]
+    },
+    "pos_w4_label": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "pos_w4_text": {
+      "type": "Text",
+      "props": {
+        "text": "RWA institutional (3 ↓, Mixed) — liquid soft; BUIDL multi-chain still structural"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_map": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_map",
+        "map_emerging",
+        "map_rising",
+        "map_peak",
+        "map_fading"
+      ]
+    },
+    "heading_map": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h2"
+      }
+    },
+    "map_emerging": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_e_label",
+        "map_e_text"
+      ]
+    },
+    "map_e_label": {
+      "type": "Text",
+      "props": {
+        "text": "Emerging",
+        "variant": "lead"
+      }
+    },
+    "map_e_text": {
+      "type": "Text",
+      "props": {
+        "text": "—",
+        "variant": "muted"
+      }
+    },
+    "map_rising": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_r_label",
+        "map_r_text"
+      ]
+    },
+    "map_r_label": {
+      "type": "Text",
+      "props": {
+        "text": "Rising",
+        "variant": "lead"
+      }
+    },
+    "map_r_text": {
+      "type": "Text",
+      "props": {
+        "text": "Tokenized yield (BANK) · InfoFi/KAITO"
+      }
+    },
+    "map_peak": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_p_label",
+        "map_p_text"
+      ]
+    },
+    "map_p_label": {
+      "type": "Text",
+      "props": {
+        "text": "Peak",
+        "variant": "lead"
+      }
+    },
+    "map_p_text": {
+      "type": "Text",
+      "props": {
+        "text": "Solana memecoin · AI crypto · Perp DEX · Fear-base"
+      }
+    },
+    "map_fading": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_f_label",
+        "map_f_text"
+      ]
+    },
+    "map_f_label": {
+      "type": "Text",
+      "props": {
+        "text": "Fading",
+        "variant": "lead"
+      }
+    },
+    "map_f_text": {
+      "type": "Text",
+      "props": {
+        "text": "RWA liquid · Uniswap V4 fees · DePIN"
+      }
+    }
+  }
+}

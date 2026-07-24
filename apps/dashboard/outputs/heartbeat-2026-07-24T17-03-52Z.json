@@ -1,0 +1,246 @@
+{
+  "root": "card_heartbeat",
+  "state": {},
+  "elements": {
+    "card_heartbeat": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat · fleet DEGRADED",
+        "description": "Fleet health status report"
+      },
+      "children": [
+        "alert_degraded",
+        "sep_1",
+        "section_failed",
+        "sep_2",
+        "section_missing",
+        "sep_3",
+        "section_memory",
+        "sep_4",
+        "section_selfcheck"
+      ]
+    },
+    "alert_degraded": {
+      "type": "Alert",
+      "props": {
+        "type": "error",
+        "title": "Fleet Status: DEGRADED",
+        "message": "Multiple skills experiencing consecutive failures due to zero-token harness errors"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_failed": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_failed",
+        "text_failed_reason",
+        "stack_failed_items"
+      ]
+    },
+    "badge_failed": {
+      "type": "Badge",
+      "props": {
+        "text": "FAILED",
+        "variant": "destructive"
+      }
+    },
+    "text_failed_reason": {
+      "type": "Text",
+      "props": {
+        "text": "Shared zero-token harness errors — model not consuming tokens",
+        "variant": "muted"
+      }
+    },
+    "stack_failed_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "failed_item_heartbeat",
+        "failed_item_fear_divergence",
+        "failed_item_picks_tracker",
+        "failed_item_narrative_tracker",
+        "failed_item_token_pick",
+        "failed_item_skill_health",
+        "failed_item_defi_overview",
+        "failed_item_x402_monitor"
+      ]
+    },
+    "failed_item_heartbeat": {
+      "type": "Text",
+      "props": {
+        "text": "heartbeat (142 consec, last ok Jul 11)",
+        "variant": "body"
+      }
+    },
+    "failed_item_fear_divergence": {
+      "type": "Text",
+      "props": {
+        "text": "fear-divergence (150)",
+        "variant": "body"
+      }
+    },
+    "failed_item_picks_tracker": {
+      "type": "Text",
+      "props": {
+        "text": "picks-tracker (149)",
+        "variant": "body"
+      }
+    },
+    "failed_item_narrative_tracker": {
+      "type": "Text",
+      "props": {
+        "text": "narrative-tracker (146)",
+        "variant": "body"
+      }
+    },
+    "failed_item_token_pick": {
+      "type": "Text",
+      "props": {
+        "text": "token-pick (128)",
+        "variant": "body"
+      }
+    },
+    "failed_item_skill_health": {
+      "type": "Text",
+      "props": {
+        "text": "skill-health (126)",
+        "variant": "body"
+      }
+    },
+    "failed_item_defi_overview": {
+      "type": "Text",
+      "props": {
+        "text": "defi-overview (124)",
+        "variant": "body"
+      }
+    },
+    "failed_item_x402_monitor": {
+      "type": "Text",
+      "props": {
+        "text": "x402-monitor (119)",
+        "variant": "body"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_missing": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_missing",
+        "text_missing_items"
+      ]
+    },
+    "badge_missing": {
+      "type": "Badge",
+      "props": {
+        "text": "MISSING",
+        "variant": "secondary"
+      }
+    },
+    "text_missing_items": {
+      "type": "Text",
+      "props": {
+        "text": "github-trending, price-alert, digest — enabled but never dispatched",
+        "variant": "body"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_memory": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "badge_memory",
+        "memory_item_1",
+        "memory_item_2"
+      ]
+    },
+    "badge_memory": {
+      "type": "Badge",
+      "props": {
+        "text": "MEMORY",
+        "variant": "outline"
+      }
+    },
+    "memory_item_1": {
+      "type": "Text",
+      "props": {
+        "text": "configure notification channels",
+        "variant": "body"
+      }
+    },
+    "memory_item_2": {
+      "type": "Text",
+      "props": {
+        "text": "run first digest",
+        "variant": "body"
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_selfcheck": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_selfcheck",
+        "selfcheck_last_success",
+        "selfcheck_status_page"
+      ]
+    },
+    "heading_selfcheck": {
+      "type": "Heading",
+      "props": {
+        "text": "Self-check",
+        "level": "h3"
+      }
+    },
+    "selfcheck_last_success": {
+      "type": "Text",
+      "props": {
+        "text": "heartbeat last success >8d ago",
+        "variant": "body"
+      }
+    },
+    "selfcheck_status_page": {
+      "type": "Text",
+      "props": {
+        "text": "Status page → DEGRADED",
+        "variant": "body"
+      }
+    }
+  }
+}
