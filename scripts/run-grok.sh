@@ -258,16 +258,28 @@ out_file="$(mktemp)"; err_file="$(mktemp)"
 SUBAGENT_FLAG=(--no-subagents)
 [ "${GROK_WANTS_SUBAGENTS:-0}" = 1 ] && SUBAGENT_FLAG=()
 # Guard the array expansions for the empty case under bash 3.2 set -u.
-grok -p "$PROMPT" \
-  ${MODEL_FLAG[@]+"${MODEL_FLAG[@]}"} \
-  --output-format json \
-  --no-auto-update \
-  --rules "$GROK_COMPAT_RULES" \
-  ${SUBAGENT_FLAG[@]+"${SUBAGENT_FLAG[@]}"} \
-  ${RUN_FLAGS[@]+"${RUN_FLAGS[@]}"} \
-  ${MCP_ALLOW[@]+"${MCP_ALLOW[@]}"} \
-  ${GROK_ARGS[@]+"${GROK_ARGS[@]}"} >"$out_file" 2>"$err_file"
+run_grok() {
+  grok -p "$PROMPT" \
+    "$@" \
+    --output-format json \
+    --no-auto-update \
+    --rules "$GROK_COMPAT_RULES" \
+    ${SUBAGENT_FLAG[@]+"${SUBAGENT_FLAG[@]}"} \
+    ${RUN_FLAGS[@]+"${RUN_FLAGS[@]}"} \
+    ${MCP_ALLOW[@]+"${MCP_ALLOW[@]}"} \
+    ${GROK_ARGS[@]+"${GROK_ARGS[@]}"} >"$out_file" 2>"$err_file"
+}
+run_grok ${MODEL_FLAG[@]+"${MODEL_FLAG[@]}"}
 rc=$?
+# xAI's hosted model catalog has renamed/dropped ids under us with the CLI version
+# unchanged (grok-composer-2.5-fast, grok-build, then grok-4.5 all went "unknown
+# model id" in turn) — so a stale explicit --model shouldn't hard-fail every run.
+# Retry once with no --model at all so grok falls back to its own current default.
+if [ $rc -ne 0 ] && [ ${#MODEL_FLAG[@]} -gt 0 ] && grep -qi 'unknown model id' "$err_file"; then
+  log "::warning::model '$MODEL' rejected by grok CLI (unknown model id) — retrying without --model"
+  run_grok
+  rc=$?
+fi
 # Surface grok's own diagnostics into the step log regardless of outcome.
 cat "$err_file" >&2
 if [ $rc -ne 0 ]; then
