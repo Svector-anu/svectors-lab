@@ -161,5 +161,14 @@
     "total_failures": 1,
     "consecutive_failures": 1,
     "success_rate": 0
+  },
+  "vuln-scanner": {
+    "last_status": "failed",
+    "last_failed": "2026-07-24T16:54:51Z",
+    "total_runs": 1,
+    "total_successes": 0,
+    "total_failures": 1,
+    "consecutive_failures": 1,
+    "success_rate": 0
   }
 }
