@@ -364,12 +364,12 @@ jobs:
             HARNESS="${CONFIG_HARNESS:-claude}"
           fi
           if [ "$HARNESS" != "grok" ]; then HARNESS="claude"; fi   # unknown value → safe default (use `if`, not `&&`, under set -e)
-          # On the grok harness a claude-* model id is meaningless — fall back to
-          # grok's default (grok-4.5) unless an explicit grok model was chosen.
-          # run-grok.sh omits --model for a non-grok value as a safety net.
-          if [ "$HARNESS" = "grok" ]; then
-            case "$MODEL" in claude-*|"") MODEL="grok-4.5" ;; esac
-          fi
+          # On the grok harness a claude-* model id is meaningless, but do NOT remap
+          # it to a hardcoded grok-* id here — that id has gone stale 3x in a week as
+          # xAI's catalog changes server-side out from under a pinned CLI version.
+          # Leave MODEL as-is: run-grok.sh already omits --model for any claude-*/
+          # empty value and lets the grok CLI self-select its own current default,
+          # which is the only thing that doesn't rot.
           echo "Using harness: $HARNESS  |  model: $MODEL"
           echo "SKILL_MODEL=$MODEL" >> "$GITHUB_OUTPUT"
           echo "HARNESS=$HARNESS" >> "$GITHUB_OUTPUT"   # read by the post-run scorer / feed-convert steps

@@ -847,10 +847,10 @@ jobs:
           CONFIG_HARNESS=$(grep -E '^harness:' aeon.yml | sed 's/^harness: *//' | tr -d ' ')
           HARNESS="${CONFIG_HARNESS:-claude}"
           if [ "$HARNESS" != "grok" ]; then HARNESS="claude"; fi   # unknown → safe default
-          # On grok a claude-* model id is meaningless — fall back to grok's default.
-          if [ "$HARNESS" = "grok" ]; then
-            case "$MODEL" in claude-*|"") MODEL="grok-4.5" ;; esac
-          fi
+          # On grok a claude-* model id is meaningless, but do NOT remap it to a
+          # hardcoded grok-* id here — see aeon.yml's Run step for why (id has gone
+          # stale 3x in a week). run-grok.sh omits --model for claude-*/empty and
+          # lets the grok CLI self-select its own current default.
           echo "Using harness: $HARNESS  |  model: $MODEL"
 
           # AI Gateway routing — same path as aeon.yml's Run steps. The grok harness
