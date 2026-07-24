@@ -135,12 +135,12 @@
   },
   "github-trending": {
     "last_dispatch": "2026-07-24T23:27:31Z",
-    "last_status": "dispatched",
-    "last_failed": "2026-07-24T22:48:51Z",
-    "total_runs": 58,
+    "last_status": "failed",
+    "last_failed": "2026-07-24T23:57:52Z",
+    "total_runs": 59,
     "total_successes": 0,
-    "total_failures": 58,
-    "consecutive_failures": 58,
+    "total_failures": 59,
+    "consecutive_failures": 59,
     "success_rate": 0
   },
   "digest": {
