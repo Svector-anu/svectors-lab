@@ -41,6 +41,10 @@ BASE_TOOLS="$BASE_TOOLS,Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(g
 # Write tier additionally gets repo-mutation tools + python (an interpreter is itself
 # a write vector, so it stays out of the read-only base; skills' python helpers run here).
 WRITE_TOOLS="Write,Edit,Bash(gh:*),Bash(git:*),Bash(python3:*),Bash(python:*)"
+# vuln-scanner's SAST tools (staged by scripts/prefetch-vuln-scanner.sh into /tmp/bin,
+# invoked by bare name per its Sandbox note) — read-only in effect (they only scan a
+# forked clone) but kept on the write tier since vuln-scanner itself is mode: write.
+WRITE_TOOLS="$WRITE_TOOLS,Bash(semgrep:*),Bash(trufflehog:*),Bash(osv-scanner:*),Bash(slither:*)"
 
 resolve_mode() {
   local skill="$1" f="skills/$1/SKILL.md" m=""
@@ -98,7 +102,7 @@ write_tools() { echo "$BASE_TOOLS,$WRITE_TOOLS"; }
 # Bash command globs allowed on every tier (mirror BASE_TOOLS' Bash(...:*) set).
 GROK_BASE_BASH="curl jq ./notify ./notify-jsonrender mkdir ls cat chmod date echo node npm npx head tail wc sort grep"
 # Additional Bash command globs for the write tier (mirror WRITE_TOOLS).
-GROK_WRITE_BASH="gh git python3 python"
+GROK_WRITE_BASH="gh git python3 python semgrep trufflehog osv-scanner slither"
 
 grok_args() {
   local mode="$1"
