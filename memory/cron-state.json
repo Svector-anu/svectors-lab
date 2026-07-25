@@ -123,15 +123,15 @@
   },
   "price-alert": {
     "last_dispatch": "2026-07-25T23:24:46Z",
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-07-20T02:24:02Z",
-    "total_runs": 96,
+    "total_runs": 97,
     "total_successes": 5,
-    "total_failures": 91,
-    "consecutive_failures": 91,
+    "total_failures": 92,
+    "consecutive_failures": 92,
     "success_rate": 0.05,
     "last_quality_score": 3,
-    "last_failed": "2026-07-25T22:53:07Z"
+    "last_failed": "2026-07-25T23:55:15Z"
   },
   "github-trending": {
     "last_dispatch": "2026-07-25T23:24:46Z",
