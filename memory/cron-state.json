@@ -1,7 +1,7 @@
 {
   "heartbeat": {
-    "last_dispatch": "2026-07-25T12:33:13Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-07-25T14:12:30Z",
+    "last_status": "dispatched",
     "last_failed": "2026-07-25T13:04:03Z",
     "total_runs": 249,
     "total_successes": 2,
@@ -12,7 +12,7 @@
     "last_success": "2026-07-19T17:58:21Z"
   },
   "defi-overview": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-20T02:26:01Z",
     "total_runs": 243,
     "total_successes": 7,
@@ -20,12 +20,12 @@
     "consecutive_failures": 90,
     "success_rate": 0.03,
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-25T12:33:13Z",
+    "last_dispatch": "2026-07-25T14:12:30Z",
     "last_failed": "2026-07-25T13:03:33Z",
     "last_error": "fa10bc5\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "narrative-tracker": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-07-25T13:03:47Z",
     "total_runs": 271,
     "total_successes": 8,
@@ -35,7 +35,7 @@
     "last_error": "cf5e238\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
     "last_success": "2026-07-20T02:24:46Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-25T12:33:13Z"
+    "last_dispatch": "2026-07-25T14:12:30Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -48,7 +48,7 @@
     "last_quality_score": 4
   },
   "fear-divergence": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-19T18:33:19Z",
     "total_runs": 243,
     "total_successes": 3,
@@ -56,12 +56,12 @@
     "consecutive_failures": 89,
     "success_rate": 0.01,
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-25T12:33:13Z",
+    "last_dispatch": "2026-07-25T14:12:30Z",
     "last_failed": "2026-07-25T13:03:58Z",
     "last_error": "0a4f319\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "x402-monitor": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-19T18:34:24Z",
     "total_runs": 193,
     "total_successes": 2,
@@ -71,7 +71,7 @@
     "last_quality_score": 4,
     "last_failed": "2026-07-25T13:03:56Z",
     "last_error": "153fcc8\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
-    "last_dispatch": "2026-07-25T12:33:13Z"
+    "last_dispatch": "2026-07-25T14:12:30Z"
   },
   "picks-tracker": {
     "last_status": "success",
@@ -87,7 +87,7 @@
     "last_error": "349f021\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "token-pick": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-07-19T18:35:17Z",
     "total_runs": 216,
     "total_successes": 4,
@@ -95,13 +95,13 @@
     "consecutive_failures": 84,
     "success_rate": 0.02,
     "last_quality_score": 4,
-    "last_dispatch": "2026-07-25T12:33:13Z",
+    "last_dispatch": "2026-07-25T14:12:30Z",
     "last_failed": "2026-07-25T13:03:39Z",
     "last_error": "fc22883\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "skill-health": {
-    "last_dispatch": "2026-07-25T12:33:13Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-07-25T14:12:30Z",
+    "last_status": "dispatched",
     "last_success": "2026-07-19T18:34:33Z",
     "total_runs": 210,
     "total_successes": 2,
@@ -122,8 +122,8 @@
     "last_error": "91a8fe7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "price-alert": {
-    "last_dispatch": "2026-07-25T12:33:13Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-07-25T14:12:30Z",
+    "last_status": "dispatched",
     "last_success": "2026-07-20T02:24:02Z",
     "total_runs": 87,
     "total_successes": 5,
@@ -134,8 +134,8 @@
     "last_failed": "2026-07-25T13:03:42Z"
   },
   "github-trending": {
-    "last_dispatch": "2026-07-25T12:33:13Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-07-25T14:12:30Z",
+    "last_status": "dispatched",
     "last_failed": "2026-07-25T13:03:32Z",
     "total_runs": 67,
     "total_successes": 0,
@@ -144,14 +144,14 @@
     "success_rate": 0
   },
   "digest": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-07-25T13:03:49Z",
     "total_runs": 88,
     "total_successes": 0,
     "total_failures": 88,
     "consecutive_failures": 88,
     "success_rate": 0,
-    "last_dispatch": "2026-07-25T12:33:13Z"
+    "last_dispatch": "2026-07-25T14:12:30Z"
   },
   "verdikta-hunter": {
     "last_status": "failed",
@@ -163,13 +163,13 @@
     "success_rate": 0
   },
   "vuln-scanner": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-07-25T13:04:11Z",
     "total_runs": 13,
     "total_successes": 0,
     "total_failures": 13,
     "consecutive_failures": 13,
     "success_rate": 0,
-    "last_dispatch": "2026-07-25T12:33:13Z"
+    "last_dispatch": "2026-07-25T14:12:30Z"
   }
 }
