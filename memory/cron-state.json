@@ -48,16 +48,16 @@
     "last_quality_score": 4
   },
   "fear-divergence": {
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-07-19T18:33:19Z",
-    "total_runs": 269,
+    "total_runs": 270,
     "total_successes": 3,
-    "total_failures": 266,
-    "consecutive_failures": 115,
+    "total_failures": 267,
+    "consecutive_failures": 116,
     "success_rate": 0.01,
     "last_quality_score": 4,
     "last_dispatch": "2026-07-26T19:50:55Z",
-    "last_failed": "2026-07-26T19:10:37Z",
+    "last_failed": "2026-07-26T20:21:42Z",
     "last_error": "0a4f319\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "x402-monitor": {
