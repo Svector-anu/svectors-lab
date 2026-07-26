@@ -163,12 +163,12 @@
     "success_rate": 0
   },
   "vuln-scanner": {
-    "last_status": "dispatched",
-    "last_failed": "2026-07-26T13:45:36Z",
-    "total_runs": 30,
+    "last_status": "failed",
+    "last_failed": "2026-07-26T15:15:20Z",
+    "total_runs": 31,
     "total_successes": 0,
-    "total_failures": 30,
-    "consecutive_failures": 30,
+    "total_failures": 31,
+    "consecutive_failures": 31,
     "success_rate": 0,
     "last_dispatch": "2026-07-26T14:44:19Z"
   }
