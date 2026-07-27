@@ -50,6 +50,52 @@ API="https://api.resend.com/emails"
 
 log() { echo "postprocess-email: $*"; }
 
+# --- Audit leads log -----------------------------------------------------------
+# Every confirmed disclosure (a maintainer actually got emailed, or — see
+# skills/vuln-scanner/SKILL.md step A5b — a PVR report was accepted) is a warm
+# lead for a manual private-audit follow-up: free, credible proof of skill,
+# already in their inbox. This just records it; the sales conversation is
+# always a human, never automated. Append-only — never rewrites an existing
+# row, so hand-edits to the Status column survive.
+log_lead() {
+  local repo="$1" severity="$2" channel="$3" note="$4"
+  local file="memory/topics/audit-leads.md"
+  local now today
+  now=$(date -u +%FT%TZ) today=$(date -u +%F)
+  mkdir -p memory/topics
+  if [ ! -f "$file" ]; then
+    cat > "$file" <<EOF
+---
+type: Leads
+title: Audit Leads
+description: Companies vuln-scanner has privately disclosed a real, confirmed vulnerability to — a warm list for a manual private-audit follow-up. Disclosure and sales are kept deliberately separate; nothing here is auto-pitched.
+tags: [security, leads, business-dev, vuln-scanner]
+timestamp: ${now}
+---
+
+# Audit Leads
+
+Every row is a company/repo vuln-scanner privately disclosed a real, confirmed finding to (PVR report accepted, or maintainer email sent) — free, credible proof of skill, already in their inbox. Any follow-up sales conversation from here is manual, never automated (see [[vuln-scanner]]). Update the Status column by hand as you work a lead; new rows are only ever appended, existing rows are never rewritten, so your notes survive.
+
+| Date | Repo | Severity | Channel | Status | Notes |
+|------|------|----------|---------|--------|-------|
+EOF
+  else
+    python3 - "$file" "$now" <<'PY' 2>/dev/null || true
+import sys
+path, now = sys.argv[1], sys.argv[2]
+lines = open(path, encoding="utf-8").read().split("\n")
+for i, ln in enumerate(lines):
+    if ln.startswith("timestamp:"):
+        lines[i] = f"timestamp: {now}"
+        break
+open(path, "w", encoding="utf-8").write("\n".join(lines))
+PY
+  fi
+  local safe_note; safe_note=$(printf '%s' "$note" | tr '|\n\r' '   ')
+  printf '| %s | %s | %s | %s | disclosed | %s |\n' "$today" "$repo" "$severity" "$channel" "$safe_note" >> "$file"
+}
+
 # --- Global kill-switch -------------------------------------------------------
 case "${DISCLOSURE_EMAIL_PAUSED:-}" in
   1|true|TRUE|yes|on)
@@ -117,6 +163,7 @@ for req in "$PENDING_DIR"/*.json; do
   SUBJECT=$(jq -r '.subject // empty' "$req")
   TEXT=$(jq -r '.text // empty'       "$req")
   DRAFT=$(jq -r '.draft_path // empty' "$req")
+  SEVERITY=$(jq -r '.severity // "unknown"' "$req")
 
   if [ -z "$TO" ] || [ -z "$SUBJECT" ] || [ -z "$TEXT" ]; then
     log "skip $(basename "$req") — missing to/subject/text"
@@ -312,6 +359,8 @@ for k, v in (("email_sent_at", at), ("email_id", eid), ("email_to", to)):
 open(path, "w", encoding="utf-8").write("---\n" + "\n".join(lines) + "\n---\n" + body)
 PY
   fi
+
+  log_lead "$REPO" "$SEVERITY" "email (resend ${ID})" "$SUBJECT"
 
   SENT_REPORT="${SENT_REPORT}- ${REPO} -> ${TO} (${SUBJECT}) [resend ${ID}]"$'\n'
 

@@ -247,7 +247,26 @@ gh api -X POST "/repos/$REPO/security-advisories/reports" \
 **Always POST via `--input <file>`, never a long inline heredoc / `-f description="$(cat …)"`** — the latter can trip the sandbox ("Unhandled node type: string"), and `vulnerabilities` is a nested array that `-f`/`-F` can't express cleanly. Write the full JSON payload (`{summary, description, severity, cwe_ids, vulnerabilities}` — `vulnerabilities` is **mandatory**, see the ⚠️ note above) to a temp file and `gh api -X POST … --input payload.json`.
 
 Read the HTTP response code and branch accordingly. **Never** fall back to a public issue or a code-fix PR for an *unpatched* flaw (that publishes a zero-day):
-- **`201`** → reported. Record the report/advisory id and link it in the local report.
+- **`201`** → reported. Record the report/advisory id and link it in the local report. Also append one row to `memory/topics/audit-leads.md` (a real, confirmed disclosure is a warm lead for a manual private-audit follow-up — see the "Why this skill exists" framing: disclosure and sales stay separate, this only records the fact). Create the file with the frontmatter/table below if it doesn't exist yet; **only ever append a row — never rewrite or delete existing ones**, since the operator hand-edits the Status column as leads get worked:
+
+  ```markdown
+  ---
+  type: Leads
+  title: Audit Leads
+  description: Companies vuln-scanner has privately disclosed a real, confirmed vulnerability to — a warm list for a manual private-audit follow-up. Disclosure and sales are kept deliberately separate; nothing here is auto-pitched.
+  tags: [security, leads, business-dev, vuln-scanner]
+  timestamp: <today's ISO-8601>
+  ---
+
+  # Audit Leads
+
+  Every row is a company/repo vuln-scanner privately disclosed a real, confirmed finding to (PVR report accepted, or maintainer email sent) — free, credible proof of skill, already in their inbox. Any follow-up sales conversation from here is manual, never automated. Update the Status column by hand as you work a lead; new rows are only ever appended, existing rows are never rewritten, so your notes survive.
+
+  | Date | Repo | Severity | Channel | Status | Notes |
+  |------|------|----------|---------|--------|-------|
+  ```
+
+  Append: `| <today> | owner/repo | <severity> | PVR #<id> | disclosed | <one-line finding summary> |`. If the file already exists, also bump its frontmatter `timestamp:` to today.
 - **`403 "Repository does not have private vulnerability reporting enabled"`** → PVR is OFF on the repo. This is **not** a token-scope problem (classic `repo` scope is enough). **Critically: the GitHub advisory web form (`/security/advisories/new`) is the SAME PVR backend — it returns `404` to external reporters when PVR is off. Do NOT stage that URL as the channel even if `SECURITY.md` recommends it** (a `SECURITY.md` that only says "use the advisory form" is *not* a usable channel when PVR is disabled — confirmed on agent-reach and world-of-claudecraft, 2026-06-19). Resolve an **out-of-band** private contact instead, in this order: (1) `SECURITY.md` email / portal / vendor PSIRT; (2) README contact (email / Discord / X); (3) package metadata — `pyproject.toml` / `setup.py` author, `package.json` `author` + `bugs`; (4) the maintainer/owner's git commit email or GitHub profile. Stage a maintainer-ready report at `memory/pending-disclosures/<repo>-<timestamp>.md` in the **auto-send-ready format** (see below) so the **disclose arm** (Arm C) can send it, and add a row to `memory/security-watchlist.md` so the **re-submit arm** (Arm B) will re-check PVR status. Only if no out-of-band contact exists anywhere, log "no safe channel — skipped".
 
   **Auto-send-ready draft format** (consumed by Arm C → `scripts/postprocess-email.sh`):
