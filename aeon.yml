@@ -206,7 +206,16 @@ model: claude-opus-4-8
 # Override per-skill with `harness: "grok"` in the skill entry, or per-run via
 # the workflow_dispatch `harness` input. Default stays claude — everything
 # already configured keeps working unchanged.
-harness: grok
+#
+# Reverted off grok 2026-07-26: xAI's hosted default (self-selected once we
+# stopped hardcoding a model id — see above) is currently grok-build, the
+# heavy reasoning/multi-agent model. Every scheduled skill fleet-wide was
+# timing out at the 30min job ceiling under it (confirmed via exact step
+# start/end timestamps — 29m59s every time, not an external cancellation).
+# Claude Code has been fast and reliable for every run tested directly this
+# week. Re-enable per-skill with harness: "grok" if a specific skill wants it
+# and can tolerate/verify grok-build's pace.
+harness: claude
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
