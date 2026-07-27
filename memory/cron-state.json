@@ -103,13 +103,13 @@
     "last_dispatch": "2026-07-27T11:44:00Z",
     "last_status": "failed",
     "last_success": "2026-07-19T18:34:33Z",
-    "total_runs": 254,
+    "total_runs": 255,
     "total_successes": 2,
-    "total_failures": 252,
-    "consecutive_failures": 126,
+    "total_failures": 253,
+    "consecutive_failures": 127,
     "success_rate": 0.01,
-    "last_failed": "2026-07-27T20:50:15Z",
-    "last_error": "79543b7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-07-27T21:52:21Z",
+    "last_error": "bdd6cfe\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "soul-builder": {
     "last_status": "failed",
