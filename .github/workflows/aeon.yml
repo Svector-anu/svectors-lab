@@ -91,7 +91,15 @@ jobs:
   run:
     if: github.event_name != 'issues' || github.event.label.name == 'ai-build'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Raised from 30 to 45 2026-07-27: vuln-scanner's real workload (clone + 4
+    # scanners + read-and-judge every candidate finding) confirmed making steady
+    # progress under grok, not stuck, when it hit the old 30min ceiling at both
+    # grok-build (29m40s, run 30286119301) and grok-composer-2.5-fast (29m36s,
+    # run 30293736616) -- a job timeout reports conclusion:"cancelled", not
+    # "failure"/"timed_out" (see the harness comment in aeon.yml for the fuller
+    # history of that gotcha). This is fleet-wide, not vuln-scanner-only -- every
+    # scheduled skill gets the extra room.
+    timeout-minutes: 45
 
     steps:
       - name: Early checkout
