@@ -144,12 +144,12 @@
     "success_rate": 0
   },
   "digest": {
-    "last_status": "dispatched",
-    "last_failed": "2026-07-27T05:23:19Z",
-    "total_runs": 117,
+    "last_status": "failed",
+    "last_failed": "2026-07-27T08:49:00Z",
+    "total_runs": 118,
     "total_successes": 0,
-    "total_failures": 117,
-    "consecutive_failures": 117,
+    "total_failures": 118,
+    "consecutive_failures": 118,
     "success_rate": 0,
     "last_dispatch": "2026-07-27T08:18:22Z"
   },
