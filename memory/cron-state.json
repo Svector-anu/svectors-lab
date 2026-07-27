@@ -167,13 +167,13 @@
   },
   "vuln-scanner": {
     "last_status": "failed",
-    "last_failed": "2026-07-27T19:28:24Z",
-    "total_runs": 51,
+    "last_failed": "2026-07-27T20:51:01Z",
+    "total_runs": 52,
     "total_successes": 0,
-    "total_failures": 51,
-    "consecutive_failures": 51,
+    "total_failures": 52,
+    "consecutive_failures": 52,
     "success_rate": 0,
     "last_dispatch": "2026-07-27T11:44:00Z",
-    "last_error": "83726c7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "18743c6\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   }
 }
