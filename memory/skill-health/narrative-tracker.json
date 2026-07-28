@@ -1,12 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-07-19T18:34:22Z",
+  "last_analyzed": "2026-07-28T09:15:44Z",
   "quality_score": 4,
-  "assessment": "Substantive decision map with actionable FRONT-RUN/RIDE/WATCH/FADE calls, multi-source triangulation, and clear stage transitions despite XAI cache miss.",
+  "assessment": "Decision-grade map with multi-source anchors, scored narratives, transitions, and actionable RIDE/FADE/WATCH calls despite XAI cache/API failure.",
   "flags": [
-    "stale_data"
+    "api_error"
   ],
-  "avg_score": 3.83,
+  "avg_score": 3.86,
   "history": [
     {
       "date": "2026-07-06",
@@ -30,6 +30,10 @@
     },
     {
       "date": "2026-07-19",
+      "score": 4
+    },
+    {
+      "date": "2026-07-28",
       "score": 4
     }
   ]

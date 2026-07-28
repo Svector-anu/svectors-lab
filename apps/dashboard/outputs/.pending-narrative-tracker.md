@@ -1,33 +1,30 @@
-ℹ️ Narrative Tracker — 2026-07-20
+ℹ️ Narrative Tracker — 2026-07-28
 
-*Narrative Tracker — 2026-07-20*
+*Narrative Tracker — 2026-07-28*
 
 TRANSITIONS
-• NEW: InfoFi / attention (KAITO) — split from AI; Analytics +26% / SocialFi +43% on DefiLlama; KAITO +15% 24h / +45% 7d into Jul 20 unlock — https://defillama.com/narrative-tracker
-• PROMOTED: Solana memecoin Rising → Peak — Meme cat +75.6% mcap-wtd ($40.1B); CG trending top4: PUMP +23.5%, CASHCAT +30.7%, ANSEM +22.6%, PENGU; pump.fun fees $783k (+39% 7d), PumpSwap $1.27M
-• PROMOTED: Tokenized yield (BANK) Emerging → Rising — Lorenzo BANK +105% 24h, still #5 CG trending after yday +79%
-• DEMOTED: Perp DEX Rising → Peak — HYPE $60.3 (−1% 24h / −10% 7d) still #10; HL perps fees $825k (+16% 1d but −4% 7d); LIT −16% 7d
-• DEMOTED: RWA liquid Peak → Fading — RWA cat −4.0% DefiLlama; ONDO $0.344 flat 24h; fund TVL ≠ token beta
-• DEAD: none vs Jul 19 set
+• NEW: Privacy / FHE (ZAMA) — CG trending #10, +10% 24h / +57% 7d on risk-off tape — https://www.coingecko.com/en/coins/zama
+• PROMOTED: InfoFi / KAITO Rising → Peak — only major prior-map name still green (+21% 7d) while BTC/HYPE/AI dump
+• DEMOTED: AI crypto Peak → Fading — AI Agents mcap $3.13B −6% 24h; VIRTUAL −14% 7d
+• DEMOTED: Tokenized yield (BANK) Rising → Fading — Lorenzo −31% 24h; single-name melt-up unwound
+• DEAD: Tokenized yield as *sector* narrative — never broadened past BANK
 
 REFLEXIVITY ALERT
-• Solana memes — airdrop lore → mcap → more bull posting (@blknoiz06 $ANSEM; @PumpfunEco amplifying)
-• Launchpad fees — pump.fun + PumpSwap fee stack rising with meme mindshare (story↔revenue loop)
-• BANK — single-name melt-up without category breadth = price manufacturing the "tokenized yield" story
-• Meme×RWA/AI cosplay — trenches rebranding as RWA/AI agents (e.g. RH-chain CASHCAT framing)
+• KAITO/InfoFi — attention token trading on attention about attention; ~high 24h turnover vs mcap while narrative is "measure mindshare" (https://x.com/0xDegenMo/status/2081835012706676985)
+• Hyperliquid — fee burn story loud (HL perps ~$2.15M 24h fees, +139% 1d) while HYPE −8% 24h / −12% 7d; story≠price
+• pump.fun stack — launchpad fees still expanding (pump.fun $1.19M +34% 7d; PumpSwap $1.98M +39% 7d) as meme mcaps soft (−3% 24h) — revenue≠bags
 
 POSITIONS
-• RIDE: Tokenized yield / Lorenzo BANK (mindshare 3 ↑↑, Bull) — BANK CG #5 — single-name; no sector confirm — https://www.coingecko.com/en/search_redirect?id=lorenzo-protocol&type=coin
-• FADE: Solana memecoin / trench (5 ↑↑, Cope/Bull) — @blknoiz06 + pump.fun — zero fundies; Peak + FOMO = late entry poison
-• FADE: AI crypto basket (4 →, Cope) — AI cat $24.1B −1.2% period; agents mcap ~$3.3B −2% — long-window gains baked
-• WATCH: InfoFi / KAITO (3 ↑, Mixed) — unlock day overhang (~17.6M cited prior) while price still bid
-• WATCH: Perp DEX HYPE complex (4 ↓, Bull/Mixed) — structural fees real; momentum rolling over
-• WATCH: Fear-base BTC chop (3 →, Mixed) — F&G 29 Fear (need >30); BTC ~$64.6k flat
-• FADE: Uniswap fee surge (2 ↓, Cope) — V3 $1.21M / V4 $1.07M (−24% 1d V4); mean-reversion intact
-• WATCH: RWA institutional (3 ↓, Mixed) — liquid soft; BUIDL multi-chain still structural
+• RIDE: InfoFi / KAITO (mindshare 4 ↑, Mixed) — @KaitoAI / Analytics cat +20% YTD DL — bear: unlock + momentum mean-revert — https://defillama.com/narrative-tracker/analytics
+• FADE: Solana memecoin new entries (4 ↓, Cope) — ANSEM still CG trending; fee stack hot, token bags cold
+• FADE: AI retail basket (3 ↓, Cope) — agents −6% 24h; long-window performance already baked
+• WATCH: Perp DEX / HYPE (4 →, Mixed) — fees strong, price weak; don't fade venue, don't chase token
+• WATCH: Privacy / ZAMA (2 ↑↑, Mixed) — emerging +57% 7d; thin liquidity, one-name risk
+• WATCH: RWA liquid + RH hybrid (3 ↑, Mixed) — ONDO $0.39 vs $0.34 on Jul 20; X "RWA crime week" posts; liquid still ≠ fund AUM
+• WATCH: Fear-base BTC chop (4 →, Mixed) — F&G 29 Fear; BTC $63.4k −4% 7d; Jul 24 ETF outflow streak-break still in chat
 
 MAP
-Emerging: —
-Rising: Tokenized yield (BANK) · InfoFi/KAITO
-Peak: Solana memecoin · AI crypto · Perp DEX · Fear-base
-Fading: RWA liquid · Uniswap V4 fees · DePIN
+Emerging: Privacy/ZAMA
+Rising: RWA liquid/RH hybrid
+Peak: Fear-base · InfoFi/KAITO · Solana memecoin · Perp DEX
+Fading: AI crypto · Tokenized yield BANK · DePIN · Prediction markets
