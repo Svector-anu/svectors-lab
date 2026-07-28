@@ -61,13 +61,13 @@
     "last_error": "441abdb\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "x402-monitor": {
-    "last_status": "dispatched",
-    "last_success": "2026-07-28T09:31:01Z",
-    "total_runs": 247,
-    "total_successes": 3,
+    "last_status": "success",
+    "last_success": "2026-07-28T13:18:32Z",
+    "total_runs": 248,
+    "total_successes": 4,
     "total_failures": 244,
     "consecutive_failures": 0,
-    "success_rate": 0.01,
+    "success_rate": 0.02,
     "last_quality_score": 4,
     "last_failed": "2026-07-28T06:46:38Z",
     "last_error": "6c8f83d\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
