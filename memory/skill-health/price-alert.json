@@ -1,10 +1,10 @@
 {
   "skill": "price-alert",
-  "last_analyzed": "2026-07-28T13:15:40Z",
-  "quality_score": 3,
-  "assessment": "Correct silent exit when no Tracked Token is configured; clear status code, log-only behavior, and actionable setup follow-up.",
+  "last_analyzed": "2026-07-28T15:36:07Z",
+  "quality_score": 4,
+  "assessment": "Correct silent exit on missing Tracked Token with clear status, log-only behavior, and actionable setup follow-up.",
   "flags": [],
-  "avg_score": 3.5,
+  "avg_score": 3.56,
   "history": [
     {
       "date": "2026-07-19",
@@ -37,6 +37,10 @@
     {
       "date": "2026-07-28",
       "score": 3
+    },
+    {
+      "date": "2026-07-28",
+      "score": 4
     }
   ]
 }

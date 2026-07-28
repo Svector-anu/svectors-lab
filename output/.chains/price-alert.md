@@ -1,25 +1,28 @@
-No Tracked Token in MEMORY.md — exiting with `PRICE_ALERT_NO_TOKEN` (no notify, no state write). Appending today's log.## Summary
+No Tracked Token in MEMORY.md — logging `PRICE_ALERT_NO_TOKEN` and exiting without notify or state write.## Summary
 
 **Skill:** price-alert  
 **Status:** `PRICE_ALERT_NO_TOKEN`  
-**Notifications:** 0 (silent exit)
+**Notifications:** 0 (correct silent exit)
 
-### What ran
-1. **Parse var** — empty (`SKILL_VAR=`); `MODE=execute`, no targets.
-2. **Resolve tracked token** — `memory/MEMORY.md` has no **Tracked Token** section/table, so contract/chain cannot be resolved.
-3. **Exit** — per skill rules: log only; no notify; no state write.
+### What happened
+1. Parsed `var` — empty → `MODE=execute`, no targets.
+2. Resolved tracked token from `memory/MEMORY.md` — **no "Tracked Token" section** (and no valid `0x…` contract).
+3. Per skill rules: exit with log only — **no notify, no state write**.
 
-### Files modified
-- `memory/logs/2026-07-28.md` — appended `### price-alert` block
+### Files
+| Action | Path |
+|--------|------|
+| Appended log | `memory/logs/2026-07-28.md` |
+| Unchanged | `memory/topics/price-alert-state.json` (not created) |
 
 ### Follow-up
-To enable alerts, add a Tracked Token table to `memory/MEMORY.md`, e.g.:
+To enable alerts, add a **Tracked Token** table to `memory/MEMORY.md`, for example:
 
 ```markdown
 ## Tracked Token
-| Token | Contract | Chain |
-|-------|----------|-------|
-| SYMBOL | 0x...40hex... | base |
+| Symbol | Contract | Chain |
+|--------|----------|-------|
+| TOKEN  | 0x…40hex | base  |
 ```
 
-Optional: set `var` to comma-separated USD targets (or `dry-run` / `set-target:<price>`).
+Then ATH / sharp-move (±20% 1h) gates will run; optional targets via `var` or Telegram force-reply.
