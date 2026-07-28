@@ -203,19 +203,27 @@ model: claude-opus-4-8
 #   grok             — Grok Build (`grok`); logs in with your X account
 #                      (GROK_CREDENTIALS, captured in the dashboard) or an
 #                      XAI_API_KEY. Bypasses the gateway (grok has its own auth).
-# Override per-skill with `harness: "grok"` in the skill entry, or per-run via
-# the workflow_dispatch `harness` input. Default stays claude — everything
-# already configured keeps working unchanged.
+# Override per-skill with `harness: "claude"` in the skill entry, or per-run via
+# the workflow_dispatch `harness` input.
 #
-# Reverted off grok 2026-07-26: xAI's hosted default (self-selected once we
-# stopped hardcoding a model id — see above) is currently grok-build, the
-# heavy reasoning/multi-agent model. Every scheduled skill fleet-wide was
-# timing out at the 30min job ceiling under it (confirmed via exact step
-# start/end timestamps — 29m59s every time, not an external cancellation).
-# Claude Code has been fast and reliable for every run tested directly this
-# week. Re-enable per-skill with harness: "grok" if a specific skill wants it
-# and can tolerate/verify grok-build's pace.
-harness: claude
+# Re-enabled 2026-07-28, correcting the 2026-07-26 revert below: those
+# consistent ~29m59s timeouts weren't grok-build's weight — they were an
+# expired GROK_CREDENTIALS (X-account OAuth) session. When that session goes
+# stale, grok silently falls back to an interactive device-auth prompt, which
+# just hangs unattended in CI until the device code itself expires (~30min) —
+# same failure shape regardless of which model was configured, which is why
+# switching models never fixed it. Root-caused via a live local `grok login`
+# (multiple concurrent stale attempts were also fighting over the same
+# ~/.grok/auth.json.lock — kill strays before re-authing). Fresh credentials
+# verified working via live dispatch: heartbeat, harness=grok, 1m54s, success.
+#
+# Switching back to claude at the same time: both CLAUDE_CODE_OAUTH_TOKEN
+# (direct) and BANKR_LLM_KEY (gateway) are currently dead — claude fails in
+# ~3s (rate/usage ceiling) and Bankr 402s with "Insufficient LLM Gateway
+# credits" ($0 balance) — so 46 of the last 50 scheduled runs failed fleet-
+# wide. grok is the only currently-funded, working path; switch back once
+# Bankr is topped up or a working ANTHROPIC_API_KEY/OpenRouter key is added.
+harness: grok
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
