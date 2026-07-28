@@ -3,83 +3,80 @@ type: Token
 title: Market Context
 description: Current crypto macro snapshot — regime, signal snapshot, narratives, DeFi, prediction markets.
 tags: [crypto, macro, defi, market-context]
-timestamp: 2026-07-11T14:30:00Z
+timestamp: 2026-07-28T09:35:00Z
+resource: https://defillama.com
 ---
 
-# Market Context (as of 2026-07-11)
+# Market Context (as of 2026-07-28)
 
-> **Take:** chop — BTC +0.6% 24h, breadth 15/20 (intraday recovery from 7/20 morning), F&G still 26 (Fear); bounce in breadth is real but not enough to flip regime without TVL confirmation. Conviction: low.
+> **Take:** risk-off — BTC −2.7% 24h with breadth 2/20 top-cap green and F&G 29 Fear. Conviction: high.
 
 ## Signal Snapshot
-- BTC $64,265 (+0.6% 24h, +2.2% 7d) · dominance 56.2% (flat)
-- ETH $1,823 (+1.9% 24h, +1.4% 7d) · ETH/BTC 0.0284
-- SOL $77.98 (+0.4% 24h)
-- Total mcap $2.293T (+0.8% 24h) · DEX vol $6.44B 24h (−4.8% 1d, +13.9% 7d)
-- Breadth: 15/20 green 24h · 10/20 green 7d
-- Fear & Greed: 26 (Fear) — yesterday 23 (Extreme Fear)
+- BTC $63,402 (−2.7% 24h, −4.2% 7d) · dominance 56.4% (+0.2 pp vs Jul 11)
+- ETH $1,881 (−3.9% 24h, −2.9% 7d) · ETH/BTC 0.0297
+- SOL $73.33 (−3.9% 24h, −6.4% 7d)
+- Total mcap $2.256T (−2.7% 24h) · DEX vol $7.33B 24h (+33.9% 1d)
+- Breadth: 2/20 green 24h · 2/20 green 7d
+- Fear & Greed: 29 (Fear) — yesterday 30 (Fear)
 
 ## What Changed Since Last Refresh
-- Breadth snapped from 7/20 (morning) → 15/20 now — material intraday recovery; ETH +1.9% leading the bounce.
-- BTC flipped slightly positive (+0.6% 24h) vs −0.5% in the prior run — still shallow but directional.
-- Uniswap V3 fees +144% 1d / +154% vs 7d avg — now confirmed as a multi-session fee surge, not a one-day spike.
-- UNI trending on CoinGecko (+4.4% 24h) alongside the fee surge — fee narrative picking up mindshare.
-- DEX vol $6.44B (−4.8% 1d) — volume still declining day-over-day despite intraday price bounce.
+- Regime flip chop → risk-off: breadth collapsed 15/20 (Jul 11) → 2/20; BTC from mild green to −2.7% 24h / −4.2% 7d.
+- F&G still Fear (29 vs 30 yesterday; was 26 on Jul 11) — no sentiment escape.
+- DEX volume diverges from price: $7.33B 24h (+33.9% 1d) vs $6.44B prior snapshot — risk-off with elevated turnover, not quiet exit.
+- HYPE fee/price decoupling: Hyperliquid Perps fees $2.15M (+139% 1d) while HYPE −8.2% 24h / −12.3% 7d (#1 CoinGecko trending).
 
 ## Active Narratives
-- **RWA / institutional DeFi** — phase: rising. Evidence: BlackRock BUIDL +15.7% 1d ($3.69B TVL) for a second consecutive session; Robinhood Chain Bridge +22.4% 1d; Provenance chain $1.46B TVL (top 7 by chain).
-- **Uniswap fee surge / V4 migration** — phase: rising. Evidence: Uniswap V3 fees +144% 1d / +154% vs 7d avg; V4 leads DEX vol at $953M 24h (+3.3%); UNI trending on CoinGecko at +4.4%.
-- **Chop / fear-base formation** — phase: rising. Evidence: F&G held 26 (Fear) for third session; BTC +2.2% 7d while breadth oscillates 7→15/20 — blue-chip resilience, no alt breakout.
-- **AI agent / micro-cap speculation** — phase: emerging. Evidence: HOODIE +1,653% 24h trending; CASHCAT +35.6% trending — isolated micro-cap spikes, no sector leader yet.
-- **Solana memecoin fading** — phase: fading. Evidence: SOL +0.4% 24h (lagging ETH +1.9%); PumpSwap −17.3% 1d; Meteora DLMM −8.4% 1d.
+- **Fear-base / BTC chop** — phase: peak. Evidence: F&G 29 Fear; BTC −4.2% 7d; breadth 2/20 green 24h and 7d.
+- **Perp DEX (HYPE)** — phase: peak. Evidence: HYPE #1 CG trending −8% 24h; HL Perps fees $2.15M (+139% 1d) while token sells — fee≠bag.
+- **Solana memecoin / launchpad** — phase: peak. Evidence: PumpSwap $803M DEX vol (+63% 1d); pump.fun fees $1.19M (+20% 1d / +34% vs 7d avg).
+- **InfoFi / attention (KAITO)** — phase: peak. Evidence: prior 7d outperformance still in log trail; Analytics/SocialFi mindshare held while broad alts red.
+- **Privacy / FHE (ZAMA)** — phase: emerging. Evidence: ZAMA still in recent CG trending set with strong 7d mcap move (narrative-tracker); thin sector breadth.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $16.63B (+1.6%)
-- Aave V3: ~$13.2B (+3.5% est.)
-- SparkLend: $3.39B (fading — top protocol mover down today)
-- BlackRock BUIDL: $3.69B (+15.7% 1d — RWA standout)
-- Morpho Blue: ~$7.2B (+2.4% est.)
+- Lido: $17.59B (−1.2%)
+- Aave V3: $13.77B (−1.8%)
+- Morpho Blue: $7.49B (−0.7%)
+- Sky Lending: $5.73B (−6.1%)
+- BlackRock BUIDL: $3.44B (+3.1%)
 
-## Chain Flow (top 5 by TVL, snapshot)
-- Ethereum: $40.46B (1d delta API-cached)
-- BSC: $4.98B
-- Solana: $4.94B
-- Tron: $4.81B
-- Base: $4.47B
+## Chain Flow (top 3 by TVL, 7d)
+- Ethereum: $41.05B (1d/7d chain deltas API-null; USD TVL soft with majors)
+- BSC: $4.82B
+- Tron: $4.79B
 
-*Note: DeFiLlama chain-level 1d/7d deltas returning 0.0% again (API caching); TVL figures are current snapshots.*
+*Note: DeFiLlama `/v2/chains` returned no `change_1d`/`change_7d` fields this run; protocol-weighted top-50 TVL ≈ −2.4% 1d / −1.7% 7d used for regime scoring.*
 
 ## Stablecoins
-Total: $311.0B. USDT $184.1B · USDC $73.5B · USDS $7.6B · DAI $4.9B · USD1 $4.5B · USDe $3.9B. No notable single-issuer moves ≥1% — stablecoin supply flat.
+Total: $308.0B (−0.1% 7d). USDT $183.9B · USDC $72.5B (−1.3% 1d) · USDS $6.5B (−1.6% 1d) · DAI $4.8B · combined top stables dominate mcap share; USDC/USDS/USDe all ≥1% 1d contractions.
 
 ## Trending (CoinGecko)
-- HOODIE — $0.0281 +1,653% 24h (micro-cap explosion; rank 672, high risk)
-- CASHCAT (Cash Cat) — $0.194 +35.6% 24h (memecoin rotation)
-- UNI (Uniswap) — $3.70 +4.4% 24h (fee surge narrative, V3+V4 momentum)
-- PENGU (Pudgy Penguins) — $0.00626 −0.4% 24h (NFT-linked, holding steady)
-- SUI — $0.747 +1.7% 24h (trending alongside ETH bounce)
-- LAB — $0.711 −29.3% 24h (sharp reversal; avoid)
+- HYPE — $55.2 −8.1% 24h (perp-DEX leader; fee print strong, token weak)
+- COTI — $0.011 +49% 24h (micro-cap outlier in a red tape)
+- BTC — $63.4k −2.6% 24h (macro anchor on trending — defensive attention)
+- SUI — $0.68 −4.6% 24h
+- SOL — $73.4 −3.7% 24h
+- TAO — $187 −4.8% 24h (AI-adjacent still watched, not leading)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Will Norway win on 2026-07-11? | 25% | $5.0M | $2.4M |
-| Norway vs. England: Team to Advance | 35% | $5.0M | $2.3M |
-| Will Spain win the 2026 FIFA World Cup? | 21% | $4.0M | $6.1M |
-| Will England win on 2026-07-11? | 50% | $3.6M | $2.5M |
-
-*Top markets are FIFA World Cup 2026 semi-finals — no crypto-specific markets in top 24h volume.*
+| Will the Fed increase interest rates by 25 bps after the July 2026 meeting? | 26% | $2.38M | $0.20M |
+| Will there be no change in Fed interest rates after the July 2026 meeting? | 74% | $2.33M | $0.23M |
+| Cleveland Guardians vs. Cincinnati Reds | 42% | $0.30M | $0.03M |
 
 ## Macro Catalysts (next 48h)
-- WebSearch returned no results. Key live signals: Uniswap V3/V4 fee momentum (multi-session), BUIDL accumulation (consecutive sessions), breadth recovering intraday — watch whether F&G crosses 30 (Fear→neutral boundary) in next 24h as the key regime flip signal.
+- July Fed decision window: Polymarket hold (no change) ~74% YES vs hike-25bps ~26% — positioning hinges on hold confirmation; surprise hawkish skew would extend risk-off.
+- Spot ETF flow chop: Jul 27 BTC ETFs ≈ −$12M / ETH ≈ +$9M; prior week BTC net only ~$34M after mid-week −$225M/−$240M sessions — institutional bid unstable, not a clean risk-on tape.
 
 ## Implications for Downstream Skills
-- **token-pick:** Breadth recovery + Uniswap fee surge opens a UNI setup (fee narrative with trending + real fundamentals). RWA/institutional plays (BUIDL-adjacent, Morpho) remain the defensive posture. Avoid SOL-ecosystem memecoins and LAB.
-- **narrative-tracker:** Monitor F&G for sustained hold above 26 → inflection toward 30 (neutral). Watch Uniswap for peak signal — V3+V4 fee surge at 3+ sessions = potential crowding risk.
+- **token-pick:** Stay defensive — favor fee-cashflow names only with flat beta (avoid HYPE chase on fee headlines); no broad alt beta until breadth >10/20. KAITO already logged — size only if unlock risk priced.
+- **narrative-tracker:** Fear-base still Peak/WATCH; Perp DEX fee/price split and launchpad fee strength vs meme mcap compression are the two phase-transition watches (Peak → Fading if fees roll over with price).
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
 |------|-------|-------|--------|
+| 2026-07-19 | KAITO | $0.95 | InfoFi/attention rotation + elevated OI; Jul 17 outperformance; risk Jul 20 unlock overhang |
 
 ---
-*Sources — btc/eth/sol: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*
-*Source status: coingecko=ok defillama=ok fng=ok polymarket=ok websearch=fail (no results) yields=ok chains=ok (1d deltas cached)*
+*Sources — btc/eth: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*
+*Source status: coingecko=ok defillama=ok fng=ok polymarket=ok websearch=ok*
