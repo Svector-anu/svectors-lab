@@ -5,5 +5,12 @@
     "findings": 2,
     "channel": "public-pr-blocked",
     "notes": "brace-expansion HIGH + @anthropic-ai/sdk MODERATE; fork 403 blocked public PR"
+  },
+  {
+    "repo": "alibaba/open-code-review",
+    "scanned_at": "2026-07-28T12:15:00Z",
+    "findings": 1,
+    "channel": "public-pr-blocked",
+    "notes": "brace-expansion@2.1.2 HIGH CVE-2026-14257 via vscode yarn.lock/resolutions; Go x/net+x/text dropped (called:false); fork 403 blocked public PR"
   }
 ]
