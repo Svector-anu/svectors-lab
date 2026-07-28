@@ -123,16 +123,16 @@
   },
   "price-alert": {
     "last_dispatch": "2026-07-28T01:06:49Z",
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-07-20T02:24:02Z",
-    "total_runs": 131,
+    "total_runs": 135,
     "total_successes": 5,
-    "total_failures": 126,
-    "consecutive_failures": 126,
+    "total_failures": 130,
+    "consecutive_failures": 130,
     "success_rate": 0.04,
     "last_quality_score": 3,
-    "last_failed": "2026-07-27T23:47:19Z",
-    "last_error": "5df9595\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_failed": "2026-07-28T01:08:10Z",
+    "last_error": "tool_name\":\"Bash\",\"tool_use_id\":\"toolu_01EKZNK8gLmgQTt2hp6bocbA\",\"tool_input\":{\"command\":\"cat >> memory/logs/2026-07-28.md <<'EOF'\\n## Price Threshold Alert\\n- **Skill**: price-alert\\n- **Status**: PR"
   },
   "github-trending": {
     "last_dispatch": "2026-07-28T01:06:49Z",
