@@ -146,15 +146,15 @@
     "last_error": "2ea175c\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "digest": {
-    "last_status": "dispatched",
-    "last_failed": "2026-07-27T23:47:27Z",
-    "total_runs": 129,
+    "last_status": "failed",
+    "last_failed": "2026-07-28T01:08:10Z",
+    "total_runs": 130,
     "total_successes": 0,
-    "total_failures": 129,
-    "consecutive_failures": 129,
+    "total_failures": 130,
+    "consecutive_failures": 130,
     "success_rate": 0,
     "last_dispatch": "2026-07-28T01:06:49Z",
-    "last_error": "689d868\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-opus-4-8\":{\"inputTokens\":202772"
   },
   "verdikta-hunter": {
     "last_status": "failed",
