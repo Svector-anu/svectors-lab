@@ -1,10 +1,10 @@
 {
   "skill": "picks-tracker",
-  "last_analyzed": "2026-07-19T18:34:05Z",
+  "last_analyzed": "2026-07-28T09:29:40Z",
   "quality_score": 4,
-  "assessment": "Clean no-pick skip: correct window scan, clear table, root-cause note, and actionable follow-up without spurious notify.",
+  "assessment": "Solid scorecard with real PnL, clear W/L metrics, open-market status, and actionable follow-ups despite a thin sample.",
   "flags": [],
-  "avg_score": 3.5,
+  "avg_score": 3.67,
   "history": [
     {
       "date": "2026-07-11",
@@ -12,6 +12,10 @@
     },
     {
       "date": "2026-07-19",
+      "score": 4
+    },
+    {
+      "date": "2026-07-28",
       "score": 4
     }
   ]
