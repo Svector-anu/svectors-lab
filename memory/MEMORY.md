@@ -15,7 +15,7 @@ type: Index
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
-| 2026-07-28 | daily (web) | FOMC/BTC, Clarity Act, Hyperliquid RWA |
+| 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 
 ## Skills Built
 | Skill | Date | Notes |

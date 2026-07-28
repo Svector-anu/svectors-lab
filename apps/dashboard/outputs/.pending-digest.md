@@ -1,32 +1,29 @@
-ℹ️ Daily Digest — 2026-07-28
+ℹ️ Digest — 2026-07-28
 
 *— 2026-07-28*
 
-_TL;DR: Risk-off into tomorrow's FOMC; Senate shelved Clarity for other floor work; HL RWA volume now larger than its crypto flow._
+_TL;DR: FOMC decision lands Wed 2pm ET with ~36% hike odds and hawkish Warsh risk; this-week Clarity cloture is slipping; Circle just stacked ~1,000 IBM blockchain patents._
 
-1. *BTC holds ~$63.3k into FOMC; STH breakeven ~$68.5k is first wall*
-   Bitcoin slid ~2–3% with equities after Korea's Kospi plunged ~10%; Nasdaq futures hit multi-month lows. Bitfinex flags short-term holder cost basis near $68,500 as first structural resistance — clear it and volume maps an "air pocket" higher; fail it and this stays sell-the-rip.
-   Why it matters: Size risk for Wednesday's Fed; don't front-run a break of $68.5k from here.
-   https://www.coindesk.com/markets/2026/07/28/bitcoin-recovers-from-asian-session-lows-nasdaq-futures-remain-under-pressure
+1. *FOMC print Wed: ~36% hike odds, hawkish tone is the live risk*
+   Markets price ~36% chance of a 25bp hike at this week's meeting (hold still base case ~64%). Schwab expects Chair Warsh hawkish rhetoric that could tighten financial conditions even without a move. Spot BTC ~$63.4–63.8k into the event; weekly ETF products only net +$34M while Jul 23–24 alone saw >$465M spot-BTC ETF outflows.
+   Why it matters: Size risk into the 2pm ET decision — fade reflexive longs if the statement hardens path, don't chase a hold-alone bounce.
+   https://x.com/CoinDesk/status/2081909935374225649
+   https://www.roic.ai/news/bitcoin-etfs-see-first-back-to-back-outflows-in-weeks-as-fed-meeting-looms-07-27-2026
 
-2. *Senate puts Clarity Act behind Russia sanctions and nominations*
-   Thune scheduled other floor business first; any Clarity action is squeezed into the last week before the Aug recess, with Democrats still rejecting GOP ethics text. Leadership tone and prediction markets both point past the recess if this week slips.
-   Why it matters: Fade near-term "bill passes" trades until cloture is actually filed.
-   https://www.coindesk.com/policy/2026/07/27/u-s-senate-puts-off-crypto-clarity-act-for-now-as-it-focuses-limited-bandwidth-elsewhere
+2. *Clarity Act: this-week cloture hopes fading*
+   Eleanor Terrett: Thune would need to file cloture on the motion to proceed today for a Thursday vote under Senate rules; Russia/Iran sanctions are expected to take the floor first. Industry pressure now shifts to starting cloture before the August recess, not clearing the bill this week.
+   Why it matters: Remove any near-term "Clarity pass" premium from positioning; calendar risk is next-week-or-later, not tomorrow's headline.
+   https://x.com/EleanorTerrett/status/2082127523249262881
 
-3. *Hyperliquid: RWA volume overtook crypto for the first week*
-   Tokenized stocks/commodities (HIP-3) hit ~54% of HL weekly volume (~$26B RWA), more than the combined crypto perps of every other DEX, per ARK's Lorenzo Valente. Single-stock perps (SK Hynix leading) now dominate that mix.
-   Why it matters: HL is becoming a TradFi-perp venue — watch fee/HYPE linkage if RWA share sticks while HYPE softens.
-   https://decrypt.co/374334/stocks-crypto-hyperliquid-ark-invest
+3. *Circle acquires IBM blockchain patent portfolio (~1,000 patents)*
+   Circle (USDC issuer) bought >680 patent families / nearly 1,000 issued patents from IBM covering foundational blockchain, banking rails, supply chain, and secure cloud. Terms undisclosed; Circle claims it is now the top U.S. blockchain patent holder, backing USDC, Circle Payments Network, and Arc L1.
+   Why it matters: Stablecoin infra race is shifting from pure float to IP/defensibility — watch Arc and payments network roadmap, not just USDC supply.
+   https://www.circle.com/pressroom/circle-acquires-ibm-blockchain-patent-portfolio
 
-4. *BitMine adds ~10k ETH; treasury now ~4.8% of supply*
-   BitMine bought 9,946 ETH last week to ~5.79M ETH (~$11.2B) and stepped up buybacks under its $4B authorization. Tom Lee cited a rising ETH/BTC ratio as a broader risk-on tell.
-   Why it matters: ETH DAT absorption continues even as spot is soft — flow story, not a breakout.
-   https://www.coindesk.com/business/2026/07/27/bitmine-buys-more-ether-as-tom-lee-says-rising-eth-btc-ratio-points-to-stronger-crypto-prices
+4. *HL RWA: equity perps now the volume story (material update)*
+   Hyperliquid Labs: ~half of HL volume is RWAs; SK Hynix printed ~$2B notional in a day on HIP-3 equity perps. Prior oracle-wick stress on SK Hynix remains the live design risk for the venue.
+   Why it matters: Trade venue mechanics and oracle/backstop risk on HIP-3 names — not ONDO bags as a pure RWA proxy.
+   https://x.com/HLglobal_/status/2082123004683886918
 
-5. *Kalshi & Polymarket win federal pause of Minnesota ban*
-   A federal judge paused Minnesota's law criminalizing prediction markets, finding it likely preempted by the Commodity Exchange Act.
-   Why it matters: Federal CFTC lane for event contracts gains ground; state shutdown risk steps down.
-   https://www.coindesk.com/policy/2026/07/27/kalshi-polymarket-win-pause-against-minnesota-s-prediction-market-ban
-
-*Also worth a glance:* CME vs CFTC on onchain crypto perps — https://www.coindesk.com/policy/2026/07/28/inside-the-cme-and-cftc-s-battle-over-onchain-perpetual-futures · Strategy rebased mNAV to "net bitcoin per share" ahead of Jul 30 earnings — https://decrypt.co/374281/strategy-overhauls-bitcoin-metrics-debuting-net-bitcoin-per-share
+*Also worth a glance:* Augustus (stablecoin bank) raised $180M Series B at $1B valuation · BitMine added ~9.9k ETH; treasury now ~5.8M ETH (~4.8% supply)
+https://calebandbrown.com/blog/weekly-rollup-july-28-2026/
