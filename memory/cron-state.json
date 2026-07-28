@@ -1,14 +1,14 @@
 {
   "heartbeat": {
     "last_dispatch": "2026-07-28T01:06:49Z",
-    "last_status": "dispatched",
-    "last_failed": "2026-07-27T23:47:43Z",
-    "total_runs": 295,
+    "last_status": "failed",
+    "last_failed": "2026-07-28T01:08:10Z",
+    "total_runs": 296,
     "total_successes": 2,
-    "total_failures": 293,
-    "consecutive_failures": 136,
+    "total_failures": 294,
+    "consecutive_failures": 137,
     "success_rate": 0.01,
-    "last_error": "fd996c0\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
+    "last_error": "er\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-opus-4-8\":{\"inputTokens\":9679",
     "last_success": "2026-07-19T17:58:21Z"
   },
   "defi-overview": {
