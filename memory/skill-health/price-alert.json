@@ -1,10 +1,10 @@
 {
   "skill": "price-alert",
-  "last_analyzed": "2026-07-28T09:28:56Z",
-  "quality_score": 4,
-  "assessment": "Correct PRICE_ALERT_NO_TOKEN exit: no false notify, clear log, actionable Tracked Token setup guidance",
+  "last_analyzed": "2026-07-28T11:35:43Z",
+  "quality_score": 3,
+  "assessment": "Correct graceful exit for missing Tracked Token config with clear log and actionable setup guidance.",
   "flags": [],
-  "avg_score": 3.67,
+  "avg_score": 3.57,
   "history": [
     {
       "date": "2026-07-19",
@@ -29,6 +29,10 @@
     {
       "date": "2026-07-28",
       "score": 4
+    },
+    {
+      "date": "2026-07-28",
+      "score": 3
     }
   ]
 }

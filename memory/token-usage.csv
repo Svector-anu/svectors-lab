@@ -19,3 +19,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-07-28,narrative-tracker,claude-opus-4-8,0,0,0,0
 2026-07-28,heartbeat,claude-opus-4-8,0,0,0,0
 2026-07-28,defi-overview,claude-opus-4-8,0,0,0,0
+2026-07-28,price-alert,claude-opus-4-8,0,0,0,0
