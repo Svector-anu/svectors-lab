@@ -933,6 +933,36 @@ jobs:
           done
           rm -rf .pending-notify
 
+      - name: Fallback notify if skill produced output without notifying
+        if: steps.work.outputs.mode != '' && steps.run.outcome == 'success'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SKILL_NAME: ${{ steps.skill.outputs.name }}
+        run: |
+          # A skill that changes files but never calls ./notify at all (not even a
+          # gated/muted/deduped call -- see the .notify-invoked marker in
+          # scripts/notify.sh) leaves the operator with zero signal that anything
+          # happened, silently, until they think to check the repo themselves. This
+          # is a safety net for exactly that: skipped last step, not a bug in notify
+          # delivery itself (that path already has its own pending-file fallback above).
+          if [ -f .notify-invoked ]; then
+            echo "notify was invoked this run (delivered, gated, or queued) -- no fallback needed"
+            exit 0
+          fi
+          if git diff --quiet && git diff --staged --quiet && [ -z "$(git status --porcelain --untracked-files=all)" ]; then
+            echo "no file changes this run -- nothing to notify about"
+            exit 0
+          fi
+          echo "::warning::$SKILL_NAME changed files but never called ./notify -- sending fallback alert"
+          if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
+            RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            MSG="⚠️ *${SKILL_NAME}* completed and changed files, but never sent a notification this run. Check the output directly: ${RUN_URL}"
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -H "Content-Type: application/json" \
+              -d "$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "$MSG" '{chat_id: $chat, text: $text, parse_mode: "Markdown"}')" > /dev/null 2>&1 || true
+          fi
+
       - name: Run post-process scripts
         if: steps.work.outputs.mode != '' && steps.run.outcome == 'success'
         env:
@@ -1000,7 +1030,7 @@ jobs:
         run: |
           git config user.name "aeonframework"
           git config user.email "aeonframework@proton.me"
-          rm -f ./notify ./notify-jsonrender .notify-sent-hashes  # Remove generated notify scripts + dedup log before committing
+          rm -f ./notify ./notify-jsonrender .notify-sent-hashes .notify-invoked  # Remove generated notify scripts + dedup log + invoke marker before committing
 
           # Issues-as-state (hardening §3): cron-state.json was materialized from the
           # pinned Issue for this run's readers — it's a projection, not source of truth.
