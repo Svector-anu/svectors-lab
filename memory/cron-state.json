@@ -147,14 +147,14 @@
   },
   "digest": {
     "last_status": "failed",
-    "last_failed": "2026-07-28T01:08:10Z",
-    "total_runs": 130,
+    "last_failed": "2026-07-28T04:22:45Z",
+    "total_runs": 131,
     "total_successes": 0,
-    "total_failures": 130,
-    "consecutive_failures": 130,
+    "total_failures": 131,
+    "consecutive_failures": 131,
     "success_rate": 0,
     "last_dispatch": "2026-07-28T01:06:49Z",
-    "last_error": "\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-opus-4-8\":{\"inputTokens\":202772"
+    "last_error": "d33f75e\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "verdikta-hunter": {
     "last_status": "failed",
