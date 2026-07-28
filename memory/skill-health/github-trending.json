@@ -1,0 +1,14 @@
+{
+  "skill": "github-trending",
+  "last_analyzed": "2026-07-28T09:29:55Z",
+  "quality_score": 4,
+  "assessment": "Completed github-trending with concrete curation (7/15), drop reasons, dedup, and a clear top pick.",
+  "flags": [],
+  "avg_score": 4,
+  "history": [
+    {
+      "date": "2026-07-28",
+      "score": 4
+    }
+  ]
+}
