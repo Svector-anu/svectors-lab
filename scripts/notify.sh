@@ -16,6 +16,12 @@
 # .pending-notify/ for post-run delivery when the sandbox blocks outbound curl.
 set -euo pipefail
 
+# Marker: notify was invoked at all this run, regardless of what happens next
+# (delivered, gated by severity/mute, deduped, or queued to .pending-notify/).
+# The workflow's fallback-notify step reads this to tell "skill deliberately
+# suppressed its own notification" apart from "skill never called ./notify."
+touch .notify-invoked 2>/dev/null || true
+
 # Resolve the formatter whether run as ./notify (repo root) or scripts/notify.sh
 _HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FMT=""
