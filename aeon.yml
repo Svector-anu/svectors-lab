@@ -143,7 +143,13 @@ skills:
   send-email: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — compose + send a 1:1 email to a named recipient via Resend (general sibling of disclosure-emailer). var: "to=… | subject=… | about=…"
   idea-forge: { enabled: false, schedule: "0 9 * * 1", var: "" } # weekly business-idea engine. var: empty/generate=timing-scored wedges | validate[:theme]=viability screen | memo[:theme]=2 evidence-backed memos
   # --- Fallback (must be last) ---
-  heartbeat: { enabled: true, schedule: "0 8 * * *", var: "" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
+  heartbeat: { enabled: true, schedule: "0 8 * * *", var: "", model: "grok-composer-2.5-fast" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
+  # TEST-ONLY on this branch (test/heartbeat-grok-fast-model), DO NOT MERGE AS-IS:
+  # grok CLI's own default is grok-build-0.1 (heavy reasoning model, confirmed against
+  # xAI's docs), not the fast composer model — so pinning it here to see if the fast
+  # model finishes a lightweight skill quickly. MODEL passes through to `claude -p`
+  # regardless of harness, so this would break heartbeat's real claude-harness cron
+  # run if merged as-is.
 
 # Reactive triggers — event-driven skill dispatch based on cron-state.json conditions.
 # Skills with schedule: "reactive" are never cron-matched. Instead, the scheduler
