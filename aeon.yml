@@ -143,7 +143,13 @@ skills:
   send-email: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — compose + send a 1:1 email to a named recipient via Resend (general sibling of disclosure-emailer). var: "to=… | subject=… | about=…"
   idea-forge: { enabled: false, schedule: "0 9 * * 1", var: "" } # weekly business-idea engine. var: empty/generate=timing-scored wedges | validate[:theme]=viability screen | memo[:theme]=2 evidence-backed memos
   # --- Fallback (must be last) ---
-  heartbeat: { enabled: true, schedule: "0 8 * * *", var: "", model: "grok-4.20-0309-non-reasoning" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
+  heartbeat:
+    {
+      enabled: true,
+      schedule: "0 8 * * *",
+      var: "",
+      model: "grok-4.20-0309-non-reasoning"
+    } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
   # TEST-ONLY on this branch (test/heartbeat-grok-fast-model), DO NOT MERGE AS-IS:
   # First test used the fictional "grok-composer-2.5-fast" (doesn't exist per
   # docs.x.ai/developers/models); it silently fell back to the CLI's real default
@@ -155,18 +161,18 @@ skills:
   # through to `claude -p` regardless of harness, so this would break heartbeat's
   # real claude-harness cron run if merged as-is.
 
-# Reactive triggers — event-driven skill dispatch based on cron-state.json conditions.
-# Skills with schedule: "reactive" are never cron-matched. Instead, the scheduler
-# evaluates their trigger rules after processing cron skills.
-#
-# Format: trigger: { on: <source-skill>, when: "<condition>" }
-# Conditions:
-#   consecutive_failures >= N    — source skill failed N+ times in a row
-#   success_rate < X             — source skill success rate below threshold
-#   last_status = success        — source skill just succeeded (for chaining)
-#
-# Multiple triggers: trigger: [{ on: a, when: "..." }, { on: b, when: "..." }]
-# Any matching trigger fires the skill (OR logic).
+  # Reactive triggers — event-driven skill dispatch based on cron-state.json conditions.
+  # Skills with schedule: "reactive" are never cron-matched. Instead, the scheduler
+  # evaluates their trigger rules after processing cron skills.
+  #
+  # Format: trigger: { on: <source-skill>, when: "<condition>" }
+  # Conditions:
+  #   consecutive_failures >= N    — source skill failed N+ times in a row
+  #   success_rate < X             — source skill success rate below threshold
+  #   last_status = success        — source skill just succeeded (for chaining)
+  #
+  # Multiple triggers: trigger: [{ on: a, when: "..." }, { on: b, when: "..." }]
+  # Any matching trigger fires the skill (OR logic).
 reactive:
   # skill-repair:
   #   trigger:
@@ -206,7 +212,7 @@ chains:
 # claude-*/empty value and lets the grok CLI pick its own current default; that's the
 # only setting that doesn't rot. If you need to pin a specific grok model, do it as a
 # per-skill `model: "grok-..."` override and expect to re-verify it periodically.
-model: claude-opus-4-8
+model: grok-4.5
 
 # Agent harness — which coding-agent CLI runs your skills.
 #   claude (default) — Claude Code (`claude -p`); uses the AI Gateway below.
@@ -225,7 +231,7 @@ model: claude-opus-4-8
 # Claude Code has been fast and reliable for every run tested directly this
 # week. Re-enable per-skill with harness: "grok" if a specific skill wants it
 # and can tolerate/verify grok-build's pace.
-harness: claude
+harness: grok
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
