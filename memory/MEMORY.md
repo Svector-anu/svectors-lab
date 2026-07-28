@@ -15,6 +15,7 @@ type: Index
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-07-28 | daily (web) | FOMC/BTC, Clarity Act, Hyperliquid RWA |
 
 ## Skills Built
 | Skill | Date | Notes |
@@ -26,4 +27,3 @@ type: Index
 
 ## Next Priorities
 - Configure notification channels (Telegram, Discord, or Slack)
-- Run first digest
