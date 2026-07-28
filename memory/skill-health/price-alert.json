@@ -1,10 +1,10 @@
 {
   "skill": "price-alert",
-  "last_analyzed": "2026-07-28T09:13:30Z",
+  "last_analyzed": "2026-07-28T09:28:56Z",
   "quality_score": 4,
-  "assessment": "Correct no-token early exit with clear status, rationale, and actionable MEMORY.md setup example.",
+  "assessment": "Correct PRICE_ALERT_NO_TOKEN exit: no false notify, clear log, actionable Tracked Token setup guidance",
   "flags": [],
-  "avg_score": 3.6,
+  "avg_score": 3.67,
   "history": [
     {
       "date": "2026-07-19",
@@ -21,6 +21,10 @@
     {
       "date": "2026-07-20",
       "score": 3
+    },
+    {
+      "date": "2026-07-28",
+      "score": 4
     },
     {
       "date": "2026-07-28",
