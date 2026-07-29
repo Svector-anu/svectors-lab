@@ -92,7 +92,7 @@ skills:
   schedule-ads: { enabled: false, schedule: "0 8 * * *", var: "" } # daily 08:00 UTC — paid ads via AdManage.ai. var: empty=schedule ad launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn from config.yaml (PAUSED by default) | create=provision Meta campaigns/ad sets on-demand from config.create.yaml (PAUSED, IDs written back to state so the schedule branch can launch into them; folds in create-campaign)
 
   # --- Utilities ---
-  auto-workflow: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand aeon.yml builder. var: <url[,url]>=analyze→enablement plan | enable:<slugs>=flip enabled:true (validate, commit, PR); enable:dry-run:<slugs> (folds in skill-enabler)
+  auto-workflow: { enabled: true, schedule: "workflow_dispatch", var: "" } # on-demand aeon.yml builder. var: <url[,url]>=analyze→enablement plan | enable:<slugs>=flip enabled:true (validate, commit, PR); enable:dry-run:<slugs> (folds in skill-enabler)
 
   # --- Ported from derivative instances (PR #219) ---
   # Markets & crypto
