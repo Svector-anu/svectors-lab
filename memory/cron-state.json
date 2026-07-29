@@ -170,12 +170,12 @@
     "success_rate": 0
   },
   "vuln-scanner": {
-    "last_status": "success",
-    "last_failed": "2026-07-28T06:47:37Z",
-    "total_runs": 60,
+    "last_status": "failed",
+    "last_failed": "2026-07-29T14:03:36Z",
+    "total_runs": 61,
     "total_successes": 2,
-    "total_failures": 58,
-    "consecutive_failures": 0,
+    "total_failures": 59,
+    "consecutive_failures": 1,
     "success_rate": 0.03,
     "last_dispatch": "2026-07-28T01:06:49Z",
     "last_error": "13a7a7a\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
