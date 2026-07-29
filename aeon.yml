@@ -108,6 +108,7 @@ skills:
 
   # Ideas & productivity
   idea-pipeline: { enabled: false, schedule: "0 18 * * 1" } # Monday — execution-gap audit: top 3 backlog ideas to build this week
+  hunter-22: { enabled: true, schedule: "0 10 * * *", var: "" } # daily bounty scan against ClawHunter's free discovery API (docs/ClawHunter-API.md) — capability-matched, triaged for real work vs content-farming, dedup'd against memory/topics/hunter-22-seen.json. Discovery only, no wallet, never claims/submits.
 
   # Self-maintenance / meta
 
