@@ -64,6 +64,26 @@ jobs:
           NOW_ISO=$(date -u +%FT%TZ)
           NOW_EPOCH=$(date -u +%s)
 
+          # Classic PATs echo granted scopes on X-OAuth-Scopes; fine-grained PATs
+          # and GITHUB_TOKEN don't send this header, so this only flags the
+          # classic-PAT case (GH_GLOBAL is documented as one — see the vuln-scanner
+          # public-PR setup note in memory/logs and output/articles).
+          OAUTH_SCOPES=$(gh api -i /rate_limit 2>/dev/null | grep -i '^x-oauth-scopes:' | cut -d: -f2- | tr -d '\r ')
+          if [ -n "$OAUTH_SCOPES" ] && [[ ",$OAUTH_SCOPES," != *,workflow,* ]]; then
+            echo "::warning::GH_GLOBAL token is missing the 'workflow' scope (has: ${OAUTH_SCOPES}) — workflow-dispatch calls below will 403 until it's added (Settings > Developer settings > Personal access tokens)."
+          fi
+
+          # Workflow-dispatch calls can 403 if GH_GLOBAL is a classic PAT missing
+          # the 'workflow' scope (or a fine-grained PAT missing Actions:write) —
+          # wrap dispatches so one bad token can't abort catch-up + message polling.
+          dispatch() {
+            local out
+            if ! out=$(gh workflow run "$@" 2>&1); then
+              echo "::error::gh workflow run $* failed: ${out}"
+              return 1
+            fi
+          }
+
           # Previous two hours for catch-up. GitHub Actions throttles the */5 tick
           # to 71-97min gaps under load; a 1h lookback gives :40-:59 slots only
           # ~65-80min of tolerance, so trailing-minute slots get dropped. A 2h
@@ -333,7 +353,7 @@ jobs:
           # --- Dispatch chains ---
           for CH in "${MATCHED_CHAINS[@]}"; do
             echo "Dispatching chain: $CH"
-            gh workflow run chain-runner.yml -f chain="$CH"
+            dispatch chain-runner.yml -f chain="$CH" || true
             STATE=$(echo "$STATE" | jq --arg s "chain:$CH" --arg ts "$NOW_ISO" \
               '.[$s].last_dispatch = $ts | .[$s].last_status = "dispatched"')
             sleep 2
@@ -438,10 +458,10 @@ jobs:
             VAR="${SKILL_VAR[$SKILL]:-}"
             if [ -n "$VAR" ]; then
               echo "Dispatching: $SKILL (var: $VAR)${SKILL_DEPS[$SKILL]:+ [depends_on: ${SKILL_DEPS[$SKILL]}]}"
-              gh workflow run aeon.yml -f skill="$SKILL" -f var="$VAR"
+              dispatch aeon.yml -f skill="$SKILL" -f var="$VAR" || true
             else
               echo "Dispatching: $SKILL${SKILL_DEPS[$SKILL]:+ [depends_on: ${SKILL_DEPS[$SKILL]}]}"
-              gh workflow run aeon.yml -f skill="$SKILL"
+              dispatch aeon.yml -f skill="$SKILL" || true
             fi
 
             STATE=$(echo "$STATE" | jq --arg s "$SKILL" --arg ts "$NOW_ISO" \
@@ -654,7 +674,14 @@ jobs:
             SOURCE=$(echo "$MESSAGES" | jq -r ".[$i].source")
             TEXT=$(echo "$MESSAGES" | jq -r ".[$i].text")
             echo "Dispatching [$SOURCE]: $TEXT"
-            gh workflow run messages.yml -R "$GITHUB_REPOSITORY" -f source="$SOURCE" -f message="$TEXT"
+            if ! DISPATCH_ERR=$(gh workflow run messages.yml -R "$GITHUB_REPOSITORY" -f source="$SOURCE" -f message="$TEXT" 2>&1); then
+              echo "::error::Failed to dispatch [$SOURCE] message (already ack'd, will not retry): ${DISPATCH_ERR}"
+              if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
+                curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+                  -H "Content-Type: application/json" \
+                  -d "$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "Got your message but couldn't dispatch it for processing (workflow-dispatch permission error) — it will not be retried. Check GH_GLOBAL's token scope." '{chat_id: $chat, text: $text}')" > /dev/null || true
+              fi
+            fi
           done
 
           if [ "$MSG_COUNT" -eq 0 ]; then
