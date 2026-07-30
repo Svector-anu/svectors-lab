@@ -535,7 +535,7 @@ jobs:
               ); then
                 USED_GATEWAY="$cand"; CLAUDE_OK=1; break
               fi
-              echo "::warning::provider '$cand' failed — $(printf '%s' "$CLAUDE_OUTPUT" | tail -c 160 | tr '\n' ' ')"
+              echo "::warning::provider '$cand' failed — $(printf '%s' "$CLAUDE_OUTPUT" | head -c 300 | tr '\n' ' ')"
             done
             if [ "$CLAUDE_OK" != "1" ]; then
               echo "::error::All gateway providers failed ($CANDIDATES). Last output: $CLAUDE_OUTPUT"
