@@ -1,0 +1,312 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "picks scorecard",
+        "description": "2026-06-28 → 2026-07-28"
+      },
+      "children": [
+        "section-tokens",
+        "sep-1",
+        "section-scores",
+        "sep-2",
+        "section-market",
+        "sep-3",
+        "footer-stack"
+      ]
+    },
+    "section-tokens": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-tokens",
+        "token-pick-kaito"
+      ]
+    },
+    "heading-tokens": {
+      "type": "Text",
+      "props": {
+        "text": "token picks (1 total)",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "token-pick-kaito": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "kaito-main",
+        "kaito-status"
+      ]
+    },
+    "kaito-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "kaito-label",
+        "kaito-date",
+        "kaito-prices",
+        "kaito-return"
+      ]
+    },
+    "kaito-label": {
+      "type": "Badge",
+      "props": {
+        "text": "KAITO",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "kaito-date": {
+      "type": "Text",
+      "props": {
+        "text": "2026-07-19",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "kaito-prices": {
+      "type": "Text",
+      "props": {
+        "text": "$0.95 → $1.18",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "kaito-return": {
+      "type": "Stat",
+      "props": {
+        "value": "+24.2%",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "kaito-status": {
+      "type": "Badge",
+      "props": {
+        "text": "🟢 Hit",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-scores": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "score-header",
+        "score-grid",
+        "score-extremes"
+      ]
+    },
+    "score-header": {
+      "type": "Text",
+      "props": {
+        "text": "score",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "score-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat-record",
+        "stat-avg",
+        "stat-hitrate"
+      ]
+    },
+    "stat-record": {
+      "type": "Stat",
+      "props": {
+        "label": "Record",
+        "value": "1W 0H 0L"
+      },
+      "children": []
+    },
+    "stat-avg": {
+      "type": "Stat",
+      "props": {
+        "label": "Avg",
+        "value": "+24.2%",
+        "trend": "up"
+      },
+      "children": []
+    },
+    "stat-hitrate": {
+      "type": "Stat",
+      "props": {
+        "label": "Hit Rate",
+        "value": "100%"
+      },
+      "children": []
+    },
+    "score-extremes": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-best",
+        "text-worst"
+      ]
+    },
+    "text-best": {
+      "type": "Text",
+      "props": {
+        "text": "best: KAITO +24.2%",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "text-worst": {
+      "type": "Text",
+      "props": {
+        "text": "worst: KAITO +24.2%",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-market": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-market",
+        "market-pick-fed"
+      ]
+    },
+    "heading-market": {
+      "type": "Text",
+      "props": {
+        "text": "market picks",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "market-pick-fed": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fed-title",
+        "fed-meta"
+      ]
+    },
+    "fed-title": {
+      "type": "Text",
+      "props": {
+        "text": "Fed no change after July 2026 meeting",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "fed-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "fed-badge-yes",
+        "fed-badge-open",
+        "fed-pricing"
+      ]
+    },
+    "fed-badge-yes": {
+      "type": "Badge",
+      "props": {
+        "text": "YES",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "fed-badge-open": {
+      "type": "Badge",
+      "props": {
+        "text": "⏳ open",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "fed-pricing": {
+      "type": "Text",
+      "props": {
+        "text": "YES ~73¢; was 94¢",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "footer-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "disclaimer",
+        "link-scorecard"
+      ]
+    },
+    "disclaimer": {
+      "type": "Text",
+      "props": {
+        "text": "no financial advice. just tracking the record.",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "link-scorecard": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full picks scorecard",
+        "href": "https://github.com/aaronjmars/aeon/blob/main/output/articles/picks-scorecard-2026-07-28.md",
+        "source": "GitHub"
+      },
+      "children": []
+    }
+  }
+}

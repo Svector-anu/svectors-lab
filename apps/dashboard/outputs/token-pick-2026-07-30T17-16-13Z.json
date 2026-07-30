@@ -1,0 +1,399 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Daily Pick — 2026-07-28"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "zama-section",
+        "separator-1",
+        "btc-section"
+      ]
+    },
+    "zama-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "zama-header",
+        "zama-badges",
+        "zama-stats-group",
+        "zama-catalyst",
+        "zama-risk",
+        "zama-vs-recent"
+      ]
+    },
+    "zama-header": {
+      "type": "Heading",
+      "props": {
+        "text": "ZAMA",
+        "level": "h2"
+      }
+    },
+    "zama-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-zama-high"
+      ]
+    },
+    "badge-zama-high": {
+      "type": "Badge",
+      "props": {
+        "text": "HIGH",
+        "variant": "destructive"
+      }
+    },
+    "zama-stats-group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stat-zama-signal",
+        "stat-zama-price",
+        "stat-zama-24h",
+        "stat-zama-7d",
+        "stat-zama-mcap",
+        "stat-zama-vol",
+        "stat-zama-vol-mcap",
+        "zama-score-breakdown"
+      ]
+    },
+    "stat-zama-signal": {
+      "type": "Stat",
+      "props": {
+        "label": "Signal",
+        "value": "9/10"
+      }
+    },
+    "stat-zama-price": {
+      "type": "Stat",
+      "props": {
+        "label": "Price",
+        "value": "$0.062"
+      }
+    },
+    "stat-zama-24h": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Change",
+        "value": "+2.2%",
+        "trend": "up"
+      }
+    },
+    "stat-zama-7d": {
+      "type": "Stat",
+      "props": {
+        "label": "7d Change",
+        "value": "+60.4%",
+        "trend": "up"
+      }
+    },
+    "stat-zama-mcap": {
+      "type": "Stat",
+      "props": {
+        "label": "Market Cap",
+        "value": "$136M"
+      }
+    },
+    "stat-zama-vol": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Volume",
+        "value": "$69M"
+      }
+    },
+    "stat-zama-vol-mcap": {
+      "type": "Stat",
+      "props": {
+        "label": "Vol/Mcap Ratio",
+        "value": "0.51"
+      }
+    },
+    "zama-score-breakdown": {
+      "type": "Text",
+      "props": {
+        "text": "Score breakdown: 24h+1, 7d+1, trending+2, vol/mcap≥0.20+3, RS vs BTC/ETH+2 = 9/10",
+        "variant": "caption"
+      }
+    },
+    "zama-catalyst": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "zama-catalyst-heading",
+        "zama-catalyst-text"
+      ]
+    },
+    "zama-catalyst-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Catalyst",
+        "level": "h4"
+      }
+    },
+    "zama-catalyst-text": {
+      "type": "Text",
+      "props": {
+        "text": "FHE privacy narrative heating — CoinGecko trending, protocol hit ~1,000 confidential transfers/s, EOY mainnet plan + conditional Solana path, Shielded Q2 report upcoming (CoinGecko / Zama).",
+        "variant": "body"
+      }
+    },
+    "zama-risk": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "zama-risk-heading",
+        "zama-risk-text"
+      ]
+    },
+    "zama-risk-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Risk",
+        "level": "h4"
+      }
+    },
+    "zama-risk-text": {
+      "type": "Text",
+      "props": {
+        "text": "+60% in 7d near ATH; high turnover can reverse hard if mainnet slips or privacy rotation fades.",
+        "variant": "body"
+      }
+    },
+    "zama-vs-recent": {
+      "type": "Text",
+      "props": {
+        "text": "Vs recent picks: first time",
+        "variant": "caption"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "btc-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "btc-header",
+        "btc-badges",
+        "btc-odds-group",
+        "btc-resolution",
+        "btc-fair-value",
+        "btc-thesis",
+        "btc-risk",
+        "btc-action",
+        "btc-footer"
+      ]
+    },
+    "btc-header": {
+      "type": "Heading",
+      "props": {
+        "text": "Will Bitcoin dip to $60,000 in July?",
+        "level": "h2"
+      }
+    },
+    "btc-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-btc-high",
+        "badge-btc-edge"
+      ]
+    },
+    "badge-btc-high": {
+      "type": "Badge",
+      "props": {
+        "text": "HIGH",
+        "variant": "destructive"
+      }
+    },
+    "badge-btc-edge": {
+      "type": "Badge",
+      "props": {
+        "text": "10pp edge",
+        "variant": "secondary"
+      }
+    },
+    "btc-odds-group": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "btc-odds-heading",
+        "stat-btc-yes",
+        "stat-btc-no",
+        "stat-btc-vol"
+      ]
+    },
+    "btc-odds-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Current Odds",
+        "level": "h4"
+      }
+    },
+    "stat-btc-yes": {
+      "type": "Stat",
+      "props": {
+        "label": "YES",
+        "value": "15.5¢"
+      }
+    },
+    "stat-btc-no": {
+      "type": "Stat",
+      "props": {
+        "label": "NO",
+        "value": "84.5¢"
+      }
+    },
+    "stat-btc-vol": {
+      "type": "Stat",
+      "props": {
+        "label": "24h Volume",
+        "value": "$173k"
+      }
+    },
+    "btc-resolution": {
+      "type": "Stat",
+      "props": {
+        "label": "Resolves",
+        "value": "Jul 31 11:59pm ET"
+      }
+    },
+    "btc-fair-value": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "btc-fair-heading",
+        "stat-btc-fair-yes",
+        "btc-fair-inputs"
+      ]
+    },
+    "btc-fair-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Fair Value",
+        "level": "h4"
+      }
+    },
+    "stat-btc-fair-yes": {
+      "type": "Stat",
+      "props": {
+        "label": "Fair YES",
+        "value": "~26%"
+      }
+    },
+    "btc-fair-inputs": {
+      "type": "Text",
+      "props": {
+        "text": "inputs: BTC ~$63.4k only ~5.4% away; FOMC decision Jul 29 as vol catalyst — CME FedWatch hold-leaning with hike tail; 24h/7d soft with $60k widely cited support that often gets tagged",
+        "variant": "caption"
+      }
+    },
+    "btc-thesis": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "btc-thesis-heading",
+        "btc-thesis-text"
+      ]
+    },
+    "btc-thesis-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Thesis",
+        "level": "h4"
+      }
+    },
+    "btc-thesis-text": {
+      "type": "Text",
+      "props": {
+        "text": "Market underprices a touch of $60k into the FOMC window — tape already soft; action = lean YES while edge holds.",
+        "variant": "body"
+      }
+    },
+    "btc-risk": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "btc-risk-heading",
+        "btc-risk-text"
+      ]
+    },
+    "btc-risk-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Risk",
+        "level": "h4"
+      }
+    },
+    "btc-risk-text": {
+      "type": "Text",
+      "props": {
+        "text": "Hawkish-to-dovish hold + squeeze above $65k leaves $60k untested before month end; resolution is Binance 1m candle touch, not a close.",
+        "variant": "body"
+      }
+    },
+    "btc-action": {
+      "type": "Badge",
+      "props": {
+        "text": "Action: lean YES",
+        "variant": "outline"
+      }
+    },
+    "btc-footer": {
+      "type": "Text",
+      "props": {
+        "text": "sources: cg=ok, dex=ok, poly=ok | not financial advice — pattern-matching only",
+        "variant": "caption"
+      }
+    }
+  }
+}

@@ -1,16 +1,18 @@
-🚨 Heartbeat — Fleet DEGRADED
+Done. Ambient heartbeat complete — no notification sent (fleet-DEGRADED story was already notified <1h ago; today's deltas are incremental escalations of the same ISS-001).
 
-🔴 FLEET DEGRADED — zero-token harness failure persists (ISS-001, open since 07-19)
+## Summary
 
-The 07-28 grok re-auth didn't hold. Fleet re-failing on the same `input_tokens=0 / total_cost_usd=0` signature — the model never starts (auth/routing, not skill logic).
+**Branch run:** Ambient fleet check (empty `${var}`), the live scheduled path. Second heartbeat of the day (17:12 UTC; a prior one ran at 16:27).
 
-🔴 FAILING (consecutive):
-- skill-health ×138 · price-alert ×8 · defi-overview ×6 · narrative-tracker ×6 · heartbeat ×3 · vuln-scanner ×3 (failed today 12:17 UTC)
-- New isolated fails: auto-merge (07-29), hunter-22 (07-29, first run)
-- Fleet success rates 1–7%; last clean successes cluster 07-28
+**Fleet state (P0):** 🔴 DEGRADED — `ISS-001` (fleet zero-token harness failure) still open.
+- **Recovered:** heartbeat itself — `last_success` 16:43 UTC, `consecutive_failures` 0. Self-check no longer stale; the 07-30 claude-harness switch is holding for it.
+- **New — stuck batch:** the 16:27 dispatch (defi-overview, narrative-tracker, skill-health, price-alert, digest, hunter-22) is now >45min in `dispatched` state, never reported back — same ISS-001 harness failure re-manifesting.
+- **New — regression:** vuln-scanner `consecutive_failures` 3→5, last failed 17:04 UTC (off-schedule; its cron is Sat-only).
 
-🟡 STALLED PRs: #24 (~1d), #22 & #20 (~2d), #5/#4/#3 (10–11d). Repo issues disabled.
+**Notification:** None. Fleet DEGRADED + ISS-001 + per-skill failures were already notified <1h ago by the 16:27 run; today's deltas are escalations of that same reported item. Dedup rule → status page + log only.
 
-🔵 MEMORY: "Configure notification channels" still flagged in Next Priorities.
+**Files modified:**
+- `docs/status.md` — regenerated (🔴 DEGRADED, updated 17:12 UTC, 14 enabled skills, 6 now `🕸 stuck`, vuln-scanner `❌`, ISS-001 listed). Token pulse section omitted (no token-report articles exist). Auto-commits to `main` via the workflow.
+- `memory/logs/2026-07-30.md` — appended a second `mode: ambient` entry under `### heartbeat` with `STATUS_PAGE=DEGRADED` and the deltas.
 
-→ Fix: verify GROK_CREDENTIALS / XAI_API_KEY + harness routing. Status page: 🔴 DEGRADED.
+**Follow-up:** ISS-001 remains the root cause — the claude harness works for heartbeat but the 16:27 fleet batch still dies with the zero-token signature. Needs `skill-repair`/config investigation into why the harness switch isn't holding fleet-wide (skill-health itself is stuck at 138 consecutive failures, so the self-healing loop is down).
