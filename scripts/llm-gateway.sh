@@ -123,14 +123,19 @@ JSON
 # GATEWAY_ORDER (space-separated). Default order:
 #
 #   claude     Claude Code subscription    (CLAUDE_CODE_OAUTH_TOKEN)
+#   claude2    2nd Claude Code subscription (CLAUDE_CODE_OAUTH_TOKEN_2) — falls
+#              back here on a session-limit 429 from the primary account
+#              before cascading to a different provider/model entirely.
 #   anthropic  pay-as-you-go Anthropic API (ANTHROPIC_API_KEY)
 #   openrouter bankr usepod venice surplus  — gateway keys
 #
-# `claude` and `anthropic` are NATIVE direct-API tiers (handled by the case
-# below). `direct` is the implicit final fallback (errors later if no usable key).
+# `claude`, `claude2`, and `anthropic` are NATIVE direct-API tiers (handled by
+# the case below). `direct` is the implicit final fallback (errors later if no
+# usable key).
 aeon_present() {  # is the secret for provider $1 set?
   case "$1" in
     claude)     [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] ;;
+    claude2)    [ -n "${CLAUDE_CODE_OAUTH_TOKEN_2:-}" ] ;;
     anthropic)  [ -n "${ANTHROPIC_API_KEY:-}" ] ;;
     openrouter) [ -n "${OPENROUTER_API_KEY:-}" ] ;;
     bankr)      [ -n "${BANKR_LLM_KEY:-}" ] ;;
@@ -144,7 +149,7 @@ aeon_present() {  # is the secret for provider $1 set?
 if [ -z "${GATEWAY:-}" ] || [ "${GATEWAY}" = "auto" ]; then
   # Ordered list of every provider whose secret is set (priority via GATEWAY_ORDER).
   AEON_CANDIDATES=""
-  for provider in ${GATEWAY_ORDER:-claude anthropic openrouter bankr usepod venice surplus grok}; do
+  for provider in ${GATEWAY_ORDER:-claude claude2 anthropic openrouter bankr usepod venice surplus grok}; do
     if aeon_present "$provider"; then AEON_CANDIDATES="${AEON_CANDIDATES:+$AEON_CANDIDATES }$provider"; fi
   done
   [ -z "$AEON_CANDIDATES" ] && AEON_CANDIDATES="direct"
@@ -163,6 +168,13 @@ case "${GATEWAY:-direct}" in
     require_secret CLAUDE_CODE_OAUTH_TOKEN
     unset ANTHROPIC_API_KEY   # prefer the subscription token over a pay-go key
     echo "::notice::Using Claude Code subscription (CLAUDE_CODE_OAUTH_TOKEN)"
+    ;;
+
+  claude2)  # NATIVE — second Claude Code subscription (fallback OAuth token)
+    require_secret CLAUDE_CODE_OAUTH_TOKEN_2
+    export CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_CODE_OAUTH_TOKEN_2"
+    unset ANTHROPIC_API_KEY
+    echo "::notice::Using second Claude Code subscription (CLAUDE_CODE_OAUTH_TOKEN_2)"
     ;;
 
   anthropic)  # NATIVE — pay-as-you-go Anthropic API key (or compatible endpoint)
