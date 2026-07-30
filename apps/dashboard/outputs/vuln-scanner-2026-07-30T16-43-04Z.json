@@ -1,0 +1,179 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — alibaba/open-code-review"
+      },
+      "children": [
+        "alert_finding",
+        "sep1",
+        "stats_section",
+        "sep2",
+        "additional_section",
+        "sep3",
+        "disclosure_section",
+        "sep4",
+        "scanner_section"
+      ]
+    },
+    "alert_finding": {
+      "type": "Alert",
+      "props": {
+        "title": "CVE-2026-14257: brace-expansion DoS",
+        "message": "HIGH severity confirmed in vscode extension yarn.lock. Resolution: pin keeps 2.x",
+        "type": "warning"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_semgrep",
+        "stat_osv",
+        "stat_code_vulns"
+      ]
+    },
+    "stat_semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep candidates",
+        "value": "26"
+      }
+    },
+    "stat_osv": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV candidates",
+        "value": "3"
+      }
+    },
+    "stat_code_vulns": {
+      "type": "Stat",
+      "props": {
+        "label": "Code vulnerabilities",
+        "value": "0"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "additional_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_additional",
+        "text_go_advisories"
+      ]
+    },
+    "heading_additional": {
+      "type": "Heading",
+      "props": {
+        "text": "Additional findings",
+        "level": "h3"
+      }
+    },
+    "text_go_advisories": {
+      "type": "Text",
+      "props": {
+        "text": "2 Go advisories dropped (not in call graph)"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "disclosure_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_disclosure",
+        "text_disclosure"
+      ]
+    },
+    "heading_disclosure": {
+      "type": "Heading",
+      "props": {
+        "text": "Disclosure",
+        "level": "h3"
+      }
+    },
+    "text_disclosure": {
+      "type": "Text",
+      "props": {
+        "text": "Public PR blocked (fork 403; GH_GLOBAL unset)"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanner_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_scanners",
+        "scanners_badges"
+      ]
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "scanners_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_osv"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "secondary"
+      }
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "secondary"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "secondary"
+      }
+    }
+  }
+}

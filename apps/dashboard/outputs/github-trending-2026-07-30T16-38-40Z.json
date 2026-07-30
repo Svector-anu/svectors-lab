@@ -1,0 +1,401 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "GitHub Trending — 2026-07-28"
+      },
+      "children": [
+        "top-pick-section",
+        "sep1",
+        "devtools-section",
+        "sep2",
+        "ai-ml-section",
+        "sep3",
+        "web-apps-section",
+        "sep4",
+        "data-section",
+        "sep5",
+        "footer"
+      ]
+    },
+    "top-pick-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "top-pick-label",
+        "top-pick-repo-stack"
+      ]
+    },
+    "top-pick-label": {
+      "type": "Heading",
+      "props": {
+        "text": "Top pick",
+        "level": "h3"
+      }
+    },
+    "top-pick-repo-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "top-pick-link",
+        "top-pick-desc"
+      ]
+    },
+    "top-pick-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "alibaba/open-code-review",
+        "href": "https://github.com/alibaba/open-code-review"
+      }
+    },
+    "top-pick-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Alibaba open-sourced the hybrid pipeline+LLM review stack already battle-tested at their scale — 979★ today."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "devtools-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "devtools-heading",
+        "devtools-repos"
+      ]
+    },
+    "devtools-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Devtools",
+        "level": "h3"
+      }
+    },
+    "devtools-repos": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "devtools-repo-1",
+        "devtools-repo-2"
+      ]
+    },
+    "devtools-repo-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "devtools-repo-1-link",
+        "devtools-repo-1-desc"
+      ]
+    },
+    "devtools-repo-1-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "alibaba/open-code-review",
+        "href": "https://github.com/alibaba/open-code-review",
+        "source": "Go · [ACCELERATING]",
+        "score": "★ 979 today (15.3k total)"
+      }
+    },
+    "devtools-repo-1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Deterministic security rules + LLM agents for precise line-level PR comments."
+      }
+    },
+    "devtools-repo-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "devtools-repo-2-link",
+        "devtools-repo-2-desc"
+      ]
+    },
+    "devtools-repo-2-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "pbakaus/impeccable",
+        "href": "https://github.com/pbakaus/impeccable",
+        "source": "JavaScript · [ACCELERATING]",
+        "score": "★ 847 today (51.9k total)"
+      }
+    },
+    "devtools-repo-2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Design language that steers coding agents toward real UI craft, not generic Tailwind sludge."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "ai-ml-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "ai-ml-heading",
+        "ai-ml-repos"
+      ]
+    },
+    "ai-ml-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "AI/ML",
+        "level": "h3"
+      }
+    },
+    "ai-ml-repos": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "ai-ml-repo-1",
+        "ai-ml-repo-2",
+        "ai-ml-repo-3"
+      ]
+    },
+    "ai-ml-repo-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "ai-ml-repo-1-link",
+        "ai-ml-repo-1-desc"
+      ]
+    },
+    "ai-ml-repo-1-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "bradautomates/claude-video",
+        "href": "https://github.com/bradautomates/claude-video",
+        "source": "Python · [ACCELERATING]",
+        "score": "★ 434 today (11.5k total)"
+      }
+    },
+    "ai-ml-repo-1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "/watch skill: download video, extract frames + transcript, hand the bundle to Claude."
+      }
+    },
+    "ai-ml-repo-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "ai-ml-repo-2-link",
+        "ai-ml-repo-2-desc"
+      ]
+    },
+    "ai-ml-repo-2-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "mvanhorn/last30days-skill",
+        "href": "https://github.com/mvanhorn/last30days-skill",
+        "source": "Python · [ACCELERATING]",
+        "score": "★ 240 today (54.4k total)"
+      }
+    },
+    "ai-ml-repo-2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "One agent skill that cross-checks Reddit, X, HN, YouTube, and Polymarket before summarizing."
+      }
+    },
+    "ai-ml-repo-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "ai-ml-repo-3-link",
+        "ai-ml-repo-3-desc"
+      ]
+    },
+    "ai-ml-repo-3-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "shiyu-coder/Kronos",
+        "href": "https://github.com/shiyu-coder/Kronos",
+        "source": "Python · [ACCELERATING]",
+        "score": "★ 441 today (34.7k total)"
+      }
+    },
+    "ai-ml-repo-3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Foundation model for market microstructure — treats candles and order flow as a language."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "web-apps-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "web-apps-heading",
+        "web-apps-repos"
+      ]
+    },
+    "web-apps-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Web/Apps",
+        "level": "h3"
+      }
+    },
+    "web-apps-repos": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "web-apps-repo-1"
+      ]
+    },
+    "web-apps-repo-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "web-apps-repo-1-link",
+        "web-apps-repo-1-desc"
+      ]
+    },
+    "web-apps-repo-1-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "permissionlesstech/bitchat",
+        "href": "https://github.com/permissionlesstech/bitchat",
+        "source": "Swift · [ACCELERATING]",
+        "score": "★ 2.3k today (32.8k total)"
+      }
+    },
+    "web-apps-repo-1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Offline Bluetooth mesh chat with E2E encryption — no cell towers or servers required."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "data-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "data-heading",
+        "data-repos"
+      ]
+    },
+    "data-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Data",
+        "level": "h3"
+      }
+    },
+    "data-repos": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "data-repo-1"
+      ]
+    },
+    "data-repo-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "data-repo-1-link",
+        "data-repo-1-desc"
+      ]
+    },
+    "data-repo-1-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "opengeos/GeoLibre",
+        "href": "https://github.com/opengeos/GeoLibre",
+        "source": "TypeScript · [ACCELERATING]",
+        "score": "★ 420 today (3.0k total)"
+      }
+    },
+    "data-repo-1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "MapLibre + DuckDB GIS that runs the same stack in browser, Tauri desktop, and Jupyter."
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "footer": {
+      "type": "Text",
+      "props": {
+        "text": "sources: trending=ok · gh_api=ok · kept 7/15",
+        "variant": "caption"
+      }
+    }
+  }
+}

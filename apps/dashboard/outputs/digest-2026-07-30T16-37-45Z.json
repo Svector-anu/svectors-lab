@@ -1,0 +1,302 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Digest",
+        "description": "2026-07-28"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tldr_heading",
+        "tldr_text",
+        "separator_1",
+        "section_1",
+        "separator_2",
+        "section_2",
+        "separator_3",
+        "section_3",
+        "separator_4",
+        "section_4",
+        "separator_5",
+        "also_heading",
+        "also_content"
+      ]
+    },
+    "tldr_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TL;DR",
+        "level": "h3"
+      }
+    },
+    "tldr_text": {
+      "type": "Text",
+      "props": {
+        "text": "FOMC decision lands Wed 2pm ET with ~36% hike odds and hawkish Warsh risk; this-week Clarity cloture is slipping; Circle just stacked ~1,000 IBM blockchain patents.",
+        "variant": "lead"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "s1_heading",
+        "s1_body",
+        "s1_why",
+        "s1_links"
+      ]
+    },
+    "s1_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "FOMC print Wed: ~36% hike odds, hawkish tone is the live risk",
+        "level": "h3"
+      }
+    },
+    "s1_body": {
+      "type": "Text",
+      "props": {
+        "text": "Markets price ~36% chance of a 25bp hike at this week's meeting (hold still base case ~64%). Schwab expects Chair Warsh hawkish rhetoric that could tighten financial conditions even without a move. Spot BTC ~$63.4–63.8k into the event; weekly ETF products only net +$34M while Jul 23–24 alone saw >$465M spot-BTC ETF outflows.",
+        "variant": "body"
+      }
+    },
+    "s1_why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: Size risk into the 2pm ET decision — fade reflexive longs if the statement hardens path, don't chase a hold-alone bounce.",
+        "variant": "muted"
+      }
+    },
+    "s1_links": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "s1_link1",
+        "s1_link2"
+      ]
+    },
+    "s1_link1": {
+      "type": "StoryLink",
+      "props": {
+        "title": "CoinDesk – FOMC Hike Odds",
+        "href": "https://x.com/CoinDesk/status/2081909935374225649",
+        "source": "X"
+      }
+    },
+    "s1_link2": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Bitcoin ETFs See First Back-to-Back Outflows in Weeks",
+        "href": "https://www.roic.ai/news/bitcoin-etfs-see-first-back-to-back-outflows-in-weeks-as-fed-meeting-looms-07-27-2026",
+        "source": "ROIC"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "s2_heading",
+        "s2_body",
+        "s2_why",
+        "s2_link"
+      ]
+    },
+    "s2_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Clarity Act: this-week cloture hopes fading",
+        "level": "h3"
+      }
+    },
+    "s2_body": {
+      "type": "Text",
+      "props": {
+        "text": "Eleanor Terrett: Thune would need to file cloture on the motion to proceed today for a Thursday vote under Senate rules; Russia/Iran sanctions are expected to take the floor first. Industry pressure now shifts to starting cloture before the August recess, not clearing the bill this week.",
+        "variant": "body"
+      }
+    },
+    "s2_why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: Remove any near-term \"Clarity pass\" premium from positioning; calendar risk is next-week-or-later, not tomorrow's headline.",
+        "variant": "muted"
+      }
+    },
+    "s2_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Eleanor Terrett – Clarity Act Cloture Update",
+        "href": "https://x.com/EleanorTerrett/status/2082127523249262881",
+        "source": "X"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "s3_heading",
+        "s3_body",
+        "s3_why",
+        "s3_link"
+      ]
+    },
+    "s3_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Circle acquires IBM blockchain patent portfolio (~1,000 patents)",
+        "level": "h3"
+      }
+    },
+    "s3_body": {
+      "type": "Text",
+      "props": {
+        "text": "Circle (USDC issuer) bought >680 patent families / nearly 1,000 issued patents from IBM covering foundational blockchain, banking rails, supply chain, and secure cloud. Terms undisclosed; Circle claims it is now the top U.S. blockchain patent holder, backing USDC, Circle Payments Network, and Arc L1.",
+        "variant": "body"
+      }
+    },
+    "s3_why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: Stablecoin infra race is shifting from pure float to IP/defensibility — watch Arc and payments network roadmap, not just USDC supply.",
+        "variant": "muted"
+      }
+    },
+    "s3_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Circle Acquires IBM Blockchain Patent Portfolio",
+        "href": "https://www.circle.com/pressroom/circle-acquires-ibm-blockchain-patent-portfolio",
+        "source": "Circle"
+      }
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "s4_heading",
+        "s4_body",
+        "s4_why",
+        "s4_link"
+      ]
+    },
+    "s4_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "HL RWA: equity perps now the volume story (material update)",
+        "level": "h3"
+      }
+    },
+    "s4_body": {
+      "type": "Text",
+      "props": {
+        "text": "Hyperliquid Labs: ~half of HL volume is RWAs; SK Hynix printed ~$2B notional in a day on HIP-3 equity perps. Prior oracle-wick stress on SK Hynix remains the live design risk for the venue.",
+        "variant": "body"
+      }
+    },
+    "s4_why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: Trade venue mechanics and oracle/backstop risk on HIP-3 names — not ONDO bags as a pure RWA proxy.",
+        "variant": "muted"
+      }
+    },
+    "s4_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Hyperliquid Labs – RWA Volume Update",
+        "href": "https://x.com/HLglobal_/status/2082123004683886918",
+        "source": "X"
+      }
+    },
+    "separator_5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "also_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Also worth a glance",
+        "level": "h3"
+      }
+    },
+    "also_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "also_items",
+        "also_link"
+      ]
+    },
+    "also_items": {
+      "type": "Text",
+      "props": {
+        "text": "Augustus (stablecoin bank) raised $180M Series B at $1B valuation · BitMine added ~9.9k ETH; treasury now ~5.8M ETH (~4.8% supply)",
+        "variant": "body"
+      }
+    },
+    "also_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Calen and Brown – Weekly Rollup July 28, 2026",
+        "href": "https://calebandbrown.com/blog/weekly-rollup-july-28-2026/",
+        "source": "Calen and Brown"
+      }
+    }
+  }
+}

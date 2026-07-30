@@ -1,0 +1,309 @@
+{
+  "root": "main_card",
+  "state": {},
+  "elements": {
+    "main_card": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat — Fleet DEGRADED"
+      },
+      "children": [
+        "status_alert",
+        "sep1",
+        "issue_header",
+        "issue_text",
+        "sep2",
+        "failing_header",
+        "failing_table",
+        "sep3",
+        "new_fails_header",
+        "new_fails_items",
+        "sep4",
+        "success_header",
+        "success_items",
+        "sep5",
+        "prs_header",
+        "prs_items",
+        "sep6",
+        "memory_header",
+        "memory_text",
+        "sep7",
+        "action_header",
+        "action_items",
+        "status_page"
+      ]
+    },
+    "status_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Fleet DEGRADED",
+        "message": "Zero-token harness failure persists (ISS-001, open since 07-19)",
+        "type": "error"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "issue_header": {
+      "type": "Heading",
+      "props": {
+        "text": "Issue: Zero-Token Harness Failure",
+        "level": "h2"
+      }
+    },
+    "issue_text": {
+      "type": "Text",
+      "props": {
+        "text": "The 07-28 grok re-auth didn't hold. Fleet re-failing on the same input_tokens=0 / total_cost_usd=0 signature — the model never starts (auth/routing, not skill logic).",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "failing_header": {
+      "type": "Heading",
+      "props": {
+        "text": "Failing Skills (Consecutive)",
+        "level": "h3"
+      }
+    },
+    "failing_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Failures"
+        ],
+        "rows": [
+          [
+            "skill-health",
+            "138"
+          ],
+          [
+            "price-alert",
+            "8"
+          ],
+          [
+            "defi-overview",
+            "6"
+          ],
+          [
+            "narrative-tracker",
+            "6"
+          ],
+          [
+            "heartbeat",
+            "3"
+          ],
+          [
+            "vuln-scanner",
+            "3 (failed today 12:17 UTC)"
+          ]
+        ]
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "new_fails_header": {
+      "type": "Heading",
+      "props": {
+        "text": "New Isolated Failures",
+        "level": "h3"
+      }
+    },
+    "new_fails_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "new_fail_1",
+        "new_fail_2"
+      ]
+    },
+    "new_fail_1": {
+      "type": "Text",
+      "props": {
+        "text": "auto-merge (07-29)",
+        "variant": "body"
+      }
+    },
+    "new_fail_2": {
+      "type": "Text",
+      "props": {
+        "text": "hunter-22 (07-29, first run)",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "success_header": {
+      "type": "Heading",
+      "props": {
+        "text": "Fleet Success Rates",
+        "level": "h3"
+      }
+    },
+    "success_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "success_1",
+        "success_2"
+      ]
+    },
+    "success_1": {
+      "type": "Text",
+      "props": {
+        "text": "Fleet success rates: 1–7%",
+        "variant": "body"
+      }
+    },
+    "success_2": {
+      "type": "Text",
+      "props": {
+        "text": "Last clean successes cluster: 07-28",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "prs_header": {
+      "type": "Heading",
+      "props": {
+        "text": "Stalled PRs",
+        "level": "h3"
+      }
+    },
+    "prs_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr_1",
+        "pr_2",
+        "pr_3",
+        "pr_4"
+      ]
+    },
+    "pr_1": {
+      "type": "Text",
+      "props": {
+        "text": "#24 (~1d)",
+        "variant": "body"
+      }
+    },
+    "pr_2": {
+      "type": "Text",
+      "props": {
+        "text": "#22 & #20 (~2d)",
+        "variant": "body"
+      }
+    },
+    "pr_3": {
+      "type": "Text",
+      "props": {
+        "text": "#5 / #4 / #3 (10–11d)",
+        "variant": "body"
+      }
+    },
+    "pr_4": {
+      "type": "Text",
+      "props": {
+        "text": "Repo issues disabled",
+        "variant": "muted"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "memory_header": {
+      "type": "Heading",
+      "props": {
+        "text": "Memory Note",
+        "level": "h3"
+      }
+    },
+    "memory_text": {
+      "type": "Text",
+      "props": {
+        "text": "\"Configure notification channels\" still flagged in Next Priorities",
+        "variant": "body"
+      }
+    },
+    "sep7": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "action_header": {
+      "type": "Heading",
+      "props": {
+        "text": "Required Action",
+        "level": "h3"
+      }
+    },
+    "action_items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "action_1",
+        "action_2"
+      ]
+    },
+    "action_1": {
+      "type": "Text",
+      "props": {
+        "text": "Verify GROK_CREDENTIALS",
+        "variant": "body"
+      }
+    },
+    "action_2": {
+      "type": "Text",
+      "props": {
+        "text": "Verify XAI_API_KEY + harness routing",
+        "variant": "body"
+      }
+    },
+    "status_page": {
+      "type": "Alert",
+      "props": {
+        "title": "Status Page",
+        "message": "🔴 DEGRADED",
+        "type": "error"
+      }
+    }
+  }
+}

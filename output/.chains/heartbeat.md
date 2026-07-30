@@ -1,18 +1,16 @@
-🚨 Heartbeat: fleet DEGRADED
+🚨 Heartbeat — Fleet DEGRADED
 
-🔴 FAILED: fleet-wide zero-token harness failure (input_tokens=0, total_cost_usd=0) — shared across nearly all enabled skills
-• heartbeat (failed ~36m ago · 141 consec · last_success Jul 19 · self-check CRITICAL)
-• narrative-tracker (146 consec · 2% success)
-• defi-overview (137 consec · 2%)
-• fear-divergence (139 consec · 1%)
-• price-alert (132 consec · 4%)
-• digest (132 consec · 0%)
-• skill-health stuck ~7h (dispatched 01:06 UTC, no report)
-• token-pick stuck ~7h
-• x402-monitor · picks-tracker · github-trending · vuln-scanner (chronic 0–1% success)
+🔴 FLEET DEGRADED — zero-token harness failure persists (ISS-001, open since 07-19)
 
-🟡 STALLED: PR #5 (8d), #4 (9d), #3 (9d) open; issues disabled on repo
-🔵 MEMORY: still flagged — configure notification channels; run first digest
-🔴 ISSUE: ISS-001 critical open since Jul 19 (zero-token harness)
+The 07-28 grok re-auth didn't hold. Fleet re-failing on the same `input_tokens=0 / total_cost_usd=0` signature — the model never starts (auth/routing, not skill logic).
 
-Action: verify gateway/model path (aeon.yml harness=claude post Jul 26 revert) — zero tokens = model never starts, not skill logic.
+🔴 FAILING (consecutive):
+- skill-health ×138 · price-alert ×8 · defi-overview ×6 · narrative-tracker ×6 · heartbeat ×3 · vuln-scanner ×3 (failed today 12:17 UTC)
+- New isolated fails: auto-merge (07-29), hunter-22 (07-29, first run)
+- Fleet success rates 1–7%; last clean successes cluster 07-28
+
+🟡 STALLED PRs: #24 (~1d), #22 & #20 (~2d), #5/#4/#3 (10–11d). Repo issues disabled.
+
+🔵 MEMORY: "Configure notification channels" still flagged in Next Priorities.
+
+→ Fix: verify GROK_CREDENTIALS / XAI_API_KEY + harness routing. Status page: 🔴 DEGRADED.
