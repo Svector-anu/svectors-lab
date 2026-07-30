@@ -224,7 +224,17 @@ model: claude-opus-4-8
 # credits" ($0 balance) — so 46 of the last 50 scheduled runs failed fleet-
 # wide. grok is the only currently-funded, working path; switch back once
 # Bankr is topped up or a working ANTHROPIC_API_KEY/OpenRouter key is added.
-harness: grok
+#
+# Switched back to claude 2026-07-30: the "~3s rate/usage ceiling" above was
+# actually a stale CLAUDE_CODE_OAUTH_TOKEN (401 "OAuth access token is
+# invalid") — refreshed via `claude setup-token`, verified working via live
+# dispatch (heartbeat + vuln-scanner, harness=claude, both delivered).
+# Meanwhile grok's GROK_CREDENTIALS session is fine but the account's Grok
+# Build usage balance has been exhausted (402) continuously since 2026-07-29
+# with no reset observed after 40+ hours — grok is now the dead path. Revert
+# only once Grok Build usage resets/is funded, or if CLAUDE_CODE_OAUTH_TOKEN
+# goes stale again before then.
+harness: claude
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
