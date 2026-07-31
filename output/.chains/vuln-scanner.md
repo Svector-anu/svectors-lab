@@ -1,4 +1,2 @@
-ℹ️ Vuln Scanner — claude-video (clean)
-
-*Vuln Scanner — bradautomates/claude-video*
-Clean audit. 3 candidates reviewed, 0 confirmed. The /watch skill (yt-dlp+ffmpeg+Whisper, ~12.9k★) is defensively coded — list-form subprocess, `--` separators, `-` prefix rejection, path resolution. The 2 GHA mutable-tag hits are hardening nits; the whisper.py urllib hit is a false positive (hardcoded endpoint). Scanners: semgrep=ok, trufflehog=ok, osv=ok.
+*Vuln Scanner — opengeos/GeoLibre*
+Clean audit. 6 code candidates + 72 CI-hardening reviewed, 0 confirmed exploitable. All 6 are false-positives or defended-by-design (identifier-restricted eval in browser Pyodide; operator-env uv-installer; loopback-only urllib; hardcoded-loopback nginx proxy). FastAPI path confinement (GEOLIBRE_CONVERSION_ROOTS) is textbook-correct — resolve-before-check, no existence oracle, no TOCTOU. Only dep advisories (idna, nbconvert) sit in the JupyterLite browser-WASM sandbox and are already inside the repo's Dependabot/npm-audit/pip-audit scope. trufflehog: 0 verified secrets. Scanners: semgrep=ok, trufflehog=ok, osv=ok.

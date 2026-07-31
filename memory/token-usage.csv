@@ -26,4 +26,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-07-30,heartbeat,claude-opus-4-8,2241,12839,1037753,80475
 2026-07-30,heartbeat,claude-opus-4-8,2103,11834,424678,46893
 2026-07-31,vuln-scanner,claude-opus-4-8,4874,27047,5210959,127032
-2026-07-31,hunter-22,claude-opus-4-8,2668,17172,1650528,39783
+2026-07-31,vuln-scanner,claude-opus-4-8,8371,29269,3157865,82856

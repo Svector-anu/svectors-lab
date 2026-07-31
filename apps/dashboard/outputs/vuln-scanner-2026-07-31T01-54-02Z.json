@@ -1,0 +1,366 @@
+{
+  "root": "card_vuln_scanner",
+  "state": {},
+  "elements": {
+    "card_vuln_scanner": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — opengeos/GeoLibre"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stats_row",
+        "sep1",
+        "section_overview",
+        "sep2",
+        "section_false_positives",
+        "sep3",
+        "section_fastapi",
+        "sep4",
+        "section_deps",
+        "sep5",
+        "section_secrets",
+        "sep6",
+        "section_scanners"
+      ]
+    },
+    "stats_row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_confirmed",
+        "stat_candidates",
+        "stat_ci_hardening"
+      ]
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Exploitable",
+        "value": "0"
+      }
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Code Candidates Reviewed",
+        "value": "6"
+      }
+    },
+    "stat_ci_hardening": {
+      "type": "Stat",
+      "props": {
+        "label": "CI-Hardening Reviewed",
+        "value": "72"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_overview": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_overview",
+        "text_overview"
+      ]
+    },
+    "heading_overview": {
+      "type": "Heading",
+      "props": {
+        "text": "Audit Summary",
+        "level": "h2"
+      }
+    },
+    "text_overview": {
+      "type": "Text",
+      "props": {
+        "text": "Clean audit. All 6 code candidates are false-positives or defended-by-design.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_false_positives": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_fp",
+        "fp_list"
+      ]
+    },
+    "heading_fp": {
+      "type": "Heading",
+      "props": {
+        "text": "False-Positives & Defended-by-Design",
+        "level": "h3"
+      }
+    },
+    "fp_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fp1",
+        "fp2",
+        "fp3",
+        "fp4"
+      ]
+    },
+    "fp1": {
+      "type": "Text",
+      "props": {
+        "text": "• Identifier-restricted eval in browser Pyodide",
+        "variant": "body"
+      }
+    },
+    "fp2": {
+      "type": "Text",
+      "props": {
+        "text": "• Operator-env uv-installer",
+        "variant": "body"
+      }
+    },
+    "fp3": {
+      "type": "Text",
+      "props": {
+        "text": "• Loopback-only urllib",
+        "variant": "body"
+      }
+    },
+    "fp4": {
+      "type": "Text",
+      "props": {
+        "text": "• Hardcoded-loopback nginx proxy",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_fastapi": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_fastapi",
+        "text_fastapi",
+        "text_fastapi_config",
+        "fastapi_details"
+      ]
+    },
+    "heading_fastapi": {
+      "type": "Heading",
+      "props": {
+        "text": "FastAPI Path Confinement",
+        "level": "h3"
+      }
+    },
+    "text_fastapi": {
+      "type": "Text",
+      "props": {
+        "text": "Textbook-correct implementation: GEOLIBRE_CONVERSION_ROOTS path confinement with:",
+        "variant": "body"
+      }
+    },
+    "text_fastapi_config": {
+      "type": "Text",
+      "props": {
+        "text": "(GEOLIBRE_CONVERSION_ROOTS)",
+        "variant": "caption"
+      }
+    },
+    "fastapi_details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "detail1",
+        "detail2",
+        "detail3"
+      ]
+    },
+    "detail1": {
+      "type": "Text",
+      "props": {
+        "text": "• Resolve-before-check",
+        "variant": "caption"
+      }
+    },
+    "detail2": {
+      "type": "Text",
+      "props": {
+        "text": "• No existence oracle",
+        "variant": "caption"
+      }
+    },
+    "detail3": {
+      "type": "Text",
+      "props": {
+        "text": "• No TOCTOU",
+        "variant": "caption"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_deps": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_deps",
+        "text_deps1",
+        "text_deps2"
+      ]
+    },
+    "heading_deps": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency Advisories",
+        "level": "h3"
+      }
+    },
+    "text_deps1": {
+      "type": "Text",
+      "props": {
+        "text": "Found in JupyterLite browser-WASM sandbox: idna, nbconvert",
+        "variant": "body"
+      }
+    },
+    "text_deps2": {
+      "type": "Text",
+      "props": {
+        "text": "Already scoped by repo: Dependabot, npm-audit, pip-audit",
+        "variant": "caption"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_secrets": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_secrets",
+        "stat_secrets"
+      ]
+    },
+    "heading_secrets": {
+      "type": "Heading",
+      "props": {
+        "text": "Secret Scan (trufflehog)",
+        "level": "h3"
+      }
+    },
+    "stat_secrets": {
+      "type": "Stat",
+      "props": {
+        "label": "Verified Secrets",
+        "value": "0"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section_scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_scanners",
+        "scanners_badges"
+      ]
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "scanners_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_osv"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      }
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      }
+    }
+  }
+}
