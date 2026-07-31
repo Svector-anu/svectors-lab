@@ -21,10 +21,10 @@
     "notes": "clean audit — 3 candidates (2 GHA mutable-tag hardening in release.yml, 1 dynamic-urllib false-positive in whisper.py), 0 confirmed. Pure-stdlib Python (no deps → no osv hits), no verified secrets. Defensive subprocess handling: list-form, `--` separator, `-` prefix rejection, Path.resolve()"
   },
   {
-    "repo": "opengeos/GeoLibre",
-    "scanned_at": "2026-07-31T15:00:00Z",
+    "repo": "rainbow-me/rainbow",
+    "scanned_at": "2026-07-31T09:00:00Z",
     "findings": 0,
     "channel": "clean",
-    "notes": "clean audit — 6 code candidates + 72 GHA-hardening reviewed, 0 confirmed. All 6 FP/defended: eval() (identifier-restricted, browser Pyodide), 2x urllib + 1x subprocess in runtime.py (operator-env uv-installer, list-form), urllib notebook_client (loopback relay, XSS-escaped), nginx $host (comment; live dir=hardcoded 127.0.0.1). Path confinement (GEOLIBRE_CONVERSION_ROOTS) textbook-correct: resolve-before-check, 403-before-existence, canonical paths (no TOCTOU). trufflehog=0 verified. osv: idna@3.9.0+nbconvert@7.9.2 confined to jupyterlite/requirements.txt (browser WASM, low-impact) + ~66 crates.io Tauri/gtk-rs unmaintained-crate advisories (desktop-only); backend uv.lock current (nbconvert 7.17.1). Repo already runs Dependabot+npm-audit+pip-audit. No channel: fork 403, no PVR, no SECURITY.md"
+    "notes": "clean code audit — semgrep 0 findings (2510 files, src/), trufflehog 0 verified secrets (fs + git history). osv: 313 vuln rows / 83 pkgs (17 CRIT, 151 HIGH) but ALL public CVEs and transitive-only (secp256k1/pbkdf2/elliptic/sha.js/cipher-base none direct); repo runs Dependabot; fork 403 blocked public PR. No PVR/SECURITY.md but nothing to disclose. TS React Native wallet, 4378 stars"
   }
 ]

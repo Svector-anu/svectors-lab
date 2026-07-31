@@ -1,0 +1,135 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — rainbow-me/rainbow"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-audit",
+        "stat-semgrep",
+        "stat-secrets",
+        "stat-cves",
+        "text-crypto",
+        "text-disclosure",
+        "separator-1",
+        "heading-status",
+        "stack-scanners"
+      ]
+    },
+    "heading-audit": {
+      "type": "Heading",
+      "props": {
+        "text": "Clean code audit",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "stat-semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep findings",
+        "value": "0",
+        "delta": "2,510 files"
+      },
+      "children": []
+    },
+    "stat-secrets": {
+      "type": "Stat",
+      "props": {
+        "label": "Verified secrets",
+        "value": "0",
+        "delta": "filesystem + git history"
+      },
+      "children": []
+    },
+    "stat-cves": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV dependency CVEs",
+        "value": "313",
+        "delta": "all public, transitive-only"
+      },
+      "children": []
+    },
+    "text-crypto": {
+      "type": "Text",
+      "props": {
+        "text": "Every crypto primitive — secp256k1, pbkdf2, elliptic, sha.js — is a transitive dependency, not directly bumpable.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "text-disclosure": {
+      "type": "Text",
+      "props": {
+        "text": "Repo already runs Dependabot. Nothing routes to a disclosure channel; the public-PR path is fork-403-blocked.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading-status": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stack-scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-semgrep",
+        "badge-trufflehog",
+        "badge-osv"
+      ]
+    },
+    "badge-semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge-trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge-osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      },
+      "children": []
+    }
+  }
+}
