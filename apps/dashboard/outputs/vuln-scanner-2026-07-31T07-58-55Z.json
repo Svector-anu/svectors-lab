@@ -1,0 +1,255 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — Veilo Privacy Program",
+        "description": "Complete security audit results"
+      },
+      "children": [
+        "heading_project",
+        "status_alert",
+        "intro_text",
+        "sep1",
+        "scope_heading",
+        "scope_text",
+        "candidates_text",
+        "sep2",
+        "invariants_heading",
+        "invariants_stack",
+        "sep3",
+        "technical_heading",
+        "technical_stack",
+        "sep4",
+        "observations_heading",
+        "observations_text",
+        "mev_text",
+        "sep5",
+        "scanners_heading",
+        "scanners_table",
+        "sep6",
+        "report_link"
+      ]
+    },
+    "heading_project": {
+      "type": "Heading",
+      "props": {
+        "text": "Veilo Privacy Program (Solana/Anchor)",
+        "level": "h2"
+      }
+    },
+    "status_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Clean Audit",
+        "message": "0 confirmed exploitable vulnerabilities across full-surface manual review",
+        "type": "success"
+      }
+    },
+    "intro_text": {
+      "type": "Text",
+      "props": {
+        "text": "Tornado-style ZK privacy pool (~14.5k LoC). Full-surface manual review vs repo's own AUDIT.md invariants — all held.",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scope_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Audit Scope",
+        "level": "h3"
+      }
+    },
+    "scope_text": {
+      "type": "Text",
+      "props": {
+        "text": "5 deep passes across multiple attack surfaces",
+        "variant": "body"
+      }
+    },
+    "candidates_text": {
+      "type": "Text",
+      "props": {
+        "text": "~10 candidates reviewed",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "invariants_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "AUDIT.md Invariants — All Verified",
+        "level": "h3"
+      }
+    },
+    "invariants_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "inv_groth16",
+        "inv_merkle",
+        "inv_account",
+        "inv_cpi"
+      ]
+    },
+    "inv_groth16": {
+      "type": "Badge",
+      "props": {
+        "text": "✓ Groth16 public-input binding",
+        "variant": "default"
+      }
+    },
+    "inv_merkle": {
+      "type": "Badge",
+      "props": {
+        "text": "✓ Merkle/nullifier double-spend prevention",
+        "variant": "default"
+      }
+    },
+    "inv_account": {
+      "type": "Badge",
+      "props": {
+        "text": "✓ Account/authority validation",
+        "variant": "default"
+      }
+    },
+    "inv_cpi": {
+      "type": "Badge",
+      "props": {
+        "text": "✓ Swap/positions/phoenix/perps/predictions CPI value-accounting",
+        "variant": "default"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "technical_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Technical Verification",
+        "level": "h3"
+      }
+    },
+    "technical_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tech_note_amounts",
+        "tech_note_nullifiers",
+        "tech_note_relayers"
+      ]
+    },
+    "tech_note_amounts": {
+      "type": "Text",
+      "props": {
+        "text": "Note amounts are bound to measured token flow + proof",
+        "variant": "body"
+      }
+    },
+    "tech_note_nullifiers": {
+      "type": "Text",
+      "props": {
+        "text": "Nullifiers use plain-init markers",
+        "variant": "body"
+      }
+    },
+    "tech_note_relayers": {
+      "type": "Text",
+      "props": {
+        "text": "Relayers whitelist-bound to ext_data",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "observations_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Documented Trust-Model Items",
+        "level": "h3"
+      }
+    },
+    "observations_text": {
+      "type": "Text",
+      "props": {
+        "text": "Observations are documented trust-model items or defense-in-depth suggestions defended by the circuit.",
+        "variant": "body"
+      }
+    },
+    "mev_text": {
+      "type": "Text",
+      "props": {
+        "text": "Example: swap_data not proof-bound = bounded relayer MEV (expected, documented)",
+        "variant": "caption"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanners_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Automated Scanner Results",
+        "level": "h3"
+      }
+    },
+    "scanners_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status",
+          "Details"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "✓ Ok",
+            "0 issues"
+          ],
+          [
+            "trufflehog",
+            "✓ Ok",
+            "0 verified secrets"
+          ],
+          [
+            "osv",
+            "✓ Ok",
+            "8 transitive/informational crate advisories (not routable)"
+          ]
+        ]
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {}
+    },
+    "report_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Vulnerability Scan Report",
+        "href": "output/articles/vuln-scan-2026-07-31-veilo-privacy-program.md",
+        "source": "Vuln Scanner"
+      }
+    }
+  }
+}

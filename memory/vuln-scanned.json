@@ -26,5 +26,12 @@
     "findings": 0,
     "channel": "clean",
     "notes": "clean code audit — semgrep 0 findings (2510 files, src/), trufflehog 0 verified secrets (fs + git history). osv: 313 vuln rows / 83 pkgs (17 CRIT, 151 HIGH) but ALL public CVEs and transitive-only (secp256k1/pbkdf2/elliptic/sha.js/cipher-base none direct); repo runs Dependabot; fork 403 blocked public PR. No PVR/SECURITY.md but nothing to disclose. TS React Native wallet, 4378 stars"
+  },
+  {
+    "repo": "VeiloSolana/privacy-program",
+    "scanned_at": "2026-07-31T10:30:00Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "clean audit — Tornado-style ZK privacy pool (Solana/Anchor, privacy_pool, ~14.5k LoC/10 modules). semgrep=0, trufflehog=0 verified (fs+git), osv=8 all transitive/informational Solana-SDK crate advisories (rand/keccak/bincode/borsh/libsecp256k1/paste/anyhow/derivative), no direct-dep bump. 5 manual deep-review passes vs AUDIT.md invariants: core proof binding (8 inputs all fed+require!-checked, ExtData::hash covers all routed fields), merkle/nullifier (init markers, is_known_root rejects root==0, unique/non-zero commitments), access-control (canonical ATA re-checks, has_one+Signer admin, relayer whitelist bound to ext_data.relayer, plain init no re-init), swap/positions (measured balance deltas, min_out enforced, swap_amount=proof input #10 zk.rs:298), phoenix/perps/predictions reissue (note amount bounded by measured token flow into vault, claimant Signer gate, no double-consume). ~10 candidates, 0 confirmed. Non-exploitable observations: swap_data not proof-bound (documented relayer MEV, bounded by user min_out), close_position lacks on-chain pos_pda.balance recheck (defended by circuit), refund-to-relayer semantics, max_slot_amount D-i-D erosion. SECURITY.md present (private channel, no email/PVR) but nothing to disclose."
   }
 ]
