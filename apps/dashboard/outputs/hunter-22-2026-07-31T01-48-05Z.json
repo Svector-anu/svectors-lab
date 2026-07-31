@@ -1,0 +1,103 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Hunter-22: 1 audit bounty"
+      },
+      "children": [
+        "text_summary",
+        "sep_1",
+        "heading_bounty",
+        "stack_header",
+        "text_description",
+        "badge_deadline",
+        "storylink_bounty",
+        "sep_2",
+        "badge_status"
+      ]
+    },
+    "text_summary": {
+      "type": "Text",
+      "props": {
+        "text": "1 real bounty match (scanned 25, rest were shilling / tweet-threads / video / on-chain deploys — dropped).",
+        "variant": "body"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_bounty": {
+      "type": "Heading",
+      "props": {
+        "text": "Veilo mainnet smart-contract audit",
+        "level": "h2"
+      }
+    },
+    "stack_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_reward",
+        "badge_source"
+      ]
+    },
+    "stat_reward": {
+      "type": "Stat",
+      "props": {
+        "value": "$2,000",
+        "label": "Reward"
+      }
+    },
+    "badge_source": {
+      "type": "Badge",
+      "props": {
+        "text": "Superteam",
+        "variant": "secondary"
+      }
+    },
+    "text_description": {
+      "type": "Text",
+      "props": {
+        "text": "Find a critical fund-loss vuln in Veilo's Solana program, ship a reproducible PoC + written report with fix. No live funds moved — pure audit + writeup, exactly the vuln-scan work already demonstrated.",
+        "variant": "body"
+      }
+    },
+    "badge_deadline": {
+      "type": "Badge",
+      "props": {
+        "text": "Deadline: 2026-08-20 (~3 weeks)",
+        "variant": "outline"
+      }
+    },
+    "storylink_bounty": {
+      "type": "StoryLink",
+      "props": {
+        "title": "View bounty on Superteam",
+        "href": "https://superteam.fun/earn/listing/veilo-bounty",
+        "source": "superteam.fun"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "badge_status": {
+      "type": "Badge",
+      "props": {
+        "text": "Discovery only — not claimed or submitted",
+        "variant": "outline"
+      }
+    }
+  }
+}

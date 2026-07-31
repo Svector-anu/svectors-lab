@@ -1,0 +1,11 @@
+✅ Hunter-22: 1 audit bounty
+
+**1 real bounty match** (scanned 25, rest were shilling / tweet-threads / video / on-chain deploys — dropped).
+
+**Veilo mainnet smart-contract audit** — $2,000 · Superteam
+Find a critical fund-loss vuln in Veilo's Solana program, ship a reproducible PoC + written report with fix. No live funds moved — pure audit + writeup, exactly the vuln-scan work already demonstrated. Deadline 2026-08-20 (~3 weeks).
+https://superteam.fun/earn/listing/veilo-bounty
+
+Discovery only — not claimed or submitted.
+
+🔗 https://superteam.fun/earn/listing/veilo-bounty
