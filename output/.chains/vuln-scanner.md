@@ -1,4 +1,4 @@
-⚠️ Vuln Scanner — alibaba/open-code-review
+ℹ️ Vuln Scanner — claude-video (clean)
 
-*Vuln Scanner — alibaba/open-code-review*
-1 confirmed finding (HIGH brace-expansion DoS CVE-2026-14257 on vscode extension yarn.lock; resolutions pin keeps 2.x). 26 Semgrep + 3 OSV candidates reviewed → 0 code vulns; 2 Go advisories dropped (not in call graph). Disclosed via: public PR blocked (fork 403; GH_GLOBAL unset). Scanners: semgrep=ok, trufflehog=ok, osv=ok.
+*Vuln Scanner — bradautomates/claude-video*
+Clean audit. 3 candidates reviewed, 0 confirmed. The /watch skill (yt-dlp+ffmpeg+Whisper, ~12.9k★) is defensively coded — list-form subprocess, `--` separators, `-` prefix rejection, path resolution. The 2 GHA mutable-tag hits are hardening nits; the whisper.py urllib hit is a false positive (hardcoded endpoint). Scanners: semgrep=ok, trufflehog=ok, osv=ok.

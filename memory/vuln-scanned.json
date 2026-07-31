@@ -12,5 +12,12 @@
     "findings": 1,
     "channel": "public-pr-blocked",
     "notes": "brace-expansion@2.1.2 HIGH CVE-2026-14257 via vscode yarn.lock/resolutions; Go x/net+x/text dropped (called:false); fork 403 blocked public PR"
+  },
+  {
+    "repo": "bradautomates/claude-video",
+    "scanned_at": "2026-07-31T01:29:00Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "clean audit — 3 candidates (2 GHA mutable-tag hardening in release.yml, 1 dynamic-urllib false-positive in whisper.py), 0 confirmed. Pure-stdlib Python (no deps → no osv hits), no verified secrets. Defensive subprocess handling: list-form, `--` separator, `-` prefix rejection, Path.resolve()"
   }
 ]

@@ -1,0 +1,250 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — bradautomates/claude-video"
+      },
+      "children": [
+        "status-row",
+        "separator1",
+        "metrics",
+        "separator2",
+        "watch-details",
+        "separator3",
+        "findings",
+        "separator4",
+        "scanners"
+      ]
+    },
+    "status-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "status-badge",
+        "status-text"
+      ]
+    },
+    "status-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Clean",
+        "variant": "default"
+      }
+    },
+    "status-text": {
+      "type": "Text",
+      "props": {
+        "text": "Clean audit",
+        "variant": "body"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "candidates-stat",
+        "confirmed-stat"
+      ]
+    },
+    "candidates-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates reviewed",
+        "value": "3"
+      }
+    },
+    "confirmed-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed vulnerabilities",
+        "value": "0"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "watch-details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "watch-heading",
+        "watch-stack",
+        "watch-practices"
+      ]
+    },
+    "watch-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "/watch skill",
+        "level": "h3"
+      }
+    },
+    "watch-stack": {
+      "type": "Text",
+      "props": {
+        "text": "yt-dlp + ffmpeg + Whisper (~12.9k★)",
+        "variant": "body"
+      }
+    },
+    "watch-practices": {
+      "type": "Text",
+      "props": {
+        "text": "Defensively coded: list-form subprocess, -- separators, - prefix rejection, path resolution",
+        "variant": "caption"
+      }
+    },
+    "separator3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "findings": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "findings-heading",
+        "gha-item",
+        "urllib-item"
+      ]
+    },
+    "findings-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Findings",
+        "level": "h3"
+      }
+    },
+    "gha-item": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "gha-badge",
+        "gha-desc"
+      ]
+    },
+    "gha-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "2 GHA mutable-tag hits",
+        "variant": "secondary"
+      }
+    },
+    "gha-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Hardening nits",
+        "variant": "caption"
+      }
+    },
+    "urllib-item": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "urllib-badge",
+        "urllib-desc"
+      ]
+    },
+    "urllib-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "whisper.py urllib hit",
+        "variant": "outline"
+      }
+    },
+    "urllib-desc": {
+      "type": "Text",
+      "props": {
+        "text": "False positive (hardcoded endpoint)",
+        "variant": "caption"
+      }
+    },
+    "separator4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners-heading",
+        "scanners-list"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      }
+    },
+    "scanners-list": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "semgrep-badge",
+        "trufflehog-badge",
+        "osv-badge"
+      ]
+    },
+    "semgrep-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      }
+    },
+    "trufflehog-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      }
+    },
+    "osv-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      }
+    }
+  }
+}
