@@ -4,7 +4,7 @@ title: Veilo bug-hunt playbook
 description: Confirmed-live Solana/Anchor security tool stack + step-by-step vulnerability workflow for auditing VeiloSolana/privacy-program (Superteam Earn bounty, $2,000 USDC, fund-loss criticals only).
 tags: [security, solana, anchor, veilo, bug-bounty, fuzzing, formal-verification]
 resource: https://superteam.fun/earn/listing/veilo-bounty
-timestamp: 2026-07-31T13:35:03Z
+timestamp: 2026-08-08T07:30:00Z
 ---
 
 # Veilo bug-hunt playbook
@@ -54,3 +54,63 @@ Ordered roughly highest-frequency → highest-severity for Anchor programs gener
 
 - Don't treat multiple LLM/agent passes agreeing as independent confirmation — shared training data means shared blind spots (see [[project_ai-audit-methodology-2026]] for the documented 5-agent false-consensus failure). A genuinely different technique (Trident's fuzzing, Certora's formal proofs) adds real confidence; another LLM re-reading the same code does not.
 - A scanner's headline detection-rate stat is meaningless without the true base rate — read tool output as leads to manually verify, not as confirmed findings, especially from regex-based tools like `solsec`.
+
+## Trident fuzzing run (2026-08-08) — a hard scoping ceiling, not a tooling gap
+
+Ran the step-1-priority tool end to end: full local toolchain (rustup, Solana CLI
+2.3.0, Anchor 0.32.1 via avm, Trident CLI **0.12.0** — newer than the 0.11.1
+verified above, current API is a hand-written `#[flow_executor]`/`#[flow]`
+harness over an in-process SVM, not the enum-based `fuzz_instructions.rs` shape
+older Trident docs/examples describe), program built clean, harness written
+and run: 1000 iterations × ~100 flow calls, **0 panics, 0 invariant failures**.
+
+**The result that actually matters:** every fund-moving instruction (`transact`,
+the phoenix/jperp/prediction reissue paths, positions, swap, `ephemeral_*`) is
+gated by `verify_transaction_groth16()` *before* any state mutation runs. Per
+AUDIT.md, the Circom circuits / proving key / trusted-setup transcript are
+intentionally excluded from this repo — so no valid proof can be forged
+locally, and a fuzzer (Trident or otherwise) cannot get past that gate to
+reach the nullifier-marking / merkle-insertion / fund-movement logic. That is
+**exactly the surface step 6 above flags as fuzzing's highest-value target**.
+This isn't a harness-writing shortfall — it's a hard ceiling specific to this
+target's threat model (same blind spot AUDIT.md already names for on-chain-only
+review of value-conservation bugs, now confirmed to extend to fuzzing too).
+
+What Trident *could* reach and did fuzz: the non-proof-gated admin/setup
+surface (`initialize_global_config`, `initialize`, `add_merkle_tree`,
+`add_relayer`, `remove_relayer`, `update_pool_config`) via a hand-written
+harness (not Trident's auto-generated skeleton) that tracks ground truth
+per-iteration (a known "real admin" vs. an "attacker" key) and asserts the
+expected outcome on every call — an authority check silently passing for the
+attacker key panics immediately, which Trident reports as a crash. ~100k
+instruction invocations, 0 assertion failures — confirms AUDIT.md's stated
+admin-authority invariants hold under adversarial sequencing on that surface,
+but this was already the best-covered ground from the 2026-07-31 manual passes.
+
+**Where this leaves the bounty search:** Trident is now a dead end for this
+target until circuit artifacts surface (ask the team directly, or check if a
+testnet/devnet deployment leaks a usable proving key). Certora Prover
+(priority 2) has the same problem in reverse — formal specs over the on-chain
+verifier logic don't need a valid proof to *write*, only to trigger; a CVL
+spec on `groth16.rs`'s pairing-check wiring and the pre-proof `require!` chain
+is the more promising next step, not more fuzzing.
+
+**Reusable toolchain notes for any future Anchor-program fuzz setup:**
+- Host rustc newer than what a repo was built against can promote
+  `deref_nullptr` to a hard error on any `ptr::addr_of!((*ptr::null::<T>())...)`
+  offset-computation idiom (common in older zero-copy layout tests) —
+  breaks anchor build's local IDL-generation step specifically, not the
+  on-chain logic. Fix: rewrite to `core::mem::offset_of!` (stable since 1.77),
+  local-build-only, don't touch audited semantics.
+- `trident fuzz run <target>` must be invoked from inside the `trident-tests/`
+  directory — its root-discovery walks up from CWD looking for `Trident.toml`,
+  never down into subdirectories.
+- `trident init` can hang or dyld-crash on rustfmt if `~/.rustup` already has a
+  partially-installed nightly toolchain from an earlier interrupted run —
+  `rustup toolchain uninstall nightly && rustup toolchain install nightly -c rustfmt`
+  fixes it.
+- TridentSVM's `process_transaction` builds transactions via
+  `Transaction::new_with_payer` with **no signature step** — it doesn't verify
+  real ed25519 signatures, just the `is_signer` AccountMeta flag. Signer
+  fields only need a `Pubkey`, never a `Keypair` — simplifies harness-writing
+  substantially versus a real validator/localnet setup.
