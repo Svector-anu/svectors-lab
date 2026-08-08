@@ -4,7 +4,7 @@ title: Veilo bug-hunt playbook
 description: Confirmed-live Solana/Anchor security tool stack + step-by-step vulnerability workflow for auditing VeiloSolana/privacy-program (Superteam Earn bounty, $2,000 USDC, fund-loss criticals only).
 tags: [security, solana, anchor, veilo, bug-bounty, fuzzing, formal-verification]
 resource: https://superteam.fun/earn/listing/veilo-bounty
-timestamp: 2026-08-08T07:30:00Z
+timestamp: 2026-08-08T09:05:00Z
 ---
 
 # Veilo bug-hunt playbook
@@ -94,6 +94,111 @@ testnet/devnet deployment leaks a usable proving key). Certora Prover
 verifier logic don't need a valid proof to *write*, only to trigger; a CVL
 spec on `groth16.rs`'s pairing-check wiring and the pre-proof `require!` chain
 is the more promising next step, not more fuzzing.
+
+## Second manual pass (2026-08-08) — CPI target validation + position lifecycle, still 0 confirmed
+
+Targeted follow-up per step 2 (CPI target validation) across areas not
+individually named in the 2026-07-31 scan's notes:
+
+- **`predictions.rs` (full file)** — ephemeral-wallet funding is paid from the
+  relayer's own balance (capped at `PREDICTION_EPHEMERAL_SOL_FUNDING`), not the
+  vault; reissue's "no profit cap" is intentional and bounded by a measured
+  `ephemeral_ata_data.amount >= gross_outflow` check, not a trust assumption. Clean.
+- **`swap.rs`** — `swap_program` checked against a hardcoded allowlist
+  (Raydium CPMM/AMM, Jupiter) before every `invoke_signed`. No arbitrary-CPI path.
+- **`perps.rs`** — `JUPITER_PERP_PROGRAM_ID` is a compile-time constant baked
+  directly into the `Instruction`, not sourced from a caller-supplied account —
+  stronger than an allowlist check, immune to substitution.
+- **`close_position`** — the balance check is `swap_amount <= pos_pda.balance`
+  (not `==`), and the position is unconditionally closed after. A partial
+  close silently strands the difference in the shared vault with no PDA left
+  to claim it. Not exploitable: `claimant` must sign (real `Signer`), so only
+  the position's own owner can trigger it, and `vault_record.total_balance`
+  (the only field this desyncs) is write-only — never read as an
+  authorization or withdrawal cap anywhere in the program. Self-inflicted at
+  worst. **Correction (see the 2026-08-08 git-diff pass below): this
+  `<=` check is not a residual gap I found — it's the Veilo team's own
+  2026-08-06 hardening commit, landed the day before this pass, replacing a
+  prior state that had *no* on-chain balance check at all ("the only thing
+  stopping one position from drawing on another's share of the vault was
+  circuit soundness" — their commit message). It closed a real gap; what
+  remains (self-only stranding, unread bookkeeping field) is genuinely inert.**
+- **`merge_positions`** — enforces `merged_amount == pos0.balance + pos1.balance`
+  (strict equality, not `<=`) and requires the same signer to own both closed
+  positions via Anchor's `has_one` constraint. Clean.
+- **`phoenix.rs` conditional-order paths** (`phoenix_create_conditional_orders_account`,
+  `phoenix_place_position_conditional_order`, `phoenix_place_limit_order_with_conditionals`,
+  `phoenix_cancel_conditional_order`, `phoenix_transfer_collateral`) — every one
+  requires `claimant_signer.key() == claimant` (a real Signer) before it will
+  drive that claimant's `phoenix_executor` PDA, so a relayer can never act on
+  a victim's Phoenix position without the victim's own cosignature. Verified
+  all 14 `remaining_accounts`-consuming functions in the file check
+  `remaining[0] == PHOENIX_PROGRAM_ID` — no sibling function skips it (ruled
+  out a copy-paste omission).
+- **Unresolved, out-of-repo-scope observation:** beyond `remaining[0]`
+  (the program ID) and whichever accounts are independently re-derived by
+  seeds (e.g. `executor`), Veilo does not itself constrain most
+  `remaining_accounts` slots (e.g. `dstTraderAccount` in
+  `phoenix_transfer_collateral`) to any expected PDA — it forwards them
+  positionally and relies entirely on Phoenix Eternal's own account
+  validation to reject a wrong destination. This is a uniform pattern across
+  every phoenix.rs CPI function, not a one-off gap, so it reads as a
+  deliberate trust boundary rather than an oversight — but it's genuinely
+  **contingent on Phoenix's own source**, which is out of this repo (same
+  shape as the circuit-soundness caveat in AUDIT.md). Worth a look only if a
+  future reviewer has Phoenix Eternal's IDL/source to check whether its
+  `transferCollateral` (and similar) handlers actually derive `dstTraderAccount`
+  from the signing `traderWallet`, or accept it as freely caller-supplied.
+- `.unwrap()`-on-attacker-adjacent-data audit: `phoenix.rs:580/1023`,
+  `positions.rs:1936` can panic on malformed relayer-supplied instruction
+  bytes — reverts the tx atomically, no funds move, self-griefing only
+  (the relayer supplies that data themselves). DoS-flavored, not fund-loss.
+
+## Git-diff pass + Aeon's sanctioned scanner stack, fresh on current HEAD (2026-08-08)
+
+The prior two passes above audited a point-in-time snapshot without ever
+checking whether the snapshot was still current. It wasn't: the clone used
+for this pass landed on `b9fee396` (2026-08-06) — **3 commits past** the
+`e1b3bd0` AUDIT.md calls its last-reviewed source and past the 2026-07-31
+scan. `gh api repos/VeiloSolana/privacy-program/compare/e1b3bd0...b9fee396`
+(a plain git diff, not a scanner) is what surfaced this — worth running
+**first**, before any tool, on every repeat visit to a target: a scanner
+only tells you about the code it's pointed at, never whether that code is
+stale.
+
+The 3 commits:
+1. `1b17ad43` — AUDIT.md/README/SECURITY.md docs only: corrected an inverted
+   claim about nullifiers, disclosed the upgrade-authority-has-no-timelock
+   and Jupiter-swap-route-not-proof-bound caveats explicitly. No code change.
+2. `8decb20c` — **the fix** referenced in the `close_position` correction
+   above. Also switched `position_vault_record.total_balance` from
+   `saturating_sub` to `checked_sub` in both `close_position` and
+   `close_position_to_sol` (an over-spend now errors instead of silently
+   clamping to zero — closes a separate, smaller silent-desync path).
+3. `b9fee396` — trivial: cross-margin trader `max_positions` 128→8 (rent
+   optimization only).
+
+Then ran Aeon's actual `vuln-scanner` Arm A tools (not generic `cargo-audit`/
+`cargo install` improvisation — those aren't in this project's sanctioned
+stack; see `scripts/prefetch-vuln-scanner.sh`) fresh against the current
+HEAD, staged the same way the skill's prefetch script does:
+- **osv-scanner v2.5.0** — identical 8 transitive/informational RustSec
+  advisories to 2026-07-31 (unmaintained-crate warnings: `rand`, `keccak`,
+  `bincode`, `borsh`, `libsecp256k1`, `paste`, `anyhow`, `derivative`). No
+  new direct-dependency finding; nothing the 3 new commits touched shows up
+  here (they didn't touch `Cargo.lock`).
+- **semgrep** (`p/security-audit` + `p/owasp-top-ten` + `p/secrets`, same
+  flags as `skills/vuln-scanner/SKILL.md` A3) — 0 findings.
+- **trufflehog** (filesystem + git history, history deepened to 235 commits
+  via `git fetch --deepen=200` to roughly match the skill's own
+  `--depth 200` fork) — 0 verified secrets, 4713 chunks scanned.
+
+**Takeaway for the next visit to this target:** run the compare-since-last-scan
+check before anything else — `memory/vuln-scanned.json`'s `scanned_at` plus
+this repo's current default-branch SHA is enough to know whether a scan is
+against stale code. A future finding here is far more likely to come from
+a newly-landed commit than from re-deriving what 3 tool categories and
+7 manual/fuzz passes have already converged on as clean.
 
 **Reusable toolchain notes for any future Anchor-program fuzz setup:**
 - Host rustc newer than what a repo was built against can promote
