@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T15:40:38.024493Z",
+  "generatedAt": "2026-08-08T13:13:45.846218Z",
   "generator": "eyebrow/0.4.1",
   "artifacts": [
     {
@@ -849,6 +849,26 @@
       ],
       "contentHash": "sha256-74c3c5e5c0816ea2274dd2b0f94cf3c219536f565eff0db99f1607c22677d4ab",
       "discoveredFrom": "AGENTS.md"
+    },
+    {
+      "id": "64f9d4dd69a15346",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "hunter-22",
+      "source": {
+        "kind": "local",
+        "ref": "skills/hunter-22"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "6a878c97d9d6aa91622692bd5ccb0ac8eaca830d649f378f1f9516f07c68578a"
+        }
+      ],
+      "contentHash": "sha256-455c9de849299360e3ec1bb1f29305c240367e946c74b0c551f1f335927cfa5b",
+      "discoveredFrom": "skills/hunter-22/SKILL.md"
     },
     {
       "id": "69bc195d40b1d6e7",

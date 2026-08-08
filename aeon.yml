@@ -125,6 +125,10 @@ skills:
   write-tweet: { enabled: false, schedule: "0 21 * * *", var: "" } # tweet studio. var: empty=drafts (10×5 tiers) | thread [topic] | remix [window]. Optional XAI_API_KEY (required for remix).
   bd-radar: { enabled: false, schedule: "20 7 * * *", var: "" } # daily 07:20 — BD radar: who's building/forking/integrating/mentioning your products → ranked leads. Products from memory/products.md. Quiet unless high-intent.
 
+  # --- Ported from derivative instances (2026-08-08) ---
+  # Security (pairs with vuln-scanner)
+  hunter-22: { enabled: false, schedule: "0 10 * * *", var: "" } # daily bounty scan against ClawHunter's free discovery API (docs/ClawHunter-API.md) — capability-matched, triaged for real work vs content-farming, dedup'd against memory/topics/hunter-22-seen.json. Discovery only, no wallet, never claims/submits; audit-shaped matches with a linked GitHub repo get a one-tap "run vuln-scanner on it" button in the notification.
+
   # Product / ops (config: memory/products.md)
 
   # Self-maintenance / meta
