@@ -178,6 +178,65 @@ This is the core of the scan arm. Pick the channel by finding type:
 | **Smart-contract issue** (Slither high/medium) | **PVR** | On-chain exploitation is often immediate and irreversible |
 | **No PVR enabled AND no SECURITY.md** | **Private issue** to maintainer if possible, else skip and log | No safe channel = do no harm |
 
+#### Prior-art check — run before filing anything public
+
+Before A5a's PR, or the hardening-class public-PR discretion mentioned at the
+end of A5b, check whether the target repo already has an open or recently
+closed PR/issue for this exact bug. Skip this before PVR (private, 1:1 with
+the maintainer — lower stakes) but never before something public: a scanner
+finding the same bug someone already reported and filing a second one wastes
+the maintainer's time and reads as noise, not help.
+
+This is cheap — one `gh search` call, not optional busywork:
+
+```bash
+REPO="owner/repo"
+KEYWORD="exact_function_or_symbol_name"   # or "<package> <CVE-ID>" for a dependency finding
+# no --state flag: omitting it searches open + closed + merged together
+# (--state only accepts a single value, not "all")
+gh search issues --repo "$REPO" --include-prs --limit 15 --sort updated \
+  --json number,title,state,url,updatedAt -- "$KEYWORD"
+```
+
+Prefer the exact function/symbol name as the keyword — highest precision.
+Fall back to a short paraphrase only if that returns nothing.
+
+**Judge, don't just count hits.** For each plausible candidate, read it
+(`gh pr view`/`gh issue view --json body,files`) and confirm same file + same
+root cause + same fix direction before treating it as a match — a hit on the
+same file for an unrelated bug isn't a duplicate.
+
+Decision tree:
+- **No plausible match** → proceed to file normally.
+- **Match is open** → don't open a second one. Comment on the existing thread
+  only if you have something to add (e.g. a cleaner repro); otherwise just log
+  it. Record `channel: "duplicate-skipped"` in `memory/vuln-scanned.json` with
+  the matched URL.
+- **Match is merged** → check whether the fix is already in the HEAD you
+  audited (diff the function against the merged fix). If yes, this was never a
+  live finding — drop it, log `channel: "already-fixed"`.
+- **Match is closed-unfixed** (wontfix/stale) → don't assume it's covered;
+  use judgment on whether a fresh PR referencing the old one is still
+  warranted.
+
+#### Verification block — required in any public PR/issue body
+
+For any public filing that isn't a pure already-published-CVE lockfile bump
+(A5a's CVE/Advisory/Severity/Package fields already cover that narrower case),
+include this section so a maintainer can confirm the finding in under a
+minute instead of re-deriving it:
+
+```markdown
+### Verification
+- Reproduced locally: yes/no
+- Command: `<exact command run>`
+- Before: `<behavior/output before the fix>`
+- After: `<behavior/output after the fix>`
+- Environment: `<relevant tool/lib versions>`
+```
+
+No AI-authorship line, no branding — functional only.
+
 #### A5a. Public PR (dependency CVEs only)
 
 ```bash
@@ -201,9 +260,6 @@ Automated dependency bump to address a disclosed CVE.
 - **Package:** \`<name>\` → \`<fixed-version>\`
 
 Detected by [osv-scanner](https://google.github.io/osv-scanner/). No code changes outside the lockfile/manifest.
-
----
-Filed by [Aeon](https://github.com/aeonframework/aeon).
 EOF
 )"
 ```
@@ -332,8 +388,10 @@ git push -u origin HEAD
 Append to `memory/vuln-scanned.json` (create if missing) so future runs skip this repo for 30 days:
 
 ```json
-{"repo": "owner/repo", "scanned_at": "2026-04-20T16:00:00Z", "findings": <N>, "channel": "pvr|public-pr|skipped"}
+{"repo": "owner/repo", "scanned_at": "2026-04-20T16:00:00Z", "findings": <N>, "channel": "pvr|public-pr|skipped|duplicate-skipped|already-fixed"}
 ```
+
+`duplicate-skipped` and `already-fixed` come from the prior-art check above — a finding that turned out to already be reported or already fixed still counts as a real audit pass, just note the matched URL in `notes`.
 
 ### A7. Write local report
 
@@ -678,6 +736,7 @@ specific bullets.
 - Target: owner/repo (stars, language)
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
+- Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
 - Scanner status: semgrep=ok trufflehog=ok osv=ok
 - Advisory/PR links: [...]
 ```
@@ -740,6 +799,7 @@ General sandbox rules: use **WebFetch** as a fallback for any plain URL fetch. F
 
 **Scan (Arm A):**
 - **Do no harm.** If you can't route a finding through a safe channel, don't publish it.
+- **Check prior art before filing anything public.** A scanner can independently rediscover a bug someone already reported — filing a second PR/issue for it wastes the maintainer's time and reads as noise, not help. Mandatory before A5a and the hardening-class public-PR discretion, see the "Prior-art check" step under A5.
 - **One report per repo per run.** Bundle related findings.
 - **Read the code.** A scanner hit alone is not a vulnerability.
 - **Skip intentionally vulnerable repos** (teaching tools, CTFs).
