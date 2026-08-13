@@ -3,11 +3,13 @@ type: Reference
 repo: genspark-ai/genoffice
 severity: low
 cwe: CWE-22
-status: pending-operator-send
+status: submitted
 auto_send: false
 human_only: true
 channel: github-pvr-form
 pvr_form_url: https://github.com/genspark-ai/genoffice/security/advisories/new
+ghsa_id: GHSA-23q3-cxcv-ccc9
+submitted_at: 2026-08-13T00:00:00Z
 detected_at: 2026-08-13T00:00:00Z
 ---
 
