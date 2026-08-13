@@ -1,0 +1,303 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — genspark-ai/genoffice",
+        "description": "1 confirmed finding (low, defense-in-depth) — needs operator action to disclose"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "repo-info",
+        "sep-1",
+        "finding-section",
+        "sep-2",
+        "audit-section",
+        "sep-3",
+        "disclosure-section",
+        "sep-4",
+        "scanners-section",
+        "sep-5",
+        "links-section"
+      ]
+    },
+    "repo-info": {
+      "type": "Text",
+      "props": {
+        "text": "genspark-ai/genoffice (~2748★, commit dc4d7e5) — Electron AI office suite",
+        "variant": "caption"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "finding-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "finding-badges",
+        "finding-heading",
+        "finding-details"
+      ]
+    },
+    "finding-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-low",
+        "badge-defense"
+      ]
+    },
+    "badge-low": {
+      "type": "Badge",
+      "props": {
+        "text": "Low severity",
+        "variant": "secondary"
+      }
+    },
+    "badge-defense": {
+      "type": "Badge",
+      "props": {
+        "text": "Defense-in-depth",
+        "variant": "outline"
+      }
+    },
+    "finding-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Path Traversal in docs:save-new IPC Handler",
+        "level": "h3"
+      }
+    },
+    "finding-details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "file-path",
+        "vuln-desc",
+        "impact-text",
+        "handler-note",
+        "risk-context"
+      ]
+    },
+    "file-path": {
+      "type": "Text",
+      "props": {
+        "text": "File: apps/docs/src/main/docs-main.ts",
+        "variant": "caption"
+      }
+    },
+    "vuln-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Joins a renderer-supplied filename into the default save dir with no .. or containment check on the silent first-save path.",
+        "variant": "body"
+      }
+    },
+    "impact-text": {
+      "type": "Text",
+      "props": {
+        "text": "Impact: Arbitrary-path, arbitrary-content write",
+        "variant": "lead"
+      }
+    },
+    "handler-note": {
+      "type": "Text",
+      "props": {
+        "text": "Sibling handlers (docs:save-as, slides) already validate — this one is the outlier.",
+        "variant": "body"
+      }
+    },
+    "risk-context": {
+      "type": "Text",
+      "props": {
+        "text": "Not reachable from documents or the AI agent (current renderer callers all sanitize). Requires prior renderer-compromise, which the app's own sandbox model exists to contain. Framed as hardening/consistency fix.",
+        "variant": "body"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "audit-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "audit-heading",
+        "audit-summary"
+      ]
+    },
+    "audit-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Audit Results",
+        "level": "h4"
+      }
+    },
+    "audit-summary": {
+      "type": "Text",
+      "props": {
+        "text": "Clean on the rest: AI layout-script sandbox holds, Electron hardening (contextIsolation/sandbox/IPC) verifies, SSRF guard solid, auto-updater signature-enforced, OOXML parsing (fast-xml-parser) has no XXE/zip-slip/proto-pollution.",
+        "variant": "body"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "disclosure-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "disclosure-heading",
+        "disclosure-alert",
+        "draft-link"
+      ]
+    },
+    "disclosure-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Disclosure Status",
+        "level": "h4"
+      }
+    },
+    "disclosure-alert": {
+      "type": "Alert",
+      "props": {
+        "type": "error",
+        "title": "PVR Access Issue",
+        "message": "Fine-grained token got 403 on POST /security-advisories/reports (same 403 blocked the fork). Report is staged for operator to paste into the PVR form."
+      }
+    },
+    "draft-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Draft Report — genspark-ai-genoffice-2026-08-13.md",
+        "href": "memory/pending-disclosures/genspark-ai-genoffice-2026-08-13.md",
+        "source": "Staged for disclosure"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "scanners-heading",
+        "scanners-table"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h4"
+      }
+    },
+    "scanners-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status",
+          "Results"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok",
+            "0 findings"
+          ],
+          [
+            "trufflehog",
+            "ok",
+            "0 findings"
+          ],
+          [
+            "osv",
+            "fail",
+            "binary not staged"
+          ],
+          [
+            "slither",
+            "n/a",
+            "not applicable"
+          ]
+        ]
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "links-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pvr-link",
+        "report-link"
+      ]
+    },
+    "pvr-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "GitHub Security Advisory Form",
+        "href": "https://github.com/genspark-ai/genoffice/security/advisories/new",
+        "source": "GitHub"
+      }
+    },
+    "report-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Audit Report — vuln-scan-2026-08-13.md",
+        "href": "output/articles/vuln-scan-2026-08-13.md",
+        "source": "Artifact"
+      }
+    }
+  }
+}

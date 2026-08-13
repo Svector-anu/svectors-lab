@@ -1,5 +1,3 @@
-⚠️ Vuln Scanner — genoffice (operator action)
-
 *Vuln Scanner — genspark-ai/genoffice*
 
 1 confirmed finding (low, defense-in-depth) — needs operator action to disclose.
@@ -13,5 +11,3 @@ https://github.com/genspark-ai/genoffice/security/advisories/new
 Draft: memory/pending-disclosures/genspark-ai-genoffice-2026-08-13.md
 
 Scanners: semgrep=ok (0), trufflehog=ok (0), osv=fail (binary not staged), slither=n/a. Report: output/articles/vuln-scan-2026-08-13.md
-
-🔗 https://github.com/genspark-ai/genoffice/security/advisories/new

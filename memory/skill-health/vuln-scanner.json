@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-07-31T07:58:55Z",
-  "quality_score": 5,
-  "assessment": "Excellent — comprehensive vulnerability audit with technical depth, clear verdict, specific code references, proper documentation, and alignment with project strategy",
+  "last_analyzed": "2026-08-13T03:51:04Z",
+  "quality_score": 4,
+  "assessment": "Complete vulnerability scan with specific finding, honest triaging, proper disclosure workflow, and clear follow-ups.",
   "flags": [],
-  "avg_score": 4.2,
+  "avg_score": 4.17,
   "history": [
     {
       "date": "2026-07-28",
@@ -25,6 +25,10 @@
     {
       "date": "2026-07-31",
       "score": 5
+    },
+    {
+      "date": "2026-08-13",
+      "score": 4
     }
   ]
 }
