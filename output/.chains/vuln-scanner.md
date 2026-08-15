@@ -1,17 +1,19 @@
-⚠️ Vuln Scanner — genoffice (operator action)
+⚠️ Vuln Scanner — watermarks-remover (operator action)
 
-*Vuln Scanner — genspark-ai/genoffice*
+*Vuln Scanner — guillaumemeyer/watermarks-remover*
 
-1 confirmed finding (low, defense-in-depth) — needs operator action to disclose.
+1 confirmed finding (medium) — needs operator action to disclose.
 
-Audited the genoffice Electron AI office suite (~2748★, commit dc4d7e5). Path traversal in the `docs:save-new` IPC handler: `apps/docs/src/main/docs-main.ts` joins a renderer-supplied filename into the default save dir with no `..`/containment check, on the *silent* first-save path — an arbitrary-path, arbitrary-content write. Sibling handlers (`docs:save-as`, slides) already validate; this one is the outlier. Not reachable from documents or the AI agent (current renderer callers all sanitize) — it needs a prior renderer-compromise, which the app's own sandbox model exists to contain. So: low severity, framed as a hardening/consistency fix.
+Audited the watermarks-remover website-audit tool (Python, 8.7k★, commit 92f38b1). XML entity-expansion ("billion laughs") DoS in `service/scripts/audit_website.py:72`: `parse_sitemap` feeds a remote, attacker-controlled sitemap straight into `xml.etree.ElementTree.fromstring`, which expands internal DTD entities. A <1KB hostile sitemap inflates to gigabytes in memory → host DoS. Verified locally: 388 bytes → 3 MB (~7,700×) at just 7 entity levels; more levels go exponential. The 4 MB fetch cap is on input bytes, so it does nothing post-parse. This is the tool's core use case — auditing arbitrary untrusted sites — so the sitemap is fully attacker-controlled.
 
-Clean on the rest: AI layout-script sandbox holds, Electron hardening (contextIsolation/sandbox/IPC) verifies, SSRF guard solid, auto-updater signature-enforced, OOXML parsing (fast-xml-parser) has no XXE/zip-slip/proto-pollution.
+Not XXE (etree doesn't fetch external entities), and not a duplicate: PR #49 hardened this same file against SSRF and gzip bombs but missed the XML bomb on the same parser. Fix is stdlib-only — reject DOCTYPE/entity declarations before parsing (sitemaps have none), or use defusedxml.
 
-Disclosure: PVR is enabled on the repo, but our fine-grained token got 403 on `POST /security-advisories/reports` (same 403 blocked the fork). Report is staged for you to paste into the PVR form:
-https://github.com/genspark-ai/genoffice/security/advisories/new
-Draft: memory/pending-disclosures/genspark-ai-genoffice-2026-08-13.md
+Clean elsewhere: server.py path handling is well-contained, container_meta.py has a zip-bomb budget guard, 0 verified secrets. osv flagged 264 rows but all are optional ML-harness deps (Dependabot already on it) — no dep PR.
 
-Scanners: semgrep=ok (0), trufflehog=ok (0), osv=fail (binary not staged), slither=n/a. Report: output/articles/vuln-scan-2026-08-13.md
+Disclosure: PVR is enabled on the repo, but our fine-grained token got 403 on `POST /security-advisories/reports` (same token limit as the genoffice run). Report staged for you to paste into the PVR form:
+https://github.com/guillaumemeyer/watermarks-remover/security/advisories/new
+Draft: memory/pending-disclosures/guillaumemeyer-watermarks-remover-2026-08-15.md
 
-🔗 https://github.com/genspark-ai/genoffice/security/advisories/new
+Scanners: semgrep=ok, trufflehog=ok, osv=ok, slither=n/a. Report: output/articles/vuln-scan-2026-08-15.md
+
+🔗 https://github.com/guillaumemeyer/watermarks-remover/security/advisories/new
