@@ -1,0 +1,280 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — watermarks-remover",
+        "description": "1 confirmed finding (medium) — needs operator action to disclose"
+      },
+      "children": [
+        "repo-info",
+        "sep1",
+        "vuln-section",
+        "sep2",
+        "other-section",
+        "sep3",
+        "disclosure-section",
+        "sep4",
+        "scanners-section",
+        "sep5",
+        "links-section"
+      ]
+    },
+    "repo-info": {
+      "type": "Text",
+      "props": {
+        "text": "guillaumemeyer/watermarks-remover",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "vuln-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "vuln-h2",
+        "vuln-meta",
+        "vuln-p1",
+        "vuln-p2",
+        "vuln-p3",
+        "vuln-fix"
+      ]
+    },
+    "vuln-h2": {
+      "type": "Heading",
+      "props": {
+        "text": "XML Entity-Expansion DoS",
+        "level": "h2"
+      }
+    },
+    "vuln-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "severity-badge",
+        "tool-stat"
+      ]
+    },
+    "severity-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "medium",
+        "variant": "destructive"
+      }
+    },
+    "tool-stat": {
+      "type": "Text",
+      "props": {
+        "text": "watermarks-remover website-audit tool (Python, 8.7k★, commit 92f38b1)"
+      }
+    },
+    "vuln-p1": {
+      "type": "Text",
+      "props": {
+        "text": "\"Billion laughs\" DoS in service/scripts/audit_website.py:72 — parse_sitemap feeds a remote, attacker-controlled sitemap straight into xml.etree.ElementTree.fromstring, which expands internal DTD entities. A <1KB hostile sitemap inflates to gigabytes in memory → host DoS."
+      }
+    },
+    "vuln-p2": {
+      "type": "Text",
+      "props": {
+        "text": "Verified locally: 388 bytes → 3 MB (~7,700×) at just 7 entity levels; more levels go exponential. The 4 MB fetch cap is on input bytes, so it does nothing post-parse. This is the tool's core use case — auditing arbitrary untrusted sites — so the sitemap is fully attacker-controlled."
+      }
+    },
+    "vuln-p3": {
+      "type": "Text",
+      "props": {
+        "text": "Not XXE (etree doesn't fetch external entities), and not a duplicate: PR #49 hardened this same file against SSRF and gzip bombs but missed the XML bomb on the same parser."
+      }
+    },
+    "vuln-fix": {
+      "type": "Text",
+      "props": {
+        "text": "Fix is stdlib-only — reject DOCTYPE/entity declarations before parsing (sitemaps have none), or use defusedxml."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "other-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "other-h2",
+        "other-p1",
+        "other-p2",
+        "other-p3"
+      ]
+    },
+    "other-h2": {
+      "type": "Heading",
+      "props": {
+        "text": "Other Findings",
+        "level": "h2"
+      }
+    },
+    "other-p1": {
+      "type": "Text",
+      "props": {
+        "text": "Clean elsewhere: server.py path handling is well-contained, container_meta.py has a zip-bomb budget guard, 0 verified secrets."
+      }
+    },
+    "other-p2": {
+      "type": "Text",
+      "props": {
+        "text": "osv flagged 264 rows but all are optional ML-harness deps (Dependabot already on it) — no dep PR."
+      }
+    },
+    "other-p3": {
+      "type": "Text",
+      "props": {
+        "text": "All other scanners clean."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "disclosure-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "disc-h2",
+        "disc-p1",
+        "disc-p2",
+        "disc-draft"
+      ]
+    },
+    "disc-h2": {
+      "type": "Heading",
+      "props": {
+        "text": "Disclosure Status",
+        "level": "h2"
+      }
+    },
+    "disc-p1": {
+      "type": "Text",
+      "props": {
+        "text": "PVR is enabled on the repo, but our fine-grained token got 403 on POST /security-advisories/reports (same token limit as the genoffice run)."
+      }
+    },
+    "disc-p2": {
+      "type": "Text",
+      "props": {
+        "text": "Report staged for operator to paste into PVR form."
+      }
+    },
+    "disc-draft": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Draft disclosure report",
+        "href": "memory/pending-disclosures/guillaumemeyer-watermarks-remover-2026-08-15.md",
+        "source": "memory"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanners-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanner-h2",
+        "scanner-table"
+      ]
+    },
+    "scanner-h2": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h2"
+      }
+    },
+    "scanner-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "slither",
+            "n/a"
+          ]
+        ]
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "links-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "links-h2",
+        "advisory-link",
+        "report-link"
+      ]
+    },
+    "links-h2": {
+      "type": "Heading",
+      "props": {
+        "text": "Links & Reports",
+        "level": "h2"
+      }
+    },
+    "advisory-link": {
+      "type": "Link",
+      "props": {
+        "label": "GitHub Security Advisory — Submit Report",
+        "href": "https://github.com/guillaumemeyer/watermarks-remover/security/advisories/new"
+      }
+    },
+    "report-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full vulnerability scan report",
+        "href": "output/articles/vuln-scan-2026-08-15.md",
+        "source": "output"
+      }
+    }
+  }
+}
