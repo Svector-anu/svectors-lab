@@ -3,14 +3,19 @@ type: Reference
 repo: guillaumemeyer/watermarks-remover
 severity: medium
 cwe: CWE-776
-status: pending-operator-send
+status: submitted
+ghsa_id: GHSA-pjg6-92pm-mmcf
+advisory_url: https://github.com/guillaumemeyer/watermarks-remover/security/advisories/GHSA-pjg6-92pm-mmcf
+submitted_at: 2026-08-15T08:03:14Z
+submitted_via: interactive gh session (broader OAuth scope than the Aeon automation's fine-grained PAT)
 auto_send: false
 human_only: true
 channel: github-pvr-form
-pvr_form_url: https://github.com/guillaumemeyer/watermarks-remover/security/advisories/new
 audited_commit: 92f38b10b247788c1d2e2807251e755c315918a8
 detected_at: 2026-08-15T00:00:00Z
 ---
+
+**Submitted 2026-08-15T08:03:14Z as GHSA-pjg6-92pm-mmcf, state: triage.** Awaiting maintainer response. The automation's `GH_GLOBAL` PAT still lacks Private Vulnerability Reporting write scope — this one went out via the operator's interactive `gh` session instead, not a fixed automation path.
 
 # Staged private disclosure — guillaumemeyer/watermarks-remover
 
