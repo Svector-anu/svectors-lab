@@ -1,12 +1,16 @@
 ---
-type: Skill
-mode: read-only
-name: Base MCP
-category: crypto
-description: Access a Base Account via the Base MCP server (mcp.base.org) — wallet, portfolio, sending, swapping, signing, x402 payments, batched contract calls, and transaction history across supported chains.
-tags: [crypto, onchain]
-mcp: [base]
-version: 0.1.0
+name: base-mcp
+description: Access a Base Account via the Base MCP server (mcp.base.org) - wallet, portfolio, sending, swapping, signing, x402 payments, batched calls, and transaction history.
+metadata:
+  title: Base MCP
+  mode: read-only
+  category: crypto
+  tags:
+    - crypto
+    - onchain
+  mcp:
+    - base
+  version: 0.1.0
 ---
 
 # Base MCP

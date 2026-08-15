@@ -1,7 +1,3 @@
----
-type: Reference
----
-
 # Telegram commands, buttons & deep links
 
 Beyond plain-text chat, Aeon's Telegram integration supports slash commands,
@@ -15,8 +11,12 @@ The shared router **[`scripts/telegram-route.sh`](../scripts/telegram-route.sh)*
 single source of truth for turning an inbound update into an action — no LLM in the
 loop for commands, buttons, or replies.
 
-> Prereq: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` are set. Aeon is already scoped to
-> that single chat, so only you can command the bot.
+> Prereq: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` are set. Aeon is scoped to that
+> single chat. In a **1:1 DM** that's enough — the chat id *is* your user id, so only
+> you can command the bot. In a **group/public chat** the chat id is shared by every
+> member, so also set **`TELEGRAM_ALLOWED_USER_ID`** to your numeric user id (from
+> [@userinfobot](https://t.me/userinfobot)); until you do, button taps and messages
+> from anyone in the group are ignored (fail-closed). See [Owner gate](#owner-gate).
 
 ---
 
@@ -37,8 +37,8 @@ populates and the message-field menu button points at it. Registration is automa
 Every path reads `TELEGRAM_BOT_TOKEN` server-side (where secrets are readable) and calls
 `setMyCommands` + `setChatMenuButton` — identical result, no browser token handling.
 
-Command names can only use `a-z`, `0-9`, `_` — so a skill dir `deep-research`
-becomes `/deep_research`. The router inverts `_`→`-` when it dispatches.
+Command names can only use `a-z`, `0-9`, `_` — so a skill dir `token-movers`
+becomes `/token_movers`. The router inverts `_`→`-` when it dispatches.
 
 - `/skillname [args]` dispatches the skill instantly (no Claude call). `args` become
   the skill's `var`, e.g. `/article quantum computing`.
@@ -56,9 +56,30 @@ again** and **📅 Schedule weekly** — keyed to the running skill (`$SKILL_NAM
 This is a global `notify` feature, not per-skill: `scripts/notify.sh` appends the
 row to any Telegram send. Tapping **Run again** re-dispatches the skill
 (`run:<skill>`); **Schedule weekly** enables it and sets a weekly cron in `aeon.yml`
-(`schedule:<skill>:weekly`), which the router commits. The row is skipped only when
-there is no skill context, or on a force-reply prompt (Telegram forbids inline
-buttons and `force_reply` on the same message).
+(`schedule:<skill>:weekly`), which the caller (the Messages workflow) commits. The
+row is skipped when there is no skill context, when the skill name is too long to
+fit the 64-byte `callback_data` budget, or on a force-reply prompt (Telegram forbids
+inline buttons and `force_reply` on the same message).
+
+### Buttons follow the inbound workflow
+
+Interactive controls — inline buttons **and** `force_reply` prompts — only do anything
+if the inbound **Messages workflow** (`.github/workflows/messages.yml`) is running to
+receive the tap/reply. If you **disable that workflow**, a tap is dead and a reply routes
+nowhere, so `notify` **stops attaching them** — the notification body still posts, just
+without controls that would silently do nothing (or invite a stranger in a shared chat to
+tap them). No config: `notify` resolves the workflow's state via the GitHub API (best
+effort, cached once per run) and suppresses only when it is **definitively disabled**
+(`disabled_manually` / `disabled_inactivity`); on `active`, or if the state can't be
+determined, buttons attach as normal (fail open). Re-enable the workflow and buttons come
+back on the next run.
+
+- **Force it either way:** `TELEGRAM_FORCE_BUTTONS=1` always attaches; `AEON_MESSAGES_WF_STATE=<state>`
+  overrides the lookup (skips the API call — handy for local/offline runs or to hard-pin the behaviour).
+- **Private-repo note:** the workflow-state lookup needs a token with `actions:read`
+  (`GH_TOKEN`/`GITHUB_TOKEN`/`GH_GLOBAL`, already present in the run). Public forks resolve it unauthenticated.
+- This is separate from the [owner gate](#owner-gate): the gate governs **who** may act on a
+  tap when the workflow **is** enabled; this governs **whether buttons appear at all** when it isn't.
 
 ### Custom buttons (`--buttons`)
 
@@ -128,6 +149,25 @@ The skill parses `var` as `intent:value`.
 
 ---
 
+## Owner gate
+
+`TELEGRAM_CHAT_ID` gates the **chat**; `TELEGRAM_ALLOWED_USER_ID` gates the **user**.
+Both the poller and the webhook Worker now require an inbound update to satisfy *both*:
+the chat must be `TELEGRAM_CHAT_ID` **and** the sender/tapper (`from.id`) must be the
+owner user.
+
+- **Why both.** A button posted into a group is tappable by every member, and Telegram
+  delivers `callback_query` updates even when BotFather group-privacy mode is on (which
+  otherwise hides plain group messages from the bot). Gating on chat alone let any member
+  dispatch skills or schedule crons by tapping. Gating on user closes that.
+- **Default.** `TELEGRAM_ALLOWED_USER_ID` defaults to `TELEGRAM_CHAT_ID`. In a 1:1 DM
+  `chat.id == user.id`, so the default *is* the owner and nothing new is needed. In a
+  group the negative chat id never equals a positive user id, so the gate **fails closed**
+  — every tap/message is ignored until you set `TELEGRAM_ALLOWED_USER_ID`.
+- **Set it.** Repo var/secret `TELEGRAM_ALLOWED_USER_ID` (poller + `route` job) and the
+  Worker env of the same name (instant mode). Find your id via
+  [@userinfobot](https://t.me/userinfobot).
+
 ## Operational notes
 
 - **Offset.** The poller now requests `allowed_updates=["message","callback_query"]`
@@ -139,8 +179,10 @@ The skill parses `var` as `intent:value`.
   short reference key in `callback_data`.
 - **Instant mode.** After editing `apps/webhook/src/worker.js`, **redeploy the
   Worker** to pick up command/button/reply routing (`npx wrangler deploy`).
-- **Non-owner messages.** The Worker replies "This bot is private." to strangers in
-  private chats (keeps the bot's reply rate high) and never acts on them.
+- **Non-owner messages.** The Worker replies "This bot is private." to strangers who
+  DM the bot in a *private* chat (keeps the bot's reply rate high) and never acts on
+  them. A non-owner tapping/messaging inside the owner's own group is dropped silently
+  (no reply, to avoid group noise) — see [Owner gate](#owner-gate).
 
 ## Testing on a scratch bot
 

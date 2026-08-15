@@ -1,10 +1,12 @@
 ---
-type: Skill
-name: PR Triage
-category: dev
-description: First-touch triage for external pull requests — verdict + label + welcoming comment within minutes of open
-var: ""
-tags: [dev]
+name: pr-triage
+description: First-touch triage for external pull requests - verdict, label, and a welcoming comment within minutes of open
+metadata:
+  title: PR Triage
+  category: dev
+  var: ""
+  tags:
+    - dev
 ---
 > **${var}** — PR scope. Accepts `owner/repo`, `owner/repo#N`, or empty (all watched repos). If empty, scans every repo in `memory/watched-repos.md`.
 
@@ -15,7 +17,7 @@ External PRs that sit unanswered look unwelcoming. This skill is the **first tou
 Any PR whose author is **not** in the trusted set qualifies. The trusted set is, by precedence:
 
 1. Logins ending in `[bot]` (`dependabot[bot]`, `renovate[bot]`, `github-actions[bot]`, …) — these route to `auto-merge` / `pr-review`.
-2. The agent's own login: `aeonframework`, `aaronjmars`, and any login under a `## Trusted Authors` heading in `memory/watched-repos.md` (same allowlist convention used by `auto-merge`).
+2. The agent's own login: `aeonframework`, `aeonfun`, and any login under a `## Trusted Authors` heading in `memory/watched-repos.md` (same allowlist convention used by `auto-merge`).
 
 Everything else is **external** and gets triaged.
 
@@ -25,7 +27,7 @@ Everything else is **external** and gets triaged.
 
 ```markdown
 # Watched Repos
-- aaronjmars/aeon
+- aeonfun/aeon
 - aaronjmars/aeon-agent
 
 ## Trusted Authors
@@ -112,7 +114,7 @@ Verdict assignment (first match wins, in this order):
 
 - **OUT-OF-SCOPE** — Scope check fails AND the touched paths are protected (`.github/workflows/`, `aeon`, `scripts/prefetch-*`, `scripts/postprocess-*`). External contributors cannot ship workflow / runtime changes; redirect them to file an issue.
 - **NEEDS-CHANGES** — Format check fails (SKILL.md missing required frontmatter), OR Originality check fails (skill name collides), OR PR body is empty AND additions > 50.
-- **DEFER** — Size check fails (>500 lines without `large-ok`), OR PR is marked as RFC / proposal-only in the body, OR the PR depends on an external service that requires a secret the maintainer has not provisioned (mentions of `*_API_KEY` in added code without a corresponding `scripts/prefetch-*.sh`).
+- **DEFER** — Size check fails (>500 lines without `large-ok`), OR PR is marked as RFC / proposal-only in the body, OR the PR depends on an external service that requires a secret the maintainer has not provisioned (mentions of `*_API_KEY` in added code without declaring it in the skill's `requires:`).
 - **ACCEPTED** — Otherwise. The PR passes every rubric check; ready for `pr-review` to take a depth pass.
 
 ### 6. Post the triage comment
@@ -188,7 +190,7 @@ Append the triage record to `memory/triaged-prs.json`:
 
 ```json
 {
-  "aaronjmars/aeon": [
+  "aeonfun/aeon": [
     {"n": 143, "sha": "abc1234", "at": "2026-04-29", "verdict": "ACCEPTED"},
     {"n": 145, "sha": "def5678", "at": "2026-04-29", "verdict": "DEFER"}
   ]
@@ -235,9 +237,9 @@ Terminal log lines:
 - Every repo failed data fetch → `PR_TRIAGE_ERROR source-status=<...>` (no notification)
 - `gh` unavailable entirely → `PR_TRIAGE_ERROR gh-unavailable` and exit
 
-## Sandbox note
+## Network note
 
-Use `gh` CLI for all GitHub operations — it handles auth internally and bypasses the curl env-var-expansion sandbox issue. If `gh` errors at the repo level, record `fail — <reason>` in source status and skip that repo; do not abort the whole run. WebFetch cannot substitute for write operations (auth required); a fully unavailable `gh` is a hard exit.
+Use `gh` CLI for all GitHub operations — it handles auth internally, so no bare `$SECRET` ever lands on the command line for the Bash permission layer to refuse. If `gh` errors at the repo level, record `fail — <reason>` in source status and skip that repo; do not abort the whole run. WebFetch cannot substitute for write operations (auth required); a fully unavailable `gh` is a hard exit.
 
 ## Constraints
 

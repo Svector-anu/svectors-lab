@@ -1,11 +1,14 @@
 ---
-type: Skill
-mode: read-only
-name: GitHub Trending
-category: dev
-description: Curated trending across GitHub repos and the Hugging Face Hub (models, datasets, spaces) — filtered, clustered, and labeled by momentum, with a one-line "why notable" per pick. A source selector routes to either the GitHub repo layer or the HF artifact layer.
-var: ""
-tags: [dev, research]
+name: github-trending
+description: Curated trending across GitHub repos and the Hugging Face Hub (models, datasets, spaces) - filtered, clustered, and labeled by momentum with a one-line why-notable per pick.
+metadata:
+  title: GitHub Trending
+  mode: read-only
+  category: basics
+  var: ""
+  tags:
+    - dev
+    - research
 ---
 <!-- autoresearch: variation B — sharper output via curation, clustering, "why notable" gate, momentum tags -->
 
@@ -41,7 +44,7 @@ Don't just dump the top 10 trending repos — GitHub already shows that. Deliver
 
 ### A1. Fetch candidates
 
-Fetch the daily trending page via **WebFetch** (not curl — sandbox blocks outbound curl):
+Fetch the daily trending page via **WebFetch** (it renders the HTML for you; `curl` works too — there is no network sandbox):
 ```
 https://github.com/trending?since=daily
 ```
@@ -57,7 +60,7 @@ Extract for each of the ~25 returned repos:
 
 ### A2. Enrich with velocity metadata (supplementary)
 
-For the 10-15 repos that survive the filter in step A3, try to enrich with **stars-per-day since creation** using `gh api` (has auth built in, bypasses sandbox curl issues):
+For the 10-15 repos that survive the filter in step A3, try to enrich with **stars-per-day since creation** using `gh api` (handles auth internally, so no token touches the command line):
 ```bash
 gh api "repos/OWNER/REPO" --jq '{created_at, stargazers_count, pushed_at}'
 ```
@@ -115,7 +118,7 @@ Pick the single most interesting survivor (highest-signal regardless of category
 
 ### A8. Notify
 
-Send via `./notify` (≤ 4000 chars, no leading spaces on any line):
+Send via `./notify`:
 
 ```
 *GitHub Trending — ${today}*
@@ -170,25 +173,25 @@ The Hugging Face Hub REST API is fully keyless for the list endpoints used here.
 # Models — sort=trendingScore returns the same ranking that backs the HF front page
 curl -sf "https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=20" \
   -H "accept: application/json" \
-  -H "user-agent: aeon/1.0 (+https://github.com/aaronjmars/aeon)" \
-  > .hf-models.json
+  -H "user-agent: aeon/1.0 (+https://github.com/aeonfun/aeon)" \
+  > /tmp/hf-models.json
 
 # Datasets
 curl -sf "https://huggingface.co/api/datasets?sort=trendingScore&direction=-1&limit=15" \
   -H "accept: application/json" \
-  -H "user-agent: aeon/1.0 (+https://github.com/aaronjmars/aeon)" \
-  > .hf-datasets.json
+  -H "user-agent: aeon/1.0 (+https://github.com/aeonfun/aeon)" \
+  > /tmp/hf-datasets.json
 
 # Spaces
 curl -sf "https://huggingface.co/api/spaces?sort=trendingScore&direction=-1&limit=15" \
   -H "accept: application/json" \
-  -H "user-agent: aeon/1.0 (+https://github.com/aaronjmars/aeon)" \
-  > .hf-spaces.json
+  -H "user-agent: aeon/1.0 (+https://github.com/aeonfun/aeon)" \
+  > /tmp/hf-spaces.json
 ```
 
 If the sub-scope is `models` / `datasets` / `spaces`, fetch only that endpoint.
 
-If any `curl` fails (sandbox blocks outbound from bash on some runs), use **WebFetch** as a fallback for the same URL. WebFetch bypasses the sandbox and parses the JSON for you. If both fail across all three resources (or the single one selected by the sub-scope), log `HF_TRENDING_ERROR` with the failure detail, send a brief notify (*"Hugging Face Trending — sources unavailable today."*), and exit.
+If any `curl` fails (a flaky public GET), use **WebFetch** as a fallback for the same URL. WebFetch parses the JSON for you. If both fail across all three resources (or the single one selected by the sub-scope), log `HF_TRENDING_ERROR` with the failure detail, send a brief notify (*"Hugging Face Trending — sources unavailable today."*), and exit.
 
 For each entry extract:
 - `id` (always present, format `owner/name`) — split on `/` to get author + name
@@ -254,7 +257,7 @@ Pick the single most interesting survivor (highest signal regardless of bucket) 
 
 ### B7. Notify
 
-Send via `./notify` (≤ 4000 chars, no leading spaces on any line):
+Send via `./notify`:
 
 ```
 *Hugging Face Trending — ${today}*
@@ -306,15 +309,15 @@ Append to `memory/logs/${today}.md` under a single `### github-trending` heading
 | `HF_TRENDING_ERROR` | Every source (models + datasets + spaces — or the single one selected by the sub-scope) failed both `curl` and the WebFetch fallback | Yes (the "sources unavailable" note) |
 | `HF_TRENDING_BAD_VAR` | `${var}` selected the HF branch but the sub-scope after `hf:` / `huggingface:` was non-empty and not one of `models` / `datasets` / `spaces` | No |
 
-**Cleanup.** After logging, delete `.hf-models.json`, `.hf-datasets.json`, `.hf-spaces.json` if they were written. They're throwaway intermediates.
+**Cleanup.** These live under `/tmp` (`/tmp/hf-models.json`, `/tmp/hf-datasets.json`, `/tmp/hf-spaces.json`) — throwaway intermediates outside the repo, so no cleanup is required.
 
 ---
 
-## Sandbox note
+## Network note
 
-**GitHub branch:** the sandbox blocks outbound curl. Use **WebFetch** for the trending page and `gh api` for repo metadata (it handles auth internally and bypasses the sandbox). No pre-fetch script needed. Under `read-only` mode `gh api` may be unavailable — degrade gracefully (skip velocity enrichment; the trending page fetch via WebFetch is sufficient).
+**GitHub branch:** `curl` works — there is no network sandbox. Use **WebFetch** for the trending page (it parses the HTML) and `gh api` for repo metadata (it handles auth internally). Under `read-only` mode `gh api` may be unavailable — degrade gracefully (skip velocity enrichment; the trending page fetch via WebFetch is sufficient).
 
-**Hugging Face branch:** the sandbox may block outbound `curl` on some runs. The HF API is keyless and public, so the pattern is: **try `curl` first, fall back to WebFetch on the same URL.** No prefetch script needed, no env-var-in-headers issue, no `gh api` substitute (HF endpoints aren't routed through GitHub). If both `curl` and WebFetch fail for *all* selected resource types in the same run, that's the only path to `HF_TRENDING_ERROR`. A single source failure doesn't fail the run — proceed with the resources that did return.
+**Hugging Face branch:** `curl` works — there is no network sandbox. The HF API is keyless and public, so the pattern is: **try `curl` first, fall back to WebFetch on the same URL** (WebFetch is the fallback for a flaky public GET). There's no auth header here, and no `gh api` substitute (HF endpoints aren't routed through GitHub). If both `curl` and WebFetch fail for *all* selected resource types in the same run, that's the only path to `HF_TRENDING_ERROR`. A single source failure doesn't fail the run — proceed with the resources that did return.
 
 ## Constraints
 

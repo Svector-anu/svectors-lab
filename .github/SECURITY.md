@@ -11,7 +11,7 @@ report a problem privately.
 **Please don't open a public issue for a security problem.** Use GitHub's
 **Private Vulnerability Reporting (PVR)** instead:
 
-➡️ **[Report a vulnerability](https://github.com/aaronjmars/aeon/security/advisories/new)**
+➡️ **[Report a vulnerability](https://github.com/aeonfun/aeon/security/advisories/new)**
 
 (Repo → **Security** tab → **Report a vulnerability**.) This opens a private
 advisory that only the maintainers can see — never a public issue, so a fix can
@@ -41,7 +41,7 @@ rather stay anonymous.
 ## Supported versions
 
 Aeon ships as a public template that you fork. Security fixes land on the `main`
-branch of [`aaronjmars/aeon`](https://github.com/aaronjmars/aeon) only.
+branch of [`aeonfun/aeon`](https://github.com/aeonfun/aeon) only.
 
 | Version | Supported |
 |---------|-----------|
@@ -52,7 +52,7 @@ branch of [`aaronjmars/aeon`](https://github.com/aaronjmars/aeon) only.
 Forks are self-maintained. To stay current:
 
 ```bash
-git remote add upstream https://github.com/aaronjmars/aeon.git
+git remote add upstream https://github.com/aeonfun/aeon.git
 git fetch upstream && git merge upstream/main --no-edit
 ```
 
@@ -90,12 +90,13 @@ injection — see the `## Security` section of [`CLAUDE.md`](../CLAUDE.md).
 
 ### Sandbox
 
-Skill runs execute inside the GitHub Actions runner sandbox, which blocks
-`$ENV_VAR` expansion in `curl` headers and may block outbound network from bash —
-so a leaked secret can't be silently shipped out of a bash step. Auth'd data is
-fetched via `scripts/prefetch-*.sh` (full env, before Claude starts) or `gh api`,
-never by curling secrets from inside a skill. See
-[Sandbox limitations](../CLAUDE.md#sandbox-limitations).
+Claude Code's Bash permission analyzer refuses any command whose text contains a bare
+secret expansion (`$FOO_API_KEY` / `${FOO_API_KEY}`), so a leaked secret can't be
+silently placed on a command line and shipped out of a bash step. Auth'd calls therefore
+go through `./secretcurl` — which substitutes a `{ENV_NAME}` placeholder internally,
+keeping the secret off the command line — or `gh api` (auth handled internally); never by
+curling a raw secret from inside a skill. See
+[Network & Secrets](../CLAUDE.md#network--secrets).
 
 ### Dashboard
 

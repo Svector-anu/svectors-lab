@@ -1,9 +1,13 @@
 ---
-type: Skill
-name: PM Manipulation
-category: crypto
+name: pm-manipulation
 description: Detect suspected manipulation on prediction markets over the past 3 days by cross-referencing price/volume/comment anomalies with multilingual local-press coverage
-tags: [crypto, research, security]
+metadata:
+  title: PM Manipulation
+  category: crypto
+  tags:
+    - crypto
+    - research
+    - security
 ---
 
 Read `memory/MEMORY.md` for context.
@@ -25,9 +29,9 @@ Read `memory/topics/prediction-markets.md` if it exists for an optional `## Plat
 
 The keyword filter and locale table below are starting points — the operator can edit `memory/topics/prediction-markets.md` to add `## Keywords` and `## Locales` sections that override the defaults.
 
-## Sandbox note
+## Network note
 
-curl may fail in the sandbox. For every curl call, if it fails or returns empty, use **WebFetch** for the same URL. The Polymarket APIs above are public (no auth). For news searches, prefer **WebSearch** with locale-specific queries — it routes through the sandbox cleanly.
+`curl` works — there is no network sandbox. For every curl call, if it fails or returns empty, use **WebFetch** as a fallback for a flaky public GET. The Polymarket APIs above are public (no auth). For news searches, prefer **WebSearch** with locale-specific queries — a built-in Claude tool that needs no curl.
 
 ## Steps
 
@@ -231,7 +235,7 @@ If status is **high-confidence (≥4)**, prepend `[URGENT] ` to the notification
 
 Append to `memory/logs/${today}.md`:
 ```
-## PM Manipulation
+### pm-manipulation
 - **Scanned:** N markets (past 3d)
 - **Suspicious (≥3):** K
 - **High-confidence (≥4):** J

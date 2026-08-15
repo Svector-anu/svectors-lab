@@ -2,7 +2,7 @@
 #
 # Enable skills by setting enabled: true. Multiple skills at the same time run in parallel.
 # Set var: "value" to pass a default parameter to the skill.
-# Set model: "claude-sonnet-4-6" per skill to override the default model (cost optimization).
+# Set model: "claude-haiku-4-5-20251001" per skill to override the default model (cost optimization).
 # Set harness: "grok" per skill to run it through the Grok Build CLI instead of the
 # default Claude Code harness (see the top-level `harness:` key below).
 
@@ -11,7 +11,6 @@ skills:
 
 
   # --- Mid-morning (9 AM UTC) ---
-  issue-triage: { enabled: false, schedule: "0 9 * * *" }
   pr-triage: { enabled: false, schedule: "30 9 * * *", var: "" } # first-touch external-PR triage (verdict + label + welcoming comment); var: owner/repo or owner/repo#N for one-shot
   pr-review: { enabled: false, schedule: "0 9 * * *", var: "" } # var: empty/owner/repo=per-PR review (posts comments) | --survey [dry-run] [owner/repo]=risk-tiered PR triage digest (folds in pr-merge)
   auto-merge: { enabled: false, schedule: "0 14 * * *" } # merge green PRs daily at 2 PM UTC; max 3 per run
@@ -21,15 +20,14 @@ skills:
   # --- Midday (12 PM UTC) ---
   token-movers: { enabled: false, schedule: "0 12 * * *", var: "" } # market-movers scan + single-token deep report. var: empty=movers (CoinGecko) | geckoterminal[:chain]=on-chain runners | category:<slug> | <address|symbol|token:sym>=single-token report. Optional COINGECKO/ALCHEMY/XAI/BASE_RPC keys.
   onchain-monitor: { enabled: false, schedule: "0 12 * * *" }
-  treasury-info: { enabled: false, schedule: "0 12 * * *" }
   distribute-tokens: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand contributor rewards. var: empty/<label>=distribute (send) | plan[:week]=compute reward plan | all[:week]=plan+send | dry-run (folds in contributor-reward). BANKR_API_KEY for send.
   defi-overview: { enabled: true, schedule: "0 */6 * * *", var: "" } # one-pass DeFi read: tracked-protocol positions + macro context (regime verdict, movers, yields, fees, F&G, prediction markets; refreshes memory/topics/market-context.md). var: empty=full | positions[:label] | macro | <chain/protocol focus>. Optional COINGECKO_API_KEY.
-  verdikta-hunter: { enabled: true, schedule: "workflow_dispatch", var: "" } # Verdikta AI-judged bounties on Base. var: empty=discover+settle (no new spend) | hunt[:jobId]=write report + queue hard-capped on-chain submission (executed post-run by scripts/postprocess-verdikta.sh, cap VERDIKTA_MAX_SPEND_ETH) | dry-run[:jobId]=validate only. Needs VERDIKTA_API_KEY; VERDIKTA_WALLET_KEY (dedicated hot wallet) to submit. Stays workflow_dispatch (not cron) until a real discover run is verified against a live VERDIKTA_API_KEY.
+  verdikta-hunter: { enabled: true, schedule: "workflow_dispatch", var: "" } # Verdikta AI-judged bounties on Base. var: empty=discover+settle (no new spend) | hunt[:jobId]=write report + queue hard-capped on-chain submission (executed post-run by scripts/postprocess-verdikta.sh, cap VERDIKTA_MAX_SPEND_ETH) | dry-run[:jobId]=validate only. Needs VERDIKTA_API_KEY; VERDIKTA_WALLET_KEY (dedicated hot wallet) to submit. Stays workflow_dispatch (not cron) until a real discover run is verified against a live VERDIKTA_API_KEY. LOCAL-ONLY: removed from upstream's skill catalog (#647); kept here deliberately, dir preserved after sync.
 
   # --- Hound onchain investigation (on-demand; var = address / tx hash) ---
   investigation-report: { enabled: false, schedule: "workflow_dispatch", var: "" } # var: <token-address> [--checks=rug,contract,deployer,holders,honeypot,lp] [--depth=quick|deep] — composite investigation (folds in rug-scan/contract-audit/deployer-trace/holder-concentration/honeypot-check/lp-lock). read-only
   tx-explain: { enabled: false, schedule: "workflow_dispatch", var: "" } # var: tx hash — plain-English decode
-  ctrl: { enabled: false, schedule: "workflow_dispatch", var: "" } # var: natural-language workflow (e.g. "DCA 0.005 ETH into USDC weekly") — compiles a trigger→action graph into a CTRL V3 vault on Base via the live /api/mcp REST API, hands the user a one-shot signUrl. Agent never signs; the wallet signs an EIP-5792 batch once, the keeper executes after under per-swap/per-day caps. Operator-initiated only. No API key needed (anonymous create; wallet signature is the trust boundary).
+  deploy-uni-hook: { enabled: false, schedule: "workflow_dispatch", harness: "claude", model: "claude-opus-5", var: "" } # generate+audit+simulate+deploy a Uniswap v4 hook + test pool on any v4 chain. var: [arm:][template:dynamic|noop|skim] [chain:base-sepolia] <brief>. Dry-run by default; arm: to broadcast (needs HOOK_DEPLOYER_PRIVATE_KEY burner). Testnet default; mainnet behind arm:+explicit chain:+HOOK_MAINNET_OK=1. Opus-pinned: freeform hook-gen is hard.
 
   monitor-polymarket: { enabled: false, schedule: "30 12 * * *", var: "" } # prediction-market monitor (Polymarket + Kalshi) — 24h moves, volume, comments, conviction alerts. var: empty=both | polymarket | kalshi | polymarket:<slug> | kalshi:<ticker>
   token-pick: { enabled: true, schedule: "0 12 * * *" }
@@ -40,26 +38,26 @@ skills:
   # --- Afternoon (2 PM UTC) ---
   article: { enabled: false, schedule: "0 14 * * *", var: "" } # long-form article. var: empty=standard | repo:<owner/repo> | lens:<topic>; append --visual for a Replicate hero image (angles fold in repo-article/project-lens/technical-explainer)
   digest: { enabled: true, schedule: "0 14 * * *", var: "" } # topic digest across web + X + RSS. var: empty=web | <topic> | rss[:<topic>] | "<topic> +rss" (RSS feeds from memory/feeds.yml)
+  you-web-search: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — high-quality web search via You.com API. var: search query/topic; authenticated with YDC_API_KEY, optional livecrawl via YOUCOM_LIVECRAWL
   last30: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — cross-platform 30-day social research
   search-skill: { enabled: false, schedule: "0 14 * * *" }
 
   # --- Repo intelligence (3 PM UTC) ---
-  star-milestone: { enabled: false, schedule: "15 15 * * *", var: "" } # daily — star milestone crossings + next-milestone projection & Show HN launch-window alert (folds in star-momentum). var: empty=all | owner/repo | dry-run
-  repo-scanner: { enabled: false, schedule: "0 15 * * 0", var: "" } # GitHub fleet intel: repo catalog + per-repo action ideas + who's-building map (folds in repo-actions/builder-map). var: empty/<owner>=full | catalog[:owner] | actions[:focus] | builders
 
   # --- Late afternoon (4 PM UTC) ---
-  code-health: { enabled: false, schedule: "0 16 * * *" }
   changelog: { enabled: false, schedule: "0 16 * * *", var: "" } # changelog from recent commits/PRs. var: empty/owner/repo=in-repo | push-to:owner/website-repo=cross-repo changelog PR (needs GH_GLOBAL)
   vuln-scanner: { enabled: true, schedule: "0 16 * * 6", var: "" } # security scan + disclose. var: empty/owner/repo=scan | resubmit[:owner/repo]=PVR re-submit | disclose=queue armed emails (folds in pvr-watchlist/disclosure-emailer). RESEND_* for email.
   deploy-prototype: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — build app and deploy to Vercel
   base-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — Base Account access via the Base MCP server (mcp.base.org)
+  robinhood-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — Robinhood Agentic Trading via the Robinhood MCP (agent.robinhood.com, OAuth Connect in the dashboard). var: empty=portfolio report | orders[:N] | trade:<explicit one-order instruction> (only writing branch; refuses ambiguous orders)
+  glim-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — live-data research via the glim.sh MCP (web/X/Reddit/GitHub/Amazon/YouTube; OAuth Connect in the dashboard, pay-per-call from glim balance). var: research question, append --deep for a wider sweep
+  executor-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — run a task through the Executor Cloud tool catalog (executor.sh/mcp; one MCP endpoint proxying the operator's connected integrations, per-tool allow/approve/block policies; OAuth Connect in the dashboard). var: the task
+  finance-district-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — multichain non-custodial agent wallet via the Finance District MCP (keys in a TEE, server-side spend caps; OAuth Connect in the dashboard). var: empty=daily wallet brief | best USDC yield on Base | swap 5 USDC to ETH on Base | pay <x402-url> for <data>
+  taskmarket-delegate: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — browse/create/submit work on the TaskMarket agent-worker market (api.taskmarket.dev). var: browse[:query] | create "<title>" "<desc>" [reward] | submit <taskId> <message> [url]. Write actions need TASKMARKET_API_KEY + explicit operator authorization.
   autoresearch: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — set var to skill name to evolve
   create-skill: { enabled: false, schedule: "workflow_dispatch", var: "" } # one-shot skill creator — set var to a description prompt
   install-skill: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — install a community skill pack and open a PR; var: owner/repo [skill...]
-
-  # --- Knowledge / OKF (memory/topics is a native OKF bundle; see docs/OKF.md) ---
-  okf-export: { enabled: false, schedule: "workflow_dispatch", var: "" } # one-shot backfill — add type: frontmatter to existing memory/topics notes + open a PR. var: empty=all | <file.md>|<subdir>
-  okf-ingest: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — fetch+validate+QUARANTINE an EXTERNAL OKF bundle into memory/topics/ingested + open a PR (untrusted content; needs scripts/prefetch-okf.sh). var: git-url | owner/repo[#subdir]
+  pack-submit: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — publish a local skill as a community pack + submit registry PR; var: skill-slug [--repo o/r] [--no-register] [--dry-run]
 
   # --- X / social (5 PM UTC) ---
   fetch-tweets: { enabled: false, schedule: "0 17 * * *", var: "" } # curate X/Twitter. var: keyword:<q> | topic:<t> | account:<handle> (empty=digest tracked accounts) | list:<ids>[|topic] | agent-buzz[:<t>]. Optional XAI_API_KEY.
@@ -70,6 +68,7 @@ skills:
   # --- Evening / meta (6 PM UTC) ---
   strategy-builder: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — draft STRATEGY.md (north-star / priorities / audience / constraints) from a brief + repo README + memory. var: bare goal text, or structured brief "repo=owner/repo | links=url1,url2 | goal=free text". Powers the dashboard Strategy → Build my strategy button. No API key needed.
   skill-health: { enabled: true, schedule: "0 18 * * *", var: "" } # self-healing health audit + analytics. var: empty=health (files/resolves issues) | <skill>=single | analytics[:hours]=fleet run/pass-rate metrics (folds in skill-analytics)
+  aeon-doctor: { enabled: false, schedule: "0 15 * * 1", var: "" } # weekly Mon 15:00 UTC — static config-correctness linter (silent-failure class: unquoted schedules, dup keys, unconfigured-on-disk, requires-as-list, mode typo, mcp ${VAR}, multi-line entries). read-only; notifies only on problems. var: empty=whole config | <skill>=one skill
 
   self-improve: { enabled: false, schedule: "0 18 1/2 * *", var: "" } # every other day — improve the agent, or audit it. var: empty/improve[:focus]=propose+apply one fix | audit[:focus]=review what ran/failed (folds in self-review)
 
@@ -77,16 +76,14 @@ skills:
   skill-repair: { enabled: false, schedule: "reactive", var: "" } # reactive — auto-fix failing skills
 
   # --- Cost tracking (Monday 7 AM UTC, weekly) ---
-  cost-report: { enabled: false, schedule: "0 7 * * 1", var: "" } # weekly API cost breakdown by skill/model + anomalies + burn forecast + optimizations. var: empty=full report (7d) | N=report over last N days | watch=budget watchdog (weekly cost vs WEEKLY_BUDGET_CAP def $200, OK/WATCH/WARN/ALERT, silent <50%; folds in spend-monitor) | watch:<cap>=override cap
 
   # --- Weekly (Monday only) ---
-  ecosystem-pulse: { enabled: false, schedule: "0 11 * * 1", var: "" } # Monday — one ECOSYSTEM.md pass: project liveness (stars/forks/last-push buckets + 7d releases + WoW transitions) AND link-health (URL audit, buckets OK/ARCHIVED/MOVED/DEAD/…, folds in ecosystem-links). var: empty=both | liveness | links | dry-run
   fork-fleet: { enabled: false, schedule: "0 10 * * 1", var: "" } # fork divergence: code (unique commits/skills) + config (aeon.yml vs upstream defaults; folds in fork-digest). var: empty=both | code | config | fork=owner/repo | repo=owner/repo
+  aeon-update: { enabled: false, schedule: "0 11 * * 1", var: "" } # weekly Mon 11:00 UTC — pull upstream framework changes (canon) into this instance as a PR; 3-way merge, never clobbers operator config. var: empty=sync | report (dry) | repo=owner/name | reset=fork-point
   spawn-instance: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — var: "name: purpose"
   fleet-control: { enabled: false, schedule: "0 9,15 * * *", var: "" } # managed child instances. var: empty=health check | status | dispatch <inst|*> <skill> [var=…] | scorecard (fleet-wide runs/tokens/cost/reliability; folds in fleet-scorecard)
   shiplog: { enabled: false, schedule: "0 9 * * 1" } # everything shipped SINCE THE LAST RUN (memory/state/shiplog-last.json) — cross-repo PRs/commits, security fixes merged into others' repos, star deltas, X/ecosystem traction → digest article + ready-to-post shiplog in the operator's voice. Cadence-agnostic: this schedule just sets frequency (daily/weekly/on-demand). Config: memory/products.md + memory/watched-repos.md. Optional XAI_API_KEY (X traction) + GH_GLOBAL (cross-repo reach). var: since:DATE | days:N | dry-run | owner/repo | <theme>.
   operator-scorecard: { enabled: false, schedule: "30 10 * * 1", var: "" } # Monday — weekly plain-language scorecard: agent health + community growth + economic activity (worst-of-three OK/WATCH/DEGRADED verdict). var: empty=scorecard (7d) | dry-run=no notify | N=window N hours | ops[ DATE]=end-of-day ops recap (shipped/failed/follow-up) | push[ owner/repo]=diff-deep-dive push recap (folds in ops-recap + push-recap)
-  workflow-audit: { enabled: false, schedule: "0 16 * * 0" } # Sunday — scan workflows for injection vectors
 
   # --- Paid ads (AdManage.ai) ---
   schedule-ads: { enabled: false, schedule: "0 8 * * *", var: "" } # daily 08:00 UTC — paid ads via AdManage.ai. var: empty=schedule ad launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn from config.yaml (PAUSED by default) | create=provision Meta campaigns/ad sets on-demand from config.create.yaml (PAUSED, IDs written back to state so the schedule branch can launch into them; folds in create-campaign)
@@ -96,9 +93,8 @@ skills:
 
   # --- Ported from derivative instances (PR #219) ---
   # Markets & crypto
-  pm-pulse: { enabled: false, schedule: "0 13 * * 1" } # Monday — prediction/coordination-market volume, new mechanisms, regulatory moves
   pm-manipulation: { enabled: false, schedule: "15 13 * * *" } # daily — flag suspected PM manipulation from 3-day price/volume/comment + local-press anomalies
-  x402-monitor: { enabled: true, schedule: "0 12 * * 2", var: "" } # Tuesday — protocol/vertical ecosystem velocity. var: empty=x402 default | rwa | compute | mcp | agent-displacement | <stanza in memory/topics/tracked-protocol.md>
+  x402-monitor: { enabled: true, schedule: "0 12 * * 2", var: "" } # Tuesday — protocol/vertical ecosystem velocity. var: empty=x402 default | rwa | compute | mcp | agent-displacement | <stanza in memory/topics/tracked-protocol.md>. LOCAL-ONLY: removed from upstream's skill catalog (#647); kept here deliberately, dir preserved after sync.
 
   # Research & content
   narrative-convergence: { enabled: false, schedule: "0 13 * * *", var: "" } # daily 13:00 UTC — cross-skill convergence detector: entities/themes surfaced by 3+ independent skill categories in 48h = high-confidence write opportunities. Category map in memory/topics/signal-categories.md. Pass var to filter.
@@ -115,7 +111,7 @@ skills:
   # --- Ported from aeon-aaron ---
   # Infra & health
   # Markets & crypto
-  fear-divergence: { enabled: true, schedule: "30 7 * * *" } # daily 07:30 UTC — conditional: fires only when Fear & Greed < 25; surfaces assets diverging from the BTC drawdown with narrative catalysts from memory; silent skip otherwise. Reads market-context.md (enable market-context first).
+  fear-divergence: { enabled: true, schedule: "30 7 * * *" } # daily 07:30 UTC — conditional: fires only when Fear & Greed < 25; surfaces assets diverging from the BTC drawdown with narrative catalysts from memory; silent skip otherwise. Reads market-context.md (enable market-context first). LOCAL-ONLY: removed from upstream's skill catalog (#647); kept here deliberately, dir preserved after sync.
   picks-tracker: { enabled: true, schedule: "0 9 * * 0" } # Sunday 09:00 UTC — 30-day retrospective scoring token + prediction-market picks from logs against current prices; W/H/L + hit rate; honest record-keeping. Pairs with token-pick / monitor-polymarket.
   # Content pipeline
   soul-builder: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — build a SOUL from any mix of sources (X handle, full name, links), drafting soul/SOUL.md + STYLE.md + examples so every content skill speaks in that voice. var: bare X handle, or structured brief "x=handle | name=Full Name | links=url1,url2". Powers the dashboard Soul → Build my soul button. XAI_API_KEY optional (name/links use built-in WebSearch/WebFetch).
@@ -134,6 +130,10 @@ skills:
   write-tweet: { enabled: false, schedule: "0 21 * * *", var: "" } # tweet studio. var: empty=drafts (10×5 tiers) | thread [topic] | remix [window]. Optional XAI_API_KEY (required for remix).
   bd-radar: { enabled: false, schedule: "20 7 * * *", var: "" } # daily 07:20 — BD radar: who's building/forking/integrating/mentioning your products → ranked leads. Products from memory/products.md. Quiet unless high-intent.
 
+  # --- Ported from derivative instances (2026-08-08) ---
+  # Security (pairs with vuln-scanner)
+  hunter-22: { enabled: false, schedule: "0 10 * * *", var: "" } # daily bounty scan against ClawHunter's free discovery API (docs/ClawHunter-API.md) — capability-matched, triaged for real work vs content-farming, dedup'd against memory/topics/hunter-22-seen.json. Discovery only, no wallet, never claims/submits; audit-shaped matches with a linked GitHub repo get a one-tap "run vuln-scanner on it" button in the notification.
+
   # Product / ops (config: memory/products.md)
 
   # Self-maintenance / meta
@@ -143,6 +143,8 @@ skills:
 
   send-email: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — compose + send a 1:1 email to a named recipient via Resend (general sibling of disclosure-emailer). var: "to=… | subject=… | about=…"
   idea-forge: { enabled: false, schedule: "0 9 * * 1", var: "" } # weekly business-idea engine. var: empty/generate=timing-scored wedges | validate[:theme]=viability screen | memo[:theme]=2 evidence-backed memos
+  seo-audit: { enabled: false, schedule: "0 13 * * *", var: "" } # daily on-page + technical SEO audit of every page on a site. var: comma-separated origins (empty = no target, no-op). PAGESPEED_API_KEY folds in Core Web Vitals
+  posthog-errors: { enabled: false, schedule: "0 15 * * 1", var: "" } # weekly cross-project PostHog error digest. Needs PostHog MCP connected in the dashboard. var: empty=all projects/7d | Nd window | project-name substrings
   # --- Fallback (must be last) ---
   heartbeat: { enabled: true, schedule: "0 8 * * *", var: "" } # ambient fleet-health check (default) — surfaces anything worth attention. var: empty=ambient check | <area>=ambient focused on that area | brief[:<area>]=priority brief (3 things to focus on, why now, what moved; folds in priority-brief)
 
@@ -189,51 +191,45 @@ chains:
 # Default model for all skills. Override per-run via workflow_dispatch.
 # Options: claude-opus-4-8, claude-fable-5, claude-sonnet-5, claude-sonnet-4-6, claude-haiku-4-5-20251001
 #
-# Leave this on a claude-* id (or blank) even though harness defaults to grok below.
-# xAI's model catalog has renamed/dropped ids twice in 3 days (grok-composer-2.5-fast
-# and grok-build both went "unknown model id", then the grok-4.5 id that replaced them
-# did too) while the CLI version stayed pinned — so a hardcoded grok-* id here goes
-# stale on its own schedule, not ours. run-grok.sh already omits --model for any
-# claude-*/empty value and lets the grok CLI pick its own current default; that's the
-# only setting that doesn't rot. If you need to pin a specific grok model, do it as a
-# per-skill `model: "grok-..."` override and expect to re-verify it periodically.
+# Kept pinned to claude-opus-4-8 (operator's deliberate choice) across this sync —
+# upstream's new recommended default is claude-sonnet-5, switch to it explicitly
+# if desired, not silently via a fork sync.
 model: claude-opus-4-8
 
 # Agent harness — which coding-agent CLI runs your skills.
-#   claude (default) — Claude Code (`claude -p`); uses the AI Gateway below.
-#   grok             — Grok Build (`grok`); logs in with your X account
-#                      (GROK_CREDENTIALS, captured in the dashboard) or an
-#                      XAI_API_KEY. Bypasses the gateway (grok has its own auth).
-# Override per-skill with `harness: "claude"` in the skill entry, or per-run via
+#   claude (default)  — Claude Code (`claude -p`); uses the AI Gateway below.
+#   grok              — Grok Build (`grok`); logs in with your X account
+#                       (GROK_CREDENTIALS, captured in the dashboard) or an
+#                       XAI_API_KEY. Bypasses the gateway (grok has its own auth).
+#   codex/pi/vibe/kimi — OpenAI Codex, Pi, Mistral Vibe, Moonshot Kimi — run through
+#                       harness-adapter/run-harness (one Claude-Code-shaped contract),
+#                       added in this fork sync. A single OPENROUTER_API_KEY drives
+#                       all four, or each can use its own native auth (ChatGPT/
+#                       Moonshot login, provider key). See docs/harnesses.md for
+#                       models, auth, and verification.
+# Override per-skill with `harness: "<name>"` in the skill entry, or per-run via
 # the workflow_dispatch `harness` input.
 #
-# Re-enabled 2026-07-28, correcting the 2026-07-26 revert below: those
-# consistent ~29m59s timeouts weren't grok-build's weight — they were an
-# expired GROK_CREDENTIALS (X-account OAuth) session. When that session goes
-# stale, grok silently falls back to an interactive device-auth prompt, which
-# just hangs unattended in CI until the device code itself expires (~30min) —
-# same failure shape regardless of which model was configured, which is why
-# switching models never fixed it. Root-caused via a live local `grok login`
-# (multiple concurrent stale attempts were also fighting over the same
-# ~/.grok/auth.json.lock — kill strays before re-authing). Fresh credentials
-# verified working via live dispatch: heartbeat, harness=grok, 1m54s, success.
+# Operational history (this fork, pre-sync):
+# Re-enabled grok 2026-07-28, correcting a 2026-07-26 revert: those consistent
+# ~29m59s timeouts weren't grok-build's weight — they were an expired
+# GROK_CREDENTIALS (X-account OAuth) session, which makes grok silently fall
+# back to an interactive device-auth prompt that hangs unattended in CI until
+# the device code expires (~30min). Root-caused via a live local `grok login`
+# (kill strays fighting over ~/.grok/auth.json.lock before re-authing).
 #
-# Switching back to claude at the same time: both CLAUDE_CODE_OAUTH_TOKEN
-# (direct) and BANKR_LLM_KEY (gateway) are currently dead — claude fails in
-# ~3s (rate/usage ceiling) and Bankr 402s with "Insufficient LLM Gateway
-# credits" ($0 balance) — so 46 of the last 50 scheduled runs failed fleet-
-# wide. grok is the only currently-funded, working path; switch back once
-# Bankr is topped up or a working ANTHROPIC_API_KEY/OpenRouter key is added.
+# Switched to grok the same day: both CLAUDE_CODE_OAUTH_TOKEN (direct) and
+# BANKR_LLM_KEY (gateway) were dead at the time — claude failed in ~3s
+# (rate/usage ceiling) and Bankr 402'd with $0 balance — so grok was the only
+# funded, working path.
 #
-# Switched back to claude 2026-07-30: the "~3s rate/usage ceiling" above was
+# Switched back to claude 2026-07-30: the "~3s rate/usage ceiling" was
 # actually a stale CLAUDE_CODE_OAUTH_TOKEN (401 "OAuth access token is
 # invalid") — refreshed via `claude setup-token`, verified working via live
-# dispatch (heartbeat + vuln-scanner, harness=claude, both delivered).
-# Meanwhile grok's GROK_CREDENTIALS session is fine but the account's Grok
-# Build usage balance has been exhausted (402) continuously since 2026-07-29
-# with no reset observed after 40+ hours — grok is now the dead path. Revert
-# only once Grok Build usage resets/is funded, or if CLAUDE_CODE_OAUTH_TOKEN
-# goes stale again before then.
+# dispatch (heartbeat + vuln-scanner, harness=claude, both delivered). grok's
+# GROK_CREDENTIALS session was fine but the account's Grok Build usage balance
+# was exhausted (402) with no reset after 40+ hours. Revert to grok only once
+# its usage resets/is funded, or if CLAUDE_CODE_OAUTH_TOKEN goes stale again.
 harness: claude
 
 # AI Gateway — route Claude Code requests through an LLM provider.
@@ -262,3 +258,10 @@ channels:
 # Polls for messages every 5 minutes on Telegram/Discord/Slack.
 telegram:
   enabled: true
+
+# Observability (optional) — no config lives here; it's credential-driven.
+# Set the repo secrets LANGFUSE_PUBLIC_KEY + LANGFUSE_SECRET_KEY and every
+# Claude Code run streams to your Langfuse project as a trace (LLM calls,
+# tokens, cost, prompts/responses). Region/toggles are repo variables:
+# LANGFUSE_HOST (default EU cloud), LANGFUSE_TRACING (0 to disable),
+# LANGFUSE_LOG_CONTENT (0 = metadata only). See docs/langfuse.md.

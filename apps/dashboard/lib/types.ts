@@ -2,7 +2,7 @@ import { GATEWAY_SLUGS, type GatewaySlug } from './gateway-registry'
 
 export interface SkillKeyRef { key: string; optional: boolean }
 export interface SkillMcpRef { slug: string; optional: boolean }
-export interface Skill { name: string; description: string; tags: string[]; category: string; pack: string; packName: string; enabled: boolean; schedule: string; var: string; model: string; harness: string; requires: SkillKeyRef[]; mcp: SkillMcpRef[] }
+export interface Skill { name: string; description: string; tags: string[]; category: string; pack: string; packName: string; enabled: boolean; schedule: string; var: string; varHint: string; model: string; harness: string; requires: SkillKeyRef[]; mcp: SkillMcpRef[] }
 export interface Run { id: number; workflow: string; status: string; conclusion: string | null; created_at: string; url: string }
 // Result of a Telegram setup probe (webhook registration / chat-id lookup), shown inline in the Telegram credential helpers.
 export interface TelegramStatus { ok: boolean; msg: string }
@@ -65,20 +65,35 @@ export type GatewayProvider = 'auto' | 'direct' | GatewaySlug
 export const GATEWAY_PROVIDERS: GatewayProvider[] = ['auto', 'direct', ...GATEWAY_SLUGS]
 
 // Which agent CLI runs skills. `claude` = Claude Code (default, uses the gateway
-// above); `grok` = Grok Build CLI (own auth, own models). See scripts/run-grok.sh.
-export type Harness = 'claude' | 'grok'
-export const HARNESSES: Harness[] = ['claude', 'grok']
+// above); `grok` = Grok Build CLI (own auth, own models). The remaining four run
+// through harness-adapter's `run-harness` on one OPENROUTER_API_KEY (see
+// harness-adapter/docs/aeon-integration.md and scripts/run-grok.sh for the seam).
+export type Harness = 'claude' | 'grok' | 'codex' | 'pi' | 'vibe' | 'kimi'
+export const HARNESSES: Harness[] = ['claude', 'grok', 'codex', 'pi', 'vibe', 'kimi']
 
 export interface UploadFile { path: string; content: string }
+
+// The dashboard's top-level view, shared by the page shell, the top bar and the sidebar.
+export type DashboardView = 'hq' | 'packs' | 'secrets' | 'strategy' | 'mcp' | 'soul'
 
 // Client→server build briefs. The panels collect them; the build routes accept
 // them as Partial (every field is untrusted/optional on the wire).
 export interface SoulSources { handle: string; name: string; links: string }
 export interface StrategySources { goal: string; repo: string; links: string }
 
-// `.mcp.json` server map. A server's shape varies by transport (http/stdio),
-// so each entry is an open record; consumers narrow fields as needed.
-export type McpServer = Record<string, unknown>
+// `.mcp.json` server map. A server's shape varies by transport: http (`url`,
+// optional `headers`) or stdio (`command`, `args`, `env`). The known fields are
+// typed; the index signature keeps this an open record so an operator's hand-edited
+// .mcp.json (extra/unknown keys) still parses and consumers narrow as needed.
+export interface McpServer {
+  type?: 'http' | 'stdio' | 'sse'
+  url?: string
+  command?: string
+  args?: string[]
+  headers?: Record<string, string>
+  env?: Record<string, string>
+  [key: string]: unknown
+}
 export type McpServers = Record<string, McpServer>
 
 export interface SkillMetrics {
@@ -86,12 +101,10 @@ export interface SkillMetrics {
   total: number
   success: number
   failure: number
-  cancelled: number
   inProgress: number
-  successRate: number
+  successRate: number // over completed runs only
   lastRun: string | null
   lastConclusion: string | null
-  avgDurationMin: number | null
   streak: number // positive = consecutive successes, negative = consecutive failures
 }
 
@@ -102,11 +115,7 @@ export interface Insight {
 
 interface AnalyticsSummary {
   totalRuns: number
-  totalSuccess: number
-  totalFailure: number
   overallSuccessRate: number
-  uniqueSkills: number
-  periodDays: number
 }
 
 export interface AnalyticsData {
@@ -186,6 +195,22 @@ export interface SyncResult {
   synced?: boolean
   syncError?: string
 }
+
+// POST /api/mcp-auth - the OAuth connect result. `server` is the .mcp.json
+// descriptor the panel adds through its normal save path; `warning` is set when
+// the grant carried no refresh token.
+export interface McpAuthResponse {
+  ok?: boolean
+  slug?: string
+  server?: McpServer
+  durable?: boolean
+  warning?: string
+  error?: string
+}
+
+// GET /api/soul/examples - the gallery people available to install.
+export interface SoulExample { key: string; label: string; blurb: string }
+export interface SoulExamplesResponse { examples: SoulExample[] }
 
 // POST /api/soul/examples - syncResult plus the installed file contents on
 // success, or { error } on the not-found / failure paths.

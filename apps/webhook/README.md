@@ -3,7 +3,7 @@
 Default polling checks Telegram every 5 minutes. Deploy this Cloudflare Worker as
 a Telegram webhook to drop that to **~1 second**: the Worker classifies each update
 and relays it to your Aeon fork via a GitHub `repository_dispatch`, which fires the
-**Messages & Scheduler** workflow immediately.
+**Messages** workflow immediately.
 
 It routes the full inbound feature set — slash commands, inline-button taps, and
 reply follow-ups — not just plain messages (see
@@ -16,9 +16,9 @@ Worker's secrets.
 
 ## Deploy
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aaronjmars/aeon/tree/main/apps/webhook)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aeonfun/aeon/tree/main/apps/webhook)
 
-> Forked Aeon? Change `aaronjmars/aeon` in the button URL above to
+> Forked Aeon? Change `aeonfun/aeon` in the button URL above to
 > `your-username/your-fork` so it deploys from your repo. (The button requires a
 > **public** source repo.)
 
@@ -32,7 +32,7 @@ npx wrangler deploy
 
 ## Configure
 
-The deploy button prompts for all four values during the wizard (declared in
+The deploy button prompts for all five values during the wizard (declared in
 [`.dev.vars.example`](.dev.vars.example)) and stores them as encrypted Worker
 secrets — the Worker comes out configured. Deploying from a clone instead? Set
 them via the CLI:
@@ -40,6 +40,7 @@ them via the CLI:
 ```bash
 npx wrangler secret put TELEGRAM_BOT_TOKEN        # bot token from @BotFather
 npx wrangler secret put TELEGRAM_CHAT_ID          # your chat id (only this chat is allowed)
+npx wrangler secret put TELEGRAM_ALLOWED_USER_ID  # optional; your user id (required for group chats — see table)
 npx wrangler secret put TELEGRAM_WEBHOOK_SECRET   # shared secret for webhook verification (required)
 npx wrangler secret put GITHUB_REPO               # owner/repo of your Aeon fork
 npx wrangler secret put GITHUB_TOKEN              # GitHub PAT (see scopes below)
@@ -49,7 +50,9 @@ npx wrangler secret put GITHUB_TOKEN              # GitHub PAT (see scopes below
 |--------|----------|-------|
 | `TELEGRAM_BOT_TOKEN` | yes | From [@BotFather](https://t.me/BotFather). |
 | `TELEGRAM_CHAT_ID` | yes | Only messages from this chat are relayed; everything else is dropped. |
-| `GITHUB_REPO` | yes | `owner/repo` of your Aeon fork, e.g. `aaronjmars/aeon` — not the worker repo the deploy button creates. |
+| `TELEGRAM_ALLOWED_USER_ID` | for groups | The only **user** allowed to command the bot. Defaults to `TELEGRAM_CHAT_ID`, which is correct for a 1:1 DM (there `chat.id == user.id`). If `TELEGRAM_CHAT_ID` is a **group**, set this to your numeric user id — otherwise any group member can drive the bot by tapping a posted button. Left unset in a group, buttons fail closed. Get your id from [@userinfobot](https://t.me/userinfobot). |
+| `TELEGRAM_WEBHOOK_SECRET` | yes | Random string; pass the **same** value to `setWebhook` as `secret_token`. The Worker rejects every update with `403` until it's set. |
+| `GITHUB_REPO` | yes | `owner/repo` of your Aeon fork, e.g. `aeonfun/aeon` — not the worker repo the deploy button creates. |
 | `GITHUB_TOKEN` | yes | Fine-grained PAT scoped to your fork with **Contents: read/write** and **Actions: read/write**, or a classic token with `repo`. |
 
 To edit values later: Cloudflare dashboard → Workers & Pages → your worker →
@@ -78,7 +81,7 @@ curl "https://api.telegram.org/bot<YOUR_BOT_TOKEN>/deleteWebhook"
 ## How it coexists with polling
 
 A webhook and `getUpdates` polling are **mutually exclusive** — once a webhook is
-set, `getUpdates` returns `409 Conflict`. The Messages & Scheduler workflow's
+set, `getUpdates` returns `409 Conflict`. The Messages workflow's
 poller calls `getWebhookInfo` first and **skips the Telegram branch when a webhook
 is active**, so the two never fight. Delivery then runs entirely through this
 Worker → `repository_dispatch`.
@@ -94,7 +97,7 @@ retries).
 Telegram → POST update → Worker
   ├─ verify method + secret token
   ├─ callback_query (button tap) → answerCallbackQuery → dispatch telegram-callback
-  ├─ ignore (200) anything not from TELEGRAM_CHAT_ID (private chats get "This bot is private.")
+  ├─ ignore (200) anything not from the owner chat AND owner user (a stranger's private DM gets "This bot is private.")
   ├─ reply to a [skill::intent] prompt   → dispatch telegram-reply
   ├─ /slash command or /start deep link  → dispatch telegram-command
   └─ plain text                          → dispatch telegram-message

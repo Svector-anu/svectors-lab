@@ -1,10 +1,13 @@
 ---
 name: [REPLACE: SKILL_NAME]
-category: crypto
 description: Price and volume tracker for [REPLACE: TOKEN_SYMBOL] with anomaly alerts above [REPLACE: ALERT_THRESHOLD_PCT]% movement
-var: ""
-tags: [crypto]
-requires: [COINGECKO_API_KEY?]
+metadata:
+  category: crypto
+  var: ""
+  tags:
+    - crypto
+  requires:
+    - COINGECKO_API_KEY?
 ---
 
 > **${var}** — Optional. Pass a different CoinGecko ID to override the default. If empty, tracks the configured token.
@@ -26,7 +29,7 @@ Today is ${today}. Track [REPLACE: TOKEN_SYMBOL] price/volume and alert on anoma
    fi
    ```
 
-   If `curl` fails (sandbox blocks outbound), use **WebFetch** on the same URL as a fallback.
+   If a `curl` GET is flaky, use **WebFetch** on the same URL as a fallback (there is no network sandbox — WebFetch is just a convenience for flaky public reads).
 
 2. **Read prior state** — last 7 days of `memory/logs/YYYY-MM-DD.md` for previous prices and volumes (parse lines like `**[REPLACE: TOKEN_SYMBOL]**: price=$N, volume_24h=$N`).
 
@@ -47,9 +50,9 @@ Today is ${today}. Track [REPLACE: TOKEN_SYMBOL] price/volume and alert on anoma
    - **Verdict**: QUIET | STEADY | ANOMALY:price | ANOMALY:volume
    ```
 
-## Sandbox note
+## Network note
 
-CoinGecko's keyless endpoint occasionally rate-limits. WebFetch is the fallback when `curl` fails — it bypasses the sandbox network gate.
+CoinGecko's keyless endpoint occasionally rate-limits. There is no network sandbox — `curl` works; use **WebFetch** as the fallback when a `curl` GET is flaky.
 
 ## Constraints
 

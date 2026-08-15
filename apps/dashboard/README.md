@@ -1,12 +1,12 @@
 # Aeon Dashboard
 
-The local web UI for running Aeon — enable skills, browse community packs, set schedules, manage secrets, and watch skill output in real time. It's the first screen you see after `./aeon`, and the one that turns "edit `aeon.yml` and `skills.json` by hand" into point-and-click.
+The local web UI for running Aeon — enable skills, browse community packs, set schedules, manage secrets, pick the agent harness and per-skill model, and watch skill output in real time. It's the first screen you see after `./aeon`, and the one that turns "edit `aeon.yml` and `skills.json` by hand" into point-and-click.
 
 ## What it is
 
 A [Next.js](https://nextjs.org) app that runs on your machine and drives your Aeon fork through the GitHub CLI. Its `/api/*` routes shell out to `gh` for everything that touches your repo — reading and writing secrets, dispatching workflow runs, and committing config changes — so there's no separate backend and no credential custody: the dashboard holds nothing your `gh` login doesn't already grant.
 
-Every change you make in the UI maps to a file in the repo. Toggling a skill flips its `enabled` flag, editing a schedule rewrites its cron, pasting an API key sets a GitHub secret. **Push** commits those changes so Actions picks them up on the next run; **Run now** dispatches a workflow immediately without committing. It's the same `aeon.yml` / `skills.json` / secrets the cron runner reads — the dashboard is just the editor.
+Every change you make in the UI maps to a file in the repo. Toggling a skill flips its `enabled` flag, editing a schedule rewrites its cron, pasting an API key sets a GitHub secret. **Push** commits those changes so Actions picks them up on the next run; **Run now** dispatches a workflow immediately without committing. It's the same `aeon.yml` / `catalog/skills.json` / secrets the cron runner reads — the dashboard is just the editor.
 
 ## Quickstart
 
@@ -47,7 +47,11 @@ The left sidebar switches between the workspaces; the **Team** roster below the 
 | **MCP** | Browse featured MCP servers and write `.mcp.json` for one-click install; shows which secret each server needs. |
 | **Settings** | Add and manage credentials (Anthropic / gateway keys, per-skill API keys, notification channel tokens) as GitHub secrets. Skills flag inline when a required key is missing. |
 
-Selecting a skill from the roster opens its detail panel: description, schedule, the API keys and MCP servers it needs, a `var` input, and **Run now**.
+Selecting a skill from the roster opens its detail panel: description, schedule, the API keys and MCP servers it needs, a `var` input, a **model picker** (its options track the active harness), and **Run now**.
+
+### Harness selector
+
+The **top bar** carries a harness dropdown that sets which agent CLI runs your skills — one of six: **Claude Code** (default), **Grok**, **Codex**, **Pi**, **Vibe**, or **Kimi**. It writes `harness:` in `aeon.yml` (global, with an optional per-skill override), and the skill detail panel's model picker swaps to the selected harness's model ids. The **Authenticate** modal wires the credentials each one needs: **Connect X account** for Grok, **Connect ChatGPT** for Codex, **Connect Kimi** for Moonshot, or a single shared `OPENROUTER_API_KEY` that unlocks Codex/Pi/Vibe/Kimi at once. See [Harnesses](../../docs/harnesses.md) for the full matrix.
 
 ## Configuration
 
@@ -74,9 +78,9 @@ The gate also rejects state-changing requests whose `Origin` isn't allowlisted. 
 
 ## How it works
 
-- **Frontend:** Next.js App Router (`app/`) with React client components in `components/`. State is the repo itself — the UI reads `skills.json`, `packs.json`, `aeon.yml`, and `STRATEGY.md`, and writes back through the API.
+- **Frontend:** Next.js App Router (`app/`) with React client components in `components/`. State is the repo itself — the UI reads `catalog/skills.json`, `catalog/packs.json`, `aeon.yml`, and `STRATEGY.md`, and writes back through the API.
 - **API:** route handlers under `app/api/*` are the only place the dashboard touches your repo. They shell out to `gh` (`lib/gh.ts`) for secrets, workflow dispatch, and content reads, and run behind the loopback gate (`proxy.ts`).
-- **Skill output feed:** skill runs drop json-render specs into `outputs/`; the feed renders them as cards via [`@json-render`](https://github.com/json-render). `./notify-jsonrender` (a post-run workflow step) produces those specs.
+- **Skill output feed:** skill runs drop json-render specs into `outputs/`; the feed renders them as cards with a small built-in spec renderer (`components/SpecNode.tsx`). `./notify-jsonrender` (a post-run workflow step) produces those specs.
 - **Deploy:** the repo auto-deploys `apps/dashboard/` to Vercel on push to `main` — no manual step. Most operators run it locally with `./aeon`; the hosted build is the same app.
 
 ## Sandbox / deployment note

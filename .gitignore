@@ -6,18 +6,33 @@
 .env.local
 .env.*.local
 
-# Claude Code local state
-.claude/
+# Claude Code local state — ignored, EXCEPT the shipped operator skill
+# (`.claude/skills/aeon/` gives every fork the `/aeon` setup skill; see docs/aeon-setup.md)
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/aeon/
 
-# Caches — prefetch scripts write these, skills read them; regenerated every run
-# (.xai-cache, .verdikta-cache, .treasury-cache, .star-cache, .github-releases-cache, …)
+# Cache dirs skills create at run time; regenerated every run
 .*-cache/
-.tg_cache/
 
-# Pending queues — postprocess scripts consume + delete these after the run
-# (.pending-notify, .pending-email, .pending-admanage, .pending-verdikta, …),
-# plus the .pending-notify-temp scratch where skills stage notify bodies for `./notify -f`
+# Working scratch dirs some skills stage during a run, then clean up:
+# .pending-notify (notify re-delivery), .pending-deploy (deploy-prototype build),
+# plus .pending-notify-temp where skills stage notify bodies for `./notify -f`
 .pending-*/
+# ...and the FILE form. The trailing slash above matches directories only, so the
+# json-render staging file (.pending-<skill>.md) was tracked and committed; a later
+# read-only run that could not overwrite it had the previous run's digest published
+# as its own. It now lives outside the repo ($AEON_PENDING_DIR); this is the guard
+# against it coming back.
+.pending-*.md
+apps/dashboard/outputs/.pending-*.md
+
+# deploy-uni-hook stages its key-safe runner + chain registry at the repo root
+# (like ./notify / ./secretcurl) from skills/deploy-uni-hook/templates/; these are
+# run-time copies, not sources, so they must never be committed.
+/hook-deploy.sh
+/chains.tsv
 
 # Skill provenance lock (per-repo, not committed)
 skills.lock
@@ -25,18 +40,11 @@ skills.lock
 # Scratch / temp files
 tmp_*
 *.tmp
-.tmp-*
-.pending-*.sh
-.run-*.sh
 .*-tmp.md
 .*-draft.md
 .*-msg.txt
 *_msg.txt
 *_raw.txt
-
-# Leaked creds scratch
-.xai_key
-.ghtoken
 
 # Python bytecode
 __pycache__/
@@ -45,6 +53,9 @@ __pycache__/
 # Node
 node_modules/
 
-# Stale artifacts
-.external-work
-.vuln-scan/
+# remotion skill: render outputs + the working storyboard are runtime-only
+skills/remotion/project/out/
+skills/remotion/project/props.json
+
+# eyebrow local snapshot cache (content-addressed; not committed)
+.eyebrow/

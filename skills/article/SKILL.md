@@ -1,11 +1,15 @@
 ---
-type: Skill
-name: Article
-category: research
-description: Write a publication-ready article in one of three angles — a general trending long-form piece (or a single-mechanism technical explainer), a thesis-driven article about a watched repo, or a project-through-a-lens essay. Optionally generate a Replicate hero image with --visual.
-var: ""
-tags: [content, dev]
-requires: [REPLICATE_API_TOKEN?]
+name: article
+description: Write a publication-ready article in one of three angles - a trending long-form piece, a watched-repo thesis, or a project-through-a-lens essay. Optional Replicate hero image with --visual.
+metadata:
+  title: Article
+  category: basics
+  var: ""
+  tags:
+    - content
+    - dev
+  requires:
+    - REPLICATE_API_TOKEN?
 ---
 > **${var}** — Selector: `[angle:arg] [--visual]`. The **angle** prefix picks the article type; append **`--visual`** (or `visual`) anywhere to also generate a Replicate hero image.
 >
@@ -15,7 +19,7 @@ requires: [REPLICATE_API_TOKEN?]
 > - **`lens:<topic>`** → `lens` project-through-a-lens essay framed by that lens (e.g. `lens:unix philosophy`). Bare `lens:` auto-selects the lens.
 > - **`--visual`** appended to any of the above → after the body is written, generate a Replicate hero image (optional `REPLICATE_API_TOKEN`; ships text-only if absent).
 >
-> Examples: `""`, `"entropy trajectory reasoning --visual"`, `"repo:aaronjmars/aeon"`, `"repo:roadmap"`, `"lens:regulation wave --visual"`.
+> Examples: `""`, `"entropy trajectory reasoning --visual"`, `"repo:aeonfun/aeon"`, `"repo:roadmap"`, `"lens:regulation wave --visual"`.
 
 Today is ${today}. Write a high-quality, publication-ready article. No placeholders.
 
@@ -200,7 +204,7 @@ From the commit list, find the most-frequently-touched files. Read the top 2–3
 ### Phase 2 — Thesis
 
 Write one **falsifiable claim** in ≤25 words. The claim must be disprovable by specific evidence — not a vibe.
-- Good: "aaronjmars/aeon is pivoting from scheduled digests to reactive skill chains — 4 of 7 merged PRs this week added or consumed `output/.chains/*.md` contracts."
+- Good: "aeonfun/aeon is pivoting from scheduled digests to reactive skill chains — 4 of 7 merged PRs this week added or consumed `output/.chains/*.md` contracts."
 - Bad: "Aeon is an interesting agent framework." (not falsifiable)
 
 If an angle is forced (from `arg`), the thesis must relate to it (e.g. angle `architecture` → an architectural claim). If no angle is forced, pick the one with the strongest evidence from: shipping velocity shift, architectural pivot, community growth inflection, roadmap commitment, deprecation/scope cut, performance or scale milestone.
@@ -447,7 +451,7 @@ Go through this checklist after the first draft. If any gate fails, rewrite the 
 
 Runs **only when `visual = true`**, after the article body is written and saved, for **any** angle. Use Replicate's Nano Banana Pro (Gemini 3 Pro Image). It renders **text labels well** — exploit that by writing prompts that ask for labeled diagrams or schematics, not stock-photo metaphors. Set `IMG_BASENAME` to match the article file for the angle: `explainer-${today}` (standard/explainer), `article-${today}` (standard/general), `repo-article-${today}` (repo), or `project-lens-${today}` (lens).
 
-1. **Preflight**: if `$REPLICATE_API_TOKEN` is empty **or unset**, log `IMAGE_SKIPPED reason=no-token` and skip to step 5 (no-image path). Do not attempt any Replicate call. The article must ship without an image in this case.
+1. **Preflight**: check presence with the `${VAR:+x}` form — `[ -n "${REPLICATE_API_TOKEN:+x}" ]` (a bare `$REPLICATE_API_TOKEN` trips the secret-expansion analyzer and falsely reads as unset). If it's unset, log `IMAGE_SKIPPED reason=no-token` and skip to step 5 (no-image path). Do not attempt any Replicate call. The article must ship without an image in this case.
 
 2. **Craft the prompt**. Aim for technical illustration energy, not marketing. Strong prompt templates:
    - *Schematic*: "Technical schematic illustration of <mechanism>, dark navy background, thin cyan and amber lines, labeled boxes reading '<label1>', '<label2>', '<label3>', arrows showing data flow from <A> to <B> to <C>, blueprint aesthetic, 16:9"
@@ -455,10 +459,10 @@ Runs **only when `visual = true`**, after the article body is written and saved,
    - *Data-flow*: "Network diagram of <mechanism>: nodes labeled '<A>', '<B>', '<C>' connected by directional arrows, weights shown as line thickness, monospace labels, technical-paper figure style, 16:9"
    Avoid: photorealistic faces, stock-business imagery, "AI brain" tropes, gradient slop.
 
-3. **Generate** with fallback enabled from the start (Nano Banana Pro can rate-limit; Seedream 5.0 lite is the fallback):
+3. **Generate** with fallback enabled from the start (Nano Banana Pro can rate-limit; Seedream 5.0 lite is the fallback). The Replicate call is auth'd, so route it through `./secretcurl` with the `{REPLICATE_API_TOKEN}` placeholder — never a bare `$REPLICATE_API_TOKEN` on the line (the Bash permission layer refuses it):
    ```bash
-   curl -s -X POST \
-     -H "Authorization: Bearer $REPLICATE_API_TOKEN" \
+   ./secretcurl -s -X POST \
+     -H "Authorization: Bearer {REPLICATE_API_TOKEN}" \
      -H "Content-Type: application/json" \
      -H "Prefer: wait" \
      -d '{
@@ -472,10 +476,11 @@ Runs **only when `visual = true`**, after the article body is written and saved,
      }' \
      "https://api.replicate.com/v1/models/google/nano-banana-pro/predictions"
    ```
+   `Prefer: wait` usually returns the image inline in `.output`. If `.output` is empty, the prediction is still running — poll `.urls.get` for up to ~60s (`./secretcurl -s -H "Authorization: Bearer {REPLICATE_API_TOKEN}" "$PRED_URL"`), stopping when `.status` is `succeeded` (read `.output`) or `failed`/`canceled` (no-image path, step 5).
 
-4. **Persist locally** — Replicate CDN URLs expire. Download and commit:
+4. **Persist locally** — Replicate CDN URLs expire. Download and commit (the CDN URL carries no secret, so plain `curl` is fine):
    ```bash
-   mkdir -p images
+   mkdir -p output/images
    IMAGE_URL=<extracted from response.output>
    EXT=$(echo "$IMAGE_URL" | grep -oE '\.(jpg|jpeg|png|webp)' | tail -1)
    EXT="${EXT:-.jpg}"
@@ -537,11 +542,11 @@ Append **one** entry under a single `### article` heading in `memory/logs/${toda
 
 Log **always — even on partial failure** (e.g. IMAGE_SKIPPED, REPO_ARTICLE_SKIPPED, aborted lens).
 
-## Sandbox note
+## Network note
 
-The sandbox may block outbound curl. Use **WebFetch** as a fallback for any URL fetch. For auth-required APIs, use the pre-fetch/post-process pattern (see CLAUDE.md). `gh api` handles GitHub auth internally — prefer it over raw curl for repo metadata.
+There is no network sandbox — `curl` works. For a flaky public GET, fall back to **WebFetch** on the same URL. For an auth'd API, call `./secretcurl` with a `{ENV_NAME}` placeholder (the key is injected via `requires:`) — never a bare `$SECRET` on the line. `gh api` handles GitHub auth internally — prefer it over raw curl for repo metadata.
 
-For the Replicate call (auth-required via env var), if the inline curl fails, write the request payload to `.pending-replicate/explainer-${today}.json` and rely on the post-process pattern documented in `CLAUDE.md` (`scripts/postprocess-replicate.sh` runs after Claude finishes with full env access). Continue down the no-image path so the article still ships. The deferred JSON uses the flat shape `scripts/postprocess-replicate.sh` reads: `{ "prompt": "...", "aspect_ratio": "16:9", "output_path": "output/images/${IMG_BASENAME}.jpg", "model": "google/nano-banana-pro" }`.
+The Replicate call runs **in-run** via `./secretcurl` (see the Visual add-on). If it fails, times out, or the download fails, go straight to the no-image path (step 5) — the article ships text-only. There is no deferred fallback; the image is best-effort and never blocks the article.
 
 ## Environment Variables
 - `REPLICATE_API_TOKEN` — Replicate API key, used only by the `--visual` add-on. Optional: article text ships without it via the no-image path.

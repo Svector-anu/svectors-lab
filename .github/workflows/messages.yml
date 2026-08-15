@@ -1,5 +1,5 @@
-name: Messages & Scheduler
-run-name: "${{ inputs.message && format('msg ({0}): {1}', inputs.source || 'user', inputs.message) || (github.event_name == 'repository_dispatch' && github.event.action != 'cron-tick' && format('msg ({0}): {1}', github.event.action, github.event.client_payload.message)) || 'tick: schedule + poll' }}"
+name: Aeon · Messages
+run-name: "${{ inputs.message && format('msg ({0}): {1}', inputs.source || 'user', inputs.message) || (github.event_name == 'repository_dispatch' && github.event.action != 'cron-tick' && format('msg ({0}): {1}', github.event.action, github.event.client_payload.message)) || 'poll' }}"
 
 on:
   schedule:
@@ -17,26 +17,30 @@ on:
   repository_dispatch:
     # Message types -> the heavy `run` job (Claude interprets). Routing types
     # (from the instant-mode webhook, pre-classified) -> the lightweight `route`
-    # job (no LLM). cron-tick -> the `tick` scheduler.
+    # job (no LLM). cron-tick -> the `poll` job (an external uptime pinger uses it
+    # to catch up dropped */5 schedule ticks). Scheduling itself now lives in the
+    # separate scheduler.yml, which also listens to schedule + cron-tick.
     types: [telegram-message, discord-message, slack-message, cron-tick, telegram-command, telegram-callback, telegram-reply]
 
 permissions:
   contents: write
   pull-requests: write
-  issues: read
-  actions: write
+  issues: write   # the route/run jobs may append to the Issues-as-state ledger
+                  # (§3); harmless when STATE_BACKEND is unset/file
+  actions: write  # the poll job calls `gh workflow run messages.yml` to dispatch
+                  # each collected message as its own `run`
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   NODE_OPTIONS: '--no-deprecation'
 
-# Poll/schedule runs serialize (prevent duplicate ticks). Message runs get unique groups (parallel execution).
+# Poll runs serialize (prevent duplicate polls). Message runs get unique groups (parallel execution).
 concurrency:
-  group: ${{ (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.message != '')) && format('aeon-msg-{0}', github.run_id) || 'aeon-tick' }}
+  group: ${{ (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.message != '')) && format('aeon-msg-{0}', github.run_id) || 'aeon-poll' }}
   cancel-in-progress: false
 
 jobs:
-  tick:
+  poll:
     if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.message == '') || (github.event_name == 'repository_dispatch' && github.event.action == 'cron-tick')
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -52,465 +56,19 @@ jobs:
           git config user.name "aeonframework"
           git config user.email "aeonframework@proton.me"
 
-      - name: Determine and dispatch scheduled skills
-        env:
-          GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
-        run: |
-          MINUTE=$(date -u +%-M)
-          HOUR=$(date -u +%-H)
-          DOM=$(date -u +%-d)
-          MONTH=$(date -u +%-m)
-          DOW=$(date -u +%w)
-          NOW_ISO=$(date -u +%FT%TZ)
-          NOW_EPOCH=$(date -u +%s)
-
-          # Classic PATs echo granted scopes on X-OAuth-Scopes; fine-grained PATs
-          # and GITHUB_TOKEN don't send this header, so this only flags the
-          # classic-PAT case (GH_GLOBAL is documented as one — see the vuln-scanner
-          # public-PR setup note in memory/logs and output/articles).
-          OAUTH_SCOPES=$(gh api -i /rate_limit 2>/dev/null | grep -i '^x-oauth-scopes:' | cut -d: -f2- | tr -d '\r ')
-          if [ -n "$OAUTH_SCOPES" ] && [[ ",$OAUTH_SCOPES," != *,workflow,* ]]; then
-            echo "::warning::GH_GLOBAL token is missing the 'workflow' scope (has: ${OAUTH_SCOPES}) — workflow-dispatch calls below will 403 until it's added (Settings > Developer settings > Personal access tokens)."
-          fi
-
-          # Workflow-dispatch calls can 403 if GH_GLOBAL is a classic PAT missing
-          # the 'workflow' scope (or a fine-grained PAT missing Actions:write) —
-          # wrap dispatches so one bad token can't abort catch-up + message polling.
-          dispatch() {
-            local out
-            if ! out=$(gh workflow run "$@" 2>&1); then
-              echo "::error::gh workflow run $* failed: ${out}"
-              return 1
-            fi
-          }
-
-          # Previous two hours for catch-up. GitHub Actions throttles the */5 tick
-          # to 71-97min gaps under load; a 1h lookback gives :40-:59 slots only
-          # ~65-80min of tolerance, so trailing-minute slots get dropped. A 2h
-          # lookback gives every slot >=120min of tolerance.
-          PREV_HOUR=$(( (HOUR + 23) % 24 ))
-          PREV2_HOUR=$(( (HOUR + 22) % 24 ))
-
-          # Cron field matcher — supports: *, N, N-M (ranges), N,M (lists), */N, N/step, N-M/step (steps)
-          cron_match() {
-            local field="$1" value="$2"
-            [ "$field" = "*" ] && return 0
-            # Step values: */5 or 1-10/2
-            if [[ "$field" == */* ]]; then
-              local base="${field%/*}" interval="${field#*/}"
-              if [ "$base" = "*" ]; then
-                [ $((value % interval)) -eq 0 ] && return 0
-              elif [[ "$base" == *-* ]]; then
-                local lo="${base%-*}" hi="${base#*-}"
-                [ "$value" -ge "$lo" ] && [ "$value" -le "$hi" ] && [ $(( (value - lo) % interval )) -eq 0 ] && return 0
-              else
-                [ "$value" -ge "$base" ] && [ $(( (value - base) % interval )) -eq 0 ] && return 0
-              fi
-              return 1
-            fi
-            # Comma-separated list (entries may be ranges or exact values)
-            IFS=',' read -ra VALS <<< "$field"
-            for v in "${VALS[@]}"; do
-              if [[ "$v" == *-* ]]; then
-                local lo="${v%-*}" hi="${v#*-}"
-                [ "$value" -ge "$lo" ] && [ "$value" -le "$hi" ] && return 0
-              else
-                [ "$v" = "$value" ] && return 0
-              fi
-            done
-            return 1
-          }
-
-          # --- Load cron state ---
-          STATE_FILE="memory/cron-state.json"
-          if [ -f "$STATE_FILE" ] && jq empty "$STATE_FILE" 2>/dev/null; then
-            STATE=$(cat "$STATE_FILE")
-          else
-            STATE='{}'
-          fi
-
-          # --- Parse aeon.yml ---
-          declare -A SKILL_ENABLED SKILL_SCHEDULE SKILL_VAR
-          SKILL_ORDER=()
-          CURRENT_SKILL=""
-          while IFS= read -r line; do
-            # Inline format: skill-name: { enabled: true, schedule: "..." }
-            if [[ "$line" =~ ^\ \ ([a-zA-Z0-9_-]+):\ *\{(.+)\} ]]; then
-              CURRENT_SKILL="${BASH_REMATCH[1]}"
-              INLINE="${BASH_REMATCH[2]}"
-              SKILL_ORDER+=("$CURRENT_SKILL")
-              [[ "$INLINE" =~ enabled:\ *true ]] && SKILL_ENABLED["$CURRENT_SKILL"]="true" || SKILL_ENABLED["$CURRENT_SKILL"]="false"
-              [[ "$INLINE" =~ schedule:\ *\"([^\"]+)\" ]] && SKILL_SCHEDULE["$CURRENT_SKILL"]="${BASH_REMATCH[1]}"
-              [[ "$INLINE" =~ var:\ *\"([^\"]+)\" ]] && SKILL_VAR["$CURRENT_SKILL"]="${BASH_REMATCH[1]}"
-              CURRENT_SKILL=""
-              continue
-            fi
-            # Multi-line format — covers both block-mapping (name: then 4-space
-            # fields) and split flow maps an editor/formatter may produce (name:
-            # then a lone "{", then deeper-indented "enabled:"/"schedule:" fields,
-            # then "}"). The optional trailing "{" also catches "name: {" on one
-            # line. Field regexes accept 3+ spaces so 4- and 6-space indents both
-            # parse — otherwise a reformatted *enabled* skill silently loses its
-            # schedule and is never dispatched (the default below is enabled=true).
-            if [[ "$line" =~ ^\ \ ([a-zA-Z0-9_-]+):\ *\{?\ *$ ]]; then
-              CURRENT_SKILL="${BASH_REMATCH[1]}"
-              SKILL_ORDER+=("$CURRENT_SKILL")
-              SKILL_ENABLED["$CURRENT_SKILL"]="true"
-              SKILL_SCHEDULE["$CURRENT_SKILL"]=""
-              SKILL_VAR["$CURRENT_SKILL"]=""
-            fi
-            if [[ "$line" =~ ^\ \ \ +enabled:\ *false ]] && [ -n "$CURRENT_SKILL" ]; then
-              SKILL_ENABLED["$CURRENT_SKILL"]="false"
-            fi
-            if [[ "$line" =~ ^\ \ \ +schedule:\ *\"([^\"]+)\" ]] && [ -n "$CURRENT_SKILL" ]; then
-              SKILL_SCHEDULE["$CURRENT_SKILL"]="${BASH_REMATCH[1]}"
-            fi
-            if [[ "$line" =~ ^\ \ \ +var:\ *\"([^\"]+)\" ]] && [ -n "$CURRENT_SKILL" ]; then
-              SKILL_VAR["$CURRENT_SKILL"]="${BASH_REMATCH[1]}"
-            fi
-          done < aeon.yml
-
-          # --- Match skills ---
-          MATCHED=()
-          for SKILL in "${SKILL_ORDER[@]}"; do
-            [ "${SKILL_ENABLED[$SKILL]}" = "false" ] && continue
-            SCHED="${SKILL_SCHEDULE[$SKILL]}"
-            [ -z "$SCHED" ] && continue
-            [ "$SCHED" = "workflow_dispatch" ] && continue
-            [ "$SCHED" = "reactive" ] && continue
-
-            # Read state for this skill
-            LAST_STATUS=$(echo "$STATE" | jq -r --arg s "$SKILL" '.[$s].last_status // "none"')
-            LAST_DISPATCH=$(echo "$STATE" | jq -r --arg s "$SKILL" '.[$s].last_dispatch // "1970-01-01T00:00:00Z"')
-            LAST_DISPATCH_EPOCH=$(date -u -d "$LAST_DISPATCH" +%s 2>/dev/null || echo 0)
-            MINUTES_SINCE=$(( (NOW_EPOCH - LAST_DISPATCH_EPOCH) / 60 ))
-
-            # --- Retry failed skills (after 30 min cooldown) ---
-            if [ "$LAST_STATUS" = "failed" ] && [ "$MINUTES_SINCE" -ge 30 ]; then
-              echo "Retrying failed skill: $SKILL (failed ${MINUTES_SINCE}m ago)"
-              MATCHED+=("$SKILL")
-              continue
-            fi
-
-            # --- Normal cron matching ---
-            IFS=' ' read -r C_MIN C_HOUR C_DOM C_MONTH C_DOW <<< "$SCHED"
-
-            cron_match "$C_DOM" "$DOM" || continue
-            cron_match "$C_MONTH" "$MONTH" || continue
-            cron_match "$C_DOW" "$DOW" || continue
-
-            SHOULD_RUN=false
-            if cron_match "$C_HOUR" "$HOUR"; then
-              if [ "$C_MIN" = "*" ] || [ "$C_MIN" -le "$MINUTE" ]; then
-                SHOULD_RUN=true
-              fi
-            fi
-            # Catch-up: schedule matched one of the previous two hours but was missed.
-            # Only catch up when last dispatch predates the scheduled fire time —
-            # prevents the same skill from firing twice when later ticks still match.
-            if [ "$SHOULD_RUN" = "false" ]; then
-              for CATCHUP_HOUR in "$PREV_HOUR" "$PREV2_HOUR"; do
-                cron_match "$C_HOUR" "$CATCHUP_HOUR" || continue
-                if [[ "$C_MIN" =~ ^[0-9]+$ ]]; then
-                  SCHED_EPOCH=$(date -u -d "$(date -u +%Y-%m-%d) ${CATCHUP_HOUR}:$(printf '%02d' "$C_MIN"):00 UTC" +%s 2>/dev/null || echo 0)
-                  # Lookback hour wrapped past midnight — scheduled fire was yesterday
-                  [ "$SCHED_EPOCH" -gt "$NOW_EPOCH" ] && SCHED_EPOCH=$((SCHED_EPOCH - 86400))
-                  [ "$LAST_DISPATCH_EPOCH" -lt "$SCHED_EPOCH" ] && SHOULD_RUN=true
-                else
-                  SHOULD_RUN=true
-                fi
-                [ "$SHOULD_RUN" = "true" ] && break
-              done
-            fi
-
-            [ "$SHOULD_RUN" = "false" ] && continue
-
-            # --- Dedup: skip if dispatched recently ---
-            # 150 (was 90): must exceed the 2h catch-up lookback so schedules with
-            # non-numeric minute fields can't re-fire on successive ticks.
-            DEDUP_WINDOW=150
-            if [[ "$C_MIN" == */* ]]; then
-              INTERVAL="${C_MIN#*/}"
-              DEDUP_WINDOW=$((INTERVAL * 2 + 5))
-            fi
-
-            if [ "$MINUTES_SINCE" -lt "$DEDUP_WINDOW" ]; then
-              echo "Skipping $SKILL (dispatched ${MINUTES_SINCE}m ago, window: ${DEDUP_WINDOW}m)"
-              continue
-            fi
-
-            MATCHED+=("$SKILL")
-            echo "Matched: $SKILL (schedule: $SCHED)"
-          done
-
-          if [ ${#MATCHED[@]} -eq 0 ]; then
-            echo "No skills matched"
-          fi
-
-          # --- Parse depends_on from SKILL.md frontmatter ---
-          declare -A SKILL_DEPS
-          for SKILL in "${MATCHED[@]}"; do
-            SKILL_FILE="skills/${SKILL}/SKILL.md"
-            if [ -f "$SKILL_FILE" ]; then
-              DEPS=$(sed -n '/^---/,/^---/p' "$SKILL_FILE" | \
-                grep -oP 'depends_on:\s*\[([^\]]*)\]' | \
-                sed 's/depends_on:\s*\[//;s/\]//' | \
-                tr -d ' ' || true)
-              [ -n "$DEPS" ] && SKILL_DEPS["$SKILL"]="$DEPS"
-            fi
-          done
-
-          # --- Order dispatches: dependencies first, then dependents ---
-          DEPS_FIRST=()
-          DEPS_LAST=()
-          for SKILL in "${MATCHED[@]}"; do
-            if [ -n "${SKILL_DEPS[$SKILL]:-}" ]; then
-              DEPS_LAST+=("$SKILL")
-            else
-              DEPS_FIRST+=("$SKILL")
-            fi
-          done
-          ORDERED=("${DEPS_FIRST[@]}" "${DEPS_LAST[@]}")
-
-          # --- Parse chains from aeon.yml ---
-          declare -A CHAIN_SCHEDULE CHAIN_SKILLS
-          CHAIN_ORDER=()
-          CHAIN_COVERED_SKILLS=()
-          IN_CHAINS=false
-          CURRENT_CHAIN=""
-          IN_STEPS=false
-          while IFS= read -r line; do
-            if [[ "$line" =~ ^chains: ]]; then
-              IN_CHAINS=true
-              continue
-            fi
-            $IN_CHAINS && [[ "$line" =~ ^[a-z] ]] && IN_CHAINS=false
-            $IN_CHAINS || continue
-
-            if [[ "$line" =~ ^\ \ ([a-zA-Z0-9_-]+): ]]; then
-              CURRENT_CHAIN="${BASH_REMATCH[1]}"
-              CHAIN_ORDER+=("$CURRENT_CHAIN")
-              IN_STEPS=false
-              continue
-            fi
-            [ -z "$CURRENT_CHAIN" ] && continue
-            if [[ "$line" =~ schedule:\ *\"([^\"]+)\" ]]; then
-              CHAIN_SCHEDULE["$CURRENT_CHAIN"]="${BASH_REMATCH[1]}"
-            fi
-            if [[ "$line" =~ parallel:\ *\[([^\]]+)\] ]]; then
-              CHAIN_SKILLS["$CURRENT_CHAIN"]+="$(echo "${BASH_REMATCH[1]}" | tr -d ' '),"
-            elif [[ "$line" =~ skill:\ *([a-zA-Z0-9_-]+) ]]; then
-              CHAIN_SKILLS["$CURRENT_CHAIN"]+="${BASH_REMATCH[1]},"
-            fi
-          done < aeon.yml
-
-          # Match chains against current time
-          MATCHED_CHAINS=()
-          for CH in "${CHAIN_ORDER[@]}"; do
-            SCHED="${CHAIN_SCHEDULE[$CH]:-}"
-            [ -z "$SCHED" ] && continue
-
-            IFS=' ' read -r C_MIN C_HOUR C_DOM C_MONTH C_DOW <<< "$SCHED"
-            cron_match "$C_DOM" "$DOM" || continue
-            cron_match "$C_MONTH" "$MONTH" || continue
-            cron_match "$C_DOW" "$DOW" || continue
-
-            CHAIN_KEY="chain:$CH"
-            LAST_DISPATCH=$(echo "$STATE" | jq -r --arg s "$CHAIN_KEY" '.[$s].last_dispatch // "1970-01-01T00:00:00Z"')
-            LAST_DISPATCH_EPOCH=$(date -u -d "$LAST_DISPATCH" +%s 2>/dev/null || echo 0)
-            MINUTES_SINCE=$(( (NOW_EPOCH - LAST_DISPATCH_EPOCH) / 60 ))
-
-            SHOULD_RUN=false
-            if cron_match "$C_HOUR" "$HOUR"; then
-              if [ "$C_MIN" = "*" ] || [ "$C_MIN" -le "$MINUTE" ]; then
-                SHOULD_RUN=true
-              fi
-            fi
-            # Catch-up: only if last dispatch predates today's scheduled fire time
-            if [ "$SHOULD_RUN" = "false" ] && cron_match "$C_HOUR" "$PREV_HOUR"; then
-              if [[ "$C_MIN" =~ ^[0-9]+$ ]]; then
-                SCHED_EPOCH=$(date -u -d "$(date -u +%Y-%m-%d) ${PREV_HOUR}:$(printf '%02d' "$C_MIN"):00 UTC" +%s 2>/dev/null || echo 0)
-                [ "$LAST_DISPATCH_EPOCH" -lt "$SCHED_EPOCH" ] && SHOULD_RUN=true
-              else
-                SHOULD_RUN=true
-              fi
-            fi
-            [ "$SHOULD_RUN" = "false" ] && continue
-
-            if [ "$MINUTES_SINCE" -lt 90 ]; then
-              echo "Skipping chain $CH (dispatched ${MINUTES_SINCE}m ago)"
-              continue
-            fi
-
-            MATCHED_CHAINS+=("$CH")
-            IFS=',' read -ra CH_SKILLS <<< "${CHAIN_SKILLS[$CH]}"
-            for s in "${CH_SKILLS[@]}"; do
-              [ -n "$s" ] && CHAIN_COVERED_SKILLS+=("$s")
-            done
-            echo "Matched chain: $CH (schedule: $SCHED)"
-          done
-
-          # --- Dispatch chains ---
-          for CH in "${MATCHED_CHAINS[@]}"; do
-            echo "Dispatching chain: $CH"
-            dispatch chain-runner.yml -f chain="$CH" || true
-            STATE=$(echo "$STATE" | jq --arg s "chain:$CH" --arg ts "$NOW_ISO" \
-              '.[$s].last_dispatch = $ts | .[$s].last_status = "dispatched"')
-            sleep 2
-          done
-
-          # --- Filter standalone skills: skip if covered by a chain dispatching now ---
-          FILTERED_ORDERED=()
-          for SKILL in "${ORDERED[@]}"; do
-            SKIP=false
-            for covered in "${CHAIN_COVERED_SKILLS[@]}"; do
-              if [ "$SKILL" = "$covered" ]; then
-                echo "Skipping standalone $SKILL (covered by chain)"
-                SKIP=true
-                break
-              fi
-            done
-            $SKIP || FILTERED_ORDERED+=("$SKILL")
-          done
-          ORDERED=("${FILTERED_ORDERED[@]}")
-
-          # --- Evaluate reactive triggers ---
-          # Parse reactive section from aeon.yml
-          IN_REACTIVE=false
-          REACTIVE_SKILL=""
-          declare -A REACTIVE_TRIGGERS
-          while IFS= read -r line; do
-            if [[ "$line" =~ ^reactive: ]]; then
-              IN_REACTIVE=true
-              continue
-            fi
-            $IN_REACTIVE && [[ "$line" =~ ^[a-z] ]] && ! [[ "$line" =~ ^[[:space:]] ]] && IN_REACTIVE=false
-            $IN_REACTIVE || continue
-            [[ "$line" =~ ^\ *# ]] && continue
-            if [[ "$line" =~ ^\ \ ([a-zA-Z0-9_-]+): ]]; then
-              REACTIVE_SKILL="${BASH_REMATCH[1]}"
-              continue
-            fi
-            if [ -n "$REACTIVE_SKILL" ] && [[ "$line" =~ on:\ *\"([^\"]+)\".*when:\ *\"([^\"]+)\" ]]; then
-              ON="${BASH_REMATCH[1]}"
-              WHEN="${BASH_REMATCH[2]}"
-              REACTIVE_TRIGGERS["$REACTIVE_SKILL"]+="${ON}:${WHEN};"
-            fi
-          done < aeon.yml
-
-          # Check reactive triggers against cron state
-          for RSKILL in "${!REACTIVE_TRIGGERS[@]}"; do
-            IFS=';' read -ra RULES <<< "${REACTIVE_TRIGGERS[$RSKILL]}"
-            for rule in "${RULES[@]}"; do
-              [ -z "$rule" ] && continue
-              ON="${rule%%:*}"
-              WHEN="${rule#*:}"
-
-              # Check condition against all skills (or specific source skill)
-              TRIGGERED=false
-              for CHECK_SKILL in "${SKILL_ORDER[@]}"; do
-                [ "${SKILL_ENABLED[$CHECK_SKILL]}" = "false" ] && continue
-                [ "$ON" != "*" ] && [ "$ON" != "$CHECK_SKILL" ] && continue
-
-                if [[ "$WHEN" =~ consecutive_failures\ *\>=\ *([0-9]+) ]]; then
-                  THRESHOLD="${BASH_REMATCH[1]}"
-                  CONSEC=$(echo "$STATE" | jq -r --arg s "$CHECK_SKILL" '.[$s].consecutive_failures // 0')
-                  if [ "$CONSEC" -ge "$THRESHOLD" ]; then
-                    echo "Reactive trigger: $RSKILL (${CHECK_SKILL} has ${CONSEC} consecutive failures >= ${THRESHOLD})"
-                    TRIGGERED=true
-                    break
-                  fi
-                elif [[ "$WHEN" =~ last_status\ *=\ *([a-z]+) ]]; then
-                  EXPECTED="${BASH_REMATCH[1]}"
-                  ACTUAL=$(echo "$STATE" | jq -r --arg s "$CHECK_SKILL" '.[$s].last_status // "none"')
-                  if [ "$ACTUAL" = "$EXPECTED" ]; then
-                    echo "Reactive trigger: $RSKILL (${CHECK_SKILL} last_status = ${EXPECTED})"
-                    TRIGGERED=true
-                    break
-                  fi
-                fi
-              done
-
-              if [ "$TRIGGERED" = "true" ]; then
-                # Dedup check
-                LAST_DISPATCH=$(echo "$STATE" | jq -r --arg s "$RSKILL" '.[$s].last_dispatch // "1970-01-01T00:00:00Z"')
-                LAST_DISPATCH_EPOCH=$(date -u -d "$LAST_DISPATCH" +%s 2>/dev/null || echo 0)
-                MINUTES_SINCE=$(( (NOW_EPOCH - LAST_DISPATCH_EPOCH) / 60 ))
-                if [ "$MINUTES_SINCE" -ge 90 ]; then
-                  ORDERED+=("$RSKILL")
-                else
-                  echo "Skipping reactive $RSKILL (dispatched ${MINUTES_SINCE}m ago)"
-                fi
-                break
-              fi
-            done
-          done
-
-          # --- Dispatch ---
-          DISPATCHED_DEPS=false
-          for SKILL in "${ORDERED[@]}"; do
-            if [ -n "${SKILL_DEPS[$SKILL]:-}" ] && [ "$DISPATCHED_DEPS" = "false" ]; then
-              DISPATCHED_DEPS=true
-              echo "Waiting 5s before dispatching skills with dependencies..."
-              sleep 5
-            fi
-
-            VAR="${SKILL_VAR[$SKILL]:-}"
-            if [ -n "$VAR" ]; then
-              echo "Dispatching: $SKILL (var: $VAR)${SKILL_DEPS[$SKILL]:+ [depends_on: ${SKILL_DEPS[$SKILL]}]}"
-              dispatch aeon.yml -f skill="$SKILL" -f var="$VAR" || true
-            else
-              echo "Dispatching: $SKILL${SKILL_DEPS[$SKILL]:+ [depends_on: ${SKILL_DEPS[$SKILL]}]}"
-              dispatch aeon.yml -f skill="$SKILL" || true
-            fi
-
-            STATE=$(echo "$STATE" | jq --arg s "$SKILL" --arg ts "$NOW_ISO" \
-              '.[$s].last_dispatch = $ts | .[$s].last_status = "dispatched"')
-
-            sleep 2
-          done
-
-          # --- Commit updated state ---
-          mkdir -p memory
-          echo "$STATE" | jq '.' > "$STATE_FILE"
-
-          git add "$STATE_FILE"
-          if git diff --staged --quiet; then
-            echo "No state changes"
-          else
-            git commit -m "chore(scheduler): update cron state"
-            for i in 1 2 3 4 5; do
-              if git pull --rebase origin main 2>/dev/null && git push -u origin HEAD 2>/dev/null; then
-                echo "State committed on attempt $i"
-                break
-              fi
-              git rebase --abort 2>/dev/null || true
-              git reset --soft HEAD~1 2>/dev/null || true
-              git checkout -- "$STATE_FILE" 2>/dev/null || true
-              git pull origin main 2>/dev/null || true
-
-              if [ -f "$STATE_FILE" ] && jq empty "$STATE_FILE" 2>/dev/null; then
-                MERGED=$(cat "$STATE_FILE")
-              else
-                MERGED='{}'
-              fi
-              for SKILL in "${MATCHED[@]}"; do
-                MERGED=$(echo "$MERGED" | jq --arg s "$SKILL" --arg ts "$NOW_ISO" \
-                  '.[$s].last_dispatch = $ts | .[$s].last_status = "dispatched"')
-              done
-              echo "$MERGED" | jq '.' > "$STATE_FILE"
-              git add "$STATE_FILE"
-              git diff --staged --quiet && { echo "State already up to date after merge"; break; }
-              git commit -m "chore(scheduler): update cron state"
-              sleep "$i"
-            done
-          fi
-
       - name: Collect and dispatch messages
         env:
           GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Owner user gate. TELEGRAM_CHAT_ID gates the *chat*; in a group/public
+          # chat that lets any member command the bot (chat.id matches, but they
+          # aren't the owner). This gates the *user*: it defaults to TELEGRAM_CHAT_ID,
+          # which is exactly the owner's id in a 1:1 DM (chat.id == user.id there),
+          # so DM setups need no new config. In a group a negative chat id never
+          # equals a positive user id, so buttons fail closed until the operator
+          # sets TELEGRAM_ALLOWED_USER_ID to their own numeric Telegram user id.
+          TELEGRAM_ALLOWED_USER_ID: ${{ vars.TELEGRAM_ALLOWED_USER_ID || secrets.TELEGRAM_ALLOWED_USER_ID }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
           DISCORD_ALLOWED_AUTHOR_ID: ${{ vars.DISCORD_ALLOWED_AUTHOR_ID || secrets.DISCORD_ALLOWED_AUTHOR_ID }}
@@ -522,6 +80,10 @@ jobs:
 
           # --- Telegram (collect ALL pending updates) ---
           if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
+            # Owner user id: whoever is allowed to command the bot. Defaults to the
+            # chat id (correct for a 1:1 DM, where chat.id == user.id); in a group set
+            # TELEGRAM_ALLOWED_USER_ID so a button tap by a non-owner member is ignored.
+            TG_OWNER_UID="${TELEGRAM_ALLOWED_USER_ID:-$TELEGRAM_CHAT_ID}"
             # A webhook and getUpdates are mutually exclusive: once a webhook is
             # set (instant mode, see webhook/), getUpdates returns 409. Detect it
             # and skip polling — the Worker delivers via repository_dispatch.
@@ -547,12 +109,18 @@ jobs:
                 CB_DATA=$(echo "$RESPONSE" | jq -r ".result[$i].callback_query.data // empty")
                 if [ -n "$CB_DATA" ]; then
                   CB_CHAT=$(echo "$RESPONSE" | jq -r ".result[$i].callback_query.message.chat.id // empty")
+                  CB_FROM=$(echo "$RESPONSE" | jq -r ".result[$i].callback_query.from.id // empty")
                   CB_ID=$(echo "$RESPONSE" | jq -r ".result[$i].callback_query.id // empty")
                   # Stop the client's spinner immediately (safe pre-ack — no action taken yet).
                   [ -n "$CB_ID" ] && curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/answerCallbackQuery" -d "callback_query_id=$CB_ID" >/dev/null 2>&1 || true
-                  if [ "$CB_CHAT" = "$TELEGRAM_CHAT_ID" ]; then
+                  # Gate on chat AND user: the chat must be the owner's, and the tapping
+                  # user must be the owner — otherwise any member of a group chat could
+                  # dispatch skills / schedule crons just by tapping a posted button.
+                  if [ "$CB_CHAT" = "$TELEGRAM_CHAT_ID" ] && [ "$CB_FROM" = "$TG_OWNER_UID" ]; then
                     TG_CALLBACKS=$(echo "$TG_CALLBACKS" | jq --arg d "$CB_DATA" '. + [$d]')
                     echo "Telegram callback: $CB_DATA"
+                  elif [ "$CB_CHAT" = "$TELEGRAM_CHAT_ID" ]; then
+                    echo "::warning::Telegram callback from non-owner user '$CB_FROM' ignored (set TELEGRAM_ALLOWED_USER_ID to your id to command from a group)"
                   fi
                   continue
                 fi
@@ -560,8 +128,12 @@ jobs:
                 # Message
                 TEXT=$(echo "$RESPONSE" | jq -r ".result[$i].message.text // empty")
                 CHAT=$(echo "$RESPONSE" | jq -r ".result[$i].message.chat.id // empty")
+                FROM=$(echo "$RESPONSE" | jq -r ".result[$i].message.from.id // empty")
                 [ -z "$TEXT" ] && continue
+                # Same owner gate as callbacks: right chat AND the owner user. In a 1:1
+                # DM both equal TELEGRAM_CHAT_ID; in a group a non-owner member is dropped.
                 [ "$CHAT" != "$TELEGRAM_CHAT_ID" ] && continue
+                [ "$FROM" != "$TG_OWNER_UID" ] && continue
 
                 REPLY_TO=$(echo "$RESPONSE" | jq -r ".result[$i].message.reply_to_message.text // empty")
                 if [[ "$REPLY_TO" =~ \[[a-zA-Z0-9_-]+::[a-zA-Z0-9_-]+\] ]]; then
@@ -613,6 +185,13 @@ jobs:
 
           # --- Discord (collect ALL unprocessed messages) ---
           if [ -n "${DISCORD_BOT_TOKEN:-}" ] && [ -n "${DISCORD_CHANNEL_ID:-}" ]; then
+            # Opt-in author allowlist (GHSA-252c F5): without DISCORD_ALLOWED_AUTHOR_ID
+            # the only gate below is is_bot, so any non-bot member of the polled channel
+            # can issue trusted agent commands. Non-breaking nudge, not fail-closed —
+            # forks that never set it keep working, but the risk is loud and actionable.
+            if [ -z "${DISCORD_ALLOWED_AUTHOR_ID:-}" ]; then
+              echo "::warning::Discord polling is active with no DISCORD_ALLOWED_AUTHOR_ID set — any non-bot member of the channel can trigger agent runs. Set DISCORD_ALLOWED_AUTHOR_ID (your Discord user ID) to restrict it."
+            fi
             RESPONSE=$(curl -s -H "Authorization: Bot $DISCORD_BOT_TOKEN" \
               "https://discord.com/api/v10/channels/$DISCORD_CHANNEL_ID/messages?limit=10")
             COUNT=$(echo "$RESPONSE" | jq 'if type == "array" then length else 0 end')
@@ -639,6 +218,13 @@ jobs:
 
           # --- Slack (collect ALL unprocessed messages) ---
           if [ -n "${SLACK_BOT_TOKEN:-}" ] && [ -n "${SLACK_CHANNEL_ID:-}" ]; then
+            # Opt-in user allowlist (GHSA-252c F5): without SLACK_ALLOWED_USER_ID the
+            # only gate below is bot_id, so any non-bot member of the polled channel
+            # can issue trusted agent commands. Non-breaking nudge, not fail-closed —
+            # forks that never set it keep working, but the risk is loud and actionable.
+            if [ -z "${SLACK_ALLOWED_USER_ID:-}" ]; then
+              echo "::warning::Slack polling is active with no SLACK_ALLOWED_USER_ID set — any non-bot member of the channel can trigger agent runs. Set SLACK_ALLOWED_USER_ID (your Slack user ID) to restrict it."
+            fi
             RESPONSE=$(curl -s -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
               "https://slack.com/api/conversations.history?channel=$SLACK_CHANNEL_ID&limit=10")
             COUNT=$(echo "$RESPONSE" | jq '.messages | length')
@@ -674,14 +260,7 @@ jobs:
             SOURCE=$(echo "$MESSAGES" | jq -r ".[$i].source")
             TEXT=$(echo "$MESSAGES" | jq -r ".[$i].text")
             echo "Dispatching [$SOURCE]: $TEXT"
-            if ! DISPATCH_ERR=$(gh workflow run messages.yml -R "$GITHUB_REPOSITORY" -f source="$SOURCE" -f message="$TEXT" 2>&1); then
-              echo "::error::Failed to dispatch [$SOURCE] message (already ack'd, will not retry): ${DISPATCH_ERR}"
-              if [ -n "${TELEGRAM_BOT_TOKEN:-}" ] && [ -n "${TELEGRAM_CHAT_ID:-}" ]; then
-                curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-                  -H "Content-Type: application/json" \
-                  -d "$(jq -n --arg chat "$TELEGRAM_CHAT_ID" --arg text "Got your message but couldn't dispatch it for processing (workflow-dispatch permission error) — it will not be retried. Check GH_GLOBAL's token scope." '{chat_id: $chat, text: $text}')" > /dev/null || true
-              fi
-            fi
+            gh workflow run messages.yml -R "$GITHUB_REPOSITORY" -f source="$SOURCE" -f message="$TEXT"
           done
 
           if [ "$MSG_COUNT" -eq 0 ]; then
@@ -724,6 +303,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_ALLOWED_USER_ID: ${{ vars.TELEGRAM_ALLOWED_USER_ID || secrets.TELEGRAM_ALLOWED_USER_ID }}
           _ACTION: ${{ github.event.action }}
           # Payload fields via env (not template interpolation) so untrusted text
           # can never break out into the shell. Each is JSON-encoded by toJSON.
@@ -731,11 +311,18 @@ jobs:
           _P_DATA: ${{ toJSON(github.event.client_payload.data) }}
           _P_REPLY_TO: ${{ toJSON(github.event.client_payload.reply_to_text) }}
           _P_CHAT_ID: ${{ toJSON(github.event.client_payload.chat_id) }}
+          _P_FROM_ID: ${{ toJSON(github.event.client_payload.from_id) }}
         run: |
           CHAT_ID=$(printf '%s' "$_P_CHAT_ID" | jq -r 'tostring' 2>/dev/null || echo "null")
-          # Defence in depth — the Worker already gates on chat id; re-check here.
+          FROM_ID=$(printf '%s' "$_P_FROM_ID" | jq -r 'tostring' 2>/dev/null || echo "null")
+          OWNER_UID="${TELEGRAM_ALLOWED_USER_ID:-$TELEGRAM_CHAT_ID}"
+          # Defence in depth — the Worker already gates on chat + user; re-check both.
           if [ -n "${TELEGRAM_CHAT_ID:-}" ] && [ "$CHAT_ID" != "null" ] && [ "$CHAT_ID" != "$TELEGRAM_CHAT_ID" ]; then
-            echo "::warning::route: chat_id '$CHAT_ID' is not the owner — ignoring"
+            echo "::warning::route: chat_id '$CHAT_ID' is not the owner chat — ignoring"
+            exit 0
+          fi
+          if [ -n "$OWNER_UID" ] && [ "$FROM_ID" != "null" ] && [ "$FROM_ID" != "$OWNER_UID" ]; then
+            echo "::warning::route: from_id '$FROM_ID' is not the owner user — ignoring (set TELEGRAM_ALLOWED_USER_ID to command from a group)"
             exit 0
           fi
           TEXT=$(printf '%s' "$_P_TEXT" | jq -r 'if . == null then "" else . end')
@@ -811,14 +398,97 @@ jobs:
 
       - name: Setup Node.js
         if: steps.msg.outputs.source != ''
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
 
+      - name: Cache Claude Code (npm)
+        if: steps.msg.outputs.source != ''
+        # Shares the pinned-version cache with aeon.yml so the global install runs
+        # offline. Keep the version in the key in sync with the pin below.
+        uses: actions/cache@v6
+        with:
+          path: ~/.npm
+          key: claude-code-${{ runner.os }}-2.1.168
+          restore-keys: |
+            claude-code-${{ runner.os }}-
+
       - name: Install Claude Code
         if: steps.msg.outputs.source != ''
-        # Pinned for supply-chain safety — keep in sync with aeon.yml's pin.
-        run: npm install -g @anthropic-ai/claude-code@2.1.168
+        # Pinned for supply-chain safety — keep in sync with aeon.yml's pin
+        # (and the cache key version above).
+        run: npm install -g @anthropic-ai/claude-code@2.1.168 --prefer-offline
+
+      # Inbound messaging isn't a per-skill run, so no skill name is passed and
+      # the repo-global `harness:`/`model:` keys decide — the same script aeon.yml
+      # uses, so a repo answers messages on the harness it runs skills on.
+      - name: Resolve harness
+        id: harness
+        if: steps.msg.outputs.source != ''
+        env:
+          HARNESS_MODEL: ${{ vars.HARNESS_MODEL }}
+          # Native-auth secrets — presence ONLY, to detect which provider each
+          # harness runs on (native login/key > OpenRouter). Never echoed.
+          CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
+          KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_OAUTH_TOKEN: ${{ secrets.ANTHROPIC_OAUTH_TOKEN }}
+          GROK_CREDENTIALS: ${{ secrets.GROK_CREDENTIALS }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: bash scripts/resolve-harness.sh >> "$GITHUB_OUTPUT"
+
+      # Stage the resolved harness's CLI + provider auth. This step is why
+      # messages.yml now supports all six: it previously had none, so a repo on
+      # codex/pi/vibe/kimi had its messages answered on claude with a warning.
+      # The `env:` block is duplicated from aeon.yml by necessity (`secrets.*`
+      # resolves per workflow); the recipes it feeds are shared.
+      - name: Install harness CLI
+        if: steps.msg.outputs.source != '' && steps.harness.outputs.HARNESS != '' && steps.harness.outputs.HARNESS != 'claude'
+        env:
+          H: ${{ steps.harness.outputs.HARNESS }}
+          HM: ${{ steps.harness.outputs.HARNESS_MODEL }}
+          AUTH_MODE: ${{ steps.harness.outputs.AUTH_MODE }}
+          # grok auth (staged via run-grok.sh setup): captured X-account OAuth or key,
+          # plus the secrets-write PAT that persists a rotated refresh token back to
+          # GROK_CREDENTIALS (run-grok.sh §2b).
+          GROK_CREDENTIALS: ${{ secrets.GROK_CREDENTIALS }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          GH_SECRETS_PAT: ${{ secrets.GH_SECRETS_PAT }}
+          GH_GLOBAL: ${{ secrets.GH_GLOBAL }}
+          GROK_OAUTH_SKEW: ${{ vars.GROK_OAUTH_SKEW }}
+          # Provider credentials — restored (OAuth captures) or written into the
+          # harness's config (API keys). All land in the runner's ephemeral $HOME.
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
+          KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          # Tier-2 harness tracing gates the otel-cli install below on these.
+          LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
+          LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY }}
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ vars.OTEL_EXPORTER_OTLP_ENDPOINT }}
+        run: |
+          set -euo pipefail
+          bash scripts/install-harness.sh "$H"
+          # Stage otel-cli for Tier-2 harness spans (no-op unless telemetry is on).
+          bash scripts/install-otel-cli.sh
+
+      # Stage the Buzz CLI for the Buzz notify channel — instant no-op unless
+      # BUZZ_PRIVATE_KEY is set. Set BUZZ_CLI_URL (var) to a prebuilt binary to skip
+      # the from-source build.
+      - name: Stage Buzz CLI
+        if: steps.msg.outputs.source != ''
+        env:
+          BUZZ_PRIVATE_KEY: ${{ secrets.BUZZ_PRIVATE_KEY }}
+          BUZZ_CLI_URL: ${{ vars.BUZZ_CLI_URL }}
+          BUZZ_CLI_REF: ${{ vars.BUZZ_CLI_REF }}
+        run: |
+          set -euo pipefail
+          bash scripts/install-buzz-cli.sh
 
       - name: Run
         id: run
@@ -830,7 +500,6 @@ jobs:
           ALL_SECRETS: ${{ toJSON(secrets) }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
           ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL }}
           BANKR_LLM_KEY: ${{ secrets.BANKR_LLM_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -848,6 +517,19 @@ jobs:
           VENICE_CLEANCACHE: ${{ vars.VENICE_CLEANCACHE }}
           SURPLUS_MODEL: ${{ vars.SURPLUS_MODEL }}
           CCR_LOG: ${{ vars.CCR_LOG }}
+          # Optional Langfuse observability — traces the conversational-reply run
+          # (scripts/langfuse-otel.sh; no-op unless both LANGFUSE_* keys are set).
+          LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
+          LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY }}
+          LANGFUSE_HOST: ${{ vars.LANGFUSE_HOST }}
+          LANGFUSE_TRACING: ${{ vars.LANGFUSE_TRACING }}
+          LANGFUSE_LOG_CONTENT: ${{ vars.LANGFUSE_LOG_CONTENT }}
+          # Optional raw OTLP target for the non-claude harnesses (Tier-2 gen_ai
+          # spans). When Langfuse keys are set, langfuse-otel.sh derives the
+          # endpoint instead — leave these unset.
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ vars.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+          OTEL_SERVICE_NAME: ${{ vars.OTEL_SERVICE_NAME }}
           GITHUB_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -858,8 +540,29 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          # Buzz channel — ./notify signs + publishes via the buzz CLI (staged by
+          # "Stage Buzz CLI"); no-ops without BUZZ_PRIVATE_KEY.
+          BUZZ_PRIVATE_KEY: ${{ secrets.BUZZ_PRIVATE_KEY }}
+          BUZZ_CHANNEL_ID: ${{ secrets.BUZZ_CHANNEL_ID }}
+          BUZZ_RELAY_URL: ${{ vars.BUZZ_RELAY_URL }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           GROK_CREDENTIALS: ${{ secrets.GROK_CREDENTIALS }}   # grok harness: X-account OAuth (restored by run-grok.sh)
+          GH_SECRETS_PAT: ${{ secrets.GH_SECRETS_PAT }}   # persist rotated grok refresh token → GROK_CREDENTIALS (run-grok.sh §2b)
+          GH_GLOBAL: ${{ secrets.GH_GLOBAL }}
+          GROK_OAUTH_SKEW: ${{ vars.GROK_OAUTH_SKEW }}   # force grok OAuth refresh + persist every run when set large (durability check)
+          # Resolved by the "Resolve harness" step above; the CLI they name was
+          # staged by "Install harness CLI".
+          HARNESS: ${{ steps.harness.outputs.HARNESS }}
+          AUTH_MODE: ${{ steps.harness.outputs.AUTH_MODE }}
+          MODEL_ARG: ${{ steps.harness.outputs.MODEL_ARG }}
+          # Provider keys the non-claude harnesses read at RUN time (pi picks its
+          # provider from whichever is in env; codex/kimi/vibe read the key their
+          # staged config names). OPENROUTER_API_KEY is already declared above.
+          CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
+          KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           _MSG_SOURCE: ${{ steps.msg.outputs.source }}
@@ -867,27 +570,30 @@ jobs:
         run: |
           TODAY=$(date -u +%Y-%m-%d)
           CONFIG_MODEL=$(grep -E '^model:' aeon.yml | sed 's/^model: *//' | tr -d ' ')
-          MODEL="${CONFIG_MODEL:-claude-opus-4-8}"
+          MODEL="${CONFIG_MODEL:-claude-sonnet-5}"
 
-          # Harness resolution — inbound messaging isn't a per-skill run, so it
-          # follows the repo's global `harness:` in aeon.yml (same default/guard as
-          # aeon.yml). A grok-only repo (no Claude creds) must respond via grok.
-          CONFIG_HARNESS=$(grep -E '^harness:' aeon.yml | sed 's/^harness: *//' | tr -d ' ')
-          HARNESS="${CONFIG_HARNESS:-claude}"
-          if [ "$HARNESS" != "grok" ]; then HARNESS="claude"; fi   # unknown → safe default
-          # On grok a claude-* model id is meaningless, but do NOT remap it to a
-          # hardcoded grok-* id here — see aeon.yml's Run step for why (id has gone
-          # stale 3x in a week). run-grok.sh omits --model for claude-*/empty and
-          # lets the grok CLI self-select its own current default.
-          echo "Using harness: $HARNESS  |  model: $MODEL"
+          # HARNESS / AUTH_MODE / MODEL_ARG come from the "Resolve harness" step
+          # (scripts/resolve-harness.sh), and the CLI was staged by "Install harness
+          # CLI" — so all six answer messages now. This used to be an inline
+          # claude-or-grok resolution here that downgraded the other four to claude
+          # with a ::warning::, because nothing on this workflow could install them.
+          # On grok a claude-* model id is meaningless — fall back to grok's default.
+          if [ "$HARNESS" = "grok" ]; then
+            case "$MODEL" in claude-*|"") MODEL="grok-4.5" ;; esac
+          fi
+          echo "Using harness: $HARNESS  |  auth: $AUTH_MODE  |  model: ${MODEL_ARG:-$MODEL}"
 
-          # AI Gateway routing — same path as aeon.yml's Run steps. The grok harness
-          # has its own auth and does NOT use the gateway, so skip it there (avoids
-          # "no gateway/Anthropic API" noise on a grok-only repo).
-          if [ "$HARNESS" != "grok" ]; then
+          # AI Gateway routing — same path as aeon.yml's Run step, and gated the
+          # same way: it is Anthropic-specific (llm-gateway.sh rewrites
+          # ANTHROPIC_BASE_URL/model env), so ONLY claude sources it. This used to
+          # read `!= grok`, which was correct while claude and grok were the only
+          # two possible harnesses; with codex/pi/vibe/kimi reachable it would
+          # point their env at an Anthropic gateway they never call.
+          if [ "$HARNESS" = "claude" ]; then
             GATEWAY=$(grep -A1 '^gateway:' aeon.yml | grep 'provider:' | sed 's/.*provider:[[:space:]]*//' | sed "s/[\"' ]//g" || true)
             GATEWAY="${GATEWAY:-auto}"
             source "${GITHUB_WORKSPACE}/scripts/llm-gateway.sh"
+            AEON_OTEL_COMPONENT=message source "${GITHUB_WORKSPACE}/scripts/langfuse-otel.sh"
           fi
 
           cat > ./notify << 'NOTIFY_SCRIPT'
@@ -948,6 +654,12 @@ jobs:
           # skip MCP with a warning rather than break the run on a parse failure.
           MCP_FLAGS=()
           if [ -f .mcp.json ] && jq -e '.mcpServers' .mcp.json >/dev/null 2>&1; then
+            # MCP OAuth (durable): refresh any captured OAuth access token BEFORE the
+            # ${VAR} loop (exports a live MCP_<SLUG>_TOKEN). Sourced; never fails the
+            # run. See scripts/mcp-oauth-refresh.sh.
+            if [ -f "${GITHUB_WORKSPACE}/scripts/mcp-oauth-refresh.sh" ]; then
+              source "${GITHUB_WORKSPACE}/scripts/mcp-oauth-refresh.sh" || true
+            fi
             MCP_MISSING=""
             # ALL_SECRETS is toJSON(secrets). Guard the empty case via a temp var —
             # NOT the inline ${ALL_SECRETS:-{}} form: bash closes ${...} at the first
@@ -986,25 +698,55 @@ jobs:
           - For anything else, do your best and explain what you did.
 
           Always send your response back via ./notify so the user sees it."
-          # Harness split — both paths emit the SAME {result, usage} envelope, so
-          # the token/notify handling below is unchanged. run-grok.sh discovers
-          # .mcp.json natively (the preflight above already exported its secrets)
-          # and maps SKILL_MODE=write to grok's permission flags; a conversational
-          # reply can run skills, update memory, and notify, i.e. write mode.
-          if [ "$HARNESS" = "grok" ]; then
-            if ! CLAUDE_OUTPUT=$(
-              export MODEL SKILL_MODE=write
-              echo "$PROMPT" | bash "${GITHUB_WORKSPACE}/scripts/run-grok.sh"
-            ); then
-              echo "::error::grok harness failed. Output: $(printf '%s' "$CLAUDE_OUTPUT" | tail -c 300 | tr '\n' ' ')"
-              exit 1
-            fi
-          elif ! CLAUDE_OUTPUT=$(echo "$PROMPT" | claude -p - \
-            --model "$MODEL" --allowedTools "$ALLOWED" \
-            "${MCP_FLAGS[@]}" --output-format json 2>&1); then
-            echo "::error::Claude CLI failed. Output: $CLAUDE_OUTPUT"
+          # Unified execution: EVERY harness runs through harness-adapter's
+          # run-harness, the same way aeon.yml runs a skill — one
+          # {result, usage{...}} envelope, so the token/notify handling below is
+          # unchanged. This is the point of the change: fixes that live in the
+          # adapter now apply here too. Previously this path called
+          # scripts/run-grok.sh directly and bypassed the adapter entirely, which
+          # is why grok's MCP folder-trust gate stayed broken on inbound messages
+          # after it was fixed for skill runs (#779 → #781).
+          #
+          # Write mode: a conversational reply can run skills, update memory and
+          # notify. run-harness applies its OS sandbox only to read-only runs, so
+          # there is nothing to opt out of here.
+          RH="${GITHUB_WORKSPACE}/harness-adapter/run-harness"
+          RH_ARGS=(--mode write --allowed-tools "$ALLOWED" --timeout 600)
+          # Pass --mcp-config only when the preflight actually ENABLED MCP (every
+          # referenced ${VAR} resolved) — MCP_FLAGS doubles as that gate.
+          # run-harness re-expands the config and translates it per harness; the
+          # claude adapter adds --strict-mcp-config itself, as this step used to.
+          if [ "${#MCP_FLAGS[@]}" -gt 0 ]; then RH_ARGS+=(--mcp-config .mcp.json); fi
+          # Which --model to forward, mirroring aeon.yml's Run step. aeon's own ids
+          # are claude-*/grok-*, which mean nothing to an OpenRouter-backed CLI:
+          # forwarding one there leaves the harness on its default while every
+          # record names a model that never ran. MODEL_ARG (from resolve-harness.sh)
+          # is already the right value or empty for "the staged config decides" —
+          # vibe and kimi resolve a config ALIAS, so passing --model breaks them.
+          RH_MODEL_ARGS=()
+          case "$HARNESS" in
+            claude) RH_MODEL_ARGS=(--model "$MODEL") ;;
+            grok)   case "$MODEL" in grok-*) RH_MODEL_ARGS=(--model "$MODEL") ;; esac ;;
+            *)      if [ -n "${MODEL_ARG:-}" ]; then RH_MODEL_ARGS=(--model "$MODEL_ARG"); fi ;;
+          esac
+          # Tier-2 harness tracing: claude sourced langfuse-otel.sh above and
+          # self-traces; for the other harnesses export the OTLP env here so
+          # harness-adapter/lib/otel-span.sh emits a gen_ai span. No-op unless
+          # telemetry is configured; `|| true` so it never fails the reply.
+          if [ "$HARNESS" != "claude" ]; then
+            AEON_OTEL_COMPONENT=harness source "${GITHUB_WORKSPACE}/scripts/langfuse-otel.sh" >&2 || true
+          fi
+          HARNESS_ERR=$(mktemp)
+          if ! CLAUDE_OUTPUT=$(echo "$PROMPT" | bash "$RH" "$HARNESS" \
+            "${RH_MODEL_ARGS[@]}" "${RH_ARGS[@]}" 2>"$HARNESS_ERR"); then
+            echo "::error::$HARNESS harness failed: $(tail -c 400 "$HARNESS_ERR" | tr '\n' ' ')"
             exit 1
           fi
+          # run-harness diagnostics are the only signal when a harness degrades but
+          # still exits 0 (a skipped MCP server, a token-estimate fallback), so
+          # surface them in the job log rather than swallowing them.
+          if [ -s "$HARNESS_ERR" ]; then sed 's/^/run-harness: /' "$HARNESS_ERR" >&2; fi
+          rm -f "$HARNESS_ERR"
 
           echo "$CLAUDE_OUTPUT" | jq -r '.result // empty'
 

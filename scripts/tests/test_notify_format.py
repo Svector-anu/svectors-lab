@@ -52,22 +52,64 @@ class TestChunk(unittest.TestCase):
             self.assertIn(token, joined)
 
 
-class TestGfmToTelegramMd(unittest.TestCase):
-    def test_double_asterisk_bold_converted(self):
-        self.assertEqual(nf._gfm_to_telegram_md("**Status:** ok"), "*Status:* ok")
+def no_unescaped_angle_outside_tags(s: str) -> bool:
+    """True if every < / > in s belongs to a tag we emit (never a raw literal)."""
+    # Remove all well-formed tags, then assert no stray < or > remain.
+    stripped = nf.re.sub(r"</?[a-zA-Z][^>]*>", "", s)
+    return "<" not in stripped and ">" not in stripped
 
-    def test_double_underscore_bold_converted(self):
-        self.assertEqual(nf._gfm_to_telegram_md("__Status:__ ok"), "*Status:* ok")
 
-    def test_header_converted_to_bold_line(self):
-        self.assertEqual(nf._gfm_to_telegram_md("## Summary\nbody"), "*Summary*\nbody")
+class TestTelegramHtml(unittest.TestCase):
+    def test_bold_double_star_becomes_b_tag(self):
+        self.assertEqual(nf.md_to_telegram_html("**hi**"), "<b>hi</b>")
+        self.assertEqual(nf.md_to_telegram_html("__hi__"), "<b>hi</b>")
 
-    def test_fenced_code_left_untouched(self):
-        text = "before **bold**\n```\n**not bold** ## not a header\n```\nafter **bold**"
-        out = nf._gfm_to_telegram_md(text)
-        self.assertIn("**not bold** ## not a header", out)
-        self.assertNotIn("before **bold**", out)
-        self.assertIn("before *bold*", out)
+    def test_heading_becomes_bold(self):
+        self.assertEqual(nf.md_to_telegram_html("## Token Report"), "<b>Token Report</b>")
+
+    def test_bullets_become_dots(self):
+        self.assertEqual(nf.md_to_telegram_html("- one\n- two"), "• one\n• two")
+
+    def test_link_preserved_as_anchor(self):
+        out = nf.md_to_telegram_html("see [chart](https://x.com/foo)")
+        self.assertIn('<a href="https://x.com/foo">chart</a>', out)
+
+    def test_inline_code_escaped(self):
+        out = nf.md_to_telegram_html("run `a < b && c`")
+        self.assertIn("<code>a &lt; b &amp;&amp; c</code>", out)
+
+    def test_angle_brackets_in_prose_escaped(self):
+        out = nf.md_to_telegram_html("use <script> & stay safe")
+        self.assertNotIn("<script>", out)
+        self.assertIn("&lt;script&gt;", out)
+        self.assertIn("&amp;", out)
+
+    def test_table_flattened_with_bold_header(self):
+        md = "| Asset | 24h |\n| --- | --- |\n| BTC | +3.2% |"
+        out = nf.md_to_telegram_html(md)
+        self.assertIn("<b>Asset</b> | <b>24h</b>", out)
+        self.assertIn("BTC | +3.2%", out)
+        self.assertNotIn("---", out)
+
+    def test_fenced_code_becomes_pre(self):
+        out = nf.md_to_telegram_html("```py\nx = 1 < 2\n```")
+        self.assertIn('<pre><code class="language-py">x = 1 &lt; 2</code></pre>', out)
+
+    def test_unbalanced_marker_stays_literal_and_safe(self):
+        # a lone * must not open a tag or produce invalid HTML
+        out = nf.md_to_telegram_html("price is 3 * 4 and *incomplete")
+        self.assertTrue(no_unescaped_angle_outside_tags(out))
+        self.assertNotIn("<i>", out)
+
+    def test_snake_case_not_italicized(self):
+        self.assertEqual(nf.md_to_telegram_html("call some_func_name now"),
+                         "call some_func_name now")
+
+    def test_realistic_body_is_valid_html(self):
+        body = ("## Report\n\n**Verdict:** up\n\n- BTC **+3.2%** to `$68,400`\n"
+                "- see [x](https://x.com/a?b=1&c=2)\n\n| A | B |\n| - | - |\n| 1 | 2 |")
+        for c in nf.telegram(body, title="Daily", severity="info"):
+            self.assertTrue(no_unescaped_angle_outside_tags(c), f"stray < or >:\n{c}")
 
 
 class TestChannels(unittest.TestCase):
@@ -82,6 +124,7 @@ class TestChannels(unittest.TestCase):
         chunks = nf.telegram("body", title="Token Report", severity="warn")
         self.assertIn("Token Report", chunks[0])
         self.assertIn("⚠️", chunks[0])
+        self.assertIn("<b>", chunks[0])
 
     def test_discord_returns_embeds_with_color(self):
         payloads = nf.discord("body text", title="Alert", severity="critical")
@@ -111,6 +154,21 @@ class TestChannels(unittest.TestCase):
         for b in payload["blocks"]:
             if b["type"] == "section":
                 self.assertLessEqual(len(b["text"]["text"]), 3000)
+
+    def test_buzz_returns_raw_markdown_with_title(self):
+        chunks = nf.buzz("- a bullet\n- another", title="Daily", severity="warn")
+        self.assertEqual(len(chunks), 1)
+        # Markdown is passed through untouched (Buzz renders it natively); title is bolded.
+        self.assertIn("**Daily**", chunks[0])
+        self.assertIn("- a bullet", chunks[0])
+
+    def test_buzz_chunks_within_limit_and_indexes(self):
+        chunks = nf.buzz("z" * 40000, title="", severity="info", limit=15000)
+        self.assertGreater(len(chunks), 1)
+        n = len(chunks)
+        for i, c in enumerate(chunks):
+            self.assertLessEqual(len(c), 15000)
+            self.assertTrue(c.rstrip().endswith(f"[{i + 1}/{n}]"))
 
 
 if __name__ == "__main__":

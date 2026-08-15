@@ -1,12 +1,20 @@
 ---
-type: Skill
-name: Distribute Tokens
-category: core
-description: Two-phase contributor rewards — computes a tier-priced reward plan from the repo's merged-PR contributor ranking (plan phase) and executes the on-chain send via Bankr Wallet API with per-recipient idempotency, resolve→execute, dry-run, and partial-run recovery (send phase). Run either phase alone or both back-to-back.
-var: ""
-tags: [community, crypto]
-requires: [BANKR_API_KEY?]
-capabilities: [external_api, writes_external_host, onchain_writes, sends_notifications]
+name: distribute-tokens
+description: Two-phase contributor rewards - plan builds a tier-priced payout from the repo's merged-PR ranking; send executes it on-chain via Bankr Wallet API with per-recipient idempotency and dry-run.
+metadata:
+  title: Distribute Tokens
+  category: crypto
+  var: ""
+  tags:
+    - community
+    - crypto
+  requires:
+    - BANKR_API_KEY?
+  capabilities:
+    - external_api
+    - writes_external_host
+    - onchain_writes
+    - sends_notifications
 ---
 <!-- autoresearch: variation C — robustness via per-recipient idempotency state, two-phase resolve→execute, dry-run, retries, 403/429 handling, recovery. Merged: contributor-reward's tier-priced reward-computation folded in as the plan/input phase; the on-chain distribution stays the execute phase. -->
 
@@ -135,7 +143,7 @@ Compute the ranking directly from GitHub — no upstream skill or article requir
 - **First-PR ✨** per ranked login — did they have any *prior* merged PR to the repo?
   `gh api -X GET search/issues -f q="repo:${REPO} is:pr is:merged author:${login} merged:<${WEEK_START}" --jq '.total_count'` → `0` means this is their first-ever merged PR (set `first_pr_marker = ✨`).
 - If zero merged PRs in the window → log `CONTRIBUTOR_REWARD_NO_MERGED_PRS — week ${TARGET_WEEK}` to `memory/logs/${today}.md`, exit silently (no notify). Nothing shipped, nothing to reward.
-- If the GitHub API is unreachable (see Sandbox note for the `gh api` → WebFetch fallback) → log `CONTRIBUTOR_REWARD_API_FAIL`, notify the operator, exit.
+- If the GitHub API is unreachable (see Network note for the `gh api` → WebFetch fallback) → log `CONTRIBUTOR_REWARD_API_FAIL`, notify the operator, exit.
 
 ### A3. Load plan idempotency state
 
@@ -296,7 +304,7 @@ Read `memory/state/distributions.json` (if present) for send idempotency state b
 If `BANKR_API_KEY` not set → `DISTRIBUTE_TOKENS_ERROR — BANKR_API_KEY not configured`, log, exit.
 
 ```bash
-ME=$(curl -fsS "https://api.bankr.bot/wallet/me" -H "X-API-Key: ${BANKR_API_KEY}")
+ME=$(./secretcurl -fsS "https://api.bankr.bot/wallet/me" -H "X-API-Key: {BANKR_API_KEY}")
 ```
 
 - HTTP 403 → `DISTRIBUTE_TOKENS_ERROR — API key is read-only; needs wallet write scope`, exit.
@@ -304,7 +312,7 @@ ME=$(curl -fsS "https://api.bankr.bot/wallet/me" -H "X-API-Key: ${BANKR_API_KEY}
 - Network failure → use **WebFetch** fallback. If still failing → `DISTRIBUTE_TOKENS_ERROR — Bankr /wallet/me unreachable`, exit.
 
 ```bash
-PORTFOLIO=$(curl -fsS "https://api.bankr.bot/wallet/portfolio?chain=base" -H "X-API-Key: ${BANKR_API_KEY}")
+PORTFOLIO=$(./secretcurl -fsS "https://api.bankr.bot/wallet/portfolio?chain=base" -H "X-API-Key: {BANKR_API_KEY}")
 ```
 
 Extract sender's balance for the target token. Compute `total_required` from the recipient list (sum of per-recipient amounts, applying overrides). If `balance < total_required * 1.05` (5% headroom for any failed retries) → `DISTRIBUTE_TOKENS_ERROR — insufficient balance: have X, need Y ${TOKEN}`, exit. Do not start a partial run.
@@ -317,12 +325,12 @@ For each recipient, build a row: `{key, type, amount, token, target_address, lab
 
 **Handle resolution** (`@username`): use Bankr Agent API to look up the linked wallet:
 ```bash
-JOB=$(curl -fsS -X POST "https://api.bankr.bot/agent/prompt" \
-  -H "X-API-Key: ${BANKR_API_KEY}" -H "Content-Type: application/json" \
+JOB=$(./secretcurl -fsS -X POST "https://api.bankr.bot/agent/prompt" \
+  -H "X-API-Key: {BANKR_API_KEY}" -H "Content-Type: application/json" \
   -d "{\"prompt\":\"What is the EVM address linked to ${HANDLE} on Base? Respond with only the address.\"}" | jq -r '.jobId')
 # Poll every 2s, max 30s
 for i in $(seq 1 15); do
-  R=$(curl -fsS "https://api.bankr.bot/agent/job/${JOB}" -H "X-API-Key: ${BANKR_API_KEY}")
+  R=$(./secretcurl -fsS "https://api.bankr.bot/agent/job/${JOB}" -H "X-API-Key: {BANKR_API_KEY}")
   S=$(echo "$R" | jq -r '.status')
   [ "$S" = "completed" ] || [ "$S" = "failed" ] && break
   sleep 2
@@ -353,8 +361,8 @@ If 0 rows are `READY` (everything deduped/failed) → notify the plan, log, exit
 For each `READY` row, send via `/wallet/transfer` (the only sanctioned transfer endpoint per Bankr docs):
 
 ```bash
-RESP=$(curl -fsS -X POST "https://api.bankr.bot/wallet/transfer" \
-  -H "X-API-Key: ${BANKR_API_KEY}" -H "Content-Type: application/json" \
+RESP=$(./secretcurl -fsS -X POST "https://api.bankr.bot/wallet/transfer" \
+  -H "X-API-Key: {BANKR_API_KEY}" -H "Content-Type: application/json" \
   -d "{\"recipientAddress\":\"${ADDR}\",\"tokenAddress\":\"${TOKEN_ADDR}\",\"amount\":\"${AMT}\",\"isNativeToken\":${IS_NATIVE}}")
 ```
 
@@ -468,10 +476,10 @@ Omit the block for whichever phase did not run.
 
 For `all:`, the terminal exit code is the send phase's code (or the Phase A early-exit code when the plan produced nothing to send).
 
-## Sandbox note
+## Network note
 
-- **Plan phase (A):** ranks contributors via `gh api search/issues` (`gh` handles GitHub auth internally — the sandbox permits it in write mode). If `gh api` fails, fall back to **WebFetch** on the public `https://api.github.com/search/issues?q=…` URL. Also reads/writes `memory/state/contributor-reward-state.json`, `memory/distributions.yml`, `memory/logs/${today}.md`. No prefetch/postprocess scripts required.
-- **Send phase (B):** outbound curl may fail in the GH Actions sandbox. For each GET curl call, on failure try **WebFetch** (no body for GET). For `/wallet/transfer` specifically — a write endpoint with auth headers — if curl fails, queue the request as a JSON file under `.pending-bankr/` and rely on a `scripts/postprocess-bankr.sh` runner if available; otherwise mark the row `FAILED` reason `SANDBOX_BLOCKED` and continue. **Never silently drop a transfer.**
+- **Plan phase (A):** ranks contributors via `gh api search/issues` (`gh` handles GitHub auth internally, so no secret ever lands on the command line). If `gh api` fails, fall back to **WebFetch** on the public `https://api.github.com/search/issues?q=…` URL. Also reads/writes `memory/state/contributor-reward-state.json`, `memory/distributions.yml`, `memory/logs/${today}.md`. No postprocess scripts required.
+- **Send phase (B):** every Bankr call is auth'd, so make it with `./secretcurl` using the `{BANKR_API_KEY}` placeholder — never a bare `$BANKR_API_KEY` (the Bash permission layer refuses a secret on the command line) and never plain `curl`. `/wallet/transfer` is an irreversible money-movement write; it runs **in-run** as the executor's final action (Phase B4), behind the B2 balance preflight and the per-recipient idempotency in `memory/state/distributions.json` (persisted after every send, so re-runs never double-pay). There is **no** deferred/postprocess step — a failed transfer is recorded (`FAILED` with its reason) and the run continues to the next row. **Never silently drop a transfer.**
 
 ## Constraints
 

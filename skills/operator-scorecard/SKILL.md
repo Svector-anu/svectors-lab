@@ -1,16 +1,19 @@
 ---
-type: Skill
 name: operator-scorecard
-category: meta
-description: Three recap modes behind one selector — (default) a plain-language operator scorecard synthesizing agent health + community growth + economic activity into a was-it-worth-it verdict; `ops` an operational day-recap of what Aeon shipped, what failed, and what needs a human call; `push` a diff-reading deep-dive that ranks push impact and separates user-visible shipments from internal work.
-var: ""
-tags: [meta, productivity, dev]
+description: Three recap modes - default synthesizes agent health, community growth, and economic activity into a was-it-worth-it verdict; ops recaps what shipped and failed; push ranks push impact.
+metadata:
+  category: productivity
+  var: ""
+  tags:
+    - meta
+    - productivity
+    - dev
 ---
 
 > **${var}** — Mode selector. The first token picks the branch; the remainder is branch-specific.
 > - **empty** → **operator scorecard** (default): synthesize the week into agent health + community growth + economic activity with a worst-of-three OK/WATCH/DEGRADED verdict. Also accepts `dry-run` (skip the notification — article + JSON spec still write) and/or an integer `N` to override the window in hours (default 168 = 7d, cap 720). Examples: `` , `dry-run`, `336`, `dry-run 336`.
 > - **`ops`** → **ops recap**: operational summary of one day — what shipped, what failed, what needs follow-up. Optional date override after the keyword (`ops 2026-06-30` or `ops:2026-06-30`); empty date = today (UTC).
-> - **`push`** → **push recap**: deep-dive recap of all pushes — reads diffs, ranks impact, separates user-visible shipments from internal work, delivers a verdict. Optional repo scope after the keyword (`push aaronjmars/aeon` or `push:owner/repo`); empty = all watched repos.
+> - **`push`** → **push recap**: deep-dive recap of all pushes — reads diffs, ranks impact, separates user-visible shipments from internal work, delivers a verdict. Optional repo scope after the keyword (`push aeonfun/aeon` or `push:owner/repo`); empty = all watched repos.
 
 <!-- merged: operator-scorecard (default branch, three-pillar synthesis) + ops-recap (`ops` branch, operational day-recap) + push-recap (`push` branch, diff-reading push deep-dive). Every distinct behaviour of all three is preserved below. -->
 
@@ -83,7 +86,7 @@ d. **Compute health verdict (paragraph 1):**
 
 ### 3. Collect community-growth signals
 
-a. **Stars + forks delta.** Sum every `output/articles/repo-pulse-*.md` file with date suffix in window. From each, extract the `New stars (24h)` count and `New forks (24h)` count for each watched repo. Aggregate per-repo totals across the window. The `aaronjmars/aeon` row is the headline; other repos go on a continuation line.
+a. **Stars + forks delta.** Sum every `output/articles/repo-pulse-*.md` file with date suffix in window. From each, extract the `New stars (24h)` count and `New forks (24h)` count for each watched repo. Aggregate per-repo totals across the window. The `aeonfun/aeon` row is the headline; other repos go on a continuation line.
 
 If the file format doesn't contain the canonical fields, fall back to scanning `memory/logs/*.md` for `## Repo Pulse` blocks (older format). If both fail for a given repo: `stars_added=null`, mark `growth_source=partial`.
 
@@ -238,7 +241,7 @@ Full: output/articles/operator-scorecard-${today}.md
 
 `notable_addendum`: if any "What was notable" bullet exists, prefix with `Notable:` and inline the first one only (cap at ~120 chars). If none, omit the line.
 
-Cap message at ~3500 chars (Telegram safe limit). The verdict + three lane lines are the priority — drop "Notable" first if exceeded.
+Keep it tight for signal — the verdict + three lane lines are the priority; drop "Notable" first if it runs long. (`./notify` auto-chunks, so length is about signal, not transport.)
 
 ### 9. Log to `memory/logs/${today}.md`
 
@@ -601,8 +604,8 @@ All three branches log under a single `### operator-scorecard` heading (the heal
 
 Append one block per run (never overwrite) so re-running the same branch on the same day shows drift.
 
-## Sandbox note
+## Network note
 
-- **scorecard branch:** Pure local file I/O — no curl, no `gh api`, no env-var-in-headers, no prefetch script. Works in the GitHub Actions sandbox without any of the network workarounds other branches need. The only outbound call is `./notify` itself, which is already sandbox-safe — it stages to `.pending-notify/` and the workflow re-delivers after the run.
-- **ops branch:** All inputs are local file reads (logs, issues index, cron-state). `gh pr list` runs through the GitHub CLI and is sandbox-friendly — if it fails, treat the source as unavailable and skip the PR-staleness check. `./notify` writes to `.pending-notify/` when outbound HTTP is blocked, so delivery is reliable.
-- **push branch:** `gh api` and `gh pr list` handle auth internally and work in the sandbox. If a call returns a rate-limit error (403 with `X-RateLimit-Remaining: 0`), record it in the source-status footer and continue with what you have. For large diffs where the `patch` field is `null`, fall back to filename + additions/deletions stats. Never use raw `curl` against the GitHub API — always `gh api`.
+- **scorecard branch:** Pure local file I/O — no curl, no `gh api`, no secrets on the command line. Works in a GitHub Actions run without any of the extra auth handling the other branches need. The only outbound call is `./notify` itself, which stages to `.pending-notify/` for the workflow to re-deliver after the run.
+- **ops branch:** All inputs are local file reads (logs, issues index, cron-state). `gh pr list` runs through the GitHub CLI (auth handled internally) — if it fails, treat the source as unavailable and skip the PR-staleness check. `./notify` stages to `.pending-notify/` for re-delivery after the run, so delivery is reliable.
+- **push branch:** `gh api` and `gh pr list` handle auth internally and work in a GitHub Actions run. If a call returns a rate-limit error (403 with `X-RateLimit-Remaining: 0`), record it in the source-status footer and continue with what you have. For large diffs where the `patch` field is `null`, fall back to filename + additions/deletions stats. Never use raw `curl` against the GitHub API — always `gh api`.

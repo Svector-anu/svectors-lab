@@ -1,11 +1,13 @@
 ---
-type: Skill
 name: fork-fleet
-category: dev
-description: Fork divergence monitor — tracks where the fleet's active forks diverge in CODE (unique commits, new/modified skills, upstream-contribution candidates) and in CONFIG (enable/disable/var/model/schedule decisions vs upstream defaults), and gates notifications on real change
-var: ""
-tags: [dev, meta]
-cron: "0 10 * * 1"
+description: Fork divergence monitor - tracks where the fleet's active forks diverge in CODE (unique commits, new/modified skills) and CONFIG (enable/var/model/schedule vs upstream), gated on real change.
+metadata:
+  category: core
+  var: ""
+  tags:
+    - dev
+    - meta
+  cron: "0 10 * * 1"
 ---
 > **${var}** — Divergence scope selector; space-separated tokens, order-independent, all optional:
 > - **scope** (`code` | `config` | `both`, default `both`) — which divergence dimension to run.
@@ -520,7 +522,7 @@ Read `soul/` (if present) to match the operator's voice. **Skip notify entirely*
 
 If either branch hit `FORK_FLEET_API_FAIL`, send an **error** notify (`--severity warn`) noting the failure and source status.
 
-Otherwise send one combined message via `./notify` (include only the sub-blocks whose branch produced signal; cap ~900 chars so it renders across Telegram/Discord/Slack):
+Otherwise send one combined message via `./notify` (include only the sub-blocks whose branch produced signal; keep it tight):
 
 ```
 *Fork Divergence — ${today}*
@@ -607,6 +609,6 @@ The combined status rolls up the per-branch statuses (kept verbatim in A9 / B-st
 - The per-fork fingerprint is descriptive only — only aggregate signals drive recommendations.
 - Silent runs are **correct**, not failures. This skill is the divergence companion to `skill-gap` (popularity); avoid duplicating its headline metrics — focus on the code + config **divergence patterns** it doesn't surface.
 
-## Sandbox note
+## Network note
 
-Every GitHub call uses `gh api`, which authenticates via `GITHUB_TOKEN` automatically and works from the sandbox — no `curl`, no env-var expansion in headers, no secrets beyond the default `GITHUB_TOKEN`. Retry policy: on `429`/`5xx` (compare) back off per step A1; on `403` with `X-RateLimit-Remaining: 0` (tree/contents) sleep 60s and retry once, then mark that fork `rate_limited` and proceed with a partial fleet (the verdict and source-status footers surface the gap). If the initial `/forks` listing fails after retry, combined status = `FORK_DIVERGENCE_API_FAIL` with `forks_list=fail`.
+Every GitHub call uses `gh api`, which authenticates via `GITHUB_TOKEN` automatically — no `curl`, no `$SECRET` on the command line (so nothing for the Bash permission layer to refuse), no secrets beyond the default `GITHUB_TOKEN`. Retry policy: on `429`/`5xx` (compare) back off per step A1; on `403` with `X-RateLimit-Remaining: 0` (tree/contents) sleep 60s and retry once, then mark that fork `rate_limited` and proceed with a partial fleet (the verdict and source-status footers surface the gap). If the initial `/forks` listing fails after retry, combined status = `FORK_DIVERGENCE_API_FAIL` with `forks_list=fail`.

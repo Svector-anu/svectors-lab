@@ -1,10 +1,13 @@
 ---
-type: Skill
 name: narrative-convergence
-category: research
-description: Cross-skill signal detector — finds entities or themes surfaced independently by 3+ different skill categories within 48h and surfaces them as high-confidence write opportunities
-var: ""
-tags: [content, meta, intelligence]
+description: Cross-skill signal detector - finds entities or themes surfaced independently by 3+ different skill categories within 48h and surfaces them as high-confidence write opportunities
+metadata:
+  category: core
+  var: ""
+  tags:
+    - content
+    - meta
+    - intelligence
 ---
 > **${var}** — Optional entity or theme filter (e.g. "Anthropic", "coordination markets"). If empty, scans all skill output categories.
 
@@ -187,6 +190,6 @@ If skipped: `NARRATIVE_CONVERGENCE_SKIP: <reason>`.
 
 None. All reads from local `output/.chains/`, `memory/`, and `output/articles/` dirs.
 
-## Sandbox Note
+## Network Note
 
-No network calls required. All data comes from local files written by other skills. If `output/.chains/` is sparse (e.g. first morning run before skills have written), fall back to reading the last 3 memory logs directly — every skill appends a log entry, so the signal map can be reconstructed from logs alone. The only outbound call is `./notify`, which is already sandbox-safe.
+No network calls required. All data comes from local files written by other skills. If `output/.chains/` is sparse (e.g. first morning run before skills have written), fall back to reading the last 3 memory logs directly — every skill appends a log entry, so the signal map can be reconstructed from logs alone. The only outbound call is `./notify`, which works reliably.

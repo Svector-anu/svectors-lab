@@ -1,10 +1,10 @@
-import type { Skill, GatewayProvider, Harness } from '../lib/types'
+import type { Skill, GatewayProvider, Harness, DashboardView } from '../lib/types'
 import { PACK_BY_KEY, HARNESSES, modelsForHarness } from '../lib/constants'
 import { displayName } from '../lib/utils'
 
 interface TopBarProps {
   skill: Skill | null
-  view: 'hq' | 'packs' | 'secrets' | 'strategy' | 'mcp' | 'soul'
+  view: DashboardView
   repo: string
   model: string
   harness: Harness
@@ -42,8 +42,8 @@ export function TopBar({ skill, view, repo, model, harness, gateway, hasModelKey
         )}
       </div>
       <div className="flex items-center gap-2">
-        {harness !== 'grok' && gateway !== 'direct' && gateway !== 'auto' && (
-          <span className="text-[10px] font-mono px-2 py-0.5 bg-aeon-red/10 text-eva-orange uppercase tracking-[0.18em] border border-aeon-red/30">{gateway}</span>
+        {harness === 'claude' && gateway !== 'direct' && gateway !== 'auto' && (
+          <span className="text-[10px] font-mono px-2 py-0.5 bg-aeon-red/10 text-aeon-red uppercase tracking-[0.18em] border border-aeon-red/30">{gateway}</span>
         )}
         {!hasModelKey && (
           <button onClick={onSetupAuth} disabled={authLoading} className="btn-solid-sm disabled:opacity-50">
@@ -69,6 +69,14 @@ export function TopBar({ skill, view, repo, model, harness, gateway, hasModelKey
             <option key={m.id} value={m.id} className="bg-aeon-panel text-aeon-fg">{m.label}</option>
           ))}
         </select>
+        <button onClick={onPull} disabled={pulling} className="btn-quiet disabled:opacity-50">
+          {behind > 0 && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-aeon-red animate-pulse" />}
+          {pulling ? '…' : 'Pull'}
+        </button>
+        <button onClick={onSync} disabled={syncing || !hasChanges} className="btn-quiet disabled:opacity-40">
+          {hasChanges && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-aeon-green" />}
+          {syncing ? '…' : 'Push'}
+        </button>
         {repo && (
           <a
             href={`https://github.com/${repo}`}
@@ -83,14 +91,6 @@ export function TopBar({ skill, view, repo, model, harness, gateway, hasModelKey
             </svg>
           </a>
         )}
-        <button onClick={onPull} disabled={pulling} className="btn-quiet disabled:opacity-50">
-          {behind > 0 && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-aeon-red animate-pulse" />}
-          {pulling ? '…' : 'Pull'}
-        </button>
-        <button onClick={onSync} disabled={syncing || !hasChanges} className="btn-quiet disabled:opacity-40">
-          {hasChanges && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-aeon-green" />}
-          {syncing ? '…' : 'Push'}
-        </button>
       </div>
     </div>
   )

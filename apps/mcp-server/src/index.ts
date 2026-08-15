@@ -8,9 +8,9 @@
  * Tool naming: aeon-{slug} (e.g. aeon-article, aeon-hn-digest)
  * Each tool accepts a single optional `var` argument (the skill's variable input).
  *
- * Skill execution: spawns the configured harness (`claude -p -`, or the Grok
- * `run-grok.sh` when `harness: grok`) with the skill prompt, exactly as GitHub
- * Actions does, so local runs are identical to scheduled runs.
+ * Skill execution: spawns the configured harness through harness-adapter's
+ * `run-harness` with the skill prompt, exactly as GitHub Actions does, so local
+ * runs are identical to scheduled runs.
  */
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -18,13 +18,15 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
-  ListResourcesRequestSchema,
-  ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
+import { SpanStatusCode } from "@opentelemetry/api";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { type Skill, loadSkills, runSkill } from "./skill-executor.js";
-import { listOkfResources, readOkfResource } from "./okf.js";
+import { initTracing } from "./tracing.js";
+
+// Opt-in + no-op unless OTEL_EXPORTER_OTLP_ENDPOINT is set (see tracing.ts).
+const tracer = initTracing();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -72,13 +74,11 @@ function buildVarDescription(skill: Skill): string {
   if (skill.var) return skill.var;
   const defaults: Record<string, string> = {
     core: "Skill-specific input (e.g. a skill name, owner/repo, or 'name: purpose'). See the skill's SKILL.md for its var contract.",
-    research: "Topic or keyword to focus the skill on (e.g. 'AI agents'). Leave empty for auto-selection.",
+    evolution: "Optional target (a skill slug to author/evolve/heal, or a focus area). Leave empty to operate across the fleet.",
+    basics: "Optional focus (topic, repo, token, or tx hash). Leave empty for the skill's default behaviour.",
     dev: "Repo in owner/repo format to narrow scope. Leave empty to scan all watched repos.",
     crypto: "Token symbol or contract address to focus on. Leave empty for all tracked tokens.",
-    "onchain-security": "Address, transaction hash, or token contract to investigate.",
-    social: "Topic, handle, or keyword. Leave empty to use configured defaults.",
     productivity: "Focus area or goal. Leave empty for general operation.",
-    meta: "Skill slug or focus area to scope the run. Leave empty to operate across all skills.",
   };
   return (
     defaults[skill.category] ??
@@ -89,13 +89,11 @@ function buildVarDescription(skill: Skill): string {
 function categoryName(category: string): string {
   const labels: Record<string, string> = {
     core: "Core",
-    research: "Research",
+    evolution: "Evolution",
+    basics: "Basics",
     dev: "Dev",
     crypto: "Crypto",
-    "onchain-security": "Onchain Security",
-    social: "Social",
     productivity: "Productivity",
-    meta: "Meta",
   };
   return labels[category] ?? category;
 }
@@ -104,7 +102,7 @@ function categoryName(category: string): string {
 
 const server = new Server(
   { name: "aeon-mcp", version: "1.0.0" },
-  { capabilities: { tools: {}, resources: {} } }
+  { capabilities: { tools: {} } }
 );
 
 const skills = loadSkills(REPO_ROOT, LOG_PREFIX);
@@ -118,48 +116,43 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools }));
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const toolName = request.params.name;
-  const slug = toolNameToSlug(toolName);
-  const skill = skills.find((s) => s.slug === slug);
+  return tracer.startActiveSpan(`mcp.call_tool ${toolName}`, (span) => {
+    const slug = toolNameToSlug(toolName);
+    const skill = skills.find((s) => s.slug === slug);
+    span.setAttribute("aeon.mcp.tool", toolName);
+    span.setAttribute("aeon.skill", slug);
 
-  if (!skill) {
-    return {
-      content: [
-        {
-          type: "text" as const,
-          text: `Unknown Aeon tool: ${toolName}\nAvailable tools: ${tools.map((t) => t.name).join(", ")}`,
-        },
-      ],
-      isError: true,
-    };
-  }
+    if (!skill) {
+      span.setAttribute("aeon.mcp.unknown_tool", true);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: "unknown tool" });
+      span.end();
+      return {
+        content: [
+          {
+            type: "text" as const,
+            text: `Unknown Aeon tool: ${toolName}\nAvailable tools: ${tools.map((t) => t.name).join(", ")}`,
+          },
+        ],
+        isError: true,
+      };
+    }
 
-  const varArg = request.params.arguments?.var;
-  const varValue = typeof varArg === "string" ? varArg : "";
-  const output = runSkill(REPO_ROOT, slug, varValue, LOG_PREFIX);
-
-  return {
-    content: [{ type: "text" as const, text: output }],
-  };
-});
-
-// ---- OKF knowledge bundle (read-only resources) ----
-// memory/topics/ is a native OKF v0.1 bundle; expose it (plus skills as
-// `type: Skill` concepts) so consumption agents can traverse Aeon's knowledge
-// over MCP without cloning the repo. See apps/mcp-server/src/okf.ts.
-
-server.setRequestHandler(ListResourcesRequestSchema, async () => ({
-  resources: listOkfResources(REPO_ROOT, skills),
-}));
-
-server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
-  const uri = request.params.uri;
-  const resolved = readOkfResource(REPO_ROOT, uri, skills);
-  if (!resolved) {
-    throw new Error(`Unknown OKF resource: ${uri}`);
-  }
-  return {
-    contents: [{ uri, mimeType: resolved.mimeType, text: resolved.text }],
-  };
+    try {
+      const varArg = request.params.arguments?.var;
+      const varValue = typeof varArg === "string" ? varArg : "";
+      const output = runSkill(REPO_ROOT, slug, varValue, LOG_PREFIX);
+      span.setAttribute("aeon.output_bytes", output.length);
+      return {
+        content: [{ type: "text" as const, text: output }],
+      };
+    } catch (err) {
+      span.recordException(err as Error);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: String(err) });
+      throw err;
+    } finally {
+      span.end();
+    }
+  });
 });
 
 async function main() {

@@ -1,11 +1,15 @@
 ---
-type: Skill
-name: Skill Repair
-category: core
-description: Diagnose and fix failing or degraded skills automatically — systemic-first triage, per-category playbooks, verification plan
-var: ""
-tags: [meta, dev]
-depends_on: [skill-health]
+name: skill-repair
+description: Diagnose and fix failing or degraded skills automatically - systemic-first triage, per-category playbooks, and a verification plan
+metadata:
+  title: Skill Repair
+  category: evolution
+  var: ""
+  tags:
+    - meta
+    - dev
+  depends_on:
+    - skill-health
 ---
 <!-- autoresearch: variation D — systemic-first triage + per-category playbooks + verification (folds A's regression hunter, B's structured PR + risk class + verdict, C's exit taxonomy + preflight + cooldown) -->
 
@@ -118,8 +122,8 @@ Categories follow `CLAUDE.md`. Pick the **most specific** category that fits the
 |---|---|
 | **`api-change`** | WebFetch the live API spec / status page / release notes. Update endpoints, payload shape, headers, error codes in the skill. Cite the spec URL in the PR body. Never guess — if WebFetch fails, drop to `REPAIR_DIAGNOSED_NO_FIX`. |
 | **`rate-limit`** | Add backoff (`sleep`), reduce request count, or add a fallback endpoint. Never raise the limit from the skill side. If the skill's `schedule` is too aggressive, propose a less-frequent cron in the PR body but **don't edit `aeon.yml`** unless the issue file already authorizes it. |
-| **`timeout`** | Split work into stages, add early-return on partial success, downgrade `model:` to `claude-sonnet-4-6` or `claude-haiku-4-5-20251001` for the skill that doesn't need Opus. |
-| **`sandbox-limitation`** | Convert auth-required curls to the prefetch (`scripts/prefetch-{name}.sh`) or postprocess (`.pending-{name}/` + `scripts/postprocess-{name}.sh`) pattern from `CLAUDE.md`. Add a "Sandbox note" section to the skill. |
+| **`timeout`** | Split work into stages, add early-return on partial success, downgrade `model:` to `claude-haiku-4-5-20251001` for the skill that doesn't need Sonnet or Opus. |
+| **`sandbox-limitation`** | Usually the "sandbox blocks the network" myth — there is **no** network sandbox. The real cause is a bare `$SECRET` on the command line (refused by the Bash permission layer) or a non-allowlisted command. Fix: route auth-required calls through `./secretcurl` with a `{ENV_NAME}` placeholder, or `gh api` for GitHub (auth handled internally). **Irreversible side-effects** (email / spend / on-chain / deploy) run **in-run** via `./secretcurl` as the skill's final, fail-closed action — never for reads. Add/refresh a "Network note" section. (There are **no** `scripts/prefetch-*.sh` or `scripts/postprocess-*.sh` scripts — both patterns were retired; auth'd reads and irreversible sends alike happen in-run.) |
 | **`prompt-bug`** | Minimum-edit specificity insertion. Don't rewrite — add the missing constraint, a forbidden phrase, a required output structure, or a clarifying example. Diff should be < 30 added/removed lines. |
 | **`output-format`** / **`quality-regression`** | Re-read the target skill's own output spec in its `SKILL.md`. Edit the skill so the next run satisfies that spec. Cite the exact requirement (section / line) in the PR body. |
 | **`missing-secret`** | **Do not modify `aeon.yml` or the workflow.** File or update the issue with `status: open`, `category: missing-secret`, naming the secret. Notify operator with the env-var name. Exit `REPAIR_DIAGNOSED_NO_FIX`. |
@@ -244,15 +248,15 @@ Append to `memory/logs/${today}.md`:
 - Source status: cron_state | issues_index | gh_runs | gh_logs | git_log | check_runs
 ```
 
-## Sandbox note
+## Network note
 
-`gh` and `git` work inside the sandbox. The diagnostic curls go through `gh api` (auth handled). For any external API spec lookup in the `api-change` playbook, prefer **WebFetch** over `curl` — see `CLAUDE.md`.
+`gh` and `git` handle auth internally, so the diagnostic reads carry no `$SECRET` on the command line. There is no network sandbox — `curl` works; use `gh api` for GitHub reads, and prefer **WebFetch** over `curl` for any external API spec lookup in the `api-change` playbook (see `CLAUDE.md`). For an auth'd third-party API, route the call through `./secretcurl` with a `{ENV_NAME}` placeholder.
 
 ## Constraints
 
 - One target per run (or one systemic cluster). Never bundle unrelated repairs.
 - Minimum-edit principle: keep diffs as small as possible. The original failure mode is rarely "the skill needs a rewrite".
-- Never modify secrets, the workflow file (`.github/workflows/aeon.yml`), or `messages.yml`.
+- Never modify secrets or the workflow files (`.github/workflows/aeon.yml`, `messages.yml`, `scheduler.yml`, `chain-runner.yml`).
 - Never push to `main`. Always branch + PR.
 - Never auto-merge HIGH-risk PRs. They carry the `manual-review` label.
 - If a skill has been failing > 7 days with no clear root cause and the category is `unknown`, recommend (in the issue and notify) `enabled: false` in `aeon.yml` — but **do not apply that change** without an explicit operator-approved issue.

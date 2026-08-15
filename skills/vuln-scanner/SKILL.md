@@ -1,12 +1,21 @@
 ---
-type: Skill
-name: Vuln Scanner
-category: core
-description: Audit trending repos for real security vulnerabilities and disclose responsibly — scan and route findings (PVR / dependency PR), re-submit queued advisories when a watched repo enables private reporting, and auto-send armed out-of-band email disclosures via Resend
-var: ""
-tags: [dev, security, meta]
-depends_on: [github-trending]
-requires: [GH_GLOBAL?, RESEND_API_KEY?]
+name: vuln-scanner
+description: Audit trending repos for real security vulnerabilities and disclose responsibly - scan and route findings (PVR / dependency PR), re-submit queued advisories, and send armed email disclosures
+metadata:
+  title: Vuln Scanner
+  category: dev
+  var: ""
+  tags:
+    - dev
+    - security
+    - meta
+  depends_on:
+    - github-trending
+  requires:
+    - GH_GLOBAL?
+    - RESEND_API_KEY?
+    - RESEND_FROM?
+    - RESEND_REPLY_TO?
 ---
 <!-- autoresearch: variation B — responsible-disclosure-first: private reports for code vulns, public PRs only for already-disclosed dep CVEs -->
 
@@ -25,7 +34,7 @@ This is the **write / action arm of the vuln-disclosure loop** — one skill cov
 
 - **Scan** — a security scanner that dumps unpatched vulnerabilities into public PRs is a zero-day publisher, not a helper. This skill matches industry practice: **Private Vulnerability Reporting (PVR) for code flaws, public PRs only for dependency CVEs that are already public**. Bad disclosure burns credibility and puts users at risk.
 - **Re-submit** — when a scan finds a HIGH/CRITICAL issue in a repo with no PVR, no `SECURITY.md`, and no reachable contact, it has no safe channel — so it logs the finding as `"channel": "skipped"` in `memory/vuln-scanned.json` and stages a watchlist row. Without a weekly probe those findings silently age until the responsible-disclosure window closes. The re-submit arm closes that loop.
-- **Disclose** — when the only responsible path is a private email to the maintainer, drafts sit in `memory/pending-disclosures/` with `status: pending-operator-send`, waiting for a human. The disclose arm finds drafts **explicitly armed for auto-send**, composes the email, and queues it (the send itself happens in `scripts/postprocess-email.sh`).
+- **Disclose** — when the only responsible path is a private email to the maintainer, drafts sit in `memory/pending-disclosures/` with `status: pending-operator-send`, waiting for a human. The disclose arm finds drafts **explicitly armed for auto-send**, composes the email, and **sends it in-run** (Resend via `./secretcurl`) behind a set of fail-closed caps — the send is the arm's final action.
 
 ## Dispatch — parse `${var}`, then run one arm
 
@@ -92,10 +101,11 @@ cd "$(basename "$REPO")"
 
 Raw grep produces too many false positives. Use tools with dataflow reachability and verified-secret matching.
 
-The scanners are pre-installed by `scripts/prefetch-vuln-scanner.sh` (runs before
-Claude starts, with full network access — see the Sandbox note below). **Do not
-`pip install` / `curl | sh` here** — both the network and the permission layer
-block those inside the sandbox. Put the prefetch's bin dir on `PATH` and invoke
+Stage the scanners **in-run** into `/tmp/bin` (see the install preamble below). The
+network is open, but `pip install` / `curl | sh` / `tar` are **not** on the in-run
+capability allowlist — use the ones that are: `python3 -m pip install …` for the Python
+tools (semgrep, slither) and `curl -o … && chmod +x` for the Go binaries (osv-scanner,
+trufflehog). Put `/tmp/bin` on `PATH` and invoke
 each tool by **bare name** — the bare names (`semgrep`, `trufflehog`,
 `osv-scanner`, `slither`) are exactly what the capability allowlist
 (`scripts/skill_mode.sh`) grants, so `claude -p` is permitted to execute them. If
@@ -103,8 +113,15 @@ a binary is missing, log `VULN_SCANNER_SKIPPED` and continue (it records `fail`
 in `sources.txt` below) — never abort the whole run for one tool.
 
 ```bash
-mkdir -p /tmp/vuln-scan
-export PATH="/tmp/bin:$PATH"   # prefetch staged trufflehog/osv-scanner (+ semgrep symlink) here
+mkdir -p /tmp/vuln-scan /tmp/bin
+export PATH="/tmp/bin:$PATH"
+# Stage the scanners IN-RUN, best-effort, using ONLY allow-listed commands (network is
+# open, but `pip install` / `curl | sh` / `tar` are NOT allow-listed — `python3 -m pip`,
+# `curl -o`, `chmod`, `npm`/`npx`, `node` ARE). Wrap each in `|| true`; any tool that fails
+# to stage is skipped by the `command -v` guards below (records fail), never fatal:
+python3 -m pip install --quiet --disable-pip-version-check semgrep slither-analyzer 2>/dev/null || true
+curl -sSL -o /tmp/bin/osv-scanner "https://github.com/google/osv-scanner/releases/latest/download/osv-scanner_linux_amd64" 2>/dev/null && chmod +x /tmp/bin/osv-scanner || true
+# trufflehog: stage its release binary the same way if a raw asset exists; else it's skipped below.
 
 # --- SAST: Semgrep OSS ---
 if command -v semgrep >/dev/null 2>&1; then
@@ -148,6 +165,96 @@ echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail
 echo "osv=$([ -s /tmp/vuln-scan/osv.json ] && echo ok || echo fail)"              >> /tmp/vuln-scan/sources.txt
 ```
 
+### A3.5. Dynamic testing: fuzz it if it already ships a harness
+
+Static tools never execute the target's code, so they can't catch a bug that only
+shows up on a specific malformed input. Some repos already carry their own fuzz
+harnesses (`cargo fuzz`) for exactly this. If the clone has one, run it — this is
+a different technique from A3, not a better version of it, and it finds a
+different class of bug.
+
+**Scope, on purpose:** Rust + `cargo fuzz` only, for this pass. `stage-vuln-scanner.sh`
+installs a nightly toolchain and `cargo-fuzz` for every run (bounded, ~1-2 min:
+the runner already has stable Rust) so this step never needs an in-run install —
+it degrades to a skip exactly like a missing scanner does. Other ecosystems have
+their own fuzzers (libFuzzer/AFL for C/C++, go-fuzz, atheris for Python, Trident
+for Solana/Anchor) — worth adding the same way later, each gated on its own
+`command -v` guard, but out of scope here.
+
+**This is a real trade-off, not a free scanner:** semgrep/trufflehog/osv-scanner
+only read the target's files. This *compiles and runs* the target's own code
+(and whatever it pulls in) inside the sandboxed run. That's the same trust
+boundary any CI system already accepts when it builds a repo's test suite — the
+runner is ephemeral and only holds this skill's own scoped secrets — but it's a
+step up from A3, so it only activates when the repo hands you a harness rather
+than probing for one, and it never touches the network beyond what cloning the
+repo already did.
+
+```bash
+if [ -d fuzz/fuzz_targets ] && command -v cargo-fuzz >/dev/null 2>&1; then
+  mkdir -p /tmp/vuln-scan/fuzz
+  # Seed real inputs where they exist — an empty corpus rarely gets a mutator
+  # past a magic-byte header, so this is the difference between a shallow run
+  # and one that reaches real parsing logic.
+  for target in $(cargo fuzz list 2>/dev/null); do
+    if [ -d "tests/fixtures" ]; then
+      mkdir -p "fuzz/corpus/$target"
+      find tests/fixtures -iname "*.${target}" -exec cp {} "fuzz/corpus/$target/" \; 2>/dev/null
+    fi
+  done
+
+  # Bounded: a handful of targets, ~90s each. This is a smoke test for "does
+  # anything crash immediately," not a real fuzzing campaign — a real one runs
+  # for hours and belongs to the maintainer's own CI, not a weekly scan.
+  #
+  # This step compiles and runs the target's own code (and every dependency's
+  # build.rs) with network open. Scrub this skill's own secrets from the
+  # env first — a malicious target could otherwise exfiltrate them at compile
+  # time via a build script:
+  n=0
+  for target in $(cargo fuzz list 2>/dev/null); do
+    [ "$n" -ge 8 ] && break
+    n=$((n + 1))
+    env -u GH_TOKEN -u GH_GLOBAL -u RESEND_API_KEY -u RESEND_FROM -u RESEND_REPLY_TO \
+      cargo +nightly fuzz run "$target" -- -max_total_time=90 \
+      > "/tmp/vuln-scan/fuzz/${target}.log" 2>&1 || true
+  done
+  echo "fuzz=$([ -n "$(ls /tmp/vuln-scan/fuzz 2>/dev/null)" ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+else
+  echo "VULN_SCANNER_SKIPPED: no fuzz/fuzz_targets or cargo-fuzz unavailable"
+fi
+```
+
+A crash artifact lands at `fuzz/artifacts/<target>/crash-*`. Reproduce it clean
+before it counts as anything: `env -u GH_TOKEN -u GH_GLOBAL -u RESEND_API_KEY -u RESEND_FROM -u RESEND_REPLY_TO cargo fuzz run <target> fuzz/artifacts/<target>/crash-*`
+(same secret-scrubbing as the run above — this also compiles and executes the
+target's code) and read the actual panic message and call stack, not just the
+"deadly signal" summary line.
+
+**Root-cause it before routing it** — a crash under `fuzz/` can mean three
+different things, and they route differently:
+
+1. **The panic is in the target's own code.** Route it exactly like any other
+   code vulnerability (A5 table) — PVR if the repo has a channel, out-of-band
+   contact otherwise.
+2. **The panic is in a dependency**, reached through the target's own call path
+   (check the stack trace — if the crashing frame's crate isn't the one you
+   cloned, this is it). This happened on the one real run so far: fuzzing
+   `firecrawl/anydoc`'s `xlsx` target surfaced a crash inside `calamine`, not in
+   anydoc's own code. Report and, if the fix is small and matches the
+   dependency's own existing conventions, fix it **in the dependency's repo**,
+   not the original target — the target's only actionable next step is bumping
+   a version once one exists. A dependency panic is DoS-only (Rust panics
+   safely; this is not a memory-safety finding) and, absent a published CVE
+   already covering it, the fix usually is the disclosure: small, obvious,
+   reviewable, no exploit chain to redact. A PR is the appropriate channel for
+   that case even without PVR on the dependency's repo — same logic as A5's
+   dependency-CVE row, just for a bug you found instead of one already public.
+3. **The panic is in the harness itself**, not the parser (an assertion the
+   fuzz target's own author wrote, a fixture format mismatch, an `unwrap()` on
+   setup code outside the code path being fuzzed). Not a finding — drop it,
+   same as a scanner false positive.
+
 ### A4. Triage — read every finding before trusting it
 
 A scanner hit is a candidate, not a vulnerability. For each candidate:
@@ -176,6 +283,8 @@ This is the core of the scan arm. Pick the channel by finding type:
 | **Code vulnerability** (Semgrep ERROR/WARNING, verified exploitable) | **PVR** (GitHub private advisory) | Unpatched code flaw — public disclosure creates a zero-day |
 | **Verified leaked secret** (TruffleHog verified) | **PVR** + tell maintainer to rotate | Publishing the file/line in a public PR tells attackers where to look |
 | **Smart-contract issue** (Slither high/medium) | **PVR** | On-chain exploitation is often immediate and irreversible |
+| **Fuzz crash in the target's own code** | **PVR** | Same as any other code vulnerability — see A3.5 |
+| **Fuzz crash in a dependency** | **Public PR to the dependency's repo** (fix, not just a report, if it's small and matches their conventions) | DoS-only, no exploit chain to redact — see A3.5 case 2 |
 | **No PVR enabled AND no SECURITY.md** | **Private issue** to maintainer if possible, else skip and log | No safe channel = do no harm |
 
 #### Prior-art check — run before filing anything public
@@ -300,7 +409,7 @@ gh api -X POST "/repos/$REPO/security-advisories/reports" \
   -H "X-GitHub-Api-Version: 2022-11-28" --input /tmp/pvr.json
 ```
 
-**Always POST via `--input <file>`, never a long inline heredoc / `-f description="$(cat …)"`** — the latter can trip the sandbox ("Unhandled node type: string"), and `vulnerabilities` is a nested array that `-f`/`-F` can't express cleanly. Write the full JSON payload (`{summary, description, severity, cwe_ids, vulnerabilities}` — `vulnerabilities` is **mandatory**, see the ⚠️ note above) to a temp file and `gh api -X POST … --input payload.json`.
+**Always POST via `--input <file>`, never a long inline heredoc / `-f description="$(cat …)"`** — the latter can trip Claude Code's Bash command analyzer ("Unhandled node type: string"), and `vulnerabilities` is a nested array that `-f`/`-F` can't express cleanly. Write the full JSON payload (`{summary, description, severity, cwe_ids, vulnerabilities}` — `vulnerabilities` is **mandatory**, see the ⚠️ note above) to a temp file and `gh api -X POST … --input payload.json`.
 
 Read the HTTP response code and branch accordingly. **Never** fall back to a public issue or a code-fix PR for an *unpatched* flaw (that publishes a zero-day):
 - **`201`** → reported. Record the report/advisory id and link it in the local report. Also append one row to `memory/topics/audit-leads.md` (a real, confirmed disclosure is a warm lead for a manual private-audit follow-up — see the "Why this skill exists" framing: disclosure and sales stay separate, this only records the fact). Create the file with the frontmatter/table below if it doesn't exist yet; **only ever append a row — never rewrite or delete existing ones**, since the operator hand-edits the Status column as leads get worked:
@@ -325,7 +434,7 @@ Read the HTTP response code and branch accordingly. **Never** fall back to a pub
   Append: `| <today> | owner/repo | <severity> | PVR #<id> | disclosed | <one-line finding summary> |`. If the file already exists, also bump its frontmatter `timestamp:` to today.
 - **`403 "Repository does not have private vulnerability reporting enabled"`** → PVR is OFF on the repo. This is **not** a token-scope problem (classic `repo` scope is enough). **Critically: the GitHub advisory web form (`/security/advisories/new`) is the SAME PVR backend — it returns `404` to external reporters when PVR is off. Do NOT stage that URL as the channel even if `SECURITY.md` recommends it** (a `SECURITY.md` that only says "use the advisory form" is *not* a usable channel when PVR is disabled — confirmed on agent-reach and world-of-claudecraft, 2026-06-19). Resolve an **out-of-band** private contact instead, in this order: (1) `SECURITY.md` email / portal / vendor PSIRT; (2) README contact (email / Discord / X); (3) package metadata — `pyproject.toml` / `setup.py` author, `package.json` `author` + `bugs`; (4) the maintainer/owner's git commit email or GitHub profile. Stage a maintainer-ready report at `memory/pending-disclosures/<repo>-<timestamp>.md` in the **auto-send-ready format** (see below) so the **disclose arm** (Arm C) can send it, and add a row to `memory/security-watchlist.md` so the **re-submit arm** (Arm B) will re-check PVR status. Only if no out-of-band contact exists anywhere, log "no safe channel — skipped".
 
-  **Auto-send-ready draft format** (consumed by Arm C → `scripts/postprocess-email.sh`):
+  **Auto-send-ready draft format** (consumed by Arm C's in-run send):
 
   ```markdown
   ---
@@ -405,13 +514,13 @@ Use `./notify`. One paragraph. Lead with the verdict.
 *Vuln Scanner — <repo>*
 <N> confirmed findings (<severity-summary>).
 Disclosed via: <PVR: advisory #123 | public PR #45 | skipped (no channel)>
-Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, osv=<ok|fail>.
+Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, osv=<ok|fail>, fuzz=<ok|fail|skip>.
 ```
 
 If the audit was clean:
 ```
 *Vuln Scanner — <repo>*
-Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok.
+Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip.
 ```
 
 Then log per the **Log** section below with `Mode: scan`.
@@ -454,7 +563,7 @@ Expected responses:
 - `404` — Repo may have been deleted / renamed / made private. Flag as `not-found`.
 - `403` — Token lacks scope or it's a private repo. Flag as `access-denied`.
 
-**Sandbox note:** `gh` CLI handles auth internally — no token-in-URL needed. If `gh api` is blocked by the sandbox, fall back to:
+**Note:** `gh` CLI handles auth internally — no token-in-URL needed. If `gh api` is unavailable, fall back to:
 ```bash
 curl -s -H "Authorization: Bearer $GH_GLOBAL" \
   "https://api.github.com/repos/${REPO}/private-vulnerability-reporting" | grep -o '"enabled":[a-z]*'
@@ -563,11 +672,11 @@ Updated automatically by the vuln-scanner re-submit arm.
 
 ## Arm C — DISCLOSE (auto-send armed email disclosures)
 
-When Arm A finds an exploitable **code** flaw (not a public dep CVE) in a repo that has **neither PVR enabled nor a usable SECURITY.md/PR channel**, the only responsible disclosure path is a **private email to the maintainer**. Those drafts sit in `memory/pending-disclosures/` with `status: pending-operator-send`. This arm finds drafts **explicitly armed for auto-send**, composes the email, and queues it. The actual send happens in `scripts/postprocess-email.sh` (Resend API) because an authenticated outbound call can't run inside Claude's sandbox — see the Sandbox note.
+When Arm A finds an exploitable **code** flaw (not a public dep CVE) in a repo that has **neither PVR enabled nor a usable SECURITY.md/PR channel**, the only responsible disclosure path is a **private email to the maintainer**. Those drafts sit in `memory/pending-disclosures/` with `status: pending-operator-send`. This arm finds drafts **explicitly armed for auto-send**, composes each email, and **sends it in-run** via Resend (`./secretcurl`). The send is an irreversible outbound call, so it is the arm's **final** step and is **fail-closed**: it happens only behind every cap in C4 (kill-switch, daily budget, per-maintainer cooldown, dedup ledger, recipient sanity, secret tripwire) — any check that fails, is unset, or errors means *do not send*, never *send anyway*.
 
 This is **fully autonomous** (operator chose this): an armed draft is sent without waiting for a human. That makes the **arming gate the only safeguard**, so this arm is conservative — it queues *only* drafts that pass every check below, and the post-send notification tells the operator exactly what went out.
 
-This is **outbound mail to third parties**. It is unrelated to the SendGrid operator-notify channel (which mails *the operator*). Do not conflate them.
+This is **outbound mail to third parties**. It shares the Resend account with the operator-notify email channel (which mails *the operator*) but is a distinct purpose and from-address. Do not conflate them.
 
 ### Eligibility — a draft is queued ONLY if ALL of these hold
 
@@ -592,8 +701,7 @@ or a body still containing operator-only scaffolding (e.g. "Operator action requ
 "do not publish") inside the extracted region.
 
 If zero drafts are eligible → log `DISCLOSURE_EMAILER_SKIP: nothing armed` and stop.
-**No notification** (the post-send notification is fired by the postprocess only when
-something actually sends).
+**No notification** on an empty/nothing-armed run — only send the summary notify (C4) when something actually goes out.
 
 ### C1. Load the queue and the sent-ledger
 
@@ -640,52 +748,51 @@ the isolated body still contains operator-scaffolding phrases, **skip the draft 
 log it** — never risk emailing the preamble. Do not invent or rewrite the body; send
 exactly what the draft author staged.
 
-### C4. Prioritize, then queue (do NOT send here)
+### C4. Prioritize, then send in-run (fail-closed)
 
-The sender only dispatches **one email per day** (a deliberate drip — see Guidelines),
-so the order matters: the single slot must go to the **most important** pending
-disclosure. **Sort eligible drafts by severity (critical → high → medium → low), then
-oldest `detected_at` first.** Queue them with a zero-padded rank prefix so the sender —
-which processes `.pending-email/*.json` in sorted glob order — always spends its slot on
-rank `00` first:
+The arm dispatches at most **one email per day** (a deliberate drip — see Guidelines),
+so **sort eligible drafts by severity (critical → high → medium → low), then oldest
+`detected_at` first** — the single daily slot must go to the most important disclosure.
+Then send, in that order, applying every gate below. Any gate that fails, is unset, or
+errors ⇒ **do not send that draft** — leave it for a later run; never fall through to
+sending. Only `./secretcurl`, `jq`, `python3`, `grep`, `date`, `echo`, `mkdir`, and the
+`Write`/`Edit` tools are available (no `mv`/`awk`/`sha256sum`/`mktemp`).
 
-```bash
-mkdir -p .pending-email
-# rank = 00 for the most urgent, 01 next, … (queue ALL eligible; the sender caps itself)
-```
+**Global gates (once, before the loop):**
+1. **Kill-switch.** `$DISCLOSURE_EMAIL_PAUSED` in `1/true/yes/on` → log `DISCLOSURE_EMAILER_SKIP: paused`, stop.
+2. **Config.** Presence-check with the `${VAR:+x}` form — a **bare** `$RESEND_API_KEY` trips the secret-expansion analyzer and falsely reads as unset (idiom documented in `narrative-tracker`): `{ [ -n "${RESEND_API_KEY:+x}" ] && [ -n "${RESEND_FROM:+x}" ]; }`. If either is unset → log `DISCLOSURE_EMAILER_SKIP: resend not configured`, stop (drafts stay queued; nothing lost).
+3. **Budget.** Seed `memory/email-log.json` to `[]` if missing/corrupt. `SENT_TODAY = jq '[.[]|select((.sent_at//"")|startswith($TODAY))]|length'` — if that isn't a clean integer (ledger unreadable), **fail closed**: stop, send nothing. Else `BUDGET = min(${DISCLOSURE_EMAIL_MAX_PER_RUN:-1}, ${DISCLOSURE_EMAIL_DAILY_CAP:-1} - SENT_TODAY)`; if `BUDGET <= 0` → `DISCLOSURE_EMAILER_SKIP: daily cap`, stop.
 
-Write one JSON request per eligible draft to `.pending-email/<NN>-<slug>.json`:
+**Per draft (stop the loop once `BUDGET` sends have gone out):**
+4. **Dedup / status.** Skip if `slug` (repo with `/`→`-`) is already a row in `memory/email-log.json`, or the draft's own `status:` is already `email-sent`/`email-failed`.
+5. **Recipient sanity.** `to` must match `^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$` (`grep -qE`) — else skip + warn.
+6. **Cooldown.** If this `to` was emailed within `${DISCLOSURE_EMAIL_COOLDOWN_DAYS:-7}` days (latest `.to`→`.sent_at` in the ledger, `python3` datetime diff) → skip, leave queued, retry after the window. A cooled-down draft does **not** consume the budget — move to the next.
+7. **Secret tripwire.** If subject+body match `grep -qE '(sk-[A-Za-z0-9]{20}|re_[A-Za-z0-9]{8}[A-Za-z0-9_]{12}|gh[pousr]_[A-Za-z0-9]{20}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{20}|-----BEGIN [A-Z ]*PRIVATE KEY-----)'` → **do not send**, log `BLOCKED: possible secret in body`, leave for operator review.
+8. **Build cc** = the draft's `cc` (array or comma-string) + `$RESEND_CC` (operator audit copy), minus blanks and the `to`, deduped (`jq`).
+9. **Build payload + send.** Build the JSON body with `python3`, reading `RESEND_FROM`/`RESEND_REPLY_TO` from `os.environ` (never a `--arg from "$RESEND_FROM"` on the line — that risks the analyzer block); pass only the non-secret `to`/`subject`/`body`/`cc` as argv. Then POST with `./secretcurl` (the `{RESEND_API_KEY}` header placeholder is substituted inside the script); the clean `slug` is the idempotency key:
+   ```bash
+   PAYLOAD=$(python3 - "$TO" "$SUBJECT" "$BODY" "$CC_JSON" <<'PY'
+   import os, sys, json
+   to, subject, text, cc = sys.argv[1], sys.argv[2], sys.argv[3], json.loads(sys.argv[4] or "[]")
+   p = {"from": os.environ["RESEND_FROM"], "to": [to], "subject": subject, "text": text}
+   if os.environ.get("RESEND_REPLY_TO"): p["reply_to"] = os.environ["RESEND_REPLY_TO"]
+   if cc: p["cc"] = cc
+   print(json.dumps(p))
+   PY
+   )
+   ./secretcurl -sS --max-time 30 -w 'http=%{http_code}\n' -X POST "https://api.resend.com/emails" \
+     -H "Authorization: Bearer {RESEND_API_KEY}" -H "Content-Type: application/json" \
+     -H "Idempotency-Key: $SLUG" -d "$PAYLOAD"
+   ```
+   Print `http=<code>`. Body has `.id` ⇒ **sent**; no `.id` / non-2xx ⇒ **failed**.
+10. **On send:** append `{slug,repo,to,subject,resend_id,sent_at}` to `memory/email-log.json` (via `python3`/`Write` — no `mv`), and flip the draft's frontmatter `status: email-sent` (+ `email_id`/`email_sent_at`/`email_to`) with `Edit`/`python3`. Decrement `BUDGET`.
+11. **On failure:** bump the draft's `send_attempts` in frontmatter; once it reaches `${DISCLOSURE_EMAIL_MAX_ATTEMPTS:-3}`, flip `status: email-failed` so it stops retrying and the operator can fix the contact. Leave the draft queued otherwise (retried next run). Do **not** decrement `BUDGET` on failure.
 
-```json
-{
-  "draft_path": "memory/pending-disclosures/<file>.md",
-  "repo": "owner/repo",
-  "slug": "owner-repo",
-  "to": "maintainer@example.com",
-  "cc": ["security@example.com"],
-  "subject": "<email_subject>",
-  "text": "<full extracted body>",
-  "severity": "medium"
-}
-```
+### C5. Notify + log
 
-`cc` carries the draft's required CC addresses (a JSON array; a comma-separated string
-is also accepted). Omit it or use `[]`/`""` when there are none — the sender always
-adds the operator audit copy regardless. The `slug` field stays clean (no rank
-prefix) — it's the dedup key. Use the Write tool
-(or `jq -n … > .pending-email/<NN>-<slug>.json`) so the multi-line body is encoded
-safely. `scripts/postprocess-email.sh` picks these up after you exit, sends the
-highest-rank one(s) within the daily budget, appends to `memory/email-log.json`, flips
-the sent draft to `status: email-sent`, CCs the operator, and fires the post-send
-notification. Drafts not reached today are re-queued next run.
+After the loop, if anything sent (or hard-failed), send **one** `./notify` summary — the drafts that went out (repo → to, with the Resend id) and any that gave up (`email-failed`, need operator). Nothing sent and nothing failed ⇒ no notification.
 
-### C5. Log the run
-
-Log per the **Log** section below with `Mode: disclose`.
-
-Do **not** send a `./notify` in this arm — the authoritative "sent / failed" notification
-(with the Resend message id, and any failures to retry) comes from the postprocess
-*after* the send. Queuing without sending is the whole point of the sandbox split.
+Then log per the **Log** section below with `Mode: disclose`.
 
 ### Draft format (what Arm A emits for an auto-sendable email draft)
 
@@ -737,7 +844,7 @@ specific bullets.
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
 - Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
-- Scanner status: semgrep=ok trufflehog=ok osv=ok
+- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip
 - Advisory/PR links: [...]
 ```
 
@@ -756,30 +863,32 @@ specific bullets.
 - Drafts scanned: {N}
 - Eligible / queued: {M}  ({list of repo -> contact})
 - Skipped: {reasons — not-armed, already-sent, no-channel, unsafe-body}
-- Note: actual send + delivery status handled by postprocess-email.sh (see post-send notification)
+- Note: Arm C sends in-run via Resend (`./secretcurl`) behind the C4 caps; the summary notify reports what went out
 - DISCLOSURE_EMAILER_OK   (or DISCLOSURE_EMAILER_SKIP: <reason>)
 ```
 
-## Sandbox note
+## Network note
 
-**Arm A (scan).** Getting the scanners to run in the GitHub Actions sandbox takes **two** things:
+**Arm A (scan).** Getting the scanners to run under GitHub Actions takes **two** things:
 
-1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**, and outbound `pip install` / `curl | sh` downloads are blocked. They must be staged before Claude starts by a `scripts/prefetch-vuln-scanner.sh` prefetch script (full network access — see CLAUDE.md prefetch pattern) into `/tmp/bin` (+ `semgrep` symlink). **This prefetch script is not shipped in the repo** — until the operator adds it, the scanner binaries are unavailable: Arm A must report `SCAN_TOOLS_MISSING` and skip the scan cleanly rather than erroring the run.
-2. **Execute** — non-interactive `claude -p` runs under an `--allowedTools` allowlist, so any command not on it is **denied** ("requires approval") with no human to approve. The scanner *bare names* are granted in `scripts/skill_mode.sh` (write tier). This is why step A3 puts `/tmp/bin` on `PATH` and calls each tool by bare name (`semgrep …`, not `/tmp/bin/semgrep …`) — an absolute-path invocation would not match the allowlist pattern.
+1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage them **in-run** into `/tmp/bin` (step A3's preamble): the network is open, but `pip install` / `curl | sh` / `tar` aren't allow-listed, so use `python3 -m pip install …` (semgrep, slither) and `curl -o … && chmod +x` for the Go binaries (osv-scanner, trufflehog). Any tool that can't be staged is skipped by its `command -v` guard (`VULN_SCANNER_SKIPPED`); if **no** scanner is available, Arm A reports `SCAN_TOOLS_MISSING` and skips the scan cleanly rather than erroring the run.
+2. **Execute** — non-interactive `claude -p` runs under an `--allowedTools` allowlist, so any command not on it is **denied** ("requires approval") with no human to approve. The scanner *bare names* (`semgrep`, `osv-scanner`, `trufflehog`, `slither`) must be listed in the **write tier** of `scripts/skill_mode.sh` for bare invocation to be permitted; if a name is missing it's denied and that scanner is skipped (the scan arm degrades to manual code review — a denial reads as "requires approval", **not** a network/sandbox block). This is why step A3 puts `/tmp/bin` on `PATH` and calls each tool by bare name (`semgrep …`, not `/tmp/bin/semgrep …`) — an absolute-path invocation would not match the allowlist pattern.
 
 This two-part fix resolves ISS-001 (binaries installed *and* runnable). If any scanner binary is still missing at runtime, log `VULN_SCANNER_SKIPPED: <tool> not available`, record `tool=fail` in `sources.txt`, and continue with the remaining scanners rather than aborting the whole run. An all-scanners-fail run must report **error**, not **clean**.
 
-**Arm B (re-submit).** `gh api` uses the `GH_TOKEN` env var internally (the workflow wires `GH_GLOBAL` in). If the sandbox blocks `gh api`, use the `curl` fallback in step B2. No outbound auth-required calls except `gh api` — no pre-fetch needed.
+**A3.5 (fuzz)** follows the same two-part shape, but staging happens in the workflow step, not in-run: `scripts/stage-vuln-scanner.sh` installs a nightly Rust toolchain and `cargo-fuzz` before `claude -p` starts (the sandbox denies toolchain installs in-run, same reason `deploy-uni-hook` stages Foundry the same way — see `scripts/stage-deploy-uni-hook.sh`). Staging is unconditional (same tolerance as slither above — the target isn't known yet at staging time), so it always installs; only *use* is conditional on the clone actually shipping `fuzz/fuzz_targets`. Execution needs `Bash(cargo:*)` in the write tier of `scripts/skill_mode.sh` — broader than the single-purpose scanner grants, because `cargo fuzz` dispatches through the `cargo` binary itself, which also compiles the target's own code (and its build scripts). **This means the target's build scripts run with this skill's own secrets (`GH_GLOBAL`/`GH_TOKEN`, `RESEND_API_KEY`, `RESEND_FROM`, `RESEND_REPLY_TO`) live in the environment and network open — A3.5 scrubs them with `env -u` immediately before both the fuzz run and the crash-reproduction command, and nowhere else in this skill needs that scrub**, since only this step executes the target's own code. If either staging half is missing, the `command -v cargo-fuzz` guard in A3.5 skips cleanly.
 
-**Arm C (disclose).** The send is an **auth-required outbound call** (Resend key in the header), which CLAUDE.md says fails from inside the sandbox. So this arm **only writes `.pending-email/*.json`** — it must not attempt the HTTP POST itself. The workflow runs `scripts/postprocess-email.sh` *after* Claude finishes, with `RESEND_API_KEY` in env, to do the real send (post-process pattern, like `.pending-replicate/`). This arm needs **no network and no secrets** — pure local file reads + a queue write.
+**Arm B (re-submit).** `gh api` uses the `GH_TOKEN` env var internally (the workflow wires `GH_GLOBAL` in). If `gh api` fails, use the `curl` fallback in step B2. No outbound auth-required calls except `gh api`.
 
-General sandbox rules: use **WebFetch** as a fallback for any plain URL fetch. For anything requiring a token, use `gh api` (handles auth internally) or the pre-fetch/post-process pattern (see CLAUDE.md).
+**Arm C (disclose).** The send is an **irreversible** outbound call (a disclosure email), so it runs **in-run as the arm's final action, behind the C4 fail-closed caps**. Make the Resend POST with `./secretcurl` and the `{RESEND_API_KEY}` placeholder — a bare `$RESEND_API_KEY` on the command line is refused by the Bash permission layer. `RESEND_API_KEY` / `RESEND_FROM` / `RESEND_REPLY_TO` are injected in-run via this skill's `requires:`; `RESEND_CC` + the `DISCLOSURE_EMAIL_*` caps are read from the run env. There is no deferred/postprocess step — a failed send is logged (`email-failed` after the attempt cap), not queued to a later runner.
+
+General network rules: `curl` works, with **WebFetch** as the fallback for a plain URL fetch. For anything requiring a token, use `gh api` (handles auth internally) or `./secretcurl` with a `{ENV_NAME}` placeholder. Irreversible side-effects run in-run as a skill's final fail-closed action (see CLAUDE.md) — there is no deferred/postprocess gate, and Arm C's send already runs in-run.
 
 ## Environment variables
 
 - `GH_TOKEN` / `GITHUB_TOKEN` — required for Arm A. Classic `repo` scope is sufficient, **including** private vulnerability reporting via the `/reports` endpoint (step A5b / B3). `repository_advisories:write` is only needed to *manage advisories on repos you own* — it is **not** required to report to third-party repos, and its absence is not the reason a report fails (see step A5b for the real failure modes: a **missing `vulnerabilities` array** → `500` (by far the most common — fixable in-band), PVR-disabled `403`, or a genuine GitHub API `5xx`).
 - `GH_GLOBAL` — GitHub PAT with `public_repo` + `repository_advisories:write` scope, used by Arm B (re-submit) for cross-repo `gh api` calls and the `curl` fallback. Same token family as Arm A. Optional (Arm B falls back to the ambient `gh` auth where present).
-- `RESEND_API_KEY` — Resend API key, consumed by the **postprocess** (not this skill), for Arm C sends. If unset, the postprocess skips and drafts stay queued (no send, no error). Optional.
+- `RESEND_API_KEY` — Resend API key, used **in-run** by Arm C's send (injected via `requires:`). If unset, Arm C skips the send and drafts stay queued (no send, no error). Optional.
 - `RESEND_FROM` — verified sender, e.g. `Security <disclosures@send.example.com>`.
   **Must be on a domain/subdomain verified in Resend** (SPF+DKIM+DMARC). A subdomain
   is recommended so disclosure mail can't damage the root domain's reputation.
@@ -806,8 +915,9 @@ General sandbox rules: use **WebFetch** as a fallback for any plain URL fetch. F
 - **Don't scan the same repo twice in 30 days** (`memory/vuln-scanned.json`).
 - **Never post exploit chains publicly.** PoCs go in the private advisory, not in a GitHub comment.
 - **Be deferential in disclosure language** — you're offering help, not grading homework.
-- **Public PRs are only for dependency bumps** addressing already-disclosed CVEs. Everything else is private.
+- **Public PRs are only for dependency bumps** addressing already-disclosed CVEs, or a fuzz-found bug fixed directly in the dependency that owns it (A3.5 case 2) — everything else is private.
 - **All-scanners-failed ≠ clean.** Report it as an error and do not publish anything.
+- **Fuzzing only activates when the repo already ships a harness.** This skill doesn't write fuzz targets from scratch — that's real engineering work specific to the target's parsing logic, not something to improvise inside a weekly scan. If `fuzz/fuzz_targets` isn't there, `A3.5` skips, same as a missing scanner.
 
 **Disclose (Arm C):**
 - **The arming flag is sacred.** Never queue a draft without `auto_send: true`. If a

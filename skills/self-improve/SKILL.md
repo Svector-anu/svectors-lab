@@ -1,10 +1,11 @@
 ---
-type: Skill
 name: self-improve
-category: core
-description: Improve the agent itself, or audit its recent performance — better skills, prompts, workflows, and config, plus a quality/reliability/memory-hygiene review of what the agent did and what failed
-var: ""
-tags: [meta]
+description: Improve the agent itself, or audit its recent performance - better skills, prompts, workflows, and config, plus a quality/reliability/memory-hygiene review of what it did and what failed
+metadata:
+  category: evolution
+  var: ""
+  tags:
+    - meta
 ---
 > **${var}** — Mode selector, optionally with a focus area, as `mode` or `mode:focus`.
 > - **empty** or **`improve`** → improve mode: find and fix the highest-impact issue from recent logs, then propose + apply the fix via PR (default).
@@ -181,6 +182,6 @@ For **audit** mode:
 - **Recommendations:** [top 2-3]
 ```
 
-## Sandbox note
+## Network note
 
-Write mode. Both branches touch the repo (improve opens a PR via `git`/`gh`; audit writes `output/articles/self-review-${today}.md` and may prune `MEMORY.md`/`feeds.yml`). For the GitHub API, use the `gh` CLI (`gh pr list`, `gh pr create`) — it handles auth internally and works from the sandbox where secret-bearing `curl` calls are blocked. No pre-fetch or post-process side-channel is needed.
+Write mode. Both branches touch the repo (improve opens a PR via `git`/`gh`; audit writes `output/articles/self-review-${today}.md` and may prune `MEMORY.md`/`feeds.yml`). For the GitHub API, use the `gh` CLI (`gh pr list`, `gh pr create`) — it handles auth internally, so no `$SECRET` ever touches the command line (a bare secret on the line is what the Bash permission layer refuses; there is no network sandbox). No pre-fetch or post-process side-channel is needed.

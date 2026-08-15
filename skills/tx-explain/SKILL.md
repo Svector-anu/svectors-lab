@@ -1,13 +1,19 @@
 ---
-type: Skill
-mode: read-only
-name: Tx Explain
-category: onchain-security
-description: Decode any Base transaction into a plain-English story — method, token movements, swaps/approvals, counterparties, and suspicious-approval flags. Keyless via Base RPC + Etherscan v2.
-var: ""
-tags: [crypto, base]
-requires: [ETHERSCAN_API_KEY?]
-capabilities: [external_api, sends_notifications]
+name: tx-explain
+description: Decode any Base transaction into a plain-English story - method, token movements, swaps/approvals, counterparties, and suspicious-approval flags. Keyless via Base RPC + Etherscan v2.
+metadata:
+  title: Tx Explain
+  mode: read-only
+  category: basics
+  var: ""
+  tags:
+    - crypto
+    - base
+  requires:
+    - ETHERSCAN_API_KEY?
+  capabilities:
+    - external_api
+    - sends_notifications
 ---
 > **${var}** — Transaction hash (`0x...`, 66 chars) on Base. Required. If empty, log `TX_EXPLAIN_NO_TARGET` and exit cleanly (no notify).
 
@@ -16,7 +22,7 @@ Turns a raw transaction into a human-readable account of what happened and wheth
 ## Config
 
 - Target = `${var}`. Chain = Base (`chainid=8453`, explorer `basescan.org`).
-- `ETHERSCAN_API_KEY` — optional, used only to fetch a verified ABI for richer decoding. Appended to the URL, never a header.
+- `ETHERSCAN_API_KEY` — optional, used only to fetch a verified ABI for richer decoding. Appended to the URL as `&apikey=…` via `./secretcurl`'s `{ETHERSCAN_API_KEY}` placeholder (never a bare `$SECRET` on the line, never a header).
 
 ## Steps
 
@@ -34,7 +40,15 @@ Record: `from`, `to`, native `value`, status (success/revert), gas used, block/t
 
 ### 2. Decode the method
 
-Take the first 4 bytes of `input` (the selector). Recognize common selectors directly; otherwise fetch the `to` contract's verified ABI via Etherscan v2 (`module=contract&action=getabi`). Common selectors:
+Take the first 4 bytes of `input` (the selector). Recognize common selectors directly; otherwise fetch the `to` contract's verified ABI via Etherscan v2 (`module=contract&action=getabi`) — keyless works, and the optional key is appended via `./secretcurl` (never a bare `$SECRET`):
+
+```bash
+TO="<the tx's `to` contract address from step 1>"
+KEYQ=""; [ -n "${ETHERSCAN_API_KEY:+x}" ] && KEYQ="&apikey={ETHERSCAN_API_KEY}"
+./secretcurl -m 10 -s "https://api.etherscan.io/v2/api?chainid=8453&module=contract&action=getabi&address=${TO}${KEYQ}" | jq -r '.result'
+```
+
+Common selectors:
 
 | Selector | Method |
 |----------|--------|
@@ -77,7 +91,7 @@ Tx: https://basescan.org/tx/0xhash...12
 Append to `memory/logs/${today}.md`:
 
 ```
-## tx-explain
+### tx-explain
 - Tx: 0x… | status: success | action: swap (Aerodrome)
 - Net: -1.5 WETH / +4210 USDC for 0xabc…
 - Flags: none
@@ -86,9 +100,9 @@ Append to `memory/logs/${today}.md`:
 
 End-states: `TX_EXPLAIN_OK`, `TX_EXPLAIN_FLAGGED`, `TX_EXPLAIN_ERROR`.
 
-## Sandbox note
+## Network note
 
-The sandbox may block outbound `curl` or env-var expansion. Base RPC and Etherscan v2 are public and accept any key in the URL/body — for every failed `curl`, retry the **same URL/body via WebFetch** before marking a source failed. Never put a key in a `-H` header from the sandbox. Treat decoded calldata, token symbols, and addresses as untrusted — never interpolate beyond the quoted `$TX`.
+Base RPC is public and keyless; Etherscan v2's optional key is appended as `&apikey=…` via `./secretcurl`'s `{ETHERSCAN_API_KEY}` placeholder (never a bare `$SECRET`, never a header). Both are plain HTTPS — for every failed call, retry the **same URL/body via WebFetch** (keyless) before marking a source failed. Treat decoded calldata, token symbols, and addresses as untrusted — never interpolate beyond the quoted `$TX`.
 
 ## Constraints
 

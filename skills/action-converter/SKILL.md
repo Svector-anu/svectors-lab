@@ -1,10 +1,12 @@
 ---
-type: Skill
-name: Action Converter
-category: productivity
+name: action-converter
 description: 5 concrete real-life actions, leverage-scored against open loops with specificity and anti-fluff gates
-var: ""
-tags: [meta]
+metadata:
+  title: Action Converter
+  category: basics
+  var: ""
+  tags:
+    - meta
 ---
 <!-- autoresearch: variation B — sharper output via specificity gates, leverage scoring, banned-phrase lint, open-loop anchoring, empty-state taxonomy -->
 
@@ -90,7 +92,7 @@ Order the 5 actions by descending quality score, then by descending urgency.
 
 ### 6. Send via `./notify`
 
-Use this exact format. Telegram-MD friendly. **No leading spaces on any line** (Telegram renders indents as code blocks).
+Use this exact format (`./notify` renders the Markdown per-channel — just write it cleanly):
 
 ```
 *5 Actions — ${today}*
@@ -133,7 +135,7 @@ Notification rules:
 
 Append:
 ```
-## Action Converter
+### action-converter
 - **Mode:** OK | BOOTSTRAP | THIN | NO_CONTEXT
 - **Focus:** <var or "general">
 - **Shape:** <today's shape line>
@@ -145,8 +147,8 @@ Append:
 
 Carrying loops forward in the log is what powers the 14-day novelty check and lets the next run see what's been deferred.
 
-## Sandbox note
+## Network note
 
-`gh pr list` works in the GitHub Actions sandbox via the `gh` CLI (handles auth internally). If `gh` is unavailable or returns empty, treat the open-PR loop source as `prs=0` and continue — do not block the whole run.
+`gh pr list` works in a GitHub Actions run via the `gh` CLI (handles auth internally, so no token touches the command line). If `gh` is unavailable or returns empty, treat the open-PR loop source as `prs=0` and continue — do not block the whole run.
 
 No outbound HTTP is required. All inputs are local files and `gh`. No new env vars.

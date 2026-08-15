@@ -1,13 +1,18 @@
 ---
-type: Skill
-name: Auto-Workflow Builder
-category: dev
-description: Two-mode aeon.yml workflow builder — (analyze) inspect one or more URLs and emit a tiered, signal-verified skill-enablement plan plus an aeon.yml diff, or (enable) flip enabled:false→true for a slug list, validating against skills/ and opening a PR. The analyze mode recommends what to turn on; the enable mode turns it on.
-var: ""
-tags: [meta, dev]
-mode: write
-commits: true
-permissions: [contents:write, pull-requests:write]
+name: auto-workflow
+description: Two-mode aeon.yml workflow builder - analyze inspects URLs and emits a tiered, signal-verified skill-enablement plan plus an aeon.yml diff; enable flips slugs to enabled:true and opens a PR.
+metadata:
+  title: Auto-Workflow Builder
+  category: core
+  var: ""
+  tags:
+    - meta
+    - dev
+  mode: write
+  commits: true
+  permissions:
+    - contents:write
+    - pull-requests:write
 ---
 <!-- autoresearch: variation B — sharper output (priority tiers + data-verification gates + delta-against-existing + exit taxonomy) + slug-enable execution branch (validate → commit → PR) -->
 > **${var}** — selects the mode:
@@ -470,7 +475,7 @@ Append to `memory/logs/${today}.md` under ONE `### auto-workflow` heading (the h
 
 ---
 
-## Sandbox note
+## Network note
 
 - **Analyze mode:** use `WebFetch` for untrusted URL content; `gh api` for GitHub (auth handled internally). CoinGecko/DexScreener confirmation of contracts uses `WebFetch`. If a URL is JS-only (SPA), fall back to `/sitemap.xml` or `gh api` equivalents — do not attempt a JS render.
 - **Enable mode:** all work is local file reads + `git`/`gh` CLI; no external HTTP. `gh` handles auth via the workflow's GITHUB_TOKEN (a **workflows-scope PAT is preferred — required for `aeon.yml` edits to land cleanly**; without `workflows` scope, the push fails at B5 and the branch exits with `SKILL_ENABLER_PUSH_FAILED`). If `gh pr create` itself fails (rate-limit, transient 5xx), retry once after 30s; persistent failure → log `SKILL_ENABLER_PR_FAILED` and notify with the error so the operator can open the PR manually from the pushed branch.

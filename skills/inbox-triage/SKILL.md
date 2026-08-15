@@ -1,11 +1,15 @@
 ---
-type: Skill
-name: Inbox Triage
-category: dev
-description: Daily GitHub notification inbox triage — surfaces aging vuln PR replies, security advisories, review requests, and mentions that need action
-var: ""
-tags: [github, security, meta]
-schedule: "30 11 * * *"
+name: inbox-triage
+description: Daily GitHub notification inbox triage - surfaces aging vuln PR replies, security advisories, review requests, and mentions that need action
+metadata:
+  title: Inbox Triage
+  category: dev
+  var: ""
+  tags:
+    - github
+    - security
+    - meta
+  schedule: "30 11 * * *"
 ---
 
 Today is ${today}. Read `memory/MEMORY.md` before starting.
@@ -180,7 +184,7 @@ If nothing meets the threshold: skip notification. Log that no notification was 
 Append to `memory/logs/${today}.md`:
 
 ```markdown
-## Inbox Triage
+### inbox-triage
 - **Scanned:** {N} notifications
 - **Security:** {N}
 - **Vuln replies:** {N total} ({N_critical} critical, {N_aging} aging, {N_fresh} fresh)
@@ -193,7 +197,7 @@ Append to `memory/logs/${today}.md`:
 
 If skipped:
 ```markdown
-## Inbox Triage
+### inbox-triage
 - INBOX_TRIAGE_SKIP: {reason}
 ```
 
@@ -201,9 +205,9 @@ If skipped:
 
 None beyond `GITHUB_TOKEN`, which GitHub Actions sets automatically and `gh` uses internally.
 
-## Sandbox Note
+## Network Note
 
-Uses `gh api` for all GitHub calls — no curl, no env var expansion in headers. `gh api` works in the GitHub Actions sandbox. If `gh api /notifications` fails (rate limit, auth error), log the error and exit with `INBOX_TRIAGE_SKIP: api error`. Use WebFetch as a fallback only if `gh` is unavailable — the endpoint is `https://api.github.com/notifications` with `Authorization: Bearer $GITHUB_TOKEN` but that won't work in sandbox; prefer `gh`.
+Uses `gh api` for all GitHub calls — it handles auth internally, so no `$SECRET` ever appears on the command line for the Bash permission layer to refuse. `gh api` works in a GitHub Actions run. If `gh api /notifications` fails (rate limit, auth error), log the error and exit with `INBOX_TRIAGE_SKIP: api error`. Use WebFetch as a fallback only if `gh` is unavailable — the endpoint is `https://api.github.com/notifications` with `Authorization: Bearer $GITHUB_TOKEN`, but WebFetch can't carry that auth header; prefer `gh`.
 
 ## What this is NOT
 

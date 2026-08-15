@@ -12,10 +12,10 @@ set -eo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SKILLS_DIR="$ROOT/skills"
 
-# Valid frontmatter categories. These are the 8 skills.json categories; `core` is
-# valid (core/fleet skills declare it — their pack is then resolved from
-# packs.config.json), but `fleet` is never a category value.
-VALID="core research dev crypto onchain-security social productivity meta"
+# Valid frontmatter categories. A skill's category IS its pack — one grouping
+# (see docs/skill-packs.md). To move a skill between packs, change this one line.
+# `lab` is the catch-all for a missing/unknown category and isn't set by hand.
+VALID="core evolution basics dev crypto productivity"
 
 missing=()
 invalid=()
@@ -24,7 +24,15 @@ for skill_file in "$SKILLS_DIR"/*/SKILL.md; do
   [[ -f "$skill_file" ]] || continue
   slug="$(basename "$(dirname "$skill_file")")"
 
-  cat=$(awk '/^---$/{n++; next} n==1 && /^category:/{sub(/^category:[[:space:]]*/,""); gsub(/"/,""); gsub(/[[:space:]]*$/,""); print; exit}' "$skill_file")
+  # Accept either the legacy top-level `category:` or the Agent Skills spec form
+  # nested under `metadata:` (indented). First match wins.
+  cat=$(awk '
+    /^---$/{n++; next}
+    n!=1{next}
+    /^metadata:/{inmeta=1}
+    /^category:/{sub(/^category:[[:space:]]*/,""); gsub(/"/,""); gsub(/[[:space:]]*$/,""); print; exit}
+    inmeta && /^[[:space:]]+category:/{sub(/^[[:space:]]+category:[[:space:]]*/,""); gsub(/"/,""); gsub(/[[:space:]]*$/,""); print; exit}
+  ' "$skill_file")
 
   if [[ -z "$cat" ]]; then
     missing+=("$slug")

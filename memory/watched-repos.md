@@ -1,6 +1,2 @@
----
-type: Reference
----
-
 # Watched Repos
-- aaronjmars/aeon
+- aeonfun/aeon

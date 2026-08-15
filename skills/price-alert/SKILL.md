@@ -1,10 +1,12 @@
 ---
-type: Skill
-name: Price Alert
-category: crypto
-description: Fire when the tracked token does something — new ATH, sharp 1h move, or operator-set target crossed. Silent on normal days.
-var: ""
-tags: [crypto]
+name: price-alert
+description: Fire when the tracked token does something - new ATH, sharp 1h move, or operator-set target crossed. Silent on normal days.
+metadata:
+  title: Price Alert
+  category: basics
+  var: ""
+  tags:
+    - crypto
 ---
 > **${var}** — Optional. Pass one or more `target_price` levels (comma-separated USD numbers, scientific notation allowed) to fire a one-time alert when the price crosses any of them. Empty = only ATH and sharp-move gates run. Pass `dry-run` to skip notify (state still updates). Pass `set-target:<price>` — the shape the Telegram force-reply sends (step 7) — to register a target and get a one-line confirmation.
 
@@ -30,7 +32,7 @@ Writes:
 - `memory/logs/${today}.md` — one log block per run, even on `OK`.
 - Notification via `./notify` — only when a gate fires.
 
-No new secrets. Uses keyless DexScreener; falls back to WebFetch when curl is sandbox-blocked.
+No new secrets. Uses keyless DexScreener; falls back to WebFetch when a public `curl` GET is flaky (there is no network sandbox).
 
 ## State schema
 
@@ -275,9 +277,9 @@ The status field carries the *highest-priority* gate fired this run, or the most
 | `PRICE_ALERT_BAD_VAR` | `${var}` had non-empty, non-`dry-run` text but yielded zero valid targets | No |
 | `PRICE_ALERT_STATE_CORRUPT` | jq validation failed after write; restored from `.bak` | No |
 
-## Sandbox note
+## Network note
 
-DexScreener is keyless and public — curl works in unrestricted runners. The sandbox may block outbound curl on GitHub Actions; in that case the **WebFetch fallback** kicks in (built-in Claude tool, sandbox-safe, prompt: `"Return the raw JSON body verbatim."`). No prefetch script needed: there's no env-var-in-headers, and the URL doesn't change between runs. Notify goes through `./notify`, which stages to `.pending-notify/`; the workflow re-delivers any messages that failed inside the sandbox after the run — no extra script needed.
+DexScreener is keyless and public — `curl` works; there is no network sandbox. If a public `curl` GET is flaky, the **WebFetch fallback** kicks in (built-in Claude tool, prompt: `"Return the raw JSON body verbatim."`). There's no auth header, and the URL doesn't change between runs. Notify goes through `./notify`, which stages to `.pending-notify/`; the workflow re-delivers any messages that failed to send after the run — no extra script needed.
 
 ## Constraints
 

@@ -1,11 +1,19 @@
 ---
-type: Skill
-name: Fleet Control
-category: core
-description: Operate managed Aeon instances registered in memory/instances.json — health-check, dispatch skills, and full status snapshots (control view), plus a fleet-wide scorecard of runs, tokens (OpenRouter shape), est. cost and reliability with day-over-day deltas and alerts (scorecard view)
-var: ""
-tags: [dev, meta, fleet, report, cost]
-cron: "0 9,15 * * *"
+name: fleet-control
+description: Operate managed Aeon instances from memory/instances.json - health-check, dispatch, and status snapshots (control), plus a fleet scorecard of runs, tokens, cost, and reliability (scorecard).
+metadata:
+  title: Fleet Control
+  category: core
+  var: ""
+  tags:
+    - dev
+    - meta
+    - fleet
+    - report
+    - cost
+  requires:
+    - GH_READ_PAT?
+  cron: "0 9,15 * * *"
 ---
 <!-- autoresearch: variation B — sharper output: verdict line + delta vs prior + per-instance action column + state-change-gated notify -->
 
@@ -29,7 +37,7 @@ The fleet is **discovered at runtime, never hardcoded**: it is this repo ("self"
 
 4. **Route**:
    - **Health Check / Status / Dispatch** → run the **Control-view pre-flight** below, then the matching mode section. These modes make live `gh` calls.
-   - **Scorecard** → skip the control-view pre-flight entirely (it needs no `gh` and no live network — it reads prefetched files) and jump straight to **Scorecard Mode**.
+   - **Scorecard** → skip the control-view pre-flight entirely and jump straight to **Scorecard Mode**, which gathers its own data in-run via `node scripts/fleet-scorecard.mjs`.
 
 ---
 
@@ -95,7 +103,7 @@ For each instance compute a **next_action** (one short imperative phrase):
 - `pending_secrets` → `add ANTHROPIC_API_KEY at https://github.com/${REPO}/settings/secrets/actions`
 - `degraded` → `investigate <skill_name> (<consecutive_failures>× in a row, last_error: <signature, ≤60 chars>)`
 - `warning` → `monitor — <N>/<Total> runs failed in 24h`
-- `stale` → `confirm intent: no runs in 24h, last push <relative_date>; archive or re-enable`
+- `stale` → `confirm intent: no runs in 24h, last push <relative_date>; archive or re-enable` — if it *should* be running, dispatch `aeon-doctor` to that instance (Dispatch Mode) to lint for a silent config bug (unquoted `schedule:` / duplicate key / broken entry) before assuming it's abandoned
 - `unreachable` → `verify access: <reason from repo.err>`
 - `healthy` → `none`
 - `archived` → `none (archived)`
@@ -295,14 +303,22 @@ Article: output/articles/fleet-status-${today}.md
 
 Publish the daily **fleet scorecard** to `memory/scorecard.md` and append a trend row to `memory/scorecard-history.csv`. (Ran daily at 13:00 UTC as its own dispatch when this skill is scheduled with `var: scorecard`.)
 
-All data has already been gathered by `scripts/prefetch-fleet-scorecard.sh` (which ran outside the sandbox with network/`gh` access). **This mode needs no network or `gh`** — work only from the prefetched files below.
+### 0. Gather the data in-run
 
-### Inputs (prefetched — read these)
+Run the committed collector — it discovers the fleet (self + non-archived `memory/instances.json`), fetches each repo's workflow runs + skill count + `token-usage.csv` from the GitHub API, computes the pricing/aggregation, and writes the tables. It reads its token from the environment (`GH_READ_PAT` — the read-only PAT declared in this skill's `requires:`, needed to read **private** fleet members — falling back to `GH_TOKEN`/`GITHUB_TOKEN`), so **no secret ever touches a command line**:
 
-- `/tmp/fleet-scorecard/scorecard-body.md` — the computed markdown tables (Fleet totals, Per-repo, Top skills by cost, Least reliable skills). These numbers are authoritative — **do not recompute or alter them.**
+```bash
+node scripts/fleet-scorecard.mjs   # → /tmp/fleet-scorecard/{scorecard-body.md,metrics.json}
+```
+
+The deterministic maths lives in the script (not this run) — do **not** recompute or alter its numbers. A repo the token can't read is simply absent from the tables rather than crashing the collector.
+
+### Inputs (produced by step 0 — read these)
+
+- `/tmp/fleet-scorecard/scorecard-body.md` — the computed markdown tables (Fleet totals, Per-repo, Top skills by cost, Least reliable skills). Authoritative — **do not recompute or alter them.**
 - `/tmp/fleet-scorecard/metrics.json` — today's key totals: `total_runs, total_failures, generations, prompt_tokens, cached_tokens, completion_tokens, total_tokens, est_cost_usd, cache_discount_usd`.
 
-If `/tmp/fleet-scorecard/scorecard-body.md` is missing or empty, the prefetch failed or resolved an empty fleet — write a one-line note to `/tmp/skill-result.txt` saying so and stop (do not overwrite the existing scorecard, do not notify).
+If `/tmp/fleet-scorecard/scorecard-body.md` is missing or empty, the collector failed or resolved an empty fleet — write a one-line note to `/tmp/skill-result.txt` saying so and stop (do not overwrite the existing scorecard, do not notify).
 
 ### Steps
 
@@ -370,7 +386,7 @@ Write a terse daily pulse to `/tmp/scorecard-notify.md` and send it with `./noti
 Append the scorecard entry under the consolidated `### fleet-control` heading in `memory/logs/${today}.md` (see **Log** section), noting the headline numbers (so future skills like self-improve/reflect see it).
 
 ### Scorecard notes
-- Numbers come only from the prefetched files — never invent or estimate figures yourself.
+- Numbers come only from the collector's output files (`/tmp/fleet-scorecard/*`) — never invent or estimate figures yourself.
 - The scorecard is cumulative/all-time; the deltas are what make the daily run useful.
 - GitHub Actions retains runs ~90 days, so the run history is a rolling window; the token CSVs are the durable record committed in each repo.
 
@@ -396,17 +412,17 @@ Every run logs exactly one of these to memory:
 - `FLEET_RATE_LIMITED:remaining=N` — abandoned to preserve quota (control view)
 - `FLEET_DISPATCH_OK:N/M` — dispatched N of M targets
 - `FLEET_DISPATCH_FAILED:<reason>` — dispatch produced 0 dispatches
-- `FLEET_SCORECARD_EMPTY` — prefetch missing/empty; scorecard skipped without overwriting or notifying
+- `FLEET_SCORECARD_EMPTY` — collector produced no data (empty fleet / all repos unreadable); scorecard skipped without overwriting or notifying
 
-## Sandbox note
+## Network note
 
-**Control view (health / status / dispatch):** always use `gh api` over raw curl (handles auth and the sandbox env-var-in-headers issue). All cross-repo calls go through `gh api` or `gh workflow run`. No outbound HTTP needed beyond what `gh` does internally.
+**Control view (health / status / dispatch):** always use `gh api` over raw curl (it handles auth internally, so no `$SECRET` appears on the command line for the Bash permission layer to refuse). All cross-repo calls go through `gh api` or `gh workflow run`. No outbound HTTP needed beyond what `gh` does internally.
 
-**Scorecard view:** needs no network inside the sandbox — all `gh`/API work happens in `scripts/prefetch-fleet-scorecard.sh`, which runs in the workflow's prefetch phase with `gh` auth and stages its output under `/tmp/fleet-scorecard/`. If the prefetch's cross-repo reads fail for a managed instance, it's almost always the GitHub token scope (the token needs read access to that instance's repo; self is always readable). The prefetch degrades gracefully — a repo it can't read is simply absent from the tables rather than crashing the run.
+**Scorecard view:** gathers its data **in-run** by executing `node scripts/fleet-scorecard.mjs` (step 0), which fetches workflow runs + token usage from the GitHub API and computes the tables into `/tmp/fleet-scorecard/`. The collector authenticates with `GH_READ_PAT` when set (a read-only PAT with cross-repo scope, declared in this skill's `requires:` and injected into the run) so **private** managed instances are readable; without it, only self + public repos resolve. It reads the token from `process.env` internally, so the secret never appears on a command line. A repo the token can't read is simply absent from the tables rather than crashing the collector.
 
 ## Required env vars
 
-None for the skill itself. `scripts/prefetch-fleet-scorecard.sh` uses `GH_TOKEN`/`GITHUB_TOKEN` (provided by the workflow) and reads `GITHUB_REPOSITORY` to resolve "self". The control view relies on the workflow-provided `GITHUB_TOKEN` for its live `gh` calls.
+`GH_READ_PAT` (optional, read-only) — declared in `requires:` and read from `process.env` by `scripts/fleet-scorecard.mjs` (scorecard view) to reach private managed instances; it falls back to `GH_TOKEN`/`GITHUB_TOKEN` (self + public only) when unset, and reads `GITHUB_REPOSITORY` to resolve "self". The control view relies on the workflow-provided `GITHUB_TOKEN` for its live `gh` calls.
 
 ## Constraints
 
@@ -415,7 +431,7 @@ None for the skill itself. `scripts/prefetch-fleet-scorecard.sh` uses `GH_TOKEN`
 - Never write secrets to logs or notifications.
 - Cap notification length at ~30 lines; truncate the per-instance list with `...and N more` when needed.
 - Health Check stays silent when nothing changed mid-day — the daily-rollup path handles the recurring "is everything fine?" question without spam.
-- Scorecard Mode never overwrites `memory/scorecard.md` when the prefetch is missing/empty, and appends (never rewrites) prior rows in `memory/scorecard-history.csv`.
+- Scorecard Mode never overwrites `memory/scorecard.md` when the collector output is missing/empty, and appends (never rewrites) prior rows in `memory/scorecard-history.csv`.
 - Do not change the skill's tags, var semantics, or schedule without strong justification.
 
 Write complete, working code. No TODOs or placeholders.

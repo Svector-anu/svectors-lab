@@ -1,5 +1,4 @@
 ---
-type: Reference
 title: Skill Spotlight — Rotation State
 description: Queue, coverage history, and blocklist config for the skill-spotlight rotation.
 tags: [meta, config]
@@ -66,7 +65,6 @@ Never feature these — they are meta/internal/repair skills that don't read as 
 - auto-workflow
 - distribute-tokens
 - workflow-audit
-- smithery-manifest
 - v4-readiness
 - update-gallery
 - search-skill

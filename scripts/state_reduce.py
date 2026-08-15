@@ -11,6 +11,9 @@ the events. This module is that fold, kept pure so it's unit-testable.
 Event (one JSON object per line on stdin):
   {"skill":"x","status":"success|failed","ts":"2026-06-17T12:00:00Z",
    "quality_score":4,"error":"sig"}   # quality_score/error optional
+A "dispatched" event (posted by the scheduler when it kicks off a run) carries
+only {"skill","status":"dispatched","ts"} and advances the dispatch watermark
+(last_dispatch) without counting as a run outcome.
 
 Output: the same aggregate shape aeon.yml's apply_state_update produces, so heartbeat
 / skill-health read it unchanged.
@@ -21,7 +24,8 @@ import sys
 
 def _blank():
     return {
-        "last_status": None, "last_success": None, "last_failed": None,
+        "last_status": None, "last_dispatch": None,
+        "last_success": None, "last_failed": None,
         "total_runs": 0, "total_successes": 0, "total_failures": 0,
         "consecutive_failures": 0, "success_rate": 0.0,
         "last_quality_score": None, "last_error": None,
@@ -36,7 +40,17 @@ def reduce_events(events):
         if not skill:
             continue
         s = state.setdefault(skill, _blank())
-        status = "success" if e.get("status") == "success" else "failed"
+        raw = e.get("status")
+        # A "dispatched" event is the scheduler recording that it kicked off a run.
+        # It advances the dispatch watermark + last_status only — it is NOT a run
+        # outcome, so it must not touch run counters or consecutive_failures (else
+        # every dispatch would fold as a failure and spike reactive triggers).
+        if raw == "dispatched":
+            s["last_status"] = "dispatched"
+            if e.get("ts"):
+                s["last_dispatch"] = e["ts"]
+            continue
+        status = "success" if raw == "success" else "failed"
         s["total_runs"] += 1
         if status == "success":
             s["total_successes"] += 1

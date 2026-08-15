@@ -1,4 +1,4 @@
-name: Chain Runner
+name: Aeon · Chain Runner
 run-name: "chain: ${{ inputs.chain }}"
 
 on:
@@ -39,9 +39,19 @@ jobs:
       - name: Run chain
         env:
           GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
+          _INPUT_CHAIN: ${{ inputs.chain }}
         run: |
           set -euo pipefail
-          CHAIN="${{ inputs.chain }}"
+          # env-bound (passed via env:, not expanded into this run: block) +
+          # allowlisted: a chain name is an
+          # aeon.yml chains: key, so it must match ^[a-zA-Z0-9_-]+$. Interpolating
+          # it into the shell source let a crafted value break out and run
+          # arbitrary commands on the runner. (GHSA-h9v2-7m42-33m3)
+          CHAIN="$_INPUT_CHAIN"
+          if ! printf '%s' "$CHAIN" | grep -qE '^[a-zA-Z0-9_-]+$'; then
+            echo "::error::Invalid chain name: must match ^[a-zA-Z0-9_-]+$"
+            exit 1
+          fi
           NOW_ISO=$(date -u +%FT%TZ)
           echo "Running chain: $CHAIN"
 
@@ -287,17 +297,24 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
           STATE_BACKEND: ${{ vars.STATE_BACKEND }}
+          _INPUT_CHAIN: ${{ inputs.chain }}
         run: |
-          CHAIN="${{ inputs.chain }}"
+          # env-bound + allowlisted, same as the Run chain step. (GHSA-h9v2-7m42-33m3)
+          CHAIN="$_INPUT_CHAIN"
+          if ! printf '%s' "$CHAIN" | grep -qE '^[a-zA-Z0-9_-]+$'; then
+            echo "::error::Invalid chain name: must match ^[a-zA-Z0-9_-]+$"
+            exit 1
+          fi
           NOW_ISO=$(date -u +%FT%TZ)
           STATUS="${CHAIN_STATUS:-failed}"
           STATE_FILE="memory/cron-state.json"
 
           # Issues backend (hardening §3) — STATE_BACKEND tri-state, matching aeon.yml:
-          # dual (DEFAULT) appends the chain event to the shared state Issue AND keeps
-          # committing the file; issues appends + skips the file/rebase path; file is the
-          # legacy escape hatch. Append failure falls through to the file either way.
-          BACKEND="${STATE_BACKEND:-dual}"
+          # file (DEFAULT) commits the file only, no Issue writes (best for
+          # fork-and-forget); dual also appends the chain event to the shared state
+          # Issue (opt-in transition); issues appends + skips the file/rebase path.
+          # Append failure falls through to the file either way.
+          BACKEND="${STATE_BACKEND:-file}"
           if [ "$BACKEND" != "file" ]; then
             EVENT=$(jq -cn --arg s "chain:$CHAIN" --arg st "$STATUS" --arg ts "$NOW_ISO" \
               '{skill:$s,status:$st,ts:$ts}')

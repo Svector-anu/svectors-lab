@@ -1,10 +1,12 @@
 ---
-type: Skill
-name: Spawn Instance
-category: core
-description: Clone this Aeon agent into a new GitHub repo — fork, configure skills, validate, register in fleet
-var: ""
-tags: [dev]
+name: spawn-instance
+description: Clone this Aeon agent into a new GitHub repo - fork, configure skills, validate, and register in the fleet
+metadata:
+  title: Spawn Instance
+  category: core
+  var: ""
+  tags:
+    - dev
 ---
 <!-- autoresearch: variation C — robust: skill-existence validation, exit taxonomy, idempotent recovery, dynamic SETUP.md, pre/post-flight verification -->
 
@@ -316,7 +318,7 @@ If `FORK_STATE == "exists"` at step 5, the final exit status is `SPAWN_FORK_EXIS
 
 Append to `memory/logs/${today}.md`:
 ```
-## spawn-instance
+### spawn-instance
 - Status: ${EXIT_CODE}
 - Instance: ${OWNER}/${REPO_NAME}
 - Purpose: ${PURPOSE}
@@ -356,9 +358,9 @@ Target: ${OWNER}/${REPO_NAME}
 Recovery: ${one-line recovery instruction}
 ```
 
-## Sandbox note
+## Network note
 
-This skill runs entirely through `gh` CLI, which handles auth and does not require bash env-var expansion in curl headers (no sandbox issues). No WebFetch fallback needed. If `gh` is missing or unauthenticated, the pre-flight step fails with `SPAWN_API_ERROR`.
+This skill runs entirely through `gh` CLI, which handles auth internally, so no bare `$SECRET` ever lands on the command line for the Bash permission layer to refuse. No WebFetch fallback needed. If `gh` is missing or unauthenticated, the pre-flight step fails with `SPAWN_API_ERROR`.
 
 ## Constraints
 

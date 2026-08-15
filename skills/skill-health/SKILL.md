@@ -1,10 +1,12 @@
 ---
-type: Skill
-name: Skill Health
-category: core
-description: Fleet skill observability with two views. Health view audits per-skill metrics, files/resolves issues in memory/issues/, and notifies on state change only. Analytics view ranks the fleet by 7d run count, surfaces success rates, exit-taxonomy distribution, and anomaly flags (significance-gated). The selector picks the view.
-var: ""
-tags: [meta]
+name: skill-health
+description: Fleet skill observability with two views - health audits per-skill metrics and files/resolves issues in memory/issues/; analytics ranks the fleet by 7d runs, success rates, and anomaly flags.
+metadata:
+  title: Skill Health
+  category: evolution
+  var: ""
+  tags:
+    - meta
 ---
 > **${var}** — View selector.
 > - **empty** → health check across all scheduled skills (default).
@@ -45,7 +47,7 @@ This skill provides two views over the same GitHub-Actions skill-run data. They 
 3. **`memory/skill-health/last-report.json`** — Last run's classification snapshot (this skill writes it). Used to dedup notifications and detect flapping.
 4. **`aeon.yml`** — Enabled skills and schedules.
 5. **`memory/issues/INDEX.md`** and `memory/issues/ISS-*.md` — Open issues tracker. Check before filing, update on recovery.
-6. **`./scripts/skill-runs --hours 168 --failures --json`** — Fallback source for failures that never wrote to cron-state (sandbox blocks, etc.). Run once, parse JSON.
+6. **`./scripts/skill-runs --hours 168 --failures --json`** — Fallback source for failures that never wrote to cron-state (runs that crashed before writing, etc.). Run once, parse JSON.
 7. **`memory/logs/YYYY-MM-DD.md`** (last 3 days) — Grep for `SKILL_*_ERROR` or `EMPTY` signatures keyed to skills missing from skill-health/*.json.
 
 ## Steps
@@ -56,7 +58,7 @@ This skill provides two views over the same GitHub-Actions skill-run data. They 
 - Load `memory/cron-state.json` (if missing or unparseable, treat as empty — first run, not failure).
 - Load every `memory/skill-health/*.json` (except `last-report.json`).
 - Load `memory/skill-health/last-report.json` if present → `prev_report`. If missing, `prev_report = {}`.
-- Run `./scripts/skill-runs --hours 168 --failures --json 2>/dev/null || echo '{}'` → extract any skill with failures in the last 7d that isn't in cron-state (sandbox-blocked state writes).
+- Run `./scripts/skill-runs --hours 168 --failures --json 2>/dev/null || echo '{}'` → extract any skill with failures in the last 7d that isn't in cron-state (runs that failed before writing state).
 - Parse `memory/issues/INDEX.md` → extract open issues with `detected_by: skill-health` and their affected skills. If missing, treat as empty.
 
 ### 2. Classify each enabled skill
@@ -228,8 +230,8 @@ If all skills healthy, the body-only shortcut from step 6 still fires (once per 
 ./scripts/skill-runs --json --hours $WINDOW_HOURS > output/.chains/skill-analytics-runs.json 2>/dev/null
 ```
 
-If the script fails (auth, rate limit, sandbox block) or the JSON is empty:
-- Log `SKILL_ANALYTICS_NO_DATA — skill-runs returned empty (gh api / sandbox block?)` to `memory/logs/${today}.md` (under the `### skill-health` heading, see step 13) and stop with **no notification**. A silent fleet view is correct on data-fetch failure — fall back rather than guess.
+If the script fails (auth, rate limit, network error) or the JSON is empty:
+- Log `SKILL_ANALYTICS_NO_DATA — skill-runs returned empty (gh api / network error?)` to `memory/logs/${today}.md` (under the `### skill-health` heading, see step 13) and stop with **no notification**. A silent fleet view is correct on data-fetch failure — fall back rather than guess.
 
 The script's JSON shape (see `scripts/skill-runs`):
 ```json
@@ -331,7 +333,7 @@ Path: `output/articles/skill-analytics-${today}.md`. Overwrite if it exists (ide
 
 | Flag | Skill | Detail | Action |
 |------|-------|--------|--------|
-| 🔴 SILENT | name | scheduled `<cron>` but zero runs in window | check workflow / scheduler |
+| 🔴 SILENT | name | scheduled `<cron>` but zero runs in window | run **aeon-doctor** — zero-runs-despite-schedule is usually a static config bug (unquoted `schedule:`, dup key) it can't be seen in run data |
 | 🔴 ALL_FAIL | name | N/N failed | investigate root cause |
 | 🟠 CONSECUTIVE_FAILURES | name | N-run streak (last_error: "...") | see health view for filed issue |
 | 🟠 LOW_SUCCESS | name | N% over M runs | review failures |
@@ -374,6 +376,8 @@ Path: `output/articles/skill-analytics-${today}.md`. Overwrite if it exists (ide
 ## Silent scheduled skills (enabled, zero runs)
 
 ${list of {skill, schedule} pairs OR "none — every enabled cron skill ran at least once."}
+
+> **Root-cause pointer:** an enabled cron skill with *zero* runs is most often a **static config** fault the run data can't reveal — an unquoted `schedule:` the scheduler regex silently skips, a duplicate `aeon.yml` key, or an entry pointing at a missing `SKILL.md`. That class is `aeon-doctor`'s job; dispatch it (`./aeon skills run aeon-doctor`) to pinpoint the cause instead of guessing at the scheduler.
 
 ## Source status
 
@@ -475,7 +479,7 @@ Top by runs: ${top_3_skills_by_run_count_with_counts}
 Full: output/articles/skill-analytics-${today}.md
 ```
 
-Cap the message body at ~3500 chars (Telegram safe limit). Drop the "Top by runs" line first if exceeded; flags are higher signal.
+Keep the message body tight for signal. Drop the "Top by runs" line first if it runs long; flags are higher signal. (`./notify` auto-chunks, so length is about signal, not transport.)
 
 ### 13. Log to `memory/logs/${today}.md`
 
@@ -517,9 +521,9 @@ Log under the shared `### skill-health` heading (the health loop parses this sha
 
 ---
 
-## Sandbox note (both views)
+## Network note (both views)
 
-The sandbox may block outbound `curl`. This skill does not fetch URLs directly — all data is local or via `gh` / `./scripts/skill-runs` (which uses `gh api`, so auth comes from `GITHUB_TOKEN` with no curl/env-var-in-header issue). No curl fallback needed.
+This skill fetches no URLs directly — all data is local or via `gh` / `./scripts/skill-runs` (which uses `gh api`, so auth comes from `GITHUB_TOKEN` with no secret ever on the command line). No `curl` fallback needed.
 
 - **Health view:** if `./scripts/skill-runs` fails, log `SKILL_HEALTH_PARTIAL — skill-runs unavailable` and continue with cron-state only.
 - **Analytics view:** if `gh api` is rate-limited or the runner's network is degraded, `./scripts/skill-runs` exits non-zero; catch that and fall through to `SKILL_ANALYTICS_NO_DATA` rather than emitting a partial fleet view that would mislead.

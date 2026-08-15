@@ -1,15 +1,21 @@
 ---
-type: Skill
-name: Feature
-category: dev
-description: Build, enhance, or revive GitHub repos — sweep every watched repo and ship one feature PR each (watched), make the best single enhancement on one external repo or issue (external), or reactivate the highest-scoring dormant repo (dormant); optional --fix-issues bias
-var: ""
-mode: write
-commits: true
-permissions: [contents: write, pull-requests: write]
-requires: [GH_GLOBAL?]
-tags: [dev, build, growth]
-depends_on: [repo-scanner]
+name: feature
+description: Build, enhance, or revive GitHub repos - ship one feature PR per watched repo (watched), make the best single enhancement on one external repo (external), or revive the top dormant repo (dormant).
+metadata:
+  title: Feature
+  category: dev
+  var: ""
+  mode: write
+  commits: true
+  permissions:
+    - contents:write
+    - pull-requests:write
+  requires:
+    - GH_GLOBAL?
+  tags:
+    - dev
+    - build
+    - growth
 ---
 > **${var}** — Selector `target[:arg] [--fix-issues]`, `target ∈ {watched, external, dormant}`. Empty or `watched` = build a feature on every watched repo (one PR each); `external:<owner/repo>` = one best enhancement on that external repo; `dormant` = revive the highest-scoring dormant repo. A leading `build:<owner/repo | issue-url | free-text instruction>` — the shape the Telegram "ship which opportunity?" force-reply sends via `repo-scanner`'s offer — is intercepted **first** and routed into the **external** branch on that target/instruction. `--fix-issues` biases the chosen branch toward fixing an open GitHub issue. Full grammar below.
 
@@ -72,8 +78,8 @@ All branches read operator-controlled files under `memory/` (runtime config — 
   - text-davinci
 
   ## Current models (suggest these as replacements)
-  - claude-sonnet-4-6
-  - claude-opus-4-7
+  - claude-sonnet-5
+  - claude-opus-5
   - gpt-4o
   - gemini-2.0
   ```
@@ -517,9 +523,9 @@ No eligible repos: `- REPO_REVIVE_SKIP: no eligible repos — all recently reviv
 
 Notify only on signal. The **watched** branch sends one rich per-repo message per shipped PR (skipped/failed repos send nothing; an all-skipped run sends nothing). The **external** branch sends one message per run. The **dormant** branch sends one message per revival via `./notify -f`. A clean/no-change run sends nothing.
 
-## Sandbox Note
+## Network Note
 
-All GitHub operations go through the `gh` CLI — it handles auth internally via `GITHUB_TOKEN`/`GH_GLOBAL`, so no env-var-authenticated curl from bash is needed. `./notify` / `./notify -f` deliver reliably even when the sandbox blocks outbound network. For the one public-network exception — `curl -o` of a governance-file body (§A6/§B4) — if `curl` fails intermittently, that specific fetch is the only case where you may retry; do NOT route governance-file bodies through WebFetch (see §A6 for why).
+All GitHub operations go through the `gh` CLI — it handles auth internally via `GITHUB_TOKEN`/`GH_GLOBAL`, so no env-var-authenticated curl from bash is needed. `./notify` / `./notify -f` deliver reliably. For the one public-network exception — `curl -o` of a governance-file body (§A6/§B4) — if `curl` fails intermittently, that specific fetch is the only case where you may retry; do NOT route governance-file bodies through WebFetch (see §A6 for why).
 
 **No compound bash — one operation per call.** Branches work inside per-repo temp dirs, so the natural reflex is `cd /tmp/feature-build-x && git grep ...`. The non-interactive sandbox **auto-denies** any call chaining `&&`, `||`, `;`, or pipes (`|`) — it's rejected before it runs, burning a turn each. The working directory **persists across Bash calls**, so:
 - Run `cd /tmp/feature-build-${repo-name}` (or `/tmp/external-work`, `/tmp/repo-revive-${name}`) as its own call, then run each subsequent command separately.

@@ -2,19 +2,21 @@ name: ci-tests
 
 # Runs the committed script test suites on every PR that touches scripts/ or aeon.yml.
 # These are the local tests authored alongside the hardening "easy wins" ported from
-# aeon-dev (notify formatting, log compaction, skill pruning) — same gate shape as the
-# other ci-*.yml. Keeps the extracted ./notify and the helper scripts honest.
+# aeon-dev (notify formatting, capability modes, config validation) — same gate shape
+# as the other ci-*.yml. Keeps the extracted ./notify and the helper scripts honest.
 
 on:
   pull_request:
     paths:
       - 'scripts/**'
+      - 'bin/**'
       - 'aeon.yml'
       - '.github/workflows/ci-tests.yml'
   push:
     branches: [main]
     paths:
       - 'scripts/**'
+      - 'bin/**'
       - 'aeon.yml'
   workflow_dispatch:
 
@@ -34,21 +36,50 @@ jobs:
         run: bash scripts/tests/test_notify.sh
       - name: telegram router tests
         run: bash scripts/tests/test_telegram_route.sh
-      - name: log compaction tests
-        run: python3 scripts/tests/test_compact_logs.py
-      - name: prune analyzer tests
-        run: python3 scripts/tests/test_prune_skills.py
       - name: capability mode tests
         run: bash scripts/tests/test_skill_mode.sh
+      - name: per-skill requires parse tests
+        run: bash scripts/tests/test_skill_requires.sh
+      - name: run actions summary tests
+        run: bash scripts/tests/test_run_actions_summary.sh
       - name: skill-pack manifest validation tests
         run: bash scripts/tests/test_validate_pack.sh
-      - name: grok harness runner tests
+      - name: community pack registry validation tests
+        run: bash scripts/tests/test_validate_skill_packs.sh
+      - name: README first-party catalog parity tests
+        run: bash scripts/tests/test_validate_readme_catalog.sh
+      - name: community skill install catalog tests
+        run: bash scripts/tests/test_community_skill_install.sh
+      - name: grok setup/auth tests
         run: bash scripts/tests/test_run_grok.sh
+      - name: harness-adapter grok tests
+        run: bash scripts/tests/test_harness_adapter_grok.sh
+      - name: harness resolution tests
+        run: bash scripts/tests/test_resolve_harness.sh
+      - name: harness install/config tests
+        run: bash scripts/tests/test_install_harness.sh
+      # Both hermetic (stub curl / sourced in subshells, no network). They shipped
+      # with the scripts they cover and docs/mcp-oauth.md + docs/langfuse.md cite
+      # them as that coverage, but nothing ran them until now.
+      - name: harness envelope contract tests
+        run: bash scripts/tests/test_harness_envelope.sh
+      - name: mcp-oauth-refresh tests
+        run: bash scripts/tests/test_mcp_oauth_refresh.sh
+      - name: langfuse-otel tests
+        run: bash scripts/tests/test_langfuse_otel.sh
+      - name: otel harness-span tests
+        run: bash scripts/tests/test_otel_span.sh
       - name: state reducer tests
         run: python3 scripts/tests/test_state_reduce.py
       - name: health triage tests
         run: python3 scripts/tests/test_health_triage.py
-      - name: verdikta postprocess fund-safety tests
-        run: python3 scripts/tests/test_verdikta_postprocess.py
       - name: validate-config unit tests
         run: node --test scripts/validate-config.test.js
+      - name: validate-config aeon.yml structural check
+        run: node scripts/validate-config.js
+      - name: cron-due scheduler decision tests
+        run: bash scripts/tests/test_cron_due.sh
+      - name: circuit-breaker scheduler decision tests
+        run: bash scripts/tests/test_breaker.sh
+      - name: skill-scan calibration (fires on sinks, not benign syntax)
+        run: bash scripts/tests/test_skill_scan_calibration.sh

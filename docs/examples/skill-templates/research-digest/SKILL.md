@@ -1,9 +1,11 @@
 ---
 name: [REPLACE: SKILL_NAME]
-category: research
 description: Digest of the most interesting new posts on [REPLACE: TOPIC] from RSS feeds and the open web
-var: ""
-tags: [research]
+metadata:
+  category: research
+  var: ""
+  tags:
+    - research
 ---
 
 > **${var}** — Optional. Pass a different topic to override the default. If empty, digests [REPLACE: TOPIC].
@@ -56,9 +58,9 @@ Today is ${today}. Build a digest of the [REPLACE: MAX_ITEMS] most interesting n
    - **Status**: DIGEST_OK | DIGEST_QUIET (no items) | DIGEST_DEGRADED (some feeds failed)
    ```
 
-## Sandbox note
+## Network note
 
-`WebFetch` and `WebSearch` are built-in Claude tools that bypass the GitHub Actions sandbox network gate. Use those for every external read in this skill — `curl` will frequently fail.
+`WebFetch` and `WebSearch` are built-in Claude tools. There is no network sandbox — `curl` works too; use `WebFetch` as the fallback for a flaky public GET. For this research skill the reads are unauthenticated, so `WebSearch` + `WebFetch` are the simplest path.
 
 ## Constraints
 

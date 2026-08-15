@@ -1,13 +1,18 @@
 ---
-type: Skill
-mode: read-only
-name: Token Pick
-category: crypto
-description: One token recommendation and one prediction market pick — scored, quantified, with a skip branch when signals are weak
-var: ""
-tags: [crypto]
-requires: [COINGECKO_API_KEY?]
-capabilities: [external_api, sends_notifications]
+name: token-pick
+description: One token recommendation and one prediction market pick - scored, quantified, with a skip branch when signals are weak
+metadata:
+  title: Token Pick
+  mode: read-only
+  category: crypto
+  var: ""
+  tags:
+    - crypto
+  requires:
+    - COINGECKO_API_KEY?
+  capabilities:
+    - external_api
+    - sends_notifications
 ---
 <!-- autoresearch: variation B — sharper output via signal scoring, edge calculation, conviction tiers, and a skip-day branch -->
 
@@ -27,11 +32,11 @@ Produce ONE token call and ONE prediction-market call per day, each with a numer
 ```bash
 # Trending coins
 curl -s "https://api.coingecko.com/api/v3/search/trending" \
-  ${COINGECKO_API_KEY:+-H "x-cg-pro-api-key: $COINGECKO_API_KEY"}
+  ${COINGECKO_API_KEY:+-H "x-cg-demo-api-key: $COINGECKO_API_KEY"}
 
 # Top 250 by market cap with 24h and 7d changes
 curl -s "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=24h,7d" \
-  ${COINGECKO_API_KEY:+-H "x-cg-pro-api-key: $COINGECKO_API_KEY"}
+  ${COINGECKO_API_KEY:+-H "x-cg-demo-api-key: $COINGECKO_API_KEY"}
 
 # BTC + ETH 24h/7d for relative-strength benchmark (extract from the markets call above; no extra request needed)
 
@@ -153,7 +158,7 @@ The `token-movers::deep-dive` marker routes the operator's reply to **token-move
 ### 7. Log to `memory/logs/${today}.md`
 
 ```
-## Token Pick
+### token-pick
 - **Token:** SYMBOL — $price (±X% 24h) — tier HIGH/MEDIUM/SKIP — score X/10
 - **Token thesis:** [one line, including catalyst]
 - **Market:** "Question?" — YES X¢ — tier HIGH/MEDIUM/SKIP — edge Xpp
@@ -167,9 +172,9 @@ Append symbol + market question on a single line for easy grep next-day dedup, e
 TOKEN_PICK_DEDUP: SYMBOL | "Will X happen by Y?"
 ```
 
-## Sandbox note
+## Network note
 
-The sandbox may block outbound curl. Use **WebFetch** as a fallback for any URL fetch (CoinGecko, DexScreener, Polymarket all work without auth). For auth-required APIs, use the pre-fetch/post-process pattern (see CLAUDE.md). On total source failure, send the no-data notification rather than silent fail.
+There is no network sandbox — `curl` works, with **WebFetch** as the fallback for any URL fetch (CoinGecko, DexScreener, Polymarket all work without auth). For an auth'd API, call `./secretcurl` with a `{ENV_NAME}` placeholder (the key is injected via `requires:`). On total source failure, send the no-data notification rather than silent fail.
 
 ## Environment Variables
 - `COINGECKO_API_KEY` — CoinGecko API key (optional, increases rate limits)

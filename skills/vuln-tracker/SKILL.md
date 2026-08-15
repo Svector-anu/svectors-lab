@@ -1,13 +1,20 @@
 ---
-type: Skill
-name: Vuln Tracker
-category: dev
-description: One lifecycle poll over everything vuln-scanner produces — PR & advisory status (merges, stale opens, maintainer replies needing an answer, queued-too-long carve-outs), PVR triage-state transitions on submitted advisories, and pending-disclosure queue aging — with a stars-secured impact headline and a single operator-action queue.
-var: ""
-mode: write
-tags: [meta, security, github]
-depends_on: [vuln-scanner]
-requires: [GH_TOKEN?, GH_GLOBAL?]
+name: vuln-tracker
+description: One lifecycle poll over everything vuln-scanner produces - PR and advisory status, PVR triage transitions, and pending-disclosure aging, with a stars-secured impact headline and one action queue.
+metadata:
+  title: Vuln Tracker
+  category: dev
+  var: ""
+  mode: write
+  tags:
+    - meta
+    - security
+    - github
+  depends_on:
+    - vuln-scanner
+  requires:
+    - GH_TOKEN?
+    - GH_GLOBAL?
 ---
 
 > **${var}** — Scope selector for the lifecycle poll:
@@ -26,7 +33,7 @@ If `soul/SOUL.md` and `soul/STYLE.md` are populated, read them and match the ope
 ## Capability mode
 
 This skill runs `mode: write` deliberately. It is a read/poll arm, but three of its capabilities cannot run under `read-only`:
-- **Arm B polls private, unpublished advisory triage state** via `gh api repos/$REPO/security-advisories/$GHSA`. Draft/triage advisories are visible only to the repo maintainers and the reporter, so the read is intrinsically authenticated; `read-only` strips `gh` and the sandbox blocks secret-bearing `curl`, and there is no prefetch script wired for this skill.
+- **Arm B polls private, unpublished advisory triage state** via `gh api repos/$REPO/security-advisories/$GHSA`. Draft/triage advisories are visible only to the repo maintainers and the reporter, so the read is intrinsically authenticated; `read-only` strips `gh`, and a bare `$SECRET` on the command line is refused by the Bash permission layer (so a hand-rolled authenticated `curl` isn't an option either) — the read needs `gh api`, which handles auth internally.
 - **Arm B persists state transitions** — it rewrites `state:`/`last_checked:`/`resolved_at:` frontmatter in `memory/pending-disclosures/*.md` in place and **moves** resolved files to `memory/pending-disclosures/resolved/` (`Edit`/`git mv` — both stripped in `read-only`).
 - **Arm A leans on authenticated `gh api`** for the PVR-state endpoint (`repos/$REPO/private-vulnerability-reporting`) and repo/advisory reads.
 
@@ -48,9 +55,9 @@ No sibling writes a repo file **outside** `memory/`, so there was nothing to rel
 
 Then run the arm(s) selected by `scope`, and finish with the shared **Notify** and **Log** steps.
 
-## Sandbox Note
+## Network Note
 
-- **Arm A & Arm B (GitHub reads):** all data via `gh api` / `gh search` / `gh pr view`. `gh` handles auth internally via `GH_TOKEN` (and Arm B's private-advisory reads need the elevated `GH_GLOBAL` PAT). No env-var-authenticated `curl` from bash (the sandbox blocks secret-bearing outbound calls), no prefetch/postprocess scripts needed. Arm B keeps a documented `curl` fallback for the advisory endpoint — see Arm B step B2 — but under the sandbox `gh api` is the reliable path.
+- **Arm A & Arm B (GitHub reads):** all data via `gh api` / `gh search` / `gh pr view`. `gh` handles auth internally via `GH_TOKEN` (and Arm B's private-advisory reads need the elevated `GH_GLOBAL` PAT). No env-var-authenticated `curl` from bash — a bare `$SECRET` on the command line is refused by the Bash permission layer, so `gh api` (auth handled internally) is the reliable path; no postprocess scripts needed. Arm B keeps a documented `curl` fallback for the advisory endpoint — see Arm B step B2 — but `gh api` is preferred.
 - **Arm C (local only):** reads only local files (`memory/pending-disclosures/`, `memory/issues/`, `memory/topics/pr-status.md`). No outbound network or auth required.
 
 ---
@@ -338,13 +345,13 @@ Expected outcomes:
 | HTTP 403 | Private advisory, we don't have read access — state unknown, treat as still `triage` |
 | HTTP 404 | Advisory deleted / repo private / GHSA invalid — flag as `not-found` |
 
-**Sandbox fallback:** `gh api` uses `GH_TOKEN` internally (workflow wires `GH_GLOBAL` for the elevated advisory read). If `gh` is somehow unavailable, fall back to:
+**Fallback:** `gh api` uses `GH_TOKEN` internally (workflow wires `GH_GLOBAL` for the elevated advisory read). If `gh` is somehow unavailable, fall back to:
 ```bash
 curl -s -H "Authorization: Bearer $GH_GLOBAL" \
   "https://api.github.com/repos/${REPO}/security-advisories/${GHSA}" \
   | grep -o '"state":"[a-z]*"'
 ```
-(Note: secret-bearing `curl` is blocked in the standard sandbox — `gh api` is the reliable path here.)
+(Note: a bare `$SECRET` on the command line is refused by the Bash permission layer, so `gh api` is the reliable path here — or route the `curl` through `./secretcurl` with a `{GH_GLOBAL}` placeholder.)
 
 ### B3. Detect state changes
 

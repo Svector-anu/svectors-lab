@@ -73,7 +73,7 @@ class TestReduce(unittest.TestCase):
         # the materialized file silently loses a field. This is the contract that
         # makes the reader cutover safe — guard it explicitly.
         EXPECTED = {
-            "last_status", "last_success", "last_failed",
+            "last_status", "last_dispatch", "last_success", "last_failed",
             "total_runs", "total_successes", "total_failures",
             "consecutive_failures", "success_rate",
             "last_quality_score", "last_error",
@@ -82,6 +82,41 @@ class TestReduce(unittest.TestCase):
         self.assertEqual(set(x.keys()), EXPECTED)
         # _blank() (the zero-event shape) must carry the same keys too.
         self.assertEqual(set(sr._blank().keys()), EXPECTED)
+
+
+class TestDispatch(unittest.TestCase):
+    def test_dispatch_sets_watermark_not_counters(self):
+        x = sr.reduce_events([
+            {"skill": "x", "status": "dispatched", "ts": "2026-06-17T06:25:00Z"},
+        ])["x"]
+        self.assertEqual(x["last_dispatch"], "2026-06-17T06:25:00Z")
+        self.assertEqual(x["last_status"], "dispatched")
+        # A dispatch is not a run outcome — counters stay clean.
+        self.assertEqual(x["total_runs"], 0)
+        self.assertEqual(x["consecutive_failures"], 0)
+        self.assertEqual(x["last_failed"], None)
+
+    def test_dispatch_then_success(self):
+        x = sr.reduce_events([
+            {"skill": "x", "status": "dispatched", "ts": "2026-06-17T06:25:00Z"},
+            {"skill": "x", "status": "success", "ts": "2026-06-17T06:40:00Z", "quality_score": 4},
+        ])["x"]
+        self.assertEqual(x["last_dispatch"], "2026-06-17T06:25:00Z")
+        self.assertEqual(x["last_status"], "success")   # later run outcome wins
+        self.assertEqual(x["last_success"], "2026-06-17T06:40:00Z")
+        self.assertEqual(x["total_runs"], 1)
+
+    def test_dispatch_does_not_reset_or_spike_failures(self):
+        # A dispatch between failures must not clear consecutive_failures (that
+        # would defeat reactive triggers) nor count as a failure itself.
+        x = sr.reduce_events([
+            {"skill": "x", "status": "failed", "ts": "2026-06-17T05:00:00Z", "error": "e1"},
+            {"skill": "x", "status": "dispatched", "ts": "2026-06-17T06:00:00Z"},
+            {"skill": "x", "status": "failed", "ts": "2026-06-17T07:00:00Z", "error": "e2"},
+        ])["x"]
+        self.assertEqual(x["consecutive_failures"], 2)
+        self.assertEqual(x["total_runs"], 2)
+        self.assertEqual(x["last_dispatch"], "2026-06-17T06:00:00Z")
 
 
 class TestParse(unittest.TestCase):

@@ -1,12 +1,15 @@
 ---
-type: Skill
-name: GitHub Monitor
-category: dev
-description: Watch your GitHub repos across four selectable views — a combined urgency monitor (stale PRs, new issues, new releases), a ranked new-issue triage queue, a release upgrade-triage digest, and a tracker for PRs this aeon instance opened. Empty var = combined monitor; issues|releases|prs select a focused view.
-var: ""
-tags: [dev, meta, github]
-commits: false
-permissions: []
+name: github-monitor
+description: Watch your GitHub repos across four views - a combined urgency monitor (stale PRs, new issues, releases), a new-issue triage queue, a release upgrade digest, or your own opened-PR tracker.
+metadata:
+  title: GitHub Monitor
+  category: dev
+  var: ""
+  tags:
+    - dev
+    - meta
+    - github
+  commits: false
 ---
 
 > **${var}** — View selector + optional scope.
@@ -591,10 +594,10 @@ Append to `memory/logs/${today}.md` under the `### github-monitor` heading (firs
 
 ---
 
-## Sandbox note
+## Network note
 
-- **`monitor`, `issues`, `prs` views** — use the `gh` CLI, which authenticates via the workflow's `GITHUB_TOKEN` / `GH_TOKEN` and works inside the sandbox (no curl fallback needed). `monitor` uses `gh pr/issue/release list`; `issues` uses `gh search issues` (fallback: per-repo `gh issue list`); `prs` uses `gh api graphql` (fallback: `gh search prs`). If a per-repo call errors in `monitor`, tag it `gh_error(<code>)` in the sources footer and continue — do not retry in a loop.
-- **`releases` view** — use **WebFetch** for every GitHub API call; curl is unreliable from the sandbox, and WebFetch bypasses the block. Pass the `Authorization: Bearer $GITHUB_TOKEN` header via WebFetch when the token is present. If WebFetch is slow across the full watch list, create `scripts/prefetch-github-releases.sh` to cache responses into `.github-releases-cache/{owner}__{repo}.json` before Claude runs; the workflow executes all `scripts/prefetch-*.sh` with full env access.
+- **`monitor`, `issues`, `prs` views** — use the `gh` CLI, which authenticates via the workflow's `GITHUB_TOKEN` / `GH_TOKEN` and works inside a GitHub Actions run (no curl fallback needed). `monitor` uses `gh pr/issue/release list`; `issues` uses `gh search issues` (fallback: per-repo `gh issue list`); `prs` uses `gh api graphql` (fallback: `gh search prs`). If a per-repo call errors in `monitor`, tag it `gh_error(<code>)` in the sources footer and continue — do not retry in a loop.
+- **`releases` view** — use `gh api "repos/{owner}/{repo}/releases?per_page=…"` for release data (the workflow's `GITHUB_TOKEN`/`GH_TOKEN` authenticates it internally and works in-run — same as the other views); **WebFetch** on the same URL is the fallback if a call fails. Tag a repo `gh_error(<code>)` in the sources footer and continue — do not retry in a loop.
 
 ## Environment Variables
 
