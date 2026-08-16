@@ -124,6 +124,8 @@ Decide `f`'s disposition from its `status` and a content 3-way (local-current vs
 
 Never CLEAN-DELETE a `skills/<name>/` directory whose `<name>` is not present in upstream's tree - fork-only skills are operator work and are structurally untouched (upstream's compare can only reference paths that exist upstream).
 
+Also never CLEAN-DELETE a `skills/<name>/` directory if `<name>` is currently `enabled: true` in the operator's `aeon.yml` (`grep -E "^  ${name}: *\{[^}]*enabled: true" aeon.yml`) - upstream retiring a skill the operator has actively scheduled is exactly the case `validate-config.js`'s skill-refs check exists to catch, but only *after* the PR is merged; nothing in the PR review itself would otherwise flag it. Downgrade this case to **CONFLICT** (reason: `enabled-skill-removed-upstream`) instead of deleting - the directory stays, and S9 surfaces it as its own loud PR-body section rather than folding it into "Applied cleanly" or the generic conflict list.
+
 ### S7. Apply CLEAN changes on a branch (sync mode only)
 
 If `MODE == report`, skip to S9. Otherwise:
@@ -152,7 +154,7 @@ If **nothing CLEAN applied** (every upstream change was CONFLICT or OPERATOR): o
 
 ### S8. Advance the baseline + reconcile conflicts (in the branch)
 
-Recompute `PENDING`: for every CONFLICT file this run **plus** every prior `PENDING` entry, keep it only if `sha256(local) != sha256(HEAD blob)` (still genuinely divergent). Drop the rest (resolved).
+Recompute `PENDING`: for every CONFLICT file this run **plus** every prior `PENDING` entry, keep it only if `sha256(local) != sha256(HEAD blob)` (still genuinely divergent). Drop the rest (resolved). Exception: `enabled-skill-removed-upstream` entries have no HEAD blob to diff (the path is deleted upstream) - resolve them instead when the skill is no longer `enabled: true` in the operator's current `aeon.yml` (they disabled it, so the CLEAN-DELETE rule can now apply next run) or upstream re-adds a path of that name (re-classify as CONFLICT/modified or CLEAN-UPDATE under the normal rules).
 
 Write `memory/topics/aeon-update-state.json` and commit it **with** the sync so merging advances the watermark:
 
@@ -202,8 +204,12 @@ PR body (`/tmp/aeon-update-pr-body.md`) - only include sections that have conten
 - **Workflows:** `.github/workflows/...`
 - **Docs / other:** `docs/...`, `CLAUDE.md`, ...
 
+### ⚠️ Currently-enabled skills removed upstream
+For each CONFLICT with reason `enabled-skill-removed-upstream` (S6):
+- `verdikta-hunter` — enabled in your `aeon.yml`, deleted upstream in {commit(s)}. **Not deleted here** so nothing breaks. Pick one: keep it as a fork-only skill going forward (nothing else to do), or disable it in `aeon.yml` to match upstream's current default set.
+
 ### Needs manual review (conflicts - your local copy diverges from upstream)
-For each: what upstream changed and why it wasn't auto-applied.
+For each *other* conflict reason (`enabled-skill-removed-upstream` is covered above, don't duplicate it here): what upstream changed and why it wasn't auto-applied.
 - `scripts/foo.sh` — you customized this locally; upstream changed it in {commits}. Upstream diff:
   ```diff
   {short upstream base..head diff for the file}
