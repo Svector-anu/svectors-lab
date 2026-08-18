@@ -3,7 +3,7 @@ type: Reference
 repo: guillaumemeyer/watermarks-remover
 severity: medium
 cwe: CWE-776
-status: submitted
+status: accepted-already-fixed
 ghsa_id: GHSA-pjg6-92pm-mmcf
 advisory_url: https://github.com/guillaumemeyer/watermarks-remover/security/advisories/GHSA-pjg6-92pm-mmcf
 submitted_at: 2026-08-15T08:03:14Z
@@ -13,6 +13,31 @@ human_only: true
 channel: github-pvr-form
 audited_commit: 92f38b10b247788c1d2e2807251e755c315918a8
 detected_at: 2026-08-15T00:00:00Z
+accepted_at: 2026-08-18T16:21:51Z
+closed_at: 2026-08-18T16:21:51Z
+resolution_pr: https://github.com/guillaumemeyer/watermarks-remover/pull/146
+---
+
+**Resolved 2026-08-18.** Went quiet in triage for 3 days — the maintainer's own
+notification pipeline had a misconfiguration and never surfaced it (his words,
+not a guess). The operator followed up publicly on X (@guillaumemeyer),
+prompting a same-day response: `submission.accepted: true`, credited as
+reporter (`credits_detailed[0].state: "accepted"`), advisory `state: closed`.
+
+Turns out the root cause was already patched by an unrelated commit
+(`7236277`, a Ruff-linting sweep that enabled rule `S314` and, as a listed
+side effect, "harden sitemap XML parsing: reject DTD/entity declarations") —
+landed *before* this report was filed, just without a regression test. The
+maintainer's follow-up, [PR #146](https://github.com/guillaumemeyer/watermarks-remover/pull/146)
+("test: refuse DTD/entity bombs in sitemap parser (GHSA-pjg6-92pm-mmcf)"),
+adds that test against `tests/test_audit.py` and merged 2026-08-18T16:24:54Z,
+3 minutes after the advisory closed. Independently verified both the commit
+and the PR via `gh api`/`gh pr view` — not just taking the maintainer's word.
+
+`published_at` is still `null` (no public CVE) as of this writing — advisory
+is accepted + closed but not yet published. Nothing further needed from our
+side; this thread is closed.
+
 ---
 
 **Submitted 2026-08-15T08:03:14Z as GHSA-pjg6-92pm-mmcf, state: triage.** Awaiting maintainer response. The automation's `GH_GLOBAL` PAT still lacks Private Vulnerability Reporting write scope — this one went out via the operator's interactive `gh` session instead, not a fixed automation path.
