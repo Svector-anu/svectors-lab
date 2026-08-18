@@ -13,6 +13,9 @@
 |------|------|------------|
 | 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 
+## Active Topics
+- [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
+
 ## Skills Built
 | Skill | Date | Notes |
 |-------|------|-------|
