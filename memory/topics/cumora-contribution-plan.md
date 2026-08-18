@@ -90,3 +90,10 @@ slow down and stay high-signal only.
 
 - 2026-08-18: PR #8 merged (axios/dompurify/nanoid/postcss CVE bumps),
   merged by yetone personally same-day. First contribution, credit live.
+- 2026-08-18: PR #14 opened, fixes #2 (GitHub login refusing accounts whose
+  primary email is unverified even when a secondary is verified — confirmed
+  root cause, fix, regression test, full 577-test suite green). Also
+  hardened the Google failure path's error handling as a plausible-but-
+  unconfirmed contributor to the other half of #2 — flagged honestly as
+  unconfirmed in the PR, not claimed as fixed. First user-reported-issue
+  contribution, exactly the top pipeline priority from this plan.
