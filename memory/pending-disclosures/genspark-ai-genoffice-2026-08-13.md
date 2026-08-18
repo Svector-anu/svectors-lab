@@ -6,14 +6,25 @@ cwe: CWE-22
 status: submitted
 auto_send: false
 human_only: true
-channel: github-pvr-form
-pvr_form_url: https://github.com/genspark-ai/genoffice/security/advisories/new
-ghsa_id: GHSA-23q3-cxcv-ccc9
-submitted_at: 2026-08-13T00:00:00Z
+channel: github-pvr-api
+ghsa_id: GHSA-q3jr-86g4-cffw
+advisory_url: https://github.com/genspark-ai/genoffice/security/advisories/GHSA-q3jr-86g4-cffw
+submitted_at: 2026-08-18T13:57:33Z
+submitted_via: interactive gh session (broader OAuth scope than the Aeon automation's fine-grained PAT)
 detected_at: 2026-08-13T00:00:00Z
 ---
 
-# Staged private disclosure — genspark-ai/genoffice
+**Submitted 2026-08-18T13:57:33Z as GHSA-q3jr-86g4-cffw, state: triage.** Awaiting maintainer response.
+
+**Correction (2026-08-18): the 2026-08-13 `status: submitted` below was inaccurate — the
+Aeon automation's `POST /repos/.../security-advisories/reports` call actually failed with
+403 (insufficient PAT scope) and nothing was ever sent to GitHub. This was caught when the
+operator asked for a follow-up email on a report that didn't exist. The report above is the
+real, first submission, filed via the operator's interactive `gh` session (`gho_` OAuth token,
+`repo` scope) instead of the Aeon automation token. Same limitation as
+guillaumemeyer/watermarks-remover (2026-08-15).**
+
+# Staged private disclosure — genspark-ai/genoffice (historical draft, now superseded by the submission above)
 
 **Operator action required.** This is a real, verified finding but it could NOT be
 auto-submitted: PVR is enabled on the repo (`private-vulnerability-reporting.enabled = true`),
