@@ -82,5 +82,26 @@
   "findings": 1,
   "channel": "pvr-submitted",
   "notes": "CWE-776 XML entity-expansion (billion laughs) DoS in audit_website.py parse_sitemap: ET.fromstring on a remote attacker-controlled sitemap, expands internal DTD entities; 4MB fetch cap is on input bytes so it does not stop post-parse amplification (388B -> 3MB @ 7 levels, exponential with more). Reachable from collect_urls->_recurse->fetch->parse_sitemap and discover_sitemap. medium. PVR enabled (.enabled=true); the automation's fine-grained GH_GLOBAL token still 403s 'Resource not accessible' on POST /security-advisories/reports (same limit as 2026-08-13 genoffice), but the operator's interactive gh session had the needed scope and submitted it directly: GHSA-pjg6-92pm-mmcf, state triage, 2026-08-15T08:03:14Z. Draft retained in memory/pending-disclosures/. Not a dup of PR#49 (hardened same file vs SSRF+gzip bombs, missed XML bomb); no issue/PR mentions sitemap XML/entity/defusedxml. semgrep=ok 7 raw hits: 1 use-defused-xml (=the finding), 2 run-shell-injection in release-images.yml (github.ref_name tag name, collaborator-push-only, yields no more than pusher already has -> dropped), 3 dangerous-subprocess in image_meta.py (all list-form subprocess.run, no shell, env-derived dir validated with is_dir -> not command injection, dropped), 1 httpsconnection WARNING (informational). trufflehog=ok 0 verified secrets (fs + git history). osv=ok 264 vuln rows but ALL in optional ML-harness requirements-*.txt (torch/transformers/diffusers/aiohttp/pillow/pip/setuptools pins for containerized synthid/markllm/ctrlregen/markdiffusion backends), not core-tool deps; Dependabot active + fork 403 so no dep PR. container_meta.py zip handling has a zip-bomb budget guard and no extractall -> no zip-slip. server.py path handling hardened (_safe_name/_tmp_path containment, size caps, loopback default). Python 8.7k stars, MIT, SECURITY.md present."
+ },
+ {
+  "repo": "microsoft/skill-recorder",
+  "scanned_at": "2026-08-18T14:30:00Z",
+  "findings": 3,
+  "channel": "public-pr",
+  "notes": "osv-scanner: fast-uri GHSA-7p8r-x3mc-p8w7 and js-yaml GHSA-5p4m-2wfm-xmqj already covered by open PRs #45/#59, skipped as duplicate prior art. nanoid@3.3.16 CVE-2026-67213/GHSA-2v37-7h3g-55p8 (high, custom generators loop indefinitely when size=0) had no prior art \u2014 transitive via vite->postcss (postcss declares nanoid ^3.3.16, 3.3.18 resolves in-range, lockfile-only 3-line diff). PR #66 opened. trufflehog clean."
+ },
+ {
+  "repo": "yetone/cumora",
+  "scanned_at": "2026-08-18T15:00:00Z",
+  "findings": 148,
+  "channel": "public-pr",
+  "notes": "osv-scanner: 148 vuln rows across 5 manifests (root + agent-fuse/go.mod + benchmarks/ + 2 Cloudflare workers), zero prior art (no open PRs on repo at all). Fixed the 4 safe/cheap semver-compatible lockfile-only bumps: axios 1.16.0->1.19.0 (10 advisories), dompurify 3.4.3->3.4.13 (10 advisories, production dep sanitizing untrusted HTML), nanoid 3.3.12->3.3.18, postcss 8.5.14->8.5.26. PR #8 opened. Deliberately NOT fixed: electron@33.4.11 vs 33 GHSAs, every fix needs Electron 38.8.6+ (5-major-version jump, real breaking-change risk) \u2014 flagged in PR body for maintainer, not auto-bumped. ~15 lower-severity/dev-tooling-only findings (esbuild/tar/ws/undici/shell-quote/protobufjs/ip-address/qs/brace-expansion/builder-util-runtime/app-builder-lib/@babel/core/@opentelemetry/core/body-parser/sharp) also left out of scope to avoid PR spam. trufflehog clean. PVR disabled despite SECURITY.md calling it preferred (confirmed via API) \u2014 not relevant this run since all findings were dependency CVEs (public-PR path)."
+ },
+ {
+  "repo": "DannyMac180/sol-advisor",
+  "scanned_at": "2026-08-18T15:40:00Z",
+  "findings": 0,
+  "channel": "clean",
+  "notes": "Picked as dep-scan-only target (no SECURITY.md, PVR disabled). No dependency manifests at all \u2014 small Codex/agent plugin package (3 TOML agent configs + 3 shell scripts), not a conventional app; osv-scanner found nothing to scan. trufflehog clean. Manually reviewed all 3 shell scripts (install-agents.sh, inspect-agent-runtime.sh, verify.sh) for TOCTOU/symlink races/glob injection/eval|curl-pipe-sh \u2014 none found. install-agents.sh is unusually well-hardened: atomic ln-based install (fails rather than overwriting a changed destination), explicit symlink/non-regular-file rejection, pre/post-install digest verification. inspect-agent-runtime.sh validates its THREAD_ID arg against a strict UUID regex before using it in find -name, and scopes temp-file cleanup to a fixed prefix."
  }
 ]
