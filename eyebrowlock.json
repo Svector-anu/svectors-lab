@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T08:39:05.159387Z",
+  "generatedAt": "2026-08-19T05:28:16.641421Z",
   "generator": "eyebrow/0.4.1",
   "artifacts": [
     {
@@ -73,6 +73,32 @@
       "discoveredFrom": "skills/idea-forge/SKILL.md"
     },
     {
+      "id": "056ff854032adb79",
+      "tool": "claude-code",
+      "scope": "project:.",
+      "type": "mcp_server",
+      "name": "robinhood-trading",
+      "source": {
+        "kind": "url",
+        "ref": "https://agent.robinhood.com/mcp/trading",
+        "certSpki": "sha256/Tu48cpUf2ZKGoakg5C7ilFOcTPsMkcQeouxSUrb5AMU="
+      },
+      "capabilities": {
+        "network": [
+          "agent.robinhood.com"
+        ]
+      },
+      "findings": [
+        {
+          "ruleId": "REMOTE-UNHASHABLE",
+          "severity": "medium",
+          "owasp": "ASK-02",
+          "explanation": "remote MCP code cannot be hashed; pinning the TLS certificate (SPKI) instead"
+        }
+      ],
+      "discoveredFrom": ".mcp.json"
+    },
+    {
       "id": "0648c25b1a0cf0de",
       "tool": "aeon",
       "scope": "project:.",
@@ -115,7 +141,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "0c1988170a65a2f66fda78abffb38cbdbd295feed8d1cf67f1d4cef41bf64cb0"
+          "hash": "cd0ab6e3ec0e55f6d48609a1bd7b0978364cda8d3b5a557c41e08bb2f57f98f3"
         }
       ],
       "findings": [
@@ -142,12 +168,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 796,
+          "line": 874,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-73f662c990722830f89065d46c534c9a505c67052e96bd3ce11c734413b57512",
+      "contentHash": "sha256-ea6f34f2e426327f84c197b321ebd01d4b72e16550338c19a319febae3b20c44",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
@@ -556,6 +582,26 @@
       "discoveredFrom": "skills/skill-health/SKILL.md"
     },
     {
+      "id": "3b9bb6d529e3b41b",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "verdikta-hunter",
+      "source": {
+        "kind": "local",
+        "ref": "skills/verdikta-hunter"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "6aa80fd8b975f1224429e1c06c2a4078219c0d2e9a3d00f764fa9cb9e4cda072"
+        }
+      ],
+      "contentHash": "sha256-dda3bb81b0278ea31d1489f4097904b1a69b193fe64350b2763b37845b998dc3",
+      "discoveredFrom": "skills/verdikta-hunter/SKILL.md"
+    },
+    {
       "id": "3d96d9a8bb3a96d9",
       "tool": "aeon",
       "scope": "project:.",
@@ -627,10 +673,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "8ea51d2ef4853f0622c59af794566fdc4614b0e9e28397cbb51437bf622c82cb"
+          "hash": "5c77394f2c7abd639279340590812c41f3401ad762be2ab8db43cc89d16813f9"
         }
       ],
-      "contentHash": "sha256-1c0fde25d72be5c645954cdfd1753fdd20447361a4a658caae16cf2e010f3610",
+      "contentHash": "sha256-097875d7be8566fbe0dc613a4505902dceb9174567bc2380164df0da4570d2b0",
       "discoveredFrom": "skills/token-pick/SKILL.md"
     },
     {
@@ -849,6 +895,26 @@
       ],
       "contentHash": "sha256-74c3c5e5c0816ea2274dd2b0f94cf3c219536f565eff0db99f1607c22677d4ab",
       "discoveredFrom": "AGENTS.md"
+    },
+    {
+      "id": "60c7023ee81a506d",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "fear-divergence",
+      "source": {
+        "kind": "local",
+        "ref": "skills/fear-divergence"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "baf5621c81dbd131de5af676e4d2af3eca13a9d7dad897b5ea5628e220d664c2"
+        }
+      ],
+      "contentHash": "sha256-71fd5e585b439e79f27ce2e02060270ea5bce153c729dc3d91a6d06405e74f86",
+      "discoveredFrom": "skills/fear-divergence/SKILL.md"
     },
     {
       "id": "64f9d4dd69a15346",
@@ -1495,7 +1561,7 @@
           "owasp": "ASK-06",
           "file": "hook-deploy.sh",
           "line": 175,
-          "snippet": "[ -f hook.env ] && . ./hook.env",
+          "snippet": "[ -f hook.env ] \u0026\u0026 . ./hook.env",
           "explanation": "references sensitive credential or secret paths"
         },
         {
@@ -1888,6 +1954,103 @@
       "discoveredFrom": "skills/higgsfield/SKILL.md"
     },
     {
+      "id": "c9caca0148f44800",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "taskmarket-delegate",
+      "source": {
+        "kind": "local",
+        "ref": "skills/taskmarket-delegate"
+      },
+      "capabilities": {
+        "network": [
+          "api.taskmarket.dev"
+        ]
+      },
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "bc78074e49656a5289c946525c6eaf954d74571425bac494451afd30a6a44cdd"
+        },
+        {
+          "path": "scripts/taskmarket.js",
+          "hash": "982ae8679872e78ab47b02b0f79e3e20ba0939e3464de706aad5d655dbfae1c8"
+        },
+        {
+          "path": "tests/test-taskmarket.js",
+          "hash": "05e90c4f547bbcb17592e57e70144f166f65983266605d3254d3549b0f42f79b"
+        }
+      ],
+      "findings": [
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "scripts/taskmarket.js",
+          "line": 42,
+          "snippet": "if (!process.env.TASKMARKET_API_KEY) exit(3, 'TASKMARKET_API_KEY not set; write actions require it');",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "scripts/taskmarket.js",
+          "line": 50,
+          "snippet": "headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + process.env.TASKMARKET_API_KEY },",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "scripts/taskmarket.js",
+          "line": 68,
+          "snippet": "const workerAddress = process.env.TASKMARKET_WORKER_ADDRESS;",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "scripts/taskmarket.js",
+          "line": 72,
+          "snippet": "headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + process.env.TASKMARKET_API_KEY },",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "EXEC-PRIMITIVE",
+          "severity": "medium",
+          "owasp": "ASK-03",
+          "file": "tests/test-taskmarket.js",
+          "line": 5,
+          "snippet": "const { execFileSync } = require('child_process');",
+          "explanation": "uses a process-execution primitive"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "tests/test-taskmarket.js",
+          "line": 26,
+          "snippet": "execFileSync('node', [SCRIPT, 'create', 't', 'd'], { stdio: 'pipe', env: { ...process.env, TASKMARKET_API_KEY: '' } });",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "tests/test-taskmarket.js",
+          "line": 33,
+          "snippet": "const out = execFileSync('node', [SCRIPT, 'browse'], { stdio: 'pipe', env: { ...process.env, TASKMARKET_API_KEY: '' } })…",
+          "explanation": "references sensitive credential or secret paths"
+        }
+      ],
+      "contentHash": "sha256-c22490e655d2e0800ecdd5644802745c720670756c1199c8009b5345be946814",
+      "discoveredFrom": "skills/taskmarket-delegate/SKILL.md"
+    },
+    {
       "id": "ce1d06e2e9f30cb7",
       "tool": "claude-code",
       "scope": "project:.",
@@ -1901,7 +2064,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "9068bf394a671f656d598423fc93ebaf4c3959fae7f790303445cc3419c5b380"
+          "hash": "4392bf6cd40bbe15303d732d04d88f9caa777ae7fedc2403d752b574255939d2"
         },
         {
           "path": "references/ci.md",
@@ -1913,11 +2076,11 @@
         },
         {
           "path": "references/layout.md",
-          "hash": "322f8974ba14992093a3b1045fdab2def54cebc0f06fd376c593fe0bb9ee6380"
+          "hash": "0127f5f56b16800fd8c03fa44df84988fcfb72290bdd9638dd2c8043fddf66eb"
         },
         {
           "path": "references/mcp.md",
-          "hash": "f0fadf8be705e2a636ebb7c01b8d51a7a017e08ffc29587d2693301b6c3482d6"
+          "hash": "162f3cd9ad86dc4e3e65f60cedf9824b60b13ad598271141758652aa065c3720"
         },
         {
           "path": "references/secrets.md",
@@ -1925,14 +2088,14 @@
         },
         {
           "path": "references/skill-anatomy.md",
-          "hash": "ee98b2302b8ddc8a18cc4fadde0d1864c0d3299b2bb52f6a7db09e6688a3260b"
+          "hash": "565893505064e4e985d19d1241a8e70aa99278f86b78216633680409d68254c3"
         },
         {
           "path": "scripts/mine-history.mjs",
           "hash": "0edc7445542a21cb5518e813a6ae462a1d469636601a799efc1bec86b4058c5a"
         }
       ],
-      "contentHash": "sha256-03377e139ed510956c63a4ed03ba2ea6beb7d2eb272d543329345eba37306d8f",
+      "contentHash": "sha256-53be1e62b59f423de4e7b8957a4a2f1f25df8f8aacb99304442a8245e3615c41",
       "discoveredFrom": ".claude/skills/aeon/SKILL.md"
     },
     {
@@ -2051,6 +2214,32 @@
       ],
       "contentHash": "sha256-7ac53da2da887244206f23174dc9641cb93b02eec0d5f88bf746de17ada84c77",
       "discoveredFrom": "skills/monitor-polymarket/SKILL.md"
+    },
+    {
+      "id": "e691674d7348404f",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "x402-monitor",
+      "source": {
+        "kind": "local",
+        "ref": "skills/x402-monitor"
+      },
+      "capabilities": {
+        "network": [
+          "api.github.com",
+          "api.npmjs.org",
+          "app.rwa.xyz"
+        ]
+      },
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "4d07b511f865677297a27f1dbcf891362c4eed04c56dd6daeab3d88efad537d5"
+        }
+      ],
+      "contentHash": "sha256-42c16373fe82cb8a686c96c8db3ad77319035e6f560a5e4fdf2da2d70d0dabf4",
+      "discoveredFrom": "skills/x402-monitor/SKILL.md"
     },
     {
       "id": "ecab2cfa234086b7",
@@ -2217,7 +2406,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "c7aec12b2246f16c79eb70eb1eccc1f00c8cea78fa6d8dde3ef1159f5d9eb86c"
+          "hash": "7f5d719a791c30e655ac236fbfb09992c85b56b561d5ae711b74ac84d79becd0"
         }
       ],
       "findings": [
@@ -2231,105 +2420,8 @@
           "explanation": "references sensitive credential or secret paths"
         }
       ],
-      "contentHash": "sha256-915ef57cf4dc5214a125f55df7bfe821503fd3252a8b80095f29d8343f47b5ae",
+      "contentHash": "sha256-c249e7e95b081e5fce5c4e4a0379b2797c9020f55e862d37601f697f514ca421",
       "discoveredFrom": "skills/aeon-update/SKILL.md"
-    },
-    {
-      "id": "c9caca0148f44800",
-      "tool": "aeon",
-      "scope": "project:.",
-      "type": "skill",
-      "name": "taskmarket-delegate",
-      "source": {
-        "kind": "local",
-        "ref": "skills/taskmarket-delegate"
-      },
-      "capabilities": {
-        "network": [
-          "api.taskmarket.dev"
-        ]
-      },
-      "files": [
-        {
-          "path": "SKILL.md",
-          "hash": "b1b7f7545b1a9471684a8959da005312be41ea11ca64f55d22dfa4679f3d5d49"
-        },
-        {
-          "path": "scripts/taskmarket.js",
-          "hash": "377a1e526cc754d3e18f124bbad6e642dbc5a7a5725bda0658d13c344fcf54f6"
-        },
-        {
-          "path": "tests/test-taskmarket.js",
-          "hash": "05e90c4f547bbcb17592e57e70144f166f65983266605d3254d3549b0f42f79b"
-        }
-      ],
-      "findings": [
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "scripts/taskmarket.js",
-          "line": 42,
-          "snippet": "if (!process.env.TASKMARKET_API_KEY) exit(3, 'TASKMARKET_API_KEY not set; write actions require it');",
-          "explanation": "references sensitive credential or secret paths"
-        },
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "scripts/taskmarket.js",
-          "line": 50,
-          "snippet": "headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + process.env.TASKMARKET_API_KEY },",
-          "explanation": "references sensitive credential or secret paths"
-        },
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "scripts/taskmarket.js",
-          "line": 70,
-          "snippet": "headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + process.env.TASKMARKET_API_KEY },",
-          "explanation": "references sensitive credential or secret paths"
-        },
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "scripts/taskmarket.js",
-          "line": 71,
-          "snippet": "body: JSON.stringify({ worker_address: process.env.TASKMARKET_WORKER_ADDRESS || '', message, github_url: githubUrl || ''…",
-          "explanation": "references sensitive credential or secret paths"
-        },
-        {
-          "ruleId": "EXEC-PRIMITIVE",
-          "severity": "medium",
-          "owasp": "ASK-03",
-          "file": "tests/test-taskmarket.js",
-          "line": 5,
-          "snippet": "const { execFileSync } = require('child_process');",
-          "explanation": "uses a process-execution primitive"
-        },
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "tests/test-taskmarket.js",
-          "line": 26,
-          "snippet": "execFileSync('node', [SCRIPT, 'create', 't', 'd'], { stdio: 'pipe', env: { ...process.env, TASKMARKET_API_KEY: '' } });",
-          "explanation": "references sensitive credential or secret paths"
-        },
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "tests/test-taskmarket.js",
-          "line": 33,
-          "snippet": "const out = execFileSync('node', [SCRIPT, 'browse'], { stdio: 'pipe', env: { ...process.env, TASKMARKET_API_KEY: '' } })…",
-          "explanation": "references sensitive credential or secret paths"
-        }
-      ],
-      "contentHash": "sha256-d3d50bc8a45a831d8153aa8cc4511b033f5ddbbb489d37d447cc7969ae805b2d",
-      "discoveredFrom": "skills/taskmarket-delegate/SKILL.md"
     }
   ]
 }
