@@ -2,6 +2,11 @@ name: Aeon · Messages
 run-name: "${{ inputs.message && format('msg ({0}): {1}', inputs.source || 'user', inputs.message) || (github.event_name == 'repository_dispatch' && github.event.action != 'cron-tick' && format('msg ({0}): {1}', github.event.action, github.event.client_payload.message)) || 'poll' }}"
 
 on:
+  # Re-pushed 2026-08-20: schedule triggers were completing as action_required
+  # with zero jobs on every tick since at least 2026-08-14 (route/run jobs
+  # dependent on this were dead for a week). A workflow disable/re-enable
+  # toggle alone didn't clear it; forcing a commit here to make GitHub
+  # re-register the cron schedule, per known community-documented behavior.
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
