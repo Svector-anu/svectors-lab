@@ -25,14 +25,14 @@
     "last_error": "claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permiss"
   },
   "narrative-tracker": {
-    "last_status": "dispatched",
-    "last_failed": "2026-07-29T00:40:37Z",
-    "total_runs": 332,
+    "last_status": "failed",
+    "last_failed": "2026-08-21T18:59:36Z",
+    "total_runs": 333,
     "total_successes": 13,
-    "total_failures": 319,
-    "consecutive_failures": 0,
+    "total_failures": 320,
+    "consecutive_failures": 1,
     "success_rate": 0.04,
-    "last_error": "08a3823\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
+    "last_error": "read-only: workspace write-locked via bwrap claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],",
     "last_success": "2026-08-21T13:59:00Z",
     "last_quality_score": 4,
     "last_dispatch": "2026-08-21T18:59:03Z"
