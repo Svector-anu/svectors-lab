@@ -1,34 +1,34 @@
-ℹ️ GitHub Trending — 2026-07-28
+ℹ️ GitHub Trending — 2026-08-21
 
-*GitHub Trending — 2026-07-28*
+**GitHub Trending — 2026-08-21**
 
-*Top pick* — [alibaba/open-code-review](https://github.com/alibaba/open-code-review)
-Alibaba open-sourced the hybrid pipeline+LLM review stack already battle-tested at their scale — 979★ today.
+**Top pick** — [RyanCodrai/turbovec](https://github.com/RyanCodrai/turbovec)
+The skills gold rush is minting collections; the quieter, higher-signal story is the infra underneath — cheaper vector memory is what actually unblocks bigger agent context.
 
-*Devtools*
-• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 979 today (15.3k total) · Go · [ACCELERATING]
-Deterministic security rules + LLM agents for precise line-level PR comments.
+**AI/ML**
+• [modular/modular](https://github.com/modular/modular) — ★ 905 today (29k total) · Mojo · RETURNING
+Mojo + MAX in one repo — the bet that one language can span Python ergonomics and raw GPU-kernel speed.
 
-• [pbakaus/impeccable](https://github.com/pbakaus/impeccable) — ★ 847 today (51.9k total) · JavaScript · [ACCELERATING]
-Design language that steers coding agents toward real UI craft, not generic Tailwind sludge.
+• [volcengine/OpenViking](https://github.com/volcengine/OpenViking) — ★ 659 today (32k total) · Python · ACCELERATING
+Unifies agent memory, RAG, and skills in one self-evolving store instead of stitching three systems together.
 
-*AI/ML*
-• [bradautomates/claude-video](https://github.com/bradautomates/claude-video) — ★ 434 today (11.5k total) · Python · [ACCELERATING]
-/watch skill: download video, extract frames + transcript, hand the bundle to Claude.
+• [mattpocock/skills](https://github.com/mattpocock/skills) — ★ 3.4k today (229k total) · Shell · ACCELERATING
+The reference dump behind the agent-skills wave — copy-paste skill files that upgrade a coding agent overnight. (Judgment keep: borderline collection, but it *is* today's story.)
 
-• [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) — ★ 240 today (54.4k total) · Python · [ACCELERATING]
-One agent skill that cross-checks Reddit, X, HN, YouTube, and Polymarket before summarizing.
+**Infra**
+• [RyanCodrai/turbovec](https://github.com/RyanCodrai/turbovec) — ★ 348 today (16k total) · Rust · ACCELERATING
+Quantization-native vector index in Rust — trades almost no recall for large memory savings vs FAISS; ships Python bindings.
 
-• [shiyu-coder/Kronos](https://github.com/shiyu-coder/Kronos) — ★ 441 today (34.7k total) · Python · [ACCELERATING]
-Foundation model for market microstructure — treats candles and order flow as a language.
+• [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — ★ 435 today (5.3k total) · Python · RETURNING
+Red-team scanner now covers MCP servers and agent skills, not just models — timely as the MCP attack surface grows.
 
-*Web/Apps*
-• [permissionlesstech/bitchat](https://github.com/permissionlesstech/bitchat) — ★ 2.3k today (32.8k total) · Swift · [ACCELERATING]
-Offline Bluetooth mesh chat with E2E encryption — no cell towers or servers required.
+**Devtools**
+• [santifer/career-ops](https://github.com/santifer/career-ops) — ★ 918 today (67k total) · JavaScript · ACCELERATING
+Runs job search inside your coding CLI — scrapes portals, scores listings A–F, tailors your CV, all local.
 
-*Data*
-• [opengeos/GeoLibre](https://github.com/opengeos/GeoLibre) — ★ 420 today (3.0k total) · TypeScript · [ACCELERATING]
-MapLibre + DuckDB GIS that runs the same stack in browser, Tauri desktop, and Jupyter.
+**Web/Apps**
+• [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) — ★ 1.4k today (13k total) · Rust · ACCELERATING
+Rust replacement for Logitech Options+ — remap buttons, DPI, SmartShift over HID++ with no account and no telemetry.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/15
+sources: trending=ok · gh_api=fail (read-only; verified via public GitHub API) · kept 7/16

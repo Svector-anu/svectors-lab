@@ -1,0 +1,575 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "GitHub Trending — 2026-08-21"
+      },
+      "children": [
+        "section-top-pick",
+        "sep-1",
+        "section-ai-ml",
+        "sep-2",
+        "section-infra",
+        "sep-3",
+        "section-devtools",
+        "sep-4",
+        "section-web-apps",
+        "sep-5",
+        "footer-sources"
+      ]
+    },
+    "section-top-pick": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text-top-pick-label",
+        "repo-top-pick",
+        "text-top-pick-desc"
+      ]
+    },
+    "text-top-pick-label": {
+      "type": "Text",
+      "props": {
+        "text": "Top pick",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "repo-top-pick": {
+      "type": "StoryLink",
+      "props": {
+        "title": "RyanCodrai/turbovec",
+        "href": "https://github.com/RyanCodrai/turbovec"
+      },
+      "children": []
+    },
+    "text-top-pick-desc": {
+      "type": "Text",
+      "props": {
+        "text": "The skills gold rush is minting collections; the quieter, higher-signal story is the infra underneath — cheaper vector memory is what actually unblocks bigger agent context.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-ai-ml": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-ai-ml",
+        "repo-modular",
+        "repo-volcengine",
+        "repo-mattpocock"
+      ]
+    },
+    "heading-ai-ml": {
+      "type": "Heading",
+      "props": {
+        "text": "AI/ML",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "repo-modular": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-modular-link",
+        "repo-modular-meta",
+        "repo-modular-desc"
+      ]
+    },
+    "repo-modular-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "modular/modular",
+        "href": "https://github.com/modular/modular",
+        "score": "★ 905 today (29k total)"
+      },
+      "children": []
+    },
+    "repo-modular-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-modular-lang",
+        "badge-modular-status"
+      ]
+    },
+    "badge-modular-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Mojo",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-modular-status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-modular-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Mojo + MAX in one repo — the bet that one language can span Python ergonomics and raw GPU-kernel speed.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "repo-volcengine": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-volcengine-link",
+        "repo-volcengine-meta",
+        "repo-volcengine-desc"
+      ]
+    },
+    "repo-volcengine-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "volcengine/OpenViking",
+        "href": "https://github.com/volcengine/OpenViking",
+        "score": "★ 659 today (32k total)"
+      },
+      "children": []
+    },
+    "repo-volcengine-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-volcengine-lang",
+        "badge-volcengine-status"
+      ]
+    },
+    "badge-volcengine-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Python",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-volcengine-status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-volcengine-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Unifies agent memory, RAG, and skills in one self-evolving store instead of stitching three systems together.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "repo-mattpocock": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-mattpocock-link",
+        "repo-mattpocock-meta",
+        "repo-mattpocock-desc"
+      ]
+    },
+    "repo-mattpocock-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "mattpocock/skills",
+        "href": "https://github.com/mattpocock/skills",
+        "score": "★ 3.4k today (229k total)"
+      },
+      "children": []
+    },
+    "repo-mattpocock-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-mattpocock-lang",
+        "badge-mattpocock-status"
+      ]
+    },
+    "badge-mattpocock-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Shell",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-mattpocock-status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-mattpocock-desc": {
+      "type": "Text",
+      "props": {
+        "text": "The reference dump behind the agent-skills wave — copy-paste skill files that upgrade a coding agent overnight. (Judgment keep: borderline collection, but it *is* today's story.)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-infra": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-infra",
+        "repo-turbovec",
+        "repo-tencent"
+      ]
+    },
+    "heading-infra": {
+      "type": "Heading",
+      "props": {
+        "text": "Infra",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "repo-turbovec": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-turbovec-link",
+        "repo-turbovec-meta",
+        "repo-turbovec-desc"
+      ]
+    },
+    "repo-turbovec-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "RyanCodrai/turbovec",
+        "href": "https://github.com/RyanCodrai/turbovec",
+        "score": "★ 348 today (16k total)"
+      },
+      "children": []
+    },
+    "repo-turbovec-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-turbovec-lang",
+        "badge-turbovec-status"
+      ]
+    },
+    "badge-turbovec-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Rust",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-turbovec-status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-turbovec-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Quantization-native vector index in Rust — trades almost no recall for large memory savings vs FAISS; ships Python bindings.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "repo-tencent": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-tencent-link",
+        "repo-tencent-meta",
+        "repo-tencent-desc"
+      ]
+    },
+    "repo-tencent-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Tencent/AI-Infra-Guard",
+        "href": "https://github.com/Tencent/AI-Infra-Guard",
+        "score": "★ 435 today (5.3k total)"
+      },
+      "children": []
+    },
+    "repo-tencent-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-tencent-lang",
+        "badge-tencent-status"
+      ]
+    },
+    "badge-tencent-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Python",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-tencent-status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-tencent-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Red-team scanner now covers MCP servers and agent skills, not just models — timely as the MCP attack surface grows.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-devtools": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-devtools",
+        "repo-santifer"
+      ]
+    },
+    "heading-devtools": {
+      "type": "Heading",
+      "props": {
+        "text": "Devtools",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "repo-santifer": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-santifer-link",
+        "repo-santifer-meta",
+        "repo-santifer-desc"
+      ]
+    },
+    "repo-santifer-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "santifer/career-ops",
+        "href": "https://github.com/santifer/career-ops",
+        "score": "★ 918 today (67k total)"
+      },
+      "children": []
+    },
+    "repo-santifer-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-santifer-lang",
+        "badge-santifer-status"
+      ]
+    },
+    "badge-santifer-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "JavaScript",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-santifer-status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-santifer-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Runs job search inside your coding CLI — scrapes portals, scores listings A–F, tailors your CV, all local.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section-web-apps": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-web-apps",
+        "repo-aprilnea"
+      ]
+    },
+    "heading-web-apps": {
+      "type": "Heading",
+      "props": {
+        "text": "Web/Apps",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "repo-aprilnea": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo-aprilnea-link",
+        "repo-aprilnea-meta",
+        "repo-aprilnea-desc"
+      ]
+    },
+    "repo-aprilnea-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "AprilNEA/OpenLogi",
+        "href": "https://github.com/AprilNEA/OpenLogi",
+        "score": "★ 1.4k today (13k total)"
+      },
+      "children": []
+    },
+    "repo-aprilnea-meta": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-aprilnea-lang",
+        "badge-aprilnea-status"
+      ]
+    },
+    "badge-aprilnea-lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Rust",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge-aprilnea-status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "repo-aprilnea-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Rust replacement for Logitech Options+ — remap buttons, DPI, SmartShift over HID++ with no account and no telemetry.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "footer-sources": {
+      "type": "Text",
+      "props": {
+        "text": "sources: trending=ok · gh_api=fail (read-only; verified via public GitHub API) · kept 7/16",
+        "variant": "caption"
+      },
+      "children": []
+    }
+  }
+}
