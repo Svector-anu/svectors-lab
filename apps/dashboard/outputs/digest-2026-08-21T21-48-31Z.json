@@ -1,0 +1,299 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Daily Digest — 2026-08-21"
+      },
+      "children": [
+        "tldr",
+        "item1",
+        "sep1",
+        "item2",
+        "sep2",
+        "item3",
+        "sep3",
+        "item4"
+      ]
+    },
+    "tldr": {
+      "type": "Text",
+      "props": {
+        "text": "Crypto's multi-day rally is policy-driven, not organic — Treasury liquidity, the SEC's first token-offering framework, and a CLARITY push are doing the lifting; Anthropic signals a record IPO and Nevada clears robotaxis at scale.",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "item1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h1",
+        "d1",
+        "w1",
+        "l1"
+      ]
+    },
+    "h1": {
+      "type": "Heading",
+      "props": {
+        "text": "SEC proposes first US token-offering framework — a legal path for token sales",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "d1": {
+      "type": "Text",
+      "props": {
+        "text": "The SEC's \"Regulation Crypto Assets\" (proposed Aug 18) creates registration exemptions — up to $75M over 12 months — plus a conditional safe harbor from \"investment contract\" once a network's key managerial efforts are complete or abandoned."
+      },
+      "children": []
+    },
+    "w1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "w1_label",
+        "w1_text"
+      ]
+    },
+    "w1_label": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters:",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "w1_text": {
+      "type": "Text",
+      "props": {
+        "text": "the first real US on-ramp for compliant token launches, and it front-runs CLARITY, which is still stalled in Congress — an issuance regime traders can position around now, not eventually."
+      },
+      "children": []
+    },
+    "l1": {
+      "type": "Link",
+      "props": {
+        "label": "SEC Press Release",
+        "href": "https://www.sec.gov/newsroom/press-releases/2026-76-sec-proposes-new-regulation-crypto-assets"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "item2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h2",
+        "d2",
+        "w2",
+        "l2"
+      ]
+    },
+    "h2": {
+      "type": "Heading",
+      "props": {
+        "text": "Crypto rally extends into Friday — regime is risk-on but policy-dependent",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "d2": {
+      "type": "Text",
+      "props": {
+        "text": "BTC and ETH continued their week-long climb after the Treasury doubled long-dated bond buybacks (Aug 19) and Trump urged Congress to pass CLARITY. The bid is driven by liquidity and regulatory optimism, not fresh organic demand."
+      },
+      "children": []
+    },
+    "w2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "w2_label",
+        "w2_text"
+      ]
+    },
+    "w2_label": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters:",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "w2_text": {
+      "type": "Text",
+      "props": {
+        "text": "this leg rests on policy catalysts — the buyback window (Sep 9–Nov 4) and the CLARITY vote are the continuation signals; a stall on either is the fade."
+      },
+      "children": []
+    },
+    "l2": {
+      "type": "Link",
+      "props": {
+        "label": "Yahoo Finance Article",
+        "href": "https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-friday-august-21-2026-cryptos-continue-rally-sparked-by-treasury-repurchase-announcement-161633891.html"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "item3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h3",
+        "d3",
+        "w3",
+        "l3"
+      ]
+    },
+    "h3": {
+      "type": "Heading",
+      "props": {
+        "text": "Anthropic signals a record IPO — could match or top SpaceX",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "d3": {
+      "type": "Text",
+      "props": {
+        "text": "Anthropic expects its IPO to match or beat SpaceX's record size (Bloomberg, Aug 20), and is preparing to file publicly as soon as end of August, with an October Nasdaq window reportedly in view."
+      },
+      "children": []
+    },
+    "w3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "w3_label",
+        "w3_text"
+      ]
+    },
+    "w3_label": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters:",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "w3_text": {
+      "type": "Text",
+      "props": {
+        "text": "a would-be largest-ever IPO sets the valuation anchor for the entire private-AI complex and tests investor appetite for AI-infra at scale."
+      },
+      "children": []
+    },
+    "l3": {
+      "type": "Link",
+      "props": {
+        "label": "Bloomberg Article",
+        "href": "https://www.bloomberg.com/news/articles/2026-08-20/anthropic-expects-to-match-spacex-s-record-ipo-size-or-top-it"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "item4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "h4",
+        "d4",
+        "w4",
+        "l4"
+      ]
+    },
+    "h4": {
+      "type": "Heading",
+      "props": {
+        "text": "Nevada clears up to 8,000 robotaxis for Tesla, Uber, and Waymo",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "d4": {
+      "type": "Text",
+      "props": {
+        "text": "The Nevada Transportation Authority approved paid robotaxi permits in Clark County (Aug 20) — 5,000 for Tesla, 1,000 each for Waymo and Uber. Tesla's own Cybercab engineer targets ~2,500, well below the cap."
+      },
+      "children": []
+    },
+    "w4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "w4_label",
+        "w4_text"
+      ]
+    },
+    "w4_label": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters:",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "w4_text": {
+      "type": "Text",
+      "props": {
+        "text": "the first at-scale, multi-operator paid AV market in the US — watch the permit-vs-deployment gap as the real read on capacity."
+      },
+      "children": []
+    },
+    "l4": {
+      "type": "Link",
+      "props": {
+        "label": "TechCrunch Article",
+        "href": "https://techcrunch.com/2026/08/20/tesla-uber-and-waymo-all-get-the-ok-to-operate-thousands-of-robotaxis-in-nevada/"
+      },
+      "children": []
+    }
+  }
+}

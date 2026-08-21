@@ -1,13 +1,17 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-07-28T09:30:05Z",
+  "last_analyzed": "2026-08-21T21:48:31Z",
   "quality_score": 4,
-  "assessment": "Solid crypto-trader digest: 5 specific, tradeable items with levels/sources, strategy-aligned, notified and logged after a clean trim.",
+  "assessment": "Substantive, well-sourced daily digest following strategy: conclusion-first, crypto-weighted, decision-oriented. Four distinct stories with regulatory/policy catalysts, context, and URIs; each includes decision-relevant signals (buyback window, CLARITY vote, permit-vs-deployment gap). Qualitative on prices as instructed.",
   "flags": [],
   "avg_score": 4,
   "history": [
     {
       "date": "2026-07-28",
+      "score": 4
+    },
+    {
+      "date": "2026-08-21",
       "score": 4
     }
   ]

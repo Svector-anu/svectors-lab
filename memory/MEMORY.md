@@ -11,6 +11,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-21 | daily (web) | SEC token-offering framework, policy-driven crypto rally, Anthropic record IPO |
 | 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 
 ## Active Topics
