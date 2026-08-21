@@ -1,10 +1,10 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-07-28T13:17:45Z",
-  "quality_score": 4,
-  "assessment": "Substantive dual pick with scored breakdown, catalysts, risks, edge thesis, and completed notify/log.",
+  "last_analyzed": "2026-08-21T12:07:38Z",
+  "quality_score": 5,
+  "assessment": "Excellent — insightful regime read, quantified token analysis with transparent scoring, explicit position guidance (ride, don't chase), and disciplined market call (no forced pick); all sources validated, perfectly aligned to strategy.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 4.2,
   "history": [
     {
       "date": "2026-07-11",
@@ -21,6 +21,10 @@
     {
       "date": "2026-07-28",
       "score": 4
+    },
+    {
+      "date": "2026-08-21",
+      "score": 5
     }
   ]
 }
