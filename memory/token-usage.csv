@@ -30,3 +30,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-07-31,vuln-scanner,claude-opus-4-8,2804,35644,3104559,117416
 2026-08-13,vuln-scanner,claude-opus-4-8,12655,44943,4626877,137924
 2026-08-15,vuln-scanner,claude-opus-4-8,3391,47354,6268837,140999
+2026-08-21,fear-divergence,claude-opus-4-8,2465,1741,149018,17400

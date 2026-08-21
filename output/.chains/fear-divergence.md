@@ -1,22 +1,16 @@
-I'll read the skill definition and the usual Aeon context (memory, strategy, soul) so the run stays aligned.Next I'll load market context, soul voice, beat tracker, and today's log.F&G is 26 (≥ 25), so this run skips with no notification. Logging the skip.## Summary
+Skill executed. Outcome: **skipped, no notification** (correct per the trigger logic).
 
-**Skill:** fear-divergence  
-**Result:** skipped — no notification
+## Fear Divergence Scout — 2026-08-21
 
-| Check | Value |
-|--------|--------|
-| Source | `memory/topics/market-context.md` (as of **2026-07-11**) |
-| Fear & Greed | **26 (Fear)** |
-| Trigger | F&G **&lt; 25** required to fire |
-| Action | **FEAR_DIVERGENCE_SKIP** — above threshold |
+**Result: SKIP (silent, no notify).**
 
-**Details:**
-- Condition not met (`26 >= 25`), so no divergence scan, no `./notify`.
-- `market-context.md` is **17 days stale** (flagged in the log). Fresher narrative-tracker data from today still shows F&G **29** — would also skip.
-- `beat-tracker.md` not present; not needed for a skip path.
-- Soul files are empty templates; no voice override applied.
+- **Fear & Greed:** 29 (Fear) — read from `memory/topics/market-context.md`.
+- **Trigger:** fires only when F&G **< 25**. 29 is above the threshold, so the scan does not run and no notification is sent (per skill spec, skips silently on `F&G >= 25`).
+- **Data freshness caveat:** `market-context.md` is dated **2026-07-28** — **24 days stale** (>2d). The gating F&G value is therefore old; a fresh `market-context` run could change the trigger outcome. Flagged in the log but does not override the skip, since the skill gates on the recorded value.
+- **Divergence analysis:** not reached (short-circuited at the trigger check).
 
-**Files modified:**
-- `memory/logs/2026-07-28.md` — appended skip entry under `### fear-divergence`
-
-**Follow-up:** Re-enable / refresh `market-context` so F&G and movers stay current. This skill only acts when F&G drops below 25.
+## Summary
+- **Action:** Read `market-context.md`, evaluated the F&G trigger, skipped silently.
+- **Files modified:** created `memory/logs/2026-08-21.md` with the `FEAR_DIVERGENCE_SKIP` entry + staleness note.
+- **Notification:** none (correct — clean/no-signal runs stay quiet).
+- **Follow-up:** `market-context.md` is 24 days stale. If the fear-divergence signal matters, run the upstream `market-context` skill to refresh F&G and mover data before the next fear-divergence pass.

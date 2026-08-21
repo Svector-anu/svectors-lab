@@ -1,12 +1,12 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-07-28T09:28:54Z",
-  "quality_score": 4,
-  "assessment": "Correct skip with clear threshold logic, dual-source F&G check, structured summary, and actionable stale-data follow-up.",
+  "last_analyzed": "2026-08-21T07:52:17Z",
+  "quality_score": 3,
+  "assessment": "Skill executed correctly per spec, clearly communicated skip logic, but gated trading signal on 24-day-old market data — staleness limits signal quality against Aeon's freshness priority.",
   "flags": [
     "stale_data"
   ],
-  "avg_score": 3.75,
+  "avg_score": 3.6,
   "history": [
     {
       "date": "2026-07-08",
@@ -23,6 +23,10 @@
     {
       "date": "2026-07-28",
       "score": 4
+    },
+    {
+      "date": "2026-08-21",
+      "score": 3
     }
   ]
 }
