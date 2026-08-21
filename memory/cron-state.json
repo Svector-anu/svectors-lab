@@ -25,7 +25,7 @@
     "last_error": "claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permiss"
   },
   "narrative-tracker": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-08-21T18:59:36Z",
     "total_runs": 333,
     "total_successes": 13,
@@ -35,7 +35,7 @@
     "last_error": "read-only: workspace write-locked via bwrap claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],",
     "last_success": "2026-08-21T13:59:00Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-08-21T18:59:03Z"
+    "last_dispatch": "2026-08-21T19:48:57Z"
   },
   "token-movers": {
     "last_status": "success",
