@@ -1,18 +1,31 @@
-Done. Ambient heartbeat complete — no notification sent (fleet-DEGRADED story was already notified <1h ago; today's deltas are incremental escalations of the same ISS-001).
+## Heartbeat — ambient fleet check (2026-08-21 21:46 UTC)
+
+**Overall: 🔴 DEGRADED** · Status page regenerated (was 22 days stale — last updated 2026-07-30). **No notification sent** (deduplicated — see below).
+
+### P0 — Failed & stuck skills
+
+The fleet is still in the grip of **ISS-001 — the zero-token / empty-iterations harness failure** (critical, open since 2026-07-19). It's actively hitting the frequent skills this evening:
+
+| Skill | State | Detail |
+|-------|-------|--------|
+| defi-overview | ❌ failed | cf=**8**, no success since 2026-07-28 (24d) |
+| digest | ❌ failed | cf=3, last success 2026-07-28 |
+| narrative-tracker | ❌ failed | cf=3 — **regressed** after recovering at 13:59 today |
+| heartbeat (self) | cf=4 | last success 2026-07-30 (22d) → self-check >36h stale |
+| vuln-scanner | 🕸 stuck | dispatched 07:50, never reported back (cf=2) — likely hang/lost-outcome |
+
+`narrative-tracker` and `github-trending` errors now carry a `read-only: workspace write-locked via bwrap` prefix ahead of the zero-token signature (the tail of ISS-002, which skill-health resolved for github-trending at 18:00 — github-trending is green again).
+
+**Healthy now:** skill-health, github-trending, token-pick, hunter-22, fear-divergence — all succeeded today.
+
+### P1 — Stalled PRs
+6 open PRs >24h, but **all 3+ weeks old** (not fresh): #30 aeon-update (08-16), #22/#20/#3 x402-monitor, #5/#4 defi-overview. GitHub issues are disabled on the repo, so no urgent-label check.
+
+### Why no notification
+`skill-health` already notified this **exact** ISS-001 systemic failure and critical set **twice today** (13:57 and 18:00 logs). Re-sending 3 hours later violates the dedup rule ("never notify the same item twice / skip if in last 48h"). The stalled PRs are weeks old — stale-but-known, not new signal. Correct move: regenerate the page, log, stay quiet.
 
 ## Summary
-
-**Branch run:** Ambient fleet check (empty `${var}`), the live scheduled path. Second heartbeat of the day (17:12 UTC; a prior one ran at 16:27).
-
-**Fleet state (P0):** 🔴 DEGRADED — `ISS-001` (fleet zero-token harness failure) still open.
-- **Recovered:** heartbeat itself — `last_success` 16:43 UTC, `consecutive_failures` 0. Self-check no longer stale; the 07-30 claude-harness switch is holding for it.
-- **New — stuck batch:** the 16:27 dispatch (defi-overview, narrative-tracker, skill-health, price-alert, digest, hunter-22) is now >45min in `dispatched` state, never reported back — same ISS-001 harness failure re-manifesting.
-- **New — regression:** vuln-scanner `consecutive_failures` 3→5, last failed 17:04 UTC (off-schedule; its cron is Sat-only).
-
-**Notification:** None. Fleet DEGRADED + ISS-001 + per-skill failures were already notified <1h ago by the 16:27 run; today's deltas are escalations of that same reported item. Dedup rule → status page + log only.
-
-**Files modified:**
-- `docs/status.md` — regenerated (🔴 DEGRADED, updated 17:12 UTC, 14 enabled skills, 6 now `🕸 stuck`, vuln-scanner `❌`, ISS-001 listed). Token pulse section omitted (no token-report articles exist). Auto-commits to `main` via the workflow.
-- `memory/logs/2026-07-30.md` — appended a second `mode: ambient` entry under `### heartbeat` with `STATUS_PAGE=DEGRADED` and the deltas.
-
-**Follow-up:** ISS-001 remains the root cause — the claude harness works for heartbeat but the 16:27 fleet batch still dies with the zero-token signature. Needs `skill-repair`/config investigation into why the harness switch isn't holding fleet-wide (skill-health itself is stuck at 138 consecutive failures, so the self-healing loop is down).
+- **Regenerated** `docs/status.md` → 🔴 DEGRADED, 1 open issue (ISS-001), all 14 enabled skills tabled, next run defi-overview 00:00 UTC. Was 22 days stale.
+- **Logged** ambient findings to `memory/logs/2026-08-21.md` under `### heartbeat` (`mode: ambient`, `STATUS_PAGE=DEGRADED`).
+- **Notification: suppressed** (duplicate of today's two skill-health sends; no fresh item).
+- **Follow-up (owner):** ISS-001 remains the blocker — the zero-token harness failure needs a gateway/auth fix at the workflow level; heartbeat and skill-health can only observe it, not repair it. `vuln-scanner`'s stuck 07:50 dispatch is worth a manual re-check.
