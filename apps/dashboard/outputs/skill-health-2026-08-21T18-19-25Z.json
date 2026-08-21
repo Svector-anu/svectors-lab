@@ -1,0 +1,340 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Skill Health — 2026-08-21"
+      },
+      "children": [
+        "status-line",
+        "sep-1",
+        "section-critical",
+        "sep-2",
+        "section-warning",
+        "sep-3",
+        "section-recovered",
+        "sep-4",
+        "section-summary"
+      ]
+    },
+    "status-line": {
+      "type": "Alert",
+      "props": {
+        "type": "error",
+        "title": "HEALTH: CRITICAL(3)",
+        "message": "Systemic zero-token harness failure — 3 skills → ISS-001"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-critical": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-critical",
+        "item-defi",
+        "item-heartbeat",
+        "item-digest"
+      ]
+    },
+    "heading-critical": {
+      "type": "Heading",
+      "props": {
+        "text": "🔴 CRITICAL",
+        "level": "h3"
+      }
+    },
+    "item-defi": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-defi-name",
+        "text-defi-detail"
+      ]
+    },
+    "text-defi-name": {
+      "type": "Text",
+      "props": {
+        "text": "defi-overview",
+        "variant": "lead"
+      }
+    },
+    "text-defi-detail": {
+      "type": "Text",
+      "props": {
+        "text": "7 fails, 24d down — FIX CONFIG (zero-token) → ISS-001",
+        "variant": "body"
+      }
+    },
+    "item-heartbeat": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-heartbeat-name",
+        "text-heartbeat-detail"
+      ]
+    },
+    "text-heartbeat-name": {
+      "type": "Text",
+      "props": {
+        "text": "heartbeat",
+        "variant": "lead"
+      }
+    },
+    "text-heartbeat-detail": {
+      "type": "Text",
+      "props": {
+        "text": "4 fails, 22d down — FIX CONFIG (zero-token) → ISS-001",
+        "variant": "body"
+      }
+    },
+    "item-digest": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-digest-name",
+        "text-digest-detail"
+      ]
+    },
+    "text-digest-name": {
+      "type": "Text",
+      "props": {
+        "text": "digest",
+        "variant": "lead"
+      }
+    },
+    "text-digest-detail": {
+      "type": "Text",
+      "props": {
+        "text": "3 fails, 24d down — FIX CONFIG (zero-token) → ISS-001",
+        "variant": "body"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-warning": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-warning",
+        "item-vuln"
+      ]
+    },
+    "heading-warning": {
+      "type": "Heading",
+      "props": {
+        "text": "🟡 WARNING",
+        "level": "h3"
+      }
+    },
+    "item-vuln": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-vuln-name",
+        "text-vuln-detail"
+      ]
+    },
+    "text-vuln-name": {
+      "type": "Text",
+      "props": {
+        "text": "vuln-scanner",
+        "variant": "lead"
+      }
+    },
+    "text-vuln-detail": {
+      "type": "Text",
+      "props": {
+        "text": "cf=2, last success 08-15 (weekly Sat) — WAIT-API",
+        "variant": "body"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-recovered": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-recovered",
+        "item-recovered-1",
+        "item-recovered-2",
+        "item-recovered-3"
+      ]
+    },
+    "heading-recovered": {
+      "type": "Heading",
+      "props": {
+        "text": "✅ Recovered this run",
+        "level": "h3"
+      }
+    },
+    "item-recovered-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-rec-name-1",
+        "text-rec-detail-1"
+      ]
+    },
+    "text-rec-name-1": {
+      "type": "Text",
+      "props": {
+        "text": "narrative-tracker",
+        "variant": "lead"
+      }
+    },
+    "text-rec-detail-1": {
+      "type": "Text",
+      "props": {
+        "text": "fresh success",
+        "variant": "caption"
+      }
+    },
+    "item-recovered-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-rec-name-2",
+        "text-rec-detail-2"
+      ]
+    },
+    "text-rec-name-2": {
+      "type": "Text",
+      "props": {
+        "text": "skill-health",
+        "variant": "lead"
+      }
+    },
+    "text-rec-detail-2": {
+      "type": "Text",
+      "props": {
+        "text": "zero-token cleared, fresh successes",
+        "variant": "caption"
+      }
+    },
+    "item-recovered-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "xs"
+      },
+      "children": [
+        "text-rec-name-3",
+        "text-rec-detail-3"
+      ]
+    },
+    "text-rec-name-3": {
+      "type": "Text",
+      "props": {
+        "text": "github-trending",
+        "variant": "lead"
+      }
+    },
+    "text-rec-detail-3": {
+      "type": "Text",
+      "props": {
+        "text": "read-only write-lock resolved → ISS-002 closed",
+        "variant": "caption"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-summary": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-summary",
+        "stats-grid"
+      ]
+    },
+    "heading-summary": {
+      "type": "Heading",
+      "props": {
+        "text": "🟢 Status Summary",
+        "level": "h3"
+      }
+    },
+    "stats-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat-healthy",
+        "stat-open",
+        "stat-resolved"
+      ]
+    },
+    "stat-healthy": {
+      "type": "Stat",
+      "props": {
+        "label": "Healthy Skills",
+        "value": "8"
+      }
+    },
+    "stat-open": {
+      "type": "Stat",
+      "props": {
+        "label": "Open Issues",
+        "value": "1"
+      }
+    },
+    "stat-resolved": {
+      "type": "Stat",
+      "props": {
+        "label": "Resolved This Run",
+        "value": "1",
+        "delta": "github-trending / ISS-002"
+      }
+    }
+  }
+}

@@ -1,5 +1,3 @@
-🚨 Skill Health — 2026-08-21
-
 *Skill Health — 2026-08-21*
 HEALTH: CRITICAL(3)  [systemic: zero-token harness failure — 3 skills → ISS-001]
 

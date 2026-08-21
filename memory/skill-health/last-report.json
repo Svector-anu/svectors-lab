@@ -1,19 +1,21 @@
 {
-  "hash": "d1009d1a5a13a1a0ebbcb34ec230261923101d152789ceb35d3140a04ca664fa",
-  "last_notified_at": "2026-08-21T13:57:15Z",
-  "last_run_at": "2026-08-21T13:57:15Z",
+  "hash": "ef59a87fe0ac8016106990ca466bcb3e28d57047674758df13123eacf5f69bfa",
+  "last_notified_at": "2026-08-21T18:00:00Z",
+  "last_run_at": "2026-08-21T18:00:00Z",
   "classification": {
     "critical": [
       "defi-overview",
-      "github-trending",
-      "heartbeat",
-      "narrative-tracker",
-      "skill-health"
+      "digest",
+      "heartbeat"
     ],
     "degraded": [],
     "flapping": [],
-    "warning": ["vuln-scanner", "verdikta-hunter"],
-    "healthy_count": 6,
-    "no_data": ["auto-workflow"]
+    "warning": [
+      "vuln-scanner"
+    ],
+    "healthy_count": 8,
+    "no_data": [
+      "auto-workflow"
+    ]
   }
 }
