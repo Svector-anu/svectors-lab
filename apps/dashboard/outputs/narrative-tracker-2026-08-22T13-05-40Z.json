@@ -1,0 +1,457 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker — 2026-08-22"
+      },
+      "children": [
+        "header_time",
+        "alert_xai",
+        "sep_1",
+        "section_transitions",
+        "sep_2",
+        "section_reflexivity",
+        "sep_3",
+        "section_positions",
+        "sep_4",
+        "section_map",
+        "sep_5",
+        "final_note"
+      ]
+    },
+    "header_time": {
+      "type": "Text",
+      "props": {
+        "text": "14:00 UTC",
+        "variant": "caption"
+      }
+    },
+    "alert_xai": {
+      "type": "Alert",
+      "props": {
+        "message": "xai http=400 (invalid key on fork) → WebSearch fallback. Deltas since the 07:56 run.",
+        "type": "info"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_transitions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_transitions",
+        "heading_promoted",
+        "item_hl",
+        "item_ai",
+        "heading_unchanged",
+        "text_unchanged"
+      ]
+    },
+    "heading_transitions": {
+      "type": "Heading",
+      "props": {
+        "text": "TRANSITIONS",
+        "level": "h3"
+      }
+    },
+    "heading_promoted": {
+      "type": "Text",
+      "props": {
+        "text": "PROMOTED:",
+        "variant": "lead"
+      }
+    },
+    "item_hl": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_hl_status",
+        "text_hl_thesis"
+      ]
+    },
+    "text_hl_status": {
+      "type": "Text",
+      "props": {
+        "text": "Hyperliquid — FADE → RIDE(caution)",
+        "variant": "body"
+      }
+    },
+    "text_hl_thesis": {
+      "type": "Text",
+      "props": {
+        "text": "Trump says CFTC (Selig) is building a legal US pathway; Kraken tested a compliant DEX on HL (Aug 21); pre-IPO perps SEC filing. HYPE ATH $77.62 (Aug 21). Regulatory catalyst overrides the buyback-flywheel-eroding bear thesis — for now.",
+        "variant": "body"
+      }
+    },
+    "item_ai": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_ai_status",
+        "text_ai_thesis"
+      ]
+    },
+    "text_ai_status": {
+      "type": "Text",
+      "props": {
+        "text": "AI-agent payments infra — WATCH → RIDE(infra)",
+        "variant": "body"
+      }
+    },
+    "text_ai_thesis": {
+      "type": "Text",
+      "props": {
+        "text": "AWS Bedrock AgentCore Payments hit GA (Aug 18), built w/ Coinbase+Stripe on x402, USDC settling on Base+Solana (~200ms, $0.001–$1k tickets). Real rail, not a meme. NVDA earnings Aug 26 next.",
+        "variant": "body"
+      }
+    },
+    "heading_unchanged": {
+      "type": "Text",
+      "props": {
+        "text": "Unchanged:",
+        "variant": "lead"
+      }
+    },
+    "text_unchanged": {
+      "type": "Text",
+      "props": {
+        "text": "Policy-majors RIDE, Privacy/ZEC RIDE(stop), DAT FADE, Short-squeeze FADE.",
+        "variant": "body"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_reflexivity": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_reflexivity",
+        "item_ref_hl",
+        "item_ref_zec",
+        "item_ref_dat"
+      ]
+    },
+    "heading_reflexivity": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY",
+        "level": "h3"
+      }
+    },
+    "item_ref_hl": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_ref_hl_label",
+        "text_ref_hl_detail"
+      ]
+    },
+    "text_ref_hl_label": {
+      "type": "Badge",
+      "props": {
+        "text": "Hyperliquid",
+        "variant": "default"
+      }
+    },
+    "text_ref_hl_detail": {
+      "type": "Text",
+      "props": {
+        "text": "HYPE ripped on a verbal Trump/CFTC comment (no rule yet); Galaxy moved $4.2M HYPE to an exchange Aug 21 into the ATH = distribution into the pump.",
+        "variant": "body"
+      }
+    },
+    "item_ref_zec": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_ref_zec_label",
+        "text_ref_zec_detail"
+      ]
+    },
+    "text_ref_zec_label": {
+      "type": "Badge",
+      "props": {
+        "text": "Zcash",
+        "variant": "default"
+      }
+    },
+    "text_ref_zec_detail": {
+      "type": "Text",
+      "props": {
+        "text": "Grayscale filed a 4th amendment to convert its own ZEC Trust into a spot ETF: manufacturing the inflow it monetizes. +40% wk to ~$675, overbought.",
+        "variant": "body"
+      }
+    },
+    "item_ref_dat": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_ref_dat_label",
+        "text_ref_dat_detail"
+      ]
+    },
+    "text_ref_dat_label": {
+      "type": "Badge",
+      "props": {
+        "text": "DAT premiums",
+        "variant": "default"
+      }
+    },
+    "text_ref_dat_detail": {
+      "type": "Text",
+      "props": {
+        "text": "Compressing even as BTC hit ATH mid-Aug (NYDIG); BTC-DATs ~1.05x, smaller names at discounts → issuance flywheel stalling.",
+        "variant": "body"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_positions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_positions",
+        "table_positions"
+      ]
+    },
+    "heading_positions": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h3"
+      }
+    },
+    "table_positions": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Position",
+          "Asset",
+          "Signal",
+          "Support",
+          "Bear"
+        ],
+        "rows": [
+          [
+            "RIDE(caution)",
+            "Hyperliquid",
+            "4 ↑↑ Bull",
+            "CFTC pathway + Kraken DEX",
+            "Verbal-only, rev fell Q3-25+, insiders distributing"
+          ],
+          [
+            "RIDE(infra)",
+            "AI-agent payments/x402",
+            "4 ↑ Bull",
+            "AWS/Coinbase/Stripe",
+            "Rails ≠ token accrual; ride infra, fade agent-memes"
+          ],
+          [
+            "RIDE(stop)",
+            "Privacy/ZEC",
+            "4 → Mixed",
+            "Grayscale ETF + $1B shielded pool",
+            "Parabolic, fade on approval news"
+          ],
+          [
+            "RIDE",
+            "Policy-majors BTC/ETH/XRP",
+            "4 ↑ Bull",
+            "CLARITY/Treasury buyback/ETF flows",
+            "Proposed ≠ law, sell-the-news"
+          ],
+          [
+            "FADE",
+            "DAT premium plays",
+            "3 ↓ Cope",
+            "NAV compression kills issuance",
+            "—"
+          ],
+          [
+            "FADE",
+            "Short-squeeze continuation",
+            "3 ↑ Mixed",
+            "Mechanical, not organic",
+            "—"
+          ],
+          [
+            "WATCH",
+            "Stablecoin-yield fight",
+            "3 Mixed",
+            "GENIUS yield ban vs Coinbase",
+            "—"
+          ]
+        ]
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "section_map": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_map",
+        "item_rising",
+        "item_peak",
+        "item_fading",
+        "item_watch_map"
+      ]
+    },
+    "heading_map": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h3"
+      }
+    },
+    "item_rising": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_rising",
+        "text_rising"
+      ]
+    },
+    "badge_rising": {
+      "type": "Badge",
+      "props": {
+        "text": "Rising",
+        "variant": "secondary"
+      }
+    },
+    "text_rising": {
+      "type": "Text",
+      "props": {
+        "text": "Hyperliquid-reg, AI-agent infra/x402, Policy-majors, Privacy/ZEC",
+        "variant": "body"
+      }
+    },
+    "item_peak": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_peak",
+        "text_peak"
+      ]
+    },
+    "badge_peak": {
+      "type": "Badge",
+      "props": {
+        "text": "Peak",
+        "variant": "secondary"
+      }
+    },
+    "text_peak": {
+      "type": "Text",
+      "props": {
+        "text": "Short-squeeze, perp-DEX attention",
+        "variant": "body"
+      }
+    },
+    "item_fading": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_fading",
+        "text_fading"
+      ]
+    },
+    "badge_fading": {
+      "type": "Badge",
+      "props": {
+        "text": "Fading",
+        "variant": "secondary"
+      }
+    },
+    "text_fading": {
+      "type": "Text",
+      "props": {
+        "text": "DAT premiums",
+        "variant": "body"
+      }
+    },
+    "item_watch_map": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_watch",
+        "text_watch"
+      ]
+    },
+    "badge_watch": {
+      "type": "Badge",
+      "props": {
+        "text": "Watch",
+        "variant": "outline"
+      }
+    },
+    "text_watch": {
+      "type": "Text",
+      "props": {
+        "text": "Stablecoin-yield, prediction markets",
+        "variant": "body"
+      }
+    },
+    "sep_5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "final_note": {
+      "type": "Text",
+      "props": {
+        "text": "No clean FRONT-RUN with contrarian edge — not forcing one.",
+        "variant": "muted"
+      }
+    }
+  }
+}

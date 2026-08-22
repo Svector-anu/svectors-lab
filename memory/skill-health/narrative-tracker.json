@@ -1,10 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-22T07:55:40Z",
+  "last_analyzed": "2026-08-22T13:05:40Z",
   "quality_score": 4,
-  "assessment": "Substantive, decision-grade report with explicit positions and reflexivity alerts; XAI fetch failure gracefully fell back to WebSearch/WebFetch; baseline caveat acknowledged",
+  "assessment": "Substantive analysis with specific dated catalysts, actionable position calls, reflexivity alerts identifying insider distribution, and graceful API fallback; well-aligned to strategy",
   "flags": [],
-  "avg_score": 3.9,
+  "avg_score": 3.91,
   "history": [
     {
       "date": "2026-07-06",
@@ -36,6 +36,10 @@
     },
     {
       "date": "2026-07-28",
+      "score": 4
+    },
+    {
+      "date": "2026-08-22",
       "score": 4
     },
     {
