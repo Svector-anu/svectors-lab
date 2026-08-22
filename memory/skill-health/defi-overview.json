@@ -1,10 +1,10 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-07-28T13:18:56Z",
-  "quality_score": 4,
-  "assessment": "Solid macro defi-overview with clear risk-off take, concrete metrics, and sources; Facet A skipped only for missing watches config.",
+  "last_analyzed": "2026-08-22T02:47:29Z",
+  "quality_score": 5,
+  "assessment": "Excellent signal with catalysts verified, decision-grade position calls, strategic caveats, and full STRATEGY alignment — insightful analysis (capital rotation read, narrative divergence tracking) backed by specific data and honest about limitations",
   "flags": [],
-  "avg_score": 3.86,
+  "avg_score": 4,
   "history": [
     {
       "date": "2026-07-06",
@@ -33,6 +33,10 @@
     {
       "date": "2026-07-28",
       "score": 4
+    },
+    {
+      "date": "2026-08-22",
+      "score": 5
     }
   ]
 }

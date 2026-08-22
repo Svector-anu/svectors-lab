@@ -1,0 +1,598 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Crypto Overview — 2026-08-22"
+      },
+      "children": [
+        "conviction-line",
+        "sep-1",
+        "take-heading",
+        "take-text",
+        "sep-2",
+        "tvl-section",
+        "sep-3",
+        "movers-section",
+        "sep-4",
+        "fees-section",
+        "sep-5",
+        "dex-section",
+        "sep-6",
+        "stables-section",
+        "sep-7",
+        "yields-section",
+        "sep-8",
+        "narratives-section",
+        "sep-9",
+        "macro-section",
+        "sep-10",
+        "position-section",
+        "sep-11",
+        "sources-line"
+      ]
+    },
+    "conviction-line": {
+      "type": "Text",
+      "props": {
+        "text": "2026-08-22 — risk-on (conviction high) | DeFi Mixed→hot: TVL & DEX vol surging, stables flat",
+        "variant": "lead"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "take-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Take",
+        "level": "h3"
+      }
+    },
+    "take-text": {
+      "type": "Text",
+      "props": {
+        "text": "risk-on — BTC +5.7% 24h ($78.3k) with 16/20 majors green, DEX vol +33% to $13.9B, F&G 71 (Greed). Fresh legs came from Treasury doubling long-end buybacks + CLARITY Act push → $1.44B short squeeze; ETF inflows confirming (6 straight days, $606M Aug 20). Overbought after +23% 7d — $80k break-or-reject is the pivot.",
+        "variant": "body"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "tvl-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tvl-heading",
+        "tvl-stat",
+        "top-chains-heading",
+        "top-chains-table"
+      ]
+    },
+    "tvl-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TVL",
+        "level": "h3"
+      }
+    },
+    "tvl-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Value Locked (chains)",
+        "value": "$88.2B",
+        "delta": "+4.7% 24h, +17.7% 7d",
+        "trend": "up"
+      }
+    },
+    "top-chains-heading": {
+      "type": "Text",
+      "props": {
+        "text": "Top chains",
+        "variant": "muted"
+      }
+    },
+    "top-chains-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Rank",
+          "Chain",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "1",
+            "Ethereum",
+            "$49.5B"
+          ],
+          [
+            "2",
+            "BSC",
+            "$5.6B"
+          ],
+          [
+            "3",
+            "Solana",
+            "$5.5B"
+          ]
+        ]
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "movers-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "movers-heading",
+        "movers-table",
+        "movers-note"
+      ]
+    },
+    "movers-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Movers (protocols)",
+        "level": "h3"
+      }
+    },
+    "movers-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Direction",
+          "Protocol",
+          "24h Change",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "↑",
+            "Aave V4",
+            "+23%",
+            "$0.33B"
+          ],
+          [
+            "↓",
+            "Solstice",
+            "−20%",
+            "$0.40B"
+          ]
+        ]
+      }
+    },
+    "movers-note": {
+      "type": "Text",
+      "props": {
+        "text": "Aave V4: new-version liquidity onboarding into V4. Solstice: basis-trade TVL outflow, no obvious catalyst. (Chain movers omitted — DeFiLlama /v2/chains returned no 24h deltas this run)",
+        "variant": "caption"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fees-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "fees-heading",
+        "fees-table",
+        "fees-beat-heading",
+        "fees-beat-text"
+      ]
+    },
+    "fees-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Fees leaders (24h)",
+        "level": "h3"
+      }
+    },
+    "fees-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Rank",
+          "Token/Protocol",
+          "24h Fees",
+          "Change"
+        ],
+        "rows": [
+          [
+            "1",
+            "Tether",
+            "$15.9M",
+            "flat"
+          ],
+          [
+            "2",
+            "Circle USDC",
+            "$6.4M",
+            "+0.6%"
+          ],
+          [
+            "3",
+            "Hyperliquid Perps",
+            "$6.0M",
+            "+47% 1d / +411% 7d"
+          ]
+        ]
+      }
+    },
+    "fees-beat-heading": {
+      "type": "Text",
+      "props": {
+        "text": "Fees beating TVL",
+        "variant": "muted"
+      }
+    },
+    "fees-beat-text": {
+      "type": "Text",
+      "props": {
+        "text": "• Polymarket Intl — fees +37% / TVL +3.2% (7d) — betting demand outrunning deposits",
+        "variant": "body"
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "dex-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "dex-heading",
+        "dex-stat",
+        "dex-detail"
+      ]
+    },
+    "dex-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "DEX vol (24h)",
+        "level": "h3"
+      }
+    },
+    "dex-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Total DEX Volume",
+        "value": "$13.9B",
+        "delta": "+33%",
+        "trend": "up"
+      }
+    },
+    "dex-detail": {
+      "type": "Text",
+      "props": {
+        "text": "Top: Uniswap V3 $2.1B, Uniswap V4 $1.6B, PancakeSwap $1.3B",
+        "variant": "caption"
+      }
+    },
+    "sep-6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stables-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stables-heading",
+        "stables-stat",
+        "stables-detail"
+      ]
+    },
+    "stables-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Stables",
+        "level": "h3"
+      }
+    },
+    "stables-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Stables",
+        "value": "$309.5B",
+        "delta": "+0.7% 7d",
+        "trend": "up"
+      }
+    },
+    "stables-detail": {
+      "type": "Text",
+      "props": {
+        "text": "USDC +1.0% only notable single-issuer move; aggregate flat = rotation, not fresh minting",
+        "variant": "caption"
+      }
+    },
+    "sep-7": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "yields-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "real-yield-heading",
+        "real-yield-table",
+        "incentive-yield-heading",
+        "incentive-yield-table"
+      ]
+    },
+    "real-yield-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Real yield (sustainable, ≥$10M, filtered)",
+        "level": "h4"
+      }
+    },
+    "real-yield-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Token",
+          "Protocol",
+          "Chain",
+          "APY Base",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "SUSDAT",
+            "saturn",
+            "ETH",
+            "15.9%",
+            "$80M"
+          ],
+          [
+            "ONYC",
+            "onre",
+            "Solana",
+            "11.6%",
+            "$267M"
+          ],
+          [
+            "REUSDE",
+            "re",
+            "ETH",
+            "12.3%",
+            "$20M"
+          ]
+        ]
+      }
+    },
+    "incentive-yield-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Incentive yield (points / emissions, ≥$25M)",
+        "level": "h4"
+      }
+    },
+    "incentive-yield-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Pair",
+          "Protocol",
+          "Chain",
+          "APY",
+          "Reward Token",
+          "TVL"
+        ],
+        "rows": [
+          [
+            "USDC-AERO",
+            "Aerodrome",
+            "Base",
+            "23.9%",
+            "AERO rewards",
+            "$29M"
+          ],
+          [
+            "SDCRV",
+            "Stake DAO",
+            "ETH",
+            "14.0%",
+            "SDT rewards",
+            "$41M"
+          ]
+        ]
+      }
+    },
+    "sep-8": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "narratives-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "narratives-heading",
+        "narratives-list"
+      ]
+    },
+    "narratives-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Narratives",
+        "level": "h3"
+      }
+    },
+    "narratives-list": {
+      "type": "Text",
+      "props": {
+        "text": "• Majors breakout (rising)\n• Privacy ZEC +43% 24h/+60% 7d (peak, XMR diverging red)\n• Large-cap alt rotation XRP/ADA/LINK +12-17% (rising)\n• Perp DEX HYPE fees+price aligned (rising)",
+        "variant": "body"
+      }
+    },
+    "sep-9": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "macro-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "macro-heading",
+        "macro-grid"
+      ]
+    },
+    "macro-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Macro",
+        "level": "h3"
+      }
+    },
+    "macro-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "btc-stat",
+        "eth-stat",
+        "fng-stat",
+        "breadth-stat",
+        "consensus-alert"
+      ]
+    },
+    "btc-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "BTC",
+        "value": "$78.3k",
+        "delta": "+5.7%",
+        "trend": "up"
+      }
+    },
+    "eth-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "$2,503",
+        "delta": "+7.7%",
+        "trend": "up"
+      }
+    },
+    "fng-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Fear & Greed",
+        "value": "71",
+        "delta": "Greed"
+      }
+    },
+    "breadth-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Breadth",
+        "value": "16/20",
+        "delta": "majors green"
+      }
+    },
+    "consensus-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "BTC $80k in August?",
+        "message": "YES 77%",
+        "type": "info"
+      }
+    },
+    "sep-10": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "position-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "position-heading",
+        "position-text"
+      ]
+    },
+    "position-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Position calls",
+        "level": "h3"
+      }
+    },
+    "position-text": {
+      "type": "Text",
+      "props": {
+        "text": "• Ride broad alt beta while breadth holds >14/20\n• Perp-DEX cashflow (HYPE) is a ride, not a chase\n• ZEC is late-stage — fade/watch, not a fresh entry\n• Watch $80k break-and-hold for the next leg",
+        "variant": "lead"
+      }
+    },
+    "sep-11": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "sources-line": {
+      "type": "Text",
+      "props": {
+        "text": "Sources: llama_tvl=ok llama_dex=ok llama_fees=ok llama_stables=ok llama_yields=ok coingecko=ok fng=ok polymarket=ok websearch=ok | var: none",
+        "variant": "caption"
+      }
+    }
+  }
+}
