@@ -21,7 +21,12 @@ OUT="$RH_TMPDIR/claude-out.json"
 claude "${ARGS[@]}" < "$RH_PROMPT_FILE" > "$OUT"
 rc=$?
 if [ $rc -ne 0 ]; then
-  echo "claude exited $rc: $(tail -c 300 "$OUT" | tr '\n' ' ')" >&2
+  # 300 chars was silently discarding the actual error/result content on any
+  # response longer than that -- e.g. a full completed-turn JSON envelope with
+  # a non-zero exit, where the real signal (result/subtype/api_error_status)
+  # sits earlier in the file than the last 300 bytes. Widened to match the
+  # 4000-char precedent aeon.yml's own harness-stderr logging already uses.
+  echo "claude exited $rc: $(tail -c 4000 "$OUT" | tr '\n' ' ')" >&2
   exit $rc
 fi
 
