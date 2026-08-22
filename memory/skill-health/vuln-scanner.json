@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-15T07:25:31Z",
+  "last_analyzed": "2026-08-22T06:08:43Z",
   "quality_score": 4,
-  "assessment": "Found and verified a real XML-bomb DoS vulnerability; properly triaged false positives; generated complete structured disclosure. Disclosure staged for manual submission due to known token limitation.",
+  "assessment": "Thorough vulnerability audit with clear methodology, proper scanner orchestration, sound judgment on non-actionable findings, and appropriate notification decision; clean result is a legitimate outcome.",
   "flags": [],
-  "avg_score": 4.14,
+  "avg_score": 4.13,
   "history": [
     {
       "date": "2026-07-28",
@@ -32,6 +32,10 @@
     },
     {
       "date": "2026-08-15",
+      "score": 4
+    },
+    {
+      "date": "2026-08-22",
       "score": 4
     }
   ]
