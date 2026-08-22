@@ -192,16 +192,16 @@
     "success_rate": 0
   },
   "hunter-22": {
-    "last_status": "dispatched",
-    "last_failed": "2026-08-21T10:50:30Z",
-    "total_runs": 5,
+    "last_status": "failed",
+    "last_failed": "2026-08-22T10:33:30Z",
+    "total_runs": 6,
     "total_successes": 2,
-    "total_failures": 3,
-    "consecutive_failures": 0,
-    "success_rate": 0.4,
+    "total_failures": 4,
+    "consecutive_failures": 1,
+    "success_rate": 0.33,
     "last_dispatch": "2026-08-22T10:31:26Z",
     "last_success": "2026-08-21T11:46:02Z",
     "last_quality_score": 4,
-    "last_error": "claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permiss"
+    "last_error": "f9d9b6\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   }
 }
