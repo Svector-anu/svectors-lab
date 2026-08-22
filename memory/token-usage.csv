@@ -44,4 +44,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-22,heartbeat,claude-opus-4-8,2739,17702,747458,59788
 2026-08-22,github-trending,claude-opus-4-8,2878,19558,812605,97403
 2026-08-22,defi-overview,claude-opus-4-8,4417,30981,2600783,154122
-2026-08-22,skill-health,claude-opus-4-8,3353,15723,1140875,80690
+2026-08-22,defi-overview,claude-opus-4-8,3035,29224,2088422,69965
