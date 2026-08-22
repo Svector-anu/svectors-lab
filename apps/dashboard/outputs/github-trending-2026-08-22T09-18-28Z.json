@@ -1,0 +1,469 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "GitHub Trending — 2026-08-22"
+      },
+      "children": [
+        "heading_top_pick",
+        "repo_typescript_toppick",
+        "sep1",
+        "heading_ai_ml",
+        "text_ai_ml_intro",
+        "repo_moneyprinter",
+        "repo_superpowers",
+        "repo_ecc",
+        "sep2",
+        "heading_devtools",
+        "repo_typescript_devtools",
+        "repo_cursor",
+        "sep3",
+        "heading_infra",
+        "repo_posthog",
+        "sep4",
+        "text_sources"
+      ]
+    },
+    "heading_top_pick": {
+      "type": "Heading",
+      "props": {
+        "text": "Top pick",
+        "level": "h2"
+      }
+    },
+    "repo_typescript_toppick": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_typescript_toppick",
+        "desc_typescript_toppick"
+      ]
+    },
+    "link_typescript_toppick": {
+      "type": "StoryLink",
+      "props": {
+        "title": "microsoft/TypeScript",
+        "href": "https://github.com/microsoft/TypeScript"
+      }
+    },
+    "desc_typescript_toppick": {
+      "type": "Text",
+      "props": {
+        "text": "The reference TypeScript compiler is now a Go program — the largest toolchain-performance shift the JS ecosystem has seen in years, visible right in the primary repo."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_ai_ml": {
+      "type": "Heading",
+      "props": {
+        "text": "AI/ML",
+        "level": "h2"
+      }
+    },
+    "text_ai_ml_intro": {
+      "type": "Text",
+      "props": {
+        "text": "the agent-harness/skills wave still owns the board; two standouts below.",
+        "variant": "muted"
+      }
+    },
+    "repo_moneyprinter": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_moneyprinter",
+        "desc_moneyprinter",
+        "stats_moneyprinter"
+      ]
+    },
+    "link_moneyprinter": {
+      "type": "StoryLink",
+      "props": {
+        "title": "harry0703/MoneyPrinterTurbo",
+        "href": "https://github.com/harry0703/MoneyPrinterTurbo"
+      }
+    },
+    "desc_moneyprinter": {
+      "type": "Text",
+      "props": {
+        "text": "One keyword in, a finished HD short out — script, TTS voice, subtitles, and stock footage auto-assembled."
+      }
+    },
+    "stats_moneyprinter": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_moneyprinter_stars",
+        "badge_moneyprinter_lang",
+        "badge_moneyprinter_status"
+      ]
+    },
+    "stat_moneyprinter_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars today",
+        "value": "1.2k",
+        "delta": "114k total"
+      }
+    },
+    "badge_moneyprinter_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Python"
+      }
+    },
+    "badge_moneyprinter_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "secondary"
+      }
+    },
+    "repo_superpowers": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_superpowers",
+        "desc_superpowers",
+        "stats_superpowers"
+      ]
+    },
+    "link_superpowers": {
+      "type": "StoryLink",
+      "props": {
+        "title": "obra/superpowers",
+        "href": "https://github.com/obra/superpowers"
+      }
+    },
+    "desc_superpowers": {
+      "type": "Text",
+      "props": {
+        "text": "Bundles reusable agent skills with an opinionated dev methodology — a reference point for the skills-file wave."
+      }
+    },
+    "stats_superpowers": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_superpowers_stars",
+        "badge_superpowers_lang",
+        "badge_superpowers_status"
+      ]
+    },
+    "stat_superpowers_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars today",
+        "value": "790",
+        "delta": "276k total"
+      }
+    },
+    "badge_superpowers_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Shell"
+      }
+    },
+    "badge_superpowers_status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "secondary"
+      }
+    },
+    "repo_ecc": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_ecc",
+        "desc_ecc",
+        "stats_ecc"
+      ]
+    },
+    "link_ecc": {
+      "type": "StoryLink",
+      "props": {
+        "title": "affaan-m/ECC",
+        "href": "https://github.com/affaan-m/ECC"
+      }
+    },
+    "desc_ecc": {
+      "type": "Text",
+      "props": {
+        "text": "Tunes the agent harness itself — skills, memory, security, research-first loops — across Claude Code, Codex, Cursor."
+      }
+    },
+    "stats_ecc": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_ecc_stars",
+        "badge_ecc_lang",
+        "badge_ecc_status"
+      ]
+    },
+    "stat_ecc_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars today",
+        "value": "357",
+        "delta": "242k total"
+      }
+    },
+    "badge_ecc_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "JavaScript"
+      }
+    },
+    "badge_ecc_status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "secondary"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_devtools": {
+      "type": "Heading",
+      "props": {
+        "text": "Devtools",
+        "level": "h2"
+      }
+    },
+    "repo_typescript_devtools": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_typescript_devtools",
+        "desc_typescript_devtools",
+        "stats_typescript_devtools"
+      ]
+    },
+    "link_typescript_devtools": {
+      "type": "StoryLink",
+      "props": {
+        "title": "microsoft/TypeScript",
+        "href": "https://github.com/microsoft/TypeScript"
+      }
+    },
+    "desc_typescript_devtools": {
+      "type": "Text",
+      "props": {
+        "text": "Primary repo language is now Go: the native compiler port Microsoft says targets ~10x faster type-checking."
+      }
+    },
+    "stats_typescript_devtools": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_typescript_devtools_stars",
+        "badge_typescript_devtools_lang",
+        "badge_typescript_devtools_status"
+      ]
+    },
+    "stat_typescript_devtools_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars today",
+        "value": "65",
+        "delta": "110k total"
+      }
+    },
+    "badge_typescript_devtools_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Go"
+      }
+    },
+    "badge_typescript_devtools_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "secondary"
+      }
+    },
+    "repo_cursor": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_cursor",
+        "desc_cursor",
+        "stats_cursor"
+      ]
+    },
+    "link_cursor": {
+      "type": "StoryLink",
+      "props": {
+        "title": "cursor/plugins",
+        "href": "https://github.com/cursor/plugins"
+      }
+    },
+    "desc_cursor": {
+      "type": "Text",
+      "props": {
+        "text": "Cursor opens an official plugin spec — third-party editor extensions, versioned in one canonical repo."
+      }
+    },
+    "stats_cursor": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_cursor_stars",
+        "badge_cursor_lang",
+        "badge_cursor_status"
+      ]
+    },
+    "stat_cursor_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars today",
+        "value": "388",
+        "delta": "4.5k total"
+      }
+    },
+    "badge_cursor_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "TypeScript"
+      }
+    },
+    "badge_cursor_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "secondary"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_infra": {
+      "type": "Heading",
+      "props": {
+        "text": "Infra",
+        "level": "h2"
+      }
+    },
+    "repo_posthog": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "link_posthog",
+        "desc_posthog",
+        "stats_posthog"
+      ]
+    },
+    "link_posthog": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PostHog/posthog",
+        "href": "https://github.com/PostHog/posthog"
+      }
+    },
+    "desc_posthog": {
+      "type": "Text",
+      "props": {
+        "text": "Analytics stack repositioned around agent observability — capture the context an AI agent needs, steer from MCP."
+      }
+    },
+    "stats_posthog": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_posthog_stars",
+        "badge_posthog_lang",
+        "badge_posthog_status"
+      ]
+    },
+    "stat_posthog_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars today",
+        "value": "335",
+        "delta": "38k total"
+      }
+    },
+    "badge_posthog_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Python"
+      }
+    },
+    "badge_posthog_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "secondary"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_sources": {
+      "type": "Text",
+      "props": {
+        "text": "sources: trending=ok · gh_api=fail (read-only; verified via public GitHub API) · kept 6/16",
+        "variant": "caption"
+      }
+    }
+  }
+}
