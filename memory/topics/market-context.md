@@ -3,73 +3,74 @@ type: Token
 title: Market Context
 description: Current crypto macro snapshot — regime, signal snapshot, narratives, DeFi, prediction markets.
 tags: [crypto, macro, defi, market-context]
-timestamp: 2026-07-28T13:20:00Z
+timestamp: 2026-08-22T14:30:00Z
 resource: https://defillama.com
 ---
 
-# Market Context (as of 2026-07-28)
+# Market Context (as of 2026-08-22)
 
-> **Take:** risk-off — BTC −2.5% 24h with breadth 2/20 top-cap green and F&G 29 Fear. Conviction: high.
+> **Take:** risk-on — BTC +5.7% 24h ($78.3k) with 16/20 top-cap majors green, DEX volume +33% to $13.9B, F&G 71 (Greed). Conviction: high.
 
 ## Signal Snapshot
-- BTC $63,433 (−2.5% 24h, −4.2% 7d) · dominance 56.4% (flat vs morning snapshot)
-- ETH $1,889 (−3.3% 24h, −2.3% 7d) · ETH/BTC 0.0298
-- SOL $73.18 (−4.5% 24h, −6.4% 7d)
-- Total mcap $2.258T (−2.5% 24h) · DEX vol $7.43B 24h (+35.6% 1d)
-- Breadth: 2/20 green 24h · 2/20 green 7d
-- Fear & Greed: 29 (Fear) — yesterday 30 (Fear)
+- BTC $78,304 (+5.7% 24h, +23.8% 7d) · dominance 58.7% (firmed — BTC +5.7% outpaced total mcap +2.9% 24h)
+- ETH $2,503 (+7.7% 24h, +34.1% 7d) · ETH/BTC 0.0320
+- SOL $94.71 (+6.4% 24h, +24.7% 7d)
+- Total mcap $2.680T (+2.9% 24h) · DEX vol $13.89B 24h (+32.5% 1d, +154% vs 7d ago)
+- Breadth: 16/20 green 24h · 17/20 green 7d
+- Fear & Greed: 71 (Greed) — yesterday 72 (Greed)
 
 ## What Changed Since Last Refresh
-- Regime held risk-off (morning → afternoon): breadth still 2/20; BTC still ~$63.4k (−2.5% 24h vs −2.7% earlier).
-- Protocol mover flip: Convex +23% this morning cooled to −1.6%; only K3 Capital (+10% / $0.36B) still clears the ≥10% / ≥$100M gate.
-- DEX vol still elevated vs price: $7.43B 24h (+35.6% 1d) — risk-off with active turnover, not a quiet grind.
-- Polymarket Fed hold firmed: no-change YES 76% (was ~74% morning); hike-25bps YES 23%.
+- Regime flipped Fear → Greed since the 07-28 snapshot: F&G 29 → 71 (+42 pts); breadth 2/20 → 16/20 green.
+- BTC $63.4k → $78.3k (+23%); ETH $1,889 → $2,503 (+33%); majors in a clean 7d uptrend (ETH +34%, BTC +24%).
+- Capital rebuilt in DeFi: total chain TVL $75.0B → $88.2B; DEX 24h vol $7.43B → $13.89B.
+- Privacy went parabolic: ZEC +42.6% 24h / +60% 7d, now #1 CoinGecko trending and #12 by mcap.
 
 ## Active Narratives
-- **Fear-base / BTC chop** — phase: peak. Evidence: F&G 29 Fear; BTC −4.2% 7d; breadth 2/20 green 24h and 7d.
-- **Perp DEX (HYPE)** — phase: peak. Evidence: HYPE #6 CG trending −9.3% 24h / −13.5% 7d; HL Perps fees $2.15M (+139% 1d) while token sells.
-- **Solana memecoin / launchpad** — phase: peak. Evidence: PumpSwap $803M DEX vol (+63% 1d); pump.fun fees $1.19M (+20% 1d / +20% vs 7d avg); PUMP trending −7%.
-- **Privacy / FHE (ZAMA)** — phase: emerging. Evidence: ZAMA #8 CG trending +3% 24h after strong multi-day mcap move; still single-name.
-- **AI crypto (TAO / VVV)** — phase: fading. Evidence: TAO #3 trending −4.7% 24h; VVV #4 −3.9%; no top-20 breadth recovery.
+- **Majors breakout / broad risk-on** — phase: rising. Evidence: BTC +23.8% 7d, breadth 16/20 24h & 17/20 7d, F&G firmly in Greed (71).
+- **Privacy (ZEC-led)** — phase: peak. Evidence: ZEC +42.6% 24h / +60% 7d, #1 CG trending; XMR −2.1% 24h diverging — single-name concentration, late-stage.
+- **Large-cap alt rotation** — phase: rising. Evidence: XRP +16.7%, ADA +13.3%, DOGE +12.6%, LINK +11.8% 24h — alts outrunning BTC (+5.7%).
+- **Perp DEX (HYPE)** — phase: rising. Evidence: Hyperliquid Perps fees $6.0M (+47% 1d / +411% 7d) with HYPE $80 (+36% 7d, #10 mcap) — fees AND price now aligned (vs July's split).
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $17.57B (−1.6%)
-- Aave V3: $13.73B (−2.2%)
-- Morpho Blue: $7.48B (−1.2%)
-- Sky Lending: $5.73B (−6.2%)
-- BlackRock BUIDL: $3.44B (+3.1%)
+- Lido: $24.12B (+34.8%)
+- Aave V3: $17.35B (+23.0%)
+- SSV Network: $12.71B (+34.3%)
+- Morpho Blue: $9.41B (+18.2%)
+- Binance staked ETH: $9.36B (+34.0%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $40.98B (1d/7d chain deltas API-null; USD TVL soft with majors)
-- BSC: $4.82B
-- Tron: $4.80B
+- Ethereum: $49.54B
+- BSC: $5.57B
+- Solana: $5.54B
 
-*Note: DeFiLlama `/v2/chains` returned no `change_1d`/`change_7d` fields this run; protocol-weighted top-50 TVL ≈ −2.4% 1d / −0.3% 7d used for regime scoring. Chain sum TVL $75.0B.*
+*Note: DeFiLlama `/v2/chains` returned no `change_1d`/`change_7d` fields this run; chain 7d deltas n/a. Total chain TVL $88.2B (461 chains). Top-50 protocol-weighted TVL used for regime scoring: +4.7% 1d / +17.7% 7d.*
 
 ## Stablecoins
-Total: $308.0B (−0.1% 7d). USDT $183.9B · USDC $72.5B (−1.3% 1d) · USDS $6.5B (−1.5% 1d) · DAI $4.8B (−1.3% 1d) · USDe $3.9B (−1.4% 1d). Multiple major issuers contracting ≥1% 1d while aggregate supply flat.
+Total: $309.5B (+0.69% 7d). USDT $183.1B (flat) · USDC $73.7B (+1.0% 1d / +2.3% 7d) · USDS $6.6B (−1.2% 1d) · DAI $4.8B · USDe $4.1B (+3.7% 7d). Aggregate supply flat-to-up while price rallies — inflows are coming from rotation, not fresh minting.
 
 ## Trending (CoinGecko)
-- PONS — $0.050 −23% 24h (micro-cap heat in a red tape)
-- PENGU — $0.0059 −7.4% 24h (meme residual attention)
-- TAO — $189 −4.7% 24h (AI-adjacent still watched, soft)
-- COTI — $0.012 +52% 24h (micro-cap outlier)
-- HYPE — $54.2 −8.9% 24h (perp-DEX leader; fee print strong, token weak)
-- ZAMA — $0.063 +3.2% 24h (privacy/FHE emerging)
+- ZEC — $817 +42.6% 24h (privacy leader, parabolic, #1 trending)
+- PEPE — $0.0000042 +31.1% 24h (memecoin heat back)
+- LIT — $3.20 +19.8% 24h (micro/mid-cap outlier)
+- SUI — $0.88 +17.9% 24h (L1 beta on the rally)
+- XRP — $1.53 +16.7% 24h (large-cap alt leadership)
+- HYPE — $79.06 +6.2% 24h (perp-DEX leader, fees + price aligned)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Will the Fed increase interest rates by 25 bps after the July 2026 meeting? | 23% | $2.39M | $0.33M |
-| Will there be no change in Fed interest rates after the July 2026 meeting? | 76% | $2.31M | $0.47M |
+| Will Bitcoin reach $80,000 in August? | 77% | $0.40M | $0.05M |
+| Will there be no change in Fed interest rates after the Sept meeting? | 68% | $0.73M | $0.84M |
+| Will the Fed increase interest rates by 25 bps after the Sept meeting? | 30% | $0.52M | $0.73M |
 
 ## Macro Catalysts (next 48h)
-- July Fed decision window: Polymarket hold (no change) ~76% YES vs hike-25bps ~23% — positioning hinges on hold confirmation; hawkish surprise extends risk-off.
-- Spot ETF flow chop: Jul 27 BTC ETFs ≈ −$11.6M / ETH ≈ +$9M (Farside/WuBlockchain); week ended Jul 24 still net +$33.8M after mid-week −$225M/−$240M sessions — institutional bid unstable, not a clean risk-on tape.
+- **What drove the move:** US Treasury doubling long-end liquidity buybacks ($2B→$4B/op, effective Sep 9) + Trump/CLARITY Act push (White House Aug 19) triggered a $1.44B short squeeze (vs $168M longs). ETF inflows confirming, not fading: Aug 19 $517M, Aug 20 $606M (largest in 3.5mo, 6th straight day, IBIT +$285M).
+- **BTC $80k round-number test:** BTC challenged $80k overnight, slipped to ~$77–78k; Polymarket "$80k in August" 77% YES. Break-and-hold above $80k opens the next leg; a rejection here is the near-term fade risk (already overbought after +23% 7d).
+- **Sept Fed path:** Polymarket hold 68% YES vs 25bps-hike 30% — market leaning no-change; a hawkish repricing is the main macro downside to this risk-on tape.
 
 ## Implications for Downstream Skills
-- **token-pick:** Stay defensive — no broad alt beta until breadth >10/20; fee-cashflow names only with flat beta (do not chase HYPE on fee headlines). KAITO already logged.
-- **narrative-tracker:** Fear-base still Peak/WATCH; Perp DEX fee/price split and launchpad fee strength vs meme price compression remain the phase-transition watches (Peak → Fading if fees roll with price).
+- **token-pick:** Breadth supports broad alt beta (16/20 green) — favor large-cap alt-rotation names (XRP/LINK/ADA already extended) and perp-DEX cashflow (HYPE fees +411% 7d). Treat ZEC as late-stage, not a fresh entry.
+- **narrative-tracker:** Watch privacy (ZEC) for peak→fading (XMR already diverging red); watch perp-DEX (HYPE) for the fee/price alignment to hold or break.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
