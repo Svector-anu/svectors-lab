@@ -12,7 +12,7 @@
     "last_success": "2026-08-21T23:05:26Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-22T02:48:50Z",
     "total_runs": 301,
     "total_successes": 10,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.03,
     "last_quality_score": 5,
-    "last_dispatch": "2026-08-22T02:39:47Z",
+    "last_dispatch": "2026-08-22T06:45:31Z",
     "last_failed": "2026-08-21T20:03:19Z",
     "last_error": "claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permiss"
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-21T20:35:28Z",
     "total_runs": 336,
     "total_successes": 14,
@@ -35,7 +35,7 @@
     "last_error": "read-only: workspace write-locked via bwrap claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],",
     "last_success": "2026-08-22T02:47:11Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-08-22T02:39:47Z"
+    "last_dispatch": "2026-08-22T06:45:31Z"
   },
   "token-movers": {
     "last_status": "success",
