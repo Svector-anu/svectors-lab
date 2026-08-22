@@ -1,19 +1,17 @@
 {
-  "hash": "ef59a87fe0ac8016106990ca466bcb3e28d57047674758df13123eacf5f69bfa",
-  "last_notified_at": "2026-08-21T18:00:00Z",
-  "last_run_at": "2026-08-21T18:00:00Z",
+  "hash": "4cd1cd5bed630576e6eab529a04f6ba3d611213ee563dbf6ae0c01b72c88b529",
+  "last_notified_at": "2026-08-22T18:19:41Z",
+  "last_run_at": "2026-08-22T18:19:41Z",
   "classification": {
     "critical": [
-      "defi-overview",
       "digest",
-      "heartbeat"
+      "hunter-22",
+      "vuln-scanner"
     ],
     "degraded": [],
     "flapping": [],
-    "warning": [
-      "vuln-scanner"
-    ],
-    "healthy_count": 8,
+    "warning": [],
+    "healthy_count": 9,
     "no_data": [
       "auto-workflow"
     ]

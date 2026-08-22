@@ -1,0 +1,315 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Skill Health — 2026-08-22"
+      },
+      "children": [
+        "status_summary",
+        "alert_critical",
+        "sep1",
+        "heading_failures",
+        "stack_failing_skills",
+        "sep2",
+        "heading_recovered",
+        "stack_recovered_skills",
+        "sep3",
+        "stat_healthy",
+        "sep4",
+        "heading_analysis",
+        "text_analysis",
+        "sep5",
+        "heading_issues",
+        "text_issues"
+      ]
+    },
+    "status_summary": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_critical",
+        "text_iss001"
+      ]
+    },
+    "badge_critical": {
+      "type": "Badge",
+      "props": {
+        "text": "CRITICAL(3)",
+        "variant": "destructive"
+      },
+      "children": []
+    },
+    "text_iss001": {
+      "type": "Text",
+      "props": {
+        "text": "Systemic: zero-token harness — 3 skills, ISS-001",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "alert_critical": {
+      "type": "Alert",
+      "props": {
+        "title": "All failing skills show zero-token signature",
+        "message": "total_cost_usd: 0 across all 3 failures",
+        "type": "error"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_failures": {
+      "type": "Heading",
+      "props": {
+        "text": "Critical Failures",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stack_failing_skills": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "skill_hunter22",
+        "skill_digest",
+        "skill_vuln_scanner"
+      ]
+    },
+    "skill_hunter22": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_hunter22",
+        "text_hunter22_details"
+      ]
+    },
+    "badge_hunter22": {
+      "type": "Badge",
+      "props": {
+        "text": "hunter-22",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_hunter22_details": {
+      "type": "Text",
+      "props": {
+        "text": "4 fails, ~1d down — WAIT-API (zero-token) → ISS-001",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "skill_digest": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_digest",
+        "text_digest_details"
+      ]
+    },
+    "badge_digest": {
+      "type": "Badge",
+      "props": {
+        "text": "digest",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_digest_details": {
+      "type": "Text",
+      "props": {
+        "text": "3 fails, <1d down — WAIT-API (zero-token) → ISS-001",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "skill_vuln_scanner": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_vuln_scanner",
+        "text_vuln_scanner_details"
+      ]
+    },
+    "badge_vuln_scanner": {
+      "type": "Badge",
+      "props": {
+        "text": "vuln-scanner",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_vuln_scanner_details": {
+      "type": "Text",
+      "props": {
+        "text": "3 fails, <1d down (clean scan 06:08 then 3 zero-token) — WAIT-API → ISS-001",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_recovered": {
+      "type": "Heading",
+      "props": {
+        "text": "Recovered This Audit",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stack_recovered_skills": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "skill_defi_overview",
+        "skill_heartbeat"
+      ]
+    },
+    "skill_defi_overview": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_defi",
+        "text_defi_details"
+      ]
+    },
+    "badge_defi": {
+      "type": "Badge",
+      "props": {
+        "text": "defi-overview",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "text_defi_details": {
+      "type": "Text",
+      "props": {
+        "text": "cf=0, clean runs today",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "skill_heartbeat": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_heartbeat",
+        "text_heartbeat_details"
+      ]
+    },
+    "badge_heartbeat": {
+      "type": "Badge",
+      "props": {
+        "text": "heartbeat",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "text_heartbeat_details": {
+      "type": "Text",
+      "props": {
+        "text": "cf=0, clean runs today",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stat_healthy": {
+      "type": "Stat",
+      "props": {
+        "label": "Healthy Skills",
+        "value": "9"
+      },
+      "children": []
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_analysis": {
+      "type": "Heading",
+      "props": {
+        "text": "Root Cause Analysis",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text_analysis": {
+      "type": "Text",
+      "props": {
+        "text": "The zero-token harness failure keeps rotating across the fleet — skills succeed then re-fail within a day, a different subset each audit. Intermittent harness/auth/rate transient, not per-skill logic.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_issues": {
+      "type": "Heading",
+      "props": {
+        "text": "Issue Tracking",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text_issues": {
+      "type": "Text",
+      "props": {
+        "text": "Open issues: 1 · Resolved this run: 0",
+        "variant": "body"
+      },
+      "children": []
+    }
+  }
+}
