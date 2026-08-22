@@ -102,7 +102,18 @@ env:
   FLEET_TOKEN:    ${{ secrets.FLEET_TOKEN }}
 
 concurrency:
-  group: aeon-${{ inputs.skill || github.event.action || github.run_id }}
+  # Keyed by skill name alone, `var` was ignored entirely: dispatching the
+  # same skill at two different explicit targets (e.g. vuln-scanner against
+  # two different owner/repo values) collided into one concurrency group.
+  # With cancel-in-progress:false, only ONE run can be queued behind the
+  # active one at a time, so a burst of dispatches to the same skill with
+  # different targets silently cancelled all but the first and the last —
+  # the middle ones never ran at all. Appending `var` when it's set (the
+  # documented way to parallelize a skill against distinct targets) fixes
+  # that without changing behavior for the common case (var empty/unset):
+  # same-skill scheduled/manual runs with no target still serialize exactly
+  # as before, which is the intended guard against a genuine duplicate run.
+  group: aeon-${{ inputs.skill || github.event.action || github.run_id }}${{ inputs.var && format('-{0}', inputs.var) || '' }}
   cancel-in-progress: false
 
 jobs:
