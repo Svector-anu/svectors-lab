@@ -1,26 +1,29 @@
-Ambient heartbeat complete. Fleet is degraded but trending up.
+Ambient heartbeat complete. Status page regenerated, log appended, notification correctly suppressed.
 
-## Heartbeat — ambient fleet check (2026-08-21 23:03 UTC)
+## Heartbeat — ambient fleet check (2026-08-22 08:15 UTC)
 
-**Overall: 🔴 DEGRADED** (recovering) · Open issues: 1 · `STATUS_PAGE=DEGRADED`
+**HEARTBEAT_OK · STATUS_PAGE=WATCH** — no fresh signal; no notification sent.
 
-**P0 — Failed & stuck**
-- 🔴 **defi-overview** — `consecutive_failures=8`, last success 2026-07-28 (24d). ISS-001 zero-token/empty-iterations harness failure.
-- 🔴 **narrative-tracker** — `consecutive_failures=3`, failed 20:35 (regressed after recovering at 13:59). Error carries a `read-only: workspace write-locked via bwrap` prefix ahead of the zero-token signature.
-- 🕸 **vuln-scanner stuck** — dispatched 07:50 UTC (same watermark as fear-divergence, which succeeded), never reported back; last success 08-15 → hang (`cf=2`).
+**The headline: the fleet has recovered.** The ISS-001 zero-token harness failure that reddened the page for weeks has cleared across every affected skill. All enabled scheduled skills now report `last_status: success` with `consecutive_failures: 0`:
 
-**Recovered since the 21:46 heartbeat** (the only deltas this run)
-- ✅ **digest** — success 21:49 (was `cf=3` zero-token).
-- ✅ **heartbeat self** — success 21:47, `cf` 4→0, self-check no longer >36h stale.
+- `defi-overview` — success 08-22T08:00 (was cf=8, 24d dark)
+- `digest` — success 08-21T21:49
+- `heartbeat` (self) — success 08-21T23:05
+- `narrative-tracker` — success 08-22T07:56
+- `vuln-scanner` — success 08-22T06:08 (was 🕸 stuck yesterday)
+- `github-trending` — healthy (ISS-002 resolved 08-21)
 
-**P1 — Stalled PRs** — 6 open >24h, all weeks old (not fresh): #30 aeon-update (08-16), #22/#20/#3 x402-monitor, #5/#4 defi-overview. GitHub issues disabled on this repo.
+**Not flagged (correctly):** `price-alert` (stuck "dispatched" since 07-30, cf=8) is `enabled: false`; `soul-builder`/`verdikta-hunter`/`auto-merge` failures are all on disabled/on-demand skills. None are live concerns.
 
-**Notification: SUPPRESSED (dedup)** — every current 🔴 item (defi-overview, narrative-tracker, ISS-001 zero-token, vuln-scanner stuck) was already reported earlier today by skill-health (13:57, 18:00) and the 18:xx heartbeat. This run's only changes are recoveries, which aren't alert-worthy, and the stalled PRs are 3+ weeks old. No fresh signal → sent nothing, per the notify-on-signal rule.
+**Why WATCH, not OK:**
+- **ISS-001 still open** (critical) in `INDEX.md` — all its affected skills recovered, but closing the issue is skill-repair's job. An open critical issue holds the page at 🟡.
+- **P3 — `x402-monitor`** (enabled, weekly) hasn't dispatched or succeeded since 2026-07-28 (25d, >2× interval); the scheduler appears not to be firing it. Stale for weeks — logged, not alerted.
+- **P1 — 6 stalled PRs** >24h, all weeks old (#30, #22/#20/#3, #5/#4).
 
-**Status page** regenerated (`docs/status.md`) — verdict 🔴 DEGRADED with a "recovering" note; digest/heartbeat moved to ✅, defi-overview/narrative-tracker ❌, vuln-scanner 🕸. Token pulse section omitted (no `token-report` article on disk). ISS-001 remains open (affected set now `[defi-overview, narrative-tracker]`).
+**Notification suppressed:** today's only deltas are recoveries (not alert-worthy), and the remaining flags are all weeks-old and already in the logs. No fresh negative signal to send. Token Pulse section omitted — no `token-report-*.md` exists.
 
 ## Summary
-- **Ran:** ambient fleet-health check (empty `${var}`, the live scheduled path).
-- **Modified:** `docs/status.md` (regenerated, 🔴 DEGRADED, updated 23:03 UTC); appended a `### heartbeat` / `mode: ambient` entry to `memory/logs/2026-08-21.md`.
-- **Notified:** nothing (dedup — no fresh signal since earlier today).
-- **Follow-up:** ISS-001 zero-token harness failure still hitting defi-overview & narrative-tracker (owned by skill-health/skill-repair loop); vuln-scanner's 07:50 hang has never reported back — worth a look if it recurs on its next Saturday 16:00 run.
+- **Regenerated** `docs/status.md` → 🟡 WATCH, 13 enabled skills all ✅, 1 open issue (ISS-001), next run hunter-22 @ 10:00 UTC.
+- **Appended** `### heartbeat` (mode: ambient) entry to `memory/logs/2026-08-22.md`.
+- **No notification** sent (dedup / recoveries-only — per notify-on-signal).
+- **Follow-up for other skills:** skill-repair should close ISS-001 (affected skills recovered); operator/aeon-doctor should check why `x402-monitor` (enabled, weekly) hasn't dispatched since 07-28.
