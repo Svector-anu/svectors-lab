@@ -36,6 +36,15 @@ BASE_TOOLS="Read,Glob,Grep,WebFetch,WebSearch"
 BASE_TOOLS="$BASE_TOOLS,Bash(curl:*),Bash(jq:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(./notify:*),Bash(./notify-jsonrender:*),Bash(./secretcurl:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(mkdir:*),Bash(ls:*),Bash(cat:*),Bash(chmod:*)"
+# `cd` — a multi-step Bash call is commonly written as `cd <repo-root>\n<real
+# command>`; the permission matcher evaluates the leading statement, so a
+# bare `cd` with no grant here denies the WHOLE compound command, including
+# the already-allowlisted curl/secretcurl/python3 call after it. Live-observed
+# on defi-overview/narrative-tracker (permission_denials on a cd-prefixed
+# multi-line Bash call), intermittent because it only trips when a run
+# happens to prepend cd. cd only changes the shell's own cwd — no file/
+# network effect of its own, same risk class as ls/cat already granted above.
+BASE_TOOLS="$BASE_TOOLS,Bash(cd:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(date:*),Bash(echo:*),Bash(node:*),Bash(npm:*),Bash(npx:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(grep:*)"
 
