@@ -850,6 +850,12 @@ jobs:
               ); then
                 USED_GATEWAY="$cand"; CLAUDE_OK=1; break
               fi
+              # Full diagnostic goes to the step log unconditionally (matches the
+              # non-claude harness path below) — the ::warning:: summary line is
+              # truncated for a quick scan, but a truncated summary was the ONLY
+              # trace of a per-attempt failure before this, silently discarding
+              # the real cause whenever it exceeded ~160 chars.
+              tail -c 4000 /tmp/harness-stderr.txt >&2 || true
               echo "::warning::provider '$cand' failed — $(tail -c 160 /tmp/harness-stderr.txt 2>/dev/null | tr '\n' ' ')"
             done
             if [ "$CLAUDE_OK" != "1" ]; then
