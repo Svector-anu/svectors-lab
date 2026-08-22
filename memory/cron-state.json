@@ -12,14 +12,14 @@
     "last_success": "2026-08-21T23:05:26Z"
   },
   "defi-overview": {
-    "last_status": "dispatched",
-    "last_success": "2026-07-28T13:18:58Z",
-    "total_runs": 300,
-    "total_successes": 9,
+    "last_status": "success",
+    "last_success": "2026-08-22T02:48:50Z",
+    "total_runs": 301,
+    "total_successes": 10,
     "total_failures": 291,
-    "consecutive_failures": 8,
+    "consecutive_failures": 0,
     "success_rate": 0.03,
-    "last_quality_score": 4,
+    "last_quality_score": 5,
     "last_dispatch": "2026-08-22T02:39:47Z",
     "last_failed": "2026-08-21T20:03:19Z",
     "last_error": "claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{},\"permiss"
