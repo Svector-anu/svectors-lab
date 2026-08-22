@@ -1,10 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-22T02:47:09Z",
+  "last_analyzed": "2026-08-22T07:55:40Z",
   "quality_score": 4,
-  "assessment": "Substantive, well-structured narrative report with specific regime calls, honest about source limitations, and actionable for traders; output is truncated in display but captured content is complete.",
+  "assessment": "Substantive, decision-grade report with explicit positions and reflexivity alerts; XAI fetch failure gracefully fell back to WebSearch/WebFetch; baseline caveat acknowledged",
   "flags": [],
-  "avg_score": 3.89,
+  "avg_score": 3.9,
   "history": [
     {
       "date": "2026-07-06",
@@ -36,6 +36,10 @@
     },
     {
       "date": "2026-07-28",
+      "score": 4
+    },
+    {
+      "date": "2026-08-22",
       "score": 4
     },
     {
