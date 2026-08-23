@@ -9,8 +9,8 @@
       "124": "timeout"
     }
   },
-  "generated": "2026-08-20T14:23:52Z",
-  "count": 6,
+  "generated": "2026-08-23T07:31:39Z",
+  "count": 7,
   "harnesses": [
     {
       "id": "claude",
@@ -65,6 +65,33 @@
           "OPENAI_API_KEY"
         ],
         "openrouter": true
+      },
+      "native_control_path": "run-harness"
+    },
+    {
+      "id": "fx",
+      "label": "fx",
+      "cli": {
+        "install": "curl -fsSL https://fx.sh/setup.sh | bash",
+        "bin": "fx",
+        "min_version": "0.0.5"
+      },
+      "invoke": "fx ask --json --auto --no-save",
+      "round_trip": true,
+      "token_usage": "full",
+      "cost": true,
+      "read_only": "sandbox",
+      "structured_output": "shim",
+      "mcp": "native",
+      "max_turns": "native",
+      "claude_md": "native",
+      "auth": {
+        "native_oauth": [],
+        "native_key": [
+          "AI_GATEWAY_API_KEY",
+          "VERCEL_OIDC_TOKEN"
+        ],
+        "openrouter": false
       },
       "native_control_path": "run-harness"
     },
