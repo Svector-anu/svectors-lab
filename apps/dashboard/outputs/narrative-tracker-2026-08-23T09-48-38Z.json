@@ -1,0 +1,491 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker — 2026-08-23",
+        "description": "Regime read: policy-driven risk-on cooling"
+      },
+      "children": [
+        "regime-text",
+        "sep1",
+        "transitions-section",
+        "sep2",
+        "reflexivity-section",
+        "sep3",
+        "positions-section",
+        "sep4",
+        "map-section"
+      ]
+    },
+    "regime-text": {
+      "type": "Text",
+      "props": {
+        "text": "Regime read: policy-driven risk-on cooling. Narratives are bifurcating — real-cashflow stories (perp-DEX) diverging from reflexive parabolas (ZEC privacy). Front bid is regulatory, not fundamental.",
+        "variant": "lead"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "transitions-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "transitions-heading",
+        "trans-new",
+        "trans-promoted",
+        "trans-demoted"
+      ]
+    },
+    "transitions-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TRANSITIONS",
+        "level": "h2"
+      }
+    },
+    "trans-new": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-new",
+        "text-new"
+      ]
+    },
+    "badge-new": {
+      "type": "Badge",
+      "props": {
+        "text": "NEW",
+        "variant": "default"
+      }
+    },
+    "text-new": {
+      "type": "Text",
+      "props": {
+        "text": "Reg/policy rally — SEC Reg-Crypto NPRM (Aug 18) + White House summit (Aug 19) + CFTC Innovation cmte (Aug 20) + Treasury buyback $2B→$4B. XRP top beneficiary. This IS the macro bid."
+      }
+    },
+    "trans-promoted": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-promoted",
+        "text-promoted"
+      ]
+    },
+    "badge-promoted": {
+      "type": "Badge",
+      "props": {
+        "text": "PROMOTED",
+        "variant": "secondary"
+      }
+    },
+    "text-promoted": {
+      "type": "Text",
+      "props": {
+        "text": "Privacy (ZEC) Peak→Peak+catalyst — Grayscale 5th amended S-3 (Aug 22), 8-yr high >$800, mcap $13.8B (#12)."
+      }
+    },
+    "trans-demoted": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-demoted",
+        "text-demoted"
+      ]
+    },
+    "badge-demoted": {
+      "type": "Badge",
+      "props": {
+        "text": "DEMOTED",
+        "variant": "outline"
+      }
+    },
+    "text-demoted": {
+      "type": "Text",
+      "props": {
+        "text": "AI agents Rising→Fading — tokens in descending channels; infra (AWS Bedrock AgentCore Payments w/ Coinbase+Stripe, USDC) building under a dead price."
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "reflexivity-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "reflexivity-heading",
+        "reflex-zec",
+        "reflex-dats"
+      ]
+    },
+    "reflexivity-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY",
+        "level": "h2"
+      }
+    },
+    "reflex-zec": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "reflex-zec-label",
+        "reflex-zec-text"
+      ]
+    },
+    "reflex-zec-label": {
+      "type": "Heading",
+      "props": {
+        "text": "ZEC",
+        "level": "h3"
+      }
+    },
+    "reflex-zec-text": {
+      "type": "Text",
+      "props": {
+        "text": "ETF *filing* (not approval) driving price; futures vol dwarfs spot (leverage), DCG mulling 200k-ZEC contribution. Story moving the tape, not fundamentals."
+      }
+    },
+    "reflex-dats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "reflex-dats-label",
+        "reflex-dats-text"
+      ]
+    },
+    "reflex-dats-label": {
+      "type": "Heading",
+      "props": {
+        "text": "DATs",
+        "level": "h3"
+      }
+    },
+    "reflex-dats-text": {
+      "type": "Text",
+      "props": {
+        "text": "share-issuance→buy flywheel is textbook reflexivity; reverses on mNAV compression. Strategy back in profit only because BTC>$77k."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "positions-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "positions-heading",
+        "pos-ride",
+        "pos-fade",
+        "pos-watch-reg",
+        "pos-watch-dats",
+        "pos-ignore"
+      ]
+    },
+    "positions-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h2"
+      }
+    },
+    "pos-ride": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-ride",
+        "text-ride-main",
+        "text-ride-info",
+        "text-ride-bear"
+      ]
+    },
+    "badge-ride": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "default"
+      }
+    },
+    "text-ride-main": {
+      "type": "Text",
+      "props": {
+        "text": "Perp-DEX / HYPE (4 ↑, Bull) — OI $20.9B 2026-high, HYPE >50% share, ~$840M annualized rev → buyback."
+      }
+    },
+    "text-ride-info": {
+      "type": "Text",
+      "props": {
+        "text": "Cleanest fundamentals on the board.",
+        "variant": "body"
+      }
+    },
+    "text-ride-bear": {
+      "type": "Alert",
+      "props": {
+        "title": "Bear case",
+        "message": "OI at highs = crowded unwind risk.",
+        "type": "warning"
+      }
+    },
+    "pos-fade": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-fade",
+        "text-fade"
+      ]
+    },
+    "badge-fade": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "text-fade": {
+      "type": "Text",
+      "props": {
+        "text": "Privacy / ZEC (5 → Cope) — parabolic +48%, isolated as breadth narrows, futures>>spot. 'Sell the ETF news.'"
+      }
+    },
+    "pos-watch-reg": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-watch-reg",
+        "text-watch-reg"
+      ]
+    },
+    "badge-watch-reg": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "secondary"
+      }
+    },
+    "text-watch-reg": {
+      "type": "Text",
+      "props": {
+        "text": "Reg/policy rally (4 ↑, Mixed) — real driver but priced; rulemaking is slow, decoupled-from-equities rally is fragile if liquidity impulse fades."
+      }
+    },
+    "pos-watch-dats": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-watch-dats",
+        "text-watch-dats"
+      ]
+    },
+    "badge-watch-dats": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "secondary"
+      }
+    },
+    "text-watch-dats": {
+      "type": "Text",
+      "props": {
+        "text": "DATs (3 → Mixed) — mNAV compression is the tell."
+      }
+    },
+    "pos-ignore": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-ignore",
+        "text-ignore"
+      ]
+    },
+    "badge-ignore": {
+      "type": "Badge",
+      "props": {
+        "text": "IGNORE",
+        "variant": "outline"
+      }
+    },
+    "text-ignore": {
+      "type": "Text",
+      "props": {
+        "text": "Memecoin/political froth (TRUMP/PUMP) — dead-cat, cope."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "map-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "map-heading",
+        "map-emerging",
+        "map-rising",
+        "map-peak",
+        "map-fading"
+      ]
+    },
+    "map-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h2"
+      }
+    },
+    "map-emerging": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map-emerging-label",
+        "map-emerging-text"
+      ]
+    },
+    "map-emerging-label": {
+      "type": "Heading",
+      "props": {
+        "text": "Emerging",
+        "level": "h3"
+      }
+    },
+    "map-emerging-text": {
+      "type": "Text",
+      "props": {
+        "text": "—",
+        "variant": "muted"
+      }
+    },
+    "map-rising": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map-rising-label",
+        "map-rising-text"
+      ]
+    },
+    "map-rising-label": {
+      "type": "Heading",
+      "props": {
+        "text": "Rising",
+        "level": "h3"
+      }
+    },
+    "map-rising-text": {
+      "type": "Text",
+      "props": {
+        "text": "Perp-DEX (HYPE), Reg/policy rally"
+      }
+    },
+    "map-peak": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map-peak-label",
+        "map-peak-text"
+      ]
+    },
+    "map-peak-label": {
+      "type": "Heading",
+      "props": {
+        "text": "Peak",
+        "level": "h3"
+      }
+    },
+    "map-peak-text": {
+      "type": "Text",
+      "props": {
+        "text": "Privacy (ZEC), Large-cap alt rotation"
+      }
+    },
+    "map-fading": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map-fading-label",
+        "map-fading-text"
+      ]
+    },
+    "map-fading-label": {
+      "type": "Heading",
+      "props": {
+        "text": "Fading",
+        "level": "h3"
+      }
+    },
+    "map-fading-text": {
+      "type": "Text",
+      "props": {
+        "text": "AI agents, memecoin froth, DAT premium"
+      }
+    }
+  }
+}

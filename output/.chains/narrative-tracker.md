@@ -1,9 +1,27 @@
-ℹ️ Narrative Tracker — 2026-08-22 (evening)
+ℹ️ Narrative Tracker — 2026-08-23
 
-Two deltas since the 14:00 map; map otherwise unchanged.
+*Narrative Tracker — 2026-08-23*
 
-DOWNGRADE — AI-agent payments / x402: RIDE(infra) → WATCH. Adoption headlines keep landing (AWS AgentCore GA, 14M transfers/30d, $50B processed) but on-chain settlement volume is reportedly −93% YTD. The rails narrative isn't showing up in settled value — ride the story, not the token. Cloudflare's monetization gateway is the swing factor.
+Regime read: policy-driven risk-on cooling. Narratives are bifurcating — real-cashflow stories (perp-DEX) diverging from reflexive parabolas (ZEC privacy). Front bid is regulatory, not fundamental.
 
-REFLEXIVITY — Hyperliquid: fresh ATH ~$81.5 (+12% 24h) as CZ joins the Trump/CFTC endorsement chorus; Galaxy moved $4.2M HYPE to an exchange and a whale banked $7.5M/4d on ZEC+HYPE longs = distribution into strength. RIDE but crowded — this is late-tape endorsement, not new fundamentals. Tighten.
+TRANSITIONS
+• NEW: Reg/policy rally — SEC Reg-Crypto NPRM (Aug 18) + White House summit (Aug 19) + CFTC Innovation cmte (Aug 20) + Treasury buyback $2B→$4B. XRP top beneficiary. This IS the macro bid.
+• PROMOTED: Privacy (ZEC) Peak→Peak+catalyst — Grayscale 5th amended S-3 (Aug 22), 8-yr high >$800, mcap $13.8B (#12).
+• DEMOTED: AI agents Rising→Fading — tokens in descending channels; infra (AWS Bedrock AgentCore Payments w/ Coinbase+Stripe, USDC) building under a dead price.
 
-ZEC parabola extending (+47% 24h, now the lone large gainer as breadth narrows to 14/20) — RIDE(stop) / distribution risk, not an entry. No clean FRONT-RUN with contrarian edge today.
+REFLEXIVITY
+• ZEC — ETF *filing* (not approval) driving price; futures vol dwarfs spot (leverage), DCG mulling 200k-ZEC contribution. Story moving the tape, not fundamentals.
+• DATs — share-issuance→buy flywheel is textbook reflexivity; reverses on mNAV compression. Strategy back in profit only because BTC>$77k.
+
+POSITIONS
+• RIDE: Perp-DEX / HYPE (4 ↑, Bull) — OI $20.9B 2026-high, HYPE >50% share, ~$840M annualized rev → buyback. Bear: OI at highs = crowded unwind risk. Cleanest fundamentals on the board.
+• FADE: Privacy / ZEC (5 → Cope) — parabolic +48%, isolated as breadth narrows, futures>>spot. 'Sell the ETF news.'
+• WATCH: Reg/policy rally (4 ↑, Mixed) — real driver but priced; rulemaking is slow, decoupled-from-equities rally is fragile if liquidity impulse fades.
+• WATCH: DATs (3 → Mixed) — mNAV compression is the tell.
+• IGNORE: Memecoin/political froth (TRUMP/PUMP) — dead-cat, cope.
+
+MAP
+Emerging: —
+Rising: Perp-DEX (HYPE), Reg/policy rally
+Peak: Privacy (ZEC), Large-cap alt rotation
+Fading: AI agents, memecoin froth, DAT premium

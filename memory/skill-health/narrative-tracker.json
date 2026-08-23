@@ -1,10 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-22T13:05:40Z",
+  "last_analyzed": "2026-08-23T09:48:38Z",
   "quality_score": 4,
-  "assessment": "Substantive analysis with specific dated catalysts, actionable position calls, reflexivity alerts identifying insider distribution, and graceful API fallback; well-aligned to strategy",
+  "assessment": "Substantive regime analysis with explicit position calls and risk flags; handled data source fallback gracefully despite X.AI API key issue.",
   "flags": [],
-  "avg_score": 3.91,
+  "avg_score": 3.92,
   "history": [
     {
       "date": "2026-07-06",
@@ -48,6 +48,10 @@
     },
     {
       "date": "2026-08-22",
+      "score": 4
+    },
+    {
+      "date": "2026-08-23",
       "score": 4
     }
   ]
