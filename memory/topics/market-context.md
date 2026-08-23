@@ -3,75 +3,73 @@ type: Token
 title: Market Context
 description: Current crypto macro snapshot — regime, signal snapshot, narratives, DeFi, prediction markets.
 tags: [crypto, macro, defi, market-context]
-timestamp: 2026-08-22T18:22:00Z
+timestamp: 2026-08-23T10:20:00Z
 resource: https://defillama.com
 ---
 
-# Market Context (as of 2026-08-22)
+# Market Context (as of 2026-08-23)
 
-> **Take:** consolidation (risk-on cooling) — BTC flat at $77.3k (−0.1% 24h, +22.6% 7d) while the multi-day alt blow-off keeps bleeding out: XRP +5.8% 24h (was +19.7% AM / +11.4% midday), ADA +4.2%, DOGE +9.9%; breadth eased to 14/20 (from 17 at the AM peak), mcap −2.1% 24h. ZEC is the lone big gainer (+21.6%). The 7d uptrend is intact but today is digestion, not extension. Conviction: medium.
+> **Take:** consolidation / risk-on cooling — the cooling has spread from breadth into on-chain activity. BTC flat $77.2k (+0.3% 24h, +23.0% 7d), breadth eased 14→13/20, F&G rolled over 71→66, and BTC dominance ticked up to 59.2% (from 58.8%) as large-cap alts give back (XRP +5.8%→+1.5%, ZEC +21.6%→+7.1%, ADA +4.2%→+2.0%). New this run: DEX volume rolled off to $11.6B (−17% 1d, from $14.0B) and Hyperliquid perp fees −53% 1d — the churn that fueled the week's rotation is now exhausting. 7d uptrend intact (+23% BTC, TVL +17.5%) but momentum is fading, not extending. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $77,251 (−0.1% 24h, +22.6% 7d) · dominance 58.80% (flat vs 58.79% — leadership neither rotating out to alts nor concentrating)
-- ETH $2,427 (+0.2% 24h, +28.8% 7d) · ETH/BTC 0.0314
-- SOL $94.25 (+2.8% 24h, +24.9% 7d)
-- Total mcap $2.626T (−2.11% 24h) · DEX vol $14.04B 24h (+34% 1d, +157% 7d)
-- Breadth: 14/20 green 24h · 17/20 green 7d
-- Fear & Greed: 71 (Greed) — yesterday 72 (Greed)
+- BTC $77,167 (+0.3% 24h, +23.0% 7d) · dominance 59.21% (+0.4pp vs 58.80% — safety bid within crypto, alts rotating back to BTC)
+- ETH $2,433 (+0.9% 24h, +30.9% 7d) · ETH/BTC 0.0315
+- SOL $94.91 (+1.9% 24h, +26.9% 7d)
+- Total mcap $2.615T (−3.33% 24h) · DEX vol $11.63B 24h (−17% 1d, from $14.04B)
+- Breadth: 13/20 green 24h · 17/20 green 7d
+- Fear & Greed: 66 (Greed) — yesterday 71 (Greed)
 
 ## What Changed Since Last Refresh
-- **Alt cooling extended, breadth narrowing.** vs the 13:05 refresh: XRP +11.4%→+5.8%, DOGE +10.7%→+9.9%, ADA +7.0%→+4.2%; top-20 24h breadth eased 16→14/20 and mcap red deepened −0.82%→−2.11% 24h. The rotation leg is still exhaling, and participation is narrowing toward a single name (ZEC +21.6%) — a late-stage tell, not a fresh risk-on impulse.
-- **ETF streak intact but decelerating.** Aug-21 spot-BTC-ETF flows now published: **$307.5M net (IBIT +$239M), 5th straight day of inflows** — down from Aug-20's $606M. Streak alive but the marginal bid is cooling; a streak break is the cleanest forward tell.
-- **Rally decoupled from equities.** US stocks fell sharply and European stocks logged their worst week in ~2 months while crypto held — this leg is liquidity/regulatory-driven (Treasury buyback doubling, Trump CLARITY Act push), not risk-asset beta. Cross-asset divergence = fragility if the liquidity impulse fades.
-- **DeFi fundamentals unchanged intraday.** DEX $14.04B (+34% 1d), Tether fees $15.9M (flat), Hyperliquid Perps $6.0M (+411% 7d), same movers (Dolomite, M0) — the DeFi read has not moved since midday; only sentiment/breadth shifted.
+- **Cooling has reached on-chain activity.** vs the 08-22 18:22 refresh, the alt-rotation fade is no longer just a breadth/price story: DEX 24h volume rolled off $14.04B→$11.63B (−17% 1d) and Hyperliquid Perps fees dropped $6.0M→$2.8M (−53% 1d). The churn that powered the week's rotation is exhausting — first material rollover in on-chain throughput.
+- **F&G rolled over and dominance ticked up.** F&G 71→66 (still Greed, but −5 and falling); BTC dominance 58.80%→59.21% (+0.4pp) as XRP (+5.8%→+1.5%), ZEC (+21.6%→+7.1%) and ADA (+4.2%→+2.0%) hand gains back to BTC. Participation narrowing, safety bid within crypto.
+- **TVL and stables dead flat.** Top-50 DeFi weighted TVL +0.05% 1d (+17.5% 7d); stablecoin supply +0.06% 1d (+0.73% 7d). No fresh capital in or out — the 7d uptrend is intact but not being extended today.
+- **ETF streak may be breaking.** Prior recorded 5 straight inflow days through Aug-21 ($307.5M, decelerating from $606M Aug-20); a Yahoo Finance headline now flags spot-BTC-ETF flows reversing (Aug-22 figure unconfirmed). A confirmed streak break is the cleanest forward tell the liquidity bid is exhausting — watch the daily print.
 
 ## Active Narratives
-- **Large-cap alt rotation** — phase: peak→cooling (extending). Evidence: XRP +5.8% 24h (was +19.7% this AM) / +47.6% 7d; ADA +4.2%, DOGE +9.9%; breadth 17→14/20. The leg is digesting +25–48% 7d gains, not extending.
-- **Privacy (ZEC-led)** — phase: peak (late). Evidence: ZEC +21.6% 24h / +68% 7d, still #1 gainer and top CoinGecko trending — but it is now the *lone* large gainer as breadth narrows around it; XMR flat +0.8%. Parabolic and isolated = distribution risk.
-- **Perp DEX (HYPE)** — phase: rising. Evidence: HYPE $78.86 +3.4% 24h / +38.5% 7d; Hyperliquid Perps fees $6.0M (+411% 7d) — price and cashflow aligned; cleanest fundamentals story on the board.
-- **Memecoin / political froth** — phase: reviving intraday. Evidence: TRUMP +40.5% 24h back onto trending (rank ~93), PUMP +16.4%; tail-end speculation persistent even as majors consolidate.
+- **Large-cap alt rotation** — phase: cooling (extending). Evidence: XRP +1.5% 24h (was +19.7% AM 08-22) / +52% 7d; ADA +2.0%, DOGE +2.5%; breadth 14→13/20, dominance rising. The leg is digesting +26–52% 7d gains; the fade is now confirmed by DEX-volume rollover, not just price.
+- **Privacy (ZEC-led)** — phase: peak→fading. Evidence: ZEC +7.1% 24h (was +21.6%) / +75% 7d — still the biggest 7d gainer but 24h momentum cut two-thirds; XMR flat +0.4%. Parabolic and decelerating = distribution risk, an exit not an entry.
+- **Perp DEX (HYPE)** — phase: rising→cooling. Evidence: HYPE $79.55 +4.0% 24h / +40.8% 7d (price still leads), but Hyperliquid Perps fees −53% 1d to $2.8M (7d still +685%). The cleanest cashflow story is now cooling intraday with everything else — watch whether fees stabilize or keep bleeding.
+- **BTC/ETH majors** — phase: rising (relative). Evidence: dominance +0.4pp to 59.21%, ETH +30.9% 7d, both holding while alts give back. The safety leg within crypto as the rotation exhales.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.12B (+29.1%)
-- Aave V3: $16.91B (+19.4%)
-- SSV Network: $12.18B (+28.6%)
-- Morpho Blue: $9.35B (+17.2%)
-- Binance staked ETH: $8.97B (+28.3%)
+- Lido: $23.27B (+30.2%)
+- Aave V3: $17.01B (+20.4%)
+- SSV Network: $12.27B (+29.7%)
+- Morpho Blue: $9.38B (+18.0%)
+- Binance staked ETH: $9.04B (+29.4%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $48.59B
-- BSC: $5.52B
-- Solana: $5.51B
+- Ethereum: $48.44B
+- BSC: $10.30B
+- Solana: $5.56B
 
-*Note: DeFiLlama `/v2/chains` again returned no `change_1d`/`change_7d` fields; chain 7d deltas n/a. Total chain TVL $87.0B (462 chains). Top-50 DeFi protocol-weighted TVL used for regime scoring: +0.50% 1d / +17.22% 7d.*
+*Note: DeFiLlama `/v2/chains` again returned no `change_1d`/`change_7d` fields; chain 7d deltas n/a and chain movers omitted. Total chain TVL $91.8B (462 chains). Top-50 DeFi protocol-weighted TVL used for regime scoring: +0.05% 1d / +17.53% 7d (Uniswap V4 +486% 1d excluded as a V4-migration data artifact).*
 
 ## Stablecoins
-Total: $309.5B (+0.72% 7d, +0.35% 1d). USDT $183.2B (flat) · USDC $73.7B (+1.04% 1d) · USDS $6.7B (−0.92% 1d) · DAI $4.8B · USDe $4.1B (+0.30% 1d). Combined share of mcap ~11.8%. Supply flat while DEX activity runs hot ($14B, +34% 1d) — rotation/churn, not fresh inflows.
+Total: $309.5B (+0.73% 7d, +0.06% 1d). USDT $183.2B (flat) · USDC $73.6B (−0.15% 1d, +2.2% 7d) · USDS $6.7B · DAI $4.8B · USDe $4.1B (+3.3% 7d). Combined share of mcap ~11.8%. Supply flat while DEX activity cooled ($11.6B, −17% 1d) — no fresh minting, and the churn that ran hot all week is now easing.
 
 ## Trending (CoinGecko)
-- TRUMP — $2.59 +40.5% 24h (political memecoin back on trending, rank ~93 — froth reviving)
-- ZEC — $833 +24.2% 24h (privacy leader, still #1 gainer, parabolic and isolated)
-- PUMP — $0.0047 +16.4% 24h (launchpad token, still bid)
-- HYPE — $78.8 +4.9% 24h (perp-DEX leader, fees + price aligned)
-- PIPEDOG / ALIGN — fresh microcap memecoins on trending (both red 24h — attention without follow-through)
+- ZEC — $848 +7.1% 24h (privacy leader, still #1 7d gainer +75% but 24h momentum cut two-thirds — late/fading)
+- HYPE — $79.6 +4.0% 24h (perp-DEX leader, price holding while its fee cashflow cooled −53% 1d)
+- XRP — $1.51 +1.5% 24h (+52% 7d; rotation leader now decelerating hard)
+- DOGE — $0.093 +2.5% 24h (+34% 7d; memecoin beta cooling with the rotation)
 
-## Prediction Markets (Polymarket)
+## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| CS: Legacy vs Spirit (Esports World Cup) | 32% | $2.03M | $0.24M |
-| Bayern Munich win 2026-08-22 | 62% | $0.59M | $0.71M |
+| CS: FUT Esports vs Spirit (BO5, Esports World Cup) | 28% | $2.55M | $0.27M |
+| Liverpool FC win 2026-08-23 | 51% | $1.77M | $2.84M |
 
-*Crypto/macro book thin this run — the Fed Sept-path market (prior ~68% hold / 30% hike) dropped out of the active top-vol/liquidity book; top-vol markets are sports/esports. No tradeable crypto prediction-market signal today.*
+*Crypto/macro book thin again this run — the Fed Sept-path market is out of the top-vol/liquidity book; top markets are sports/esports. No tradeable crypto prediction-market signal today.*
 
 ## Macro Catalysts (next 48h)
-- **ETF streak the key tell:** Aug-21 $307.5M net (IBIT $239M), 5th straight day but decelerating from Aug-20's $606M. A streak break would be the cleanest signal the liquidity bid is exhausting — watch the daily print.
-- **Cross-asset divergence = fragility:** crypto rallying while equities fall (US sharp, EU worst week ~2mo) confirms a liquidity/regulatory driver (Treasury buyback $2B→$4B, CLARITY Act push), but a decoupled rally is more fragile if the liquidity impulse rolls over.
-- **$80k pivot unresolved:** BTC rejected ~$79.5–80k overnight, consolidating $77.3k. Break-and-hold above $80k reopens the next leg; failure keeps near-term fade risk live.
-- **Jackson Hole Aug 27–29** (Fed Chair Warsh remarks) — next scheduled macro event and main forward risk for the tape.
+- **ETF streak the key tell:** 5 straight inflow days through Aug-21 ($307.5M, decelerating from $606M Aug-20); a Yahoo Finance headline now flags flows reversing (Aug-22 number unconfirmed). A confirmed break is the cleanest signal the liquidity bid is exhausting.
+- **Jackson Hole Aug 27–29** (Fed Chair Warsh remarks) — the next scheduled macro event and main forward risk for the tape. Positioning into it is the dominant driver, not fresh news.
+- **$80k pivot still unresolved:** BTC rejected ~$79.5–80k earlier this week, holding $77.2k. Break-and-hold above $80k reopens the next leg; the cooling breadth/volume backdrop keeps near-term fade risk live.
 
 ## Implications for Downstream Skills
-- **token-pick:** Rotation cooling has extended — breadth narrowed to 14/20 and alts are decelerating (XRP/ADA/DOGE giving back). Favor BTC/ETH beta and pullback entries over chasing extended large-cap alts; ZEC (+68% 7d, lone gainer) is an exit not an entry. Perp-DEX cashflow (HYPE, fees +411% 7d) remains the cleanest fundamentals pick.
-- **narrative-tracker:** Large-cap alt rotation peak→cooling (extending); privacy (ZEC) peak/late as breadth narrows around a single name; memecoin/political froth (TRUMP) reviving intraday; perp-DEX (HYPE) the one narrative still building.
+- **token-pick:** Cooling now confirmed on-chain (DEX vol −17%, perp fees −53% 1d), not just in breadth. Fade the extended large-cap alt chase (XRP/ZEC/ADA giving back; ZEC +75% 7d is an exit not entry). Favor BTC/ETH beta and pullback entries — dominance rising signals the safety bid. Even the perp-DEX cashflow story (HYPE) is cooling; wait for fee stabilization before adding.
+- **narrative-tracker:** Large-cap alt rotation cooling (extending, now on-chain-confirmed); privacy (ZEC) peak→fading as 24h momentum halves; perp-DEX (HYPE) rising→cooling as fees roll off; BTC/ETH majors the relative-strength leg. Watch HYPE fees for a phase flip and the ETF streak for a regime tell.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
@@ -81,5 +79,3 @@ Total: $309.5B (+0.72% 7d, +0.35% 1d). USDT $183.2B (flat) · USDC $73.7B (+1.04
 ---
 *Sources — btc/eth: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*
 *Source status: coingecko=ok(keyless) defillama=ok fng=ok polymarket=ok(crypto book thin) websearch=ok*
-</content>
-</invoke>
