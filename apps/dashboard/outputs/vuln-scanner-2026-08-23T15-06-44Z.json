@@ -1,0 +1,372 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — Tencent/AI-Infra-Guard"
+      },
+      "children": [
+        "text_summary",
+        "separator_0",
+        "heading_audit",
+        "stack_audit_summary",
+        "separator_1",
+        "stack_defensive",
+        "separator_2",
+        "stack_red_team",
+        "separator_3",
+        "alert_vuln",
+        "stack_vuln_details",
+        "separator_4",
+        "stack_not_filed",
+        "separator_5",
+        "stack_followup",
+        "separator_6",
+        "table_scanners"
+      ]
+    },
+    "text_summary": {
+      "type": "Text",
+      "props": {
+        "text": "Clean audit for exploitable code flaws: 32 semgrep candidates evaluated, 0 confirmed in-scope.",
+        "variant": "lead"
+      }
+    },
+    "separator_0": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_audit": {
+      "type": "Heading",
+      "props": {
+        "text": "Audit Details",
+        "level": "h2"
+      }
+    },
+    "stack_audit_summary": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_defensive",
+        "text_excluded"
+      ]
+    },
+    "text_defensive": {
+      "type": "Text",
+      "props": {
+        "text": "Consistently defensive codebase: zip-slip guards, path/username validators, DNS-rebinding-aware HTTP",
+        "variant": "body"
+      }
+    },
+    "text_excluded": {
+      "type": "Text",
+      "props": {
+        "text": "Excluded findings: shell=True and eval hits are by-design (red-team tool + testcase)",
+        "variant": "body"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack_defensive": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_defensive"
+      ]
+    },
+    "heading_defensive": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency Vulnerability",
+        "level": "h2"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack_red_team": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_placeholder"
+      ]
+    },
+    "text_placeholder": {
+      "type": "Text",
+      "props": {
+        "text": "",
+        "variant": "body"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "alert_vuln": {
+      "type": "Alert",
+      "props": {
+        "title": "Real, Public Dependency DoS Identified",
+        "message": "golang.org/x/net v0.40.0: infinite-loop and quadratic-parse vulnerabilities in x/net/html",
+        "type": "error"
+      }
+    },
+    "stack_vuln_details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_cves",
+        "grid_cves",
+        "heading_reachability",
+        "text_reachability",
+        "heading_why_not_filed"
+      ]
+    },
+    "heading_cves": {
+      "type": "Heading",
+      "props": {
+        "text": "Advisory Identifiers",
+        "level": "h3"
+      }
+    },
+    "grid_cves": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "sm"
+      },
+      "children": [
+        "badge_go4440",
+        "badge_go4441",
+        "badge_ghsa"
+      ]
+    },
+    "badge_go4440": {
+      "type": "Badge",
+      "props": {
+        "text": "GO-2026-4440",
+        "variant": "destructive"
+      }
+    },
+    "badge_go4441": {
+      "type": "Badge",
+      "props": {
+        "text": "GO-2026-4441",
+        "variant": "destructive"
+      }
+    },
+    "badge_ghsa": {
+      "type": "Badge",
+      "props": {
+        "text": "GHSA-5cv4-jp36-h3mw",
+        "variant": "destructive"
+      }
+    },
+    "heading_reachability": {
+      "type": "Heading",
+      "props": {
+        "text": "Reachability Path",
+        "level": "h3"
+      }
+    },
+    "text_reachability": {
+      "type": "Text",
+      "props": {
+        "text": "Reachable from untrusted scan-target HTML: favicon.go → goquery → x/net/html",
+        "variant": "body"
+      }
+    },
+    "heading_why_not_filed": {
+      "type": "Heading",
+      "props": {
+        "text": "Why Not Filed as PR",
+        "level": "h3"
+      }
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack_not_filed": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_reason_intro",
+        "text_reason1",
+        "text_reason2",
+        "text_reason3",
+        "text_reason4",
+        "text_reason5"
+      ]
+    },
+    "text_reason_intro": {
+      "type": "Text",
+      "props": {
+        "text": "Vulnerability held back due to constraints:",
+        "variant": "body"
+      }
+    },
+    "text_reason1": {
+      "type": "Text",
+      "props": {
+        "text": "• Every patched version forces Go-directive bump (1.23 → 1.24+)",
+        "variant": "caption"
+      }
+    },
+    "text_reason2": {
+      "type": "Text",
+      "props": {
+        "text": "• Requires 5-module cascade",
+        "variant": "caption"
+      }
+    },
+    "text_reason3": {
+      "type": "Text",
+      "props": {
+        "text": "• Current run lacks Go toolchain to produce/verify correct go.sum",
+        "variant": "caption"
+      }
+    },
+    "text_reason4": {
+      "type": "Text",
+      "props": {
+        "text": "• Do-no-harm principle > build-breaking PR",
+        "variant": "caption"
+      }
+    },
+    "text_reason5": {
+      "type": "Text",
+      "props": {
+        "text": "• Crafted-scan-target DoS pre-scoped out of scope by AIG's SECURITY.md",
+        "variant": "caption"
+      }
+    },
+    "separator_5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stack_followup": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_followup",
+        "text_followup_intro",
+        "text_command",
+        "text_action_note"
+      ]
+    },
+    "heading_followup": {
+      "type": "Heading",
+      "props": {
+        "text": "Operator Follow-up Required",
+        "level": "h2"
+      }
+    },
+    "text_followup_intro": {
+      "type": "Text",
+      "props": {
+        "text": "Manual remediation needed (requires Go toolchain):",
+        "variant": "body"
+      }
+    },
+    "text_command": {
+      "type": "Text",
+      "props": {
+        "text": "go get golang.org/x/net@latest golang.org/x/text@latest && go mod tidy && go build ./...",
+        "variant": "caption"
+      }
+    },
+    "text_action_note": {
+      "type": "Text",
+      "props": {
+        "text": "Then open the bump PR from a verified build.",
+        "variant": "body"
+      }
+    },
+    "separator_6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "table_scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_scanners",
+        "scanner_table"
+      ]
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h2"
+      }
+    },
+    "scanner_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "manual"
+          ],
+          [
+            "osv",
+            "via-api"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ]
+        ]
+      }
+    }
+  }
+}

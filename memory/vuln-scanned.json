@@ -1,5 +1,12 @@
 [
  {
+  "repo": "Tencent/AI-Infra-Guard",
+  "scanned_at": "2026-08-23T15:30:00Z",
+  "findings": 1,
+  "channel": "not-filed",
+  "notes": "AI red-teaming platform (Go core + Python mcp-scan/agent-scan/AIG-PromptSecurity, 5.6k stars, Apache-2.0, PVR disabled, SECURITY.md present w/ zhuque@tencent.com + strict single-operator trust model). semgrep=ok 32 candidates 0 confirmed in-scope: subprocess(shell=True) in mcp-scan execute_shell is a by-design red-team tool, eval is a testcase fixture, zip/tgz extraction have correct zip-slip guards, upload/chunk filename rejects ../slash/backslash + validateFileUpload, safeJoinPath+validateUsername on agent-config paths, agent.go WS upgrade lacks CheckOrigin (CSWSH but loopback single-operator = SECURITY.md OOS), md5 is non-crypto digest, GHA mutable-tag/run-shell-injection are CI-side. trufflehog=manual grep 0 hardcoded secrets. osv=via api.osv.dev batch over full go.sum (202 modules). REAL FINDING not filed: golang.org/x/net v0.40.0 (DIRECT) has x/net/html DoS advisories GO-2026-4441 (infinite loop, fix 0.45.0), GO-2026-4440 (quadratic, fix 0.45.0), GHSA-5cv4-jp36-h3mw/GO-2026-5028 + 5025/5027/5029/5030 (fix 0.55.0) REACHABLE via untrusted scan-target HTML: favicon.go:35 goquery.NewDocumentFromReader + title.go imports x/net/html, run on every HTTP fingerprint. Also x/text v0.25.0 GO-2026-5970 (fix 0.39.0). NOT filed as public PR because: (1) every patched x/net forces go directive 1.23.2->1.24+/1.25 + x/crypto/x/sys/x/term cascade (maintainer decision), (2) go toolchain not allowlisted this session -> cannot go mod tidy/build to produce or verify a correct go.sum (hand-fabricated go.sum risks breaking their build), (3) SECURITY.md pre-declares crafted-scan-target DoS out-of-scope. Documented in report for a toolchain-equipped manual follow-up; recommended `go get golang.org/x/net@latest golang.org/x/text@latest && go mod tidy`. All other OSV go.sum hits are // indirect/transitive. Prior-art: 0 existing x/net PRs/issues, no dependabot. First scan of repo."
+ },
+ {
   "repo": "makecindy/cindy",
   "scanned_at": "2026-07-28T08:55:09Z",
   "findings": 2,
