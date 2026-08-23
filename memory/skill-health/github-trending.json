@@ -1,8 +1,8 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-22T09:18:28Z",
+  "last_analyzed": "2026-08-23T09:49:45Z",
   "quality_score": 4,
-  "assessment": "Substantive, well-structured trending report with transparent methodology, clear categorization, and appropriate data quality caveats.",
+  "assessment": "Solid trending report with curated 7-pick slate, momentum tags, and clear narrative hooks; gracefully degraded when read-only mode blocked gh api.",
   "flags": [],
   "avg_score": 4,
   "history": [
@@ -16,6 +16,10 @@
     },
     {
       "date": "2026-08-22",
+      "score": 4
+    },
+    {
+      "date": "2026-08-23",
       "score": 4
     }
   ]

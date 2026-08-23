@@ -1,30 +1,34 @@
-ℹ️ GitHub Trending — 2026-08-22
+ℹ️ GitHub Trending — 2026-08-23
 
-**GitHub Trending — 2026-08-22**
+**GitHub Trending — 2026-08-23**
 
-**Top pick** — [microsoft/TypeScript](https://github.com/microsoft/TypeScript)
-The reference TypeScript compiler is now a Go program — the largest toolchain-performance shift the JS ecosystem has seen in years, visible right in the primary repo.
+**Top pick** — [openai/codex](https://github.com/openai/codex)
+The board belongs to the agent-skills land-grab today, but the loudest single event is Codex spiking ~1.5k stars in a day — a jump that size on OpenAI's Rust terminal agent reads as a fresh release landing.
 
-**AI/ML** — the agent-harness/skills wave still owns the board; two standouts below.
-• [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) — ★ 1.2k today (114k total) · Python · RETURNING
-One keyword in, a finished HD short out — script, TTS voice, subtitles, and stock footage auto-assembled.
+**AI/ML**
+• [openai/codex](https://github.com/openai/codex) — ★ 1.5k today (114k total) · Rust · ACCELERATING
+1.5k stars in a day on the Rust-native OpenAI terminal coding agent — a spike this size signals a notable release.
 
-• [obra/superpowers](https://github.com/obra/superpowers) — ★ 790 today (276k total) · Shell · ACCELERATING
-Bundles reusable agent skills with an opinionated dev methodology — a reference point for the skills-file wave.
-
-• [affaan-m/ECC](https://github.com/affaan-m/ECC) — ★ 357 today (242k total) · JavaScript · ACCELERATING
-Tunes the agent harness itself — skills, memory, security, research-first loops — across Claude Code, Codex, Cursor.
+• [modular/modular](https://github.com/modular/modular) — ★ 395 today (29k total) · Mojo · RETURNING
+Mojo + MAX in one monorepo — the GPU-portable Python-superset stack betting against the CUDA lock-in.
 
 **Devtools**
-• [microsoft/TypeScript](https://github.com/microsoft/TypeScript) — ★ 65 today (110k total) · Go · RETURNING
-Primary repo language is now Go: the native compiler port Microsoft says targets ~10x faster type-checking.
+• [mattpocock/skills](https://github.com/mattpocock/skills) — ★ 2.7k today (233k total) · Shell · ACCELERATING
+Matt Pocock's raw .agents skill set — the reference bundle everyone's cloning in this week's skills-file rush.
 
-• [cursor/plugins](https://github.com/cursor/plugins) — ★ 388 today (4.5k total) · TypeScript · RETURNING
-Cursor opens an official plugin spec — third-party editor extensions, versioned in one canonical repo.
+• [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) — ★ 959 today (14k total) · Rust · ACCELERATING
+Local-first, native replacement for Logitech Options+ — remap your mouse buttons with no cloud account.
 
 **Infra**
-• [PostHog/posthog](https://github.com/PostHog/posthog) — ★ 335 today (38k total) · Python · RETURNING
-Analytics stack repositioned around agent observability — capture the context an AI agent needs, steer from MCP.
+• [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) — ★ 278 today (39k total) · Go · ACCELERATING
+Exposes your Claude/OpenAI/Gemini subscription accounts as one OpenAI-compatible API endpoint.
+
+• [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — ★ 150 today (5.6k total) · Python · RETURNING
+Red-teams the skills/MCP/agent stack everyone's shipping this week — scans for prompt-injection and jailbreaks.
+
+**Data**
+• [mahlernim/google-timeline-visualizer](https://github.com/mahlernim/google-timeline-visualizer) — ★ 441 today (2.6k total) · Kotlin · RETURNING
+Feed it your Google Location History export, get an interactive travel map — quiet repo, sharp spike today.
 
 ---
-sources: trending=ok · gh_api=fail (read-only; verified via public GitHub API) · kept 6/16
+sources: trending=ok · gh_api=fail (read-only; enriched via public api.github.com) · kept 7/17

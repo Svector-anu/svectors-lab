@@ -49,4 +49,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-22,vuln-scanner,claude-opus-4-8,16570,25187,4266076,232215
 2026-08-23,hunter-22,claude-opus-4-8,2799,8850,882269,34044
 2026-08-23,digest,claude-opus-4-8,6740,17398,1101677,134761
-2026-08-23,picks-tracker,claude-opus-4-8,3033,14782,1386473,70170
+2026-08-23,github-trending,claude-opus-4-8,2886,20601,1013026,122367
