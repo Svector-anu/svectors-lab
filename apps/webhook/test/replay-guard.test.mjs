@@ -143,4 +143,14 @@ assert.equal(res.status, 200);
 assert.equal(dispatchCalls, 1, "an update with no update_id should still be processed (fail open on dedupe, not on delivery)");
 console.log("ok   - an update with no update_id is still processed normally (dedupe fails open)");
 
+// --- test 7: KV namespace not bound (misconfigured deploy) -> fail OPEN.
+// The guard must skip dedup and dispatch, never throw on env.REPLAY_GUARD.get.
+dispatchCalls = 0;
+const envNoKv = { ...env, REPLAY_GUARD: undefined };
+res = await worker.fetch(req(msgUpdate(4001)), envNoKv, ctx);
+await drain();
+assert.equal(res.status, 200, "an unbound KV namespace must not 500 a real update");
+assert.equal(dispatchCalls, 1, "with no KV binding the update should still dispatch (fail open, not crash)");
+console.log("ok   - an unbound REPLAY_GUARD fails open: update dispatches, no crash");
+
 console.log("\nALL PASS");

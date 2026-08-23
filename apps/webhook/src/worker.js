@@ -79,7 +79,11 @@ const handler = {
       typeof update?.update_id === "number"
         ? `update:${update.update_id}`
         : null;
-    if (dedupeKey && (await env.REPLAY_GUARD.get(dedupeKey)) !== null) {
+    // If the KV namespace is not bound (a misconfigured deploy), fail OPEN:
+    // skip dedup and dispatch normally, rather than throwing a 500 on a real
+    // update. The wrangler.toml placeholder id makes this unreachable on a
+    // successful deploy, but the code should not depend on that to stay up.
+    if (dedupeKey && env.REPLAY_GUARD && (await env.REPLAY_GUARD.get(dedupeKey)) !== null) {
       return new Response("duplicate", { status: 200 });
     }
 
@@ -89,7 +93,7 @@ const handler = {
     // stay un-cached so Telegram's own retry can still get through and succeed
     // — caching a failure would turn a transient error into a permanently
     // dropped update.
-    if (dedupeKey && response.status === 200) {
+    if (dedupeKey && env.REPLAY_GUARD && response.status === 200) {
       ctx.waitUntil(env.REPLAY_GUARD.put(dedupeKey, "1", { expirationTtl: 300 }));
     }
     return response;
