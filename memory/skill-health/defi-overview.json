@@ -1,10 +1,10 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-22T18:25:17Z",
-  "quality_score": 4,
-  "assessment": "Substantive, well-sourced regime call with quantified evidence and appropriate conviction framing; decision-grade output aligned to strategy. Minor truncation at end did not affect core signal delivery.",
+  "last_analyzed": "2026-08-23T15:00:40Z",
+  "quality_score": 5,
+  "assessment": "Excellent — conclusion-first take with conviction, multi-signal verification, explicit position calls, and trader-grade actionability aligned to strategy.",
   "flags": [],
-  "avg_score": 4.09,
+  "avg_score": 4.17,
   "history": [
     {
       "date": "2026-07-06",
@@ -49,6 +49,10 @@
     {
       "date": "2026-08-22",
       "score": 4
+    },
+    {
+      "date": "2026-08-23",
+      "score": 5
     }
   ]
 }
