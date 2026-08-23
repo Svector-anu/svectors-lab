@@ -72,6 +72,8 @@ jobs:
         run: bash scripts/tests/test_resolve_harness.sh
       - name: harness install/config tests
         run: bash scripts/tests/test_install_harness.sh
+      - name: run-harness sandbox-gate tests
+        run: bash scripts/tests/test_run_harness_sandbox_gate.sh
       # Both hermetic (stub curl / sourced in subshells, no network). They shipped
       # with the scripts they cover and docs/mcp-oauth.md + docs/langfuse.md cite
       # them as that coverage, but nothing ran them until now.
@@ -85,8 +87,12 @@ jobs:
         run: bash scripts/tests/test_otel_span.sh
       - name: state reducer tests
         run: python3 scripts/tests/test_state_reduce.py
+      - name: state-store ensure-race tests
+        run: bash scripts/tests/test_state_store.sh
       - name: health triage tests
         run: python3 scripts/tests/test_health_triage.py
+      - name: health-issue ensure-race tests
+        run: bash scripts/tests/test_health_issue.sh
       - name: memory-flush prep tests
         run: python3 scripts/tests/test_memory_prep.py
       - name: validate-config unit tests
@@ -107,3 +113,5 @@ jobs:
         run: bash scripts/tests/test_audit.sh
       - name: dry-run gate (synthetic secrets, no real leak, pass criteria)
         run: bash scripts/tests/test_dry_run.sh
+      - name: secretcurl argv-exposure tests
+        run: bash scripts/tests/test_secretcurl.sh
