@@ -47,3 +47,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-22,defi-overview,claude-opus-4-8,3035,29224,2088422,69965
 2026-08-22,narrative-tracker,claude-opus-4-8,4089,16683,854103,118045
 2026-08-22,vuln-scanner,claude-opus-4-8,16570,25187,4266076,232215
+2026-08-23,hunter-22,claude-opus-4-8,2799,8850,882269,34044
