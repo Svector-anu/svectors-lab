@@ -1,10 +1,10 @@
 {
   "skill": "picks-tracker",
-  "last_analyzed": "2026-07-28T09:29:40Z",
+  "last_analyzed": "2026-08-23T09:49:20Z",
   "quality_score": 4,
-  "assessment": "Solid scorecard with real PnL, clear W/L metrics, open-market status, and actionable follow-ups despite a thin sample.",
+  "assessment": "Complete, well-sourced scorecard with transparent methodology; honest about poor performance (0-for-1) and explicitly acknowledges sample-size limitations.",
   "flags": [],
-  "avg_score": 3.67,
+  "avg_score": 3.75,
   "history": [
     {
       "date": "2026-07-11",
@@ -16,6 +16,10 @@
     },
     {
       "date": "2026-07-28",
+      "score": 4
+    },
+    {
+      "date": "2026-08-23",
       "score": 4
     }
   ]
