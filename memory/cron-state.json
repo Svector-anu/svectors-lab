@@ -25,14 +25,14 @@
     "last_error": "7f1131\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "narrative-tracker": {
-    "last_status": "dispatched",
-    "last_failed": "2026-08-23T01:43:28Z",
-    "total_runs": 342,
+    "last_status": "failed",
+    "last_failed": "2026-08-23T02:49:37Z",
+    "total_runs": 343,
     "total_successes": 17,
-    "total_failures": 325,
-    "consecutive_failures": 1,
+    "total_failures": 326,
+    "consecutive_failures": 2,
     "success_rate": 0.05,
-    "last_error": "ve @handles driving it, 3) 2-3 tweet permalinks, 4) rough mention-volume descriptor (niche / growing / saturating / cooling), 5) the strongest one-line bear case against it.\\\" --arg fd \\\"2026-08-20\\\" ",
+    "last_error": "bf80a2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-08-22T18:57:16Z",
     "last_quality_score": 4,
     "last_dispatch": "2026-08-23T02:48:58Z"
