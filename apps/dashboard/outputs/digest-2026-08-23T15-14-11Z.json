@@ -1,0 +1,183 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Digest — 2026-08-23"
+      },
+      "children": [
+        "main-stack"
+      ]
+    },
+    "main-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "tldr-section",
+        "separator1",
+        "story1",
+        "separator2",
+        "story2",
+        "separator3",
+        "story3"
+      ]
+    },
+    "tldr-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "tldr-heading",
+        "tldr-text"
+      ]
+    },
+    "tldr-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "TL;DR",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "tldr-text": {
+      "type": "Text",
+      "props": {
+        "text": "A $8.5M DeFi governance takeover with no code bug, a 15%+ Nvidia AI-server price hike from the DRAM crunch, and a hard date on the CLARITY vote that still won't pass this year."
+      },
+      "children": []
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "story1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story1-heading",
+        "story1-text",
+        "story1-link"
+      ]
+    },
+    "story1-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Term Labs drained of $8.5M in a pure governance takeover",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "story1-text": {
+      "type": "Text",
+      "props": {
+        "text": "An attacker seeded 2 ETH through Tornado Cash, bootstrapped a supermajority — 100% of four USDC strategy vaults and ~91% of the ETH Meta Vault — then voted the funds out: ~2,843 ETH and ~1.6M DAI to a single wallet. Confirmed by CertiK and PeckShield.\n\nWhy it matters: this wasn't an exploit, it was a legal vote. Any vault with low-quorum, token-weighted on-chain governance is exposed the same way — check where your deposits sit."
+      },
+      "children": []
+    },
+    "story1-link": {
+      "type": "Link",
+      "props": {
+        "label": "Read article",
+        "href": "https://cryptobriefing.com/term-labs-governance-exploit-vaults/"
+      },
+      "children": []
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "story2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story2-heading",
+        "story2-text",
+        "story2-link"
+      ]
+    },
+    "story2-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Nvidia AI-server prices set to rise 15%+ as memory costs surge",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "story2-text": {
+      "type": "Text",
+      "props": {
+        "text": "A 15–17% bump hits Vera Rubin and Grace Blackwell configs shipping in early 2027, driven by DRAM prices (Samsung, SK Hynix, Micron). The increase flows straight through to Microsoft, Google and Oracle.\n\nWhy it matters: it adds billions to gigawatt-scale AI buildouts and sharpens the incentive for hyperscalers to ship their own accelerators — a slow bleed away from all-Nvidia stacks."
+      },
+      "children": []
+    },
+    "story2-link": {
+      "type": "Link",
+      "props": {
+        "label": "Read article",
+        "href": "https://cryptoadventure.com/nvidia-ai-server-prices-set-to-rise-more-than-15-as-memory-costs-surge/"
+      },
+      "children": []
+    },
+    "separator3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "story3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story3-heading",
+        "story3-text",
+        "story3-link"
+      ]
+    },
+    "story3-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "CLARITY Act cloture vote locked for Sept 15 — but it won't pass in 2026",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "story3-text": {
+      "type": "Text",
+      "props": {
+        "text": "The Senate set a procedural cloture vote (needs 60) for Sept 15; Coinbase's Armstrong frames two paths — that vote, or CFTC/SEC rules landing Sept 16. Three fights stay open (enforcement, stablecoin rewards, dev protections); analysts now peg actual passage to 2027.\n\nWhy it matters: the regulatory catalyst behind August's rally is further out than the tape implies. Trade the September date as a volatility event, not a done deal."
+      },
+      "children": []
+    },
+    "story3-link": {
+      "type": "Link",
+      "props": {
+        "label": "Read article",
+        "href": "https://bitcoinfoundation.org/news/regulation/congress-crypto-bill-delay-clarity-act-vote-pushed-to-september-as-2026-passage-hopes-fade/"
+      },
+      "children": []
+    }
+  }
+}
