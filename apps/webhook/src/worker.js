@@ -30,6 +30,7 @@
  *   GITHUB_REPO               "owner/repo" of your Aeon fork
  *   GITHUB_TOKEN              GitHub PAT — fine-grained with Contents: read/write
  *                             and Actions: read/write on your fork (or classic `repo`)
+ *   REPLAY_GUARD              Workers KV namespace binding (see wrangler.toml)
  */
 import { instrument } from "@microlabs/otel-cf-workers";
 
@@ -62,27 +63,23 @@ const handler = {
     // network blip on either side. Without a check here, every redelivery
     // re-dispatches: a slash command runs twice, a button tap fires its action
     // twice. `update_id` is present on every Update regardless of sub-type
-    // (message, callback_query, ...), so one cache keyed on it covers every
+    // (message, callback_query, ...), so one KV key covers every
     // path through this handler — despite the comment already in `dispatch()`
     // below claiming this, nothing actually checked it before this change.
     //
-    // Cache API, not KV/D1/DO: each operator deploys an isolated Worker with no
-    // provisioned storage (see wrangler.toml) and Cache API needs no binding —
-    // consistent with this file's own "no shared infrastructure" design.
-    // Verified live against a real *.workers.dev deployment (the default
-    // target in this project's own README quickstart, where historically some
-    // Cache API behavior was doc'd as unsupported): a cache.put() from one
-    // request round-tripped as a cache.match() HIT on a later request. It is
-    // per-colo, not a global or distributed store, so this closes the
-    // realistic single-region retry window rather than guaranteeing
-    // exactly-once delivery across every edge simultaneously — a documented
-    // tradeoff, not an oversold one.
-    const cache = caches.default;
+    // Workers KV is used because it works on the documented workers.dev target;
+    // Cache API writes are not reliable there. KV is eventually consistent and
+    // has no compare-and-swap, so two truly concurrent redeliveries can both
+    // miss before either put completes and dispatch twice. That bounded
+    // check-then-act race is accepted here; this is deduplication, not an
+    // exactly-once delivery guarantee.
+    // The five-minute TTL preserves the existing guard's bounded window: it
+    // covers prompt transient retries without retaining update IDs indefinitely.
     const dedupeKey =
       typeof update?.update_id === "number"
-        ? new Request(`https://aeon-webhook-dedupe.invalid/update/${update.update_id}`)
+        ? `update:${update.update_id}`
         : null;
-    if (dedupeKey && (await cache.match(dedupeKey))) {
+    if (dedupeKey && (await env.REPLAY_GUARD.get(dedupeKey)) !== null) {
       return new Response("duplicate", { status: 200 });
     }
 
@@ -93,12 +90,7 @@ const handler = {
     // — caching a failure would turn a transient error into a permanently
     // dropped update.
     if (dedupeKey && response.status === 200) {
-      ctx.waitUntil(
-        cache.put(
-          dedupeKey,
-          new Response("1", { headers: { "Cache-Control": "max-age=300" } }),
-        ),
-      );
+      ctx.waitUntil(env.REPLAY_GUARD.put(dedupeKey, "1", { expirationTtl: 300 }));
     }
     return response;
   },

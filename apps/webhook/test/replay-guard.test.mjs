@@ -1,5 +1,5 @@
 // Tests for the replay guard in ../src/worker.js — imports the REAL module
-// (not a hand-copied approximation) and drives it against a stubbed `caches`
+// (not a hand-copied approximation) and drives it against a stubbed KV binding
 // + stubbed global `fetch` (Request/Response/Headers are real, native Node
 // classes — same Fetch API surface the Workers runtime implements).
 // Run: npm test  (or: node test/replay-guard.test.mjs)
@@ -8,21 +8,26 @@ import { register } from "node:module";
 
 register("./loader-hook.mjs", import.meta.url);
 
-// --- stub caches.default: a real in-memory Map behind the same Cache
-// interface (match/put) the Worker calls. This is what needs *emulating* --
-// the actual Cache API semantics (per-colo persistence, does it work on
-// workers.dev) were already verified separately against a live deployment;
-// this test is purely about the worker.js control-flow logic on top of it.
+// --- stub the Workers KV binding with the same get/put interface the Worker
+// calls. Keep expiration metadata visible so the test checks the production TTL.
 const store = new Map();
-globalThis.caches = {
-  default: {
-    async match(req) {
-      return store.has(req.url) ? new Response("1") : undefined;
-    },
-    async put(req, res) {
-      store.set(req.url, true);
-    },
+const expirationTtls = new Map();
+const replayGuard = {
+  async get(key) {
+    return store.has(key) ? store.get(key) : null;
   },
+  async put(key, value, options) {
+    store.set(key, value);
+    expirationTtls.set(key, options?.expirationTtl);
+  },
+};
+const env = {
+  TELEGRAM_WEBHOOK_SECRET: "s3cr3t",
+  TELEGRAM_CHAT_ID: "111",
+  TELEGRAM_BOT_TOKEN: "fake-token",
+  GITHUB_REPO: "fake/fake",
+  GITHUB_TOKEN: "fake-gh-token",
+  REPLAY_GUARD: replayGuard,
 };
 
 // --- stub the outbound fetch() the Worker uses for both the GitHub dispatch
@@ -48,13 +53,6 @@ globalThis.fetch = async (url, opts) => {
 const mod = await import("../src/worker.js");
 const worker = mod.default;
 
-const env = {
-  TELEGRAM_WEBHOOK_SECRET: "s3cr3t",
-  TELEGRAM_CHAT_ID: "111",
-  TELEGRAM_BOT_TOKEN: "fake-token",
-  GITHUB_REPO: "fake/fake",
-  GITHUB_TOKEN: "fake-gh-token",
-};
 let waitUntilPromises = [];
 const ctx = { waitUntil: (p) => waitUntilPromises.push(p) };
 
@@ -81,6 +79,7 @@ let res = await worker.fetch(req(msgUpdate(1001)), env, ctx);
 await drain();
 assert.equal(res.status, 200, "first delivery should succeed");
 assert.equal(dispatchCalls, 1, "first delivery should dispatch exactly once");
+assert.equal(expirationTtls.get("update:1001"), 300, "successful updates should be kept for five minutes");
 console.log("ok   - first delivery of a new update_id dispatches and returns 200");
 
 // --- test 2: Telegram redelivers the SAME update_id -> must NOT re-dispatch
