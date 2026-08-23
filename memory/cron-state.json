@@ -12,7 +12,7 @@
     "last_success": "2026-08-22T08:17:03Z"
   },
   "defi-overview": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-08-22T18:25:19Z",
     "total_runs": 309,
     "total_successes": 13,
@@ -20,12 +20,12 @@
     "consecutive_failures": 2,
     "success_rate": 0.04,
     "last_quality_score": 4,
-    "last_dispatch": "2026-08-23T01:37:59Z",
+    "last_dispatch": "2026-08-23T02:48:58Z",
     "last_failed": "2026-08-23T01:43:29Z",
     "last_error": " -o tmpdata_cg_price.json -w 'http=%{http_code}\\\\n'\\necho \\\"size $(wc -c <tmpdata_cg_price.json)\\\"; head -c 400 tmpdata_cg_price.json\",\"description\":\"Fetch CoinGecko simple price\"}},{\"tool_name\":\"Bash"
   },
   "narrative-tracker": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-08-23T01:43:28Z",
     "total_runs": 342,
     "total_successes": 17,
@@ -35,7 +35,7 @@
     "last_error": "ve @handles driving it, 3) 2-3 tweet permalinks, 4) rough mention-volume descriptor (niche / growing / saturating / cooling), 5) the strongest one-line bear case against it.\\\" --arg fd \\\"2026-08-20\\\" ",
     "last_success": "2026-08-22T18:57:16Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-08-23T01:37:59Z"
+    "last_dispatch": "2026-08-23T02:48:58Z"
   },
   "token-movers": {
     "last_status": "success",
