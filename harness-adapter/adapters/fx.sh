@@ -80,7 +80,10 @@ export HOME="$FX_HOME"
 
 # translate aeon's mcpServers shape -> fx's {mcp:{name:{type,command|url,...}}}.
 # stdio servers: command (string) + args (array) -> one argv array.
-# remote servers: url (+ headers) -> {type:"http", url, headers}.
+# remote servers: preserve an explicit type:"sse"; Aeon's config has no separate
+# transport field for unspecified URL servers, so those default to fx's streamable
+# HTTP type. This keeps hand-authored SSE entries correct without guessing for the
+# common URL-only form.
 if [ -n "${RH_MCP_CONFIG:-}" ] && [ -f "${RH_MCP_CONFIG:-}" ]; then
   jq '{mcp: (.mcpServers // {} | to_entries | map({
         key: .key,
@@ -88,7 +91,8 @@ if [ -n "${RH_MCP_CONFIG:-}" ] && [ -f "${RH_MCP_CONFIG:-}" ]; then
             {type: "local", command: ([.value.command] + (.value.args // [])),
              env: (.value.env // {})}
           else
-            {type: "http", url: .value.url, headers: (.value.headers // {})}
+            {type: (if .value.type == "sse" then "sse" else "http" end),
+             url: .value.url, headers: (.value.headers // {})}
           end)
       }) | from_entries)}' "$RH_MCP_CONFIG" > "$FX_HOME/.fx/mcp.json" 2>/dev/null \
     || echo "warning: mcp config translation failed — continuing without MCP" >&2
@@ -146,6 +150,10 @@ if [ -n "$ERR" ]; then
       echo "fx exited $rc: error=$ERR $(printf '%s' "$RESULT" | tr '\n' ' ' | cut -c1-2000)" >&2 ;;
   esac
   exit "${rc:-1}"
+fi
+if [ "$EXIT_CODE" != "0" ]; then
+  echo "fx reported exit_code=$EXIT_CODE${RESULT:+ with partial output: $(printf '%s' "$RESULT" | tr '\n' ' ' | cut -c1-2000)}" >&2
+  exit 3
 fi
 if [ "$rc" -ne 0 ] && [ -z "$RESULT" ]; then
   echo "fx exited $rc with no output" >&2
