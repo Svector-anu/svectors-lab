@@ -1,24 +1,22 @@
-Done. Ran `hunter-22` end to end.
+Done. Clean run — no new bounties, so no notification per "notify only on signal."
 
-## hunter-22 — 2026-08-22
+## hunter-22 — bounty scan, 2026-08-23
 
-**ClawHunter `/api/v1/match`**: http=200, 25 matches returned (demo=false), queried against real capabilities (`code, security-research, research, writing, dependency-analysis`, `canDoRealWorld:false`, `minReward:20`).
+**Verdict: 0 new matches. Nothing to act on. No notification sent.**
 
-**New this run (not surfaced in the last 14 days): 2 — both dropped on honest triage:**
+ClawHunter `POST /api/v1/match` returned **http 200 with 24 matches** (free discovery tier, no auth/wallet; `capabilities=[code, security-research, research, writing, dependency-analysis]`, `canDoRealWorld=false`, `minReward=20`, `limit=25`).
 
-| Bounty | Reward | Venue | Verdict |
-|---|---|---|---|
-| IDEATHON \| Submit Innovative Ideas for the Hackathon | $200 | Superteam UA | **Drop** — startup-idea pitch contest (pitch-deck/`design` deliverable), judged subjectively against others, with an explicit *"not purely AI-generated"* clause. Not code/security/citable-research work. |
-| Biggest Fake Guru Scandals | $20 | pump.fun | **Drop** — `expiresAt` 2026-06-14 is already past; deadline unreachable, and a marginal content-research task anyway. |
+**Triage (honest, not generous):**
+- The bulk were content/social-growth tasks in disguise — shilling campaigns (Y2K, Kekius Maximus, The Syndicate, Clive Bagworking), creator/thread bounties, hype-video and infographic asks. `requires` is `write`/`engage`/`video`/`image` with no `code`/`onchain` → this agent has no content-generation or social-outreach tooling, dropped.
+- Code-ish survivors — **Bring Your Web2 Ideas Onchain**, **Solana Developer Challenge: Anchor Flash Loan**, **Develop Solana Ecosystem Dashboard**, **List your API to MPP32** — are build/dev-challenge shaped, not audits.
+- **Audit-shaped candidates (code/onchain + linked GitHub repo): 0.** None of the survivors carried a `github.com/owner/repo` link, so no vuln-scanner dispatch button was generated. (The one prior example of this shape remains the Veilo bounty from July.)
 
-**Audit-shaped candidates: 0.** No match this run carried a `github.com/owner/repo` link, so no vuln-scanner dispatch button was warranted. The remaining 23 were repeats (Superteam/shillz content, shilling, video, and onchain-execution tasks the agent can't credibly deliver).
+**Dedup:** all 24 IDs were already in `hunter-22-seen.json`, seen 2026-08-21/22 — inside the 14-day window. **0 genuinely new.**
 
-**Notification:** none sent — nothing real survived triage (notify-only-on-signal).
-
-**Dedup log:** upserted all 25 returned IDs at `seen_at 2026-08-22T10:00:00Z`, pruned entries older than 30 days → 52 entries.
+**Bookkeeping:** refreshed `seen_at` → 2026-08-23 for all 24 returned candidates, pruned entries older than 30 days (before 2026-07-24), 52 entries total. Committed.
 
 ## Summary
-- Called ClawHunter free discovery tier (`POST /api/v1/match`) — no key, no paid endpoints, no wallet touched.
-- Triaged 25 matches; 2 were new, both legitimately dropped (poor fit / expired). No audit-shaped repos.
-- **Modified:** `memory/topics/hunter-22-seen.json` (dedup refresh, 52 entries), `memory/logs/2026-08-22.md` (run log). Committed to main.
-- **Follow-up:** none. Notification channels still unconfigured (per MEMORY.md) — irrelevant today since no signal to send.
+- Called ClawHunter free `/match` (http 200, 24 matches); triaged, found 0 audit-shaped and 0 new-since-last-seen.
+- No notification (correct per notify-only-on-signal).
+- Files: `memory/topics/hunter-22-seen.json` (refreshed/pruned), `memory/logs/2026-08-23.md` (run log appended) — both committed. Temp helper script removed.
+- Follow-up: none. Next scheduled run 2026-08-24 10:00 UTC.
