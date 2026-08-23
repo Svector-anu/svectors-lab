@@ -43,7 +43,7 @@ BASE_TOOLS="$BASE_TOOLS,Bash(mkdir:*),Bash(ls:*),Bash(cat:*),Bash(chmod:*)"
 # command-chaining. With no grant here, that officially-recommended pattern
 # itself fails: a standalone `cd` call has no more permission than a
 # multi-line call that happens to start with one. A multi-line/compound Bash
-# call is also evaluated by its LEADING statement, so `cd <dir>\n<real work>`
+# call is denied unless every sub-command in it is allowlisted, so `cd <dir>\n<real work>`
 # denies the whole call, real work included, even when every command after
 # the cd is itself allowlisted — live-observed on defi-overview/
 # narrative-tracker (permission_denials on a cd-prefixed multi-line call).
