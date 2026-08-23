@@ -1,0 +1,208 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Digest — 2026-08-23"
+      },
+      "children": [
+        "tldr-section",
+        "sep-1",
+        "story-1",
+        "sep-2",
+        "story-2",
+        "sep-3",
+        "story-3",
+        "sep-4",
+        "glance-section"
+      ]
+    },
+    "tldr-section": {
+      "type": "Text",
+      "props": {
+        "text": "TL;DR: The privacy trade gets an institutional bid (Grayscale Zcash ETF), an L1 gives up on itself (BounceBit winds down after a $3M exploit), and Nvidia buys AI coding talent without an acquisition.",
+        "variant": "lead"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "story-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story-1-title",
+        "story-1-desc",
+        "story-1-why",
+        "story-1-link"
+      ]
+    },
+    "story-1-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Grayscale files 5th amendment for a spot Zcash ETF — would be the first US privacy-coin fund",
+        "level": "h3"
+      }
+    },
+    "story-1-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Grayscale moved to convert its $260M+ Zcash Trust into a spot ETF (ticker ZCH, NYSE Arca, 2.5% fee, Coinbase custody). If cleared it's the first US spot Zcash ETF, landing as ZEC prints an 8-year high on the week's privacy rotation."
+      }
+    },
+    "story-1-why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: the ZEC/privacy run now has a concrete institutional catalyst, not just momentum — ride while the filing advances, but the 2.5% fee and no approval yet argue for fading any parabolic spike into the SEC decision.",
+        "variant": "caption"
+      }
+    },
+    "story-1-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "SEC Filing - Grayscale Zcash ETF Amendment",
+        "href": "https://www.sec.gov/Archives/edgar/data/0001720265/000119312526361067/zec_s-3_amendment_5.htm",
+        "source": "SEC EDGAR"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "story-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story-2-title",
+        "story-2-desc",
+        "story-2-why",
+        "story-2-link"
+      ]
+    },
+    "story-2-title": {
+      "type": "Heading",
+      "props": {
+        "text": "BounceBit will permanently shut its L1 and migrate to BNB Chain after a $3M exploit",
+        "level": "h3"
+      }
+    },
+    "story-2-desc": {
+      "type": "Text",
+      "props": {
+        "text": "An Evmos authorization flaw let an attacker move ~286.5M BB (~$3M) with no private key compromised. Rather than patch a chain built on the now-discontinued Evmos stack, BounceBit is winding down its L1 and reissuing BB as a BEP-20 on BNB Chain. A pre-exploit snapshot (block 20,697,260) sets the new distribution; the attacker's 286.5M BB is excluded."
+      }
+    },
+    "story-2-why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: BB holders must follow the snapshot/migration, not the dying chain — and it's a live warning on app-chains built atop abandoned frameworks.",
+        "variant": "caption"
+      }
+    },
+    "story-2-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "BounceBit Sunset Blockchain, Migrate to BNB Chain After $3 Million Exploit",
+        "href": "https://www.theblock.co/news/ecosystems/2026-08-21-bouncebit-sunset-blockchain-migrate-bnb-chain-after-3-million-exploit-412485",
+        "source": "The Block"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "story-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "story-3-title",
+        "story-3-desc",
+        "story-3-why",
+        "story-3-link"
+      ]
+    },
+    "story-3-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Nvidia to pay Poolside $6B to license its AI model factory, plus a $1B investment",
+        "level": "h3"
+      }
+    },
+    "story-3-desc": {
+      "type": "Text",
+      "props": {
+        "text": "Nvidia struck a non-exclusive $6B license to Poolside's coding-model platform, invested $1B at a $12B pre-money valuation, and extended offers to 109 staff — explicitly not an acquisition. NVDA closed the week ~5% lower."
+      }
+    },
+    "story-3-why": {
+      "type": "Text",
+      "props": {
+        "text": "Why it matters: \"license-and-hire\" is becoming the template for absorbing AI startups around antitrust — expect copycats, and read the NVDA dip as deal-cost digestion rather than demand softening.",
+        "variant": "caption"
+      }
+    },
+    "story-3-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Nvidia to Pay AI Startup Poolside a $6 Billion License",
+        "href": "https://www.bloomberg.com/news/articles/2026-08-20/nvidia-to-pay-ai-startup-poolside-a-6-billion-license-newcomer-says",
+        "source": "Bloomberg"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "glance-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "glance-heading",
+        "glance-item-1",
+        "glance-item-2"
+      ]
+    },
+    "glance-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Also worth a glance",
+        "level": "h3"
+      }
+    },
+    "glance-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "BitMart weighs a restructuring over a full wind-down (White & Case retained; roadmap due Sep 9) — a withdrawal-risk flag if you hold there"
+      }
+    },
+    "glance-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "IRS warns of a mail-based phishing campaign using fake letters and QR codes to harvest US crypto holders' private keys"
+      }
+    }
+  }
+}
