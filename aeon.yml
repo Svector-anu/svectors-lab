@@ -207,7 +207,7 @@ chains:
 # vibe mistralai/*, pi deepseek/*, fx AI_GATEWAY_API_KEY-backed) — surfaced in the
 # dashboard picker per harness; see docs/harnesses.md. The value below only
 # applies to the claude/grok harnesses.
-model: deepseek/deepseek-v4-flash
+model: claude-sonnet-5
 
 # Agent harness — which coding-agent CLI runs your skills.
 #   claude (default)  — Claude Code (`claude -p`); uses the AI Gateway below.
@@ -243,7 +243,7 @@ model: deepseek/deepseek-v4-flash
 # GROK_CREDENTIALS session was fine but the account's Grok Build usage balance
 # was exhausted (402) with no reset after 40+ hours. Revert to grok only once
 # its usage resets/is funded, or if CLAUDE_CODE_OAUTH_TOKEN goes stale again.
-harness: pi
+harness: fx
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
