@@ -101,15 +101,15 @@
   },
   "skill-health": {
     "last_dispatch": "2026-08-24T08:23:42Z",
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-08-22T18:22:20Z",
-    "total_runs": 273,
+    "total_runs": 274,
     "total_successes": 5,
-    "total_failures": 268,
-    "consecutive_failures": 4,
+    "total_failures": 269,
+    "consecutive_failures": 5,
     "success_rate": 0.02,
-    "last_failed": "2026-08-24T02:13:05Z",
-    "last_error": "a5fd4c\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
+    "last_failed": "2026-08-24T08:24:25Z",
+    "last_error": "a51c30\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "soul-builder": {
     "last_status": "failed",
