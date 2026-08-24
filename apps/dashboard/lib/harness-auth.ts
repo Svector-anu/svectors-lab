@@ -82,7 +82,16 @@ const HARNESS_AUTH_SPECS = {
       cli: 'kimi',
       ttyArgs: ['login'],
       deviceArgs: ['login'], // `kimi login` is device-code by default
-      credPaths: ['.kimi-code/credentials/kimi-code.json', '.kimi-code/device_id'],
+      // Whole directory, not individual files: kimi's credential filename is
+      // itself scoped by a hash of (oauthHost, baseUrl) — kimi-code.json only
+      // for the default mainland-cn region, kimi-code-env-<hash>.json for any
+      // other region (e.g. global/kimi.ai) — so a fixed filename here misses
+      // non-default-region logins entirely. And the account's model/provider
+      // config lives in config.toml (populated by the interactive /login +
+      // trust flow, not the credential file), which the old two-entry list
+      // never captured at all — a kimi login restored from that capture would
+      // hit "No model configured" in CI even with a perfectly valid token.
+      credPaths: ['.kimi-code'],
       secret: 'KIMI_AUTH',
       label: 'Connect Kimi',
     },
