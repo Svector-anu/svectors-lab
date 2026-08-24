@@ -247,12 +247,25 @@ model: claude-sonnet-5
 # Reverted from fx 2026-08-24: fx landed on this value as an unintended
 # side effect of clicking through the harness picker to verify it now renders
 # fx as an option (a real dashboard bug — a model-only PATCH silently also
-# wrote a stale harness value; under investigation separately). This repo has
-# no AI_GATEWAY_API_KEY/VERCEL_OIDC_TOKEN configured, and fx has no
+# wrote a stale harness value; the race itself is fixed now, see #944). This
+# repo has no AI_GATEWAY_API_KEY/VERCEL_OIDC_TOKEN configured, and fx has no
 # OpenRouter fallback (see resolve-harness.sh's fx case), so every skill was
 # failing closed immediately on MissingCredentials. Don't set harness: fx
 # again until those secrets are actually provisioned.
-harness: claude
+#
+# Switched to codex 2026-08-24: both harness=claude gateway candidates
+# (claude, bankr) are dead — claude 429 weekly-limit (resets Aug 26 1pm
+# UTC), bankr 402 insufficient LLM Gateway credits — confirmed from a real
+# failed run's log, not inferred. 24% pass rate over the trailing 168h
+# (./scripts/skill-runs --hours 168) as a direct result. CODEX_AUTH is now
+# provisioned (native ChatGPT-subscription auth, bypasses the gateway
+# entirely — see resolve-harness.sh's codex case). Caveat worth remembering:
+# this is Aaron's own personal, revocable ChatGPT Plus login, shared, with
+# no confirmed duration/usage cap — if he reclaims it or the shared account
+# hits its own limit, this fails closed the same way. Revert to claude once
+# its weekly limit resets, or back to whichever provider is actually funded,
+# if codex access goes away.
+harness: codex
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
