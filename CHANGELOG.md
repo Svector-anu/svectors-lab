@@ -11,6 +11,98 @@ from or pin to; the template keeps serving the latest `main` to new forks.
 
 ### Added
 
+- **Codex plugin parity + a repo-root `llms.txt`.** The `/aeon` operator skill now
+  installs on Codex too (`plugin/.codex-plugin/plugin.json` +
+  `.agents/plugins/marketplace.json`: `codex plugin marketplace add aeonfun/aeon`
+  then `codex plugin add aeon@aeon`), and a new repo-root `llms.txt` gives any
+  coding agent a doc map of the core entry points, setup/config docs, catalog, and
+  harness docs. (#919)
+- **Generated harness capability manifest (`harness-adapter/harnesses.json`).** A
+  queryable, CI-validated file of capability facts for the six adapters (claude,
+  grok, codex, pi, vibe, kimi) - token-cost reporting, read-only enforcement, MCP
+  flavor, auth - sourced from an `rh-meta` block in each `adapters/<h>.sh`. The CLI
+  analog of a UHP `GET /v1/harnesses` discovery response. (#916)
+- **Chain steps can route on Haiku quality scores (`when:` on chain steps).** The
+  1-5 score Aeon already writes to `memory/skill-health/<skill>.json` becomes a
+  control-flow edge: a chain step runs only when a condition holds for the score of
+  the skill it consumes (e.g. `when: "score > 3"`). A `when:` whose key is missing
+  skips the step rather than failing it. Chassis INTEGRATION.md item 2. (#911)
+- **Dry-run gate for self-authored skills before auto-merge.** `create-skill` and
+  `self-improve` now run a candidate with synthetic `DRYRUN`-marked secrets and a
+  structural pass check (exit 0, output present, no write outside declared mode, no
+  secret used outside `requires:`) before its PR opens - the live model credential
+  is the only real secret allowed near the run. Chassis INTEGRATION.md item 4.
+  (#914)
+- **Structured audit log of privileged actions.** An append-only JSONL record (one
+  line per action that reaches outside the run: notify, secretcurl) uploaded as the
+  `audit-log-<run_id>` artifact. `secrets_used` is names only - values are scrubbed
+  in raw, base64, and url-encoded forms before writing, failing toward
+  over-redaction. Chassis INTEGRATION.md item 5. (#908)
+- **Reactive failure handlers learn which skill tripped them.** A handler fired by
+  `on: "*"` now receives the matched source skill as its `var` (unless it declares
+  its own), so `skill-repair` no longer re-derives the failed skill. Reactive is
+  documented as the blessed per-skill failure edge in `docs/CONFIGURATION.md`.
+  Chassis INTEGRATION.md item 3. (#910)
+- **`validate-config` checks reactive triggers.** Every reactive target and
+  non-wildcard `on:` source must resolve to a real skill, and every `when:` must
+  parse to a condition the runtime evaluator understands - a dangling reference or
+  mistyped condition now fails CI instead of being a silent no-op. (#907)
+- **`aeon-update` 3-way merges OWNED conflicts.** An operator-customized file that
+  upstream also changed (commonly a hand-narrowed `aeon.yml`) now attempts a real
+  `git merge-file --diff3`: disjoint hunks merge cleanly and keep the customization,
+  genuine overlaps still surface as CONFLICT. Adds an eyebrow-lock fail-safe. (#903)
+- **`vuln-scanner` A3.6 agentic logic audit.** A new source-to-sink reasoning pass
+  over a repo's real entrypoints (threat model, ranked entrypoint inventory,
+  deep-review of the top N by a size budget) that catches authorization,
+  business-logic, and trust-boundary bugs the syntactic (A3) and fuzz (A3.5) passes
+  miss. Candidates go through the same A4 triage. (#894)
+- **`vuln-scanner` deliverability gate before autonomous disclosure email.** A new
+  fail-closed DoH MX/A check (dns.google, then Cloudflare) confirms a resolved
+  maintainer domain can actually receive mail before Arm C spends its one daily send
+  slot; an unreachable domain flips the draft to `contact-unverified` and surfaces
+  to the operator without burning the budget. (#895)
+- **The `/aeon` operator skill is now installable as a Claude Code plugin.**
+  Packages the existing `.claude/skills/aeon` setup skill as a distributable
+  plugin under a self-contained `plugin/` subdirectory (`plugin/.claude-plugin/`
+  manifest + `plugin/skills/aeon/`), published through a repo-root
+  `.claude-plugin/marketplace.json`, so operators can install it from any folder
+  with `/plugin marketplace add aeonfun/aeon` then `/plugin install aeon@aeon`
+  (versioned, `/plugin update`-able) instead of copying files. Rooting the plugin
+  under `plugin/` keeps its `skills/` isolated to the one operator skill and never
+  drags the framework catalog into an installer's Claude Code; the copy is
+  byte-for-byte identical to the source except the five `mine-history.mjs` path
+  lines that resolve via `${CLAUDE_PLUGIN_ROOT}`. `docs/aeon-setup.md` gains
+  install Option B and the README notes the plugin path. (#884, #885)
+- **Five ecosystem partners listed in `docs/ECOSYSTEM.md`** - AgentLink, AI2Human,
+  Mneme, Skim, and TaskMarket, each one alphabetized row, mirrored to
+  aeon.fun/ecosystem automatically via hourly ISR. (#880)
+- **New skill: `taskmarket-delegate`** - delegates work to the TaskMarket
+  agent-worker market (`tasks.taskmarket.dev` / `api.taskmarket.dev`) instead of
+  burning inference on low-confidence work. `browse` ranks open tasks
+  winnable-first with no key; `create`/`submit` sit behind an explicit operator
+  authorization gate and degrade cleanly to read-only when `TASKMARKET_API_KEY` is
+  unset. Ships a zero-dependency node client and a 6-test suite (live read-only
+  browse, no spend). `crypto` pack, disabled by default; brings the catalog to
+  **75 skills** (74 -> 75; Crypto 14 -> 15). (#865)
+- **New skill: `hunter-22`** - calls ClawHunter's free bounty-discovery API,
+  matches candidates against the agent's real demonstrated capabilities (code,
+  security research, research, writing, dependency analysis), and triages honestly
+  - dropping content/social-growth work wearing a bounty costume, keeping
+  deliverable work. Discovery only: no wallet, never claims or submits. When a kept
+  candidate is audit-shaped (a `code`/`onchain` bounty linking a GitHub repo), the
+  notification carries a one-tap "Audit owner/repo" button that dispatches
+  `vuln-scanner` straight at that repo, closing discovery to audit in one motion.
+  `productivity` pack, disabled by default; catalog 73 -> 74. (#864)
+- **New skill: `you-web-search`** - an optional You.com-backed web search against
+  the documented `https://api.you.com/v1/search` contract, giving operators a
+  structured, current web source without changing default behavior. Parses
+  `snippets[]` and `page_age` from the response shape You.com documents today;
+  `YDC_API_KEY` required, with optional `YOUCOM_FRESHNESS` and `YOUCOM_LIVECRAWL`
+  tuning. `basics` pack, disabled by default. (#795)
+- **Finance District listed in `docs/ECOSYSTEM.md`** - its Agent Wallet is in the
+  core catalog (`skills/finance-district-mcp`, #791) and launched as a supported
+  wallet on aeon; one alphabetized row, mirrored to aeon.fun/ecosystem
+  automatically via hourly ISR. (#869)
 - **Five new skills, ported from the `aeon-dev` instance and generalized for any
   operator** (frontmatter converted to Agent Skills spec-form, OKF references
   removed, private product/instance references genericized): **`spend-watch`** (dev
@@ -138,6 +230,55 @@ from or pin to; the template keeps serving the latest `main` to new forks.
 
 ### Changed
 
+- **GitHub token model corrected to a single classic PAT.** `GH_GLOBAL` is now
+  documented as one classic PAT with `repo` + `workflow` scopes (was fine-grained
+  Contents/PRs/Issues); `GH_READ_PAT` / `GH_SECRETS_PAT` are reframed as legacy and
+  optional, both folding into `GH_GLOBAL`. `read:org` / `admin:org` are not needed,
+  and classic is preferred because the advisories / PVR API is unreliable with
+  fine-grained tokens. Updated in `docs/CONFIGURATION.md`, the README, and the aeon
+  setup skill's `references/secrets.md` (plus its plugin copy and the hosted
+  mirror). (#905)
+- **README agent-onboarding callout + harness section.** A top-of-README line
+  points any coding agent at `read https://www.aeon.fun/skills/aeon.md and follow
+  the instructions` (Claude Code, Codex, Hermes, OpenClaw), and a new "Six engines,
+  one socket" section illustrates the `run-harness` contract across the six CLIs;
+  plus an image-optimization pass trimming ~2.6M of oversized banner assets. (#922)
+- **Security and dependency hardening.** All GitHub Actions are SHA-pinned to
+  immutable commit refs, codex install scripts are blocked and the eyebrow download
+  is SHA256-pinned, and the `messages.yml` `ALL_SECRETS` dump was narrowed to a
+  named allowlist. (#904, #917, #918)
+- **Maintenance.** Model pins refreshed to the current generation (Opus 5 to
+  opus-4-8, fable-5 dropped from the Venice passthrough), the skill-run harness
+  timeout raised to 30m (job cap 50m), cron-state commit given a jittered backoff,
+  `skill_mode` grants `./scripts/skill-runs` in the base tier, `./notify` and
+  `./secretcurl` cleanup plus a usage-probe guard, bounded apt installs, a dashboard
+  feed-card layout fix, a main-CI unbreak, and README harness-section iterations.
+  (#891, #892, #893, #896, #897, #898, #899, #900, #901, #902, #915, #920, #923,
+  #924, #925)
+- **OpenRouter gateway traffic is now attributed to Aeon.** The `openrouter` case
+  of `scripts/llm-gateway.sh` sets `ANTHROPIC_CUSTOM_HEADERS` so every Claude Code
+  request routed through `openrouter.ai` carries `HTTP-Referer: https://aeon.fun`
+  and `X-Title: Aeon`, ranking the usage on OpenRouter's public app leaderboard
+  instead of counting as anonymous volume. Overridable per fork via the
+  `OPENROUTER_SITE_URL` / `OPENROUTER_APP_TITLE` repo vars; base URL, auth, and
+  model are untouched. (#881)
+- **Documented Langfuse v4 compatibility** in `docs/langfuse.md`: the OTLP
+  ingestion contract is identical across v3 and v4, existing `pk-lf-`/`sk-lf-` keys
+  keep working across the Nov 2026 Cloud cutover, and the shim already sends
+  `x-langfuse-ingestion-version=4` for real-time direct ingestion. No config or
+  behavior change. (#883)
+- **`vuln-scanner` now runs a repo's own `cargo-fuzz` harnesses** during scan arm A
+  (new step A3.5). The static tools (semgrep, trufflehog, osv-scanner) only ever
+  read files; if the scanned repo ships its own `fuzz/fuzz_targets`, the scanner
+  now seeds the corpus from its `tests/fixtures`, runs each target ~90s (capped at
+  8 targets), and triages a crash with the same rigor as any scanner hit before it
+  counts as a finding. A `command -v cargo-fuzz` + `fuzz/fuzz_targets` guard keeps
+  it a clean no-op on repos without a harness. The runtime half stages a nightly
+  Rust toolchain + `cargo-fuzz` in `stage-vuln-scanner.sh` (the sandbox denies
+  toolchain installs in-run) and widens the write-tier allowlist with
+  `Bash(cargo:*)` - a deliberate step up from read-only static scanning to
+  compiling and running the target's own code inside the sandboxed run. (#863,
+  #868)
 - **Dashboard catalog wiring for the five new skills** (#860): the Higgsfield hosted
   OAuth MCP is registered in `mcp-catalog.ts` (one-click Connect, secrets + OAuth
   refresh derived generically from the slug); `secrets-catalog.ts` adds
@@ -186,6 +327,52 @@ from or pin to; the template keeps serving the latest `main` to new forks.
 
 ### Fixed
 
+- **Reactive `success_rate` conditions now actually fire.** The scheduler's inline
+  evaluator only handled `consecutive_failures` and `last_status`; a trigger written
+  as `when: "success_rate < 0.5"` matched no branch and was silently dropped.
+  Single-condition evaluation moved to a tested `scripts/reactive_when.sh` covering
+  all three documented conditions, with a `total_runs > 0` guard so a never-run
+  skill does not false-fire. (#906)
+- **`bd-radar` / `fleet-control` read private forks on the single-key setup.** With
+  `GH_READ_PAT` optional and unset fleet-wide, `bd-radar` logged a false source-miss
+  every run and read zero forks/issues; it now falls back to the run's `GH_GLOBAL`
+  (which reads the same private data) and treats an unset `GH_READ_PAT` as the
+  normal one-key config instead of a 401 / rotation follow-up. (#909)
+- **Post-run quality scorer grades the full output, aligned to STRATEGY.** The judge
+  previously saw only the first 3000 bytes (grading the intro, never the payoff); it
+  now samples head 10KB + tail 4KB of large output, injects `STRATEGY.md` so
+  correctness and verifiability outrank looks-finished polish, and adds a
+  fabrication flag for invented IDs / URLs / figures. (#921)
+- **`vuln-tracker` / `vuln-scanner` correctness ports from `aeon-vuln`.** The tracker
+  now reads a flat-array `vuln-scanned.json` (not just the legacy `{scans:[...]}`
+  shape, which silently yielded zero rows) and matches `fix(deps)` / `fix(security)`
+  / bare `security:` PR titles on the `security/` branch (was `fix(security):`-only,
+  dropping most in-flight PRs); the scanner installs osv-scanner v2 and scans
+  gitignored lockfiles. (#890)
+- **`aeon-update` no longer silently deletes a currently-enabled skill retired
+  upstream.** The 3-way classifier CLEAN-DELETEd any `skills/<name>/` path removed
+  upstream and unmodified locally without checking whether `<name>` is still
+  `enabled: true` in the operator's `aeon.yml` - so a sync PR could drop an
+  actively-scheduled skill's directory with nothing in the review flagging it, the
+  break only surfacing later at `validate-config.js` or the skill's next run. That
+  case is now downgraded to a CONFLICT (`enabled-skill-removed-upstream`): the
+  directory stays and the PR body surfaces it in a loud dedicated section so the
+  operator can't merge past it unnoticed. (#874)
+- **`pi` + OpenRouter onboarding fixed.** `aeon auth --harness pi --key sk-or-...`
+  crashed at the launcher's `exec "$TSX"` because `tsx` was a `devDependency` and
+  the container bootstrap's `npm install --omit=dev` skipped it; `tsx` is now a
+  runtime `dependency`. Separately, the dashboard "Run now" gate reported "No
+  provider key set" whenever a flaky `/api/secrets` read (GitHub `503`) threw:
+  a just-saved secret is now optimistically registered, and a failed vault read
+  shows an accurate "couldn't read repo secrets" message instead of blaming a
+  missing key. (#882)
+- **`bin/add-skill` could not install from the standard `skills/<slug>/SKILL.md`
+  layout** - the one this repo's own catalog uses. Discovery globbed at
+  `-maxdepth 2` (never matching the depth-3 `SKILL.md`) so every repo reported "No
+  skills found", and install resolved `$REPO_DIR/$skill` without the `skills/`
+  subdir. Discovery now searches `-maxdepth 3` and install resolves `skills/<slug>`
+  first, falling back to the flatter legacy layout. Verified end-to-end installing
+  `tx-explain` from `aeonfun/aeon`. (#866)
 - **Stale "Proof of work" numbers corrected** on the README to match
   aeon.fun/security and `ECOSYSTEM.md`: ~2M stars secured, 69 repos, 68 ecosystem
   products (community packs stay 12). (#843)
@@ -434,6 +621,17 @@ from or pin to; the template keeps serving the latest `main` to new forks.
 
 ### Security
 
+- **Bumped `nanoid` to 3.3.18** (GHSA-2v37-7h3g-55p8) in the `remotion` skill's
+  bundled project lockfile - transitive, lockfile-only. (#879)
+- **`ALL_SECRETS` built from an explicit allowlist, not `toJSON(secrets)`.**
+  Serializing the entire secret store into a workflow env var is the canonical
+  credential-exfiltration primitive, and on 2026-07-28 GitHub began holding
+  public-repo runs that match it for per-run, web-session-only approval - silently
+  taking the public instances `aeon-agent` and `miroshark-aeon` dark from
+  2026-07-30 (the `Aeon · Scheduler` workflow kept running green on `schedule`
+  events, so they looked alive while doing nothing). `ALL_SECRETS` now serializes
+  only the named secrets the workflow already references. Private forks were
+  unaffected - the GitHub feature is public-repo-only. (#819)
 - **Skill-scan recalibrated to fire on operations, not syntax.** The HIGH tier now
   matches dangerous sinks (code execution, secret exfiltration, destruction) and
   prompt injection rather than ordinary shell syntax, adds a `curl | sh` RCE
@@ -454,6 +652,13 @@ from or pin to; the template keeps serving the latest `main` to new forks.
 
 ### Maintenance
 
+- Dead-code sweep from a `ponytail-audit` pass: verified cuts across the CLI,
+  dashboard, mcp-server tracing, and scripts, net -444 lines, no behavior change.
+  (#886)
+- CI: added PR-scoped concurrency to the lint/check workflows so superseded runs
+  cancel instead of piling up. (#887)
+- Dashboard Dependabot security fix: patched `nanoid` advisories (lockfile-only
+  transitive bump, no `package.json` change). (#871)
 - Webhook Dependabot batch (undici, `@opentelemetry/core`) plus two CI changes:
   dropped the daily cron from Setup Telegram Commands, and stated the egress-parser
   scope with a lockfile-coverage gate. (#826, #827, #839)

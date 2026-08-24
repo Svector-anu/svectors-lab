@@ -66,7 +66,7 @@ fi
 #   agy      — its print mode runs tools outside $PWD, so it reports success
 #              having written nothing to the workspace.
 case "$HARNESS" in
-  claude|grok|codex|pi|vibe|kimi) ;;
+  claude|grok|codex|pi|vibe|kimi|fx) ;;
   *) echo "::warning::unknown harness '$HARNESS' — falling back to claude" >&2
      HARNESS="claude" ;;
 esac
@@ -86,6 +86,15 @@ case "$HARNESS" in
   kimi)  if [ -n "${KIMI_AUTH:-}" ]; then AUTH_MODE="native-oauth"; elif [ -n "${MOONSHOT_API_KEY:-}" ]; then AUTH_MODE="native-key"; fi ;;
   vibe)  if [ -n "${MISTRAL_API_KEY:-}" ]; then AUTH_MODE="native-key"; fi ;;
   pi)    if [ -n "${ANTHROPIC_API_KEY:-}" ] || [ -n "${ANTHROPIC_OAUTH_TOKEN:-}" ] || [ -n "${OPENAI_API_KEY:-}" ]; then AUTH_MODE="native-key"; fi ;;
+  # fx has no OpenRouter path at all (confirmed: no mention anywhere in its
+  # docs/CONTRIBUTING.md — its only credential surfaces are Vercel AI Gateway
+  # and an interactive `fx login`, not viable headless). so unlike every other
+  # harness here, if neither var is set this stays "openrouter" as a LABEL but
+  # there's no real fallback behind it: fx will just fail cleanly at its own
+  # credential check (adapters/fx.sh already surfaces that as a clear
+  # MissingCredentials error, not a silent/confusing one) rather than actually
+  # running on a shared key like the other six do.
+  fx)    if [ -n "${AI_GATEWAY_API_KEY:-}" ] || [ -n "${VERCEL_OIDC_TOKEN:-}" ]; then AUTH_MODE="native-key"; fi ;;
 esac
 
 # The harness model (HM), in priority order:
@@ -118,8 +127,12 @@ else
 fi
 case "$REQ_MODEL" in claude-*|grok-*|"") REQ_MODEL="" ;; esac   # aeon-native / unset → not an OpenRouter id
 
+# NOTE: changing any per-harness DEFAULT_HM below also requires updating the
+# expected values in scripts/tests/test_resolve_harness.sh (a stale codex pin
+# there broke CI once; fixed in #896). If the same model-pin pass edits skill
+# bodies, run `eyebrow scan` and commit the refreshed eyebrowlock.json too.
 case "$HARNESS" in
-  codex) DEFAULT_HM="openai/gpt-5-mini" ;;
+  codex) DEFAULT_HM="openai/gpt-5.1-codex-mini" ;;
   vibe)  DEFAULT_HM="mistralai/mistral-medium-3-5" ;;   # vibe's default (VIBE_MODELS[0])
   pi)    DEFAULT_HM="deepseek/deepseek-v4-flash" ;;     # pi's default (PI_MODELS[0])
   kimi)  DEFAULT_HM="moonshotai/kimi-k2.5" ;;           # kimi's default (KIMI_MODELS[0])

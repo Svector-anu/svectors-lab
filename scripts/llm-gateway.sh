@@ -195,16 +195,23 @@ case "${GATEWAY:-direct}" in
     echo "::notice::Routing through Bankr Gateway (https://llm.bankr.bot)"
     ;;
 
-  openrouter)  # NATIVE — Anthropic "skin", carries Opus 5
+  openrouter)  # NATIVE — Anthropic "skin", carries Opus 4.8
     require_secret OPENROUTER_API_KEY
     export ANTHROPIC_BASE_URL="https://openrouter.ai/api"   # NOT /api/v1
     export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"       # Bearer; API_KEY must be blank
     unset ANTHROPIC_API_KEY CLAUDE_CODE_OAUTH_TOKEN
     # Map EVERY model slot Claude Code uses to OpenRouter slugs (opus/sonnet/haiku).
-    export ANTHROPIC_DEFAULT_OPUS_MODEL="${OPENROUTER_MODEL:-anthropic/claude-opus-5}"
+    export ANTHROPIC_DEFAULT_OPUS_MODEL="${OPENROUTER_MODEL:-anthropic/claude-opus-4.8}"
     export ANTHROPIC_DEFAULT_SONNET_MODEL="${OPENROUTER_MODEL_SONNET:-anthropic/claude-sonnet-5}"
     export ANTHROPIC_DEFAULT_HAIKU_MODEL="${OPENROUTER_MODEL_HAIKU:-anthropic/claude-haiku-4.5}"
     MODEL="$ANTHROPIC_DEFAULT_OPUS_MODEL"
+    # App attribution: HTTP-Referer + X-Title make aeon's OpenRouter traffic show
+    # up on openrouter.ai's public app leaderboard. Claude Code forwards
+    # ANTHROPIC_CUSTOM_HEADERS (one "Name: Value" per line) to the upstream even on
+    # a third-party gateway base URL. Override per fork with the repo vars
+    # OPENROUTER_SITE_URL / OPENROUTER_APP_TITLE.
+    export ANTHROPIC_CUSTOM_HEADERS="HTTP-Referer: ${OPENROUTER_SITE_URL:-https://aeon.fun}
+X-Title: ${OPENROUTER_APP_TITLE:-Aeon}"
     echo "::notice::Routing through OpenRouter (Anthropic-native) as ${MODEL}"
     ;;
 
@@ -213,7 +220,7 @@ case "${GATEWAY:-direct}" in
     export ANTHROPIC_BASE_URL="https://api.usepod.ai/proxy/${USEPOD_TOKEN}"
     export ANTHROPIC_AUTH_TOKEN="unused"    # UsePod auths via the path token
     unset ANTHROPIC_API_KEY CLAUDE_CODE_OAUTH_TOKEN
-    # UsePod mirrors the upstream Anthropic surface, so aeon's claude-opus-5 id
+    # UsePod mirrors the upstream Anthropic surface, so aeon's claude-opus-4-8 id
     # is passed through by default. If UsePod needs marketplace-specific ids, set
     # USEPOD_MODEL (+ _SONNET / _HAIKU) to override.
     if [ -n "${USEPOD_MODEL:-}" ]; then MODEL="$USEPOD_MODEL"; fi
@@ -251,14 +258,14 @@ case "${GATEWAY:-direct}" in
     # uses dot-form ids: drop any trailing -YYYYMMDD date, then convert each
     # <digit>-<digit> to <digit>.<digit>. SURPLUS_MODEL overrides; opus-4.8 is the
     # fallback when $MODEL is unset.
-    surplus_model="${SURPLUS_MODEL:-$(printf '%s' "${MODEL:-claude-opus-5}" | sed -E 's/-[0-9]{8}$//; s/([0-9])-([0-9])/\1.\2/g')}"
+    surplus_model="${SURPLUS_MODEL:-$(printf '%s' "${MODEL:-claude-opus-4-8}" | sed -E 's/-[0-9]{8}$//; s/([0-9])-([0-9])/\1.\2/g')}"
     start_ccr_sidecar surplus \
       "https://www.surplusintelligence.ai/api/inference/v1/chat/completions" \
       "$SURPLUS_API_KEY" "$surplus_model"
     echo "::notice::Routing through Surplus via claude-code-router (${surplus_model})"
     ;;
 
-  venice)  # SIDECAR — OpenAI-compatible (dash-form ids); carries Opus 5, no haiku
+  venice)  # SIDECAR — OpenAI-compatible (dash-form ids); carries Opus 4.8, no haiku
     require_secret VENICE_API_KEY
     # Set VENICE_CLEANCACHE=1 to add the cleancache transformer (1h TTL, avoids
     # the shared 4-block prompt-cache limit) if you hit cache errors.
@@ -275,8 +282,7 @@ case "${GATEWAY:-direct}" in
     if [ -z "$venice_model" ]; then
       m="$(printf '%s' "${MODEL:-}" | sed -E 's/-[0-9]{8}$//')"
       case "$m" in
-        claude-opus-5|claude-sonnet-5|claude-fable-5|claude-opus-4-8|claude-opus-4-7|\
-        claude-opus-4-6|claude-opus-4-5|claude-sonnet-4-6|claude-sonnet-4-5) venice_model="$m" ;;
+        claude-opus-4-8|claude-sonnet-5) venice_model="$m" ;;
         *) venice_model="claude-sonnet-5" ;;
       esac
     fi

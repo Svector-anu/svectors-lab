@@ -35,7 +35,7 @@ skills:
   market-pulse: { enabled: true, schedule: "0 12 * * *", model: "claude-sonnet-5" }
   heartbeat: { enabled: true, schedule: "0 12 * * *" }
 
-model: claude-opus-5
+model: claude-opus-4-8
 
 gateway:
   provider: direct
@@ -65,7 +65,7 @@ describe("parseConfig", () => {
     assert.equal(config.skills["morning-brief"].schedule, "0 7 * * *");
     assert.equal(config.skills["market-pulse"].enabled, true);
     assert.equal(config.skills["market-pulse"].model, "claude-sonnet-5");
-    assert.equal(config.model, "claude-opus-5");
+    assert.equal(config.model, "claude-opus-4-8");
     assert.equal(config.gateway.provider, "direct");
     assert.equal(config.jsonrenderEnabled, true);
   });
@@ -158,15 +158,35 @@ describe("updateSkillInConfig", () => {
     assert.equal(config.skills["heartbeat"].schedule, "0 3 * * *");
     assert.equal(config.skills["heartbeat"].var, "hello");
   });
+
+  it("does not fold a long one-liner value across lines", () => {
+    // A save must not wrap long scalars (yaml lib default lineWidth: 80). A chain
+    // step written as a long one-liner has to survive on a single physical line,
+    // or the scheduler's single-line bash parser reads only the first line and
+    // runs the step with an empty brief.
+    const longVar =
+      "step1: research the topic thoroughly across many sources and " +
+      "summarize; step2: draft a report; step3: review and refine the final " +
+      "output before publishing it to the configured channel";
+    const yaml = `skills:\n  chain-step: { enabled: true, schedule: "0 12 * * *", var: "${longVar}" }\n`;
+    const updated = updateSkillInConfig(yaml, "chain-step", { enabled: false });
+    // The whole value stays on one physical line (no fold).
+    assert.ok(
+      updated.split("\n").some((line) => line.includes(longVar)),
+      "long var value was folded across lines",
+    );
+    // And it still round-trips intact.
+    assert.equal(parseConfig(updated).skills["chain-step"].var, longVar);
+  });
 });
 
 // ── updateModelInConfig ──────────────────────────────────────────────
 
 describe("updateModelInConfig", () => {
   it("updates the top-level model", () => {
-    const updated = updateModelInConfig(MINIMAL_YAML, "claude-opus-5");
+    const updated = updateModelInConfig(MINIMAL_YAML, "claude-opus-4-8");
     const config = parseConfig(updated);
-    assert.equal(config.model, "claude-opus-5");
+    assert.equal(config.model, "claude-opus-4-8");
   });
 
   it("replaces an existing model", () => {
@@ -353,9 +373,9 @@ describe("round-trip config mutations", () => {
   });
 
   it("update model and gateway independently", () => {
-    let yaml = updateModelInConfig(MINIMAL_YAML, "claude-opus-5");
+    let yaml = updateModelInConfig(MINIMAL_YAML, "claude-opus-4-8");
     const config1 = parseConfig(yaml);
-    assert.equal(config1.model, "claude-opus-5");
+    assert.equal(config1.model, "claude-opus-4-8");
 
     // Model change should not affect skills
     assert.equal(config1.skills["heartbeat"].enabled, true);

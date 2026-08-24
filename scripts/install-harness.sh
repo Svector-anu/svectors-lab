@@ -70,7 +70,12 @@ case "$H" in
     # PINNED, like aeon pins claude-code. Unpinned, this step silently tracked
     # latest: two cells that passed on 2026-07-21 failed hours later with an
     # OpenRouter 400 and nothing in the repo had changed.
-    npm install -g @openai/codex@0.144.6
+    # --ignore-scripts (same hardening as pi/kimi): codex ships its binary via
+    # optional platform packages (@openai/codex-<os>-<arch>), NOT a postinstall
+    # fetch, so blocking lifecycle scripts is safe and denies a compromised
+    # release an auto-run install hook in the run's secret env. If a future pin
+    # needs a postinstall binary fetch, drop this flag (keep the pin).
+    npm install -g --ignore-scripts @openai/codex@0.144.6
     mkdir -p "$HOME/.codex"
     case "$AUTH_MODE" in
       native-oauth)
@@ -147,7 +152,7 @@ api_key = "$MOONSHOT_API_KEY"
 
 [models.kimi-native]
 provider = "moonshot"
-model = "kimi-k2-0711-preview"
+model = "kimi-k2.5"
 max_context_size = 131072
 TOML
         chmod 600 "$HOME/.kimi-code/config.toml"
@@ -203,6 +208,26 @@ provider = "openrouter"
 alias = "or-cheap"
 TOML
       echo "vibe: OpenRouter"
+    fi
+    ;;
+  fx)
+    # curl-installed native binary (Zig, ~10MB), no package manager. fx ships no
+    # pinned-version install path as of 0.0.5 — it's brand-new/experimental per
+    # its own README, so this tracks whatever fx.sh/setup.sh currently serves.
+    # Revisit if/when fx publishes pinned release artifacts.
+    curl -fsSL https://fx.sh/setup.sh | bash
+    [ -n "${GITHUB_PATH:-}" ] && echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+    # fx has NO OpenRouter path (confirmed: no mention anywhere in its docs —
+    # see resolve-harness.sh's fx case for the same note). Every other harness
+    # here falls back to the shared OPENROUTER_API_KEY when its own native
+    # credential is missing; fx has nothing to fall back to. So this fails
+    # closed here rather than staging a CLI that's guaranteed to fail later
+    # inside the actual agent run with a less obvious error.
+    if [ -n "${AI_GATEWAY_API_KEY:-}" ] || [ -n "${VERCEL_OIDC_TOKEN:-}" ]; then
+      echo "fx: Vercel AI Gateway / OIDC key staged via env (fx reads it directly, no config file needed)"
+    else
+      echo "::error::fx needs AI_GATEWAY_API_KEY or VERCEL_OIDC_TOKEN — it has no OpenRouter fallback, unlike every other harness here" >&2
+      exit 1
     fi
     ;;
   *)

@@ -36,17 +36,34 @@ BASE_TOOLS="Read,Glob,Grep,WebFetch,WebSearch"
 BASE_TOOLS="$BASE_TOOLS,Bash(curl:*),Bash(jq:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(./notify:*),Bash(./notify-jsonrender:*),Bash(./secretcurl:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(mkdir:*),Bash(ls:*),Bash(cat:*),Bash(chmod:*)"
-# `cd` — a multi-step Bash call is commonly written as `cd <repo-root>\n<real
-# command>`; the permission matcher evaluates the leading statement, so a
-# bare `cd` with no grant here denies the WHOLE compound command, including
-# the already-allowlisted curl/secretcurl/python3 call after it. Live-observed
-# on defi-overview/narrative-tracker (permission_denials on a cd-prefixed
-# multi-line Bash call), intermittent because it only trips when a run
-# happens to prepend cd. cd only changes the shell's own cwd — no file/
-# network effect of its own, same risk class as ls/cat already granted above.
+# `cd` — several skills' own docs (skills/feature/SKILL.md, skills/changelog/
+# SKILL.md) explicitly instruct agents to run `cd <dir>` as its OWN standalone
+# Bash call, then each subsequent command as a separate call — the documented
+# workaround for the sandbox's unconditional denial of `&&`/`||`/`;`/`|`
+# command-chaining. With no grant here, that officially-recommended pattern
+# itself fails: a standalone `cd` call has no more permission than a
+# multi-line call that happens to start with one. A multi-line/compound Bash
+# call is denied unless every sub-command in it is allowlisted, so `cd <dir>\n<real work>`
+# denies the whole call, real work included, even when every command after
+# the cd is itself allowlisted — live-observed on defi-overview/
+# narrative-tracker (permission_denials on a cd-prefixed multi-line call).
+# cd only changes the invoking shell's own cwd — no file/network effect of
+# its own, the same risk class as ls/cat/mkdir already granted above.
 BASE_TOOLS="$BASE_TOOLS,Bash(cd:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(date:*),Bash(echo:*),Bash(node:*),Bash(npm:*),Bash(npx:*)"
 BASE_TOOLS="$BASE_TOOLS,Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(sort:*),Bash(grep:*)"
+# The run-audit wrapper. Five skills (skill-health, heartbeat, cost-report,
+# retrospective, self-review) document ./scripts/skill-runs as a primary data
+# source, but no tier granted it, so every documented call was denied. That was
+# the trigger for ISS-001 on aeon-compute: skill-health, unable to reach its own
+# data source, burned turns working around the denial and hit the 30m GH Actions
+# job timeout on two consecutive runs. Safe in the base tier: the script only
+# does `gh api` GET reads + jq + date (no repo/network mutation), and its inner
+# `gh` runs inside the script's own subshell, so granting the wrapper does NOT
+# re-open the broad `Bash(gh:*)` write vector that the read-only base
+# deliberately withholds: a read-only skill gets audited GitHub run data with no
+# write capability.
+BASE_TOOLS="$BASE_TOOLS,Bash(./scripts/skill-runs:*)"
 
 # Write tier additionally gets repo-mutation tools + python (an interpreter is itself
 # a write vector, so it stays out of the read-only base; skills' python helpers run here).

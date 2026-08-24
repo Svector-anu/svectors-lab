@@ -11,6 +11,9 @@ on:
       - 'scripts/**'
       - 'bin/**'
       - 'aeon.yml'
+      - 'harness-adapter/adapters/**'
+      - 'harness-adapter/bin/**'
+      - 'harness-adapter/harnesses.json'
       - '.github/workflows/ci-tests.yml'
   push:
     branches: [main]
@@ -18,16 +21,25 @@ on:
       - 'scripts/**'
       - 'bin/**'
       - 'aeon.yml'
+      - 'harness-adapter/adapters/**'
+      - 'harness-adapter/bin/**'
+      - 'harness-adapter/harnesses.json'
   workflow_dispatch:
 
 permissions:
   contents: read
 
+# Cancel a superseded in-progress run when a newer commit is pushed to the same PR
+# (reclaims runner-minutes on stacked PR pushes). Never cancels push/main/tag runs.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Install deps
         run: pip install pyyaml==6.0.2
       - name: notify_format unit tests
@@ -54,10 +66,14 @@ jobs:
         run: bash scripts/tests/test_run_grok.sh
       - name: harness-adapter grok tests
         run: bash scripts/tests/test_harness_adapter_grok.sh
+      - name: harness capability manifest tests
+        run: bash scripts/tests/test_generate_harnesses_json.sh
       - name: harness resolution tests
         run: bash scripts/tests/test_resolve_harness.sh
       - name: harness install/config tests
         run: bash scripts/tests/test_install_harness.sh
+      - name: run-harness sandbox-gate tests
+        run: bash scripts/tests/test_run_harness_sandbox_gate.sh
       # Both hermetic (stub curl / sourced in subshells, no network). They shipped
       # with the scripts they cover and docs/mcp-oauth.md + docs/langfuse.md cite
       # them as that coverage, but nothing ran them until now.
@@ -71,8 +87,14 @@ jobs:
         run: bash scripts/tests/test_otel_span.sh
       - name: state reducer tests
         run: python3 scripts/tests/test_state_reduce.py
+      - name: state-store ensure-race tests
+        run: bash scripts/tests/test_state_store.sh
       - name: health triage tests
         run: python3 scripts/tests/test_health_triage.py
+      - name: health-issue ensure-race tests
+        run: bash scripts/tests/test_health_issue.sh
+      - name: memory-flush prep tests
+        run: python3 scripts/tests/test_memory_prep.py
       - name: validate-config unit tests
         run: node --test scripts/validate-config.test.js
       - name: validate-config aeon.yml structural check
@@ -81,5 +103,15 @@ jobs:
         run: bash scripts/tests/test_cron_due.sh
       - name: circuit-breaker scheduler decision tests
         run: bash scripts/tests/test_breaker.sh
+      - name: reactive-trigger when-condition tests
+        run: bash scripts/tests/test_reactive_when.sh
+      - name: chain when-routing tests
+        run: bash scripts/tests/test_chain_when.sh
       - name: skill-scan calibration (fires on sinks, not benign syntax)
         run: bash scripts/tests/test_skill_scan_calibration.sh
+      - name: audit-log redaction tests
+        run: bash scripts/tests/test_audit.sh
+      - name: dry-run gate (synthetic secrets, no real leak, pass criteria)
+        run: bash scripts/tests/test_dry_run.sh
+      - name: secretcurl argv-exposure tests
+        run: bash scripts/tests/test_secretcurl.sh

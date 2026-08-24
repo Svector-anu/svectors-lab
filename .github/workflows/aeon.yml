@@ -24,7 +24,7 @@ on:
         options:
           - '(config default)'
           - claude-sonnet-5
-          - claude-opus-5
+          - claude-opus-4-8
           - claude-haiku-4-5-20251001
           - grok-4.5
           - openai/gpt-5-mini
@@ -104,15 +104,25 @@ env:
 concurrency:
   # Keyed by skill name alone, `var` was ignored entirely: dispatching the
   # same skill at two different explicit targets (e.g. vuln-scanner against
-  # two different owner/repo values) collided into one concurrency group.
-  # With cancel-in-progress:false, only ONE run can be queued behind the
-  # active one at a time, so a burst of dispatches to the same skill with
-  # different targets silently cancelled all but the first and the last —
-  # the middle ones never ran at all. Appending `var` when it's set (the
-  # documented way to parallelize a skill against distinct targets) fixes
-  # that without changing behavior for the common case (var empty/unset):
+  # two different owner/repo values, or digest against two different topics)
+  # collided into the same group. With cancel-in-progress:false, GitHub only
+  # keeps ONE run queued behind the currently-active one at a time -- so a
+  # burst of dispatches to the same skill with different targets silently
+  # cancelled every run except the first and whichever landed last. The ones
+  # in between never executed at all, with no error surfaced anywhere.
+  # Live-observed: 10 vuln-scanner dispatches, 8 silently cancelled, only 2
+  # ever ran. Appending inputs.var to the group key when it's set fixes that
+  # without changing behavior for the common case (var empty/unset):
   # same-skill scheduled/manual runs with no target still serialize exactly
-  # as before, which is the intended guard against a genuine duplicate run.
+  # as before, preserving the original guard against a genuine duplicate run.
+  #
+  # Known remaining gap, not fixed by this change: a skill invoked
+  # repeatedly with an EMPTY var that auto-selects a different target
+  # internally on each run (e.g. vuln-scanner's "auto-select a trending
+  # repo" mode) still collides, since the workflow trigger layer has no
+  # visibility into what the skill will pick once it's running -- that
+  # would need a client-side distinguishing value (e.g. a per-dispatch
+  # nonce), a separate, narrower change.
   group: aeon-${{ inputs.skill || github.event.action || github.run_id }}${{ inputs.var && format('-{0}', inputs.var) || '' }}
   cancel-in-progress: false
 
@@ -120,12 +130,12 @@ jobs:
   run:
     if: github.event_name != 'issues' || github.event.label.name == 'ai-build'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50
 
     steps:
       - name: Early checkout
         if: github.event_name == 'issues'
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           token: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
 
@@ -156,7 +166,7 @@ jobs:
 
       - name: Checkout repo
         if: steps.work.outputs.mode != ''
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           token: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
 
@@ -168,7 +178,7 @@ jobs:
 
       - name: Setup Node.js
         if: steps.work.outputs.mode != ''
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: '22'
 
@@ -179,7 +189,7 @@ jobs:
         # ~100% hit after the first run of a version, shared with messages.yml). The
         # restore-keys prefix degrades gracefully on a version bump. Keep the version
         # in the key in sync with the pin below.
-        uses: actions/cache@v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           path: ~/.npm
           key: claude-code-${{ runner.os }}-2.1.168
@@ -223,6 +233,8 @@ jobs:
           # should run on (native login/key > OpenRouter). Never echoed.
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
@@ -256,9 +268,18 @@ jobs:
       # the same thing on all six.
       - name: Install bubblewrap (read-only sandbox)
         if: steps.work.outputs.mode != ''
+        # Bound this step. apt can block on the runner's unattended-upgrades dpkg
+        # lock, and with no cap a stall here consumed the entire 50-min job wall and
+        # the run was cancelled before the skill ever executed (nur create-skill/
+        # digest/heartbeat + data kpi-daily all self-flagged run_failed 2026-08-19,
+        # each a ~50-min hang on this exact step). timeout-minutes fails the step
+        # fast; DPkg::Lock::Timeout waits a bounded time for the lock instead of
+        # hanging indefinitely.
+        timeout-minutes: 5
         run: |
           set -euo pipefail
-          sudo apt-get update -qq && sudo apt-get install -y -qq bubblewrap
+          APT_OPTS="-o DPkg::Lock::Timeout=120"
+          sudo apt-get $APT_OPTS update -qq && sudo apt-get $APT_OPTS install -y -qq bubblewrap
           # Ubuntu 24.04 (including GitHub's ubuntu-latest) restricts unprivileged
           # user namespaces via AppArmor, so bwrap dies with 'setting up uid map:
           # Permission denied' and run-harness fails CLOSED on every read-only
@@ -291,6 +312,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
@@ -439,6 +462,18 @@ jobs:
         if: steps.work.outputs.mode != '' && steps.skill.outputs.name == 'vuln-scanner'
         run: bash scripts/stage-vuln-scanner.sh "${{ steps.skill.outputs.name }}"
 
+      - name: Install Foundry (deploy-uni-hook)
+        # The official action installs a cached, pinned Foundry from GitHub
+        # releases with retries. The old path (curl https://foundry.paradigm.xyz |
+        # bash, inside stage-deploy-uni-hook.sh) got rate-limited on the shared
+        # runner IPs and swallowed the failure, so a deploy run went GREEN with no
+        # toolchain and silently did nothing. With forge already on PATH here, the
+        # stage script's `command -v forge` guard skips its curl fallback entirely.
+        if: steps.work.outputs.mode != '' && steps.skill.outputs.name == 'deploy-uni-hook'
+        uses: foundry-rs/foundry-toolchain@908c540300062bd5a7e473851cdb4282204cee09 # v1
+        with:
+          version: stable
+
       - name: Stage deploy-uni-hook toolchain
         # Installs Foundry + a pre-built Uniswap v4 project (v4 libs + templates) for
         # the deploy-uni-hook skill, appends ~/.foundry/bin to the PATH file so
@@ -459,7 +494,7 @@ jobs:
         # sufficient key; bump the -vN salt to force-bust. Only restores/saves for
         # the remotion skill (path is empty for every other skill = cheap no-op).
         if: steps.work.outputs.mode != '' && steps.skill.outputs.name == 'remotion'
-        uses: actions/cache@v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           path: skills/remotion/project/node_modules
           key: remotion-${{ runner.os }}-v1-${{ hashFiles('skills/remotion/project/package-lock.json') }}
@@ -483,7 +518,10 @@ jobs:
         # render_card.py's fallback picks it up. Best-effort: never fails the run; without
         # it the skill degrades to the SVG + a text notify.
         if: steps.work.outputs.mode != '' && steps.skill.outputs.name == 'weekly-aeoncard'
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq librsvg2-bin || true
+        # Best-effort, but `|| true` only catches a non-zero exit, not a hang on the
+        # dpkg lock, so bound the lock wait too and an apt stall can't eat the job wall.
+        timeout-minutes: 5
+        run: sudo apt-get -o DPkg::Lock::Timeout=120 update -qq && sudo apt-get -o DPkg::Lock::Timeout=120 install -y -qq librsvg2-bin || true
 
       # Single-source standing instructions. AGENTS.md is the full, self-contained
       # mirror of CLAUDE.md (operating manual + @STRATEGY.md inlined) that the
@@ -518,12 +556,15 @@ jobs:
           # workflow scanner HOLDS (action_required) any run that serializes the
           # entire secret store via toJSON(secrets). This list must cover EVERY
           # secret named in a skill's `requires:` frontmatter or a .mcp.json ${VAR}
-          # ref — the loops below jq-resolve from this blob, so a missing key is
-          # silently not injected. To expose a NEW secret to MCP/requires, add its
-          # name here (and set it in the dashboard).
+          # ref - the loops below jq-resolve from this blob, so a missing key is
+          # silently not injected. Connecting an MCP in the dashboard auto-splices
+          # the secret names its .mcp.json references into this blob (see
+          # apps/dashboard/lib/workflow-secrets.ts). To expose a NEW secret to a
+          # skill's `requires:`, add its name here by hand (and set it in the
+          # dashboard).
           # Consumed by the MCP/requires loops below, then unset before Claude runs.
           ALL_SECRETS: >-
-            {"ADMANAGE_API_KEY":${{ toJSON(secrets.ADMANAGE_API_KEY) }},"ALCHEMY_API_KEY":${{ toJSON(secrets.ALCHEMY_API_KEY) }},"ANTHROPIC_API_KEY":${{ toJSON(secrets.ANTHROPIC_API_KEY) }},"ANTHROPIC_OAUTH_TOKEN":${{ toJSON(secrets.ANTHROPIC_OAUTH_TOKEN) }},"BANKR_API_KEY":${{ toJSON(secrets.BANKR_API_KEY) }},"BANKR_LLM_KEY":${{ toJSON(secrets.BANKR_LLM_KEY) }},"BASESCAN_API_KEY":${{ toJSON(secrets.BASESCAN_API_KEY) }},"BASE_RPC_URL":${{ toJSON(secrets.BASE_RPC_URL) }},"BEAMR_GATEWAY_URL":${{ toJSON(secrets.BEAMR_GATEWAY_URL) }},"BEAMR_PAYER_KEY":${{ toJSON(secrets.BEAMR_PAYER_KEY) }},"CLAUDE_CODE_OAUTH_TOKEN":${{ toJSON(secrets.CLAUDE_CODE_OAUTH_TOKEN) }},"CODEX_AUTH":${{ toJSON(secrets.CODEX_AUTH) }},"COINGECKO_API_KEY":${{ toJSON(secrets.COINGECKO_API_KEY) }},"DISCORD_BOT_TOKEN":${{ toJSON(secrets.DISCORD_BOT_TOKEN) }},"DISCORD_CHANNEL_ID":${{ toJSON(secrets.DISCORD_CHANNEL_ID) }},"DISCORD_WEBHOOK_URL":${{ toJSON(secrets.DISCORD_WEBHOOK_URL) }},"ETHERSCAN_API_KEY":${{ toJSON(secrets.ETHERSCAN_API_KEY) }},"FLEET_ENDPOINT":${{ toJSON(secrets.FLEET_ENDPOINT) }},"FLEET_TOKEN":${{ toJSON(secrets.FLEET_TOKEN) }},"GH_GLOBAL":${{ toJSON(secrets.GH_GLOBAL) }},"GH_READ_PAT":${{ toJSON(secrets.GH_READ_PAT) }},"GH_SECRETS_PAT":${{ toJSON(secrets.GH_SECRETS_PAT) }},"GITHUB_TOKEN":${{ toJSON(secrets.GITHUB_TOKEN) }},"GROK_CREDENTIALS":${{ toJSON(secrets.GROK_CREDENTIALS) }},"HOOK_DEPLOYER_PRIVATE_KEY":${{ toJSON(secrets.HOOK_DEPLOYER_PRIVATE_KEY) }},"HOOK_MAINNET_OK":${{ toJSON(secrets.HOOK_MAINNET_OK) }},"KIMI_AUTH":${{ toJSON(secrets.KIMI_AUTH) }},"LANGFUSE_PUBLIC_KEY":${{ toJSON(secrets.LANGFUSE_PUBLIC_KEY) }},"LANGFUSE_SECRET_KEY":${{ toJSON(secrets.LANGFUSE_SECRET_KEY) }},"MISTRAL_API_KEY":${{ toJSON(secrets.MISTRAL_API_KEY) }},"MOONSHOT_API_KEY":${{ toJSON(secrets.MOONSHOT_API_KEY) }},"NOTIFY_EMAIL_TO":${{ toJSON(secrets.NOTIFY_EMAIL_TO) }},"OPENAI_API_KEY":${{ toJSON(secrets.OPENAI_API_KEY) }},"OPENROUTER_API_KEY":${{ toJSON(secrets.OPENROUTER_API_KEY) }},"PAGESPEED_API_KEY":${{ toJSON(secrets.PAGESPEED_API_KEY) }},"REPLICATE_API_TOKEN":${{ toJSON(secrets.REPLICATE_API_TOKEN) }},"RESEND_API_KEY":${{ toJSON(secrets.RESEND_API_KEY) }},"RESEND_FROM":${{ toJSON(secrets.RESEND_FROM) }},"RESEND_REPLY_TO":${{ toJSON(secrets.RESEND_REPLY_TO) }},"SLACK_BOT_TOKEN":${{ toJSON(secrets.SLACK_BOT_TOKEN) }},"SLACK_CHANNEL_ID":${{ toJSON(secrets.SLACK_CHANNEL_ID) }},"SLACK_WEBHOOK_URL":${{ toJSON(secrets.SLACK_WEBHOOK_URL) }},"SURPLUS_API_KEY":${{ toJSON(secrets.SURPLUS_API_KEY) }},"TELEGRAM_BOT_TOKEN":${{ toJSON(secrets.TELEGRAM_BOT_TOKEN) }},"TELEGRAM_CHAT_ID":${{ toJSON(secrets.TELEGRAM_CHAT_ID) }},"USEPOD_TOKEN":${{ toJSON(secrets.USEPOD_TOKEN) }},"VENICE_API_KEY":${{ toJSON(secrets.VENICE_API_KEY) }},"VERCEL_TOKEN":${{ toJSON(secrets.VERCEL_TOKEN) }},"XAI_API_KEY":${{ toJSON(secrets.XAI_API_KEY) }},"YDC_API_KEY":${{ toJSON(secrets.YDC_API_KEY) }}}
+            {"ADMANAGE_API_KEY":${{ toJSON(secrets.ADMANAGE_API_KEY) }},"AI_GATEWAY_API_KEY":${{ toJSON(secrets.AI_GATEWAY_API_KEY) }},"ALCHEMY_API_KEY":${{ toJSON(secrets.ALCHEMY_API_KEY) }},"ANTHROPIC_API_KEY":${{ toJSON(secrets.ANTHROPIC_API_KEY) }},"ANTHROPIC_OAUTH_TOKEN":${{ toJSON(secrets.ANTHROPIC_OAUTH_TOKEN) }},"BANKR_API_KEY":${{ toJSON(secrets.BANKR_API_KEY) }},"BANKR_LLM_KEY":${{ toJSON(secrets.BANKR_LLM_KEY) }},"BASESCAN_API_KEY":${{ toJSON(secrets.BASESCAN_API_KEY) }},"BASE_RPC_URL":${{ toJSON(secrets.BASE_RPC_URL) }},"BEAMR_GATEWAY_URL":${{ toJSON(secrets.BEAMR_GATEWAY_URL) }},"BEAMR_PAYER_KEY":${{ toJSON(secrets.BEAMR_PAYER_KEY) }},"CLAUDE_CODE_OAUTH_TOKEN":${{ toJSON(secrets.CLAUDE_CODE_OAUTH_TOKEN) }},"CODEX_AUTH":${{ toJSON(secrets.CODEX_AUTH) }},"COINGECKO_API_KEY":${{ toJSON(secrets.COINGECKO_API_KEY) }},"DISCORD_BOT_TOKEN":${{ toJSON(secrets.DISCORD_BOT_TOKEN) }},"DISCORD_CHANNEL_ID":${{ toJSON(secrets.DISCORD_CHANNEL_ID) }},"DISCORD_WEBHOOK_URL":${{ toJSON(secrets.DISCORD_WEBHOOK_URL) }},"ETHERSCAN_API_KEY":${{ toJSON(secrets.ETHERSCAN_API_KEY) }},"FLEET_ENDPOINT":${{ toJSON(secrets.FLEET_ENDPOINT) }},"FLEET_TOKEN":${{ toJSON(secrets.FLEET_TOKEN) }},"GH_GLOBAL":${{ toJSON(secrets.GH_GLOBAL) }},"GH_READ_PAT":${{ toJSON(secrets.GH_READ_PAT) }},"GH_SECRETS_PAT":${{ toJSON(secrets.GH_SECRETS_PAT) }},"GITHUB_TOKEN":${{ toJSON(secrets.GITHUB_TOKEN) }},"GROK_CREDENTIALS":${{ toJSON(secrets.GROK_CREDENTIALS) }},"HOOK_DEPLOYER_PRIVATE_KEY":${{ toJSON(secrets.HOOK_DEPLOYER_PRIVATE_KEY) }},"KIMI_AUTH":${{ toJSON(secrets.KIMI_AUTH) }},"LANGFUSE_PUBLIC_KEY":${{ toJSON(secrets.LANGFUSE_PUBLIC_KEY) }},"LANGFUSE_SECRET_KEY":${{ toJSON(secrets.LANGFUSE_SECRET_KEY) }},"MISTRAL_API_KEY":${{ toJSON(secrets.MISTRAL_API_KEY) }},"MOONSHOT_API_KEY":${{ toJSON(secrets.MOONSHOT_API_KEY) }},"NOTIFY_EMAIL_TO":${{ toJSON(secrets.NOTIFY_EMAIL_TO) }},"OPENAI_API_KEY":${{ toJSON(secrets.OPENAI_API_KEY) }},"OPENROUTER_API_KEY":${{ toJSON(secrets.OPENROUTER_API_KEY) }},"PAGESPEED_API_KEY":${{ toJSON(secrets.PAGESPEED_API_KEY) }},"REPLICATE_API_TOKEN":${{ toJSON(secrets.REPLICATE_API_TOKEN) }},"RESEND_API_KEY":${{ toJSON(secrets.RESEND_API_KEY) }},"RESEND_FROM":${{ toJSON(secrets.RESEND_FROM) }},"RESEND_REPLY_TO":${{ toJSON(secrets.RESEND_REPLY_TO) }},"SLACK_BOT_TOKEN":${{ toJSON(secrets.SLACK_BOT_TOKEN) }},"SLACK_CHANNEL_ID":${{ toJSON(secrets.SLACK_CHANNEL_ID) }},"SLACK_WEBHOOK_URL":${{ toJSON(secrets.SLACK_WEBHOOK_URL) }},"SURPLUS_API_KEY":${{ toJSON(secrets.SURPLUS_API_KEY) }},"TELEGRAM_BOT_TOKEN":${{ toJSON(secrets.TELEGRAM_BOT_TOKEN) }},"TELEGRAM_CHAT_ID":${{ toJSON(secrets.TELEGRAM_CHAT_ID) }},"USEPOD_TOKEN":${{ toJSON(secrets.USEPOD_TOKEN) }},"VENICE_API_KEY":${{ toJSON(secrets.VENICE_API_KEY) }},"VERCEL_OIDC_TOKEN":${{ toJSON(secrets.VERCEL_OIDC_TOKEN) }},"VERCEL_TOKEN":${{ toJSON(secrets.VERCEL_TOKEN) }},"XAI_API_KEY":${{ toJSON(secrets.XAI_API_KEY) }},"YDC_API_KEY":${{ toJSON(secrets.YDC_API_KEY) }}}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL }}
@@ -536,6 +577,8 @@ jobs:
           ANTHROPIC_OAUTH_TOKEN: ${{ secrets.ANTHROPIC_OAUTH_TOKEN }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           USEPOD_TOKEN: ${{ secrets.USEPOD_TOKEN }}
           VENICE_API_KEY: ${{ secrets.VENICE_API_KEY }}
           SURPLUS_API_KEY: ${{ secrets.SURPLUS_API_KEY }}
@@ -606,6 +649,13 @@ jobs:
           BEAMR_NETWORK: ${{ vars.BEAMR_NETWORK }}
           BEAMR_MAX_PAY_USDC: ${{ vars.BEAMR_MAX_PAY_USDC }}
           JSONRENDER_ENABLED: ${{ vars.JSONRENDER_ENABLED || 'true' }}
+          # Mainnet opt-in lock for deploy-uni-hook, read by hook-deploy.sh. A
+          # repo VARIABLE, not a secret: its value is the flag "1", and a secret
+          # value of "1" makes GitHub mask every "1" digit across the run log, so
+          # tx hashes, addresses, and explorer links print as ***. It gates
+          # nothing sensitive on its own (the burner key is the real secret), so a
+          # plaintext variable is correct.
+          HOOK_MAINNET_OK: ${{ vars.HOOK_MAINNET_OK }}
           SKILL_VAR: ${{ inputs.var }}
           SKILL_NAME: ${{ steps.skill.outputs.name }}
           INPUT_MODEL: ${{ inputs.model }}
@@ -694,6 +744,23 @@ jobs:
           : > "$AEON_PENDING_DIR/notify-sent-hashes"
           echo "AEON_PENDING_DIR=$AEON_PENDING_DIR" >> "$GITHUB_ENV"
           export AEON_PENDING_DIR
+
+          # Structured audit log (scripts/audit.sh): one append-only JSON line per
+          # privileged action that reaches outside the run (notify send, secretcurl,
+          # git push). Lives beside the notify queue OUTSIDE the workspace so a
+          # read-only-sandboxed skill can still append to it, then a post-run step
+          # uploads it as an artifact. Touch it now so a run that performs no
+          # privileged action ends with an empty file, not a missing one.
+          AEON_AUDIT_LOG="$AEON_PENDING_DIR/audit.jsonl"
+          : > "$AEON_AUDIT_LOG"
+          echo "AEON_AUDIT_LOG=$AEON_AUDIT_LOG" >> "$GITHUB_ENV"
+          export AEON_AUDIT_LOG
+          # Name the running skill in every audit record (audit.sh reads AEON_SKILL).
+          # Without this the notify/secretcurl subprocesses don't see $SKILL and each
+          # record's skill field falls back to "unknown".
+          AEON_SKILL="${{ steps.skill.outputs.name }}"
+          echo "AEON_SKILL=$AEON_SKILL" >> "$GITHUB_ENV"
+          export AEON_SKILL
 
           # notify / notify-jsonrender are the committed scripts/*.sh (testable; see scripts/tests/).
           cp scripts/notify.sh ./notify
@@ -834,7 +901,7 @@ jobs:
           # refused outright.
           CLAUDE_OK=0
           RH="${GITHUB_WORKSPACE}/harness-adapter/run-harness"
-          RH_ARGS=(--mode "$SKILL_MODE" --allowed-tools "$ALLOWED" --timeout 900)
+          RH_ARGS=(--mode "$SKILL_MODE" --allowed-tools "$ALLOWED" --timeout 1800)
           # Pass --mcp-config only when the MCP preflight actually ENABLED MCP (every
           # required ${VAR} resolved) — MCP_FLAGS is set to the flags in that case and
           # left empty otherwise, so it doubles as the "MCP on" gate. run-harness does
@@ -862,10 +929,14 @@ jobs:
                 USED_GATEWAY="$cand"; CLAUDE_OK=1; break
               fi
               # Full diagnostic goes to the step log unconditionally (matches the
-              # non-claude harness path below) — the ::warning:: summary line is
-              # truncated for a quick scan, but a truncated summary was the ONLY
-              # trace of a per-attempt failure before this, silently discarding
-              # the real cause whenever it exceeded ~160 chars.
+              # non-claude harness path below, which already does this at its
+              # `tail -c 4000 ... >&2` line) — the ::warning:: summary line stays
+              # short for a quick scan, but a truncated summary was previously the
+              # ONLY trace of a per-attempt failure, silently discarding the real
+              # cause whenever it exceeded ~160 chars (Claude Code's JSON result
+              # envelope puts is_error/api_error_status/result near the front and
+              # usage/modelUsage/uuid boilerplate at the end, so a tail-only view
+              # keeps the boilerplate and drops the actual error).
               tail -c 4000 /tmp/harness-stderr.txt >&2 || true
               echo "::warning::provider '$cand' failed — $(tail -c 160 /tmp/harness-stderr.txt 2>/dev/null | tr '\n' ' ')"
             done
@@ -1193,7 +1264,7 @@ jobs:
         # Multi-subject: one attestation over both run-scoped artifacts (the output
         # snapshot and its manifest). Both paths are ${GITHUB_RUN_ID}-unique, so the
         # committed bytes always match what was attested.
-        uses: actions/attest-build-provenance@v4
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4
         with:
           subject-path: |
             ${{ steps.manifest.outputs.snapshot }}
@@ -1215,6 +1286,8 @@ jobs:
           ANTHROPIC_OAUTH_TOKEN: ${{ secrets.ANTHROPIC_OAUTH_TOKEN }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           USEPOD_TOKEN: ${{ secrets.USEPOD_TOKEN }}
           VENICE_API_KEY: ${{ secrets.VENICE_API_KEY }}
           SURPLUS_API_KEY: ${{ secrets.SURPLUS_API_KEY }}
@@ -1240,8 +1313,15 @@ jobs:
         run: |
           SKILL="${{ steps.skill.outputs.name }}"
 
-          # Skip analysis for meta skills (they don't produce scorable output)
-          case "$SKILL" in heartbeat|skill-health|skill-analytics|reflect|memory-flush|self-review|cost-report) echo "Skipping analysis for meta skill"; exit 0;; esac
+          # Skip skills that declare `scorable: false` in their frontmatter - meta
+          # skills that produce no gradable output. Frontmatter-driven so a new meta
+          # skill opts out in its own SKILL.md instead of by editing a name regex
+          # here (which had drifted: skill-analytics/reflect/self-review/cost-report
+          # no longer exist as skills).
+          SKILL_MD="skills/${SKILL}/SKILL.md"
+          if [ -f "$SKILL_MD" ] && [ -n "$(awk 'NR==1&&/^---/{f=1;next} f&&/^---/{exit} f&&/^scorable:[[:space:]]*false([[:space:]#]|$)/{print 1;exit}' "$SKILL_MD")" ]; then
+            echo "Skipping analysis for non-scorable skill"; exit 0
+          fi
 
           HARNESS="${{ steps.run.outputs.HARNESS }}"
           # Route the scorer's claude call through the gateway (claude harness only).
@@ -1256,30 +1336,54 @@ jobs:
             AEON_OTEL_COMPONENT=scorer source "${GITHUB_WORKSPACE}/scripts/langfuse-otel.sh"
           fi
 
-          # Read and truncate skill output for analysis
+          # Read skill output for analysis. Sample head + tail so the judge sees the
+          # conclusion of long outputs, not just the intro - a flat 3KB head-truncate
+          # graded only the opening and biased the score against skills that build to
+          # their payoff (articles, digests, research compendia routinely exceed a few
+          # KB). `iconv -c` drops any partial UTF-8 char left at a byte cut.
           OUTPUT=""
           if [ -f /tmp/skill-result.txt ] && [ -s /tmp/skill-result.txt ]; then
-            OUTPUT=$(head -c 3000 /tmp/skill-result.txt)
+            BYTES=$(wc -c < /tmp/skill-result.txt)
+            if [ "$BYTES" -le 14000 ]; then
+              OUTPUT=$(iconv -f UTF-8 -t UTF-8 -c < /tmp/skill-result.txt)
+            else
+              OHEAD=$(head -c 10000 /tmp/skill-result.txt | iconv -f UTF-8 -t UTF-8 -c)
+              OTAIL=$(tail -c 4000 /tmp/skill-result.txt | iconv -f UTF-8 -t UTF-8 -c)
+              OUTPUT=$(printf '%s\n\n[... middle truncated ...]\n\n%s' "$OHEAD" "$OTAIL")
+            fi
           fi
           [ -z "$OUTPUT" ] && { echo "No output to analyze"; exit 0; }
+
+          # Ground the rubric in the operator's north-star so the judge grades
+          # strategic alignment and correctness, not just surface polish. STRATEGY.md
+          # is short by design; inject it whole (byte-capped for safety). Absent or
+          # placeholder file leaves the block empty and grading falls back to generic.
+          STRATEGY_CTX=""
+          [ -f STRATEGY.md ] && STRATEGY_CTX=$(head -c 4000 STRATEGY.md)
 
           ANALYSIS_PROMPT="Score this autonomous agent skill output on a 1-5 scale. Respond with ONLY valid JSON.
 
           Scoring:
           1 = Failed/empty/error output
-          2 = Ran but low quality, generic, or boilerplate
-          3 = Acceptable — completed the task adequately
-          4 = Good — substantive, well-structured, useful
-          5 = Excellent — insightful, well-sourced, actionable
+          2 = Ran but low quality, generic, boilerplate, or fluent-but-unverifiable
+          3 = Acceptable - completed the task adequately
+          4 = Good - substantive, well-structured, useful, and verifiable
+          5 = Excellent - insightful, well-sourced, actionable
 
-          Flag any issues from: api_error, empty_output, low_quality, stale_data, generic_content, rate_limited
+          Correctness and verifiability outrank polish: a well-written output that invents specifics scores no higher than 2. Grade alignment to the operator strategy below - reward work that serves the stated priorities, not work that merely looks finished.
 
-          Flag strictly against the FINAL output above — not against sources or steps it merely mentions:
-          - empty_output: ONLY when the skill produced no usable result (no report, analysis, or draft). A legitimate no-op — an empty inbox, an empty watchlist, 'nothing met the threshold', a clean scan with no findings — is a COMPLETED task, not empty_output. A run that delivered its output is not empty_output even if its log notes an upstream source came back empty.
-          - api_error / rate_limited: ONLY when the error blocked the skill's output — not for a sub-call that was retried or fell back cleanly.
+          Operator strategy:
+          $STRATEGY_CTX
+
+          Flag any issues from: api_error, empty_output, low_quality, stale_data, generic_content, rate_limited, unverifiable_claim
+
+          Flag strictly against the FINAL output above - not against sources or steps it merely mentions:
+          - empty_output: ONLY when the skill produced no usable result (no report, analysis, or draft). A legitimate no-op - an empty inbox, an empty watchlist, 'nothing met the threshold', a clean scan with no findings - is a COMPLETED task, not empty_output. A run that delivered its output is not empty_output even if its log notes an upstream source came back empty.
+          - api_error / rate_limited: ONLY when the error blocked the skill's output - not for a sub-call that was retried or fell back cleanly.
+          - unverifiable_claim: the output asserts specific facts, IDs, URLs, figures, or quotes that read as invented or that the skill could not plausibly have obtained from a real source. Cap such an output at 2 and set this flag.
 
           Skill: $SKILL
-          Output (truncated):
+          Output:
           $OUTPUT
 
           JSON format: {\"score\": N, \"assessment\": \"one line\", \"flags\": []}"
@@ -1351,9 +1455,12 @@ jobs:
           ASSESSMENT=$(echo "$PARSED" | jq -r '.assessment // "analysis incomplete"')
           FLAGS=$(echo "$PARSED" | jq -c '.flags // []')
 
-          # Validate score range
-          if [ "$SCORE" -lt 1 ] || [ "$SCORE" -gt 5 ] 2>/dev/null; then
-            SCORE=0
+          # A missing or out-of-range score means the judge malformed its reply, not
+          # that the skill scored zero. Treat it as unscored and skip the write, so a
+          # judge error can't append a 0 to history and drag avg_score down. (`.score
+          # // 0` above makes an absent field 0, which fails the >=1 test here.)
+          if ! { [ "$SCORE" -ge 1 ] && [ "$SCORE" -le 5 ]; } 2>/dev/null; then
+            echo "::notice::Judge returned no valid score - skipping write (non-fatal)."; exit 0
           fi
 
           echo "QUALITY_SCORE=$SCORE" >> "$GITHUB_OUTPUT"
@@ -1408,6 +1515,8 @@ jobs:
           ANTHROPIC_OAUTH_TOKEN: ${{ secrets.ANTHROPIC_OAUTH_TOKEN }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           USEPOD_TOKEN: ${{ secrets.USEPOD_TOKEN }}
           VENICE_API_KEY: ${{ secrets.VENICE_API_KEY }}
           SURPLUS_API_KEY: ${{ secrets.SURPLUS_API_KEY }}
@@ -1570,7 +1679,7 @@ jobs:
         run: |
           git config user.name "aeonframework"
           git config user.email "aeonframework@proton.me"
-          rm -f ./notify ./notify-jsonrender  # Remove generated notify scripts before committing
+          rm -f ./notify ./notify-jsonrender ./secretcurl  # Remove generated notify/secretcurl scripts before committing
 
           # Issues-as-state (hardening §3): cron-state.json was materialized from the
           # pinned Issue for this run's readers — it's a projection, not source of truth.
@@ -1618,7 +1727,7 @@ jobs:
           else
             git commit -m "chore($LABEL): auto-commit $(date +%Y-%m-%d)"
           fi
-          for i in 1 2 3 4 5; do
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             # Pull and rebase onto latest remote
             if ! git pull --rebase origin main 2>/dev/null; then
               echo "Rebase conflict on attempt $i, auto-resolving..."
@@ -1644,10 +1753,11 @@ jobs:
             # Try to push — if it fails, another job beat us, loop and re-pull
             if git push -u origin HEAD 2>/dev/null; then
               echo "Pushed successfully on attempt $i"
+              bash scripts/audit.sh "git.push" "$GITHUB_REPOSITORY@$(git rev-parse --abbrev-ref HEAD)" 0 "GH_GLOBAL" || true
               exit 0
             fi
             echo "Push attempt $i failed (ref moved), retrying in ${i}s..."
-            sleep "$i"
+            sleep "$(( (RANDOM % 4) + i ))"  # jittered backoff - a deterministic sleep re-collides lockstep writers under push contention
           done
           echo "Failed to push after 5 attempts"
           exit 1
@@ -1783,7 +1893,7 @@ jobs:
           fi
 
           git commit -m "chore(cron): $SKILL $CRON_STATUS"
-          for i in 1 2 3 4 5; do
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             if git pull --rebase origin main 2>/dev/null && git push -u origin HEAD 2>/dev/null; then
               echo "Cron state updated: $SKILL=$CRON_STATUS"
               exit 0
@@ -1804,7 +1914,7 @@ jobs:
             git add "$STATE_FILE"
             git diff --staged --quiet && { echo "State already up to date"; exit 0; }
             git commit -m "chore(cron): $SKILL $CRON_STATUS"
-            sleep "$i"
+            sleep "$(( (RANDOM % 4) + i ))"  # jittered backoff - a deterministic sleep re-collides lockstep writers under push contention
           done
           echo "::warning::Failed to commit cron state (non-fatal)"
 
@@ -1839,3 +1949,28 @@ jobs:
           else
             echo "no regression for $SKILL; health issue silent"
           fi
+
+      # Structured audit log (scripts/audit.sh) -> run artifact. Runs on failure too
+      # so a run that pushed a commit or sent a notify before dying still leaves its
+      # trail. The log lives outside the workspace (beside the notify queue); stage a
+      # copy into the workspace so upload-artifact picks it up, guaranteeing a file
+      # even when nothing privileged happened (empty, not missing).
+      - name: Stage audit log
+        if: always()
+        run: |
+          mkdir -p audit-artifact
+          if [ -n "${AEON_AUDIT_LOG:-}" ] && [ -f "$AEON_AUDIT_LOG" ]; then
+            cp "$AEON_AUDIT_LOG" audit-artifact/audit.jsonl
+          else
+            : > audit-artifact/audit.jsonl
+          fi
+          echo "audit records: $(wc -l < audit-artifact/audit.jsonl)"
+
+      - name: Upload audit log
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: audit-log-${{ github.run_id }}
+          path: audit-artifact/audit.jsonl
+          if-no-files-found: warn
+          retention-days: 30

@@ -16,6 +16,25 @@
 #   * reads AGENTS.md or CLAUDE.md natively (global -> parents -> cwd); Claude's
 #     @imports are NOT expanded (dispatcher pre-expands when needed).
 #   * no structured-output flag -> prompt-with-schema + validate + one retry.
+#
+# rh-meta-start - capability manifest source of truth (bin/generate-harnesses-json)
+# {
+#   "id": "pi",
+#   "label": "Pi",
+#   "cli": { "install": "npm i -g --ignore-scripts @earendil-works/pi-coding-agent", "bin": "pi", "min_version": "0.80.9" },
+#   "invoke": "pi -p --mode json",
+#   "round_trip": true,
+#   "token_usage": "full",
+#   "cost": true,
+#   "read_only": "sandbox",
+#   "structured_output": "shim",
+#   "mcp": "unsupported",
+#   "max_turns": "timeout",
+#   "claude_md": "native",
+#   "auth": { "native_oauth": [], "native_key": ["ANTHROPIC_API_KEY", "OPENAI_API_KEY"], "openrouter": true },
+#   "native_control_path": "run-harness"
+# }
+# rh-meta-end
 set -uo pipefail
 . "$RH_LIB/envelope.sh"
 . "$RH_LIB/tools-grammar.sh"
@@ -27,7 +46,7 @@ command -v pi >/dev/null 2>&1 || {
 ARGS=(--mode json --no-session --approve)
 
 # model: pi is multi-provider — pass anything through (its registry matches
-# patterns like "claude-sonnet-5", "openai/gpt-4o", or bare "sonnet")
+# patterns like "claude-sonnet-5", "openai/gpt-5-mini", or bare "sonnet")
 [ -n "${RH_MODEL:-}" ] && [ "${RH_MODEL}" != "default" ] && ARGS+=(--model "$RH_MODEL")
 
 # read-only -> tool subsetting (pi's only native lever; advisory without the

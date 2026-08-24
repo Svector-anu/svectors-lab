@@ -70,7 +70,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    - **Variable behavior** — what `${var}` controls; what happens when empty (sane default OR clean abort with notify).
    - **Steps** — 4-8 numbered, following the standard pattern: read context → fetch/search → process/analyze → write output → log → notify.
    - **Schedule suggestion** — choose a cron slot. Read existing schedules in `aeon.yml`; avoid co-scheduling at the same minute as heavy skills (article, repo-scanner, deep-research, telegram-digest) unless the new skill is lightweight (<30s expected). Prefer a `:30` minute offset if the natural hour is already crowded.
-   - **Model** — default `claude-sonnet-5`. Pick `claude-haiku-4-5-20251001` if the skill is high-frequency aggregation/digestion (cost optimization), or `claude-opus-5` if it needs the strongest reasoning. Document the choice in the PR body.
+   - **Model** — default `claude-sonnet-5`. Pick `claude-haiku-4-5-20251001` if the skill is high-frequency aggregation/digestion (cost optimization), or `claude-opus-4-8` if it needs the strongest reasoning. Document the choice in the PR body.
    - **Category** — the pack the skill joins. Pick one: `research` `dev` `crypto` `onchain-security` `social` `productivity` `meta`. (`core` and `fleet` are curated in `packs.config.json`, not chosen here.) If none fits, omit it and the skill lands in the **Lab** catch-all for later triage. See `docs/skill-packs.md`.
 
 6. **Write the SKILL.md draft** at `skills/{skill-name}/SKILL.md` with this exact structure:
@@ -145,13 +145,22 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 
 9. **Register in `aeon.yml`.** Insert the new skill in the appropriate time-slot section:
    - Format: `  {skill-name}: { enabled: false, schedule: "{suggested_cron}" }`
-   - Add `model: "claude-haiku-4-5-20251001"` (or `"claude-opus-5"`) if chosen in step 5.
+   - Add `model: "claude-haiku-4-5-20251001"` (or `"claude-opus-4-8"`) if chosen in step 5.
    - Add `var: ""` if the skill takes a default var.
    - Add a brief trailing comment if the name doesn't make purpose obvious.
    - Place near related skills (crypto with crypto, content with content, etc.).
    - **Always** `enabled: false`. Operator decides when to turn it on.
 
    Verify YAML still parses after the edit. If parsing fails, revert the change and exit `CREATE_SKILL_VALIDATION_FAILED`.
+
+9b. **Dry-run gate (blocks a broken generated skill from auto-merge).** Before opening the PR, execute the new skill once with **synthetic** secrets, so a generated skill never reaches production having only ever run with real credentials:
+    ```bash
+    DRYRUN_VERDICT="output/.dry-run/$name.json" bash scripts/dry-run.sh run "$name" || true
+    ```
+    - The script self-checks the `SKILL_DRYRUN` repo variable (default on) and returns a `skipped` verdict when it is `0`.
+    - Read `output/.dry-run/$name.json`. `passed: true` (or `skipped: true`) means continue. `passed: false` means **delete `skills/$name/`, revert the `aeon.yml` edit, and exit `CREATE_SKILL_DRYRUN_FAILED`** with a notify listing the verdict `reasons[]`. Do not open the PR.
+    - Put the verdict JSON in the PR body under a `## Dry-run` section either way, so a reviewer sees the gate ran.
+    The gate is **structural** (exit 0, non-empty output, no write outside the declared `mode`, no secret outside `requires:`), and no real credential is ever placed in the run's environment. It does not re-score content; the Haiku scorer already does that.
 
 10. **Open as a PR (never commit to `main`).**
     ```bash
@@ -235,6 +244,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 | `CREATE_SKILL_DUPLICATE` | Existing skill covers the request | Notify with existing-skill suggestion; stop |
 | `CREATE_SKILL_INSUFFICIENT_RESEARCH` | Couldn't confirm ≥1 working data source after WebSearch + WebFetch | Notify with what was tried; stop |
 | `CREATE_SKILL_VALIDATION_FAILED` | Quality enforcement or post-write checks failed | Delete partial files; revert aeon.yml; notify with failed criteria; stop |
+| `CREATE_SKILL_DRYRUN_FAILED` | The dry-run gate (step 9b) returned `passed: false` | Delete partial files; revert aeon.yml; notify with verdict reasons; do NOT open the PR; stop |
 
 ## Network note
 

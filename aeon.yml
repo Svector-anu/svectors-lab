@@ -27,7 +27,7 @@ skills:
   # --- Hound onchain investigation (on-demand; var = address / tx hash) ---
   investigation-report: { enabled: false, schedule: "workflow_dispatch", var: "" } # var: <token-address> [--checks=rug,contract,deployer,holders,honeypot,lp] [--depth=quick|deep] — composite investigation (folds in rug-scan/contract-audit/deployer-trace/holder-concentration/honeypot-check/lp-lock). read-only
   tx-explain: { enabled: false, schedule: "workflow_dispatch", var: "" } # var: tx hash — plain-English decode
-  deploy-uni-hook: { enabled: false, schedule: "workflow_dispatch", harness: "claude", model: "claude-opus-5", var: "" } # generate+audit+simulate+deploy a Uniswap v4 hook + test pool on any v4 chain. var: [arm:][template:dynamic|noop|skim] [chain:base-sepolia] <brief>. Dry-run by default; arm: to broadcast (needs HOOK_DEPLOYER_PRIVATE_KEY burner). Testnet default; mainnet behind arm:+explicit chain:+HOOK_MAINNET_OK=1. Opus-pinned: freeform hook-gen is hard.
+  deploy-uni-hook: { enabled: false, schedule: "workflow_dispatch", harness: "claude", model: "claude-opus-4-8", var: "" } # generate+audit+simulate+deploy a Uniswap v4 hook + test pool on any v4 chain. var: [arm:][template:dynamic|noop|skim] [chain:base-sepolia] <brief>. Dry-run by default; arm: to broadcast (needs HOOK_DEPLOYER_PRIVATE_KEY burner). Testnet default; mainnet behind arm:+explicit chain:+HOOK_MAINNET_OK=1. Opus-pinned: freeform hook-gen is hard.
 
   monitor-polymarket: { enabled: false, schedule: "30 12 * * *", var: "" } # prediction-market monitor (Polymarket + Kalshi) — 24h moves, volume, comments, conviction alerts. var: empty=both | polymarket | kalshi | polymarket:<slug> | kalshi:<ticker>
   token-pick: { enabled: true, schedule: "0 12 * * *" }
@@ -149,10 +149,14 @@ skills:
 # evaluates their trigger rules after processing cron skills.
 #
 # Format: trigger: { on: <source-skill>, when: "<condition>" }
-# Conditions:
-#   consecutive_failures >= N    — source skill failed N+ times in a row
-#   success_rate < X             — source skill success rate below threshold
-#   last_status = success        — source skill just succeeded (for chaining)
+# Conditions (evaluated by scripts/reactive_when.sh):
+#   consecutive_failures >= N    - source skill failed N+ times in a row
+#   success_rate <op> X          - success rate vs threshold; op is < <= > >= and X
+#                                  is a 0.0-1.0 float. Only checked once the source
+#                                  skill has run at least once (a never-run skill is
+#                                  0.0 and would otherwise false-fire `< X`).
+#   last_status = <value>        - source skill's last run ended <value> (e.g.
+#                                  success), for chaining
 #
 # Multiple triggers: trigger: [{ on: a, when: "..." }, { on: b, when: "..." }]
 # Any matching trigger fires the skill (OR logic).
@@ -173,9 +177,17 @@ reactive:
 #     chain-name:
 #       schedule: "cron expression"
 #       on_error: fail-fast          # fail-fast (default) | continue
+#       max_dispatches: 10           # optional total-dispatch cap for the chain
 #       steps:
-#         - parallel: [skill-a, skill-b]
-#         - skill: skill-c, consume: [skill-a, skill-b]
+#         # Multi-key steps use flow-brace form so they stay valid YAML when uncommented.
+#         - { parallel: [skill-a, skill-b] }
+#         - { skill: skill-c, consume: [skill-a, skill-b] }
+#         # Conditional routing on the consumed skill's Haiku score (1-5). A step
+#         # with when: runs only if the condition holds; a missing score does NOT
+#         # fire, so always pair branches with an unconditional fall-through.
+#         # Operators: == != < > <= >= (ordering needs an integer on both sides).
+#         - { skill: polish,  consume: [skill-c], when: "score > 3" }
+#         - { skill: rewrite, consume: [skill-c], when: "score <= 3" }
 chains:
   # routine:
   #   schedule: "0 7 * * *"
@@ -186,10 +198,15 @@ chains:
 
 # Default model for all skills. Override per-run via workflow_dispatch.
 # Options: claude-opus-4-8, claude-fable-5, claude-sonnet-5, claude-sonnet-4-6, claude-haiku-4-5-20251001
-#
-# Kept pinned to claude-opus-4-8 (operator's deliberate choice) across this sync —
-# upstream's new recommended default is claude-sonnet-5, switch to it explicitly
-# if desired, not silently via a fork sync.
+# (Grok harness model: grok-4.5, the flagship reasoning model and grok's current
+#  default, run with --no-subagents in CI. It's the only id the grok CLI accepts on an
+#  X-account login, and it's the gateway default too. The older coding ids
+#  (grok-build-0.1, grok-composer-2.5-fast, grok-4.3) are gateway-only, reachable via
+#  XAI_API_KEY + the GROK_MODEL var.)
+# The non-claude harnesses use their OWN model ids (codex openai/*, kimi moonshotai/*,
+# vibe mistralai/*, pi deepseek/*, fx AI_GATEWAY_API_KEY-backed) — surfaced in the
+# dashboard picker per harness; see docs/harnesses.md. The value below only
+# applies to the claude/grok harnesses.
 model: claude-opus-4-8
 
 # Agent harness — which coding-agent CLI runs your skills.

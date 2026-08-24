@@ -89,13 +89,19 @@ mkfixture grok
   && pass "grok: GROK_CREDENTIALS → native-oauth" || bad "grok native-oauth"
 [ "$(get AUTH_MODE "" XAI_API_KEY=xx)" = "native-key" ] \
   && pass "grok: XAI_API_KEY → native-key" || bad "grok native-key"
+mkfixture fx
+[ "$(get HARNESS)" = "fx" ] && pass "fx: reaches the allowlist" || bad "fx allowlist"
+[ "$(get AUTH_MODE "" AI_GATEWAY_API_KEY=xx)" = "native-key" ] \
+  && pass "fx: AI_GATEWAY_API_KEY → native-key" || bad "fx native-key (gateway)"
+[ "$(get AUTH_MODE "" VERCEL_OIDC_TOKEN=xx)" = "native-key" ] \
+  && pass "fx: VERCEL_OIDC_TOKEN → native-key" || bad "fx native-key (oidc)"
 
 # --- 4. MODEL_ARG per harness ----------------------------------------------
 # The whole point of MODEL_ARG: each CLI wants a different shape, and two want
 # nothing at all. Passing a raw id to vibe/kimi breaks them (they resolve an ALIAS
 # declared in the staged config), so empty is the correct answer, not a fallback.
 mkfixture codex
-[ "$(get MODEL_ARG)" = "openai/gpt-5-mini" ] \
+[ "$(get MODEL_ARG)" = "openai/gpt-5.1-codex-mini" ] \
   && pass "codex: MODEL_ARG is a bare OpenRouter id" || bad "codex MODEL_ARG"
 mkfixture pi
 [ "$(get MODEL_ARG)" = "openrouter/deepseek/deepseek-v4-flash" ] \
@@ -120,10 +126,10 @@ esac
 # picker still reads `model: claude-sonnet-5`, and forwarding that would pin the
 # run to a dead id while every downstream record named it.
 mkfixture codex claude-sonnet-5
-[ "$(get MODEL_ARG)" = "openai/gpt-5-mini" ] \
+[ "$(get MODEL_ARG)" = "openai/gpt-5.1-codex-mini" ] \
   && pass "claude-* config model ignored → per-harness default" || bad "claude-* model passthrough"
 mkfixture codex grok-4.5
-[ "$(get MODEL_ARG)" = "openai/gpt-5-mini" ] \
+[ "$(get MODEL_ARG)" = "openai/gpt-5.1-codex-mini" ] \
   && pass "grok-* config model ignored → per-harness default" || bad "grok-* model passthrough"
 mkfixture codex openai/gpt-5
 [ "$(get MODEL_ARG)" = "openai/gpt-5" ] \

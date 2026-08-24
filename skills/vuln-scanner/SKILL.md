@@ -147,10 +147,26 @@ else
 fi
 
 # --- Dependencies: osv-scanner (unified CVE DB across ecosystems) ---
+# osv-scanner v2 (what `releases/latest` now installs, 2.4.x) moved scanning under the
+# `scan source` subcommand. The v1 bare form (`osv-scanner --recursive .`) still works on
+# 2.x, so try v2 first and fall back to v1 only if v2 wrote NOTHING (keyed on emptiness,
+# NOT exit code - osv exits 1 when it FINDS vulns, which must not read as a syntax error).
+# `--no-ignore` is REQUIRED: v2 `scan source` respects .gitignore by default, so a target
+# repo that gitignores its (committed) lockfile - common for libraries/tools - yields the
+# misleading "No package sources found" (exit 128) and zero dependency coverage. A shipped-
+# but-gitignored lockfile still describes real deps, so a security scan must read it. It is
+# a no-op when lockfiles are tracked.
 if command -v osv-scanner >/dev/null 2>&1; then
-  osv-scanner --format=json --recursive . \
-    > /tmp/vuln-scan/osv.json 2>/dev/null || true
+  osv-scanner scan source --recursive --no-ignore --format=json . > /tmp/vuln-scan/osv.json 2>/dev/null; OSV_RC=$?
+  [ -s /tmp/vuln-scan/osv.json ] || { osv-scanner --format=json --recursive --no-ignore . > /tmp/vuln-scan/osv.json 2>/dev/null; OSV_RC=$?; }
+  # Classify: exit 128 = "No package sources found" = the repo has no lockfiles/manifests
+  # to scan. That is a clean N/A (nothing to do), NOT a scan failure - osv writes an EMPTY
+  # file in that case, so `[ -s ]` alone would mislabel it `fail`. Distinguish the states:
+  if [ -s /tmp/vuln-scan/osv.json ]; then OSV_STATUS=ok        # ran; results present (0 or N dep CVEs)
+  elif [ "${OSV_RC:-}" = 128 ];   then OSV_STATUS=none         # ran; no dependency lockfiles -> n/a
+  else                                 OSV_STATUS=fail; fi      # genuine tool error
 else
+  OSV_STATUS=skipped
   echo "VULN_SCANNER_SKIPPED: osv-scanner not available"
 fi
 
@@ -162,7 +178,7 @@ fi
 # Record what succeeded (empty output ≠ clean, could be tool failure)
 echo "semgrep=$([ -s /tmp/vuln-scan/semgrep.json ] && echo ok || echo fail)" >  /tmp/vuln-scan/sources.txt
 echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
-echo "osv=$([ -s /tmp/vuln-scan/osv.json ] && echo ok || echo fail)"              >> /tmp/vuln-scan/sources.txt
+echo "osv=${OSV_STATUS:-fail}"                                                    >> /tmp/vuln-scan/sources.txt
 ```
 
 ### A3.5. Dynamic testing: fuzz it if it already ships a harness
@@ -255,9 +271,60 @@ different things, and they route differently:
    setup code outside the code path being fuzzed). Not a finding — drop it,
    same as a scanner false positive.
 
+### A3.6. Agentic logic audit (what SAST and fuzzing both miss)
+
+Semgrep matches syntactic patterns and has weak dataflow reachability on custom code; fuzzing (A3.5) only reaches what a harness already drives. Both are blind to **authorization, business-logic, and multi-step trust-boundary** bugs. That whole class is what an agentic reviewer catches - and here **you are the agentic scanner**. Do the source-to-sink reasoning the tools can't, over this repo's real entrypoints. This pass runs on every scan (unlike A3.5, which only fires when the repo ships a fuzz harness) and produces *candidates*, not verdicts - everything still goes through A4 triage (the model surfacing a finding is not evidence it is real).
+
+**Bounded so it can't run away on run time.** Size the repo first, then set the entrypoint review budget `N` from it - deep-review the **top-N highest-exposure** entrypoints only, and note the rest in the A7 report as reviewed-but-not-deep so coverage stays honest:
+
+```bash
+# Cheap size probe (excludes the usual noise dirs). Drives the review budget below.
+CODE_FILES=$(find . -type f \( -name '*.js' -o -name '*.ts' -o -name '*.jsx' -o -name '*.tsx' \
+  -o -name '*.py' -o -name '*.go' -o -name '*.rs' -o -name '*.sol' -o -name '*.rb' \
+  -o -name '*.java' -o -name '*.php' \) \
+  -not -path '*/node_modules/*' -not -path '*/vendor/*' -not -path '*/dist/*' \
+  -not -path '*/build/*' -not -path '*/.git/*' 2>/dev/null | wc -l | tr -d ' ')
+if   [ "${CODE_FILES:-0}" -le 300 ];  then N=15   # small repo - review broadly
+elif [ "${CODE_FILES:-0}" -le 1500 ]; then N=10
+else                                       N=6; fi # large repo - top exposure only
+echo "agentic-budget: CODE_FILES=$CODE_FILES N=$N"
+```
+
+**0. Frame the threat model first (one paragraph, before you enumerate).** State what this app is, the 2-3 things an attacker most wants from it (RCE, auth bypass / IDOR, secret/data exfil, SSRF into internal infra), and its trust boundaries (who is authenticated where, what input is server- vs user-controlled). This targets the ranking in step 2 so the top-`N` budget lands on what actually matters, not just the first entrypoints you find. Keep it to a few lines; it is the plan, not a deliverable.
+
+**1. Build the entrypoint inventory** - every place untrusted input enters. Grep + read to enumerate; record `file:symbol` and a `kind` for each:
+
+- HTTP / route handlers, API endpoints, GraphQL resolvers, webhook receivers
+- CLI arg + env parsing
+- Deserializers (JSON / YAML / pickle / XML), file uploads, path handling (traversal)
+- Template rendering / HTML construction (XSS), SQL / NoSQL query building (injection)
+- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)
+- Auth / session / token / crypto code (authz bypass, IDOR, weak crypto)
+- Outbound network clients + redirect handling (SSRF, open redirect)
+
+**2. Rank by exposure, deep-review the top N.** Order entrypoints by attack surface **against the step-0 threat model** (unauthenticated + reachable + dangerous-sink, weighted toward what the attacker most wants, first). For the top `N`: trace source-to-sink - what the attacker controls, where it flows, the sink, and the guard (if any) between. Write the one-sentence attacker-control claim (the A4 bar). Prioritize reachable **production** paths; ignore tests/examples/docs. Note entrypoints past `N` in the A7 report as not-deep-reviewed - do not silently drop them.
+
+**3. Emit candidates** in the same shape the tool outputs feed A4. Write one JSON array (may be `[]`) to `/tmp/vuln-scan/agentic.json` with the **Write** tool:
+
+```json
+[
+  {"file":"src/api/user.ts","line":88,"severity":"high","category":"idor",
+   "claim":"unauthenticated GET /user/:id returns any user's record - no owner check"}
+]
+```
+
+```bash
+# after writing /tmp/vuln-scan/agentic.json, record the source status:
+echo "agentic=ok" >> /tmp/vuln-scan/sources.txt   # 0 candidates on a reviewed surface is still `ok`;
+                                                  # use `agentic=skipped` only if the repo is unreadable/opaque
+                                                  # (minified-only, generated, no source you can reason about)
+```
+
+**Optional - codex-security as an extra source.** If `OPENAI_API_KEY` is present **and** `npx` is allow-listed and the CLI is staged, `npx @openai/codex-security scan . --json` produces an independent agentic `findings.json`; merge its findings into `/tmp/vuln-scan/agentic.json` and record `codex=ok`. **Off by default** - it needs Node 22.13+, model credits, and an allow-listed `npx`; the Claude-native pass above is the baseline and needs no new infra. (Verify the subcommand/flags against the installed version first - it is early 0.1.x and churns.)
+
 ### A4. Triage — read every finding before trusting it
 
-A scanner hit is a candidate, not a vulnerability. For each candidate:
+A scanner hit - or a candidate from the A3.6 agentic pass - is a candidate, not a vulnerability. Merge the array in `/tmp/vuln-scan/agentic.json` (if present) into the tool findings, then for each candidate:
 
 1. **Open the file at the reported line** and read the surrounding 30–50 lines.
 2. **Write one sentence** describing what an attacker controls and what they achieve. If you can't, discard it.
@@ -520,7 +587,7 @@ Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, osv=<ok|fail>, fuzz=<ok|fail|
 If the audit was clean:
 ```
 *Vuln Scanner — <repo>*
-Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip.
+Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
 ```
 
 Then log per the **Log** section below with `Mode: scan`.
@@ -689,7 +756,7 @@ A `.md` file in `memory/pending-disclosures/` is eligible iff:
    plausible email (`^[^@\s]+@[^@\s]+\.[^@\s]+$`).
 3. **Still pending:** `status:` is one of `pending-operator-send`, `auto-send-ready`,
    `pending`, or blank. Anything else (`email-sent`, `email-failed`, `hold`, `sent`,
-   `submitted`, `withdrawn`, `superseded-upstream`) → **skip**. (`email-failed` means
+   `submitted`, `withdrawn`, `superseded-upstream`, `contact-unverified`) → **skip**. (`email-failed` means
    the sender gave up after repeated failures — leave it for the operator.)
 4. **Sendable body present:** the email body can be cleanly isolated (see step C3).
 5. **Not already sent:** no row in `memory/email-log.json` matches this draft
@@ -766,6 +833,15 @@ sending. Only `./secretcurl`, `jq`, `python3`, `grep`, `date`, `echo`, `mkdir`, 
 **Per draft (stop the loop once `BUDGET` sends have gone out):**
 4. **Dedup / status.** Skip if `slug` (repo with `/`→`-`) is already a row in `memory/email-log.json`, or the draft's own `status:` is already `email-sent`/`email-failed`.
 5. **Recipient sanity.** `to` must match `^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$` (`grep -qE`) — else skip + warn.
+5b. **Deliverability (MX/A), fail-closed.** A syntactically valid address can still be a dead or mistyped domain. Before an autonomous send, confirm the recipient **domain can actually receive mail** at the DNS level (port-25 SMTP probing is blocked on hosted runners, so verify over DNS-over-HTTPS - a plain GET, so `./secretcurl` passes the placeholder-free URL straight through):
+   ```bash
+   DOMAIN="${TO#*@}"
+   DNS=$(./secretcurl -sS --max-time 10 "https://dns.google/resolve?name=${DOMAIN}&type=MX")
+   MXN=$(echo "$DNS" | jq -r '[.Answer[]? | select(.type==15)] | length' 2>/dev/null)
+   ```
+   - `MXN >= 1` (domain publishes MX) → **verified, proceed.**
+   - `MXN == 0`: retry once against Cloudflare (`./secretcurl -sS --max-time 10 -H 'accept: application/dns-json' "https://cloudflare-dns.com/dns-query?name=${DOMAIN}&type=MX"`). Still none → look up an A record (`&type=A`, `.type==1`): a domain with an A but no MX still accepts mail at that host (RFC 5321 §5.1), so treat a resolvable A as deliverable.
+   - **No MX and no A, or both lookups error / time out → do NOT send (fail closed).** Flip the draft to `status: contact-unverified` and add a `deliverability: no-mx` frontmatter line so it drops out of the eligible set and surfaces to the operator; do not consume the budget.
 6. **Cooldown.** If this `to` was emailed within `${DISCLOSURE_EMAIL_COOLDOWN_DAYS:-7}` days (latest `.to`→`.sent_at` in the ledger, `python3` datetime diff) → skip, leave queued, retry after the window. A cooled-down draft does **not** consume the budget — move to the next.
 7. **Secret tripwire.** If subject+body match `grep -qE '(sk-[A-Za-z0-9]{20}|re_[A-Za-z0-9]{8}[A-Za-z0-9_]{12}|gh[pousr]_[A-Za-z0-9]{20}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{20}|-----BEGIN [A-Z ]*PRIVATE KEY-----)'` → **do not send**, log `BLOCKED: possible secret in body`, leave for operator review.
 8. **Build cc** = the draft's `cc` (array or comma-string) + `$RESEND_CC` (operator audit copy), minus blanks and the `to`, deduped (`jq`).
@@ -844,7 +920,7 @@ specific bullets.
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
 - Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
-- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip
+- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip agentic=ok|skip
 - Advisory/PR links: [...]
 ```
 
