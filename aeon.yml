@@ -243,7 +243,7 @@ model: claude-opus-4-8
 # GROK_CREDENTIALS session was fine but the account's Grok Build usage balance
 # was exhausted (402) with no reset after 40+ hours. Revert to grok only once
 # its usage resets/is funded, or if CLAUDE_CODE_OAUTH_TOKEN goes stale again.
-harness: claude
+harness: fx
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
