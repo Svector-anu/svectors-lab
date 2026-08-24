@@ -11,6 +11,8 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-23 | daily (web, PM) | Term Labs $8.5M governance takeover, Nvidia AI-server prices +15% on DRAM surge, CLARITY cloture vote Sept 15 (won't pass 2026) |
+| 2026-08-23 | daily (web, AM) | Grayscale Zcash spot ETF filing, BounceBit L1 sunset after $3M exploit, Nvidia–Poolside $6B license |
 | 2026-08-21 | daily (web) | SEC token-offering framework, policy-driven crypto rally, Anthropic record IPO |
 | 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 

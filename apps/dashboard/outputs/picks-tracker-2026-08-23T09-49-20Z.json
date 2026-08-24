@@ -1,0 +1,249 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "picks scorecard",
+        "description": "2026-07-24 → 2026-08-23"
+      },
+      "children": [
+        "summary_alert",
+        "sep1",
+        "token_section",
+        "sep2",
+        "score_section",
+        "sep3",
+        "market_section",
+        "sep4",
+        "aged_section",
+        "sep5",
+        "disclaimer",
+        "sep6",
+        "link_article"
+      ]
+    },
+    "summary_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Performance Summary",
+        "message": "0-for-1 in the window. Thin sample, losing month.",
+        "type": "warning"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "token_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "token_heading",
+        "zama_stack"
+      ]
+    },
+    "token_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Token Picks (1 total)",
+        "level": "h3"
+      }
+    },
+    "zama_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "zama_label",
+        "zama_stat"
+      ]
+    },
+    "zama_label": {
+      "type": "Text",
+      "props": {
+        "text": "ZAMA",
+        "variant": "lead"
+      }
+    },
+    "zama_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Picked 2026-07-28",
+        "value": "$0.062 → $0.0534",
+        "delta": "-13.9%",
+        "trend": "down"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "score_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "score_heading",
+        "score_grid",
+        "score_best_worst"
+      ]
+    },
+    "score_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Score",
+        "level": "h3"
+      }
+    },
+    "score_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_record",
+        "stat_avg",
+        "stat_hitrate",
+        "stat_total"
+      ]
+    },
+    "stat_record": {
+      "type": "Stat",
+      "props": {
+        "label": "Record",
+        "value": "0W 0H 1L"
+      }
+    },
+    "stat_avg": {
+      "type": "Stat",
+      "props": {
+        "label": "Average",
+        "value": "-13.9%",
+        "trend": "down"
+      }
+    },
+    "stat_hitrate": {
+      "type": "Stat",
+      "props": {
+        "label": "Hit Rate",
+        "value": "0%"
+      }
+    },
+    "stat_total": {
+      "type": "Stat",
+      "props": {
+        "label": "Total Picks",
+        "value": "1"
+      }
+    },
+    "score_best_worst": {
+      "type": "Text",
+      "props": {
+        "text": "Best/Worst: ZAMA -13.9% (only pick)",
+        "variant": "caption"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "market_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "market_heading",
+        "btc_pick"
+      ]
+    },
+    "market_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Market Picks",
+        "level": "h3"
+      }
+    },
+    "btc_pick": {
+      "type": "Alert",
+      "props": {
+        "title": "BTC dip to $60k in July? — YES",
+        "message": "Resolved NO: BTC held $63-64k, never near $60k",
+        "type": "error"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "aged_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "aged_heading",
+        "kaito_aged"
+      ]
+    },
+    "aged_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Aged Out (>30d, excluded from window)",
+        "level": "h3"
+      }
+    },
+    "kaito_aged": {
+      "type": "Text",
+      "props": {
+        "text": "KAITO (2026-07-19, +24.2% at last check) — now >30d, excluded from this window"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "disclaimer": {
+      "type": "Text",
+      "props": {
+        "text": "no financial advice. just tracking the record.",
+        "variant": "muted"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link_article": {
+      "type": "Link",
+      "props": {
+        "label": "Read full scorecard",
+        "href": "https://github.com/Svector-anu/svectors-lab/blob/main/output/articles/picks-scorecard-2026-08-23.md"
+      }
+    }
+  }
+}

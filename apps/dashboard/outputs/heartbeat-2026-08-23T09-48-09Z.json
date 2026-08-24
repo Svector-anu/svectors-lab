@@ -1,0 +1,196 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Heartbeat: Fleet DEGRADED",
+        "description": "ISS-001 zero-token failure recurred — cron batch 08:49–09:14 UTC"
+      },
+      "children": [
+        "alert_degraded",
+        "sep1",
+        "heading_api_deg",
+        "table_api_deg",
+        "sep2",
+        "heading_refailed",
+        "table_refailed",
+        "sep3",
+        "heading_root",
+        "text_root",
+        "sep4",
+        "heading_healthy",
+        "stack_healthy",
+        "sep5",
+        "text_status"
+      ]
+    },
+    "alert_degraded": {
+      "type": "Alert",
+      "props": {
+        "title": "Fleet DEGRADED — ISS-001 zero-token failure recurred",
+        "message": "The harness zero-token failure that cleared yesterday came back on this morning's cron batch (08:49–09:14 UTC). All runs returned empty-usage, same signature as the open critical ISS-001.",
+        "type": "error"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_api_deg": {
+      "type": "Heading",
+      "props": {
+        "text": "API Degradation (cf ≥ 3)",
+        "level": "h3"
+      }
+    },
+    "table_api_deg": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Confidence Factor"
+        ],
+        "rows": [
+          [
+            "defi-overview",
+            "4"
+          ],
+          [
+            "narrative-tracker",
+            "3"
+          ],
+          [
+            "vuln-scanner",
+            "3"
+          ]
+        ]
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_refailed": {
+      "type": "Heading",
+      "props": {
+        "text": "Re-failed Today (was clean yesterday)",
+        "level": "h3"
+      }
+    },
+    "table_refailed": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Skill",
+          "Confidence Factor"
+        ],
+        "rows": [
+          [
+            "fear-divergence",
+            "2"
+          ],
+          [
+            "github-trending",
+            "1"
+          ],
+          [
+            "picks-tracker",
+            "1"
+          ]
+        ]
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_root": {
+      "type": "Heading",
+      "props": {
+        "text": "Root Cause",
+        "level": "h3"
+      }
+    },
+    "text_root": {
+      "type": "Text",
+      "props": {
+        "text": "ISS-001 (open, critical) — fixing/closing is skill-repair's job. Flagging the regression so it isn't mistaken for the recovered state."
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_healthy": {
+      "type": "Heading",
+      "props": {
+        "text": "Healthy Skills",
+        "level": "h3"
+      }
+    },
+    "stack_healthy": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_digest",
+        "badge_hunter22",
+        "badge_token_pick",
+        "badge_skill_health"
+      ]
+    },
+    "badge_digest": {
+      "type": "Badge",
+      "props": {
+        "text": "digest",
+        "variant": "default"
+      }
+    },
+    "badge_hunter22": {
+      "type": "Badge",
+      "props": {
+        "text": "hunter-22",
+        "variant": "default"
+      }
+    },
+    "badge_token_pick": {
+      "type": "Badge",
+      "props": {
+        "text": "token-pick",
+        "variant": "default"
+      }
+    },
+    "badge_skill_health": {
+      "type": "Badge",
+      "props": {
+        "text": "skill-health",
+        "variant": "default"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_status": {
+      "type": "Text",
+      "props": {
+        "text": "Status page: 🔴 DEGRADED. Weeks-old stalled PRs (#30/#22/#20/#5/#4/#3) and x402-monitor staleness unchanged — already logged, not re-alerted.",
+        "variant": "caption"
+      }
+    }
+  }
+}

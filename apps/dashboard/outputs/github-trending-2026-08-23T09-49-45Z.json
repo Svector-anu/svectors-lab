@@ -1,0 +1,627 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "GitHub Trending — 2026-08-23"
+      },
+      "children": [
+        "stack_content"
+      ]
+    },
+    "stack_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "section_top_pick",
+        "section_aiml",
+        "section_devtools",
+        "section_infra",
+        "section_data",
+        "sep_sources",
+        "section_sources"
+      ]
+    },
+    "section_top_pick": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_top_pick",
+        "text_top_pick_desc",
+        "link_codex_top"
+      ]
+    },
+    "heading_top_pick": {
+      "type": "Heading",
+      "props": {
+        "text": "Top pick",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "text_top_pick_desc": {
+      "type": "Text",
+      "props": {
+        "text": "The board belongs to the agent-skills land-grab today, but the loudest single event is Codex spiking ~1.5k stars in a day — a jump that size on OpenAI's Rust terminal agent reads as a fresh release landing.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "link_codex_top": {
+      "type": "StoryLink",
+      "props": {
+        "title": "openai/codex",
+        "href": "https://github.com/openai/codex",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "section_aiml": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_aiml",
+        "item_codex",
+        "item_modular"
+      ]
+    },
+    "heading_aiml": {
+      "type": "Heading",
+      "props": {
+        "text": "AI/ML",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "item_codex": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_codex_header",
+        "text_codex_desc"
+      ]
+    },
+    "stack_codex_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_codex",
+        "stat_codex_stars",
+        "badge_codex_lang",
+        "badge_codex_status"
+      ]
+    },
+    "link_codex": {
+      "type": "StoryLink",
+      "props": {
+        "title": "openai/codex",
+        "href": "https://github.com/openai/codex",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_codex_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "1.5k",
+        "label": "today (114k total)"
+      },
+      "children": []
+    },
+    "badge_codex_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Rust",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_codex_status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_codex_desc": {
+      "type": "Text",
+      "props": {
+        "text": "1.5k stars in a day on the Rust-native OpenAI terminal coding agent — a spike this size signals a notable release.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "item_modular": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_modular_header",
+        "text_modular_desc"
+      ]
+    },
+    "stack_modular_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_modular",
+        "stat_modular_stars",
+        "badge_modular_lang",
+        "badge_modular_status"
+      ]
+    },
+    "link_modular": {
+      "type": "StoryLink",
+      "props": {
+        "title": "modular/modular",
+        "href": "https://github.com/modular/modular",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_modular_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "395",
+        "label": "today (29k total)"
+      },
+      "children": []
+    },
+    "badge_modular_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Mojo",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_modular_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "text_modular_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Mojo + MAX in one monorepo — the GPU-portable Python-superset stack betting against the CUDA lock-in.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "section_devtools": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_devtools",
+        "item_skills",
+        "item_openlogi"
+      ]
+    },
+    "heading_devtools": {
+      "type": "Heading",
+      "props": {
+        "text": "Devtools",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "item_skills": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_skills_header",
+        "text_skills_desc"
+      ]
+    },
+    "stack_skills_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_skills",
+        "stat_skills_stars",
+        "badge_skills_lang",
+        "badge_skills_status"
+      ]
+    },
+    "link_skills": {
+      "type": "StoryLink",
+      "props": {
+        "title": "mattpocock/skills",
+        "href": "https://github.com/mattpocock/skills",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_skills_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "2.7k",
+        "label": "today (233k total)"
+      },
+      "children": []
+    },
+    "badge_skills_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Shell",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_skills_status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_skills_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Matt Pocock's raw .agents skill set — the reference bundle everyone's cloning in this week's skills-file rush.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "item_openlogi": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_openlogi_header",
+        "text_openlogi_desc"
+      ]
+    },
+    "stack_openlogi_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_openlogi",
+        "stat_openlogi_stars",
+        "badge_openlogi_lang",
+        "badge_openlogi_status"
+      ]
+    },
+    "link_openlogi": {
+      "type": "StoryLink",
+      "props": {
+        "title": "AprilNEA/OpenLogi",
+        "href": "https://github.com/AprilNEA/OpenLogi",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_openlogi_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "959",
+        "label": "today (14k total)"
+      },
+      "children": []
+    },
+    "badge_openlogi_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Rust",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_openlogi_status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_openlogi_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Local-first, native replacement for Logitech Options+ — remap your mouse buttons with no cloud account.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "section_infra": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_infra",
+        "item_sub2api",
+        "item_ai_infra_guard"
+      ]
+    },
+    "heading_infra": {
+      "type": "Heading",
+      "props": {
+        "text": "Infra",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "item_sub2api": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_sub2api_header",
+        "text_sub2api_desc"
+      ]
+    },
+    "stack_sub2api_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_sub2api",
+        "stat_sub2api_stars",
+        "badge_sub2api_lang",
+        "badge_sub2api_status"
+      ]
+    },
+    "link_sub2api": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Wei-Shaw/sub2api",
+        "href": "https://github.com/Wei-Shaw/sub2api",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_sub2api_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "278",
+        "label": "today (39k total)"
+      },
+      "children": []
+    },
+    "badge_sub2api_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Go",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_sub2api_status": {
+      "type": "Badge",
+      "props": {
+        "text": "ACCELERATING",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_sub2api_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Exposes your Claude/OpenAI/Gemini subscription accounts as one OpenAI-compatible API endpoint.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "item_ai_infra_guard": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_ai_infra_guard_header",
+        "text_ai_infra_guard_desc"
+      ]
+    },
+    "stack_ai_infra_guard_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_ai_infra_guard",
+        "stat_ai_infra_guard_stars",
+        "badge_ai_infra_guard_lang",
+        "badge_ai_infra_guard_status"
+      ]
+    },
+    "link_ai_infra_guard": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Tencent/AI-Infra-Guard",
+        "href": "https://github.com/Tencent/AI-Infra-Guard",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_ai_infra_guard_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "150",
+        "label": "today (5.6k total)"
+      },
+      "children": []
+    },
+    "badge_ai_infra_guard_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Python",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_ai_infra_guard_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "text_ai_infra_guard_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Red-teams the skills/MCP/agent stack everyone's shipping this week — scans for prompt-injection and jailbreaks.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "section_data": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_data",
+        "item_google_timeline"
+      ]
+    },
+    "heading_data": {
+      "type": "Heading",
+      "props": {
+        "text": "Data",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "item_google_timeline": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "stack_google_timeline_header",
+        "text_google_timeline_desc"
+      ]
+    },
+    "stack_google_timeline_header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "link_google_timeline",
+        "stat_google_timeline_stars",
+        "badge_google_timeline_lang",
+        "badge_google_timeline_status"
+      ]
+    },
+    "link_google_timeline": {
+      "type": "StoryLink",
+      "props": {
+        "title": "mahlernim/google-timeline-visualizer",
+        "href": "https://github.com/mahlernim/google-timeline-visualizer",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "stat_google_timeline_stars": {
+      "type": "Stat",
+      "props": {
+        "value": "441",
+        "label": "today (2.6k total)"
+      },
+      "children": []
+    },
+    "badge_google_timeline_lang": {
+      "type": "Badge",
+      "props": {
+        "text": "Kotlin",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_google_timeline_status": {
+      "type": "Badge",
+      "props": {
+        "text": "RETURNING",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "text_google_timeline_desc": {
+      "type": "Text",
+      "props": {
+        "text": "Feed it your Google Location History export, get an interactive travel map — quiet repo, sharp spike today.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep_sources": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "section_sources": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_sources"
+      ]
+    },
+    "text_sources": {
+      "type": "Text",
+      "props": {
+        "text": "sources: trending=ok · gh_api=fail (read-only; enriched via public api.github.com) · kept 7/17",
+        "variant": "caption"
+      },
+      "children": []
+    }
+  }
+}

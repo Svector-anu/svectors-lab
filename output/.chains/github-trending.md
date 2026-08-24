@@ -1,34 +1,34 @@
-ℹ️ GitHub Trending — 2026-08-21
+ℹ️ GitHub Trending — 2026-08-23
 
-**GitHub Trending — 2026-08-21**
+**GitHub Trending — 2026-08-23**
 
-**Top pick** — [RyanCodrai/turbovec](https://github.com/RyanCodrai/turbovec)
-The skills gold rush is minting collections; the quieter, higher-signal story is the infra underneath — cheaper vector memory is what actually unblocks bigger agent context.
+**Top pick** — [openai/codex](https://github.com/openai/codex)
+The board belongs to the agent-skills land-grab today, but the loudest single event is Codex spiking ~1.5k stars in a day — a jump that size on OpenAI's Rust terminal agent reads as a fresh release landing.
 
 **AI/ML**
-• [modular/modular](https://github.com/modular/modular) — ★ 905 today (29k total) · Mojo · RETURNING
-Mojo + MAX in one repo — the bet that one language can span Python ergonomics and raw GPU-kernel speed.
+• [openai/codex](https://github.com/openai/codex) — ★ 1.5k today (114k total) · Rust · ACCELERATING
+1.5k stars in a day on the Rust-native OpenAI terminal coding agent — a spike this size signals a notable release.
 
-• [volcengine/OpenViking](https://github.com/volcengine/OpenViking) — ★ 659 today (32k total) · Python · ACCELERATING
-Unifies agent memory, RAG, and skills in one self-evolving store instead of stitching three systems together.
-
-• [mattpocock/skills](https://github.com/mattpocock/skills) — ★ 3.4k today (229k total) · Shell · ACCELERATING
-The reference dump behind the agent-skills wave — copy-paste skill files that upgrade a coding agent overnight. (Judgment keep: borderline collection, but it *is* today's story.)
-
-**Infra**
-• [RyanCodrai/turbovec](https://github.com/RyanCodrai/turbovec) — ★ 348 today (16k total) · Rust · ACCELERATING
-Quantization-native vector index in Rust — trades almost no recall for large memory savings vs FAISS; ships Python bindings.
-
-• [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — ★ 435 today (5.3k total) · Python · RETURNING
-Red-team scanner now covers MCP servers and agent skills, not just models — timely as the MCP attack surface grows.
+• [modular/modular](https://github.com/modular/modular) — ★ 395 today (29k total) · Mojo · RETURNING
+Mojo + MAX in one monorepo — the GPU-portable Python-superset stack betting against the CUDA lock-in.
 
 **Devtools**
-• [santifer/career-ops](https://github.com/santifer/career-ops) — ★ 918 today (67k total) · JavaScript · ACCELERATING
-Runs job search inside your coding CLI — scrapes portals, scores listings A–F, tailors your CV, all local.
+• [mattpocock/skills](https://github.com/mattpocock/skills) — ★ 2.7k today (233k total) · Shell · ACCELERATING
+Matt Pocock's raw .agents skill set — the reference bundle everyone's cloning in this week's skills-file rush.
 
-**Web/Apps**
-• [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) — ★ 1.4k today (13k total) · Rust · ACCELERATING
-Rust replacement for Logitech Options+ — remap buttons, DPI, SmartShift over HID++ with no account and no telemetry.
+• [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) — ★ 959 today (14k total) · Rust · ACCELERATING
+Local-first, native replacement for Logitech Options+ — remap your mouse buttons with no cloud account.
+
+**Infra**
+• [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) — ★ 278 today (39k total) · Go · ACCELERATING
+Exposes your Claude/OpenAI/Gemini subscription accounts as one OpenAI-compatible API endpoint.
+
+• [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — ★ 150 today (5.6k total) · Python · RETURNING
+Red-teams the skills/MCP/agent stack everyone's shipping this week — scans for prompt-injection and jailbreaks.
+
+**Data**
+• [mahlernim/google-timeline-visualizer](https://github.com/mahlernim/google-timeline-visualizer) — ★ 441 today (2.6k total) · Kotlin · RETURNING
+Feed it your Google Location History export, get an interactive travel map — quiet repo, sharp spike today.
 
 ---
-sources: trending=ok · gh_api=fail (read-only; verified via public GitHub API) · kept 7/16
+sources: trending=ok · gh_api=fail (read-only; enriched via public api.github.com) · kept 7/17

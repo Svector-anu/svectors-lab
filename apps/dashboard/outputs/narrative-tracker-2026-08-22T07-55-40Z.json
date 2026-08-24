@@ -1,0 +1,544 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text-date",
+        "text-source",
+        "sep-1",
+        "heading-alerts",
+        "alerts-stack",
+        "sep-2",
+        "heading-positions",
+        "positions-stack",
+        "sep-3",
+        "text-no-front-run",
+        "sep-4",
+        "heading-map",
+        "map-stack"
+      ]
+    },
+    "text-date": {
+      "type": "Text",
+      "props": {
+        "text": "2026-08-22",
+        "variant": "caption"
+      }
+    },
+    "text-source": {
+      "type": "Text",
+      "props": {
+        "text": "Source: WebSearch fallback (xai http=400, invalid key). Baseline thin — prior tracker runs failed.",
+        "variant": "muted"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading-alerts": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY ALERTS",
+        "level": "h2"
+      }
+    },
+    "alerts-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "alert-1",
+        "alert-2",
+        "alert-3"
+      ]
+    },
+    "alert-1": {
+      "type": "Text",
+      "props": {
+        "text": "DATs — premium-to-NAV compressing even as BTC hit ATH; 142+ treasury cos, new ones weekly. Flywheel reversing (NYDIG). → FADE"
+      }
+    },
+    "alert-2": {
+      "type": "Text",
+      "props": {
+        "text": "Privacy/ZEC — DCG buying ~200k ZEC (~$110M) through its own trust to convert to a spot ETF: on-chain flow manufacturing the narrative it monetizes. Reflexive."
+      }
+    },
+    "alert-3": {
+      "type": "Text",
+      "props": {
+        "text": "Hyperliquid — 97% of rev buys back HYPE, but gross rev fell every qtr since Q3'25 ($357M→$202M) as HIP-3 RWA perps eat the cut. Buyback-forever thesis is eroding."
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading-positions": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h2"
+      }
+    },
+    "positions-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "pos-1",
+        "pos-2",
+        "pos-3",
+        "pos-4",
+        "pos-5",
+        "pos-6",
+        "pos-7"
+      ]
+    },
+    "pos-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-1-header",
+        "pos-1-text"
+      ]
+    },
+    "pos-1-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-ride",
+        "text-policy"
+      ]
+    },
+    "badge-ride": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "default"
+      }
+    },
+    "text-policy": {
+      "type": "Text",
+      "props": {
+        "text": "Policy-majors rally (BTC/ETH, 4↑)",
+        "variant": "lead"
+      }
+    },
+    "pos-1-text": {
+      "type": "Text",
+      "props": {
+        "text": "SEC Reg-Crypto-Assets + CFTC + WH summit + 8-day ETH ETF inflows. Bear: proposed≠final, sell-the-news."
+      }
+    },
+    "pos-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-2-header",
+        "pos-2-text"
+      ]
+    },
+    "pos-2-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-ride-stop",
+        "text-privacy"
+      ]
+    },
+    "badge-ride-stop": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE(stop)",
+        "variant": "secondary"
+      }
+    },
+    "text-privacy": {
+      "type": "Text",
+      "props": {
+        "text": "Privacy/ZEC (4↑↑) +40% wk",
+        "variant": "lead"
+      }
+    },
+    "pos-2-text": {
+      "type": "Text",
+      "props": {
+        "text": "ETF+DCG catalyst live. Bear: parabolic, fade on approval news."
+      }
+    },
+    "pos-3": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-3-header",
+        "pos-3-text"
+      ]
+    },
+    "pos-3-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-fade-1",
+        "text-dat"
+      ]
+    },
+    "badge-fade-1": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "text-dat": {
+      "type": "Text",
+      "props": {
+        "text": "DAT premium plays (3↓ Cope)",
+        "variant": "lead"
+      }
+    },
+    "pos-3-text": {
+      "type": "Text",
+      "props": {
+        "text": "Compression kills issuance flywheel."
+      }
+    },
+    "pos-4": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-4-header",
+        "pos-4-text"
+      ]
+    },
+    "pos-4-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-fade-2",
+        "text-hyperliquid"
+      ]
+    },
+    "badge-fade-2": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "text-hyperliquid": {
+      "type": "Text",
+      "props": {
+        "text": "Hyperliquid buyback-flywheel-forever (4→ Mixed)",
+        "variant": "lead"
+      }
+    },
+    "pos-4-text": {
+      "type": "Text",
+      "props": {
+        "text": "Revenue declining QoQ."
+      }
+    },
+    "pos-5": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-5-header",
+        "pos-5-text"
+      ]
+    },
+    "pos-5-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-fade-3",
+        "text-squeeze"
+      ]
+    },
+    "badge-fade-3": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "text-squeeze": {
+      "type": "Text",
+      "props": {
+        "text": "Short-squeeze continuation (3↑)",
+        "variant": "lead"
+      }
+    },
+    "pos-5-text": {
+      "type": "Text",
+      "props": {
+        "text": "$477M liq'd, mechanical not organic."
+      }
+    },
+    "pos-6": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-6-header",
+        "pos-6-text"
+      ]
+    },
+    "pos-6-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-watch-1",
+        "text-ai-agents"
+      ]
+    },
+    "badge-watch-1": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "text-ai-agents": {
+      "type": "Text",
+      "props": {
+        "text": "AI-agents/DePIN infra (5↑ saturating)",
+        "variant": "lead"
+      }
+    },
+    "pos-6-text": {
+      "type": "Text",
+      "props": {
+        "text": "RIDE infra, fade agent memes; identity bottleneck unsolved."
+      }
+    },
+    "pos-7": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pos-7-header",
+        "pos-7-text"
+      ]
+    },
+    "pos-7-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-watch-2",
+        "text-stablecoin"
+      ]
+    },
+    "badge-watch-2": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "text-stablecoin": {
+      "type": "Text",
+      "props": {
+        "text": "Stablecoin-yield fight (3, Mixed)",
+        "variant": "lead"
+      }
+    },
+    "pos-7-text": {
+      "type": "Text",
+      "props": {
+        "text": "GENIUS §4(a)(11) yield ban; Coinbase opposing; supply flat/-1% 30d."
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "text-no-front-run": {
+      "type": "Text",
+      "props": {
+        "text": "No clean FRONT-RUN with real contrarian edge today — not forcing one.",
+        "variant": "muted"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "heading-map": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h2"
+      }
+    },
+    "map-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "map-rising",
+        "map-peak",
+        "map-fading",
+        "map-watch"
+      ]
+    },
+    "map-rising": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-rising-label",
+        "text-rising-items"
+      ]
+    },
+    "text-rising-label": {
+      "type": "Text",
+      "props": {
+        "text": "Rising:",
+        "variant": "lead"
+      }
+    },
+    "text-rising-items": {
+      "type": "Text",
+      "props": {
+        "text": "Policy-majors, Privacy/ZEC, AI-agents infra, Stablecoin-yield fight"
+      }
+    },
+    "map-peak": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-peak-label",
+        "text-peak-items"
+      ]
+    },
+    "text-peak-label": {
+      "type": "Text",
+      "props": {
+        "text": "Peak:",
+        "variant": "lead"
+      }
+    },
+    "text-peak-items": {
+      "type": "Text",
+      "props": {
+        "text": "Hyperliquid/perp-DEX, Short-squeeze"
+      }
+    },
+    "map-fading": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-fading-label",
+        "text-fading-items"
+      ]
+    },
+    "text-fading-label": {
+      "type": "Text",
+      "props": {
+        "text": "Fading:",
+        "variant": "lead"
+      }
+    },
+    "text-fading-items": {
+      "type": "Text",
+      "props": {
+        "text": "DAT premiums"
+      }
+    },
+    "map-watch": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-watch-label",
+        "text-watch-items"
+      ]
+    },
+    "text-watch-label": {
+      "type": "Text",
+      "props": {
+        "text": "Watch:",
+        "variant": "lead"
+      }
+    },
+    "text-watch-items": {
+      "type": "Text",
+      "props": {
+        "text": "Prediction markets (Polymarket)"
+      }
+    }
+  }
+}

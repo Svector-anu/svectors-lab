@@ -40,3 +40,16 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-21,heartbeat,claude-opus-4-8,2598,12536,321123,71611
 2026-08-22,defi-overview,claude-opus-4-8,4077,29107,2069411,120893
 2026-08-22,vuln-scanner,claude-opus-4-8,4504,32081,5324903,131050
+2026-08-22,defi-overview,claude-opus-4-8,4647,32500,2079970,148052
+2026-08-22,heartbeat,claude-opus-4-8,2739,17702,747458,59788
+2026-08-22,github-trending,claude-opus-4-8,2878,19558,812605,97403
+2026-08-22,defi-overview,claude-opus-4-8,4417,30981,2600783,154122
+2026-08-22,defi-overview,claude-opus-4-8,3035,29224,2088422,69965
+2026-08-22,narrative-tracker,claude-opus-4-8,4089,16683,854103,118045
+2026-08-22,vuln-scanner,claude-opus-4-8,16570,25187,4266076,232215
+2026-08-23,hunter-22,claude-opus-4-8,2799,8850,882269,34044
+2026-08-23,digest,claude-opus-4-8,6740,17398,1101677,134761
+2026-08-23,github-trending,claude-opus-4-8,2886,20601,1013026,122367
+2026-08-23,hunter-22,claude-opus-4-8,4057,10083,784380,37024
+2026-08-23,vuln-scanner,claude-opus-4-8,5880,51934,5850009,119013
+2026-08-23,digest,claude-opus-4-8,5941,14750,1146076,104030

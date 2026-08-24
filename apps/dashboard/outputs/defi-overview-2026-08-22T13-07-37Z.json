@@ -1,0 +1,409 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "DeFi Overview",
+        "description": "Crypto signal — 2026-08-22"
+      },
+      "children": [
+        "heading_main",
+        "sentiment_row",
+        "sep1",
+        "take_section",
+        "sep2",
+        "majors_section",
+        "sep3",
+        "defi_section",
+        "sep4",
+        "fees_section",
+        "sep5",
+        "froth_section",
+        "sep6",
+        "macro_section"
+      ]
+    },
+    "heading_main": {
+      "type": "Heading",
+      "props": {
+        "text": "Crypto: rotation cooling",
+        "level": "h2"
+      }
+    },
+    "sentiment_row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_cooling",
+        "text_conviction"
+      ]
+    },
+    "badge_cooling": {
+      "type": "Badge",
+      "props": {
+        "text": "risk-on cooling",
+        "variant": "outline"
+      }
+    },
+    "text_conviction": {
+      "type": "Text",
+      "props": {
+        "text": "conviction medium",
+        "variant": "caption"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "take_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "take_label",
+        "take_text"
+      ]
+    },
+    "take_label": {
+      "type": "Text",
+      "props": {
+        "text": "Take:",
+        "variant": "lead"
+      }
+    },
+    "take_text": {
+      "type": "Text",
+      "props": {
+        "text": "The morning's large-cap alt blow-off is fading. XRP +11.4% (was +19.7% at 08:00), ZEC +25% (was +32%), ADA +7% (was +11.8%); BTC dominance ticked back up 58.55%→58.79%, breadth eased 17→16/20, mcap −0.8% 24h. BTC holding $77.3k. Leadership rotating back toward BTC — don't chase the alt pump into deceleration.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "majors_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "majors_label",
+        "majors_grid"
+      ]
+    },
+    "majors_label": {
+      "type": "Heading",
+      "props": {
+        "text": "Majors",
+        "level": "h3"
+      }
+    },
+    "majors_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_btc",
+        "stat_eth",
+        "stat_sol",
+        "stat_fg"
+      ]
+    },
+    "stat_btc": {
+      "type": "Stat",
+      "props": {
+        "label": "BTC",
+        "value": "$77.3k",
+        "delta": "+0.9%",
+        "trend": "up"
+      }
+    },
+    "stat_eth": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH",
+        "value": "$2,428",
+        "delta": "+2.6%",
+        "trend": "up"
+      }
+    },
+    "stat_sol": {
+      "type": "Stat",
+      "props": {
+        "label": "SOL",
+        "value": "$93.9",
+        "delta": "+4.2%",
+        "trend": "up"
+      }
+    },
+    "stat_fg": {
+      "type": "Stat",
+      "props": {
+        "label": "Fear & Greed",
+        "value": "71",
+        "delta": "Greed"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "defi_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "defi_label",
+        "defi_descriptor",
+        "defi_grid"
+      ]
+    },
+    "defi_label": {
+      "type": "Heading",
+      "props": {
+        "text": "DeFi",
+        "level": "h3"
+      }
+    },
+    "defi_descriptor": {
+      "type": "Text",
+      "props": {
+        "text": "Mixed: activity hot, deposits flat — rotation not fresh capital",
+        "variant": "caption"
+      }
+    },
+    "defi_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 1,
+        "gap": "md"
+      },
+      "children": [
+        "stat_tvl",
+        "stat_dex_vol",
+        "stat_stables"
+      ]
+    },
+    "stat_tvl": {
+      "type": "Stat",
+      "props": {
+        "label": "TVL (1d, flattened)",
+        "value": "+0.43%",
+        "delta": "7d +17.3%"
+      }
+    },
+    "stat_dex_vol": {
+      "type": "Stat",
+      "props": {
+        "label": "DEX Volume (still hot)",
+        "value": "$14.0B",
+        "delta": "+34%",
+        "trend": "up"
+      }
+    },
+    "stat_stables": {
+      "type": "Stat",
+      "props": {
+        "label": "Stables (flat)",
+        "value": "$309.5B",
+        "delta": "+0.3%",
+        "trend": "neutral"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fees_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "fees_label",
+        "fees_grid"
+      ]
+    },
+    "fees_label": {
+      "type": "Heading",
+      "props": {
+        "text": "Fees Fundamentals",
+        "level": "h3"
+      }
+    },
+    "fees_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 1,
+        "gap": "md"
+      },
+      "children": [
+        "stat_hyperliquid",
+        "stat_hype",
+        "stat_aerodrome"
+      ]
+    },
+    "stat_hyperliquid": {
+      "type": "Stat",
+      "props": {
+        "label": "Hyperliquid Perps (cleanest cashflow story)",
+        "value": "$6.0M",
+        "delta": "+411% 7d",
+        "trend": "up"
+      }
+    },
+    "stat_hype": {
+      "type": "Stat",
+      "props": {
+        "label": "HYPE",
+        "value": "$77.6",
+        "delta": "+4.7%",
+        "trend": "up"
+      }
+    },
+    "stat_aerodrome": {
+      "type": "Stat",
+      "props": {
+        "label": "Aerodrome Slipstream (fees-beating-TVL)",
+        "value": "+340% fees",
+        "delta": "+4% TVL 7d",
+        "trend": "up"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "froth_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "froth_label",
+        "froth_grid"
+      ]
+    },
+    "froth_label": {
+      "type": "Heading",
+      "props": {
+        "text": "Froth Fading",
+        "level": "h3"
+      }
+    },
+    "froth_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 1,
+        "gap": "md"
+      },
+      "children": [
+        "stat_trump",
+        "stat_zec"
+      ]
+    },
+    "stat_trump": {
+      "type": "Stat",
+      "props": {
+        "label": "TRUMP",
+        "value": "#1 → #95",
+        "delta": "trending +69% → +31% 24h",
+        "trend": "down"
+      }
+    },
+    "stat_zec": {
+      "type": "Stat",
+      "props": {
+        "label": "ZEC (privacy)",
+        "value": "decelerating",
+        "delta": "+32% → +25%",
+        "trend": "down"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "macro_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "macro_label",
+        "macro_unchanged_text",
+        "macro_grid"
+      ]
+    },
+    "macro_label": {
+      "type": "Heading",
+      "props": {
+        "text": "Macro Engine",
+        "level": "h3"
+      }
+    },
+    "macro_unchanged_text": {
+      "type": "Text",
+      "props": {
+        "text": "Unchanged: no fresh catalyst — positioning, not news.",
+        "variant": "caption"
+      }
+    },
+    "macro_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 1,
+        "gap": "md"
+      },
+      "children": [
+        "stat_treasury",
+        "stat_jackson"
+      ]
+    },
+    "stat_treasury": {
+      "type": "Stat",
+      "props": {
+        "label": "Treasury buyback",
+        "value": "$2B → $4B",
+        "delta": "6-day ETF inflow streak"
+      }
+    },
+    "stat_jackson": {
+      "type": "Stat",
+      "props": {
+        "label": "Next event",
+        "value": "Jackson Hole",
+        "delta": "Aug 27-29 (Warsh)"
+      }
+    }
+  }
+}

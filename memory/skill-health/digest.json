@@ -1,8 +1,8 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-21T21:48:31Z",
+  "last_analyzed": "2026-08-23T15:14:11Z",
   "quality_score": 4,
-  "assessment": "Substantive, well-sourced daily digest following strategy: conclusion-first, crypto-weighted, decision-oriented. Four distinct stories with regulatory/policy catalysts, context, and URIs; each includes decision-relevant signals (buyback window, CLARITY vote, permit-vs-deployment gap). Qualitative on prices as instructed.",
+  "assessment": "Substantive, well-sourced, trader-focused digest with strong dedup discipline and verified claims; minor gap in explicit position calls for regulatory item.",
   "flags": [],
   "avg_score": 4,
   "history": [
@@ -12,6 +12,14 @@
     },
     {
       "date": "2026-08-21",
+      "score": 4
+    },
+    {
+      "date": "2026-08-23",
+      "score": 4
+    },
+    {
+      "date": "2026-08-23",
       "score": 4
     }
   ]

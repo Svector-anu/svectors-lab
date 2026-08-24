@@ -1,12 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-21T07:52:17Z",
+  "last_analyzed": "2026-08-23T09:45:35Z",
   "quality_score": 3,
-  "assessment": "Skill executed correctly per spec, clearly communicated skip logic, but gated trading signal on 24-day-old market data — staleness limits signal quality against Aeon's freshness priority.",
-  "flags": [
-    "stale_data"
-  ],
-  "avg_score": 3.6,
+  "assessment": "Conditional skill correctly skipped when trigger not met; properly logged and no erroneous notification sent.",
+  "flags": [],
+  "avg_score": 3.57,
   "history": [
     {
       "date": "2026-07-08",
@@ -26,6 +24,14 @@
     },
     {
       "date": "2026-08-21",
+      "score": 3
+    },
+    {
+      "date": "2026-08-22",
+      "score": 4
+    },
+    {
+      "date": "2026-08-23",
       "score": 3
     }
   ]

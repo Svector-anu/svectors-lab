@@ -1,25 +1,22 @@
-Done. Ran hunter-22 end to end.
+Done. Clean run — no new bounties, so no notification per "notify only on signal."
 
-## Hunter-22 — bounty scan for 2026-08-21
+## hunter-22 — bounty scan, 2026-08-23
 
-**Verdict: no new tradeable match. Nothing notified (correctly — no signal).**
+**Verdict: 0 new matches. Nothing to act on. No notification sent.**
 
-ClawHunter `POST /api/v1/match` returned **http=200** with 25 ranked candidates against this agent's real capabilities (`code, security-research, research, writing, dependency-analysis`, `canDoRealWorld:false`, `minReward:20`). After honest triage, **0 survived** as genuine code / security-review / technical-research work.
+ClawHunter `POST /api/v1/match` returned **http 200 with 24 matches** (free discovery tier, no auth/wallet; `capabilities=[code, security-research, research, writing, dependency-analysis]`, `canDoRealWorld=false`, `minReward=20`, `limit=25`).
 
-### Why every candidate was dropped
-- **Content/social-growth in disguise (the bulk):** Solana Summit Canada creator challenge, Botropolis AI commercial, HuzzFun hype video, "Why Digital Credit Matters" X-thread, La CCF / Aeonian / Echoes / $SOL-Maxi threads, FairScale QRT campaign, plus shillz listings (MOTION, Syndicate, Y2K, Kekius). `requires` is `write/engage/video/image` with no real `code` — this agent has no content-generation or social-outreach tooling, so it can't credibly deliver these.
-- **Region-gated / wallet-gated:** the one code-shaped listing — **Solana Developer Challenge: Anchor Flash Loan ($333)** — is restricted to Superteam **Netherlands** members and requires a funded wallet + an on-chain completion NFT + a Twitter post. With `canDoRealWorld:false` and no wallet configured, it's excluded.
-- **App-testing/luck tasks:** "Test Seeker Flap", "Read EMOS lite paper" (pull a legendary card) — no citable deliverable.
+**Triage (honest, not generous):**
+- The bulk were content/social-growth tasks in disguise — shilling campaigns (Y2K, Kekius Maximus, The Syndicate, Clive Bagworking), creator/thread bounties, hype-video and infographic asks. `requires` is `write`/`engage`/`video`/`image` with no `code`/`onchain` → this agent has no content-generation or social-outreach tooling, dropped.
+- Code-ish survivors — **Bring Your Web2 Ideas Onchain**, **Solana Developer Challenge: Anchor Flash Loan**, **Develop Solana Ecosystem Dashboard**, **List your API to MPP32** — are build/dev-challenge shaped, not audits.
+- **Audit-shaped candidates (code/onchain + linked GitHub repo): 0.** None of the survivors carried a `github.com/owner/repo` link, so no vuln-scanner dispatch button was generated. (The one prior example of this shape remains the Veilo bounty from July.)
 
-### Audit-dispatch check
-Scanned every candidate `body`/`url` for a `github.com/owner/repo` link — **none this run**, so no `vuln-scanner` dispatch button was warranted. (The Veilo-shaped audit bounty from prior runs did not reappear.)
+**Dedup:** all 24 IDs were already in `hunter-22-seen.json`, seen 2026-08-21/22 — inside the 14-day window. **0 genuinely new.**
 
-### Bookkeeping
-- Updated `memory/topics/hunter-22-seen.json`: upserted this run's 25 IDs with today's date → **50 entries**; none older than 30 days to prune.
-- Appended a `### hunter-22` entry to `memory/logs/2026-08-21.md`.
-- Committed both to `main`.
+**Bookkeeping:** refreshed `seen_at` → 2026-08-23 for all 24 returned candidates, pruned entries older than 30 days (before 2026-07-24), 52 entries total. Committed.
 
 ## Summary
-- **Did:** called ClawHunter free `/match` (http=200, 25 candidates); triaged to 0 genuine matches; confirmed no GitHub-linked audit-shaped bounty; suppressed notify per "notify only on signal."
-- **Files modified:** `memory/topics/hunter-22-seen.json` (dedup log, 50 entries), `memory/logs/2026-08-21.md` (run log). Committed as one commit on `main`.
-- **Follow-up:** none required. Next scheduled run 2026-08-22 10:00 UTC. If a wallet is ever funded and documented in `memory/topics/`, the NL Anchor Flash Loan challenge could be revisited.
+- Called ClawHunter free `/match` (http 200, 24 matches); triaged, found 0 audit-shaped and 0 new-since-last-seen.
+- No notification (correct per notify-only-on-signal).
+- Files: `memory/topics/hunter-22-seen.json` (refreshed/pruned), `memory/logs/2026-08-23.md` (run log appended) — both committed. Temp helper script removed.
+- Follow-up: none. Next scheduled run 2026-08-24 10:00 UTC.

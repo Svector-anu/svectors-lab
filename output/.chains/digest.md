@@ -1,25 +1,20 @@
-ℹ️ Daily Digest — 2026-08-21
+ℹ️ Digest — 2026-08-23
 
-*Daily Digest — 2026-08-21*
+*Digest — 2026-08-23*
 
-_TL;DR: Crypto's multi-day rally is policy-driven, not organic — Treasury liquidity, the SEC's first token-offering framework, and a CLARITY push are doing the lifting; Anthropic signals a record IPO and Nevada clears robotaxis at scale._
+_TL;DR: A $8.5M DeFi governance takeover with no code bug, a 15%+ Nvidia AI-server price hike from the DRAM crunch, and a hard date on the CLARITY vote that still won't pass this year._
 
-1. *SEC proposes first US token-offering framework — a legal path for token sales*
-   The SEC's "Regulation Crypto Assets" (proposed Aug 18) creates registration exemptions — up to $75M over 12 months — plus a conditional safe harbor from "investment contract" once a network's key managerial efforts are complete or abandoned.
-   Why it matters: the first real US on-ramp for compliant token launches, and it front-runs CLARITY, which is still stalled in Congress — an issuance regime traders can position around now, not eventually.
-   https://www.sec.gov/newsroom/press-releases/2026-76-sec-proposes-new-regulation-crypto-assets
+1. *Term Labs drained of $8.5M in a pure governance takeover*
+   An attacker seeded 2 ETH through Tornado Cash, bootstrapped a supermajority — 100% of four USDC strategy vaults and ~91% of the ETH Meta Vault — then voted the funds out: ~2,843 ETH and ~1.6M DAI to a single wallet. Confirmed by CertiK and PeckShield.
+   Why it matters: this wasn't an exploit, it was a legal vote. Any vault with low-quorum, token-weighted on-chain governance is exposed the same way — check where your deposits sit.
+   https://cryptobriefing.com/term-labs-governance-exploit-vaults/
 
-2. *Crypto rally extends into Friday — regime is risk-on but policy-dependent*
-   BTC and ETH continued their week-long climb after the Treasury doubled long-dated bond buybacks (Aug 19) and Trump urged Congress to pass CLARITY. The bid is driven by liquidity and regulatory optimism, not fresh organic demand.
-   Why it matters: this leg rests on policy catalysts — the buyback window (Sep 9–Nov 4) and the CLARITY vote are the continuation signals; a stall on either is the fade.
-   https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-friday-august-21-2026-cryptos-continue-rally-sparked-by-treasury-repurchase-announcement-161633891.html
+2. *Nvidia AI-server prices set to rise 15%+ as memory costs surge*
+   A 15–17% bump hits Vera Rubin and Grace Blackwell configs shipping in early 2027, driven by DRAM prices (Samsung, SK Hynix, Micron). The increase flows straight through to Microsoft, Google and Oracle.
+   Why it matters: it adds billions to gigawatt-scale AI buildouts and sharpens the incentive for hyperscalers to ship their own accelerators — a slow bleed away from all-Nvidia stacks.
+   https://cryptoadventure.com/nvidia-ai-server-prices-set-to-rise-more-than-15-as-memory-costs-surge/
 
-3. *Anthropic signals a record IPO — could match or top SpaceX*
-   Anthropic expects its IPO to match or beat SpaceX's record size (Bloomberg, Aug 20), and is preparing to file publicly as soon as end of August, with an October Nasdaq window reportedly in view.
-   Why it matters: a would-be largest-ever IPO sets the valuation anchor for the entire private-AI complex and tests investor appetite for AI-infra at scale.
-   https://www.bloomberg.com/news/articles/2026-08-20/anthropic-expects-to-match-spacex-s-record-ipo-size-or-top-it
-
-4. *Nevada clears up to 8,000 robotaxis for Tesla, Uber, and Waymo*
-   The Nevada Transportation Authority approved paid robotaxi permits in Clark County (Aug 20) — 5,000 for Tesla, 1,000 each for Waymo and Uber. Tesla's own Cybercab engineer targets ~2,500, well below the cap.
-   Why it matters: the first at-scale, multi-operator paid AV market in the US — watch the permit-vs-deployment gap as the real read on capacity.
-   https://techcrunch.com/2026/08/20/tesla-uber-and-waymo-all-get-the-ok-to-operate-thousands-of-robotaxis-in-nevada/
+3. *CLARITY Act cloture vote locked for Sept 15 — but it won't pass in 2026*
+   The Senate set a procedural cloture vote (needs 60) for Sept 15; Coinbase's Armstrong frames two paths — that vote, or CFTC/SEC rules landing Sept 16. Three fights stay open (enforcement, stablecoin rewards, dev protections); analysts now peg actual passage to 2027.
+   Why it matters: the regulatory catalyst behind August's rally is further out than the tape implies. Trade the September date as a volatility event, not a done deal.
+   https://bitcoinfoundation.org/news/regulation/congress-crypto-bill-delay-clarity-act-vote-pushed-to-september-as-2026-passage-hopes-fade/

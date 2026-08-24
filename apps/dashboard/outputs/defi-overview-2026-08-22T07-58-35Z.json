@@ -1,0 +1,401 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Crypto — risk-on, rotating"
+      },
+      "children": [
+        "stack-header",
+        "sep-1",
+        "section-btc",
+        "sep-2",
+        "section-alts",
+        "sep-3",
+        "section-signals",
+        "sep-4",
+        "section-froth",
+        "sep-5",
+        "section-move",
+        "sep-6",
+        "section-catalyst"
+      ]
+    },
+    "stack-header": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge-conviction",
+        "text-date"
+      ]
+    },
+    "badge-conviction": {
+      "type": "Badge",
+      "props": {
+        "text": "Conviction: High"
+      }
+    },
+    "text-date": {
+      "type": "Text",
+      "props": {
+        "text": "2026-08-22",
+        "variant": "caption"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-btc": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-btc",
+        "stat-btc",
+        "text-btc-signal"
+      ]
+    },
+    "heading-btc": {
+      "type": "Heading",
+      "props": {
+        "text": "BTC",
+        "level": "h3"
+      }
+    },
+    "stat-btc": {
+      "type": "Stat",
+      "props": {
+        "label": "Price 24h",
+        "value": "$77,300",
+        "delta": "+2.8%",
+        "trend": "up"
+      }
+    },
+    "text-btc-signal": {
+      "type": "Text",
+      "props": {
+        "text": "Rejected $80k overnight — the flagged fade risk played out"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-alts": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-alts",
+        "text-alt-context",
+        "stack-alts-grid",
+        "stat-btc-dominance"
+      ]
+    },
+    "heading-alts": {
+      "type": "Heading",
+      "props": {
+        "text": "Alt Leadership 24h",
+        "level": "h3"
+      }
+    },
+    "text-alt-context": {
+      "type": "Text",
+      "props": {
+        "text": "Leadership has rotated to large-cap alts",
+        "variant": "caption"
+      }
+    },
+    "stack-alts-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-xrp",
+        "stat-xlm",
+        "stat-doge",
+        "stat-ada"
+      ]
+    },
+    "stat-xrp": {
+      "type": "Stat",
+      "props": {
+        "label": "XRP",
+        "value": "+19.7%",
+        "trend": "up"
+      }
+    },
+    "stat-xlm": {
+      "type": "Stat",
+      "props": {
+        "label": "XLM",
+        "value": "+12.7%",
+        "trend": "up"
+      }
+    },
+    "stat-doge": {
+      "type": "Stat",
+      "props": {
+        "label": "DOGE",
+        "value": "+12.0%",
+        "trend": "up"
+      }
+    },
+    "stat-ada": {
+      "type": "Stat",
+      "props": {
+        "label": "ADA",
+        "value": "+11.8%",
+        "trend": "up"
+      }
+    },
+    "stat-btc-dominance": {
+      "type": "Stat",
+      "props": {
+        "label": "BTC Dominance",
+        "value": "58.6%",
+        "delta": "easing",
+        "trend": "down"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-signals": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-signals",
+        "stack-signals-grid"
+      ]
+    },
+    "heading-signals": {
+      "type": "Heading",
+      "props": {
+        "text": "Signals",
+        "level": "h3"
+      }
+    },
+    "stack-signals-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat-breadth",
+        "stat-fng",
+        "stat-dex",
+        "stat-tvl",
+        "stat-etf"
+      ]
+    },
+    "stat-breadth": {
+      "type": "Stat",
+      "props": {
+        "label": "Breadth",
+        "value": "17/20 green"
+      }
+    },
+    "stat-fng": {
+      "type": "Stat",
+      "props": {
+        "label": "Fear & Greed",
+        "value": "71",
+        "delta": "Greed"
+      }
+    },
+    "stat-dex": {
+      "type": "Stat",
+      "props": {
+        "label": "DEX Volume",
+        "value": "$13.9B",
+        "delta": "+33% 1d",
+        "trend": "up"
+      }
+    },
+    "stat-tvl": {
+      "type": "Stat",
+      "props": {
+        "label": "TVL",
+        "value": "+16%",
+        "delta": "7d",
+        "trend": "up"
+      }
+    },
+    "stat-etf": {
+      "type": "Stat",
+      "props": {
+        "label": "ETF Inflows",
+        "value": "$606M",
+        "delta": "6 straight days (Aug 20)"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-froth": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-froth",
+        "text-froth-context",
+        "stack-froth-grid"
+      ]
+    },
+    "heading-froth": {
+      "type": "Heading",
+      "props": {
+        "text": "Froth Watch",
+        "level": "h3"
+      }
+    },
+    "text-froth-context": {
+      "type": "Text",
+      "props": {
+        "text": "Speculation returning at the tail",
+        "variant": "caption"
+      }
+    },
+    "stack-froth-grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "stat-trump",
+        "stat-zec",
+        "stat-pepe"
+      ]
+    },
+    "stat-trump": {
+      "type": "Stat",
+      "props": {
+        "label": "TRUMP",
+        "value": "+69% 24h",
+        "delta": "#1 CG trending",
+        "trend": "up"
+      }
+    },
+    "stat-zec": {
+      "type": "Stat",
+      "props": {
+        "label": "ZEC",
+        "value": "+32%",
+        "delta": "peak",
+        "trend": "up"
+      }
+    },
+    "stat-pepe": {
+      "type": "Stat",
+      "props": {
+        "label": "PEPE",
+        "value": "+22%",
+        "trend": "up"
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-move": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-move",
+        "text-move-primary",
+        "text-move-7d",
+        "text-move-fades"
+      ]
+    },
+    "heading-move": {
+      "type": "Heading",
+      "props": {
+        "text": "Move",
+        "level": "h3"
+      }
+    },
+    "text-move-primary": {
+      "type": "Text",
+      "props": {
+        "text": "Ride the alt rotation on pullbacks, not chases"
+      }
+    },
+    "text-move-7d": {
+      "type": "Text",
+      "props": {
+        "text": "XRP/DOGE/ADA already +30–56% 7d — wait for dips before adding"
+      }
+    },
+    "text-move-fades": {
+      "type": "Text",
+      "props": {
+        "text": "Treat ZEC/TRUMP as late-stage fades, not entries"
+      }
+    },
+    "sep-6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "section-catalyst": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-catalyst",
+        "text-catalyst"
+      ]
+    },
+    "heading-catalyst": {
+      "type": "Heading",
+      "props": {
+        "text": "Next Catalyst",
+        "level": "h3"
+      }
+    },
+    "text-catalyst": {
+      "type": "Text",
+      "props": {
+        "text": "Jackson Hole Aug 27–29 (Warsh)"
+      }
+    }
+  }
+}
