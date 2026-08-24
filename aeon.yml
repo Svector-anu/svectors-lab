@@ -243,7 +243,16 @@ model: claude-sonnet-5
 # GROK_CREDENTIALS session was fine but the account's Grok Build usage balance
 # was exhausted (402) with no reset after 40+ hours. Revert to grok only once
 # its usage resets/is funded, or if CLAUDE_CODE_OAUTH_TOKEN goes stale again.
-harness: fx
+#
+# Reverted from fx 2026-08-24: fx landed on this value as an unintended
+# side effect of clicking through the harness picker to verify it now renders
+# fx as an option (a real dashboard bug — a model-only PATCH silently also
+# wrote a stale harness value; under investigation separately). This repo has
+# no AI_GATEWAY_API_KEY/VERCEL_OIDC_TOKEN configured, and fx has no
+# OpenRouter fallback (see resolve-harness.sh's fx case), so every skill was
+# failing closed immediately on MissingCredentials. Don't set harness: fx
+# again until those secrets are actually provisioned.
+harness: claude
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
