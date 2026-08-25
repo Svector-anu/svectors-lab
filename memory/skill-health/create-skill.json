@@ -1,0 +1,16 @@
+{
+  "skill": "create-skill",
+  "last_analyzed": "2026-08-25T01:03:56Z",
+  "quality_score": 1,
+  "assessment": "Failed to create the requested skill and produced only an abort message due to missing input.",
+  "flags": [
+    "empty_output"
+  ],
+  "avg_score": 1,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 1
+    }
+  ]
+}
