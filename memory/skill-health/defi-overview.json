@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-25T01:25:15Z",
+  "last_analyzed": "2026-08-25T06:27:41Z",
   "quality_score": 2,
-  "assessment": "Useful regime framing, but it lacks explicit position calls, foregrounds prohibited live prices, provides weak sourcing, and implausibly claims workspace writes during a read-only run.",
+  "assessment": "Specific uncited market figures and contradictory read-only write claims undermine verifiability; it also violates the no-hard-price rule and provides no actionable position calls.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.73,
+  "avg_score": 3.63,
   "history": [
     {
       "date": "2026-07-06",
@@ -56,6 +56,10 @@
     {
       "date": "2026-08-23",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",
