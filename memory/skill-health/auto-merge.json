@@ -1,19 +1,18 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-08-25T08:06:06Z",
-  "quality_score": 2,
-  "assessment": "The PR safety decision is clear and actionable, but the output claims workspace state initialization and log writes during a read-only run, making completion unverifiable.",
-  "last_analyzed": "2026-08-25T08:07:41Z",
-  "quality_score": 2,
-  "assessment": "The merge decision is clear, but claims of creating and updating workspace files are incompatible with the read-only run and therefore unverifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2,
+  "last_analyzed": "2026-08-25T14:44:36Z",
+  "quality_score": 4,
+  "assessment": "Good: concise, decision-first auto-merge report with explicit eligibility reasons, outcome, retry status, and auditable log path.",
+  "flags": [],
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-08-25",
       "score": 2
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     }
   ]
 }
