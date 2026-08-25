@@ -1,42 +1,39 @@
 ℹ️ RightStack: Base consumer app architecture
 
-## RightStack architecture brief
+## RightStack brief — Base consumer app with embedded wallet
 
-**Request:** consumer app on Base with embedded wallet  
-**Selected workflow:** `base-consumer-app` (Base Consumer App Workflow), MVP, adapter confidence 0.65
+**Request:** `consumer app on base with embedded wallet`  
+**Selected workflow:** `base-consumer-app` (Base, MVP). The route matches the requested chain, application type, and embedded-wallet onboarding model. RightStack confidence is 0.65; that is corpus evidence, not independent validation.
 
 ### Recommended stack by phase
 
-1. **Required — identity and embedded signing:** Privy React SDK, configured for Base. Decide explicitly whether each user gets an EOA only or a Privy-controlled ERC-4337 smart wallet. Preserve an external-wallet/Base Account connection path if existing wallet holders matter.
-2. **Required — app interaction layer:** standalone wagmi + viem, with the app's own UI components. **Correction:** do not start a new build on OnchainKit; current Base documentation says it is no longer maintained and documents migration away from it.
-3. **Required — chain access:** a dedicated Base RPC/data provider. Alchemy is usable, but it is one supported option rather than a uniquely verified default; Base lists CDP, Alchemy, QuickNode, and others. Use Base Sepolia for testing and a dedicated endpoint for production.
-4. **Conditional — gas sponsorship/account abstraction:** start with Privy's native smart-wallet sponsorship if its policies and pricing meet the product's needs. Add Pimlico only if you need its bundler/paymaster capabilities or want that infrastructure boundary explicitly. Enforce per-user, per-action, and global spend limits.
-5. **Before launch — application services:** product backend/database, wallet-to-user authorization rules, observability, transaction simulation, recovery/support flows, abuse controls, and smart-contract review. RightStack omitted these non-Web3 but required production layers.
+- **Required — wallet/auth:** Privy as the leading candidate for email/social/passkey onboarding and embedded wallets. Decide first whether accounts are EOAs or smart accounts, whether external wallets must also connect, and what export/recovery/offboarding guarantee users need. If hybrid embedded + external-wallet support is central, evaluate Dynamic before committing.
+- **Required — app/contract client:** **wagmi + viem**, with a custom product UI. This corrects RightStack's OnchainKit recommendation: current Base documentation says OnchainKit is no longer maintained and directs apps to standalone wagmi/viem.
+- **Required — chain access/data:** Alchemy is a reasonable candidate for dedicated Base RPC and indexed APIs. Keep provider access behind a thin adapter and add an alternate RPC/failover path; do not expose privileged API credentials in the browser.
+- **Optional — gasless transactions:** Add Pimlico only if the product requires sponsored user transactions and only after choosing the smart-account implementation. Enforce allowlisted methods, per-user/per-period limits, simulation, monitoring, and a kill switch. Compare against Alchemy's bundler/gas manager to reduce provider count.
 
 ### Confidence and assumptions
 
-**Confidence: medium.** The chain, consumer-app, and embedded-wallet route matches the request. Assumptions: React/Next.js web app; non-crypto-native users; Base-only MVP; user-approved transactions; no autonomous server-side signing; and at least one onchain write flow. Custody semantics, recovery, geographic/compliance requirements, expected transaction volume, and contract scope were not specified.
+**Confidence: medium.** Assumes a React/Next.js EVM app, non-crypto-native users, Base mainnet deployment, user-controlled embedded wallets, and at least some onchain writes. Custody/recovery requirements, geography, transaction volume, contract scope, external-wallet support, and whether gas sponsorship is truly needed are unspecified.
 
 ### Tradeoffs and anti-patterns
 
-- Privy improves onboarding but creates wallet/auth vendor dependence. Document export/recovery and migration behavior before launch; do not assume migration is impossible or seamless without contractual and technical verification.
-- Keep identity, embedded signer, smart account, bundler, paymaster, and RPC as separate architectural roles even when one vendor supplies several.
-- Sponsorship improves conversion but creates an abuse and budget surface. Never deploy an unlimited policy; bind sponsorship to authenticated users, allowed contracts/functions, value caps, rate limits, and monitoring.
-- Do not use public Base RPC endpoints in production; Base labels them rate-limited and recommends a partner or self-hosted node.
-- Do not use browser wallet SDKs for backend signing. If server-controlled operations are later required, design a separate policy-controlled signer with least privilege.
-- Avoid making the embedded wallet the only recovery or support mechanism. Define account linking, lost-access recovery, user offboarding, and external-wallet interoperability.
+- Privy improves onboarding but creates identity/wallet-infrastructure lock-in; document key control, export, recovery, deletion, and migration before launch.
+- A custom wagmi/viem UI requires more product work than a component kit but avoids adopting an unmaintained dependency.
+- Alchemy + Pimlico means two operational dependencies; a single Alchemy AA stack may be simpler, while separate vendors can reduce single-vendor coupling only if failover is actually designed.
+- Gas sponsorship improves conversion but creates abuse and budget risk. Never deploy an unlimited paymaster policy.
+- Do not require a browser wallet for users the product explicitly intends to onboard through an embedded wallet. Do not use browser auth SDKs for server signing. Do not hardcode wallet addresses or conflate RPC/data APIs with account-abstraction products.
 
-### Verify against primary documentation before coding
+### Verify against primary docs before coding
 
-- Current Privy package names, supported Base chain configuration, smart-wallet account implementation, paymaster integration, export/recovery guarantees, pricing, and security model.
-- Current Base Account terminology and compatibility; Coinbase Smart Wallet has been renamed Base Account.
-- wagmi/viem peer-version compatibility with Privy and the chosen React/Next.js version.
-- Whether Privy native sponsorship or Pimlico is the better operational boundary; confirm Base mainnet/Sepolia support, policy controls, quotas, pricing, and failure behavior.
-- RPC provider rate limits, WebSocket/webhook needs, archive/trace requirements, geographic redundancy, key restrictions, and failover.
-- Contract audits, transaction simulation, phishing defenses, session duration, signer permissions, data retention, privacy, sanctions/KYC obligations, and incident response.
+1. Privy's current Base support; account type and signer/key architecture; export, recovery, deletion, and external-wallet linking; server/client SDK boundaries; pricing and rate limits.
+2. Current wagmi/viem package compatibility and the official Base migration guidance away from OnchainKit.
+3. Whether the selected Privy account model interoperates with Pimlico's supported Base entry point, bundler, paymaster, and sponsorship-policy APIs; confirm testnet/mainnet support and pricing.
+4. Alchemy's current Base RPC/indexing feature matrix, quotas, browser-key restrictions, webhook semantics, and failover behavior.
+5. Contract audits, transaction simulation, nonce/replay behavior, session permissions, monitoring, incident controls, privacy/consent, and applicable custody/compliance obligations.
 
 ### Verdict
 
-**`usable-with-corrections`** — The workflow match and Privy/RPC foundation are useful. Replace the stale OnchainKit recommendation with wagmi/viem, and make Pimlico conditional after evaluating Privy's native sponsorship. RightStack's scores and “production-grade” labels are corpus metadata, not independent verification.
+**`usable-with-corrections`** — the workflow match is sound, but replace OnchainKit with wagmi/viem and validate the wallet-to-smart-account-to-paymaster composition before implementation. RightStack's `production-grade` labels and scores are not verification.
 
-Primary checks: [Base OnchainKit migration notice](https://docs.base.org/onchainkit/buy/buy), [Base–Privy setup](https://docs.base.org/base-account/framework-integrations/privy/setup), [Privy smart wallets and sponsorship](https://docs.privy.io/wallets/using-wallets/evm-smart-wallets/overview), [Base production RPC guidance](https://docs.base.org/base-chain/quickstart/connecting-to-base), and [Base node-provider list](https://docs.base.org/base-chain/node-operators/node-providers).
+Exit: `RIGHTSTACK_CORRECTED` | Operation: `recommend` (implicit build-goal grammar) | Pinned version: `rightstack@0.3.1` | Verdict: `usable-with-corrections` | Notification: attempted
