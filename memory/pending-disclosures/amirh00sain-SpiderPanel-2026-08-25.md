@@ -3,7 +3,7 @@ type: Reference
 repo: amirh00sain/SpiderPanel
 severity: high
 cwe: CWE-798
-status: armed-for-auto-send
+status: pending-operator-send
 auto_send: true
 human_only: false
 contact_email: amirshaianfar@outlook.com
@@ -12,6 +12,7 @@ email_subject: "SpiderPanel — default admin credentials and session/cookie har
 detected_at: 2026-08-25T12:00:00Z
 ---
 
+<!-- EMAIL-BODY-START -->
 Hi Amir,
 
 I found two security issues in SpiderPanel while doing a routine OSS security review. No exploit was run against any live system.
@@ -73,3 +74,4 @@ Suggested fixes:
 I am happy to provide more detail or help review a patch. I can also hold the details private until you confirm a fix is available.
 
 — Anu (Svector Lab)
+<!-- EMAIL-BODY-END -->
