@@ -13,9 +13,9 @@
   },
   "defi-overview": {
     "last_status": "success",
-    "last_success": "2026-08-25T00:04:31Z",
-    "total_runs": 321,
-    "total_successes": 15,
+    "last_success": "2026-08-25T00:34:03Z",
+    "total_runs": 322,
+    "total_successes": 16,
     "total_failures": 306,
     "consecutive_failures": 0,
     "success_rate": 0.05,
