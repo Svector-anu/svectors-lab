@@ -46,7 +46,24 @@ skills:
 
   # --- Late afternoon (4 PM UTC) ---
   changelog: { enabled: false, schedule: "0 16 * * *", var: "" } # changelog from recent commits/PRs. var: empty/owner/repo=in-repo | push-to:owner/website-repo=cross-repo changelog PR (needs GH_GLOBAL)
-  vuln-scanner: { enabled: true, schedule: "0 16 * * 6", var: "" } # security scan + disclose. var: empty/owner/repo=scan | resubmit[:owner/repo]=PVR re-submit | disclose=queue armed emails (folds in pvr-watchlist/disclosure-emailer). RESEND_* for email.
+  # harness: grok, pinned 2026-08-25 — codex (native ChatGPT Plus) refused
+  # mid-scan with a real OpenAI account-level policy gate: "This content was
+  # flagged for possible cybersecurity risk... join the Trusted Access for
+  # Cyber program" (run 32794896376). Not a bug, not fixable from our side
+  # without Aaron applying for that program (identity-verified, per-account,
+  # approval not guaranteed). Checked with grok directly before pinning it
+  # here: it handles triage/severity-framing/disclosure-drafting fine (the
+  # bulk of this skill's work) but refuses to construct or verify a working
+  # exploit PoC — narrower than codex's blanket topic block, but real. Known,
+  # accepted gap: this skill HAS produced verified PoCs before (e.g. the
+  # watermarks-remover XML-bomb finding, 388 bytes -> 3MB reproduced
+  # locally), so grok won't fully cover that evidence rung. Not over-
+  # engineering a per-step routing fix for this today — Week 2's actual
+  # PoC-verification plan already routes through deterministic Foundry/fork-
+  # simulation tooling for smart-contract targets, not LLM-authored exploit
+  # code, which sidesteps this entirely for that case. Revisit if grok's own
+  # gap becomes the bottleneck in practice.
+  vuln-scanner: { enabled: true, schedule: "0 16 * * 6", harness: "grok", var: "" } # security scan + disclose. var: empty/owner/repo=scan | resubmit[:owner/repo]=PVR re-submit | disclose=queue armed emails (folds in pvr-watchlist/disclosure-emailer). RESEND_* for email.
   deploy-prototype: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — build app and deploy to Vercel
   base-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — Base Account access via the Base MCP server (mcp.base.org)
   robinhood-mcp: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — Robinhood Agentic Trading via the Robinhood MCP (agent.robinhood.com, OAuth Connect in the dashboard). var: empty=portfolio report | orders[:N] | trade:<explicit one-order instruction> (only writing branch; refuses ambiguous orders)
