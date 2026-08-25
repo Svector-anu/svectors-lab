@@ -1,10 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-23T15:14:11Z",
-  "quality_score": 4,
-  "assessment": "Substantive, well-sourced, trader-focused digest with strong dedup discipline and verified claims; minor gap in explicit position calls for regulatory item.",
-  "flags": [],
-  "avg_score": 4,
+  "last_analyzed": "2026-08-25T00:56:33Z",
+  "quality_score": 2,
+  "assessment": "Polished and linked, but poorly aligned to the crypto-trader strategy: no regime verdict or position calls, mostly generic AI news, and it claims workspace files were modified during a read-only run.",
+  "flags": [
+    "low_quality",
+    "generic_content",
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.6,
   "history": [
     {
       "date": "2026-07-28",
@@ -21,6 +25,10 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     }
   ]
 }

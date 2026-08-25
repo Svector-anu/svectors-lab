@@ -1,20 +1,34 @@
-ℹ️ Digest — 2026-08-23
+*Daily digest — 2026-08-25*
 
-*Digest — 2026-08-23*
+_TL;DR: Domain models and agent tooling entered production workflows, while tokenized equities gained usable DeFi pricing infrastructure._
 
-_TL;DR: A $8.5M DeFi governance takeover with no code bug, a 15%+ Nvidia AI-server price hike from the DRAM crunch, and a hard date on the CLARITY vote that still won't pass this year._
+1. *GPT-5.6 lands in Kiro*  
+   OpenAI’s GPT-5.6 family is now available in Kiro for planning, coding, review, and testing.  
+   Why it matters: Kiro users can test the models in live engineering workflows today.  
+   https://openai.com/index/gpt-5-6-in-kiro/
 
-1. *Term Labs drained of $8.5M in a pure governance takeover*
-   An attacker seeded 2 ETH through Tornado Cash, bootstrapped a supermajority — 100% of four USDC strategy vaults and ~91% of the ETH Meta Vault — then voted the funds out: ~2,843 ETH and ~1.6M DAI to a single wallet. Confirmed by CertiK and PeckShield.
-   Why it matters: this wasn't an exploit, it was a legal vote. Any vault with low-quorum, token-weighted on-chain governance is exposed the same way — check where your deposits sit.
-   https://cryptobriefing.com/term-labs-governance-exploit-vaults/
+2. *Thomson Reuters builds its own $40 million legal-domain model*  
+   Thomson Reuters launched Thomson, an in-house model built from an open-source foundation and proprietary professional content.  
+   Why it matters: vertical AI vendors now have a concrete build-versus-rent benchmark.  
+   https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model
 
-2. *Nvidia AI-server prices set to rise 15%+ as memory costs surge*
-   A 15–17% bump hits Vera Rubin and Grace Blackwell configs shipping in early 2027, driven by DRAM prices (Samsung, SK Hynix, Micron). The increase flows straight through to Microsoft, Google and Oracle.
-   Why it matters: it adds billions to gigawatt-scale AI buildouts and sharpens the incentive for hyperscalers to ship their own accelerators — a slow bleed away from all-Nvidia stacks.
-   https://cryptoadventure.com/nvidia-ai-server-prices-set-to-rise-more-than-15-as-memory-costs-surge/
+3. *Coinbase tokenized stocks get Chainlink pricing on Base*  
+   Chainlink now supplies continuous prices for Coinbase tokenized shares including NVDAc, METAc, AAPLc, and GOOGLc.  
+   Why it matters: Base protocols can integrate these assets into lending, borrowing, and trading.  
+   https://www.nasdaq.com/press-release/coinbase-selects-chainlink-bring-new-tokenized-stocks-millions-defi-users-2026-08-24
 
-3. *CLARITY Act cloture vote locked for Sept 15 — but it won't pass in 2026*
-   The Senate set a procedural cloture vote (needs 60) for Sept 15; Coinbase's Armstrong frames two paths — that vote, or CFTC/SEC rules landing Sept 16. Three fights stay open (enforcement, stablecoin rewards, dev protections); analysts now peg actual passage to 2027.
-   Why it matters: the regulatory catalyst behind August's rally is further out than the tape implies. Trade the September date as a volatility event, not a done deal.
-   https://bitcoinfoundation.org/news/regulation/congress-crypto-bill-delay-clarity-act-vote-pushed-to-september-as-2026-passage-hopes-fade/
+4. *BigQuery adds production telemetry for data agents*  
+   Google Cloud now exposes agent adoption, latency, cost, conversation, and performance metrics through Cloud Observability.  
+   Why it matters: teams can measure agent economics and failures without separate telemetry infrastructure.  
+   https://docs.cloud.google.com/bigquery/docs/release-notes
+
+5. *Google automates cloud-migration cost assessments*  
+   Migration Center’s Gemini-powered assessments map services, model TCO, explain assumptions, and export business cases.  
+   Why it matters: an initial migration model can now be produced in minutes.  
+   https://cloud.google.com/blog/products/infrastructure-modernization/ai-powered-quick-assessments-in-migration-center
+
+## Summary
+
+- Created [digest-2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-08-25.md).
+- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+- Delivery ran inline, but the external feed queue was read-only, so its rendered feed entry could not be persisted.
