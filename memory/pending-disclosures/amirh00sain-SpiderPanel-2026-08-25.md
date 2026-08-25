@@ -3,13 +3,15 @@ type: Reference
 repo: amirh00sain/SpiderPanel
 severity: high
 cwe: CWE-798
-status: pending-operator-send
+status: email-sent
 auto_send: true
 human_only: false
 contact_email: amirshaianfar@outlook.com
 cc: []
 email_subject: "SpiderPanel — default admin credentials and session/cookie hardening issues"
 detected_at: 2026-08-25T12:00:00Z
+sent_at: 2026-08-25T20:34:08Z
+sent_via: manual-gmail (svector.anu@gmail.com)
 ---
 
 <!-- EMAIL-BODY-START -->
