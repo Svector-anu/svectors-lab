@@ -1,34 +1,35 @@
-ℹ️ GitHub Trending — 2026-08-23
+GitHub Trending — 2026-08-25
 
-**GitHub Trending — 2026-08-23**
+Top pick — https://github.com/apache/maka
+A local-first agent workspace built around durable execution evidence, not ephemeral chat history.
 
-**Top pick** — [openai/codex](https://github.com/openai/codex)
-The board belongs to the agent-skills land-grab today, but the loudest single event is Codex spiking ~1.5k stars in a day — a jump that size on OpenAI's Rust terminal agent reads as a fresh release landing.
+AI/ML
+- NousResearch/hermes-agent — 896 stars today (235.8k total) · Python · ACCELERATING
+Closes the learning loop by turning experience into evolving skills and searchable cross-session memory.
 
-**AI/ML**
-• [openai/codex](https://github.com/openai/codex) — ★ 1.5k today (114k total) · Rust · ACCELERATING
-1.5k stars in a day on the Rust-native OpenAI terminal coding agent — a spike this size signals a notable release.
+- apache/maka — 411 stars today (2.9k total) · TypeScript · RETURNING
+Preserves tool calls, results, permissions, and endings as recoverable facts even after context compaction.
 
-• [modular/modular](https://github.com/modular/modular) — ★ 395 today (29k total) · Mojo · RETURNING
-Mojo + MAX in one monorepo — the GPU-portable Python-superset stack betting against the CUDA lock-in.
+- tashfeenahmed/freellmapi — 174 stars today (19.8k total) · TypeScript · ACCELERATING
+Unifies 34 providers behind one endpoint, routing around quotas while tracking every free-tier cap.
 
-**Devtools**
-• [mattpocock/skills](https://github.com/mattpocock/skills) — ★ 2.7k today (233k total) · Shell · ACCELERATING
-Matt Pocock's raw .agents skill set — the reference bundle everyone's cloning in this week's skills-file rush.
+- tinyhumansai/openhuman — 515 stars today (37.3k total) · Rust · ACCELERATING
+Stores scored Markdown memory locally and compresses tool output before it reaches the model.
 
-• [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) — ★ 959 today (14k total) · Rust · ACCELERATING
-Local-first, native replacement for Logitech Options+ — remap your mouse buttons with no cloud account.
+Devtools
+- anthropics/claude-plugins-community — 489 stars today (1.3k total) · Python · RETURNING
+Exposes Anthropic-approved community plugins through a nightly-synced, security-scanned marketplace mirror.
 
-**Infra**
-• [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) — ★ 278 today (39k total) · Go · ACCELERATING
-Exposes your Claude/OpenAI/Gemini subscription accounts as one OpenAI-compatible API endpoint.
+Web/Apps
+- makeplane/plane — 243 stars today (57.9k total) · TypeScript · RETURNING
+Offers Docker and Kubernetes self-hosting for a full issue, sprint, and roadmap stack.
 
-• [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — ★ 150 today (5.6k total) · Python · RETURNING
-Red-teams the skills/MCP/agent stack everyone's shipping this week — scans for prompt-injection and jailbreaks.
+- AgriciDaniel/claude-obsidian — 310 stars today (11.9k total) · Python · ACCELERATING
+Keeps provenance-aware research and rollups as ordinary Markdown files instead of a plugin-owned database.
 
-**Data**
-• [mahlernim/google-timeline-visualizer](https://github.com/mahlernim/google-timeline-visualizer) — ★ 441 today (2.6k total) · Kotlin · RETURNING
-Feed it your Google Location History export, get an interactive travel map — quiet repo, sharp spike today.
+Infra
+- dani-garcia/vaultwarden — 175 stars today (66.1k total) · Rust · RETURNING
+Implements the Bitwarden client API with a lighter self-hosted server compatible with official clients.
 
 ---
-sources: trending=ok · gh_api=fail (read-only; enriched via public api.github.com) · kept 7/17
+sources: trending=ok · gh_api=ok · kept 8/18
