@@ -1,12 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T01:03:31Z",
-  "quality_score": 2,
-  "assessment": "Substantive but internally inconsistent: it claims workspace files were created or updated during a read-only run, and its detailed audit counts and clean verdict lack evidence in the final output.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 3.91,
+  "last_analyzed": "2026-08-25T01:19:50Z",
+  "quality_score": 4,
+  "assessment": "Verified OpenLogi scan with real PR #956, real RUSTSEC IDs, clear triage drops, and actionable lockfile disclosure.",
+  "flags": [],
+  "avg_score": 3.92,
   "history": [
     {
       "date": "2026-07-28",
@@ -51,6 +49,10 @@
     {
       "date": "2026-08-25",
       "score": 2
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     }
   ]
 }
