@@ -1,12 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-25T07:25:32Z",
+  "last_analyzed": "2026-08-25T13:03:58Z",
   "quality_score": 2,
-  "assessment": "Substantive and decision-oriented, but several trade-driving claims and mindshare scores lack evidence, including the uncited $1.92B ETF inflow, unsupported social drivers, and opaque scoring despite failed primary ingestion.",
+  "assessment": "Decision-oriented and well structured, but numerous precise figures, events, and transitions are cited only to generic news/category pages, making key trading claims unverifiable.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 3.6,
+  "avg_score": 3.5,
   "history": [
     {
       "date": "2026-07-06",
@@ -63,6 +63,10 @@
     {
       "date": "2026-08-25",
       "score": 3
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",
