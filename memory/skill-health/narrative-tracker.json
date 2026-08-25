@@ -1,10 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-25T01:23:57Z",
-  "quality_score": 3,
-  "assessment": "Actionable and conclusion-first with explicit position calls and several primary-source links, but major Hyperliquid, BTC, and CLARITY assertions lack direct evidence, weakening decision-grade verifiability.",
-  "flags": [],
-  "avg_score": 3.71,
+  "last_analyzed": "2026-08-25T07:25:32Z",
+  "quality_score": 2,
+  "assessment": "Substantive and decision-oriented, but several trade-driving claims and mindshare scores lack evidence, including the uncited $1.92B ETF inflow, unsupported social drivers, and opaque scoring despite failed primary ingestion.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.6,
   "history": [
     {
       "date": "2026-07-06",
@@ -61,6 +63,10 @@
     {
       "date": "2026-08-25",
       "score": 3
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     }
   ]
 }
