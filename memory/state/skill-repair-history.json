@@ -1,0 +1,8 @@
+{
+  "systemic-zero-token": {
+    "last_repair_at": "2026-08-25T01:10:00Z",
+    "exit_code": "REPAIR_OK_SYSTEMIC",
+    "fix_pr": "https://github.com/Svector-anu/svectors-lab/commit/2958e51",
+    "issue": "ISS-001"
+  }
+}
