@@ -295,9 +295,9 @@
   },
   "rightstack": {
     "last_status": "success",
-    "last_success": "2026-08-25T14:40:21Z",
-    "total_runs": 1,
-    "total_successes": 1,
+    "last_success": "2026-08-25T16:50:43Z",
+    "total_runs": 2,
+    "total_successes": 2,
     "total_failures": 0,
     "consecutive_failures": 0,
     "success_rate": 1,
