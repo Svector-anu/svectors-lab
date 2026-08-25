@@ -1,6 +1,6 @@
 ---
 title: Harnesses — advanced behavior
-description: Deep reference for Aeon's harness axis (the seven agent CLIs behind one run-harness contract) — token accounting, capability-mode mapping, MCP and grok's folder-trust gate, per-skill grok knobs, and per-surface harness selection.
+description: Deep reference for Aeon's harness axis (the ten agent CLIs behind one run-harness contract) — token accounting, capability-mode mapping, MCP, and per-surface harness selection.
 ---
 
 # Harnesses — advanced behavior
@@ -11,9 +11,9 @@ first-class harnesses (`claude` default, `grok`), how to select one, and
 one-click X-account login. This page collects the deeper behavior for anyone
 running the `grok` harness in anger.
 
-## Additional harnesses via run-harness (`codex`, `pi`, `vibe`, `kimi`, `fx`)
+## Additional harnesses via run-harness (`codex`, `pi`, `vibe`, `kimi`, `fx`, `cursor`, `hermes`, `glm`)
 
-Five more harnesses are selectable in the dashboard's harness dropdown and the
+Eight more harnesses are selectable in the dashboard's harness dropdown and the
 `harness:` config: **codex** (OpenAI Codex CLI), **pi** (Pi Coding Agent),
 **vibe** (Mistral Vibe), **kimi** (Moonshot Kimi), and **fx** (Vercel's fx —
 [fx.sh](https://fx.sh), a minimal native Zig coding agent). Unlike `claude`/`grok`
@@ -59,6 +59,9 @@ login locally, store the session as a repo secret, restore it on the runner):
 | `pi`    | provider API key | `aeon auth --harness pi --key <sk-ant-…\|sk-…>` → the matching `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` (auto-detected) |
 | `vibe`  | Mistral key | `aeon auth --harness vibe --key <key>` → `MISTRAL_API_KEY` (vibe's default provider) |
 | `fx`    | Vercel AI Gateway key (or `VERCEL_OIDC_TOKEN`) | set `AI_GATEWAY_API_KEY` as a repo secret. **No `aeon auth` flow and no OpenRouter fallback** — see below. |
+| `cursor` | Cursor API key | set `CURSOR_API_KEY` as a repo secret; headless entry point is `agent -p`. |
+| `hermes` | Nous Portal OAuth | `aeon auth --harness hermes` → `HERMES_AUTH`; the adapter restores `~/.hermes/auth.json`. |
+| `glm` | GLM Coding Plan API key | set `GLM_API_KEY` (or `ZAI_API_KEY`); the adapter uses Z.AI's Anthropic endpoint through Claude Code. |
 
 Which one runs is decided at dispatch by **which secret is set**, native first,
 OpenRouter last (`authSecretsForHarness` / the `HARNESS_AUTH` registry in

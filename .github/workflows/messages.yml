@@ -431,6 +431,10 @@ jobs:
           # harness runs on (native login/key > OpenRouter). Never echoed.
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
           VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -466,6 +470,10 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
           VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -568,6 +576,10 @@ jobs:
           # staged config names). OPENROUTER_API_KEY is already declared above.
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}

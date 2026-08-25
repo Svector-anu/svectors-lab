@@ -115,6 +115,25 @@ const HARNESS_AUTH_SPECS = {
     authSecrets: ['AI_GATEWAY_API_KEY', 'VERCEL_OIDC_TOKEN'],
     apiKey: { secret: 'AI_GATEWAY_API_KEY', placeholder: 'Vercel AI Gateway key' },
   },
+  cursor: {
+    authSecrets: ['CURSOR_API_KEY'],
+    apiKey: { secret: 'CURSOR_API_KEY', placeholder: 'Cursor API key' },
+  },
+  hermes: {
+    authSecrets: ['HERMES_AUTH', 'OPENROUTER_API_KEY'],
+    oauth: {
+      cli: 'hermes',
+      ttyArgs: ['auth', 'add', 'nous', '--type', 'oauth'],
+      deviceArgs: ['auth', 'add', 'nous', '--type', 'oauth'],
+      credPaths: ['.hermes/auth.json', '.hermes/config.yaml'],
+      secret: 'HERMES_AUTH',
+      label: 'Connect Nous Portal',
+    },
+  },
+  glm: {
+    authSecrets: ['GLM_API_KEY', 'ZAI_API_KEY'],
+    apiKey: { secret: 'GLM_API_KEY', placeholder: 'GLM Coding Plan key' },
+  },
 } satisfies Record<string, HarnessAuthSpec>
 
 // Every caller indexes this with a harness name that came off the wire, out of

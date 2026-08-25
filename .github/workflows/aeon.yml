@@ -38,6 +38,8 @@ on:
           - moonshotai/kimi-k2.5
           - moonshotai/kimi-k3
           - moonshotai/kimi-k2.7-code
+          - glm-5.2
+          - gpt-5
       harness:
         description: 'Agent harness'
         required: false
@@ -51,6 +53,9 @@ on:
           - pi
           - vibe
           - kimi
+          - cursor
+          - hermes
+          - glm
       var:
         description: 'Variable (e.g. AI, bitcoin, owner/repo)'
         required: false
@@ -70,7 +75,7 @@ on:
         required: false
         type: string
       harness:
-        description: 'Agent harness override (claude | grok | codex | pi | vibe | kimi)'
+        description: 'Agent harness override (claude | grok | codex | pi | vibe | kimi | cursor | hermes | glm)'
         required: false
         type: string
       var:
@@ -251,6 +256,10 @@ jobs:
           # should run on (native login/key > OpenRouter). Never echoed.
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
           VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -330,6 +339,10 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
           VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -648,6 +661,10 @@ jobs:
           # so a skill can ask for a message but cannot read the credential that sends
           # it. GITHUB_TOKEN/GH_GLOBAL stay in-run (deferred, broad gh surface).
           GROK_CREDENTIALS: ${{ secrets.GROK_CREDENTIALS }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           # Send caps + audit CC for the IN-RUN email senders (send-email + vuln-scanner
           # Arm C). RESEND_API_KEY / RESEND_FROM / RESEND_REPLY_TO are per-skill secrets
           # injected via `requires:`; these are non-secret repo vars, bound here so the
@@ -1321,6 +1338,10 @@ jobs:
           SURPLUS_API_KEY: ${{ secrets.SURPLUS_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}   # grok scorer: API-key auth path
           GROK_CREDENTIALS: ${{ secrets.GROK_CREDENTIALS }}   # grok scorer: X-account OAuth (restored by run-grok.sh)
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           RH_MODEL_ARG: ${{ steps.harness.outputs.MODEL_ARG }}   # run-harness scorer: same --model the run used
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
           OPENROUTER_MODEL_SONNET: ${{ vars.OPENROUTER_MODEL_SONNET }}
