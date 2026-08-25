@@ -166,5 +166,12 @@
     "findings": 3,
     "channel": "duplicate-skipped",
     "notes": "TypeScript/Electron local-first AI agent (3.1k stars, Apache Incubating). PVR off; SECURITY.md email security@maka.app. semgrep=ok 5 candidates 0 confirmed (GCM FP \u2014 setAuthTag present; eval-harbor Dockerfile/Flask OOS). trufflehog=ok 0 verified. osv=ok brace-expansion@5.0.7 + undici@7.28.0 HIGH and @babel/core LOW \u2014 exact match to open issue #3724 (npm audit), no second PR. fuzz=skip. agentic N=6 on 2505 files (openPath guard, credential/settings IPC, external-link+MCP OAuth, WS listener, attachment approvals, path containment/Mermaid) \u2014 0 load-bearing boundary breaches. Report: output/articles/vuln-scan-2026-08-25-maka.md. Matched URL: https://github.com/apache/maka/issues/3724"
+  },
+  {
+    "repo": "dani-garcia/vaultwarden",
+    "scanned_at": "2026-08-25T13:08:58Z",
+    "findings": 1,
+    "channel": "public-pr",
+    "notes": "Rust Bitwarden-compatible vault server (~66k\u2605). PVR enabled + SECURITY.md. Audited fa2566d. semgrep=ok 26 candidates 0 confirmed (playwright/docker/template noise). trufflehog=ok 0 verified. osv=ok \u2014 filed h2 0.4.15\u21920.4.16 RUSTSEC-2026-0258 as PR #7651; dropped vaultwarden@1.0.0 GHSA false-positives (Cargo.toml placeholder version), rsa Marvin (unpatched), rustls-webpki@0.101.7 (Rocket 0.21 path; 0.103.13 already present), playwright npm (test-only), unmaintained notices. fuzz=skip. agentic N=15 on 97 files (admin, attachments, cipher/collection authz, protected OTP, auth-requests, icon SSRF, sends, SSO, org LDAP, emergency access) \u2014 0 code vulns. Report: output/articles/vuln-scan-2026-08-25-vaultwarden.md. PR: https://github.com/dani-garcia/vaultwarden/pull/7651"
   }
 ]

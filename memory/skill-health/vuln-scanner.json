@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T12:30:24Z",
-  "quality_score": 4,
-  "assessment": "Complete, honest scan of apache/maka with verifiable deps/#3724 duplicate-skip and clear FP triage; useful but not deeply insightful.",
+  "last_analyzed": "2026-08-25T13:09:45Z",
+  "quality_score": 5,
+  "assessment": "Verified vaultwarden scan with real RUSTSEC-2026-0258 finding, filed PR #7651, clear triage of drops, and actionable verdict.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 4.07,
   "history": [
     {
       "date": "2026-07-28",
@@ -61,6 +61,10 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 5
     }
   ]
 }

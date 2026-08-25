@@ -1,7 +1,8 @@
-ℹ️ Vuln Scanner — apache/maka
+ℹ️ Vuln Scanner — vaultwarden
 
-*Vuln Scanner — apache/maka*
-Clean code audit. 13 candidates reviewed, 0 new confirmed code findings.
-Dep CVEs (brace-expansion / undici / @babel/core) already tracked in open issue #3724 — duplicate-skipped.
-Disclosed via: none (no new channel action).
+*Vuln Scanner — dani-garcia/vaultwarden*
+1 confirmed finding (medium dep DoS).
+Disclosed via: public PR #7651 (bump h2 0.4.15→0.4.16 for RUSTSEC-2026-0258).
 Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
+
+🔗 https://github.com/dani-garcia/vaultwarden/pull/7651
