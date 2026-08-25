@@ -60,6 +60,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,token-pick,codex-default,474417,4014,412928,0
 2026-08-25,narrative-tracker,codex-default,249819,3115,209920,0
 2026-08-25,digest,codex-default,411314,2999,356096,0
-2026-08-25,vuln-scanner,codex-default,1494918,8619,1398528,0
-2026-08-25,search-skill,codex-default,253130,1763,171008,0
-2026-08-25,skill-health,codex-default,565913,5035,512000,0
+2026-08-25,skill-repair,codex-default,2354286,9042,2244608,0
