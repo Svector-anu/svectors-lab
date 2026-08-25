@@ -70,7 +70,7 @@ skills:
   skill-health: { enabled: true, schedule: "0 18 * * *", var: "" } # self-healing health audit + analytics. var: empty=health (files/resolves issues) | <skill>=single | analytics[:hours]=fleet run/pass-rate metrics (folds in skill-analytics)
   aeon-doctor: { enabled: true, schedule: "0 15 * * 1", var: "" } # weekly Mon 15:00 UTC — static config-correctness linter (silent-failure class: unquoted schedules, dup keys, unconfigured-on-disk, requires-as-list, mode typo, mcp ${VAR}, multi-line entries). read-only; notifies only on problems. var: empty=whole config | <skill>=one skill
 
-  self-improve: { enabled: false, schedule: "0 18 1/2 * *", var: "" } # every other day — improve the agent, or audit it. var: empty/improve[:focus]=propose+apply one fix | audit[:focus]=review what ran/failed (folds in self-review)
+  self-improve: { enabled: true, schedule: "0 18 1/2 * *", var: "" } # every other day — improve the agent, or audit it. var: empty/improve[:focus]=propose+apply one fix | audit[:focus]=review what ran/failed (folds in self-review)
 
   action-converter: { enabled: false, schedule: "0 18 * * *" }
   skill-repair: { enabled: false, schedule: "reactive", var: "" } # reactive — auto-fix failing skills
