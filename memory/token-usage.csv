@@ -66,3 +66,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,vuln-scanner,grok-4.5,320846,21601,2364672,0
 2026-08-25,narrative-tracker,codex-default,277170,3563,225280,0
 2026-08-25,vuln-scanner,grok-4.5,194013,20167,2495488,0
+2026-08-25,hunter-22,codex-default,633967,3952,580096,0

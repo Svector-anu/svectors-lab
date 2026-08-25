@@ -1,10 +1,12 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-08-23T10:04:57Z",
-  "quality_score": 4,
-  "assessment": "Well-executed scan with honest triage logic, proper dedup, and correct application of notify-only-on-signal rule — substantive no-op correctly reported",
-  "flags": [],
-  "avg_score": 4,
+  "last_analyzed": "2026-08-25T01:36:10Z",
+  "quality_score": 2,
+  "assessment": "The no-signal result is concise and plausible, but it claims workspace file updates despite the explicitly read-only run, making key completion claims unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.6,
   "history": [
     {
       "date": "2026-07-31",
@@ -21,6 +23,10 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     }
   ]
 }
