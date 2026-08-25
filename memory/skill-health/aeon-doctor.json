@@ -1,0 +1,14 @@
+{
+  "skill": "aeon-doctor",
+  "last_analyzed": "2026-08-25T00:17:27Z",
+  "quality_score": 4,
+  "assessment": "Substantive, structured diagnostic with clear counts, concrete issue categories, honest read-only limitation, and an actionable follow-up, though exact file locations and fixes are absent from the final output.",
+  "flags": [],
+  "avg_score": 4,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 4
+    }
+  ]
+}
