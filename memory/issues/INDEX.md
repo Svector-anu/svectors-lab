@@ -4,7 +4,7 @@
 
 | ID | Title | Severity | Category | Detected | Affected Skills |
 |----|-------|----------|----------|----------|-----------------|
-| ISS-001 | Fleet zero-token harness failure (grok-4.5) | critical | config | 2026-07-19 | digest, hunter-22, vuln-scanner |
+| ISS-001 | Fleet zero-token harness failure (grok-4.5) | critical | config | 2026-07-19 | digest, fear-divergence, hunter-22, skill-health, vuln-scanner |
 
 ## Resolved
 
