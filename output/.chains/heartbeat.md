@@ -1,14 +1,18 @@
-Heartbeat completed.
+HEARTBEAT completed · `STATUS_PAGE=DEGRADED`.
 
-- Status: 🔴 DEGRADED
-- New finding: `auto-merge` is scheduled daily but has no recorded success; last failure was July 29.
-- `soul-builder` remains at four consecutive failures.
+Key findings:
+
+- Recent scheduled runs are succeeding.
+- `verdikta-hunter` remains failed without a successful run.
+- Historical success rates still trigger chronic-failure thresholds.
 - Six PRs remain stalled over 24 hours.
-- ISS-003 remains critical; ISS-001 is resolved but still incorrectly listed as open.
-- Notification attempted, but the external queue was read-only; delivered inline only.
-- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
-- Appended the run to [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+- All findings were reported within 48 hours, so no duplicate notification was sent.
+
+Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). Validation passed, with all 26 enabled skills represented.
 
 ## Summary
 
-Updated the public status page and heartbeat log. No token pulse was available. Validation passed with no whitespace errors.
+- Status page: 🔴 DEGRADED
+- Notification: skipped due to deduplication
+- Token pulse: omitted; no token report exists
+- Follow-up: verify `VERDIKTA_API_KEY` and complete a successful `verdikta-hunter` discovery run.
