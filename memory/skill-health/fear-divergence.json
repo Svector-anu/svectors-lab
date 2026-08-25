@@ -1,10 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-23T09:45:35Z",
-  "quality_score": 3,
-  "assessment": "Conditional skill correctly skipped when trigger not met; properly logged and no erroneous notification sent.",
+  "last_analyzed": "2026-08-25T01:07:26Z",
+  "quality_score": 4,
+  "assessment": "Clear, conclusion-first no-signal report with the observed index value and trigger threshold, though it lacks a source link and an explicit watch/position call.",
   "flags": [],
-  "avg_score": 3.57,
+  "avg_score": 3.63,
   "history": [
     {
       "date": "2026-07-08",
@@ -33,6 +33,10 @@
     {
       "date": "2026-08-23",
       "score": 3
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     }
   ]
 }
