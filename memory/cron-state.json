@@ -302,5 +302,9 @@
     "consecutive_failures": 0,
     "success_rate": 1,
     "last_quality_score": 4
+  },
+  "vuln-tracker": {
+    "last_dispatch": "2026-08-25T16:52:45Z",
+    "last_status": "dispatched"
   }
 }
