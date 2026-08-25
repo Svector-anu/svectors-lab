@@ -1,0 +1,18 @@
+{
+  "skill": "verdikta-hunter",
+  "last_analyzed": "2026-08-25T09:24:13Z",
+  "quality_score": 1,
+  "assessment": "Failed to produce any Verdikta discovery output due to authentication failure and implausibly claims a workspace log update during a read-only run.",
+  "flags": [
+    "api_error",
+    "empty_output",
+    "unverifiable_claim"
+  ],
+  "avg_score": 1,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 1
+    }
+  ]
+}
