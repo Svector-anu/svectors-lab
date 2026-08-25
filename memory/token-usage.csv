@@ -54,3 +54,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-23,vuln-scanner,claude-opus-4-8,5880,51934,5850009,119013
 2026-08-23,digest,claude-opus-4-8,5941,14750,1146076,104030
 2026-08-24,heartbeat,codex-default,386148,3581,337664,0
+2026-08-25,defi-overview,codex-default,518801,8239,463872,0

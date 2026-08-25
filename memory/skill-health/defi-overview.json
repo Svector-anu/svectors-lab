@@ -1,10 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-23T15:00:40Z",
-  "quality_score": 5,
-  "assessment": "Excellent — conclusion-first take with conviction, multi-signal verification, explicit position calls, and trader-grade actionability aligned to strategy.",
-  "flags": [],
-  "avg_score": 4.17,
+  "last_analyzed": "2026-08-25T00:04:28Z",
+  "quality_score": 2,
+  "assessment": "Useful regime framing, but it lacks explicit position calls and claims workspace files were modified despite the run being read-only, making the completion summary unverifiable.",
+  "flags": [
+    "unverifiable_claim",
+    "low_quality"
+  ],
+  "avg_score": 4,
   "history": [
     {
       "date": "2026-07-06",
@@ -53,6 +56,10 @@
     {
       "date": "2026-08-23",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     }
   ]
 }
