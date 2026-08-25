@@ -2,7 +2,7 @@
 *Last consolidated: 2026-08-25*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
-- Upstream contribution milestone: aeonfun/aeon PR #956 opened for complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
+- Upstream contribution milestone: aeonfun/aeon PR #956 merged, adding complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
 
 ## Recent Articles
 | Date | Title | Topic |
@@ -31,4 +31,5 @@
 
 ## Next Priorities
 - Resolve ISS-003 by verifying `VERDIKTA_API_KEY` and completing verdikta-hunter's first successful discovery run
+- Resolve ISS-004 by restoring Codex capacity and completing self-improve's first successful run
 - Configure notification channels (Telegram, Discord, or Slack)
