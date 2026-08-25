@@ -73,3 +73,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,picks-tracker,codex-default,343735,3020,300800,0
 2026-08-25,heartbeat,codex-default,362216,4674,315136,0
 2026-08-25,verdikta-hunter,codex-default,193935,1759,162304,0
+2026-08-25,auto-workflow,codex-default,192357,1320,134656,0
