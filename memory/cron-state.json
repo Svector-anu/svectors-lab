@@ -25,16 +25,16 @@
     "last_error": "be1c33\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "narrative-tracker": {
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-08-24T03:17:50Z",
-    "total_runs": 350,
-    "total_successes": 18,
+    "total_runs": 351,
+    "total_successes": 19,
     "total_failures": 332,
-    "consecutive_failures": 5,
+    "consecutive_failures": 0,
     "success_rate": 0.05,
     "last_error": "e1dba6\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
-    "last_success": "2026-08-23T09:49:38Z",
-    "last_quality_score": 4,
+    "last_success": "2026-08-25T00:52:23Z",
+    "last_quality_score": 2,
     "last_dispatch": "2026-08-24T22:31:23Z"
   },
   "token-movers": {
