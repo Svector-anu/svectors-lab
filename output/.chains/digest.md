@@ -1,34 +1,29 @@
 *Daily digest — 2026-08-25*
 
-_TL;DR: Domain models and agent tooling entered production workflows, while tokenized equities gained usable DeFi pricing infrastructure._
+_TL;DR: New wrappers are making leveraged crypto and Treasury exposure more portable, while U.S. stablecoin rules narrow toward issuer-customer identification._
 
-1. *GPT-5.6 lands in Kiro*  
-   OpenAI’s GPT-5.6 family is now available in Kiro for planning, coding, review, and testing.  
-   Why it matters: Kiro users can test the models in live engineering workflows today.  
-   https://openai.com/index/gpt-5-6-in-kiro/
+1. *Arcus turns perpetual accounts into transferable ERC-20s*  
+   The Robinhood Chain DEX launched pTokens representing fixed-leverage perpetual accounts, including long and short exposure to BTC, SOL, HYPE, and HOOD.  
+   Why it matters: Watch adoption and liquidity before riding; leverage can now enter lending markets without users managing margin directly.  
+   https://www.theblock.co/news/defi/2026-08-25-robinhood-chain-dex-arcus-ptokens-perps-erc-20s-412696
 
-2. *Thomson Reuters builds its own $40 million legal-domain model*  
-   Thomson Reuters launched Thomson, an in-house model built from an open-source foundation and proprietary professional content.  
-   Why it matters: vertical AI vendors now have a concrete build-versus-rent benchmark.  
-   https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model
+2. *Franklin Templeton puts tokenized Treasuries on HashKey Earn*  
+   HashKey launched Franklin Templeton’s grBENJI government-liquidity fund for eligible professional investors in Asia.  
+   Why it matters: Ride the regulated-RWA distribution trend; this adds an exchange channel across a multi-jurisdiction institutional network.  
+   https://www.prnewswire.com/apac/news-releases/hashkey-exchange-and-franklin-templeton-to-bring-onchain-us-government-liquidity-fund-to-asia-302858384.html
 
-3. *Coinbase tokenized stocks get Chainlink pricing on Base*  
-   Chainlink now supplies continuous prices for Coinbase tokenized shares including NVDAc, METAc, AAPLc, and GOOGLc.  
-   Why it matters: Base protocols can integrate these assets into lending, borrowing, and trading.  
-   https://www.nasdaq.com/press-release/coinbase-selects-chainlink-bring-new-tokenized-stocks-millions-defi-users-2026-08-24
+3. *Stablecoin lobby backs primary-market customer checks*  
+   The Blockchain Association supported GENIUS Act rules limiting issuer identification duties to direct customers while excluding downstream peer-to-peer transfers.  
+   Why it matters: Watch the final rule; it determines whether compliance remains issuer-centric or spreads across secondary activity.  
+   https://theblockchainassociation.org/posts/blockchain-association-comment-on-permitted-payment-stablecoin-issuer-customer-identification-program-joint-rulemaking
 
-4. *BigQuery adds production telemetry for data agents*  
-   Google Cloud now exposes agent adoption, latency, cost, conversation, and performance metrics through Cloud Observability.  
-   Why it matters: teams can measure agent economics and failures without separate telemetry infrastructure.  
-   https://docs.cloud.google.com/bigquery/docs/release-notes
-
-5. *Google automates cloud-migration cost assessments*  
-   Migration Center’s Gemini-powered assessments map services, model TCO, explain assumptions, and export business cases.  
-   Why it matters: an initial migration model can now be produced in minutes.  
-   https://cloud.google.com/blog/products/infrastructure-modernization/ai-powered-quick-assessments-in-migration-center
+4. *XPENG robotics raises $900 million before IRON production*  
+   XPENG’s robotics unit raised over $900 million at a valuation above $6.3 billion. IRON mass production is targeted for late 2026, with deliveries planned in 2027.  
+   Why it matters: Capital is shifting from humanoid demonstrations toward manufacturing scale.  
+   https://www.xpeng.com/news/01a03797fccda01e0de68a02a256006a
 
 ## Summary
 
-- Created [digest-2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-08-25.md).
+- Generated and delivered a four-item, 2,375-character digest.
 - Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
-- Delivery ran inline, but the external feed queue was read-only, so its rendered feed entry could not be persisted.
+- External notification queues were read-only, so delivery fell back to inline output.

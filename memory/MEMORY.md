@@ -11,6 +11,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-25 | daily (web, second run) | Arcus pTokens, Franklin–HashKey RWA, GENIUS customer checks |
 | 2026-08-25 | daily (web) | GPT-5.6 in Kiro, Thomson Reuters LLM, Coinbase tokenized stocks |
 | 2026-08-23 | daily (web, PM) | Term Labs $8.5M governance takeover, Nvidia AI-server prices +15% on DRAM surge, CLARITY cloture vote Sept 15 (won't pass 2026) |
 | 2026-08-23 | daily (web, AM) | Grayscale Zcash spot ETF filing, BounceBit L1 sunset after $3M exploit, Nvidia–Poolside $6B license |
