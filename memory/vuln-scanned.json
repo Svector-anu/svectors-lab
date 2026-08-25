@@ -154,10 +154,10 @@
     "notes": "osv dep bumps: h2/memmap2/event-listener/crossbeam-epoch \u2192 PR #956; semgrep CI FPs; agentic clean; quick-xml@0.30 blocked by xcb/zed-scap; fuzz skip"
   },
   {
-    "repo": "rtk-ai/rtk",
-    "scanned_at": "2026-08-25T02:00:00Z",
-    "findings": 4,
-    "channel": "public-pr",
-    "notes": "osv RustSec bumps quick-xml/anyhow/crossbeam-epoch \u2192 PR #3705; semgrep CI FPs; agentic clean on hooks/rewrite/trust; sh -c covered by open #1194; fuzz skip"
+    "repo": "NousResearch/hermes-agent",
+    "scanned_at": "2026-08-25T01:45:00Z",
+    "findings": 2,
+    "channel": "pvr+public-pr",
+    "notes": "PVR GHSA-3jv7-3pr9-766x (Algolia overprivileged key; accidental duplicate GHSA-fw85-px44-j278 also created \u2014 same body); public PR #94342 bumps h2 4.3.0\u21924.4.1 for GHSA-6hr6-w5qg-qmwg. Electron/nanoid duplicate-skipped (open PRs #94262/#93975/#89930). extract-zip@2.0.1 HIGH unpatched upstream \u2014 not filed. idna in optional-skills path skipped. Semgrep full-tree timed out; auth-surface subset 0 hits. fuzz=skip. agentic N=6 on 7154 files."
   }
 ]
