@@ -78,7 +78,7 @@ skills:
   # --- Cost tracking (Monday 7 AM UTC, weekly) ---
 
   # --- Weekly (Monday only) ---
-  fork-fleet: { enabled: false, schedule: "0 10 * * 1", var: "" } # fork divergence: code (unique commits/skills) + config (aeon.yml vs upstream defaults; folds in fork-digest). var: empty=both | code | config | fork=owner/repo | repo=owner/repo
+  fork-fleet: { enabled: true, schedule: "0 10 * * 1", var: "" } # fork divergence: code (unique commits/skills) + config (aeon.yml vs upstream defaults; folds in fork-digest). var: empty=both | code | config | fork=owner/repo | repo=owner/repo
   aeon-update: { enabled: false, schedule: "0 11 * * 1", var: "" } # weekly Mon 11:00 UTC — pull upstream framework changes (canon) into this instance as a PR; 3-way merge, never clobbers operator config. var: empty=sync | report (dry) | repo=owner/name | reset=fork-point
   spawn-instance: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — var: "name: purpose"
   fleet-control: { enabled: false, schedule: "0 9,15 * * *", var: "" } # managed child instances. var: empty=health check | status | dispatch <inst|*> <skill> [var=…] | scorecard (fleet-wide runs/tokens/cost/reliability; folds in fleet-scorecard)
