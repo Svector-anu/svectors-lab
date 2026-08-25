@@ -2,7 +2,7 @@
 
 import { spawnSync } from "node:child_process";
 
-const PIN = "rightstack@0.3.1";
+const PIN = "rightstack@0.3.2";
 const raw = (process.env.SKILL_VAR ?? "").trim();
 
 const childEnv = Object.fromEntries(
@@ -26,7 +26,7 @@ if (!raw) {
 }
 
 let command = "recommend";
-let args = [raw];
+let args = [raw, "--json"];
 
 const match = raw.match(/^([a-z-]+)\s*:\s*(.*)$/s);
 if (match) {
@@ -37,11 +37,11 @@ if (match) {
   switch (operation) {
     case "recommend":
       command = "recommend";
-      args = [value];
+      args = [value, "--json"];
       break;
     case "workflow":
       command = "workflow";
-      args = [value];
+      args = [value, "--json"];
       break;
     case "explain":
       command = "explain";
@@ -57,7 +57,7 @@ if (match) {
         fail("RIGHTSTACK_BAD_INPUT: compare requires exactly two tools separated by |");
       }
       command = "compare";
-      args = tools;
+      args = [...tools, "--json"];
       break;
     }
     default:

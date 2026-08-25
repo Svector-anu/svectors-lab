@@ -27,7 +27,7 @@ Today is ${today}. Use RightStack to produce a decision-ready Web3 architecture 
 
 ## Current integration boundary
 
-This integration pins the latest version actually published to npm: `rightstack@0.3.1`. The source repo currently declares `0.3.2`, but that version is not available from npm. Do not claim unreleased benchmark or corpus fixes are active in this skill.
+This integration pins `rightstack@0.3.2`, the published release that introduced deterministic, versioned JSON for the agent-facing `recommend`, `workflow`, and `compare` commands. Treat `schema_version: "1.0"` as the contract boundary; do not scrape presentation-formatted terminal output.
 
 The skill is advisory only. It does not install a recommended SDK, edit application code, create a wallet, deploy a contract, or submit a transaction. Those actions belong in a separate build skill after the recommendation has been reviewed.
 
@@ -40,21 +40,22 @@ The skill is advisory only. It does not install a recommended SDK, edit applicat
    node skills/rightstack/run.mjs
    ```
 4. Treat a non-zero exit as evidence. Report the exact operation, exit code, and concise stderr. Do not silently switch to another operation or invent a recommendation. Exit `RIGHTSTACK_TOOL_ERROR`.
-5. Review the returned recommendation before presenting it:
+5. Confirm structured output has `schema_version: "1.0"` and the expected `command`. If it does not, stop with `RIGHTSTACK_TOOL_ERROR`; do not guess at an incompatible schema.
+6. Review the returned recommendation before presenting it:
    - Does the selected workflow match the requested chain, application type, custody model, and users?
    - Are required and optional layers distinguished?
    - Are named packages current enough to verify before implementation?
    - Are security, vendor-lock-in, operational, and migration tradeoffs stated?
    - Does the output confuse a product migration with a package migration?
-6. If the workflow match is weak, contradictory, or clearly wrong, label it `looks-wrong`, explain the mismatch, and provide the smallest correction supported by the output and known project constraints. Never hide a bad route behind polished prose.
-7. Produce a compact brief containing:
+7. If the workflow match is weak, contradictory, or clearly wrong, label it `looks-wrong`, explain the mismatch, and provide the smallest correction supported by the output and known project constraints. Never hide a bad route behind polished prose.
+8. Produce a compact brief containing:
    - request and selected workflow
    - recommended stack by phase
    - confidence and assumptions
    - tradeoffs and anti-patterns
    - items that must be verified against primary documentation before coding
    - verdict: `usable`, `usable-with-corrections`, or `looks-wrong`
-8. Send the same substantive brief via `./notify -f <path>` when the result is useful. The captured final output must still contain the full brief for the dashboard, chains, and health scoring.
+9. Send the same substantive brief via `./notify -f <path>` when the result is useful. The captured final output must still contain the full brief for the dashboard, chains, and health scoring.
 
 ## Constraints
 
