@@ -1,35 +1,34 @@
-GitHub Trending — 2026-08-25
+*GitHub Trending — 2026-08-25*
 
-Top pick — https://github.com/apache/maka
-A local-first agent workspace built around durable execution evidence, not ephemeral chat history.
+*Top pick* — [apache/maka](https://github.com/apache/maka)
+Maka makes agent execution inspectable by treating every tool call, permission decision, and outcome as durable event history.
 
-AI/ML
-- NousResearch/hermes-agent — 896 stars today (235.8k total) · Python · ACCELERATING
-Closes the learning loop by turning experience into evolving skills and searchable cross-session memory.
+*AI/ML*
+• [openai/codex](https://github.com/openai/codex) — ★ 1,994 today (117.4k total) · Rust · [ACCELERATING]
+One installer now spans terminal and IDE workflows, with a Rust core moving at flagship-project velocity.
 
-- apache/maka — 411 stars today (2.9k total) · TypeScript · RETURNING
-Preserves tool calls, results, permissions, and endings as recoverable facts even after context compaction.
+• [apache/maka](https://github.com/apache/maka) — ★ 411 today (3.0k total) · TypeScript · [RETURNING]
+Append-only run records make tool calls and permission decisions replayable instead of disappearing into chat history.
 
-- tashfeenahmed/freellmapi — 174 stars today (19.8k total) · TypeScript · ACCELERATING
-Unifies 34 providers behind one endpoint, routing around quotas while tracking every free-tier cap.
+• [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) — ★ 515 today (37.4k total) · Rust · [ACCELERATING]
+Checkpointed agent graphs pair replayable costs with local SQLite memory mirrored into editable Markdown.
 
-- tinyhumansai/openhuman — 515 stars today (37.3k total) · Rust · ACCELERATING
-Stores scored Markdown memory locally and compresses tool output before it reaches the model.
+*Devtools*
+• [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community) — ★ 489 today (1.5k total) · Python · [RETURNING]
+Nightly-synced, security-reviewed marketplace metadata gives teams an inspectable plugin supply chain.
 
-Devtools
-- anthropics/claude-plugins-community — 489 stars today (1.3k total) · Python · RETURNING
-Exposes Anthropic-approved community plugins through a nightly-synced, security-scanned marketplace mirror.
+*Web/Apps*
+• [makeplane/plane](https://github.com/makeplane/plane) — ★ 243 today (58.1k total) · TypeScript · [RETURNING]
+Docker and Kubernetes deployment keep a full project-management stack under the operator’s control.
 
-Web/Apps
-- makeplane/plane — 243 stars today (57.9k total) · TypeScript · RETURNING
-Offers Docker and Kubernetes self-hosting for a full issue, sprint, and roadmap stack.
+• [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) — ★ 175 today (66.2k total) · Rust · [RETURNING]
+Official Bitwarden clients work against a substantially leaner self-hosted server implementation.
 
-- AgriciDaniel/claude-obsidian — 310 stars today (11.9k total) · Python · ACCELERATING
-Keeps provenance-aware research and rollups as ordinary Markdown files instead of a plugin-owned database.
+*Other*
+• [basecamp/omarchy](https://github.com/basecamp/omarchy) — ★ 1,056 today (30.4k total) · Shell · [ACCELERATING]
+An opinionated Linux distribution is pulling unusually strong attention toward a maintained, cohesive workstation baseline.
 
-Infra
-- dani-garcia/vaultwarden — 175 stars today (66.1k total) · Rust · RETURNING
-Implements the Bitwarden client API with a lighter self-hosted server compatible with official clients.
+Other because an operating-system distribution is neither an app framework nor developer tool in the narrow sense.
 
 ---
-sources: trending=ok · gh_api=ok · kept 8/18
+sources: trending=ok · gh_api=ok · kept 7/18

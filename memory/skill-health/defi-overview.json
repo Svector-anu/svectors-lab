@@ -1,13 +1,12 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-25T06:27:41Z",
+  "last_analyzed": "2026-08-25T12:04:02Z",
   "quality_score": 2,
-  "assessment": "Specific uncited market figures and contradictory read-only write claims undermine verifiability; it also violates the no-hard-price rule and provides no actionable position calls.",
+  "assessment": "Decision-grade and conclusion-first, but it claims workspace files were updated during a read-only run and provides little sourcing for numerous precise figures, undermining verifiability.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.63,
+  "avg_score": 3.53,
   "history": [
     {
       "date": "2026-07-06",
@@ -56,6 +55,10 @@
     {
       "date": "2026-08-23",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",

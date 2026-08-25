@@ -1,20 +1,16 @@
-ℹ️ picks scorecard
+# Picks Scorecard — 2026-08-25
 
-*picks scorecard — 2026-07-24 → 2026-08-23*
+- ZAMA: picked at $0.062, now $0.058528 — **-5.6% (Hold)**
+- Score: **0 wins / 1 hold / 0 losses**
+- Average return: **-5.6%**
+- Hit rate: **0%**
+- BTC $60k July market: YES — **wrong; resolved NO**
 
-0-for-1 in the window. Thin sample, losing month.
+CoinGecko returned HTTP 200. Polymarket search returned no reliable match, so the previously verified resolution was retained.
 
-*token picks (1 total)*
-ZAMA 2026-07-28 — picked $0.062 → now $0.0534 (-13.9%) 🔴
+## Summary
 
-*score: 0W 0H 1L | avg -13.9% | hit rate 0%*
-*best: ZAMA -13.9% | worst: ZAMA -13.9% (only pick)*
-
-*market picks*
-BTC dip to $60k in July? — YES ❌ (resolved NO; BTC held $63-64k, never near $60k)
-
-*aged out:* KAITO (2026-07-19, +24.2% at last check) now >30d, excluded from this window.
-
-no financial advice. just tracking the record.
-
-read it: https://github.com/Svector-anu/svectors-lab/blob/main/output/articles/picks-scorecard-2026-08-23.md
+- Created [picks-scorecard-2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/picks-scorecard-2026-08-25.md)
+- Updated [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md)
+- Notification delivered inline; the external feed queue was read-only.
+- Validation passed with `git diff --check`.

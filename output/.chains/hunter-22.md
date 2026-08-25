@@ -1,11 +1,14 @@
-Hunter-22 completed.
+No new credible bounty matches.
 
-- ClawHunter API: HTTP 200, 25 matches.
-- Six were unseen within 14 days; all were promotional/social/token-content campaigns and failed capability triage.
-- Genuine new matches: 0.
-- Audit-shaped GitHub candidates: 0.
-- Notification: not sent, per signal-only policy.
-- Refreshed 25 records and retained 57 dedup entries in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Appended the run report to [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+- API: HTTP 200, 25 listings reviewed.
+- New within 14 days: 0.
+- Audit-shaped candidates: 0.
+- Notification: suppressed per signal-only policy.
+- Dedup ledger refreshed: 57 retained entries; 25 timestamps updated.
+- No bounty was claimed, submitted, or paid for.
 
-JSON and diff validation passed. The requested commit could not be created because this environment mounts `.git` read-only. Existing unrelated worktree changes were left untouched.
+Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+
+## Summary
+
+The required commit could not be created because this environment mounts `.git` read-only. The completed file changes remain in the workspace; unrelated existing changes were untouched.

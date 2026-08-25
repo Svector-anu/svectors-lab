@@ -1,10 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-25T05:32:11Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-signal result with a clear threshold comparison, but the Fear & Greed value lacks a source or citation for verification.",
+  "last_analyzed": "2026-08-25T08:06:59Z",
+  "quality_score": 4,
+  "assessment": "Good, concise no-signal output with a clear trigger-based reason and appropriate restraint, though the F&G reading is not source-linked in the final output.",
   "flags": [],
-  "avg_score": 3.56,
+  "avg_score": 3.6,
   "history": [
     {
       "date": "2026-07-08",
@@ -41,6 +41,10 @@
     {
       "date": "2026-08-25",
       "score": 3
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "skill": "picks-tracker",
-  "last_analyzed": "2026-08-23T09:49:20Z",
-  "quality_score": 4,
-  "assessment": "Complete, well-sourced scorecard with transparent methodology; honest about poor performance (0-for-1) and explicitly acknowledges sample-size limitations.",
-  "flags": [],
-  "avg_score": 3.75,
+  "last_analyzed": "2026-08-25T08:56:27Z",
+  "quality_score": 3,
+  "assessment": "Adequate, fresh scorecard with explicit outcomes and sourcing notes, but the hard live-price figures violate the qualitative-price constraint and the 0% hit rate is misleading when the only active pick is still a hold.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 3.6,
   "history": [
     {
       "date": "2026-07-11",
@@ -21,6 +23,10 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 3
     }
   ]
 }

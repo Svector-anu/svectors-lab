@@ -1,13 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T01:32:31Z",
+  "last_analyzed": "2026-08-25T13:46:59Z",
   "quality_score": 5,
-  "assessment": "Verified scan of rtk-ai/rtk with real RustSec IDs, honest triage of dropped hits, and a live public PR #3705 that matches the claimed bumps and prior art.",
-  "last_analyzed": "2026-08-25T01:47:35Z",
-  "quality_score": 5,
-  "assessment": "Substantive, verifiable Arm A scan: real PR #94342 (h2 4.3.0→4.4.1/CVE-2026-71554), prior-art skips match open PRs, responsible PVR/triage with honest semgrep/duplicate caveats.",
+  "assessment": "Correct Arm C fail-closed skip with verified queue reasons, accurate GHSA/status details, and an actionable stranded USDTPAY draft note—no inventing, no spurious notify.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 4.13,
   "history": [
     {
       "date": "2026-07-28",
@@ -56,6 +53,18 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 5
     },
     {
       "date": "2026-08-25",

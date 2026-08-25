@@ -1,12 +1,13 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-25T01:25:20Z",
+  "last_analyzed": "2026-08-25T09:47:12Z",
   "quality_score": 2,
-  "assessment": "Structured and plausibly sourced, but it provides no crypto regime verdict or explicit trade call, so it does not serve the operator’s stated strategy.",
+  "assessment": "Substantive GitHub roundup, but it is misaligned with the crypto-trading strategy: no regime verdict, catalyst evidence, or explicit position call.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "generic_content"
   ],
-  "avg_score": 3.6,
+  "avg_score": 3.14,
   "history": [
     {
       "date": "2026-07-28",
@@ -23,6 +24,14 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",
