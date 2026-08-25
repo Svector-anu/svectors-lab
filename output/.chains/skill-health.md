@@ -1,17 +1,12 @@
-HEALTH: OK — `rightstack` is healthy.
+HEALTH: CRITICAL(1)
 
-- Success: 100% (2/2 cron-state; 3/3 GitHub Actions)
-- Consecutive failures: 0
-- Quality: 4.0/4 across 3 assessments
-- Issues filed/resolved: none
-- Open fleet issues: 2, neither affects `rightstack`
-- Notification attempted; read-only external queues caused inline-only delivery
+- `self-improve`: two consecutive failures, no successful run; blocked by ChatGPT usage limits.
+- Filed [ISS-004](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-004.md).
+- 14 skills classified degraded, 6 warning, and 5 healthy.
+- Corrected [INDEX.md](/home/runner/work/svectors-lab/svectors-lab/memory/issues/INDEX.md) to show resolved ISS-001.
+- Open issues: 2; resolved this run: 0.
+- Notification attempted; external queues were read-only, so it delivered inline only.
 
 ## Summary
 
-Updated:
-
-- [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md)
-
-Existing unrelated worktree changes were preserved.
+Updated the issue tracker, [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json), and [today’s health log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). Validation passed with no JSON or whitespace errors.

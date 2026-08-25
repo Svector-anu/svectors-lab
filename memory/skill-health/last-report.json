@@ -1,13 +1,13 @@
 {
-  "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "last_notified_at": "2026-08-25T16:53:00Z",
-  "last_run_at": "2026-08-25T16:53:00Z",
+  "hash": "7513b9d5abdc1d41524c1c6d0acdf0d65993d53ce172db4406a6b31d4ce2abcc",
+  "last_notified_at": "2026-08-25T19:42:49Z",
+  "last_run_at": "2026-08-25T19:42:49Z",
   "classification": {
-    "critical": [],
-    "degraded": [],
+    "critical": ["self-improve"],
+    "degraded": ["defi-overview", "digest", "fear-divergence", "github-trending", "heartbeat", "hunter-22", "narrative-tracker", "picks-tracker", "skill-health", "soul-builder", "token-pick", "verdikta-hunter", "vuln-scanner", "x402-monitor"],
     "flapping": [],
-    "warning": [],
-    "healthy_count": 1,
+    "warning": ["auto-merge", "autoresearch", "create-skill", "fork-fleet", "shiplog", "vuln-tracker"],
+    "healthy_count": 5,
     "no_data": []
   }
 }
