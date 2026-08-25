@@ -1,0 +1,17 @@
+{
+  "skill": "vuln-tracker",
+  "last_analyzed": "2026-08-25T16:56:54Z",
+  "quality_score": 2,
+  "assessment": "Specific repository findings and impact figures lack evidence or source links, and the claimed workspace updates contradict the explicitly read-only run constraints.",
+  "flags": [
+    "unverifiable_claim",
+    "low_quality"
+  ],
+  "avg_score": 2,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 2
+    }
+  ]
+}
