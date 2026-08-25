@@ -1,12 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-25T13:03:58Z",
+  "last_analyzed": "2026-08-25T19:42:31Z",
   "quality_score": 2,
-  "assessment": "Decision-oriented and well structured, but numerous precise figures, events, and transitions are cited only to generic news/category pages, making key trading claims unverifiable.",
+  "assessment": "Explicit position calls are useful, but several specific claims lack citations or credible verification, the output lacks a conclusion-first regime verdict, and it violates strategy by foregrounding a hard BTC price.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.5,
+  "avg_score": 3.41,
   "history": [
     {
       "date": "2026-07-06",
@@ -63,6 +64,10 @@
     {
       "date": "2026-08-25",
       "score": 3
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",
