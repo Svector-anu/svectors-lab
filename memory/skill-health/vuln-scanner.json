@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T16:11:37Z",
-  "quality_score": 5,
-  "assessment": "Arm C correctly skip-gated all 3 drafts with verifiable reasons; SpiderPanel near-miss and plain-text rewrite action are precise and actionable.",
+  "last_analyzed": "2026-08-25T16:18:16Z",
+  "quality_score": 4,
+  "assessment": "Solid Arm C disclose run: clear queue/gates, honest Resend 403 domain-unverified failure, correct retry state and actionable follow-up.",
   "flags": [],
-  "avg_score": 4.22,
+  "avg_score": 4.21,
   "history": [
     {
       "date": "2026-07-28",
@@ -77,6 +77,10 @@
     {
       "date": "2026-08-25",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     }
   ]
 }

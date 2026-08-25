@@ -1,45 +1,52 @@
-I'll read the vuln-scanner skill and the usual memory context, then run it with `var=disclose`.Running Arm C (disclose). Checking pending disclosures, the email ledger, soul voice files, and recent logs.Resend is configured and the ledger is empty. Next I'll parse the three pending drafts for eligibility.SpiderPanel looks newly reformatted (status + markers), but the body is still Markdown-heavy. Checking for a helper script and applying the eligibility gates formally.SpiderPanel passes the checklist but still has a Markdown body — guidelines say flag that, don't rewrite or send. Verifying MX and the secret tripwire so the operator note is complete.MX is verified and the secret tripwire is clean; the only blocker is the Markdown body. Skipping the send per Arm C guidelines and appending the run log.## Vuln Scanner — Disclose (Arm C)
+I'll read the vuln-scanner skill and supporting context, then run it with `var=disclose`.Executing Arm C (disclose). Loading soul voice, recent logs, and the pending-disclosure queue.Three drafts found. Reading frontmatter and checking Resend / kill-switch gates.Only SpiderPanel is eligible (armed high-severity). Applying C4 gates, then sending.All gates passed. Sending the disclosure email in-run via Resend.Send failed: Resend domain `svector.xyz` isn't verified. Logging the retryable failure and skipping notify (nothing sent, not hard-failed).# Vuln Scanner — Disclose (Arm C)
 
-**Selector:** `var=disclose`  
-**Result:** `DISCLOSURE_EMAILER_SKIP: nothing eligible`
+**Mode:** `disclose`  
+**Date:** 2026-08-25
 
-### Queue (3 drafts)
+## Queue scan
 
-| Draft | Verdict | Reason |
-|-------|---------|--------|
-| `genspark-ai/genoffice` | skip | `auto_send: false`, `human_only`, `status: submitted`, no email channel |
-| `guillaumemeyer/watermarks-remover` | skip | `auto_send: false`, `human_only`, `status: accepted-already-fixed` |
-| `amirh00sain/SpiderPanel` | near-miss | Armed and checklist-ready, but **EMAIL-BODY is still Markdown** |
+| Draft | Repo | Severity | `auto_send` | Status | Result |
+|-------|------|----------|-------------|--------|--------|
+| `amirh00sain-SpiderPanel-2026-08-25.md` | amirh00sain/SpiderPanel | high | true | pending-operator-send | **Eligible — send attempted** |
+| `genspark-ai-genoffice-2026-08-13.md` | genspark-ai/genoffice | low | false | submitted | Skipped (not armed / already submitted / human_only) |
+| `guillaumemeyer-watermarks-remover-2026-08-15.md` | guillaumemeyer/watermarks-remover | medium | false | accepted-already-fixed | Skipped (not armed / resolved / human_only) |
 
-### SpiderPanel near-miss (HIGH)
+**Eligible:** 1 — `amirh00sain/SpiderPanel` → `amirshaianfar@outlook.com`  
+Subject: *SpiderPanel — default admin credentials and session/cookie hardening issues*
 
-Passes almost every gate:
+## C4 gates
 
-- `auto_send: true`, `status: pending-operator-send`
-- `contact_email: amirshaianfar@outlook.com` (MX verified)
-- `<!-- EMAIL-BODY-START/END -->` markers present
-- Secret tripwire clean
-- Not in `email-log.json`
+| Gate | Result |
+|------|--------|
+| Kill-switch (`DISCLOSURE_EMAIL_PAUSED`) | ok (unset) |
+| Resend config (`RESEND_API_KEY` + `RESEND_FROM`) | present |
+| Daily budget | SENT_TODAY=0 → BUDGET=1 |
+| Dedup / status | not in ledger; still pending |
+| Recipient sanity | ok |
+| Deliverability (MX) | outlook.com MX present |
+| Cooldown | ok (ledger empty) |
+| Secret tripwire | ok |
+| Body markers / scaffolding | clean plain-text EMAIL-BODY |
 
-**Blocker:** body still has Markdown (`##` headings, fenced `python` blocks, backtick spans). Arm C sends plain text and must not rewrite staged bodies — emailing the asterisks would be an authoring bug, not a send.
+## Send result
 
-Vs earlier disclose runs today: frontmatter/status + markers are fixed; **only the plain-text body rewrite remains**.
+In-run Resend POST via `./secretcurl`:
 
-### Gates
+- **http=403** `validation_error`
+- Message: *The svector.xyz domain is not verified*
+- `RESEND_FROM` domain: `svector.xyz`
+- Draft left queued: `status: pending-operator-send`, `send_attempts: 1` (of 3)
+- `memory/email-log.json` unchanged (`[]`) — budget not consumed on failure
+- **Notify:** skipped (nothing sent, not hard-failed)
 
-- Kill-switch: off  
-- Resend config: ok  
-- Sent today: 0 → budget: 1 (unused)  
-- Notification: skipped (nothing sent / nothing failed)
-
-### Operator action
-
-Rewrite `memory/pending-disclosures/amirh00sain-SpiderPanel-2026-08-25.md` EMAIL-BODY to **plain text** (no `##`, no fences, no backticks; use `Where:`-style labels and indented code). Keep `auto_send: true`. Next `var=disclose` run can then send this HIGH finding (1/day drip).
+Until `svector.xyz` (or another from-address domain) is verified in the Resend dashboard, every Arm C send will fail the same way. The armed HIGH SpiderPanel disclosure remains queued for retry.
 
 ## Summary
 
 - Ran **Arm C (disclose)** with `var=disclose`.
-- Scanned 3 drafts; **0 sent**.
-- SpiderPanel is the only candidate; blocked solely by Markdown body.
-- Appended log under `### vuln-scanner` in `memory/logs/2026-08-25.md`.
-- No notification (empty send run).
+- Scanned 3 pending drafts; **1 eligible** (SpiderPanel, high, armed).
+- All C4 fail-closed gates passed; send attempted as final action.
+- Resend rejected with **403 — domain `svector.xyz` not verified**.
+- Updated draft `send_attempts: 1`; left status pending for retry.
+- Logged under `### vuln-scanner` in `memory/logs/2026-08-25.md`.
+- **Follow-up:** verify `svector.xyz` (or set `RESEND_FROM` to a verified subdomain) in Resend, then re-run `vuln-scanner` with `var=disclose`.
