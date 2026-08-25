@@ -1,40 +1,45 @@
-I'll read the vuln-scanner skill and the usual memory context, then run it with `var=disclose`.Running Arm C (disclose). Gathering pending drafts, the email ledger, soul voice, and recent logs.Checking today's vuln-scanner logs and how the SpiderPanel draft was armed — its status and body format look nonstandard.SpiderPanel is armed but not Arm-C eligible (bad status, no EMAIL-BODY markers, Markdown body). Confirming gates and whether we should only log or also surface a warning.Gates are open, but no draft is Arm-C eligible. Logging the skip (including SpiderPanel’s format issues) and finishing without sending.# Vuln Scanner — Arm C (disclose)
+I'll read the vuln-scanner skill and the usual memory context, then run it with `var=disclose`.Running Arm C (disclose). Checking pending disclosures, the email ledger, soul voice files, and recent logs.Resend is configured and the ledger is empty. Next I'll parse the three pending drafts for eligibility.SpiderPanel looks newly reformatted (status + markers), but the body is still Markdown-heavy. Checking for a helper script and applying the eligibility gates formally.SpiderPanel passes the checklist but still has a Markdown body — guidelines say flag that, don't rewrite or send. Verifying MX and the secret tripwire so the operator note is complete.MX is verified and the secret tripwire is clean; the only blocker is the Markdown body. Skipping the send per Arm C guidelines and appending the run log.## Vuln Scanner — Disclose (Arm C)
 
 **Selector:** `var=disclose`  
-**Result:** `DISCLOSURE_EMAILER_SKIP: nothing eligible` — **0 emails sent**
+**Result:** `DISCLOSURE_EMAILER_SKIP: nothing eligible`
 
-## Gates (C4)
+### Queue (3 drafts)
 
-| Gate | Result |
-|------|--------|
-| Kill-switch (`DISCLOSURE_EMAIL_PAUSED`) | off |
-| Resend config (`RESEND_API_KEY` + `RESEND_FROM`) | ok |
-| Ledger | `memory/email-log.json` = `[]` |
-| Sent today / budget | 0 / 1 (unused) |
-| Notification | skipped (nothing sent, nothing failed) |
+| Draft | Verdict | Reason |
+|-------|---------|--------|
+| `genspark-ai/genoffice` | skip | `auto_send: false`, `human_only`, `status: submitted`, no email channel |
+| `guillaumemeyer/watermarks-remover` | skip | `auto_send: false`, `human_only`, `status: accepted-already-fixed` |
+| `amirh00sain/SpiderPanel` | near-miss | Armed and checklist-ready, but **EMAIL-BODY is still Markdown** |
 
-## Queue (3 drafts)
+### SpiderPanel near-miss (HIGH)
 
-| Draft | `auto_send` | Status | Verdict |
-|-------|-------------|--------|---------|
-| `genspark-ai/genoffice` | false | `submitted` (GHSA-q3jr-86g4-cffw) | **skip** — human_only, already submitted via PVR, no email channel |
-| `guillaumemeyer/watermarks-remover` | false | `accepted-already-fixed` (GHSA-pjg6-92pm-mmcf) | **skip** — human_only, already resolved |
-| `amirh00sain/SpiderPanel` | **true** | `armed-for-auto-send` | **skip** — armed but **not Arm-C eligible** (format/status bugs) |
+Passes almost every gate:
 
-## SpiderPanel — mis-armed HIGH draft (operator action)
+- `auto_send: true`, `status: pending-operator-send`
+- `contact_email: amirshaianfar@outlook.com` (MX verified)
+- `<!-- EMAIL-BODY-START/END -->` markers present
+- Secret tripwire clean
+- Not in `email-log.json`
 
-Scan today staged a HIGH finding (default admin credentials / weak hashing + session/CORS hardening) with `auto_send: true` and `contact_email: amirshaianfar@outlook.com` (MX for `outlook.com` verified; secret tripwire clean). Arm C still refused to send — fail-closed:
+**Blocker:** body still has Markdown (`##` headings, fenced `python` blocks, backtick spans). Arm C sends plain text and must not rewrite staged bodies — emailing the asterisks would be an authoring bug, not a send.
 
-1. **Status** is `armed-for-auto-send`, not one of `pending-operator-send` / `auto-send-ready` / `pending` / blank.
-2. **No** `<!-- EMAIL-BODY-START -->` / `<!-- EMAIL-BODY-END -->` markers, and no legacy `Subject:` fallback.
-3. **Body is Markdown** (`##` headings, fenced code). Arm C must send plain text exactly as staged — it does not rewrite bodies.
+Vs earlier disclose runs today: frontmatter/status + markers are fixed; **only the plain-text body rewrite remains**.
 
-To unblock the next disclose run, reformat `memory/pending-disclosures/amirh00sain-SpiderPanel-2026-08-25.md` to the auto-send-ready shape (plain-text EMAIL-BODY block, `status: pending-operator-send`, keep `auto_send: true`). Arm C will not re-author it.
+### Gates
+
+- Kill-switch: off  
+- Resend config: ok  
+- Sent today: 0 → budget: 1 (unused)  
+- Notification: skipped (nothing sent / nothing failed)
+
+### Operator action
+
+Rewrite `memory/pending-disclosures/amirh00sain-SpiderPanel-2026-08-25.md` EMAIL-BODY to **plain text** (no `##`, no fences, no backticks; use `Where:`-style labels and indented code). Keep `auto_send: true`. Next `var=disclose` run can then send this HIGH finding (1/day drip).
 
 ## Summary
 
 - Ran **Arm C (disclose)** with `var=disclose`.
-- Scanned **3** pending drafts; **0** eligible; **0** Resend sends.
-- Logged under `### vuln-scanner` in `memory/logs/2026-08-25.md`.
-- No `./notify` (empty/nothing-eligible run).
-- **Follow-up:** operator reformats the SpiderPanel draft, then re-run `vuln-scanner` with `var=disclose`.
+- Scanned 3 drafts; **0 sent**.
+- SpiderPanel is the only candidate; blocked solely by Markdown body.
+- Appended log under `### vuln-scanner` in `memory/logs/2026-08-25.md`.
+- No notification (empty send run).

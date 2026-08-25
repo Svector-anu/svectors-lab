@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T16:05:45Z",
+  "last_analyzed": "2026-08-25T16:11:37Z",
   "quality_score": 5,
-  "assessment": "Arm C correctly fail-closed with verifiable gate/queue audit, precise SpiderPanel eligibility diagnosis, and actionable operator remediaion; 0 sends is a legitimate completed no-op.",
+  "assessment": "Arm C correctly skip-gated all 3 drafts with verifiable reasons; SpiderPanel near-miss and plain-text rewrite action are precise and actionable.",
   "flags": [],
-  "avg_score": 4.18,
+  "avg_score": 4.22,
   "history": [
     {
       "date": "2026-07-28",
@@ -61,6 +61,10 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 5
     },
     {
       "date": "2026-08-25",
