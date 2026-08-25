@@ -292,5 +292,15 @@
     "consecutive_failures": 0,
     "success_rate": 1,
     "last_quality_score": 3
+  },
+  "rightstack": {
+    "last_status": "success",
+    "last_success": "2026-08-25T14:40:21Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0,
+    "consecutive_failures": 0,
+    "success_rate": 1,
+    "last_quality_score": 4
   }
 }
