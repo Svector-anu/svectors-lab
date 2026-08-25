@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-25T00:04:28Z",
+  "last_analyzed": "2026-08-25T00:34:01Z",
   "quality_score": 2,
-  "assessment": "Useful regime framing, but it lacks explicit position calls and claims workspace files were modified despite the run being read-only, making the completion summary unverifiable.",
+  "assessment": "Specific market figures and file updates are unsupported in the final output, the claimed workspace writes contradict the read-only run, and no actionable position call was produced.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
-  "avg_score": 4,
+  "avg_score": 3.86,
   "history": [
     {
       "date": "2026-07-06",
@@ -56,6 +56,10 @@
     {
       "date": "2026-08-23",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",

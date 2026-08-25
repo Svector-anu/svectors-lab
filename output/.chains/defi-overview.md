@@ -1,16 +1,24 @@
-Take: **chop, medium conviction** — BTC rose 1.7%, but breadth narrowed to 11/20 and DEX volume fell 17% to $9.66B.
+Take: chop — BTC gained 1.8% and DEX volume rebounded 12.7%, but only 11/20 top-cap assets rose.
 
-- DeFi verdict: Mixed; top-50 protocol TVL +0.5% while stablecoin supply rose 0.3%.
-- F&G: 74 (Greed), up from 66 at the prior refresh.
-- Rising narrative: SOL/DEX infrastructure; SOL +3.6%, AERO +12.8%.
-- Sustainable yields: ETH-LINK 43.3%, USDC-WETH 20.0%, HGRAM 17.4%, all passing the skill’s filters.
-- Polymarket: CLARITY Act passage in 2026 priced at 18.5%.
-- Latest verified BTC ETF flow remains Aug. 21 at +$307.5M. [ETF flow table](https://www.tftc.io/bitcoin-etf-flows/august-2026)
+Conviction: medium — BTC, SOL, and DEX activity improved; breadth and total market cap disagreed.
+
+Evidence: DEX volume recovered from $9.66B to $10.88B, reversing the prior contraction.
+
+- DeFi verdict: Mixed
+- TVL: $88.0B; protocol-weighted top-50 +0.6% over 24h
+- BTC: $78,777 (+1.8%); ETH: $2,478 (+1.1%); SOL: $99.70 (+5.5%)
+- Fear & Greed: 74 (Greed)
+- Leading narrative: SOL/DEX infrastructure
+- Protocol mover: Ethena USDtb +16.3% to $335M
+- Polymarket: CLARITY Act signed in 2026 at 18.5% YES
+- Positions: `DEFI_MONITOR_NO_CONFIG`
+
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). All data sources succeeded. Notification ran inline, but its external feed queue was read-only. The commit was also blocked because this harness mounts `.git` read-only.
 
 ## Summary
 
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Appended the complete run to [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
-- Positions facet logged `DEFI_MONITOR_NO_CONFIG`.
-- Notification was prepared and attempted; the external queue was read-only, so delivery fell back inline.
-- Commit creation was blocked because `.git` is read-only. Unrelated workspace changes were untouched.
+- Executed the combined positions and macro facets.
+- Preserved the KAITO token-pick history.
+- Refreshed market context and appended the run log.
+- No source failures or fabricated fallback values.
+- Follow-up: commit the two modified files from a writable Git checkout.
