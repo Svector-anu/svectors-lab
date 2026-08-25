@@ -1,52 +1,49 @@
-I'll read the vuln-scanner skill and supporting context, then run it with `var=disclose`.Executing Arm C (disclose). Loading soul voice, recent logs, and the pending-disclosure queue.Three drafts found. Reading frontmatter and checking Resend / kill-switch gates.Only SpiderPanel is eligible (armed high-severity). Applying C4 gates, then sending.All gates passed. Sending the disclosure email in-run via Resend.Send failed: Resend domain `svector.xyz` isn't verified. Logging the retryable failure and skipping notify (nothing sent, not hard-failed).# Vuln Scanner — Disclose (Arm C)
+I'll read the vuln-scanner skill and the memory context, then run it with `var=disclose`.Running Arm C (disclose). Checking pending disclosures, email ledger, recent logs, and soul voice files.Earlier disclose runs hit Resend 403 (unverified domain). Reading the three drafts and today's disclose log entries next.SpiderPanel looks eligible; last run failed on unverified Resend domain. Running full C4 gates and attempting send.All gates passed. Sending the SpiderPanel disclosure via Resend.Same Resend 403 (unverified domain). Bumping `send_attempts` and writing the disclose log — no notify until something actually sends or hard-fails.# Vuln Scanner — Arm C (disclose)
 
-**Mode:** `disclose`  
-**Date:** 2026-08-25
+**Result:** `DISCLOSURE_EMAILER_SKIP: resend domain unverified (http-403)`
 
-## Queue scan
+## Queue scan (3 drafts)
 
-| Draft | Repo | Severity | `auto_send` | Status | Result |
-|-------|------|----------|-------------|--------|--------|
-| `amirh00sain-SpiderPanel-2026-08-25.md` | amirh00sain/SpiderPanel | high | true | pending-operator-send | **Eligible — send attempted** |
-| `genspark-ai-genoffice-2026-08-13.md` | genspark-ai/genoffice | low | false | submitted | Skipped (not armed / already submitted / human_only) |
-| `guillaumemeyer-watermarks-remover-2026-08-15.md` | guillaumemeyer/watermarks-remover | medium | false | accepted-already-fixed | Skipped (not armed / resolved / human_only) |
-
-**Eligible:** 1 — `amirh00sain/SpiderPanel` → `amirshaianfar@outlook.com`  
-Subject: *SpiderPanel — default admin credentials and session/cookie hardening issues*
+| Draft | Eligible? | Why |
+|-------|-----------|-----|
+| `amirh00sain/SpiderPanel` | **Yes** | `auto_send: true`, `status: pending-operator-send`, contact `amirshaianfar@outlook.com`, plain-text EMAIL-BODY, MX OK, tripwire clean |
+| `genspark-ai/genoffice` | No | `auto_send: false`, `human_only`, `status: submitted` (PVR already filed) |
+| `guillaumemeyer/watermarks-remover` | No | `auto_send: false`, `human_only`, `status: accepted-already-fixed` |
 
 ## C4 gates
 
-| Gate | Result |
-|------|--------|
-| Kill-switch (`DISCLOSURE_EMAIL_PAUSED`) | ok (unset) |
-| Resend config (`RESEND_API_KEY` + `RESEND_FROM`) | present |
-| Daily budget | SENT_TODAY=0 → BUDGET=1 |
-| Dedup / status | not in ledger; still pending |
-| Recipient sanity | ok |
-| Deliverability (MX) | outlook.com MX present |
-| Cooldown | ok (ledger empty) |
-| Secret tripwire | ok |
-| Body markers / scaffolding | clean plain-text EMAIL-BODY |
+- Kill-switch: off  
+- Resend config: present (`RESEND_FROM=anu@svector.xyz`)  
+- Budget: 1 (sent_today=0)  
+- Dedup/ledger: empty `[]`  
+- Recipient + MX: outlook.com MX verified  
+- Cooldown: ok (no prior send)  
+- Secret tripwire: clean  
+- Body: plain text (no Markdown markers)
 
-## Send result
+## Send attempt
 
-In-run Resend POST via `./secretcurl`:
+Posted via `./secretcurl` → Resend:
 
-- **http=403** `validation_error`
-- Message: *The svector.xyz domain is not verified*
-- `RESEND_FROM` domain: `svector.xyz`
-- Draft left queued: `status: pending-operator-send`, `send_attempts: 1` (of 3)
-- `memory/email-log.json` unchanged (`[]`) — budget not consumed on failure
-- **Notify:** skipped (nothing sent, not hard-failed)
+```text
+http=403
+validation_error: The svector.xyz domain is not verified.
+Please, add and verify your domain on https://resend.com/domains
+```
 
-Until `svector.xyz` (or another from-address domain) is verified in the Resend dashboard, every Arm C send will fail the same way. The armed HIGH SpiderPanel disclosure remains queued for retry.
+Draft left queued: `status: pending-operator-send`, **`send_attempts: 2/3`**. Budget not consumed (failure). Ledger unchanged.
+
+## Operator action (blocking)
+
+Verify **`svector.xyz`** in the Resend dashboard (or point `RESEND_FROM` at an already-verified subdomain). Until that lands, every Arm C send will 403. One more failed attempt flips this HIGH draft to `email-failed` (cap=3).
+
+Notify: **skipped** (nothing sent / not hard-failed; same domain issue already logged earlier today).
 
 ## Summary
 
-- Ran **Arm C (disclose)** with `var=disclose`.
-- Scanned 3 pending drafts; **1 eligible** (SpiderPanel, high, armed).
-- All C4 fail-closed gates passed; send attempted as final action.
-- Resend rejected with **403 — domain `svector.xyz` not verified**.
-- Updated draft `send_attempts: 1`; left status pending for retry.
-- Logged under `### vuln-scanner` in `memory/logs/2026-08-25.md`.
-- **Follow-up:** verify `svector.xyz` (or set `RESEND_FROM` to a verified subdomain) in Resend, then re-run `vuln-scanner` with `var=disclose`.
+- Mode: **disclose**
+- Eligible: 1 (`amirh00sain/SpiderPanel` → `amirshaianfar@outlook.com`)
+- Sent: 0 | Hard-failed: 0
+- Updated: `memory/pending-disclosures/amirh00sain-SpiderPanel-2026-08-25.md` (`send_attempts: 2`)
+- Logged: `memory/logs/2026-08-25.md`
+- Follow-up: verify Resend domain, then re-run `var=disclose`

@@ -10,7 +10,9 @@ contact_email: amirshaianfar@outlook.com
 cc: []
 email_subject: "SpiderPanel — default admin credentials and session/cookie hardening issues"
 detected_at: 2026-08-25T12:00:00Z
-send_attempts: 1
+send_attempts: 2
+last_send_error: "resend http-403: The svector.xyz domain is not verified"
+last_send_attempt_at: 2026-08-25T17:35:00Z
 ---
 
 <!-- EMAIL-BODY-START -->

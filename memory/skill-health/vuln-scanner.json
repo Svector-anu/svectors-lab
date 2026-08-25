@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T16:18:16Z",
+  "last_analyzed": "2026-08-25T17:31:43Z",
   "quality_score": 4,
-  "assessment": "Solid Arm C disclose run: clear queue/gates, honest Resend 403 domain-unverified failure, correct retry state and actionable follow-up.",
+  "assessment": "Honest disclose-arm report: clear skip code, verifiable Resend 403, queue/gates, and blocking operator fix.",
   "flags": [],
-  "avg_score": 4.21,
+  "avg_score": 4.2,
   "history": [
     {
       "date": "2026-07-28",
@@ -77,6 +77,10 @@
     {
       "date": "2026-08-25",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     },
     {
       "date": "2026-08-25",
