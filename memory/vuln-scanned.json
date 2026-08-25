@@ -152,5 +152,12 @@
     "findings": 4,
     "channel": "public-pr",
     "notes": "osv dep bumps: h2/memmap2/event-listener/crossbeam-epoch \u2192 PR #956; semgrep CI FPs; agentic clean; quick-xml@0.30 blocked by xcb/zed-scap; fuzz skip"
+  },
+  {
+    "repo": "rtk-ai/rtk",
+    "scanned_at": "2026-08-25T02:00:00Z",
+    "findings": 4,
+    "channel": "public-pr",
+    "notes": "osv RustSec bumps quick-xml/anyhow/crossbeam-epoch \u2192 PR #3705; semgrep CI FPs; agentic clean on hooks/rewrite/trust; sh -c covered by open #1194; fuzz skip"
   }
 ]

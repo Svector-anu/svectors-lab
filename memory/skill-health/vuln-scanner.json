@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T01:19:50Z",
-  "quality_score": 4,
-  "assessment": "Verified OpenLogi scan with real PR #956, real RUSTSEC IDs, clear triage drops, and actionable lockfile disclosure.",
+  "last_analyzed": "2026-08-25T01:32:31Z",
+  "quality_score": 5,
+  "assessment": "Verified scan of rtk-ai/rtk with real RustSec IDs, honest triage of dropped hits, and a live public PR #3705 that matches the claimed bumps and prior art.",
   "flags": [],
-  "avg_score": 3.92,
+  "avg_score": 4,
   "history": [
     {
       "date": "2026-07-28",
@@ -53,6 +53,10 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 5
     }
   ]
 }
