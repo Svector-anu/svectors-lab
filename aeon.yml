@@ -259,13 +259,27 @@ model: claude-sonnet-5
 # failed run's log, not inferred. 24% pass rate over the trailing 168h
 # (./scripts/skill-runs --hours 168) as a direct result. CODEX_AUTH is now
 # provisioned (native ChatGPT-subscription auth, bypasses the gateway
-# entirely — see resolve-harness.sh's codex case). Caveat worth remembering:
-# this is Aaron's own personal, revocable ChatGPT Plus login, shared, with
-# no confirmed duration/usage cap — if he reclaims it or the shared account
-# hits its own limit, this fails closed the same way. Revert to claude once
-# its weekly limit resets, or back to whichever provider is actually funded,
-# if codex access goes away.
-harness: codex
+# entirely — see resolve-harness.sh's codex case). Verified working via a
+# real dispatched defi-overview run (harness: codex, auth: native-oauth,
+# real regime-verdict output, not a stub).
+#
+# TESTING kimi 2026-08-25: codex is also the operator's own personal daily
+# driver (VS Code interactive coding), so fleet dispatches and personal
+# sessions were drawing on the same shared ChatGPT Plus account/cap —
+# separating them is the actual goal here, not a preference for kimi's
+# quality specifically. Picked kimi over grok because grok already has a
+# documented history on THIS repo of exhausting its usage balance with no
+# reset after 40+ hours (see the reverted-from-grok note above); kimi is
+# unproven at fleet scale but has no such history yet. Real, unresolved
+# risk found before switching (not assumed away): Kimi Code's own
+# subscription plans carry a weekly allowance + 5-hour rate limit on top of
+# a shared monthly credit pool — exact numbers for this specific account's
+# tier are unknown, so this could hit its own wall the same way claude and
+# grok did. Treat this as an active experiment: watch
+# `./scripts/skill-runs` over the next day or two for kimi-specific
+# failures, and revert to codex (proven) immediately if it doesn't hold —
+# don't assume it's fine just because the first dispatch worked.
+harness: kimi
 
 # AI Gateway — route Claude Code requests through an LLM provider.
 #
