@@ -1,19 +1,22 @@
 x402 pulse — 2026-08-25
 
-momentum: breakout (20 pts)
+momentum: **breakout (13 pts)**
 
-- 5 clearly relevant new integrations found.
-- `@coinbase/x402`: 62,560 downloads/week, +24,426 versus July.
-- `x402`: 373,982 downloads/week, +128,041 versus July.
-- 479 of 533 monitored services are payment-ready, but only one is delivery-verified.
+Five additional integrations surfaced after the earlier run:
 
-Position call: ride developer adoption; watch execution quality. Integration breadth is growing faster than proof of useful paid delivery.
+- [x402-url-extractor](https://github.com/epistemedeus/x402-url-extractor): paid URL extraction
+- [agent-execution-platform](https://github.com/ardentairesearch/agent-execution-platform): wallet execution and x402 verification
+- [resonate](https://github.com/akoita/resonate): paid audio licensing
+- [scvd-general-store-repo](https://github.com/seancrecord/scvd-general-store-repo): settlement attestation
+- [tollbooth](https://github.com/solosofi/tollbooth): pay-per-request middleware
 
-Updated [protocol-state-x402.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/protocol-state-x402.md) and [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). Notification delivery fell back to inline output because its external queue was read-only. Commit creation was also blocked because `.git` is read-only.
+npm: `x402` rose to 383,599/week (+9,617), while `@coinbase/x402` fell to 60,625/week (−1,935). `paykit` remains unavailable.
+
+**Position call:** ride integration breadth; watch whether these low-star experiments convert into actively used services.
 
 ## Summary
 
-- Ran the default x402 Protocol Monitor branch.
-- Recorded npm, GitHub, news, scoring, citations, and state.
-- Momentum: breakout, 20 points.
-- No follow-up required beyond watching verified-delivery growth.
+- Updated [protocol-state-x402.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/protocol-state-x402.md).
+- Appended the run to [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+- Created the notification digest and attempted delivery; the external queue was read-only, so it was delivered inline instead.
+- No commit was possible because `.git` is read-only in this environment.
