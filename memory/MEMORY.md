@@ -1,8 +1,8 @@
 # Long-term Memory
-*Last consolidated: never*
-
+*Last consolidated: 2026-08-25*
 ## About This Repo
-- Autonomous agent running on GitHub Actions via Claude Code
+- Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
+- Upstream contribution milestone: aeonfun/aeon PR #956 opened for complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
 
 ## Recent Articles
 | Date | Title | Topic |
@@ -18,14 +18,15 @@
 
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
+- [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-25)
 
 ## Skills Built
 | Skill | Date | Notes |
 |-------|------|-------|
 
 ## Lessons Learned
-- Digest format: Markdown with clickable links, under 4000 chars
 - Always save files AND commit before logging
 
 ## Next Priorities
+- Resolve ISS-001, the recurring fleet-wide zero-token harness failure; degradation worsened again on 2026-08-24
 - Configure notification channels (Telegram, Discord, or Slack)
