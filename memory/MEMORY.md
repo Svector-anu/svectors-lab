@@ -29,5 +29,5 @@
 - Always save files AND commit before logging
 
 ## Next Priorities
-- Resolve ISS-001, the recurring fleet-wide zero-token harness failure; degradation worsened again on 2026-08-24
+- Resolve ISS-003 by verifying `VERDIKTA_API_KEY` and completing verdikta-hunter's first successful discovery run
 - Configure notification channels (Telegram, Discord, or Slack)
