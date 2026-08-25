@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T13:46:59Z",
+  "last_analyzed": "2026-08-25T16:05:45Z",
   "quality_score": 5,
-  "assessment": "Correct Arm C fail-closed skip with verified queue reasons, accurate GHSA/status details, and an actionable stranded USDTPAY draft note—no inventing, no spurious notify.",
+  "assessment": "Arm C correctly fail-closed with verifiable gate/queue audit, precise SpiderPanel eligibility diagnosis, and actionable operator remediaion; 0 sends is a legitimate completed no-op.",
   "flags": [],
-  "avg_score": 4.13,
+  "avg_score": 4.18,
   "history": [
     {
       "date": "2026-07-28",
@@ -61,6 +61,10 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 5
     },
     {
       "date": "2026-08-25",

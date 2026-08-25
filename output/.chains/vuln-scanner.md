@@ -1,30 +1,40 @@
-I'll read the vuln-scanner skill and the memory context, then execute it with `var=disclose`.Arm C (disclose) is selected. Loading pending disclosures, the email ledger, soul voice, and recent logs.Both drafts are disarmed (`auto_send: false`, `human_only: true`). Checking today's disclose runs, then logging the skip.There's a `pending-operator-send` row in `vuln-scanned.json` — checking whether a draft is missing from the queue.Draft for USDTPAY-woocommerce is missing from disk and was never armed. Logging the skip and finishing — no send, no notify.## Vuln Scanner — Arm C (disclose)
+I'll read the vuln-scanner skill and the usual memory context, then run it with `var=disclose`.Running Arm C (disclose). Gathering pending drafts, the email ledger, soul voice, and recent logs.Checking today's vuln-scanner logs and how the SpiderPanel draft was armed — its status and body format look nonstandard.SpiderPanel is armed but not Arm-C eligible (bad status, no EMAIL-BODY markers, Markdown body). Confirming gates and whether we should only log or also surface a warning.Gates are open, but no draft is Arm-C eligible. Logging the skip (including SpiderPanel’s format issues) and finishing without sending.# Vuln Scanner — Arm C (disclose)
 
-**Result:** `DISCLOSURE_EMAILER_SKIP: nothing armed`
+**Selector:** `var=disclose`  
+**Result:** `DISCLOSURE_EMAILER_SKIP: nothing eligible` — **0 emails sent**
 
-Parsed `var=disclose` → Arm C. Resend is configured, kill-switch is off, daily budget is 1 (unused). No email was sent and no notification was sent (empty/nothing-armed runs stay quiet).
+## Gates (C4)
 
-### Queue
+| Gate | Result |
+|------|--------|
+| Kill-switch (`DISCLOSURE_EMAIL_PAUSED`) | off |
+| Resend config (`RESEND_API_KEY` + `RESEND_FROM`) | ok |
+| Ledger | `memory/email-log.json` = `[]` |
+| Sent today / budget | 0 / 1 (unused) |
+| Notification | skipped (nothing sent, nothing failed) |
 
-| Draft | Status | `auto_send` | Why skipped |
-|-------|--------|-------------|-------------|
-| `genspark-ai/genoffice` | `submitted` (GHSA-q3jr-86g4-cffw) | `false` + `human_only` | Not armed; PVR form draft, not email; no `contact_email` / EMAIL-BODY markers |
-| `guillaumemeyer/watermarks-remover` | `accepted-already-fixed` (GHSA-pjg6-92pm-mmcf) | `false` + `human_only` | Not armed; already resolved; same non-email shape |
+## Queue (3 drafts)
 
-**Drafts scanned:** 2 · **Eligible:** 0 · **Sent:** 0
+| Draft | `auto_send` | Status | Verdict |
+|-------|-------------|--------|---------|
+| `genspark-ai/genoffice` | false | `submitted` (GHSA-q3jr-86g4-cffw) | **skip** — human_only, already submitted via PVR, no email channel |
+| `guillaumemeyer/watermarks-remover` | false | `accepted-already-fixed` (GHSA-pjg6-92pm-mmcf) | **skip** — human_only, already resolved |
+| `amirh00sain/SpiderPanel` | **true** | `armed-for-auto-send` | **skip** — armed but **not Arm-C eligible** (format/status bugs) |
 
-### Stranded scan note (operator)
+## SpiderPanel — mis-armed HIGH draft (operator action)
 
-`memory/vuln-scanned.json` still has `DigitalShieldOfficial/USDTPAY-woocommerce` as `channel: pending-operator-send` (2026-08-18, medium CWE-840 underpayment in webhook amount reconciliation; contact `service@ds.pro`). The staged file `memory/pending-disclosures/DigitalShieldOfficial-USDTPAY-woocommerce-2026-08-18.md` is **missing from disk**. Scan notes say it was deliberately `auto_send: false` / `human_only: true`. Arm C does **not** re-arm missing drafts — restore or re-author if email disclosure is still wanted.
+Scan today staged a HIGH finding (default admin credentials / weak hashing + session/CORS hardening) with `auto_send: true` and `contact_email: amirshaianfar@outlook.com` (MX for `outlook.com` verified; secret tripwire clean). Arm C still refused to send — fail-closed:
 
-### State writes
+1. **Status** is `armed-for-auto-send`, not one of `pending-operator-send` / `auto-send-ready` / `pending` / blank.
+2. **No** `<!-- EMAIL-BODY-START -->` / `<!-- EMAIL-BODY-END -->` markers, and no legacy `Subject:` fallback.
+3. **Body is Markdown** (`##` headings, fenced code). Arm C must send plain text exactly as staged — it does not rewrite bodies.
 
-- Seeded `memory/email-log.json` → `[]` (was missing)
-- Appended `### vuln-scanner` (Mode: disclose) to `memory/logs/2026-08-25.md`
+To unblock the next disclose run, reformat `memory/pending-disclosures/amirh00sain-SpiderPanel-2026-08-25.md` to the auto-send-ready shape (plain-text EMAIL-BODY block, `status: pending-operator-send`, keep `auto_send: true`). Arm C will not re-author it.
 
 ## Summary
 
-- Ran Arm C with `var=disclose`.
-- Nothing eligible to send; fail-closed skip with no notify.
-- Surfaced missing USDTPAY-woocommerce draft for operator follow-up.
-- Files touched: `memory/email-log.json`, `memory/logs/2026-08-25.md`.
+- Ran **Arm C (disclose)** with `var=disclose`.
+- Scanned **3** pending drafts; **0** eligible; **0** Resend sends.
+- Logged under `### vuln-scanner` in `memory/logs/2026-08-25.md`.
+- No `./notify` (empty/nothing-eligible run).
+- **Follow-up:** operator reformats the SpiderPanel draft, then re-run `vuln-scanner` with `var=disclose`.
