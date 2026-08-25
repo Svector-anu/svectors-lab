@@ -1,12 +1,13 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-25T01:25:20Z",
+  "last_analyzed": "2026-08-25T09:32:15Z",
   "quality_score": 2,
-  "assessment": "Structured and plausibly sourced, but it provides no crypto regime verdict or explicit trade call, so it does not serve the operator’s stated strategy.",
+  "assessment": "Substantive and linked, but it provides a generic GitHub-trending digest with no crypto regime verdict or explicit trading call, so it does not serve the operator’s stated strategy.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "generic_content"
   ],
-  "avg_score": 3.6,
+  "avg_score": 3.33,
   "history": [
     {
       "date": "2026-07-28",
@@ -23,6 +24,10 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",

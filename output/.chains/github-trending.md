@@ -1,35 +1,32 @@
-GitHub Trending — 2026-08-25
+*GitHub Trending — 2026-08-25*
 
-Top pick — https://github.com/apache/maka
-A local-first agent workspace built around durable execution evidence, not ephemeral chat history.
+*Top pick* — [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman)
+The standout is an unusually complete local-agent architecture: durable orchestration, inspectable memory, and native x402 coordination in one system.
 
-AI/ML
-- NousResearch/hermes-agent — 896 stars today (235.8k total) · Python · ACCELERATING
-Closes the learning loop by turning experience into evolving skills and searchable cross-session memory.
+*AI/ML*
+• [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) — ★ 515 today (37.5k total) · Rust · ACCELERATING
+Pairs scored Markdown memory trees with checkpointed agent graphs and replayable per-call costs.
 
-- apache/maka — 411 stars today (2.9k total) · TypeScript · RETURNING
-Preserves tool calls, results, permissions, and endings as recoverable facts even after context compaction.
+• [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — ★ 174 today (20.0k total) · TypeScript · ACCELERATING
+Routes one OpenAI-compatible API across 635 endpoints, failing over around free-tier quotas.
 
-- tashfeenahmed/freellmapi — 174 stars today (19.8k total) · TypeScript · ACCELERATING
-Unifies 34 providers behind one endpoint, routing around quotas while tracking every free-tier cap.
+• [openclaw/openclaw](https://github.com/openclaw/openclaw) — ★ 173 today (387.5k total) · TypeScript · ACCELERATING
+Cross-platform assistant combines one gateway runtime with channel integrations and an expanding extension ecosystem.
 
-- tinyhumansai/openhuman — 515 stars today (37.3k total) · Rust · ACCELERATING
-Stores scored Markdown memory locally and compresses tool output before it reaches the model.
+*Devtools*
+• [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community) — ★ 489 today (1.5k total) · Python · RETURNING
+Nightly mirror exposes Anthropic-reviewed community plugins after automated security scanning.
 
-Devtools
-- anthropics/claude-plugins-community — 489 stars today (1.3k total) · Python · RETURNING
-Exposes Anthropic-approved community plugins through a nightly-synced, security-scanned marketplace mirror.
+• [PostHog/posthog](https://github.com/PostHog/posthog) — ★ 83 today (39.1k total) · Python · RETURNING
+Unifies product telemetry and LLM traces so agents can diagnose behavior from the same event context.
 
-Web/Apps
-- makeplane/plane — 243 stars today (57.9k total) · TypeScript · RETURNING
-Offers Docker and Kubernetes self-hosting for a full issue, sprint, and roadmap stack.
+*Infra*
+• [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) — ★ 175 today (66.2k total) · Rust · RETURNING
+Implements nearly the full Bitwarden client API in a lighter self-hosted Rust server.
 
-- AgriciDaniel/claude-obsidian — 310 stars today (11.9k total) · Python · ACCELERATING
-Keeps provenance-aware research and rollups as ordinary Markdown files instead of a plugin-owned database.
-
-Infra
-- dani-garcia/vaultwarden — 175 stars today (66.1k total) · Rust · RETURNING
-Implements the Bitwarden client API with a lighter self-hosted server compatible with official clients.
+*Other*
+• [basecamp/omarchy](https://github.com/basecamp/omarchy) — ★ 1,056 today (30.6k total) · Shell · ACCELERATING
+DHH’s curated Arch desktop makes a Linux setup reproducible and batteries-included; it is an OS distribution, not an app.
 
 ---
-sources: trending=ok · gh_api=ok · kept 8/18
+sources: trending=ok · gh_api=ok · kept 7/19
