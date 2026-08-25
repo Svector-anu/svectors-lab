@@ -1,0 +1,16 @@
+{
+  "skill": "autoresearch",
+  "last_analyzed": "2026-08-25T01:04:36Z",
+  "quality_score": 1,
+  "assessment": "Failed to run the requested autoresearch task and produced only an input-error notice with no usable research or analysis.",
+  "flags": [
+    "empty_output"
+  ],
+  "avg_score": 1,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 1
+    }
+  ]
+}
