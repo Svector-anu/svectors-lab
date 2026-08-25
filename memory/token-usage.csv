@@ -58,3 +58,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,aeon-doctor,codex-default,274854,5723,224000,0
 2026-08-25,defi-overview,codex-default,594942,7331,532224,0
 2026-08-25,token-pick,codex-default,474417,4014,412928,0
+2026-08-25,narrative-tracker,codex-default,249819,3115,209920,0

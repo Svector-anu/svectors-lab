@@ -1,10 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-23T09:48:38Z",
-  "quality_score": 4,
-  "assessment": "Substantive regime analysis with explicit position calls and risk flags; handled data source fallback gracefully despite X.AI API key issue.",
-  "flags": [],
-  "avg_score": 3.92,
+  "last_analyzed": "2026-08-25T00:52:21Z",
+  "quality_score": 2,
+  "assessment": "Actionable structure and explicit calls, but several precise market figures and catalyst claims rely on weak or missing evidence, while hard price references violate the qualitative-only strategy.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.77,
   "history": [
     {
       "date": "2026-07-06",
@@ -53,6 +55,10 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     }
   ]
 }

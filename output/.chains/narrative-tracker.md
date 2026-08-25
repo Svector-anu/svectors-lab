@@ -1,27 +1,25 @@
-ℹ️ Narrative Tracker — 2026-08-23
-
-*Narrative Tracker — 2026-08-23*
-
-Regime read: policy-driven risk-on cooling. Narratives are bifurcating — real-cashflow stories (perp-DEX) diverging from reflexive parabolas (ZEC privacy). Front bid is regulatory, not fundamental.
+*Narrative Tracker — 2026-08-25*
 
 TRANSITIONS
-• NEW: Reg/policy rally — SEC Reg-Crypto NPRM (Aug 18) + White House summit (Aug 19) + CFTC Innovation cmte (Aug 20) + Treasury buyback $2B→$4B. XRP top beneficiary. This IS the macro bid.
-• PROMOTED: Privacy (ZEC) Peak→Peak+catalyst — Grayscale 5th amended S-3 (Aug 22), 8-yr high >$800, mcap $13.8B (#12).
-• DEMOTED: AI agents Rising→Fading — tokens in descending channels; infra (AWS Bedrock AgentCore Payments w/ Coinbase+Stripe, USDC) building under a dead price.
+• NEW baseline: ETF/liquidity rally — strongest weekly BTC move since 2023 and ~$1.92B weekly ETF inflows; already crowded. https://coinstats.app/ai/a/crypto-news-update-24-August-2026
+• NEW baseline: SOL/DEX infrastructure — Solana leads spot-DEX activity while breadth stays narrow. https://www.api.chaincatcher.com/en/article/2284306
+• DEMOTED: privacy/ZEC Peak → Fading — prior ETF-filing burst no longer appears in fresh signals.
 
-REFLEXIVITY
-• ZEC — ETF *filing* (not approval) driving price; futures vol dwarfs spot (leverage), DCG mulling 200k-ZEC contribution. Story moving the tape, not fundamentals.
-• DATs — share-issuance→buy flywheel is textbook reflexivity; reverses on mNAV compression. Strategy back in profit only because BTC>$77k.
+REFLEXIVITY ALERT
+• ETF/liquidity rally — the Treasury liquidity story triggered a short squeeze; BTC +23.5%, ETH +31%, SOL +28%, XRP +53% weekly, so price is now manufacturing narrative conviction. https://mudrex.com/learn/the-market-brief-august-crypto-ethena/
+• Perp/DEX beta — Hyperliquid handled ~$15.2B, ~45% of perp-DEX volume, while HYPE moved into the $70 range. https://www.api.chaincatcher.com/en/article/2284306
 
 POSITIONS
-• RIDE: Perp-DEX / HYPE (4 ↑, Bull) — OI $20.9B 2026-high, HYPE >50% share, ~$840M annualized rev → buyback. Bear: OI at highs = crowded unwind risk. Cleanest fundamentals on the board.
-• FADE: Privacy / ZEC (5 → Cope) — parabolic +48%, isolated as breadth narrows, futures>>spot. 'Sell the ETF news.'
-• WATCH: Reg/policy rally (4 ↑, Mixed) — real driver but priced; rulemaking is slow, decoupled-from-equities rally is fragile if liquidity impulse fades.
-• WATCH: DATs (3 → Mixed) — mNAV compression is the tell.
-• IGNORE: Memecoin/political froth (TRUMP/PUMP) — dead-cat, cope.
+• RIDE: SOL/DEX infrastructure (mindshare 4 ↑, Bull) — @solana, @DefiLlama, @HyperliquidX — bear: activity can unwind with the short squeeze; no broad alt breadth.
+• FADE: ETF/liquidity rally (5 →, Mixed) — @BlackRock, @Grayscale, @CoinStats — bear: one-off liquidity + forced covering, with ETF flow already decelerating.
+• WATCH: DeFi governance security (3 ↑, Bear) — @CertiKAlert, @PeckShieldAlert, @term_structure — bear: Term Finance is an isolated exploit, not yet sector contagion.
+• WATCH: Ethereum upgrade/institutional beta (3 →, Bull) — @ethereum, @ethdotorg, @coinbase — bear: ETH move was liquidity-led; upgrade catalyst is not imminent.
+• FADE: privacy/ZEC (2 ↓↓, Mixed) — @Zcash, @Grayscale, @ElectricCoinCo — bear: no fresh catalyst after the filing burst.
 
 MAP
-Emerging: —
-Rising: Perp-DEX (HYPE), Reg/policy rally
-Peak: Privacy (ZEC), Large-cap alt rotation
-Fading: AI agents, memecoin froth, DAT premium
+Emerging: DeFi governance security
+Rising: SOL/DEX infrastructure
+Peak: ETF/liquidity rally; Ethereum institutional beta
+Fading: privacy/ZEC
+
+Calibration: DefiLlama reported $83.216B TVL (+9.15% day/day), $10.886B spot DEX volume, and Hyperliquid at 45% of perp volume on Aug 21.
