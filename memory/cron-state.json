@@ -174,17 +174,17 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-08-25T12:51:05Z",
-    "total_runs": 98,
-    "total_successes": 16,
+    "total_runs": 99,
+    "total_successes": 17,
     "total_failures": 82,
-    "consecutive_failures": 1,
-    "success_rate": 0.16,
+    "consecutive_failures": 0,
+    "success_rate": 0.17,
     "last_dispatch": "2026-08-25T13:01:32Z",
     "last_error": "df547f\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
-    "last_success": "2026-08-25T12:30:27Z",
-    "last_quality_score": 4
+    "last_success": "2026-08-25T13:09:47Z",
+    "last_quality_score": 5
   },
   "auto-merge": {
     "last_status": "success",
