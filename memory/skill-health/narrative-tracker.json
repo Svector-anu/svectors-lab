@@ -1,12 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-25T00:52:21Z",
-  "quality_score": 2,
-  "assessment": "Actionable structure and explicit calls, but several precise market figures and catalyst claims rely on weak or missing evidence, while hard price references violate the qualitative-only strategy.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 3.77,
+  "last_analyzed": "2026-08-25T01:23:57Z",
+  "quality_score": 3,
+  "assessment": "Actionable and conclusion-first with explicit position calls and several primary-source links, but major Hyperliquid, BTC, and CLARITY assertions lack direct evidence, weakening decision-grade verifiability.",
+  "flags": [],
+  "avg_score": 3.71,
   "history": [
     {
       "date": "2026-07-06",
@@ -59,6 +57,10 @@
     {
       "date": "2026-08-25",
       "score": 2
+    },
+    {
+      "date": "2026-08-25",
+      "score": 3
     }
   ]
 }
