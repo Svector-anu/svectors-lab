@@ -1,14 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-08-25T00:42:00Z",
+  "last_analyzed": "2026-08-25T12:02:54Z",
   "quality_score": 2,
-  "assessment": "Specific and actionable, but it violates the qualitative-price constraint, relies on a stale/non-token-specific catalyst, and provides no direct evidence for the exact market figures or 70% fair-value estimate.",
+  "assessment": "Substantive and structured, but it violates the qualitative-price constraint, lacks explicit position calls, and presents highly specific token, catalyst, market, and probability claims that appear unverifiable from the final output.",
   "flags": [
-    "low_quality",
-    "stale_data",
     "unverifiable_claim"
   ],
-  "avg_score": 3.86,
+  "avg_score": 3.63,
   "history": [
     {
       "date": "2026-07-11",
@@ -33,6 +31,10 @@
     {
       "date": "2026-08-22",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",
