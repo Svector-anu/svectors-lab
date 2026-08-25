@@ -1,22 +1,22 @@
 {
-  "hash": "8b98ef881a23e0e79a193b3e8653a7ebea96b3ea663ab2f1c3fb4e12ae3353a0",
-  "last_notified_at": "2026-08-25T01:07:04Z",
-  "last_run_at": "2026-08-25T01:07:04Z",
+  "hash": "74a60b5f4678cfe2d054fefc54d7135db5547d183437622363db83475861f8d1",
+  "last_notified_at": "2026-08-25T01:12:21Z",
+  "last_run_at": "2026-08-25T01:12:21Z",
   "classification": {
     "critical": [
-      "fear-divergence",
-      "skill-health"
+      "verdikta-hunter"
     ],
     "degraded": [
       "defi-overview",
       "digest",
+      "fear-divergence",
       "github-trending",
       "heartbeat",
       "hunter-22",
       "narrative-tracker",
       "picks-tracker",
+      "skill-health",
       "token-pick",
-      "verdikta-hunter",
       "vuln-scanner",
       "x402-monitor"
     ],
