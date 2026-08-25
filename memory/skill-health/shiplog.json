@@ -1,0 +1,17 @@
+{
+  "skill": "shiplog",
+  "last_analyzed": "2026-08-25T08:08:10Z",
+  "quality_score": 2,
+  "assessment": "The output gives a concise activity summary, but omits the actual digest and evidence, makes specific unverifiable PR counts, and claims workspace files were created during a read-only run.",
+  "flags": [
+    "low_quality",
+    "unverifiable_claim"
+  ],
+  "avg_score": 2,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 2
+    }
+  ]
+}
