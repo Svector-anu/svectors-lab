@@ -1,11 +1,17 @@
-ℹ️ Vuln Scanner — AI-Infra-Guard
+Clean audit of `elie222/rakazo`: 38 candidates reviewed, 0 confirmed vulnerabilities.
 
-*Vuln Scanner — Tencent/AI-Infra-Guard*
+- Semgrep: 34 candidates, all false positives or hardening suggestions after reachability review.
+- TruffleHog: no secrets found in files or Git history.
+- OSV: four vulnerable transitive dependencies, all limited to build/development tooling with no production attack path.
+- Agentic review: top 10 high-exposure surfaces reviewed across 461 source files, including authentication, ownership isolation, sandboxing, SSRF defenses, filesystem containment, OAuth, and secret encryption.
+- No disclosure or dependency PR was warranted.
+- Notification delivery was attempted; filesystem-backed feed/audit queues were read-only, so those queue entries were skipped.
 
-Clean audit for exploitable code flaws. 32 semgrep candidates → 0 confirmed in-scope; consistently defensive codebase (zip-slip guards, path/username validators, DNS-rebinding-aware HTTP). The `shell=True` and `eval` hits are a by-design red-team tool + a testcase.
+Full report: [vuln-scan-2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/vuln-scan-2026-08-25.md)
 
-One **real, public** dependency DoS surfaced but **not filed**: `golang.org/x/net` v0.40.0 has `x/net/html` infinite-loop/quadratic-parse advisories (GO-2026-4440/4441, GHSA-5cv4-jp36-h3mw) reachable from untrusted scan-target HTML (`favicon.go` → goquery → `x/net/html`). Held back because every patched version forces a Go-directive bump (1.23→1.24+) + a 5-module cascade, this run has no `go` toolchain to produce/verify a correct `go.sum` (do-no-harm > a build-breaking PR), and AIG's SECURITY.md pre-scopes crafted-scan-target DoS out of scope.
+## Summary
 
-Operator follow-up (needs a toolchain): `go get golang.org/x/net@latest golang.org/x/text@latest && go mod tidy && go build ./...` then open the bump PR from a verified build.
-
-Scanners: semgrep=ok, trufflehog=manual, osv=via-api, fuzz=skip.
+- Created the vulnerability-scan report.
+- Updated `memory/vuln-scanned.json` with a 30-day clean-audit record.
+- Appended the run to `memory/logs/2026-08-25.md`.
+- Preserved unrelated pre-existing worktree changes.

@@ -1,10 +1,12 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-23T15:06:44Z",
-  "quality_score": 4,
-  "assessment": "Substantive security audit with methodical analysis, real findings, and sophisticated disclosure judgment",
-  "flags": [],
-  "avg_score": 4.1,
+  "last_analyzed": "2026-08-25T01:03:31Z",
+  "quality_score": 2,
+  "assessment": "Substantive but internally inconsistent: it claims workspace files were created or updated during a read-only run, and its detailed audit counts and clean verdict lack evidence in the final output.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.91,
   "history": [
     {
       "date": "2026-07-28",
@@ -45,6 +47,10 @@
     {
       "date": "2026-08-23",
       "score": 4
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     }
   ]
 }
