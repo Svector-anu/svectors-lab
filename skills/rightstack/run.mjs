@@ -5,6 +5,17 @@ import { spawnSync } from "node:child_process";
 const PIN = "rightstack@0.3.1";
 const raw = (process.env.SKILL_VAR ?? "").trim();
 
+const childEnv = Object.fromEntries(
+  ["PATH", "HOME", "TMPDIR", "TMP", "TEMP", "USER", "LOGNAME", "SHELL", "LANG", "LC_ALL", "TERM", "CI"]
+    .flatMap((key) => process.env[key] === undefined ? [] : [[key, process.env[key]]]),
+);
+Object.assign(childEnv, {
+  npm_config_ignore_scripts: "true",
+  npm_config_audit: "false",
+  npm_config_fund: "false",
+  npm_config_update_notifier: "false",
+});
+
 function fail(message, code = 2) {
   console.error(message);
   process.exit(code);
@@ -60,7 +71,7 @@ const result = spawnSync(
   {
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
-    env: { ...process.env, npm_config_ignore_scripts: "true" },
+    env: childEnv,
   },
 );
 
