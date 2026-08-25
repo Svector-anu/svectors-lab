@@ -3,16 +3,18 @@ type: Reference
 repo: amirh00sain/SpiderPanel
 severity: high
 cwe: CWE-798
-status: pending-operator-send
+status: email-failed
 auto_send: true
 human_only: false
 contact_email: amirshaianfar@outlook.com
 cc: []
 email_subject: "SpiderPanel — default admin credentials and session/cookie hardening issues"
 detected_at: 2026-08-25T12:00:00Z
-send_attempts: 2
-last_send_error: "resend http-403: The svector.xyz domain is not verified"
-last_send_attempt_at: 2026-08-25T17:35:00Z
+send_attempts: 3
+last_send_error: "resend http-403: resend.dev testing domain — can only send to account owner; verify a domain and set RESEND_FROM to that domain"
+last_send_attempt_at: 2026-08-25T17:36:21Z
+email_failed_at: 2026-08-25T17:36:21Z
+email_failed_reason: resend-dev-testing-domain-only
 ---
 
 <!-- EMAIL-BODY-START -->

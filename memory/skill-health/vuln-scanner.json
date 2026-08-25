@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T17:31:43Z",
+  "last_analyzed": "2026-08-25T17:36:56Z",
   "quality_score": 4,
-  "assessment": "Honest disclose-arm report: clear skip code, verifiable Resend 403, queue/gates, and blocking operator fix.",
+  "assessment": "Substantive Arm C report: eligible draft identified, Resend 403 verified, state updated, clear operator domain fix.",
   "flags": [],
-  "avg_score": 4.2,
+  "avg_score": 4.19,
   "history": [
     {
       "date": "2026-07-28",
@@ -77,6 +77,10 @@
     {
       "date": "2026-08-25",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 4
     },
     {
       "date": "2026-08-25",
