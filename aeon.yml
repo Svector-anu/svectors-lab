@@ -73,7 +73,7 @@ skills:
   self-improve: { enabled: true, schedule: "0 18 1/2 * *", var: "" } # every other day — improve the agent, or audit it. var: empty/improve[:focus]=propose+apply one fix | audit[:focus]=review what ran/failed (folds in self-review)
 
   action-converter: { enabled: false, schedule: "0 18 * * *" }
-  skill-repair: { enabled: false, schedule: "reactive", var: "" } # reactive — auto-fix failing skills
+  skill-repair: { enabled: true, schedule: "reactive", var: "" } # reactive — auto-fix failing skills
 
   # --- Cost tracking (Monday 7 AM UTC, weekly) ---
 
