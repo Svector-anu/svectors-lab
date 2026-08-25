@@ -305,6 +305,13 @@
   },
   "vuln-tracker": {
     "last_dispatch": "2026-08-25T16:52:45Z",
-    "last_status": "dispatched"
+    "last_status": "success",
+    "last_success": "2026-08-25T16:56:59Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0,
+    "consecutive_failures": 0,
+    "success_rate": 1,
+    "last_quality_score": 2
   }
 }
