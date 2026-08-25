@@ -1,14 +1,7 @@
-ℹ️ Vuln Scanner — rtk-ai/rtk
+ℹ️ Vuln Scanner — apache/maka
 
-*Vuln Scanner — rtk-ai/rtk*
-4 confirmed findings (RustSec dep advisories: quick-xml DoS×2, anyhow unsoundness, crossbeam-epoch ptr deref).
-Disclosed via: public PR #3705
+*Vuln Scanner — apache/maka*
+Clean code audit. 13 candidates reviewed, 0 new confirmed code findings.
+Dep CVEs (brace-expansion / undici / @babel/core) already tracked in open issue #3724 — duplicate-skipped.
+Disclosed via: none (no new channel action).
 Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
-
-🔗 https://github.com/rtk-ai/rtk/pull/3705
-ℹ️ Vuln Scanner — hermes-agent
-
-*Vuln Scanner — NousResearch/hermes-agent*
-2 confirmed findings (1 medium credential ACL mismatch, 1 moderate dep CVE).
-Disclosed via: PVR GHSA-3jv7-3pr9-766x; public PR #94342 (h2 4.4.1). Electron/nanoid already covered by open maintainer PRs — skipped.
-Scanners: semgrep=ok (auth subset; full tree timed out), trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
