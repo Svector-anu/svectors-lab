@@ -1,0 +1,14 @@
+{
+  "skill": "search-skill",
+  "last_analyzed": "2026-08-25T01:05:36Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-op result with a clear query, compatibility rationale, and outcome, though it lacks candidate details or evidence that would make the search independently verifiable.",
+  "flags": [],
+  "avg_score": 3,
+  "history": [
+    {
+      "date": "2026-08-25",
+      "score": 3
+    }
+  ]
+}
