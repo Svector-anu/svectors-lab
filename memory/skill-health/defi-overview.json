@@ -1,12 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-25T12:04:02Z",
+  "last_analyzed": "2026-08-25T19:44:33Z",
   "quality_score": 2,
-  "assessment": "Decision-grade and conclusion-first, but it claims workspace files were updated during a read-only run and provides little sourcing for numerous precise figures, undermining verifiability.",
+  "assessment": "Conclusion-first and specific, but it omits actionable position calls, provides no evidence anchors for most metrics, and makes contradictory read-only file-update claims.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.53,
+  "avg_score": 3.44,
   "history": [
     {
       "date": "2026-07-06",
@@ -55,6 +56,10 @@
     {
       "date": "2026-08-23",
       "score": 5
+    },
+    {
+      "date": "2026-08-25",
+      "score": 2
     },
     {
       "date": "2026-08-25",
