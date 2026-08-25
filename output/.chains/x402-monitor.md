@@ -1,20 +1,19 @@
-x402 pulse — 2026-07-08
+x402 pulse — 2026-08-25
 
-momentum: breakout (14 pts)
+momentum: breakout (20 pts)
 
-new integrations (6):
-- cloudflare/agents: official Cloudflare agents framework — x402 as native pay-per-call (5234★)
-- x402-rs/x402-rs: Rust x402 toolkit — Permit2 + usage-based payments, EVM/Solana/Aptos (277★)
-- voidly-ai/voidly-pay: AI agent hire marketplace with x402 adapter + MCP server (11★)
-- solvela-ai/solvela: Solana-native agent payment infra via x402 (9★)
-- gordonmurray/Sluice: self-hostable pay-per-request gateway, USDC on Base (1★)
-- XR-Utilities/h-series-mcp: MCP server with x402 payment middleware (0★)
+- 5 clearly relevant new integrations found.
+- `@coinbase/x402`: 62,560 downloads/week, +24,426 versus July.
+- `x402`: 373,982 downloads/week, +128,041 versus July.
+- 479 of 533 monitored services are payment-ready, but only one is delivery-verified.
 
-npm @coinbase/x402: 38,134/wk (first data point)
-npm x402: 245,941/wk (first data point)
+Position call: ride developer adoption; watch execution quality. Integration breadth is growing faster than proof of useful paid delivery.
 
-signals:
-- cloudflare/agents (5234★) ships x402 as a first-class feature — highest-signal institutional adoption yet
-- x402view directory live: investment-focused tracker of the x402 ecosystem
+Updated [protocol-state-x402.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/protocol-state-x402.md) and [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). Notification delivery fell back to inline output because its external queue was read-only. Commit creation was also blocked because `.git` is read-only.
 
-state: memory/topics/protocol-state-x402.md
+## Summary
+
+- Ran the default x402 Protocol Monitor branch.
+- Recorded npm, GitHub, news, scoring, citations, and state.
+- Momentum: breakout, 20 points.
+- No follow-up required beyond watching verified-delivery growth.
