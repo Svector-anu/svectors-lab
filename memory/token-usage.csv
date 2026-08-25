@@ -64,4 +64,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,search-skill,codex-default,253130,1763,171008,0
 2026-08-25,skill-health,codex-default,565913,5035,512000,0
 2026-08-25,vuln-scanner,grok-4.5,320846,21601,2364672,0
-2026-08-25,memory-flush,codex-default,159719,1407,139520,0
+2026-08-25,search-skill,codex-default,345009,2107,296704,0
