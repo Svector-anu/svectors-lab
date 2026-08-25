@@ -595,6 +595,59 @@
       "discoveredFrom": "skills/schedule-ads/SKILL.md"
     },
     {
+      "id": "425f4da5ab8b98c5",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "rightstack",
+      "source": {
+        "kind": "local",
+        "ref": "skills/rightstack"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "1baa17dd35f72aa101e9c37d72f47da9d5b2ea0a35664466fd8f33fa3bb76ab6"
+        },
+        {
+          "path": "run.mjs",
+          "hash": "213aeefa2b09c5953baceea9266098785612c79c2bb43667c01190d10c0c5fb3"
+        }
+      ],
+      "findings": [
+        {
+          "ruleId": "EXEC-PRIMITIVE",
+          "severity": "medium",
+          "owasp": "ASK-03",
+          "file": "run.mjs",
+          "line": 3,
+          "snippet": "import { spawnSync } from \"node:child_process\";",
+          "explanation": "uses a process-execution primitive"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "run.mjs",
+          "line": 6,
+          "snippet": "const raw = (process.env.SKILL_VAR ?? \"\").trim();",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "run.mjs",
+          "line": 10,
+          "snippet": ".flatMap((key) => process.env[key] === undefined ? [] : [[key, process.env[key]]]),",
+          "explanation": "references sensitive credential or secret paths"
+        }
+      ],
+      "contentHash": "sha256-0fb5b75bc52e9a23610c4c9615857784cab59b07d2ead5e983adcaa6b8cba53c",
+      "discoveredFrom": "skills/rightstack/SKILL.md"
+    },
+    {
       "id": "42757a4adcc2bdf0",
       "tool": "aeon",
       "scope": "project:.",
