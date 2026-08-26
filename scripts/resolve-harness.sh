@@ -139,7 +139,10 @@ case "$HARNESS" in
   vibe)  DEFAULT_HM="mistralai/mistral-medium-3-5" ;;   # vibe's default (VIBE_MODELS[0])
   pi)    DEFAULT_HM="deepseek/deepseek-v4-flash" ;;     # pi's default (PI_MODELS[0])
   kimi)  DEFAULT_HM="moonshotai/kimi-k2.5" ;;           # kimi's default (KIMI_MODELS[0])
-  hermes) DEFAULT_HM="anthropic/claude-sonnet-4.6" ;;
+  # Hermes' native provider and model are restored from HERMES_AUTH/config.yaml.
+  # Passing a hardcoded model can switch the CLI to a different provider and
+  # bypass the Nous Portal subscription, so let Hermes use its configured default.
+  hermes) DEFAULT_HM="default" ;;
   glm) DEFAULT_HM="glm-5.2" ;;
   cursor) DEFAULT_HM="gpt-5.1" ;;
   *)     DEFAULT_HM="openai/gpt-5-mini" ;;              # generic fallback: only claude/grok hit it (and don't consume it)

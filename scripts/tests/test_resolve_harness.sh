@@ -102,7 +102,7 @@ mkfixture cursor
 [ "$(get MODEL_ARG "" CURSOR_API_KEY=xx)" = "gpt-5.1" ] \
   && pass "cursor: native model override forwarded" || bad "cursor model forwarding"
 mkfixture hermes
-[ "$(get MODEL_ARG "" HERMES_AUTH=xx)" = "anthropic/claude-sonnet-4.6" ] \
+[ "$(get MODEL_ARG "" HERMES_AUTH=xx)" = "default" ] \
   && pass "hermes: Portal model override forwarded" || bad "hermes model forwarding"
 mkfixture glm
 [ "$(get MODEL_ARG "" GLM_API_KEY=xx)" = "glm-5.2" ] \
