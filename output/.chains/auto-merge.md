@@ -1,14 +1,16 @@
 Auto-merge completed in live mode for `aeonfun/aeon`.
 
-- Considered: 2 PRs
-- Merged: 0
-- #957 skipped: author `Svector-anu` not allowlisted
-- #954 skipped: author `danbuildss` not allowlisted
+- Considered: 3 PRs
+- Qualified/merged: 0
+- Skipped: #970, #969, and #954 because their authors are not allowlisted
 - Retry-capped: 0
-- Notification: not sent, per policy
+- Notification: skipped, as required
 
-Updated and validated the retry state and appended the run to [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+Updated and validated:
+
+- [auto-merge state](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
+- [2026-08-26 log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md)
 
 ## Summary
 
-No PRs qualified, so no repository PR state was changed. Existing unrelated workspace changes were preserved.
+No PR state was modified. State JSON and repository diffs passed validation.
