@@ -39,7 +39,7 @@ on:
           - moonshotai/kimi-k3
           - moonshotai/kimi-k2.7-code
           - glm-5.2
-          - gpt-5
+          - gpt-5.1
       harness:
         description: 'Agent harness'
         required: false

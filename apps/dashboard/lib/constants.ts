@@ -81,7 +81,7 @@ export const PI_MODELS = [
   { id: 'deepseek/deepseek-v4-pro', label: 'DeepSeek V4 Pro' },
 ]
 
-export const CURSOR_MODELS = [{ id: 'gpt-5', label: 'GPT-5' }]
+export const CURSOR_MODELS = [{ id: 'gpt-5.1', label: 'GPT-5.1' }]
 export const HERMES_MODELS = [
   { id: 'anthropic/claude-sonnet-4.6', label: 'Claude Sonnet 4.6' },
   { id: 'openai/gpt-5.4', label: 'GPT-5.4' },

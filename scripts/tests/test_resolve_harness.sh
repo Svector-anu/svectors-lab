@@ -99,7 +99,7 @@ mkfixture glm
 [ "$(get AUTH_MODE "" GLM_API_KEY=xx)" = "native-key" ] \
   && pass "glm: GLM_API_KEY → native-key" || bad "glm native-key"
 mkfixture cursor
-[ "$(get MODEL_ARG "" CURSOR_API_KEY=xx)" = "gpt-5" ] \
+[ "$(get MODEL_ARG "" CURSOR_API_KEY=xx)" = "gpt-5.1" ] \
   && pass "cursor: native model override forwarded" || bad "cursor model forwarding"
 mkfixture hermes
 [ "$(get MODEL_ARG "" HERMES_AUTH=xx)" = "anthropic/claude-sonnet-4.6" ] \

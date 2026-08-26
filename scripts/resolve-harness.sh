@@ -141,7 +141,7 @@ case "$HARNESS" in
   kimi)  DEFAULT_HM="moonshotai/kimi-k2.5" ;;           # kimi's default (KIMI_MODELS[0])
   hermes) DEFAULT_HM="anthropic/claude-sonnet-4.6" ;;
   glm) DEFAULT_HM="glm-5.2" ;;
-  cursor) DEFAULT_HM="gpt-5" ;;
+  cursor) DEFAULT_HM="gpt-5.1" ;;
   *)     DEFAULT_HM="openai/gpt-5-mini" ;;              # generic fallback: only claude/grok hit it (and don't consume it)
 esac
 HM="${HARNESS_MODEL:-${REQ_MODEL:-$DEFAULT_HM}}"
