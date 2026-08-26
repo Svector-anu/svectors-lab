@@ -1478,9 +1478,18 @@ jobs:
             HISTORY='[]'
           fi
 
-          # Append to history (keep last 30 entries)
+          # Append to history (keep last 30 entries). $HARNESS here is the SAME
+          # harness the skill itself ran on (see the "Score through the SAME
+          # harness" comment above, confirmed by tracing case "$HARNESS" in ...
+          # a few lines up) — not a separate scorer-only harness. $ts/$h/$m are
+          # additive: existing entries keep their old {date,score}-only shape,
+          # nothing reads them differently. model is omitted (not written as
+          # empty string) when the run used the harness's own default, same
+          # idiom this file already uses for egress_denied_hosts below.
           HISTORY=$(echo "$HISTORY" | jq -c --arg d "$TODAY" --argjson s "$SCORE" \
-            '. + [{"date": $d, "score": $s}] | .[-30:]')
+            --arg ts "$NOW_ISO" --arg h "$HARNESS" --arg m "${RH_MODEL_ARG:-}" \
+            '. + [{"date": $d, "score": $s, "ts": $ts, "harness": $h}
+                  + (if ($m | length) > 0 then {"model": $m} else {} end)] | .[-30:]')
 
           AVG=$(echo "$HISTORY" | jq '([.[].score] | add / length * 100 | round) / 100')
 
