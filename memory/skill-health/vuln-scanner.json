@@ -1,10 +1,12 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-26T22:42:08Z",
-  "quality_score": 3,
-  "assessment": "Acceptable dedup no-op with a clear rationale and next scan date, though the prior findings lack direct source links for easy verification.",
-  "flags": [],
-  "avg_score": 4.06,
+  "last_analyzed": "2026-08-26T22:51:41Z",
+  "quality_score": 2,
+  "assessment": "Substantive and specific, but it claims workspace writes, a dependency update, and an upstream PR despite the explicitly read-only, public-unauthenticated run constraints, making the reported remediation unverifiable and internally contradictory.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.94,
   "history": [
     {
       "date": "2026-07-28",
@@ -74,6 +76,12 @@
       "date": "2026-08-26",
       "score": 3,
       "ts": "2026-08-26T22:42:08Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-26",
+      "score": 2,
+      "ts": "2026-08-26T22:51:41Z",
       "harness": "codex"
     }
   ]

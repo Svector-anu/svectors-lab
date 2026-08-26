@@ -1,5 +1,12 @@
 [
   {
+    "repo": "tinyhumansai/openhuman",
+    "scanned_at": "2026-08-26T23:00:00Z",
+    "findings": 1,
+    "channel": "public-pr",
+    "notes": "Audited 5630b00 (38,178 stars, Rust, 4,102 code files). PVR enabled + SECURITY.md. osv=ok: 174 package/advisory rows / 79 unique IDs; confirmed direct mobile tauri 2.10.3 GHSA-7gmj-67g7-phm9 (CVE-2026-5947, high, origin confusion permits remote pages to invoke local-only IPC), fixed by bumping to 2.11.1 in PR #5814. Prior-art exact GHSA + tauri 2.11 search found no match; PR #1581 unrelated. trufflehog=ok 0 verified secrets filesystem+git. semgrep=fail because scanner config/log path was read-only (not treated clean). fuzz=skip (no harness). agentic=ok N=6: RPC bind token, Tauri IPC, shell policy/env clearing, SSRF DNS guard, hosted-dir auth/path root, OAuth loopback state; 0 code findings. Full cargo check reached native build then stopped on missing glib/gobject system packages; dependency resolution and diff check passed. Report: output/articles/vuln-scan-2026-08-26.md. PR: https://github.com/tinyhumansai/openhuman/pull/5814"
+  },
+  {
     "repo": "Tencent/AI-Infra-Guard",
     "scanned_at": "2026-08-23T15:30:00Z",
     "findings": 1,

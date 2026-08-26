@@ -1,13 +1,18 @@
-NousResearch/hermes-agent was not rescanned because it was audited on 2026-08-25, triggering the skill’s 30-day dedup guard. No new findings, disclosures, PRs, or notifications were produced. Next eligible scan date: 2026-09-24.
+Scan completed for `tinyhumansai/openhuman`.
 
-The prior audit reported:
+One confirmed HIGH dependency vulnerability was found: mobile Tauri `2.10.3` is affected by origin confusion ([GHSA-7gmj-67g7-phm9](https://github.com/advisories/GHSA-7gmj-67g7-phm9)). I updated it to `2.11.1` and opened [PR #5814](https://github.com/tinyhumansai/openhuman/pull/5814).
 
-- PVR: GHSA-3jv7-3pr9-766x
-- Dependency fix: PR #94342
-- Confirmed findings: 2
+- OSV: 174 rows / 79 unique advisories triaged
+- TruffleHog: 0 verified secrets
+- Agentic review: top 6 exposure classes reviewed, 0 code vulnerabilities confirmed
+- Semgrep: failed to initialize because its configuration path was read-only
+- Fuzzing: skipped; no repository fuzz harness
+- Prior art: no matching report or fix found
+
+Full report: [vuln-scan-2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/vuln-scan-2026-08-26.md)
 
 ## Summary
 
-- Logged the dedup skip in [memory/logs/2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md).
-- Preserved existing unrelated workspace changes.
-- No notification sent because there was no new signal.
+- Updated scan state and daily log.
+- Opened upstream dependency-fix PR #5814.
+- Notification and local commit were attempted, but external queue and `.git` metadata were read-only. The report and state files remain saved in the workspace.
