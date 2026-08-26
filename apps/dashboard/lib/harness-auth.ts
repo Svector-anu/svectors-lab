@@ -82,22 +82,12 @@ const HARNESS_AUTH_SPECS = {
       cli: 'kimi',
       ttyArgs: ['login'],
       deviceArgs: ['login'], // `kimi login` is device-code by default
-      // The credentials/ SUBDIRECTORY (not one filename): kimi's credential
-      // filename is itself scoped by a hash of (oauthHost, baseUrl) —
-      // kimi-code.json only for the default mainland-cn region,
-      // kimi-code-env-<hash>.json for any other region (e.g. global/kimi.ai)
-      // — so a fixed filename here misses non-default-region logins
-      // entirely. And the account's model/provider config lives in
-      // config.toml (populated by the interactive /login + trust flow, not
-      // the credential file), which the old two-entry list never captured at
-      // all — a kimi login restored from that capture would hit "No model
-      // configured" in CI even with a perfectly valid token.
-      //
-      // NOT the whole ~/.kimi-code directory: GitHub Actions secrets cap at
-      // 48KB, and kimi drops session transcripts + a query cache in there
-      // (sessions/, cache/) that alone blow past that on a normal-use
-      // machine (measured 540KB total vs. ~8KB for just these two paths) —
-      // none of it is needed to authenticate or resolve a model in CI.
+      // The credentials/ subdirectory (not one filename): kimi scopes the
+      // credential filename by a hash of (oauthHost, baseUrl), so a fixed
+      // filename misses non-default-region logins. config.toml holds the
+      // provider/model configuration written by the interactive login flow.
+      // Keep these paths narrow: sessions/ and cache/ can push a capture of
+      // the whole ~/.kimi-code directory past GitHub's 48 KB secret limit.
       credPaths: ['.kimi-code/credentials', '.kimi-code/config.toml'],
       secret: 'KIMI_AUTH',
       label: 'Connect Kimi',
@@ -124,6 +114,25 @@ const HARNESS_AUTH_SPECS = {
   fx: {
     authSecrets: ['AI_GATEWAY_API_KEY', 'VERCEL_OIDC_TOKEN'],
     apiKey: { secret: 'AI_GATEWAY_API_KEY', placeholder: 'Vercel AI Gateway key' },
+  },
+  cursor: {
+    authSecrets: ['CURSOR_API_KEY'],
+    apiKey: { secret: 'CURSOR_API_KEY', placeholder: 'Cursor API key' },
+  },
+  hermes: {
+    authSecrets: ['HERMES_AUTH', 'OPENROUTER_API_KEY'],
+    oauth: {
+      cli: 'hermes',
+      ttyArgs: ['auth', 'add', 'nous', '--type', 'oauth'],
+      deviceArgs: ['auth', 'add', 'nous', '--type', 'oauth'],
+      credPaths: ['.hermes/auth.json', '.hermes/config.yaml'],
+      secret: 'HERMES_AUTH',
+      label: 'Connect Nous Portal',
+    },
+  },
+  glm: {
+    authSecrets: ['GLM_API_KEY', 'ZAI_API_KEY'],
+    apiKey: { secret: 'GLM_API_KEY', placeholder: 'GLM Coding Plan key' },
   },
 } satisfies Record<string, HarnessAuthSpec>
 

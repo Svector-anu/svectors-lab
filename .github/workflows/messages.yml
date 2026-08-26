@@ -436,6 +436,10 @@ jobs:
           # harness runs on (native login/key > OpenRouter). Never echoed.
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
           VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -448,8 +452,8 @@ jobs:
         run: bash scripts/resolve-harness.sh >> "$GITHUB_OUTPUT"
 
       # Stage the resolved harness's CLI + provider auth. This step is why
-      # messages.yml now supports all six: it previously had none, so a repo on
-      # codex/pi/vibe/kimi had its messages answered on claude with a warning.
+      # messages.yml now supports all seven: it previously had none, so a repo on
+      # codex/pi/vibe/kimi/fx had its messages answered on claude with a warning.
       # The `env:` block is duplicated from aeon.yml by necessity (`secrets.*`
       # resolves per workflow); the recipes it feeds are shared.
       - name: Install harness CLI
@@ -471,6 +475,10 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
           VERCEL_OIDC_TOKEN: ${{ secrets.VERCEL_OIDC_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -573,6 +581,10 @@ jobs:
           # staged config names). OPENROUTER_API_KEY is already declared above.
           CODEX_AUTH: ${{ secrets.CODEX_AUTH }}
           KIMI_AUTH: ${{ secrets.KIMI_AUTH }}
+          HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
@@ -589,8 +601,8 @@ jobs:
 
           # HARNESS / AUTH_MODE / MODEL_ARG come from the "Resolve harness" step
           # (scripts/resolve-harness.sh), and the CLI was staged by "Install harness
-          # CLI" — so all six answer messages now. This used to be an inline
-          # claude-or-grok resolution here that downgraded the other four to claude
+          # CLI" — so all seven answer messages now. This used to be an inline
+          # claude-or-grok resolution here that downgraded the other five to claude
           # with a ::warning::, because nothing on this workflow could install them.
           # On grok a claude-* model id is meaningless — fall back to grok's default.
           if [ "$HARNESS" = "grok" ]; then

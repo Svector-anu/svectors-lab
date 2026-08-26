@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T14:33:29.456179Z",
+  "generatedAt": "2026-08-24T14:14:01.883168Z",
   "generator": "eyebrow/0.4.1",
   "artifacts": [
     {
@@ -654,11 +654,11 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "9e639b4790a54a7c2541df6deb25e52c63ae754aaf2a133fdfcafbd072d8e246"
+          "hash": "1baa17dd35f72aa101e9c37d72f47da9d5b2ea0a35664466fd8f33fa3bb76ab6"
         },
         {
           "path": "run.mjs",
-          "hash": "e1f38ccb3ee39f9a68efe7c4224487eb37b40486cd454c7acb0a0c947264a2c3"
+          "hash": "213aeefa2b09c5953baceea9266098785612c79c2bb43667c01190d10c0c5fb3"
         }
       ],
       "findings": [
@@ -686,11 +686,11 @@
           "owasp": "ASK-06",
           "file": "run.mjs",
           "line": 10,
-          "snippet": ".flatMap((key) =\u003e process.env[key] === undefined ? [] : [[key, process.env[key]]]),",
+          "snippet": ".flatMap((key) => process.env[key] === undefined ? [] : [[key, process.env[key]]]),",
           "explanation": "references sensitive credential or secret paths"
         }
       ],
-      "contentHash": "sha256-a3ec095a7549d27d53315ad88a9b40489972ede8c3d39444d97c352f388623df",
+      "contentHash": "sha256-0fb5b75bc52e9a23610c4c9615857784cab59b07d2ead5e983adcaa6b8cba53c",
       "discoveredFrom": "skills/rightstack/SKILL.md"
     },
     {
@@ -1621,7 +1621,7 @@
           "owasp": "ASK-06",
           "file": "hook-deploy.sh",
           "line": 175,
-          "snippet": "[ -f hook.env ] \u0026\u0026 . ./hook.env",
+          "snippet": "[ -f hook.env ] && . ./hook.env",
           "explanation": "references sensitive credential or secret paths"
         },
         {
@@ -1957,6 +1957,26 @@
       ],
       "contentHash": "sha256-d511b0f4a4d2326e03bbfe113c99de6eb4b7fcfc780bef42b68856e4a1b8ba4f",
       "discoveredFrom": "skills/install-skill/SKILL.md"
+    },
+    {
+      "id": "c87437853e0ee112",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "skill-article",
+      "source": {
+        "kind": "local",
+        "ref": "skills/skill-article"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "7826b9d27920419beae3826ae2c91593510d37900e09eced55233dfa6654ef3e"
+        }
+      ],
+      "contentHash": "sha256-2f61efcffe5f0b3ee50f9fa9677e1b4d1951cde36502ee08450e61aa127b9534",
+      "discoveredFrom": "skills/skill-article/SKILL.md"
     },
     {
       "id": "c908c767a600220e",

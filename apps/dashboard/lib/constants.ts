@@ -81,6 +81,14 @@ export const PI_MODELS = [
   { id: 'deepseek/deepseek-v4-pro', label: 'DeepSeek V4 Pro' },
 ]
 
+export const CURSOR_MODELS = [{ id: 'gpt-5.1', label: 'GPT-5.1' }]
+export const HERMES_MODELS = [
+  { id: 'anthropic/claude-sonnet-4.6', label: 'Claude Sonnet 4.6' },
+  { id: 'openai/gpt-5.4', label: 'GPT-5.4' },
+  { id: 'google/gemini-2.5-pro', label: 'Gemini 2.5 Pro' },
+]
+export const GLM_MODELS = [{ id: 'glm-5.2', label: 'GLM 5.2' }]
+
 // Harnesses (agent CLIs). `claude` = Claude Code (default, AI Gateway), labelled
 // "Anthropic"; `grok` = Grok Build (own X-account/API-key auth, own models),
 // "xAI". codex/pi/vibe/kimi run through harness-adapter's run-harness on a
@@ -99,6 +107,9 @@ export const HARNESSES = [
   { id: 'pi', label: 'Pi' },
   { id: 'vibe', label: 'Vibe' },
   { id: 'kimi', label: 'Kimi' },
+  { id: 'cursor', label: 'Cursor CLI' },
+  { id: 'hermes', label: 'Hermes (Nous Portal)' },
+  { id: 'glm', label: 'GLM Coding Plan' },
 ] as const satisfies readonly { id: Harness; label: string }[]
 
 // fx has no model picker: unlike codex/pi/vibe/kimi's OpenRouter path, fx's
@@ -114,6 +125,9 @@ export function modelsForHarness(harness: string) {
   if (harness === 'vibe') return VIBE_MODELS
   if (harness === 'pi') return PI_MODELS
   if (harness === 'kimi') return KIMI_MODELS
+  if (harness === 'cursor') return CURSOR_MODELS
+  if (harness === 'hermes') return HERMES_MODELS
+  if (harness === 'glm') return GLM_MODELS
   return MODELS
 }
 

@@ -21,14 +21,12 @@ function fail(message, code = 2) {
   process.exit(code);
 }
 
-if (!raw) {
-  fail("RIGHTSTACK_EMPTY: provide a build goal or an operation prefix", 2);
-}
+if (!raw) fail("RIGHTSTACK_EMPTY: provide a build goal or an operation prefix", 2);
 
 let command = "recommend";
 let args = [raw, "--json"];
-
 const match = raw.match(/^([a-z-]+)\s*:\s*(.*)$/s);
+
 if (match) {
   const operation = match[1];
   const value = match[2].trim();
@@ -36,26 +34,15 @@ if (match) {
 
   switch (operation) {
     case "recommend":
-      command = "recommend";
-      args = [value, "--json"];
-      break;
     case "workflow":
-      command = "workflow";
-      args = [value, "--json"];
-      break;
     case "explain":
-      command = "explain";
-      args = [value, "--json"];
-      break;
     case "migrate":
-      command = "migrate";
+      command = operation;
       args = [value, "--json"];
       break;
     case "compare": {
       const tools = value.split("|").map((part) => part.trim()).filter(Boolean);
-      if (tools.length !== 2) {
-        fail("RIGHTSTACK_BAD_INPUT: compare requires exactly two tools separated by |");
-      }
+      if (tools.length !== 2) fail("RIGHTSTACK_BAD_INPUT: compare requires exactly two tools separated by |");
       command = "compare";
       args = [...tools, "--json"];
       break;
@@ -65,21 +52,13 @@ if (match) {
   }
 }
 
-const result = spawnSync(
-  "npx",
-  ["--yes", "--package", PIN, "rightstack", command, ...args],
-  {
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-    env: childEnv,
-  },
-);
+const result = spawnSync("npx", ["--yes", "--package", PIN, "rightstack", command, ...args], {
+  encoding: "utf8",
+  stdio: ["ignore", "pipe", "pipe"],
+  env: childEnv,
+});
 
 if (result.stdout) process.stdout.write(result.stdout);
 if (result.stderr) process.stderr.write(result.stderr);
-
-if (result.error) {
-  fail(`RIGHTSTACK_TOOL_ERROR: ${result.error.message}`, 1);
-}
-
+if (result.error) fail(`RIGHTSTACK_TOOL_ERROR: ${result.error.message}`, 1);
 process.exit(result.status ?? 1);

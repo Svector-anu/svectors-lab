@@ -230,6 +230,33 @@ TOML
       exit 1
     fi
     ;;
+  cursor)
+    curl -fsSL https://cursor.com/install | bash
+    [ -n "${GITHUB_PATH:-}" ] && echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+    need CURSOR_API_KEY "a Cursor API key for headless CLI runs"
+    echo "cursor: API key staged via CURSOR_API_KEY" ;;
+  hermes)
+    curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+    [ -n "${GITHUB_PATH:-}" ] && echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+    mkdir -p "$HOME/.hermes"
+    if [ "$AUTH_MODE" = "native-oauth" ]; then
+      need HERMES_AUTH "the Nous Portal capture from 'hermes auth --harness hermes'"
+      printf '%s' "$HERMES_AUTH" | base64 -d | tar xzf - -C "$HOME"
+      chmod 600 "$HOME/.hermes/auth.json" 2>/dev/null || true
+      echo "hermes: restored Nous Portal login"
+    else
+      need OPENROUTER_API_KEY "the shared OpenRouter key (or capture HERMES_AUTH for Nous Portal)"
+      echo "hermes: OpenRouter fallback via OPENROUTER_API_KEY"
+    fi
+    ;;
+  glm)
+    # GLM Coding Plan is an API endpoint, not a separate CLI. Claude Code is
+    # already installed by the workflow; the adapter points it at Z.AI.
+    if [ -z "${GLM_API_KEY:-${ZAI_API_KEY:-}}" ]; then
+      echo "::error::glm needs GLM_API_KEY (or ZAI_API_KEY) — a GLM Coding Plan key" >&2
+      exit 1
+    fi
+    echo "glm: Claude Code staged for Z.AI Anthropic endpoint" ;;
   *)
     echo "::error::no install recipe for harness '$H'"; exit 1 ;;
 esac
