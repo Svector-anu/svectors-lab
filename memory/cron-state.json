@@ -12,10 +12,10 @@
     "last_success": "2026-08-26T12:20:31Z"
   },
   "defi-overview": {
-    "last_status": "dispatched",
-    "last_success": "2026-08-26T12:23:31Z",
-    "total_runs": 331,
-    "total_successes": 23,
+    "last_status": "success",
+    "last_success": "2026-08-26T18:28:38Z",
+    "total_runs": 332,
+    "total_successes": 24,
     "total_failures": 308,
     "consecutive_failures": 0,
     "success_rate": 0.07,
