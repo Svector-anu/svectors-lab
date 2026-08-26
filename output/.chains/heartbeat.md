@@ -1,18 +1,12 @@
-HEARTBEAT completed · `STATUS_PAGE=DEGRADED`.
+Heartbeat completed in ambient mode.
 
-Key findings:
-
-- Recent scheduled runs are succeeding.
-- `verdikta-hunter` remains failed without a successful run.
-- Historical success rates still trigger chronic-failure thresholds.
-- Six PRs remain stalled over 24 hours.
-- All findings were reported within 48 hours, so no duplicate notification was sent.
-
-Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). Validation passed, with all 26 enabled skills represented.
+- `STATUS_PAGE=DEGRADED`: historical success rates remain below 50% for multiple enabled skills, despite recent successful runs.
+- Seven PRs are stalled over 24 hours; PR #31 is newly stalled.
+- `verdikta-hunter` and `self-improve` recovered, but ISS-003, ISS-004, and `MEMORY.md` still mark them unresolved.
+- `fork-fleet` remains scheduled without a cron-state entry.
+- The warning notification fell back to inline delivery because external queues were read-only.
+- Validation passed: all 26 enabled skills appear on the status page and `git diff --check` is clean.
 
 ## Summary
 
-- Status page: 🔴 DEGRADED
-- Notification: skipped due to deduplication
-- Token pulse: omitted; no token report exists
-- Follow-up: verify `VERDIKTA_API_KEY` and complete a successful `verdikta-hunter` discovery run.
+Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and appended the run to [memory/logs/2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md). Follow-up: reconcile ISS-003/ISS-004 and `MEMORY.md`, then review PR #31.
