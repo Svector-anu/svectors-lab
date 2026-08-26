@@ -90,3 +90,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,memory-flush,codex-default,226162,2065,192512,0
 2026-08-26,defi-overview,codex-default,692400,8074,610304,0
 2026-08-26,narrative-tracker,codex-default,204761,3681,153856,0
+2026-08-26,defi-overview,codex-default,731254,8404,660992,0

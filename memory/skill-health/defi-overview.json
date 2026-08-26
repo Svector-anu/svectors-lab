@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-26T00:04:39Z",
+  "last_analyzed": "2026-08-26T06:24:17Z",
   "quality_score": 2,
-  "assessment": "Specific market figures are unsourced, the claimed workspace writes contradict the read-only run, and the output lacks explicit position calls while improperly foregrounding live prices.",
+  "assessment": "Substantive regime read, but it lacks explicit position calls and evidence links, uses prohibited hard live figures, and implausibly claims workspace files were updated during a read-only run.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
-  "avg_score": 3.37,
+  "avg_score": 3.3,
   "history": [
     {
       "date": "2026-07-06",
@@ -79,6 +79,10 @@
     },
     {
       "date": "2026-08-25",
+      "score": 2
+    },
+    {
+      "date": "2026-08-26",
       "score": 2
     },
     {
