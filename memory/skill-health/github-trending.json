@@ -1,13 +1,10 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-26T09:36:58Z",
-  "quality_score": 2,
-  "assessment": "Well-structured and plausibly sourced, but it provides general GitHub trends rather than the operator’s required conclusion-first, tradeable crypto regime signal with explicit position calls.",
-  "flags": [
-    "low_quality",
-    "generic_content"
-  ],
-  "avg_score": 3,
+  "last_analyzed": "2026-08-26T12:25:03Z",
+  "quality_score": 4,
+  "assessment": "Substantive, conclusion-first, well-curated, and plausibly verifiable through direct repository and Trending links, though the exact benchmark and trend-status claims lack explicit evidence and it does not advance the crypto-trading strategy.",
+  "flags": [],
+  "avg_score": 3.11,
   "history": [
     {
       "date": "2026-07-28",
@@ -40,6 +37,12 @@
     {
       "date": "2026-08-26",
       "score": 2
+    },
+    {
+      "date": "2026-08-26",
+      "score": 4,
+      "ts": "2026-08-26T12:25:03Z",
+      "harness": "codex"
     }
   ]
 }
