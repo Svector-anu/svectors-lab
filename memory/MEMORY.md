@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-08-25*
+*Last consolidated: 2026-08-26*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Upstream contribution milestone: aeonfun/aeon PR #956 merged, adding complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
@@ -21,7 +21,7 @@
 
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
-- [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-25)
+- [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-26)
 
 ## Skills Built
 | Skill | Date | Notes |
@@ -31,6 +31,4 @@
 - Always save files AND commit before logging
 
 ## Next Priorities
-- Resolve ISS-003 by verifying `VERDIKTA_API_KEY` and completing verdikta-hunter's first successful discovery run
-- Resolve ISS-004 by restoring Codex capacity and completing self-improve's first successful run
 - Configure notification channels (Telegram, Discord, or Slack)

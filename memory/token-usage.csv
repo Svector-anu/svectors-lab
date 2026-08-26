@@ -105,3 +105,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-26,github-trending,glm-5.2,61265,12593,1925504,0
 2026-08-26,vuln-scanner,codex-default,267306,1406,222464,0
 2026-08-26,vuln-scanner,codex-default,3151283,10160,3011584,0
+2026-08-26,memory-flush,codex-default,181231,1368,134400,0
