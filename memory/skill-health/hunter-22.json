@@ -1,10 +1,12 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-08-25T10:04:49Z",
-  "quality_score": 4,
-  "assessment": "Good conclusion-first no-signal report with concrete API, screening, deduplication, and action-status details; the commit limitation is disclosed clearly.",
-  "flags": [],
-  "avg_score": 3.67,
+  "last_analyzed": "2026-08-26T10:11:16Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-signal report with explicit rejection reasons, but weakly verifiable because it provides no candidate URLs or evidence anchors and focuses heavily on run mechanics.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 3.57,
   "history": [
     {
       "date": "2026-07-31",
@@ -29,6 +31,10 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-26",
+      "score": 3
     }
   ]
 }
