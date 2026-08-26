@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-25T13:46:59Z",
-  "quality_score": 5,
-  "assessment": "Correct Arm C fail-closed skip with verified queue reasons, accurate GHSA/status details, and an actionable stranded USDTPAY draft note—no inventing, no spurious notify.",
+  "last_analyzed": "2026-08-26T22:42:08Z",
+  "quality_score": 3,
+  "assessment": "Acceptable dedup no-op with a clear rationale and next scan date, though the prior findings lack direct source links for easy verification.",
   "flags": [],
-  "avg_score": 4.13,
+  "avg_score": 4.06,
   "history": [
     {
       "date": "2026-07-28",
@@ -69,6 +69,12 @@
     {
       "date": "2026-08-25",
       "score": 5
+    },
+    {
+      "date": "2026-08-26",
+      "score": 3,
+      "ts": "2026-08-26T22:42:08Z",
+      "harness": "codex"
     }
   ]
 }
