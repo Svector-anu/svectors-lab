@@ -1,58 +1,56 @@
-# Market Context (as of 2026-08-25)
+# Market Context (as of 2026-08-26)
 
-> **Take:** chop — BTC is flat over 24h and only 7/20 top-cap assets are green, despite DEX volume rising 12.5%. Conviction: medium.
+> **Take:** risk-off — only 4/20 top-cap assets are green and Fear & Greed fell 9 points, although BTC is down just 0.6%. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $78,891 (+0.0% 24h, +22.4% 7d) · dominance 59.14% (-0.51 pp since the prior refresh)
-- ETH $2,461 (-0.4% 24h, +29.1% 7d) · ETH/BTC 0.0312
-- SOL $97.84 (+1.6% 24h, +28.1% 7d)
-- Total mcap $2.671T (-2.6% 24h) · DEX vol $10.86B 24h
-- Breadth: 7/20 green 24h · 16/20 green 7d
-- Fear & Greed: 74 (Greed) — yesterday 73
+- BTC $78,503 (-0.6% 24h, +21.5% 7d) · dominance 59.26% (+0.12 pp since the prior refresh)
+- ETH $2,442 (-1.6% 24h, +27.6% 7d) · ETH/BTC 0.0311
+- SOL $96.58 (-2.3% 24h, +25.4% 7d)
+- Total mcap $2.656T (-3.4% 24h) · DEX vol $10.86B 24h
+- Breadth: 4/20 green 24h · 16/20 green 7d
+- Fear & Greed: 65 (Greed) — yesterday 74
 
 ## What Changed Since Last Refresh
-- Quiet — all majors within ±1% except SOL, breadth stayed at 7/20, and the chop regime is unchanged.
-- BTC dominance fell 0.51 percentage points while SOL gained 1.6%, a modest rotation signal.
+- Fear & Greed fell 9 points to 65 while 24h breadth narrowed from 7/20 to 4/20.
+- Total market cap fell 3.4%, but BTC lost only 0.6%, lifting dominance 0.12 percentage points.
+- The regime shifted from chop to risk-off; DeFi stayed firmer with TVL +0.2% and DEX volume +12.5% over 24h.
 
 ## Active Narratives
-- **Hyperliquid activity** — phase: rising. Evidence: HYPE +5.4% over 24h while Hyperliquid Perps fees rose 37.8%.
-- **SOL relative strength** — phase: rising. Evidence: SOL +1.6% versus BTC flat and ETH -0.4% over 24h.
-- **Large-cap rally consolidation** — phase: fading. Evidence: only 7/20 top-cap assets are green over 24h, down from 16/20 over 7d.
-- **Micro-cap speculation** — phase: peak. Evidence: PONS +35.2% and DOG +33.8% are CoinGecko trends outside the top 200.
+- **Hyperliquid resilience** — phase: rising. Evidence: HYPE gained 0.9% while only 4/20 top caps rose; Hyperliquid Perps fees jumped 37.8%.
+- **Solana DEX activity** — phase: rising. Evidence: Orca volume rose 16.9% over 24h even as SOL fell 2.3%.
+- **Large-cap rally consolidation** — phase: fading. Evidence: 24h breadth fell to 4/20 from 16/20 green over 7d.
+- **Micro-cap speculation** — phase: peak. Evidence: sub-top-300 PONS gained 25.3% while broad market cap fell 3.4%.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.81B (+30.4%)
-- Aave V3: $17.22B (+19.4%)
-- SSV Network: $12.49B (+29.2%)
-- Morpho Blue: $9.49B (+16.6%)
-- Binance staked ETH: $9.19B (+29.0%)
+- Lido: $23.59B (+29.4%)
+- Aave V3: $17.12B (+18.8%)
+- SSV Network: $12.39B (+28.4%)
+- Morpho Blue: $9.45B (+15.9%)
+- Binance staked ETH: $9.11B (+28.1%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.33B (n/a)
-- Solana: $5.64B (n/a)
-- BSC: $5.57B (n/a)
+- Ethereum: $49.09B (n/a)
+- Solana: $5.60B (n/a)
+- BSC: $5.55B (n/a)
 
 ## Stablecoins
-Total: $310.4B (+1.0% 7d). USDT $183.2B · USDC $73.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.6%.
+Total: $310.4B (+1.0% 7d). USDT $183.2B · USDC $73.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.7%.
 
 ## Trending (CoinGecko)
-- HYPE — fee-backed activity leads large caps, $81.91 (+5.4% 24h)
-- ZRO — mid-cap momentum, $1.25 (+15.6% 24h)
-- SOL — relative strength amid narrow breadth, $97.84 (+1.6% 24h)
+- HYPE — positive relative strength and fee growth, $79.63 (+0.9% 24h)
+- STX — strong trend-list momentum despite weak breadth, $0.261 (+13.4% 24h)
+- SOL — DEX activity remains elevated despite price weakness, $96.58 (-2.3% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Clarity Act signed into law in 2026? | 14.5% | $0.99M | $1.03M |
-
-## Macro Catalysts (next 48h)
-- A softer dollar and Treasury efforts to calm bond markets are supporting BTC, but long yields remain the risk to a narrow rally ([Reuters](https://www.investing.com/news/economy-news/bitcoin-rises-above-80000-as-soft-dollar-debasement-fears-boost-momentum-4874482)).
-- Jackson Hole begins Aug 27; hawkish policy guidance would test the rally while only 7/20 top caps are green ([MEXC](https://www.mexc.com/en-GB/crypto-pulse/article/mexc-alpha-trader-industry-daily-august-25-2026-141653)).
-- The latest verified US spot-BTC ETF session remains Aug 21 at +$307.5M; five consecutive inflow sessions totaled about $1.92B, cushioning pullbacks ([TFTC](https://www.tftc.io/bitcoin-etf-flows/august-2026)).
+| Clarity Act (H.R.3633) signed into law in 2026? | 14.5% | $1.01M | $0.72M |
+| Strait of Hormuz traffic returns to normal by September 30? | 12.5% | $0.76M | $0.32M |
+| No Fed rate change after the September 2026 meeting? | 67.5% | $0.53M | $0.54M |
 
 ## Implications for Downstream Skills
-- **token-pick:** ride liquid HYPE/SOL relative strength selectively; avoid broad beta while 24h breadth remains 7/20.
-- **narrative-tracker:** watch whether Hyperliquid fee growth broadens and whether breadth recovers above 14/20.
+- **token-pick:** favor assets showing fee-backed relative strength; avoid broad beta until 24h breadth recovers.
+- **narrative-tracker:** monitor Hyperliquid resilience and Solana DEX activity for rising-to-peak transitions.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

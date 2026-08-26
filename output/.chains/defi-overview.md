@@ -1,16 +1,20 @@
-Take: chop — BTC is flat over 24h, breadth is only 7/20, and Fear & Greed remains 74. DEX volume is the counter-signal, rising 12.5%. Conviction: medium.
+Take: risk-off, medium conviction — only 4/20 top-cap assets are green and Fear & Greed fell nine points to 65, although BTC declined just 0.6%.
 
-- DeFi verdict: Mixed; TVL and stablecoin supply were nearly flat.
-- Movers: Ethena USDtb +43.3%; Solstice −24.8%. No verified catalyst.
-- Rising narrative: Hyperliquid—HYPE +5.4%, perps fees +37.8%.
-- Positions: `DEFI_MONITOR_NO_CONFIG`.
-- Macro catalysts include a softer dollar, Jackson Hole, and continued ETF inflows ([Reuters](https://www.investing.com/news/economy-news/bitcoin-rises-above-80000-as-soft-dollar-debasement-fears-boost-momentum-4874482), [TFTC](https://www.tftc.io/bitcoin-etf-flows/august-2026)).
+DeFi remains mixed: TVL rose 0.2%, DEX volume increased 12.5%, and stablecoin supply gained 0.35%. Hyperliquid showed relative strength, with HYPE +0.9% and Perps fees +37.8%.
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md). All required sources succeeded and validation passed. Notification executed, with inline fallback because the external queue was read-only.
+Key readings:
+
+- BTC $78,503 (-0.6%); ETH $2,442 (-1.6%); SOL $96.58 (-2.3%)
+- TVL $87.87B; DEX volume $10.86B
+- Protocol movers: Ethena USDtb +44.5%; Solstice -24.8%
+- Polymarket: CLARITY Act signed in 2026 at 14.5% YES
+- Sustainable-yield filter returned three pools; incentive-yield filter returned two
+- No tracked positions were configured
 
 ## Summary
 
-- Executed the full `defi-overview` skill.
-- Preserved the Token Picks table.
-- Refreshed macro, DeFi, yields, narratives, and prediction-market context.
-- No follow-up action required.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Preserved the Token Picks Made table unchanged.
+- Added the run record to [2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md).
+- All market sources returned valid data.
+- Notification delivery ran, but external queues were read-only; the report was delivered inline and the dashboard feed entry was skipped.

@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-25T19:44:33Z",
+  "last_analyzed": "2026-08-26T00:04:39Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first and specific, but it omits actionable position calls, provides no evidence anchors for most metrics, and makes contradictory read-only file-update claims.",
+  "assessment": "Specific market figures are unsourced, the claimed workspace writes contradict the read-only run, and the output lacks explicit position calls while improperly foregrounding live prices.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.44,
+  "avg_score": 3.37,
   "history": [
     {
       "date": "2026-07-06",
@@ -79,6 +79,10 @@
     },
     {
       "date": "2026-08-25",
+      "score": 2
+    },
+    {
+      "date": "2026-08-26",
       "score": 2
     }
   ]
