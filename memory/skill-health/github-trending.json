@@ -1,0 +1,14 @@
+{
+  "skill": "github-trending",
+  "last_analyzed": "2026-08-26T10:58:52Z",
+  "quality_score": 5,
+  "assessment": "Fully verifiable output — every star total and 'stars today' figure matches the live GitHub API and trending page exactly; clean structure, honest methodology notes, no fabricated data.",
+  "flags": [],
+  "avg_score": 5,
+  "history": [
+    {
+      "date": "2026-08-26",
+      "score": 5
+    }
+  ]
+}
