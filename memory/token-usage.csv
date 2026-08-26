@@ -95,4 +95,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-26,heartbeat,codex-default,510845,5852,452864,0
 2026-08-26,github-trending,codex-default,357762,4788,290048,0
 2026-08-26,hunter-22,codex-default,521063,3887,473856,0
-2026-08-26,heartbeat,codex-default,293232,3753,242688,0
+2026-08-26,token-pick,codex-default,433293,5402,356096,0
