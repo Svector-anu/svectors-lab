@@ -1,34 +1,31 @@
-*GitHub Trending — 2026-08-25*
+*GitHub Trending — 2026-08-26*
 
-*Top pick* — [apache/maka](https://github.com/apache/maka)
-Maka makes agent execution inspectable by treating every tool call, permission decision, and outcome as durable event history.
+*Top pick* — [marin-community/marin](https://github.com/marin-community/marin)
+The standout is an unusually open 500B+-parameter MoE effort exposing checkpoints, data mixtures, recipes, and methodology.
 
 *AI/ML*
-• [openai/codex](https://github.com/openai/codex) — ★ 1,994 today (117.4k total) · Rust · [ACCELERATING]
-One installer now spans terminal and IDE workflows, with a Rust core moving at flagship-project velocity.
+• [marin-community/marin](https://github.com/marin-community/marin) — ★ 231 today (2.3k total) · Python · RETURNING
+Makes frontier-scale training inspectable across data, checkpoints, recipes, evaluation, and process—not weights alone.
 
-• [apache/maka](https://github.com/apache/maka) — ★ 411 today (3.0k total) · TypeScript · [RETURNING]
-Append-only run records make tool calls and permission decisions replayable instead of disappearing into chat history.
+• [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — ★ 218 today (100.6k total) · Python · ACCELERATING
+Recent correctness fixes address look-ahead leakage, checkpoint recovery, crypto sentiment, and model-provider resilience.
 
-• [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) — ★ 515 today (37.4k total) · Rust · [ACCELERATING]
-Checkpointed agent graphs pair replayable costs with local SQLite memory mirrored into editable Markdown.
+• [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) — ★ 542 today (38.0k total) · Rust · ACCELERATING
+Combines local persistent memory, replayable agent graphs, approvals, and privacy-mode inference in one desktop system.
 
 *Devtools*
-• [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community) — ★ 489 today (1.5k total) · Python · [RETURNING]
-Nightly-synced, security-reviewed marketplace metadata gives teams an inspectable plugin supply chain.
+• [apache/maka](https://github.com/apache/maka) — ★ 543 today (3.5k total) · TypeScript · RETURNING
+Append-only agent records preserve evidence through context trimming while enabling crash recovery and reproducible evaluations.
+
+• [openai/codex](https://github.com/openai/codex) — ★ 1,181 today (118.5k total) · Rust · ACCELERATING
+A rapidly compounding Rust codebase keeps terminal-agent execution local and its implementation open to inspection.
 
 *Web/Apps*
-• [makeplane/plane](https://github.com/makeplane/plane) — ★ 243 today (58.1k total) · TypeScript · [RETURNING]
-Docker and Kubernetes deployment keep a full project-management stack under the operator’s control.
+• [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) — ★ 1,265 today (35.8k total) · Python · ACCELERATING
+Packages screening, drafter-reviewer applications, ATS checks, and interview preparation into a forkable local workflow.
 
-• [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) — ★ 175 today (66.2k total) · Rust · [RETURNING]
-Official Bitwarden clients work against a substantially leaner self-hosted server implementation.
-
-*Other*
-• [basecamp/omarchy](https://github.com/basecamp/omarchy) — ★ 1,056 today (30.4k total) · Shell · [ACCELERATING]
-An opinionated Linux distribution is pulling unusually strong attention toward a maintained, cohesive workstation baseline.
-
-Other because an operating-system distribution is neither an app framework nor developer tool in the narrow sense.
+• [AgriciDaniel/claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian) — ★ 813 today (13.0k total) · Python · ACCELERATING
+Source and claim ledgers keep agent-built Obsidian knowledge traceable while serializing writes from parallel workers.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/18
+sources: trending=ok · gh_api=ok · kept 7/16

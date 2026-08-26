@@ -1,13 +1,13 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-25T09:47:12Z",
+  "last_analyzed": "2026-08-26T09:36:58Z",
   "quality_score": 2,
-  "assessment": "Substantive GitHub roundup, but it is misaligned with the crypto-trading strategy: no regime verdict, catalyst evidence, or explicit position call.",
+  "assessment": "Well-structured and plausibly sourced, but it provides general GitHub trends rather than the operator’s required conclusion-first, tradeable crypto regime signal with explicit position calls.",
   "flags": [
     "low_quality",
     "generic_content"
   ],
-  "avg_score": 3.14,
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-07-28",
@@ -35,6 +35,10 @@
     },
     {
       "date": "2026-08-25",
+      "score": 2
+    },
+    {
+      "date": "2026-08-26",
       "score": 2
     }
   ]
