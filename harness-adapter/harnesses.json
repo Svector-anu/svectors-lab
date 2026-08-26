@@ -184,7 +184,7 @@
         "bin": "hermes",
         "min_version": "latest"
       },
-      "invoke": "hermes -z --usage-file <tmp> prompt",
+      "invoke": "hermes --usage-file <tmp> -z prompt",
       "round_trip": true,
       "token_usage": "full",
       "cost": true,
