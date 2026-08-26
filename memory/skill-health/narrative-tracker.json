@@ -1,12 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-26T01:51:52Z",
-  "quality_score": 3,
-  "assessment": "Substantive position calls and evidence links, but it lacks a conclusion-first regime verdict, includes live price figures despite the strategy constraint, and presents several uncited mindshare/driver claims with unclear calibration.",
+  "last_analyzed": "2026-08-26T07:15:54Z",
+  "quality_score": 2,
+  "assessment": "Decision-oriented and well structured, but numerous precise figures, mindshare scores, transition labels, and catalyst claims lack direct evidence or transparent derivation, making the regime calls insufficiently verifiable.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 3.39,
+  "avg_score": 3.32,
   "history": [
     {
       "date": "2026-07-06",
@@ -79,6 +79,10 @@
     {
       "date": "2026-08-26",
       "score": 3
+    },
+    {
+      "date": "2026-08-26",
+      "score": 2
     }
   ]
 }
