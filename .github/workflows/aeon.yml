@@ -1051,6 +1051,17 @@ jobs:
 
       # Egress hardening P2: publish the warn-mode audit log. always() so it lands
       # even if the run failed; the host list is the allowlist oracle P3 builds from.
+      - name: Upload egress audit log
+        if: always() && vars.EGRESS_AUDIT == '1'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: egress-${{ steps.skill.outputs.name }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/iron/audit.jsonl
+          if-no-files-found: ignore
+
+      # Prove the vuln-scanner actually invoked a scanner: the staged wrappers log
+      # each call to executions.log; model prose is not execution evidence. Best-effort,
+      # warnings only, never gates the run.
       - name: Verify vuln-scanner execution evidence
         if: always() && steps.work.outputs.mode != '' && steps.skill.outputs.name == 'vuln-scanner'
         run: |
@@ -1080,14 +1091,6 @@ jobs:
               echo "${tool}=not-observed-or-not-applicable"
             fi
           done
-
-      - name: Upload egress audit log
-        if: always() && vars.EGRESS_AUDIT == '1'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        with:
-          name: egress-${{ steps.skill.outputs.name }}-${{ github.run_id }}
-          path: ${{ runner.temp }}/iron/audit.jsonl
-          if-no-files-found: ignore
 
       # Undo "Single-source standing instructions" so the working tree matches HEAD
       # before any capture/guard/commit step runs. always(): the file must come back

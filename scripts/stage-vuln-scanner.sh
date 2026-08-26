@@ -50,6 +50,7 @@ instrument() { # command name, real executable
   local name="$1" real="$2" wrapper="$BIN/$1"
   [ -x "$real" ] || return 0
   mv "$real" "$BIN/.${name}.real" 2>/dev/null || return 0
+  rm -f "$wrapper"   # drop any dangling symlink so the heredoc writes a plain file into $BIN
   cat > "$wrapper" <<EOF
 #!/usr/bin/env bash
 printf '%s %s\\n' '$name' "\$*" >> '$EXEC_LOG'
