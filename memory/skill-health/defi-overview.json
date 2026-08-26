@@ -1,13 +1,12 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-26T12:23:28Z",
+  "last_analyzed": "2026-08-26T18:28:35Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first regime call is useful, but most figures lack evidence, no explicit front-run/ride/fade/watch call is given, and claimed workspace writes contradict the read-only run.",
+  "assessment": "Useful regime framing, but most metrics lack sources, explicit trade calls are missing, and the claimed workspace writes contradict the read-only run.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.24,
+  "avg_score": 3.18,
   "history": [
     {
       "date": "2026-07-06",
@@ -93,6 +92,12 @@
       "date": "2026-08-26",
       "score": 2,
       "ts": "2026-08-26T12:23:28Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-26",
+      "score": 2,
+      "ts": "2026-08-26T18:28:35Z",
       "harness": "codex"
     }
   ]
