@@ -1,2 +1,3 @@
 date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-26,vuln-scanner,gpt-5.1,49140,10427,0,0
+2026-08-26,vuln-scanner,gpt-5.1,63989,13972,0,0
