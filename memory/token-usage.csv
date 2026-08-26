@@ -3,3 +3,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-26,vuln-scanner,gpt-5.1,108699,16624,0,0
 2026-08-26,heartbeat,default,65605,10324,345920,0
 2026-08-26,github-trending,default,63868,11934,369920,0
+2026-08-26,heartbeat,glm-5.2,39055,23786,335936,0

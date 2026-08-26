@@ -1,23 +1,9 @@
-Heartbeat complete. Here's the result:
+**HEARTBEAT_OK · STATUS_PAGE=OK (warming up)**
 
-HEARTBEAT_OK · STATUS_PAGE=OK (warming up)
+Ambient check complete — `${var}` was empty, so the default scheduled path ran:
 
-Branch run: ambient check (default, empty var).
-
-Verdict logic — Bootstrap grace:
-- memory/cron-state.json contains only one entry, `heartbeat`, with `last_status: "dispatched"` and no `total_runs`, `last_success`, or `last_failed`. No skill has ever completed a run.
-- That means the fleet is bootstrapping/warming up. Per the skill's Bootstrap grace rule this is the expected state on a fresh fork — not a failure — so the overall status is 🟢 OK with a warming-up note, and no notification is sent.
-
-Checks performed (all within the warming-up path):
-- P0 (failed/stuck): skipped — no completed runs, nothing to flag. `heartbeat` itself is excluded from the stuck check by definition.
-- P1 (stalled PRs/urgent issues): skipped under bootstrap grace.
-- P2 (flagged memory): no Priorities flagged for follow-up.
-- P3 (missing scheduled skills): skipped entirely on a bootstrapping fleet.
-- Public status page: regenerated docs/status.md (one enabled skill — heartbeat — shown as `🌱 warming up`; no Token pulse section because no `output/articles/token-report-*.md` exists; open issues = 0).
-- Log: appended this run under the `### heartbeat` heading in memory/logs/2026-08-26.md with `mode: ambient`.
-
-Files touched:
-- /home/runner/work/svectors-lab/svectors-lab/docs/status.md (regenerated, verdict 🟢 OK)
-- /home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md (appended heartbeat log entry)
-
-No notification fired (quiet by design for a warming-up fork), and nothing requires operator attention.
+- **P0**: `cron-state.json` holds only heartbeat's own in-flight `dispatched` watermark — no skill has completed a run fleet-wide → **Bootstrap grace**: no failures/stuck skills to flag, no notification. P3 (missing scheduled skills) skipped for the same reason.
+- **P1**: 7 open PRs, all >24h old — but every one is skill-output from skills not yet running (the same warming-up condition grace suppresses), so noted in the log rather than notified.
+- **P2**: Nothing flagged in memory needing follow-up. Issues are disabled on this repo.
+- **Status page**: `docs/status.md` regenerated (🟢 OK, warming-up note, next run heartbeat 2026-08-27 08:00 UTC). No `output/articles/token-report-*.md` exists, so the Token pulse section is omitted cleanly.
+- **Log**: appended under the existing `### heartbeat` heading with `mode: ambient` and the verdict line; the workflow's auto-commit will land both files on `main`.

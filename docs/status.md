@@ -7,9 +7,9 @@ permalink: /status/
 # Agent Status
 
 **Overall:** 🟢 OK  
-**Updated:** 2026-08-26 10:44 UTC  
+**Updated:** 2026-08-26 11:49 UTC  
 **Open issues:** 0  
-**Next scheduled run:** heartbeat at 08:00 UTC
+**Next scheduled run:** heartbeat at 2026-08-27 08:00 UTC
 
 🌱 warming up — 1 skill(s) dispatched, awaiting first completed run.
 
