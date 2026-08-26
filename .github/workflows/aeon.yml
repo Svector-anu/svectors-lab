@@ -1081,6 +1081,22 @@ jobs:
             echo 'executions=none'
             echo '::warning::vuln-scanner produced no machine-readable scanner invocation evidence'
           fi
+          echo '--- per-tool execution status ---'
+          for tool in semgrep trufflehog osv-scanner; do
+            if [ -s /tmp/vuln-scan/executions.log ] && grep -q "^${tool} " /tmp/vuln-scan/executions.log; then
+              echo "${tool}=observed"
+            else
+              echo "${tool}=not-observed"
+              echo "::warning::${tool} was staged but no invocation was recorded"
+            fi
+          done
+          for tool in slither cargo-fuzz; do
+            if [ -s /tmp/vuln-scan/executions.log ] && grep -q "^${tool} " /tmp/vuln-scan/executions.log; then
+              echo "${tool}=observed"
+            else
+              echo "${tool}=not-observed-or-not-applicable"
+            fi
+          done
 
       - name: Upload egress audit log
         if: always() && vars.EGRESS_AUDIT == '1'
