@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# run-harness — one Claude Code-shaped contract, seven coding-agent harnesses.
+# run-harness — one Claude Code-shaped contract, ten coding-agent harnesses.
 #
 #   usage: run-harness <claude|grok|codex|fx|pi|vibe|kimi|cursor|hermes|glm> [options] < prompt.txt
 #
