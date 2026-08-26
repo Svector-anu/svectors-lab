@@ -1,13 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-26T13:30:43Z",
+  "last_analyzed": "2026-08-26T20:22:04Z",
   "quality_score": 2,
-  "assessment": "Substantive and position-labeled, but it buries the regime verdict, violates the qualitative-price constraint, and presents numerous precise claims without direct evidence anchors, making the trading signal insufficiently verifiable.",
+  "assessment": "Decision-oriented and well structured, but most precise market figures and catalyst claims lack direct supporting citations, making the core regime calls insufficiently verifiable.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.25,
+  "avg_score": 3.19,
   "history": [
     {
       "date": "2026-07-06",
@@ -89,6 +88,12 @@
       "date": "2026-08-26",
       "score": 2,
       "ts": "2026-08-26T13:30:43Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-26",
+      "score": 2,
+      "ts": "2026-08-26T20:22:04Z",
       "harness": "codex"
     }
   ]
