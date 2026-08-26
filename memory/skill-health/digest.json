@@ -1,10 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-25T14:44:45Z",
-  "quality_score": 4,
-  "assessment": "Substantive, conclusion-first, sourced digest with actionable watch/ride calls, though it lacks a clear overall regime verdict and the XPENG item is off-strategy and unlabeled as a position call.",
-  "flags": [],
-  "avg_score": 3.67,
+  "last_analyzed": "2026-08-26T14:15:28Z",
+  "quality_score": 2,
+  "assessment": "Substantive and linked, but poorly aligned with the crypto-trader strategy: no regime verdict or explicit position calls, and the claimed workspace updates contradict the read-only run.",
+  "flags": [
+    "low_quality",
+    "generic_content",
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.43,
   "history": [
     {
       "date": "2026-07-28",
@@ -29,6 +33,12 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-26",
+      "score": 2,
+      "ts": "2026-08-26T14:15:28Z",
+      "harness": "codex"
     }
   ]
 }
