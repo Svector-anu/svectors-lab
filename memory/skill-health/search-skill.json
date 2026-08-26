@@ -1,12 +1,13 @@
 {
   "skill": "search-skill",
-  "last_analyzed": "2026-08-25T14:44:58Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op result, but the search coverage and rejection rationale lack candidate names, catalog references, or other evidence needed for strong verification.",
+  "last_analyzed": "2026-08-26T14:14:37Z",
+  "quality_score": 2,
+  "assessment": "The no-op result is usable, but it provides little verification and falsely claims a workspace log write during an explicitly read-only run.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
-  "avg_score": 3,
+  "avg_score": 2.75,
   "history": [
     {
       "date": "2026-08-25",
@@ -19,6 +20,12 @@
     {
       "date": "2026-08-25",
       "score": 3
+    },
+    {
+      "date": "2026-08-26",
+      "score": 2,
+      "ts": "2026-08-26T14:14:37Z",
+      "harness": "codex"
     }
   ]
 }

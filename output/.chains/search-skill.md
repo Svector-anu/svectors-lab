@@ -1,13 +1,13 @@
 SEARCH_SKILL_EMPTY
 
-Query: `heartbeat monitoring`, derived from heartbeat’s 4% recorded success rate.
+Query: `heartbeat monitoring`, derived from `heartbeat`’s historical success rate in `cron-state.json`.
 
-No candidate passed compatibility and gap-fit gates. Nothing was installed or notified. The run was logged in [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md).
+- Searched four catalogs plus skills.sh.
+- No candidate passed the exact gap-fit gate.
+- Dropped the existing `heartbeat` skill as a duplicate.
+- Installed nothing and sent no notification, as required for empty results.
+- `npx` search failed due to its read-only npm cache; fallback catalogs completed.
 
 ## Summary
 
-- Searched all required catalogs.
-- Dropped the already-installed Aeon heartbeat skill.
-- Rejected an external heartbeat skill requiring Claude-specific cron/task tools.
-- Installed: none.
-- Follow-up needed: none.
+Appended the run record to [memory/logs/2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md). No follow-up action is needed.
