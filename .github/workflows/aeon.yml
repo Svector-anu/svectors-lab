@@ -1068,6 +1068,20 @@ jobs:
 
       # Egress hardening P2: publish the warn-mode audit log. always() so it lands
       # even if the run failed; the host list is the allowlist oracle P3 builds from.
+      - name: Verify vuln-scanner execution evidence
+        if: always() && steps.work.outputs.mode != '' && steps.skill.outputs.name == 'vuln-scanner'
+        run: |
+          set -u
+          echo '--- staged scanner manifest ---'
+          if [ -f /tmp/vuln-scan/prefetch.txt ]; then cat /tmp/vuln-scan/prefetch.txt; else echo 'manifest=missing'; fi
+          echo '--- actual scanner invocations ---'
+          if [ -s /tmp/vuln-scan/executions.log ]; then
+            cat /tmp/vuln-scan/executions.log
+          else
+            echo 'executions=none'
+            echo '::warning::vuln-scanner produced no machine-readable scanner invocation evidence'
+          fi
+
       - name: Upload egress audit log
         if: always() && vars.EGRESS_AUDIT == '1'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
