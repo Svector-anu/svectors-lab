@@ -12,7 +12,7 @@
     "last_success": "2026-08-25T09:19:39Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-25T19:44:35Z",
     "total_runs": 328,
     "total_successes": 20,
@@ -20,7 +20,7 @@
     "consecutive_failures": 0,
     "success_rate": 0.06,
     "last_quality_score": 2,
-    "last_dispatch": "2026-08-25T19:39:57Z",
+    "last_dispatch": "2026-08-26T00:00:09Z",
     "last_failed": "2026-08-25T19:04:26Z",
     "last_error": "read_id\":\"01a03a4f-31ce-7381-8489-49d501aa64ed\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt"
   },
