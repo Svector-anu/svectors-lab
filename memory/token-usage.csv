@@ -106,3 +106,8 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-26,vuln-scanner,codex-default,267306,1406,222464,0
 2026-08-26,vuln-scanner,codex-default,3151283,10160,3011584,0
 2026-08-26,memory-flush,codex-default,181231,1368,134400,0
+2026-08-25,vuln-scanner,grok-4.5,167753,6692,186624,0
+2026-08-25,vuln-scanner,grok-4.5,71488,5644,286464,0
+2026-08-25,vuln-scanner,grok-4.5,70383,7143,281984,0
+2026-08-25,vuln-scanner,grok-4.5,163540,6367,221312,0
+2026-08-25,vuln-scanner,grok-4.5,68495,8166,314368,0
