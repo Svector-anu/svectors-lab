@@ -1,10 +1,10 @@
 {
   "skill": "rightstack",
-  "last_analyzed": "2026-08-27T06:15:11Z",
-  "quality_score": 4,
-  "assessment": "Substantive, decision-oriented architecture brief with useful corrections and primary-source links, though the OnchainKit migration citation appears weakly matched and the output does not advance the operator’s crypto-trading signal strategy.",
+  "last_analyzed": "2026-08-27T16:29:20Z",
+  "quality_score": 3,
+  "assessment": "Acceptable duplicate-guard no-op with a clear preserved verdict and metadata, though it provides no evidence or pointer to verify the prior result.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 3.8,
   "history": [
     {
       "date": "2026-08-25",
@@ -22,6 +22,12 @@
       "date": "2026-08-27",
       "score": 4,
       "ts": "2026-08-27T06:15:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 3,
+      "ts": "2026-08-27T16:29:20Z",
       "harness": "codex"
     }
   ]
