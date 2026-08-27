@@ -207,6 +207,14 @@ reactive:
 #         - { skill: polish,  consume: [skill-c], when: "score > 3" }
 #         - { skill: rewrite, consume: [skill-c], when: "score <= 3" }
 chains:
+  web3-stack-watch:
+    schedule: "workflow_dispatch"
+    on_error: fail-fast
+    max_dispatches: 2
+    steps:
+      - { skill: rightstack, var: "consumer app on Base with an embedded wallet" }
+      - { skill: digest, var: "web3 developer tooling", consume: [rightstack] }
+
   # routine:
   #   schedule: "0 7 * * *"
   #   on_error: fail-fast
