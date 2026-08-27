@@ -112,3 +112,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-25,vuln-scanner,grok-4.5,163540,6367,221312,0
 2026-08-25,vuln-scanner,grok-4.5,68495,8166,314368,0
 2026-08-27,aeon-update,codex-default,212694,1649,183552,0
+2026-08-27,soul-builder,codex-default,1771688,8511,1664512,0
