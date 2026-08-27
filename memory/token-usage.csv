@@ -117,4 +117,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-27,digest,codex-default,339611,2861,286720,0
 2026-08-27,soul-builder,codex-default,968635,7345,862976,0
 2026-08-27,soul-builder,codex-default,978573,6577,918272,0
-2026-08-27,token-pick,codex-default,404494,4814,353536,0
+2026-08-27,hunter-22,codex-default,548797,4286,496384,0
