@@ -1,28 +1,38 @@
 *Narrative Tracker — 2026-08-27*
 
 TRANSITIONS
-• NEW: ETF-supported BTC consolidation — seven straight inflow sessions; August flows topped $3B.
-• NEW: Hyperliquid fee-backed strength — $24.63M 7d fees and HYPE +34.3% 7d.
-• NEW: AI agents with wallets — VIRTUAL opened agent tokenization to Solana; token jumped 12.5% before cooling.
-• NEW: token-value-accrual launches — LayerZero ATLAS routes 75% of remaining revenue to ZRO buy-and-burn.
-• NEW: privacy ETF sell-the-news — ZEC fell 7.3% after its spot ETF began trading, after a ~56% weekly run.
+• NEW: AI agents + crypto rails — stablecoins, x402 and Solana payments are converging into an execution thesis, not another chatbot-token pitch — [source](https://x.com/kaswizofficial/status/2092565314324013309)
+• NEW: RWA + 24/7 markets — Robinhood-style tokenized stocks and onchain Treasury rails are pulling the theme toward usable financial products — [source](https://x.com/cryptodotnews/status/2092745403737444827)
+• NEW: privacy revival — ZEC/XMR discussion is rotating back as the cypherpunk counterweight to institutional crypto — [source](https://x.com/AltcoinDaily/status/2092753657213366630)
+• NEW: AI data-center backlash — political and local opposition is now a visible counter-narrative to hyperscaler capex — [source](https://x.com/trtworld/status/2092662119195910368)
+• No PROMOTED/DEMOTED/DEAD calls: no narrative-tracker baseline exists in the prior three days.
 
 REFLEXIVITY ALERT
-• ZEC ETF — ETF anticipation drove a ~56% weekly move; launch triggered a 7.3% reversal.
-• AI-agent wallets — VIRTUAL rose 12.5% on Solana expansion, then fell 5.2% next session: story-led repricing outran adoption evidence.
+• Solana-default — the Summit Serbia event loop is turning ecosystem promotion into evidence of startup/agent dominance; attention is reinforcing the chain-choice claim before fee sustainability proves it — [example](https://x.com/solana/status/2092692723585438157)
+• Solana memecoins — UFD/CAT launches and giveaways are price-attention loops with hour-scale narrative half-lives and no fundamentals shift — [example](https://x.com/BitBoyJay/status/2092763555795808669)
 
 POSITIONS
-• RIDE: ETF-supported BTC consolidation (5 ↑, Bull) — @BlackRock, @SoSoValue, US spot ETF issuers — crowded options and 23% weekly rise invite consolidation.
-• RIDE: Hyperliquid fundamentals (4 ↑, Bull) — @HyperliquidX, @DefiLlama, HYPE Assistance Fund — $77.3B FDV prices in durable dominance.
-• WATCH: AI-agent wallets (3 ↑, Mixed) — @virtuals_io, @solana, VIRTUAL — agent-washing and thin demonstrated demand remain the bear case.
-• FRONT-RUN: token value accrual (2 ↑↑, Bull) — @LayerZero_Core, ATLAS, ZRO — buybacks cannot compensate for weak product demand.
-• FADE: privacy ETF beta (4 ↓, Mixed) — @Grayscale, ZCSH, Zcash — ETF access was already priced into the run.
-• FADE: micro-cap momentum (3 ↓, Cope) — BTR, NCT, CoinGecko trend lists — 300% spikes amid 3/20 positive top-cap breadth lack durable catalysts.
+• RIDE: agent payment rails (3 ↑, Bull, Rising) — @kaswizofficial, @glorisave3, @PawshadeSociety — real agent spend remains thin.
+• RIDE: RWA/24-7 markets (4 ↑, Bull, Rising) — @sonder_crypto, @cryptodotnews, @TheBlockRunner — liquidity and regulatory friction can keep pilots from becoming markets.
+• RIDE: perp DEX competition (4 ↑, Bull, Rising) — @RuneCrypto_, @Ifeanyi_gmi, Hyperliquid — challengers may not break incumbent liquidity effects.
+• RIDE: privacy revival (3 ↑, Mixed, Rising) — @AltcoinDaily, @SaveZcash, @SallyMayweather — delistings and regulatory pressure cap liquidity.
+• WATCH: DePIN utility (3 ↑, Mixed, Rising) — @paulbarron, @ourcryptotalk, @DonCrypto_ — subsidy-heavy supply can outrun real demand.
+• WATCH: DeAI/Bittensor (3 ↑, Mixed, Rising) — @CryptoTeca__, @DeFimorphosis, @_joncipher — usage still trails the story.
+• WATCH: Bitcoin continuation (3 ↑, Bull, Rising) — @alienops, @robw00ds, @Kev_Capital_TA — thesis is chart-led and invalidates on a local-low break.
+• WATCH: Solana-default (5 →, Bull, Peak) — @solana, @matija_sol, @SuperteamBLKN — saturated positioning; no contrarian edge.
+• FADE: Solana memecoin churn (5 ↓, Cope, Fading) — @BitBoyJay, @mystayor, @CannaCatMeme — hourly rotations make buyers exit liquidity.
+• WATCH: AI capex boom (5 →, Mixed, Peak) — @business, @aibottleneckcap, @sudoraohacker — grid constraints and overbuild risk.
+• WATCH: data-center backlash (3 ↑, Bear, Rising) — @trtworld, @meetzeroai, @gmoreaubooks — opposition may remain local rather than systemic.
+• WATCH: workplace AI verification tax (3 ↑, Mixed, Rising) — @mozuosan, @AntonHand, @BitBiasedAI — anecdotes do not yet quantify net productivity.
+• WATCH: AI legal/copyright fights (3 ↑, Bear, Rising) — @justupdates001, @lpajunior23, @meetzeroai — timing and remedies remain uncertain.
+• IGNORE: frontier-model rumor cycle (2 ↑, Mixed, Emerging) — rumor-heavy GPT-Astra/Grok/Fable chatter lacks verified releases.
+
+CALIBRATION
+• RWA has real weight beyond X: tokenized equities reached $963.04m in Jan 2026, +2,878% YoY — [DefiLlama Research](https://defillama.com/research/topics/rwa).
+• “AI compute RWA” is still tiny: $18.57m active/onchain market cap and $93,203 DeFi TVL — [DefiLlama](https://defillama.com/rwa/asset-group/ai-compute-infrastructure).
 
 MAP
-Emerging: token value accrual
-Rising: ETF-supported BTC, Hyperliquid, AI-agent wallets
-Peak: privacy ETF beta
-Fading: micro-cap momentum
-
-Source quality: web fallback; X.AI key unset/invalid in run environment.
+Emerging: frontier-model rumors
+Rising: agent rails, RWA, perp DEXs, privacy, DePIN, DeAI, Bitcoin continuation, data-center backlash, workplace AI friction, AI legal fights
+Peak: Solana-default, AI capex
+Fading: Solana memecoins

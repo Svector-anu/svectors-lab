@@ -1,13 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-27T05:09:28Z",
-  "quality_score": 2,
-  "assessment": "Conclusion-oriented and position-labeled, but the many precise figures and catalysts lack verifiable citations, while several calls and rationales are internally inconsistent or weakly supported.",
-  "flags": [
-    "unverifiable_claim",
-    "low_quality"
-  ],
-  "avg_score": 3.14,
+  "last_analyzed": "2026-08-27T16:32:27Z",
+  "quality_score": 3,
+  "assessment": "Substantive and position-labeled with source links, but it lacks a clear conclusion-first regime verdict and relies heavily on thin social evidence with opaque scoring methodology.",
+  "flags": [],
+  "avg_score": 3.13,
   "history": [
     {
       "date": "2026-07-06",
@@ -101,6 +98,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T05:09:28Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 3,
+      "ts": "2026-08-27T16:32:27Z",
       "harness": "codex"
     }
   ]
