@@ -1,0 +1,1 @@
+Aeon notification-path verification from a Codex write-mode skill. This deliberately long operational message confirms whether the runner can stage a structured payload outside the repository workspace.

@@ -1,13 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-27T06:18:07Z",
-  "quality_score": 2,
-  "assessment": "Usable developer-tooling digest, but it misses the operator’s core requirement for a crypto regime verdict and explicit trade calls, and its claimed workspace updates contradict the read-only run.",
+  "last_analyzed": "2026-08-27T06:28:26Z",
+  "quality_score": 1,
+  "assessment": "Failed: the digest produced only notification-path diagnostics and no usable crypto regime verdict, evidence-backed signal, or position call.",
   "flags": [
+    "empty_output",
     "low_quality",
     "generic_content"
   ],
-  "avg_score": 3.25,
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-07-28",
@@ -43,6 +44,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T06:18:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 1,
+      "ts": "2026-08-27T06:28:26Z",
       "harness": "codex"
     }
   ]

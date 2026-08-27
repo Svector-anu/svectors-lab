@@ -1,6 +1,3 @@
-The notification was not delivered: the pending directory was read-only, and no JSON queue payload exists.
-
-```text
 notify_rc=0
 pending_dir=/home/runner/work/_temp/aeon-pending
 --- stderr ---
@@ -12,15 +9,3 @@ notify: json-render queue unwritable (read-only FS) — feed entry skipped
 --- queue files ---
 /home/runner/work/_temp/aeon-pending/notify-sent-hashes
 /home/runner/work/_temp/aeon-pending/audit.jsonl
-```
-
-## Summary
-
-Created:
-
-- `output/notification-path-probe-body.md`
-- `output/notification-path-probe.stdout`
-- `output/notification-path-probe.stderr`
-- `output/notification-path-probe-evidence.txt`
-
-The probe reproduced the queue-path failure. Despite `notify_rc=0`, both payload writes failed and no JSON payload was staged.

@@ -1,0 +1,5 @@
+./notify: line 144: /home/runner/work/_temp/aeon-pending/notify-sent-hashes: Read-only file system
+./notify: line 249: /home/runner/work/_temp/aeon-pending/notify-queue/1787812090-4-2897.json: Read-only file system
+notify: failed to write queue payload
+./notify: line 267: /home/runner/work/_temp/aeon-pending/.pending-digest.md: Read-only file system
+notify: json-render queue unwritable (read-only FS) — feed entry skipped
