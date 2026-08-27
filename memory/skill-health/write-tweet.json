@@ -1,0 +1,19 @@
+{
+  "skill": "write-tweet",
+  "last_analyzed": "2026-08-27T05:09:47Z",
+  "quality_score": 2,
+  "assessment": "Polished drafts, but they are generic and off-strategy for crypto traders, lack evidence anchors, and claim workspace writes despite the explicitly read-only run.",
+  "flags": [
+    "generic_content",
+    "unverifiable_claim"
+  ],
+  "avg_score": 2,
+  "history": [
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T05:09:47Z",
+      "harness": "codex"
+    }
+  ]
+}
