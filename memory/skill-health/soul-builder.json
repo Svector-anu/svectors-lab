@@ -1,14 +1,22 @@
 {
   "skill": "soul-builder",
-  "last_analyzed": "2026-08-25T08:06:25Z",
-  "quality_score": 3,
-  "assessment": "Acceptable clean no-op: it clearly explains the missing input, reports scope, and provides an actionable rerun example, though it produces no substantive soul-builder result.",
-  "flags": [],
-  "avg_score": 3,
+  "last_analyzed": "2026-08-27T12:15:06Z",
+  "quality_score": 2,
+  "assessment": "Claims workspace files and a log were created despite the explicitly read-only workspace, making the reported completion internally inconsistent and unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.5,
   "history": [
     {
       "date": "2026-08-25",
       "score": 3
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T12:15:06Z",
+      "harness": "codex"
     }
   ]
 }
