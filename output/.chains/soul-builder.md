@@ -1,10 +1,14 @@
-Soul Builder skipped cleanly: no `var` was provided, and the existing soul scaffold contains no X handle.
+✅ soul built — @svector_eth
 
-Logged `SOUL_BUILDER_SKIP` in [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md:151). No soul files or unrelated worktree changes were modified, and no notification was sent.
+soul built — @svector_eth (anu)
 
-## Summary
+identity: builder of agent fleets + non-custodial DeFi copilots (Skopos); OSS security researcher; runs Aeon
+sources: X (~45 posts via X search tools; Path A KEY_UNSET) + tryskopos.xyz + GitHub profile
+files: soul/SOUL.md, soul/STYLE.md, soul/examples/good-outputs.md
+PR: https://github.com/Svector-anu/svectors-lab/pull/36
 
-- Source required: `x=<handle>`, `name=<full name>`, or `links=<URLs>`
-- Files created: none
-- Files modified: `memory/logs/2026-08-25.md`
-- Follow-up: rerun with a source brief, such as `x=aeonfun`
+most distinctive: peer-hype one-liners ("king"/"you cooked") next to precise CVE/pagination writeups and a hard non-custodial agent thesis
+
+prior soul was scaffold only. review + edit in the dashboard Soul tab, then Pull to refresh.
+
+🔗 https://github.com/Svector-anu/svectors-lab/pull/36
