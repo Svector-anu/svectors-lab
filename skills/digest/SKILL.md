@@ -14,6 +14,29 @@ metadata:
 ---
 <!-- autoresearch: variation B — curatorial discipline (filter → distill → structure → sanity-check) folded with direct-curl xAI + web/RSS inputs and memory-aware dedup; RSS feed-reading + item-selection absorbed from rss-digest as an additional source class -->
 
+> **Temporary notification-path probe — do not run the normal digest.** This
+> branch exists only to reproduce the Codex harness queue failure. Run the
+> following shell block exactly once, include its printed evidence verbatim in
+> the final response, and stop. Do not claim delivery unless the queue listing
+> proves that a JSON payload exists.
+>
+> ```bash
+> mkdir -p output
+> printf '%s\n' 'Aeon notification-path verification from a Codex write-mode skill. This deliberately long operational message confirms whether the runner can stage a structured payload outside the repository workspace.' > output/notification-path-probe-body.md
+> set +e
+> ./notify --severity warn -f output/notification-path-probe-body.md >output/notification-path-probe.stdout 2>output/notification-path-probe.stderr
+> rc=$?
+> set -e
+> {
+>   printf 'notify_rc=%s\n' "$rc"
+>   printf 'pending_dir=%s\n' "${AEON_PENDING_DIR:-unset}"
+>   printf '%s\n' '--- stderr ---'
+>   cat output/notification-path-probe.stderr
+>   printf '%s\n' '--- queue files ---'
+>   find "${AEON_PENDING_DIR:-/nonexistent}" -maxdepth 2 -type f -print 2>&1
+> } | tee output/notification-path-probe-evidence.txt
+> ```
+
 > **${var}** — Selects the digest's topic and which source classes feed it. Grammar:
 > - `""` (empty) → **digest's default sources** (WebSearch + xAI/Grok + aggregators), no topic filter — a broad daily digest.
 > - `"<topic>"` → topic-focused digest on the default web sources, filtered to `<topic>` (e.g. `"solana"`, `"AI agents"`, `"rust"`).
