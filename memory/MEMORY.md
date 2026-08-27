@@ -11,6 +11,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-27 | web3 developer tooling (web) | Pyth Hermes auth, Solana telemetry, Rayls Sovereign |
 | 2026-08-26 | daily (web) | Gitea CVE-2026-60004, WhatsApp security, LayerZero ATLAS |
 | 2026-08-25 | daily (web, second run) | Arcus pTokens, Franklin–HashKey RWA, GENIUS customer checks |
 | 2026-08-25 | daily (web) | GPT-5.6 in Kiro, Thomson Reuters LLM, Coinbase tokenized stocks |

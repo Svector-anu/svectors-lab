@@ -1,35 +1,27 @@
-*Daily digest — 2026-08-26*
+*web3 developer tooling — 2026-08-27*
 
-_TL;DR: Patch exposed Gitea servers now; WhatsApp strengthened account recovery, while LayerZero, Google Cloud, and Taurus shipped new infrastructure._
+_TL;DR: Pyth integrations need Hermes authentication now, while new Solana observability and institutional EVM infrastructure broaden the build-versus-buy menu._
 
-1. *Actively exploited Gitea flaw requires an immediate upgrade*  
-   CVE-2026-60004 enables shell-command execution through malicious patches; default open registration can make the attack path unauthenticated. Upgrade to Gitea 1.27.1 or later by August 28.  
-   Why it matters: nearly 5,000 internet-exposed instances are being tracked.  
-   https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-gitea-flaw-in-code-injection-attacks/
+1. *Pyth’s Hermes API-key requirement is now live*  
+   Pyth completed its Core upgrade on August 26. Interfaces remain compatible, but every Hermes user now needs an API key. Audit production, CI, preview, and local environments for unauthenticated requests.  
+   Why it matters: missing credentials can cause a production data outage.  
+   https://docs.pyth.network/price-feeds/core/upgrade
 
-2. *WhatsApp replaces six-digit 2FA PINs with stronger passwords*  
-   WhatsApp is rolling out alphanumeric two-step-verification passwords, multiple passkeys, and more context for unknown Android callers.  
-   Why it matters: users can harden account recovery under Settings > Account.  
-   https://about.fb.com/news/2026/08/new-account-security-features-for-whatsapp/
+2. *State of Solana consolidates network and ecosystem telemetry*  
+   The new dashboard combines RPC health, TPS, stake distribution, uptime, upgrades, yields, TVL, and fees. It is useful as a secondary view; retain first-party RPC and application monitoring as the operational source of truth.  
+   Why it matters: teams gain a free external check for incident triage and ecosystem research.  
+   https://stateofsol.com/
 
-3. *LayerZero launches ATLAS as a headless exchange backend*  
-   ATLAS combines matching, clearing, settlement, and risk on LayerZero’s Zero chain. LayerZero claims launch capacity of 200,000 transactions per second.  
-   Why it matters: trading apps can launch markets without building the complete exchange stack.  
-   https://layerzero.network/blog/introducing-atlas
+3. *Rayls opens its institution-controlled EVM stack*  
+   Rayls Sovereign is publicly available as an open-source, EVM-compatible private environment with a managed sandbox and Solidity tooling. Premium consensus and privacy modules remain commercial; vendor performance claims need workload-specific validation.  
+   Why it matters: regulated teams can test an alternative to building permissioned EVM infrastructure from scratch.  
+   https://rayls.com/products/sovereign
 
-4. *Google Cloud packages Gemini agents for legal workflows*  
-   Gemini Enterprise for Legal enters preview with legal-system connectors and skills for contract review, citation checking, diligence, and regulatory monitoring.  
-   Why it matters: legal teams can evaluate a governed, domain-specific agent platform.  
-   https://www.googlecloudpresscorner.com/2026-08-25-Google-Cloud-Launches-Gemini-Enterprise-for-Legal
-
-5. *Taurus connects its custody stack to Swift’s shared ledger*  
-   Taurus integrated Swift smart contracts with its tokenization and custody products; initial client connections and transactions are expected shortly.  
-   Why it matters: Swift-member banks gain a route to tokenized deposits without replacing existing settlement rails.  
-   https://finance.yahoo.com/markets/crypto/articles/exclusive-taurus-connects-banks-swift-121543958.html
+*Also worth a glance:* For new Base consumer apps, current Base guidance uses wagmi and viem directly. Keep the embedded wallet, smart account, RPC, and paymaster as separate architectural choices.  
+https://docs.base.org/apps/quickstart/build-app
 
 ## Summary
 
-- Filtered 21 candidates to five after freshness, evidence, and three-day dedup checks.
-- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md).
-- `XAI_API_KEY` was unset, so X-specific search used the web fallback.
-- Notification was attempted; external queues were read-only, so delivery remained inline.
+- Updated `memory/MEMORY.md` and today’s digest log.
+- Deduplicated LayerZero ATLAS, already reported on August 26.
+- The external notification queue was read-only, so delivery failed; the complete digest is included above.
