@@ -1,13 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-27T06:18:07Z",
+  "last_analyzed": "2026-08-27T16:31:20Z",
   "quality_score": 2,
-  "assessment": "Usable developer-tooling digest, but it misses the operator’s core requirement for a crypto regime verdict and explicit trade calls, and its claimed workspace updates contradict the read-only run.",
+  "assessment": "Substantive and plausibly sourced, but it is a developer-tooling news digest rather than a conclusion-first crypto regime read with explicit front-run/ride/fade/watch position calls, so it poorly serves the operator strategy.",
   "flags": [
     "low_quality",
     "generic_content"
   ],
-  "avg_score": 3.25,
+  "avg_score": 3.11,
   "history": [
     {
       "date": "2026-07-28",
@@ -43,6 +43,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T06:18:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T16:31:20Z",
       "harness": "codex"
     }
   ]
