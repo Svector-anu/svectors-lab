@@ -1,12 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-26T20:22:04Z",
+  "last_analyzed": "2026-08-27T05:09:28Z",
   "quality_score": 2,
-  "assessment": "Decision-oriented and well structured, but most precise market figures and catalyst claims lack direct supporting citations, making the core regime calls insufficiently verifiable.",
+  "assessment": "Conclusion-oriented and position-labeled, but the many precise figures and catalysts lack verifiable citations, while several calls and rationales are internally inconsistent or weakly supported.",
   "flags": [
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
-  "avg_score": 3.19,
+  "avg_score": 3.14,
   "history": [
     {
       "date": "2026-07-06",
@@ -94,6 +95,12 @@
       "date": "2026-08-26",
       "score": 2,
       "ts": "2026-08-26T20:22:04Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T05:09:28Z",
       "harness": "codex"
     }
   ]

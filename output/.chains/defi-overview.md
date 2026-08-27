@@ -1,19 +1,23 @@
-Chop, low conviction. Only 3/20 top-cap assets are green today, though 16/20 remain positive over seven days. BTC ETF inflows of $314.3M on August 25 provide support, but breadth does not confirm broad risk-on positioning. [ETF flow source](https://financefeeds.com/crypto-etfs-draw-more-than-550-million-on-august-25-as-bitcoin-and-ether-lead-inflows/)
+Take: rotation — BTC was flat at −0.1%, while ETH gained 1.2% and SOL 4.7%.
 
-- DeFi verdict: Sideways
-- TVL: $87.48B, about −0.4% since the prior refresh
-- DEX volume: $10.46B, −3.7% daily
-- Stablecoins: $310.2B, +0.33% daily
-- Fear & Greed: 65, down from 74
-- Notable strength: Hyperliquid Spot Orderbook TVL +11.6%; Perps fees +200.1% over seven days
-- Notable weakness: CIAN Yield Layer TVL −16.0%, with no obvious catalyst
-- Positions: no configured pools or positions; logged `DEFI_MONITOR_NO_CONFIG`
+Conviction: low — sentiment improved and BTC dominance fell, but only 8/20 top assets were green and DEX volume dropped 17.5%.
 
-The notification was generated and delivered inline; external notification/feed queues were read-only.
+Evidence: SOL outperformed BTC by 4.7 percentage points as BTC dominance declined 0.14 pp.
+
+- DeFi TVL: $88.44B, up 1.1% since the prior refresh
+- Fear & Greed: 71, up from 65
+- Stablecoins: $311.0B, +0.38% daily
+- Protocol mover: WisdomTree +32.2% to $1.03B
+- Fees leader: Tether, $15.95M
+- Sustainable-yield leader: Uniswap V3 WETH-USDT, 46.3% base APY on $123.4M TVL
+- Polymarket: 67.5% probability of no September Fed rate change
+- ETF flows remain supportive, including $314.3M of US spot-Bitcoin ETF inflows on August 25. [Flow coverage](https://financefeeds.com/crypto-etfs-draw-more-than-550-million-on-august-25-as-bitcoin-and-ether-lead-inflows/)
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- Appended the run to [2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md)
-- Preserved the complete token-pick history
-- All required market-data sources succeeded; `git diff --check` passed
+- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) with the complete snapshot and preserved token-pick history.
+- Appended the run details to [2026-08-27.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-27.md).
+- No tracked DeFi positions were configured.
+- All data sources succeeded.
+- Notification delivery was attempted but the external queue was read-only.
+- Commit creation was also blocked because `.git` is read-only; the workspace changes remain saved.

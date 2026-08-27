@@ -1,12 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-26T18:28:35Z",
+  "last_analyzed": "2026-08-27T05:10:57Z",
   "quality_score": 2,
-  "assessment": "Useful regime framing, but most metrics lack sources, explicit trade calls are missing, and the claimed workspace writes contradict the read-only run.",
+  "assessment": "Substantive regime snapshot, but it lacks an explicit position call, headlines unsupported live figures, and implausibly claims workspace changes were saved during a read-only run.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.18,
+  "avg_score": 3.13,
   "history": [
     {
       "date": "2026-07-06",
@@ -98,6 +99,12 @@
       "date": "2026-08-26",
       "score": 2,
       "ts": "2026-08-26T18:28:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T05:10:57Z",
       "harness": "codex"
     }
   ]

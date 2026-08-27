@@ -1,13 +1,13 @@
 {
   "skill": "soul-builder",
-  "last_analyzed": "2026-08-27T13:20:50Z",
+  "last_analyzed": "2026-08-27T12:34:46Z",
   "quality_score": 2,
-  "assessment": "The output is only a completion summary with file pointers, not the substantive soul artifacts, and its claim that workspace files were saved conflicts with the stated read-only runtime.",
+  "assessment": "Mostly a status summary with file pointers; it omits the actual soul profile content and evidence from the 31 posts, making the result insufficiently substantive or verifiable from the final output.",
   "flags": [
     "low_quality",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 2.5,
+  "avg_score": 2.33,
   "history": [
     {
       "date": "2026-08-25",
@@ -16,7 +16,13 @@
     {
       "date": "2026-08-27",
       "score": 2,
-      "ts": "2026-08-27T13:20:50Z",
+      "ts": "2026-08-27T12:15:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T12:34:46Z",
       "harness": "codex"
     }
   ]

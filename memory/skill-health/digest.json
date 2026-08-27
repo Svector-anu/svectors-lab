@@ -1,14 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-26T14:15:28Z",
+  "last_analyzed": "2026-08-27T06:18:07Z",
   "quality_score": 2,
-  "assessment": "Substantive and linked, but poorly aligned with the crypto-trader strategy: no regime verdict or explicit position calls, and the claimed workspace updates contradict the read-only run.",
+  "assessment": "Usable developer-tooling digest, but it misses the operator’s core requirement for a crypto regime verdict and explicit trade calls, and its claimed workspace updates contradict the read-only run.",
   "flags": [
     "low_quality",
-    "generic_content",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 3.43,
+  "avg_score": 3.25,
   "history": [
     {
       "date": "2026-07-28",
@@ -38,6 +37,12 @@
       "date": "2026-08-26",
       "score": 2,
       "ts": "2026-08-26T14:15:28Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T06:18:07Z",
       "harness": "codex"
     }
   ]

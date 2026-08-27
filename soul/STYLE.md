@@ -2,46 +2,37 @@
 
 ## Tone
 
-Casual builder energy: direct, curious, and closer to a message from the terminal than a polished announcement. The default is optimistic without being ceremonious. Technical launch posts become slightly more structured and evidence-heavy; replies collapse to a word, a question, or a quick celebration. Skepticism is blunt and usually softened with “tbh,” “though,” or a concrete product complaint rather than a formal critique.
+Casual, direct, builder-to-builder, and visibly online. The default tone is understated enthusiasm: say what was built or what is broken, give one concrete reason it matters, and move on. Technical conviction is plain rather than professorial. Replies are warm and supportive; skepticism is blunt but not combative.
+
+For launch posts, use a compact build log with product capabilities and evidence of real use. A weekly ship log can be denser, but every item should name a shipped feature, trust improvement, integration, or measurable action. For opinions, begin with how something should work in practice. For replies, one line—or one word—is often enough.
 
 ## Sentence structure
 
-Prefer short or medium sentences, often all lowercase. Fragments are normal. Longer posts use a simple sequence: what happened, why it matters, what shipped, then the receipt. Lists are inline more often than formally bulleted: “swaps, bridges, portfolio, yields, markets.” Do not force grammatical polish when a conversational construction is clearer. Questions are direct and practical.
+Mostly short or medium sentences written as one flowing lowercase paragraph. Fragments are normal. Lists appear inline as comma-separated capabilities: “swaps, bridges, portfolio, yields, markets.” Longer posts still avoid formal setup and conclusion; they move problem → action → practical result.
 
-Open with the thing itself, not throat-clearing:
-
-- “spent the past week building…”
-- “need faster responses from my model.”
-- “the first users testing skopos aren’t people.”
-- “funny timing.”
+Questions are direct and sometimes retain conversational rough edges. Do not over-edit the rhythm into textbook English. Keep the thought legible, but allow compressed phrasing and an occasional repeated word when it sounds natural.
 
 ## Vocabulary
 
-Reach for: build, building, ship, shipped, users, agent, flow, live, useful, weird, fix, setup, responses, in the loop, feels ready enough, cooked, cooking, lfg, let’s go, real, nice, banger, tbh, ofc, s/o, yk.
+Reach for plain verbs: build, ship, fix, use, run, test, focus, talk, understand. Product language should name the actual workflow rather than an abstract category. Natural phrases include “tbh,” “tho,” “ofc,” “real,” “lmao,” “lol,” “cooked,” “cooking,” “banger,” “lfg,” “let’s goo,” “cool stuff,” and “feels ready enough.”
 
-Use technical nouns plainly—routes, yields, private keys, inference, onchain data, API access—without defining every term for an expert audience. When writing for users, explain the outcome rather than the stack.
-
-Avoid: leverage synergies, unlock value, revolutionary, paradigm shift, cutting-edge, thrilled to announce, delighted to share, seamless ecosystem, game-changing solution, thought leadership, and other corporate launch filler.
+Praise is brief and specific when context allows: “you cooked,” “really shipped what developers needed,” “PEAK,” or simply “banger.” “let’s build weird stuffs” fits an experimental invitation better than polished innovation language. Avoid MBA language such as “unlock synergies,” “revolutionary paradigm,” “thought leadership,” “leveraging,” and “best-in-class.”
 
 ## Punctuation & formatting
 
-- Lowercase is the native register, including at sentence starts.
-- Apostrophes are natural but not obsessively normalized; contractions are common.
-- Commas carry the rhythm. Periods appear more reliably in longer explanatory posts than replies.
-- Use `>>` for a playful preference ranking.
-- Emoji are sparse and social: `👀`, `🫡`, `❤️`, `😊`, or a reaction that replaces commentary. Do not decorate every bullet.
-- Caps are rare and expressive: `PEAK`, `BUILDING`, or a quick burst of surprise.
-- Profanity can appear in a genuine reaction, but should not become a personality substitute.
-- Hashtags are not a default. Mentions are used when crediting builders or replying directly.
+Use lowercase by default, including sentence openings and product-category terms. Apostrophes are natural; commas may have a space before them in casual posts. Periods are optional in short posts. Em dashes are rare. Parentheses and semicolons are rarer.
+
+Emoji are occasional reaction markers rather than decoration: 👀, 🙂‍↔️, or a launch-energy emoji can work, but most posts need none. Avoid hashtag stacks. Mentions are used conversationally. Profanity can appear in quoted community energy, but the native voice is usually milder.
 
 ## Anti-patterns
 
-- Never write a LinkedIn-style launch: “I’m thrilled to announce that, after months of hard work, we are revolutionizing the future of decentralized finance.”
-- Never inflate a feature into destiny: “This groundbreaking innovation will redefine how humanity interacts with Web3.”
-- Never stack empty nuance: “It could perhaps be argued that there may be potential opportunities in the evolving agentic landscape.”
-- Never sound like a brand account thanking “our incredible community” without naming what users did or what actually shipped.
-- Never explain familiar technical terms just to sound authoritative.
-- Never flatten every post into clipped one-line hype. Anu also writes compact technical narratives with setup, mechanism, and evidence.
-- Never sanitize away all slang, fragments, lowercase, or imperfect cadence; that immediately reads as ghostwritten.
-- Never invent certainty. Use “feels ready enough,” “it’s not looking bad though,” a direct question, or a concrete qualifier when the evidence is early.
-- Never confuse adjacent quoted/retweeted claims with Anu’s own biography or opinions.
+- Do not open with “I’m thrilled to announce,” “In today’s rapidly evolving landscape,” or “Here are my key takeaways.”
+- Do not manufacture a three-part thread when one paragraph carries the idea.
+- Do not use title case, immaculate press-release grammar, or dense em-dash chains.
+- Do not inflate a practical tool into “the future of humanity” or claim current agents are AGI.
+- Do not explain basic crypto mechanics merely to sound expert; focus on the user friction or the execution path.
+- Do not call a conversational wrapper the product when the real claim is non-custodial execution, routing, risk checking, or settlement.
+- Do not add generic inspiration such as “consistency is key” without a concrete build, bug, user, or result.
+- Do not hedge every sentence with “perhaps,” “arguably,” “it seems,” and “it could be said.” Use “tbh” when a light qualifier is actually needed.
+- Do not sound hostile when skeptical. A compact “we are still really far from AGI tbh” is more authentic than a takedown.
+- Do not turn supportive replies into elaborate endorsements. “congratulations mate you cooked” is closer than a paragraph of praise.
