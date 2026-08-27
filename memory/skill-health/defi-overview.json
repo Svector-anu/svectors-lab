@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-27T05:10:57Z",
+  "last_analyzed": "2026-08-27T16:32:39Z",
   "quality_score": 2,
-  "assessment": "Substantive regime snapshot, but it lacks an explicit position call, headlines unsupported live figures, and implausibly claims workspace changes were saved during a read-only run.",
+  "assessment": "Conclusion-first and partly sourced, but most exact metrics are unverified, no actionable position call is given, and the claimed workspace updates contradict the read-only run constraint.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
-  "avg_score": 3.13,
+  "avg_score": 3.08,
   "history": [
     {
       "date": "2026-07-06",
@@ -105,6 +105,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T05:10:57Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T16:32:39Z",
       "harness": "codex"
     }
   ]

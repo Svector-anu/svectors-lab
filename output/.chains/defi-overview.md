@@ -1,23 +1,19 @@
-Take: rotation — BTC was flat at −0.1%, while ETH gained 1.2% and SOL 4.7%.
+Take: risk-on — BTC gained 3.1% and 19/20 top-cap assets are green. Conviction: medium; DEX volume fell 18.7%, limiting confirmation.
 
-Conviction: low — sentiment improved and BTC dominance fell, but only 8/20 top assets were green and DEX volume dropped 17.5%.
+- TVL: $89.07B, up 0.7% since the prior refresh.
+- SOL led majors at +12.8%; ETH and BTC both gained about 3.1%.
+- Fear & Greed: 71, unchanged from this morning and up six points from yesterday.
+- Sustainable-yield leaders: WETH-USDT 59.5%, ETH-LINK 45.1%, ETH-USDC 41.6%; all passed the skill’s consistency and TVL filters.
+- US spot Bitcoin ETFs recorded roughly $232M of August 26 inflows, extending an eight-session streak ([flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/), [coverage](https://decrypt.co/376683/bitcoin-etfs-draw-2-8b-in-eight-day-streak-as-btc-tests-80k)).
 
-Evidence: SOL outperformed BTC by 4.7 percentage points as BTC dominance declined 0.14 pp.
+Updated:
 
-- DeFi TVL: $88.44B, up 1.1% since the prior refresh
-- Fear & Greed: 71, up from 65
-- Stablecoins: $311.0B, +0.38% daily
-- Protocol mover: WisdomTree +32.2% to $1.03B
-- Fees leader: Tether, $15.95M
-- Sustainable-yield leader: Uniswap V3 WETH-USDT, 46.3% base APY on $123.4M TVL
-- Polymarket: 67.5% probability of no September Fed rate change
-- ETF flows remain supportive, including $314.3M of US spot-Bitcoin ETF inflows on August 25. [Flow coverage](https://financefeeds.com/crypto-etfs-draw-more-than-550-million-on-august-25-as-bitcoin-and-ether-lead-inflows/)
+- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
+- [2026-08-27.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-27.md)
 
 ## Summary
 
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) with the complete snapshot and preserved token-pick history.
-- Appended the run details to [2026-08-27.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-27.md).
-- No tracked DeFi positions were configured.
-- All data sources succeeded.
-- Notification delivery was attempted but the external queue was read-only.
-- Commit creation was also blocked because `.git` is read-only; the workspace changes remain saved.
+- Positions: `DEFI_MONITOR_NO_CONFIG`.
+- All nine data-source groups succeeded.
+- Notification delivery was attempted but the harness queue was read-only.
+- Commit creation was blocked because `.git/refs` is read-only. Changes remain safely present and uncommitted; unrelated workspace changes were untouched.
