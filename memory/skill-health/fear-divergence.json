@@ -1,12 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-26T08:02:26Z",
-  "quality_score": 2,
-  "assessment": "The no-trigger verdict is clear and decision-relevant, but the live sentiment figure has no source or timestamp, and the claimed workspace log write conflicts with the read-only run constraints.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 3.45,
+  "last_analyzed": "2026-08-27T16:29:35Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-signal completion with a clear trigger-based skip, but the F&G reading is not source-linked or otherwise verifiable in the final output.",
+  "flags": [],
+  "avg_score": 3.42,
   "history": [
     {
       "date": "2026-07-08",
@@ -51,6 +49,12 @@
     {
       "date": "2026-08-26",
       "score": 2
+    },
+    {
+      "date": "2026-08-27",
+      "score": 3,
+      "ts": "2026-08-27T16:29:35Z",
+      "harness": "codex"
     }
   ]
 }
