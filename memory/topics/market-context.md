@@ -1,59 +1,60 @@
-# Market Context (as of 2026-08-26)
+# Market Context (as of 2026-08-27)
 
-> **Take:** chop — only 3/20 top-cap assets are green over 24 hours, but 16/20 remain green over seven days. Conviction: low.
+> **Take:** rotation — BTC is flat at -0.1% while ETH gained 1.2% and SOL 4.7%. Conviction: low.
 
 ## Signal Snapshot
-- BTC $78,520 (-0.9% 24h, +14.6% 7d) · dominance 59.28% (+0.11 pp since the prior refresh)
-- ETH $2,466 (-0.3% 24h, +17.9% 7d) · ETH/BTC 0.0314
-- SOL $96.88 (-1.8% 24h, +18.9% 7d)
-- Total mcap $2.655T (-3.5% 24h) · DEX vol $10.46B 24h
-- Breadth: 3/20 green 24h · 16/20 green 7d
-- Fear & Greed: 65 (Greed) — yesterday 74
+- BTC $78,653 (-0.1% 24h, +13.9% 7d) · dominance 59.14% (-0.14 pp since the prior refresh)
+- ETH $2,484 (+1.2% 24h, +10.5% 7d) · ETH/BTC 0.0316
+- SOL $100.89 (+4.7% 24h, +19.7% 7d)
+- Total mcap $2.667T (-2.4% 24h) · DEX vol $8.63B 24h
+- Breadth: 8/20 green 24h · 15/20 green 7d
+- Fear & Greed: 71 (Greed) — yesterday 65
 
 ## What Changed Since Last Refresh
-- Seven-day breadth recovered from 3/20 to 16/20 as CoinGecko's rolling window advanced; the medium-term rally remains broader than today's tape.
-- BTC's seven-day gain cooled from 21.9% to 14.6%, while the 24-hour loss widened slightly from 0.7% to 0.9%.
-- US spot Bitcoin ETFs took in $314.3M on August 25, extending the inflow streak to seven sessions despite weak daily breadth.
+- Fear & Greed rose 6 points to 71 while daily breadth improved from 3/20 to 8/20.
+- SOL gained 4.7% and ETH 1.2% as BTC stayed flat, consistent with a tentative alt rotation.
+- DEX volume fell 17.5% to $8.63B, weakening confirmation of the rotation.
 
 ## Active Narratives
-- **ETF-supported consolidation** — phase: rising. Evidence: spot Bitcoin ETFs added $314.3M on August 25 for a seventh consecutive inflow session.
-- **Micro-cap speculation** — phase: peak. Evidence: BTR gained 308.8% and NCT gained 286.8% while only 3/20 top caps rose.
-- **Hyperliquid fundamentals** — phase: rising. Evidence: Hyperliquid Perps fees rose 200.1% over seven days while HYPE remains +30.4% over seven days.
-- **Large-cap rally consolidation** — phase: fading. Evidence: 16/20 top caps remain green over seven days, but only 3/20 are green today.
+- **Large-cap alt rotation** — phase: emerging. Evidence: SOL +4.7% and ETH +1.2% while BTC is flat and dominance fell 0.14 pp.
+- **ETF-supported consolidation** — phase: rising. Evidence: US spot Bitcoin ETFs took in $314.3M on August 25, extending the positive-flow streak.
+- **Micro-cap speculation** — phase: peak. Evidence: BTR rose 232.6% and remains CoinGecko's top trending asset.
+- **RWA expansion** — phase: emerging. Evidence: WisdomTree TVL rose 32.2% to $1.03B in 24 hours.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.59B (+18.8%)
-- Aave V3: $17.10B (+13.0%)
-- SSV Network: $12.45B (+18.4%)
-- Morpho Blue: $9.44B (+16.4%)
-- Binance staked ETH: $9.14B (+18.0%)
+- Lido: $24.03B (+10.9%)
+- Aave V3: $17.38B (+8.6%)
+- SSV Network: $12.53B (+10.2%)
+- Morpho Blue: $9.47B (+8.9%)
+- Binance staked ETH: $9.28B (+10.1%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $48.86B (n/a)
-- Solana: $5.55B (n/a)
-- BSC: $5.53B (n/a)
+- Ethereum: $49.60B (n/a)
+- Solana: $5.77B (n/a)
+- BSC: $5.56B (n/a)
 
 ## Stablecoins
-Total: $310.2B (+1.1% 7d). USDT $183.3B · USDC $73.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.7%.
+Total: $311.0B (+1.0% 7d). USDT $183.3B · USDC $74.0B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.7%.
 
 ## Trending (CoinGecko)
-- BTR — rank-564 speculative momentum, $0.136 (+308.8% 24h)
-- PONS — rank-300 momentum, $0.112 (+19.0% 24h)
-- NCT — rank-579 speculative momentum, $0.0185 (+286.8% 24h)
+- BTR — rank-494 speculative momentum, $0.172 (+232.6% 24h)
+- ANSEM — rank-209 momentum, $0.345 (+26.2% 24h)
+- SPX — rank-93 meme momentum, $0.630 (+16.5% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Real Madrid wins on August 26? | 82.5% | $2.63M | $1.99M |
-| Strait of Hormuz traffic returns to normal by September 30? | 9.5% | $0.83M | $0.53M |
-| No Fed rate change after the September 2026 meeting? | 64.5% | $0.46M | $0.69M |
+| Monterrey Open: Alexandrova vs Tauson | 30.0% | $1.73M | $0.28M |
+| Barcelona wins on August 27? | 79.5% | $0.55M | $0.91M |
+| Fed raises 25 bps in September? | 30.5% | $0.50M | $0.71M |
 
 ## Macro Catalysts (next 48h)
-- US spot Bitcoin ETFs added $314.3M on August 25, their seventh consecutive inflow session; persistent demand may cushion dips, but 3/20 daily breadth argues against chasing broad beta.
+- Persistent US spot Bitcoin ETF inflows may support BTC dips, but falling DEX activity argues against chasing broad beta.
+- Markets price a 67.5% chance of no Fed change in September; a rates repricing would challenge the tentative alt rotation.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor fee-backed relative strength and wait for daily breadth to repair before adding broad beta.
-- **narrative-tracker:** monitor ETF-supported consolidation and Hyperliquid fundamentals; treat micro-cap spikes as late-phase speculation.
+- **token-pick:** favor liquid alt relative strength and fee-backed protocols; avoid treating the move as broad risk-on until volume and breadth confirm.
+- **narrative-tracker:** monitor large-cap alt rotation for emerging→rising and RWA expansion beyond WisdomTree.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
