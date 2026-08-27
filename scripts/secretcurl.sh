@@ -137,6 +137,14 @@ run_xai_search() {
       reason="http-$http"
     elif [ "$bytes" -eq 0 ] && [ -n "$out_file" ]; then
       reason=empty
+    elif [ -n "$out_file" ] && [ "$http" = 200 ] && jq -e -r '
+        [ .output[]? | select(.type == "message") | .content[]?
+          | select(.type == "output_text") | .text // empty
+          | select(length > 0) ] | length > 0
+      ' "$out_file" >/dev/null 2>&1; then
+      reason=ok
+    elif [ -n "$out_file" ] && [ "$http" = 200 ]; then
+      reason=empty
     elif [ -z "$out_file" ] && [ ! -s "$stdout_file" ]; then
       reason=empty
     else
