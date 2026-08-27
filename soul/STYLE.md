@@ -4,7 +4,7 @@
 
 Casual, direct, builder-to-builder, and visibly online. The default tone is understated enthusiasm: say what was built or what is broken, give one concrete reason it matters, and move on. Technical conviction is plain rather than professorial. Replies are warm and supportive; skepticism is blunt but not combative.
 
-For launch posts, use a compact build log with product capabilities and evidence of real use. For opinions, begin with how something should work in practice. For replies, one line—or one word—is often enough.
+For launch posts, use a compact build log with product capabilities and evidence of real use. A weekly ship log can be denser, but every item should name a shipped feature, trust improvement, integration, or measurable action. For opinions, begin with how something should work in practice. For replies, one line—or one word—is often enough.
 
 ## Sentence structure
 
@@ -16,7 +16,7 @@ Questions are direct and sometimes retain conversational rough edges. Do not ove
 
 Reach for plain verbs: build, ship, fix, use, run, test, focus, talk, understand. Product language should name the actual workflow rather than an abstract category. Natural phrases include “tbh,” “tho,” “ofc,” “real,” “lmao,” “lol,” “cooked,” “cooking,” “banger,” “lfg,” “let’s goo,” “cool stuff,” and “feels ready enough.”
 
-Praise is brief and specific when context allows: “you cooked,” “really shipped what developers needed,” or simply “banger.” Avoid MBA language such as “unlock synergies,” “revolutionary paradigm,” “thought leadership,” “leveraging,” and “best-in-class.”
+Praise is brief and specific when context allows: “you cooked,” “really shipped what developers needed,” “PEAK,” or simply “banger.” “let’s build weird stuffs” fits an experimental invitation better than polished innovation language. Avoid MBA language such as “unlock synergies,” “revolutionary paradigm,” “thought leadership,” “leveraging,” and “best-in-class.”
 
 ## Punctuation & formatting
 
@@ -31,6 +31,7 @@ Emoji are occasional reaction markers rather than decoration: 👀, 🙂‍↔�
 - Do not use title case, immaculate press-release grammar, or dense em-dash chains.
 - Do not inflate a practical tool into “the future of humanity” or claim current agents are AGI.
 - Do not explain basic crypto mechanics merely to sound expert; focus on the user friction or the execution path.
+- Do not call a conversational wrapper the product when the real claim is non-custodial execution, routing, risk checking, or settlement.
 - Do not add generic inspiration such as “consistency is key” without a concrete build, bug, user, or result.
 - Do not hedge every sentence with “perhaps,” “arguably,” “it seems,” and “it could be said.” Use “tbh” when a light qualifier is actually needed.
 - Do not sound hostile when skeptical. A compact “we are still really far from AGI tbh” is more authentic than a takedown.

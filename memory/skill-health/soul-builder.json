@@ -1,12 +1,13 @@
 {
   "skill": "soul-builder",
-  "last_analyzed": "2026-08-27T12:15:06Z",
+  "last_analyzed": "2026-08-27T12:34:46Z",
   "quality_score": 2,
-  "assessment": "Claims workspace files and a log were created despite the explicitly read-only workspace, making the reported completion internally inconsistent and unverifiable.",
+  "assessment": "Mostly a status summary with file pointers; it omits the actual soul profile content and evidence from the 31 posts, making the result insufficiently substantive or verifiable from the final output.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality",
+    "generic_content"
   ],
-  "avg_score": 2.5,
+  "avg_score": 2.33,
   "history": [
     {
       "date": "2026-08-25",
@@ -16,6 +17,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T12:15:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-27",
+      "score": 2,
+      "ts": "2026-08-27T12:34:46Z",
       "harness": "codex"
     }
   ]
