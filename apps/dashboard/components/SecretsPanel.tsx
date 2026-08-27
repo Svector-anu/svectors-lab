@@ -12,6 +12,7 @@ import { InstantModeCard } from './InstantModeCard'
 import { LangfuseRegionCard } from './LangfuseRegionCard'
 import { TelegramCommandsCard } from './TelegramCommandsCard'
 import { TelegramChatIdHelper } from './TelegramChatIdHelper'
+import { OAUTH_SECRET_HARNESS } from '../lib/harness-auth'
 
 // Logo shown next to each credential group's header. Brand groups use their
 // favicon; non-brand groups use a glyph.
@@ -50,10 +51,6 @@ interface SecretsPanelProps {
   onConnectHarness: (harness: string) => void
   harnessConnecting?: boolean
 }
-
-// The OAuth-capture secrets (a tar of a login you can't paste) → the harness
-// whose native login sets them. Rendered with a Connect button, like Claude/Grok.
-const OAUTH_SECRET_HARNESS: Record<string, string> = { CODEX_AUTH: 'codex', KIMI_AUTH: 'kimi' }
 
 export function SecretsPanel({ secrets, skills, busy, repo, harness, focusKey, onFocusHandled, onSave, onDelete, onSelectSkill, onConnectClaude, connecting, onConnectGrok, grokConnecting, onConnectHarness, harnessConnecting }: SecretsPanelProps) {
   const [editingSecret, setEditingSecret] = useState<string | null>(null)

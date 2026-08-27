@@ -142,6 +142,15 @@ const HARNESS_AUTH_SPECS = {
 // sites were dead code the compiler believed could never fire.
 export const HARNESS_AUTH: Record<string, HarnessAuthSpec | undefined> = HARNESS_AUTH_SPECS
 
+// Settings uses this to render Connect/Reconnect for every captured OAuth
+// credential. Derive it from the registry so adding a harness in one place
+// cannot leave its secret looking like a generic pasteable API key.
+export const OAUTH_SECRET_HARNESS: Readonly<Record<string, string>> = Object.fromEntries(
+  Object.entries(HARNESS_AUTH).flatMap(([harness, spec]) =>
+    spec?.oauth ? [[spec.oauth.secret, harness]] : [],
+  ),
+)
+
 // The URL a device-auth flow prints for the operator to approve in the browser.
 // Permissive on purpose — codex (ChatGPT) and kimi (Moonshot) print different
 // hosts, and we only need the first https URL to hand to openBrowser.

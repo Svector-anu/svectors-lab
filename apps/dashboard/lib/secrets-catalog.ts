@@ -17,12 +17,14 @@ export const BUILTIN_SECRETS: Omit<Secret, 'isSet'>[] = [
   { name: 'ANTHROPIC_API_KEY', group: 'Core', description: 'How Claude Code signs in - option 2 of 2. A pay-as-you-go Anthropic API key (sk-ant-...) billed via the Console, or any Anthropic-compatible key for a proxy. Create one at console.anthropic.com.', either: 'auth' },
   { name: 'BANKR_LLM_KEY', group: 'Core', description: 'Bankr Gateway API key (bk_...) - enable at bankr.bot/api-keys' },
   { name: 'OPENROUTER_API_KEY', group: 'Core', description: 'OpenRouter API key (sk-or-...) - dual purpose: (1) routes Claude Code through openrouter.ai (a gateway provider), and (2) the shared fallback auth for the codex, pi, vibe and kimi harnesses, which all run on OpenRouter via run-harness. One key covers all four. Create at openrouter.ai/keys' },
-  // Native harness auth - each of the run-harness harnesses can run on its OWN
-  // provider instead of the shared OpenRouter key. The two OAuth captures
-  // (CODEX_AUTH/KIMI_AUTH) are set by `aeon auth --harness <h>` or the dashboard's
-  // Connect button, which drive the CLI's login and store the captured session.
+  // Native harness auth - each run-harness harness can use its own provider.
+  // OAuth captures are set by `aeon auth --harness <h>` or the dashboard's
+  // Connect button, which drives the CLI login and stores the captured session.
   { name: 'CODEX_AUTH', group: 'Core', description: 'Codex (ChatGPT) login captured for CI - a base64 tar of ~/.codex/auth.json. Set it with `aeon auth --harness codex` or the dashboard "Connect ChatGPT" button (runs `codex login`, stores the session here). Runs the codex harness on your ChatGPT plan instead of OpenRouter.' },
   { name: 'KIMI_AUTH', group: 'Core', description: 'Kimi (Moonshot) device login captured for CI - a base64 tar of ~/.kimi-code/credentials and config.toml. Set it with `aeon auth --harness kimi` or the dashboard "Connect Kimi" button. Runs the kimi harness on your Moonshot account instead of OpenRouter.' },
+  { name: 'CURSOR_API_KEY', group: 'Core', description: 'Cursor API key for the Cursor CLI harness. Set it here or with `aeon auth --harness cursor --key`; the key is stored as a GitHub Actions secret and never committed. Create one in Cursor settings.' },
+  { name: 'HERMES_AUTH', group: 'Core', description: 'Hermes Nous Portal login captured for CI - a base64 tar of ~/.hermes/auth.json and config.yaml. Set it with `aeon auth --harness hermes` or the dashboard "Connect Nous Portal" button, which opens the official Nous OAuth flow and stores the resulting session.' },
+  { name: 'GLM_API_KEY', group: 'Core', description: 'Z.AI GLM Coding Plan API key for the GLM harness. Set it here or with `aeon auth --harness glm --key`; the key is stored as a GitHub Actions secret and never committed. Create one in the Z.AI Coding Plan console.' },
   { name: 'OPENAI_API_KEY', group: 'Core', description: 'OpenAI API key (sk-...) - API-key auth for the codex harness (alternative to the ChatGPT login) and a provider pi can use. Create at platform.openai.com/api-keys' },
   { name: 'MOONSHOT_API_KEY', group: 'Core', description: 'Moonshot API key - API-key auth for the kimi harness (alternative to the device login). From platform.moonshot.ai' },
   { name: 'MISTRAL_API_KEY', group: 'Core', description: "Mistral API key - native auth for the vibe harness (its default provider). vibe's own `vibe` sign-in stores its credential in the OS keychain (not a portable file, like Claude Code), so it can't be captured for CI - set the key here instead. Create at console.mistral.ai" },
