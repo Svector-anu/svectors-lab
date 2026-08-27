@@ -144,7 +144,7 @@ skills:
   feature: { enabled: false, schedule: "0 10 * * 6", var: "" } # build a feature + open PR. var: watched (default) | external:<owner/repo> | dormant[:<owner/repo>], append --fix-issues (folds in external-feature/repo-revive). GH_GLOBAL for external.
 
   # Research & content
-  write-tweet: { enabled: false, schedule: "0 21 * * *", var: "" } # tweet studio. var: empty=drafts (10×5 tiers) | thread [topic] | remix [window]. Optional XAI_API_KEY (required for remix).
+  write-tweet: { enabled: true, schedule: "0 21 * * *", var: "" } # tweet studio. var: empty=drafts (10×5 tiers) | thread [topic] | remix [window]. Optional XAI_API_KEY (required for remix).
   bd-radar: { enabled: false, schedule: "20 7 * * *", var: "" } # daily 07:20 — BD radar: who's building/forking/integrating/mentioning your products → ranked leads. Products from memory/products.md. Quiet unless high-intent.
 
   # Product / ops (config: memory/products.md)
