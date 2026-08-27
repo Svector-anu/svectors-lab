@@ -154,8 +154,6 @@ skills:
 
   # Utilities / on-demand
 
-  rightstack: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand Web3 stack advisor. var: <build goal> | recommend:<goal> | workflow:<id> | compare:<a>|<b> | explain:<tool> | migrate:<package>. Read-only pilot pinned to published rightstack@0.3.2 with schema v1 JSON output.
-
   send-email: { enabled: false, schedule: "workflow_dispatch", var: "" } # on-demand — compose + send a 1:1 email to a named recipient via Resend (general sibling of disclosure-emailer). var: "to=… | subject=… | about=…"
   idea-forge: { enabled: false, schedule: "0 9 * * 1", var: "" } # weekly business-idea engine. var: empty/generate=timing-scored wedges | validate[:theme]=viability screen | memo[:theme]=2 evidence-backed memos
   seo-audit: { enabled: false, schedule: "0 13 * * *", var: "" } # daily on-page + technical SEO audit of every page on a site. var: comma-separated origins (empty = no target, no-op). PAGESPEED_API_KEY folds in Core Web Vitals
