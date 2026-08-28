@@ -1,31 +1,38 @@
+ℹ️ Narrative Tracker — 2026-08-28
+
 *Narrative Tracker — 2026-08-28*
 
 TRANSITIONS
-• NEW: quantum-safe Bitcoin — first mainnet transaction without a soft fork; technically real, commercially early — https://x.com/avihu28/status/2092742315995480266
-• PROMOTED: Solana strength Rising → Peak — SOL momentum spilled into saturating memecoin/altseason calls; chase risk now dominates.
-• PROMOTED: DeFi/RWA Emerging → Rising — Morpho Robinhood listing, Aave tokenized-gold usage and Solana reinsurance give the story multiple live rails.
-• DEMOTED: ETF-supported BTC Rising → Peak — eight-day inflow streak remains supportive, but $80k and near-universal repetition make it crowded.
-• DEAD: none observable; prior tracker logs contain no structured labels.
+• NEW: SEC Reg Crypto / DeFi Howey guidance — growing policy cluster around a $75M fundraising plan + Howey framing — https://x.com/crypto_ninjas/status/2092299595938402494
+• NEW: AI agent eval scheming — viral Hugging Face / OpenAI reward-hacking report — https://x.com/AlexBores/status/2092781255960216020
+• NEW: robotics foundation models — one-shot / in-context robot learning entering CT — https://x.com/SkildAI/status/2092300842900865389
+• PROMOTED: prediction markets Emerging → Rising — Kalshi-style listing votes + forecast posts stacking with +24% 7d narrative mcap — https://x.com/trend_btc_app/status/2093025954213830740
+• DEMOTED: quantum-safe Bitcoin Emerging → absent — not in current 3d X cluster after this morning's spike
+• DEMOTED: Hyperliquid Rising → Peak — still strong on perps mcap (+13% 7d) but no longer a top CT thread vs memes/ETF/AI
+• DEAD: Bitcoin Runes; XRP ETF rally — still gone
 
 REFLEXIVITY ALERT
-• Solana memecoins — SOL price strength is being recycled into “altseason” launch demand despite no common fundamentals; thin-liquidity launches are the outcome of the story itself.
-• Nvidia/AI capex — the earnings beat lifted SOL/crypto risk sentiment even though their fundamentals did not change with Nvidia’s print.
-• Hyperliquid — ATH/relative-strength posts are attracting leverage and copy-trade products, reinforcing volume and the token narrative.
+• Solana memecoin supercycle — SOL strength is being recycled into launch demand with no shared fundamentals; thin-liquidity launches are the outcome of the story — https://x.com/gem_insider/status/2092967402095231373
+• Nvidia AI supremacy — HF acquisition rumor + chip supremacy posts are lifting crypto risk appetite without a crypto fundamentals shift — https://x.com/TechCrunch/status/2092863459104838031
+• Solana RWA $4B TVL posts — repeated @crypto_ninjas framing is manufacturing legitimacy ahead of actual TradFi scale
 
 POSITIONS
-• FRONT-RUN: quantum-safe Bitcoin (2 ↑↑, Emerging, Bull) — @avihu28, @WuBlockchain — distant threat may not justify near-term attention.
-• RIDE: Hyperliquid/HyperEVM (4 ↑, Rising, Bull) — @Linear_Bvc, @wallstreetbets — leverage and perp-DEX competition can unwind fast.
-• RIDE: DeFi blue chips + RWAs (3 ↑, Rising, Bull) — @RobinhoodApp, @Blockchain_Boky, @onrefinance — adoption remains tiny versus TradFi and token value capture varies.
-• WATCH: OpenAI custom inference silicon (2 ↑↑, Emerging, Mixed) — @bsindia, @chilltc — performance claims and scale are unproven.
-• WATCH: Qwen open-weight efficiency (4 ↑, Rising, Bull) — @Alibaba_Qwen, @UnslothAI — launch attention may outrun hard-reasoning gains.
-• FADE: Solana memecoin supercycle (5 →, Peak, Cope) — @gem_insider, @YogiDyor — saturation plus thin liquidity is classic washout setup.
-• WATCH: BTC ETF/$80k (5 →, Peak, Bull) — @HODL15Capital, @CryptoTice_ — inflows can reverse and $80k is visible supply.
-• FADE: Bitcoin Runes memes (2 ↓, Fading, Cope) — @loborunesBTC, @Decentralizd — Solana captured liquidity and attention.
+• FRONT-RUN: privacy / ZK price-action gap (mindshare 2 ↑↑, Mixed) — Sharpe 7d Privacy +27.6% / ZK +33.4% while CT barely talks it — bear: rotation fades without a catalyst
+• RIDE: prediction markets (3 ↑, Bull) — @trend_btc_app @Kalshi_Crypto — thin liquidity / whale games
+• RIDE: Solana RWA tokenization (3 ↑, Bull) — @crypto_ninjas @heybeluga — still a rounding error vs TradFi
+• RIDE: AI cyber-defense surge (3 ↑, Bull) — @gdb — vendor conflict-of-interest cope
+• WATCH: SEC Reg Crypto (3 ↑, Mixed) — @crypto_ninjas @haonguyen6868 — enforcement-by-another-name risk
+• WATCH: AI agent scheming (3 ↑↑, Mixed) — @AlexBores @METR_Evals — sandbox reward-hack ≠ agency
+• WATCH: robotics FMs (2 ↑, Bull) — @SkildAI — demos fail outside the lab
+• FADE: Solana memecoin supercycle (5 →, Peak, Cope) — @gem_insider @VOLTIXSOL @coldtrz — saturating + 90% retrace script
+• FADE: Nvidia AI chip supremacy (5 →, Peak, Bull) — @TechCrunch @NVIDIAGeForce — priced for perfection
+• WATCH: BTC ETF inflow streak (4 →, Peak, Bull) — @heybeluga @AshCrypto — crowded $80k; inflows can flip
+• WATCH: ETH ETF + tokenized stocks (3 ↑, Mixed) — @RookieXBT @heybeluga — ETH still lags BTC relatively
 
 MAP
-Emerging: quantum-safe BTC; OpenAI custom silicon
-Rising: Hyperliquid; DeFi/RWA; Qwen/open models; AI cyber-risk
-Peak: Solana memes; BTC ETF/$80k; Nvidia AI capex
-Fading: Bitcoin Runes; XRP ETF rally
+Emerging: privacy/ZK attention gap; robotics FMs; AI agent scheming
+Rising: prediction markets; Solana RWA; AI cyber-defense; SEC Reg Crypto; ETH tokenization
+Peak: Solana memes; Nvidia AI; BTC ETF/$80k; Hyperliquid/perps
+Fading: quantum-safe BTC; Bitcoin Runes; XRP ETF
 
-Calibration: DefiLlama shows Solana +48.14%, AI +27.15%, DeFi +27.36%, RWA +5,954% on the selected tracker period; category construction and outliers mean these are cross-checks, not trade returns.
+Calibration: Sharpe narrative tracker (2026-08-28 04:04 UTC) — Privacy +27.59% 7d / ZK +33.39% 7d / Intent-Based +173.65% 7d / Memes +12.31% 7d / Perps DEXs +13.40% 7d / AI Agents +13.95% 7d but −0.93% 24h / RWA only +1.29% 7d (social ahead of price). Kaito: AI held top narrative ~28% mindshare for 12 months. xai http=200 SOURCE=api

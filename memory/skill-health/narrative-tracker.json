@@ -1,12 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T01:11:01Z",
-  "quality_score": 3,
-  "assessment": "Substantive and actionable with explicit position calls, but it lacks a conclusion-first regime verdict, provides weak evidence links for most claims, and violates the qualitative-price constraint by emphasizing $80k.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 3.13,
+  "last_analyzed": "2026-08-28T04:47:37Z",
+  "quality_score": 4,
+  "assessment": "Decision-grade positions with verified X/API anchors and clear FRONT-RUN/RIDE/FADE/WATCH calls; misses conclusion-first Skopos framing and slightly stretches a few source-to-narrative links.",
+  "flags": [],
+  "avg_score": 3.16,
   "history": [
     {
       "date": "2026-07-06",
@@ -113,6 +111,12 @@
       "score": 3,
       "ts": "2026-08-28T01:11:01Z",
       "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 4,
+      "ts": "2026-08-28T04:47:37Z",
+      "harness": "grok"
     }
   ]
 }
