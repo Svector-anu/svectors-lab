@@ -1,13 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T04:54:38Z",
-  "quality_score": 2,
-  "assessment": "Decision-grade structure with real narratives, but invents/mislabels hard figures (SOL ETF $56M, ETH ETF $225M, USDe $320M) and mis-anchors a tweet despite empty primary source.",
-  "flags": [
-    "unverifiable_claim",
-    "low_quality"
-  ],
-  "avg_score": 3.12,
+  "last_analyzed": "2026-08-28T05:00:57Z",
+  "quality_score": 5,
+  "assessment": "Decision-grade FRONT-RUN/RIDE/FADE/WATCH slate with live API sourcing; DefiLlama category figures and cited X IDs verify, reflexivity and bears keep it honest.",
+  "flags": [],
+  "avg_score": 3.19,
   "history": [
     {
       "date": "2026-07-06",
@@ -125,6 +122,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T04:54:38Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 5,
+      "ts": "2026-08-28T05:00:57Z",
       "harness": "grok"
     }
   ]
