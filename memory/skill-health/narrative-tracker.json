@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T12:31:35Z",
-  "quality_score": 3,
-  "assessment": "Substantive and conclusion-oriented with explicit position calls, but several narratives lack direct evidence links, conviction counts are unexplained, and the hard live-price percentages violate the strategy’s qualitative-price constraint.",
+  "last_analyzed": "2026-08-28T12:45:39Z",
+  "quality_score": 2,
+  "assessment": "Explicit trade calls and concise structure are useful, but numerous specific catalysts, metrics, classifications, and causal claims lack direct evidence links, while hard live-price figures violate the strategy.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 3.27,
+  "avg_score": 3.2,
   "history": [
-    {
-      "date": "2026-07-11",
-      "score": 4
-    },
     {
       "date": "2026-07-11",
       "score": 4
@@ -156,6 +152,12 @@
       "date": "2026-08-28",
       "score": 3,
       "ts": "2026-08-28T12:31:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T12:45:39Z",
       "harness": "codex"
     }
   ]

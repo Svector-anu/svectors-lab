@@ -1,32 +1,29 @@
-ℹ️ Narrative Tracker — 2026-08-28
-
 *Narrative Tracker — 2026-08-28*
 
 TRANSITIONS
-• BASELINE RESET: prior 3-day logs contain no narrative labels, so today’s clusters are NEW-to-log, not proven market debuts.
-• NEW: Solana crypto-to-cash rails — Bandos turns SOL liquidity into a payments story — https://x.com/fundingexe/status/2092454149442933191
-• NEW: physical-world AI agents — Anthropic and Skild moved agents from browser workflows into labs and robots — https://x.com/AnthropicAI/status/2093038426140651791
-• NEW: frontier-model test hacking — coordination/scheming shifted from abstract safety talk to a reported eval incident — https://x.com/AlexBores/status/2092781255960216020
+• NEW: tokenized equities/RWAs — Solana + Base launches meet sustained sector performance; RIDE — https://x.com/solana/status/2092954231217287342
+• NEW: EURR euro stablecoin — Revolut distribution gives the stablecoin story a concrete bank rail; WATCH — https://x.com/Revolut/status/2092512154603663441
+• NEW: AI eval scheming — multi-million-view eval report moved from research niche to saturated tech discourse; FADE — https://x.com/METR_Evals/status/2092692175452803393
+• PROMOTED: onchain trading rebound → tokenized-equity/RWA rotation — prior broad risk-on attention now has a named product catalyst.
+• DEMOTED: broad large-cap risk-on Rising → Fading — BTC flattened near $80k and today’s signal fragmented into narrower trades.
 
 REFLEXIVITY ALERT
-• none proven. Solana memecoin promotion is coordinated and saturating, but no verified price/flow outcome was supplied; do not infer one.
+• $FONE “next WIF” — giveaway accounts are manufacturing attention around the comparison itself, without a fundamentals change; this is the outcome mechanism, not evidence of adoption. FADE.
+• agentic finance L1s — Amadeus is using the agent label plus validator incentives to bootstrap legitimacy before TVL/usage evidence. WATCH.
 
 POSITIONS
-• FRONT-RUN: Solana cash rails (2 ↑↑, Bull, Emerging) — @bandoscash, @fundingexe — compliance can cap reach — https://x.com/fundingexe/status/2092454149442933191
-• FRONT-RUN: low-latency voice agents (2 ↑, Bull, Emerging) — @kwindla, PhoneLLM — speed may restore old reliability failures — https://x.com/kwindla/status/2093014818647339026
-• RIDE: BTC debasement/ETF bid (5 ↑, Bull, Rising) — @Dennis_Porter_, @CoinMarketCap, @krakenpro — inflow slowdown can expose a bear-market bounce — https://x.com/Dennis_Porter_/status/2092119780497277261
-• RIDE: stables + RWA rails (4 ↑, Bull, Rising) — @KryponThe1st, @Teriq118, @DonCryptonn — value may accrue to TradFi issuers, not tokens — https://x.com/KryponThe1st/status/2092767540464222336
-• WATCH: physical-world AI (3 ↑↑, Mixed, Rising) — @AnthropicAI, @SkildAI, @Dr_Singularity — tail-risk and sim-to-real evidence remain thin — https://x.com/SkildAI/status/2092300842900865389
-• WATCH: model scheming/test hacking (3 ↑, Bear, Rising) — @METR_Evals, @AlexBores, @zeng_xian40157 — one sandboxed incident may be over-read.
-• RIDE: custom/on-device silicon (4 ↑, Mixed, Rising) — @1duooo, @PriGoistic, @zeng_xian40157 — Nvidia’s software moat remains the hard counter.
-• FADE: Solana giveaway memecoins (5 →, Cope, Peak) — @fluffycrypt, @mystayor, @Earnerfun — bot/giveaway activity is not durable demand — https://x.com/fluffycrypt/status/2093048757495415187
-• FADE: generic agent-workflow content (5 →, Cope, Peak) — @Nozelcode, @undefinedKi, @LunarResearcher — frameworks do not solve data, compute, or eval bottlenecks.
+• RIDE: tokenized equities/RWAs (4 ↑, Bull) — @solana, @base, @Bitwise — custody, regulation and thin liquidity can still stall PMF — https://defillama.com/narrative-tracker
+• RIDE: EURR/euro stablecoins (3 ↑, Bull) — @Revolut, @ethereuminsti, @0xPolygon — could remain a Revolut-walled balance with no DeFi velocity.
+• WATCH: physical AI/humanoids (5 →, Mixed) — @AnthropicAI, @Figure_robot, @arduino — viral demos still outrun reliable, affordable deployment.
+• FRONT-RUN: low-latency open voice agents (2 ↑↑, Bull) — @kwindla, @trydaily, @pipecat_ai — frontier vendors can erase the latency niche quickly.
+• FADE: AI eval scheming (5 →, Mixed) — @METR_Evals, @AlexBores, @peterwildeford — incentive-specification artifact, not persistent agency.
+• FADE: $FONE meme rotation (4 ↑↑, Cope) — @mystayor, @serenaonchain, @fluffycrypt — giveaway saturation is exit liquidity.
+• WATCH: BTC $80k squeeze (3 →, Mixed) — @BTCNewsGlobal, @CryptomegaNews — expiry/ETF-flow catalyst can vanish without a clean breakout.
 
 MAP
-Emerging: Solana cash rails; low-latency voice agents
-Rising: BTC ETF/debasement; stables/RWA; physical-world AI; model scheming; custom silicon
-Peak: Solana giveaway memecoins; agent-workflow content; Grok bot swarms
-Fading: none established without a prior baseline
+Emerging: low-latency voice agents; Amadeus agentic-finance L1
+Rising: tokenized equities/RWAs; EURR; AI compute/capex
+Peak: physical AI; AI eval scheming; $FONE
+Fading: broad large-cap risk-on; generic “AI replaces teams”
 
-CALIBRATION
-• Market cross-check: SOL +24.8% over 7d; ENA +18.1% over 24h. Kaito’s public leaderboard says its data updates hourly, but its dynamic table exposed no current numeric rows, so no Kaito percentage was invented.
+Calibration: DefiLlama reports Solana +44.10%, $61.915B market cap and $6.267B 24h volume in its live narrative table. Kaito’s Warden Season 2 creator leaderboard is highly fragmented: #1 has 0.7598% mindshare and #10 has 0.4012%, so account count alone is not treated as sector dominance.
