@@ -1,60 +1,59 @@
-# Market Context (as of 2026-08-27)
+# Market Context (as of 2026-08-28)
 
-> **Take:** risk-on — BTC gained 3.1% and 19/20 top-cap assets are green over 24h. Conviction: medium.
+> **Take:** risk-on — BTC gained 2.6% and 18/20 top-cap assets are green over 24h. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $80,486 (+3.1% 24h, +12.0% 7d) · dominance 59.22% (+0.08 pp since the prior refresh)
-- ETH $2,525 (+3.1% 24h, +10.7% 7d) · ETH/BTC 0.0314
-- SOL $108.06 (+12.8% 24h, +24.1% 7d)
-- Total mcap $2.722T (+0.5% 24h) · DEX vol $8.53B 24h
-- Breadth: 19/20 green 24h · 16/20 green 7d
-- Fear & Greed: 71 (Greed) — yesterday 65
+- BTC $80,722 (+2.6% 24h, +10.4% 7d) · dominance 59.28% (+0.06 pp since the prior refresh)
+- ETH $2,519 (+1.1% 24h, +8.2% 7d) · ETH/BTC 0.0312
+- SOL $109.22 (+8.4% 24h, +24.8% 7d)
+- Total mcap $2.722T (-1.1% 24h) · DEX vol $9.89B 24h
+- Breadth: 18/20 green 24h · 15/20 green 7d
+- Fear & Greed: 73 (Greed) — yesterday 71
 
 ## What Changed Since Last Refresh
-- Regime shifted from rotation to risk-on as BTC accelerated from -0.1% to +3.1% and breadth expanded from 8/20 to 19/20.
-- SOL accelerated from +4.7% to +12.8%, leading the large-cap move.
-- TVL rose 0.7% to $89.07B, but DEX volume stayed weak at $8.53B and fell 18.7% day over day.
+- DEX volume rebounded 15.9% to $9.89B after the prior session's 18.7% contraction.
+- Quiet otherwise — majors remain in the same risk-on regime, Fear & Greed moved only two points, and tracked chain TVL rose 0.3%.
 
 ## Active Narratives
-- **Broad large-cap risk-on** — phase: rising. Evidence: 19/20 top caps are green over 24h and BTC gained 3.1%.
-- **Solana relative strength** — phase: rising. Evidence: SOL gained 12.8% over 24h and 24.1% over seven days.
-- **ETF-supported BTC demand** — phase: rising. Evidence: US spot Bitcoin ETFs recorded $232M net inflow on August 26, extending an eight-session inflow streak.
-- **Ethena momentum** — phase: emerging. Evidence: ENA gained 21.7% and is CoinGecko's top trending asset.
+- **Broad large-cap risk-on** — phase: rising. Evidence: 18/20 top caps are green over 24h and BTC gained 2.6%.
+- **Solana relative strength** — phase: rising. Evidence: SOL gained 8.4% over 24h and 24.8% over seven days.
+- **Ethena momentum** — phase: rising. Evidence: ENA leads CoinGecko trending and gained 18.1% over 24h.
+- **Onchain trading rebound** — phase: emerging. Evidence: DEX volume rose 15.9% day over day, led by Uniswap V4 at $1.45B.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.32B (+11.8%)
-- Aave V3: $17.45B (+8.1%)
-- SSV Network: $12.61B (+9.7%)
+- Lido: $24.21B (+8.6%)
+- Aave V3: $17.58B (+7.6%)
+- SSV Network: $12.63B (+7.5%)
 - Morpho Blue: $9.46B (+9.2%)
-- Binance staked ETH: $9.39B (+10.9%)
+- Binance staked ETH: $9.35B (+8.1%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.81B (n/a)
-- Solana: $5.91B (n/a)
-- BSC: $5.57B (n/a)
+- Ethereum: $49.90B (n/a)
+- Solana: $6.01B (n/a)
+- BSC: $5.61B (n/a)
 
 ## Stablecoins
-Total: $310.2B (+0.7% 7d). USDT $183.3B · USDC $73.9B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.4%.
+Total: $310.4B (+0.8% 7d). USDT $183.3B · USDC $73.9B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.4%.
 
 ## Trending (CoinGecko)
-- ENA — rank-53 momentum, $0.166 (+21.7% 24h)
-- HYPE — rank-10 momentum, $84.83 (+5.5% 24h)
-- PENGU — rank-95 momentum, $0.0098 (+10.7% 24h)
+- ENA — rank-52 momentum, $0.173 (+18.1% 24h)
+- SOL — rank-7 momentum, $109.40 (+8.3% 24h)
+- PENGU — rank-95 momentum, $0.0097 (+2.9% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Legacy beats FUT Esports (BO3) | 76.5% | $4.94M | $0.16M |
-| U.S. invades Iran before 2027 | 12.5% | $2.28M | $1.00M |
-| Barcelona wins on August 27 | 79.5% | $1.07M | $1.71M |
+| Los Angeles Dodgers vs. Atlanta Braves | 20.5% | $7.35M | $0.28M |
+| U.S. invades Iran before 2027 | 12.5% | $2.36M | $1.09M |
+| Augusto Cury wins the 2026 Brazilian presidential election | 3.4% | $1.20M | $0.20M |
 
 ## Macro Catalysts (next 48h)
-- An eight-session, $2.8B US spot Bitcoin ETF inflow streak supports dips, though the latest daily inflow slowed to $232M.
-- Falling DEX activity weakens confirmation; avoid treating price breadth alone as durable until volume recovers.
+- [U.S. spot Bitcoin ETFs absorbed $2.8B across eight sessions](https://decrypt.co/376683/bitcoin-etfs-draw-2-8b-in-eight-day-streak-as-btc-tests-80k), but daily inflow slowed to $232M on August 26; the streak supports dips while deceleration caps conviction.
+- DEX volume's 15.9% rebound improves confirmation, but one session is not enough to establish a durable activity trend.
 
 ## Implications for Downstream Skills
-- **token-pick:** ride liquid large-cap relative strength, especially SOL-linked momentum; require fee or volume confirmation before chasing smaller beta.
-- **narrative-tracker:** monitor broad risk-on and Solana strength for saturation; watch whether Ethena expands beyond one trending token.
+- **token-pick:** favor liquid SOL and onchain-trading exposure; require sustained volume before moving into smaller beta.
+- **narrative-tracker:** monitor Ethena and the DEX rebound for broader participation rather than single-token momentum.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

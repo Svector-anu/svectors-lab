@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-27T16:32:39Z",
+  "last_analyzed": "2026-08-28T01:08:32Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first and partly sourced, but most exact metrics are unverified, no actionable position call is given, and the claimed workspace updates contradict the read-only run constraint.",
+  "assessment": "Conclusion-first but lacks explicit position calls, cites only the ETF claim, violates the qualitative-price constraint, and makes contradictory read-only workspace-update claims.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
-  "avg_score": 3.08,
+  "avg_score": 3.04,
   "history": [
     {
       "date": "2026-07-06",
@@ -111,6 +111,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T16:32:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T01:08:32Z",
       "harness": "codex"
     }
   ]

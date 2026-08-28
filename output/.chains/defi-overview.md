@@ -1,19 +1,26 @@
-Take: risk-on — BTC gained 3.1% and 19/20 top-cap assets are green. Conviction: medium; DEX volume fell 18.7%, limiting confirmation.
+Take: risk-on — BTC gained 2.6% with 18/20 top-cap assets green.
 
-- TVL: $89.07B, up 0.7% since the prior refresh.
-- SOL led majors at +12.8%; ETH and BTC both gained about 3.1%.
-- Fear & Greed: 71, unchanged from this morning and up six points from yesterday.
-- Sustainable-yield leaders: WETH-USDT 59.5%, ETH-LINK 45.1%, ETH-USDC 41.6%; all passed the skill’s consistency and TVL filters.
-- US spot Bitcoin ETFs recorded roughly $232M of August 26 inflows, extending an eight-session streak ([flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/), [coverage](https://decrypt.co/376683/bitcoin-etfs-draw-2-8b-in-eight-day-streak-as-btc-tests-80k)).
+Conviction: medium — breadth, SOL strength, and DEX activity agree; sentiment and TVL improved only marginally.
 
-Updated:
+Evidence: DEX volume rebounded 15.9% to $9.89B.
 
-- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- [2026-08-27.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-27.md)
+- BTC: $80,722 (+2.6% 24h)
+- ETH: $2,519 (+1.1%)
+- SOL: $109.22 (+8.4%)
+- Fear & Greed: 73, Greed
+- Chain TVL: $89.29B (+0.3% since prior refresh)
+- Stablecoin supply: $310.4B (+0.17% 24h)
+- Leading protocol mover: Saturn +100.8%; no obvious catalyst
+- Fees leader: Tether at $15.91M
+- Leading sustainable yield: Uniswap V3 WETH-USDT, 52.6% base APY on $114M TVL
+- Leading incentive yield: Aerodrome USDC-AERO, 23.5% via AERO rewards
+- ETF context: the eight-session $2.8B inflow streak supports dips, although daily inflows slowed to $232M. [Source](https://decrypt.co/376683/bitcoin-etfs-draw-2-8b-in-eight-day-streak-as-btc-tests-80k)
 
 ## Summary
 
-- Positions: `DEFI_MONITOR_NO_CONFIG`.
-- All nine data-source groups succeeded.
-- Notification delivery was attempted but the harness queue was read-only.
-- Commit creation was blocked because `.git/refs` is read-only. Changes remain safely present and uncommitted; unrelated workspace changes were untouched.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Added the run record to [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
+- Preserved the complete token-pick history.
+- Positions facet reported `DEFI_MONITOR_NO_CONFIG`.
+- Notification delivery was attempted but its external queue is read-only.
+- Commit creation was also blocked because this environment exposes `.git` as read-only; the files remain updated in the workspace.
