@@ -1,26 +1,18 @@
-Take: risk-on — BTC gained 2.6% with 18/20 top-cap assets green.
+Take: chop — BTC is nearly flat at +0.2% and breadth cooled to 12/20 green, while DEX volume surged 30.3% to $11.12B. Conviction is low because onchain activity and ETF inflows disagree with weakening breadth.
 
-Conviction: medium — breadth, SOL strength, and DEX activity agree; sentiment and TVL improved only marginally.
+Key signals:
 
-Evidence: DEX volume rebounded 15.9% to $9.89B.
-
-- BTC: $80,722 (+2.6% 24h)
-- ETH: $2,519 (+1.1%)
-- SOL: $109.22 (+8.4%)
+- TVL: $89.07B, down 0.25% from the prior refresh
+- BTC: $79,642; ETH: $2,504; SOL: $105.62
 - Fear & Greed: 73, Greed
-- Chain TVL: $89.29B (+0.3% since prior refresh)
-- Stablecoin supply: $310.4B (+0.17% 24h)
-- Leading protocol mover: Saturn +100.8%; no obvious catalyst
-- Fees leader: Tether at $15.91M
-- Leading sustainable yield: Uniswap V3 WETH-USDT, 52.6% base APY on $114M TVL
-- Leading incentive yield: Aerodrome USDC-AERO, 23.5% via AERO rewards
-- ETF context: the eight-session $2.8B inflow streak supports dips, although daily inflows slowed to $232M. [Source](https://decrypt.co/376683/bitcoin-etfs-draw-2-8b-in-eight-day-streak-as-btc-tests-80k)
+- Stablecoin supply: $310.9B, up 0.28% daily
+- Sustainable-yield leaders: Uniswap WETH-USDT 40.1%, ETH-LINK 37.0%, WBTC-USDT 22.2%
+- U.S. Bitcoin ETFs absorbed roughly $2.8B over eight sessions, but the flat BTC tape suggests treating flows as confirmation rather than a standalone entry signal. [CoinDesk](https://www.coindesk.com/business/2026/08/27/live-updates-bitcoin-etf-inflows-hit-eight-straight-days-as-august-tops-usd3-billion)
 
 ## Summary
 
 - Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Added the run record to [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
 - Preserved the complete token-pick history.
-- Positions facet reported `DEFI_MONITOR_NO_CONFIG`.
-- Notification delivery was attempted but its external queue is read-only.
-- Commit creation was also blocked because this environment exposes `.git` as read-only; the files remain updated in the workspace.
+- Appended the run to [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
+- No tracked DeFi positions were configured.
+- Notification delivery was attempted but the external queue was read-only.

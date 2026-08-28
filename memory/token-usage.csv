@@ -129,4 +129,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-28,narrative-tracker,glm-5.2,77749,18766,4873728,0
 2026-08-28,narrative-tracker,glm-5.2,76873,16234,4364992,0
 2026-08-28,narrative-tracker,default,0,0,0,0
-2026-08-28,heartbeat,codex-default,395605,4745,334336,0
+2026-08-28,defi-overview,codex-default,473259,6712,398848,0

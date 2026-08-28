@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-28T01:08:32Z",
+  "last_analyzed": "2026-08-28T12:25:12Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first but lacks explicit position calls, cites only the ETF claim, violates the qualitative-price constraint, and makes contradictory read-only workspace-update claims.",
+  "assessment": "Conclusion-first regime read is useful, but it lacks explicit position calls, improperly headlines live prices, provides weak sourcing for most figures, and claims workspace writes despite the run being read-only.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3.04,
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-07-06",
@@ -117,6 +117,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T01:08:32Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T12:25:12Z",
       "harness": "codex"
     }
   ]
