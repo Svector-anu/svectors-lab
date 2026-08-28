@@ -12,7 +12,7 @@
     "last_success": "2026-08-27T16:30:35Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-27T16:32:43Z",
     "total_runs": 334,
     "total_successes": 26,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.08,
     "last_quality_score": 2,
-    "last_dispatch": "2026-08-27T16:27:53Z",
+    "last_dispatch": "2026-08-28T01:03:22Z",
     "last_failed": "2026-08-25T19:04:26Z",
     "last_error": "read_id\":\"01a03a4f-31ce-7381-8489-49d501aa64ed\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt"
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-25T19:04:29Z",
     "total_runs": 362,
     "total_successes": 29,
@@ -35,7 +35,7 @@
     "last_error": "read_id\":\"01a03a4f-3d04-7b23-9749-7d0de34b32e9\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt",
     "last_success": "2026-08-27T16:32:32Z",
     "last_quality_score": 3,
-    "last_dispatch": "2026-08-27T16:27:53Z"
+    "last_dispatch": "2026-08-28T01:03:22Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -100,8 +100,8 @@
     "last_error": "58c057\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "skill-health": {
-    "last_dispatch": "2026-08-26T18:24:34Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T01:03:22Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-26T18:27:24Z",
     "total_runs": 281,
     "total_successes": 10,
@@ -150,14 +150,14 @@
     "last_quality_score": 4
   },
   "digest": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-23T14:29:47Z",
     "total_runs": 150,
     "total_successes": 10,
     "total_failures": 140,
     "consecutive_failures": 0,
     "success_rate": 0.07,
-    "last_dispatch": "2026-08-26T14:12:11Z",
+    "last_dispatch": "2026-08-28T01:03:22Z",
     "last_error": "41e1e2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-08-27T16:31:22Z",
     "last_quality_score": 2
@@ -212,14 +212,14 @@
     "last_error": "4982e4\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "memory-flush": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-26T23:47:27Z",
     "total_runs": 4,
     "total_successes": 4,
     "total_failures": 0,
     "consecutive_failures": 0,
     "success_rate": 1,
-    "last_dispatch": "2026-08-26T23:46:00Z"
+    "last_dispatch": "2026-08-28T01:03:22Z"
   },
   "aeon-doctor": {
     "last_status": "success",
@@ -304,8 +304,8 @@
     "last_quality_score": 3
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-08-26T16:40:19Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T01:03:22Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-26T16:47:12Z",
     "total_runs": 2,
     "total_successes": 2,
@@ -315,8 +315,8 @@
     "last_quality_score": 2
   },
   "self-improve": {
-    "last_dispatch": "2026-08-25T19:39:57Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T01:03:22Z",
+    "last_status": "dispatched",
     "last_failed": "2026-08-25T19:05:08Z",
     "total_runs": 3,
     "total_successes": 1,
@@ -338,8 +338,8 @@
     "last_quality_score": 2
   },
   "write-tweet": {
-    "last_dispatch": "2026-08-27T05:07:23Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T01:03:22Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-27T05:09:49Z",
     "total_runs": 1,
     "total_successes": 1,
