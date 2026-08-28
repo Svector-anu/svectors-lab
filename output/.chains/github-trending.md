@@ -1,34 +1,35 @@
-ℹ️ GitHub Trending — 2026-08-26
+*GitHub Trending — 2026-08-28*
 
-*GitHub Trending — 2026-08-26*
-
-*Top pick* — [marin-community/marin](https://github.com/marin-community/marin)
-The rare foundation-model lab that ships process, not just weights — every experiment, failure, and recipe stays public while it scales toward a 500B+ MoE.
+*Top pick* — [tailscale/tailcat](https://github.com/tailscale/tailcat)
+Tailcat turns encrypted peer-to-peer connectivity into a tiny composable primitive instead of a control-plane dependency.
 
 *AI/ML*
-• [marin-community/marin](https://github.com/marin-community/marin) — ★ 443t (2.4k total) · Python · [RETURNING]
-Open-development training stack: data curation → tokenization → pretraining → eval, with failed experiments kept in the record.
+• [marin-community/marin](https://github.com/marin-community/marin) — ★ 236 today (2.8k total) · Python · RETURNING
+Makes foundation-model experiments reproducible across data processing, training, evaluation, and scaling in one open stack.
+
+• [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) — ★ 405 today (21.3k total) · TypeScript · ACCELERATING
+Normalizes 34 free providers behind one endpoint with routing, failover, and encrypted local key storage.
 
 *Devtools*
-• [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) — ★ 1.6kt (112k total) · JavaScript · [ACCELERATING]
-Agent skill that biases coders toward minimal code — measured ~54% less output on real sessions while keeping every safety guard.
+• [tt-a1i/archify](https://github.com/tt-a1i/archify) — ★ 4,561 today (25.5k total) · JavaScript · ACCELERATING
+Gives coding agents a repeatable path from repository evidence to exportable, self-contained architecture diagrams.
 
-• [tt-a1i/archify](https://github.com/tt-a1i/archify) — ★ 1kt (17.7k total) · HTML · [ACCELERATING]
-Turns a repo into an interactive architecture map with a typed JSON IR — diagrams become diffable, verifiable artifacts instead of stale screenshots.
+• [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) — ★ 189 today (46.0k total) · TypeScript · ACCELERATING
+Builds a browser-local code knowledge graph, keeping repository analysis off servers while still enabling Graph RAG.
 
-• [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search) — ★ 1.3kt (36.4k total) · Python · [ACCELERATING]
-Local-only Claude Code workflow for the whole application funnel — author credits it with 69 applications → 20 interviews → one signed AI-engineer contract.
+• [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) — ★ 574 today (2.4k total) · Go · RETURNING
+Encodes post-1.13 Go practices specifically for agents, reducing stale idioms in generated code.
 
-*Web/Apps*
-• [AgriciDaniel/claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian) — ★ 812t (13.4k total) · Python · [ACCELERATING]
-Second-brain skill that keeps the knowledge graph as plain Markdown you own — answers cite vault evidence instead of hallucinating over it.
-
-• [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) — ★ 522t (38.2k total) · Rust · [ACCELERATING]
-Local-first personal-AI harness in Rust: agent-fleet orchestration plus memory that never leaves your machine.
+• [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) — ★ 61 today (49.9k total) · TypeScript · ACCELERATING
+Lets coding agents inspect live browser state, performance traces, and console failures through Chrome's native tooling.
 
 *Infra*
-• [basecamp/omarchy](https://github.com/basecamp/omarchy) — ★ 1kt (31.9k total) · Shell · [RETURNING]
-DHH's opinionated Arch + Hyprland daily-driver just shipped v4.0.1 — the reference config for a tiling-Wayland setup that stays boring.
+• [tailscale/tailcat](https://github.com/tailscale/tailcat) — ★ 986 today (2.3k total) · Go · RETURNING
+Separates Tailscale's encrypted data plane from its control plane for direct netcat-style peer connections.
+
+*Web/Apps*
+• [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — ★ 1,984 today (10.0k total) · JavaScript · ACCELERATING
+Combines live public geospatial feeds on a photorealistic globe, making OSINT exploration immediately interactive.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/16
+sources: trending=ok · gh_api=ok · kept 8/19

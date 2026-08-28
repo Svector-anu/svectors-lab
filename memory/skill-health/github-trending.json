@@ -1,10 +1,12 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-26T21:58:40Z",
-  "quality_score": 4,
-  "assessment": "Substantive, well-structured trending digest with a conclusion-first top pick, specific sourced repo details (links, star deltas, README-derived figures), category verdicts, and honest provenance (trending=ok, gh_api=ok, kept 7/16); claims are plausibly fetched rather than invented, though the digest is only tangentially related to the crypto-signal north star.",
-  "flags": [],
-  "avg_score": 3.2,
+  "last_analyzed": "2026-08-28T12:43:07Z",
+  "quality_score": 3,
+  "assessment": "Substantive and plausibly verifiable GitHub-trending digest, but it does not serve the crypto-trader strategy with a regime verdict or explicit position call, and momentum labels lack visible evidence or definitions.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 3.18,
   "history": [
     {
       "date": "2026-07-28",
@@ -50,6 +52,12 @@
       "ts": "2026-08-26T21:58:40Z",
       "harness": "glm",
       "model": "glm-5.2"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 3,
+      "ts": "2026-08-28T12:43:07Z",
+      "harness": "codex"
     }
   ]
 }
