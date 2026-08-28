@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-28T12:25:12Z",
+  "last_analyzed": "2026-08-28T22:43:22Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first regime read is useful, but it lacks explicit position calls, improperly headlines live prices, provides weak sourcing for most figures, and claims workspace writes despite the run being read-only.",
+  "assessment": "Specific market figures lack source anchors, explicit position calls are missing, and claimed workspace writes contradict the stated read-only run.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3,
+  "avg_score": 2.96,
   "history": [
     {
       "date": "2026-07-06",
@@ -123,6 +123,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T12:25:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T22:43:22Z",
       "harness": "codex"
     }
   ]

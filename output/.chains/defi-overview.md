@@ -1,18 +1,23 @@
-Take: chop — BTC is nearly flat at +0.2% and breadth cooled to 12/20 green, while DEX volume surged 30.3% to $11.12B. Conviction is low because onchain activity and ETF inflows disagree with weakening breadth.
+Latest DeFi overview completed.
+
+The regime shifted from chop to risk-off: BTC fell 3.2%, ETH fell 3.0%, and only 5/20 top-cap assets remain green. Conviction is medium because Fear & Greed remains at 73 and DEX volume is still up 30.3%.
 
 Key signals:
 
-- TVL: $89.07B, down 0.25% from the prior refresh
-- BTC: $79,642; ETH: $2,504; SOL: $105.62
-- Fear & Greed: 73, Greed
-- Stablecoin supply: $310.9B, up 0.28% daily
-- Sustainable-yield leaders: Uniswap WETH-USDT 40.1%, ETH-LINK 37.0%, WBTC-USDT 22.2%
-- U.S. Bitcoin ETFs absorbed roughly $2.8B over eight sessions, but the flat BTC tape suggests treating flows as confirmation rather than a standalone entry signal. [CoinDesk](https://www.coindesk.com/business/2026/08/27/live-updates-bitcoin-etf-inflows-hit-eight-straight-days-as-august-tops-usd3-billion)
+- Tracked chain TVL: $87.57B, down 1.7% since the prior refresh
+- DEX volume: $11.12B
+- Stablecoin supply: $310.4B, up 0.14% daily
+- Top protocol mover: Aerodrome Slipstream +46.1%
+- Largest decline: Solstice −17.5%
+- No configured on-chain positions; logged `DEFI_MONITOR_NO_CONFIG`
+- All market-data sources succeeded
+
+The notification was attempted, but the harness’s notification and feed queues are read-only, so delivery could not be confirmed.
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Preserved the complete token-pick history.
-- Appended the run to [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
-- No tracked DeFi positions were configured.
-- Notification delivery was attempted but the external queue was read-only.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
+- Appended the complete run record to [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md)
+- Preserved the complete token-pick history
+- Validated the required context structure and 4,000-character notification limit
+- Follow-up needed: none, aside from the external notification-queue permission issue
