@@ -15,6 +15,10 @@ PROMPT="$(cat "$RH_PROMPT_FILE")"; PREFIX="${RH_COMPAT_RULES:-}"
 [ -n "${RH_JSON_SCHEMA:-}" ] && PROMPT="${PROMPT}$(schema_prompt_suffix "$RH_JSON_SCHEMA")"
 ARGS=(-p --output-format json)
 [ -n "${RH_MODEL:-}" ] && [ "$RH_MODEL" != "default" ] && ARGS+=(--model "$RH_MODEL")
+# Headless CI always starts from a fresh HOME, so the workspace has no persisted
+# trust decision. --trust skips only that prompt; unlike --force, it does not
+# grant command execution or file writes.
+ARGS+=(--trust)
 [ "${RH_MODE:-write}" != "read-only" ] && ARGS+=(--force)
 OUT="$RH_TMPDIR/cursor-out.json"; printf '%s' "$PROMPT" | agent "${ARGS[@]}" > "$OUT"; rc=$?
 [ $rc -ne 0 ] && { echo "cursor exited $rc: $(tail -c 4000 "$OUT" | tr '\n' ' ')" >&2; exit $rc; }
