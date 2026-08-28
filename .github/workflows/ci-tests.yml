@@ -66,6 +66,8 @@ jobs:
         run: bash scripts/tests/test_run_grok.sh
       - name: harness-adapter grok tests
         run: bash scripts/tests/test_harness_adapter_grok.sh
+      - name: hermes adapter tests
+        run: bash scripts/tests/test_hermes_adapter.sh
       - name: harness capability manifest tests
         run: bash scripts/tests/test_generate_harnesses_json.sh
       - name: harness resolution tests
