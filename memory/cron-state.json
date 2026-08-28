@@ -25,14 +25,14 @@
     "last_error": "read_id\":\"01a03a4f-31ce-7381-8489-49d501aa64ed\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt"
   },
   "narrative-tracker": {
-    "last_status": "success",
-    "last_failed": "2026-08-25T19:04:29Z",
-    "total_runs": 369,
+    "last_status": "failed",
+    "last_failed": "2026-08-28T05:54:19Z",
+    "total_runs": 370,
     "total_successes": 36,
-    "total_failures": 333,
-    "consecutive_failures": 0,
+    "total_failures": 334,
+    "consecutive_failures": 1,
     "success_rate": 0.1,
-    "last_error": "read_id\":\"01a03a4f-3d04-7b23-9749-7d0de34b32e9\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt",
+    "last_error": "a460ae\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-08-28T05:48:29Z",
     "last_quality_score": 3,
     "last_dispatch": "2026-08-28T01:03:22Z"
