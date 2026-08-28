@@ -131,4 +131,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-28,narrative-tracker,default,0,0,0,0
 2026-08-28,narrative-tracker,codex-default,432541,4357,364032,0
 2026-08-28,narrative-tracker,codex-default,583372,4238,524800,0
-2026-08-28,search-skill,codex-default,429724,2868,372736,0
+2026-08-28,skill-health,codex-default,616358,3650,521216,0
