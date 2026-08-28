@@ -1,10 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-27T16:29:35Z",
+  "last_analyzed": "2026-08-28T12:23:33Z",
   "quality_score": 3,
-  "assessment": "Acceptable no-signal completion with a clear trigger-based skip, but the F&G reading is not source-linked or otherwise verifiable in the final output.",
+  "assessment": "Acceptable trigger-based no-op with an explicit outcome, but the F&G value lacks a source or timestamp, limiting verifiability and freshness.",
   "flags": [],
-  "avg_score": 3.42,
+  "avg_score": 3.38,
   "history": [
     {
       "date": "2026-07-08",
@@ -54,6 +54,12 @@
       "date": "2026-08-27",
       "score": 3,
       "ts": "2026-08-27T16:29:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 3,
+      "ts": "2026-08-28T12:23:33Z",
       "harness": "codex"
     }
   ]
