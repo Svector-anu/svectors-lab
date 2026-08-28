@@ -1,0 +1,402 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Narrative Tracker",
+        "description": "2026-08-28"
+      },
+      "children": [
+        "heading_baseline",
+        "text_baseline",
+        "separator_1",
+        "heading_reflexivity",
+        "reflexivity_alert_1",
+        "reflexivity_alert_2",
+        "separator_2",
+        "heading_divergence",
+        "divergence_alert",
+        "separator_3",
+        "heading_positions",
+        "stack_positions",
+        "separator_4",
+        "heading_map",
+        "map_stack",
+        "separator_5",
+        "text_source"
+      ]
+    },
+    "heading_baseline": {
+      "type": "Heading",
+      "props": {
+        "text": "BASELINE NOTE",
+        "level": "h2"
+      }
+    },
+    "text_baseline": {
+      "type": "Text",
+      "props": {
+        "text": "No usable prior narrative-tracker data in the last 3 days (2026-08-26 to 2026-08-28 logs show stub runs only). Establishing fresh baseline today — no NEW/PROMOTED/DEMOTED/DEAD calls made."
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_reflexivity": {
+      "type": "Heading",
+      "props": {
+        "text": "REFLEXIVITY ALERT",
+        "level": "h2"
+      }
+    },
+    "reflexivity_alert_1": {
+      "type": "Alert",
+      "props": {
+        "title": "Solana memecoin/casino saturation",
+        "message": "@moonshot-style giveaway mechanics are manufacturing pump volume, not organic demand (explicit rug-risk bear case).",
+        "type": "warning"
+      }
+    },
+    "reflexivity_alert_2": {
+      "type": "Alert",
+      "props": {
+        "title": "Zcash privacy launchpads",
+        "message": "Riding the Grayscale spot Zcash ETF filing (2026-08-21) for legitimacy while still niche-volume on X — narrative running ahead of product.",
+        "type": "warning"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_divergence": {
+      "type": "Heading",
+      "props": {
+        "text": "DIVERGENCE FLAG",
+        "level": "h2"
+      }
+    },
+    "divergence_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "BTC sentiment vs on-chain breadth",
+        "message": "X sentiment calls BTC \"testing 80k without confirmed altseason\" (cooling), but on-chain breadth (18/20 top-caps green, DEX vol +15.9%) is actually improving. Social narrative may be lagging the data — worth a re-check next cycle for a cooling-to-rising flip.",
+        "type": "info"
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_positions": {
+      "type": "Heading",
+      "props": {
+        "text": "POSITIONS",
+        "level": "h2"
+      }
+    },
+    "stack_positions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "position_1",
+        "position_2",
+        "position_3",
+        "position_4",
+        "position_5",
+        "position_6"
+      ]
+    },
+    "position_1": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_ride_1",
+        "text_position_1"
+      ]
+    },
+    "badge_ride_1": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "default"
+      }
+    },
+    "text_position_1": {
+      "type": "Text",
+      "props": {
+        "text": "AI agentic economy — onchain agents as \"invisible hedge funds\" + agent orchestration (mindshare 3 up, Mixed) — @RaoulGMI, @ceterispar1bus, @OriSilver — bear: agents fail risk/compliance at scale w/o human override"
+      }
+    },
+    "position_2": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_fade",
+        "text_position_2"
+      ]
+    },
+    "badge_fade": {
+      "type": "Badge",
+      "props": {
+        "text": "FADE",
+        "variant": "destructive"
+      }
+    },
+    "text_position_2": {
+      "type": "Text",
+      "props": {
+        "text": "Solana memecoin/casino saturation (mindshare 3 flat, Cope) — @elenakvcs, @moonshot — bear: unsustainable liquidity, rug risk"
+      }
+    },
+    "position_3": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_frontrun",
+        "text_position_3"
+      ]
+    },
+    "badge_frontrun": {
+      "type": "Badge",
+      "props": {
+        "text": "FRONT-RUN",
+        "variant": "secondary"
+      }
+    },
+    "text_position_3": {
+      "type": "Text",
+      "props": {
+        "text": "Zcash privacy/shielded launchpads (mindshare 2 up, Bull) — @zec_bit, @orcabayio — bear: regulatory crackdown on privacy tools"
+      }
+    },
+    "position_4": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_ride_2",
+        "text_position_4"
+      ]
+    },
+    "badge_ride_2": {
+      "type": "Badge",
+      "props": {
+        "text": "RIDE",
+        "variant": "default"
+      }
+    },
+    "text_position_4": {
+      "type": "Text",
+      "props": {
+        "text": "Tokenized stocks/RWA on Base (mindshare 3 up, Bull) — @coinbase, @orcabayio — bear: liquidity/reg hurdles delay institutional flow; multi-day theme since 08-25 digest"
+      }
+    },
+    "position_5": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_watch_1",
+        "text_position_5"
+      ]
+    },
+    "badge_watch_1": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "text_position_5": {
+      "type": "Text",
+      "props": {
+        "text": "BTC 80k resistance / altseason unconfirmed (mindshare 4 down per X, Mixed) — @Egypt_pharaoh2 — see divergence flag above"
+      }
+    },
+    "position_6": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_watch_2",
+        "text_position_6"
+      ]
+    },
+    "badge_watch_2": {
+      "type": "Badge",
+      "props": {
+        "text": "WATCH",
+        "variant": "outline"
+      }
+    },
+    "text_position_6": {
+      "type": "Text",
+      "props": {
+        "text": "NVIDIA earnings spillover into crypto risk-on (mindshare 3 down, Mixed) — @NVIDIAGeForce — bear: any miss triggers profit-taking across tech and BTC"
+      }
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_map": {
+      "type": "Heading",
+      "props": {
+        "text": "MAP",
+        "level": "h2"
+      }
+    },
+    "map_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "map_emerging",
+        "map_rising",
+        "map_peak",
+        "map_fading"
+      ]
+    },
+    "map_emerging": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_emerging_heading",
+        "map_emerging_text"
+      ]
+    },
+    "map_emerging_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Emerging",
+        "level": "h3"
+      }
+    },
+    "map_emerging_text": {
+      "type": "Text",
+      "props": {
+        "text": "Zcash privacy launchpads"
+      }
+    },
+    "map_rising": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_rising_heading",
+        "map_rising_text"
+      ]
+    },
+    "map_rising_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Rising",
+        "level": "h3"
+      }
+    },
+    "map_rising_text": {
+      "type": "Text",
+      "props": {
+        "text": "AI agentic economy, Tokenized stocks/RWA"
+      }
+    },
+    "map_peak": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_peak_heading",
+        "map_peak_text"
+      ]
+    },
+    "map_peak_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Peak",
+        "level": "h3"
+      }
+    },
+    "map_peak_text": {
+      "type": "Text",
+      "props": {
+        "text": "Solana memecoin/casino saturation"
+      }
+    },
+    "map_fading": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "map_fading_heading",
+        "map_fading_text"
+      ]
+    },
+    "map_fading_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Fading/Watch",
+        "level": "h3"
+      }
+    },
+    "map_fading_text": {
+      "type": "Text",
+      "props": {
+        "text": "BTC altseason-unconfirmed, NVIDIA spillover"
+      }
+    },
+    "separator_5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_source": {
+      "type": "Text",
+      "props": {
+        "text": "Source: X.AI Grok x_search (HTTP 200, live). Quant calibration (Kaito/DefiLlama) = n/a, both dashboards JS-blocked to fetch tools this cycle.",
+        "variant": "muted"
+      }
+    }
+  }
+}

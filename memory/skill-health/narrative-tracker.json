@@ -1,10 +1,12 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T05:16:06Z",
-  "quality_score": 5,
-  "assessment": "Decision-grade narrative map with labeled FRONT-RUN/RIDE/FADE/WATCH calls, sourced transitions/reflexivity, and DefiLlama/ZCSH/ETF figures that check out.",
-  "flags": [],
-  "avg_score": 3.28,
+  "last_analyzed": "2026-08-28T05:47:16Z",
+  "quality_score": 3,
+  "assessment": "Actionable position calls with explicit calls (RIDE/FADE/FRONT-RUN/WATCH) and honest gap reporting, but specific quantitative claims (18/20 green, +15.9% vol, mindshare scores) lack transparent sourcing.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.27,
   "history": [
     {
       "date": "2026-07-06",
@@ -141,6 +143,12 @@
       "score": 5,
       "ts": "2026-08-28T05:16:06Z",
       "harness": "grok"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 3,
+      "ts": "2026-08-28T05:47:16Z",
+      "harness": "claude"
     }
   ]
 }
