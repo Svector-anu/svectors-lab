@@ -1,10 +1,10 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T05:00:57Z",
-  "quality_score": 5,
-  "assessment": "Decision-grade FRONT-RUN/RIDE/FADE/WATCH slate with live API sourcing; DefiLlama category figures and cited X IDs verify, reflexivity and bears keep it honest.",
+  "last_analyzed": "2026-08-28T05:09:32Z",
+  "quality_score": 4,
+  "assessment": "Decision-grade map with explicit FRONT-RUN/RIDE/FADE calls and verified DefiLlama/MindoAI/ETF anchors; buries the tradeable take behind metadata and transitions instead of conclusion-first.",
   "flags": [],
-  "avg_score": 3.19,
+  "avg_score": 3.21,
   "history": [
     {
       "date": "2026-07-06",
@@ -128,6 +128,12 @@
       "date": "2026-08-28",
       "score": 5,
       "ts": "2026-08-28T05:00:57Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 4,
+      "ts": "2026-08-28T05:09:32Z",
       "harness": "grok"
     }
   ]
