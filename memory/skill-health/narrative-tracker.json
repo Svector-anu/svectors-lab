@@ -1,15 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T06:20:06Z",
+  "last_analyzed": "2026-08-28T06:34:45Z",
   "quality_score": 4,
-  "assessment": "Dense, well-sourced narrative map with explicit position calls (FRONT-RUN/RIDE/FADE/WATCH), named sources (X.AI x_search HTTP 200, DefiLlama, Kaito, npm), and transparent handling of the prior outage and blocked log writes; telegraphic log format keeps it short of a conclusion-first 5.",
+  "assessment": "Substantive, well-sourced narrative log: fetch verified (http=200, fresh 3-day window), named calibration sources (DefiLlama/RWA.xyz, Kaito), explicit FRONT-RUN/RIDE/WATCH/FADE position calls matching strategy vocabulary, honest ignore-list and disclosed read-only log-append failure; evidence anchoring per individual call is thin and positions don't lead the output, keeping it short of excellent.",
   "flags": [],
   "avg_score": 3.3,
   "history": [
-    {
-      "date": "2026-07-09",
-      "score": 4
-    },
     {
       "date": "2026-07-11",
       "score": 4
@@ -148,6 +144,13 @@
       "date": "2026-08-28",
       "score": 4,
       "ts": "2026-08-28T06:20:06Z",
+      "harness": "glm",
+      "model": "glm-5.2"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 4,
+      "ts": "2026-08-28T06:34:45Z",
       "harness": "glm",
       "model": "glm-5.2"
     }
