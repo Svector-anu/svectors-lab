@@ -1,12 +1,12 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-08-27T16:29:36Z",
+  "last_analyzed": "2026-08-28T22:41:19Z",
   "quality_score": 2,
-  "assessment": "The merge decision is clear, but the claimed workspace file updates are incompatible with the read-only run and therefore unverifiable.",
+  "assessment": "The merge decision is concise and actionable, but the claimed workspace file updates contradict the explicitly read-only run and make the final output materially unverifiable.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.5,
+  "avg_score": 2.4,
   "history": [
     {
       "date": "2026-08-25",
@@ -26,6 +26,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T16:29:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T22:41:19Z",
       "harness": "codex"
     }
   ]

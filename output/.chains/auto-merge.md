@@ -1,17 +1,18 @@
-Auto-merge completed in live mode.
+## Auto Merge — 2026-08-28
 
-- Repository: `aeonfun/aeon`
-- Open PRs considered: 1
-- Merged: 0
-- Skipped: `#954` — `SKIP:author-not-allowlisted:danbuildss`
-- The required retry resolved its state to `DIRTY`/conflicting; it is also from a fork.
-- No merge was attempted and no notification was sent.
+No PRs merged from `aeonfun/aeon`.
+
+- #984 — skipped: author `Svector-anu` is not allowlisted; also cross-repository.
+- #983 — skipped: author `Svector-anu` is not allowlisted; also cross-repository.
+- Qualified: 0/2
+- Retry-capped: 0
+- Notification: not sent, per no-signal policy.
 
 ## Summary
 
-Updated and validated:
+Updated:
 
-- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
-- [2026-08-27.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-27.md)
+- `memory/topics/auto-merge-state.json`
+- `memory/logs/2026-08-28.md`
 
-No follow-up is required unless `danbuildss` should be added manually under `## Trusted Authors`.
+State JSON passed validation. To make these PRs eligible in future, add `Svector-anu` under `## Trusted Authors`; the cross-repository restriction would still prevent automatic merging.
