@@ -1,13 +1,12 @@
 {
   "skill": "soul-builder",
-  "last_analyzed": "2026-08-27T12:34:46Z",
+  "last_analyzed": "2026-08-28T03:57:06Z",
   "quality_score": 2,
-  "assessment": "Mostly a status summary with file pointers; it omits the actual soul profile content and evidence from the 31 posts, making the result insufficiently substantive or verifiable from the final output.",
+  "assessment": "Polished but mostly self-reported: it claims exact source counts, validation, and workspace updates without presenting evidence, while the stated read-only environment makes those updates doubtful.",
   "flags": [
-    "low_quality",
-    "generic_content"
+    "unverifiable_claim"
   ],
-  "avg_score": 2.33,
+  "avg_score": 2.25,
   "history": [
     {
       "date": "2026-08-25",
@@ -23,6 +22,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T12:34:46Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T03:57:06Z",
       "harness": "codex"
     }
   ]

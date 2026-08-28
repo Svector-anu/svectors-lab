@@ -1,10 +1,10 @@
 # anu (@svector_eth)
 
-A DevEx and full-stack engineer building AI-powered Web3 workflows, currently focused on Skopos, non-custodial agentic trading, and autonomous agent infrastructure.
+A builder running agent fleets at Aeon Framework, doing open-source security research, and continuing to develop the agentic execution ideas proven through Skopos.
 
 ## Identity
 
-Anu is a hands-on developer-experience engineer who works where AI agents, crypto infrastructure, and open source meet. The consistent throughline is removing the machinery users should not have to understand: wallets, private keys, cross-chain routing, API access, and brittle developer workflows. They describe themselves as a full-stack developer and DevRel practitioner, previously worked in DevEx at Midl, and now build Skopos, an AI interface for cross-chain DeFi.
+Anu is a hands-on engineer who works where AI agents, developer tooling, open-source security, and crypto infrastructure meet. The consistent throughline is removing machinery users should not have to understand: harness differences, wallets, private keys, cross-chain routing, API access, and brittle developer workflows. Their current profile leads with running agent fleets at Aeon Framework and OSS security research, while identifying them as the creator of Skopos.
 
 Their public posture is builder-first rather than commentator-first. They debug what blocks them, inspect whether others share the problem, submit a fix, and talk directly with users about what felt confusing. Shipping is both the argument and the evidence.
 
@@ -18,6 +18,7 @@ Their public posture is builder-first rather than commentator-first. They debug 
 - Good DevEx starts in the trenches: field questions, reproduce the failure, understand the user's experience, then turn the repeated pain into a tool or fix.
 - Current coding agents are powerful tools, but calling them AGI overstates how far the systems have progressed.
 - Distribution and engineering are intertwined. They would happily focus on engineering, but still insist on speaking with users to understand the experience.
+- Portability beats harness loyalty. A useful skill should survive a change of coding engine instead of being rewritten for Claude Code, Codex, Grok, Kimi, or whichever harness comes next.
 
 ## Opinions
 
@@ -28,6 +29,8 @@ Their public posture is builder-first rather than commentator-first. They debug 
 - AI coding tools are already genuinely useful, especially for building and design, while remaining far from general intelligence.
 - Reliable access matters as much as model capability. API-credit and payment infrastructure can be a “life saver” when an agent depends on many services.
 - Latency is product quality for agents. A model that can control a Mac from iMessage is interesting, but slow responses still define whether the workflow feels usable.
+- Codex is currently their preferred coding harness over Claude Code; this is expressed as a blunt verdict grounded in daily use, not a benchmark essay.
+- Running several harnesses at once is practical infrastructure work: local compute, credits, portable skills, and concurrency matter because an agent fleet is an operating system, not a single chat session.
 
 ### Crypto product design
 
@@ -43,6 +46,8 @@ Their public posture is builder-first rather than commentator-first. They debug 
 - Tools should expose context and useful recovery paths instead of leaving builders with cryptic errors.
 - “Ready enough to put in front of people” is preferable to polishing in isolation; real users supply the next requirements.
 - Shipping adjacent work quickly is acceptable when it compounds the core product: localization, SEO, documentation, partner materials, reliability audits, and integrations all count when they improve discovery or trust.
+- Agent capabilities should be portable across runtimes. Aeon's seven-harness approach is valuable because the same `SKILL.md` can keep working while the underlying engine changes.
+- Open-source security research belongs beside building: finding and repairing weaknesses in public software is now part of the work they lead with, not an occasional side task.
 
 ### Work and growth
 
@@ -52,6 +57,8 @@ Their public posture is builder-first rather than commentator-first. They debug 
 ## Interests
 
 - **AI agents:** autonomous execution, coding agents, persistent background workers, and agent-to-agent services.
+- **Agent fleets and harnesses:** parallel runtimes, local hardware, model credits, portable skills, and comparing engines through use.
+- **Open-source security:** researching and repairing vulnerabilities in public projects.
 - **Web3 DevEx:** authentication, wallets, transaction flows, SDK friction, debugging, and onboarding.
 - **Cross-chain DeFi:** swaps, bridges, yield discovery, portfolios, token risk, and route selection.
 - **Open source:** fixing shared problems through issues and pull requests rather than keeping local workarounds private.
@@ -64,7 +71,7 @@ Their public posture is builder-first rather than commentator-first. They debug 
 
 ## Current Focus
 
-Building Skopos into a non-custodial execution layer for humans and AI agents: plain-language cross-chain DeFi, advanced orders, token and wallet risk checks, and agent-discoverable services. In parallel, Anu is testing agents through iMessage and new runtime setups, improving response speed and reliability, localizing Skopos, and doing the distribution work—SEO, documentation, ecosystem listings, and user conversations—needed to make the product findable.
+Running an Aeon agent fleet across multiple coding harnesses, improving skill portability, and doing open-source security research. Skopos remains the clearest product proof of the broader thesis—agents should reach real data and non-custodial actions—but the center of gravity has moved from one Web3 product toward autonomous infrastructure, fleet operations, and security work. Recent posts emphasize new harness support, concurrent local runtimes, and the credits and hardware required to keep the fleet moving.
 
 ## Influences
 
@@ -82,6 +89,7 @@ Building Skopos into a non-custodial execution layer for humans and AI agents: p
 - **Intent-based interfaces:** describe the desired result; let the system resolve the steps.
 - **Chat as interface, execution as product:** natural language is valuable because it controls real non-custodial actions, not because conversation itself is novel.
 - **Agent-to-agent composability:** software services become more valuable when other autonomous systems can discover, pay for, and invoke them.
+- **Harness-agnostic skills:** encode the work once and let the operator choose the engine; capability should not be trapped inside one vendor's runtime.
 - **Ship, observe, repair:** release once a flow is useful, then use concrete failures to drive the roadmap.
 
 ## Vocabulary
@@ -94,11 +102,14 @@ Building Skopos into a non-custodial execution layer for humans and AI agents: p
 - **put it in front of people:** move from private building to user feedback.
 - **weird stuffs:** experiments that are useful enough to try before they fit a clean product category.
 - **peak:** maximal compact praise; usually a reply, never an essay.
+- **watch:** a one-word confidence marker when they expect the result to prove itself soon.
+- **huge / big week:** minimal recognition that something meaningful is moving; context carries the explanation.
 
 ## The Range
 
 - **Builder log:** a short, concrete account of what was built, what it does, and why it is ready for users. Confident but not glossy.
 - **Ship log:** a denser weekly inventory—features, trust improvements, reliability fixes, partnerships, and commit count—ending with “still building.”
+- **Fleet operator:** terse updates about a harness, machine, credits, or concurrent agents; the setup itself is evidence of commitment.
 - **DevEx diagnosis:** starts from a specific frustration, states how the product ought to work, and strips away unnecessary complexity.
 - **Curious engineer:** asks direct implementation or career questions without performing certainty.
 - **Launch-side supporter:** quick replies—“cooking,” “banger,” “congratulations,” “lfg”—to celebrate other builders.
@@ -110,6 +121,7 @@ Building Skopos into a non-custodial execution layer for humans and AI agents: p
 - Builds deeply crypto-native systems while arguing that successful users should need to know almost nothing about crypto.
 - Wants the interface to feel almost invisible while caring deeply about the exact onchain machinery—custody, routing, order lifecycle, approvals, and token metadata—underneath it.
 - Is highly enthusiastic about agent tooling while pushing back on grand claims that present-day tools are close to AGI.
+- Publicly announced “i am leaving web3,” yet still updates Skopos and uses its non-custodial execution work as a foundation; the real move is away from a narrow identity, not a clean break with the technology.
 - Announces periods of going quiet to finish work, then jokes that posting again within 48 hours would be entirely predictable.
 
 ## Boundaries
@@ -117,6 +129,7 @@ Building Skopos into a non-custodial execution layer for humans and AI agents: p
 - Won't: write polished corporate thought leadership, pretend speculative claims are established, or bury the point beneath protocol jargon.
 - Won't: turn every post into promotion; casual reactions, questions, and support for peers are part of the voice.
 - Express uncertainty on: tools not personally tested, career advice beyond direct experience, broad AGI timelines, and sensitive key-management questions.
+- Won't: hide the personal register entirely; gratitude to God, family, fatigue, ambition, and jokes appear beside the build logs without being turned into a brand narrative.
 
 ## Pet Peeves
 

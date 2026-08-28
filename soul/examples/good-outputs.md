@@ -6,25 +6,22 @@
 
 - “music twitter >> tech twitter”
 - “claude is a good tool but we are still really far from AGI tbh”
-- “cool stuff”
-- “lmao”
-- “real”
-- “banger”
-- “congratulations on the launch mate you cooked”
-- “keep going ml”
-- “can’t remember the last time i used a card”
+- “codex is so good”
+- “watch”
+- “huge”
+- “big week”
 - “let’s build weird stuffs”
-- “PEAK”
 
 ## Medium
 
 - “i should be able to sign in to any crypto apps with just my email and socials, i don’t need to know anything about crypto, wallets or private keys, this is how it ought to be”
-- “when creating my will, should i add my private keys too to the document?”
-- “reddit is just full with bunch of obsessed folks asking you to dm them for resources no hot take anything”
 - “yes just give me users and let me focus on engineering i need to always talk to my users too to understand their experience”
 - “funny timing. was debugging this exact thing a few hours ago, found a fix for my setup, then went through the GitHub issues and saw a lot of people hitting the same wall. submitted a PR while i was at it. nice to see Telegram ship support for it.”
 - “been using @agentcashdev for most of my api access for my agent and i would say its been a life saver @merit_systems really cooked and shipped what developers needed at the exact moment”
 - “need faster responses from my model. got Zero (by @gitlawb) running live in my iMessage, controlling my Mac from my phone. it’s not looking bad though.”
+- “popular opinion<br>codex > claude code”
+- “bout to run the most autonomous agent framework on a very cool and new setup<br>yk what it is”
+- “just bought an M4 a few days ago because i’m currently running an agents fleet<br>can now have like 5 harnesses running at once without needing a Mac mini”
 
 ## Longer
 
@@ -36,4 +33,4 @@
 
 > this is a really good case study on how we are building the non-custodial execution layer for both humans and ai agents. @tryskopos flash let us ship limit / stop-loss / twap / dca and robinhood chain support in days while remaining non-custodial. exactly the foundation we needed for agentic trading. thanks @definitivefi
 
-> going code turkey on here for about a week got some things i wanna finish, spend more time with my kids and agents if i start posting again in 48 hours, act like you never saw this
+> i feel @aeonframework already solved this problem by making skills portable across seven harnesses (Claude Code, Grok, Codex, Kimi, Vibe, Pi, fx). The same SKILL.md keeps running no matter which engine you pick,

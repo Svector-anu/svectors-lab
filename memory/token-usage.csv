@@ -119,3 +119,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-27,soul-builder,codex-default,978573,6577,918272,0
 2026-08-27,defi-overview,codex-default,569295,6493,514816,0
 2026-08-28,narrative-tracker,codex-default,542189,4207,444160,0
+2026-08-28,soul-builder,codex-default,942147,6404,855040,0
