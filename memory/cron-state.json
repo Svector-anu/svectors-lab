@@ -253,10 +253,10 @@
     "last_quality_score": 1
   },
   "search-skill": {
-    "last_status": "dispatched",
-    "last_success": "2026-08-27T16:30:42Z",
-    "total_runs": 5,
-    "total_successes": 5,
+    "last_status": "success",
+    "last_success": "2026-08-28T22:41:49Z",
+    "total_runs": 6,
+    "total_successes": 6,
     "total_failures": 0,
     "consecutive_failures": 0,
     "success_rate": 1,
