@@ -1,20 +1,20 @@
-HEALTH: DEGRADED(15), improved from CRITICAL.
+HEALTH: DEGRADED(15)
+
+Degraded skills: `defi-overview`, `digest`, `fear-divergence`, `github-trending`, `heartbeat`, `hunter-22`, `narrative-tracker`, `picks-tracker`, `self-improve`, `skill-health`, `soul-builder`, `token-pick`, `verdikta-hunter`, `vuln-scanner`, and `x402-monitor`.
 
 - Critical: 0
-- Degraded: 15
-- Warning: 6
+- Flapping: 0
 - Healthy: 5
-- No data: 0
 - Open issues: 2
-- Filed/resolved: 0/0
+- Filed/resolved: 0
+- Systemic signals: legacy zero-token failures across eight enabled skills; ChatGPT usage-limit failures across four.
+- Notification: attempted but the external queue was read-only; the prior notification timestamp was retained for retry.
 
-`self-improve` and `verdikta-hunter` recovered successful runs but remain degraded under lifetime success-rate thresholds, so ISS-003 and ISS-004 remain open. Historical systemic signatures persist: zero-token failures across eight skills and ChatGPT usage-limit errors across four.
-
-Notification was attempted; external queues were read-only, so delivery fell back inline.
+Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and added [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md). JSON validation and `git diff --check` passed.
 
 ## Summary
 
-- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- Appended the audit to [2026-08-26.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-26.md)
-- Validated the report JSON
-- Preserved unrelated existing worktree changes
+- Completed the default fleet-wide health audit.
+- Refreshed classification state and appended the required activity log.
+- Left existing unrelated worktree changes untouched.
+- Follow-up: restore write access to the external notification queue so the degraded-health report can be delivered.
