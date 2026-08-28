@@ -24,7 +24,9 @@
 
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
+- [Codex harness runtime](topics/codex-harness-runtime.md) — verified two-layer write/commit behavior, notification semantics, and evidence rules for fleet audits
 - [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-27)
+- [GHSA-p47r-wg2f-2mw4 Matrix auth bypass](topics/ghsa-p47r-wg2f-2mw4-matrix-auth-bypass.md) — reproduced and fixed cross-profile authorization leak in hermes-agent Matrix adapter; PR #94657 open
 
 ## Skills Built
 | Skill | Date | Notes |
@@ -32,6 +34,7 @@
 
 ## Lessons Learned
 - Always save files AND commit before logging
+- Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
 - Review the 7 stalled open PRs (#31, #30, #22, #20, #5, #4, #3); all have been open for more than 24 hours
