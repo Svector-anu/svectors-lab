@@ -12,6 +12,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-28 | daily (web, crypto) | Cosmos EVM exploit, Core Lightning patch, hard-asset ETF flows |
 | 2026-08-28 | web3 developer tooling (web) | Midnight hackathon, cardano-init, RGB Lightning |
 | 2026-08-28 | daily (web) | AI infrastructure attacks, Salesforce in Claude, double-blind evals |
 | 2026-08-27 | web3 developer tooling (web) | Pyth Hermes auth, Solana telemetry, Rayls Sovereign |

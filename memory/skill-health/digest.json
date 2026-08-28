@@ -1,14 +1,12 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-28T12:29:40Z",
+  "last_analyzed": "2026-08-28T22:44:02Z",
   "quality_score": 2,
-  "assessment": "Substantive developer-news digest, but it misses the trader-focused strategy: no regime verdict or explicit position calls, and its claimed workspace writes conflict with the read-only run constraint.",
+  "assessment": "Substantive and conclusion-first, but it implausibly claims workspace files were updated during a read-only run, undermining verifiability; position calls are also inconsistent.",
   "flags": [
-    "low_quality",
-    "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.91,
+  "avg_score": 2.83,
   "history": [
     {
       "date": "2026-07-28",
@@ -62,6 +60,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T12:29:40Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T22:44:02Z",
       "harness": "codex"
     }
   ]

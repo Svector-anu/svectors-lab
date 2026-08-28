@@ -1,32 +1,25 @@
-*web3 developer tooling — 2026-08-28*
+*daily — 2026-08-28*
 
-_TL;DR: builders can join a privacy hackathon today, Cardano shipped an agent-ready project generator, and wallet stacks added RGB Lightning and stricter transaction verification._
+_TL;DR: patch Cosmos EVM and Core Lightning nodes now; institutional flows are rotating into Bitcoin and gold together._
 
-1. *Midnight’s privacy hackathon starts today*  
-   The online build runs August 28–30 around private apps, zero-knowledge contracts, and agents with onchain policy guardrails.  
-   Why it matters: a live weekend path to test policy-constrained wallet agents  
-   https://events.mlh.com/events/14510-midnight-hackathon-august
+1. *Upgrade Cosmos EVM after a six-chain exploit*  
+   A balance-accounting vulnerability was exploited across six Cosmos EVM networks; attackers sold about $2.87M on DEXes and another estimated $2.85M on centralized exchanges. Chains below v0.6.2 or v0.7.2 are affected.  
+   Why it matters: operators should upgrade immediately, while traders should audit exposure to affected chains and bridges.  
+   https://github.com/cosmos/security/blob/main/communications/cosmos_evm_GHSA-7g4w-cg88-2cq2_post_mortem.md
 
-2. *cardano-init becomes a released, agent-ready project generator*  
-   Versions 0.2.0 and 0.2.1 generate wired monorepos, machine-readable JSON, and `AGENTS.md`, with commands for changing stack components later.  
-   Why it matters: Cardano setup becomes a repeatable scaffold instead of manual glue work  
-   https://github.com/input-output-hk/cardano-init
+2. *Core Lightning ships fixes under a 14-day embargo*  
+   Multiple critical vulnerabilities prompted Core Lightning to release signed emergency binaries while withholding source patches for two weeks. Node operators are being told to upgrade or run with `--offline`.  
+   Why it matters: unpatched routing nodes carry undisclosed risk, and reduced routing capacity could affect Lightning liquidity.  
+   https://cryptoslate.com/onslaught-of-ai-found-bugs-forces-bitcoins-core-lightning-into-a-secret-14-day-emergency-lockdown/
 
-3. *Tether WDK adds Lightning support for RGB assets*  
-   A module built by Utexo brings RGB asset transfers over Bitcoin Lightning into Tether’s Wallet Development Kit.  
-   Why it matters: developers can test RGB Lightning without assembling the integration from scratch  
-   https://rgb.info/rgb-lightning-tether-wdk/
-
-4. *Sparrow 2.5.4 hardens what wallets trust*  
-   The Bitcoin wallet strengthens Electrum-response and block-proof validation, redacts credentials from logs, closes Tor DNS leaks, and tightens hardware-wallet signing protections.  
-   Why it matters: embedded-wallet teams should make server verification and secret-safe diagnostics explicit acceptance criteria  
-   https://github.com/sparrowwallet/sparrow
-
-*Also worth a glance:* for the Base consumer app, keep Privy as the onboarding layer only after fixing the canonical account model; use wagmi + viem, a dedicated RPC with fallback, and one sponsorship path.
+3. *Bitcoin and gold ETFs pull a record $7B in five sessions*  
+   Bloomberg data show roughly $7B entered gold and Bitcoin ETFs over five trading days, including $3.4B for GLD and $1.5B for IBIT. Both ranked among the ten largest US ETF inflows for the week.  
+   Why it matters: ride the hard-asset flow, but watch whether IBIT demand persists if the dollar or real yields rebound.  
+   https://cryptoslate.com/investors-just-moved-7-billion-into-bitcoin-and-gold-in-five-days-to-escape-an-accelerating-dollar-crisis/
 
 ## Summary
 
-- Saved the digest to [output/digest-web3-developer-tooling-2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-web3-developer-tooling-2026-08-28.md).
-- Updated `MEMORY.md` and today’s digest log.
-- Verified all four links return HTTP 200.
-- Notification delivery was attempted, but the external queues were read-only.
+- Generated and logged a three-item, deduplicated crypto digest.
+- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
+- Saved the digest to [digest-2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-08-28.md).
+- Notification delivery was attempted but not confirmed because the external notification queue was read-only.
