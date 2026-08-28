@@ -19,6 +19,10 @@ PROMPT="$(cat "$RH_PROMPT_FILE")"; PREFIX="${RH_COMPAT_RULES:-}"
 ARGS=(--usage-file "$RH_TMPDIR/hermes-usage.json" -z "$PROMPT"); [ -n "${RH_MODEL:-}" ] && [ "$RH_MODEL" != "default" ] && ARGS+=(--model "$RH_MODEL"); [ "${RH_MODE:-write}" = "read-only" ] && ARGS+=(--safe-mode); [ -z "${HERMES_AUTH:-}" ] && [ -n "${OPENROUTER_API_KEY:-}" ] && ARGS+=(--provider openrouter)
 OUT="$RH_TMPDIR/hermes-out.txt"; hermes "${ARGS[@]}" > "$OUT"; rc=$?
 [ $rc -ne 0 ] && { echo "hermes exited $rc: $(tail -c 4000 "$OUT" | tr '\n' ' ')" >&2; exit $rc; }; RESULT="$(cat "$OUT")"
+if grep -Eq '(^|[[:space:]])HTTP [45][0-9][0-9]:' "$OUT"; then
+  echo "hermes API error: $(tail -c 4000 "$OUT" | tr '\n' ' ')" >&2
+  exit 1
+fi
 TIN=0; TOUT=0; TCR=0; COST=""; SID=""; U="$RH_TMPDIR/hermes-usage.json"
 if [ -f "$U" ] && jq -e . "$U" >/dev/null 2>&1; then TIN=$(jq -r '.input_tokens // 0' "$U"); TOUT=$(jq -r '.output_tokens // 0' "$U"); TCR=$(jq -r '.cache_read_tokens // 0' "$U"); COST=$(jq -r '.estimated_cost_usd // empty' "$U"); SID=$(jq -r '.session_id // ""' "$U"); fi
 if [ -n "${RH_JSON_SCHEMA:-}" ]; then RESULT="$(schema_extract_json "$RESULT")"; schema_validate "$RH_JSON_SCHEMA" "$RESULT" || { echo "structured output failed validation" >&2; exit 3; }; fi
