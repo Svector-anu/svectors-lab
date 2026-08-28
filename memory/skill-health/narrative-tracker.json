@@ -1,15 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T06:34:45Z",
-  "quality_score": 4,
-  "assessment": "Substantive, well-sourced narrative log: fetch verified (http=200, fresh 3-day window), named calibration sources (DefiLlama/RWA.xyz, Kaito), explicit FRONT-RUN/RIDE/WATCH/FADE position calls matching strategy vocabulary, honest ignore-list and disclosed read-only log-append failure; evidence anchoring per individual call is thin and positions don't lead the output, keeping it short of excellent.",
-  "flags": [],
-  "avg_score": 3.3,
+  "last_analyzed": "2026-08-28T12:31:35Z",
+  "quality_score": 3,
+  "assessment": "Substantive and conclusion-oriented with explicit position calls, but several narratives lack direct evidence links, conviction counts are unexplained, and the hard live-price percentages violate the strategy’s qualitative-price constraint.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 3.27,
   "history": [
-    {
-      "date": "2026-07-11",
-      "score": 4
-    },
     {
       "date": "2026-07-11",
       "score": 4
@@ -153,6 +151,12 @@
       "ts": "2026-08-28T06:34:45Z",
       "harness": "glm",
       "model": "glm-5.2"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 3,
+      "ts": "2026-08-28T12:31:35Z",
+      "harness": "codex"
     }
   ]
 }
