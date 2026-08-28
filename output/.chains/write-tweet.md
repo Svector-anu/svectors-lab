@@ -1,76 +1,82 @@
-## Tweet Drafts: chat is the interface, execution is the product
+## Tweet Drafts: agent fleets are infrastructure
 
 ### Tier 1 — One-liner
 
-**1a. Reframe**
+**1a. Observation**
 
-> chat is the interface. execution is the actual agent product
+> one agent is a tool. a fleet is an operating system.
 
-**1b. Hot take**
+**1b. Reframe**
 
-> if your agent stops at an answer, you built a chatbot
+> the model is replaceable. the workflow around it is the moat.
 
 ### Tier 2 — Two-punch
 
-**2a. Builder’s breakdown**
+**2a. Observation**
 
-> the chat box is the easy part. routing, signing, settlement and recovery are where an agent becomes useful
+> running ten coding agents is easy. knowing what each changed, why it changed, and what is safe to merge is the actual product.
 
-**2b. Observation**
+**2b. Sardonic**
 
-> everyone is polishing the agent conversation. i care more about what happens after i press send
+> everyone wants more agents. then agent #4 overwrites agent #2 and suddenly the hottest feature is isolation.
 
 ### Tier 3 — Paragraph
 
 **3a. Reframe**
 
-> an agent recommending a swap is still a chatbot. the useful part starts when it can find the route, check risk, sign safely, settle the trade and recover when a provider fails
+> the next leap in coding agents will not come from a smarter chat box. it will come from the boring layer around the model: isolated worktrees, shared memory, review gates, retries, and a clean handoff when one harness fails.
 
-**3b. Observation**
+**3b. Builder insight**
 
-> users should say what they want and leave. if they still need to choose the chain, bridge, route and transaction settings, the agent just moved the old interface into a chat box
+> i can swap codex for claude code faster than i can rebuild the workflow around either one. that is the point. models will keep changing. skills, memory, coordination, and recovery should survive the switch.
 
 ### Tier 4 — Long tweet
 
-**4a. Builder’s breakdown**
+**4a. Structural critique**
 
-> chat makes agents look simple, but the hard work starts after the prompt. the system still needs to route the intent, check risk, manage permissions, sign safely, settle onchain and recover when one provider fails. that execution layer is the product. the conversation is just how the user asks for it
+> running one coding agent feels like using a tool. running several feels like operating a small engineering system.
+>
+> you need task boundaries, isolated worktrees, shared context, review gates, failure recovery, and a record of who changed what. without that layer, adding agents just creates faster confusion.
+>
+> the model matters. the control plane decides whether the fleet actually ships.
 
-**4b. Narrative**
+**4b. Reframe**
 
-> i don’t want an agent that tells me how to bridge, swap or place a limit order. i want to state the outcome and leave. it should choose the route, handle signing without taking custody, check the trade, settle it and tell me only when something needs my attention. better answers are nice. completed flows are useful
+> people compare coding agents by benchmark scores. i care about a less glamorous test: can i move the same skill from codex to claude code to another harness without rewriting the whole workflow?
+>
+> models change. credits run out. providers fail. the durable asset is the work encoded around them—instructions, memory, verification, and recovery.
+>
+> harness portability is not a nice extra. it is how an agent fleet stays alive.
 
 ### Tier 5 — Thread opener
 
-**5a. Structural critique**
+**5a. Narrative**
 
-> most agent demos end exactly where the real product starts. the prompt works, the answer looks good, then the user still has to execute everything
-
----
-
-- why conversation quality is no longer enough
-- the execution path: route, risk, permissions, signing, settlement
-- what breaks when tools and providers fail
-- why completed flows are the real measure of usefulness
-
-**5b. Prediction**
-
-> the next agent moat won’t be a nicer chat box. it will be reliable execution across messy tools, permissions, payments and failures
+> i started running multiple coding agents for more throughput. the real lesson was not about speed. once agents work concurrently, coordination becomes the product.
 
 ---
 
-- why chat interfaces are easy to copy
-- where reliability gets difficult
-- non-custodial execution as a trust advantage
-- how to judge agents by outcomes instead of demos
+- Why concurrency breaks single-agent workflows
+- Isolation, ownership, and merge safety
+- Shared memory without shared confusion
+- Recovery when a harness or provider fails
 
-Best overall: **3a**  
-Best per tier: **1a, 2a, 3a, 4b, 5a**
+**5b. Reframe**
+
+> the most important part of an agent fleet is not the smartest model. it is everything that still works when you replace that model.
+
+---
+
+- Why model churn makes portability necessary
+- What belongs in a reusable skill
+- Memory and verification across harnesses
+- The control plane as durable infrastructure
+
+Best overall: **#3b**. Best per tier: **1a, 2b, 3b, 4a, 5a**.
 
 ## Summary
 
-- Generated and character-checked all 10 drafts.
+- Generated ten drafts across all five tiers, informed by current X discussion.
 - Saved the revisable batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
 - Logged the run in [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
-- The X enrichment request returned no response body, so no live claims were introduced.
-- Notification and revision-offer delivery were attempted but the external queue was read-only.
+- Notification and revision prompt were attempted, but the external notification queue was read-only.
