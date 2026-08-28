@@ -59,7 +59,7 @@ login locally, store the session as a repo secret, restore it on the runner):
 | `pi`    | provider API key | `aeon auth --harness pi --key <sk-ant-…\|sk-…>` → the matching `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` (auto-detected) |
 | `vibe`  | Mistral key | `aeon auth --harness vibe --key <key>` → `MISTRAL_API_KEY` (vibe's default provider) |
 | `fx`    | Vercel AI Gateway key (or `VERCEL_OIDC_TOKEN`) | set `AI_GATEWAY_API_KEY` as a repo secret. **No `aeon auth` flow and no OpenRouter fallback** — see below. |
-| `cursor` | Cursor API key | set `CURSOR_API_KEY` as a repo secret; headless entry point is `agent -p`. |
+| `cursor` | Cursor API key | set `CURSOR_API_KEY` as a repo secret; headless entry point is `agent -p --trust` because every CI run starts with a fresh home. `--force` remains write-mode only. |
 | `hermes` | Nous Portal OAuth | `aeon auth --harness hermes` → `HERMES_AUTH`; the adapter restores `~/.hermes/auth.json`. |
 | `glm` | GLM Coding Plan API key | set `GLM_API_KEY` (or `ZAI_API_KEY`); the adapter uses Z.AI's Anthropic endpoint through Claude Code. |
 
