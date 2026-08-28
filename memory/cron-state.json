@@ -12,7 +12,7 @@
     "last_success": "2026-08-28T12:24:51Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-28T12:25:14Z",
     "total_runs": 336,
     "total_successes": 28,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.08,
     "last_quality_score": 2,
-    "last_dispatch": "2026-08-28T12:21:59Z",
+    "last_dispatch": "2026-08-28T22:39:33Z",
     "last_failed": "2026-08-25T19:04:26Z",
     "last_error": "read_id\":\"01a03a4f-31ce-7381-8489-49d501aa64ed\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt"
   },
   "narrative-tracker": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-08-28T18:31:57Z",
     "total_runs": 387,
     "total_successes": 41,
@@ -35,7 +35,7 @@
     "last_error": "equires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlock your free credits. fx reported",
     "last_success": "2026-08-28T12:45:42Z",
     "last_quality_score": 2,
-    "last_dispatch": "2026-08-28T12:40:44Z"
+    "last_dispatch": "2026-08-28T22:39:33Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -100,8 +100,8 @@
     "last_error": "58c057\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "skill-health": {
-    "last_dispatch": "2026-08-28T01:03:22Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T22:39:33Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-28T01:06:20Z",
     "total_runs": 282,
     "total_successes": 11,
@@ -150,14 +150,14 @@
     "last_quality_score": 3
   },
   "digest": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-23T14:29:47Z",
     "total_runs": 152,
     "total_successes": 12,
     "total_failures": 140,
     "consecutive_failures": 0,
     "success_rate": 0.08,
-    "last_dispatch": "2026-08-28T01:03:22Z",
+    "last_dispatch": "2026-08-28T22:39:33Z",
     "last_error": "41e1e2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-08-28T12:29:42Z",
     "last_quality_score": 2
@@ -187,14 +187,14 @@
     "last_quality_score": 2
   },
   "auto-merge": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-07-29T08:24:35Z",
     "total_runs": 6,
     "total_successes": 5,
     "total_failures": 1,
     "consecutive_failures": 0,
     "success_rate": 0.83,
-    "last_dispatch": "2026-08-27T16:27:53Z",
+    "last_dispatch": "2026-08-28T22:39:33Z",
     "last_success": "2026-08-27T16:29:38Z",
     "last_quality_score": 2
   },
@@ -253,7 +253,7 @@
     "last_quality_score": 1
   },
   "search-skill": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-27T16:30:42Z",
     "total_runs": 5,
     "total_successes": 5,
@@ -261,7 +261,7 @@
     "consecutive_failures": 0,
     "success_rate": 1,
     "last_quality_score": 3,
-    "last_dispatch": "2026-08-27T16:27:53Z"
+    "last_dispatch": "2026-08-28T22:39:33Z"
   },
   "skill-repair": {
     "last_status": "success",
@@ -304,8 +304,8 @@
     "last_quality_score": 4
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-08-28T01:03:22Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T22:39:33Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-28T01:09:17Z",
     "total_runs": 3,
     "total_successes": 3,
@@ -338,8 +338,8 @@
     "last_quality_score": 2
   },
   "write-tweet": {
-    "last_dispatch": "2026-08-28T01:03:22Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-28T22:39:33Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-28T01:06:45Z",
     "total_runs": 2,
     "total_successes": 2,
