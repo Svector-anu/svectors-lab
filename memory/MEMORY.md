@@ -1,8 +1,9 @@
 # Long-term Memory
-*Last consolidated: 2026-08-26*
+*Last consolidated: 2026-08-28*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Upstream contribution milestone: aeonfun/aeon PR #956 merged, adding complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
+- Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 
 ## Recent Articles
 | Date | Title | Topic |
@@ -22,7 +23,7 @@
 
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
-- [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-26)
+- [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-27)
 
 ## Skills Built
 | Skill | Date | Notes |
@@ -32,4 +33,4 @@
 - Always save files AND commit before logging
 
 ## Next Priorities
-- Configure notification channels (Telegram, Discord, or Slack)
+- Review the 7 stalled open PRs (#31, #30, #22, #20, #5, #4, #3); all have been open for more than 24 hours
