@@ -1,29 +1,25 @@
 *Narrative Tracker — 2026-08-28*
 
 TRANSITIONS
-• NEW: tokenized equities/RWAs — Solana + Base launches meet sustained sector performance; RIDE — https://x.com/solana/status/2092954231217287342
-• NEW: EURR euro stablecoin — Revolut distribution gives the stablecoin story a concrete bank rail; WATCH — https://x.com/Revolut/status/2092512154603663441
-• NEW: AI eval scheming — multi-million-view eval report moved from research niche to saturated tech discourse; FADE — https://x.com/METR_Evals/status/2092692175452803393
-• PROMOTED: onchain trading rebound → tokenized-equity/RWA rotation — prior broad risk-on attention now has a named product catalyst.
-• DEMOTED: broad large-cap risk-on Rising → Fading — BTC flattened near $80k and today’s signal fragmented into narrower trades.
+• NEW/UNBASELINED: agentic stablecoin payments — multiple fresh launches connect agents to real settlement; prior 3-day logs contain no labels — https://a2awire.com/news/
+• NEW/UNBASELINED: tokenized equities — $166.2M added in the latest reported week despite the wider RWA sector losing $210.5M — https://www.kucoin.com/news/flash/tokenized-commodities-market-gains-298m-as-rwa-sector-loses-211m-in-a-week
+• DEMOTED ON CURRENT SIGNAL: prediction markets — Nevada won a federal appeals ruling allowing state gambling regulation of Kalshi sports contracts — https://apnews.com/article/2168b6c0837ad9b4f0f63b04633d8835
 
 REFLEXIVITY ALERT
-• $FONE “next WIF” — giveaway accounts are manufacturing attention around the comparison itself, without a fundamentals change; this is the outcome mechanism, not evidence of adoption. FADE.
-• agentic finance L1s — Amadeus is using the agent label plus validator incentives to bootstrap legitimacy before TVL/usage evidence. WATCH.
+• tokenized equities — attention is translating into capital concentration: Ondo, Binance bStock and xStocks hold 77% of the segment, while tokenized stocks added $166.2M in the latest reported week.
+• agent payments — projects are explicitly launching/repositioning around the story: Flop Labs proposes an agent-native currency; Alipay launched an agent-commerce stack.
 
 POSITIONS
-• RIDE: tokenized equities/RWAs (4 ↑, Bull) — @solana, @base, @Bitwise — custody, regulation and thin liquidity can still stall PMF — https://defillama.com/narrative-tracker
-• RIDE: EURR/euro stablecoins (3 ↑, Bull) — @Revolut, @ethereuminsti, @0xPolygon — could remain a Revolut-walled balance with no DeFi velocity.
-• WATCH: physical AI/humanoids (5 →, Mixed) — @AnthropicAI, @Figure_robot, @arduino — viral demos still outrun reliable, affordable deployment.
-• FRONT-RUN: low-latency open voice agents (2 ↑↑, Bull) — @kwindla, @trydaily, @pipecat_ai — frontier vendors can erase the latency niche quickly.
-• FADE: AI eval scheming (5 →, Mixed) — @METR_Evals, @AlexBores, @peterwildeford — incentive-specification artifact, not persistent agency.
-• FADE: $FONE meme rotation (4 ↑↑, Cope) — @mystayor, @serenaonchain, @fluffycrypt — giveaway saturation is exit liquidity.
-• WATCH: BTC $80k squeeze (3 →, Mixed) — @BTCNewsGlobal, @CryptomegaNews — expiry/ETF-flow catalyst can vanish without a clean breakout.
+• FRONT-RUN: agentic stablecoin payments (3 ↑↑, Bull) — @coinbaseDev, @circle, @Arthur_0x — bear: authorization, identity and chargeback controls lag payment execution — https://a2awire.com/news/
+• RIDE: tokenized equities / RWA trading (4 ↑, Bull) — @OndoFinance, @binance, @xStocksFi — bear: liquidity is concentrated and the wider RWA sector contracted — https://www.theblock.co/news/defi/2026-08-17-tokenized-equities-triple-market-share-ondo-binance-xstocks-dominate-411996
+• RIDE: perp DEX expansion (4 ↑, Bull) — @HyperliquidX, @DefiLlama, @CFTC — bear: storage-perp OI fell 32.2%, showing leverage can leave quickly — https://newsletter.defillama.com/
+• FADE: prediction-market regulatory arbitrage (4 ↓, Mixed) — @Kalshi, @Polymarket, @CFTC — bear: states may regulate sports contracts as gambling despite federal designation — https://apnews.com/article/2168b6c0837ad9b4f0f63b04633d8835
+• WATCH: privacy/ZK compliance (2 ↑, Mixed) — @zksync, @0xPolygon, @ethereum — bear: no fresh 3-day catalyst strong enough for conviction.
 
 MAP
-Emerging: low-latency voice agents; Amadeus agentic-finance L1
-Rising: tokenized equities/RWAs; EURR; AI compute/capex
-Peak: physical AI; AI eval scheming; $FONE
-Fading: broad large-cap risk-on; generic “AI replaces teams”
+Emerging: privacy/ZK compliance
+Rising: agentic payments; tokenized equities; perp DEX expansion
+Peak: none
+Fading: prediction-market regulatory arbitrage
 
-Calibration: DefiLlama reports Solana +44.10%, $61.915B market cap and $6.267B 24h volume in its live narrative table. Kaito’s Warden Season 2 creator leaderboard is highly fragmented: #1 has 0.7598% mindshare and #10 has 0.4012%, so account count alone is not treated as sector dominance.
+Calibration: DefiLlama currently shows SocialFi +115% and PolitiFi +85.51% on its selected tracker window, but neither had enough verified 3-day driver evidence to enter the actionable map.

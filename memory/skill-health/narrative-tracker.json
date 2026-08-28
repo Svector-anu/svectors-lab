@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T12:45:39Z",
-  "quality_score": 2,
-  "assessment": "Explicit trade calls and concise structure are useful, but numerous specific catalysts, metrics, classifications, and causal claims lack direct evidence links, while hard live-price figures violate the strategy.",
+  "last_analyzed": "2026-08-28T22:43:42Z",
+  "quality_score": 3,
+  "assessment": "Actionable position labels and evidence links make this useful, but the tokenized-equities thesis relies on an ~11-day-old report for a 3-day tracker, several precise metrics point only to generic or mismatched sources, and the unexplained numeric/arrow ratings weaken verifiability.",
   "flags": [
-    "unverifiable_claim"
+    "stale_data"
   ],
-  "avg_score": 3.2,
+  "avg_score": 3.17,
   "history": [
-    {
-      "date": "2026-07-11",
-      "score": 4
-    },
     {
       "date": "2026-07-19",
       "score": 4
@@ -158,6 +154,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T12:45:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 3,
+      "ts": "2026-08-28T22:43:42Z",
       "harness": "codex"
     }
   ]
