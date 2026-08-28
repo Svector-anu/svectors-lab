@@ -1,9 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-27T16:32:27Z",
+  "last_analyzed": "2026-08-28T01:11:01Z",
   "quality_score": 3,
-  "assessment": "Substantive and position-labeled with source links, but it lacks a clear conclusion-first regime verdict and relies heavily on thin social evidence with opaque scoring methodology.",
-  "flags": [],
+  "assessment": "Substantive and actionable with explicit position calls, but it lacks a conclusion-first regime verdict, provides weak evidence links for most claims, and violates the qualitative-price constraint by emphasizing $80k.",
+  "flags": [
+    "low_quality"
+  ],
   "avg_score": 3.13,
   "history": [
     {
@@ -104,6 +106,12 @@
       "date": "2026-08-27",
       "score": 3,
       "ts": "2026-08-27T16:32:27Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 3,
+      "ts": "2026-08-28T01:11:01Z",
       "harness": "codex"
     }
   ]
