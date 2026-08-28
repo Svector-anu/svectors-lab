@@ -1,10 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T04:47:37Z",
-  "quality_score": 4,
-  "assessment": "Decision-grade positions with verified X/API anchors and clear FRONT-RUN/RIDE/FADE/WATCH calls; misses conclusion-first Skopos framing and slightly stretches a few source-to-narrative links.",
-  "flags": [],
-  "avg_score": 3.16,
+  "last_analyzed": "2026-08-28T04:54:38Z",
+  "quality_score": 2,
+  "assessment": "Decision-grade structure with real narratives, but invents/mislabels hard figures (SOL ETF $56M, ETH ETF $225M, USDe $320M) and mis-anchors a tweet despite empty primary source.",
+  "flags": [
+    "unverifiable_claim",
+    "low_quality"
+  ],
+  "avg_score": 3.12,
   "history": [
     {
       "date": "2026-07-06",
@@ -116,6 +119,12 @@
       "date": "2026-08-28",
       "score": 4,
       "ts": "2026-08-28T04:47:37Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T04:54:38Z",
       "harness": "grok"
     }
   ]

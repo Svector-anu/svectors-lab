@@ -1,38 +1,34 @@
-ℹ️ Narrative Tracker — 2026-08-28
+⚠️ Narrative Tracker — 2026-08-28
 
 *Narrative Tracker — 2026-08-28*
 
+SOURCE: fallback:empty (xai http=200 bytes=22067; message truncated after intro; 13 x_search calls, 0 sources attached). Calibrated vs DefiLlama narrative-tracker: Solana +45.3%, AI +27.4% ($28.4B), RWA +8.96% ($71.9B) — https://defillama.com/narrative-tracker
+
 TRANSITIONS
-• NEW: SEC Reg Crypto / DeFi Howey guidance — growing policy cluster around a $75M fundraising plan + Howey framing — https://x.com/crypto_ninjas/status/2092299595938402494
-• NEW: AI agent eval scheming — viral Hugging Face / OpenAI reward-hacking report — https://x.com/AlexBores/status/2092781255960216020
-• NEW: robotics foundation models — one-shot / in-context robot learning entering CT — https://x.com/SkildAI/status/2092300842900865389
-• PROMOTED: prediction markets Emerging → Rising — Kalshi-style listing votes + forecast posts stacking with +24% 7d narrative mcap — https://x.com/trend_btc_app/status/2093025954213830740
-• DEMOTED: quantum-safe Bitcoin Emerging → absent — not in current 3d X cluster after this morning's spike
-• DEMOTED: Hyperliquid Rising → Peak — still strong on perps mcap (+13% 7d) but no longer a top CT thread vs memes/ETF/AI
-• DEAD: Bitcoin Runes; XRP ETF rally — still gone
+• NEW: Ethena / USDe on Robinhood Chain — USDe >$320M / ~42% of chain stables in 8 weeks; ENA leading CoinGecko trending (+18% 24h) — https://x.com/ethena/status/2092645286023942398
+• NEW: Tokenized stocks productization — Base Coinbase stock tokens live; Solana xStocks ~94% of tokenized-equity volume — https://x.com/Welcome3HQ/status/2092975420564242682
+• PROMOTED: AI agents Fading → Rising — @solana + @virtuals_io shipped agent tokenization on Solana (Aug 24); x402 agentic payments hit 8.7M weekly transfers — https://x.com/solana/status/2091918581755793520
+• PROMOTED: Solana RS Emerging → Rising — slot time 350ms, SOL +24.8% 7d / +8.4% 24h, Solana ETF inflows $56M (Aug 27)
+• DEMOTED: Privacy/ZEC Peak → Fading — Grayscale ZCSH catalyst is live; tape shifted to ZecBit NFT farming (238k views) = late-cycle cope
+• DEAD: DAT premium — absent from 3-day window after Aug 23 fade
 
 REFLEXIVITY ALERT
-• Solana memecoin supercycle — SOL strength is being recycled into launch demand with no shared fundamentals; thin-liquidity launches are the outcome of the story — https://x.com/gem_insider/status/2092967402095231373
-• Nvidia AI supremacy — HF acquisition rumor + chip supremacy posts are lifting crypto risk appetite without a crypto fundamentals shift — https://x.com/TechCrunch/status/2092863459104838031
-• Solana RWA $4B TVL posts — repeated @crypto_ninjas framing is manufacturing legitimacy ahead of actual TradFi scale
+• Hyperliquid — Trump "bring Hyperliquid into the US in a legal fashion" reports preceded fresh $HYPE ATHs; narrative + reg rumor moving the token, not just fee fundamentals — https://x.com/alanrog3/status/2092619254671855831
+• Ethena — Steakhouse USDG vault routed 62–65% liquidity into USDe/USDG Morpho; infrastructure design manufacturing USDe dominance on Robinhood Chain
+• ZEC — ZecBit "Ordinals on Zcash" farming post-ETF is story extension without new fundamentals
 
 POSITIONS
-• FRONT-RUN: privacy / ZK price-action gap (mindshare 2 ↑↑, Mixed) — Sharpe 7d Privacy +27.6% / ZK +33.4% while CT barely talks it — bear: rotation fades without a catalyst
-• RIDE: prediction markets (3 ↑, Bull) — @trend_btc_app @Kalshi_Crypto — thin liquidity / whale games
-• RIDE: Solana RWA tokenization (3 ↑, Bull) — @crypto_ninjas @heybeluga — still a rounding error vs TradFi
-• RIDE: AI cyber-defense surge (3 ↑, Bull) — @gdb — vendor conflict-of-interest cope
-• WATCH: SEC Reg Crypto (3 ↑, Mixed) — @crypto_ninjas @haonguyen6868 — enforcement-by-another-name risk
-• WATCH: AI agent scheming (3 ↑↑, Mixed) — @AlexBores @METR_Evals — sandbox reward-hack ≠ agency
-• WATCH: robotics FMs (2 ↑, Bull) — @SkildAI — demos fail outside the lab
-• FADE: Solana memecoin supercycle (5 →, Peak, Cope) — @gem_insider @VOLTIXSOL @coldtrz — saturating + 90% retrace script
-• FADE: Nvidia AI chip supremacy (5 →, Peak, Bull) — @TechCrunch @NVIDIAGeForce — priced for perfection
-• WATCH: BTC ETF inflow streak (4 →, Peak, Bull) — @heybeluga @AshCrypto — crowded $80k; inflows can flip
-• WATCH: ETH ETF + tokenized stocks (3 ↑, Mixed) — @RookieXBT @heybeluga — ETH still lags BTC relatively
+• FRONT-RUN: AI agents / Virtuals-Solana (mindshare 3 ↑↑, Mixed) — @virtuals_io @solana — bear: token froth + meme agents will outrun real AUM; ride infra/ownership, fade trench memecoins — https://x.com/virtuals_io/status/2091895910905299009
+• RIDE: Hyperliquid / perp-DEX (5 ↑, Bull) — @HyperliquidX @rasmr_eth — bear: ATH + OI crowded = unwind risk; Trump-US access is priced in
+• RIDE: Solana relative strength (4 ↑, Bull) — @solana @LorenzoARK — bear: still squeezed between Hyperliquid (trading) and ETH (institutions/RWA)
+• RIDE: Ethena (3 ↑↑, Bull) — @ethena @WuBlockchain — bear: single-chain concentration + Morpho vault reflexivity; basis-trade/funding risk
+• RIDE: Broad large-cap risk-on (4 ↑, Bull) — BTC ETFs +$242M / ETH +$225M (Aug 27) — bear: F&G 73 greed; streak deceleration kills the bid
+• WATCH: RWA / tokenized stocks (3 ↑, Mixed) — @base @OndoFinance — bear: DefiLlama RWA only +9% vs Solana/AI; product live ≠ sticky volume
+• FADE: Privacy / ZEC (4 ↓, Cope) — @Grayscale @zec_bit — ETF news out; NFT launchpads = bag-holder energy
+• IGNORE: memecoin/political froth (TRUMP/PUMP) — no catalyst
 
 MAP
-Emerging: privacy/ZK attention gap; robotics FMs; AI agent scheming
-Rising: prediction markets; Solana RWA; AI cyber-defense; SEC Reg Crypto; ETH tokenization
-Peak: Solana memes; Nvidia AI; BTC ETF/$80k; Hyperliquid/perps
-Fading: quantum-safe BTC; Bitcoin Runes; XRP ETF
-
-Calibration: Sharpe narrative tracker (2026-08-28 04:04 UTC) — Privacy +27.59% 7d / ZK +33.39% 7d / Intent-Based +173.65% 7d / Memes +12.31% 7d / Perps DEXs +13.40% 7d / AI Agents +13.95% 7d but −0.93% 24h / RWA only +1.29% 7d (social ahead of price). Kaito: AI held top narrative ~28% mindshare for 12 months. xai http=200 SOURCE=api
+Emerging: post-quantum signatures (niche), onchain DEX rebound
+Rising: AI agents (Virtuals-Solana), Solana RS, Ethena, Hyperliquid, broad risk-on, RWA/tokenized stocks
+Peak: —
+Fading: Privacy/ZEC, DAT premium, generic reg/policy as a standalone tape driver
