@@ -26,13 +26,13 @@
   },
   "narrative-tracker": {
     "last_status": "failed",
-    "last_failed": "2026-08-28T06:48:56Z",
-    "total_runs": 377,
+    "last_failed": "2026-08-28T06:51:27Z",
+    "total_runs": 378,
     "total_successes": 38,
-    "total_failures": 339,
-    "consecutive_failures": 4,
+    "total_failures": 340,
+    "consecutive_failures": 5,
     "success_rate": 0.1,
-    "last_error": "read-only: workspace write-locked via bwrap  ⚠ Workspace Trust Required    Cursor Agent can execute code and access files in this directory.   Do you trust the contents of this directory?      /home",
+    "last_error": "read-only: workspace write-locked via bwrap hermes -z: agent failed: No access token found for Nous Portal login. hermes exited 1:  ",
     "last_success": "2026-08-28T06:34:51Z",
     "last_quality_score": 4,
     "last_dispatch": "2026-08-28T01:03:22Z"
