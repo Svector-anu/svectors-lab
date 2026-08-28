@@ -9,7 +9,7 @@
       "124": "timeout"
     }
   },
-  "generated": "2026-08-25T22:09:20Z",
+  "generated": "2026-08-28T16:08:08Z",
   "count": 10,
   "harnesses": [
     {
@@ -76,7 +76,7 @@
         "bin": "agent",
         "min_version": "latest"
       },
-      "invoke": "agent -p --output-format json",
+      "invoke": "agent -p --trust --output-format json",
       "round_trip": true,
       "token_usage": "none",
       "cost": false,

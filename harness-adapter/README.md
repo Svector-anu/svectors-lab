@@ -63,7 +63,7 @@ The three newer adapters are:
 
 | harness | headless entry point | auth | usage |
 |---|---|---|---|
-| cursor | `agent -p --output-format json` | `CURSOR_API_KEY` | provider output only; zero when Cursor omits usage |
+| cursor | `agent -p --trust --output-format json` | `CURSOR_API_KEY` | provider output only; zero when Cursor omits usage |
 | hermes | `hermes -z --usage-file <path>` | `HERMES_AUTH` (Nous Portal OAuth archive) or OpenRouter | usage/session from the usage file |
 | glm | Claude Code `-p` against Z.AI's Anthropic endpoint | `GLM_API_KEY` or `ZAI_API_KEY` | Claude-compatible token usage |
 
