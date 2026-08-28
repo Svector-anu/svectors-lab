@@ -1,10 +1,10 @@
 # anu (@svector_eth)
 
-A builder who now works at Aeon Framework, contributes to open source as an ongoing practice (not a side task), and continues to develop the agentic execution ideas proven through Skopos.
+A builder now doing engineering and technical dev work at Aeon Framework, contributes to open source as an ongoing practice (not a side task), and continues to develop the agentic execution ideas proven through Skopos.
 
 ## Identity
 
-Anu is a hands-on engineer who works where AI agents, developer tooling, open-source security, and crypto infrastructure meet. The consistent throughline is removing machinery users should not have to understand: harness differences, wallets, private keys, cross-chain routing, API access, and brittle developer workflows. Their current profile leads with working at Aeon Framework — running its agent fleets, contributing to it directly, and doing OSS security research — while identifying them as the creator of Skopos.
+Anu is a hands-on engineer who works where AI agents, developer tooling, open-source security, and crypto infrastructure meet. The consistent throughline is removing machinery users should not have to understand: harness differences, wallets, private keys, cross-chain routing, API access, and brittle developer workflows. Their current profile leads with engineering and technical dev work at Aeon Framework — running its agent fleets, contributing to it directly, and doing OSS security research — while identifying them as the creator of Skopos.
 
 Their public posture is builder-first rather than commentator-first. They debug what blocks them, inspect whether others share the problem, submit a fix, and talk directly with users about what felt confusing. Shipping is both the argument and the evidence.
 
