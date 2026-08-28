@@ -1,12 +1,81 @@
-The exact request was already completed today with unchanged input. The preserved result matched workflow `base-consumer-app` and concluded `usable-with-corrections`; rerunning would violate the skill’s three-day duplicate guard.
+## Architecture brief
+
+**Request:** consumer app on Base with an embedded wallet  
+**Matched workflow:** `base-consumer-app`  
+**Verdict:** `usable-with-corrections`  
+**Confidence:** medium
+
+RightStack correctly identifies embedded-wallet onboarding as the central requirement. Its Privy recommendation is supported by current Privy documentation, but parts of the surrounding stack are overly prescriptive and lag Base’s current guidance.
+
+### Stack by phase
+
+| Phase | Recommendation | Status |
+|---|---|---|
+| Wallet and authentication | Privy embedded, user-owned wallet | Required |
+| Contract interaction | wagmi + viem | Required |
+| RPC | Dedicated Base-capable provider with fallback | Required for production |
+| UI components | Custom UI; selectively use compatible component kits | Optional |
+| Gas sponsorship | Privy gas sponsorship, Base Account capabilities, or Pimlico after selecting the account model | Optional until users transact |
+| External wallets | Support through Privy if existing wallet holders matter | Optional |
+| Indexing/webhooks | Add only when product queries exceed direct RPC/event reads | Optional |
+
+Privy supports embedded self-custodial wallets on Base, external-wallet connection, policy controls, and key export. That makes it a sound primary wallet layer for email, social, or passkey onboarding. Its custody mode must be configured deliberately rather than inferred from “embedded wallet.” [Privy embedded-wallet overview](https://docs.privy.io/wallets/overview/embedded), [key-export documentation](https://docs.privy.io/wallets/wallets/export)
+
+Use wagmi and viem as the stable interaction layer. Current Base documentation builds standard web apps around these libraries and the Base Account connector. It also says Base’s public RPC endpoints are rate-limited and unsuitable for production, but does not independently establish Alchemy as the mandatory or default provider. [Base app quickstart](https://docs.base.org/apps/quickstart/build-app), [Base network documentation](https://docs.base.org/base-chain/quickstart/connecting-to-base)
+
+### Corrections to the RightStack output
+
+- Treat **OnchainKit as optional and verify its current scope before adoption**. Current Base guidance emphasizes standard web apps using wagmi, viem, and Base Account. The corpus’s “default UI toolkit” claim is not sufficiently supported by the current primary documentation.
+- Treat **Alchemy as one RPC option**, not an architectural requirement. Compare reliability, limits, geographic coverage, debugging APIs, pricing, and failover needs before choosing.
+- Do not automatically combine Privy, Pimlico, and another smart-account product. First decide whether the wallet is an EOA, Privy-managed smart account, or Base Account/Sub Account. Then select one coherent sponsorship path.
+- The corpus’s Coinbase Smart Wallet terminology is stale. Current documentation calls it **Base Account**; Base Sub Accounts can provide app-specific embedded accounts and reduced signing friction. [Base Account overview](https://docs.base.org/base-account/overview/what-is-base-account), [Base Sub Accounts](https://docs.base.org/base-account/improve-ux/sub-accounts)
+- Pimlico remains a valid ERC-4337 bundler/paymaster option, but it is optional infrastructure rather than a default dependency. [Pimlico documentation](https://docs.pimlico.io/)
+
+### Assumptions
+
+- Users are mostly non-crypto-native and should not need a browser extension.
+- The app is a standard web or mobile consumer product, not an autonomous server wallet.
+- Users should control their wallets and have a documented recovery/export path.
+- Base Mainnet is the target, with Base Sepolia used during development.
+- Gas sponsorship is desirable if the app submits transactions, but its abuse budget and policy are not yet defined.
+
+### Tradeoffs
+
+- **Privy:** fast onboarding and unified embedded/external wallets, balanced against vendor dependency for authentication and key infrastructure.
+- **Base Account/Sub Accounts:** stronger Base-native interoperability and passkey UX, but potentially more Base/Coinbase coupling.
+- **Gas sponsorship:** removes the ETH onboarding barrier, but introduces paymaster availability, policy design, abuse prevention, and budget exposure.
+- **Key export:** improves portability, but requires a carefully secured and tested recovery flow—especially for native mobile apps.
+- **Dedicated RPC:** improves production reliability, but creates another vendor dependency; hide it behind a transport abstraction and maintain a fallback.
+
+### Anti-patterns
+
+- Requiring MetaMask or ETH before the first useful action.
+- Calling an embedded wallet “non-custodial” without documenting its ownership, recovery, export, and server-signing configuration.
+- Giving a backend unrestricted authority over user wallets.
+- Sponsoring transactions without per-user limits, contract allowlists, monitoring, and an emergency disable path.
+- Using Base’s public RPC in production.
+- Coupling business logic directly to one wallet provider’s React components.
+- Adding both Privy and Base Account without defining which address is the user’s canonical account.
+- Assuming bundler acceptance means final onchain success; surface signing, submission, inclusion, replacement, and failure states separately.
+
+### Primary-documentation checks before implementation
+
+1. Confirm the intended Privy ownership model and supported login methods.
+2. Prototype and test wallet export/recovery on every target platform.
+3. Decide whether Base Account/Sub Accounts provide material value alongside Privy.
+4. Confirm current SDK compatibility among Privy, wagmi, viem, and any UI library.
+5. Select a dedicated RPC using measured limits and define failover.
+6. Threat-model sponsorship policies and set a hard operating budget.
+7. Verify Base chain IDs, wallet capabilities, batching, and paymaster support at runtime rather than assuming them.
 
 ## Summary
 
+- Executed `recommend` using pinned `rightstack@0.3.2`.
+- Adapter exit code: `0`.
+- Validated `schema_version: "1.0"` and command `recommend`.
+- No duplicate recommendation for this exact request appeared in the last three days.
+- No workspace files were modified.
+- Notification sent: no; the complete brief is delivered here.
+- Final state: `RIGHTSTACK_CORRECTED`
 - Operation: `recommend`
-- Pinned RightStack version: `0.3.2`
-- Previous verdict: `usable-with-corrections`
-- Files modified: none
-- Notification sent: no
-- Follow-up needed: none unless the request changes
-
-`RIGHTSTACK_DUPLICATE`
+- Verdict: `usable-with-corrections`
