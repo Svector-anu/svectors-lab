@@ -1,34 +1,32 @@
-*Daily digest — 2026-08-28*
+*web3 developer tooling — 2026-08-28*
 
-_TL;DR: exposed agent infrastructure is already being exploited while new enterprise agent tooling and stronger evaluation methods ship._
+_TL;DR: builders can join a privacy hackathon today, Cardano shipped an agent-ready project generator, and wallet stacks added RGB Lightning and stricter transaction verification._
 
-1. *Audit exposed MCP and AI services now*  
-   Wiz observed active attacks against LiteLLM, MCP servers, LangChain and Flowise, including auth bypass, RCE, prompt injection and credential theft. Check exposure, patch LiteLLM and rotate reachable credentials.  
-   Why it matters: one compromised proxy can expose model keys, cloud IAM and downstream tools  
-   https://www.wiz.io/blog/ai-infrastructure-honeypot
+1. *Midnight’s privacy hackathon starts today*  
+   The online build runs August 28–30 around private apps, zero-knowledge contracts, and agents with onchain policy guardrails.  
+   Why it matters: a live weekend path to test policy-constrained wallet agents  
+   https://events.mlh.com/events/14510-midnight-hackathon-august
 
-2. *Salesforce puts 37 governed sales skills inside Claude*  
-   Salesforce and Anthropic launched a pilot connecting Claude to live CRM data and actions. An open beta is expected in September.  
-   Why it matters: enterprise agents are moving into governed production workflows  
-   https://www.salesforce.com/in/news/press-releases/2026/08/27/salesforce-and-anthropic-announce-claudeforce/
+2. *cardano-init becomes a released, agent-ready project generator*  
+   Versions 0.2.0 and 0.2.1 generate wired monorepos, machine-readable JSON, and `AGENTS.md`, with commands for changing stack components later.  
+   Why it matters: Cardano setup becomes a repeatable scaffold instead of manual glue work  
+   https://github.com/input-output-hk/cardano-init
 
-3. *Cloudflare cuts its DNS cache footprint by more than half*  
-   Five storage changes across 250 billion cache entries freed roughly 100 TB of RAM, raised insert throughput 43% and cut lookup latency 19%.  
-   Why it matters: small per-object savings compound hard at infrastructure scale  
-   https://blog.cloudflare.com/dns-cache-memory-optimization-1111/
+3. *Tether WDK adds Lightning support for RGB assets*  
+   A module built by Utexo brings RGB asset transfers over Bitcoin Lightning into Tether’s Wallet Development Kit.  
+   Why it matters: developers can test RGB Lightning without assembling the integration from scratch  
+   https://rgb.info/rgb-lightning-tether-wdk/
 
-4. *DeepMind pilots double-blind frontier-model evaluations*  
-   Confidential benchmarks run inside a cryptographically protected environment, preventing developers and evaluators from using hidden test material to tune results.  
-   Why it matters: the setup directly reduces benchmark contamination and gaming  
-   https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/
+4. *Sparrow 2.5.4 hardens what wallets trust*  
+   The Bitcoin wallet strengthens Electrum-response and block-proof validation, redacts credentials from logs, closes Tor DNS leaks, and tightens hardware-wallet signing protections.  
+   Why it matters: embedded-wallet teams should make server verification and secret-safe diagnostics explicit acceptance criteria  
+   https://github.com/sparrowwallet/sparrow
 
-5. *Hackers used a coding agent across seven company intrusions*  
-   Reuters reviewed logs showing the Aur0ra ransomware group used Cursor for hundreds of malicious operations by presenting attacks as simulations.  
-   Why it matters: prompt-level safeguards did not stop a sustained real-world campaign  
-   https://www.reuters.com/world/russian-speaking-cybercriminals-used-spacexs-cursor-ai-tool-hack-seven-companies-2026-08-27/
+*Also worth a glance:* for the Base consumer app, keep Privy as the onboarding layer only after fixing the canonical account model; use wagmi + viem, a dedicated RPC with fallback, and one sponsorship path.
 
 ## Summary
 
-- Gathered 17 candidates from web search and a successful xAI X-search request; sent 5 after filtering.
-- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-28.md).
-- Notification delivery was attempted, but its external queue was read-only, so delivery could not be confirmed.
+- Saved the digest to [output/digest-web3-developer-tooling-2026-08-28.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-web3-developer-tooling-2026-08-28.md).
+- Updated `MEMORY.md` and today’s digest log.
+- Verified all four links return HTTP 200.
+- Notification delivery was attempted, but the external queues were read-only.

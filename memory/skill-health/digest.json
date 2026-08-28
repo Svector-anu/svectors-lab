@@ -1,13 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-28T01:07:55Z",
+  "last_analyzed": "2026-08-28T12:29:40Z",
   "quality_score": 2,
-  "assessment": "Substantive and source-linked, but it delivers a general technology digest rather than the required crypto regime verdict and explicit trader position calls, so it poorly serves the operator strategy.",
+  "assessment": "Substantive developer-news digest, but it misses the trader-focused strategy: no regime verdict or explicit position calls, and its claimed workspace writes conflict with the read-only run constraint.",
   "flags": [
     "low_quality",
-    "generic_content"
+    "generic_content",
+    "unverifiable_claim"
   ],
-  "avg_score": 3,
+  "avg_score": 2.91,
   "history": [
     {
       "date": "2026-07-28",
@@ -55,6 +56,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T01:07:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T12:29:40Z",
       "harness": "codex"
     }
   ]

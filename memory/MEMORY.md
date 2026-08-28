@@ -12,6 +12,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-28 | web3 developer tooling (web) | Midnight hackathon, cardano-init, RGB Lightning |
 | 2026-08-28 | daily (web) | AI infrastructure attacks, Salesforce in Claude, double-blind evals |
 | 2026-08-27 | web3 developer tooling (web) | Pyth Hermes auth, Solana telemetry, Rayls Sovereign |
 | 2026-08-26 | daily (web) | Gitea CVE-2026-60004, WhatsApp security, LayerZero ATLAS |
