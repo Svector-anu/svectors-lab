@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T12:45:39Z",
-  "quality_score": 2,
-  "assessment": "Explicit trade calls and concise structure are useful, but numerous specific catalysts, metrics, classifications, and causal claims lack direct evidence links, while hard live-price figures violate the strategy.",
-  "flags": [
-    "unverifiable_claim"
-  ],
+  "last_analyzed": "2026-08-28T16:03:39Z",
+  "quality_score": 4,
+  "assessment": "Well-structured, decision-focused narrative map with clear position calls grounded in recent logs, but it lacks a concise conclusion-first lead line as the opening takeaway.",
+  "flags": [],
   "avg_score": 3.2,
   "history": [
-    {
-      "date": "2026-07-11",
-      "score": 4
-    },
     {
       "date": "2026-07-19",
       "score": 4
@@ -159,6 +153,13 @@
       "score": 2,
       "ts": "2026-08-28T12:45:39Z",
       "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 4,
+      "ts": "2026-08-28T16:03:39Z",
+      "harness": "cursor",
+      "model": "gpt-5.1"
     }
   ]
 }
