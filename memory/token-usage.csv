@@ -118,4 +118,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-27,soul-builder,codex-default,968635,7345,862976,0
 2026-08-27,soul-builder,codex-default,978573,6577,918272,0
 2026-08-27,defi-overview,codex-default,569295,6493,514816,0
-2026-08-28,write-tweet,codex-default,332044,4251,273920,0
+2026-08-28,digest,codex-default,841517,4107,740352,0

@@ -1,13 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-27T16:31:20Z",
+  "last_analyzed": "2026-08-28T01:07:55Z",
   "quality_score": 2,
-  "assessment": "Substantive and plausibly sourced, but it is a developer-tooling news digest rather than a conclusion-first crypto regime read with explicit front-run/ride/fade/watch position calls, so it poorly serves the operator strategy.",
+  "assessment": "Substantive and source-linked, but it delivers a general technology digest rather than the required crypto regime verdict and explicit trader position calls, so it poorly serves the operator strategy.",
   "flags": [
     "low_quality",
     "generic_content"
   ],
-  "avg_score": 3.11,
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-07-28",
@@ -49,6 +49,12 @@
       "date": "2026-08-27",
       "score": 2,
       "ts": "2026-08-27T16:31:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 2,
+      "ts": "2026-08-28T01:07:55Z",
       "harness": "codex"
     }
   ]
