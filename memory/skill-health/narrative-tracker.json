@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T05:47:16Z",
-  "quality_score": 3,
-  "assessment": "Actionable position calls with explicit calls (RIDE/FADE/FRONT-RUN/WATCH) and honest gap reporting, but specific quantitative claims (18/20 green, +15.9% vol, mindshare scores) lack transparent sourcing.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 3.27,
+  "last_analyzed": "2026-08-28T06:20:06Z",
+  "quality_score": 4,
+  "assessment": "Dense, well-sourced narrative map with explicit position calls (FRONT-RUN/RIDE/FADE/WATCH), named sources (X.AI x_search HTTP 200, DefiLlama, Kaito, npm), and transparent handling of the prior outage and blocked log writes; telegraphic log format keeps it short of a conclusion-first 5.",
+  "flags": [],
+  "avg_score": 3.3,
   "history": [
-    {
-      "date": "2026-07-06",
-      "score": 3
-    },
     {
       "date": "2026-07-09",
       "score": 4
@@ -149,6 +143,13 @@
       "score": 3,
       "ts": "2026-08-28T05:47:16Z",
       "harness": "claude"
+    },
+    {
+      "date": "2026-08-28",
+      "score": 4,
+      "ts": "2026-08-28T06:20:06Z",
+      "harness": "glm",
+      "model": "glm-5.2"
     }
   ]
 }
