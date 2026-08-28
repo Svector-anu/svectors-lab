@@ -3,7 +3,7 @@ type: Playbook
 title: SVector Lab Contribution OSS Playbook
 description: The canonical, evidence-derived methodology for how SVector Lab discovers, validates, fixes, and contributes to unfamiliar open-source repositories — security and functional-bug lineages both, with evidence standards, stopping conditions, and documented failures.
 tags: [methodology, oss-contribution, security, vuln-scanner, playbook, evidence-standards]
-timestamp: 2026-08-17T13:30:00Z
+timestamp: 2026-08-25T12:30:00+01:00
 ---
 
 # SVector Lab Contribution OSS Playbook
@@ -535,6 +535,51 @@ handling: the refusal wasn't about the destination being bad, it was about the *
 and once the user's actual underlying goal was separated from the specific mechanism they'd
 proposed, that goal was still pursued, just through a channel that didn't require trusting
 unvalidated fetched content as a command source.
+
+### 7.7 Generated catalog changed while manually maintained counts stayed stale
+
+Actions run `32824788811` exposed a fork-local documentation drift: `catalog/packs.json`
+contained 78 unique skills and exactly matched the 78 on-disk `skills/*/SKILL.md` files, while
+`.github/README.md` and `docs/skill-packs.md` still said 75. The skill count had been copied
+into human-maintained Markdown; later skill/catalog additions updated the source data without
+updating both copies. The README/catalog parity gate correctly failed. Upstream parity was
+checked before classification: `upstream/main` was internally consistent at 76, so this was
+our fork's drift, not an Aeon defect. Fork-local PR #32 fixed both stale references.
+
+For every skill addition or removal, treat this as one atomic change set:
+
+- `skills/<name>/SKILL.md`;
+- `catalog/skills.json`;
+- `catalog/packs.json`;
+- the count and link in `.github/README.md`; and
+- the count and heading in `docs/skill-packs.md`.
+
+Before committing, run the generators and the same parity gate CI runs:
+
+```bash
+bin/generate-skills-json
+bin/generate-packs-json
+bash scripts/tests/test_validate_readme_catalog.sh
+git diff --check
+```
+
+Then review the atomic surface explicitly:
+
+```bash
+git diff -- \
+  catalog/skills.json \
+  catalog/packs.json \
+  .github/README.md \
+  docs/skill-packs.md
+```
+
+Do not treat a new skill as complete merely because its own tests pass. The stopping condition
+for this failure class is `test_validate_readme_catalog: ALL PASS`, plus confirmation that the
+catalog's declared count, listed unique slugs, and on-disk skill count agree.
+
+The stronger structural prevention is to have the catalog generator update marked count fields
+in both Markdown files, or remove numeric counts from hand-maintained text entirely. Until that
+exists, the atomic checklist above is load-bearing.
 
 ---
 

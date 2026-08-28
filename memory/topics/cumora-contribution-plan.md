@@ -6,7 +6,7 @@ tags:
   - contribution-strategy
   - cumora
 resource: https://github.com/yetone/cumora
-timestamp: 2026-08-18T18:20:00Z
+timestamp: 2026-08-19T05:26:25Z
 ---
 
 # cumora contribution plan
@@ -50,8 +50,9 @@ eliza by default.
    helps the maintainer, not just self-found scanner output. Check
    `gh issue list --repo yetone/cumora --state open` each pass.
    - **#2 "Login Issue on Google or Github Account"** (opened 2026-08-18) —
-     a real bug report, live now. Strongest next candidate: reproduce, fix,
-     PR referencing the issue directly.
+     fixed via PR #14, merged 2026-08-19T05:26:25Z. Closed; no longer a
+     pipeline candidate. Next pass: fresh `gh issue list` check for anything
+     new.
    - #4 (Grok/xAI EngineAdapter for BYOA) and #7 (pi agent support) are
      feature requests, not bugs — lower priority unless scoped small and
      genuinely quick; don't force a feature PR just to pad volume.
@@ -97,3 +98,4 @@ slow down and stay high-signal only.
   unconfirmed contributor to the other half of #2 — flagged honestly as
   unconfirmed in the PR, not claimed as fixed. First user-reported-issue
   contribution, exactly the top pipeline priority from this plan.
+- 2026-08-19T05:26:25Z: PR #14 merged (confirmed live via `gh pr list --state all --json mergedAt`). Both contributions to this repo are now merged — #8 same-day, #14 same-day-ish (opened and merged within roughly 12 hours). Second consecutive fast merge from yetone personally — a real signal per this plan's own re-evaluation rule ("fast merge + positive engagement → cadence can tighten"). Worth reassessing pipeline item #1 (issue #2 is now closed by this fix) and considering whether item #4 (Electron upgrade) or a fresh `gh issue list` pass is the next move, but still inside the 1-2-week cadence — this isn't a signal to switch to eliza-style volume.

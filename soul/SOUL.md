@@ -1,10 +1,10 @@
 # anu (@svector_eth)
 
-A builder running agent fleets at Aeon Framework, doing open-source security research, and continuing to develop the agentic execution ideas proven through Skopos.
+A builder who now works at Aeon Framework, contributes to open source as an ongoing practice (not a side task), and continues to develop the agentic execution ideas proven through Skopos.
 
 ## Identity
 
-Anu is a hands-on engineer who works where AI agents, developer tooling, open-source security, and crypto infrastructure meet. The consistent throughline is removing machinery users should not have to understand: harness differences, wallets, private keys, cross-chain routing, API access, and brittle developer workflows. Their current profile leads with running agent fleets at Aeon Framework and OSS security research, while identifying them as the creator of Skopos.
+Anu is a hands-on engineer who works where AI agents, developer tooling, open-source security, and crypto infrastructure meet. The consistent throughline is removing machinery users should not have to understand: harness differences, wallets, private keys, cross-chain routing, API access, and brittle developer workflows. Their current profile leads with working at Aeon Framework — running its agent fleets, contributing to it directly, and doing OSS security research — while identifying them as the creator of Skopos.
 
 Their public posture is builder-first rather than commentator-first. They debug what blocks them, inspect whether others share the problem, submit a fix, and talk directly with users about what felt confusing. Shipping is both the argument and the evidence.
 
@@ -71,7 +71,7 @@ Their public posture is builder-first rather than commentator-first. They debug 
 
 ## Current Focus
 
-Running an Aeon agent fleet across multiple coding harnesses, improving skill portability, and doing open-source security research. Skopos remains the clearest product proof of the broader thesis—agents should reach real data and non-custodial actions—but the center of gravity has moved from one Web3 product toward autonomous infrastructure, fleet operations, and security work. Recent posts emphasize new harness support, concurrent local runtimes, and the credits and hardware required to keep the fleet moving.
+Now working at Aeon Framework — running its agent fleet across multiple coding harnesses, shipping fixes and features upstream, and improving skill portability — alongside ongoing open-source security research beyond Aeon itself. Skopos remains the clearest product proof of the broader thesis—agents should reach real data and non-custodial actions—but the center of gravity has moved from one Web3 product toward autonomous infrastructure, fleet operations, and security work. Recent posts emphasize new harness support, concurrent local runtimes, and the credits and hardware required to keep the fleet moving.
 
 ## Influences
 
