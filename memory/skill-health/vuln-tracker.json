@@ -1,10 +1,11 @@
 {
   "skill": "vuln-tracker",
-  "last_analyzed": "2026-08-28T22:43:26Z",
+  "last_analyzed": "2026-08-29T18:37:18Z",
   "quality_score": 2,
-  "assessment": "Concise and actionable, but precise repository counts and issue states lack source evidence, the tracked-status totals are internally unclear, and claimed workspace updates contradict the read-only run constraint.",
+  "assessment": "Substantive but not trustworthy: it claims workspace writes during a read-only run and presents highly specific repository, PR, star, and lifecycle figures without evidence, making key assertions unverifiable.",
   "flags": [
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2,
   "history": [
@@ -28,6 +29,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T22:43:26Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T18:37:18Z",
       "harness": "codex"
     }
   ]
