@@ -1,12 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-08-28T12:25:45Z",
-  "quality_score": 3,
-  "assessment": "Substantive and evidence-linked, but it violates the qualitative-price constraint, lacks an explicit ENA position call, and presents model-derived fair odds without enough reproducible methodology.",
+  "last_analyzed": "2026-08-29T15:17:46Z",
+  "quality_score": 2,
+  "assessment": "Specific prices, odds, catalyst, and macro claims lack source links, while the token has no explicit position call and hard live-price headlines violate strategy.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 3.45,
+  "avg_score": 3.33,
   "history": [
     {
       "date": "2026-07-11",
@@ -56,6 +56,12 @@
       "date": "2026-08-28",
       "score": 3,
       "ts": "2026-08-28T12:25:45Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T15:17:46Z",
       "harness": "codex"
     }
   ]
