@@ -1,8 +1,8 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-08-28T22:43:34Z",
+  "last_analyzed": "2026-08-29T21:12:45Z",
   "quality_score": 2,
-  "assessment": "Usable tweet drafts, but they are generic and off-strategy, and the claimed workspace file writes contradict the read-only run constraints.",
+  "assessment": "Polished drafts, but they are off-strategy, provide no evidence links for highly specific claims, and implausibly claim workspace writes during a read-only run.",
   "flags": [
     "generic_content",
     "unverifiable_claim"
@@ -25,6 +25,12 @@
       "date": "2026-08-28",
       "score": 2,
       "ts": "2026-08-28T22:43:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T21:12:45Z",
       "harness": "codex"
     }
   ]
