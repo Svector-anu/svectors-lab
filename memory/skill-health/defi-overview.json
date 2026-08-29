@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-29T10:33:34Z",
+  "last_analyzed": "2026-08-29T15:19:36Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first regime call is useful, but it violates the qualitative-price constraint, lacks explicit position calls and evidence for most figures, and implausibly claims workspace files were updated during a read-only run.",
+  "assessment": "Substantive and conclusion-first, but most specific figures and yield claims lack evidence links, hard live prices violate strategy, and no actionable front-run/ride/fade/watch calls are provided.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.9,
+  "avg_score": 2.87,
   "history": [
     {
       "date": "2026-07-06",
@@ -141,6 +141,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T10:33:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T15:19:36Z",
       "harness": "codex"
     }
   ]
