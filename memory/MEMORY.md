@@ -13,6 +13,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-29 | web3 developer tooling (web) | Base production RPC, Arc v0.8.0, Compass WTGXX |
 | 2026-08-28 | daily (web, crypto) | Cosmos EVM exploit, Core Lightning patch, hard-asset ETF flows |
 | 2026-08-28 | web3 developer tooling (web) | Midnight hackathon, cardano-init, RGB Lightning |
 | 2026-08-28 | daily (web) | AI infrastructure attacks, Salesforce in Claude, double-blind evals |
