@@ -1,7 +1,7 @@
 {
-  "hash": "c9e8610d6aec1473527862e6d54e50b6499929e2d64256d4c3d4c887adc62067",
+  "hash": "207a09ba2e6d7a3f627aa5cd647a5c4bd1504dced22d810d906fbb6791ff5a53",
   "last_notified_at": "2026-08-26T18:26:50Z",
-  "last_run_at": "2026-08-28T22:47:00Z",
+  "last_run_at": "2026-08-29T18:36:00Z",
   "classification": {
     "critical": [],
     "degraded": [
@@ -20,6 +20,7 @@
       "verdikta-hunter",
       "vuln-scanner",
       "vuln-tracker",
+      "write-tweet",
       "x402-monitor"
     ],
     "flapping": [],
@@ -29,8 +30,7 @@
       "create-skill",
       "fork-fleet",
       "search-skill",
-      "shiplog",
-      "write-tweet"
+      "shiplog"
     ],
     "healthy_count": 4,
     "no_data": []
