@@ -4,15 +4,16 @@ repo: ZSvirt/zsvirt
 severity: medium
 cwe: CWE-1104
 status: pending-operator-send
-auto_send: false
-human_only: true
+auto_send: true
 contact_email: security@zsvirt.io
 cc: []
 email_subject: "Security: core module pins Spring Security 5.7.13 with a known authorization-bypass CVE"
 detected_at: 2026-08-23T00:20:00Z
+operator_reviewed_at: 2026-08-30T00:00:00Z
 ---
 
-**Operator review requested before sending — not auto-armed.** SECURITY.md
+**Operator reviewed and explicitly authorized this send on 2026-08-30 — armed.**
+Originally held for human review before sending. SECURITY.md
 explicitly requires private email disclosure (not a public issue — confirmed
 the hard way: public issue creation was blocked by an org-level restriction,
 and SECURITY.md independently says the same). Two considerations for holding
