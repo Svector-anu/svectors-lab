@@ -1,13 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-29T03:56:28Z",
+  "last_analyzed": "2026-08-29T10:33:34Z",
   "quality_score": 2,
-  "assessment": "Clear regime verdict, but figures lack source citations, no explicit position call is given, and claimed workspace updates contradict the read-only run constraint.",
+  "assessment": "Conclusion-first regime call is useful, but it violates the qualitative-price constraint, lacks explicit position calls and evidence for most figures, and implausibly claims workspace files were updated during a read-only run.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
-  "avg_score": 2.93,
+  "avg_score": 2.9,
   "history": [
     {
       "date": "2026-07-06",
@@ -135,6 +135,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T03:56:28Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T10:33:34Z",
       "harness": "codex"
     }
   ]

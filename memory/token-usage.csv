@@ -133,4 +133,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-28,narrative-tracker,codex-default,583372,4238,524800,0
 2026-08-28,digest,codex-default,834335,4130,740608,0
 2026-08-29,narrative-tracker,codex-default,610235,4551,561920,0
-2026-08-29,hunter-22,codex-default,601935,6044,515584,0
+2026-08-29,defi-overview,codex-default,459601,7749,404736,0

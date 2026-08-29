@@ -1,55 +1,58 @@
 # Market Context (as of 2026-08-29)
 
-> **Take:** risk-off — BTC fell 2.8% over 24h while only 7/20 top-cap assets are green. Conviction: medium.
+> **Take:** risk-off — BTC fell 2.0% over 24h while only 4/20 top-cap assets are green. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $77,577 (-2.8% 24h, -0.2% 7d) · dominance 58.96% (-0.03 pp since the prior refresh)
-- ETH $2,436 (-2.2% 24h, -2.9% 7d) · ETH/BTC 0.0314
-- SOL $104.03 (-2.8% 24h, +10.8% 7d)
-- Total mcap $2.634T (-4.9% 24h) · DEX vol $10.06B 24h
-- Breadth: 7/20 green 24h · 8/20 green 7d
+- BTC $77,673 (-2.0% 24h, +0.6% 7d) · dominance 59.50% (+0.54 pp since the prior refresh)
+- ETH $2,437 (-2.1% 24h, +0.5% 7d) · ETH/BTC 0.0314
+- SOL $103.48 (-1.9% 24h, +10.0% 7d)
+- Total mcap $2.615T (-5.1% 24h) · DEX vol $10.06B 24h
+- Breadth: 4/20 green 24h · 9/20 green 7d
 - Fear & Greed: 68 (Greed) — yesterday 73
 
 ## What Changed Since Last Refresh
-- Fear & Greed fell 5 points to 68, still Greed but moving against the persistent ETF bid.
-- DEX volume fell 9.6% from the prior snapshot to $10.06B; day-over-day volume is also down 9.5%.
+- Breadth weakened from 7/20 to 4/20 green while BTC dominance rose 0.54 percentage points.
+- Bitcoin ETFs recorded about $202M of August 28 outflows, ending a nine-session inflow streak; ETH and SOL ETFs still took in $102M and $17M.
 
 ## Active Narratives
-- **Broad large-cap pullback** — phase: rising. Evidence: BTC fell 2.8%, total market cap fell 4.9%, and only 7/20 top-cap assets are green.
-- **Institutional BTC bid** — phase: rising. Evidence: U.S. spot BTC ETFs added $242.2M on August 27, the ninth straight inflow day.
-- **SOL relative strength** — phase: fading. Evidence: SOL retains a 10.8% seven-day gain but fell 2.8% over 24h.
-- **Political memecoin attention** — phase: emerging. Evidence: TRUMP is fourth on CoinGecko trending and gained 7.6% over 24h.
+- **Broad large-cap pullback** — phase: rising. Evidence: BTC fell 2.0%, total market cap fell 5.1%, and only 4/20 top-cap assets are green.
+- **ETF rotation away from BTC** — phase: emerging. Evidence: BTC funds lost $202M while ETH and SOL funds added $102M and $17M on August 28.
+- **SOL relative strength** — phase: fading. Evidence: SOL retains a 10.0% seven-day gain but fell 1.9% over 24h.
+- **Long-tail speculative attention** — phase: emerging. Evidence: PONS and HNT lead CoinGecko trending after 44.9% and 80.8% daily gains.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.55B (-2.4%)
-- Aave V3: $17.13B (-1.3%)
-- SSV Network: $12.29B (-3.3%)
-- Morpho Blue: $9.50B (+0.5%)
-- Binance staked ETH: $9.09B (-2.9%)
+- Lido: $23.47B (+0.3%)
+- Aave V3: $17.09B (+0.2%)
+- SSV Network: $12.25B (-0.6%)
+- Morpho Blue: $9.49B (+1.2%)
+- Binance staked ETH: $9.06B (-0.2%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $48.86B (n/a)
-- Solana: $5.87B (n/a)
-- Base: $5.48B (n/a)
+- Ethereum: $48.71B (n/a)
+- Solana: $5.85B (n/a)
+- BSC: $5.50B (n/a)
 
 ## Stablecoins
-Total: $310.7B (+0.5% 7d). USDT $183.4B · USDC $74.2B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.8%.
+Total: $310.7B (+0.5% 7d). USDT $183.4B · USDC $74.2B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.9%.
 
 ## Trending (CoinGecko)
-- PONS — rank-246 momentum, $0.155 (+27.6% 24h)
-- SOL — rank-7 attention, $104.13 (-2.6% 24h)
-- TRUMP — rank-87 attention, $2.90 (+7.6% 24h)
+- PONS — rank-210 momentum, $0.193 (+44.9% 24h)
+- HNT — rank-328 momentum, $0.401 (+80.8% 24h)
+- SOL — rank-7 attention, $103.48 (-1.9% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after the September 2026 meeting | 53.5% | $2.41M | $0.39M |
-| Fed raises rates 25 bps after the September 2026 meeting | 45.5% | $2.16M | $0.34M |
-| Baltimore Orioles beat the Athletics | 72.5% | $0.75M | $0.22M |
+| No Fed rate change after the September 2026 meeting | 54.5% | $2.71M | $0.46M |
+| Fed raises rates 25 bps after the September 2026 meeting | 43.5% | $2.24M | $0.55M |
+| Liverpool FC wins on August 29 | 67.5% | $1.16M | $1.40M |
+
+## Macro Catalysts (next 48h)
+- Month-end positioning follows a $202M Bitcoin ETF outflow; continued BTC outflows would reinforce the dominance-led risk-off tape.
 
 ## Implications for Downstream Skills
-- **token-pick:** require relative strength and deep liquidity; broad beta remains weak despite positive ETF flows.
-- **narrative-tracker:** monitor whether ETF demand arrests the pullback and whether SOL preserves its weekly lead.
+- **token-pick:** require relative strength and deep liquidity; avoid treating long-tail trending spikes as broad risk appetite.
+- **narrative-tracker:** monitor whether ETF rotation into ETH and SOL persists while BTC breadth weakens.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
