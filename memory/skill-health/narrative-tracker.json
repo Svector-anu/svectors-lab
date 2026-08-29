@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-28T22:43:42Z",
-  "quality_score": 3,
-  "assessment": "Actionable position labels and evidence links make this useful, but the tokenized-equities thesis relies on an ~11-day-old report for a 3-day tracker, several precise metrics point only to generic or mismatched sources, and the unexplained numeric/arrow ratings weaken verifiability.",
+  "last_analyzed": "2026-08-29T03:57:13Z",
+  "quality_score": 2,
+  "assessment": "Substantive position calls, but multiple specific catalysts and metrics lack verifiable source links or context, especially the Hyperliquid +280% revenue claim, while several narratives rely mainly on X posts and unsupported assertions.",
   "flags": [
-    "stale_data"
+    "unverifiable_claim"
   ],
-  "avg_score": 3.17,
+  "avg_score": 3.1,
   "history": [
-    {
-      "date": "2026-07-19",
-      "score": 4
-    },
     {
       "date": "2026-07-28",
       "score": 4
@@ -160,6 +156,12 @@
       "date": "2026-08-28",
       "score": 3,
       "ts": "2026-08-28T22:43:42Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T03:57:13Z",
       "harness": "codex"
     }
   ]

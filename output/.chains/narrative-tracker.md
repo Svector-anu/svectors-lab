@@ -1,25 +1,29 @@
-*Narrative Tracker — 2026-08-28*
+*Narrative Tracker — 2026-08-29*
 
 TRANSITIONS
-• NEW/UNBASELINED: agentic stablecoin payments — multiple fresh launches connect agents to real settlement; prior 3-day logs contain no labels — https://a2awire.com/news/
-• NEW/UNBASELINED: tokenized equities — $166.2M added in the latest reported week despite the wider RWA sector losing $210.5M — https://www.kucoin.com/news/flash/tokenized-commodities-market-gains-298m-as-rwa-sector-loses-211m-in-a-week
-• DEMOTED ON CURRENT SIGNAL: prediction markets — Nevada won a federal appeals ruling allowing state gambling regulation of Kalshi sports contracts — https://apnews.com/article/2168b6c0837ad9b4f0f63b04633d8835
+• NEW: Solana double-disinflation — the governance vote passed, turning supply policy into an immediate SOL valuation story — https://x.com/solana/status/2093367686017245668
+• NEW: quantum-resistant crypto — StarkWare put a post-quantum Bitcoin transaction on mainnet; attention moved from distant research to a concrete demo — https://x.com/BitcoinMagazine/status/2092846329424925077
+• NEW: Robinhood Chain / tokenized equities — live stock-token infrastructure is spawning paired assets and RWA products — https://x.com/RobinhoodCrypto/status/2092998069436477629
+• NEW: crypto-backed mortgages — Coinbase/Better tied BTC collateral directly to housing leverage — https://x.com/coinbase/status/2092598705794785531
+• PROMOTED/DEMOTED/DEAD: not verifiable; the prior 3-day logs contain no structured narrative baseline.
 
 REFLEXIVITY ALERT
-• tokenized equities — attention is translating into capital concentration: Ondo, Binance bStock and xStocks hold 77% of the segment, while tokenized stocks added $166.2M in the latest reported week.
-• agent payments — projects are explicitly launching/repositioning around the story: Flop Labs proposes an agent-native currency; Alipay launched an agent-commerce stack.
+• Solana disinflation — the passed vote changes issuance itself, so the supply narrative is now altering protocol economics.
+• Robinhood Chain — builders are launching NVDA-paired memes and RWA products specifically around the tokenized-stock story: https://x.com/chironchain/status/2093483141428023532
+• MemeFi 2.0 — rewards, buybacks and vaults are being bolted onto memes to manufacture durability; economics are following the pitch, not proven demand.
 
 POSITIONS
-• FRONT-RUN: agentic stablecoin payments (3 ↑↑, Bull) — @coinbaseDev, @circle, @Arthur_0x — bear: authorization, identity and chargeback controls lag payment execution — https://a2awire.com/news/
-• RIDE: tokenized equities / RWA trading (4 ↑, Bull) — @OndoFinance, @binance, @xStocksFi — bear: liquidity is concentrated and the wider RWA sector contracted — https://www.theblock.co/news/defi/2026-08-17-tokenized-equities-triple-market-share-ondo-binance-xstocks-dominate-411996
-• RIDE: perp DEX expansion (4 ↑, Bull) — @HyperliquidX, @DefiLlama, @CFTC — bear: storage-perp OI fell 32.2%, showing leverage can leave quickly — https://newsletter.defillama.com/
-• FADE: prediction-market regulatory arbitrage (4 ↓, Mixed) — @Kalshi, @Polymarket, @CFTC — bear: states may regulate sports contracts as gambling despite federal designation — https://apnews.com/article/2168b6c0837ad9b4f0f63b04633d8835
-• WATCH: privacy/ZK compliance (2 ↑, Mixed) — @zksync, @0xPolygon, @ethereum — bear: no fresh 3-day catalyst strong enough for conviction.
+• FRONT-RUN: quantum-resistant crypto (2 ↑↑, Mixed) — @BitcoinMagazine, @n1ckler, @a16zcrypto — real demo, but the threat horizon is distant and fragmentation risk is high.
+• RIDE: Robinhood Chain / tokenized equities (3 ↑, Bull) — @RobinhoodCrypto, @chironchain, @Vozdexai — distribution is real; MEV and securities regulation are the hard bear case.
+• RIDE: Hyperliquid/perps (3 ↑, Bull) — @ThinkingUSD, @Morecryptoonl; DefiLlama reports Hyperliquid revenue +280% — competition, unlocks and regulation can compress the edge.
+• WATCH: Solana disinflation (5 →, Mixed) — @solana, @mert, @SolanaFloor — passed catalyst, but lower issuance may already be priced in.
+• WATCH: crypto-backed mortgages (3 ↑, Mixed) — @coinbase, @cryptorover — product-market signal is real; BTC drawdowns plus housing leverage create liquidation/legal tail risk.
+• FADE: Jackson Hole/Fed catalyst (5 →, Cope) — @cryptorover, @AshCrypto, @CryptoNobler — one speech plus options-expiry positioning is event reflexivity, not durable fundamentals.
+• FADE: MemeFi 2.0 (3 ↑, Cope) — @eth_cedric, @blknoiz06, @icobeast — buybacks cannot manufacture lasting demand for most memes.
+• WATCH: Nvidia AI capex (5 →, Mixed) — @nvidia, @KobeissiLetter, @The_AI_Investor — record earnings face credible circular-financing concerns.
 
 MAP
-Emerging: privacy/ZK compliance
-Rising: agentic payments; tokenized equities; perp DEX expansion
-Peak: none
-Fading: prediction-market regulatory arbitrage
-
-Calibration: DefiLlama currently shows SocialFi +115% and PolitiFi +85.51% on its selected tracker window, but neither had enough verified 3-day driver evidence to enter the actionable map.
+Emerging: quantum-resistant crypto, crypto-backed mortgages
+Rising: Robinhood Chain/RWA, Hyperliquid, BTC institutional spot demand, TradFi tokenization
+Peak: Solana disinflation, Jackson Hole/Fed, Nvidia AI capex
+Fading: none verified
