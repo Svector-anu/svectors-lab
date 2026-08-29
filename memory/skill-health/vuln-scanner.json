@@ -1,8 +1,8 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-29T18:31:33Z",
+  "last_analyzed": "2026-08-29T18:45:11Z",
   "quality_score": 4,
-  "assessment": "Clear blocked-send status with verifiable draft/path/error detail and actionable next steps; Resend 403 reported, not output-blocking.",
+  "assessment": "Verified PR #3095 disclosure of real HIGH transitive dep CVEs plus MODERATE protobufjs; concise, linked, and actionable.",
   "flags": [],
   "avg_score": 4.08,
   "history": [
@@ -112,6 +112,12 @@
       "date": "2026-08-29",
       "score": 4,
       "ts": "2026-08-29T18:31:33Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 4,
+      "ts": "2026-08-29T18:45:11Z",
       "harness": "grok"
     }
   ]
