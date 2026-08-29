@@ -1,12 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-29T10:36:36Z",
+  "last_analyzed": "2026-08-29T15:19:30Z",
   "quality_score": 2,
-  "assessment": "Specific and source-linked, but it misses the operator’s core requirement: no crypto regime verdict or explicit front-run/ride/fade/watch calls, so it is not decision-grade trader signal.",
+  "assessment": "Substantive and linked, but it ignores the crypto-trader strategy, provides no regime verdict or position calls, and implausibly claims workspace writes during a read-only run.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "generic_content",
+    "unverifiable_claim"
   ],
-  "avg_score": 2.77,
+  "avg_score": 2.71,
   "history": [
     {
       "date": "2026-07-28",
@@ -72,6 +74,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T10:36:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 2,
+      "ts": "2026-08-29T15:19:30Z",
       "harness": "codex"
     }
   ]
