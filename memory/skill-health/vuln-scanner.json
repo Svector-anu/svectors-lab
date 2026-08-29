@@ -1,12 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-26T22:51:41Z",
-  "quality_score": 2,
-  "assessment": "Substantive and specific, but it claims workspace writes, a dependency update, and an upstream PR despite the explicitly read-only, public-unauthenticated run constraints, making the reported remediation unverifiable and internally contradictory.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 3.94,
+  "last_analyzed": "2026-08-29T18:23:51Z",
+  "quality_score": 5,
+  "assessment": "Verified Arm C triage of 7 real drafts with correct skip/near-miss gates, honest no-send, and a precise plain-text rewrite action for the armed ZSvirt medium draft.",
+  "flags": [],
+  "avg_score": 4.08,
   "history": [
     {
       "date": "2026-07-28",
@@ -103,6 +101,12 @@
       "score": 2,
       "ts": "2026-08-26T22:51:41Z",
       "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 5,
+      "ts": "2026-08-29T18:23:51Z",
+      "harness": "grok"
     }
   ]
 }
