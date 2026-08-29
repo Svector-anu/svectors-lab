@@ -12,7 +12,7 @@
     "last_success": "2026-08-29T10:32:27Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-08-29T15:19:39Z",
     "total_runs": 340,
     "total_successes": 32,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.09,
     "last_quality_score": 2,
-    "last_dispatch": "2026-08-29T15:14:48Z",
+    "last_dispatch": "2026-08-29T18:33:40Z",
     "last_failed": "2026-08-25T19:04:26Z",
     "last_error": "read_id\":\"01a03a4f-31ce-7381-8489-49d501aa64ed\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt"
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-28T18:31:57Z",
     "total_runs": 391,
     "total_successes": 45,
@@ -35,7 +35,7 @@
     "last_error": "equires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlock your free credits. fx reported",
     "last_success": "2026-08-29T15:20:16Z",
     "last_quality_score": 3,
-    "last_dispatch": "2026-08-29T15:14:48Z"
+    "last_dispatch": "2026-08-29T18:33:40Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -100,8 +100,8 @@
     "last_error": "58c057\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "skill-health": {
-    "last_dispatch": "2026-08-28T22:39:33Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-29T18:33:40Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-28T22:42:36Z",
     "total_runs": 283,
     "total_successes": 12,
@@ -174,14 +174,14 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-25T13:42:49Z",
     "total_runs": 105,
     "total_successes": 22,
     "total_failures": 83,
     "consecutive_failures": 0,
     "success_rate": 0.21,
-    "last_dispatch": "2026-08-25T13:01:32Z",
+    "last_dispatch": "2026-08-29T18:33:40Z",
     "last_error": "7f087e\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-08-29T18:31:38Z",
     "last_quality_score": 4
@@ -304,8 +304,8 @@
     "last_quality_score": 4
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-08-28T22:39:33Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-29T18:33:40Z",
+    "last_status": "dispatched",
     "last_success": "2026-08-28T22:43:28Z",
     "total_runs": 4,
     "total_successes": 4,
@@ -315,8 +315,8 @@
     "last_quality_score": 2
   },
   "self-improve": {
-    "last_dispatch": "2026-08-28T01:03:22Z",
-    "last_status": "success",
+    "last_dispatch": "2026-08-29T18:33:40Z",
+    "last_status": "dispatched",
     "last_failed": "2026-08-25T19:05:08Z",
     "total_runs": 4,
     "total_successes": 2,
