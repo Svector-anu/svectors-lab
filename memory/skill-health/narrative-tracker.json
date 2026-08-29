@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-29T10:34:03Z",
+  "last_analyzed": "2026-08-29T15:20:12Z",
   "quality_score": 3,
-  "assessment": "Substantive and position-labeled with evidence links, but it lacks a conclusion-first regime verdict, leaves scoring notation unexplained, and makes several thinly sourced catalyst and performance claims.",
+  "assessment": "Actionable position labels and direct links make this usable, but it lacks a conclusion-first regime verdict, relies heavily on single-post evidence, and gives unexplained narrative scores and trend arrows without a prior baseline.",
   "flags": [
     "low_quality"
   ],
-  "avg_score": 3.07,
+  "avg_score": 3.03,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -164,6 +160,12 @@
       "date": "2026-08-29",
       "score": 3,
       "ts": "2026-08-29T10:34:03Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 3,
+      "ts": "2026-08-29T15:20:12Z",
       "harness": "codex"
     }
   ]

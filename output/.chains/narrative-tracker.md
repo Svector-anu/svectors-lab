@@ -1,31 +1,28 @@
 *Narrative Tracker — 2026-08-29*
 
 TRANSITIONS
-• NEW: post-quantum bitcoin — first live forkless PQ-resistant transaction moved a distant security risk into a working demo — https://x.com/BitcoinMagazine/status/2092846329424925077
-• NEW: agentic finance — on-chain agent counts, validator programs and agent-trading posts are clustering — https://x.com/ama_protocol/status/2093376662779953535
-• NEW: RWA + tokenized markets — receivables, private credit and stocks are converging into one trade — https://x.com/RaylsLabs/status/2092688196715073919
-• NEW: humanoid robot olympics — viral China demos pushed robotics to peak attention — https://x.com/EHuanglu/status/2092487733096956261
-• NEW: autonomous AI alignment — Anthropic's automated researcher result created a fresh safety/capability thread — https://x.com/AnthropicAI/status/2093386528668172373
+• NEW: AI-agent economic rails — x402, Virtuals ACP and private inference are converging into one payments/execution thesis — https://x.com/Zevryn0/status/2092936592058986784
+• NEW: privacy infrastructure — Zcash shielded assets, FHE for agents and full-stack privacy are moving together — https://x.com/zec_bit/status/2092936784434925583
+• NEW: Hyperliquid perps + buy-and-burn — growing attention has measurable backing: DefiLlama reports ~$6.71B TVL — https://api.llama.fi/protocol/hyperliquid
+• NEW: AI hype recalibration — practical-utility framing is becoming a real counter-narrative — https://x.com/EHuanglu/status/2092487733096956261
 
 REFLEXIVITY ALERT
-• RWA tokenization — attention is already moving thin assets: DefiLlama's tracker shows Anzen +202% and OpenAI PreStocks +85.82%, but its cohort study says 47.4% of RWA-first Hyperliquid wallets traded exactly once. price expansion is outrunning retention.
-• Solana memecoins — giveaway/casino posts from @elenakvcs, @Monasolanatoken and @Booksey are the catalyst itself; no fundamental change underneath.
+• Robinhood Chain — new-chain attention is already producing NFT launchpads and mints; story-led supply is arriving faster than demonstrated tokenized-equity demand: https://x.com/bootlegmachines/status/2093283647100985701
+• Hyperliquid — HYPE buy-and-burn discussion directly links trading activity to token demand: https://x.com/HypeTradoors/status/2093240180018925940
 
 POSITIONS
-• RIDE: agentic finance (4 ↑, Bull) — @ama_protocol, @DeAgentAI, @Yumzlef — most “agents” remain wrappers; favor execution infrastructure, not agent-count claims.
-• RIDE: RWA + tokenized markets (4 ↑, Mixed) — @RaylsLabs, @Bybit_Official, @STRM_Chain — legal rails and weak repeat usage can break the price story.
-• RIDE: stablecoin/payment rails (3 ↑, Bull) — @cryptofrontio, @KryponThe1st, @MandoCT — regulation can capture value at issuers, not chain tokens.
-• WATCH: post-quantum bitcoin (2 ↑↑, Mixed) — @BitcoinMagazine, @TheBlockCo, @BowTiedMara — technically real, economically early.
-• WATCH: autonomous AI alignment (3 ↑, Mixed) — @AnthropicAI, @ContextWindow_, @MTSlive — benchmark success may not transfer to novel failures.
-• RIDE: voice AI (3 ↑, Bull) — @Google — privacy and transcription liability slow enterprise deployment.
-• FADE: humanoid robot demos (5 →, Mixed) — @EHuanglu, @maziidev, @NewsHour — viral clips are ahead of safety, batteries and deployment.
-• FADE: Solana memecoin frenzy (4 →, Cope) — @Monasolanatoken, @Booksey, @elenakvcs — giveaway volume is reflexive and exit liquidity dependent.
-• FADE: hyper-real AI video shock (4 →, Bear) — @yuruhuwa_kdenpa — shock value decays as “video can be fake” becomes default.
+• FRONT-RUN: privacy infrastructure (2 ↑↑, Bull) — @zcash, @BeldexCoin, @TheSurgeDefi — regulation and weak non-speculative use remain the bear case
+• RIDE: AI-agent economic rails (3 ↑, Bull) — @virtuals_io, @AskVenice, @bittensor — real agent payment volume remains small
+• RIDE: Hyperliquid perps (4 ↑, Bull) — @HyperliquidX, @HypeTradoors, @Outcomexyz — regulation, CEX competition and unlock pressure
+• RIDE: multi-agent hardware control (3 ↑, Mixed) — @AnthropicAI, @XFreeze — reliability is not ready for unsupervised physical workflows
+• WATCH: RWA tokenization (3 ↑, Mixed) — @Coinbase, @0xAmberCT — thin liquidity and unclear legal wrappers
+• WATCH: physical AI data loops (2 ↑, Mixed) — @axisrobotics, @Officially_Cred — centralized labs may simply collect better data
+• WATCH: AI hype recalibration (2 ↑, Mixed) — @EHuanglu, @N0V4Dev — capability gains can continue even if AGI framing cools
+• FADE: Robinhood Chain launch frenzy (5 →, Cope) — @vladtenev, @RobinhoodCrypto, @bootlegmachines — launchpad spam is outrunning durable usage
+• FADE: generative video maturation (5 →, Mixed) — @runwayml, @FlowbyGoogle, @ridark_eth — saturated attention, consistency and copyright risk
 
 MAP
-Emerging: post-quantum bitcoin
-Rising: agentic finance, RWA/tokenized markets, stablecoin rails, autonomous AI alignment, voice AI
-Peak: humanoid robots, Solana memecoins, hyper-real AI video
-Fading: none yet; no prior scored baseline
-
-Calibration: DefiLlama reports 169,514 RWA-first Hyperliquid wallets by June, but only 7k–12k weekly active and 8.3% of new-user fees. https://defillama.com/research/spotlight/hyperliquid-and-the-rwa-retention-question-what-the-data-shows
+Emerging: privacy infrastructure; physical AI; AI hype recalibration
+Rising: agent rails; Hyperliquid; multi-agent hardware; RWA tokenization
+Peak: Robinhood Chain; generative video; Bitcoin institutional wrappers
+Fading: none established without a prior baseline
