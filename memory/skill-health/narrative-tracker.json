@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-29T03:57:13Z",
-  "quality_score": 2,
-  "assessment": "Substantive position calls, but multiple specific catalysts and metrics lack verifiable source links or context, especially the Hyperliquid +280% revenue claim, while several narratives rely mainly on X posts and unsupported assertions.",
+  "last_analyzed": "2026-08-29T10:34:03Z",
+  "quality_score": 3,
+  "assessment": "Substantive and position-labeled with evidence links, but it lacks a conclusion-first regime verdict, leaves scoring notation unexplained, and makes several thinly sourced catalyst and performance claims.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality"
   ],
-  "avg_score": 3.1,
+  "avg_score": 3.07,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
     {
       "date": "2026-07-28",
       "score": 4
@@ -162,6 +158,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T03:57:13Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-29",
+      "score": 3,
+      "ts": "2026-08-29T10:34:03Z",
       "harness": "codex"
     }
   ]
