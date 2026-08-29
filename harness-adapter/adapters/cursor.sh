@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Cursor CLI adapter: documented `agent -p` headless mode.
 # rh-meta-start
-# {"id":"cursor","label":"Cursor CLI","cli":{"install":"curl -fsSL https://cursor.com/install | bash","bin":"agent","min_version":"latest"},"invoke":"agent -p --output-format json","round_trip":true,"token_usage":"none","cost":false,"read_only":"sandbox","structured_output":"shim","mcp":"native","max_turns":"none","claude_md":"native","auth":{"native_oauth":[],"native_key":["CURSOR_API_KEY"],"openrouter":false},"native_control_path":"run-harness"}
+# {"id":"cursor","label":"Cursor CLI","cli":{"install":"curl -fsSL https://cursor.com/install | bash","bin":"agent","min_version":"latest"},"invoke":"agent -p --trust --output-format json","round_trip":true,"token_usage":"none","cost":false,"read_only":"sandbox","structured_output":"shim","mcp":"native","max_turns":"none","claude_md":"native","auth":{"native_oauth":[],"native_key":["CURSOR_API_KEY"],"openrouter":false},"native_control_path":"run-harness"}
 # rh-meta-end
 set -uo pipefail
 . "$RH_LIB/envelope.sh"
@@ -15,6 +15,10 @@ PROMPT="$(cat "$RH_PROMPT_FILE")"; PREFIX="${RH_COMPAT_RULES:-}"
 [ -n "${RH_JSON_SCHEMA:-}" ] && PROMPT="${PROMPT}$(schema_prompt_suffix "$RH_JSON_SCHEMA")"
 ARGS=(-p --output-format json)
 [ -n "${RH_MODEL:-}" ] && [ "$RH_MODEL" != "default" ] && ARGS+=(--model "$RH_MODEL")
+# Headless CI always starts from a fresh HOME, so the workspace has no persisted
+# trust decision. --trust skips only that prompt; unlike --force, it does not
+# grant command execution or file writes.
+ARGS+=(--trust)
 [ "${RH_MODE:-write}" != "read-only" ] && ARGS+=(--force)
 OUT="$RH_TMPDIR/cursor-out.json"; printf '%s' "$PROMPT" | agent "${ARGS[@]}" > "$OUT"; rc=$?
 [ $rc -ne 0 ] && { echo "cursor exited $rc: $(tail -c 4000 "$OUT" | tr '\n' ' ')" >&2; exit $rc; }
