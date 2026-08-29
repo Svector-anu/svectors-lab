@@ -4,6 +4,8 @@ repo: ZSvirt/zsvirt
 severity: medium
 cwe: CWE-1104
 status: pending-operator-send
+send_attempts: 1
+last_send_error: resend-403: svector.xyz domain not verified
 auto_send: true
 contact_email: security@zsvirt.io
 cc: []
