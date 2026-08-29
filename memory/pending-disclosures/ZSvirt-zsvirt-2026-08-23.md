@@ -33,47 +33,45 @@ this back from auto-send:
 Hi,
 
 I ran a routine, good-faith security review of ZSvirt's public repos and found
-that `zsvirt`'s `core` module (and several other modules) pin Spring Security
-and Spring Framework to versions with known, published CVEs:
+that zsvirt's core module (and several other modules) pin Spring Security and
+Spring Framework to versions with known, published CVEs:
 
-```xml
-<spring.framework.version>5.2.25.RELEASE</spring.framework.version>
-<spring.security.version>5.7.13</spring.security.version>
-```
+spring.framework.version = 5.2.25.RELEASE
+spring.security.version = 5.7.13
 
-**The one I'd prioritize:** GHSA-q3v6-hm2v-pw99 — a genuine authorization-bypass
+The one I'd prioritize: GHSA-q3v6-hm2v-pw99, a genuine authorization-bypass
 vulnerability in Spring Security caused by case-sensitive comparison
-mismatches. It's fixed in **5.7.14**, which is a same-line patch release
-within `5.7.x` — should be a low-risk, drop-in version bump, no breaking API
-changes expected. A few siblings in the same release are also worth picking up
-in the same bump: GHSA-vxf7-qj7q-83fh (user attribute enumeration via
+mismatches. It's fixed in 5.7.14, a same-line patch release within 5.7.x -
+should be a low-risk, drop-in version bump, no breaking API changes expected.
+A few siblings in the same release are also worth picking up in the same
+bump: GHSA-vxf7-qj7q-83fh (user attribute enumeration via
 DaoAuthenticationProvider), GHSA-293q-567p-wmwq (X.509 client-cert user
 impersonation), GHSA-mf92-479x-3373 (security headers not written under some
 conditions), GHSA-x2r2-rvhq-2mqv (open redirect via unvalidated post-login
 redirect URL).
 
-**Separately, a bigger one to plan for, not fix today:** `spring.framework.version`
-is pinned to `5.2.25.RELEASE`, which predates even the `5.3.x` line. Several
+Separately, a bigger one to plan for, not fix today: spring.framework.version
+is pinned to 5.2.25.RELEASE, which predates even the 5.3.x line. Several
 Spring MVC CVEs I checked (e.g. GHSA-cjpg-rgq5-fr37, multipart request
-smuggling) list `5.3.39` as the last known-affected version before a fix —
-meaning `5.2.x` is outside the tracked/patched range entirely rather than
+smuggling) list 5.3.39 as the last known-affected version before a fix -
+meaning 5.2.x is outside the tracked/patched range entirely rather than
 already covered. A real fix means the jump to at least Spring Framework
-`6.2.19`, which is a genuine major-version migration (Jakarta EE namespace
-changes among other things) — too large for me to respectfully hand you as a
+6.2.19, which is a genuine major-version migration (Jakarta EE namespace
+changes among other things) - too large for me to respectfully hand you as a
 drop-in patch, but worth having on the roadmap given it's your actual web
 framework layer, not an incidental dependency.
 
-I confirmed both of these are *direct* dependencies (declared in `core/pom.xml`
-and centrally pinned in the root `pom.xml`'s `dependencyManagement`), not
+I confirmed both of these are direct dependencies (declared in core/pom.xml
+and centrally pinned in the root pom.xml's dependencyManagement), not
 transitive noise, before writing in.
 
 I tried to open a public issue first out of habit but it was blocked by an org
-permission restriction — then noticed your own SECURITY.md correctly asks for
+permission restriction - then noticed your own SECURITY.md correctly asks for
 private email instead, so apologies if that attempt showed up anywhere on
 your end.
 
-Happy to open a PR for the Spring Security `5.7.13 -> 5.7.14` bump specifically
-if that's useful — it should be a one-line, no-risk change. Let me know.
+Happy to open a PR for the Spring Security 5.7.13 -> 5.7.14 bump specifically
+if that's useful - it should be a one-line, no-risk change. Let me know.
 
 Thanks for building in the open,
 Anu
