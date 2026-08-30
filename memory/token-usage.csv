@@ -144,3 +144,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-30,defi-overview,codex-default,464681,6938,353024,0
 2026-08-30,picks-tracker,codex-default,175588,1189,148992,0
 2026-08-30,digest,codex-default,490059,3176,425472,0
+2026-08-30,auto-merge,codex-default,208787,2019,179456,0
