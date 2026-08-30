@@ -1,9 +1,10 @@
 # Long-term Memory
-*Last consolidated: 2026-08-29*
+*Last consolidated: 2026-08-30*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
 - Upstream contribution milestone: aeonfun/aeon PR #956 merged, adding complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
+- OSS security milestone: GitNexus dependency-CVE remediation opened as abhigyanpatwari/GitNexus PR #3095 after a six-target code audit found no new exploitable flaws
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 
 ## Recent Articles
@@ -43,3 +44,4 @@
 
 ## Next Priorities
 - Review 8 open PRs: 7 stalled (#31, #30, #22, #20, #5, #4, #3) plus newly opened soul wording PR #42
+- Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
