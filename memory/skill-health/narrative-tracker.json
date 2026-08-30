@@ -1,17 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-30T01:20:31Z",
+  "last_analyzed": "2026-08-30T06:50:43Z",
   "quality_score": 2,
-  "assessment": "Explicit position calls and caveats are useful, but numerous precise figures, events, social metrics, and transition labels lack direct supporting citations or appear weakly anchored, making the report insufficiently verifiable for trading decisions.",
+  "assessment": "Conclusion-first and position-labeled, but corrupted figures and implausible unsupported claims—especially the OpenAI/SpaceX/Cursor assertion—make the output unreliable and largely unverifiable.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.9,
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -170,6 +167,12 @@
       "date": "2026-08-30",
       "score": 2,
       "ts": "2026-08-30T01:20:31Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T06:50:43Z",
       "harness": "codex"
     }
   ]
