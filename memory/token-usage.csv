@@ -142,4 +142,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-29,write-tweet,codex-default,657052,4280,604416,0
 2026-08-30,defi-overview,codex-default,665593,8298,590848,0
 2026-08-30,defi-overview,codex-default,464681,6938,353024,0
-2026-08-30,fear-divergence,codex-default,168920,1108,133632,0
+2026-08-30,picks-tracker,codex-default,175588,1189,148992,0

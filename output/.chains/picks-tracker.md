@@ -1,16 +1,10 @@
-# Picks Scorecard — 2026-08-25
+No token or prediction-market picks were found in the last 30 days. Per the skill’s stop condition:
 
-- ZAMA: picked at $0.062, now $0.058528 — **-5.6% (Hold)**
-- Score: **0 wins / 1 hold / 0 losses**
-- Average return: **-5.6%**
-- Hit rate: **0%**
-- BTC $60k July market: YES — **wrong; resolved NO**
-
-CoinGecko returned HTTP 200. Polymarket search returned no reliable match, so the previously verified resolution was retained.
+- No price lookups, scorecard, or notification were generated.
+- The skip result was logged in [memory/logs/2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md).
 
 ## Summary
 
-- Created [picks-scorecard-2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/picks-scorecard-2026-08-25.md)
-- Updated [memory/logs/2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md)
-- Notification delivered inline; the external feed queue was read-only.
-- Validation passed with `git diff --check`.
+- Result: `PICKS_TRACKER_SKIP`
+- Reason: no qualifying picks; August matches were prior scorecard recaps of July 28 picks, now outside the window.
+- Follow-up: enable or run `token-pick` / `monitor-polymarket` to produce trackable picks.
