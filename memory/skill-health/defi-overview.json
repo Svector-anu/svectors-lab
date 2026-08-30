@@ -1,17 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-30T06:53:08Z",
+  "last_analyzed": "2026-08-30T12:20:58Z",
   "quality_score": 2,
-  "assessment": "Provides a clear regime take and plausible data, but violates the qualitative-price constraint, lacks explicit front-run/ride/fade/watch calls, and offers no externally verifiable evidence for the figures or yield classifications.",
+  "assessment": "Substantive regime framing, but it violates the qualitative-price constraint, lacks actionable position calls, provides weak sourcing for numerous figures, and implausibly claims workspace edits during a read-only run.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
-  "avg_score": 2.7,
+  "avg_score": 2.63,
   "history": [
-    {
-      "date": "2026-07-11",
-      "score": 4
-    },
     {
       "date": "2026-07-11",
       "score": 4
@@ -152,6 +149,12 @@
       "date": "2026-08-30",
       "score": 2,
       "ts": "2026-08-30T06:53:08Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T12:20:58Z",
       "harness": "codex"
     }
   ]

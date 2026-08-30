@@ -1,16 +1,20 @@
-Take: rotation — BTC rose 1.0% with 18/20 top-cap assets green, but DEX volume fell 34.8%. Conviction: medium.
+Take: rotation — BTC gained 1.2% and 15/20 top-cap assets were green, but DEX volume fell 36.5%.
 
-- TVL: $87.98B, essentially flat.
-- BTC: $78,231; ETH: $2,459; Fear & Greed: 69.
-- Sustainable-yield leaders: Raydium WSOL-USDC 93.5%, Pendle REUSD 18.4%, Hipo HGRAM 16.6%.
-- Incentive leaders: Aerodrome USDC-AERO 22.2%, Convex CVXCRV 12.6%.
-- Positions: none configured.
-- No new macro catalyst cleared the materiality and deduplication filters.
+Conviction: medium. SOL remained strongest at +12.2% over seven days, while weaker DEX activity and a reported $202M BTC ETF outflow argued against broad risk-on conditions. [ETF-flow report](https://cointelegraph.com/markets/bitcoin-etf-end-9-day-inflow-streak-btc-below-78k)
 
-The refreshed report is in [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md), with the run recorded in [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md).
+- DeFi TVL: $88.01B, +0.2% from the prior refresh
+- BTC: $78,587; ETH: $2,467
+- Fear & Greed: 69, Greed
+- Stablecoin supply: $310.7B
+- Largest filtered protocol decline: Defi Saver Asset Management, −27.1%
+- Fees leader: Tether, $15.84M
+- Polymarket: September Fed hold at 51.5%
+- Positions: `DEFI_MONITOR_NO_CONFIG`
+
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md). All nine data-source groups succeeded and `git diff --check` passed.
 
 ## Summary
 
-- Queried CoinGecko, DeFiLlama, Alternative.me, Polymarket, and the required macro searches successfully.
+- Refreshed the combined DeFi and macro overview.
 - Preserved the complete token-pick history.
-- Attempted the notification, but delivery could not be confirmed because the external notification queues are mounted read-only.
+- Attempted notification delivery, but Aeon’s external notification queues were read-only in this harness, so delivery was not confirmed.
