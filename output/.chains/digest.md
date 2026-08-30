@@ -1,22 +1,30 @@
-*web3 developer tooling — 2026-08-30*
+*Daily digest — 2026-08-30*
 
-_TL;DR: Radix builders need to rebuild Stokenet state after yesterday’s wipe, while Stellar operators have a September 9 validator deadline ahead of Protocol 28._
+_TL;DR: coding-tool model access is becoming a contract risk while agent interfaces expand from software into physical hardware._
 
-_Quiet news day: only two items cleared the recency, primary-source, and dedup filters._
+1. *Plan now for OpenAI models leaving Cursor on November 12*  
+   OpenAI proposed ending its model-supply contract with Cursor after its acquisition by SpaceX and says future models will not be provided. Cursor users can still configure direct provider keys for standard models.  
+   Why it matters: teams should test provider fallbacks before the cutoff  
+   https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/
 
-1. *Rebuild Radix Stokenet deployments after the August 29 wipe*  
-   Radix Stokenet packages, components, balances, dApp metadata, and wallet personas were erased in the scheduled reset. Network identifiers and key-derived account addresses remain unchanged, but test deployments must be recreated and refunded.  
-   Why it matters: CI fixtures and staging environments can fail until their on-ledger state is rebuilt  
-   https://radix.wiki/developers/radix-developer-resources
+2. *Apply to test Anthropic’s model-agnostic hardware standard*  
+   Anthropic opened the Model Hardware Standard preview to research labs and manufacturers. It provides a common interface for instruments and robotic hardware through MCP, CLI, or APIs.  
+   Why it matters: hardware teams can replace bespoke integrations with a portable agent interface  
+   https://www.anthropic.com/news/model-hardware-standard-research-preview
 
-2. *Prepare Stellar infrastructure for the Protocol 28 mainnet vote*  
-   Protocol 28 builds are available across Core, Horizon, RPC, Galexie, and SDKs. Validators must upgrade and arm by September 9; raw-ledger consumers need to handle CAP-83’s empty-transaction-set value before the September 16 vote.  
-   Why it matters: validators have a ten-day operational deadline, and custom indexers may need a schema-path change  
-   https://stellar.org/blog/developers/adapter-protocol-28-upgrade-guide
+3. *a16z opens a $1.1B fund for AI’s physical stack*  
+   The Machine Age Fund will invest across chips, memory, networking, storage, data centers, robotics, and home AI hardware.  
+   Why it matters: infrastructure founders have a new dedicated capital pool to approach  
+   https://a16z.com/the-machine-age-fund/
+
+4. *Save DALL·E GPT assets before today’s retirement*  
+   OpenAI is retiring the official DALL·E GPT today. ChatGPT Images remains available, and user-created GPTs with image generation are unaffected.  
+   Why it matters: images kept only in old DALL·E GPT sessions should be exported now  
+   https://help.openai.com/en/articles/6825453-chatgpt-release-notes
 
 ## Summary
 
-- Created [digest artifact](/home/runner/work/svectors-lab/svectors-lab/output/digest-web3-developer-tooling-2026-08-30.md).
-- Updated memory and the daily run log.
-- RightStack was not rerun because its supplied result was a duplicate.
-- Notification was attempted, but the external delivery queues were read-only; delivery could not be confirmed.
+- Created [digest-2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-08-30.md).
+- Updated digest memory and the daily run log.
+- X search fell back after xAI returned HTTP 403 due to its credit/spending limit.
+- Notification delivery failed because the external queue is mounted read-only; the complete digest is preserved above and in the workspace.
