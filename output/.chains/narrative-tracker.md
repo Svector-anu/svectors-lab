@@ -1,24 +1,30 @@
 *Narrative Tracker — 2026-08-30*
 
 TRANSITIONS
-• NEW*: BTC bull-regime whipsaw — .04B nine-day ETF inflow streak flipped to 01.9M outflow as hawkish Fed odds hit price.
-• NEW*: alt-L1 institutional rotation — ETH/XRP/SOL funds took 45M while BTC funds leaked.
-• NEW*: Cursor model sovereignty — OpenAI plans a Nov 12 cutoff after SpaceX ownership, making vendor dependence the story.
-*No prior structured baseline; NEW means absent from logs.
+• NEW (recorded baseline): AI-miner/HPC pivot — Riot’s $9.1B Anthropic lease turns the story into contracted revenue, not token chatter — https://cryptoslate.com/ai/
+• NEW: agent execution rails — Binance Agent OS/MCP, Coinbase tokenized stocks, and agent-lending integrations converge on agents doing transactions — https://niteagent.com/blog/ai-crypto-news-roundup-2026-08-29/
+• NEW: RWA institutional rails — Stellar near $4B RWA plus tokenized-stock expansion keeps the category fundamental-led — https://fininsight.news/en/2026/08/30/bis-stablecoin-warning-stellar-rwa-trust-risk/
+• NEW: hawkish macro repricing — September cut odds reportedly fell 88%→40%; BTC followed risk assets lower — https://plainlycrypto.com/weekly-crypto-brief-2026-08-30/
+• DEAD/PROMOTED/DEMOTED: unavailable; prior logs contain no structured map.
 
 REFLEXIVITY ALERT
-• SOL institutionalization — Schwab listing, B+ ETF scale and disinflation vote helped SOL reach 10 before macro pulled it back near 04: narrative plus flows moved price, then met reality.
+• AI-miner/HPC — miners are being repriced as AI infrastructure proxies after @RiotPlatforms/@AnthropicAI’s contracted lease; the revenue commitment is real, but sector copycat pivots can outrun power/delivery economics.
+• macro-policy — prediction-market rate odds are feeding the BTC risk-asset framing; narrative and positioning reinforce each other.
 
 POSITIONS
-• RIDE: SOL institutionalization (4 ↑↑, Bull) — @Solana, @BitwiseInvest, @CharlesSchwab — crowded after a fast run; governance vote was narrow.
-• WATCH: alt-L1 ETF rotation (3 ↑, Mixed) — @SoSoValue, @ethereum, @Ripple — one session can be noise, not durable rotation.
-• WATCH: BTC bull-regime whipsaw (5 →, Mixed) — @cryptoquant_com, @Fidelity, @BitGo — macro sensitivity and first ETF outflow weaken the clean breakout.
-• RIDE: Cursor model sovereignty (4 ↑↑, Mixed) — @OpenAI, @cursor_ai, @SpaceX — only ~5% of Cursor usage reportedly uses OpenAI models, limiting user impact.
-• WATCH: agent wallets/A2A payments (2 ↑, Bull) — @MetaMask, @coinbase, @BNBCHAIN — infrastructure is ahead of proven paid demand.
-• FADE: AI-token rebound (3 ↓, Cope) — @virtuals_io, AI launchpads — sector remains deeply below prior highs; isolated pumps are not adoption.
+• RIDE: AI-miner/HPC (4 ↑, Bull) — @RiotPlatforms @AnthropicAI @nvidia — execution/capex risk remains.
+• RIDE: agent execution rails (3 ↑, Bull) — @binance @coinbase @chainlink — fragmented standards and agent security can stall adoption.
+• RIDE: RWA rails (4 ↑, Bull) — @StellarOrg @OndoFinance @BlackRock — issuance growth may not accrue to narrative tokens.
+• WATCH: stablecoin institutionalization (4 →, Mixed) — @circle @Tether_to @BIS_org — regulation helps distribution but raises issuer concentration/compliance risk.
+• FADE: broad crypto risk-on (5 ↓, Mixed) — @federalreserve @Polymarket @coinbase — greed stayed elevated while cut odds and BTC reversed.
+• WATCH: prediction markets (3 ↑, Mixed) — @Polymarket @coinbase @Kalshi — activity is growing, but contract volume is not automatic token value capture.
 
 MAP
-Emerging: agent wallets/A2A payments
-Rising: SOL institutionalization, alt-L1 ETF rotation, Cursor model sovereignty
-Peak: BTC bull-regime whipsaw
-Fading: AI-token rebound
+Emerging: agent execution rails
+Rising: AI-miner/HPC, RWA rails, prediction markets
+Peak: stablecoin institutionalization
+Fading: broad crypto risk-on
+
+Calibration: DefiLlama currently shows Prediction Markets +36.55% / $12.832B market cap and RWA +10.50% / $70.367B. Kaito/Warden’s current top account mindshare is 0.7598%; this is account-level context, not narrative share.
+
+Data quality: primary X search failed HTTP 403 after 3 attempts; public-web fallback used. No reliable Aug 27–30 tweet permalinks surfaced, so none were invented.
