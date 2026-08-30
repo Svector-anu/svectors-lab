@@ -1,18 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-29T18:38:24Z",
+  "last_analyzed": "2026-08-30T01:20:31Z",
   "quality_score": 2,
-  "assessment": "Action-oriented and well structured, but key claims rely on thin X-post attribution, the post-quantum terminology appears suspect, and the DefiLlama figures look malformed or stale, undermining correctness and verifiability.",
+  "assessment": "Explicit position calls and caveats are useful, but numerous precise figures, events, social metrics, and transition labels lack direct supporting citations or appear weakly anchored, making the report insufficiently verifiable for trading decisions.",
   "flags": [
-    "stale_data",
     "unverifiable_claim"
   ],
-  "avg_score": 2.97,
+  "avg_score": 2.9,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -169,6 +164,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T18:38:24Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T01:20:31Z",
       "harness": "codex"
     }
   ]
