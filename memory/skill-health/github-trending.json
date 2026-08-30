@@ -1,12 +1,10 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-29T15:17:32Z",
-  "quality_score": 3,
-  "assessment": "Substantive, concise, and plausibly verifiable GitHub trend reporting, but it does not serve the operator’s crypto-trading north star or provide a regime verdict and explicit position call.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 3.17,
+  "last_analyzed": "2026-08-30T16:50:05Z",
+  "quality_score": 4,
+  "assessment": "Substantive, conclusion-first curation with direct repository links, concrete activity metrics, useful categorization, and honest delivery limitations, though it provides little actionable crypto-trading relevance under the operator strategy.",
+  "flags": [],
+  "avg_score": 3.23,
   "history": [
     {
       "date": "2026-07-28",
@@ -63,6 +61,12 @@
       "date": "2026-08-29",
       "score": 3,
       "ts": "2026-08-29T15:17:32Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 4,
+      "ts": "2026-08-30T16:50:05Z",
       "harness": "codex"
     }
   ]

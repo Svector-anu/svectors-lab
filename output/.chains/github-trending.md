@@ -1,32 +1,42 @@
-*GitHub Trending — 2026-08-29*
+*GitHub Trending — 2026-08-30*
 
-*Top pick* — [tt-a1i/archify](https://github.com/tt-a1i/archify)
-Agent fleets can now emit typed, validated diagrams instead of unverifiable Mermaid-shaped guesses—and export them cleanly.
+*Top pick* — [tt-a1i/archify](https://github.com/tt-a1i/archify)  
+Architecture diagrams become reviewable build artifacts: validated, diffable, interactive, and exportable instead of disposable screenshots.
 
 *AI/ML*
-• [marin-community/marin](https://github.com/marin-community/marin) — ★ 163 today (3.0k total) · Python · [RETURNING]
-Exposes data-to-evaluation infrastructure for a public 500B+-parameter MoE training effort.
+
+• [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) — ★ 1,113 today (38.8k total) · Python · ACCELERATING  
+Packages 163 scientific workflows plus 78+ databases as portable Agent Skills and a plugin.
+
+• [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) — ★ 147 today (726 total) · Python · RETURNING  
+Ships 4,096-environment PPO training and ONNX deployment for walking, recovery, skating, and ball-kicking policies.
 
 *Devtools*
-• [tt-a1i/archify](https://github.com/tt-a1i/archify) — ★ 3,927 today (29.9k total) · JavaScript · [ACCELERATING]
-Compiles typed JSON into validated HTML/SVG diagrams with static, motion, and share-card exports.
 
-• [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) — ★ 273 today (46.3k total) · TypeScript · [ACCELERATING]
-Gives coding agents dependency and call-chain context through a local knowledge graph and MCP.
+• [tt-a1i/archify](https://github.com/tt-a1i/archify) — ★ 3,730 today (33.7k total) · JavaScript · ACCELERATING  
+Turns architecture diffs into validated Before/Delta/After artifacts with exact routing and component changes.
 
-• [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines) — ★ 294 today (2.8k total) · Go · [RETURNING]
-Counters model training lag with agent guidance covering Go idioms through 1.27.
+• [Lakr233/vphone-cli](https://github.com/Lakr233/vphone-cli) — ★ 341 today (9.5k total) · Swift · ACCELERATING  
+Exposes iOS VMs through screenshot-returning touch controls, making AI-driven mobile E2E testing scriptable.
 
-• [swoole/typephp](https://github.com/swoole/typephp) — ★ 188 today (908 total) · PHP · [RETURNING]
-AOT-compiles typed PHP into native binaries, with the compiler bootstrapped from its own PHP source.
-
-*Infra*
-• [tailscale/tailcat](https://github.com/tailscale/tailcat) — ★ 790 today (3.2k total) · Go · [RETURNING]
-Bootstraps WireGuard transfers through DERP while exchanging connection metadata outside Tailscale control.
+• [corsairdev/corsair](https://github.com/corsairdev/corsair) — ★ 99 today (10.8k total) · TypeScript · RETURNING  
+Unifies third-party integrations behind REST while keeping OAuth refresh, webhooks, and self-hosting portable.
 
 *Web/Apps*
-• [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — ★ 1,870 today (12.1k total) · JavaScript · [ACCELERATING]
-Unifies public aircraft, ship, satellite, seismic, traffic, and camera feeds on one browser globe.
+
+• [THU-MAIC/OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) — ★ 907 today (23.5k total) · TypeScript · ACCELERATING  
+v1.0 adds durable course-building sessions, reusable skills, provider-neutral servers, and pluggable persistence.
+
+• [every-app/open-seo](https://github.com/every-app/open-seo) — ★ 517 today (15.0k total) · TypeScript · ACCELERATING  
+Gives coding agents SEO data through MCP and skills, with Cloudflare self-hosting on the free plan.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/20
+
+sources: trending=ok · GitHub API=ok · kept 7/19
+
+## Summary
+
+- Curated seven repositories from 19 live GitHub Trending candidates.
+- Excluded obvious lists/free-resource bundles, low-activity entries, and recently reported GitNexus.
+- Notification delivery failed because this harness’s `notify -f` rejected stdin and process-file paths.
+- No memory log was written because the run was explicitly read-only.
