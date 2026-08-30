@@ -1,17 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-30T16:48:49Z",
+  "last_analyzed": "2026-08-30T19:31:27Z",
   "quality_score": 2,
-  "assessment": "Strong structure and explicit positioning, but extraordinary claims and precise metrics rely on weak/generic links rather than clearly verifiable primary evidence, undermining decision-grade correctness.",
+  "assessment": "Too terse to be decision-grade: it gives no regime verdict, position call, evidence anchor, or narrative map details to verify the no-change conclusion.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality",
+    "generic_content"
   ],
   "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 3
@@ -174,6 +171,12 @@
       "date": "2026-08-30",
       "score": 2,
       "ts": "2026-08-30T16:48:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T19:31:27Z",
       "harness": "codex"
     }
   ]
