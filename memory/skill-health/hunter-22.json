@@ -1,12 +1,12 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-08-29T10:32:54Z",
+  "last_analyzed": "2026-08-30T12:20:46Z",
   "quality_score": 2,
-  "assessment": "The no-signal result is clear, but claims that workspace files were updated contradict the explicitly read-only runtime, making the reported persistence and validation unverifiable.",
+  "assessment": "The no-match result is concise and operationally clear, but it claims workspace files were updated despite the explicitly read-only harness, making the reported side effects internally inconsistent and unverifiable.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 3.1,
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-07-31",
@@ -52,6 +52,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T10:32:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T12:20:46Z",
       "harness": "codex"
     }
   ]

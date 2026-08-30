@@ -1,33 +1,45 @@
 [
   {
-    "id": "superteam_bring-your-web2-ideas-onchain",
-    "title": "Bring Your Web2 Ideas Onchain",
-    "reward": 1000,
-    "seen_at": "2026-08-23T10:00:00Z"
+    "id": "70cecfe5-65ce-4e78-8fd0-a001f940dd88",
+    "title": "A short video/gif where Morphy does a morh",
+    "reward": 45.24,
+    "seen_at": "2026-08-08T13:10:00Z"
   },
   {
-    "id": "superteam_solana-developer-challenge-anchor-flash-loan",
-    "title": "Solana Developer Challenge: Anchor Flash Loan",
-    "reward": 333.33,
-    "seen_at": "2026-08-23T10:00:00Z"
+    "id": "f70bd905-c366-4e40-bf94-da097dbe90be",
+    "title": "Get a streamer to play Whosmarter",
+    "reward": 13.57,
+    "seen_at": "2026-08-08T13:10:00Z"
   },
   {
-    "id": "08508f3c-558b-45f8-8827-3a3675a71a12",
-    "title": "Test Seeker Flap & Share Feedback",
-    "reward": 25.45,
-    "seen_at": "2026-08-23T10:00:00Z"
+    "id": "shillz_5aa6af93-274b-4da0-807a-2c8c26125197",
+    "title": "Kintara Content 3",
+    "reward": 56.03,
+    "seen_at": "2026-08-08T13:10:00Z"
   },
   {
-    "id": "1ecc537c-a2be-4bd1-a193-6935874e5e17",
-    "title": "$500 $SOL Maxi Content Bounty",
-    "reward": 56.29,
-    "seen_at": "2026-08-23T10:00:00Z"
+    "id": "shillz_ccebf48d-8043-45e4-ac47-29d7c3f886a7",
+    "title": "Jimothy",
+    "reward": 115.13,
+    "seen_at": "2026-08-08T13:10:00Z"
   },
   {
-    "id": "f8c56095-c0ac-4655-8c43-447545871976",
-    "title": "Biggest Fake Guru Scandals",
-    "reward": 20.35,
-    "seen_at": "2026-08-22T10:00:00Z"
+    "id": "superteam_ai-id",
+    "title": "Create Agent ID, claim free tokens, & deploy first RUST contract on the network",
+    "reward": 33.33,
+    "seen_at": "2026-08-08T13:10:00Z"
+  },
+  {
+    "id": "superteam_analyze-trader-behavior-cex-vs-solana-dex-perpetual-futures-report",
+    "title": "Analyze Trader Behavior: CEX vs. Solana DEX Perpetual Futures Report",
+    "reward": 50,
+    "seen_at": "2026-08-08T13:10:00Z"
+  },
+  {
+    "id": "superteam_era-security-discussion-bounty-x-reddit",
+    "title": "ERA Security Discussion Bounty (X + Reddit)",
+    "reward": 50,
+    "seen_at": "2026-08-08T13:10:00Z"
   },
   {
     "id": "35a33e5e-ed6f-4506-82d2-23649eca3462",
@@ -42,232 +54,34 @@
     "seen_at": "2026-08-21T10:00:00Z"
   },
   {
-    "id": "shillz_ccebf48d-8043-45e4-ac47-29d7c3f886a7",
-    "title": "Jimothy",
-    "reward": 115.13,
-    "seen_at": "2026-08-08T13:10:00Z"
+    "id": "f8c56095-c0ac-4655-8c43-447545871976",
+    "title": "Biggest Fake Guru Scandals",
+    "reward": 20.35,
+    "seen_at": "2026-08-22T10:00:00Z"
   },
   {
-    "id": "shillz_5aa6af93-274b-4da0-807a-2c8c26125197",
-    "title": "Kintara Content 3",
-    "reward": 56.03,
-    "seen_at": "2026-08-08T13:10:00Z"
+    "id": "08508f3c-558b-45f8-8827-3a3675a71a12",
+    "title": "Test Seeker Flap & Share Feedback",
+    "reward": 25.45,
+    "seen_at": "2026-08-23T10:00:00Z"
   },
   {
-    "id": "superteam_analyze-trader-behavior-cex-vs-solana-dex-perpetual-futures-report",
-    "title": "Analyze Trader Behavior: CEX vs. Solana DEX Perpetual Futures Report",
-    "reward": 50,
-    "seen_at": "2026-08-08T13:10:00Z"
+    "id": "1ecc537c-a2be-4bd1-a193-6935874e5e17",
+    "title": "$500 $SOL Maxi Content Bounty",
+    "reward": 56.29,
+    "seen_at": "2026-08-23T10:00:00Z"
   },
   {
-    "id": "f70bd905-c366-4e40-bf94-da097dbe90be",
-    "title": "Get a streamer to play Whosmarter",
-    "reward": 13.57,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "superteam_ai-id",
-    "title": "Create Agent ID, claim free tokens, & deploy first RUST contract on the network",
-    "reward": 33.33,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "superteam_era-security-discussion-bounty-x-reddit",
-    "title": "ERA Security Discussion Bounty (X + Reddit)",
-    "reward": 50,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "70cecfe5-65ce-4e78-8fd0-a001f940dd88",
-    "title": "A short video/gif where Morphy does a morh",
-    "reward": 45.24,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "superteam_write-twitter-thread-dutch-solana-ecosystem-and-superteam-nl-progress",
-    "title": "Write Twitter Thread: Dutch Solana Ecosystem & Superteam NL Progress",
-    "reward": 333.33,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "shillz_52ee32a6-6fcf-4ccc-9ea6-98631686a14f",
-    "title": "Cupsey Shilling",
-    "reward": 177.75,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "shillz_51601c63-5bc5-4092-9fd7-84f6f4653b8e",
-    "title": "Unicorn Shilling",
-    "reward": 112.55,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "2c40953a-8b92-4269-80d2-860cb472d17b",
-    "title": "Get an AI creator to post Fine Structure",
-    "reward": 179.47,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_write-about-the-brain-drain-wall",
-    "title": "Write About the Brain Drain Wall",
-    "reward": 175,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_on-chain-loyalty-rewards-system-challenge",
-    "title": "On-Chain Loyalty Rewards System Challenge",
-    "reward": 125,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "6ce8cfb4-60d4-456f-803a-de11fef42713",
-    "title": "Get us a client for our SaaS Project",
-    "reward": 8.97,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_veilo-bounty",
-    "title": "Find Critical Vulnerabilities in Veilo Mainnet Smart Contracts for Fund Loss",
-    "reward": 2000,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_superteam-poland-ecosystem-infographic-challenge",
-    "title": "Superteam Poland Ecosystem Infographic Challenge",
-    "reward": 62.5,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_polish-startup-icons-the-nextgen-founders-challenge",
-    "title": "Polish Startup Icons: The NextGen Founders Challenge",
-    "reward": 62.5,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_create-content-for-fbyt",
-    "title": "Create Content for FBYT",
-    "reward": 125,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_deep-dive-on-p2pdotme-a-decentralized-on-off-ramp-protocol",
-    "title": "Deep dive on P2Pdotme: A decentralized On/Off Ramp protocol",
-    "reward": 83.33,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "2bf1eb36-63c5-4c4f-8fd0-eb94e88e33c2",
-    "title": "Get sapijiju to claim the fees!",
-    "reward": 74.78,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_analyze-long-term-nft-community-growth-and-survival-strategy",
-    "title": "Analyze Long-Term NFT Community Growth & Survival Strategy",
-    "reward": 58.33,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_panta-market-content-bounty",
-    "title": "Panta Market Content Bounty",
-    "reward": 500,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "shillz_5fae0c22-f346-402d-a29a-194eff807872",
-    "title": "Emblem Shillz",
-    "reward": 31.96,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "shillz_8294f5cb-26dc-4a36-b8b3-42589ed63682",
-    "title": "Short form #3",
-    "reward": 39.46,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_write-a-twitter-thread-on-the-pmm-litepaper",
-    "title": "Write a Twitter thread on the PMM Litepaper",
-    "reward": 83.33,
-    "seen_at": "2026-07-31T01:45:01Z"
-  },
-  {
-    "id": "superteam_solana-summit-canada-creator-challenge-part-1",
-    "title": "Solana Summit Canada Creator Challenge - part 1",
-    "reward": 384.615384615385,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_hackathon-universitaria-superteam-brasil-1",
-    "title": "Hackathon Universitária Superteam Brasil",
+    "id": "superteam_bring-your-web2-ideas-onchain",
+    "title": "Bring Your Web2 Ideas Onchain",
     "reward": 1000,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "seen_at": "2026-08-23T10:00:00Z"
   },
   {
-    "id": "superteam_post-why-flint-beats-building-your-own-prop-amm",
-    "title": "Post: Why Flint Beats Building Your Own Prop AMM",
-    "reward": 500,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "9afa62df-9275-47e3-ae68-7c678b82452a",
-    "title": "Read EMOS lite paper",
-    "reward": 48.3835516784891,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "bb4e8256-580b-4116-88a6-073a27a5e6a3",
-    "title": "Seeker Envelope Deep Dive Writing Bounty.",
-    "reward": 14.8112913301497,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "shillz_1ca95cc2-8dd2-41f4-8c6d-b0675594f843",
-    "title": "Y2K Hardcore Shilling",
-    "reward": 181.701739130435,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "shillz_69a9f113-b50d-48f0-b2e4-4a73373e97d1",
-    "title": "MOTION CAMPAIGN",
-    "reward": 314.022222222222,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_nectarfi-x-dominion-market",
-    "title": "NectarFi x Dominion Market",
-    "reward": 333.333333333333,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_create-content-to-engage-new-builders-for-the-hackathon",
-    "title": "Create Content to Engage New Builders for the Hackathon",
-    "reward": 300,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_draft-x-thread-detailing-la-ccf-and-its-shows-in-spanish",
-    "title": "Draft X Thread Detailing La CCF & Its Shows in Spanish",
-    "reward": 233.333333333333,
-    "seen_at": "2026-08-28T12:24:02Z"
-  },
-  {
-    "id": "superteam_ideathon-submit-innovative-ideas-for-the-hackathon",
-    "title": "IDEATHON | Submit Innovative Ideas for the Hackathon",
-    "reward": 200,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_develop-solana-ecosystem-auto-updating-report-and-interactive-dashboard",
-    "title": "Develop Solana Ecosystem Auto-Updating Report & Interactive Dashboard",
-    "reward": 333.333333333333,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_creator-program-tell-the-story-that-brings-thailands-next-talent-to-solana",
-    "title": "Creator Program: Tell the story that brings Thailand's next talent to Solana",
-    "reward": 129.166666666667,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "id": "superteam_solana-developer-challenge-anchor-flash-loan",
+    "title": "Solana Developer Challenge: Anchor Flash Loan",
+    "reward": 333.33,
+    "seen_at": "2026-08-23T10:00:00Z"
   },
   {
     "id": "shillz_1a96d846-ba89-4183-986b-adb79f168735",
@@ -276,22 +90,10 @@
     "seen_at": "2026-08-25T10:04:07Z"
   },
   {
-    "id": "superteam_compose-x-thread-explaining-segmento-and-on-chain-user-intelligence",
-    "title": "Compose X Thread Explaining Segmento & On-Chain User Intelligence",
-    "reward": 100,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_aeonianbounty",
-    "title": "Write an X Thread Explaining Aeonian Trade & Introducing Upcoming Livestreams",
-    "reward": 166.666666666667,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "shillz_f73603f6-6716-4cde-ab92-617360f8e4bb",
-    "title": "Kekius Maximus",
-    "reward": 14.9988888888889,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "id": "superteam_create-the-ultimate-huzzfun-ai-hype-video",
+    "title": "Create the Ultimate HuzzFun AI  Hype Video",
+    "reward": 183.333333333333,
+    "seen_at": "2026-08-25T10:04:07Z"
   },
   {
     "id": "superteam_why-digital-credit-matters",
@@ -300,69 +102,159 @@
     "seen_at": "2026-08-25T10:04:07Z"
   },
   {
-    "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
-    "title": "Clive Bagworking Campaign",
-    "reward": 39.07,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "shillz_0882bc2d-127e-4610-868b-37606676dc18",
-    "title": "Retire Shilling",
-    "reward": 67.6133333333333,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "bb35a0d7-ac6d-43ab-b4d0-68a5518d57ec",
-    "title": "EKOS Community Content Challenge",
-    "reward": 11.78181591477,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "d3beb920-3526-4394-9a19-13eee1500fd0",
-    "title": "Make EKOS More Visible",
-    "reward": 29.4582034968835,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_fairscale-ansem",
-    "title": "FairScale QRT Campaign for Custom $ANSEM Score",
-    "reward": 100,
-    "seen_at": "2026-08-29T10:00:00Z"
-  },
-  {
-    "id": "superteam_create-the-ultimate-huzzfun-ai-hype-video",
-    "title": "Create the Ultimate HuzzFun AI  Hype Video",
-    "reward": 183.333333333333,
-    "seen_at": "2026-08-25T10:04:07Z"
+    "id": "superteam_draft-x-thread-detailing-la-ccf-and-its-shows-in-spanish",
+    "title": "Draft X Thread Detailing La CCF & Its Shows in Spanish",
+    "reward": 233.333333333333,
+    "seen_at": "2026-08-28T12:24:02Z"
   },
   {
     "id": "1a62d6e4-4d39-4621-8f44-019acd819146",
     "title": "List your API to MPP32 Ecosystem",
     "reward": 337.294063575814,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "9afa62df-9275-47e3-ae68-7c678b82452a",
+    "title": "Read EMOS lite paper",
+    "reward": 49.4433591875715,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "bb35a0d7-ac6d-43ab-b4d0-68a5518d57ec",
+    "title": "EKOS Community Content Challenge",
+    "reward": 15.8966497912264,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "bb4e8256-580b-4116-88a6-073a27a5e6a3",
+    "title": "Seeker Envelope Deep Dive Writing Bounty.",
+    "reward": 15.135722200277,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "d3beb920-3526-4394-9a19-13eee1500fd0",
+    "title": "Make EKOS More Visible",
+    "reward": 35.2358480868288,
+    "seen_at": "2026-08-30T12:19:23Z"
   },
   {
     "id": "daaab05e-50c9-498f-86ad-5379855c4846",
     "title": "make new $badger memes",
-    "reward": 10.3679246669127,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "reward": 10.595026730205,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "shillz_0882bc2d-127e-4610-868b-37606676dc18",
+    "title": "Retire Shilling",
+    "reward": 69.1233333333333,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "shillz_1ca95cc2-8dd2-41f4-8c6d-b0675594f843",
+    "title": "Y2K Hardcore Shilling",
+    "reward": 173.510869565217,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "shillz_69a9f113-b50d-48f0-b2e4-4a73373e97d1",
+    "title": "MOTION CAMPAIGN",
+    "reward": 279.807777777778,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
+    "title": "Clive Bagworking Campaign",
+    "reward": 30.24,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "shillz_f73603f6-6716-4cde-ab92-617360f8e4bb",
+    "title": "Kekius Maximus",
+    "reward": 15.4062962962963,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_aeonianbounty",
+    "title": "Write an X Thread Explaining Aeonian Trade & Introducing Upcoming Livestreams",
+    "reward": 166.666666666667,
+    "seen_at": "2026-08-30T12:19:23Z"
   },
   {
     "id": "superteam_build-and-demo-a-mermail-agent-skill",
     "title": "Build and Demo a Mermail Agent Skill",
     "reward": 83.3333333333333,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "seen_at": "2026-08-30T12:19:23Z"
   },
   {
-    "id": "superteam_t3n-agent-build-challenge",
-    "title": "Docs v2 refreshed! Build a trusted agent with T3N that we can distribute",
-    "reward": 48.3333333333333,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "id": "superteam_compose-x-thread-explaining-segmento-and-on-chain-user-intelligence",
+    "title": "Compose X Thread Explaining Segmento & On-Chain User Intelligence",
+    "reward": 100,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_create-content-to-engage-new-builders-for-the-hackathon",
+    "title": "Create Content to Engage New Builders for the Hackathon",
+    "reward": 300,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_creator-program-tell-the-story-that-brings-thailands-next-talent-to-solana",
+    "title": "Creator Program: Tell the story that brings Thailand's next talent to Solana",
+    "reward": 129.166666666667,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_develop-solana-ecosystem-auto-updating-report-and-interactive-dashboard",
+    "title": "Develop Solana Ecosystem Auto-Updating Report & Interactive Dashboard",
+    "reward": 333.333333333333,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_fairscale-ansem",
+    "title": "FairScale QRT Campaign for Custom $ANSEM Score",
+    "reward": 100,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_hackathon-universitaria-superteam-brasil-1",
+    "title": "Hackathon Universitária Superteam Brasil",
+    "reward": 1000,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_ideathon-submit-innovative-ideas-for-the-hackathon",
+    "title": "IDEATHON | Submit Innovative Ideas for the Hackathon",
+    "reward": 200,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_nectarfi-x-dominion-market",
+    "title": "NectarFi x Dominion Market",
+    "reward": 333.333333333333,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_post-why-flint-beats-building-your-own-prop-amm",
+    "title": "Post: Why Flint Beats Building Your Own Prop AMM",
+    "reward": 500,
+    "seen_at": "2026-08-30T12:19:23Z"
   },
   {
     "id": "superteam_road-to-colosseum-hackathon-germany-ideathon",
     "title": "Road to Colosseum Hackathon: Germany Ideathon",
     "reward": 300,
-    "seen_at": "2026-08-29T10:00:00Z"
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_solana-summit-canada-creator-challenge-part-1",
+    "title": "Solana Summit Canada Creator Challenge - part 1",
+    "reward": 384.615384615385,
+    "seen_at": "2026-08-30T12:19:23Z"
+  },
+  {
+    "id": "superteam_t3n-agent-build-challenge",
+    "title": "Docs v2 refreshed! Build a trusted agent with T3N that we can distribute",
+    "reward": 48.3333333333333,
+    "seen_at": "2026-08-30T12:19:23Z"
   }
 ]
