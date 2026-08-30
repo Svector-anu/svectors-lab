@@ -1,10 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-29T10:31:09Z",
+  "last_analyzed": "2026-08-30T12:19:04Z",
   "quality_score": 3,
-  "assessment": "Acceptable no-signal result with a clear threshold check and notification status, though it lacks a source citation and explicit trader-facing position label.",
+  "assessment": "Acceptable completed no-signal run with a clear trigger verdict and action, though the F&G reading lacks a cited source or timestamp for verification.",
   "flags": [],
-  "avg_score": 3.36,
+  "avg_score": 3.33,
   "history": [
     {
       "date": "2026-07-08",
@@ -66,6 +66,12 @@
       "date": "2026-08-29",
       "score": 3,
       "ts": "2026-08-29T10:31:09Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 3,
+      "ts": "2026-08-30T12:19:04Z",
       "harness": "codex"
     }
   ]
