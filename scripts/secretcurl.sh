@@ -152,7 +152,13 @@ run_xai_search() {
     fi
     printf 'secretcurl xai attempt=%s/%s http=%s bytes=%s reason=%s\n' \
       "$attempt" "$max_attempts" "${http:-000}" "$bytes" "$reason" >&2
-    if [ "$reason" = ok ] || [ "$attempt" -eq "$max_attempts" ]; then
+    retryable=1
+    case "$reason" in
+      ok) retryable=0 ;;
+      http-429|http-5??) retryable=1 ;;
+      http-*) retryable=0 ;;
+    esac
+    if [ "$reason" = ok ] || [ "$attempt" -eq "$max_attempts" ] || [ "$retryable" -eq 0 ]; then
       cat "$stdout_file"
       rm -f "$stdout_file"
       return "$([ "$reason" = ok ] && echo 0 || echo "$rc")"

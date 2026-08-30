@@ -7,6 +7,11 @@ attempt=0
 next=$((attempt + 1))
 echo "$next" > "$state"
 out=$(printf '%s\n' "$cfg" | sed -n 's/^-o "\(.*\)"$/\1/p' | head -1)
+if [ -n "${FAKE_CURL_HTTP:-}" ]; then
+  [ -z "$out" ] || printf '%s' '{"error":"client"}' > "$out"
+  printf '%s' "$FAKE_CURL_HTTP"
+  exit 0
+fi
 if [ "$attempt" -eq 0 ]; then
   [ -z "$out" ] || printf '%s' '{"error":"transient"}' > "$out"
   printf '503'
