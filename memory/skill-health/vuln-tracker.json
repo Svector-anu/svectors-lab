@@ -1,11 +1,10 @@
 {
   "skill": "vuln-tracker",
-  "last_analyzed": "2026-08-29T18:37:18Z",
+  "last_analyzed": "2026-08-30T16:50:46Z",
   "quality_score": 2,
-  "assessment": "Substantive but not trustworthy: it claims workspace writes during a read-only run and presents highly specific repository, PR, star, and lifecycle figures without evidence, making key assertions unverifiable.",
+  "assessment": "Specific PR metrics and lifecycle claims lack verification, and the claimed workspace file modifications contradict the explicitly read-only run conditions.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "unverifiable_claim"
   ],
   "avg_score": 2,
   "history": [
@@ -35,6 +34,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T18:37:18Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T16:50:46Z",
       "harness": "codex"
     }
   ]
