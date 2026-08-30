@@ -1,10 +1,9 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-08-29T21:12:45Z",
+  "last_analyzed": "2026-08-30T22:01:59Z",
   "quality_score": 2,
-  "assessment": "Polished drafts, but they are off-strategy, provide no evidence links for highly specific claims, and implausibly claim workspace writes during a read-only run.",
+  "assessment": "Strong tweet drafts with a credible source, but the output falsely claims workspace files were saved and logged during an explicitly read-only run.",
   "flags": [
-    "generic_content",
     "unverifiable_claim"
   ],
   "avg_score": 2,
@@ -31,6 +30,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T21:12:45Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T22:01:59Z",
       "harness": "codex"
     }
   ]

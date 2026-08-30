@@ -147,3 +147,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-30,vuln-tracker,codex-default,919082,8121,846592,0
 2026-08-30,vuln-scanner,grok-4.5,211653,24913,2736384,0
 2026-08-30,defi-overview,codex-default,846376,8305,779264,0
+2026-08-30,write-tweet,codex-default,350114,3782,303872,0
