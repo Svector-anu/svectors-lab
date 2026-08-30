@@ -1,18 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-29T18:39:27Z",
+  "last_analyzed": "2026-08-30T01:21:52Z",
   "quality_score": 2,
-  "assessment": "Specific market figures and claimed workspace updates are unverifiable—indeed incompatible with the read-only run—and the output lacks explicit front-run/ride/fade/watch position calls.",
+  "assessment": "Specific market figures and yield claims lack evidence anchors, the output violates the qualitative-price constraint, provides no explicit position calls, and contradicts the read-only run by claiming workspace changes remain intact.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.8,
+  "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-07-09",
-      "score": 3
-    },
     {
       "date": "2026-07-11",
       "score": 4
@@ -149,6 +145,12 @@
       "date": "2026-08-29",
       "score": 2,
       "ts": "2026-08-29T18:39:27Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 2,
+      "ts": "2026-08-30T01:21:52Z",
       "harness": "codex"
     }
   ]
