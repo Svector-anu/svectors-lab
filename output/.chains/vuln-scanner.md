@@ -1,8 +1,8 @@
-ℹ️ Vuln Scanner — GitNexus
+ℹ️ Vuln Scanner — corsairdev/corsair
 
-*Vuln Scanner — abhigyanpatwari/GitNexus*
-1 confirmed finding (HIGH transitive dep CVEs in gitnexus-web + MODERATE protobufjs).
-Disclosed via: public PR #3095
+*Vuln Scanner — corsairdev/corsair*
+2 confirmed findings (high dep CVEs + duplicate MCP).
+Disclosed via: public PR #1421 (better-auth / kysely / drizzle-orm); MCP run_script duplicate-skipped (#1043).
 Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
 
-🔗 https://github.com/abhigyanpatwari/GitNexus/pull/3095
+🔗 https://github.com/corsairdev/corsair/pull/1421

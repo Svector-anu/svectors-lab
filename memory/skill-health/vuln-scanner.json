@@ -1,10 +1,10 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-29T18:45:11Z",
+  "last_analyzed": "2026-08-30T17:55:31Z",
   "quality_score": 4,
-  "assessment": "Verified PR #3095 disclosure of real HIGH transitive dep CVEs plus MODERATE protobufjs; concise, linked, and actionable.",
+  "assessment": "Concise, actionable vuln report with confirmed findings, package names, scanner status, and a verifiable public PR link.",
   "flags": [],
-  "avg_score": 4.08,
+  "avg_score": 4.07,
   "history": [
     {
       "date": "2026-07-28",
@@ -118,6 +118,12 @@
       "date": "2026-08-29",
       "score": 4,
       "ts": "2026-08-29T18:45:11Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-30",
+      "score": 4,
+      "ts": "2026-08-30T17:55:31Z",
       "harness": "grok"
     }
   ]

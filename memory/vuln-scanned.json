@@ -300,5 +300,12 @@
     "findings": 1,
     "channel": "public-pr",
     "notes": "Audited 170eefd4 (46.3k stars, TypeScript, 3605 code files, HEAD main). PVR enabled + SECURITY.md. Scanners: semgrep=ok (37 candidates, all FP/out-of-scope after triage), trufflehog=ok (0 verified secrets fs+git), osv=ok (68 unique id+pkg; confirmed HIGH/MODERATE transitive CVEs in gitnexus-web + protobufjs in gitnexus), fuzz=skip (no harness), agentic=ok N=6. Confirmed: public PR #3095 bumping undici/js-yaml/nanoid/tar/protobufjs overrides. Code audit deep-reviewed serve auth/MCP mount, /api/file path containment, git-clone SSRF, upload ingest, cypher read-only, docker-server proxy \u2014 0 new exploitable code findings (MCP unauth + serve-no-auth already documented in SECURITY.md; DNS-resolve gap in validateGitUrl noted as hardening only, out of default-deployment scope). Report: output/articles/vuln-scan-2026-08-29.md. PR: https://github.com/abhigyanpatwari/GitNexus/pull/3095"
+  },
+  {
+    "repo": "corsairdev/corsair",
+    "scanned_at": "2026-08-30T17:54:43Z",
+    "findings": 2,
+    "channel": "public-pr",
+    "notes": "Audited 426c033. Confirmed: better-auth GHSA-qq9h + kysely/drizzle HIGH CVEs \u2192 public PR #1421. MCP run_script authz already open as #1043 (duplicate-skipped). Semgrep oauth-token hits in tests/README + pull_request_target labeler (base.sha checkout) dropped. PVR enabled; no new private code flaw filed. Stars~10871 TypeScript."
   }
 ]
