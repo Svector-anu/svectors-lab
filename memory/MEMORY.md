@@ -14,6 +14,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-30 | web3 developer tooling (web) | Radix Stokenet reset, Stellar Protocol 28 |
 | 2026-08-29 | daily (web) | agent sandbox isolation, Apache Iggy/Sourcelume, Anthropic ruling |
 | 2026-08-29 | web3 developer tooling (web) | Base production RPC, Arc v0.8.0, Compass WTGXX |
 | 2026-08-28 | daily (web, crypto) | Cosmos EVM exploit, Core Lightning patch, hard-asset ETF flows |
