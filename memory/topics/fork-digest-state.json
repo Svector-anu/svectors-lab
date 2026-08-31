@@ -1,0 +1,11 @@
+{
+  "last_run":"2026-08-31","target_repo":"aeonfun/aeon","n_active":85,"n_processed":50,"n_configured":49,"n_template":1,"n_unreadable":0,
+  "buckets":{
+    "DEFAULT_FLIP_ENABLE":[],
+    "DEFAULT_FLIP_DISABLE":[{"skill":"search-skill","forks":48,"pct":0.98},{"skill":"auto-merge","forks":47,"pct":0.96},{"skill":"defi-overview","forks":47,"pct":0.96},{"skill":"digest","forks":47,"pct":0.96},{"skill":"vuln-scanner","forks":47,"pct":0.96}],
+    "MODEL_CONSENSUS":[{"skill":"monitor-polymarket","model":"claude-sonnet-4-6","forks":20}],
+    "VAR_HOTSPOT":[],"EMERGING":[]
+  },
+  "fork_only_skills":[{"fork":"Boodszw/Boodszw_Bread","skill":"alchemy"},{"fork":"Boodszw/Boodszw_Bread","skill":"bankr"},{"fork":"Boodszw/Boodszw_Bread","skill":"opensea"},{"fork":"Boodszw/Boodszw_Bread","skill":"zerion"},{"fork":"MagIcKEarl/aeon","skill":"forecasting"},{"fork":"MagIcKEarl/aeon","skill":"hyperliquid"},{"fork":"MagIcKEarl/aeon","skill":"yield-farming"}],
+  "fingerprints":[{"fork":"hansj73/aeon","total_overrides":47,"dominant_category":"mixed"},{"fork":"MagIcKEarl/aeon","total_overrides":20,"dominant_category":"crypto"},{"fork":"chxoky/aeon","total_overrides":16,"dominant_category":"mixed"},{"fork":"Kodawari10/aeon","total_overrides":16,"dominant_category":"mixed"},{"fork":"swarm-ai-research/aeon-atlas","total_overrides":13,"dominant_category":"mixed"}]
+}

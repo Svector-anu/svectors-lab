@@ -1,0 +1,13 @@
+{
+  "last_run": "2026-08-31",
+  "last_status": "FORK_FLEET_OK",
+  "parent_repo": "aeonfun/aeon",
+  "active_total": 85,
+  "processed": 50,
+  "truncated_at": 50,
+  "forks": {
+    "Svector-anu/svectors-lab": {"pushed_at":"2026-08-31T11:52:25Z","default_branch":"main","ahead_by":3293,"behind_by":28,"new_skill_count":3,"score":92,"tier":"PROMOTE","unique_skills":["skills/fear-divergence/SKILL.md","skills/verdikta-hunter/SKILL.md","skills/x402-monitor/SKILL.md"]},
+    "MagIcKEarl/aeon": {"pushed_at":"2026-08-29T15:07:30Z","default_branch":"main","ahead_by":151,"behind_by":14,"new_skill_count":3,"score":80,"tier":"PROMOTE","unique_skills":["skills/forecasting/SKILL.md","skills/hyperliquid/SKILL.md","skills/yield-farming/SKILL.md"]},
+    "Boodszw/Boodszw_Bread": {"pushed_at":"2026-08-31T06:03:08Z","default_branch":"main","ahead_by":20444,"behind_by":812,"new_skill_count":4,"score":76,"tier":"PROMOTE","unique_skills":["skills/alchemy/SKILL.md","skills/bankr/SKILL.md","skills/opensea/SKILL.md","skills/zerion/SKILL.md"]}
+  }
+}

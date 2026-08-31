@@ -1,0 +1,19 @@
+{
+  "skill": "fork-fleet",
+  "last_analyzed": "2026-08-31T12:01:23Z",
+  "quality_score": 2,
+  "assessment": "Specific findings are summarized, but the claimed workspace file creation contradicts the read-only run constraint, and the final output omits the substantive report and evidence needed to verify its counts.",
+  "flags": [
+    "low_quality",
+    "unverifiable_claim"
+  ],
+  "avg_score": 2,
+  "history": [
+    {
+      "date": "2026-08-31",
+      "score": 2,
+      "ts": "2026-08-31T12:01:23Z",
+      "harness": "codex"
+    }
+  ]
+}
