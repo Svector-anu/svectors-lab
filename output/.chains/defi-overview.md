@@ -1,22 +1,26 @@
-Take: chop — BTC gained 0.9% with 14/20 top-cap assets green, but DEX volume fell 36.5%.  
-Conviction: medium — price and breadth improved; DEX volume and ETF flows disagree.  
-Evidence: DEX volume was $6.38B, down 36.5% over 24 hours.
+# DeFi Overview — 2026-08-31
 
-DeFi verdict: Mixed. TVL increased 1.2% since the prior refresh to $89.09B and stablecoin supply rose 0.27%, while trading activity remained weak.
+Take: **risk-off** — only 1/20 top-cap assets is green while total market cap fell 3.3% in 24 hours.  
+Conviction: **medium** — breadth, sentiment, ETH, and SOL agree; BTC’s 0.5% decline remains modest.  
+Evidence: Fear & Greed fell 7 points to 62 as breadth collapsed from 14/20 to 1/20.
 
-- BTC: $78,906 (+0.9%); ETH: $2,506 (+2.0%)
-- Fear & Greed: 69, Greed; breadth: 14/20 green
-- Protocol movers: VVS Standard +62.0%; DeFi Saver Asset Management −25.3%; neither had an obvious verified catalyst
-- Fee leaders: Tether $15.84M, Circle $6.45M, Pons V2 $3.93M
-- Sustainable yields: Raydium WSOL-USDC 75.5%, Uniswap V4 ETH-LINK 24.0%, Uniswap V3 WETH-USDT 18.5%
-- Incentive yields: Aerodrome USDC-AERO 22.7% via AERO; Convex CVXCRV 12.6% via CRV/CVX
-- SOL remains relatively strong at +12.2% over seven days
-- The latest reported US spot BTC ETF session showed a $202M outflow after nine inflow sessions. [ETF flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/)
+- BTC: $77,859 (-0.5%)
+- ETH: $2,427 (-1.4%)
+- SOL: $102.11 (-3.2%)
+- DeFi TVL: $88.07B (-1.1% since prior refresh)
+- DEX volume: $6.38B (-36.5%)
+- Stablecoins: $311.3B (+0.3%)
+- Protocol movers: VVS Standard +59.9%; Defi Saver Asset Management -26.1%
+- Polymarket: no September Fed rate change at 46.5%
+- ETF catalyst: the latest confirmed session ended a nine-day BTC ETF inflow streak with a $202M outflow. [Cointelegraph](https://cointelegraph.com/markets/bitcoin-etf-end-9-day-inflow-streak-btc-below-78k)
+
+Filtered sustainable-yield leaders were Raydium WSOL-USDC at 80.7% base APY, Uniswap V3 WETH-USDT at 28.7%, and Uniswap V4 ETH-LINK at 25.8%. These passed the skill’s TVL, persistence, confidence, reward-share, and outlier gates.
 
 ## Summary
 
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Preserved the complete token-pick table.
-- Logged `DEFI_MONITOR_NO_CONFIG` and the macro snapshot in [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md).
-- All market sources succeeded.
-- Notification was attempted, but the external notification queues were read-only, so delivery could not be confirmed.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Added the run record to [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md).
+- Preserved the complete token-pick history.
+- No tracked DeFi positions were configured.
+- Notification delivery was attempted but the external queues were read-only.
+- Commit creation was blocked because `.git` is read-only; workspace changes remain uncommitted.

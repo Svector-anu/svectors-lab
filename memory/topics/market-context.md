@@ -1,58 +1,60 @@
-# Market Context (as of 2026-08-30)
+# Market Context (as of 2026-08-31)
 
-> **Take:** chop — BTC gained 0.9% with 14/20 top-cap assets green, but DEX volume fell 36.5%. Conviction: medium.
+> **Take:** risk-off — only 1/20 top-cap assets is green while total market cap fell 3.3% in 24 hours. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $78,906 (+0.9% 24h, +2.4% 7d) · dominance 59.45% (-0.07 pp since the prior refresh)
-- ETH $2,506 (+2.0% 24h, +2.9% 7d) · ETH/BTC 0.0318
-- SOL $106.27 (+0.5% 24h, +12.2% 7d)
-- Total mcap $2.659T (-2.3% 24h) · DEX vol $6.38B 24h
-- Breadth: 14/20 green 24h · 11/20 green 7d
-- Fear & Greed: 69 (Greed) — yesterday 68
+- BTC $77,859 (-0.5% 24h, +0.1% 7d) · dominance 59.67% (+0.22 pp since the prior refresh)
+- ETH $2,427 (-1.4% 24h, -1.5% 7d) · ETH/BTC 0.0312
+- SOL $102.11 (-3.2% 24h, +6.6% 7d)
+- Total mcap $2.615T (-3.3% 24h) · DEX vol $6.38B 24h
+- Breadth: 1/20 green 24h · 5/20 green 7d
+- Fear & Greed: 62 (Greed) — yesterday 69
 
 ## What Changed Since Last Refresh
-- ETH rose from $2,467 to $2,506 and its 24-hour gain widened from 1.2% to 2.0%.
-- Aggregate chain TVL increased from $88.01B to $89.09B, while DEX volume remained depressed at $6.38B and -36.5% day over day.
-- US spot BTC ETFs recorded a $202M outflow after nine consecutive inflow sessions, despite August remaining net positive.
+- Breadth collapsed from 14/20 to 1/20 green over 24 hours, changing the regime from chop to risk-off.
+- Fear & Greed fell 7 points to 62 while total market cap declined 3.3%.
+- Aggregate chain TVL fell from $89.09B to $88.07B (-1.1%); SOL retained +6.6% seven-day relative strength despite today's 3.2% drop.
 
 ## Active Narratives
-- **SOL relative strength** — phase: rising. Evidence: SOL gained 12.2% over seven days versus 2.4% for BTC and 2.9% for ETH.
-- **Long-tail speculation** — phase: peak. Evidence: trending HNT, SKR, and PONS gained 127.7%, 80.8%, and 60.3% over 24 hours.
-- **Onchain activity slowdown** — phase: rising. Evidence: aggregate DEX volume fell 36.5% in 24 hours and 45.4% over seven days.
-- **Uniswap attention** — phase: emerging. Evidence: UNI entered CoinGecko trending at +16.4% while Uniswap V4 fees rose 25.9% day over day.
+- **Broad large-cap de-risking** — phase: rising. Evidence: 1/20 top-cap assets is green over 24 hours and 5/20 over seven days.
+- **SOL relative strength** — phase: rising. Evidence: SOL remains +6.6% over seven days versus BTC +0.1% and ETH -1.5%.
+- **Long-tail speculation** — phase: peak. Evidence: trending SKR, HNT, and PONS gained 109.7%, 95.5%, and 30.2% in 24 hours while large-cap breadth collapsed.
+- **Onchain activity slowdown** — phase: rising. Evidence: aggregate DEX volume is down 36.5% day over day and 45.4% over seven days.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.13B (+3.0%)
-- Aave V3: $17.57B (+2.7%)
-- SSV Network: $12.70B (+2.5%)
-- Morpho Blue: $9.65B (+2.4%)
-- Binance staked ETH: $9.37B (+3.0%)
+- Lido: $23.68B (+0.4%)
+- Aave V3: $17.29B (+0.9%)
+- SSV Network: $12.43B (+0.1%)
+- Morpho Blue: $9.57B (+1.5%)
+- Binance staked ETH: $9.15B (+0.3%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.78B (7d n/a)
-- Solana: $5.96B (7d n/a)
-- Base: $5.57B (7d n/a)
+- Ethereum: $49.14B (7d n/a)
+- Solana: $5.86B (7d n/a)
+- Base: $5.53B (7d n/a)
 
 ## Stablecoins
-Total: $311.4B (+0.7% 7d). USDT $183.5B · USDC $74.0B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.7%.
+Total: $311.3B (+0.7% 7d). USDT $183.5B · USDC $74.0B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.9%.
 
 ## Trending (CoinGecko)
-- HNT — rank-189 momentum, $0.897 (+127.7% 24h)
-- SKR — rank-218 momentum, $0.0193 (+80.8% 24h)
-- PONS — rank-143 momentum, $0.359 (+60.3% 24h)
+- SKR — rank-190 momentum, $0.0235 (+109.7% 24h)
+- HNT — rank-195 momentum, $0.828 (+95.5% 24h)
+- PONS — rank-158 momentum, $0.320 (+30.2% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Vitality beats Legacy (BLAST Open Porto, BO3) | 61.5% | $1.00M | $0.16M |
-| No Fed rate change after the September 2026 meeting | 49.5% | $0.65M | $0.32M |
+| No Fed rate change after the September 2026 meeting | 46.5% | $0.66M | $0.67M |
+| U.S. invades Iran before 2027 | 15.5% | $0.64M | $0.74M |
+| Arsenal wins on 2026-08-31 | 63.5% | $0.49M | $0.50M |
 
 ## Macro Catalysts (next 48h)
-- US spot BTC ETFs ended a nine-session inflow streak with a $202M outflow; renewed inflows would be needed to confirm the price rebound.
+- August's final U.S. trading session will determine whether spot BTC ETF flows recover from Friday's $202M outflow; another outflow would reinforce the breadth-led risk-off signal.
+- End-of-month JUP and TIA unlocks add moderate supply pressure while alt breadth is already weak.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor liquid relative-strength setups over broad beta while DEX volume and ETF flows remain weak.
-- **narrative-tracker:** watch SOL strength and Uniswap attention for confirmation; treat long-tail speculation as late-phase.
+- **token-pick:** favor liquid relative-strength setups and avoid broad beta until breadth and DEX volume recover.
+- **narrative-tracker:** monitor SOL strength for a rising-to-fading transition and long-tail speculation for exhaustion.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
