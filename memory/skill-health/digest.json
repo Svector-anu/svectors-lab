@@ -1,14 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-08-30T16:49:18Z",
+  "last_analyzed": "2026-08-31T11:58:27Z",
   "quality_score": 2,
-  "assessment": "Substantive but fundamentally misaligned: it provides an AI-industry news digest instead of crypto regime signal and explicit trade calls, while also claiming workspace writes despite the read-only run.",
+  "assessment": "Specific and actionable developer alerts with source links, but it misses the crypto-trader mandate (no regime verdict or position calls) and falsely claims workspace files were written during a read-only run.",
   "flags": [
     "low_quality",
     "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.63,
+  "avg_score": 2.59,
   "history": [
     {
       "date": "2026-07-28",
@@ -92,6 +92,12 @@
       "date": "2026-08-30",
       "score": 2,
       "ts": "2026-08-30T16:49:18Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 2,
+      "ts": "2026-08-31T11:58:27Z",
       "harness": "codex"
     }
   ]

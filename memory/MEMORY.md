@@ -14,6 +14,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-31 | web3 developer tooling (web) | Degen RPC cutoff, Kaia indexing, Bob SPV migration |
 | 2026-08-30 | daily (web) | Cursor cutoff, Anthropic MHS, a16z hardware fund |
 | 2026-08-30 | web3 developer tooling (web) | Radix Stokenet reset, Stellar Protocol 28 |
 | 2026-08-29 | daily (web) | agent sandbox isolation, Apache Iggy/Sourcelume, Anthropic ruling |
