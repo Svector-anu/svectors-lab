@@ -1,10 +1,10 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-08-30T16:50:05Z",
+  "last_analyzed": "2026-08-31T18:16:53Z",
   "quality_score": 4,
-  "assessment": "Substantive, conclusion-first curation with direct repository links, concrete activity metrics, useful categorization, and honest delivery limitations, though it provides little actionable crypto-trading relevance under the operator strategy.",
+  "assessment": "Substantive, conclusion-first curation with direct repository links, explicit selection status, useful summaries, and clear provenance; however, the precise growth labels and daily-star figures are not independently evidenced in the final output, and it only weakly serves the crypto-focused operator strategy.",
   "flags": [],
-  "avg_score": 3.23,
+  "avg_score": 3.29,
   "history": [
     {
       "date": "2026-07-28",
@@ -67,6 +67,12 @@
       "date": "2026-08-30",
       "score": 4,
       "ts": "2026-08-30T16:50:05Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 4,
+      "ts": "2026-08-31T18:16:53Z",
       "harness": "codex"
     }
   ]
