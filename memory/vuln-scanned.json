@@ -307,5 +307,12 @@
     "findings": 2,
     "channel": "public-pr",
     "notes": "Audited 426c033. Confirmed: better-auth GHSA-qq9h + kysely/drizzle HIGH CVEs \u2192 public PR #1421. MCP run_script authz already open as #1043 (duplicate-skipped). Semgrep oauth-token hits in tests/README + pull_request_target labeler (base.sha checkout) dropped. PVR enabled; no new private code flaw filed. Stars~10871 TypeScript."
+  },
+  {
+    "repo": "ApodexAI/FrontierAgent",
+    "scanned_at": "2026-08-31T09:45:00Z",
+    "findings": 2,
+    "channel": "pvr",
+    "notes": "GHSA-ch5r-299j-j7h5 high CWE-78 file_editor shell injection (auto-approve bypass); related DockerSandbox mkdir quote; draft patch on fork private/fix-file-editor-shell-injection; osv 0; trufflehog 0 verified; prior-art none"
   }
 ]
