@@ -1,20 +1,22 @@
-HEALTH: DEGRADED(15)
+# Skill Health — 2026-08-31
 
-No skills are currently critical or flapping. All recent failure streaks have reset to zero, but historical success rates and quality averages keep 15 skills degraded.
+**HEALTH: DEGRADED(15)**
 
+- Critical: 0
+- Degraded: 15
 - Warning: 8
 - Healthy: 4
 - No data: 0
-- Open issues: 2
-- Filed/resolved: 0
-- Systemic signal: stale ChatGPT usage-limit errors remain across 4 recovered skills
-- Run-history fallback: 275 runs checked over 7 days
+- Systemic: ChatGPT usage-limit signature across `defi-overview`, `self-improve`, `skill-health`, and `soul-builder`
+- Open issues: 2 (`ISS-003`, `ISS-004`)
+- Filed/resolved: none
 
-The required notification was attempted but failed because the external notification queues are read-only. `last_notified_at` was therefore preserved.
+The classification hash is unchanged. A notification was required because the previous successful notification was over 24 hours old, but delivery failed because the external notification and json-render paths are read-only. `last_notified_at` was therefore preserved.
 
 ## Summary
 
-- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- Appended the audit to [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md)
-- Left the two open issues unchanged because neither affected skill is classified healthy
-- Validated JSON and passed `git diff --check`
+- Audited all 27 enabled skills using cron state, quality history, recent logs, issue records, and 168-hour workflow data.
+- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json).
+- Appended the audit to [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md).
+- Verified valid JSON and a clean `git diff --check`.
+- Follow-up: restore write access to Aeon’s external notification queue so the overdue health reminder can be delivered.
