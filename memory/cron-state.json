@@ -48,13 +48,13 @@
     "last_quality_score": 4
   },
   "fear-divergence": {
-    "last_status": "dispatched",
-    "last_success": "2026-08-30T12:19:06Z",
-    "total_runs": 312,
-    "total_successes": 17,
+    "last_status": "success",
+    "last_success": "2026-08-31T11:53:55Z",
+    "total_runs": 314,
+    "total_successes": 19,
     "total_failures": 295,
     "consecutive_failures": 0,
-    "success_rate": 0.05,
+    "success_rate": 0.06,
     "last_quality_score": 3,
     "last_dispatch": "2026-08-31T11:51:55Z",
     "last_failed": "2026-08-24T09:11:43Z",
