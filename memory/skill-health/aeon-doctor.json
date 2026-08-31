@@ -1,8 +1,8 @@
 {
   "skill": "aeon-doctor",
-  "last_analyzed": "2026-08-25T01:24:17Z",
+  "last_analyzed": "2026-08-31T18:18:28Z",
   "quality_score": 4,
-  "assessment": "Good: substantive, clearly categorized, internally consistent, actionable, and appropriately honest about read-only constraints, though it provides limited verification evidence for the claimed checks and notification.",
+  "assessment": "Substantive, well-structured diagnostic with precise file locations and actionable fixes; the line-number-dependent sed commands are somewhat brittle but the report is otherwise useful and plausibly verifiable.",
   "flags": [],
   "avg_score": 4,
   "history": [
@@ -13,6 +13,12 @@
     {
       "date": "2026-08-25",
       "score": 4
+    },
+    {
+      "date": "2026-08-31",
+      "score": 4,
+      "ts": "2026-08-31T18:18:28Z",
+      "harness": "codex"
     }
   ]
 }
