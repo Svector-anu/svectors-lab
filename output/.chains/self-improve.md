@@ -1,10 +1,10 @@
-Self-improve completed in default improve mode.
+Self-improve stopped at its PR-debt gate: three improvement-shaped PRs remain open (#43, #30, #22), so no code change, dry run, notification, or new PR was appropriate.
 
-The debt gate found three open improvement PRs (#31, #30, #22), so no additional change or PR was created. The result was recorded in [memory/logs/2026-08-29.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-29.md).
+Logged the outcome in [memory/logs/2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md). Pre-existing worktree changes were preserved.
 
 ## Summary
 
-- Checked recent logs, health state, and open PRs.
-- Logged: “3+ open PRs, waiting for review.”
-- Preserved all unrelated workspace changes.
-- Follow-up: review or close existing improvement PRs before another self-improve run.
+- Mode: improve
+- Result: waiting for review
+- Files modified: `memory/logs/2026-08-31.md`
+- Follow-up: review or close an existing improvement PR before the next run

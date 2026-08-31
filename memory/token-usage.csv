@@ -154,4 +154,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-31,vuln-scanner,grok-4.5,548151,26607,2290816,0
 2026-08-31,vuln-scanner,grok-4.5,366558,18388,1667072,0
 2026-08-31,fork-fleet,codex-default,855331,11808,783616,0
-2026-08-31,auto-merge,codex-default,225470,1507,192768,0
+2026-08-31,self-improve,codex-default,172479,1120,144896,0
