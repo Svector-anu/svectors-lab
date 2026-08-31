@@ -1,8 +1,8 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-31T10:01:03Z",
+  "last_analyzed": "2026-08-31T10:52:01Z",
   "quality_score": 4,
-  "assessment": "Concrete scan notify with named highs, PVR ID, private fix branch, and honest scanner status; PVR opacity limits external verify but claims match responsible-disclosure shape.",
+  "assessment": "Clean audit with concrete counts and per-scanner status; honest no-finding verdict, decision-grade for the skill.",
   "flags": [],
   "avg_score": 4.07,
   "history": [
@@ -136,6 +136,12 @@
       "date": "2026-08-31",
       "score": 4,
       "ts": "2026-08-31T10:01:03Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 4,
+      "ts": "2026-08-31T10:52:01Z",
       "harness": "grok"
     }
   ]

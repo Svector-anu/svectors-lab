@@ -321,5 +321,12 @@
     "findings": 2,
     "channel": "pvr",
     "notes": "GHSA-3jvm-qqmm-hp97; private fix branch Svector-anu/scientific-agent-skills@private/fix-libreoffice-profile-and-actions-injection; 43 semgrep candidates reviewed, osv idna false attribution dropped"
+  },
+  {
+    "repo": "tt-a1i/archify",
+    "scanned_at": "2026-08-31T10:51:10Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "Audited 5de7275 (36.6k stars, JS/Node ESM). PVR enabled + SECURITY.md. Scanners: semgrep=ok (28 GHA mutable-tag WARNINGs dropped as hardening-only), trufflehog=ok (0 verified fs+git), osv=ok (0 advisories on package-lock), fuzz=skip, agentic=ok N=15. Deep-reviewed HTML/SVG escaping (XSS smoke clean), brands-capture SSRF (DNS-pin + private-IP fail-closed), preview loopback Host gate, open-artifact argv safety, output-path symlink/cwd gates, repository-evidence path pin, update-manifest URL allowlist, viewer textContent JSON.parse (no innerHTML). Report: output/articles/vuln-scan-2026-08-31-archify.md"
   }
 ]

@@ -1,6 +1,4 @@
-⚠️ Vuln Scanner — scientific-agent-skills
+ℹ️ Vuln Scanner — tt-a1i/archify
 
-*Vuln Scanner — K-Dense-AI/scientific-agent-skills*
-2 confirmed findings (2 high: predictable LibreOffice /tmp profile RCE; Actions script injection).
-Disclosed via: PVR GHSA-3jvm-qqmm-hp97 (draft patch on fork branch `private/fix-libreoffice-profile-and-actions-injection`, no public PR).
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
+*Vuln Scanner — tt-a1i/archify*
+Clean audit. 28 semgrep candidates reviewed (all GHA mutable-tag hardening), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
