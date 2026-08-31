@@ -1,17 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-31T05:50:17Z",
-  "quality_score": 3,
-  "assessment": "Actionable regime and position calls are strong, but the conclusion is not front-loaded, FADE logic is occasionally contradictory, and most exact figures lack direct evidence links for verification.",
+  "last_analyzed": "2026-08-31T11:55:36Z",
+  "quality_score": 2,
+  "assessment": "Specific market figures, ETF milestones, and catalysts rely on dubious or weak sources and are not sufficiently verifiable; despite explicit position calls, the output risks presenting invented narrative as tradeable signal.",
   "flags": [
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -178,6 +175,12 @@
       "date": "2026-08-31",
       "score": 3,
       "ts": "2026-08-31T05:50:17Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 2,
+      "ts": "2026-08-31T11:55:36Z",
       "harness": "codex"
     }
   ]
