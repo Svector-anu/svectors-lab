@@ -14,6 +14,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-31 | daily (web) | ICON replay exploit, Cronos halt, VMware private AI |
 | 2026-08-31 | web3 developer tooling (web) | Degen RPC cutoff, Kaia indexing, Bob SPV migration |
 | 2026-08-30 | daily (web) | Cursor cutoff, Anthropic MHS, a16z hardware fund |
 | 2026-08-30 | web3 developer tooling (web) | Radix Stokenet reset, Stellar Protocol 28 |

@@ -1,26 +1,25 @@
-*web3 developer tooling — 2026-08-31*
+*Daily digest — 2026-08-31*
 
-_TL;DR: three infrastructure cutoffs land today; migrate Degen RPCs, Kaia subgraphs, and Bob Wallet SPV clients now._
+_TL;DR: VMware packaged private-cloud agent infrastructure while two crypto networks disclosed or contained contract exploits._
 
-1. *Move Degen workloads off Alchemy before support ends today*  
-   Alchemy ends `degen-mainnet` support on August 31 as Degen Chain winds down. Move RPC-dependent apps and bridge remaining assets before the endpoint disappears.  
-   Why it matters: production calls and stranded assets are at immediate risk.  
-   [Alchemy changelog](https://www.alchemy.com/docs/changelog)
+1. *Audit migration contracts for replay protection after ICON’s exploit*  
+   An attacker replayed two signed withdrawal messages 1,492 times, releasing 119.9M ICX and 531,600 bnUSD. User funds were unaffected, but roughly 150.2 ETH and 31,204 USDC remain confirmed losses.  
+   Why it matters: audited migration code still needs nonce consumption and automated containment.  
+   [ICON post-mortem](https://www.icon.foundation/blog/2026/icon-network-replay-exploit-post-mortem)
 
-2. *Replace The Graph for Kaia subgraphs today*  
-   The Graph ends Kaia support on August 31; Kaia subgraphs will stop indexing and their query endpoints will stop returning data.  
-   Why it matters: unfixed data layers can make Kaia apps stale or unavailable.  
-   [Kaia migration guide](https://blog.kaia.io/kaia-support-sunsetting-on-the-graph-migration-guide/)
+2. *Cronos halts after an estimated $75M Tectonic exploit*  
+   Cronos halted its chain after an exploit hit lending protocol Tectonic. The root cause, final loss, and restart timing were unconfirmed at publication; Crypto.com said its app and exchange were unaffected.  
+   Why it matters: users should avoid Tectonic interactions until an official restart and post-mortem.  
+   [Incident report](https://cointelegraph.com/news/cronos-network-halt-tectonic-exploit-75-million)
 
-3. *Upgrade Bob Wallet before its old SPV helper winds down*  
-   Bob Wallet expects its former SPV helper to wind down around August 31. Bob LearnHNS 2.3.0 migrates installations to the new helper.  
-   Why it matters: older default-SPV installs may stop synchronizing reliably.  
-   [Bob Wallet transition notice](https://bobwallet.org/blog/spv-service-transition-bobwallet-org/)
+3. *VMware ships a private-cloud stack for production AI agents*  
+   Broadcom introduced VMware Private AI Cloud and Tanzu tooling with pre-approved skills, workflow buildpacks, human approvals, integrated memory, and governed private-data access.  
+   Why it matters: enterprise agent teams now have an on-prem stack combining runtime, governance, and agent controls.  
+   [Broadcom announcement](https://investors.broadcom.com/news-releases/news-release-details/broadcom-unveils-ai-ready-data-foundations-vmware-tanzu-platform)
 
 ## Summary
 
-- Digest saved to [output/digest-web3-developer-tooling-2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-web3-developer-tooling-2026-08-31.md).
-- Updated `memory/MEMORY.md` and today’s digest log.
-- RightStack duplicate was not rerun or repeated.
-- All links returned HTTP 200.
-- Notification attempted, but delivery could not be confirmed because the external queues were read-only.
+- Created [digest-2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-08-31.md).
+- Updated memory and the daily digest log.
+- Verified all three links return HTTP 200.
+- Delivery was attempted, but the notification and feed queues were mounted read-only; delivery could not be confirmed.
