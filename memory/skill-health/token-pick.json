@@ -1,13 +1,13 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-08-30T12:20:43Z",
+  "last_analyzed": "2026-08-31T18:19:20Z",
   "quality_score": 2,
-  "assessment": "Specific live prices, odds, catalyst claims, and a Fed speech are presented without verifiable citations, while hard-price headlines violate the strategy’s qualitative-only constraint.",
+  "assessment": "Specific prices, odds, injuries, tournament status, and token-supply claims lack verifiable source links, while hard live prices violate the strategy and the 11/10 score signals a broken rubric.",
   "flags": [
     "unverifiable_claim",
     "low_quality"
   ],
-  "avg_score": 3.23,
+  "avg_score": 3.14,
   "history": [
     {
       "date": "2026-07-11",
@@ -69,6 +69,12 @@
       "date": "2026-08-30",
       "score": 2,
       "ts": "2026-08-30T12:20:43Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 2,
+      "ts": "2026-08-31T18:19:20Z",
       "harness": "codex"
     }
   ]
