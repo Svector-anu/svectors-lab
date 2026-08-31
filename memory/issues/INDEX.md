@@ -9,7 +9,7 @@
 
 ## Resolved
 
-| ID | Title | Severity | Fix PR | Resolved |
-|----|-------|----------|--------|----------|
+| ID | Title | Severity | Fix | Resolved |
+|----|-------|----------|-----|----------|
 | ISS-002 | github-trending fails on read-only workspace write-lock | critical | — | 2026-08-21 |
-| ISS-001 | Fleet zero-token harness failure (grok-4.5) | critical | https://github.com/Svector-anu/svectors-lab/pull/31 | 2026-08-25 |
+| ISS-001 | Fleet zero-token harness failure (grok-4.5) | critical | [`62aa8fef`](https://github.com/Svector-anu/svectors-lab/commit/62aa8fef) | 2026-08-25 |
