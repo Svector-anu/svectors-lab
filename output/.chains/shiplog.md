@@ -1,16 +1,25 @@
-`SHIPLOG_OK` — at least 90 operator-authored PRs were returned for Aug 18–25, including 66 merges. GitHub hit its 100-result ceiling, so this is explicitly reported as a lower bound.
+# shiplog: harness portability, reliability, and OSS security
 
-Highlights:
+**Window:** 2026-08-25 → 2026-08-31  
+**Status:** `SHIPLOG_OK`
 
-- Eliza: 40 merged PRs.
-- Skopos: 11 merged PRs.
-- Aeon: 9 merged PRs; Kimi credential capture remains under review.
-- Four external security-keyword fixes merged.
-- X, stars, and social tags were omitted because no verified product configuration exists.
+45 operator-authored PRs opened across 10 repositories: 28 merged, 11 open, and 6 closed. The watched Aeon repository recorded 43 commits.
+
+Key ships:
+
+- Added Cursor, Hermes, and GLM harness support, including auth-row and headless-workspace fixes.
+- Improved failure handling for Hermes and transient xAI searches.
+- Added bounded Telegram chunks and machine-readable vulnerability-scanner evidence.
+- Shipped stable RightStack JSON output and its Aeon web3-advisor integration.
+- GitNexus merged the external CVE dependency remediation, [PR #3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095).
+- Corsair’s better-auth, Kysely, and Drizzle remediation remains open in [PR #1421](https://github.com/corsairdev/corsair/pull/1421).
+
+No star delta, X activity, ecosystem mentions, or product traction was reported because no flagship repositories, verified handles, scouts, or traction sources are configured.
 
 ## Summary
 
-- Created the full digest and post variants: [shiplog-2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/shiplog-2026-08-25.md)
+- Created [shiplog-2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/shiplog-2026-08-31.md)
+- Included the digest, ready-to-post shiplog, thread, and three-bullet variant
 - Advanced [shiplog-last.json](/home/runner/work/svectors-lab/svectors-lab/memory/state/shiplog-last.json)
-- Appended the run to [2026-08-25.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-25.md)
-- Notification was attempted; the external queue was read-only, so delivery fell back to inline output and the dashboard feed was skipped.
+- Appended the run to [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md)
+- Notification delivery was attempted but failed because the external notification and feed queues were mounted read-only.

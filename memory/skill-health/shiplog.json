@@ -1,17 +1,20 @@
 {
   "skill": "shiplog",
-  "last_analyzed": "2026-08-25T08:08:10Z",
-  "quality_score": 2,
-  "assessment": "The output gives a concise activity summary, but omits the actual digest and evidence, makes specific unverifiable PR counts, and claims workspace files were created during a read-only run.",
-  "flags": [
-    "low_quality",
-    "unverifiable_claim"
-  ],
-  "avg_score": 2,
+  "last_analyzed": "2026-08-31T11:56:42Z",
+  "quality_score": 3,
+  "assessment": "Substantive and specific shiplog with verifiable PR links, but it is weakly aligned to the crypto-trading strategy, provides little evidence for aggregate counts, and reports workspace writes despite the run being read-only.",
+  "flags": [],
+  "avg_score": 2.5,
   "history": [
     {
       "date": "2026-08-25",
       "score": 2
+    },
+    {
+      "date": "2026-08-31",
+      "score": 3,
+      "ts": "2026-08-31T11:56:42Z",
+      "harness": "codex"
     }
   ]
 }
