@@ -1,18 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-08-30T19:31:27Z",
-  "quality_score": 2,
-  "assessment": "Too terse to be decision-grade: it gives no regime verdict, position call, evidence anchor, or narrative map details to verify the no-change conclusion.",
+  "last_analyzed": "2026-08-31T05:50:17Z",
+  "quality_score": 3,
+  "assessment": "Actionable regime and position calls are strong, but the conclusion is not front-loaded, FADE logic is occasionally contradictory, and most exact figures lack direct evidence links for verification.",
   "flags": [
-    "low_quality",
-    "generic_content"
+    "unverifiable_claim"
   ],
   "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 3
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -177,6 +172,12 @@
       "date": "2026-08-30",
       "score": 2,
       "ts": "2026-08-30T19:31:27Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 3,
+      "ts": "2026-08-31T05:50:17Z",
       "harness": "codex"
     }
   ]
