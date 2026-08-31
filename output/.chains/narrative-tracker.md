@@ -2,26 +2,29 @@
 
 *Narrative Tracker — 2026-08-31*
 
+source: public-web fallback after `xai http=403 bytes=254`; confidence: low-medium.
+
 TRANSITIONS
-• NEW*: broad de-risking — 1/20 large caps green, market cap -3.6%, $395M liquidations; matters more than sector chatter — https://charliedesk.com/market/report/2026-08-31
-• NEW*: SOL institutional beta — weekly +6.62% and Bitwise SOL ETF passed $1B AUM while most alts fell — https://www.btcmarkets.net/blog/solana-outperforms-as-bitcoin-holds-steady
-• NEW*: ETH ETF catch-up — 10-day inflow streak and $102.1M latest-day inflow against BTC outflows — https://coinstats.app/ai/a/crypto-news-update-31-August-2026
-• NEW*: stablecoins as mainstream rails — EURR, Circle/Chelsea and Visa partnerships landed in one week — https://www.originbrief.app/en/reports/crypto-web3/2026-08-31/weekly
+• NEW: XMR-led privacy rotation — XMR is separating from both majors and ZEC, so this is a single-asset relative-strength trade, not yet a sector bid — https://coinlib.io/coin/XMR/Monero/analysis/monero-analysis-2026-08-31
+• NEW: SOL institutional beta — ETF assets and ecosystem launches are reinforcing SOL's relative strength, but the loud $600 target is far ahead of prediction-market belief — https://www.thecoinrepublic.com/2026/08/30/solana-price-prediction-ansem-sees-600-as-us-sol-spot-etf-aum-hits-1-4b/
+• NEW: Solana prediction-market expansion — @JupiterExchange and @meleemarkets launched shorter-duration markets; distribution is real, user demand is not yet established — https://www.reddit.com/r/solana/comments/1w2u3e4/solana_ecosystem_news_august_302026/
+• NEW: Solana AI-agent tokenization — @virtuals_io deployed on Solana, adding a fresh catalyst to an old AI-agent story — https://www.reddit.com/r/solana/comments/1w2u3e4/solana_ecosystem_news_august_302026/
 
 REFLEXIVITY ALERT
-• SOL institutional beta — the ETF-AUM milestone is reinforcing relative-strength positioning while SOL is the only major weekly standout; flows and the story are feeding each other.
+• XMR privacy — price strength is creating the privacy story without a confirmed usage catalyst: XMR rose while BTC/ETH corrected, then extended the weekly divergence; the contemporaneous privacy report explicitly found no causal proof.
+• SOL moon-target discourse — @Ansem's $600 call circulated while Polymarket assigned only ~2–3% odds for 2026; attention is outrunning market belief even as reported US SOL ETF assets reached ~$1.43B.
 
 POSITIONS
-• RIDE: SOL institutional beta (4 ↑, Bull) — @BitwiseInvest, @solana, institutional ETF allocators — bear: one crowded relative winner can mean-revert fast in risk-off.
-• RIDE: ETH ETF catch-up (3 ↑, Bull) — @ethereum, @BlackRock, ETF desks — bear: inflows have not prevented ETH from falling with macro risk.
-• FRONT-RUN: stablecoin distribution (3 ↑↑, Bull) — @circle, @RevolutApp, @Visa — bear: adoption headlines can outrun fee capture for tokens.
-• WATCH: broad de-risking (5 ↑↑, Bear) — Fed repricing, ETF desks, leveraged longs — bear: crowded caution can reverse on soft jobs/Fed relief.
-• WATCH: privacy interoperability (2 ↑, Mixed) — @THORChain, @monero, swap users — bear: a 9.37% XMR move on one launch is not durable mindshare yet.
+• RIDE: XMR-led privacy (mindshare 3 ↑↑, Bull, Rising) — @monero + privacy-focused commentators — bear: ZEC lagged and no usage catalyst confirms a broad privacy rotation.
+• RIDE: SOL institutional beta (4 ↑, Bull, Rising) — @Ansem + @SolanaSensei + @CharlesSchwab — bear: crowded price targets and weak broad-market breadth raise exhaustion risk.
+• WATCH: Solana prediction markets (2 ↑↑, Mixed, Emerging) — @JupiterExchange + @meleemarkets + @Kalshi — bear: new venues do not prove sustained liquidity.
+• WATCH: Solana AI agents (2 ↑, Mixed, Emerging) — @virtuals_io + @solana + @Boole_AI — bear: deployment headlines remain ahead of measurable agent usage.
+• FADE: long-tail speculation (3 ↓, Cope, Fading) — UP + SKR + PONS — bear: isolated momentum lacks a durable catalyst and is vulnerable in a risk-off tape.
 
 MAP
-Emerging: privacy interoperability
-Rising: SOL institutional beta, ETH ETF catch-up, stablecoin distribution, broad de-risking
+Emerging: Solana prediction markets; Solana AI agents
+Rising: XMR-led privacy; SOL institutional beta
 Peak: none
-Fading: none
+Fading: long-tail speculation
 
-*NEW is relative to available tracker logs, which contain no prior structured baseline.
+Calibration: Kaito's public Warden leaderboard is fragmented rather than concentrated—the top account holds 0.7598% mindshare and #2 holds 0.6986%—so no narrative was scored 5 on fallback evidence alone: https://kaito.wardenprotocol.org/
