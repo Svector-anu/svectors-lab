@@ -1,10 +1,10 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-08-30T16:48:11Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op report with clear counts and follow-up status, though it provides limited evidence for the live-mode and validation claims.",
+  "last_analyzed": "2026-08-31T18:15:06Z",
+  "quality_score": 4,
+  "assessment": "Good: concise, policy-based verdicts identify every considered PR and clearly confirm that no unsafe merge occurred, though direct PR links or compact evidence would improve verifiability.",
   "flags": [],
-  "avg_score": 2.71,
+  "avg_score": 2.88,
   "history": [
     {
       "date": "2026-08-25",
@@ -42,6 +42,12 @@
       "date": "2026-08-30",
       "score": 3,
       "ts": "2026-08-30T16:48:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 4,
+      "ts": "2026-08-31T18:15:06Z",
       "harness": "codex"
     }
   ]
