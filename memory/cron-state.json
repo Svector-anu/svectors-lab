@@ -274,14 +274,14 @@
     "last_quality_score": 4
   },
   "shiplog": {
-    "last_status": "dispatched",
-    "last_success": "2026-08-25T08:08:11Z",
-    "total_runs": 1,
-    "total_successes": 1,
+    "last_status": "success",
+    "last_success": "2026-08-31T11:56:45Z",
+    "total_runs": 2,
+    "total_successes": 2,
     "total_failures": 0,
     "consecutive_failures": 0,
     "success_rate": 1,
-    "last_quality_score": 2,
+    "last_quality_score": 3,
     "last_dispatch": "2026-08-31T11:51:55Z"
   },
   "auto-workflow": {
