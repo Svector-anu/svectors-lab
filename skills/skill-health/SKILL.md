@@ -101,6 +101,14 @@ For each CRITICAL or FLAPPING skill, check if an open issue already exists with 
 For each skill now HEALTHY whose name appears in any open issue's `affected_skills`:
 - Remove it from that issue's `affected_skills`. If the list becomes empty, set `status: resolved`, set `resolved_at: <now ISO>`, and move the row from Open to Resolved in INDEX.md.
 
+**Reconcile `fix-pending` issues.** `skill-repair` sets `status: fix-pending` with a `fix_pr` when it opens a repair PR — it cannot know whether that PR merges, so it deliberately does not claim `resolved`. This step closes that loop. For each issue with `status: fix-pending` and a non-null `fix_pr`, check the PR's real state (`gh pr view <fix_pr> --json state,mergedAt`) and reconcile:
+
+- **Merged** (`mergedAt` non-null) → the fix shipped. Set `status: resolved`, `resolved_at: <mergedAt>`, move the row from Open to Resolved in INDEX.md.
+- **Closed without merging** (`state: CLOSED`, `mergedAt: null`) → the fix did **not** ship. Set `status: open`, set `fix_pr: null`, and append `Update <YYYY-MM-DD>: fix PR <url> was closed unmerged; issue reopened.` to the body. The skill is still broken; leaving it `fix-pending` would hide that.
+- **Still open** → leave untouched. The repair is in flight.
+
+If `gh` is unavailable or the lookup errors, leave the issue untouched and log it — never resolve on an unverified assumption.
+
 **Filing a new issue:**
 1. Find next ID: scan `memory/issues/ISS-*.md`, take max `NNN`, add 1. Format as zero-padded 3 digits (`ISS-042`).
 2. Write `memory/issues/ISS-NNN.md` with YAML frontmatter:
@@ -108,7 +116,7 @@ For each skill now HEALTHY whose name appears in any open issue's `affected_skil
    ---
    id: ISS-NNN
    title: <skill> <concise failure>
-   status: open
+   status: open   # open | fix-pending | resolved — fix-pending means a repair PR is open but unmerged; only a merged PR becomes resolved
    severity: critical | high | medium | low   # critical=CRITICAL status, high=FLAPPING, medium=DEGRADED
    category: rate-limit | timeout | missing-secret | config | api-change | sandbox-limitation | unknown
    detected_by: skill-health
