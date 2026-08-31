@@ -25,14 +25,14 @@
     "last_error": "read_id\":\"01a03a4f-31ce-7381-8489-49d501aa64ed\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt"
   },
   "narrative-tracker": {
-    "last_status": "dispatched",
-    "last_failed": "2026-08-28T18:31:57Z",
-    "total_runs": 399,
+    "last_status": "failed",
+    "last_failed": "2026-08-31T22:52:26Z",
+    "total_runs": 401,
     "total_successes": 53,
-    "total_failures": 346,
-    "consecutive_failures": 0,
+    "total_failures": 348,
+    "consecutive_failures": 2,
     "success_rate": 0.13,
-    "last_error": "equires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlock your free credits. fx reported",
+    "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a06-15d3-79c1-a41f-b336cc1e38eb\"} {\"type\":\"turn.started\"} {\"type\":\"error\"",
     "last_success": "2026-08-31T18:16:28Z",
     "last_quality_score": 3,
     "last_dispatch": "2026-08-31T22:51:38Z"
