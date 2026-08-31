@@ -317,15 +317,15 @@
   },
   "self-improve": {
     "last_dispatch": "2026-08-31T18:13:08Z",
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-08-25T19:05:08Z",
-    "total_runs": 5,
-    "total_successes": 3,
+    "total_runs": 6,
+    "total_successes": 4,
     "total_failures": 2,
     "consecutive_failures": 0,
-    "success_rate": 0.6,
+    "success_rate": 0.67,
     "last_error": "read_id\":\"01a03a4f-d7ba-7181-89cc-b36f8f95880e\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt",
-    "last_success": "2026-08-29T18:35:09Z",
+    "last_success": "2026-08-31T18:15:25Z",
     "last_quality_score": 3
   },
   "aeon-update": {
