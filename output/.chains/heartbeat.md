@@ -1,12 +1,17 @@
 Heartbeat completed.
 
-- Status: 🔴 DEGRADED
-- Newly flagged: PR #42 is stalled beyond 24 hours.
-- Existing findings were deduplicated.
-- Alert delivery failed because notification staging was read-only.
-- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
-- Logged the run in [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md).
+**Overall:** 🔴 DEGRADED
+
+- 11 enabled skills remain below the chronic-failure threshold due to historical counters.
+- Six PRs are stalled: #30, #22, #20, #5, #4, #3.
+- `fork-fleet` has no scheduler-state entry.
+- Two critical issue records remain open.
+- No skills are currently failed or stuck.
+- No notification sent because every finding was reported within 48 hours.
 
 ## Summary
 
-Updated the public fleet status and heartbeat log. No enabled skill is currently failed or stuck, but chronic lifetime failure rates and two critical issue records keep the overall status degraded.
+- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
+- Logged the run in [memory/logs/2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md:40).
+- Verified all 27 enabled skills appear exactly once.
+- Next scheduled run: `defi-overview` at 12:00 UTC.
