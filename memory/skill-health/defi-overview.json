@@ -1,18 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-31T00:24:54Z",
+  "last_analyzed": "2026-08-31T11:57:21Z",
   "quality_score": 2,
-  "assessment": "Substantive regime evidence, but it violates the qualitative-price constraint, lacks explicit position calls and source anchors for most figures, and implausibly claims workspace edits during a read-only run.",
+  "assessment": "Conclusion-first and signal-oriented, but it lacks explicit position calls or source citations and impossibly claims workspace files were updated during a read-only run.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.5,
+  "avg_score": 2.43,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
     {
       "date": "2026-08-22",
       "score": 5
@@ -159,6 +154,12 @@
       "date": "2026-08-31",
       "score": 2,
       "ts": "2026-08-31T00:24:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 2,
+      "ts": "2026-08-31T11:57:21Z",
       "harness": "codex"
     }
   ]

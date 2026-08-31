@@ -1,26 +1,19 @@
-# DeFi Overview — 2026-08-31
+Risk-off, medium conviction: only 5/20 top-cap assets are green and total market cap fell 2.7%. DEX volume rebounded 20.4% to $7.68B, limiting conviction.
 
-Take: **risk-off** — only 1/20 top-cap assets is green while total market cap fell 3.3% in 24 hours.  
-Conviction: **medium** — breadth, sentiment, ETH, and SOL agree; BTC’s 0.5% decline remains modest.  
-Evidence: Fear & Greed fell 7 points to 62 as breadth collapsed from 14/20 to 1/20.
+Key signals:
 
-- BTC: $77,859 (-0.5%)
-- ETH: $2,427 (-1.4%)
-- SOL: $102.11 (-3.2%)
-- DeFi TVL: $88.07B (-1.1% since prior refresh)
-- DEX volume: $6.38B (-36.5%)
-- Stablecoins: $311.3B (+0.3%)
-- Protocol movers: VVS Standard +59.9%; Defi Saver Asset Management -26.1%
-- Polymarket: no September Fed rate change at 46.5%
-- ETF catalyst: the latest confirmed session ended a nine-day BTC ETF inflow streak with a $202M outflow. [Cointelegraph](https://cointelegraph.com/markets/bitcoin-etf-end-9-day-inflow-streak-btc-below-78k)
+- DeFi TVL: $87.77B, down 0.3% since the prior refresh
+- Fear & Greed: 62, down 7 points
+- SOL retains relative strength: +9.5% over seven days
+- XMR leads top-cap momentum: +12.2% daily, +27.1% weekly
+- Sustainable-yield filter returned three pools; incentive-yield filter returned two
+- No tracked positions were configured
 
-Filtered sustainable-yield leaders were Raydium WSOL-USDC at 80.7% base APY, Uniswap V3 WETH-USDT at 28.7%, and Uniswap V4 ETH-LINK at 25.8%. These passed the skill’s TVL, persistence, confidence, reward-share, and outlier gates.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md). All required data sources succeeded. Notification delivery was attempted, but its external queues were read-only.
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Added the run record to [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md).
-- Preserved the complete token-pick history.
-- No tracked DeFi positions were configured.
-- Notification delivery was attempted but the external queues were read-only.
-- Commit creation was blocked because `.git` is read-only; workspace changes remain uncommitted.
+- Refreshed the complete DeFi and macro overview.
+- Preserved the existing token-pick history.
+- Logged source health, regime, yields, movers, and position-config status.
+- No follow-up action required.
