@@ -1,11 +1,18 @@
-No new credible ClawHunter matches today.
+Hunter-22 completed.
 
-- Free `/match` endpoint returned HTTP 200 with 25 candidates.
-- All were already seen within 14 days.
-- `Nudgen-Marketing/mermail-skills` was the sole audit-shaped result, but was previously surfaced.
-- No notification or audit button was sent.
-- Refreshed 25 entries and pruned the ledger to 43 records.
+- API: HTTP 200, 25 candidates reviewed.
+- New candidate: “Best $CONVICTION Pump.fun Callout” (~$30.87).
+- Result: rejected as token-promotion/social engagement, not credible technical work.
+- Genuine new matches: 0.
+- Audit-shaped matches: 0.
+- Notification: none, per no-signal rule.
+- Dedup state refreshed: 44 retained entries after pruning.
 
 ## Summary
 
-Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md). JSON and diff checks passed. Commit creation was blocked because `.git` is read-only in this harness; changes remain in the workspace.
+Modified:
+
+- [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json)
+- [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md)
+
+Validation passed. Commit could not be created because this environment mounts `.git` read-only; workspace changes remain unstaged.
