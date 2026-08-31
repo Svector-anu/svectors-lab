@@ -1,8 +1,8 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-31T09:47:31Z",
+  "last_analyzed": "2026-08-31T10:01:03Z",
   "quality_score": 4,
-  "assessment": "Actionable high/medium CWE-78 disclosure with GHSA ID, severity split, and honest scanner status; thin on repro detail but not invented or empty.",
+  "assessment": "Concrete scan notify with named highs, PVR ID, private fix branch, and honest scanner status; PVR opacity limits external verify but claims match responsible-disclosure shape.",
   "flags": [],
   "avg_score": 4.07,
   "history": [
@@ -130,6 +130,12 @@
       "date": "2026-08-31",
       "score": 4,
       "ts": "2026-08-31T09:47:31Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-08-31",
+      "score": 4,
+      "ts": "2026-08-31T10:01:03Z",
       "harness": "grok"
     }
   ]

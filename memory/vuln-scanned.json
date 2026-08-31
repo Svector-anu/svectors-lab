@@ -314,5 +314,12 @@
     "findings": 2,
     "channel": "pvr",
     "notes": "GHSA-ch5r-299j-j7h5 high CWE-78 file_editor shell injection (auto-approve bypass); related DockerSandbox mkdir quote; draft patch on fork private/fix-file-editor-shell-injection; osv 0; trufflehog 0 verified; prior-art none"
+  },
+  {
+    "repo": "K-Dense-AI/scientific-agent-skills",
+    "scanned_at": "2026-08-31T09:58:27Z",
+    "findings": 2,
+    "channel": "pvr",
+    "notes": "GHSA-3jvm-qqmm-hp97; private fix branch Svector-anu/scientific-agent-skills@private/fix-libreoffice-profile-and-actions-injection; 43 semgrep candidates reviewed, osv idna false attribution dropped"
   }
 ]

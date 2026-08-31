@@ -3,7 +3,7 @@ type: Leads
 title: Audit Leads
 description: Companies vuln-scanner has privately disclosed a real, confirmed vulnerability to — a warm list for a manual private-audit follow-up. Disclosure and sales are kept deliberately separate; nothing here is auto-pitched.
 tags: [security, leads, business-dev, vuln-scanner]
-timestamp: 2026-08-31T09:46:19Z
+timestamp: 2026-08-31T09:58:27Z
 ---
 
 # Audit Leads
@@ -14,3 +14,4 @@ Every row is a company/repo vuln-scanner privately disclosed a real, confirmed f
 |------|------|----------|---------|--------|-------|
 | 2026-08-25 | NousResearch/hermes-agent | medium | PVR GHSA-3jv7-3pr9-766x | disclosed | Overprivileged Algolia apiKey in docusaurus.config.ts (settings ACL) |
 | 2026-08-31 | ApodexAI/FrontierAgent | high | PVR GHSA-ch5r-299j-j7h5 | disclosed | file_editor_* sandbox shell injection / approval-gate bypass |
+| 2026-08-31 | K-Dense-AI/scientific-agent-skills | high | PVR GHSA-3jvm-qqmm-hp97 | disclosed | predictable LibreOffice /tmp profile RCE + Actions script injection |
