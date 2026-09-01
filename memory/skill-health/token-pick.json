@@ -1,13 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-01T19:29:39Z",
+  "last_analyzed": "2026-09-01T21:57:19Z",
   "quality_score": 2,
-  "assessment": "Strong momentum summary, but it violates the qualitative-price constraint, lacks a regime verdict and explicit position call, and provides no usable citations for its specific catalyst and volume claims.",
+  "assessment": "Specific prices, probabilities, catalyst figures, and macro claims lack verifiable source links; the output also violates the qualitative-price constraint and gives no explicit UNI position call.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 3,
+  "avg_score": 2.94,
   "history": [
     {
       "date": "2026-07-11",
@@ -87,6 +86,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T19:29:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T21:57:19Z",
       "harness": "codex"
     }
   ]
