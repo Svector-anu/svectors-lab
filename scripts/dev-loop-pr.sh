@@ -40,23 +40,14 @@ case "${1:-}" in
     for attempt in $(seq 1 "$attempts"); do
       after=$(mktemp)
       gh pr list -R "$repo" --state open --limit 100 --json number,author --jq '.[] | "\(.number)\t\(.author.login)"' | sort -n > "$after"
-      after_numbers=$(mktemp)
-      cut -f1 "$after" > "$after_numbers"
-      new_prs=()
-      while IFS= read -r number; do
-        [ -n "$number" ] && new_prs+=("$number")
-      done < <(comm -13 "$before" "$after_numbers")
-      if [ "${#new_prs[@]}" -eq 1 ]; then
-        pr_actor=$(awk -F '\t' -v n="${new_prs[0]}" '$1 == n { print $2 }' "$after")
-        if [ "$pr_actor" = "$actor" ]; then
-          printf '%s#%s\n' "$repo" "${new_prs[0]}"
-          exit 0
-        fi
-        echo "dev-loop: new PR #${new_prs[0]} was opened by $pr_actor, not feature actor $actor" >&2
-        exit 1
+      actor_prs=$(awk -F '\t' -v actor="$actor" 'NR == FNR { before[$1] = 1; next } !($1 in before) && $2 == actor { print $1 }' "$before" "$after")
+      actor_pr_count=$(printf '%s\n' "$actor_prs" | sed '/^$/d' | wc -l | tr -d ' ')
+      if [ "$actor_pr_count" -eq 1 ]; then
+        printf '%s#%s\n' "$repo" "$actor_prs"
+        exit 0
       fi
-      if [ "${#new_prs[@]}" -gt 1 ]; then
-        echo "dev-loop: ${#new_prs[@]} new open PRs appeared; refusing ambiguous review handoff" >&2
+      if [ "$actor_pr_count" -gt 1 ]; then
+        echo "dev-loop: $actor_pr_count new PRs were opened by feature actor $actor; refusing ambiguous review handoff" >&2
         exit 1
       fi
       [ "$attempt" -lt "$attempts" ] && sleep "$backoff"

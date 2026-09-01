@@ -29,6 +29,8 @@ case "$TEST_GH_SCENARIO:$calls" in
   many:2) printf '41\taeonframework\n42\taeonframework\n43\taeonframework\n' ;;
   wrong-actor:1) printf '41\n' ;;
   wrong-actor:2) printf '41\tother-user\n42\tother-user\n' ;;
+  concurrent-other:1) printf '41\n' ;;
+  concurrent-other:2) printf '41\taeonframework\n42\taeonframework\n43\tother-user\n' ;;
   *) exit 1 ;;
 esac
 EOF
@@ -68,6 +70,10 @@ if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=wrong-actor DEV_LOOP_PR_VERIFY_ATTEMP
   echo 'wrong-actor handoff unexpectedly verified' >&2
   exit 1
 fi
+
+printf '0\n' > "$calls"
+TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-other PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
+[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-other DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
 
 if bash "$CHECK" validate-target watched; then
   echo 'implicit watched target unexpectedly validated' >&2
