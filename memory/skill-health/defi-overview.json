@@ -1,17 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-01T16:24:10Z",
+  "last_analyzed": "2026-09-01T19:30:12Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first and actionable, but most specific figures and the Fed probability lack evidence links, making key regime claims unverifiable; it also claims workspace updates despite a read-only run.",
+  "assessment": "Conclusion-first regime read, but it lacks evidence links and explicit position calls, and its claimed workspace updates contradict the read-only run constraint.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.17,
+  "avg_score": 2.1,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 5
@@ -166,6 +163,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T16:24:10Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T19:30:12Z",
       "harness": "codex"
     }
   ]

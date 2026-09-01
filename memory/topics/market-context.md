@@ -1,58 +1,60 @@
 # Market Context (as of 2026-09-01)
 
-> **Take:** chop — only 5/20 top-cap assets are green today, while DeFi TVL rose 1.1% and DEX volume jumped 27.0%. Conviction: medium.
+> **Take:** risk-off — BTC fell 2.2% while 0/20 top-cap assets are green over 24 hours. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $77,584 (-1.4% 24h, -1.6% 7d) · dominance 59.07% (-0.13 pp since prior refresh)
-- ETH $2,433 (-1.4% 24h, -1.1% 7d) · ETH/BTC 0.0314
-- SOL $101.36 (-1.3% 24h, +4.0% 7d)
-- Total mcap $2.634T (-3.3% 24h) · DEX vol $9.83B 24h
-- Breadth: 5/20 green 24h · 2/20 green 7d
+- BTC $77,329 (-2.2% 24h, -2.8% 7d) · dominance 59.08% (+0.01 pp since prior refresh)
+- ETH $2,419 (-2.6% 24h, -2.4% 7d) · ETH/BTC 0.0313
+- SOL $100.03 (-3.8% 24h, +1.3% 7d)
+- Total mcap $2.626T (-4.4% 24h) · DEX vol $9.83B 24h
+- Breadth: 0/20 green 24h · 7/20 green 7d
 - Fear & Greed: 69 (Greed) — yesterday 62
 
 ## What Changed Since Last Refresh
-- Breadth reversed from 14/20 to 5/20 green over 24 hours as BTC, ETH, and SOL each turned roughly 1.3% lower.
-- Total DeFi TVL rebounded 1.1% to $170.45B, while DEX volume held near $9.83B and ran 27.0% above the prior day.
-- Polymarket's implied probability of a 25 bp September Fed hike rose from 55.5% to 58.5%.
+- Risk breadth weakened from 5/20 to 0/20 green over 24 hours; BTC's live 24-hour decline deepened from 1.4% to 2.2%.
+- Chain TVL is $85.57B, down 2.8% from the last consistently logged $88.07B reading; the prior file's $170.45B mixed incompatible aggregations.
+- The regime moved from chop to risk-off, although $9.83B of DEX volume remains a clear counter-signal.
 
 ## Active Narratives
-- **Intraday alt reversal** — phase: fading. Evidence: top-cap 24h breadth fell from 14/20 to 5/20 since the prior refresh.
-- **Privacy relative strength** — phase: rising. Evidence: XMR remains +14.4% and ZEC +4.4% over seven days despite weak breadth.
-- **Uniswap volume expansion** — phase: rising. Evidence: V4 volume rose 43.6% day over day to $1.42B and fees rose 94.1%.
+- **Broad large-cap de-risking** — phase: rising. Evidence: 0/20 top-cap assets are green over 24 hours and total market cap is down 4.4%.
+- **Arbitrum relative strength** — phase: emerging. Evidence: ARB is CoinGecko's second-ranked trending asset and gained 10.9% over 24 hours.
+- **Uniswap activity expansion** — phase: rising. Evidence: V4 volume rose 41.8% day over day and seven-day fees rose 231.4% while TVL rose 2.5%.
+- **Privacy relative strength** — phase: fading. Evidence: XMR remains +11.9% over seven days but fell 5.9% today; ZEC is +3.5% over seven days and -3.8% today.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.76B (+0.4%)
-- Aave V3: $17.23B (+0.3%)
-- SSV Network: $12.79B (+2.9%)
-- Morpho Blue: $9.58B (+1.4%)
-- Binance staked ETH: $9.12B (-0.3%)
+- Lido: $23.61B (-0.9%)
+- Aave V3: $17.12B (-0.7%)
+- SSV Network: $12.60B (+0.9%)
+- Morpho Blue: $9.51B (+0.2%)
+- Binance staked ETH: $8.99B (-1.9%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $48.85B (7d n/a)
-- Solana: $5.79B (7d n/a)
-- Base: $5.53B (7d n/a)
+- Ethereum: $48.62B (7d n/a)
+- Solana: $5.74B (7d n/a)
+- Base: $5.49B (7d n/a)
 
 ## Stablecoins
-Total: $310.0B (+0.3% 7d). USDT $183.3B · USDC $73.5B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.8%.
+Total: $310.1B (+0.4% 7d). USDT $183.3B · USDC $73.5B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.8%.
 
 ## Trending (CoinGecko)
-- PONS — rank-132 momentum, $0.433 (+6.8% 24h)
-- RAM — rank-972 momentum, $0.195 (+6.4% 24h)
-- UP — rank-789 momentum, $1.11 (+6.1% 24h)
+- PONS — rank-140 momentum, $0.386 (+2.4% 24h)
+- ARB — rank-89 relative strength, $0.106 (+10.9% 24h)
+- HYPE — rank-10 attention despite weakness, $81.54 (-2.6% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after the September 2026 meeting | 39.5% | $1.52M | $0.42M |
-| Fed raises rates 25 bps after the September 2026 meeting | 58.5% | $0.81M | $0.55M |
+| No Fed rate change after the September 2026 meeting | 40.5% | $1.30M | $0.37M |
+| Fed raises rates 25 bps after the September 2026 meeting | 58.5% | $0.60M | $0.46M |
+| U.S. invades Iran before 2027 | 16.5% | $0.50M | $0.75M |
 
 ## Macro Catalysts (next 48h)
-- The U.S. 10-year yield near 4.77% and roughly 58-65% market odds of a September hike keep weak breadth exposed to hawkish repricing.
-- U.S. spot BTC ETFs recorded $216.7M of net inflows for August 31, reversing the prior session's $201.9M outflow; the next print is the confirmation signal.
+- The U.S. 10-year yield near 4.77% and 58.5% Polymarket odds of a September hike leave weak breadth exposed to further hawkish repricing.
+- U.S. spot BTC ETFs took in $216.7M on August 31 after a $201.9M outflow; the September 1 print will show whether institutional demand is sustained.
 
 ## Implications for Downstream Skills
-- **token-pick:** watch liquid relative strength; do not ride broad beta while only 5/20 top caps are green.
-- **narrative-tracker:** monitor Uniswap activity for rising-phase confirmation and the alt rebound for further decay.
+- **token-pick:** favor proven relative strength over broad beta while 0/20 top caps are green; ARB is the live exception, not yet a broad rotation.
+- **narrative-tracker:** monitor Uniswap activity for rising-phase confirmation and ARB for emerging-to-rising breadth.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
