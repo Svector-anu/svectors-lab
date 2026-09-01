@@ -1,12 +1,14 @@
-No new credible bounty matches.
+Hunter-22 completed successfully.
 
-- Queried ClawHunter’s free `/match` endpoint: HTTP 200, 25 results.
-- Rejected two new duplicate $500 GoPro listings because they require promotional publishing rather than supported execution.
-- No security-audit candidate survived. The Mermail GitHub bounty was already seen and is build/demo work.
-- No notification sent.
-- Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
-- JSON and diff validation passed.
+- ClawHunter free endpoint: HTTP 200, 25 candidates.
+- New candidates: 0; all IDs were within the 14-day dedup window.
+- Genuine new matches: 0.
+- Audit-shaped GitHub matches: 0.
+- Notification: not sent because there was no new signal.
+- Refreshed 25 records in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
+- Recorded the run in [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
+- JSON validation and `git diff --check` passed.
 
 ## Summary
 
-The scan and persistence work completed. Commit creation was blocked because this environment mounts `.git` read-only (`index.lock: Read-only file system`); the validated changes remain in the workspace.
+The requested files were updated, but committing was impossible because this harness mounts `.git` read-only. Unrelated existing workspace changes were preserved.
