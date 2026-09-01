@@ -174,3 +174,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-01,pr-review,grok-4.5,108404,9638,481024,0
 2026-09-01,feature,codex-default,5491305,12265,5344256,0
 2026-09-01,pr-review,grok-4.5,81842,8485,749824,0
+2026-09-01,fear-divergence,codex-default,171649,1207,132608,0

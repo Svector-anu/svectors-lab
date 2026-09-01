@@ -1,11 +1,10 @@
-Fear divergence did not trigger.
+Fear divergence skipped.
 
-- F&G: 69 (Greed), above the `<25` threshold
-- Market context: current as of 2026-09-01
-- BTC: -1.5% over 7 days
+- F&G: 69 (Greed), above the `<25` trigger
+- Market context: fresh as of 2026-09-01
 - Notification: not sent
-- Memory: existing identical skip log retained; no duplicate added
+- Log updated: [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md)
 
 ## Summary
 
-No files modified. `FEAR_DIVERGENCE_SKIP: F&G 69 (Greed) — above threshold`.
+Executed the skill’s trigger logic and recorded the required skip. No market-context changes or follow-up actions needed.
