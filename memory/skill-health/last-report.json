@@ -1,7 +1,7 @@
 {
-  "hash": "2480e048be69cd21f6b94248df72aaaacb212d7ad9b37343997206c7c719e8c5",
-  "last_notified_at": "2026-08-26T18:26:50Z",
-  "last_run_at": "2026-08-31T18:16:15Z",
+  "hash": "741e0c8f947dc1de082bebd08533bd2ab87029ac4a097678cf933863d2faaf0c",
+  "last_notified_at": "2026-09-01T19:28:48Z",
+  "last_run_at": "2026-09-01T19:28:48Z",
   "classification": {
     "critical": [],
     "degraded": [
@@ -24,15 +24,11 @@
     "flapping": [],
     "warning": [
       "auto-merge",
-      "autoresearch",
-      "create-skill",
-      "fork-fleet",
       "hunter-22",
       "search-skill",
-      "self-improve",
-      "shiplog"
+      "self-improve"
     ],
-    "healthy_count": 4,
+    "healthy_count": 10,
     "no_data": []
   }
 }

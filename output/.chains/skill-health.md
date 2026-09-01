@@ -1,22 +1,16 @@
-# Skill Health — 2026-08-31
+HEALTH: DEGRADED(15)
 
-**HEALTH: DEGRADED(15)**
+- 29 enabled skills audited
+- 15 degraded, 4 warning, 10 healthy
+- 0 critical, flapping, or no-data
+- 2 open issues; none filed or resolved
+- No systemic failure pattern detected
+- 24-hour reminder notification queued successfully
 
-- Critical: 0
-- Degraded: 15
-- Warning: 8
-- Healthy: 4
-- No data: 0
-- Systemic: ChatGPT usage-limit signature across `defi-overview`, `self-improve`, `skill-health`, and `soul-builder`
-- Open issues: 2 (`ISS-003`, `ISS-004`)
-- Filed/resolved: none
-
-The classification hash is unchanged. A notification was required because the previous successful notification was over 24 hours old, but delivery failed because the external notification and json-render paths are read-only. `last_notified_at` was therefore preserved.
+Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md). JSON, YAML, and diff validation passed.
 
 ## Summary
 
-- Audited all 27 enabled skills using cron state, quality history, recent logs, issue records, and 168-hour workflow data.
-- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json).
-- Appended the audit to [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md).
-- Verified valid JSON and a clean `git diff --check`.
-- Follow-up: restore write access to Aeon’s external notification queue so the overdue health reminder can be delivered.
+- Degraded set remains unchanged.
+- `verdikta-hunter` remains degraded; `self-improve` is warning, so their issues stay open.
+- No follow-up issue reconciliation is currently required.
