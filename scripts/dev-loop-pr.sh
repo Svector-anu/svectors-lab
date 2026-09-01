@@ -40,7 +40,7 @@ case "${1:-}" in
     for attempt in $(seq 1 "$attempts"); do
       after=$(mktemp)
       gh pr list -R "$repo" --state open --limit 100 --json number,author --jq '.[] | "\(.number)\t\(.author.login)"' | sort -n > "$after"
-      actor_prs=$(awk -F '\t' -v actor="$actor" 'NR == FNR { before[$1] = 1; next } !($1 in before) && $2 == actor { print $1 }' "$before" "$after")
+      actor_prs=$(awk -F '\t' -v actor="$actor" 'FILENAME == ARGV[1] { before[$1] = 1; next } !($1 in before) && $2 == actor { print $1 }' "$before" "$after")
       actor_pr_count=$(printf '%s\n' "$actor_prs" | sed '/^$/d' | wc -l | tr -d ' ')
       if [ "$actor_pr_count" -eq 1 ]; then
         printf '%s#%s\n' "$repo" "$actor_prs"
