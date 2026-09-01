@@ -26,7 +26,7 @@ case "${1:-}" in
   snapshot)
     [ "$#" -eq 2 ] || usage
     repo=$(target_repo "$2") || exit $?
-    gh pr list -R "$repo" --state open --limit 100 --json number --jq '.[].number' | sort -n
+    gh pr list -R "$repo" --state open --limit 100 --json number --jq '.[].number' | cut -f1 | sort -n
     ;;
   verify-new-pr)
     [ "$#" -eq 3 ] || usage
@@ -35,16 +35,25 @@ case "${1:-}" in
     [ -f "$before" ] || { echo "dev-loop: pre-feature PR snapshot is missing: $before" >&2; exit 1; }
     attempts="${DEV_LOOP_PR_VERIFY_ATTEMPTS:-3}"
     backoff="${DEV_LOOP_PR_VERIFY_BACKOFF:-2}"
+    actor=$(gh api user --jq .login)
+    [ -n "$actor" ] || { echo "dev-loop: could not determine the feature actor" >&2; exit 1; }
     for attempt in $(seq 1 "$attempts"); do
       after=$(mktemp)
-      gh pr list -R "$repo" --state open --limit 100 --json number --jq '.[].number' | sort -n > "$after"
+      gh pr list -R "$repo" --state open --limit 100 --json number,author --jq '.[] | "\(.number)\t\(.author.login)"' | sort -n > "$after"
+      after_numbers=$(mktemp)
+      cut -f1 "$after" > "$after_numbers"
       new_prs=()
       while IFS= read -r number; do
         [ -n "$number" ] && new_prs+=("$number")
-      done < <(comm -13 "$before" "$after")
+      done < <(comm -13 "$before" "$after_numbers")
       if [ "${#new_prs[@]}" -eq 1 ]; then
-        printf '%s#%s\n' "$repo" "${new_prs[0]}"
-        exit 0
+        pr_actor=$(awk -F '\t' -v n="${new_prs[0]}" '$1 == n { print $2 }' "$after")
+        if [ "$pr_actor" = "$actor" ]; then
+          printf '%s#%s\n' "$repo" "${new_prs[0]}"
+          exit 0
+        fi
+        echo "dev-loop: new PR #${new_prs[0]} was opened by $pr_actor, not feature actor $actor" >&2
+        exit 1
       fi
       if [ "${#new_prs[@]}" -gt 1 ]; then
         echo "dev-loop: ${#new_prs[@]} new open PRs appeared; refusing ambiguous review handoff" >&2
