@@ -1,8 +1,12 @@
-ℹ️ PR Review — Svector-anu/svectors-lab#47
+⚠️ PR Review — skopos#107
 
 *PR Review — 2026-09-01*
-Reviewed 1, skipped 0.
-- Svector-anu/svectors-lab#47: approve-ready — 0 critical, 0 issues
 
-**fix(dev-loop): bind review to feature dispatch** (SHA `abbd69e`)
-Correlation id on each chain dispatch + receipt-gated `verify-new-pr` (jq body match, multiline-safe). Same-actor impostor rejected; concurrent same-skill runs resolve their own run ids. CI green; handoff + chain-runner tests pass locally.
+Reviewed 1, skipped 0.
+
+- **Svector-anu/skopos#107**: discussion-needed — 0 critical, 3 issues
+  - [ISSUE] `lib/cardToText.ts:289` — buy qty (USD) rendered as token amount (`buy 2000 ETH`)
+  - [ISSUE] `lib/cardToText.ts:287` — TWAP duration rendered as raw seconds
+  - [ISSUE] `app/api/chat/route.ts:2166` — parse-miss fallback still says feature unavailable
+  - SHA `bfdb91f` · Vercel green · closes #80
+  - PR: https://github.com/Svector-anu/skopos/pull/107
