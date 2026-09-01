@@ -175,3 +175,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-01,feature,codex-default,5491305,12265,5344256,0
 2026-09-01,pr-review,grok-4.5,81842,8485,749824,0
 2026-09-01,vuln-tracker,codex-default,772412,10180,707840,0
+2026-09-01,pr-review,grok-4.5,46100,1712,181504,0

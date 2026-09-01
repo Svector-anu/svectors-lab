@@ -1,10 +1,10 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-01T18:19:21Z",
-  "quality_score": 4,
-  "assessment": "Concrete, file:line PR findings on trader-facing text bugs with SHA/CI/link; actionable and decision-relevant, though thin on fixes.",
+  "last_analyzed": "2026-09-01T21:55:41Z",
+  "quality_score": 3,
+  "assessment": "Legitimate empty-queue no-op: dual API checks, clear status, correct notify skip.",
   "flags": [],
-  "avg_score": 4.08,
+  "avg_score": 4,
   "history": [
     {
       "date": "2026-09-01",
@@ -76,6 +76,12 @@
       "date": "2026-09-01",
       "score": 4,
       "ts": "2026-09-01T18:19:21Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 3,
+      "ts": "2026-09-01T21:55:41Z",
       "harness": "grok"
     }
   ]
