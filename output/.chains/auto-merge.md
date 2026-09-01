@@ -1,13 +1,17 @@
-Executed `auto-merge` in live mode for `aeonfun/aeon`.
+Auto-merge completed in live mode for `aeonfun/aeon`.
 
-- Considered 3 open PRs.
-- Merged 0.
-- Skipped #1002 and #1001: author `alexverify` is not allowlisted; both are also forks.
-- Skipped #999: author `aaronjmars` is not allowlisted.
-- No retry-cap hits; no notification sent.
-- Updated and validated `memory/topics/auto-merge-state.json`.
-- Logged the complete verdicts in `memory/logs/2026-08-31.md`.
+- Considered: 9 PRs
+- Qualified/merged: 0
+- Retry-capped: 0
+- All failed the exact author allowlist gate.
+- No merge command or notification was issued.
+- Notably, GitHub reported Dependabot as `app/dependabot`, not the allowed `dependabot[bot]`, so those PRs failed closed.
+- Updated the retry state timestamp and logged specific verdicts for every PR.
+- State JSON and repository diff validation passed.
 
 ## Summary
 
-No PR met the mandatory safety policy, so repository PR state was not modified.
+Modified:
+
+- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
+- [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md:131)

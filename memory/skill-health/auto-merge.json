@@ -1,10 +1,10 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-08-31T18:15:06Z",
-  "quality_score": 4,
-  "assessment": "Good: concise, policy-based verdicts identify every considered PR and clearly confirm that no unsafe merge occurred, though direct PR links or compact evidence would improve verifiability.",
+  "last_analyzed": "2026-09-01T16:22:29Z",
+  "quality_score": 3,
+  "assessment": "Acceptable operational summary with clear fail-closed behavior and validation, but it omits PR identifiers and specific verdicts, limiting independent verification and usefulness.",
   "flags": [],
-  "avg_score": 2.88,
+  "avg_score": 2.89,
   "history": [
     {
       "date": "2026-08-25",
@@ -48,6 +48,12 @@
       "date": "2026-08-31",
       "score": 4,
       "ts": "2026-08-31T18:15:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 3,
+      "ts": "2026-09-01T16:22:29Z",
       "harness": "codex"
     }
   ]
