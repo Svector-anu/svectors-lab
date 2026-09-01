@@ -1,22 +1,21 @@
-Implemented issue [Svector-anu/skopos#43](https://github.com/Svector-anu/skopos/issues/43) and opened [PR #106](https://github.com/Svector-anu/skopos/pull/106).
+Implemented issue #80 and opened [Svector-anu/skopos PR #107](https://github.com/Svector-anu/skopos/pull/107).
 
-- Hero canvas now rebuilds after a debounced viewport resize or mobile rotation.
-- Stale asynchronous builds and animation loops are safely invalidated.
-- Resize/mouse listeners, timers, and animation frames are cleaned up.
-- Privy configuration and Solana wallet arrays now have stable, typed module-level references.
+The PR adds structured text-mode handoffs for limit, stop-loss, take-profit, and TWAP orders. Responses include parsed intent details and an app signing link while explicitly excluding calldata, approvals, and typed-signing payloads. The structured LLM fallback now also works in text mode.
 
 Verification:
 
-- ESLint passed.
-- TypeScript passed.
-- 121/121 tests passed.
-- Production compilation passed; route collection stopped only because deployment payment environment variables were unavailable.
-- PR is open and mergeable. The Vercel status failure is an account/access link, not a code-build result.
-- Notification delivery was attempted but its external queue is read-only.
+- 129/129 tests passed
+- TypeScript passed
+- Focused ESLint passed
+- Production compilation and type checking passed
+- Vercel deployment is pending
+- Exact dispatch marker included in the PR body
+
+Notification delivery was attempted but the external queue is read-only. The feature run was recorded in [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
 
 ## Summary
 
-- PR created: [Svector-anu/skopos#106](https://github.com/Svector-anu/skopos/pull/106)
-- Commit: `d0666e9`
-- Updated [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md) with the result.
-- Existing unrelated workspace changes were preserved.
+- Built and pushed `ai/headless-advanced-order-handoff`
+- Opened PR #107, closing issue #80
+- Modified the chat route, text projection, API documentation, and endpoint tests
+- No follow-up required beyond PR review and Vercel completion
