@@ -34,19 +34,25 @@ timestamp: 2026-09-01T00:00:00Z
 - nanotools-x402/nanotools (0★) — 44 pay-per-call agent tools on Base mainnet, priced from $0.001 to $0.03
 - nikunjdixit-ai/unicity-protocol (0★) — privacy-preserving human verification combining Algorand credentials, anti-Sybil checks, and x402 payments
 - trinitysigillium-boop/agent-stack-omniauth (0★) — multi-chain x402 payment gateway with Mexican CFDI stamping and Kubernetes deployment
+- kairenndev/x402-preflight (0★) — unpaid endpoint probe that gives agents a pay/do-not-pay verdict before an x402 call
+- Vellar-Wallet/vellar-webmcp (0★) — WebMCP tools exposing the Vellar x402 payment ecosystem on Stellar to AI agents
+- 0rkz/byte-x402-gateway (0★) — pay-per-byte USDC gateway on Base with EIP-712 receipts over delivered bytes
+- forgemeshlabs/x402-notary-mcp (0★) — paid cryptographic receipts for AI outputs with Merkle proofs and Base anchors
+- onetapstudiogames/1f3ea (0★) — non-custodial USDC marketplace for autonomous agents
 
 ## Key Stats
 - npm @coinbase/x402: 69,060 weekly downloads (+8,435 vs prior run; +30,926 vs 2026-07-08 baseline)
 - npm x402: 392,735 weekly downloads (+9,136 vs prior run; +146,794 vs 2026-07-08 baseline)
 - npm paykit: 404 (not found — skipped)
-- GitHub repos matching x402: 2,631 broad-query matches pushed in the last 7 days; 333 stricter `"x402 protocol"` matches. Five new integrations were retained after relevance review.
-- Notable announcements: no date-verifiable, genuinely new announcement retained this run.
+- GitHub repos matching x402: 2,698 broad-query matches pushed in the last 7 days; 358 stricter `"x402 protocol"` matches. Five additional integrations were retained on the rerun after relevance review.
+- Notable announcements: Stellar's x402 integration documentation was updated on 2026-08-31; no new corporate or protocol announcement was retained.
 
 ## Signal Log
 - 2026-07-08: First run. 6+ new integrations in last 7d. cloudflare/agents (5234★) is highest-signal. x402=245k/wk, @coinbase/x402=38k/wk npm. Momentum: breakout (14pts).
 - 2026-08-25: Five new, clearly relevant integrations retained from a much larger noisy GitHub result set (+10). Both tracked npm packages rose vs the July baseline (+6). One ecosystem reliability report (+2), one fresh cross-chain implementation tutorial (+1), and one settlement-quality analysis (+1). Momentum: breakout (20pts). Read: ride developer adoption, but watch verified delivery—the service count is expanding faster than proof that paid calls return useful output.
 - 2026-08-25 (12:05 UTC rerun): Five additional repositories absent from the morning baseline were active today (+10), spanning data extraction, transaction execution, audio licensing, settlement attestation, and pay-per-request middleware. `x402` npm downloads rose (+3), while `@coinbase/x402` declined and scored zero. No new announcement was retained after same-day dedup. Momentum: breakout (13pts). Read: ride integration breadth; watch whether the long tail converts from low-star experiments into used services.
 - 2026-09-01: Five new repositories passed relevance review (+10), led by a live Solana mainnet facilitator and a 44-tool Base API catalog. Both tracked npm packages rose (+6). No date-verifiable announcement or tutorial was retained. Momentum: breakout (16pts). Read: implementation breadth and installs are still climbing; watch whether zero-star launches earn repeat usage and independent delivery evidence.
+- 2026-09-01 (rerun): Five additional integrations absent from the earlier baseline passed relevance review (+10), spanning buyer-side preflight, Stellar WebMCP, byte-receipt delivery, output notarization, and an agent marketplace. npm's measurement window had not advanced, so both packages were flat for scoring. Stellar's x402 documentation update counted as one new tutorial (+1). Momentum: breakout (11pts). Read: integrations are branching into pre-payment safety and delivery proof, not just settlement; watch whether these controls become shared infrastructure.
 
 # Citations
 - [GitHub repository search API](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-18&sort=updated&order=desc&per_page=20)
@@ -59,3 +65,6 @@ timestamp: 2026-09-01T00:00:00Z
 - [GitHub repository search API — strict x402 protocol query](https://api.github.com/search/repositories?q=%22x402%20protocol%22%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
 - [npm downloads: @coinbase/x402 — week ending 2026-08-29](https://api.npmjs.org/downloads/point/last-week/%40coinbase%2Fx402)
 - [npm downloads: x402 — week ending 2026-08-29](https://api.npmjs.org/downloads/point/last-week/x402)
+- [GitHub repository search API — broad x402 query, 2026-09-01 rerun](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
+- [GitHub repository search API — strict x402 protocol query, 2026-09-01 rerun](https://api.github.com/search/repositories?q=%22x402%20protocol%22%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
+- [Stellar x402 documentation](https://developers.stellar.org/docs/build/agentic-payments/x402)
