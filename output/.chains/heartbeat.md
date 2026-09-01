@@ -1,12 +1,15 @@
 Fleet status remains 🔴 DEGRADED.
 
-- `narrative-tracker` and `write-tweet` recovered.
-- `chain:dev-loop` failed again, but was deduplicated from today’s earlier alert.
-- Six PRs remain stalled; two critical issue records remain open.
-- No repeat notification was sent.
-- Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
-- Validation passed with no whitespace errors.
+- `chain:dev-loop` failed again at 19:26 UTC, but was deduplicated against today’s earlier report.
+- Six PRs remain stalled over 24 hours.
+- Two critical issues remain open.
+- Several enabled skills have lifetime success rates below 50%.
+- No notification was sent because every finding appeared in the previous 48 hours.
+- All 29 enabled skills have scheduler state; none exceed twice their schedule interval.
 
 ## Summary
 
-Executed the ambient heartbeat check, regenerated the status page, and recorded the deduplicated findings. No follow-up action was performed.
+- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) at 19:28 UTC.
+- Logged the ambient run in [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
+- Next scheduled run: `write-tweet` at 21:00 UTC.
+- No token pulse was included because no token report exists.
