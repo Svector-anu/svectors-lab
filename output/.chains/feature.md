@@ -1,19 +1,22 @@
-Shipped [Svector-anu/dieena PR #65](https://github.com/Svector-anu/dieena/pull/65).
+Implemented issue [Svector-anu/skopos#43](https://github.com/Svector-anu/skopos/issues/43) and opened [PR #106](https://github.com/Svector-anu/skopos/pull/106).
 
-The mobile client now requires enrolled device biometrics before submitting confirmation tokens for risky actions. Failed or canceled authentication remains fail-closed and preserves the token for an explicit retry.
+- Hero canvas now rebuilds after a debounced viewport resize or mobile rotation.
+- Stale asynchronous builds and animation loops are safely invalidated.
+- Resize/mouse listeners, timers, and animation frames are cleaned up.
+- Privy configuration and Solana wallet arrays now have stable, typed module-level references.
 
 Verification:
 
-- Mobile TypeScript, formatting, and ESLint passed; one unrelated existing warning remains.
-- Workspace typecheck and lint passed.
-- All 390 tests passed.
-- Logged in `memory/logs/2026-09-01.md`.
-- Notification delivery was attempted but its external queue is read-only in this harness.
+- ESLint passed.
+- TypeScript passed.
+- 121/121 tests passed.
+- Production compilation passed; route collection stopped only because deployment payment environment variables were unavailable.
+- PR is open and mergeable. The Vercel status failure is an account/access link, not a code-build result.
+- Notification delivery was attempted but its external queue is read-only.
 
 ## Summary
 
-- Branch: `external`
-- Repo: `Svector-anu/dieena`
-- Commit: `660832b`
-- PR: https://github.com/Svector-anu/dieena/pull/65
-- Follow-up: physical-device biometric and MWA verification remains required.
+- PR created: [Svector-anu/skopos#106](https://github.com/Svector-anu/skopos/pull/106)
+- Commit: `d0666e9`
+- Updated [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md) with the result.
+- Existing unrelated workspace changes were preserved.
