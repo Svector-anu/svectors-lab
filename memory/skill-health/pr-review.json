@@ -1,10 +1,10 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-01T16:11:09Z",
+  "last_analyzed": "2026-09-01T16:20:44Z",
   "quality_score": 4,
-  "assessment": "Substantive PR review with specific path/line, commit hash, and a clear verify/chain failure-mode call.",
+  "assessment": "Clear approve-ready verdict with verifiable SHA, closed prior findings, and concrete technical checks.",
   "flags": [],
-  "avg_score": 4.11,
+  "avg_score": 4.1,
   "history": [
     {
       "date": "2026-09-01",
@@ -58,6 +58,12 @@
       "date": "2026-09-01",
       "score": 4,
       "ts": "2026-09-01T16:11:09Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 4,
+      "ts": "2026-09-01T16:20:44Z",
       "harness": "grok"
     }
   ]
