@@ -1,25 +1,30 @@
-*Daily digest — 2026-08-31*
+*Daily digest — 2026-09-01*
 
-_TL;DR: VMware packaged private-cloud agent infrastructure while two crypto networks disclosed or contained contract exploits._
+_TL;DR: agent operators got a concrete containment baseline, while identity and WAF vendors shipped runtime controls and Injective contained an application-layer exploit._
 
-1. *Audit migration contracts for replay protection after ICON’s exploit*  
-   An attacker replayed two signed withdrawal messages 1,492 times, releasing 119.9M ICX and 531,600 bnUSD. User funds were unaffected, but roughly 150.2 ETH and 31,204 USDC remain confirmed losses.  
-   Why it matters: audited migration code still needs nonce consumption and automated containment.  
-   [ICON post-mortem](https://www.icon.foundation/blog/2026/icon-network-replay-exploit-post-mortem)
+1. *Adopt Anthropic's containment checklist before the next agent run*  
+   Anthropic resumed most cyber evaluations after adding real-time escape classifiers, stronger isolation, explicit scope prompts, pre-run sandbox probes, and automatic termination on boundary violations; some high-risk training environments remain paused.  
+   Why it matters: agent fleets now have a concrete minimum for sandbox, network, secret, and monitor design  
+   https://www.anthropic.com/news/improving-alignment-security-efforts
 
-2. *Cronos halts after an estimated $75M Tectonic exploit*  
-   Cronos halted its chain after an exploit hit lending protocol Tectonic. The root cause, final loss, and restart timing were unconfirmed at publication; Crypto.com said its app and exchange were unaffected.  
-   Why it matters: users should avoid Tectonic interactions until an official restart and post-mortem.  
-   [Incident report](https://cointelegraph.com/news/cronos-network-halt-tectonic-exploit-75-million)
+2. *Ping adds identity and action controls for personal coding agents*  
+   Enterprise Personal Agent Access can discover desktop and coding agents, bind each session to a user and device, provide secretless privileged access, and enforce policy at action time. It is available now through PingOne Privilege.  
+   Why it matters: teams can govern Claude Code-style agents without handing them standing credentials  
+   https://press.pingidentity.com/2026-09-01-Ping-Identity-Secures-Claude-Personal-Agents-From-Discovery-to-Action
 
-3. *VMware ships a private-cloud stack for production AI agents*  
-   Broadcom introduced VMware Private AI Cloud and Tanzu tooling with pre-approved skills, workflow buildpacks, human approvals, integrated memory, and governed private-data access.  
-   Why it matters: enterprise agent teams now have an on-prem stack combining runtime, governance, and agent controls.  
-   [Broadcom announcement](https://investors.broadcom.com/news-releases/news-release-details/broadcom-unveils-ai-ready-data-foundations-vmware-tanzu-platform)
+3. *F5 turns scanner findings into runtime virtual patches*  
+   F5 added anomaly detection, agentic threat intelligence, and automated virtual patching across Distributed Cloud WAF and BIG-IP; the company reports 98% detection efficacy and 1% false positives in internal testing.  
+   Why it matters: exposed services can block exploit traffic while maintainers build and test the code fix  
+   https://www.f5.com/company/news/press-releases/virtual-patching-ai-powered-waf-runtime-security
+
+4. *Injective upgrades the network after app-level binary-options exploits*  
+   Injective says an accelerated network upgrade followed exploits against binary-options markets in a small number of ecosystem apps; consensus and user funds at the chain layer remained secure, though the upgrade ran longer than planned.  
+   Why it matters: Injective app operators should verify binary-options integrations and exchange deposit status before resuming flows  
+   https://www.gate.com/en-us/news/detail/injective-network-upgrade-took-longer-than-expected-overnight-blockchain-17859124
 
 ## Summary
 
-- Created [digest-2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-08-31.md).
-- Updated memory and the daily digest log.
-- Verified all three links return HTTP 200.
-- Delivery was attempted, but the notification and feed queues were mounted read-only; delivery could not be confirmed.
+- Created [output/digest-2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-01.md).
+- Updated [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and today’s run log.
+- The xAI search returned HTTP 403 due to the team’s credit/spending limit; public web search supplied the fallback.
+- Notification delivery was attempted, but the external notification queues were mounted read-only.
