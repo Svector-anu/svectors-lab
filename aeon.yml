@@ -227,22 +227,22 @@ chains:
       - { skill: rightstack, var: "consumer app on Base with an embedded wallet" }
       - { skill: digest, var: "web3 developer tooling", consume: [rightstack] }
 
-  # Cross-model dev loop: codex writes the PR, claude reviews it, a human merges.
-  # The harness split is the point — each step runs on the harness pinned to its own
-  # skill in `skills:` above (feature=codex, pr-review=claude), so the reviewer is a
-  # different model family than the author. No plugin needed; chain-runner dispatches
-  # each step through aeon.yml and resolve-harness applies the per-skill override.
-  # workflow_dispatch only, and `feature` needs an explicit target — dispatch with
-  # var on the chain's first step, e.g. external:owner/repo or external:owner/repo#12.
+  # Cross-model dev loop: the writer opens a PR, a separately pinned reviewer checks
+  # it, and a human merges. chain-runner dispatches each step through aeon.yml, so
+  # each skill keeps its own harness override.
+  # workflow_dispatch only. It requires the chain's `target` input, e.g.
+  # external:owner/repo or external:owner/repo#12; empty targets are rejected rather
+  # than falling back to the watched-repos sweep.
   # Never let this run unattended against a repo you don't own until the output has
-  # been read by hand several times.
+  # been read by hand several times. The reviewer receives only a PR that GitHub
+  # shows was newly opened by the preceding feature step.
   dev-loop:
     schedule: "workflow_dispatch"
     on_error: fail-fast
     max_dispatches: 2
     steps:
-      - { skill: feature, var: "" }
-      - { skill: pr-review, var: "", consume: [feature] }
+      - { skill: feature, var: "$chain_target" }
+      - { skill: pr-review, var: "$feature_pr", consume: [feature] }
 
   # routine:
   #   schedule: "0 7 * * *"
