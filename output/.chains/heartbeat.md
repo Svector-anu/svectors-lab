@@ -1,17 +1,18 @@
-Heartbeat completed.
+🔴 DEGRADED
 
-**Overall:** 🔴 DEGRADED
+- `narrative-tracker`: 4 consecutive failures.
+- `write-tweet`: 3 consecutive failures.
+- Shared signature: Codex `01 Unauthorized`.
+- `chain:dev-loop` failed at 11:59 UTC.
+- Six stalled PRs and the ZSvirt disclosure remain open but were deduplicated from alerts.
 
-- 11 enabled skills remain below the chronic-failure threshold due to historical counters.
-- Six PRs are stalled: #30, #22, #20, #5, #4, #3.
-- `fork-fleet` has no scheduler-state entry.
-- Two critical issue records remain open.
-- No skills are currently failed or stuck.
-- No notification sent because every finding was reported within 48 hours.
+Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md). Validation passed with all 29 enabled skills represented.
+
+Notification delivery was attempted but the external queues were mounted read-only.
 
 ## Summary
 
-- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
-- Logged the run in [memory/logs/2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md:40).
-- Verified all 27 enabled skills appear exactly once.
-- Next scheduled run: `defi-overview` at 12:00 UTC.
+- Status: `STATUS_PAGE=DEGRADED`
+- Modified: `docs/status.md`, `memory/logs/2026-09-01.md`
+- Next scheduled run: `auto-merge` at 14:00 UTC
+- No unrelated worktree changes were altered.
