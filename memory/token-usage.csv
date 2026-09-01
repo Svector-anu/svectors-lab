@@ -158,3 +158,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-01,vuln-scanner,grok-4.5,61725,2032,262656,0
 2026-09-01,feature,codex-default,1381798,4256,1303296,0
 2026-09-01,defi-overview,codex-default,579633,7168,524032,0
+2026-09-01,pr-review,grok-4.5,204233,12701,533120,0

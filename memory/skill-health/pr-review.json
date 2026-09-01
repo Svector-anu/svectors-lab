@@ -1,0 +1,16 @@
+{
+  "skill": "pr-review",
+  "last_analyzed": "2026-09-01T07:49:27Z",
+  "quality_score": 5,
+  "assessment": "Substantive PR review with verified #44 exit-code finding and clear approve/discuss verdicts.",
+  "flags": [],
+  "avg_score": 5,
+  "history": [
+    {
+      "date": "2026-09-01",
+      "score": 5,
+      "ts": "2026-09-01T07:49:27Z",
+      "harness": "grok"
+    }
+  ]
+}
