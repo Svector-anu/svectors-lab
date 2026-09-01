@@ -1,10 +1,10 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-01T08:01:02Z",
-  "quality_score": 4,
-  "assessment": "Substantive PR review with clear verdicts, specific skip reasons, and an actionable author-check gap on #44.",
+  "last_analyzed": "2026-09-01T08:11:30Z",
+  "quality_score": 5,
+  "assessment": "Decision-grade PR review with verified SHA/file finding on concurrent-PR exit-code race; skips justified and prior issues tracked.",
   "flags": [],
-  "avg_score": 4.5,
+  "avg_score": 4.67,
   "history": [
     {
       "date": "2026-09-01",
@@ -16,6 +16,12 @@
       "date": "2026-09-01",
       "score": 4,
       "ts": "2026-09-01T08:01:02Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 5,
+      "ts": "2026-09-01T08:11:30Z",
       "harness": "grok"
     }
   ]

@@ -1,14 +1,20 @@
-ℹ️ PR Review — Svector-anu/svectors-lab
+ℹ️ PR Review — svectors-lab
 
-*PR Review — 2026-09-01*
+## PR Review — Svector-anu/svectors-lab — 2026-09-01
 
-Reviewed 2, skipped 6 (drafts: 0, bots: 5, dup-SHA: 1, bot-reviewed-recently: 0).
+**Scope:** single repo · **Mode:** per-PR deep review
 
-- Svector-anu/svectors-lab#45: approve-ready — 0 critical, 0 issues
-- Svector-anu/svectors-lab#44: discussion-needed — 0 critical, 1 issue
+### Reviewed
+- **#44** `fix(dev-loop): verify pr handoff` (SHA `b01777c`)
+  - **Verdict:** discussion-needed
+  - **Findings:** 0 critical, 1 issue
+  - [ISSUE] `scripts/dev-loop-pr.sh:51` — counts all newly opened PRs; a concurrent non-actor PR during a feature no-op forces `exit 1` / chain failure instead of `exit 3` / CHAIN_NO_ACTION. Filter to actor-authored new PRs before counting.
 
-**#45** `fix(aeon): pin pr review to grok` — harness pin only (`claude` → `grok` in `aeon.yml`). Valid harness; no blockers.
+### Skipped
+- #45 (dup-SHA `7d05704` — already reviewed today)
+- #30 (dup-SHA `2c14a84` — already reviewed today)
+- #22, #20, #5, #4, #3 (bots: `app/github-actions`)
 
-**#44** `fix(dev-loop): verify pr handoff` — snapshot/verify handoff is a real improvement over prose parsing (prior closed-PR hard-fail is gone). Remaining gap: `verify-new-pr` accepts any single new open PR with no author check, so a concurrent PR can silently mis-route the reviewer.
+Prior findings on earlier SHAs of #44 (closed-PR URL hard-fail; missing author check) are addressed on this head.
 
-Skipped: #30 (dup-SHA `2c14a84`), #22/#20/#5/#4/#3 (bots).
+🔗 https://github.com/Svector-anu/svectors-lab/pull/44
