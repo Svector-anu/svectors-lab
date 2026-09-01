@@ -394,7 +394,8 @@
     "last_quality_score": 4
   },
   "chain:dev-loop": {
-    "last_status": "failed",
-    "last_failed": "2026-09-01T11:59:12Z"
+    "last_status": "success",
+    "last_failed": "2026-09-01T11:59:12Z",
+    "last_success": "2026-09-01T14:46:40Z"
   }
 }
