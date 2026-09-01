@@ -1,20 +1,19 @@
-The requested OpenRouter adapter was already implemented and merged in [dieena PR #50](https://github.com/Svector-anu/dieena/pull/50). I did not create a duplicate PR.
+Shipped [Svector-anu/dieena PR #65](https://github.com/Svector-anu/dieena/pull/65).
 
-Verified at default-branch HEAD `d5b6421`:
+The mobile client now requires enrolled device biometrics before submitting confirmation tokens for risky actions. Failed or canceled authentication remains fail-closed and preserves the token for an explicit retry.
 
-- OpenAI-compatible `/chat/completions` adapter with Bearer authentication
-- No forged or disguised client-identity headers
-- Tool calls and multi-turn tool results supported
-- OpenRouter-compatible API wiring and fail-closed error handling
-- Adapter tests: 7/7 passed
-- Agent suite: 182/182 passed
-- Workspace typecheck and lint passed
+Verification:
 
-Issue #48 remains open because AgentRouter’s allowlist is still an external blocker; OpenRouter itself can use the merged adapter.
+- Mobile TypeScript, formatting, and ESLint passed; one unrelated existing warning remains.
+- Workspace typecheck and lint passed.
+- All 390 tests passed.
+- Logged in `memory/logs/2026-09-01.md`.
+- Notification delivery was attempted but its external queue is read-only in this harness.
 
 ## Summary
 
-- External repository modified: none
-- Duplicate PR avoided
-- Run recorded in [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md)
-- Follow-up required: configure OpenRouter credentials/model when deploying; no additional adapter code is needed
+- Branch: `external`
+- Repo: `Svector-anu/dieena`
+- Commit: `660832b`
+- PR: https://github.com/Svector-anu/dieena/pull/65
+- Follow-up: physical-device biometric and MWA verification remains required.
