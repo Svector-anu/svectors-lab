@@ -1,24 +1,17 @@
-Completed the full `vuln-tracker` lifecycle poll.
+Vulnerability lifecycle poll completed.
 
-Key findings:
+- 49 records tracked: 3 merged, 6 open, 1 closed, 2 queued.
+- Persistent action: `NousResearch/hermes-agent#94342` still needs an answer.
+- Three PRs remain stale; no newly aged or newly actionable items.
+- Stars: ★50,223 secured, ★390,177 in flight, ★760,392 tracked.
+- Seven disclosure drafts: 0 escalations, 2 in-window, 1 operator-todo, 4 cleanup candidates.
+- No exact `channel: pvr` tracking files were present.
+- No notification sent because today’s earlier poll already reported the unchanged signals.
 
-- 3 merged security PRs secure ★50,219 across 3 repos.
-- 6 open PRs cover ★390,103.
-- `NousResearch/hermes-agent#94342` still needs an answer.
-- `rtk-ai/rtk#3705` and `AprilNEA/OpenLogi#956` newly became stale at 7 days.
-- Three directly checked GHSAs remain in triage.
-- Disclosure queue: 7 drafts, with 0 genuine escalations, 1 operator task, and 4 cleanup candidates.
-
-Updated:
-
-- [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md)
-- [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md)
-
-The combined notification was attempted, but external notification and feed queues were mounted read-only, so delivery was not confirmed.
+Corrected the tracked-stars aggregate to include `AprilNEA/OpenLogi` and refreshed all live repository counts.
 
 ## Summary
 
-- Refreshed all live PR states and repository star counts.
-- Updated the complete vulnerability lifecycle dashboard.
-- Logged the run as `VULN_TRACKER_OK`.
-- No advisory files required state transitions or archival.
+- Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md).
+- Appended the run to [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
+- Validation passed with `git diff --check`.
