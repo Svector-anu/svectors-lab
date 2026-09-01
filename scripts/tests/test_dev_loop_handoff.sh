@@ -23,16 +23,19 @@ calls=$((calls + 1))
 printf '%s\n' "$calls" > "$TEST_GH_CALLS"
 case "$TEST_GH_SCENARIO:$calls" in
   empty:1) : ;;
-  empty:2) printf '42\taeonframework\n' ;;
+  empty:2) printf '[{"number":42,"author":{"login":"aeonframework"},"body":"summary\\n\\n<!-- aeon-dispatch:chain-0123456789abcdef0123456789abcdef -->"}]\n' ;;
   one:1) printf '41\n' ;;
-  one:2) printf '41\taeonframework\n42\taeonframework\n' ;;
-  none:*) printf '41\taeonframework\n' ;;
+  one:2) printf '[{"number":41,"author":{"login":"aeonframework"},"body":"old"},{"number":42,"author":{"login":"aeonframework"},"body":"summary\\n\\n<!-- aeon-dispatch:chain-0123456789abcdef0123456789abcdef -->\\nmore"}]\n' ;;
+  none:1) printf '41\n' ;;
+  none:2) printf '[{"number":41,"author":{"login":"aeonframework"},"body":"old"}]\n' ;;
   many:1) printf '41\n' ;;
-  many:2) printf '41\taeonframework\n42\taeonframework\n43\taeonframework\n' ;;
+  many:2) printf '[{"number":41,"author":{"login":"aeonframework"},"body":"old"},{"number":42,"author":{"login":"aeonframework"},"body":"<!-- aeon-dispatch:chain-0123456789abcdef0123456789abcdef -->"},{"number":43,"author":{"login":"aeonframework"},"body":"<!-- aeon-dispatch:chain-0123456789abcdef0123456789abcdef -->"}]\n' ;;
   wrong-actor:1) printf '41\n' ;;
-  wrong-actor:2) printf '41\tother-user\n42\tother-user\n' ;;
+  wrong-actor:2) printf '[{"number":41,"author":{"login":"other-user"},"body":"old"},{"number":42,"author":{"login":"other-user"},"body":"<!-- aeon-dispatch:chain-0123456789abcdef0123456789abcdef -->"}]\n' ;;
   concurrent-other:1) printf '41\n' ;;
-  concurrent-other:2) printf '41\taeonframework\n42\taeonframework\n43\tother-user\n' ;;
+  concurrent-other:2) printf '[{"number":41,"author":{"login":"aeonframework"},"body":"old"},{"number":42,"author":{"login":"aeonframework"},"body":"summary\\n<!-- aeon-dispatch:chain-0123456789abcdef0123456789abcdef -->"},{"number":43,"author":{"login":"other-user"},"body":"unrelated"}]\n' ;;
+  concurrent-same-actor:1) printf '41\n' ;;
+  concurrent-same-actor:2) printf '[{"number":41,"author":{"login":"aeonframework"},"body":"old"},{"number":42,"author":{"login":"aeonframework"},"body":"unrelated same-actor pr"}]\n' ;;
   *) exit 1 ;;
 esac
 EOF
@@ -40,24 +43,27 @@ chmod +x "$TMP/bin/gh"
 
 before="$TMP/before"
 calls="$TMP/calls"
+dispatch_id="chain-0123456789abcdef0123456789abcdef"
 
 grep -Fq 'target:' "$RUNNER"
 grep -Fq '_INPUT_TARGET: ${{ inputs.target }}' "$RUNNER"
 grep -Fq 'var: "$chain_target"' "$CONFIG"
 grep -Fq 'var: "$feature_pr"' "$CONFIG"
+grep -Fq '${AEON_DISPATCH_ID:+<!-- aeon-dispatch:$AEON_DISPATCH_ID -->}' "$ROOT/skills/feature/SKILL.md"
+[ "$(grep -Fc '${AEON_DISPATCH_ID:+<!-- aeon-dispatch:$AEON_DISPATCH_ID -->}' "$ROOT/skills/feature/SKILL.md")" -eq 3 ]
 
 [ "$(bash "$CHECK" validate-target external:acme/demo#7)" = 'acme/demo' ]
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
-[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
+[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id")" = 'acme/demo#42' ]
 
 printf '0\n' > "$calls"
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=empty PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
 [ ! -s "$before" ]
-[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=empty DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
+[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=empty DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id")" = 'acme/demo#42' ]
 
 printf '0\n' > "$calls"
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=none PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
-if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=none DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before"; then
+if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=none DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id"; then
   echo 'no-op unexpectedly produced a PR handoff' >&2
   exit 1
 else
@@ -66,21 +72,30 @@ fi
 
 printf '0\n' > "$calls"
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=many PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
-if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=many DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before"; then
+if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=many DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id"; then
   echo 'ambiguous handoff unexpectedly verified' >&2
   exit 1
 fi
 
 printf '0\n' > "$calls"
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=wrong-actor PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
-if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=wrong-actor DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before"; then
+if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=wrong-actor DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id"; then
   echo 'wrong-actor handoff unexpectedly verified' >&2
   exit 1
 fi
 
 printf '0\n' > "$calls"
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-other PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
-[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-other DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
+[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-other DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id")" = 'acme/demo#42' ]
+
+printf '0\n' > "$calls"
+TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-same-actor PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
+if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=concurrent-same-actor DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before" "$dispatch_id"; then
+  echo 'unmarked same-actor impostor unexpectedly verified' >&2
+  exit 1
+else
+  [ "$?" -eq 3 ]
+fi
 
 if bash "$CHECK" validate-target watched; then
   echo 'implicit watched target unexpectedly validated' >&2
