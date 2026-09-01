@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T14:14:01.883168Z",
+  "generatedAt": "2026-08-31T13:29:32.025328Z",
   "generator": "eyebrow/0.4.1",
   "artifacts": [
     {
@@ -143,7 +143,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "815cc646eaf16bb9536f009c0e5e5c27b61fa43c4490fe1c6c77a7e017faab3a"
+          "hash": "86db22c3971e1647b10a170bdcc2be5f3585d4b31f9ebf58d7c4e3d5999b3beb"
         }
       ],
       "findings": [
@@ -152,7 +152,7 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 105,
+          "line": 108,
           "snippet": "network is open, but `pip install` / `curl | sh` / `tar` are **not** on the in-run",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         },
@@ -161,7 +161,7 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 119,
+          "line": 122,
           "snippet": "# open, but `pip install` / `curl | sh` / `tar` are NOT allow-listed — `python3 -m pip`,",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         },
@@ -170,7 +170,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 301,
+          "line": 304,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -179,12 +179,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 950,
+          "line": 1082,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-146674a2de742cc72700340ca03fe61da46f9488d69ae788cc0cdb59e13370f4",
+      "contentHash": "sha256-b10ade7a6e7a54f245093148feaa01afc62637c2d9eb7d820fdbf0bdcbcb8681",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
