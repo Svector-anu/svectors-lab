@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-08-31*
+*Last consolidated: 2026-09-01*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
@@ -30,7 +30,6 @@
 | 2026-08-23 | daily (web, PM) | Term Labs $8.5M governance takeover, Nvidia AI-server prices +15% on DRAM surge, CLARITY cloture vote Sept 15 (won't pass 2026) |
 | 2026-08-23 | daily (web, AM) | Grayscale Zcash spot ETF filing, BounceBit L1 sunset after $3M exploit, Nvidia–Poolside $6B license |
 | 2026-08-21 | daily (web) | SEC token-offering framework, policy-driven crypto rally, Anthropic record IPO |
-| 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
@@ -39,11 +38,12 @@
 ## Skills Built
 | Skill | Date | Notes |
 |-------|------|-------|
+| vuln-scanner | 2026-08-31 | Added a fail-closed, claim-bound PoC verification gate for HIGH/CRITICAL findings; verified locally and in GitHub Actions on a pinned Base fork |
 
 ## Lessons Learned
 - Always save files AND commit before logging
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Review 8 open PRs: 7 stalled (#31, #30, #22, #20, #5, #4, #3) plus newly opened soul wording PR #42
+- Review 6 stalled open PRs (#30, #22, #20, #5, #4, #3)
 - Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
