@@ -5,7 +5,7 @@
 set -euo pipefail
 
 usage() {
-  echo "usage: $0 validate-target <external:owner/repo[#issue]> | snapshot <target> | verify-new-pr <target> <before-file>" >&2
+  echo "usage: $0 validate-target <external:owner/repo[#issue]> | snapshot <target> | verify-new-pr <target> <before-file> <dispatch-id>" >&2
   exit 64
 }
 
@@ -29,18 +29,29 @@ case "${1:-}" in
     gh pr list -R "$repo" --state open --limit 100 --json number --jq '.[].number' | cut -f1 | sort -n
     ;;
   verify-new-pr)
-    [ "$#" -eq 3 ] || usage
+    [ "$#" -eq 4 ] || usage
     repo=$(target_repo "$2") || exit $?
     before="$3"
+    dispatch_id="$4"
     [ -f "$before" ] || { echo "dev-loop: pre-feature PR snapshot is missing: $before" >&2; exit 1; }
+    [[ "$dispatch_id" =~ ^chain-[0-9a-f]{32}$ ]] || { echo "dev-loop: invalid feature dispatch ID" >&2; exit 1; }
     attempts="${DEV_LOOP_PR_VERIFY_ATTEMPTS:-3}"
     backoff="${DEV_LOOP_PR_VERIFY_BACKOFF:-2}"
     actor=$(gh api user --jq .login)
     [ -n "$actor" ] || { echo "dev-loop: could not determine the feature actor" >&2; exit 1; }
     for attempt in $(seq 1 "$attempts"); do
       after=$(mktemp)
-      gh pr list -R "$repo" --state open --limit 100 --json number,author --jq '.[] | "\(.number)\t\(.author.login)"' | sort -n > "$after"
-      actor_prs=$(awk -F '\t' -v actor="$actor" 'FILENAME == ARGV[1] { before[$1] = 1; next } !($1 in before) && $2 == actor { print $1 }' "$before" "$after")
+      gh pr list -R "$repo" --state open --limit 100 --json number,author,body > "$after"
+      actor_prs=$(jq -r --arg actor "$actor" --arg marker "<!-- aeon-dispatch:$dispatch_id -->" --rawfile before "$before" '
+        ($before | split("\n") | map(select(length > 0) | tonumber)) as $old |
+        .[] |
+        select(
+          (.number as $n | ($old | index($n)) == null) and
+          .author.login == $actor and
+          ((.body // "") | contains($marker))
+        ) |
+        .number
+      ' "$after")
       actor_pr_count=$(printf '%s\n' "$actor_prs" | sed '/^$/d' | wc -l | tr -d ' ')
       if [ "$actor_pr_count" -eq 1 ]; then
         printf '%s#%s\n' "$repo" "$actor_prs"
