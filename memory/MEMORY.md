@@ -3,7 +3,8 @@
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
-- Upstream contribution milestone: aeonfun/aeon PR #956 merged, adding complete Kimi region-scoped credential capture; tests, build, and upstream checks passed
+- Upstream contribution milestones: aeonfun/aeon PR #956 merged with complete Kimi region-scoped credential capture; PR #1009 merged with receipt-bound dev-loop PR handoff verification after review caught and resolved three concurrency/serialization gaps
+- Product contribution milestone: Svector-anu/skopos PR #107 merged, adding non-custodial text-mode handoffs for limit, stop-loss, take-profit, and TWAP orders
 - OSS security milestones: dependency-CVE remediations opened as abhigyanpatwari/GitNexus PR #3095 and corsairdev/corsair PR #1421; the latter bundled better-auth, Kysely, and Drizzle fixes after prior-art checks
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 
@@ -30,9 +31,6 @@
 | 2026-08-26 | daily (web) | Gitea CVE-2026-60004, WhatsApp security, LayerZero ATLAS |
 | 2026-08-25 | daily (web, second run) | Arcus pTokens, Franklin–HashKey RWA, GENIUS customer checks |
 | 2026-08-25 | daily (web) | GPT-5.6 in Kiro, Thomson Reuters LLM, Coinbase tokenized stocks |
-| 2026-08-23 | daily (web, PM) | Term Labs $8.5M governance takeover, Nvidia AI-server prices +15% on DRAM surge, CLARITY cloture vote Sept 15 (won't pass 2026) |
-| 2026-08-23 | daily (web, AM) | Grayscale Zcash spot ETF filing, BounceBit L1 sunset after $3M exploit, Nvidia–Poolside $6B license |
-| 2026-08-21 | daily (web) | SEC token-offering framework, policy-driven crypto rally, Anthropic record IPO |
 
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
