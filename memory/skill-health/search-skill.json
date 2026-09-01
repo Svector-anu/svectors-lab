@@ -1,10 +1,12 @@
 {
   "skill": "search-skill",
-  "last_analyzed": "2026-09-01T16:23:20Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op: it clearly reports that no distinct candidate passed duplicate gates, but provides limited evidence for the inferred gap and catalog results.",
-  "flags": [],
-  "avg_score": 2.9,
+  "last_analyzed": "2026-09-01T19:28:47Z",
+  "quality_score": 2,
+  "assessment": "Concise and potentially legitimate no-op, but it provides no verifiable catalog references and falsely claims a workspace log write during a read-only run.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.82,
   "history": [
     {
       "date": "2026-08-25",
@@ -58,6 +60,12 @@
       "date": "2026-09-01",
       "score": 3,
       "ts": "2026-09-01T16:23:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T19:28:47Z",
       "harness": "codex"
     }
   ]
