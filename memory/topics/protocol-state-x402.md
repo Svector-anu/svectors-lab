@@ -3,12 +3,12 @@ type: Reference
 title: x402 Ecosystem Tracker
 description: Per-run state for the x402 Protocol Monitor — known integrations, npm stats, GitHub repo counts, signal log.
 tags: [x402, protocol-monitor, micropayments, ai-agents]
-timestamp: 2026-08-25T12:05:00Z
+timestamp: 2026-09-01T00:00:00Z
 ---
 
 # x402 Ecosystem Tracker
 
-*Last run: 2026-08-25*
+*Last run: 2026-09-01*
 
 ## Known Integrations
 - cloudflare/agents (5234★) — official Cloudflare agents framework; x402 listed as native pay-per-call feature
@@ -29,18 +29,24 @@ timestamp: 2026-08-25T12:05:00Z
 - akoita/resonate (1★) — machine-first audio licensing API with x402-powered stem checkout
 - seancrecord/scvd-general-store-repo (3★) — conformance, settlement-attestation, and general-store layer for x402 offers and receipts
 - solosofi/tollbooth (0★) — machine-payable endpoint charging agents per request through x402 on Base
+- dchu3/sol-x402-facilitator (0★) — self-hosted Solana facilitator with crash-safe, exactly-once settlement; live on mainnet
+- LiquidAgent/liquidagentx402 (0★) — agent-native tokenized-stock index on Base with x402 discovery and unsigned transaction execution
+- nanotools-x402/nanotools (0★) — 44 pay-per-call agent tools on Base mainnet, priced from $0.001 to $0.03
+- nikunjdixit-ai/unicity-protocol (0★) — privacy-preserving human verification combining Algorand credentials, anti-Sybil checks, and x402 payments
+- trinitysigillium-boop/agent-stack-omniauth (0★) — multi-chain x402 payment gateway with Mexican CFDI stamping and Kubernetes deployment
 
 ## Key Stats
-- npm @coinbase/x402: 60,625 weekly downloads (-1,935 vs prior run; +22,491 vs 2026-07-08 baseline)
-- npm x402: 383,599 weekly downloads (+9,617 vs prior run; +137,658 vs 2026-07-08 baseline)
+- npm @coinbase/x402: 69,060 weekly downloads (+8,435 vs prior run; +30,926 vs 2026-07-08 baseline)
+- npm x402: 392,735 weekly downloads (+9,136 vs prior run; +146,794 vs 2026-07-08 baseline)
 - npm paykit: 404 (not found — skipped)
-- GitHub repos matching x402: 2,567 broad-query matches pushed in the last 7 days; 356 stricter `"x402 protocol"` matches. Five additional integrations absent from the morning baseline were retained after relevance review.
-- Notable announcements: x402 List reports 533 monitored services, 479 payment-ready, but only one delivery-verified as of 2026-08-24; Animica published a live native-ANM payment lane tutorial on 2026-08-23.
+- GitHub repos matching x402: 2,631 broad-query matches pushed in the last 7 days; 333 stricter `"x402 protocol"` matches. Five new integrations were retained after relevance review.
+- Notable announcements: no date-verifiable, genuinely new announcement retained this run.
 
 ## Signal Log
 - 2026-07-08: First run. 6+ new integrations in last 7d. cloudflare/agents (5234★) is highest-signal. x402=245k/wk, @coinbase/x402=38k/wk npm. Momentum: breakout (14pts).
 - 2026-08-25: Five new, clearly relevant integrations retained from a much larger noisy GitHub result set (+10). Both tracked npm packages rose vs the July baseline (+6). One ecosystem reliability report (+2), one fresh cross-chain implementation tutorial (+1), and one settlement-quality analysis (+1). Momentum: breakout (20pts). Read: ride developer adoption, but watch verified delivery—the service count is expanding faster than proof that paid calls return useful output.
 - 2026-08-25 (12:05 UTC rerun): Five additional repositories absent from the morning baseline were active today (+10), spanning data extraction, transaction execution, audio licensing, settlement attestation, and pay-per-request middleware. `x402` npm downloads rose (+3), while `@coinbase/x402` declined and scored zero. No new announcement was retained after same-day dedup. Momentum: breakout (13pts). Read: ride integration breadth; watch whether the long tail converts from low-star experiments into used services.
+- 2026-09-01: Five new repositories passed relevance review (+10), led by a live Solana mainnet facilitator and a 44-tool Base API catalog. Both tracked npm packages rose (+6). No date-verifiable announcement or tutorial was retained. Momentum: breakout (16pts). Read: implementation breadth and installs are still climbing; watch whether zero-star launches earn repeat usage and independent delivery evidence.
 
 # Citations
 - [GitHub repository search API](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-18&sort=updated&order=desc&per_page=20)
@@ -49,3 +55,7 @@ timestamp: 2026-08-25T12:05:00Z
 - [x402 Ecosystem Reliability Report — August 2026](https://x402-list.com/blog/x402-reliability-report)
 - [Animica x402 agent-payments tutorial](https://animica.org/learn/x402-agent-payments/)
 - [What Agents Buy settlement analysis](https://whatagentsbuy.com/)
+- [GitHub repository search API — broad x402 query](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
+- [GitHub repository search API — strict x402 protocol query](https://api.github.com/search/repositories?q=%22x402%20protocol%22%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
+- [npm downloads: @coinbase/x402 — week ending 2026-08-29](https://api.npmjs.org/downloads/point/last-week/%40coinbase%2Fx402)
+- [npm downloads: x402 — week ending 2026-08-29](https://api.npmjs.org/downloads/point/last-week/x402)
