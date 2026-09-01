@@ -1,18 +1,19 @@
-Market read: chop, medium conviction. 14/20 top-cap assets are green today, but only 6/20 remain green over seven days. DEX volume was the strongest signal at $9.77B, up 26.2%.
+Chop, medium conviction: only 5/20 top-cap assets are green, while DeFi TVL rose 1.1% and DEX volume jumped 27.0%.
 
-- BTC: $78,861, +1.1%
-- ETH: $2,475, +1.4%
-- Fear & Greed: 69, up 7 points
-- DeFi TVL: $88.12B, nearly flat
-- Top protocol mover: Nexus BTC, +19.7%
-- Sustainable yields passing filters: 3
-- Incentive-driven yields passing filters: 2
+- DeFi verdict: mixed—activity strengthened, stablecoin supply stayed nearly flat.
+- Position call: watch liquid relative strength; fade broad beta until breadth recovers.
+- Strongest activity: Uniswap V4 volume +43.6% and fees +94.1%.
+- Protocol movers: Defi Saver +43.1%; Linea Bridge −18.9%. No verified catalyst for either.
+- Sentiment: Fear & Greed remains 69, Greed.
+- Macro risk: markets imply a 58.5% probability of a 25 bp September Fed hike.
+- Institutional flow: spot BTC ETFs recorded $216.7M of August 31 inflows, reversing the prior session’s outflow. [Farside Investors](https://farside.co.uk/btc/)
+- Positions facet: `DEFI_MONITOR_NO_CONFIG`; no tracked position alerts.
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md). No tracked positions were configured.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md). The notification was successfully queued through a workspace-local fallback.
 
 ## Summary
 
-- All nine data-source groups succeeded.
-- Preserved the complete token-pick history.
-- Notification was attempted, but its external queues were read-only, so delivery could not be confirmed.
-- Existing unrelated workspace changes were left untouched.
+- Ran the complete `defi-overview` macro workflow.
+- Preserved the historical KAITO token pick.
+- Logged all source statuses as healthy.
+- Left unrelated existing workspace changes untouched.
