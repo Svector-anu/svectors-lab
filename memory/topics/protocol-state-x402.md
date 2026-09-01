@@ -39,13 +39,18 @@ timestamp: 2026-09-01T00:00:00Z
 - 0rkz/byte-x402-gateway (0★) — pay-per-byte USDC gateway on Base with EIP-712 receipts over delivered bytes
 - forgemeshlabs/x402-notary-mcp (0★) — paid cryptographic receipts for AI outputs with Merkle proofs and Base anchors
 - onetapstudiogames/1f3ea (0★) — non-custodial USDC marketplace for autonomous agents
+- 89rat/x402-conformance (0★) — executable x402 conformance suite with golden EIP-3009 vectors, JSON Schema, ABNF, and a reference verifier
+- edgepillar/zenon-x402-poc (5★) — proof of concept using Zenon as an x402 settlement rail for agent and API payments
+- neromtoobad/receipts (0★) — AI-pundit market paying informants over x402 on Base with Virtuals ACP
+- stevysmith/gallery-402 (0★) — WebMCP virtual museum charging x402 admission for agent-composed tours
+- gkaragioul/deltabot-utility-suite (0★) — hosted MCP utility suite exposing 25 Base-USDC x402 paid tools
 
 ## Key Stats
 - npm @coinbase/x402: 69,060 weekly downloads (+8,435 vs prior run; +30,926 vs 2026-07-08 baseline)
 - npm x402: 392,735 weekly downloads (+9,136 vs prior run; +146,794 vs 2026-07-08 baseline)
 - npm paykit: 404 (not found — skipped)
-- GitHub repos matching x402: 2,698 broad-query matches pushed in the last 7 days; 358 stricter `"x402 protocol"` matches. Five additional integrations were retained on the rerun after relevance review.
-- Notable announcements: Stellar's x402 integration documentation was updated on 2026-08-31; no new corporate or protocol announcement was retained.
+- GitHub repos matching x402: the latest 20 broad and 20 strict results were reviewed on the third same-day run. Five additional integrations were retained after baseline and relevance checks.
+- Notable announcements: Alchemy published an x402-for-MCP builder guide on 2026-08-26; no new corporate or protocol announcement was retained.
 
 ## Signal Log
 - 2026-07-08: First run. 6+ new integrations in last 7d. cloudflare/agents (5234★) is highest-signal. x402=245k/wk, @coinbase/x402=38k/wk npm. Momentum: breakout (14pts).
@@ -53,6 +58,7 @@ timestamp: 2026-09-01T00:00:00Z
 - 2026-08-25 (12:05 UTC rerun): Five additional repositories absent from the morning baseline were active today (+10), spanning data extraction, transaction execution, audio licensing, settlement attestation, and pay-per-request middleware. `x402` npm downloads rose (+3), while `@coinbase/x402` declined and scored zero. No new announcement was retained after same-day dedup. Momentum: breakout (13pts). Read: ride integration breadth; watch whether the long tail converts from low-star experiments into used services.
 - 2026-09-01: Five new repositories passed relevance review (+10), led by a live Solana mainnet facilitator and a 44-tool Base API catalog. Both tracked npm packages rose (+6). No date-verifiable announcement or tutorial was retained. Momentum: breakout (16pts). Read: implementation breadth and installs are still climbing; watch whether zero-star launches earn repeat usage and independent delivery evidence.
 - 2026-09-01 (rerun): Five additional integrations absent from the earlier baseline passed relevance review (+10), spanning buyer-side preflight, Stellar WebMCP, byte-receipt delivery, output notarization, and an agent marketplace. npm's measurement window had not advanced, so both packages were flat for scoring. Stellar's x402 documentation update counted as one new tutorial (+1). Momentum: breakout (11pts). Read: integrations are branching into pre-payment safety and delivery proof, not just settlement; watch whether these controls become shared infrastructure.
+- 2026-09-01 (third run): Five more integrations absent from both earlier baselines passed relevance review (+10), spanning conformance testing, a Zenon settlement experiment, paid informant markets, WebMCP admission, and a 25-tool MCP suite. npm's measurement window remained unchanged, so installs were flat for scoring. Alchemy's dated MCP payment builder guide added one tutorial signal (+1). Momentum: breakout (11pts). Read: x402 is spreading across both application experiments and interoperability tooling; watch whether conformance suites gain independent users and protocol alignment.
 
 # Citations
 - [GitHub repository search API](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-18&sort=updated&order=desc&per_page=20)
@@ -68,3 +74,7 @@ timestamp: 2026-09-01T00:00:00Z
 - [GitHub repository search API — broad x402 query, 2026-09-01 rerun](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
 - [GitHub repository search API — strict x402 protocol query, 2026-09-01 rerun](https://api.github.com/search/repositories?q=%22x402%20protocol%22%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-25&sort=updated&order=desc&per_page=20)
 - [Stellar x402 documentation](https://developers.stellar.org/docs/build/agentic-payments/x402)
+- [Alchemy: How to add x402 payments to an MCP server](https://www.alchemy.com/overviews/how-to-add-x402-payments-to-an-mcp-server)
+- [x402 conformance suite](https://github.com/89rat/x402-conformance)
+- [Zenon x402 proof of concept](https://github.com/edgepillar/zenon-x402-poc)
+- [DeltaBot x402 utility suite](https://github.com/gkaragioul/deltabot-utility-suite)
