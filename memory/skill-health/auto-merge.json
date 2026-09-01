@@ -1,10 +1,12 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-09-01T19:28:43Z",
-  "quality_score": 3,
-  "assessment": "Adequate operational summary with explicit skip reasons and no fabricated-looking signal, but limited evidence makes the PR decisions only partially verifiable from the final output.",
-  "flags": [],
-  "avg_score": 2.9,
+  "last_analyzed": "2026-09-01T21:55:57Z",
+  "quality_score": 2,
+  "assessment": "The no-change result is concise, but it unverifiably claims workspace files were modified and validated during an explicitly read-only run.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.82,
   "history": [
     {
       "date": "2026-08-25",
@@ -60,6 +62,12 @@
       "date": "2026-09-01",
       "score": 3,
       "ts": "2026-09-01T19:28:43Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T21:55:57Z",
       "harness": "codex"
     }
   ]

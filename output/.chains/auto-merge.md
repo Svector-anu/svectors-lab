@@ -1,16 +1,15 @@
-Auto-merge completed in live mode for `aeonfun/aeon`.
+Auto-merge completed in live mode.
 
-- Considered: 3 PRs
-- Qualified/merged: 0
+- Repository: `aeonfun/aeon`
+- Open PRs considered: 0
+- Merged: 0
 - Retry-capped: 0
-- #1014 and #1013 skipped: `app/dependabot` is not an exact allowlist match.
-- #1009 skipped: author not allowlisted, cross-repository, and conflicting.
-- No notification sent, as required.
-
-Updated the run log and validated `memory/topics/auto-merge-state.json`. Existing unrelated workspace changes were preserved.
+- Notification: not sent, as required for a no-change run
+- State timestamp and daily log updated and validated
 
 ## Summary
 
-- Modified `memory/logs/2026-09-01.md`
-- Modified `memory/topics/auto-merge-state.json`
-- No PR state was changed.
+Modified:
+
+- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
+- [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md)
