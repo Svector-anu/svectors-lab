@@ -1,30 +1,30 @@
-ℹ️ Narrative Tracker — 2026-08-31
-
-*Narrative Tracker — 2026-08-31*
-
-source: public-web fallback after `xai http=403 bytes=254`; confidence: low-medium.
+*Narrative Tracker — 2026-09-01*
 
 TRANSITIONS
-• NEW: XMR-led privacy rotation — XMR is separating from both majors and ZEC, so this is a single-asset relative-strength trade, not yet a sector bid — https://coinlib.io/coin/XMR/Monero/analysis/monero-analysis-2026-08-31
-• NEW: SOL institutional beta — ETF assets and ecosystem launches are reinforcing SOL's relative strength, but the loud $600 target is far ahead of prediction-market belief — https://www.thecoinrepublic.com/2026/08/30/solana-price-prediction-ansem-sees-600-as-us-sol-spot-etf-aum-hits-1-4b/
-• NEW: Solana prediction-market expansion — @JupiterExchange and @meleemarkets launched shorter-duration markets; distribution is real, user demand is not yet established — https://www.reddit.com/r/solana/comments/1w2u3e4/solana_ecosystem_news_august_302026/
-• NEW: Solana AI-agent tokenization — @virtuals_io deployed on Solana, adding a fresh catalyst to an old AI-agent story — https://www.reddit.com/r/solana/comments/1w2u3e4/solana_ecosystem_news_august_302026/
+• NEW: agentic finance — Coinbase turned AI×crypto from a thesis into permissioned accounts + x402 payments; research published Aug 30 gives the trade a hard reality check. [launch](https://www.cryptotimes.io/2026/08/27/coinbase-pushes-ai-agents-into-crypto-trading-and-payments/)
+• PROMOTED: privacy strength, Emerging → Rising — XMR +16.2% 7d and ZEC +4.1% 24h; the Grayscale ZEC filing is still the catalyst.
+• DEMOTED: Arbitrum attention spike, Emerging → Fading — ARB's 29.1% daily jump surfaced in market data, but the 72h web fallback found no matching new fundamental catalyst; Nova support ending adds friction.
+• DEMOTED: long-tail speculation, Peak → Fading — RAM +3,337.9% and PONS +38.8% in 24h is exhaustion, not durable breadth.
+• NEW: prediction-market normalization — Polymarket/Kalshi/Robinhood contracts remain highly visible, but Nevada jurisdiction risk is now part of the narrative. [market report](https://www.kucoin.com/news/articles/crypto-daily-market-report-august-31-2026)
 
 REFLEXIVITY ALERT
-• XMR privacy — price strength is creating the privacy story without a confirmed usage catalyst: XMR rose while BTC/ETH corrected, then extended the weekly divergence; the contemporaneous privacy report explicitly found no causal proof.
-• SOL moon-target discourse — @Ansem's $600 call circulated while Polymarket assigned only ~2–3% odds for 2026; attention is outrunning market belief even as reported US SOL ETF assets reached ~$1.43B.
+• Arbitrum — price/trending rank moved before a verified 72h fundamental catalyst; narrative is the outcome.
+• long-tail speculation — RAM's +3,337.9% print is attention manufacturing attention.
+• agent tokens — empirical research found $30M+ treasury paper gains while holders lost $191.7M; token valuations remain weakly tied to treasury fundamentals. [paper](https://arxiv.org/abs/2605.29174)
 
 POSITIONS
-• RIDE: XMR-led privacy (mindshare 3 ↑↑, Bull, Rising) — @monero + privacy-focused commentators — bear: ZEC lagged and no usage catalyst confirms a broad privacy rotation.
-• RIDE: SOL institutional beta (4 ↑, Bull, Rising) — @Ansem + @SolanaSensei + @CharlesSchwab — bear: crowded price targets and weak broad-market breadth raise exhaustion risk.
-• WATCH: Solana prediction markets (2 ↑↑, Mixed, Emerging) — @JupiterExchange + @meleemarkets + @Kalshi — bear: new venues do not prove sustained liquidity.
-• WATCH: Solana AI agents (2 ↑, Mixed, Emerging) — @virtuals_io + @solana + @Boole_AI — bear: deployment headlines remain ahead of measurable agent usage.
-• FADE: long-tail speculation (3 ↓, Cope, Fading) — UP + SKR + PONS — bear: isolated momentum lacks a durable catalyst and is vulnerable in a risk-off tape.
+• RIDE: agentic finance (mindshare 4 ↑, Bull, Rising) — @coinbase, @brian_armstrong, @EllioTrades — bear: permissions, hallucinations and liability remain unsolved; token proxies may not capture infra value.
+• RIDE: privacy strength (3 ↑, Mixed, Rising) — @ZcashFoundation, @Grayscale, @monero — bear: ETF-led ZEC momentum can unwind and privacy assets retain regulatory/listing risk.
+• WATCH: prediction-market normalization (3 ↑, Mixed, Rising) — @Polymarket, @Kalshi, @RobinhoodApp — bear: Nevada's ruling may escalate the jurisdiction fight.
+• FADE: Arbitrum attention spike (3 ↓, Cope, Fading) — @arbitrum, @OffchainLabs, @CoinGecko — bear: price velocity lacks a confirmed new catalyst.
+• FADE: long-tail speculation (4 ↓, Cope, Fading) — @CoinGecko, $RAM, $PONS — bear: vertical moves without durable liquidity are exit-liquidity setups.
 
 MAP
-Emerging: Solana prediction markets; Solana AI agents
-Rising: XMR-led privacy; SOL institutional beta
+Emerging: none
+Rising: agentic finance, privacy strength, prediction-market normalization
 Peak: none
-Fading: long-tail speculation
+Fading: Arbitrum attention spike, long-tail speculation
 
-Calibration: Kaito's public Warden leaderboard is fragmented rather than concentrated—the top account holds 0.7598% mindshare and #2 holds 0.6986%—so no narrative was scored 5 on fallback evidence alone: https://kaito.wardenprotocol.org/
+Calibration: Warden's Kaito leaderboard shows even its top account at only 0.7598% mindshare, so named-driver breadth—not one loud account—set these scores. [leaderboard](https://kaito.wardenprotocol.org/)
+
+Source note: primary X search failed `xai http=403 bytes=254`; this is a lower-confidence web fallback, cross-checked against the 2026-09-01 market snapshot.
