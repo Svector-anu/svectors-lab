@@ -12,14 +12,24 @@ mkdir -p "$TMP/bin"
 cat > "$TMP/bin/gh" <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
-[ "$1" = api ]
-[ "$2" = repos/acme/demo/pulls/42 ]
-printf 'open\thttps://github.com/acme/demo/pull/42\n'
+[ "$1" = pr ]
+[ "$2" = list ]
+calls=$(cat "$TEST_GH_CALLS" 2>/dev/null || echo 0)
+calls=$((calls + 1))
+printf '%s\n' "$calls" > "$TEST_GH_CALLS"
+case "$TEST_GH_SCENARIO:$calls" in
+  one:1) printf '41\n' ;;
+  one:2) printf '41\n42\n' ;;
+  none:*) printf '41\n' ;;
+  many:1) printf '41\n' ;;
+  many:2) printf '41\n42\n43\n' ;;
+  *) exit 1 ;;
+esac
 EOF
 chmod +x "$TMP/bin/gh"
 
-output="$TMP/feature.md"
-printf 'PR: https://github.com/acme/demo/pull/42\n' > "$output"
+before="$TMP/before"
+calls="$TMP/calls"
 
 grep -Fq 'target:' "$RUNNER"
 grep -Fq '_INPUT_TARGET: ${{ inputs.target }}' "$RUNNER"
@@ -27,19 +37,22 @@ grep -Fq 'var: "$chain_target"' "$CONFIG"
 grep -Fq 'var: "$feature_pr"' "$CONFIG"
 
 [ "$(bash "$CHECK" validate-target external:acme/demo#7)" = 'acme/demo' ]
-[ "$(PATH="$TMP/bin:$PATH" bash "$CHECK" verify-pr external:acme/demo "$output")" = 'acme/demo#42' ]
+TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
+[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
 
-printf 'No PR was needed.\n' > "$output"
-if PATH="$TMP/bin:$PATH" bash "$CHECK" verify-pr external:acme/demo "$output"; then
-  echo 'missing PR URL unexpectedly verified' >&2
+printf '0\n' > "$calls"
+TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=none PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
+if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=none DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before"; then
+  echo 'no-op unexpectedly produced a PR handoff' >&2
   exit 1
 else
   [ "$?" -eq 3 ]
 fi
 
-printf 'PR: https://github.com/other/demo/pull/42\n' > "$output"
-if PATH="$TMP/bin:$PATH" bash "$CHECK" verify-pr external:acme/demo "$output"; then
-  echo 'wrong repository PR unexpectedly verified' >&2
+printf '0\n' > "$calls"
+TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=many PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
+if TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=many DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before"; then
+  echo 'ambiguous handoff unexpectedly verified' >&2
   exit 1
 fi
 

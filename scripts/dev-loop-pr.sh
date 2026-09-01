@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Deterministic handoff checks for the dev-loop chain.
-# The feature skill's prose is not proof that it opened a PR: verify the claimed
-# GitHub URL against the API before asking pr-review to comment on it.
+# Feature output is not proof that it opened a PR. Compare GitHub's open-PR state
+# before and after the run before asking pr-review to comment on anything.
 set -euo pipefail
 
 usage() {
-  echo "usage: $0 validate-target <external:owner/repo[#issue]> | verify-pr <target> <feature-output>" >&2
+  echo "usage: $0 validate-target <external:owner/repo[#issue]> | snapshot <target> | verify-new-pr <target> <before-file>" >&2
   exit 64
 }
 
@@ -23,45 +23,37 @@ case "${1:-}" in
     [ "$#" -eq 2 ] || usage
     target_repo "$2"
     ;;
-  verify-pr)
+  snapshot)
+    [ "$#" -eq 2 ] || usage
+    repo=$(target_repo "$2") || exit $?
+    gh pr list -R "$repo" --state open --limit 100 --json number --jq '.[].number' | sort -n
+    ;;
+  verify-new-pr)
     [ "$#" -eq 3 ] || usage
     repo=$(target_repo "$2") || exit $?
-    output="$3"
-    [ -f "$output" ] || { echo "dev-loop: feature output is missing: $output" >&2; exit 1; }
-
-    urls=()
-    while IFS= read -r url; do
-      [ -n "$url" ] && urls+=("$url")
-    done < <(grep -oE 'https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/pull/[1-9][0-9]*' "$output" | sort -u || true)
-    if [ "${#urls[@]}" -eq 0 ]; then
-      echo "dev-loop: feature completed without a PR URL; review will be skipped" >&2
-      exit 3
-    fi
-    if [ "${#urls[@]}" -ne 1 ]; then
-      echo "dev-loop: feature output names ${#urls[@]} distinct PR URLs; refusing ambiguous review handoff" >&2
-      exit 1
-    fi
-
-    url="${urls[0]}"
-    path="${url#https://github.com/}"
-    url_repo="${path%/pull/*}"
-    number="${path##*/}"
-    if [ "$url_repo" != "$repo" ]; then
-      echo "dev-loop: feature claimed PR $url outside requested repository $repo" >&2
-      exit 1
-    fi
-
-    live=$(gh api "repos/$repo/pulls/$number" --jq '[.state, .html_url] | @tsv') || {
-      echo "dev-loop: could not read claimed PR $url from GitHub" >&2
-      exit 1
-    }
-    state="${live%%$'\t'*}"
-    live_url="${live#*$'\t'}"
-    if [ "$state" != "open" ] || [ "$live_url" != "$url" ]; then
-      echo "dev-loop: claimed PR is not the requested open PR (state=$state url=$live_url)" >&2
-      exit 1
-    fi
-    printf '%s#%s\n' "$repo" "$number"
+    before="$3"
+    [ -f "$before" ] || { echo "dev-loop: pre-feature PR snapshot is missing: $before" >&2; exit 1; }
+    attempts="${DEV_LOOP_PR_VERIFY_ATTEMPTS:-3}"
+    backoff="${DEV_LOOP_PR_VERIFY_BACKOFF:-2}"
+    for attempt in $(seq 1 "$attempts"); do
+      after=$(mktemp)
+      gh pr list -R "$repo" --state open --limit 100 --json number --jq '.[].number' | sort -n > "$after"
+      new_prs=()
+      while IFS= read -r number; do
+        [ -n "$number" ] && new_prs+=("$number")
+      done < <(comm -13 "$before" "$after")
+      if [ "${#new_prs[@]}" -eq 1 ]; then
+        printf '%s#%s\n' "$repo" "${new_prs[0]}"
+        exit 0
+      fi
+      if [ "${#new_prs[@]}" -gt 1 ]; then
+        echo "dev-loop: ${#new_prs[@]} new open PRs appeared; refusing ambiguous review handoff" >&2
+        exit 1
+      fi
+      [ "$attempt" -lt "$attempts" ] && sleep "$backoff"
+    done
+    echo "dev-loop: feature created no new open PR; review will be skipped" >&2
+    exit 3
     ;;
   *) usage ;;
 esac

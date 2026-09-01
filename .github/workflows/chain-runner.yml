@@ -242,6 +242,7 @@ jobs:
           CHAIN_FAILED=false
           CHAIN_NO_ACTION=false
           FEATURE_PR=""
+          FEATURE_OPEN_BEFORE=""
 
           # --- Execute steps sequentially ---
           for ((i=0; i<TOTAL_STEPS; i++)); do
@@ -309,6 +310,15 @@ jobs:
             RUN_IDS=()
 
             for skill in "${SKILL_LIST[@]}"; do
+              if [ "$CHAIN" = "dev-loop" ] && [ "$skill" = "feature" ]; then
+                FEATURE_OPEN_BEFORE=$(mktemp)
+                if ! bash scripts/dev-loop-pr.sh snapshot "$CHAIN_TARGET" > "$FEATURE_OPEN_BEFORE"; then
+                  echo "::error::dev-loop could not snapshot open PRs before feature"
+                  CHAIN_FAILED=true
+                  break
+                fi
+              fi
+
               # Build context file if this step consumes outputs
               CTX_FILE=""
               if [ -n "$CONSUME" ]; then
@@ -365,12 +375,11 @@ jobs:
               echo "  Pulled latest outputs"
 
               # The feature run's exit status only proves the harness exited cleanly.
-              # For dev-loop, independently verify its claimed PR before handing a
-              # target to the reviewer. Exit 3 means a genuine no-PR result, which
-              # is a successful no-op but must not be narrated as a reviewed change.
+              # Compare GitHub's PR state before and after it ran; model prose is not
+              # used to decide whether the reviewer should run.
               if [ "$CHAIN" = "dev-loop" ] && [ "$SKILLS" = "feature" ]; then
                 VERIFY_RC=0
-                FEATURE_PR=$(bash scripts/dev-loop-pr.sh verify-pr "$CHAIN_TARGET" output/.chains/feature.md) || VERIFY_RC=$?
+                FEATURE_PR=$(bash scripts/dev-loop-pr.sh verify-new-pr "$CHAIN_TARGET" "$FEATURE_OPEN_BEFORE") || VERIFY_RC=$?
                 case "$VERIFY_RC" in
                   0) echo "  Verified feature PR: $FEATURE_PR" ;;
                   3) FEATURE_PR=""; CHAIN_NO_ACTION=true; echo "::notice::dev-loop feature completed without a verified PR; reviewer will not run" ;;

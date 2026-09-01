@@ -236,7 +236,8 @@ chains:
   # external:owner/repo or external:owner/repo#12; empty targets are rejected rather
   # than falling back to the watched-repos sweep.
   # Never let this run unattended against a repo you don't own until the output has
-  # been read by hand several times.
+  # been read by hand several times. The reviewer receives only a PR that GitHub
+  # shows was newly opened by the preceding feature step.
   dev-loop:
     schedule: "workflow_dispatch"
     on_error: fail-fast
