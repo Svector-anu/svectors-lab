@@ -1,9 +1,8 @@
-ℹ️ PR Review — aeonfun/aeon#1009
+ℹ️ PR Review — Svector-anu/svectors-lab#47
 
 *PR Review — 2026-09-01*
-
 Reviewed 1, skipped 0.
+- Svector-anu/svectors-lab#47: approve-ready — 0 critical, 0 issues
 
-- aeonfun/aeon#1009: **approve-ready** — 0 critical, 0 issues
-
-Prior findings on earlier SHAs (same-actor impostor, multiline TSV body break, missing dispatch markers in feature templates) are addressed on `1986685`. Marker-bound jq verify + A8/B7/C templates look solid; CI green.
+**fix(dev-loop): bind review to feature dispatch** (SHA `abbd69e`)
+Correlation id on each chain dispatch + receipt-gated `verify-new-pr` (jq body match, multiline-safe). Same-actor impostor rejected; concurrent same-skill runs resolve their own run ids. CI green; handoff + chain-runner tests pass locally.
