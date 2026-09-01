@@ -1,13 +1,13 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-01T12:01:42Z",
+  "last_analyzed": "2026-09-01T16:23:08Z",
   "quality_score": 2,
-  "assessment": "The no-match result is legitimate, but the output provides no evidence, source, candidate criteria, or dedup details, and its claim that it updated workspace records conflicts with the read-only run.",
+  "assessment": "Usable no-op report, but it contradicts the read-only run constraint by claiming workspace files were updated, and its specific endpoint/results claims lack evidence in the final output.",
   "flags": [
-    "low_quality",
-    "generic_content"
+    "unverifiable_claim",
+    "low_quality"
   ],
-  "avg_score": 2.85,
+  "avg_score": 2.79,
   "history": [
     {
       "date": "2026-07-31",
@@ -71,6 +71,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T12:01:42Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T16:23:08Z",
       "harness": "codex"
     }
   ]
