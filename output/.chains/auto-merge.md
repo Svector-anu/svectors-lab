@@ -1,17 +1,16 @@
 Auto-merge completed in live mode for `aeonfun/aeon`.
 
-- Considered: 9 PRs
+- Considered: 3 PRs
 - Qualified/merged: 0
 - Retry-capped: 0
-- All failed the exact author allowlist gate.
-- No merge command or notification was issued.
-- Notably, GitHub reported Dependabot as `app/dependabot`, not the allowed `dependabot[bot]`, so those PRs failed closed.
-- Updated the retry state timestamp and logged specific verdicts for every PR.
-- State JSON and repository diff validation passed.
+- #1014 and #1013 skipped: `app/dependabot` is not an exact allowlist match.
+- #1009 skipped: author not allowlisted, cross-repository, and conflicting.
+- No notification sent, as required.
+
+Updated the run log and validated `memory/topics/auto-merge-state.json`. Existing unrelated workspace changes were preserved.
 
 ## Summary
 
-Modified:
-
-- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
-- [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md:131)
+- Modified `memory/logs/2026-09-01.md`
+- Modified `memory/topics/auto-merge-state.json`
+- No PR state was changed.
