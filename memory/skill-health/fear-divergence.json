@@ -1,10 +1,10 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-08-31T11:53:52Z",
+  "last_analyzed": "2026-09-01T12:00:24Z",
   "quality_score": 3,
-  "assessment": "Acceptable no-signal skip with a clear trigger and outcome, but the Fear & Greed reading lacks a cited evidence anchor.",
+  "assessment": "Acceptable threshold-based no-op with a clear trigger value and outcome, but the final output provides no source or evidence link to verify the F&G reading or freshness claim.",
   "flags": [],
-  "avg_score": 3.31,
+  "avg_score": 3.29,
   "history": [
     {
       "date": "2026-07-08",
@@ -78,6 +78,12 @@
       "date": "2026-08-31",
       "score": 3,
       "ts": "2026-08-31T11:53:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 3,
+      "ts": "2026-09-01T12:00:24Z",
       "harness": "codex"
     }
   ]
