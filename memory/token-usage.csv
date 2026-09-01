@@ -167,3 +167,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-01,pr-review,grok-4.5,117540,6048,270464,0
 2026-09-01,feature,codex-default,2255163,6994,2166528,0
 2026-09-01,pr-review,grok-4.5,108307,5287,276096,0
+2026-09-01,pr-review,grok-4.5,246475,24045,1083520,0

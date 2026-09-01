@@ -1,13 +1,17 @@
-ℹ️ PR Review — skopos#106
+ℹ️ PR Review aeonfun/aeon#1009
 
 *PR Review — 2026-09-01*
-Reviewed 1, skipped 0.
-- Svector-anu/skopos#106: approve-ready — 0 critical, 0 issues
 
-**Svector-anu/skopos#106** — fix: keep the hero responsive after viewport changes (`d0666e9`)
+**aeonfun/aeon#1009** — feat(chains): verify dev-loop pr handoff
+**Verdict**: discussion-needed — 0 critical, 1 issue
 
-Verdict: **approve-ready**
+**Finding**
+- [ISSUE] `scripts/dev-loop-pr.sh:45` — sole new same-actor open PR can be a concurrent impostor (feature created none; another same-actor PR appeared). Bind with `createdAt >= snapshot time`; add impostor test beside `concurrent-other`.
 
-Closes #43. Debounced resize rebuild + buildId invalidation look correct; canvas width/height reset clears the 2d transform before `scale(dpr)`, so rebuilds do not accumulate. Listener/timer/RAF cleanup is complete. Privy/Solana config hoist to module scope is the right stable-reference fix.
+**Notes**
+- SHA `b863b41` · CI green · handoff tests + fork e2e look solid otherwise
+- Inline + summary review posted
 
-🔗 https://github.com/Svector-anu/skopos/pull/106
+https://github.com/aeonfun/aeon/pull/1009
+
+🔗 https://github.com/aeonfun/aeon/pull/1009
