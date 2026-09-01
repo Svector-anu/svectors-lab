@@ -1,10 +1,10 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-01T15:48:42Z",
-  "quality_score": 4,
-  "assessment": "Concrete, actionable PR finding with file:line, clear verdict, and a specific fix; not crypto-signal work but solid for pr-review.",
+  "last_analyzed": "2026-09-01T16:00:28Z",
+  "quality_score": 5,
+  "assessment": "Blocked with a verified critical finding: multiline PR bodies break TSV dispatch-marker verify and silently skip review.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 4.13,
   "history": [
     {
       "date": "2026-09-01",
@@ -46,6 +46,12 @@
       "date": "2026-09-01",
       "score": 4,
       "ts": "2026-09-01T15:48:42Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 5,
+      "ts": "2026-09-01T16:00:28Z",
       "harness": "grok"
     }
   ]
