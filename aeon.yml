@@ -232,8 +232,9 @@ chains:
   # skill in `skills:` above (feature=codex, pr-review=claude), so the reviewer is a
   # different model family than the author. No plugin needed; chain-runner dispatches
   # each step through aeon.yml and resolve-harness applies the per-skill override.
-  # workflow_dispatch only, and `feature` needs an explicit target — dispatch with
-  # var on the chain's first step, e.g. external:owner/repo or external:owner/repo#12.
+  # workflow_dispatch only. It requires the chain's `target` input, e.g.
+  # external:owner/repo or external:owner/repo#12; empty targets are rejected rather
+  # than falling back to the watched-repos sweep.
   # Never let this run unattended against a repo you don't own until the output has
   # been read by hand several times.
   dev-loop:
@@ -241,8 +242,8 @@ chains:
     on_error: fail-fast
     max_dispatches: 2
     steps:
-      - { skill: feature, var: "" }
-      - { skill: pr-review, var: "", consume: [feature] }
+      - { skill: feature, var: "$chain_target" }
+      - { skill: pr-review, var: "$feature_pr", consume: [feature] }
 
   # routine:
   #   schedule: "0 7 * * *"
