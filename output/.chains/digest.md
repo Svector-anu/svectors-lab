@@ -1,30 +1,26 @@
-*Daily digest — 2026-09-01*
+*daily digest — 2026-09-01*
 
-_TL;DR: agent operators got a concrete containment baseline, while identity and WAF vendors shipped runtime controls and Injective contained an application-layer exploit._
+_TL;DR: agent tooling shipped clearer failure semantics, reproducible memory tests, and resumable cross-harness session migration._
 
-1. *Adopt Anthropic's containment checklist before the next agent run*  
-   Anthropic resumed most cyber evaluations after adding real-time escape classifiers, stronger isolation, explicit scope prompts, pre-run sandbox probes, and automatic termination on boundary violations; some high-risk training environments remain paused.  
-   Why it matters: agent fleets now have a concrete minimum for sandbox, network, secret, and monitor design  
-   https://www.anthropic.com/news/improving-alignment-security-efforts
+1. *Make automation alerts follow task outcome, not process completion*  
+   OpenHands now separates a run finishing from its task succeeding, so blocked or failed automations no longer appear operationally healthy just because the process ended.  
+   Why it matters: update fleet health checks to key off task outcome before the next scheduled run  
+   https://github.com/OpenHands/OpenHands/commit/744e8652f254613045b779eb148bf4f741177975
 
-2. *Ping adds identity and action controls for personal coding agents*  
-   Enterprise Personal Agent Access can discover desktop and coding agents, bind each session to a user and device, provide secretless privileged access, and enforce policy at action time. It is available now through PingOne Privilege.  
-   Why it matters: teams can govern Claude Code-style agents without handing them standing credentials  
-   https://press.pingidentity.com/2026-09-01-Ping-Identity-Secures-Claude-Personal-Agents-From-Discovery-to-Action
+2. *Replay agent-memory prompts before shipping them*  
+   Mastra added a local A/B replay simulator for observational memory prompts, with fixed cycle boundaries, isolated databases, and an A/A control that exposes model sampling noise.  
+   Why it matters: memory changes can be tested against the same history instead of waiting days for noisy production evidence  
+   https://github.com/mastra-ai/mastra/commit/eda942cb76d004d577673eeb3d153f1bb8cc3ef3
 
-3. *F5 turns scanner findings into runtime virtual patches*  
-   F5 added anomaly detection, agentic threat intelligence, and automated virtual patching across Distributed Cloud WAF and BIG-IP; the company reports 98% detection efficacy and 1% false positives in internal testing.  
-   Why it matters: exposed services can block exploit traffic while maintainers build and test the code fix  
-   https://www.f5.com/company/news/press-releases/virtual-patching-ai-powered-waf-runtime-security
-
-4. *Injective upgrades the network after app-level binary-options exploits*  
-   Injective says an accelerated network upgrade followed exploits against binary-options markets in a small number of ecosystem apps; consensus and user funds at the chain layer remained secure, though the upgrade ran longer than planned.  
-   Why it matters: Injective app operators should verify binary-options integrations and exchange deposit status before resuming flows  
-   https://www.gate.com/en-us/news/detail/injective-network-upgrade-took-longer-than-expected-overnight-blockchain-17859124
+3. *Kilo makes Codex and Claude session migration resumable*  
+   Kilo moved transcript discovery and import server-side, records source markers, skips completed sessions on reruns, and isolates per-transcript failures so one bad file does not block a migration.  
+   Why it matters: harness moves no longer require shipping transcript bytes or sharing a client filesystem with the backend  
+   https://github.com/Kilo-Org/kilocode/commit/6cc21af6d0e19887d5be887a9771865ccf2963af
 
 ## Summary
 
-- Created [output/digest-2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-01.md).
-- Updated [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and today’s run log.
-- The xAI search returned HTTP 403 due to the team’s credit/spending limit; public web search supplied the fallback.
-- Notification delivery was attempted, but the external notification queues were mounted read-only.
+- Created [digest-2026-09-01-pm.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-01-pm.md).
+- Updated `MEMORY.md` and today’s activity log.
+- Deduplicated against the previous three days and today’s earlier digest.
+- xAI returned HTTP 403 due to its credit/spending limit; public X fallback yielded no usable posts.
+- Notification delivery was attempted, but the external notification queues were read-only.

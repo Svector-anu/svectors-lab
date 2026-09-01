@@ -1,14 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-01T16:23:15Z",
+  "last_analyzed": "2026-09-01T19:29:40Z",
   "quality_score": 2,
-  "assessment": "Substantive links and concise actions, but it largely misses the crypto-trader brief: no regime verdict or explicit front-run/ride/fade/watch calls, and it implausibly claims workspace files were created or updated during a read-only run.",
+  "assessment": "Substantive and plausibly verifiable, but it is an agent-tooling digest with no crypto regime verdict or explicit trade call, so it fails the operator’s core objective.",
   "flags": [
     "low_quality",
-    "generic_content",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 2.53,
+  "avg_score": 2.5,
   "history": [
     {
       "date": "2026-07-28",
@@ -110,6 +109,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T16:23:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T19:29:40Z",
       "harness": "codex"
     }
   ]

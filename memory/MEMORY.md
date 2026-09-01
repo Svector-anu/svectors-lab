@@ -14,6 +14,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-01 | daily PM (web) | task outcomes, memory replay, session migration |
 | 2026-09-01 | daily (web) | agent containment, runtime identity, virtual patching |
 | 2026-08-31 | daily (web) | ICON replay exploit, Cronos halt, VMware private AI |
 | 2026-08-31 | web3 developer tooling (web) | Degen RPC cutoff, Kaia indexing, Bob SPV migration |
