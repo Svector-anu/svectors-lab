@@ -1,58 +1,60 @@
-# Market Context (as of 2026-08-31)
+# Market Context (as of 2026-09-01)
 
-> **Take:** risk-off — only 6/20 top-cap assets are green while total market cap is down 2.4% in 24 hours. Conviction: medium.
+> **Take:** chop — 14/20 top-cap assets are green today, but only 6/20 remain green over seven days. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $78,840 (+0.0% 24h, -0.2% 7d) · dominance 59.21% (-0.48 pp since the prior refresh)
-- ETH $2,471 (-1.1% 24h, -0.1% 7d) · ETH/BTC 0.0313
-- SOL $103.55 (-2.5% 24h, +7.9% 7d)
-- Total mcap $2.666T (-2.4% 24h) · DEX vol $7.74B 24h
-- Breadth: 6/20 green 24h · 7/20 green 7d
-- Fear & Greed: 62 (Greed) — yesterday 69
+- BTC $78,861 (+1.1% 24h, -1.5% 7d) · dominance 59.20% (-0.02 pp since prior refresh)
+- ETH $2,475 (+1.4% 24h, -0.4% 7d) · ETH/BTC 0.0314
+- SOL $103.87 (+1.2% 24h, +3.0% 7d)
+- Total mcap $2.670T (-0.7% 24h) · DEX vol $9.77B 24h
+- Breadth: 14/20 green 24h · 6/20 green 7d
+- Fear & Greed: 69 (Greed) — yesterday 62
 
 ## What Changed Since Last Refresh
-- Quiet — all majors within ±1% of the prior snapshot, regime unchanged.
+- Breadth improved from 6/20 to 14/20 green over 24 hours, moving the tape from risk-off to chop.
+- Fear & Greed rose 7 points to 69 while remaining in Greed.
+- DEX volume increased from $7.74B to $9.77B, a 26.2% rebound.
 
 ## Active Narratives
-- **Broad large-cap de-risking** — phase: rising. Evidence: only 6/20 top-cap assets are green and total market cap is down 2.4% over 24 hours.
-- **Privacy rotation** — phase: rising. Evidence: XMR is +5.4% over 24 hours and +21.7% over seven days, the strongest liquid top-20 move.
-- **SOL relative strength** — phase: rising. Evidence: SOL remains +7.9% over seven days despite a -2.5% daily pullback.
-- **Long-tail speculation** — phase: peak. Evidence: trending RAM, SKR, and UP gained 3,762%, 64.8%, and 48.1% in 24 hours while large-cap breadth stayed weak.
+- **Short-horizon alt rebound** — phase: emerging. Evidence: 14/20 top caps are green today versus only 6/20 over seven days.
+- **Arbitrum attention spike** — phase: emerging. Evidence: ARB is CoinGecko's third trending asset and is up 29.1% in 24 hours.
+- **Long-tail speculation** — phase: peak. Evidence: trending RAM is up 3,337.9% and PONS 38.8% in 24 hours.
+- **Privacy relative strength** — phase: rising. Evidence: XMR is +16.2% over seven days and ZEC +4.1% today.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.85B (-0.9%)
-- Aave V3: $17.30B (-0.5%)
-- SSV Network: $12.47B (-1.7%)
-- Morpho Blue: $9.56B (+0.3%)
-- Binance staked ETH: $9.19B (-1.6%)
+- Lido: $23.90B (-0.7%)
+- Aave V3: $17.32B (-0.7%)
+- SSV Network: $12.51B (-1.4%)
+- Morpho Blue: $9.60B (-0.4%)
+- Binance staked ETH: $9.20B (-1.5%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $48.98B (7d n/a)
-- Solana: $5.79B (7d n/a)
-- Base: $5.55B (7d n/a)
+- Ethereum: $49.11B (7d n/a)
+- Solana: $5.84B (7d n/a)
+- Base: $5.56B (7d n/a)
 
 ## Stablecoins
-Total: $311.1B (+0.6% 7d). USDT $183.3B · USDC $73.9B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.7%.
+Total: $310.4B (+0.4% 7d). USDT $183.3B · USDC $73.6B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.6%.
 
 ## Trending (CoinGecko)
-- RAM — rank-385 momentum, $0.931 (+3,762.3% 24h)
-- SKR — rank-171 momentum, $0.0293 (+64.8% 24h)
-- UP — rank-862 momentum, $0.953 (+48.1% 24h)
+- PONS — rank-120 momentum, $0.473 (+38.8% 24h)
+- RAM — rank-357 momentum, $0.931 (+3,337.9% 24h)
+- ARB — rank-87 momentum, $0.111 (+29.1% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Arsenal wins on 2026-08-31 | 64.5% | $2.31M | $2.27M |
-| CA Osasuna wins on 2026-08-31 | 32.5% | $1.79M | $0.07M |
-| No Fed rate change after the September 2026 meeting | 41.5% | $1.55M | $0.44M |
+| No Fed rate change after the September 2026 meeting | 43.5% | $1.76M | $0.81M |
+| Fed raises rates 25 bps after the September 2026 meeting | 55.5% | $1.25M | $0.74M |
+| United Russia gains the most seats in the next parliamentary election | 70.5% | $0.40M | $0.48M |
 
 ## Macro Catalysts (next 48h)
-- September rate-hike odds near 62% after the Fed chair's Jackson Hole remarks keep duration-sensitive crypto exposed to hawkish repricing.
-- Friday's $202M BTC ETF outflow snapped a nine-day inflow streak; Monday's unresolved print is the next institutional-demand check.
+- The U.S. 10-year yield near 4.77% and roughly 65% market odds of a September hike keep the rebound exposed to hawkish repricing.
+- U.S. spot BTC ETFs recorded $216.7M of net inflows for August 31, reversing the prior session's $201.9M outflow; confirmation from the next print matters.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor liquid relative strength in privacy and SOL; avoid broad beta until breadth confirms the DEX-volume rebound.
-- **narrative-tracker:** monitor privacy for continued rising-phase breadth and long-tail speculation for exhaustion.
+- **token-pick:** favor liquid relative strength over broad beta until seven-day breadth confirms today's rebound.
+- **narrative-tracker:** watch Arbitrum for emerging-to-rising confirmation and long-tail speculation for exhaustion.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

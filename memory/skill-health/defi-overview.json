@@ -1,18 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-08-31T18:19:21Z",
+  "last_analyzed": "2026-09-01T06:40:02Z",
   "quality_score": 2,
-  "assessment": "Substantive regime summary, but it violates the qualitative-price constraint, lacks explicit position calls, provides mostly uncited figures, and contradicts the read-only harness by claiming workspace changes remain intact.",
+  "assessment": "Specific market figures lack evidence links, hard live prices violate strategy, no actionable position calls are given, and claimed workspace writes contradict the read-only run constraint.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.33,
+  "avg_score": 2.23,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 5
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -163,6 +159,12 @@
       "date": "2026-08-31",
       "score": 2,
       "ts": "2026-08-31T18:19:21Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T06:40:02Z",
       "harness": "codex"
     }
   ]
