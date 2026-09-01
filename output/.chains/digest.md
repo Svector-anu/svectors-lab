@@ -1,26 +1,27 @@
-*daily digest — 2026-09-01*
+*daily PM — 2026-09-01*
 
-_TL;DR: agent tooling shipped clearer failure semantics, reproducible memory tests, and resumable cross-harness session migration._
+_TL;DR: Frontier models crossed another cyber threshold while agent security moved from policy into skill verification and endpoint enforcement._
 
-1. *Make automation alerts follow task outcome, not process completion*  
-   OpenHands now separates a run finishing from its task succeeding, so blocked or failed automations no longer appear operationally healthy just because the process ended.  
-   Why it matters: update fleet health checks to key off task outcome before the next scheduled run  
-   https://github.com/OpenHands/OpenHands/commit/744e8652f254613045b779eb148bf4f741177975
+1. *Claude Fable 5.1 ships for long-running coding and agent work*  
+   Anthropic released Fable 5.1 for paid plans, its API, and cloud marketplaces. Cache reads are 75% cheaper than Fable 5, cutting estimated highly agentic workload costs by up to 45%.  
+   Why it matters: agent fleets can test a stronger long-horizon model today with lower cache costs  
+   https://www.anthropic.com/claude/fable
 
-2. *Replay agent-memory prompts before shipping them*  
-   Mastra added a local A/B replay simulator for observational memory prompts, with fixed cycle boundaries, isolated databases, and an A/A control that exposes model sampling noise.  
-   Why it matters: memory changes can be tested against the same history instead of waiting days for noisy production evidence  
-   https://github.com/mastra-ai/mastra/commit/eda942cb76d004d577673eeb3d153f1bb8cc3ef3
+2. *OpenAI designates Astra a critical cybersecurity model*  
+   OpenAI says Astra is its first model to meet its Critical cyber threshold: with tools and access, it can autonomously find unknown flaws and develop exploits across protected systems.  
+   Why it matters: frontier-model access controls now belong inside the vulnerability-management boundary  
+   https://openai.com/index/path-to-astra/
 
-3. *Kilo makes Codex and Claude session migration resumable*  
-   Kilo moved transcript discovery and import server-side, records source markers, skips completed sessions on reruns, and isolates per-transcript failures so one bad file does not block a migration.  
-   Why it matters: harness moves no longer require shipping transcript bytes or sharing a client filesystem with the backend  
-   https://github.com/Kilo-Org/kilocode/commit/6cc21af6d0e19887d5be887a9771865ccf2963af
+3. *AIR raises $50M to continuously vet agent skills and MCP servers*  
+   AIR emerged from stealth with a platform that discovers enterprise agents and continuously re-checks their skills, plugins, and MCP servers as dependencies change. It reports rejecting roughly 27% of the add-ons it finds.  
+   Why it matters: portable skills are becoming a monitored software-supply-chain layer  
+   https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/
+
+4. *CrowdStrike brings agent runtime enforcement to endpoints*  
+   Falcon Guardian inventories approved and shadow agents on Windows and macOS, connects prompts and tool calls to downstream actions, and enforces runtime controls.  
+   Why it matters: Falcon users can govern local agents at execution time instead of relying solely on central policy  
+   https://www.crowdstrike.com/en-us/press-releases/crowdstrike-unveils-falcon-guardian-ai-agent-security/
 
 ## Summary
 
-- Created [digest-2026-09-01-pm.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-01-pm.md).
-- Updated `MEMORY.md` and today’s activity log.
-- Deduplicated against the previous three days and today’s earlier digest.
-- xAI returned HTTP 403 due to its credit/spending limit; public X fallback yielded no usable posts.
-- Notification delivery was attempted, but the external notification queues were read-only.
+Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md). The X API returned HTTP 403 due to its credit limit, so public web search supplied the fallback signal. Notification was attempted, but the external notification queues were read-only; delivery could not be confirmed.
