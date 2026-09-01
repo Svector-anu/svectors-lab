@@ -1,30 +1,22 @@
 *Narrative Tracker — 2026-09-01*
 
 TRANSITIONS
-• NEW: agentic finance — Coinbase turned AI×crypto from a thesis into permissioned accounts + x402 payments; research published Aug 30 gives the trade a hard reality check. [launch](https://www.cryptotimes.io/2026/08/27/coinbase-pushes-ai-agents-into-crypto-trading-and-payments/)
-• PROMOTED: privacy strength, Emerging → Rising — XMR +16.2% 7d and ZEC +4.1% 24h; the Grayscale ZEC filing is still the catalyst.
-• DEMOTED: Arbitrum attention spike, Emerging → Fading — ARB's 29.1% daily jump surfaced in market data, but the 72h web fallback found no matching new fundamental catalyst; Nova support ending adds friction.
-• DEMOTED: long-tail speculation, Peak → Fading — RAM +3,337.9% and PONS +38.8% in 24h is exhaustion, not durable breadth.
-• NEW: prediction-market normalization — Polymarket/Kalshi/Robinhood contracts remain highly visible, but Nevada jurisdiction risk is now part of the narrative. [market report](https://www.kucoin.com/news/articles/crypto-daily-market-report-august-31-2026)
+• NEW: Robinhood Chain speculation — 5.52M tx, ~$875M DEX volume and 22,600 token launches turned a tokenized-stocks chain into a memecoin venue — https://www.coindesk.com/markets/2026/08/31/robinhood-chain-beats-ethereum-in-daily-revenue-as-memecoin-trading-takes-over
+• NEW: onchain mortgages / STABLE — concentrated promotion moved STABLE ~7% without a major protocol catalyst — https://coinmarketcap.com/top-stories/6a961694f2b8186f115ae6ae/
+• NEW: institutional ETF bid — BTC funds took $216.7M and ETH funds $87.6M on Aug 31; ETH reached 11 straight inflow days — https://financefeeds.com/bitcoin-etfs-rebound-with-217m-inflows-as-ether-extends-winning-streak/
 
 REFLEXIVITY ALERT
-• Arbitrum — price/trending rank moved before a verified 72h fundamental catalyst; narrative is the outcome.
-• long-tail speculation — RAM's +3,337.9% print is attention manufacturing attention.
-• agent tokens — empirical research found $30M+ treasury paper gains while holders lost $191.7M; token valuations remain weakly tied to treasury fundamentals. [paper](https://arxiv.org/abs/2605.29174)
+• onchain mortgages — STABLE rose ~7% as volume climbed from ~$10.5M toward ~$14M; no listing, upgrade or major partnership surfaced.
+• Robinhood Chain — launched around tokenized stocks, yet memecoin tools generated most of its $2.66M daily revenue.
 
 POSITIONS
-• RIDE: agentic finance (mindshare 4 ↑, Bull, Rising) — @coinbase, @brian_armstrong, @EllioTrades — bear: permissions, hallucinations and liability remain unsolved; token proxies may not capture infra value.
-• RIDE: privacy strength (3 ↑, Mixed, Rising) — @ZcashFoundation, @Grayscale, @monero — bear: ETF-led ZEC momentum can unwind and privacy assets retain regulatory/listing risk.
-• WATCH: prediction-market normalization (3 ↑, Mixed, Rising) — @Polymarket, @Kalshi, @RobinhoodApp — bear: Nevada's ruling may escalate the jurisdiction fight.
-• FADE: Arbitrum attention spike (3 ↓, Cope, Fading) — @arbitrum, @OffchainLabs, @CoinGecko — bear: price velocity lacks a confirmed new catalyst.
-• FADE: long-tail speculation (4 ↓, Cope, Fading) — @CoinGecko, $RAM, $PONS — bear: vertical moves without durable liquidity are exit-liquidity setups.
+• RIDE: Robinhood Chain speculation (4 ↑↑, Bull) — @RobinhoodApp, @arbitrum, @sgoldfed — real activity; bear: mercenary traffic may not convert into durable adoption.
+• WATCH: onchain mortgages / STABLE (3 ↑↑, Mixed) — @stable, @rwasummit, @_JackMcDonald_ — price leads verified adoption; concentrated promotion raises unwind risk.
+• RIDE: institutional ETF bid (4 ↑, Bull) — @BlackRock, @FarsideUK, @iShares — persistent ETH inflows matter; bear: BTC daily flows remain noisy.
+• WATCH: short-horizon alt rebound (3 ↑, Mixed) — @arbitrum, @RobinhoodApp, @DefiLlama — breadth improved; bear: only 6/20 large caps are green over seven days.
 
 MAP
-Emerging: none
-Rising: agentic finance, privacy strength, prediction-market normalization
+Emerging: onchain mortgages / STABLE; short-horizon alt rebound
+Rising: Robinhood Chain speculation; institutional ETF bid
 Peak: none
-Fading: Arbitrum attention spike, long-tail speculation
-
-Calibration: Warden's Kaito leaderboard shows even its top account at only 0.7598% mindshare, so named-driver breadth—not one loud account—set these scores. [leaderboard](https://kaito.wardenprotocol.org/)
-
-Source note: primary X search failed `xai http=403 bytes=254`; this is a lower-confidence web fallback, cross-checked against the 2026-09-01 market snapshot.
+Fading: none

@@ -1,15 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-01T12:01:18Z",
-  "quality_score": 4,
-  "assessment": "Substantive, conclusion-oriented narrative map with explicit trade calls, catalyst caveats, source links, and honest fallback disclosure; confidence is reduced by secondary sourcing, unsupported exact market figures, and a few weakly evidenced catalyst attributions.",
+  "last_analyzed": "2026-09-01T16:22:55Z",
+  "quality_score": 3,
+  "assessment": "Substantive, fresh, and position-labeled with several credible source anchors, but it lacks the required conclusion-first regime verdict and leaves some claims—especially promotion concentration and 6/20 breadth—uncited.",
   "flags": [],
   "avg_score": 2.87,
   "history": [
-    {
-      "date": "2026-08-26",
-      "score": 3
-    },
     {
       "date": "2026-08-26",
       "score": 2
@@ -182,6 +178,12 @@
       "date": "2026-09-01",
       "score": 4,
       "ts": "2026-09-01T12:01:18Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 3,
+      "ts": "2026-09-01T16:22:55Z",
       "harness": "codex"
     }
   ]
