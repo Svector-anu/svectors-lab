@@ -1,9 +1,13 @@
 SEARCH_SKILL_EMPTY
 
-Query: `agent fleet health monitoring`, derived from cron-state.
+The inferred gap was `heartbeat monitoring`, derived from `heartbeat`’s historical cron success rate. The exact capability is already installed locally, and no distinct candidate passed the hard gates.
 
-- Searched npx, Vercel, Anthropic, Bankr, Aeon, and skills.sh catalogs.
-- Exact matches were already installed: `heartbeat`, `fleet-control`, `skill-health`, `operator-scorecard`.
-- No candidate passed the hard gates.
-- Nothing installed or notified.
-- Logged the run in [memory/logs/2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md).
+- Catalogs: npx failed, Vercel 9, Anthropic 20, Bankr 37, skills.sh failed
+- Duplicate dropped: `heartbeat`
+- Installed: none
+- Notification: skipped as required
+- Log updated: [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md)
+
+## Summary
+
+Executed `search-skill`, found no non-duplicate candidate, and recorded the silent empty result.
