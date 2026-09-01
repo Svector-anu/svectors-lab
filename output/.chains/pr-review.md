@@ -1,20 +1,8 @@
-ℹ️ PR Review — svectors-lab
+ℹ️ PR Review — Svector-anu/svectors-lab
 
-## PR Review — Svector-anu/svectors-lab — 2026-09-01
+*PR Review — 2026-09-01*
+Reviewed 1, skipped 7 (bots: 5, dup-SHA: 2).
+- Svector-anu/svectors-lab#44: approve-ready — 0 critical, 0 issues
 
-**Scope:** single repo · **Mode:** per-PR deep review
-
-### Reviewed
-- **#44** `fix(dev-loop): verify pr handoff` (SHA `b01777c`)
-  - **Verdict:** discussion-needed
-  - **Findings:** 0 critical, 1 issue
-  - [ISSUE] `scripts/dev-loop-pr.sh:51` — counts all newly opened PRs; a concurrent non-actor PR during a feature no-op forces `exit 1` / chain failure instead of `exit 3` / CHAIN_NO_ACTION. Filter to actor-authored new PRs before counting.
-
-### Skipped
-- #45 (dup-SHA `7d05704` — already reviewed today)
-- #30 (dup-SHA `2c14a84` — already reviewed today)
-- #22, #20, #5, #4, #3 (bots: `app/github-actions`)
-
-Prior findings on earlier SHAs of #44 (closed-PR URL hard-fail; missing author check) are addressed on this head.
-
-🔗 https://github.com/Svector-anu/svectors-lab/pull/44
+**#44 fix(dev-loop): verify pr handoff** (`86400c47`)
+Prior ISSUEs cleared on this SHA: actor-scoped new-PR detection, concurrent non-actor PRs no longer fail the chain, and claimed closed-PR URLs are no longer parsed. Handoff is GitHub open-PR snapshot before/after feature only.
