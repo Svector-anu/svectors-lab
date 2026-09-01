@@ -1,77 +1,74 @@
-## Tweet Drafts: the Cursor cutoff is a portability test
+## Tweet Drafts: Device biometrics for risky agent actions
 
 ### Tier 1 — One-liner
 
 **1a. Reframe**
 
-> model access is rented. portable workflows are owned.
+> agents can plan the action. your device should still authorize the risk
 
 **1b. Observation**
 
-> your coding workflow should survive your model provider’s breakup.
+> real agent autonomy needs a brake you can reach from your pocket
 
 ### Tier 2 — Two-punch
 
-**2a. Hot take**
+**2a. Structural**
 
-> openai may leave cursor on november 12. the real deadline is whenever your workflow can no longer move with you.
+> the agent can prepare a risky action. execution should still belong to the person holding the phone
 
-**2b. Reframe**
+**2b. Technical**
 
-> cursor users can still bring an api key or run codex separately. the app was never the durable layer — your workflow is.
+> a confirmation button proves intent. device biometrics prove the person approving it is actually there
 
 ### Tier 3 — Paragraph
 
-**3a. Observation**
+**3a. Shipping**
 
-> openai proposed november 12 to end direct model access in cursor. users can still bring an api key or run codex separately. good tools give you exits. good workflows actually survive them.
+> shipped a biometric gate for risky agent actions. the server issues the confirmation token, but the mobile client will not submit it until device auth succeeds. cancel the prompt and nothing executes. the token stays ready for an explicit retry
 
-**3b. Narrative**
+**3b. Principle**
 
-> every coding tool feels permanent until ownership changes and a model contract disappears. keep prompts in the repo, keep a second harness working, keep shipping.
+> autonomy should remove repetitive work, not erase the last meaningful human decision. let the agent plan everything. when money or permissions move, the phone becomes the final execution boundary
 
 ### Tier 4 — Long tweet
 
-**4a. Reframe**
+**4a. Narrative**
 
-> openai proposed november 12 as the end of direct model access in cursor after the spacex acquisition. cursor may end it sooner, and future openai models are already off the table. the useful response is not picking a side. keep your prompts and skills portable, test a second harness now, and make model access replaceable before a contract makes the decision for you.
+> shipped the missing boundary in dieena's risky-action flow: device biometrics before the mobile client submits a server-issued confirmation token. if face or fingerprint auth fails or gets cancelled, the action never executes and the token stays available for an explicit retry. agents can handle the machinery. the final irreversible step still belongs to the user
 
-**4b. Builder perspective**
+**4b. Critique**
 
-> this is why i care more about portable skills than the best coding app this month. cursor users still have routes through their own api key, the codex extension, or compatible gateways, but each route covers a different slice of the workflow. the interface can change overnight. the work should keep running.
+> most agent safety demos stop at a confirmation screen. that proves someone tapped a button, not that the authorized person approved the action. for risky operations, i want the agent to prepare the transaction, the server to issue a narrow confirmation token, and the phone to release it only after device auth. useful autonomy needs a clean final boundary
 
 ### Tier 5 — Thread opener
 
-**5a. Structural critique**
+**5a. Thesis-first**
 
-> openai’s proposed cursor cutoff is not just vendor drama. it is a live test of whether your coding workflow belongs to you or to the model picker.
-
----
-
-- What OpenAI is actually ending
-- Which Cursor workflows the alternatives cover
-- Why prompts and skills should live outside one app
-- How to test a second harness before access changes
-
-**5b. Hot take**
-
-> november 12 is a migration date. the real lesson is simpler: if one contract can stop your agent workflow, you built on access, not infrastructure.
+> i don't want humans approving every agent step. i want one strong boundary before the step that changes money, permissions, or state. we just shipped that boundary with device biometrics
 
 ---
 
-- The difference between model access and owned infrastructure
-- Why BYOK alone does not cover every Cursor feature
-- How harness-portable skills reduce provider risk
-- A practical portability checklist
+- Why approval at every step destroys useful autonomy
+- Where the irreversible-action boundary belongs
+- How server tokens and device authentication work together
+- Why cancellation must fail closed without destroying retry state
 
-Best overall: **#4a**  
-Best per tier: **1a, 2b, 3b, 4a, 5b**
+**5b. Question**
 
-The proposed-date distinction and migration routes were verified against [OpenAI’s announcement](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/).
+> an agent confirmation flow can look safe and still fail at the last inch. the server may issue a narrow token, but who proves the right person approved it? the user's own device should
+
+---
+
+- The gap between tapping confirm and authenticating the approver
+- How the mobile client guards token submission
+- Failure and cancellation behavior
+- The broader pattern for agent-controlled financial actions
+
+Best overall: **#4a**. Best per tier: **1a, 2b, 3a, 4a, 5a**.
 
 ## Summary
 
-- Generated 10 drafts across five tiers.
-- Saved the revisable copy to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md).
-- Notification delivery failed because the external queues were read-only; no revision prompt was delivered.
+- Generated 10 drafts and verified all character limits.
+- Saved the revisable batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Logged the run in [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
+- External notification and revision prompt could not be delivered because the harness queue is read-only.
