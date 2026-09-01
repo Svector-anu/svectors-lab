@@ -22,6 +22,8 @@ calls=$(cat "$TEST_GH_CALLS" 2>/dev/null || echo 0)
 calls=$((calls + 1))
 printf '%s\n' "$calls" > "$TEST_GH_CALLS"
 case "$TEST_GH_SCENARIO:$calls" in
+  empty:1) : ;;
+  empty:2) printf '42\taeonframework\n' ;;
   one:1) printf '41\n' ;;
   one:2) printf '41\taeonframework\n42\taeonframework\n' ;;
   none:*) printf '41\taeonframework\n' ;;
@@ -47,6 +49,11 @@ grep -Fq 'var: "$feature_pr"' "$CONFIG"
 [ "$(bash "$CHECK" validate-target external:acme/demo#7)" = 'acme/demo' ]
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
 [ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=one DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
+
+printf '0\n' > "$calls"
+TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=empty PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
+[ ! -s "$before" ]
+[ "$(TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=empty DEV_LOOP_PR_VERIFY_ATTEMPTS=1 PATH="$TMP/bin:$PATH" bash "$CHECK" verify-new-pr external:acme/demo "$before")" = 'acme/demo#42' ]
 
 printf '0\n' > "$calls"
 TEST_GH_CALLS="$calls" TEST_GH_SCENARIO=none PATH="$TMP/bin:$PATH" bash "$CHECK" snapshot external:acme/demo > "$before"
