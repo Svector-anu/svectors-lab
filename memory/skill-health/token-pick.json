@@ -1,13 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-08-31T18:19:20Z",
+  "last_analyzed": "2026-09-01T16:22:54Z",
   "quality_score": 2,
-  "assessment": "Specific prices, odds, injuries, tournament status, and token-supply claims lack verifiable source links, while hard live prices violate the strategy and the 11/10 score signals a broken rubric.",
+  "assessment": "Substantive but not decision-grade: it lacks an explicit front-run/ride/fade/watch call, violates the qualitative-price constraint, and gives precise catalyst, unlock, and macro claims without verifiable source links.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 3.14,
+  "avg_score": 3.07,
   "history": [
     {
       "date": "2026-07-11",
@@ -75,6 +74,12 @@
       "date": "2026-08-31",
       "score": 2,
       "ts": "2026-08-31T18:19:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 2,
+      "ts": "2026-09-01T16:22:54Z",
       "harness": "codex"
     }
   ]
