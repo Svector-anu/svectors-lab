@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-01T19:29:20Z",
-  "quality_score": 2,
-  "assessment": "Well-structured and position-labeled, but several precise figures, catalysts, and composite claims lack credible matching evidence from the cited links, making the trading calls insufficiently verifiable.",
+  "last_analyzed": "2026-09-01T21:56:51Z",
+  "quality_score": 3,
+  "assessment": "Substantive and actionable with explicit position calls and source links, but it misses the conclusion-first requirement, leaves scoring symbols unexplained, and several trade theses extend beyond the cited evidence.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality"
   ],
-  "avg_score": 2.87,
+  "avg_score": 2.9,
   "history": [
-    {
-      "date": "2026-08-26",
-      "score": 2,
-      "ts": "2026-08-26T13:30:43Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-26",
       "score": 2,
@@ -188,6 +182,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T19:29:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 3,
+      "ts": "2026-09-01T21:56:51Z",
       "harness": "codex"
     }
   ]

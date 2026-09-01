@@ -1,25 +1,25 @@
 *Narrative Tracker — 2026-09-01*
 
 TRANSITIONS
-• NEW: agent containment + supply-chain security — unauthorized-agent incidents, Broadcom controls, and AIR’s $50M raise turn security from warning into budget — https://www.anthropic.com/news/improving-alignment-security-efforts
-• NEW: BTC as macro-resistant hard asset — ~25% August gain and ~$78K hold despite oil/rate pressure — https://www.theblock.co/news/markets/2026-09-01-bitcoin-defies-oil-price-spike-and-rising-fed-hike-bets-after-best-august-since-2017-413218
-• NEW: Robinhood Chain meme flywheel — usage is surging, but token launches/trading—not tokenized equities—drive it — https://www.kucoin.com/news/articles/crypto-daily-market-report-september-1-2026
-• NEW: CLARITY catalyst watch — Sept. 15 procedure is attracting positioning, but outcome remains binary — https://web.mobee.com/en/mobee-academy/market-update/market-news-this-week
+• NEW: Robinhood Chain / Arbitrum stack — ARB +~30% as gross chain revenue rose from $54.7K to $1.088M Aug 22–30 — https://www.coindesk.com/markets/2026/09/01/bitcoin-consolidates-near-usd78-000-as-arbitrum-surges-30-on-robinhood-chain-revenue
+• NEW: exploit-frequency shock — 50 August attacks, +67% MoM, despite losses falling 49.5% to $136.3M — https://www.gadgets360.com/cryptocurrency/news/crypto-sees-67-percent-rise-in-hacks-with-136-million-lost-in-august-crypto-scams-hacks-exploits-august-2026-11987402/
+• NEW: subsidized RWA liquidity — launches are shifting from issuance to incentives/secondary markets; real DEX acquisition remains only 0–6% in most RWA protocols — https://chainwire.org/2026/09/01/theorem-launches-exchange-infrastructure-built-for-the-next-phase-of-tokenized-asset-markets/
+• NEW: miner-to-AI compute pivot — major AI capacity contracts keep repricing mining power assets — https://www.itpro.com/infrastructure/reports-anthropic-signs-usd45bn-cloud-computing-deal-with-nscale
 
 REFLEXIVITY ALERT
-• Robinhood Chain — ~5.52M Aug. 30 transactions, ~$875M DEX volume and ~22,600 Pons token launches; attention/activity is feeding ARB price momentum before tokenized-equity usage proves the thesis.
+• Robinhood/ARB — usage/revenue headlines moved ARB ~30%; near-term story is reinforced by price, but the gas subsidy expires late September and 92.6M ARB unlock Sept 16.
+• RWA/stablecoins — Aster/WLFI are offering 125M WLFI + 6.25M USD1 rewards, so incentives can manufacture the volume used to validate the narrative.
 
 POSITIONS
-• FRONT-RUN: agent security controls (4 ↑↑, Bull) — @AnthropicAI, @Broadcom, AIR — bear: incident-driven spend may consolidate into incumbent security suites.
-• RIDE: BTC macro resilience (5 ↑, Bull) — @LMAX, @Wintermute_t — bear: ~65% implied Sept. hike odds and 4.77% 10Y cap the breakout.
-• FADE: Robinhood “tokenized equities” framing (4 ↑↑, Cope) — @RobinhoodApp, @arbitrum, Pons — bear: current growth is overwhelmingly meme issuance/trading.
-• WATCH: CLARITY Act catalyst (3 ↑, Mixed) — @SECGov, U.S. Senate, ETF desks — bear: procedural delay can erase the premium.
-• WATCH: AI agents for intelligence operations (2 ↑, Mixed) — Aslan, law-enforcement users — bear: a $20.8M raise is adoption evidence, not broad category demand.
+• RIDE: Robinhood Chain / Arbitrum (4 ↑↑, Bull) — @RobinhoodApp, @arbitrum, @ARKInvest — subsidy expiry + unlock can reverse the reflexive move.
+• FRONT-RUN: security tooling / exploit response (2 ↑↑, Bear) — @PeckShieldAlert, @Cronos_Chain, @TectonicFi — security tokens rarely capture spend cleanly.
+• WATCH: RWA secondary liquidity (3 ↑, Mixed) — @worldlibertyfi, @Aster_DEX, @OndoFinance — issuance is large, organic secondary demand is thin.
+• WATCH: agentic trading/payments (2 ↑, Mixed) — @CoinbaseDev, @etherscan, @Virtuals_io — demos do not prove token necessity or repeatable alpha.
+• RIDE: miner-to-AI compute (4 ↑, Bull) — @AnthropicAI, @RiotPlatforms, @nscale_global — long-dated capacity promises carry build and financing risk.
+• FADE: post-August BTC squeeze / hard-money macro (5 →, Mixed) — @LMAX, @Wintermute_t, @CoinSharesCo — 25% monthly gain faces rate-hike risk and ETF outflow.
 
 MAP
-Emerging: AI intelligence agents
-Rising: agent security; Robinhood meme flywheel; CLARITY watch
-Peak: BTC macro resilience
+Emerging: security tooling, agentic trading/payments
+Rising: Robinhood/Arbitrum, RWA secondary liquidity, miner-to-AI compute
+Peak: BTC hard-money macro
 Fading: none
-
-source note: X primary failed http-403; web fallback used. no prior 3-day baseline, so all validated threads are NEW.
