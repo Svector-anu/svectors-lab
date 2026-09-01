@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-08-31T10:52:01Z",
+  "last_analyzed": "2026-09-01T04:07:32Z",
   "quality_score": 4,
-  "assessment": "Clean audit with concrete counts and per-scanner status; honest no-finding verdict, decision-grade for the skill.",
+  "assessment": "Arm D poc-smoke completed correctly with verifiable Foundry/Base fork evidence, clear VULN_POC_SMOKE_OK verdict, and proper no-notify/no-finding framing.",
   "flags": [],
   "avg_score": 4.07,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
     {
       "date": "2026-07-28",
       "score": 4
@@ -142,6 +138,12 @@
       "date": "2026-08-31",
       "score": 4,
       "ts": "2026-08-31T10:52:01Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-01",
+      "score": 4,
+      "ts": "2026-09-01T04:07:32Z",
       "harness": "grok"
     }
   ]
