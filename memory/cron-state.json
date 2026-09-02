@@ -343,12 +343,12 @@
   "write-tweet": {
     "last_dispatch": "2026-09-01T21:54:17Z",
     "last_status": "success",
-    "last_success": "2026-09-02T21:18:41Z",
-    "total_runs": 11,
-    "total_successes": 8,
+    "last_success": "2026-09-02T23:23:45Z",
+    "total_runs": 12,
+    "total_successes": 9,
     "total_failures": 3,
     "consecutive_failures": 0,
-    "success_rate": 0.73,
+    "success_rate": 0.75,
     "last_quality_score": 2,
     "last_failed": "2026-09-01T01:28:40Z",
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a95-1d1c-7050-befa-e8649b9f85da\"} {\"type\":\"turn.started\"} {\"type\":\"error\""
