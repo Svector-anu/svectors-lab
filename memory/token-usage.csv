@@ -182,3 +182,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-02,heartbeat,codex-default,522514,5804,458368,0
 2026-09-02,defi-overview,codex-default,956055,10503,890880,0
 2026-09-02,vuln-scanner,grok-4.5,106884,17688,1399552,0
+2026-09-02,vuln-scanner,grok-4.5,211753,21200,2332160,0

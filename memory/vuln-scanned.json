@@ -356,5 +356,12 @@
     "findings": 1,
     "channel": "pvr",
     "notes": "Auto-selected from github-trending chain (OpenMAIC already scanned today). PVR enabled. Audited commit 9575612. Confirmed MEDIUM CWE-22 write-side path traversal via EDL source keys in seg_*.mp4 filenames \u2192 GHSA-79fj-7f7h-8gxx. Concat apostrophe issue duplicate of open PR #54; resolve_path read traversal duplicate of open PR #93. osv=none (no lockfiles). fuzz=skip. poc=not-required (medium)."
+  },
+  {
+    "repo": "affaan-m/ECC",
+    "scanned_at": "2026-09-02T16:00:00Z",
+    "findings": 1,
+    "channel": "public-pr",
+    "notes": "GHSA-p498-v437-472g @humanfs/node override bump via PR #2934; RUSTSEC-2026-0253 lru in ecc2 noted/skipped (informational unsound, ecc2 not in npm package files); 26 semgrep child_process candidates triaged as intentional/mitigated"
   }
 ]
