@@ -1,15 +1,14 @@
-Hunter 22 completed.
+ClawHunter scan completed successfully.
 
-- Free `/api/v1/match` request succeeded: HTTP 200, 25 candidates.
-- All candidates were already within the 14-day dedup window.
-- No genuine new code, security, research, or technical-writing match survived.
-- The Mermail GitHub bounty was build/demo work, not a security audit.
-- No notification or audit-dispatch button was sent.
-- Refreshed 25 records in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Appended the run result to [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
+- API: HTTP 200, 25 candidates triaged.
+- New credible matches: 0; all IDs were seen within 14 days.
+- Audit candidates: 0. The GitHub-linked Mermail bounty is build/demo work, not a security audit.
+- Notification: none, as required for no-signal runs.
+- Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
+- Validation passed: 49 retained entries, 25 refreshed, none older than 30 days.
 
-Validation passed: 49 valid dedup records and no whitespace errors. The requested commit could not be created because this harness mounts `.git` read-only; the working-tree changes remain intact.
+The commit could not be created because `.git` is mounted read-only (`index.lock: Read-only file system`). Unrelated existing workspace changes were untouched.
 
 ## Summary
 
-No new actionable bounty matches and no notification. Two files modified; commit remains the only required follow-up.
+Executed `hunter-22`, refreshed and logged its dedup state, and found no bounty worth notifying about. The two modified memory files remain uncommitted due to repository permissions.

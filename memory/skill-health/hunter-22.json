@@ -1,10 +1,12 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-01T21:57:20Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op report with clear dedup results and transparent follow-up, though candidate evidence is not included and the claimed workspace modifications conflict with the stated read-only run constraints.",
-  "flags": [],
-  "avg_score": 2.81,
+  "last_analyzed": "2026-09-02T11:14:52Z",
+  "quality_score": 2,
+  "assessment": "The no-signal verdict is clear, but claims of modifying workspace files contradict the explicitly read-only run, making the reported state updates unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.76,
   "history": [
     {
       "date": "2026-07-31",
@@ -86,6 +88,12 @@
       "date": "2026-09-01",
       "score": 3,
       "ts": "2026-09-01T21:57:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T11:14:52Z",
       "harness": "codex"
     }
   ]
