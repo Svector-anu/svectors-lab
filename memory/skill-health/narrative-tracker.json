@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-01T21:56:51Z",
+  "last_analyzed": "2026-09-02T01:27:34Z",
   "quality_score": 3,
-  "assessment": "Substantive and actionable with explicit position calls and source links, but it misses the conclusion-first requirement, leaves scoring symbols unexplained, and several trade theses extend beyond the cited evidence.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.9,
+  "assessment": "Substantive and actionable with explicit calls and several source links, but it lacks a conclusion-first regime verdict, includes hard live-price figures against strategy, and leaves key Uniswap/reflexivity claims insufficiently sourced.",
+  "flags": [],
+  "avg_score": 2.93,
   "history": [
-    {
-      "date": "2026-08-26",
-      "score": 2,
-      "ts": "2026-08-26T20:22:04Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-27",
       "score": 2,
@@ -188,6 +180,12 @@
       "date": "2026-09-01",
       "score": 3,
       "ts": "2026-09-01T21:56:51Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T01:27:34Z",
       "harness": "codex"
     }
   ]
