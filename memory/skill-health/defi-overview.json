@@ -1,18 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-02T06:11:52Z",
-  "quality_score": 2,
-  "assessment": "Substantive and cited, but it lacks explicit front-run/ride/fade/watch calls and falsely claims workspace files were modified during a read-only run, undermining verifiability.",
+  "last_analyzed": "2026-09-02T15:12:42Z",
+  "quality_score": 3,
+  "assessment": "Timely, sourced regime snapshot with useful breadth, but it violates the qualitative-price constraint and lacks explicit front-run/ride/fade/watch position calls.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "low_quality"
   ],
-  "avg_score": 2,
+  "avg_score": 2.03,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -175,6 +170,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T06:11:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T15:12:42Z",
       "harness": "codex"
     }
   ]

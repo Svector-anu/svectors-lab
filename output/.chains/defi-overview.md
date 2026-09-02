@@ -1,26 +1,13 @@
-# DeFi overview — 2026-09-02
+Market remains in chop with medium conviction: BTC is $77,032, down 1.0% over 24 hours, while only 4/20 top-cap assets are green. Total crypto market cap fell 3.8%.
 
-Take: **chop** — BTC is down 1.8% while only 3/20 top-cap assets are green.  
-Conviction: **medium** — weak breadth, majors, and market cap agree; Greed sentiment and stablecoin growth disagree.  
-Evidence: Total crypto market cap fell 4.2%, with SOL down 3.8%.
+DeFi is sideways: TVL is $84.89B, down 0.6% since the prior refresh; DEX volume fell 2.1% to $9.62B, while stablecoin supply grew 0.4%. Uniswap V4 stands out—24-hour fees reached $6.15M, 64.1% above its seven-day daily average.
 
-- DeFi TVL: **$85.41B**, down 1.3% over 24h
-- DEX volume: **$9.71B**, down 1.3%
-- Stablecoin supply: **$310.2B**, up 0.3%
-- Fear & Greed: **63 (Greed)**, down from 69
-- Polymarket: September 25bp Fed hike **60.5% YES**
-- Leading protocol mover: Defi Saver Asset Management **+38.9%**
-- Largest qualifying decline: Linea Bridge **−21.6%**
-- Fees leader: Tether, **$16.23M**
-- Sustainable-yield filter: 3 pools passed
-- Incentive-yield filter: 2 pools passed
-- Positions: `DEFI_MONITOR_NO_CONFIG`
-
-The main new catalyst is macro-driven: escalating U.S.-Iran tensions pushed Brent above $95 and the U.S. 10-year yield to 4.81%, pressuring high-beta crypto. September 1 spot BTC ETF flows were a $35.3M net outflow. [CoinDesk market report](https://www.coindesk.com/markets/2026/09/02/solana-ether-xrp-lead-majors-slide-as-iran-strikes-drive-a-broad-risk-selloff), [KuCoin daily report](https://www.kucoin.com/news/articles/crypto-daily-market-report-september-2-2026).
+Macro pressure remains driven by oil above $95 and rising global bond yields. September Fed markets currently price a 56.5% probability of a 25-basis-point increase. September 1 spot BTC ETFs recorded a $35.3M net outflow. [The Block](https://www.theblock.co/news/markets/2026-09-02-bitcoin-hovers-near-77000-as-global-bond-selloff-tests-post-rally-resilience-413320), [Charlie](https://charliedesk.com/market/report/2026-09-02).
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) while preserving the complete token-pick table.
-- Appended position and macro results to [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
-- Validated JSON from every required source and passed `git diff --check`.
-- Notification was attempted, but the harness’s external delivery queues were read-only, so delivery could not be confirmed.
+- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) with current prices, narratives, yields, fundamentals, and prediction markets.
+- Preserved the complete token-pick history.
+- Logged the run in [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
+- No tracked DeFi positions were configured.
+- Notification delivery was attempted, but Aeon’s external queue is read-only in this harness; the completed 1,893-character notification remains at `.tmp/defi-overview-notification.md`.
