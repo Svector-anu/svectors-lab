@@ -1,31 +1,28 @@
 *daily digest — 2026-09-02*
 
-_TL;DR: production agent teams are converging on event-driven execution and shared validation, while new edge models and CPU guardrails cut dependence on cloud and GPU infrastructure._
+_TL;DR: fork a production commerce-agent baseline today, then protect KuCoin automation from two scheduled disruptions._
 
-1. *Check whether your multi-agent system is still a call chain*  
-   Google distilled four patterns from thousands of agent-challenge submissions: bidirectional MCP, event-driven concurrency, identical validation for primary and fallback models, and cheap deterministic routing before expensive inference. One measured deployment handled more than 40% of requests before a full model call.  
-   Why it matters: audit the fleet for serial waits and fallback paths that bypass primary-model checks  
-   https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/
+1. *Fork Anthropic's commerce-agent blueprint instead of rebuilding the loop*  
+   Anthropic released an Apache-2.0 reference repo with runnable shopping and merchant agents across retail, travel, telecom, and ticketing. It includes three runtimes, staged human approval for writes, safety gates, eval tooling, and a Claude Code scaffolding plugin.  
+   Why it matters: builders can reuse the execution and safety layer, then connect their own catalog, cart, inventory, and pricing backends.  
+   https://github.com/anthropics/commerce-agents
 
-2. *Tether releases offline translation models for 19 African languages*  
-   The open-source TranslatePsy family runs on phones and laptops; Tether says its 800M-parameter African model beat much larger systems on three translation benchmarks after filtering up to 96% of low-quality training data. A 36MB European model supports 90 translation directions across nine languages.  
-   Why it matters: builders can add private, offline translation without a hosted inference dependency  
-   https://tether.io/news/tether-releases-open-source-ai-translation-models-for-african-and-european-languages/
+2. *Close KuCoin GALA margin positions before 02:00 UTC September 3*  
+   KuCoin will delist GALA margin trading, lending, borrowing, and its Margin Grid bot. Open orders will be cancelled and outstanding positions may be liquidated automatically.  
+   Why it matters: anyone carrying a GALA margin loan or bot has only hours to exit cleanly.  
+   https://www.kucoin.com/announcement/kucoin-margin-notice-260902
 
-3. *Lasso puts agent guardrails on CPUs at under five milliseconds*  
-   Lasso launched LEAP, a transformer-free runtime guardrail it says processes decisions on ordinary CPUs in under five milliseconds, alongside a $30M funding round. The company reports the engine is already protecting production deployments in enterprises and the US federal government.  
-   Why it matters: always-on agent inspection no longer has to reserve a second GPU inference path  
-   https://www.globenewswire.com/news-release/2026/09/02/3354871/0/en/lasso-security-announces-future-of-ai-security-with-cpu-based-guardrails.html
+3. *Add reconnect and loss handling before KuCoin's September 4 API upgrade*  
+   KuCoin’s UTA API maintenance starts at 12:00 UTC September 4 and runs for about two hours. WebSocket clients may disconnect, lose data, or see delays; the API also adds error `110188` for busy-system retries.  
+   Why it matters: trading agents need reconnect, replay, and backoff paths tested before the window.  
+   https://www.kucoin.com/announcement/en-announcement-of-kucoin-api-upgrade-2026-09-04
 
-4. *Tari opens a five-month builder program ahead of its privacy L2*  
-   Tari confirmed Ootle for November 11 and launched monthly open-source contests leading into the privacy-focused L2 release. September accepts existing projects, with a 1M XTM top prize; the first 20 verified November launches receive 100K XTM each.  
-   Why it matters: existing open-source projects can enter now instead of waiting for the chain launch  
-   https://tari.com/updates/2026-09-01-update-143
+*Also worth a glance:* AWS published a six-pillar production-agent walkthrough covering build, test, run, secure, observe, and govern: https://aws.amazon.com/blogs/industries/building-a-production-ai-agent-on-aws-a-six-pillar-walkthrough/
 
 ## Summary
 
-- Created [digest-2026-09-02-second-run.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-02-second-run.md).
-- Updated digest memory and today’s run log.
+- Created [digest-2026-09-02-third-run.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-02-third-run.md).
+- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
 - Verified all four links returned HTTP 200.
-- xAI returned HTTP 403; public-search fallback supplied no usable X posts.
-- Notification delivery was attempted but not confirmed because its external queues were read-only.
+- xAI search returned HTTP 403 after three attempts.
+- Notification delivery was attempted, but the external notification queues were read-only; the digest remains saved in the workspace.
