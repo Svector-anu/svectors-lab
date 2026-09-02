@@ -1,32 +1,31 @@
 *GitHub Trending — 2026-09-02*
 
-*Top pick* — [pacifio/atlas](https://github.com/pacifio/atlas)
-The strongest fresh signal is source control adapting to parallel coding agents, not another agent wrapper.
+*Top pick* — [google-research/timesfm](https://github.com/google-research/timesfm)
+TimesFM 3.0 turns a strong univariate forecaster into a broader zero-shot forecasting primitive for real production data.
 
 *AI/ML*
-• [pacifio/atlas](https://github.com/pacifio/atlas) — ★ 895 today (2.7k total) · Rust · RETURNING
-Makes concurrent agent changes inspectable and queryable through one source-control layer.
+• [google-research/timesfm](https://github.com/google-research/timesfm) — ★ 326 today (29.6k total) · Python · [RETURNING]
+Version 3.0 adds native multivariate forecasting and covariates, ranking first across three cited benchmark suites.
 
-• [firecrawl/pdf-inspector](https://github.com/firecrawl/pdf-inspector) — ★ 589 today (18.4k total) · Rust · ACCELERATING
-Lets ingestion pipelines detect scanned PDFs before choosing OCR, avoiding blind extraction attempts.
+• [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) — ★ 834 today (14.5k total) · Python · [ACCELERATING]
+Runs 16 TTS and 11 ASR engines locally behind desktop, OpenAI-compatible, and MCP interfaces.
 
-• [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) — ★ 88 today (41.8k total) · Rust · ACCELERATING
-Gives agents a purpose-built browser CLI instead of requiring bespoke automation glue.
+• [superlinked/sie](https://github.com/superlinked/sie) — ★ 61 today (3.0k total) · Python · [RETURNING]
+Consolidates 100-plus agent models behind one OpenAI-compatible cluster with on-demand loading and LRU eviction.
 
 *Devtools*
-• [jdx/mise](https://github.com/jdx/mise) — ★ 64 today (33.4k total) · Rust · RETURNING
-Unifies runtime versions, environment variables, and task execution behind one project-aware CLI.
+• [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) — ★ 140 today (50.6k total) · TypeScript · [ACCELERATING]
+Gives coding agents source-mapped console errors, network inspection, screenshots, and trace-based performance analysis.
 
-• [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) — ★ 58 today (16.9k total) · Rust · ACCELERATING
-Centralizes account switching and quota visibility across eight coding-agent products.
+• [vercel-labs/portless](https://github.com/vercel-labs/portless) — ★ 69 today (11.7k total) · TypeScript · [ACCELERATING]
+Stable HTTPS `.localhost` names remove port coordination across developers, agents, frameworks, and monorepos.
 
-*Infra*
-• [arcboxlabs/arcbox](https://github.com/arcboxlabs/arcbox) — ★ 506 today (2.5k total) · Rust · RETURNING
-Promises sub-100ms, kernel-isolated agent machines while remaining local-first and OCI-compatible.
+• [Gitlawb/openclaude](https://github.com/Gitlawb/openclaude) — ★ 776 today (31.9k total) · TypeScript · [ACCELERATING]
+Keeps one coding-agent workflow across local models, OpenAI-compatible APIs, Gemini, Codex OAuth, and GitHub Models.
 
-*Web/Apps*
-• [emilk/egui](https://github.com/emilk/egui) — ★ 51 today (30.4k total) · Rust · RETURNING
-One immediate-mode codebase targets native and web interfaces without separate UI stacks.
+*Data*
+• [firecrawl/pdf-inspector](https://github.com/firecrawl/pdf-inspector) — ★ 589 today (18.4k total) · Rust · [ACCELERATING]
+Routes OCR page-by-page while exposing the same fast parser through Rust, Python, Node, and WebAssembly.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/15
+sources: trending=ok · gh_api=ok · kept 7/19

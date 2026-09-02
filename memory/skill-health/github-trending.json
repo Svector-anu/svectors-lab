@@ -1,12 +1,10 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-02T17:11:32Z",
+  "last_analyzed": "2026-09-02T21:18:25Z",
   "quality_score": 3,
-  "assessment": "Substantive, current, and plausibly verifiable GitHub-trending report, but it does not serve the operator’s crypto-trading north star or provide a regime verdict and explicit position calls.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 3.18,
+  "assessment": "Substantive, fresh, and plausibly verifiable with direct repository links, but it does not serve the crypto-trader strategy or provide regime and explicit position calls; momentum labels are also unexplained.",
+  "flags": [],
+  "avg_score": 3.17,
   "history": [
     {
       "date": "2026-07-28",
@@ -93,6 +91,12 @@
       "date": "2026-09-02",
       "score": 3,
       "ts": "2026-09-02T17:11:32Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T21:18:25Z",
       "harness": "codex"
     }
   ]
