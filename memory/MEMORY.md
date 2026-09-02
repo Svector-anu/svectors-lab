@@ -15,6 +15,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-02 | daily (web, fourth run) | WebGPU kernels, context tax, skill verification |
 | 2026-09-02 | daily (web, third run) | commerce agents, GALA margin, KuCoin API |
 | 2026-09-02 | daily (web, second run) | event-driven agents, edge translation, CPU guardrails |
 | 2026-09-02 | daily (web) | context escalation, Coder Agents GA, TAC postmortem |

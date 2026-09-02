@@ -1,14 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-02T21:18:50Z",
+  "last_analyzed": "2026-09-02T23:23:33Z",
   "quality_score": 2,
-  "assessment": "Actionable KuCoin notices are useful, but the digest lacks a crypto regime verdict and explicit position labels, leads with off-strategy agent tooling, and impossibly claims workspace writes during a read-only run.",
+  "assessment": "Substantive and plausibly sourced, but it ignores the crypto-trader strategy: no regime verdict, catalyst read, or explicit position call, making it largely unactionable for Skopos.",
   "flags": [
     "low_quality",
-    "generic_content",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 2.42,
+  "avg_score": 2.4,
   "history": [
     {
       "date": "2026-07-28",
@@ -140,6 +139,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T21:18:50Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T23:23:33Z",
       "harness": "codex"
     }
   ]
