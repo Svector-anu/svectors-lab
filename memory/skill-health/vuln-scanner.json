@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T19:38:40Z",
-  "quality_score": 4,
-  "assessment": "Substantive confirmed findings with clear severities, disclosure path, and scanner status; actionable and specific enough to verify.",
+  "last_analyzed": "2026-09-02T19:57:00Z",
+  "quality_score": 3,
+  "assessment": "Acceptable condensed vuln alert with verifiable public PR #1764 and scanner status; thin on CVE IDs and action detail.",
   "flags": [],
-  "avg_score": 4.07,
+  "avg_score": 4,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 5
-    },
     {
       "date": "2026-08-25",
       "score": 4
@@ -166,6 +162,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T19:38:40Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T19:57:00Z",
       "harness": "grok"
     }
   ]

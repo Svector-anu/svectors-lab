@@ -194,3 +194,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-02,vuln-scanner,grok-4.5,307949,31259,3574912,0
 2026-09-02,vuln-scanner,grok-4.5,222947,27822,2349312,0
 2026-09-02,vuln-scanner,grok-4.5,375611,34476,3626112,0
+2026-09-02,vuln-scanner,grok-4.5,713855,27275,3961600,0
