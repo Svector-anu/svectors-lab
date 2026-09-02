@@ -1,19 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-02T21:18:17Z",
+  "last_analyzed": "2026-09-02T23:23:18Z",
   "quality_score": 2,
-  "assessment": "Decision-oriented and well structured, but numerous precise figures, transitions, and causal claims are not adequately supported by the linked pages and read as potentially fabricated or unverifiable.",
+  "assessment": "Actionable positioning and honest baseline/API caveats, but several precise figures, mindshare scores, trend arrows, and catalysts lack direct evidence or methodology; some links are generic homepages, and the hard BTC price conflicts with strategy.",
   "flags": [
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T04:54:38Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-08-28",
       "score": 5,
@@ -188,6 +183,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T21:18:17Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T23:23:18Z",
       "harness": "codex"
     }
   ]
