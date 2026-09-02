@@ -1,11 +1,9 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-02T21:18:39Z",
+  "last_analyzed": "2026-09-02T23:23:43Z",
   "quality_score": 2,
-  "assessment": "Polished tweet variants, but they ignore the crypto-trading strategy and include unsupported project/fix claims plus impossible workspace writes in a declared read-only run.",
+  "assessment": "Useful tweet variants, but the claimed workspace saves and log writes contradict the read-only run, making the delivery assertions unverifiable; it also does not advance the crypto-signal strategy.",
   "flags": [
-    "low_quality",
-    "generic_content",
     "unverifiable_claim"
   ],
   "avg_score": 2,
@@ -56,6 +54,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T21:18:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T23:23:43Z",
       "harness": "codex"
     }
   ]

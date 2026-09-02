@@ -1,23 +1,27 @@
-tweet drafts: security agents should ship evidence, not scan volume
+tweet drafts: coding agent context is a privilege boundary
 
 — one-liner —
-1a. security agents should ship fixes, not findings dashboards
-1b. a vulnerability count is not proof. a reproduced bug and a patch is
+1a. your coding agent's context is part of the attack surface
+1b. we sandbox agent tools then hand random markdown root access
 
 — two-punch —
-2a. finding 100 possible vulnerabilities is easy. reproduce one, trace the impact and ship the fix
-2b. an agent security report should end with a poc, a private disclosure or a patch. otherwise it is just a very expensive grep
+2a. a coding agent reads repo instructions before it touches code. if that context is untrusted, the tool permissions come second.
+2b. prompt injection is not just a chatbot problem anymore. once the model can run tools, inherited context becomes executable influence.
 
 — paragraph —
-3a. ran my security agent across open source repos today. the useful output was not the number of alerts. it was verified bugs, maintainer-ready reports and fixes already sitting in pull requests. security agents need to close the loop
-3b. most security agents are optimized to find more things. i care more about what survives reproduction, prior-art checks and maintainer review. one verified fix upstream beats a dashboard full of maybes
+3a. we audit what coding agents can execute but barely audit what they can inherit. repo instructions, saved memory, issue text and tool output all shape the next action. context needs trust levels too.
+3b. your agent can have perfect tool permissions and still make the wrong privileged call. the missing control is provenance: where did each instruction come from, and was that source allowed to steer this action?
 
 — long tweet —
-4a. my security agent scanned open source projects today and found plenty of possible issues. most were noise, intentional patterns or already known. the real work started after detection: reproduce the bug, check prior art, choose private disclosure when needed and prepare the fix. a scanner gives you leads. an agent should carry the useful ones all the way to a maintainer-ready outcome
-4b. today the agent opened fixes across projects like OpenMAIC, pdf-inspector, mise and agent-browser, while routing sensitive findings through private advisories. that split matters. autonomous security is not one giant scan button. it is evidence, judgment and the right disclosure path for every finding
+4a. spent a lot of time making skills portable across agent harnesses. the security lesson is becoming obvious: context is not passive data. repo instructions, saved memory, issue bodies and tool output can all steer a privileged action. if the harness merges them into one prompt with no provenance or trust boundary, a tool sandbox only protects half the system.
+4b. coding agent security cannot stop at "which tools can it call?"
+
+the harder question is "who can influence the call?"
+
+a restricted shell means little if untrusted repo text, persisted memory or fetched content can quietly become instructions. every context source needs a trust level, provenance and a clear rule for what it is allowed to steer.
 
 — thread opener —
-5a. ran an autonomous security agent across open source repos today. the surprising part was not how many issues it found. it was how much judgment sits between a scanner alert and a fix a maintainer can actually use
-5b. a security agent should not be measured by findings generated. measure verified bugs, false positives killed, disclosures routed correctly and fixes accepted upstream
+5a. coding agents do not just execute code. they execute context. repo instructions, memory and fetched text can all steer the same privileged tools, but most harnesses still flatten every source into one prompt.
+5b. i think context provenance will become a core agent primitive. not another warning banner. every instruction should carry where it came from, how much it is trusted and which actions it can influence.
 
-best: #4a — it turns the full workflow into the argument
+best: #4a — connects hands-on harness portability work to a concrete security model

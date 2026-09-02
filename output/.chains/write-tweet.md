@@ -1,75 +1,73 @@
-## Tweet Drafts: security agents should ship evidence, not scan volume
+## Tweet Drafts: coding agent context is a privilege boundary
 
 ### Tier 1 — One-liner
 
-**1a. Hot take**
+**1a. Observation**
 
-> security agents should ship fixes, not findings dashboards
+> your coding agent's context is part of the attack surface
 
-**1b. Reframe**
+**1b. Sardonic**
 
-> a vulnerability count is not proof. a reproduced bug and a patch is
+> we sandbox agent tools then hand random markdown root access
 
 ### Tier 2 — Two-punch
 
-**2a. Observation**
+**2a. Reframe**
 
-> finding 100 possible vulnerabilities is easy. reproduce one, trace the impact and ship the fix
+> a coding agent reads repo instructions before it touches code. if that context is untrusted, the tool permissions come second.
 
-**2b. Sardonic**
+**2b. Observation**
 
-> an agent security report should end with a poc, a private disclosure or a patch. otherwise it is just a very expensive grep
+> prompt injection is not just a chatbot problem anymore. once the model can run tools, inherited context becomes executable influence.
 
 ### Tier 3 — Paragraph
 
-**3a. Narrative**
+**3a. Hot take**
 
-> ran my security agent across open source repos today. the useful output was not the number of alerts. it was verified bugs, maintainer-ready reports and fixes already sitting in pull requests. security agents need to close the loop
+> we audit what coding agents can execute but barely audit what they can inherit. repo instructions, saved memory, issue text and tool output all shape the next action. context needs trust levels too.
 
-**3b. Reframe**
+**3b. Question**
 
-> most security agents are optimized to find more things. i care more about what survives reproduction, prior-art checks and maintainer review. one verified fix upstream beats a dashboard full of maybes
+> your agent can have perfect tool permissions and still make the wrong privileged call. the missing control is provenance: where did each instruction come from, and was that source allowed to steer this action?
 
 ### Tier 4 — Long tweet
 
 **4a. Narrative**
 
-> my security agent scanned open source projects today and found plenty of possible issues. most were noise, intentional patterns or already known. the real work started after detection: reproduce the bug, check prior art, choose private disclosure when needed and prepare the fix. a scanner gives you leads. an agent should carry the useful ones all the way to a maintainer-ready outcome
+> spent a lot of time making skills portable across agent harnesses. the security lesson is becoming obvious: context is not passive data. repo instructions, saved memory, issue bodies and tool output can all steer a privileged action. if the harness merges them into one prompt with no provenance or trust boundary, a tool sandbox only protects half the system.
 
-**4b. Data drop**
+**4b. Reframe**
 
-> today the agent opened fixes across projects like OpenMAIC, pdf-inspector, mise and agent-browser, while routing sensitive findings through private advisories. that split matters. autonomous security is not one giant scan button. it is evidence, judgment and the right disclosure path for every finding
+> coding agent security cannot stop at “which tools can it call?”
+>
+> the harder question is “who can influence the call?”
+>
+> a restricted shell means little if untrusted repo text, persisted memory or fetched content can quietly become instructions. every context source needs a trust level, provenance and a clear rule for what it is allowed to steer.
 
 ### Tier 5 — Thread opener
 
 **5a. Observation**
 
-> ran an autonomous security agent across open source repos today. the surprising part was not how many issues it found. it was how much judgment sits between a scanner alert and a fix a maintainer can actually use
+> coding agents do not just execute code. they execute context. repo instructions, memory and fetched text can all steer the same privileged tools, but most harnesses still flatten every source into one prompt.
 
 ---
 
-- why scanner output is only the lead
-- how reproduction and prior-art checks remove noise
-- when to use private disclosure instead of a public PR
-- why upstream fixes are the real success metric
+- How context sources acquire different trust levels
+- Why tool permissions address only half the attack surface
+- How provenance should follow instructions into tool calls
+- Practical isolation rules for production harnesses
 
-**5b. Reframe**
+**5b. Prediction**
 
-> a security agent should not be measured by findings generated. measure verified bugs, false positives killed, disclosures routed correctly and fixes accepted upstream
+> i think context provenance will become a core agent primitive. not another warning banner. every instruction should carry where it came from, how much it is trusted and which actions it can influence.
 
 ---
 
-- the incentives behind inflated finding counts
-- a better evidence-based scorecard
-- why false positives killed should count as useful work
-- what complete autonomous remediation looks like
+- Why flat prompts erase security boundaries
+- A capability model for context sources
+- How inherited instructions should be constrained
+- What harness builders can enforce today
 
-Best overall: **#4a**. Best per tier: **1a, 2b, 3a, 4a, 5b**.
+Best overall: **#4a**. It connects hands-on harness portability work to a concrete security model.
 
-## Summary
-
-- Generated 10 drafts across five tiers.
-- Saved the latest batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
-- X.AI returned HTTP 403, so public search supplied conversation context.
-- Notification and revision delivery were attempted but the external queues were read-only.
+Saved to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md). Character limits and repository checks passed. The required X lookup returned HTTP 403; public search found no useful current discussion. Notification and revision-offer delivery were attempted but the external queue was read-only, and the outcome was recorded in [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
