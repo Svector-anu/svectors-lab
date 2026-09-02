@@ -1,18 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-02T21:19:12Z",
+  "last_analyzed": "2026-09-02T23:24:21Z",
   "quality_score": 2,
-  "assessment": "Useful regime framing, but it lacks explicit position calls and contradicts the read-only constraint by claiming workspace files were updated; most specific figures are also uncited.",
+  "assessment": "Specific market data may be sourced, but the output violates the qualitative-price constraint, lacks explicit position calls, and falsely claims workspace files were updated during a read-only run.",
   "flags": [
     "unverifiable_claim",
     "low_quality"
   ],
   "avg_score": 2.03,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-26",
       "score": 2
@@ -181,6 +177,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T21:19:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T23:24:21Z",
       "harness": "codex"
     }
   ]
