@@ -385,5 +385,12 @@
     "findings": 1,
     "channel": "public-pr",
     "notes": "Auto-selected from github-trending chain (33.4k\u2605 Rust, PVR+SECURITY.md). Audited 6ff7b1af6bc69cee44db8d64e6327175dc4fc384. semgrep=21 candidates (GHA curl|bash / workflow-env-secret hardening, Dockerfile USER, brew cask_shim Open3 false-positive \u2014 all dropped). trufflehog=0 verified. osv: quick-xml 0.38.4 via self_update 0.44 (RUSTSEC-2026-0194/0195 HIGH DoS) confirmed actionable \u2014 self_update 1.3.0 released today gates quick-xml behind optional s3; migrated API + opened public PR #12714; removed deny.toml ignores from #10717. Dropped: vite@5.4.21 HIGH GHSA-fx2h (docs-only via vitepress 1.6.4, no 5.x fix), rsa Marvin + proc-macro-error2 unmaintained (already deny.toml ignored). Agentic top-N: trust-gated tera exec, MCP stdio env dump by design, no confirmed code vulns. fuzz=skip. poc=not-required (published dep CVEs)."
+  },
+  {
+    "repo": "pacifio/atlas",
+    "scanned_at": "2026-09-02T18:25:00Z",
+    "findings": 3,
+    "channel": "pending-email+public-pr",
+    "notes": "2 HIGH code (ACP fs escape, browser-reader XSS) staged email auto_send; 1 public dep PR #220; commit 4b2aa8a027df8cb9c1deb8566be891f4e1bd55f2; poc verified both HIGHs"
   }
 ]

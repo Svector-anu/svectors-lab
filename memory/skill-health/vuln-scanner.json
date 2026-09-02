@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T18:02:00Z",
+  "last_analyzed": "2026-09-02T18:21:33Z",
   "quality_score": 4,
-  "assessment": "Verified HIGH transitive quick-xml DoS via self_update with real PR #12714 and scanner status; concise, decision-grade, no invented claims.",
+  "assessment": "Verifiable scan result with live PR #220 matching claimed dep bumps and correct private/public disclosure routing; thin notify-format depth keeps it from a 5.",
   "flags": [],
   "avg_score": 4.03,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -156,6 +152,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T18:02:00Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 4,
+      "ts": "2026-09-02T18:21:33Z",
       "harness": "grok"
     }
   ]
