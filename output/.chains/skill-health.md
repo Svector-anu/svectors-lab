@@ -1,15 +1,16 @@
-HEALTH: DEGRADED(15)
+HEALTH: CRITICAL(1)
 
-- Degraded: 15
-- Warning: 4
-- Healthy: 10
-- Critical/flapping/no-data: 0
-- Open issues: 2
-- Filed/resolved this run: 0
-- Systemic failures: none
+- `vuln-scanner`: four consecutive failures; stored error is malformed. Filed [ISS-005](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-005.md).
+- Degraded: 14
+- Warning: 5
+- Healthy: 9
+- No data: 0
+- Open issues: 3; resolved this run: 0
 
-The classification is unchanged. A 24-hour reminder was attempted, but delivery failed because the notification queues are read-only; the previous notification timestamp was preserved.
+The classification snapshot, [issue index](/home/runner/work/svectors-lab/svectors-lab/memory/issues/INDEX.md), and [daily log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md) were updated. Notification delivery failed because the external notify/json-render queues are read-only; the prior notification timestamp was retained so the next run retries.
 
 ## Summary
 
-Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and appended the audit to [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md). No issue files required changes.
+- Audited all 29 enabled skills using cron state, quality history, seven-day Actions data, recent logs, and existing issues.
+- Filed `ISS-005`; no issues were resolved.
+- Preserved unrelated existing workspace changes.
