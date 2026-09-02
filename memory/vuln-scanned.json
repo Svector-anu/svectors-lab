@@ -445,5 +445,12 @@
     "findings": 2,
     "channel": "pvr+public-pr",
     "notes": "Go agent VM sandbox (1004 stars, PVR+SECURITY.md). Confirmed: (1) medium world-writable agent.sock 0666 under 0755 ~/.clawk \u2192 PVR GHSA-f92w-wjfp-773j + private draft fix branch; (2) published dep advisories bumped via PR #18 (x/net, x/crypto, x/mod, klauspost/compress). Dropped: GHA mutable tags, necessary unsafe TAP/netns, tar2ext4 unbounded copy as standalone DoS, Windows-only docker/cli LPE, dhcp via gvisor replace, openpgp unmaintained. Audited a67d04f."
+  },
+  {
+    "repo": "vshulcz/deja-vu",
+    "scanned_at": "2026-09-02T20:26:55Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "Go session-history CLI/MCP (~760 stars, PVR+SECURITY.md). Audited e5d9d55c. Scanners: semgrep=ok (14 noise/hardening), trufflehog=ok (0 verified), osv=ok (stdlib-only), fuzz=skip, agentic=ok (N=6). Clean audit \u2014 MCP framing, walkers, sync SSH, update checksums, sqlite parsers, redaction reviewed; Dockerfile USER noted not filed. Report: output/articles/vuln-scan-2026-09-02-deja-vu.md"
   }
 ]

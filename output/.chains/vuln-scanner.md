@@ -1,6 +1,4 @@
-ℹ️ Vuln Scanner — clawkwork/clawk
+ℹ️ Vuln Scanner — vshulcz/deja-vu
 
-*Vuln Scanner — clawkwork/clawk*
-2 confirmed findings (1 medium code, published Go dep advisories).
-Disclosed via: PVR GHSA-f92w-wjfp-773j | public PR #18
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
+*Vuln Scanner — vshulcz/deja-vu*
+Clean audit. 14 tool candidates + agentic top-6 reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
