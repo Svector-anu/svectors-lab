@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-02T15:09:31Z",
-  "quality_score": 2,
-  "assessment": "Clear position calls and caveats, but the report violates the qualitative-price constraint and relies on weak or missing evidence for several precise figures and extraordinary claims, making it insufficiently decision-grade.",
-  "flags": [
-    "unverifiable_claim"
-  ],
+  "last_analyzed": "2026-09-02T18:39:58Z",
+  "quality_score": 3,
+  "assessment": "Actionable position calls and clear narrative mapping, but it lacks a conclusion-first regime verdict and leaves several exact figures and catalysts without direct evidence links, reducing decision-grade verifiability.",
+  "flags": [],
   "avg_score": 2.9,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 3,
-      "ts": "2026-08-28T01:11:01Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 4,
@@ -188,6 +180,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T15:09:31Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T18:39:58Z",
       "harness": "codex"
     }
   ]
