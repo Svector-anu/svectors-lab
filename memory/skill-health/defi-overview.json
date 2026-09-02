@@ -1,17 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-01T21:57:51Z",
+  "last_analyzed": "2026-09-02T01:29:07Z",
   "quality_score": 2,
-  "assessment": "Substantive and conclusion-first, but key DeFi figures lack evidence anchors, explicit position calls are missing, and the claimed workspace modifications contradict the read-only run constraint.",
+  "assessment": "Specific market claims are mostly uncited, required actionable position calls are absent, and the claimed workspace file writes contradict the read-only run constraints.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -170,6 +167,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T21:57:51Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T01:29:07Z",
       "harness": "codex"
     }
   ]

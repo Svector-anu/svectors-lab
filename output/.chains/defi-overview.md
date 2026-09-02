@@ -1,19 +1,17 @@
-Take: risk-off — BTC fell 2.2% and 0/20 top-cap assets were green. Conviction: medium.
+## DeFi Overview — 2026-09-02
 
-DeFi remains mixed: TVL held near $85.56B, while DEX volume rose 27.0% to $9.83B and stablecoin supply increased 0.2%. Uniswap V4 activity was the strongest fundamental signal: volume +43.5% and fees +108.7%.
+Take: **chop, medium conviction** — BTC fell 1.7% and only 2/20 top-cap assets are green, but sentiment remains Greed at 63.
 
-Notable readings:
-
-- Defi Saver Asset Management TVL +39.5%; Linea Bridge −20.4%.
-- Fear & Greed: 69 (Greed), despite uniformly negative top-cap breadth.
-- Polymarket: 57.5% probability of a September 25 bp Fed hike.
-- The macro overhang remains elevated Treasury yields and hawkish rate pricing. The latest completed U.S. spot BTC ETF session recorded $216.7M of inflows after a $201.9M outflow. [Market context](https://www.kucoin.com/news/articles/crypto-daily-market-report-september-1-2026), [ETF flows](https://farside.co.uk/btc/).
-
-No positions were checked because `memory/on-chain-watches.yml` is not configured. No notification was sent because the market readings were materially unchanged from the latest same-day refresh.
+- DeFi verdict: **Mixed** — chain TVL fell 3.3% to $85.19B; DEX volume held near $9.83B; stablecoin supply rose 0.3%.
+- Movers: Defi Saver Asset Management +40.0%; Linea Bridge −20.1%.
+- Fundamentals: Uniswap V4 fees rose 33% daily and 194.7% weekly while TVL gained only 1.3%.
+- Sustainable-yield leaders: Raydium WSOL-USDC 95.0%, Uniswap V3 WETH-USDT 42.3%, Uniswap V4 ETH-USDT 25.3%. These passed the skill’s TVL, outlier, reward-share, confidence, and 30-day persistence filters.
+- Macro risk: September rate-hike odds are 57.5%; U.S. spot BTC ETFs recorded a $35.3M September 1 outflow after $216.7M inflows on August 31. [Farside Investors](https://farside.co.uk/btc/)
+- Positions: `DEFI_MONITOR_NO_CONFIG`; no pools or positions are currently tracked.
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Preserved the complete token-pick history.
-- Appended the run to [2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
-- All required data sources succeeded; `git diff --check` passed.
+- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Created [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
+- All data sources succeeded.
+- Notification was attempted, but the harness’s notification and json-render queues were read-only, so external delivery was not confirmed.
