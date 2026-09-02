@@ -189,14 +189,14 @@
   "auto-merge": {
     "last_status": "success",
     "last_failed": "2026-07-29T08:24:35Z",
-    "total_runs": 14,
-    "total_successes": 13,
+    "total_runs": 15,
+    "total_successes": 14,
     "total_failures": 1,
     "consecutive_failures": 0,
     "success_rate": 0.93,
     "last_dispatch": "2026-09-01T21:54:17Z",
-    "last_success": "2026-09-02T15:07:52Z",
-    "last_quality_score": 3
+    "last_success": "2026-09-02T18:38:53Z",
+    "last_quality_score": 4
   },
   "hunter-22": {
     "last_status": "success",
