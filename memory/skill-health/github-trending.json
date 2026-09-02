@@ -1,13 +1,12 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-01T21:56:49Z",
-  "quality_score": 2,
-  "assessment": "Substantive GitHub roundup, but it provides no crypto regime verdict or explicit trade calls and therefore does not serve the operator’s core strategy.",
+  "last_analyzed": "2026-09-02T17:02:28Z",
+  "quality_score": 3,
+  "assessment": "Substantive and plausibly verifiable GitHub roundup with clear selection logic, but it does not serve the operator’s crypto-trading north star or provide a regime verdict and explicit position call.",
   "flags": [
-    "low_quality",
-    "generic_content"
+    "low_quality"
   ],
-  "avg_score": 3.2,
+  "avg_score": 3.19,
   "history": [
     {
       "date": "2026-07-28",
@@ -82,6 +81,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T21:56:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T17:02:28Z",
       "harness": "codex"
     }
   ]
