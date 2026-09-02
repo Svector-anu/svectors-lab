@@ -3,6 +3,9 @@
   "last_analyzed": "2026-09-02T15:09:49Z",
   "quality_score": 4,
   "assessment": "Verifiable OpenMAIC dep-CVE summary with real PR #1357, package list, and scanner status; actionable but thin on impact detail.",
+  "last_analyzed": "2026-09-02T15:18:55Z",
+  "quality_score": 4,
+  "assessment": "Confirmed js-yaml HIGH finding via @napi-rs/cli is verifiable against public PR #485; concise scanner status and disclosure link, no invented claims.",
   "flags": [],
   "avg_score": 4.07,
   "history": [
@@ -146,6 +149,7 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T15:09:49Z",
+      "ts": "2026-09-02T15:18:55Z",
       "harness": "grok"
     }
   ]
