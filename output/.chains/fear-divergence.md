@@ -1,11 +1,10 @@
 Fear divergence scan skipped.
 
-- F&G: 63 (Greed)
-- Trigger: requires F&G below 25
-- Market context: current as of 2026-09-02
+- Fear & Greed: 63 (Greed)
+- Trigger required: below 25
 - Notification: not sent
-- Logged in [memory/logs/2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md)
+- Logged in [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md)
 
 ## Summary
 
-No divergence analysis or market-context update was required.
+No diverging-asset analysis was warranted, and `market-context.md` was left unchanged.
