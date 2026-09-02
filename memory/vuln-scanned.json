@@ -378,5 +378,12 @@
     "channel": "pvr+public-pr",
     "notes": "PVR GHSA-5p84-px8m-8gwv (HV VirtioFS open/setattr symlink TOCTOU, PoC verified); public PR #709 dep bumps (openssl/quinn-proto/rustls-webpki/russh/nanoid). Prior-art #474 covered LOOKUP names only, not this open-path gap.",
     "commit": "55b384b9193d9e564b33efe208dcc7ad5d63b0ff"
+  },
+  {
+    "repo": "jdx/mise",
+    "scanned_at": "2026-09-02T18:00:57Z",
+    "findings": 1,
+    "channel": "public-pr",
+    "notes": "Auto-selected from github-trending chain (33.4k\u2605 Rust, PVR+SECURITY.md). Audited 6ff7b1af6bc69cee44db8d64e6327175dc4fc384. semgrep=21 candidates (GHA curl|bash / workflow-env-secret hardening, Dockerfile USER, brew cask_shim Open3 false-positive \u2014 all dropped). trufflehog=0 verified. osv: quick-xml 0.38.4 via self_update 0.44 (RUSTSEC-2026-0194/0195 HIGH DoS) confirmed actionable \u2014 self_update 1.3.0 released today gates quick-xml behind optional s3; migrated API + opened public PR #12714; removed deny.toml ignores from #10717. Dropped: vite@5.4.21 HIGH GHSA-fx2h (docs-only via vitepress 1.6.4, no 5.x fix), rsa Marvin + proc-macro-error2 unmaintained (already deny.toml ignored). Agentic top-N: trust-gated tera exec, MCP stdio env dump by design, no confirmed code vulns. fuzz=skip. poc=not-required (published dep CVEs)."
   }
 ]

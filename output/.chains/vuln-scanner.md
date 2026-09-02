@@ -1,6 +1,6 @@
-✅ Vuln Scanner — arcboxlabs/arcbox
+ℹ️ Vuln Scanner — jdx/mise
 
-*Vuln Scanner — arcboxlabs/arcbox*
-2 confirmed findings (1 high code, dep CVE bundle).
-Disclosed via: PVR GHSA-5p84-px8m-8gwv | public PR #709
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: verified.
+*Vuln Scanner — jdx/mise*
+1 confirmed finding (HIGH transitive quick-xml DoS via self_update).
+Disclosed via: public PR #12714
+Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
