@@ -392,5 +392,12 @@
     "findings": 3,
     "channel": "pending-email+public-pr",
     "notes": "2 HIGH code (ACP fs escape, browser-reader XSS) staged email auto_send; 1 public dep PR #220; commit 4b2aa8a027df8cb9c1deb8566be891f4e1bd55f2; poc verified both HIGHs"
+  },
+  {
+    "repo": "emilk/egui",
+    "scanned_at": "2026-09-02T18:44:35Z",
+    "findings": 1,
+    "channel": "public-pr",
+    "notes": "RUSTSEC-2026-0221 event-listener 5.4.1\u21925.4.2 via accesskit/zbus; PR https://github.com/emilk/egui/pull/8481; 4 unmaintained advisories already deny.toml-ignored; 59 semgrep GHA mutable-tag warnings dropped; 5 agentic candidates discarded; audited 7c38c552e4d5ee19c0dad0586dc96d2be404c619; PVR enabled unused"
   }
 ]

@@ -1,8 +1,6 @@
-⚠️ Vuln Scanner — pacifio/atlas
+ℹ️ Vuln Scanner — emilk/egui
 
-*Vuln Scanner — pacifio/atlas*
-3 confirmed findings (2 high code, 1 public dep-CVE bundle).
-Disclosed via: staged private email (auto_send) to SECURITY.md contact; public PR #220 for gix/vite/mermaid/tar/js-yaml.
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: verified (ACP fs escape + browser-reader XSS).
-
-🔗 https://github.com/pacifio/atlas/pull/220
+*Vuln Scanner — emilk/egui*
+1 confirmed finding (unsound dep: RUSTSEC-2026-0221 event-listener).
+Disclosed via: public PR #8481
+Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.

@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T18:21:33Z",
-  "quality_score": 4,
-  "assessment": "Verifiable scan result with live PR #220 matching claimed dep bumps and correct private/public disclosure routing; thin notify-format depth keeps it from a 5.",
+  "last_analyzed": "2026-09-02T18:45:30Z",
+  "quality_score": 3,
+  "assessment": "Verified RUSTSEC-2026-0221 + real PR #8481; thin notify but adequate and checkable.",
   "flags": [],
-  "avg_score": 4.03,
+  "avg_score": 4,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -158,6 +154,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T18:21:33Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 3,
+      "ts": "2026-09-02T18:45:30Z",
       "harness": "grok"
     }
   ]
