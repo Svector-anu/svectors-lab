@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T16:45:15Z",
+  "last_analyzed": "2026-09-02T17:34:37Z",
   "quality_score": 4,
-  "assessment": "Clean, conclusion-first vuln scan with scanner breakdown and explicit 0-confirmed verdict; decision-grade for a no-finding run.",
+  "assessment": "Completed scan with verified public PR #709 and proper PVR/dep routing; terse but matches skill notify format.",
   "flags": [],
   "avg_score": 4.03,
   "history": [
-    {
-      "date": "2026-08-13",
-      "score": 4
-    },
     {
       "date": "2026-08-15",
       "score": 4
@@ -152,6 +148,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T16:45:15Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 4,
+      "ts": "2026-09-02T17:34:37Z",
       "harness": "grok"
     }
   ]

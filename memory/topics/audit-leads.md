@@ -3,7 +3,7 @@ type: Leads
 title: Audit Leads
 description: Companies vuln-scanner has privately disclosed a real, confirmed vulnerability to — a warm list for a manual private-audit follow-up. Disclosure and sales are kept deliberately separate; nothing here is auto-pitched.
 tags: [security, leads, business-dev, vuln-scanner]
-timestamp: 2026-09-02T15:26:00Z
+timestamp: 2026-09-02T17:32:00Z
 ---
 
 # Audit Leads
@@ -16,3 +16,4 @@ Every row is a company/repo vuln-scanner privately disclosed a real, confirmed f
 | 2026-08-31 | ApodexAI/FrontierAgent | high | PVR GHSA-ch5r-299j-j7h5 | disclosed | file_editor_* sandbox shell injection / approval-gate bypass |
 | 2026-08-31 | K-Dense-AI/scientific-agent-skills | high | PVR GHSA-3jvm-qqmm-hp97 | disclosed | predictable LibreOffice /tmp profile RCE + Actions script injection |
 | 2026-09-02 | browser-use/video-use | medium | PVR GHSA-79fj-7f7h-8gxx | disclosed | EDL source-key path traversal writes render segments outside edit_dir |
+| 2026-09-02 | arcboxlabs/arcbox | high | PVR GHSA-5p84-px8m-8gwv | disclosed | HV VirtioFS open/setattr symlink TOCTOU — guest read/truncate outside share |

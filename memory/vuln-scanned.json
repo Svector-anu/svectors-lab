@@ -370,5 +370,13 @@
     "findings": 0,
     "channel": "clean",
     "notes": "clean audit \u2014 commit 46c6834698c48bc4a463a86d8420f4eb1d7f3b75; semgrep 0; trufflehog verified hits are forge-std public Infura/Alchemy demo RPC keys (not Uniswap secrets); osv 83 vulns all in test/js-scripts lockfile (test-only, not published package); slither Highs are known false positives (FullMath XOR inverse, BitMath/TickBitmap shifts); agentic deep-review of PoolManager unlock/settle/take/swap/modifyLiquidity/hooks/ERC6909/ProtocolFees/CI \u2014 0 confirmed. PVR off; SECURITY.md \u2192 Cantina bounty + security@uniswap.org. Audits on disk (OZ, ToB, Spearbit, ABDK, Certora)."
+  },
+  {
+    "repo": "arcboxlabs/arcbox",
+    "scanned_at": "2026-09-02T17:32:00Z",
+    "findings": 2,
+    "channel": "pvr+public-pr",
+    "notes": "PVR GHSA-5p84-px8m-8gwv (HV VirtioFS open/setattr symlink TOCTOU, PoC verified); public PR #709 dep bumps (openssl/quinn-proto/rustls-webpki/russh/nanoid). Prior-art #474 covered LOOKUP names only, not this open-path gap.",
+    "commit": "55b384b9193d9e564b33efe208dcc7ad5d63b0ff"
   }
 ]
