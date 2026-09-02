@@ -1,10 +1,13 @@
 {
   "skill": "search-skill",
-  "last_analyzed": "2026-09-02T18:40:17Z",
-  "quality_score": 3,
-  "assessment": "Acceptable completed no-op with a clear query, source outcomes, capability-fit verdict, and no fabricated installation, though catalog results lack links or evidence for independent verification.",
-  "flags": [],
-  "avg_score": 2.86,
+  "last_analyzed": "2026-09-02T21:17:55Z",
+  "quality_score": 2,
+  "assessment": "The no-op result is understandable, but it provides no catalog names, candidate evidence, or source links, and its claim of modifying a workspace log contradicts the run’s read-only constraint.",
+  "flags": [
+    "low_quality",
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.8,
   "history": [
     {
       "date": "2026-08-25",
@@ -82,6 +85,12 @@
       "date": "2026-09-02",
       "score": 3,
       "ts": "2026-09-02T18:40:17Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T21:17:55Z",
       "harness": "codex"
     }
   ]
