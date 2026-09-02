@@ -179,4 +179,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-01,memory-flush,codex-default,371077,3473,329984,0
 2026-09-02,defi-overview,codex-default,838732,9232,751872,0
 2026-09-02,defi-overview,codex-default,755176,8230,659072,0
-2026-09-02,fear-divergence,codex-default,136833,779,111872,0
+2026-09-02,narrative-tracker,codex-default,224763,3197,187776,0

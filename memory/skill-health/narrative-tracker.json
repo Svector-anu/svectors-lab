@@ -1,17 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-02T01:27:34Z",
-  "quality_score": 3,
-  "assessment": "Substantive and actionable with explicit calls and several source links, but it lacks a conclusion-first regime verdict, includes hard live-price figures against strategy, and leaves key Uniswap/reflexivity claims insufficiently sourced.",
-  "flags": [],
+  "last_analyzed": "2026-09-02T11:14:25Z",
+  "quality_score": 2,
+  "assessment": "Actionable structure and explicit calls, but it violates the qualitative-price constraint and relies on thin or missing evidence for several precise market figures and catalysts, making key claims unverifiable.",
+  "flags": [
+    "unverifiable_claim",
+    "low_quality"
+  ],
   "avg_score": 2.93,
   "history": [
-    {
-      "date": "2026-08-27",
-      "score": 2,
-      "ts": "2026-08-27T05:09:28Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-27",
       "score": 3,
@@ -186,6 +183,12 @@
       "date": "2026-09-02",
       "score": 3,
       "ts": "2026-09-02T01:27:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T11:14:25Z",
       "harness": "codex"
     }
   ]
