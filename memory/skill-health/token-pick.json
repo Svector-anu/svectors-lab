@@ -1,14 +1,13 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-02T21:19:02Z",
-  "quality_score": 1,
-  "assessment": "Failed: the output is only a generic follow-up prompt and provides no token pick, regime verdict, evidence, or actionable position call.",
+  "last_analyzed": "2026-09-02T23:24:00Z",
+  "quality_score": 2,
+  "assessment": "Specific prices, catalyst claims, unlock figures, and OpenAI/Astra assertions lack verifiable source links and appear potentially fabricated; it also gives no explicit ARB position call and violates the qualitative-live-price constraint.",
   "flags": [
-    "empty_output",
-    "generic_content",
+    "unverifiable_claim",
     "low_quality"
   ],
-  "avg_score": 2.7,
+  "avg_score": 2.67,
   "history": [
     {
       "date": "2026-07-11",
@@ -112,6 +111,12 @@
       "date": "2026-09-02",
       "score": 1,
       "ts": "2026-09-02T21:19:02Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T23:24:00Z",
       "harness": "codex"
     }
   ]
