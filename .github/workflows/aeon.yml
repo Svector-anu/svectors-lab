@@ -964,7 +964,16 @@ jobs:
           # refused outright.
           CLAUDE_OK=0
           RH="${GITHUB_WORKSPACE}/harness-adapter/run-harness"
-          RH_ARGS=(--mode "$SKILL_MODE" --allowed-tools "$ALLOWED" --timeout 1800)
+          # glm (the Claude Code CLI against Z.AI's Anthropic endpoint) is materially
+          # slower per token than the native harnesses. Measured on real runs: a
+          # bounded deploy-uni-hook dry-run needed ~1758s (run 33645253166, scored 4),
+          # and a full vuln-scanner run hit the 1800s guard mid-work with no deliverable
+          # (run 33635611087). It's willing where codex/grok refuse security work, so
+          # give it wall-clock headroom to actually finish; every other harness — all of
+          # which land well under 1800s — is unchanged.
+          RH_TIMEOUT=1800
+          [ "$HARNESS" = "glm" ] && RH_TIMEOUT=2700
+          RH_ARGS=(--mode "$SKILL_MODE" --allowed-tools "$ALLOWED" --timeout "$RH_TIMEOUT")
           # Pass --mcp-config only when the MCP preflight actually ENABLED MCP (every
           # required ${VAR} resolved) — MCP_FLAGS is set to the flags in that case and
           # left empty otherwise, so it doubles as the "MCP on" gate. run-harness does
