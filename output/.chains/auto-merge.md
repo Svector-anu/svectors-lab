@@ -1,16 +1,17 @@
-Auto-merge completed in live mode for `aeonfun/aeon`.
+Auto-merge completed in live mode.
 
+- Repository: `aeonfun/aeon`
 - Open PRs considered: 0
-- Qualified: 0
 - Merged: 0
 - Retry-capped: 0
-- Notification: none, as required for a no-change run
+- Notification: not sent, as required for a no-change run
+- State and daily log updated and validated successfully
 
 ## Summary
 
-Updated:
+Modified:
 
-- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
-- [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md)
+- `memory/topics/auto-merge-state.json`
+- `memory/logs/2026-09-02.md`
 
-State validation passed with `jq`. No follow-up action is needed.
+No follow-up action is needed.
