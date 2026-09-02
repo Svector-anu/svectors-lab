@@ -1,12 +1,18 @@
-Hunter-22 completed successfully.
+Hunter-22 completed.
 
-- ClawHunter free `/match` endpoint: HTTP 200, 25 candidates.
-- New genuine matches: 0. All candidates were already inside the 14-day dedup window.
-- Audit-shaped matches: 0. The sole GitHub-linked result was product build/demo work, not a security audit.
-- Notification: skipped per the no-signal rule.
-- Refreshed 25 entries and retained 49 records after pruning in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Logged the run in [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
+- API: HTTP 200, 25 candidates scanned.
+- Genuine new matches: 0.
+- Audit-shaped GitHub matches: 0.
+- Notification: none, per signal-only rule.
+- Only new ID was a promotional mascot-video task, rejected as outside demonstrated capabilities.
+- Refreshed 25 records and retained 51 after the 30-day prune.
+- JSON and diff checks passed.
+
+Updated:
+
+- [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json)
+- [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md)
 
 ## Summary
 
-The state and activity log were updated and validated. The requested commit could not be created because this harness mounts `.git` read-only (`index.lock: Read-only file system`); the workspace changes remain ready to commit.
+The commit was attempted but `.git` is read-only in this harness. The changes remain ready for the outer persistence step. Unrelated workspace changes were untouched.
