@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T19:18:01Z",
+  "last_analyzed": "2026-09-02T19:38:40Z",
   "quality_score": 4,
-  "assessment": "Verifiable Cosmian/kms findings with real CVEs and public PR #1163; concise confirmed-signal report.",
+  "assessment": "Substantive confirmed findings with clear severities, disclosure path, and scanner status; actionable and specific enough to verify.",
   "flags": [],
   "avg_score": 4.07,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 4
-    },
     {
       "date": "2026-08-25",
       "score": 5
@@ -164,6 +160,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T19:18:01Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 4,
+      "ts": "2026-09-02T19:38:40Z",
       "harness": "grok"
     }
   ]
