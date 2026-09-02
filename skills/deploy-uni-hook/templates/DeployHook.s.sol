@@ -119,18 +119,19 @@ contract DeployHook is Script {
             ? (Currency.wrap(address(tA)), Currency.wrap(address(tB)))
             : (Currency.wrap(address(tB)), Currency.wrap(address(tA)));
 
-        // deploy the hook at the mined address
-        address hookAddr;
-        if (k == keccak256("dynamic")) {
-            hookAddr = address(new DynamicFeeHook{salt: salt}(pm));
-        } else if (k == keccak256("noop")) {
-            hookAddr = address(new NoOpHook{salt: salt}(pm));
-        } else if (k == keccak256("skim")) {
-            hookAddr = address(new HookFeeHook{salt: salt}(pm));
-        } else {
-            hookAddr = address(new Hook{salt: salt}(pm));
-        }
-        require(hookAddr == expected, "hook addr mismatch");
+        // deploy the hook at the mined address THROUGH the CREATE2 factory.
+        // forge >=1.8 executes salted creates natively in simulation (deployer =
+        // the script contract), so a bare `new X{salt}` no longer lands at the
+        // HookMiner address — the run failed closed on "hook addr mismatch".
+        // Routing via the factory makes sim and broadcast take the exact same
+        // on-chain path. The deployed address is fully
+        // deterministic — keccak(0xff, factory, salt, initCodeHash) — which is
+        // exactly what HookMiner mined as `expected`. Don't decode the factory's
+        // return data; verify the deployment by reading code at `expected`.
+        (bool ok, ) = CREATE2_DEPLOYER.call(abi.encodePacked(salt, initCode, abi.encode(pm)));
+        require(ok, "create2 deploy failed");
+        address hookAddr = expected;
+        require(hookAddr.code.length > 0, "hook not deployed at mined address");
         require(uint160(hookAddr) & Hooks.ALL_HOOK_MASK == flags, "flag bits wrong");
 
         // pool + init at 1:1
