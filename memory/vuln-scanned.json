@@ -399,5 +399,19 @@
     "findings": 1,
     "channel": "public-pr",
     "notes": "RUSTSEC-2026-0221 event-listener 5.4.1\u21925.4.2 via accesskit/zbus; PR https://github.com/emilk/egui/pull/8481; 4 unmaintained advisories already deny.toml-ignored; 59 semgrep GHA mutable-tag warnings dropped; 5 agentic candidates discarded; audited 7c38c552e4d5ee19c0dad0586dc96d2be404c619; PVR enabled unused"
+  },
+  {
+    "repo": "firecrawl/pdf-inspector",
+    "scanned_at": "2026-09-02T16:30:00Z",
+    "findings": 1,
+    "channel": "public-pr",
+    "notes": "Prior same-day scan filed PR #485 for js-yaml HIGH CVEs via @napi-rs/cli + Rust lockfile bumps; dedup row was missing from vuln-scanned.json and is backfilled here. Audited commit 65b7fa152ba9a728ad8b56e282e74559d81c0a40."
+  },
+  {
+    "repo": "crmne/fastpotify",
+    "scanned_at": "2026-09-02T19:03:42Z",
+    "findings": 1,
+    "channel": "pvr",
+    "notes": "Medium OAuth localhost callback XSS (CWE-79) filed as GHSA-hqg7-6gj3-g28w. Dep CVEs noted but not filed: quick-xml via librespot ProductInfo (authenticated Spotify), rustls-webpki 0.102 via unused hyper-proxy2 path (documented in Cargo.toml), unmaintained ttf-parser/rustls-pemfile/rsa Marvin. GHA mutable-tag hardening not filed. Private draft fix: Svector-anu/fastpotify@private/fix-oauth-callback-html-escape. Commit 60ff32b8789466a3bc2f21432a096a48c64974b1."
   }
 ]
