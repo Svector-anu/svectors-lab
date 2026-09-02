@@ -1,8 +1,5 @@
-ℹ️ Vuln Scanner — affaan-m/ECC
+ℹ️ Vuln Scanner — Uniswap/v4-core
 
-*Vuln Scanner — affaan-m/ECC*
-1 confirmed finding (moderate dep advisory GHSA-p498 on `@humanfs/node` via eslint).
-Disclosed via: public PR https://github.com/affaan-m/ECC/pull/2934
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required (published advisory).
-
-🔗 https://github.com/affaan-m/ECC/pull/2934
+*Vuln Scanner — Uniswap/v4-core*
+Clean audit. 43+ candidates reviewed (semgrep 0, slither 25, forge-std public RPC keys, osv test-only lockfile), 0 confirmed.
+Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok, slither=ok. PoC gate: not-required.

@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T15:43:12Z",
+  "last_analyzed": "2026-09-02T16:45:15Z",
   "quality_score": 4,
-  "assessment": "Substantive vuln report with confirmed GHSA ID, package path, severity, and public PR disclosure link; scanners statused and PoC gate justified.",
+  "assessment": "Clean, conclusion-first vuln scan with scanner breakdown and explicit 0-confirmed verdict; decision-grade for a no-finding run.",
   "flags": [],
-  "avg_score": 4.07,
+  "avg_score": 4.03,
   "history": [
-    {
-      "date": "2026-07-31",
-      "score": 5
-    },
     {
       "date": "2026-08-13",
       "score": 4
@@ -150,6 +146,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T15:43:12Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 4,
+      "ts": "2026-09-02T16:45:15Z",
       "harness": "grok"
     }
   ]

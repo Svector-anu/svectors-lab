@@ -363,5 +363,12 @@
     "findings": 1,
     "channel": "public-pr",
     "notes": "GHSA-p498-v437-472g @humanfs/node override bump via PR #2934; RUSTSEC-2026-0253 lru in ecc2 noted/skipped (informational unsound, ecc2 not in npm package files); 26 semgrep child_process candidates triaged as intentional/mitigated"
+  },
+  {
+    "repo": "Uniswap/v4-core",
+    "scanned_at": "2026-09-02T16:44:13Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "clean audit \u2014 commit 46c6834698c48bc4a463a86d8420f4eb1d7f3b75; semgrep 0; trufflehog verified hits are forge-std public Infura/Alchemy demo RPC keys (not Uniswap secrets); osv 83 vulns all in test/js-scripts lockfile (test-only, not published package); slither Highs are known false positives (FullMath XOR inverse, BitMath/TickBitmap shifts); agentic deep-review of PoolManager unlock/settle/take/swap/modifyLiquidity/hooks/ERC6909/ProtocolFees/CI \u2014 0 confirmed. PVR off; SECURITY.md \u2192 Cantina bounty + security@uniswap.org. Audits on disk (OZ, ToB, Spearbit, ABDK, Certora)."
   }
 ]
