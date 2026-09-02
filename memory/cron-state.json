@@ -176,14 +176,14 @@
   "vuln-scanner": {
     "last_status": "success",
     "last_failed": "2026-09-02T13:57:05Z",
-    "total_runs": 113,
-    "total_successes": 29,
+    "total_runs": 114,
+    "total_successes": 30,
     "total_failures": 84,
     "consecutive_failures": 0,
     "success_rate": 0.26,
     "last_dispatch": "2026-08-29T18:33:40Z",
     "last_error": "error: harness run exceeded --timeout 1800s ",
-    "last_success": "2026-09-02T15:09:54Z",
+    "last_success": "2026-09-02T15:19:01Z",
     "last_quality_score": 4
   },
   "auto-merge": {
