@@ -1,14 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-01T21:57:19Z",
+  "last_analyzed": "2026-09-02T15:10:07Z",
   "quality_score": 2,
-  "assessment": "Substantive and structured, but it ignores the crypto-trading mandate, provides no regime or position calls, and contains highly suspect model/product claims that are not verifiable from the output.",
+  "assessment": "Substantive and linked, but it misses the crypto-trader mandate and explicit position calls, while claiming workspace files and memory were written during a read-only run.",
   "flags": [
     "low_quality",
-    "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.48,
+  "avg_score": 2.45,
   "history": [
     {
       "date": "2026-07-28",
@@ -122,6 +121,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T21:57:19Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T15:10:07Z",
       "harness": "codex"
     }
   ]
