@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-02T18:39:58Z",
-  "quality_score": 3,
-  "assessment": "Actionable position calls and clear narrative mapping, but it lacks a conclusion-first regime verdict and leaves several exact figures and catalysts without direct evidence links, reducing decision-grade verifiability.",
-  "flags": [],
-  "avg_score": 2.9,
+  "last_analyzed": "2026-09-02T21:18:17Z",
+  "quality_score": 2,
+  "assessment": "Decision-oriented and well structured, but numerous precise figures, transitions, and causal claims are not adequately supported by the linked pages and read as potentially fabricated or unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 4,
-      "ts": "2026-08-28T04:47:37Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -186,6 +182,12 @@
       "date": "2026-09-02",
       "score": 3,
       "ts": "2026-09-02T18:39:58Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T21:18:17Z",
       "harness": "codex"
     }
   ]
