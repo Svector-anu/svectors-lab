@@ -1,30 +1,31 @@
 *daily digest — 2026-09-02*
 
-_TL;DR: agent context is now a tested attack surface, self-hosted coding-agent infrastructure reached GA, and a Cosmos EVM postmortem shows why monitoring cannot replace execution-path controls._
+_TL;DR: production agent teams are converging on event-driven execution and shared validation, while new edge models and CPU guardrails cut dependence on cloud and GPU infrastructure._
 
-1. *Audit every context source your coding agents can inherit*  
-   A new study found privilege-escalation paths across 12 production agent harnesses, including Codex and Claude Code, with outcomes ranging from manipulated tool calls to remote code execution. Treat repo instructions, persisted context, and assembled inputs as privilege boundaries.  
-   Why it matters: one low-trust context source can compromise a higher-trust agent run  
-   [Read the paper](https://arxiv.org/abs/2609.01222)
+1. *Check whether your multi-agent system is still a call chain*  
+   Google distilled four patterns from thousands of agent-challenge submissions: bidirectional MCP, event-driven concurrency, identical validation for primary and fallback models, and cheap deterministic routing before expensive inference. One measured deployment handled more than 40% of requests before a full model call.  
+   Why it matters: audit the fleet for serial waits and fallback paths that bypass primary-model checks  
+   https://developers.googleblog.com/4-engineering-patterns-behind-the-strongest-ai-agents-challenge-submissions/
 
-2. *Migrate Coder integrations as Agents reaches GA in v2.37*  
-   Coder Agents is now GA with self-hosted headless runs, stable APIs, organization-scoped MCP and model controls, and AI Gateway observability. Experimental chat routes have a one-month compatibility window, while Coder Tasks is deprecated.  
-   Why it matters: v2.37 can break old API, model, MCP, and spend-limit assumptions  
-   [Coder changelog](https://coder.com/changelog/coder-2-37)
+2. *Tether releases offline translation models for 19 African languages*  
+   The open-source TranslatePsy family runs on phones and laptops; Tether says its 800M-parameter African model beat much larger systems on three translation benchmarks after filtering up to 96% of low-quality training data. A 36MB European model supports 90 translation directions across nine languages.  
+   Why it matters: builders can add private, offline translation without a hosted inference dependency  
+   https://tether.io/news/tether-releases-open-source-ai-translation-models-for-african-and-european-languages/
 
-3. *TAC postmortem turns the Cosmos EVM exploit into an operator checklist*  
-   TAC says three shared-module defects drained 28.6% of supply from its staking pool; the balance crossed to BNB Chain within 95 seconds and roughly $1.01M was realized. Remediation adds fail-closed arithmetic, bridge limits, and faster pause paths.  
-   Why it matters: shared dependencies need acknowledged escalation paths and execution-layer controls  
-   [TAC postmortem](https://tac.build/blog/tac-mainnet-security-incident)
+3. *Lasso puts agent guardrails on CPUs at under five milliseconds*  
+   Lasso launched LEAP, a transformer-free runtime guardrail it says processes decisions on ordinary CPUs in under five milliseconds, alongside a $30M funding round. The company reports the engine is already protecting production deployments in enterprises and the US federal government.  
+   Why it matters: always-on agent inspection no longer has to reserve a second GPU inference path  
+   https://www.globenewswire.com/news-release/2026/09/02/3354871/0/en/lasso-security-announces-future-of-ai-security-with-cpu-based-guardrails.html
 
-4. *JFrog adds policy enforcement around agent-produced artifacts*  
-   JFrog introduced Agent Guard, an AI catalog, and lifecycle scanning intended to restrict which models, MCP servers, packages, and artifacts coding agents may consume or publish.  
-   Why it matters: agent output can enter the same governed supply chain as human-built artifacts  
-   [JFrog announcement](https://www.businesswire.com/news/home/20260902083102/en/)
+4. *Tari opens a five-month builder program ahead of its privacy L2*  
+   Tari confirmed Ootle for November 11 and launched monthly open-source contests leading into the privacy-focused L2 release. September accepts existing projects, with a 1M XTM top prize; the first 20 verified November launches receive 100K XTM each.  
+   Why it matters: existing open-source projects can enter now instead of waiting for the chain launch  
+   https://tari.com/updates/2026-09-01-update-143
 
 ## Summary
 
-- Created [output/digest-2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-02.md).
-- Updated digest memory and today’s activity log.
-- The X API returned HTTP 403; public fallback yielded no usable posts.
-- Notification delivery was attempted, but its external queues were read-only.
+- Created [digest-2026-09-02-second-run.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-02-second-run.md).
+- Updated digest memory and today’s run log.
+- Verified all four links returned HTTP 200.
+- xAI returned HTTP 403; public-search fallback supplied no usable X posts.
+- Notification delivery was attempted but not confirmed because its external queues were read-only.

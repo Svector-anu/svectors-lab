@@ -1,13 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-02T15:10:07Z",
+  "last_analyzed": "2026-09-02T18:40:28Z",
   "quality_score": 2,
-  "assessment": "Substantive and linked, but it misses the crypto-trader mandate and explicit position calls, while claiming workspace files and memory were written during a read-only run.",
+  "assessment": "Substantive and linked, but largely off-strategy: it provides an AI-news digest rather than a crypto regime verdict with explicit trade calls, and its claimed workspace writes conflict with the read-only run constraints.",
   "flags": [
     "low_quality",
+    "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.45,
+  "avg_score": 2.43,
   "history": [
     {
       "date": "2026-07-28",
@@ -127,6 +128,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T15:10:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T18:40:28Z",
       "harness": "codex"
     }
   ]
