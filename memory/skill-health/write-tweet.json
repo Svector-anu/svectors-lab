@@ -1,9 +1,11 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-01T21:57:17Z",
+  "last_analyzed": "2026-09-02T21:18:39Z",
   "quality_score": 2,
-  "assessment": "Useful draft variety and source links, but it asserts impossible workspace writes in a read-only run and invents first-person experience, undermining verifiability.",
+  "assessment": "Polished tweet variants, but they ignore the crypto-trading strategy and include unsupported project/fix claims plus impossible workspace writes in a declared read-only run.",
   "flags": [
+    "low_quality",
+    "generic_content",
     "unverifiable_claim"
   ],
   "avg_score": 2,
@@ -48,6 +50,12 @@
       "date": "2026-09-01",
       "score": 2,
       "ts": "2026-09-01T21:57:17Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T21:18:39Z",
       "harness": "codex"
     }
   ]
