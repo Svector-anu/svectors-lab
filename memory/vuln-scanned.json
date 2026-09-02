@@ -328,5 +328,12 @@
     "findings": 0,
     "channel": "clean",
     "notes": "Audited 5de7275 (36.6k stars, JS/Node ESM). PVR enabled + SECURITY.md. Scanners: semgrep=ok (28 GHA mutable-tag WARNINGs dropped as hardening-only), trufflehog=ok (0 verified fs+git), osv=ok (0 advisories on package-lock), fuzz=skip, agentic=ok N=15. Deep-reviewed HTML/SVG escaping (XSS smoke clean), brands-capture SSRF (DNS-pin + private-IP fail-closed), preview loopback Host gate, open-artifact argv safety, output-path symlink/cwd gates, repository-evidence path pin, update-manifest URL allowlist, viewer textContent JSON.parse (no innerHTML). Report: output/articles/vuln-scan-2026-08-31-archify.md"
+  },
+  {
+    "repo": "THU-MAIC/OpenMAIC",
+    "scanned_at": "2026-09-02T15:08:20Z",
+    "findings": 6,
+    "channel": "public-pr",
+    "notes": "Direct HIGH dep CVEs: next 16.1.2\u219216.2.11, js-yaml 4.3.0, undici 7.29.0, nanoid 5.1.16, lodash 4.18.1, sharp 0.35.4. PR https://github.com/THU-MAIC/OpenMAIC/pull/1357. Code audit: 26 semgrep + 3 agentic candidates reviewed, 0 novel code vulns confirmed for private disclosure (PVR disabled; SECURITY.md points only at advisory form). PoC gate not-required (published dep CVEs)."
   }
 ]
