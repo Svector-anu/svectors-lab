@@ -1,18 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-02T01:29:07Z",
+  "last_analyzed": "2026-09-02T06:11:52Z",
   "quality_score": 2,
-  "assessment": "Specific market claims are mostly uncited, required actionable position calls are absent, and the claimed workspace file writes contradict the read-only run constraints.",
+  "assessment": "Substantive and cited, but it lacks explicit front-run/ride/fade/watch calls and falsely claims workspace files were modified during a read-only run, undermining verifiability.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -173,6 +169,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T01:29:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T06:11:52Z",
       "harness": "codex"
     }
   ]

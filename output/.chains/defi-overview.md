@@ -1,17 +1,26 @@
-## DeFi Overview — 2026-09-02
+# DeFi overview — 2026-09-02
 
-Take: **chop, medium conviction** — BTC fell 1.7% and only 2/20 top-cap assets are green, but sentiment remains Greed at 63.
+Take: **chop** — BTC is down 1.8% while only 3/20 top-cap assets are green.  
+Conviction: **medium** — weak breadth, majors, and market cap agree; Greed sentiment and stablecoin growth disagree.  
+Evidence: Total crypto market cap fell 4.2%, with SOL down 3.8%.
 
-- DeFi verdict: **Mixed** — chain TVL fell 3.3% to $85.19B; DEX volume held near $9.83B; stablecoin supply rose 0.3%.
-- Movers: Defi Saver Asset Management +40.0%; Linea Bridge −20.1%.
-- Fundamentals: Uniswap V4 fees rose 33% daily and 194.7% weekly while TVL gained only 1.3%.
-- Sustainable-yield leaders: Raydium WSOL-USDC 95.0%, Uniswap V3 WETH-USDT 42.3%, Uniswap V4 ETH-USDT 25.3%. These passed the skill’s TVL, outlier, reward-share, confidence, and 30-day persistence filters.
-- Macro risk: September rate-hike odds are 57.5%; U.S. spot BTC ETFs recorded a $35.3M September 1 outflow after $216.7M inflows on August 31. [Farside Investors](https://farside.co.uk/btc/)
-- Positions: `DEFI_MONITOR_NO_CONFIG`; no pools or positions are currently tracked.
+- DeFi TVL: **$85.41B**, down 1.3% over 24h
+- DEX volume: **$9.71B**, down 1.3%
+- Stablecoin supply: **$310.2B**, up 0.3%
+- Fear & Greed: **63 (Greed)**, down from 69
+- Polymarket: September 25bp Fed hike **60.5% YES**
+- Leading protocol mover: Defi Saver Asset Management **+38.9%**
+- Largest qualifying decline: Linea Bridge **−21.6%**
+- Fees leader: Tether, **$16.23M**
+- Sustainable-yield filter: 3 pools passed
+- Incentive-yield filter: 2 pools passed
+- Positions: `DEFI_MONITOR_NO_CONFIG`
+
+The main new catalyst is macro-driven: escalating U.S.-Iran tensions pushed Brent above $95 and the U.S. 10-year yield to 4.81%, pressuring high-beta crypto. September 1 spot BTC ETF flows were a $35.3M net outflow. [CoinDesk market report](https://www.coindesk.com/markets/2026/09/02/solana-ether-xrp-lead-majors-slide-as-iran-strikes-drive-a-broad-risk-selloff), [KuCoin daily report](https://www.kucoin.com/news/articles/crypto-daily-market-report-september-2-2026).
 
 ## Summary
 
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Created [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
-- All data sources succeeded.
-- Notification was attempted, but the harness’s notification and json-render queues were read-only, so external delivery was not confirmed.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) while preserving the complete token-pick table.
+- Appended position and macro results to [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
+- Validated JSON from every required source and passed `git diff --check`.
+- Notification was attempted, but the harness’s external delivery queues were read-only, so delivery could not be confirmed.
