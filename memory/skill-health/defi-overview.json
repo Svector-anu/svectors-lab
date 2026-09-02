@@ -1,18 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-02T18:41:56Z",
+  "last_analyzed": "2026-09-02T21:19:12Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first but not decision-grade: it lacks explicit position calls and evidence links, and it implausibly claims workspace files were updated during a read-only run.",
+  "assessment": "Useful regime framing, but it lacks explicit position calls and contradicts the read-only constraint by claiming workspace files were updated; most specific figures are also uncited.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2.03,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -179,6 +175,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T18:41:56Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 2,
+      "ts": "2026-09-02T21:19:12Z",
       "harness": "codex"
     }
   ]
