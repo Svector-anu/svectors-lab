@@ -1,10 +1,10 @@
-Fear divergence skipped.
+Fear divergence scan skipped.
 
-- F&G: 69 (Greed), above the `<25` trigger
-- Market context: fresh as of 2026-09-01
+- F&G: 63 (Greed)
+- Trigger: requires F&G below 25
 - Notification: not sent
-- Log updated: [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md)
+- Logged in [memory/logs/2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md)
 
 ## Summary
 
-Executed the skill’s trigger logic and recorded the required skip. No market-context changes or follow-up actions needed.
+No divergence analysis was warranted. Only the required skip log was added.
