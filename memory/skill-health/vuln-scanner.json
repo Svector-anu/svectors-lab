@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T19:04:35Z",
+  "last_analyzed": "2026-09-02T19:18:01Z",
   "quality_score": 4,
-  "assessment": "Concrete scan notify with confirmed medium XSS, PVR GHSA id, fork-only fix note, and scanner/PoC status—specific and decision-grade, not fluff.",
+  "assessment": "Verifiable Cosmian/kms findings with real CVEs and public PR #1163; concise confirmed-signal report.",
   "flags": [],
-  "avg_score": 4,
+  "avg_score": 4.07,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 4
@@ -162,6 +158,12 @@
       "date": "2026-09-02",
       "score": 4,
       "ts": "2026-09-02T19:04:35Z",
+      "harness": "grok"
+    },
+    {
+      "date": "2026-09-02",
+      "score": 4,
+      "ts": "2026-09-02T19:18:01Z",
       "harness": "grok"
     }
   ]

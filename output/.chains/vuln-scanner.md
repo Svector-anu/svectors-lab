@@ -1,6 +1,6 @@
-ℹ️ Vuln Scanner — crmne/fastpotify
+ℹ️ Vuln Scanner — Cosmian/kms
 
-*Vuln Scanner — crmne/fastpotify*
-1 confirmed finding (medium XSS on the OAuth localhost callback page).
-Disclosed via: PVR GHSA-hqg7-6gj3-g28w (draft fix on fork only).
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required (medium).
+*Vuln Scanner — Cosmian/kms*
+2 confirmed findings (high UI dep CVEs: brace-expansion CVE-2026-14257/69152, nanoid CVE-2026-67213).
+Disclosed via: public PR #1163.
+Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required (published CVEs).

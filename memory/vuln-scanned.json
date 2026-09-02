@@ -413,5 +413,14 @@
     "findings": 1,
     "channel": "pvr",
     "notes": "Medium OAuth localhost callback XSS (CWE-79) filed as GHSA-hqg7-6gj3-g28w. Dep CVEs noted but not filed: quick-xml via librespot ProductInfo (authenticated Spotify), rustls-webpki 0.102 via unused hyper-proxy2 path (documented in Cargo.toml), unmaintained ttf-parser/rustls-pemfile/rsa Marvin. GHA mutable-tag hardening not filed. Private draft fix: Svector-anu/fastpotify@private/fix-oauth-callback-html-escape. Commit 60ff32b8789466a3bc2f21432a096a48c64974b1."
+  },
+  {
+    "repo": "Cosmian/kms",
+    "scanned_at": "2026-09-02T19:17:24Z",
+    "findings": 2,
+    "channel": "public-pr",
+    "notes": "UI brace-expansion+nanoid CVEs \u2192 PR #1163; audited develop 5c5496e02364085a0fbd1851fa36ffb4adfe5b3e; ring/h2 needs-upstream noted",
+    "commit": "5c5496e02364085a0fbd1851fa36ffb4adfe5b3e",
+    "pr": "https://github.com/Cosmian/kms/pull/1163"
   }
 ]
