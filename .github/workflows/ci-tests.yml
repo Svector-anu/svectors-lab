@@ -99,6 +99,8 @@ jobs:
         run: bash scripts/tests/test_state_store.sh
       - name: health triage tests
         run: python3 scripts/tests/test_health_triage.py
+      - name: skill-health recovery tests
+        run: python3 scripts/tests/test_skill_health_recovery.py
       - name: health-issue ensure-race tests
         run: bash scripts/tests/test_health_issue.sh
       - name: skill-health harness routing tests

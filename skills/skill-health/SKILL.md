@@ -110,6 +110,8 @@ For each skill now HEALTHY whose name appears in any `status: open` issue's `aff
 - Skip `status: fix-pending` issues. Those wait for the reconcile step above; a lucky HEALTHY classification must not close a repair that has not merged.
 - Remove the skill from that issue's `affected_skills`. If the list becomes empty, set `status: resolved`, set `resolved_at: <now ISO>`, and move the row from Open to Resolved in INDEX.md.
 
+For each skill in a `status: open` **critical** issue that is still DEGRADED or WARNING only because of historical metrics, pipe its cron-state JSON object to `python3 scripts/skill_health_recovery.py '<detected_at>'`. If it prints `recovered`, remove the skill from `affected_skills` and resolve an empty issue exactly as above. A successful run after detection proves that specific failure incident recovered even when lifetime `success_rate` remains low. Do not apply this shortcut to FLAPPING/high issues (one successful run does not prove flapping stopped) or to `status: fix-pending` issues (those wait for the reconcile step above). Invalid or missing state/timestamps print `active` and fail closed.
+
 **Filing a new issue:**
 1. Find next ID: scan `memory/issues/ISS-*.md`, take max `NNN`, add 1. Format as zero-padded 3 digits (`ISS-042`).
 2. Write `memory/issues/ISS-NNN.md` with YAML frontmatter:
