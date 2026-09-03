@@ -27,7 +27,12 @@ parse_body() {
     return 1
   }
 
-  local receipts receipt_count receipt critical_count issue_count verdict
+  local marker_count receipts receipt_count receipt critical_count issue_count verdict
+  marker_count=$(grep -oF '<!-- aeon-review:' "$body_file" | wc -l | tr -d ' ' || true)
+  [ "$marker_count" -eq 1 ] || {
+    echo "dev-loop review: expected exactly one review marker, found $marker_count" >&2
+    return 1
+  }
   receipts=$(grep -E '^<!-- aeon-review:\{.*\} -->$' "$body_file" || true)
   receipt_count=$(printf '%s\n' "$receipts" | sed '/^$/d' | wc -l | tr -d ' ')
   [ "$receipt_count" -eq 1 ] || {

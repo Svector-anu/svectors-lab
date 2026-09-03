@@ -50,6 +50,16 @@ if bash "$CHECK" parse "$TARGET" "$SHA" "$TMP/body.md"; then
   exit 1
 fi
 
+# One valid receipt plus any second malformed marker is still ambiguous.
+write_body \
+  '**Verdict**: approve-ready — no blockers.' \
+  '<!-- aeon-review:{"schema":1,"target":"acme/demo#42","sha":"0123456789abcdef0123456789abcdef01234567","verdict":"approve-ready","critical":0,"issues":0} -->' \
+  '<!-- aeon-review:not-json -->'
+if bash "$CHECK" parse "$TARGET" "$SHA" "$TMP/body.md"; then
+  echo 'valid receipt plus malformed marker unexpectedly verified' >&2
+  exit 1
+fi
+
 # A valid receipt for a different commit cannot authorize work on this SHA.
 write_body '<!-- aeon-review:{"schema":1,"target":"acme/demo#42","sha":"ffffffffffffffffffffffffffffffffffffffff","verdict":"approve-ready","critical":0,"issues":0} -->'
 if bash "$CHECK" parse "$TARGET" "$SHA" "$TMP/body.md"; then
