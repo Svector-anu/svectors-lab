@@ -255,14 +255,14 @@
     "last_quality_score": 1
   },
   "search-skill": {
-    "last_status": "dispatched",
-    "last_success": "2026-09-03T14:32:20Z",
-    "total_runs": 18,
-    "total_successes": 18,
+    "last_status": "success",
+    "last_success": "2026-09-03T18:02:21Z",
+    "total_runs": 19,
+    "total_successes": 19,
     "total_failures": 0,
     "consecutive_failures": 0,
     "success_rate": 1,
-    "last_quality_score": 3,
+    "last_quality_score": 4,
     "last_dispatch": "2026-09-03T17:59:49Z"
   },
   "skill-repair": {
