@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-03T10:10:30Z",
-  "quality_score": 3,
-  "assessment": "Actionable position calls and honest fallback disclosure, but it lacks a conclusion-first regime verdict, weakly sources several precise figures and catalysts, and unnecessarily includes a live BTC price contrary to strategy.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.7,
+  "last_analyzed": "2026-09-03T14:32:57Z",
+  "quality_score": 4,
+  "assessment": "Substantive, timely, and actionable with explicit position calls and evidence links, though it lacks a conclusion-first regime verdict and several precise snapshot figures are not directly cited.",
+  "flags": [],
+  "avg_score": 2.73,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 3,
-      "ts": "2026-08-28T05:47:16Z",
-      "harness": "claude"
-    },
     {
       "date": "2026-08-28",
       "score": 4,
@@ -188,6 +180,12 @@
       "date": "2026-09-03",
       "score": 3,
       "ts": "2026-09-03T10:10:30Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 4,
+      "ts": "2026-09-03T14:32:57Z",
       "harness": "codex"
     }
   ]
