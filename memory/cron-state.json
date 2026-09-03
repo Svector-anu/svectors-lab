@@ -174,12 +174,12 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "dispatched",
-    "last_failed": "2026-09-03T01:15:08Z",
-    "total_runs": 134,
+    "last_status": "failed",
+    "last_failed": "2026-09-03T05:50:42Z",
+    "total_runs": 135,
     "total_successes": 43,
-    "total_failures": 91,
-    "consecutive_failures": 7,
+    "total_failures": 92,
+    "consecutive_failures": 8,
     "success_rate": 0.32,
     "last_dispatch": "2026-09-03T05:48:29Z",
     "last_error": "Error: Internal error: {   \"message\": \"API error (status 402 Payment Required): Grok Build usage balance exhausted\\n\\nRequest URL: https://cli-chat-proxy.grok.com/v1/responses\",   \"http_status\": 402 }",
