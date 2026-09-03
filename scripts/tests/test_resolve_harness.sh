@@ -89,6 +89,10 @@ mkfixture grok
   && pass "grok: GROK_CREDENTIALS → native-oauth" || bad "grok native-oauth"
 [ "$(get AUTH_MODE "" XAI_API_KEY=xx)" = "native-key" ] \
   && pass "grok: XAI_API_KEY → native-key" || bad "grok native-key"
+# Deliberately the opposite of codex's OAuth-wins precedence: XAI_API_KEY beats
+# GROK_CREDENTIALS when both are set (fork operator preference, ISS-005).
+[ "$(get AUTH_MODE "" GROK_CREDENTIALS=xx XAI_API_KEY=yy)" = "native-key" ] \
+  && pass "grok: XAI_API_KEY beats GROK_CREDENTIALS when both are set" || bad "grok auth precedence"
 mkfixture hermes
 [ "$(get AUTH_MODE "" HERMES_AUTH=xx)" = "native-oauth" ] \
   && pass "hermes: HERMES_AUTH → native-oauth" || bad "hermes native-oauth"
