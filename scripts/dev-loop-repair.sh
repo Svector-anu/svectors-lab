@@ -66,20 +66,31 @@ case "${1:-}" in
     validate_target "$2"
     validate_sha "$3"
     repo=${2%#*}
-    checks=$(gh api "repos/$repo/commits/$3/check-runs")
-    total=$(jq -r '.total_count' <<<"$checks")
+    pages=$(gh api --paginate --slurp "repos/$repo/commits/$3/check-runs?per_page=100")
+    checks=$(jq '[.[].check_runs[]]' <<<"$pages")
+    total=$(jq 'length' <<<"$checks")
+    reported=$(jq '.[0].total_count // 0' <<<"$pages")
+    [ "$total" -eq "$reported" ] || {
+      echo "dev-loop repair: check-runs pagination was incomplete (received $total of $reported)" >&2
+      exit 1
+    }
     [ "$total" -gt 0 ] || {
       echo "dev-loop repair: repaired SHA has no GitHub check runs" >&2
       exit 3
     }
-    pending=$(jq '[.check_runs[] | select(.status != "completed")] | length' <<<"$checks")
+    pending=$(jq '[.[] | select(.status != "completed")] | length' <<<"$checks")
     [ "$pending" -eq 0 ] || {
       echo "dev-loop repair: repaired SHA still has $pending pending check(s)" >&2
       exit 3
     }
-    failed=$(jq '[.check_runs[] | select(.conclusion != "success" and .conclusion != "neutral" and .conclusion != "skipped")] | length' <<<"$checks")
+    failed=$(jq '[.[] | select(.conclusion != "success" and .conclusion != "neutral" and .conclusion != "skipped")] | length' <<<"$checks")
     [ "$failed" -eq 0 ] || {
       echo "dev-loop repair: repaired SHA has $failed unsuccessful check(s)" >&2
+      exit 1
+    }
+    successful=$(jq '[.[] | select(.conclusion == "success")] | length' <<<"$checks")
+    [ "$successful" -gt 0 ] || {
+      echo "dev-loop repair: repaired SHA has no successful check" >&2
       exit 1
     }
     jq -cn --arg target "$2" --arg sha "$3" --argjson checks "$total" \

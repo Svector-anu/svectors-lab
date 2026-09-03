@@ -17,11 +17,11 @@ if [ "$1" = api ] && [ "$2" = repos/acme/demo/pulls/42 ]; then
   printf '{"state":"%s","head":{"sha":"%s"}}\n' "${TEST_PR_STATE:-open}" "${TEST_HEAD_SHA:-0123456789abcdef0123456789abcdef01234567}"
   exit 0
 fi
-if [ "$1" = api ] && [[ "$2" == repos/acme/demo/commits/*/check-runs ]]; then
+if [ "$1" = api ] && [ "$2" = --paginate ] && [ "$3" = --slurp ] && [[ "$4" == repos/acme/demo/commits/*/check-runs* ]]; then
   if [ -n "${TEST_CHECKS:-}" ]; then
     printf '%s\n' "$TEST_CHECKS"
   else
-    printf '%s\n' '{"total_count":1,"check_runs":[{"status":"completed","conclusion":"success"}]}'
+    printf '%s\n' '[{"total_count":1,"check_runs":[{"status":"completed","conclusion":"success"}]}]'
   fi
   exit 0
 fi
@@ -41,9 +41,21 @@ TEST_HEAD_SHA="$NEW" PATH="$TMP/bin:$PATH" bash "$CHECK" verify-change acme/demo
 TEST_HEAD_SHA="$NEW" PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW" \
   | jq -e '.status == "passed" and .checks == 1 and .sha == "89abcdef0123456789abcdef0123456789abcdef"' >/dev/null
 
-if TEST_HEAD_SHA="$NEW" TEST_CHECKS='{"total_count":1,"check_runs":[{"status":"completed","conclusion":"failure"}]}' \
+if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":1,"check_runs":[{"status":"completed","conclusion":"failure"}]}]' \
   PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
   echo 'failed check unexpectedly passed' >&2
+  exit 1
+fi
+
+if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":2,"check_runs":[{"status":"completed","conclusion":"neutral"},{"status":"completed","conclusion":"skipped"}]}]' \
+  PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
+  echo 'neutral/skipped-only checks unexpectedly passed' >&2
+  exit 1
+fi
+
+if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":2,"check_runs":[{"status":"completed","conclusion":"success"}]}]' \
+  PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
+  echo 'incomplete paginated check response unexpectedly passed' >&2
   exit 1
 fi
 
