@@ -1,21 +1,19 @@
-Implemented issue #80 and opened [Svector-anu/skopos PR #107](https://github.com/Svector-anu/skopos/pull/107).
+Implemented issue #79 and opened [Svector-anu/skopos PR #108](https://github.com/Svector-anu/skopos/pull/108).
 
-The PR adds structured text-mode handoffs for limit, stop-loss, take-profit, and TWAP orders. Responses include parsed intent details and an app signing link while explicitly excluding calldata, approvals, and typed-signing payloads. The structured LLM fallback now also works in text mode.
+Changes include:
 
-Verification:
+- Accessible labels and state metadata for composer and icon controls
+- Escape-key dismissal for tier menu and mobile sidebar
+- Semantic landing-page `<h1>`
+- Reduced-motion support for hero particles and typewriter demo
+- Visible errors when quote refreshes fail
+- English, Vietnamese, and Chinese translations
 
-- 129/129 tests passed
-- TypeScript passed
-- Focused ESLint passed
-- Production compilation and type checking passed
-- Vercel deployment is pending
-- Exact dispatch marker included in the PR body
-
-Notification delivery was attempted but the external queue is read-only. The feature run was recorded in [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md).
+Vercel deployment and preview checks passed. The run was recorded in `memory/logs/2026-09-03.md`. External notification delivery was attempted but its queue was read-only.
 
 ## Summary
 
-- Built and pushed `ai/headless-advanced-order-handoff`
-- Opened PR #107, closing issue #80
-- Modified the chat route, text projection, API documentation, and endpoint tests
-- No follow-up required beyond PR review and Vercel completion
+- Branch: `ai/fix-accessibility-gaps`
+- Commit: `6fc4207`
+- PR: https://github.com/Svector-anu/skopos/pull/108
+- Follow-up: review and merge PR #108
