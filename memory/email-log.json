@@ -3,10 +3,30 @@
     "repo": "amirh00sain/SpiderPanel",
     "to": "amirshaianfar@outlook.com",
     "from": "svector.anu@gmail.com",
-    "subject": "SpiderPanel — default admin credentials and session/cookie hardening issues",
+    "subject": "SpiderPanel \u2014 default admin credentials and session/cookie hardening issues",
     "sent_at": "2026-08-25T20:34:08Z",
     "channel": "manual-gmail",
     "status": "sent",
     "notes": "Auto-send via Resend blocked by unverified svector.xyz domain; operator sent manually from Gmail."
+  },
+  {
+    "repo": "jlcodes99/cockpit-tools",
+    "sent_at": "2026-09-03T12:27:08Z",
+    "to": "lijie15910739914@163.com",
+    "cc": [
+      "jlcodes@163.com"
+    ],
+    "subject": "Security: hardcoded Google OAuth client secret in cockpit-tools",
+    "method": "manual-gmail",
+    "note": "Auto-send via Resend blocked by unverified svector.xyz domain; operator sent manually from Gmail."
+  },
+  {
+    "repo": "pacifio/atlas",
+    "sent_at": "2026-09-03T12:27:08Z",
+    "to": "adibmohsin.root@gmail.com",
+    "cc": [],
+    "subject": "Security: ACP filesystem escape and browser-reader XSS in Atlas",
+    "method": "manual-gmail",
+    "note": "Auto-send via Resend blocked by unverified svector.xyz domain; operator sent manually from Gmail."
   }
 ]
