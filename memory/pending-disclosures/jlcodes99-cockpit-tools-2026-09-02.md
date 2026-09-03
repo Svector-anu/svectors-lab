@@ -2,7 +2,7 @@
 repo: jlcodes99/cockpit-tools
 severity: critical
 cwe: CWE-798
-status: pending-operator-send
+status: sent
 auto_send: true
 contact_email: lijie15910739914@163.com
 cc: [jlcodes@163.com]
