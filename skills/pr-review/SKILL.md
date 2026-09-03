@@ -133,10 +133,23 @@ Skip a PR if any of the following hold (record the skip reason for the run summa
 
 **Findings** (mirrored as inline comments):
 - [CRITICAL] path/to/file:LINE — why it matters
-- [ISSUE] path/to/file:LINE — why it matters"
+- [ISSUE] path/to/file:LINE — why it matters
+
+<!-- aeon-review:{"schema":1,"target":"owner/repo#N","sha":"<full-headRefOid>","verdict":"blocked|discussion-needed","critical":N,"issues":M} -->"
    ```
 
-   If there are no CRITICAL/ISSUE findings, skip inline comments and post a single-line review: `**Verdict**: approve-ready — no blockers.`
+   If there are no CRITICAL/ISSUE findings, skip inline comments and post the
+   approve-ready line followed by its receipt:
+   ```text
+   **Verdict**: approve-ready — no blockers.
+   <!-- aeon-review:{"schema":1,"target":"owner/repo#N","sha":"<full-headRefOid>","verdict":"approve-ready","critical":0,"issues":0} -->
+   ```
+
+   Use exactly one receipt in every non-trivial or approve-ready review. The target
+   and full `headRefOid` must match the PR fetched in step 1, and the counts must
+   equal the `[CRITICAL]` and `[ISSUE]` bullets in the consolidated body. This is
+   routing input for a later chain step. Do not emit it for a skipped review, and
+   keep the human-readable blocked reason outside the receipt.
 
    For trivial-PR early-exits (step 3), post a single-line review matching the category: `Docs-only change — no blockers.` / `Dependency-bump — no review needed.` / `Test-only change — no production code touched.`
 
