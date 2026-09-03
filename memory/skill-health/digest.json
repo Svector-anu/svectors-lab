@@ -1,13 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-02T23:23:33Z",
+  "last_analyzed": "2026-09-03T01:15:29Z",
   "quality_score": 2,
-  "assessment": "Substantive and plausibly sourced, but it ignores the crypto-trader strategy: no regime verdict, catalyst read, or explicit position call, making it largely unactionable for Skopos.",
+  "assessment": "Polished and linked, but poorly aligned to the crypto-trader strategy: it lacks a crypto regime verdict and explicit front-run/ride/fade/watch calls, while claiming workspace files were written during a read-only run.",
   "flags": [
     "low_quality",
-    "generic_content"
+    "generic_content",
+    "unverifiable_claim"
   ],
-  "avg_score": 2.4,
+  "avg_score": 2.38,
   "history": [
     {
       "date": "2026-07-28",
@@ -145,6 +146,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T23:23:33Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 2,
+      "ts": "2026-09-03T01:15:29Z",
       "harness": "codex"
     }
   ]

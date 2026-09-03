@@ -16,6 +16,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-03 | daily (web) | SonicWall exploits, Gemini 3.8, FRNT reserves |
 | 2026-09-02 | daily (web, fourth run) | WebGPU kernels, context tax, skill verification |
 | 2026-09-02 | daily (web, third run) | commerce agents, GALA margin, KuCoin API |
 | 2026-09-02 | daily (web, second run) | event-driven agents, edge translation, CPU guardrails |

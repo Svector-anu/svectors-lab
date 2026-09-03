@@ -1,31 +1,25 @@
-*daily — 2026-09-02*
+*Daily digest — 2026-09-03*
 
-_TL;DR: Browser inference got a usable kernel layer while agent security money moved toward runtime controls and continuous skill verification._
+_TL;DR: patch internet-facing SonicWall SMA 1000 appliances now; Gemini 3.8 cuts agent-model cost, while FRNT makes reserve coverage observable onchain._
 
-1. *Try Hugging Face’s 207-kernel WebGPU layer in browser-local AI*  
-   `@huggingface/kernels` loads versioned WebGPU operations from the Hub, with correctness tests and benchmarks attached. Hugging Face reports a 2.57× geometric-mean speedup over ORT WebGPU across 809 matching M4 test cases, excluding setup and transfer time.  
-   Why it matters: browser agents can test faster local inference without maintaining a private shader stack.  
-   https://huggingface.co/blog/webgpu-kernels
+1. *Patch actively exploited SonicWall SMA 1000 flaws now*  
+   SonicWall says attackers are exploiting a pre-auth SSRF rated CVSS 10.0 and a post-auth RCE in SMA 1000 firmware 12.4.3 and 12.5.0. Apply the listed hotfixes and check exposed appliances for compromise.  
+   Why it matters: an internet-facing access gateway is already in the exploitation window.  
+   https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities-snwlid-2026-0016/kA1VN000002AXmQ0AW
 
-2. *Measure the context tax before buying a larger coding-agent window*  
-   Sonar traced an ordinary ~800-line pull request to 156 million context tokens and a 459k-token peak because repeated grep-and-read results stayed in the conversation. Its SemSitter engine replaces text-search loops with dependency-graph queries.  
-   Why it matters: navigation telemetry may cut agent cost before a model or context-window upgrade does.  
-   https://www.sonarsource.com/blog/stop-the-context-tax/
+2. *Benchmark Gemini 3.8 Flash before the introductory price expires*  
+   Google shipped Gemini 3.8 Flash at $0.75/$3.75 per million input/output tokens through December 31, plus a defender-gated Cyber variant. Google reports 54.9% on HLE-Verified; the cyber model reached 47.2% pass@1 on CWE-Bench.  
+   Why it matters: agent workloads now have a cheaper current model to test against their existing quality-and-cost frontier.  
+   https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
 
-3. *AIR raises $50M to continuously verify agent skills and MCP servers*  
-   AIR exited stealth with $50 million across two seed rounds and says its enforcement layer discovers agents, rechecks their skills and add-ons as dependencies change, and blocks components that fail policy. The company told TechCrunch it currently filters roughly 27% of the add-ons it finds.  
-   Why it matters: skill provenance and change monitoring are becoming a dedicated control plane for agent fleets.  
-   https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use/
-
-4. *HiddenLayer puts $100M behind agent runtime and harness security*  
-   HiddenLayer raised a $100 million Series B led by Delta-v Capital, with M12 and others participating. It says the capital will deepen runtime controls for tool misuse, unauthorized actions, prompt injection, secret exposure, and coding-agent harnesses.  
-   Why it matters: enterprise spend is shifting from static AI governance toward enforcement inside agent execution loops.  
-   https://www.hiddenlayer.com/newsroom
+3. *FRNT publishes reserve coverage onchain through Chainlink*  
+   Wyoming’s Stable Token Commission adopted Chainlink Proof of Reserve to publish independently examined FRNT reserves and token supply onchain in near real time.  
+   Why it matters: state-issued stablecoin backing can now be monitored directly by trading and risk systems.  
+   https://cointelegraph.com/news/wyoming-chainlink-onchain-reserves-of-state-issued-stable-token
 
 ## Summary
 
-- Generated and validated a 2,229-character digest with four HTTP-verified links.
-- Deduplicated against the previous three days and today’s three earlier digests.
-- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
-- Saved the digest to [digest-2026-09-02-fourth.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-02-fourth.md).
-- External delivery was attempted, but the notification queue is read-only. The xAI request also returned HTTP 403 because the team credit/spend limit was reached.
+- Saved the digest to [output/digest-2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-03.md).
+- Updated [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and today’s digest log.
+- xAI failed with HTTP 403 due to its spending limit; public X search yielded no usable posts.
+- Notification delivery was attempted, but the external queues were read-only, so delivery was not confirmed.
