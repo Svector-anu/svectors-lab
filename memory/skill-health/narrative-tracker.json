@@ -1,21 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-03T18:03:00Z",
-  "quality_score": 2,
-  "assessment": "Action-oriented positioning is present, but the report lacks a clear regime verdict, provides sparse evidence for several claims, uses unexplained scores, and includes an internally implausible 4,603 BTC/69.7M figure.",
-  "flags": [
-    "low_quality",
-    "unverifiable_claim"
-  ],
+  "last_analyzed": "2026-09-03T20:51:23Z",
+  "quality_score": 4,
+  "assessment": "Decision-grade, conclusion-first tracker with explicit calls, bearish invalidation cases, honest source limitations, and evidence links; some narrative scores and secondary claims remain weakly sourced.",
+  "flags": [],
   "avg_score": 2.67,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 4,
-      "ts": "2026-08-28T06:34:45Z",
-      "harness": "glm",
-      "model": "glm-5.2"
-    },
     {
       "date": "2026-08-28",
       "score": 3,
@@ -188,6 +178,12 @@
       "date": "2026-09-03",
       "score": 2,
       "ts": "2026-09-03T18:03:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 4,
+      "ts": "2026-09-03T20:51:23Z",
       "harness": "codex"
     }
   ]
