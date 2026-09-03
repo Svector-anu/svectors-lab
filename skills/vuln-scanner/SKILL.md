@@ -185,6 +185,25 @@ echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail
 echo "osv=${OSV_STATUS:-fail}"                                                    >> /tmp/vuln-scan/sources.txt
 ```
 
+**Run this block, don't paraphrase it.** It has to go through a real Bash tool call —
+summarizing what it would do, or reasoning about the target manually and moving on, is
+not the same thing, and the workflow can tell the difference: `stage-vuln-scanner.sh`
+wraps every staged binary so an actual invocation is logged to
+`/tmp/vuln-scan/executions.log`, and a post-run workflow step (`Verify vuln-scanner
+execution evidence`) diffs that log against what got staged. A tool skipped this way
+shows up there as "staged but no invocation was recorded" — this has already happened on
+live runs (`trufflehog`/`osv-scanner` staged and confirmed working, never actually
+called), so it is not a hypothetical to guard against.
+
+`ok` in `sources.txt` — and in `semgrep=`/`trufflehog=`/`osv=` anywhere in your report or
+the ledger notes — means the tool **ran** and its output file is what backs the number
+you're citing. If a tool was staged and available but you didn't get to it, that's `fail`,
+same as an install failure; there is no third option and no partial credit. Never write
+`trufflehog=0 verified` or `osv: ... confirmed` unless `/tmp/vuln-scan/trufflehog.json` /
+`osv.json` actually exist with that tool's real output in them — a "clean" read from
+manual review alone is a real, valid finding, but it is not a verified one, and the
+report must not borrow that word.
+
 ### A3.5. Dynamic testing: fuzz it if it already ships a harness
 
 Static tools never execute the target's code, so they can't catch a bug that only
@@ -689,6 +708,10 @@ Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata
 
 Use `./notify`. One paragraph. Lead with the verdict.
 
+`ok` here means the tool actually ran (§A3's execution-discipline rule — `sources.txt`
+says so, not your recollection of the target). A staged, available tool you didn't get to
+is `fail`, not `ok`.
+
 ```
 *Vuln Scanner — <repo>*
 <N> confirmed findings (<severity-summary>).
@@ -1061,7 +1084,7 @@ specific bullets.
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
 - Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
-- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification
+- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification (ok = actually ran, per §A3 — a staged tool you skipped is fail, not ok)
 - Advisory/PR links: [...]
 ```
 
