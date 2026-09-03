@@ -309,9 +309,9 @@
   "vuln-tracker": {
     "last_dispatch": "2026-09-01T21:54:17Z",
     "last_status": "success",
-    "last_success": "2026-09-02T23:29:08Z",
-    "total_runs": 12,
-    "total_successes": 12,
+    "last_success": "2026-09-03T01:18:30Z",
+    "total_runs": 13,
+    "total_successes": 13,
     "total_failures": 0,
     "consecutive_failures": 0,
     "success_rate": 1,
