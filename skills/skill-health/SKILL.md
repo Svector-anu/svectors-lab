@@ -123,7 +123,7 @@ For each skill in a `status: open` **critical** issue that is still DEGRADED or 
    severity: critical | high | medium | low   # critical=CRITICAL status, high=FLAPPING, medium=DEGRADED
    category: rate-limit | timeout | missing-secret | config | api-change | sandbox-limitation | unknown
    detected_by: skill-health
-   detected_at: <ISO timestamp>
+   detected_at: <ISO-8601 UTC, e.g. 2026-09-03T12:00:00Z>   # must carry Z or a +00:00 offset; a naive stamp fails closed to active
    affected_skills: [<skill>, ...]    # may grow later
    root_cause: <error signature, 1 line>
    fix_pr: null
