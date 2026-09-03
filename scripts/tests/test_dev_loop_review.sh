@@ -3,9 +3,13 @@ set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
 CHECK="$ROOT/scripts/dev-loop-review.sh"
+SKILL="$ROOT/skills/pr-review/SKILL.md"
 TMP=$(mktemp -d)
 SHA=0123456789abcdef0123456789abcdef01234567
 TARGET=acme/demo#42
+
+grep -Fq 'The captured final output must include the same `**Verdict**` line' "$SKILL"
+grep -Fq 'notification gate uses the verdict line as its signal' "$SKILL"
 
 write_body() {
   printf '%s\n' "$@" > "$TMP/body.md"

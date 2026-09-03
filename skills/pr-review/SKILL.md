@@ -157,6 +157,11 @@ Skip a PR if any of the following hold (record the skip reason for the run summa
 
 ## Notify and log (REVIEW branch)
 
+The captured final output must include the same `**Verdict**` line and exact
+`<!-- aeon-review:{...} -->` receipt posted to GitHub for every reviewed PR.
+Do not replace them with a generic "review posted" summary. The chain consumes
+the receipt, and the notification gate uses the verdict line as its signal.
+
 Send **one** combined message per run via `./notify`:
 ```
 *PR Review — ${today}*
