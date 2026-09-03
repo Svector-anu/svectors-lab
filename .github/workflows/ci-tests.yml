@@ -54,6 +54,8 @@ jobs:
         run: bash scripts/tests/test_skill_requires.sh
       - name: run actions summary tests
         run: bash scripts/tests/test_run_actions_summary.sh
+      - name: fleet scorecard classification tests
+        run: node --test scripts/tests/test_fleet_scorecard.mjs
       - name: skill-pack manifest validation tests
         run: bash scripts/tests/test_validate_pack.sh
       - name: community pack registry validation tests
