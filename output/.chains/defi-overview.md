@@ -1,19 +1,19 @@
-*Crypto — 2026-09-03* — risk-on (medium conviction) | DeFi mixed
+Risk-on, medium conviction: BTC gained 5.3% with 20/20 top-cap assets green. DeFi remains sideways beneath the rally—TVL rose 0.7%, DEX volume fell 4.7%, and stablecoin supply was nearly flat.
 
-Take: BTC gained 4.8% and all 20 top-cap assets are green over 24 hours. Weekly breadth remains weaker at 8/20, while DEX volume fell 4.7%.
+Key signals:
 
-- BTC: $81,028 (+4.8%)
-- ETH: $2,500 (+4.5%)
-- DeFi TVL: $87.71B (+2.1% since prior refresh)
-- Fear & Greed: 65 (Greed)
-- Top mover: Nexus BTC +16.8%
-- Sustainable-yield leader: Raydium WSOL-USDC, 70.4% base APY on $14.6M TVL
-- Polymarket: 58.5% probability of no September Fed rate change
-
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md). No tracked positions were configured.
+- Fear & Greed: 65, unchanged in Greed.
+- Weekly breadth: 12/20 green, weaker than the daily rebound.
+- Fees leader: Tether, $16.23M; Uniswap V4 fees ran 38.7% above its seven-day average.
+- Top qualifying mover: BloFin +41.9%, with no verified catalyst.
+- Polymarket: 57.5% probability of no September Fed rate change.
+- Macro catalyst: September 4 payrolls; spot-BTC ETFs recorded a $101M daily inflow led by IBIT. 
+- No tracked positions were configured, recorded as `DEFI_MONITOR_NO_CONFIG`.
 
 ## Summary
 
-- All market sources succeeded; CoinGecko global data used the required public-web fallback.
-- Preserved the complete token-picks table.
-- Notification was attempted, but the external notification and json-render queues were read-only.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Appended the complete run to [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
+- Preserved the full token-pick history.
+- All nine data-source groups succeeded.
+- Notification delivery was attempted, but the external notification queues were read-only.
