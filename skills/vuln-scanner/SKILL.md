@@ -16,6 +16,7 @@ metadata:
     - RESEND_API_KEY?
     - RESEND_FROM?
     - RESEND_REPLY_TO?
+    - XAI_API_KEY?
 ---
 <!-- autoresearch: variation B — responsible-disclosure-first: private reports for code vulns, public PRs only for already-disclosed dep CVEs -->
 
