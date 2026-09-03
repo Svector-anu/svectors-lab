@@ -2,7 +2,7 @@
 repo: pacifio/atlas
 severity: high
 cwe: CWE-22
-status: pending-operator-send
+status: sent
 auto_send: true
 contact_email: adibmohsin.root@gmail.com
 cc: []
