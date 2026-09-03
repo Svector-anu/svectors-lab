@@ -199,4 +199,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-02,vuln-scanner,grok-4.5,483367,19146,2190080,0
 2026-09-02,vuln-tracker,codex-default,741646,9919,681728,0
 2026-09-02,vuln-tracker,codex-default,1783704,17521,1692672,0
-2026-09-03,digest,codex-default,759819,4252,691968,0
+2026-09-03,write-tweet,codex-default,387860,4751,338432,0

@@ -1,73 +1,77 @@
-## Tweet Drafts: coding agent context is a privilege boundary
+## Tweet Drafts: agent skills are dependencies, not prompts
 
 ### Tier 1 — One-liner
 
-**1a. Observation**
+**1a. Reframe**
 
-> your coding agent's context is part of the attack surface
+> agent skills are dependencies with prose as executable code
 
 **1b. Sardonic**
 
-> we sandbox agent tools then hand random markdown root access
+> if a skill can touch your shell, “just a markdown file” is doing a lot of work
 
 ### Tier 2 — Two-punch
 
 **2a. Reframe**
 
-> a coding agent reads repo instructions before it touches code. if that context is untrusted, the tool permissions come second.
+> we keep reviewing agent skills like prompts. they can read files, call tools and run code, so the right model is a dependency with privileges
 
 **2b. Observation**
 
-> prompt injection is not just a chatbot problem anymore. once the model can run tools, inherited context becomes executable influence.
+> portable skills are great until trust becomes portable too. verify the author, pin the version and inspect what the skill can actually touch
 
 ### Tier 3 — Paragraph
 
-**3a. Hot take**
+**3a. Data drop**
 
-> we audit what coding agents can execute but barely audit what they can inherit. repo instructions, saved memory, issue text and tool output all shape the next action. context needs trust levels too.
+> 26.1% of 31,132 agent skills in one study had at least one vulnerability. skills with scripts were 2.12x more likely to be vulnerable. the install button needs to become a security boundary
 
-**3b. Question**
+The figures come from a [large-scale empirical study of agent skills](https://arxiv.org/abs/2601.10338).
 
-> your agent can have perfect tool permissions and still make the wrong privileged call. the missing control is provenance: where did each instruction come from, and was that source allowed to steer this action?
+**3b. Reframe**
+
+> signing proves who shipped a skill. it does not prove the skill behaves like its description. agent registries need both provenance and a claim-to-behavior check before install
 
 ### Tier 4 — Long tweet
 
-**4a. Narrative**
+**4a. Builder’s breakdown**
 
-> spent a lot of time making skills portable across agent harnesses. the security lesson is becoming obvious: context is not passive data. repo instructions, saved memory, issue bodies and tool output can all steer a privileged action. if the harness merges them into one prompt with no provenance or trust boundary, a tool sandbox only protects half the system.
+> an agent skill is not “just markdown” once the model can turn its instructions into shell commands, network calls and file access. traditional scanning catches suspicious code. it can miss a clean-looking instruction that makes the agent create the payload at runtime. verification has to cover metadata, scripts and natural-language behavior together
 
-**4b. Reframe**
+**4b. Observation**
 
-> coding agent security cannot stop at “which tools can it call?”
->
-> the harder question is “who can influence the call?”
->
-> a restricted shell means little if untrusted repo text, persisted memory or fetched content can quietly become instructions. every context source needs a trust level, provenance and a clear rule for what it is allowed to steer.
+> portable skills are the right direction. i want the same workflow to run across codex, claude code, grok, kimi and whatever comes next. but portability raises the trust requirement: pin the exact artifact, declare capabilities, scan code and instructions, then enforce those capabilities at runtime. otherwise we just made supply-chain risk portable too
 
 ### Tier 5 — Thread opener
 
-**5a. Observation**
+**5a. Reframe**
 
-> coding agents do not just execute code. they execute context. repo instructions, memory and fetched text can all steer the same privileged tools, but most harnesses still flatten every source into one prompt.
-
----
-
-- How context sources acquire different trust levels
-- Why tool permissions address only half the attack surface
-- How provenance should follow instructions into tool calls
-- Practical isolation rules for production harnesses
-
-**5b. Prediction**
-
-> i think context provenance will become a core agent primitive. not another warning banner. every instruction should carry where it came from, how much it is trusted and which actions it can influence.
+> agent skills are becoming package dependencies, except one executable layer is written in natural language. our security tooling still mostly understands only the other layer
 
 ---
 
-- Why flat prompts erase security boundaries
-- A capability model for context sources
-- How inherited instructions should be constrained
-- What harness builders can enforce today
+- How instructions become executable behavior
+- Where code-only scanners go blind
+- Why signatures solve integrity, not intent
+- Controls that close the install-time and runtime gaps
 
-Best overall: **#4a**. It connects hands-on harness portability work to a concrete security model.
+**5b. Builder’s breakdown**
 
-Saved to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md). Character limits and repository checks passed. The required X lookup returned HTTP 403; public search found no useful current discussion. Notification and revision-offer delivery were attempted but the external queue was read-only, and the outcome was recorded in [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
+> the next useful primitive for agent skills is not another marketplace. it is a receipt proving the installed skill matches what was reviewed and stayed inside its declared capabilities
+
+---
+
+- Bind review results to an exact artifact
+- Compare declared capabilities with observed behavior
+- Enforce least privilege during execution
+- Preserve evidence across updates and harnesses
+
+Best overall: **#4b**  
+Best per tier: **#1a, #2b, #3a, #4b, #5b**
+
+## Summary
+
+- Saved the revisable batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Logged the run in [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
+- xAI search returned HTTP 403, so public-search fallback was used.
+- Notification delivery was attempted but failed because the harness’s external queue is read-only.
