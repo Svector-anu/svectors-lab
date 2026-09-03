@@ -16,6 +16,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-03 | daily (web, third run) | AI ransomware, infra change, agent permissions |
 | 2026-09-03 | daily (web, second run) | Firo fork, GitSpawn, NVIDIA-Hugging Face |
 | 2026-09-03 | daily (web) | SonicWall exploits, Gemini 3.8, FRNT reserves |
 | 2026-09-02 | daily (web, fourth run) | WebGPU kernels, context tax, skill verification |

@@ -1,14 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-03T14:33:12Z",
+  "last_analyzed": "2026-09-03T18:02:54Z",
   "quality_score": 2,
-  "assessment": "Fresh, structured digest with links, but it largely misses the crypto-trader mandate: no market regime verdict or explicit front-run/ride/fade/watch calls, and the claimed workspace write contradicts the read-only run.",
+  "assessment": "Substantive and sourced, but it is off-strategy for crypto traders, lacks regime/position calls, and falsely claims workspace files were written during a read-only run.",
   "flags": [
     "low_quality",
     "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.37,
+  "avg_score": 2.36,
   "history": [
     {
       "date": "2026-07-28",
@@ -158,6 +158,12 @@
       "date": "2026-09-03",
       "score": 2,
       "ts": "2026-09-03T14:33:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 2,
+      "ts": "2026-09-03T18:02:54Z",
       "harness": "codex"
     }
   ]
