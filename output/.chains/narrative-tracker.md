@@ -1,24 +1,25 @@
 *Narrative Tracker — 2026-09-03*
 
 TRANSITIONS
-• NEW*: DeFi value capture — UNI/AAVE/HYPE/ARB appeared together while broad crypto sold off; UNI usage, fees and burns give the rotation an evidence anchor. https://www.cryptocatalyst.news/articles/2026-09-02-crypto-research-morning-brief
-• NEW*: AI-storage / DePIN — FIL separated from the market, but the move lacks a fresh protocol catalyst. https://www.fxempire.com/forecasts/article/filecoin-shorts-lose-1-5m-as-ai-capex-narrative-fuels-fil-rally-1621698
-• NEW*: global duration stress — oil and sovereign yields, not crypto-native news, are controlling beta. https://www.theblock.co/news/markets/2026-09-02-bitcoin-hovers-near-77000-as-global-bond-selloff-tests-post-rally-resilience-413320
-
-*No narrative-tracker baseline exists in the prior 3 days; NEW means new to this tracker, not proven first appearance on X.
+• NEW: Bank stablecoins — 21 major institutions targeting a 2027 joint issuance vehicle turns adoption into an infrastructure race — https://cointelegraph.com/news/what-happened-in-crypto-today?ttl=0
+• NEW: RWA/tokenized securities rails — SEC transfer-agent reform plus ongoing ONDO attention makes this the cleaner picks-and-shovels trade — https://www.fameex.com/en-AU/news/crypto-news-recap-20260902
+• NEW: BTC institutional bid vs macro — August ETF inflows hit $3.52B, then daily flows reversed as bond yields and Fed-hike odds rose — https://www.theblock.co/news/markets/2026-09-02-bitcoin-hovers-near-77000-as-global-bond-selloff-tests-post-rally-resilience-413320
+• NEW: Prediction-market jurisdiction — New Jersey's Supreme Court petition raises the regulatory stakes for event-contract platforms — https://cointelegraph.com/news/what-happened-in-crypto-today
 
 REFLEXIVITY ALERT
-• UNI / Robinhood Chain — Robinhood activity lifted Uniswap volume and fees; fee burns then reinforced the UNI value-capture story. Uniswap represented >80% of chain DEX volume in cited data. https://coinmarketcap.com/top-stories/6a97cabecd14b249420fc6b2/
-• FIL / AI storage — a ~15% narrative-led move liquidated ~$1.49m of shorts despite no fresh official protocol announcement; this is positioning feeding the story. https://www.fxempire.com/forecasts/article/filecoin-shorts-lose-1-5m-as-ai-capex-narrative-fuels-fil-rally-1621698
+• RWA — ONDO's roughly 24-hour move was attributed partly to regulatory coverage and renewed RWA/tokenized-stock framing despite no fresh project catalyst: narrative is moving price ahead of fundamentals — https://coinmarketcap.com/top-stories/6a98e43bcd14b2494210b9c9/
 
 POSITIONS
-• RIDE: DeFi value capture (4 ↑↑, Bull) — @Uniswap, @RobinhoodApp, @Aave — bear: UNI has already rerated hard and Robinhood incentives can make activity temporary.
-• WATCH: AI-storage / DePIN (3 ↑↑, Mixed) — @Filecoin, @awscloud, @CoinGlass — bear: catalyst is inferred from AI capex while FIL usage follow-through is unproven.
-• FADE: broad alt-beta / altseason (4 ↓, Bear) — @CoinMarketCap, @TheBlock__, @LMAX — bear: narrow UNI/FIL strength is not breadth; macro pressure still dominates.
-• WATCH: BTC relative resilience (3 →, Mixed) — @ecoinometrics, @TheBlock__, @LMAX — bear: ETP support can be overwhelmed if duration stress persists.
+• RIDE: Bank stablecoins (mindshare 4 ↑↑, Bull) — @Cointelegraph, @DecryptMedia, BofA/Citi/Goldman — 2027 launch means attention can outrun near-term usage.
+• RIDE: RWA rails (4 ↑, Bull) — @SECGov, @OndoFinance, @Fidelity — rulemaking is still proposed; token attention can front-run adoption.
+• WATCH: BTC institutional bid vs macro (5 →, Mixed) — @BlackRock, @CoinSharesCo, @TheBlock__ — inflows are strong, but higher yields can break the decoupling thesis.
+• WATCH: Prediction markets (3 ↑, Mixed) — @Kalshi, @Polymarket, New Jersey — Supreme Court scrutiny can clarify the moat or constrain it.
+• FADE: AI-agent tokens (2 ↓, Cope) — @virtuals_io, @aixbt_agent, @ai16zdao — no fresh three-day catalyst; research still shows weak token/fundamental linkage.
 
 MAP
-Emerging: AI-storage / DePIN
-Rising: DeFi value capture
-Peak: global duration stress
-Fading: broad alt-beta / altseason
+Emerging: prediction-market jurisdiction
+Rising: bank stablecoins; RWA rails
+Peak: BTC institutional bid vs macro
+Fading: AI-agent tokens
+
+Calibration: Perception scored Bitcoin narrative sentiment 73/100 from 1,478 articles on Sep 2; Warden's Kaito-powered leaderboard was diffuse, with its top account at 0.7598% mindshare. These support high broad-market mindshare but caution against treating any single account as dominant.
