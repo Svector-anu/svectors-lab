@@ -1,18 +1,15 @@
-Vuln-tracker completed for 2026-09-03.
+## Vuln Tracker — 2026-09-03
 
-- 21 disclosure PRs: 5 merged, 15 open, 1 closed.
-- ★86,611 secured; ★779,740 in flight.
-- Existing action: answer the maintainer on `NousResearch/hermes-agent#94342`.
-- Four recent PVRs remain in triage.
-- Nine disclosure drafts: 0 escalations, 3 in-window, 1 operator-only send, 5 cleanup candidates.
-- The operator-only item is the 11-day-old critical ZSvirt disclosure.
-- Notification delivery failed because external queues are read-only; the digest remains staged locally.
-
-Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and recorded the run in [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
+- ★117,932 secured across 6 repos; ★757,080 in flight across 15.
+- Newly merged: `THU-MAIC/OpenMAIC#1357` and `pacifio/atlas#233`.
+- Needs attention:
+  - `NousResearch/hermes-agent#94342` — lockfile drift question.
+  - `Cosmian/kms#1163` — maintainer requested reframing and validation.
+  - `vllm-project/semantic-router#3425` — changes requested and DCO failure.
+- Disclosure queue: 9 drafts; 0 escalations, 1 in-window, 1 operator action, 7 cleanup candidates.
+- PVR triage skipped because no files use the required canonical `channel: pvr` schema.
+- Notification delivery failed because the external notification queues are read-only.
 
 ## Summary
 
-- Ran all three lifecycle arms.
-- Refetched live GitHub state and star counts.
-- Found no new escalation or lifecycle transition.
-- No advisory files were moved or resolved.
+Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and appended the run to [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md). The complete notification remains staged in `.pending-notify-temp/vuln-tracker-2026-09-03.md`.
