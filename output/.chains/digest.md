@@ -1,25 +1,30 @@
-*Daily digest — 2026-09-03*
+*daily — 2026-09-03*
 
-_TL;DR: patch internet-facing SonicWall SMA 1000 appliances now; Gemini 3.8 cuts agent-model cost, while FRNT makes reserve coverage observable onchain._
+_TL;DR: upgrade Firo nodes before tomorrow's fork, treat copied `.git` directories as executable input, and expect Hugging Face to close under NVIDIA in 2027._
 
-1. *Patch actively exploited SonicWall SMA 1000 flaws now*  
-   SonicWall says attackers are exploiting a pre-auth SSRF rated CVSS 10.0 and a post-auth RCE in SMA 1000 firmware 12.4.3 and 12.5.0. Apply the listed hotfixes and check exposed appliances for compromise.  
-   Why it matters: an internet-facing access gateway is already in the exploitation window.  
-   https://www.sonicwall.com/support/notices/product-notice-sma-1000-series-affected-by-multiple-vulnerabilities-snwlid-2026-0016/kA1VN000002AXmQ0AW
+1. *Upgrade Firo before Spark reactivates tomorrow*  
+   Firo v0.14.18.0 is mandatory for wallets, nodes, masternodes, miners and exchanges before block 1,371,000, expected September 4 at 10:00 UTC. It permanently fixes multi-input Spark spends.  
+   Why it matters: outdated infrastructure will miss the hard fork.  
+   https://firo.org/2026/08/27/firo-v014180-release.html
 
-2. *Benchmark Gemini 3.8 Flash before the introductory price expires*  
-   Google shipped Gemini 3.8 Flash at $0.75/$3.75 per million input/output tokens through December 31, plus a defender-gated Cyber variant. Google reports 54.9% on HLE-Verified; the cyber model reached 47.2% pass@1 on CWE-Bench.  
-   Why it matters: agent workloads now have a cheaper current model to test against their existing quality-and-cost frontier.  
-   https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/
+2. *Sanitize `.git` before an agent opens untrusted code*  
+   Eight GitSpawn flaws let repository-local Git configuration trigger commands when coding agents inspect a project. Disable `core.fsmonitor` for untrusted repositories and remove copied `.git` metadata before opening them with an agent.  
+   Why it matters: code can run before the agent shows a trust prompt.  
+   https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html
 
-3. *FRNT publishes reserve coverage onchain through Chainlink*  
-   Wyoming’s Stable Token Commission adopted Chainlink Proof of Reserve to publish independently examined FRNT reserves and token supply onchain in near real time.  
-   Why it matters: state-issued stablecoin backing can now be monitored directly by trading and risk systems.  
-   https://cointelegraph.com/news/wyoming-chainlink-onchain-reserves-of-state-issued-stable-token
+3. *NVIDIA agrees to acquire Hugging Face for $12.93B*  
+   NVIDIA says Hugging Face will remain open and hardware-agnostic after the deal, expected to close in the first half of 2027. The platform serves 18 million developers and hosts more than 3 million models.  
+   Why it matters: the largest open-model distribution hub is moving under the dominant AI chip vendor.  
+   https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/
+
+4. *Coder brings Cursor cloud agents onto customer infrastructure*  
+   Coder Agent Relay lets regulated teams run Cursor Cloud Agents inside self-hosted Coder workspaces while Cursor retains inference and planning.  
+   Why it matters: cloud coding agents can now meet stricter data-residency and network-boundary requirements.  
+   https://coder.com/blog/agent-relay-spacexai-launch-partner-cursor-cloud-agents
 
 ## Summary
 
-- Saved the digest to [output/digest-2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-03.md).
-- Updated [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and today’s digest log.
-- xAI failed with HTTP 403 due to its spending limit; public X search yielded no usable posts.
-- Notification delivery was attempted, but the external queues were read-only, so delivery was not confirmed.
+- Saved the digest to [digest-2026-09-03-2.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-03-2.md).
+- Updated memory and the daily run log.
+- xAI failed with HTTP 403 because its spending allowance is exhausted; web-search fallback was used.
+- Notification delivery was attempted but could not be confirmed because the external queues are read-only.
