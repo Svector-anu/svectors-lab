@@ -1,77 +1,77 @@
-## Tweet Drafts: agent skills are dependencies, not prompts
+## Tweet Drafts: open-source security work is engineering
 
 ### Tier 1 — One-liner
 
 **1a. Reframe**
 
-> agent skills are dependencies with prose as executable code
+> finding the bug is research. getting the fix merged is engineering.
 
-**1b. Sardonic**
+**1b. Hot take**
 
-> if a skill can touch your shell, “just a markdown file” is doing a lot of work
+> a security report is a lead. a merged patch is the actual work.
 
 ### Tier 2 — Two-punch
 
-**2a. Reframe**
+**2a. Observation**
 
-> we keep reviewing agent skills like prompts. they can read files, call tools and run code, so the right model is a dependency with privileges
+> security work does not end when the bug is found. it ends when maintainers have a patch they can actually merge.
 
-**2b. Observation**
+**2b. Data drop**
 
-> portable skills are great until trust becomes portable too. verify the author, pin the version and inspect what the skill can actually touch
+> 62 open source repos tracked. 15 fixes in flight. 5 merged. the useful metric is not vulnerabilities found, it is software secured.
 
 ### Tier 3 — Paragraph
 
-**3a. Data drop**
+**3a. Builder’s breakdown**
 
-> 26.1% of 31,132 agent skills in one study had at least one vulnerability. skills with scripts were 2.12x more likely to be vulnerable. the install button needs to become a security boundary
-
-The figures come from a [large-scale empirical study of agent skills](https://arxiv.org/abs/2601.10338).
+> finding a vulnerability is only the first commit. then comes reproducing it, checking prior art, writing the patch, passing CI and working through review. security research becomes useful when the maintainer can merge it.
 
 **3b. Reframe**
 
-> signing proves who shipped a skill. it does not prove the skill behaves like its description. agent registries need both provenance and a claim-to-behavior check before install
+> i stopped treating open source security as a report-writing exercise. 62 repos tracked, 15 fixes in flight, 5 merged. the count i care about is not how many bugs an agent can name. it is how many users are safer after the patch lands.
 
 ### Tier 4 — Long tweet
 
-**4a. Builder’s breakdown**
+**4a. Structural critique**
 
-> an agent skill is not “just markdown” once the model can turn its instructions into shell commands, network calls and file access. traditional scanning catches suspicious code. it can miss a clean-looking instruction that makes the agent create the payload at runtime. verification has to cover metadata, scripts and natural-language behavior together
+> open source security has a last-mile problem. finding a bug gets attention, but maintainers still need a clean reproduction, a scoped fix, passing tests and someone who stays through review. that is why i track the whole path now: 62 repositories, 15 fixes in flight, 5 merged. discovery is research. remediation is engineering.
 
 **4b. Observation**
 
-> portable skills are the right direction. i want the same workflow to run across codex, claude code, grok, kimi and whatever comes next. but portability raises the trust requirement: pin the exact artifact, declare capabilities, scan code and instructions, then enforce those capabilities at runtime. otherwise we just made supply-chain risk portable too
+> my security scoreboard is deliberately boring: 5 fixes merged, 15 repositories in flight, 62 tracked. no victory lap for a scanner alert. the work starts after detection — reproduce the issue, reject false positives, check for an existing fix, patch the right branch, pass CI and answer the maintainer. software is not safer because a model found a bug. it is safer when the fix ships.
 
 ### Tier 5 — Thread opener
 
-**5a. Reframe**
+**5a. Data drop**
 
-> agent skills are becoming package dependencies, except one executable layer is written in natural language. our security tooling still mostly understands only the other layer
+> i tracked 62 open source repositories through the security-fix pipeline. 5 fixes are merged. 15 are still in flight. the gap between those numbers is where most automated security claims fall apart.
 
 ---
 
-- How instructions become executable behavior
-- Where code-only scanners go blind
-- Why signatures solve integrity, not intent
-- Controls that close the install-time and runtime gaps
+- how findings are verified before disclosure
+- why prior-art checks matter
+- where fixes stall between report and merge
+- what a remediation-first agent should optimize for
 
 **5b. Builder’s breakdown**
 
-> the next useful primitive for agent skills is not another marketplace. it is a receipt proving the installed skill matches what was reviewed and stayed inside its declared capabilities
+> finding bugs with agents is getting easier. getting a correct patch through reproduction, disclosure, CI and maintainer review is still the real work. i have the receipts from 62 repositories.
 
 ---
 
-- Bind review results to an exact artifact
-- Compare declared capabilities with observed behavior
-- Enforce least privilege during execution
-- Preserve evidence across updates and harnesses
+- the pipeline from scanner output to verified finding
+- public PR versus private disclosure decisions
+- the failure modes after a valid bug is found
+- why merged fixes beat vulnerability counts
 
-Best overall: **#4b**  
-Best per tier: **#1a, #2b, #3a, #4b, #5b**
+Best overall: **#4b**
+
+Best per tier: **#1a, #2b, #3b, #4b, #5a**
 
 ## Summary
 
+- Generated 10 character-checked drafts across five tiers.
 - Saved the revisable batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
 - Logged the run in [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
-- xAI search returned HTTP 403, so public-search fallback was used.
-- Notification delivery was attempted but failed because the harness’s external queue is read-only.
+- xAI search returned HTTP 403; public X search was used as fallback.
+- Draft delivery and revision prompt were attempted, but the external notification queues were read-only.

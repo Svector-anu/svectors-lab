@@ -1,10 +1,13 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-03T01:15:58Z",
-  "quality_score": 4,
-  "assessment": "Strong, varied, publication-ready drafts with accurately sourced figures and clear recommendations, though the topic does not directly advance the operator’s crypto-signal strategy.",
-  "flags": [],
-  "avg_score": 2.2,
+  "last_analyzed": "2026-09-03T05:51:14Z",
+  "quality_score": 2,
+  "assessment": "Polished drafts, but they are off-strategy for crypto traders and present unsupported metrics plus impossible read-only workspace writes as completed facts.",
+  "flags": [
+    "generic_content",
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.18,
   "history": [
     {
       "date": "2026-08-27",
@@ -64,6 +67,12 @@
       "date": "2026-09-03",
       "score": 4,
       "ts": "2026-09-03T01:15:58Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 2,
+      "ts": "2026-09-03T05:51:14Z",
       "harness": "codex"
     }
   ]
