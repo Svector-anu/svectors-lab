@@ -1,19 +1,17 @@
-Memory flush completed.
+Memory flush completed for the 2026-09-01–2026-09-03 window.
 
-- Promoted merged Aeon PR #1009 and Skopos PR #107.
-- Archived three older digest rows into the existing history topic.
-- Confirmed six stalled PRs and the ZSvirt disclosure remain active priorities.
-- Deduplicated transient and unchanged signals.
-- Kept `MEMORY.md` at 50 lines with unique headings.
-- Logged the run and stamped the 2026-09-01 watermark.
+- Promoted the September 2 OSS security campaign milestone.
+- Added critical `vuln-scanner` issue ISS-005 to next priorities.
+- Confirmed six stalled PRs and the ZSvirt disclosure blocker remain active.
+- Archived seven older digest entries into digest history.
+- Logged the run and stamped consolidation state to 2026-09-03.
+- Left unrelated workspace changes untouched.
 
 ## Summary
 
 Modified:
 
-- `memory/MEMORY.md`
-- `memory/topics/recent-digests-history.md`
-- `memory/logs/2026-09-01.md`
-- `memory/memory-flush-state.json`
-
-No follow-up action required.
+- [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md)
+- [recent-digests-history.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/recent-digests-history.md)
+- [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md)
+- [memory-flush-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/memory-flush-state.json)
