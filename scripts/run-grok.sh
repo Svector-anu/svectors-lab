@@ -78,10 +78,22 @@ if ! command -v grok >/dev/null 2>&1; then
 fi
 
 # --- 2. auth ----------------------------------------------------------------
-# Prefer the captured X-account OAuth session; fall back to an API key. One of
-# the two must be present, or grok would block on an interactive login prompt.
+# XAI_API_KEY (the operator's own x.ai billing) is checked FIRST, ahead of the
+# captured X-account OAuth session (GROK_CREDENTIALS) — matches the AUTH_MODE
+# precedence resolve-harness.sh resolves for grok (2026-09-03, ISS-005: this
+# fork's Grok Build subscription balance repeatedly hit 402 Payment Required
+# while the operator's own key stayed funded). Staging GROK_CREDENTIALS here
+# whenever it merely EXISTS — regardless of what AUTH_MODE actually decided —
+# was the real bug: adapters/grok.sh just checks for an existing auth.json OR
+# XAI_API_KEY and lets the grok CLI's own precedence pick from there, so an
+# exhausted-but-present OAuth session silently wins even when resolve-harness.sh
+# correctly resolved native-key. One of the two must be present, or grok would
+# block on an interactive login prompt.
 GROK_HOME="${HOME}/.grok"
-if [ -n "${GROK_CREDENTIALS:-}" ]; then
+if [ -n "${XAI_API_KEY:-}" ]; then
+  export XAI_API_KEY
+  log "::debug::authenticating grok with XAI_API_KEY"
+elif [ -n "${GROK_CREDENTIALS:-}" ]; then
   mkdir -p "$GROK_HOME"; chmod 700 "$GROK_HOME" 2>/dev/null || true
   tmp_creds="$(mktemp)"
   printf '%s' "$GROK_CREDENTIALS" | base64 -d > "$tmp_creds" 2>/dev/null || {
@@ -101,9 +113,6 @@ if [ -n "${GROK_CREDENTIALS:-}" ]; then
     log "::debug::restored grok OAuth session from GROK_CREDENTIALS to ${dest}"
   fi
   rm -f "$tmp_creds"
-elif [ -n "${XAI_API_KEY:-}" ]; then
-  export XAI_API_KEY
-  log "::debug::authenticating grok with XAI_API_KEY"
 elif [ -f "$GROK_HOME/auth.json" ]; then
   # Already signed in on this machine (local run / mcp-server path) — use it.
   log "::debug::using existing grok session at $GROK_HOME/auth.json"
@@ -198,9 +207,13 @@ grok_oauth_refresh() {
     fi
   fi
 }
-# Only meaningful on the CI OAuth path (a GROK_CREDENTIALS secret was restored above);
-# a local `grok login` session (no GROK_CREDENTIALS) is deliberately left untouched.
-[ -n "${GROK_CREDENTIALS:-}" ] && grok_oauth_refresh
+# Only meaningful on the CI OAuth path (a GROK_CREDENTIALS secret was restored
+# above) AND only when that path was actually the one taken — XAI_API_KEY wins
+# the auth block above when both are present, so a leftover auth.json from an
+# earlier GROK_CREDENTIALS-only run (or a local `grok login` session) must not
+# trigger a refresh, and must never risk persisting a rotated token, on a run
+# that's authenticating via XAI_API_KEY instead.
+[ -z "${XAI_API_KEY:-}" ] && [ -n "${GROK_CREDENTIALS:-}" ] && grok_oauth_refresh
 
 log "::debug::grok setup complete (CLI + auth staged); runs go through run-harness grok"
 exit 0
