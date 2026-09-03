@@ -1,15 +1,11 @@
-Auto-merge completed in live mode.
-
-- Repository: `aeonfun/aeon`
-- Open PRs considered: 0
-- Merged: 0
-- Retry-capped: 0
-- Notification: suppressed because there was no actionable signal
-- State JSON validated successfully
+No open PRs found in `aeonfun/aeon`; nothing merged and no notification sent.
 
 ## Summary
 
-Updated:
-
-- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
-- [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md)
+- Considered: 0
+- Qualified: 0
+- Merged: 0
+- Retry-capped: 0
+- Updated `memory/topics/auto-merge-state.json`
+- Added `memory/logs/2026-09-03.md`
+- Validated state JSON and diffs successfully.
