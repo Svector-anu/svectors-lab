@@ -1,6 +1,13 @@
 {
   "last_run": "2026-09-03",
-  "last_status": "PR_MERGE_QUEUE_EMPTY",
-  "last_repo": "anthropics/commerce-agents",
-  "prs": {}
+  "last_status": "PR_MERGE_QUEUE_OK",
+  "last_repo": "Svector-anu/svectors-lab",
+  "prs": {
+    "Svector-anu/svectors-lab#30": {"bucket":"SKILL_WARN_OR_BLOCK","scan_verdict":"WARN","head_sha":"2c14a84201fddbb6edbfd46adc282ddbba5e34f4","first_seen":"2026-09-03","last_notified_head_sha":null,"age_days":18,"author":"Svector-anu","draft":false},
+    "Svector-anu/svectors-lab#22": {"bucket":"TRUSTED_AUTHOR","scan_verdict":null,"head_sha":"6a4d4ef0ee66b4bf018cc36d31ed4d14c2985cf4","first_seen":"2026-09-03","last_notified_head_sha":null,"age_days":36,"author":"github-actions[bot]","draft":false},
+    "Svector-anu/svectors-lab#20": {"bucket":"TRUSTED_AUTHOR","scan_verdict":null,"head_sha":"10a8a3129fcd60721ccc6872bb3767f62af01358","first_seen":"2026-09-03","last_notified_head_sha":null,"age_days":36,"author":"github-actions[bot]","draft":false},
+    "Svector-anu/svectors-lab#5": {"bucket":"TRUSTED_AUTHOR","scan_verdict":null,"head_sha":"65be0b59983e8b916cea2dd4725e8c49785e63b5","first_seen":"2026-09-03","last_notified_head_sha":null,"age_days":45,"author":"github-actions[bot]","draft":false},
+    "Svector-anu/svectors-lab#4": {"bucket":"TRUSTED_AUTHOR","scan_verdict":null,"head_sha":"fa937f8ffe44936489242c0f1a8edf2f8f5b054a","first_seen":"2026-09-03","last_notified_head_sha":null,"age_days":45,"author":"github-actions[bot]","draft":false},
+    "Svector-anu/svectors-lab#3": {"bucket":"TRUSTED_AUTHOR","scan_verdict":null,"head_sha":"119a7b03d874749257d8d9751fde45e80d562b0b","first_seen":"2026-09-03","last_notified_head_sha":null,"age_days":45,"author":"github-actions[bot]","draft":false}
+  }
 }
