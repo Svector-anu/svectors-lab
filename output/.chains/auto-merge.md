@@ -5,13 +5,13 @@ Auto-merge completed in live mode.
 - Merged: 0
 - Retry-capped: 0
 - Notification: not sent; no actionable signal
-- State and daily memory log updated and validated successfully
+- State JSON validated successfully
 
 ## Summary
 
-Modified:
+Updated:
 
-- `memory/topics/auto-merge-state.json`
-- `memory/logs/2026-09-03.md`
+- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
+- [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md)
 
-No follow-up action needed.
+No follow-up action is needed.
