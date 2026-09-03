@@ -1,11 +1,15 @@
 Hunter-22 completed.
 
-- ClawHunter `/match`: HTTP 200, 25 candidates.
-- New genuine matches: 0; all were seen within 14 days.
+- ClawHunter free match API: HTTP 200, 25 candidates scanned.
+- New within 14 days: 1 — “FAI CALLOUTS” ($100.66).
+- Rejected because it is social-engagement/callout work, not credible code, security, research, or technical writing.
+- Genuine matches: 0.
 - Audit-shaped matches: 0.
-- Notification: not sent, as required for no new signal.
-- Refreshed 25 entries; retained 51 after pruning.
-- Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [2026-09-02.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md).
-- Validation passed with no duplicate IDs or whitespace errors.
+- Notification skipped as required when there is no signal.
+- No paid endpoint, wallet action, claim, or submission occurred.
 
-Commit creation was blocked because `.git` is mounted read-only. The intended changes remain unstaged; unrelated workspace changes were untouched.
+## Summary
+
+Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and recorded the run in [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md). JSON and diff checks passed.
+
+The requested commit could not be created because the harness mounts `.git` read-only; the two validated changes remain in the working tree.

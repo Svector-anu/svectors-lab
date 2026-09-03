@@ -1,12 +1,10 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-02T21:18:24Z",
-  "quality_score": 2,
-  "assessment": "The no-signal outcome is valid and concise, but the claimed workspace file updates and unstaged changes conflict with the explicitly read-only run, making the report unverifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.65,
+  "last_analyzed": "2026-09-03T10:10:35Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-signal scan with explicit filtering rationale and operational status, but limited source evidence and a confusing claim that workspace changes persisted during a declared read-only run.",
+  "flags": [],
+  "avg_score": 2.67,
   "history": [
     {
       "date": "2026-07-31",
@@ -112,6 +110,12 @@
       "date": "2026-09-02",
       "score": 2,
       "ts": "2026-09-02T21:18:24Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 3,
+      "ts": "2026-09-03T10:10:35Z",
       "harness": "codex"
     }
   ]
