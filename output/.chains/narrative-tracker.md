@@ -1,25 +1,27 @@
 *Narrative Tracker — 2026-09-03*
 
 TRANSITIONS
-• NEW: Bank stablecoins — 21 major institutions targeting a 2027 joint issuance vehicle turns adoption into an infrastructure race — https://cointelegraph.com/news/what-happened-in-crypto-today?ttl=0
-• NEW: RWA/tokenized securities rails — SEC transfer-agent reform plus ongoing ONDO attention makes this the cleaner picks-and-shovels trade — https://www.fameex.com/en-AU/news/crypto-news-recap-20260902
-• NEW: BTC institutional bid vs macro — August ETF inflows hit $3.52B, then daily flows reversed as bond yields and Fed-hike odds rose — https://www.theblock.co/news/markets/2026-09-02-bitcoin-hovers-near-77000-as-global-bond-selloff-tests-post-rally-resilience-413320
-• NEW: Prediction-market jurisdiction — New Jersey's Supreme Court petition raises the regulatory stakes for event-contract platforms — https://cointelegraph.com/news/what-happened-in-crypto-today
+• NEW: Uniswap fee/burn flywheel — 7M swaps/day plus fee-funded burns gave UNI a measurable catalyst; RIDE, but revenue capture is the check — https://phemex.com/blogs/uniswap-fee-switch-revenue
+• NEW: agentic payments — Kite showed six paid API calls for ~$0.036 USDC under one approval; actual execution is replacing agent-demo talk — https://docs.gokite.ai/
+• NEW: privacy institutionalization — ZEC ETF access and XMR native swaps turned privacy into a product/flow story, not just ideology — https://coinmarketcap.com/top-stories/6a97f4dbcd14b249420fdefa/
+• NEW: fit-for-purpose US crypto rules — official SEC proposal is dominating policy talk, but it is two weeks old and not final — https://www.sec.gov/newsroom/speeches-statements/atkins-statement-regulation-crypto-assets-081826
 
 REFLEXIVITY ALERT
-• RWA — ONDO's roughly 24-hour move was attributed partly to regulatory coverage and renewed RWA/tokenized-stock framing despite no fresh project catalyst: narrative is moving price ahead of fundamentals — https://coinmarketcap.com/top-stories/6a98e43bcd14b2494210b9c9/
+• Uniswap — UNI gained 11.78% Sep 1 and 36.96% in seven sessions as fee-switch/burn coverage accelerated; daily burn revenue rose from ~$114K to ~$325K after v4 expansion. The story is moving price while the mechanism also destroys supply.
+• Privacy — ZEC’s spot ETF and XMR’s THORChain integration helped drive reported August gains of 82% and 40%; ZEC then fell 3.45% Sep 2, showing reflexivity can reverse quickly.
 
 POSITIONS
-• RIDE: Bank stablecoins (mindshare 4 ↑↑, Bull) — @Cointelegraph, @DecryptMedia, BofA/Citi/Goldman — 2027 launch means attention can outrun near-term usage.
-• RIDE: RWA rails (4 ↑, Bull) — @SECGov, @OndoFinance, @Fidelity — rulemaking is still proposed; token attention can front-run adoption.
-• WATCH: BTC institutional bid vs macro (5 →, Mixed) — @BlackRock, @CoinSharesCo, @TheBlock__ — inflows are strong, but higher yields can break the decoupling thesis.
-• WATCH: Prediction markets (3 ↑, Mixed) — @Kalshi, @Polymarket, New Jersey — Supreme Court scrutiny can clarify the moat or constrain it.
-• FADE: AI-agent tokens (2 ↓, Cope) — @virtuals_io, @aixbt_agent, @ai16zdao — no fresh three-day catalyst; research still shows weak token/fundamental linkage.
+• RIDE: Uniswap fee/burn (mindshare 4 ↑↑, Bull) — @haydenzadams, @Uniswap, @UniswapFND — bear: 7M swaps produced only ~$4M monthly protocol revenue versus ~$44M to LPs.
+• RIDE: agentic payments (3 ↑, Bull) — @GoKiteAI, @CoinbaseDev, @Cloudflare — bear: the concrete demo cost pennies but drew limited engagement; adoption is not proven.
+• WATCH: privacy institutionalization (3 ↑, Mixed) — @Grayscale, @Zcash, @monero — bear: ZEC is extended and the first pullback already arrived.
+• WATCH: regulation clarity (4 →, Bull) — @SECPaulSAtkins, @SECGov, @a16zcrypto — bear: proposal/CLARITY enthusiasm is ahead of enacted law; no contrarian edge.
+• WATCH: BTC institutional vs macro (5 →, Mixed) — @saylor, @WatcherGuru, @Andre_Dragosch — bear: BTC is still ~$77K with weak weekly breadth despite renewed ETF inflows.
+• WATCH: microcap speculation (2 ↑↑, Cope) — PONS, AI, INDEX — bear: trending rank and double-digit prints without durable drivers are exit liquidity until breadth confirms.
 
 MAP
-Emerging: prediction-market jurisdiction
-Rising: bank stablecoins; RWA rails
-Peak: BTC institutional bid vs macro
-Fading: AI-agent tokens
+Emerging: microcap speculation
+Rising: Uniswap fee/burn, agentic payments, privacy institutionalization
+Peak: regulation clarity, BTC institutional vs macro
+Fading: none confirmed
 
-Calibration: Perception scored Bitcoin narrative sentiment 73/100 from 1,478 articles on Sep 2; Warden's Kaito-powered leaderboard was diffuse, with its top account at 0.7598% mindshare. These support high broad-market mindshare but caution against treating any single account as dominant.
+Data quality: X.AI primary returned HTTP 403; public-web fallback used. No prior 3-day tracker baseline, so transitions are NEW. Calibration: Uniswap 7M daily swaps, ~$4M 30-day protocol revenue, ~$44M LP fees.
