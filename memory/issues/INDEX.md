@@ -7,6 +7,7 @@
 | ISS-003 | verdikta-hunter has no successful run | critical | missing-secret | 2026-08-25 | verdikta-hunter |
 | ISS-004 | self-improve blocked by ChatGPT usage limit | critical | rate-limit | 2026-08-25 | self-improve |
 | ISS-005 | vuln-scanner has four consecutive failures | critical | unknown | 2026-09-02 | vuln-scanner |
+| ISS-006 | pr-review blocked by exhausted Grok usage balance | critical | rate-limit | 2026-09-03 | pr-review |
 
 ## Resolved
 

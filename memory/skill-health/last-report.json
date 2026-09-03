@@ -1,9 +1,10 @@
 {
-  "hash": "741e0c8f947dc1de082bebd08533bd2ab87029ac4a097678cf933863d2faaf0c",
+  "hash": "51485e71651ab7daa0b9c36063bdc844fecd3a0c305ea5085127c8aefac86274",
   "last_notified_at": "2026-09-01T19:28:48Z",
-  "last_run_at": "2026-09-03T01:15:25Z",
+  "last_run_at": "2026-09-03T05:50:15Z",
   "classification": {
     "critical": [
+      "pr-review",
       "vuln-scanner"
     ],
     "degraded": [
@@ -26,7 +27,6 @@
     "warning": [
       "auto-merge",
       "hunter-22",
-      "pr-review",
       "search-skill",
       "self-improve"
     ],

@@ -1,19 +1,20 @@
-# Skill Health — 2026-09-03
+HEALTH: CRITICAL(2)
 
-**HEALTH: CRITICAL(1)**
+- `vuln-scanner`: 7 consecutive failures.
+- `pr-review`: 3 consecutive failures.
+- Systemic cause: Grok Build returns HTTP 402 because its usage balance is exhausted.
+- Degraded: 14 skills.
+- Warning: 4 skills.
+- Healthy: 9 skills.
+- Open issues: 4; resolved this run: 0.
 
-- `vuln-scanner`: 5 consecutive failures; investigate truncated error capture. Existing issue: `ISS-005`.
-- 14 skills remain degraded, including `verdikta-hunter`, `soul-builder`, `picks-tracker`, `x402-monitor`, and `heartbeat`.
-- 5 warnings, 9 healthy.
-- Open issues: 3.
-- Filed: none.
-- Resolved: none.
-- Systemic failures: none.
+Filed [ISS-006](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-006.md) for `pr-review` and updated [ISS-005](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-005.md) with the new scanner failure signature. The [health snapshot](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and issue index were updated and validated.
 
-The classification hash is unchanged. A daily reminder was attempted because the last successful notification was over 24 hours ago, but the external notification queues were read-only. The prior `last_notified_at` was preserved so a future run can retry.
+Notification delivery was attempted but failed because the external notification and json-render queues are read-only.
 
 ## Summary
 
-- Updated `memory/skill-health/last-report.json`.
-- Created `memory/logs/2026-09-03.md`.
-- Validated JSON and repository diff formatting.
+- Status: critical
+- Filed: `ISS-006`
+- Updated: `ISS-005`, issue index, health snapshot, daily log
+- Required action: replenish or reconfigure the Grok provider balance affecting both critical skills.
