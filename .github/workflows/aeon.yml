@@ -722,6 +722,7 @@ jobs:
           SKILL_NAME: ${{ steps.skill.outputs.name }}
           INPUT_MODEL: ${{ inputs.model }}
           RESOLVED_HARNESS: ${{ steps.harness.outputs.HARNESS }}
+          RH_AUTH_MODE: ${{ steps.harness.outputs.AUTH_MODE }}
           RH_MODEL_ARG: ${{ steps.harness.outputs.MODEL_ARG }}
           RH_HARNESS_MODEL: ${{ steps.harness.outputs.HARNESS_MODEL }}
           INPUT_CHAIN_CTX: ${{ inputs.chain_context_file }}
@@ -744,11 +745,17 @@ jobs:
           # Resolved in the "Resolve harness" step above, which had to run before
           # "Install harness CLI". Same 3-tier precedence as model, moved verbatim.
           HARNESS="$RESOLVED_HARNESS"
-          # On the grok harness a claude-* model id is meaningless — fall back to
-          # grok's current default (grok-4.5) unless an explicit grok model was
-          # chosen. The grok adapter omits --model for a non-grok value as a safety net.
+          GROK_MODEL_ARG=""
+          # Grok Build OAuth and the xAI API-key path expose different model
+          # catalogs. The API-key path must use its CLI-authenticated default;
+          # forcing the OAuth-only grok-4.5 id fails before the skill runs.
           if [ "$HARNESS" = "grok" ]; then
-            case "$MODEL" in claude-*|"") MODEL="grok-4.5" ;; esac
+            GROK_MODEL_ARG=$(bash scripts/resolve-grok-model.sh "$RH_AUTH_MODE" "$MODEL")
+            if [ "$RH_AUTH_MODE" = "native-key" ]; then
+              MODEL="$RH_HARNESS_MODEL"
+            else
+              MODEL="$GROK_MODEL_ARG"
+            fi
           fi
           # Banner must name the model that ACTUALLY runs. For claude/grok that is
           # $MODEL (their native id). For the adapter harnesses (codex/pi/vibe/kimi)
@@ -1030,12 +1037,9 @@ jobs:
               # consumed by adapters/grok.sh — the same frontmatter mapping the
               # native path used. SKILL_MODEL was already set to grok's model above.
               eval "$(bash "${GITHUB_WORKSPACE}/scripts/skill_mode.sh" grok-run-env "$SKILL_NAME")"
-              # BASE_MODEL is grok-4.5 or an explicit grok id (forced above); pass
-              # only a real grok id — the adapter falls back to grok's default
-              # otherwise. (BASE_MODEL, not MODEL: identical here, but MODEL is the
-              # var the claude cascade rewrites in a subshell, so referencing it here
-              # would trip a spurious shellcheck SC2031.)
-              case "$BASE_MODEL" in grok-*) RH_MODEL_ARGS=(--model "$BASE_MODEL") ;; esac
+              # Invocation and provenance are separate on API-key auth: MODEL keeps
+              # the honest native-default label while GROK_MODEL_ARG stays empty.
+              case "$GROK_MODEL_ARG" in grok-*) RH_MODEL_ARGS=(--model "$GROK_MODEL_ARG") ;; esac
             else
               # RH_MODEL_ARG is decided in "Resolve harness" (empty = let the
               # harness's staged config choose). Never aeon's BASE_MODEL: that is
@@ -1439,6 +1443,7 @@ jobs:
           GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
           ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           RH_MODEL_ARG: ${{ steps.harness.outputs.MODEL_ARG }}   # run-harness scorer: same --model the run used
+          RH_AUTH_MODE: ${{ steps.harness.outputs.AUTH_MODE }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
           OPENROUTER_MODEL_SONNET: ${{ vars.OPENROUTER_MODEL_SONNET }}
           OPENROUTER_MODEL_HAIKU: ${{ vars.OPENROUTER_MODEL_HAIKU }}
@@ -1569,12 +1574,8 @@ jobs:
               # scoring model (haiku by default).
               SCORE_ARGS+=(--model "$SCORE_MODEL") ;;
             grok)
-              # Pin grok-4.5 — the only model the X-account (GROK_CREDENTIALS) login
-              # exposes. grok-composer-2.5-fast was a phantom id: the grok CLI rejects
-              # it with "unknown model id" (verified live, run 29944263287), so pinning
-              # it made every grok scorer call fail-then-fall-back. Scoring is one short
-              # text call, so grok-4.5's cost is pennies.
-              SCORE_ARGS+=(--model grok-4.5) ;;
+              GROK_SCORE_MODEL=$(bash scripts/resolve-grok-model.sh "$RH_AUTH_MODE" grok-4.5)
+              [ -n "$GROK_SCORE_MODEL" ] && SCORE_ARGS+=(--model "$GROK_SCORE_MODEL") ;;
             *)
               # RH_MODEL_ARG is the same --model the run used (empty = harness default).
               [ -n "${RH_MODEL_ARG:-}" ] && SCORE_ARGS+=(--model "$RH_MODEL_ARG") ;;
