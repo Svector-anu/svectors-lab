@@ -1,57 +1,59 @@
 # Market Context (as of 2026-09-03)
 
-> **Take:** chop — BTC rebounded 1.3% over 24 hours with 14/20 top caps green, but only 4/20 remain green over seven days. Conviction: medium.
+> **Take:** rotation — BTC gained 3.2% with 18/20 top caps green, but only 5/20 remain green over seven days. Conviction: low.
 
 ## Signal Snapshot
-- BTC $77,604 (+1.3% 24h, -2.6% 7d) · dominance 59.56% (+0.52 pp since prior refresh)
-- ETH $2,394 (+1.0% 24h, -5.4% 7d) · ETH/BTC 0.0308
-- SOL $100.19 (+1.9% 24h, -4.2% 7d)
-- Total mcap $2.610T (-2.2% 24h) · DEX vol $9.23B 24h
-- Breadth: 14/20 green 24h · 4/20 green 7d
+- BTC $79,604 (+3.2% 24h, -0.6% 7d) · dominance 59.28% (-0.28 pp since prior refresh)
+- ETH $2,449 (+2.2% 24h, -2.7% 7d) · ETH/BTC 0.0308
+- SOL $102.63 (+3.6% 24h, -2.9% 7d)
+- Total mcap $2.697T (+0.1% 24h) · DEX vol $9.19B 24h
+- Breadth: 18/20 green 24h · 5/20 green 7d
 - Fear & Greed: 65 (Greed) — yesterday 63
 
 ## What Changed Since Last Refresh
-- BTC swung from -0.4% to +1.3% over 24 hours and top-20 breadth improved from 10/20 to 14/20.
-- BTC dominance rose 0.52 percentage points, so the rebound remains concentrated while seven-day breadth is only 4/20.
+- BTC accelerated from +1.3% to +3.2%, while 24-hour breadth widened from 14/20 to 18/20.
+- Total market cap rose 3.3% since the prior refresh, but DEX volume slipped 0.5% and remains down 4.5% day over day.
+- The regime moved from chop to rotation as dominance fell 0.28 percentage points and alt breadth broadened.
 
 ## Active Narratives
-- **Uniswap activity expansion** — phase: rising. Evidence: V4 volume rose 15.5% today and fees rose 289.2% over seven days.
-- **Microcap speculation** — phase: rising. Evidence: four of CoinGecko's top eight trending assets gained at least 16% today.
-- **Privacy relative strength** — phase: rising. Evidence: XMR gained 15.0% and ZEC 4.7% over seven days while only 4/20 top caps were green.
+- **Microcap speculation** — phase: rising. Evidence: SHRUB gained 263%, while PONS and USELESS each gained more than 42% among trending assets.
+- **Privacy relative strength** — phase: rising. Evidence: ZEC gained 9.6% and XMR 11.6% over seven days while only 5/20 top caps were green.
+- **Uniswap activity expansion** — phase: rising. Evidence: V4 volume rose 16.2% today and fees rose 301.8% over seven days.
+- **Arbitrum attention rebound** — phase: emerging. Evidence: ARB ranked third in CoinGecko trends and gained 18.6% today.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.27B (-4.7%)
-- Aave V3: $17.05B (-2.0%)
-- SSV Network: $12.55B (+0.3%)
+- Lido: $23.43B (-2.9%)
+- Aave V3: $17.07B (-3.0%)
+- SSV Network: $12.56B (-0.2%)
 - Morpho Blue: $9.49B (+0.3%)
-- Binance staked ETH: $8.94B (-5.3%)
+- Binance staked ETH: $8.96B (-3.9%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $48.28B (n/a)
-- Solana: $5.76B (n/a)
-- Base: $5.50B (n/a)
+- Ethereum: $48.48B (n/a)
+- Solana: $5.81B (n/a)
+- Base: $5.52B (n/a)
 
 ## Stablecoins
-Total: $311.5B (+0.1% 7d). USDT $183.3B · USDC $73.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.9%.
+Total: $309.8B (flat 7d). USDT $182.9B · USDC $73.8B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.5%.
 
 ## Trending (CoinGecko)
-- PONS — #1 trending, $0.537 (+44.4% 24h)
-- CASHCAT — #2 trending, $0.256 (-4.5% 24h)
-- ARB — #3 trending, $0.138 (+20.2% 24h)
+- PONS — #1 trending, $0.554 (+42.1% 24h)
+- SHRUB — #2 trending, $0.039 (+263.2% 24h)
+- ARB — #3 trending, $0.134 (+18.6% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after the September 2026 meeting | 50.5% | $0.89M | $0.40M |
-| Fed raises rates 25 bps after the September 2026 meeting | 48.5% | $0.87M | $0.37M |
+| No Fed rate change after the September 2026 meeting | 57.5% | $1.58M | $0.35M |
+| Fed raises rates 25 bps after the September 2026 meeting | 42.5% | $1.35M | $0.34M |
 
 ## Macro Catalysts (next 48h)
-- September 4 U.S. payrolls can reset rate expectations while the 10-year Treasury yield remains near 4.8%; weak seven-day crypto breadth leaves the tape sensitive to a hawkish surprise ([TEFS](https://www.tefs.com/en/knowledge-base/can-bitcoin-keep-its-momentum-03-09-2026)).
-- September 2 spot-BTC ETF flows finalized at +$101.15M after September 1's -$236.5M outflow; the reversal supports BTC, but one session does not confirm a durable institutional bid ([Crypto Briefing](https://cryptobriefing.com/bitcoin-etf-inflows-altcoin-outflows/)).
+- September 4 U.S. payrolls can reset rate expectations; weak seven-day breadth leaves the rebound exposed to a hawkish surprise ([CoinDesk](https://www.coindesk.com/markets/2026/09/03/bitcoin-back-above-usd77-500-xrp-leads-majors-as-fed-hike-odds-near-66)).
+- September 2 spot-BTC ETF flows reversed to about +$101M after the prior session's roughly -$236M outflow; supportive, but not yet a durable institutional trend ([ChainCatcher](https://www.chaincatcher.com/article/2287302)).
 
 ## Implications for Downstream Skills
-- **token-pick:** favor activity-confirmed relative strength over broad beta; the 24-hour rebound has not repaired seven-day breadth.
-- **narrative-tracker:** monitor Uniswap activity and privacy strength for broader participation beyond isolated leaders.
+- **token-pick:** ride activity-confirmed alt strength selectively; avoid broad beta until seven-day breadth and DEX volume confirm.
+- **narrative-tracker:** watch privacy and Arbitrum for broader participation; treat microcap strength as late-risk speculation.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

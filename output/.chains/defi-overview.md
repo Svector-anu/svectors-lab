@@ -1,17 +1,18 @@
-Take: chop — BTC rebounded 1.3% with 14/20 top caps green, but seven-day breadth remains weak at 4/20. Conviction: medium.
+Rotation, low conviction — BTC gained 3.2% with 18/20 top caps green, but only 5/20 remain green over seven days. Ride selective alt strength; avoid broad beta until DEX volume and weekly breadth confirm.
 
-DeFi remains sideways: TVL $85.60B, DEX volume $9.23B (-4.1%), stablecoin supply +0.1%. Fluid Lite led qualifying movers at +23.5%; Uniswap V4 fees rose 289% over seven days.
+- DeFi verdict: Sideways — TVL $85.94B, DEX volume down 4.5%, stablecoin supply flat.
+- Movers: Nexus BTC +12.9%; USDD −10.6%.
+- Fear & Greed: 65, Greed.
+- Polymarket: 57.5% probability of no September Fed rate change.
+- No tracked DeFi positions are configured.
+- All required data sources returned valid results.
+- Notification delivery was attempted, but its external queue is read-only in this harness.
 
-Updated:
-
-- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md)
-
-All required sources succeeded. No positions were configured. Notification delivery was attempted, but Aeon’s external queue is read-only in this harness.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
 
 ## Summary
 
-- Refreshed the complete DeFi and crypto macro overview.
-- Preserved the token-pick history.
-- Logged current metrics and source status.
-- Verified changes with `git diff --check`.
+- Refreshed the complete DeFi and macro report.
+- Preserved the existing token-pick history.
+- Logged source status, yields, movers, regime, and position configuration.
+- No further action is required.
