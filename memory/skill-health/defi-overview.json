@@ -1,19 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-03T05:52:46Z",
-  "quality_score": 3,
-  "assessment": "Substantive and conclusion-first with plausible fresh metrics, but it lacks the strategy-required explicit position calls and provides weak source attribution for most figures and yield claims.",
+  "last_analyzed": "2026-09-03T10:11:30Z",
+  "quality_score": 2,
+  "assessment": "Concise regime take, but specific metrics and catalysts lack source citations, explicit position calls are absent, and claimed workspace updates contradict the read-only run constraint.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
   "avg_score": 2.07,
   "history": [
-    {
-      "date": "2026-08-26",
-      "score": 2,
-      "ts": "2026-08-26T12:23:28Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-26",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-03",
       "score": 3,
       "ts": "2026-09-03T05:52:46Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 2,
+      "ts": "2026-09-03T10:11:30Z",
       "harness": "codex"
     }
   ]
