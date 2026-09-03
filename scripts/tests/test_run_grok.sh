@@ -130,6 +130,16 @@ HOME="$OHOME" PATH="$OBIN:$PATH" GROK_CREDENTIALS="$CREDS" GH_SECRETS_PAT="pat-t
 CURL_LOG="$OHOME/curl2.log"; : >"$CURL_LOG"
 HOME="$OHOME" PATH="$OBIN:$PATH" XAI_API_KEY=xai-test CURL_LOG="$CURL_LOG" bash "$RABS" setup >/dev/null 2>&1
 [ ! -s "$CURL_LOG" ] && pass "oauth: API-key path does not run the OAuth refresh" || bad "oauth refresh wrongly ran on API-key path"
+
+# 3f. BOTH present → XAI_API_KEY wins (fork operator preference, ISS-005). Seed
+# GROK_CREDENTIALS with an EXPIRED token: if the OAuth path were mistakenly
+# taken instead, it would trigger a real refresh call and populate CURL_LOG.
+CREDS="$(seed_auth "2000-01-01T00:00:00.000000Z")"; CURL_LOG="$OHOME/curl3.log"; : >"$CURL_LOG"
+HOME="$OHOME" PATH="$OBIN:$PATH" GROK_CREDENTIALS="$CREDS" XAI_API_KEY=xai-test CURL_LOG="$CURL_LOG" \
+  bash "$RABS" setup >/dev/null 2>"$OHOME/e5"
+{ [ ! -s "$CURL_LOG" ] && grep -q "authenticating grok with XAI_API_KEY" "$OHOME/e5"; } \
+  && pass "oauth: XAI_API_KEY beats GROK_CREDENTIALS when both are set" \
+  || bad "oauth precedence (curl=$(cat "$CURL_LOG"); err=$(cat "$OHOME/e5"))"
 rm -rf "$OBIN" "$OHOME"
 
 echo "---"
