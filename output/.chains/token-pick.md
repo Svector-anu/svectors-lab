@@ -1,17 +1,17 @@
-*Daily Pick — 2026-09-02*
+*Daily Pick — 2026-09-03*
 
-*Token: ARB*  [HIGH]  signal 10/10 (raw rubric: 11)
-Price: $0.1245 (+14.2% 24h / +36.6% 7d) | mcap $831.2M | vol $337.9M (vol/mcap 0.41)
+*Token: UNI*  [HIGH]  signal 10/10
+Price: $6.12 (+5.2% 24h / +38.4% 7d) | mcap $3.81B | vol $866.1M (vol/mcap 0.23)
 Score breakdown: [24h positive +1, 7d positive +1, both >5% +2, CoinGecko trending +2, vol/mcap +3, RS vs BTC/ETH +2] = 11 raw, capped at 10/10
-Catalyst: Arbitrum Foundation’s H1 update landed today, framing an “institutional moment”: #1 in RWA deployments, with Robinhood, LG, Mastercard and PayPal building or expanding on Arbitrum.
-Risk: 92.65M ARB is scheduled to unlock around September 16, adding roughly 0.93% of max supply just after a 36.6% weekly run.
-Vs recent picks: first time in the seven-day log window.
+Catalyst: a broad DeFi rotation pushed UNI +10.7% on September 1 alongside CRV and ARB, according to KuCoin/CoinsProbe; CoinGecko still shows UNI trending with unusually heavy turnover.
+Risk: this looks sector-led rather than a token-specific repricing, so a fading DeFi rotation can unwind the move quickly.
+Vs recent picks: first time in the last 7 days.
 
-*Market: “Will GPT-6 be released by September 15, 2026?”*  [MEDIUM]  edge 7.5pp
-Current: YES 87.5¢ / NO 12.5¢ | 24h vol $108.4K | resolves: 2026-09-16
-Fair YES: ~80% (inputs: OpenAI says Astra will be available “soon”; it says safeguards are sufficient for release; but its September 1 post is still pre-launch and says advanced access starts with testers)
-Thesis: take NO at 12.5¢; the market prices only a 12.5% chance that “soon” slips beyond the 13-day deadline or fails the general-public-access rule, while my estimate is 20%.
-Risk: OpenAI may launch Astra broadly within days, and Polymarket may treat it as GPT-5’s recognized successor even without the GPT-6 name.
+*Market: "Will GPT-6 be released by September 15, 2026?"*  [HIGH]  edge 86.5pp
+Current: YES 94.5¢ / NO 5.5¢ | 24h vol $122.8K | resolves: 2026-09-15
+Fair YES: ~8% (inputs: OpenAI has no GPT-6 announcement; GPT-5.6 launched July 9; OpenAI DevDay is September 29, after resolution)
+Thesis: buy NO—the contract prices a near-certain public GPT-6 launch inside 12 days without matching official evidence.
+Risk: OpenAI may announce an untelegraphed launch before the deadline, and the market's high YES price may reflect information not visible in public search.
 
-sources: cg=ok, dex=ok, poly=ok (ordered endpoint 422; retry without invalid order field succeeded and was sorted locally)
+sources: cg=ok, dex=ok, poly=ok (ordered endpoint failed; un-ordered API retry succeeded)
 not financial advice — pattern-matching only
