@@ -1,16 +1,19 @@
-HEALTH: CRITICAL(1)
+# Skill Health — 2026-09-03
 
-- `vuln-scanner`: four consecutive failures; stored error is malformed. Filed [ISS-005](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-005.md).
-- Degraded: 14
-- Warning: 5
-- Healthy: 9
-- No data: 0
-- Open issues: 3; resolved this run: 0
+**HEALTH: CRITICAL(1)**
 
-The classification snapshot, [issue index](/home/runner/work/svectors-lab/svectors-lab/memory/issues/INDEX.md), and [daily log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-02.md) were updated. Notification delivery failed because the external notify/json-render queues are read-only; the prior notification timestamp was retained so the next run retries.
+- `vuln-scanner`: 5 consecutive failures; investigate truncated error capture. Existing issue: `ISS-005`.
+- 14 skills remain degraded, including `verdikta-hunter`, `soul-builder`, `picks-tracker`, `x402-monitor`, and `heartbeat`.
+- 5 warnings, 9 healthy.
+- Open issues: 3.
+- Filed: none.
+- Resolved: none.
+- Systemic failures: none.
+
+The classification hash is unchanged. A daily reminder was attempted because the last successful notification was over 24 hours ago, but the external notification queues were read-only. The prior `last_notified_at` was preserved so a future run can retry.
 
 ## Summary
 
-- Audited all 29 enabled skills using cron state, quality history, seven-day Actions data, recent logs, and existing issues.
-- Filed `ISS-005`; no issues were resolved.
-- Preserved unrelated existing workspace changes.
+- Updated `memory/skill-health/last-report.json`.
+- Created `memory/logs/2026-09-03.md`.
+- Validated JSON and repository diff formatting.
