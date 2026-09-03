@@ -12,14 +12,14 @@
     "last_success": "2026-09-03T10:10:33Z"
   },
   "defi-overview": {
-    "last_status": "dispatched",
-    "last_success": "2026-09-03T18:05:23Z",
-    "total_runs": 365,
-    "total_successes": 56,
+    "last_status": "success",
+    "last_success": "2026-09-03T20:52:35Z",
+    "total_runs": 366,
+    "total_successes": 57,
     "total_failures": 309,
     "consecutive_failures": 0,
-    "success_rate": 0.15,
-    "last_quality_score": 2,
+    "success_rate": 0.16,
+    "last_quality_score": 3,
     "last_dispatch": "2026-09-03T20:48:38Z",
     "last_failed": "2026-09-01T01:28:25Z",
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a94-e82f-7de2-9e63-534e99de5596\"} {\"type\":\"turn.started\"} {\"type\":\"error\""
