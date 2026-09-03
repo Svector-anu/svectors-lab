@@ -341,10 +341,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "bd2912172100cf9cf7604efdba6561d7f091d1569a03e6528709ee87d4dce7d7"
+          "hash": "b92fb33aa3940bf901269b7c937385d675e099e15652b2a8c334512ac360c8a6"
         }
       ],
-      "contentHash": "sha256-26184550f56d9cbba62baa234acb00a474a282ed178ef5d840a3cb5a16d9655b",
+      "contentHash": "sha256-bac7ab8ebfbb1e7f6c3e862f64878a92773fe9701261714bd7beaeafee30a878",
       "discoveredFrom": "skills/pr-review/SKILL.md"
     },
     {
