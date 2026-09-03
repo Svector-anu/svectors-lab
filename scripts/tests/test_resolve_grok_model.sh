@@ -22,5 +22,7 @@ fi
 
 grep -Fq 'RH_AUTH_MODE: ${{ steps.harness.outputs.AUTH_MODE }}' "$WORKFLOW"
 [ "$(grep -Fc 'resolve-grok-model.sh' "$WORKFLOW")" -eq 2 ]
+grep -Fq 'MODEL="$RH_HARNESS_MODEL"' "$WORKFLOW"
+grep -Fq 'case "$GROK_MODEL_ARG" in grok-*) RH_MODEL_ARGS=(--model "$GROK_MODEL_ARG")' "$WORKFLOW"
 
 echo 'grok auth-specific model tests passed'
