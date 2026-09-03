@@ -1,13 +1,11 @@
-Ran `self-improve` in default improve mode.
+The `self-improve` run completed, but no fix was submitted.
 
-Identified heartbeat’s lifetime success-rate calculation as the highest-impact issue. A targeted fix was proposed, but the mandatory synthetic dry-run failed with `non-zero exit (1)`. Per the fail-closed gate, the edit was reverted and no PR or notification was created.
-
-The outcome was recorded in [memory/logs/2026-09-01.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-01.md:58). Pre-existing workspace changes were left untouched.
+I identified a `vuln-scanner` timeout risk and tested a reduction from eight fuzz targets to three. The mandatory synthetic dry-run failed with `non-zero exit (1)`, so the change was reverted and no PR was opened, as required.
 
 ## Summary
 
-- Proposed change: prevent historical harness failures from permanently marking recovered skills as chronically failed.
-- Dry-run: failed.
-- Final code changes: none.
-- PR: none.
-- Follow-up: diagnose the heartbeat dry-run failure before retrying this improvement.
+- Reviewed recent logs, cron health, open improvement PRs, and scanner instructions.
+- Preserved all unrelated workspace changes.
+- Logged the failed gate in [memory/logs/2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
+- Files modified: `memory/logs/2026-09-03.md`.
+- Follow-up: diagnose the dry-run failure before retrying the timeout-budget change.
