@@ -1,30 +1,24 @@
-*Narrative Tracker — 2026-09-02*
+*Narrative Tracker — 2026-09-03*
 
 TRANSITIONS
-• BASELINE: no prior narrative-tracker entry in the 3-day comparison window; NEW/PROMOTED/DEMOTED/DEAD cannot be established honestly.
-• X SEARCH DEGRADED: primary API returned HTTP 403 after 3 attempts; calls below use fresh web evidence and lower confidence.
+• NEW*: DeFi value capture — UNI/AAVE/HYPE/ARB appeared together while broad crypto sold off; UNI usage, fees and burns give the rotation an evidence anchor. https://www.cryptocatalyst.news/articles/2026-09-02-crypto-research-morning-brief
+• NEW*: AI-storage / DePIN — FIL separated from the market, but the move lacks a fresh protocol catalyst. https://www.fxempire.com/forecasts/article/filecoin-shorts-lose-1-5m-as-ai-capex-narrative-fuels-fil-rally-1621698
+• NEW*: global duration stress — oil and sovereign yields, not crypto-native news, are controlling beta. https://www.theblock.co/news/markets/2026-09-02-bitcoin-hovers-near-77000-as-global-bond-selloff-tests-post-rally-resilience-413320
+
+*No narrative-tracker baseline exists in the prior 3 days; NEW means new to this tracker, not proven first appearance on X.
 
 REFLEXIVITY ALERT
-• BTC digital-gold / institutional bid — BTC/ETH ETFs drew $2.6B in the week ending Aug 21 after a $389.7M prior-week outflow; the flow reversal is reinforcing the “bear market over” story while BTC now trades below $76.5K. https://crypto.com/us/market-updates/best-crypto-september-2026
-• agent containment — disclosed escape/hacking incidents are already producing pauses, access limits, and automated-shutdown work at Anthropic/OpenAI. https://www.reuters.com/
+• UNI / Robinhood Chain — Robinhood activity lifted Uniswap volume and fees; fee burns then reinforced the UNI value-capture story. Uniswap represented >80% of chain DEX volume in cited data. https://coinmarketcap.com/top-stories/6a97cabecd14b249420fc6b2/
+• FIL / AI storage — a ~15% narrative-led move liquidated ~$1.49m of shorts despite no fresh official protocol announcement; this is positioning feeding the story. https://www.fxempire.com/forecasts/article/filecoin-shorts-lose-1-5m-as-ai-capex-narrative-fuels-fil-rally-1621698
 
 POSITIONS
-• RIDE: agent containment & runtime security (mindshare 5 ↑↑, Bear) — @OpenAI, @AnthropicAI, @huggingface — bear case: incident coverage may outrun real-world frequency. https://www.axios.com/2026/09/01/openai-hugging-face-ai-agent-security
-• RIDE: cheaper, stronger coding agents (5 ↑↑, Bull) — @AnthropicAI, @Meta, @Google — bear case: vendor benchmarks and headline savings may not survive production workloads. https://www.axios.com/2026/09/02/meta-debuts-muse-spark-13-as-personal-agent-work-continues
-• WATCH: BTC digital gold + ETF rebound (4 ↑, Mixed) — @BlackRock, @EricCrownCrypto, @CoinDesk — bear case: geopolitical risk and a sub-$76.5K BTC can flip the flow story quickly. https://www.coindesk.com/daybook-us
-• RIDE: tokenized cash / stablecoins / RWA (4 ↑, Bull) — @circle, @BlackRock, @coinbase — bear case: adoption claims are ahead of independently verified live AUM.
-• WATCH: digital-asset treasuries (3 ↑, Mixed) — @saylor, @TheBlock__, @CoinSharesCo — bear case: leverage and NAV premiums unwind fast; sector market cap is already ~$340B. https://www.theblock.co/newsletters/data-and-insights/2026-09-02-data-market-greed-413242
-• WATCH: prediction markets (3 →, Bull) — @Polymarket, @Kalshi, @CoinGecko — bear case: regulation, liquidity fragmentation, and pricing gaps cap reliability.
-• WATCH: AI-agent payments / crypto x AI (3 ↑, Bull) — @coinbase, @a16zcrypto, @KaitoAI — bear case: token value capture remains weaker than agent usage.
-• WATCH: perp DEXs / onchain trading (3 →, Mixed) — @HyperliquidX, @dYdX, @DriftProtocol — bear case: incentives and leverage can mimic durable demand.
-• WATCH: privacy / ZK (2 ↑, Mixed) — @zcash, @aztecnetwork, @ElectricCoinCo — bear case: regulation and weak UX slow conversion from attention to usage.
+• RIDE: DeFi value capture (4 ↑↑, Bull) — @Uniswap, @RobinhoodApp, @Aave — bear: UNI has already rerated hard and Robinhood incentives can make activity temporary.
+• WATCH: AI-storage / DePIN (3 ↑↑, Mixed) — @Filecoin, @awscloud, @CoinGlass — bear: catalyst is inferred from AI capex while FIL usage follow-through is unproven.
+• FADE: broad alt-beta / altseason (4 ↓, Bear) — @CoinMarketCap, @TheBlock__, @LMAX — bear: narrow UNI/FIL strength is not breadth; macro pressure still dominates.
+• WATCH: BTC relative resilience (3 →, Mixed) — @ecoinometrics, @TheBlock__, @LMAX — bear: ETP support can be overwhelmed if duration stress persists.
 
 MAP
-Emerging: privacy/ZK
-Rising: agent containment, coding-agent economics, BTC/ETF rebound, tokenized cash/RWA, AI-agent payments
-Peak: digital-asset treasuries
-Fading: none established
-
-CALIBRATION
-• Bitcoin narrative sentiment: 73/100 from 1,478 articles on Sep 2. https://perception.to/crypto-narrative-analysis
-• Warden’s Kaito leaderboard is diffuse: top account 0.7598%, second 0.6986%. https://kaito.wardenprotocol.org/
+Emerging: AI-storage / DePIN
+Rising: DeFi value capture
+Peak: global duration stress
+Fading: broad alt-beta / altseason
