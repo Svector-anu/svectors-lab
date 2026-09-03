@@ -1293,6 +1293,16 @@ jobs:
           fi
           echo "::notice::Skill output captured to output/.chains/${SKILL}.md ($(wc -c < "output/.chains/${SKILL}.md") bytes)"
 
+      # pr-review is a decision-bearing skill: a posted GitHub review that never
+      # reaches the operator is not a complete run. Agents can change directory or
+      # omit ./notify despite the skill contract, so enforce the queue from the
+      # captured output rather than trusting the closing narration.
+      - name: Ensure pr-review notification
+        if: steps.skill.outputs.name == 'pr-review' && steps.run.outcome == 'success'
+        env:
+          SKILL_NAME: pr-review
+        run: bash scripts/ensure-pr-review-notification.sh output/.chains/pr-review.md
+
       - name: Resolve attestation gate
         id: attest-gate
         if: steps.work.outputs.mode != '' && steps.run.outcome == 'success'
