@@ -1,10 +1,12 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-03T17:13:20Z",
-  "quality_score": 4,
-  "assessment": "Substantive, concise, and verifiable review with an explicit verdict, actionable file-level finding, test status, and traceable GitHub reference, though the claimed activity-log update conflicts with the stated read-only constraint.",
-  "flags": [],
-  "avg_score": 3.67,
+  "last_analyzed": "2026-09-03T17:19:43Z",
+  "quality_score": 2,
+  "assessment": "Concise, but it claims the review was posted and a workspace log was written despite the explicitly read-only run, making key completion claims unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.59,
   "history": [
     {
       "date": "2026-09-01",
@@ -130,6 +132,12 @@
       "date": "2026-09-03",
       "score": 4,
       "ts": "2026-09-03T17:13:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-03",
+      "score": 2,
+      "ts": "2026-09-03T17:19:43Z",
       "harness": "codex"
     }
   ]
