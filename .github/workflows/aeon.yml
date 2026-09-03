@@ -680,6 +680,14 @@ jobs:
           # so a skill can ask for a message but cannot read the credential that sends
           # it. GITHUB_TOKEN/GH_GLOBAL stay in-run (deferred, broad gh surface).
           GROK_CREDENTIALS: ${{ secrets.GROK_CREDENTIALS }}
+          # Unlike GROK_CREDENTIALS (staged to ~/.grok/auth.json in "Install harness
+          # CLI", a FILE that survives to this step on the same runner/$HOME), grok's
+          # XAI_API_KEY path only ever became a shell `export` in that earlier,
+          # separate step — which does not cross step boundaries. Without it here,
+          # adapters/grok.sh sees neither an auth.json nor XAI_API_KEY and fails
+          # outright, even when resolve-harness.sh correctly resolved native-key and
+          # "Install harness CLI" correctly skipped staging the OAuth session.
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           HERMES_AUTH: ${{ secrets.HERMES_AUTH }}
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
