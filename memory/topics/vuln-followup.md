@@ -1,11 +1,11 @@
 # Vuln Tracker Status
 
-*Last updated: 2026-09-02*
+*Last updated: 2026-09-03*
 
 ## Stars Secured
 
 - **Merged-PR repos (secured):** ★ 86.6k across 5 repos
-- **Open-PR repos (in flight):** ★ 779.5k across 15 repos
+- **Open-PR repos (in flight):** ★ 779.7k across 15 repos
 - **All tracked repos:** ★ 1.22m across 62 live repos
 
 Star counts were fetched live. `solana-mobile (SKR ecosystem)` is not a GitHub `owner/repo`; `Nervercc/gpt_nerver` returns 404. Both are excluded from aggregates.
@@ -80,9 +80,9 @@ None.
 
 | Repo | Stars | PR | Age | Status | Suggested action |
 |------|-------|----|-----|--------|------------------|
-| microsoft/skill-recorder | 3770 | [#66](https://github.com/microsoft/skill-recorder/pull/66) | 15d | stale-no-review | Confirm CI, then consider a polite ping. |
-| AprilNEA/OpenLogi | 18592 | [#956](https://github.com/AprilNEA/OpenLogi/pull/956) | 8d | stale-no-review | Confirm CI, then consider a polite ping. |
-| rtk-ai/rtk | 78343 | [#3705](https://github.com/rtk-ai/rtk/pull/3705) | 8d | stale-no-review | Sign or recheck the CLA, then consider a ping. |
+| microsoft/skill-recorder | 3772 | [#66](https://github.com/microsoft/skill-recorder/pull/66) | 16d | stale-no-review | Confirm CI, then consider a polite ping. |
+| AprilNEA/OpenLogi | 18607 | [#956](https://github.com/AprilNEA/OpenLogi/pull/956) | 9d | stale-no-review | Confirm CI, then consider a polite ping. |
+| rtk-ai/rtk | 78350 | [#3705](https://github.com/rtk-ai/rtk/pull/3705) | 9d | stale-no-review | Sign or recheck the CLA, then consider a ping. |
 
 ## Recently merged (last 30d, 5)
 
@@ -94,12 +94,11 @@ None.
 | 2026-08-21 | Svector-anu/skopos | 1 | [#104](https://github.com/Svector-anu/skopos/pull/104) | MEDIUM | RegExp injection fix |
 | 2026-08-18 | yetone/cumora | 3423 | [#8](https://github.com/yetone/cumora/pull/8) | HIGH/MODERATE | dependency CVE bumps |
 
-## Open / clean (no operator action — wait, 11)
+## Open / clean (no operator action — wait, 10)
 
 | Repo | Stars | PR | Severity | Opened | Age |
 |------|-------|----|----------|--------|-----|
 | affaan-m/ECC | 246293 | [#2934](https://github.com/affaan-m/ECC/pull/2934) | HIGH | 2026-09-02 | 0d |
-| tinyhumansai/openhuman | 39349 | [#5814](https://github.com/tinyhumansai/openhuman/pull/5814) | HIGH | 2026-08-26 | 7d |
 | vercel-labs/agent-browser | 41802 | [#1764](https://github.com/vercel-labs/agent-browser/pull/1764) | HIGH | 2026-09-02 | 0d |
 | emilk/egui | 30365 | [#8481](https://github.com/emilk/egui/pull/8481) | HIGH | 2026-09-02 | 0d |
 | THU-MAIC/OpenMAIC | 30495 | [#1357](https://github.com/THU-MAIC/OpenMAIC/pull/1357) | HIGH | 2026-09-02 | 0d |
@@ -109,6 +108,12 @@ None.
 | arcboxlabs/arcbox | 2346 | [#709](https://github.com/arcboxlabs/arcbox/pull/709) | HIGH | 2026-09-02 | 0d |
 | clawkwork/clawk | 1004 | [#18](https://github.com/clawkwork/clawk/pull/18) | HIGH | 2026-09-02 | 0d |
 | Cosmian/kms | 350 | [#1163](https://github.com/Cosmian/kms/pull/1163) | HIGH | 2026-09-02 | 0d |
+
+## Engaged, under aging threshold (1)
+
+| Repo | Stars | PR | Severity | Opened | Latest maintainer activity |
+|------|-------|----|----------|--------|----------------------------|
+| tinyhumansai/openhuman | 39352 | [#5814](https://github.com/tinyhumansai/openhuman/pull/5814) | HIGH | 2026-08-26 | Approved; no changes requested (2026-09-02) |
 
 ## Closed without merge (last 30d, 1)
 
@@ -120,15 +125,15 @@ None.
 
 | Severity | Repo | Stars | Original channel | Original blocker | Days queued |
 |----------|------|-------|------------------|------------------|-------------|
-| CRITICAL | ZSvirt/zsvirt | 1563 | email | operator-only send | 10 |
-| CRITICAL | jlcodes99/cockpit-tools | 16934 | email | autonomous send pending | 0 |
-| CRITICAL | z-fi/zFi | 16 | email | sent/discussed; cleanup candidate | 14 |
-| HIGH | pacifio/atlas | 2849 | email | autonomous send pending | 0 |
-| HIGH | amirh00sain/SpiderPanel | 1042 | email | sent; cleanup candidate | 8 |
-| MEDIUM | ZSvirt/zsvirt | 1563 | email | autonomous send blocked by Resend 403 | 10 |
-| MEDIUM | DigitalShieldOfficial/USDTPAY-woocommerce | 1 | email | sent; cleanup candidate | 15 |
-| MEDIUM | guillaumemeyer/watermarks-remover | 20087 | PVR | accepted; cleanup candidate | 18 |
-| LOW | genspark-ai/genoffice | 4404 | PVR | submitted; cleanup candidate | 20 |
+| CRITICAL | ZSvirt/zsvirt | 1564 | email | operator-only send | 11 |
+| CRITICAL | jlcodes99/cockpit-tools | 16937 | email | autonomous send pending | 1 |
+| CRITICAL | z-fi/zFi | 16 | email | sent/discussed; cleanup candidate | 15 |
+| HIGH | pacifio/atlas | 2891 | email | autonomous send pending | 1 |
+| HIGH | amirh00sain/SpiderPanel | 1043 | email | sent; cleanup candidate | 9 |
+| MEDIUM | ZSvirt/zsvirt | 1564 | email | autonomous send blocked by Resend 403 | 11 |
+| MEDIUM | DigitalShieldOfficial/USDTPAY-woocommerce | 1 | email | sent; cleanup candidate | 16 |
+| MEDIUM | guillaumemeyer/watermarks-remover | 20099 | PVR | accepted; cleanup candidate | 19 |
+| LOW | genspark-ai/genoffice | 4422 | PVR | submitted; cleanup candidate | 21 |
 
 No retained draft is a true past-threshold escalation. Three are in-window, one is operator-todo, and five are cleanup candidates.
 
