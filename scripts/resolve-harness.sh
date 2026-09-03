@@ -81,7 +81,13 @@ esac
 # NO model and let the harness use its own default.
 AUTH_MODE="openrouter"
 case "$HARNESS" in
-  grok)  if [ -n "${GROK_CREDENTIALS:-}" ]; then AUTH_MODE="native-oauth"; elif [ -n "${XAI_API_KEY:-}" ]; then AUTH_MODE="native-key"; fi ;;
+  # XAI_API_KEY (the operator's own x.ai billing) is checked FIRST, ahead of the
+  # Grok Build subscription (GROK_CREDENTIALS) — the opposite order from every
+  # other harness below. Deliberate, operator-requested 2026-09-03: this fork's
+  # Grok Build balance has repeatedly hit 402 Payment Required (ISS-005) while the
+  # operator's own x.ai key stays funded, so prefer it whenever it's present rather
+  # than exhausting the subscription's balance first.
+  grok)  if [ -n "${XAI_API_KEY:-}" ]; then AUTH_MODE="native-key"; elif [ -n "${GROK_CREDENTIALS:-}" ]; then AUTH_MODE="native-oauth"; fi ;;
   codex) if [ -n "${CODEX_AUTH:-}" ]; then AUTH_MODE="native-oauth"; elif [ -n "${OPENAI_API_KEY:-}" ]; then AUTH_MODE="native-key"; fi ;;
   kimi)  if [ -n "${KIMI_AUTH:-}" ]; then AUTH_MODE="native-oauth"; elif [ -n "${MOONSHOT_API_KEY:-}" ]; then AUTH_MODE="native-key"; fi ;;
   hermes) if [ -n "${HERMES_AUTH:-}" ]; then AUTH_MODE="native-oauth"; fi ;;
