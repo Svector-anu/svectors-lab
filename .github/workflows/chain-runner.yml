@@ -67,6 +67,14 @@ jobs:
           if [ "$CHAIN" = "dev-loop" ]; then
             if ! bash scripts/dev-loop-pr.sh validate-target "$CHAIN_TARGET" >/dev/null; then
               echo "::error::dev-loop requires target=external:owner/repo or external:owner/repo#issue"
+              # This is a caller error caught before any skill ran — not evidence the
+              # loop itself is unreliable. Mark it distinctly so "Update cron state"
+              # (which runs `if: always()`) skips the write instead of recording a
+              # "failed" outcome indistinguishable from a real mid-run failure. Without
+              # this, every dispatch that forgets -f target= permanently drags down
+              # chain:dev-loop's lifetime success rate and fires false P0 flags in
+              # skill-health — measured: three such dispatches on 2026-09-02 alone.
+              echo "CHAIN_STATUS=invalid-dispatch" >> "$GITHUB_ENV"
               exit 1
             fi
           fi
@@ -437,6 +445,17 @@ jobs:
           fi
           NOW_ISO=$(date -u +%FT%TZ)
           STATUS="${CHAIN_STATUS:-failed}"
+
+          # A rejected malformed dispatch (see the dev-loop target guard above) never
+          # started a real run — recording it would corrupt the chain's lifetime
+          # success-rate signal skill-health reads. The job itself still fails (this
+          # step running under `if: always()` doesn't change that); only the
+          # reliability bookkeeping is skipped.
+          if [ "$STATUS" = "invalid-dispatch" ]; then
+            echo "Chain '$CHAIN' was rejected before any skill ran (missing/invalid target) — not recording as a functional failure"
+            exit 0
+          fi
+
           STATE_FILE="memory/cron-state.json"
 
           # Issues backend (hardening §3) — STATE_BACKEND tri-state, matching aeon.yml:
