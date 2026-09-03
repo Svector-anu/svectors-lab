@@ -86,6 +86,16 @@ Skip a PR if any of the following hold (record the skip reason for the run summa
      ```
    - If the diff comes back empty (e.g. mid-rebase), skip the PR with reason `empty-diff`.
 
+   For JavaScript/TypeScript repositories, detect the package manager from the
+   PR head tree before describing or attempting local checks:
+   ```bash
+   bash scripts/detect-js-package-manager.sh owner/repo "$HEAD_SHA"
+   ```
+   The output is `<manager>\\t<lockfile>`. Use that manager for any local check
+   (`pnpm-lock.yaml` means pnpm, not npm). Never claim that a lockfile is absent
+   unless this command returned `none`; a failed install is not evidence that
+   the repository has no lockfile.
+
 3. **Early-exit for trivial PRs**: if the diff is docs-only (`.md`/`.rst`/`docs/**`), lockfile-only, or test-only, skip deep review and post the 1-line ack form in step 6.
 
 4. **Review with severity tagging**. Every finding must carry exactly one tag:
@@ -141,7 +151,10 @@ Reviewed N, skipped K (drafts: x, bots: y, dup-SHA: z, bot-reviewed-recently: w)
 - owner/repo#123: [verdict] — N critical, M issues
 ```
 
-**Telegram summary.** When the run was scoped to a **single repo** (`${var}=owner/repo`), send a Telegram summary of the review with `./notify -f review.md` so the operator sees the verdict at a glance. Skip it on an all-repos run.
+**Telegram summary.** When the run was scoped to a **single repo or PR**
+(`${var}=owner/repo` or `${var}=owner/repo#N`), send a Telegram summary of the
+review with `./notify -f review.md` so the operator sees the verdict at a
+glance. Skip it only on an all-repos run.
 
 If every PR was skipped, do not notify — just log.
 
