@@ -1,10 +1,9 @@
 {
-  "hash": "51485e71651ab7daa0b9c36063bdc844fecd3a0c305ea5085127c8aefac86274",
+  "hash": "0489731e18f53b683171fae30390d391c12c2f35c2054deaff167f6202eaafde",
   "last_notified_at": "2026-09-01T19:28:48Z",
-  "last_run_at": "2026-09-03T05:50:15Z",
+  "last_run_at": "2026-09-03T20:50:48Z",
   "classification": {
     "critical": [
-      "pr-review",
       "vuln-scanner"
     ],
     "degraded": [
@@ -26,11 +25,16 @@
     "flapping": [],
     "warning": [
       "auto-merge",
+      "autoresearch",
+      "create-skill",
+      "fork-fleet",
       "hunter-22",
+      "pr-review",
       "search-skill",
-      "self-improve"
+      "self-improve",
+      "shiplog"
     ],
-    "healthy_count": 9,
+    "healthy_count": 5,
     "no_data": []
   }
 }
