@@ -200,4 +200,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-02,vuln-tracker,codex-default,741646,9919,681728,0
 2026-09-02,vuln-tracker,codex-default,1783704,17521,1692672,0
 2026-09-03,vuln-tracker,codex-default,1393643,9839,1326848,0
-2026-09-03,write-tweet,codex-default,407002,4161,357760,0
+2026-09-03,defi-overview,codex-default,915325,9089,829696,0
