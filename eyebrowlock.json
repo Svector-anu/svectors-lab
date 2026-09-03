@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T23:52:38.151504Z",
+  "generatedAt": "2026-09-03T10:54:12.036908Z",
   "generator": "eyebrow/0.4.1",
   "artifacts": [
     {
@@ -143,7 +143,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "dbc8b796305374cad015943676cc2bb9dbfc94184d0195d7b2e7e796e1b70932"
+          "hash": "39e6a8378b35a04afb82d460a9efc1d15f066f21026d2f9dec7ce7c1ac499469"
         }
       ],
       "findings": [
@@ -152,7 +152,7 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 108,
+          "line": 109,
           "snippet": "network is open, but `pip install` / `curl | sh` / `tar` are **not** on the in-run",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         },
@@ -161,7 +161,7 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 122,
+          "line": 123,
           "snippet": "# open, but `pip install` / `curl | sh` / `tar` are NOT allow-listed — `python3 -m pip`,",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         },
@@ -170,7 +170,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 304,
+          "line": 305,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -179,12 +179,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1090,
+          "line": 1091,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-00e9d6979bfc8c8cf9209bedb6df90570b951df6e1b465097d17320b27d63f09",
+      "contentHash": "sha256-c71989bd8a14932ee57c3f5f4a723457818c828f42e248cae02894e739a8e267",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
@@ -341,10 +341,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "bf3a11650596bd34818ff8df5a8e6da7c3153f2a41388c867fd4b4861472860d"
+          "hash": "bd2912172100cf9cf7604efdba6561d7f091d1569a03e6528709ee87d4dce7d7"
         }
       ],
-      "contentHash": "sha256-7a3f62acc00ed607838decee306822cf7791ef3471b5df3a8d5387f940c3482b",
+      "contentHash": "sha256-26184550f56d9cbba62baa234acb00a474a282ed178ef5d840a3cb5a16d9655b",
       "discoveredFrom": "skills/pr-review/SKILL.md"
     },
     {
@@ -686,7 +686,7 @@
           "owasp": "ASK-06",
           "file": "run.mjs",
           "line": 10,
-          "snippet": ".flatMap((key) => process.env[key] === undefined ? [] : [[key, process.env[key]]]),",
+          "snippet": ".flatMap((key) =\u003e process.env[key] === undefined ? [] : [[key, process.env[key]]]),",
           "explanation": "references sensitive credential or secret paths"
         }
       ],
@@ -1539,7 +1539,7 @@
         },
         {
           "path": "templates/DeployHook.s.sol",
-          "hash": "bb8f34ae0cad023d6c1cc1c7d2932e7faa40abef37f3fcfeac86e3eb2d5ce4c9"
+          "hash": "e9192623e21b6885a60ac024f6a63011661687e44370694fc9fae8b729bcbd68"
         },
         {
           "path": "templates/DynamicFeeHook.sol",
@@ -1621,7 +1621,7 @@
           "owasp": "ASK-06",
           "file": "hook-deploy.sh",
           "line": 175,
-          "snippet": "[ -f hook.env ] && . ./hook.env",
+          "snippet": "[ -f hook.env ] \u0026\u0026 . ./hook.env",
           "explanation": "references sensitive credential or secret paths"
         },
         {
@@ -1652,7 +1652,7 @@
           "explanation": "references sensitive credential or secret paths"
         }
       ],
-      "contentHash": "sha256-7f4d0f86055e92ebef05c8fab531bd678081d005a426f8dec475a019f68070b5",
+      "contentHash": "sha256-d48104a09911df31783346c9c58a58739873b92a28a080d515c0b82ee54e4ba7",
       "discoveredFrom": "skills/deploy-uni-hook/SKILL.md"
     },
     {
