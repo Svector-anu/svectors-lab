@@ -17,6 +17,13 @@ if [ ! -s "$output_file" ] || [ "$(head -n 1 "$output_file")" = "_No output capt
   exit 1
 fi
 
+# Preserve Aeon's notify-on-signal contract. A clean skip/no-open-PR run is
+# successful but should stay silent; only a captured per-PR verdict is a signal.
+if ! grep -Eq '(Reviewed .+#[0-9]+|\*\*Verdict\*\*:)' "$output_file"; then
+  echo "pr-review produced no review verdict; notification not required"
+  exit 0
+fi
+
 SKILL_NAME=pr-review bash scripts/notify.sh -f "$output_file"
 
 queued=("$queue"/*.json)
