@@ -1,14 +1,17 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-04T10:13:04Z",
-  "quality_score": 2,
-  "assessment": "Concise verdict, but it claims posting a GitHub review and writing a memory log during a read-only run, making key completion claims unverifiable; it also provides little substantive review evidence.",
-  "flags": [
-    "unverifiable_claim",
-    "low_quality"
-  ],
-  "avg_score": 3.3,
+  "last_analyzed": "2026-09-04T09:08:52Z",
+  "quality_score": 3,
+  "assessment": "Acceptable clean-review verdict with an exact PR head, explicit zero-findings result, and test/CI status, though it provides little substantive review evidence beyond assertions.",
+  "flags": [],
+  "avg_score": 3.4,
   "history": [
+    {
+      "date": "2026-09-01",
+      "score": 5,
+      "ts": "2026-09-01T08:11:30Z",
+      "harness": "grok"
+    },
     {
       "date": "2026-09-01",
       "score": 4,
@@ -181,12 +184,6 @@
       "date": "2026-09-04",
       "score": 3,
       "ts": "2026-09-04T09:08:52Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T10:13:04Z",
       "harness": "codex"
     }
   ]
