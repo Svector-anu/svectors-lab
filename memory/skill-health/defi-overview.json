@@ -1,19 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-04T09:25:46Z",
+  "last_analyzed": "2026-09-04T13:46:05Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first and concise, but it lacks explicit position calls and evidence anchors for numerous precise figures; it also claims workspace writes despite the run being read-only.",
+  "assessment": "Substantive regime snapshot, but it lacks the required explicit position calls and evidence anchors for nearly all specific figures, while claiming workspace files were updated during a read-only run.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.1,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T22:43:22Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-29",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-04",
       "score": 2,
       "ts": "2026-09-04T09:25:46Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 2,
+      "ts": "2026-09-04T13:46:05Z",
       "harness": "codex"
     }
   ]
