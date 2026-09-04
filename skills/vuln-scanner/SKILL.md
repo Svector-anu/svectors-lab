@@ -314,6 +314,23 @@ disclosure, and persistence. Do not load disclosure or lifecycle instructions
 while doing the Riva code-exploration pass. With `KERNEL=legacy`, follow the
 existing A3.6 procedure unchanged.
 
+Before the Riva pass, build the compact target dossier from the Aeon checkout
+(the current working directory may still be the target clone):
+
+```bash
+RIVA_REPO="$PWD"
+cd "${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}"
+./scripts/build-vuln-context.sh --repo "$RIVA_REPO" \
+  --out /tmp/vuln-scan/riva-context.json \
+  --history "${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}/memory/vuln-scanned.json"
+cd "$RIVA_REPO"
+```
+
+Read only `/tmp/vuln-scan/riva-context.json` plus the selected code slice during
+the Riva exploration pass. In `KERNEL=shadow`, write Riva's private candidate
+and coverage comparison to `/tmp/vuln-scan/riva-shadow.json`; do not route it
+to PVR, email, or a public PR. The legacy candidate set remains authoritative.
+
 Semgrep matches syntactic patterns and has weak dataflow reachability on custom code; fuzzing (A3.5) only reaches what a harness already drives. Both are blind to **authorization, business-logic, and multi-step trust-boundary** bugs. That whole class is what an agentic reviewer catches - and here **you are the agentic scanner**. Do the source-to-sink reasoning the tools can't, over this repo's real entrypoints. This pass runs on every scan (unlike A3.5, which only fires when the repo ships a fuzz harness) and produces *candidates*, not verdicts - everything still goes through A4 triage (the model surfacing a finding is not evidence it is real).
 
 **Bounded so it can't run away on run time.** Size the repo first, then set the entrypoint review budget `N` from it - deep-review the **top-N highest-exposure** entrypoints only, and note the rest in the A7 report as reviewed-but-not-deep so coverage stays honest:
