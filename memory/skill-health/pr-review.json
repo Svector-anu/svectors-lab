@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-04T09:01:16Z",
-  "quality_score": 4,
-  "assessment": "Good: concise, decision-first review with a specific actionable race-condition finding, exact file/line, commit SHA, and GitHub evidence link; verification details are somewhat terse.",
+  "last_analyzed": "2026-09-04T09:08:52Z",
+  "quality_score": 3,
+  "assessment": "Acceptable clean-review verdict with an exact PR head, explicit zero-findings result, and test/CI status, though it provides little substantive review evidence beyond assertions.",
   "flags": [],
-  "avg_score": 3.43,
+  "avg_score": 3.4,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 4,
-      "ts": "2026-09-01T08:01:02Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-01",
       "score": 5,
@@ -184,6 +178,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T09:01:16Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 3,
+      "ts": "2026-09-04T09:08:52Z",
       "harness": "codex"
     }
   ]
