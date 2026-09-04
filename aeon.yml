@@ -127,6 +127,7 @@ skills:
   # Ideas & productivity
   idea-pipeline: { enabled: false, schedule: "0 18 * * 1" } # Monday — execution-gap audit: top 3 backlog ideas to build this week
   hunter-22: { enabled: true, schedule: "0 10 * * *", var: "" } # daily bounty scan against ClawHunter's free discovery API (docs/ClawHunter-API.md) — capability-matched, triaged for real work vs content-farming, dedup'd against memory/topics/hunter-22-seen.json. Discovery only, no wallet, never claims/submits; audit-shaped matches with a linked GitHub repo get a one-tap "run vuln-scanner on it" button in the notification.
+  slop-watch: { enabled: true, schedule: "0 8 * * *", var: "" } # daily: which slop.cash lane is worth working today. Resolves tracked projects live from SlopDotCash/slopdotcash (never hardcoded — elizaOS/asi moved orgs), reports per-lane liveness + the operator's ordinal and what their NEXT merge is worth there, surfaces CHANGES_REQUESTED on open PRs and any dormant lane waking up. Discovery only, never opens/edits/merges a PR. var: empty=all lanes | <project-slug>=one lane.
 
   # Self-maintenance / meta
 
