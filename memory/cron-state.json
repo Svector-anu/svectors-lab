@@ -150,14 +150,14 @@
     "last_quality_score": 4
   },
   "digest": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-23T14:29:47Z",
     "total_runs": 169,
     "total_successes": 29,
     "total_failures": 140,
     "consecutive_failures": 0,
     "success_rate": 0.17,
-    "last_dispatch": "2026-09-03T17:59:49Z",
+    "last_dispatch": "2026-09-04T17:03:26Z",
     "last_error": "41e1e2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-09-03T18:02:57Z",
     "last_quality_score": 2
@@ -187,14 +187,14 @@
     "last_quality_score": 4
   },
   "auto-merge": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-07-29T08:24:35Z",
     "total_runs": 20,
     "total_successes": 19,
     "total_failures": 1,
     "consecutive_failures": 0,
     "success_rate": 0.95,
-    "last_dispatch": "2026-09-03T17:59:49Z",
+    "last_dispatch": "2026-09-04T17:03:26Z",
     "last_success": "2026-09-03T18:01:33Z",
     "last_quality_score": 3
   },
@@ -255,7 +255,7 @@
     "last_quality_score": 1
   },
   "search-skill": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-03T18:02:21Z",
     "total_runs": 19,
     "total_successes": 19,
@@ -263,7 +263,7 @@
     "consecutive_failures": 0,
     "success_rate": 1,
     "last_quality_score": 4,
-    "last_dispatch": "2026-09-03T17:59:49Z"
+    "last_dispatch": "2026-09-04T17:03:26Z"
   },
   "skill-repair": {
     "last_status": "success",
@@ -307,8 +307,8 @@
     "last_quality_score": 3
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-09-03T17:59:49Z",
-    "last_status": "success",
+    "last_dispatch": "2026-09-04T17:03:26Z",
+    "last_status": "dispatched",
     "last_success": "2026-09-03T18:06:09Z",
     "total_runs": 14,
     "total_successes": 14,
