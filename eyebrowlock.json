@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-03T10:54:12.036908Z",
+  "generatedAt": "2026-09-04T06:05:17.614233Z",
   "generator": "eyebrow/0.4.1",
   "artifacts": [
     {
@@ -143,7 +143,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "39e6a8378b35a04afb82d460a9efc1d15f066f21026d2f9dec7ce7c1ac499469"
+          "hash": "b91efc14fbdd81a04576e71041e317afaba21afd72c7564a632c2d7af483ee4f"
         }
       ],
       "findings": [
@@ -170,7 +170,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 305,
+          "line": 324,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -179,12 +179,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1091,
+          "line": 1114,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-c71989bd8a14932ee57c3f5f4a723457818c828f42e248cae02894e739a8e267",
+      "contentHash": "sha256-ad237940f00b97428807dffdd44a23d667487eb58387dc609540a3b04bc6c842",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
@@ -864,10 +864,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "b9a7d47326648ec745a35419c2e0b67521d58020fb1eef4959f58df4be09f5f3"
+          "hash": "4e72e285979a11f60a3eeda50a907a81185fd335c2927bdb7b281748f3f4e51b"
         }
       ],
-      "contentHash": "sha256-3ffc12f919716a0035c0594849f176a844ba4b56ba0f71d6bf1152a2f1aaaaea",
+      "contentHash": "sha256-c7a11789ccdee637202b089c3fecc2fb030eacc02b0fa539feb78091c5865d6a",
       "discoveredFrom": "skills/feature/SKILL.md"
     },
     {
@@ -1403,6 +1403,26 @@
       ],
       "contentHash": "sha256-cf926d867b47cf47c406ff2071d54619e67b2860e3f70fb5bb39eb91bddf18c2",
       "discoveredFrom": "skills/pack-submit/SKILL.md"
+    },
+    {
+      "id": "9275a07d7c8c5408",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "slop-watch",
+      "source": {
+        "kind": "local",
+        "ref": "skills/slop-watch"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "59089cb6cc297744788c03b84eaa4a97501e29386cbfd1b7eac8b59c2f6b8d93"
+        }
+      ],
+      "contentHash": "sha256-5b347a6811323d998903bedaf62c990af3236a482b075754854fab02e9b9332b",
+      "discoveredFrom": "skills/slop-watch/SKILL.md"
     },
     {
       "id": "92d7ed59c1803aec",
