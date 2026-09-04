@@ -849,9 +849,17 @@ jobs:
           # the helper scripts need). A skill with `mode: read-only` frontmatter gets a
           # toolset with no Write/Edit/git/gh, so it physically cannot mutate the repo;
           # the post-run read-only guard reverts any stray redirected writes.
-          SKILL_MODE=$(bash scripts/skill_mode.sh mode "${{ steps.skill.outputs.name }}")
+          SHADOW_MODE=0
+          if [ "${SKILL_NAME}" = "vuln-scanner" ] && [[ "${SKILL_VAR:-}" == shadow:* || "${SKILL_VAR:-}" == compare:* ]]; then
+            SHADOW_MODE=1
+            SKILL_MODE=read-only
+            echo "Riva shadow mode: forcing read-only capability tier"
+          else
+            SKILL_MODE=$(bash scripts/skill_mode.sh mode "${{ steps.skill.outputs.name }}")
+          fi
           ALLOWED=$(bash scripts/skill_mode.sh allowed-tools "$SKILL_MODE")
           echo "SKILL_MODE=$SKILL_MODE" >> "$GITHUB_ENV"
+          echo "RIVA_SHADOW_MODE=$SHADOW_MODE" >> "$GITHUB_ENV"
           echo "Capability mode: $SKILL_MODE"
 
           # MCP (opt-in): when a project .mcp.json exists, load it for this run
@@ -865,7 +873,7 @@ jobs:
           # ${VAR}s are harness-agnostic and also feed grok, which reads .mcp.json
           # natively and expands them (the adapter adds --trust + MCPTool allows).
           MCP_FLAGS=()
-          if [ -f .mcp.json ] && jq -e '.mcpServers' .mcp.json >/dev/null 2>&1; then
+          if [ "$SHADOW_MODE" != "1" ] && [ -f .mcp.json ] && jq -e '.mcpServers' .mcp.json >/dev/null 2>&1; then
             # MCP OAuth (durable): mint a fresh access token from any captured refresh
             # token (MCP_<SLUG>_OAUTH secret) and export MCP_<SLUG>_TOKEN BEFORE the
             # ${VAR} loop, so its "already in env" check keeps the live token over the
@@ -903,12 +911,19 @@ jobs:
           # exported, skill degrades to its public path (unchanged behaviour).
           SECRETS_JSON="${ALL_SECRETS:-}"; [ -z "$SECRETS_JSON" ] && SECRETS_JSON='{}'
           INJECTED=""
-          while IFS= read -r key; do
-            [ -z "$key" ] && continue
-            [ -n "${!key:-}" ] && continue                     # already in env (infra) — leave it
-            val="$(jq -r --arg k "$key" '.[$k] // empty' <<<"$SECRETS_JSON")"
-            [ -n "$val" ] && { export "$key=$val"; INJECTED="$INJECTED $key"; }
-          done < <(bash scripts/skill_requires.sh "$SKILL_NAME" 2>/dev/null)
+          if [ "$SHADOW_MODE" != "1" ]; then
+            while IFS= read -r key; do
+              [ -z "$key" ] && continue
+              [ -n "${!key:-}" ] && continue                     # already in env (infra) — leave it
+              val="$(jq -r --arg k "$key" '.[$k] // empty' <<<"$SECRETS_JSON")"
+              [ -n "$val" ] && { export "$key=$val"; INJECTED="$INJECTED $key"; }
+            done < <(bash scripts/skill_requires.sh "$SKILL_NAME" 2>/dev/null)
+          else
+            # Shadow is research-only. Remove both declared and ambient credentials
+            # before the harness starts; post-run workflow steps retain their own env.
+            unset ALL_SECRETS GH_GLOBAL GH_TOKEN GITHUB_TOKEN RESEND_API_KEY RESEND_FROM RESEND_REPLY_TO XAI_API_KEY
+            echo "Riva shadow mode: declared and disclosure credentials withheld"
+          fi
           [ -n "$INJECTED" ] && echo "::notice::Injected declared secrets for ${SKILL_NAME}:${INJECTED}"
 
           unset ALL_SECRETS   # drop the secrets blob before any skill/Claude code runs
