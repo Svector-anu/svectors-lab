@@ -36,6 +36,12 @@ Read the last 2 days of `memory/logs/` to pull the `headRefOid` of any PR review
 
 If `${var}` names `owner/repo#N`, fetch and review only that exact open PR; do not list or comment on any other PR. If `${var}` names `owner/repo`, review that repo's open PRs. Otherwise review every repo listed in `memory/watched-repos.md`.
 
+When the workflow prompt supplies `expected_sha=<40-character SHA>`, it is an
+immutable chain boundary. Confirm the PR's `headRefOid` equals that SHA before
+fetching the diff, review that exact commit, then fetch `headRefOid` again
+immediately before posting anything. If either comparison differs, abort without
+posting comments or a receipt. Never substitute the PR's newer mutable head.
+
 If `memory/watched-repos.md` is empty or missing (and no `owner/repo` was passed), log `PR_REVIEW_NO_REPOS` and end.
 
 ## What this branch optimizes for

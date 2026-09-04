@@ -25,6 +25,14 @@ if [ "$1" = api ] && [ "$2" = --paginate ] && [ "$3" = --slurp ] && [[ "$4" == r
   fi
   exit 0
 fi
+if [ "$1" = api ] && [[ "$2" == repos/acme/demo/commits/*/status ]]; then
+  if [ -n "${TEST_STATUSES:-}" ]; then
+    printf '%s\n' "$TEST_STATUSES"
+  else
+    printf '%s\n' '{"statuses":[]}'
+  fi
+  exit 0
+fi
 exit 1
 STUB
 chmod +x "$TMP/bin/gh"
@@ -40,6 +48,12 @@ TEST_HEAD_SHA="$NEW" PATH="$TMP/bin:$PATH" bash "$CHECK" verify-change acme/demo
 
 TEST_HEAD_SHA="$NEW" PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW" \
   | jq -e '.status == "passed" and .checks == 1 and .sha == "89abcdef0123456789abcdef0123456789abcdef"' >/dev/null
+
+TEST_HEAD_SHA="$NEW" \
+  TEST_CHECKS='[{"total_count":0,"check_runs":[]}]' \
+  TEST_STATUSES='{"statuses":[{"state":"success","context":"legacy-ci"}]}' \
+  PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW" \
+  | jq -e '.status == "passed" and .checks == 0 and .statuses == 1' >/dev/null
 
 if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":1,"check_runs":[{"status":"completed","conclusion":"failure"}]}]' \
   PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
@@ -59,6 +73,12 @@ if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":2,"check_runs":[{"status":"
   exit 1
 fi
 
+if TEST_HEAD_SHA="$NEW" TEST_STATUSES='{"statuses":[{"state":"failure","context":"Vercel"}]}' \
+  PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
+  echo 'failed commit status unexpectedly passed' >&2
+  exit 1
+fi
+
 if TEST_PR_STATE=closed PATH="$TMP/bin:$PATH" bash "$CHECK" repair-target acme/demo#42 "$OLD"; then
   echo 'closed PR unexpectedly produced a repair target' >&2
   exit 1
@@ -67,10 +87,12 @@ fi
 # The workflow must derive repair authority from a verified actionable receipt,
 # prove a new SHA, require checks, and only then dispatch the re-review.
 receipt_line=$(grep -n 'dev-loop-review.sh verify "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
+initial_checks_line=$(grep -n 'verify-checks "$FEATURE_PR" "$FEATURE_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 repair_line=$(grep -n 'repair-target "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 change_line=$(grep -n 'verify-change "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 checks_line=$(grep -n 'verify-checks "$FEATURE_PR" "$REPAIRED_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 rereview_line=$(grep -n 'REREVIEW_OUTPUT=$(dispatch_skill pr-review' "$WORKFLOW" | head -1 | cut -d: -f1)
+[ "$initial_checks_line" -lt "$receipt_line" ]
 [ "$receipt_line" -lt "$repair_line" ]
 [ "$repair_line" -lt "$change_line" ]
 [ "$change_line" -lt "$checks_line" ]
@@ -83,6 +105,15 @@ fi
 grep -Fq 'stopped after one repair pass: re-review remains actionable' "$WORKFLOW"
 grep -A4 'if \[ "$CHAIN_FAILED" = "true" \]; then' "$WORKFLOW" | grep -Fq 'exit 1'
 grep -Fq 'dev-loop-review.sh body "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW"
+grep -Fq '[ "$REVIEW_SHA" != "$FEATURE_SHA" ]' "$WORKFLOW"
+grep -Fq 'dev-loop feature PR changed after its checks were verified' "$WORKFLOW"
+grep -Fq 'EXPECTED_REVIEW_SHA="$FEATURE_SHA"' "$WORKFLOW"
+grep -Fq 'args+=(-f expected_sha="$expected_sha")' "$WORKFLOW"
+grep -Fq 'dispatch_skill "$skill" "$VAR" "$CTX_FILE" "$EXPECTED_REVIEW_SHA"' "$WORKFLOW"
+grep -Fq 'dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT" "$REPAIRED_SHA"' "$WORKFLOW"
+grep -Fq 'Bind chained review to expected PR head' "$ROOT/.github/workflows/aeon.yml"
+grep -Fq 'Immutable review target: expected_sha=$EXPECTED_REVIEW_SHA' "$ROOT/.github/workflows/aeon.yml"
+grep -Fq 'If either comparison differs, abort without' "$ROOT/skills/pr-review/SKILL.md"
 grep -Fq 'repair:<owner/repo#N>@<40-character-lowercase-sha>' "$FEATURE"
 if ! sed -n '/^  dev-loop:/,/^  # routine:/p' "$CONFIG" | grep -Fq 'max_dispatches: 4'; then
   echo 'dev-loop dispatch budget is not exactly four (feature, review, repair, re-review)' >&2

@@ -82,7 +82,7 @@ jobs:
 
           # --- Helper: dispatch a skill and return its uniquely correlated run ID ---
           dispatch_skill() {
-            local skill="$1" var="${2:-}" ctx_file="${3:-}"
+            local skill="$1" var="${2:-}" ctx_file="${3:-}" expected_sha="${4:-}"
             local before_ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
             # The ID is bounded and shell-safe so it can be passed as a workflow input
             # and embedded in the run-name without changing untrusted jq source.
@@ -91,6 +91,7 @@ jobs:
             local args=(-f skill="$skill" -f dispatch_id="$dispatch_id")
             [ -n "$var" ] && args+=(-f var="$var")
             [ -n "$ctx_file" ] && args+=(-f chain_context_file="$ctx_file")
+            [ -n "$expected_sha" ] && args+=(-f expected_sha="$expected_sha")
 
             local expected_title="skill: $skill"
             [ -n "$var" ] && expected_title+=" ($var)"
@@ -365,6 +366,11 @@ jobs:
                   CHAIN_FAILED=true
                   break
                 }
+                if [ "$REVIEW_SHA" != "$FEATURE_SHA" ]; then
+                  echo "::error::dev-loop feature PR changed after its checks were verified"
+                  CHAIN_FAILED=true
+                  break
+                fi
               fi
 
               # Build context file if this step consumes outputs
@@ -393,7 +399,11 @@ jobs:
                 break 2
               fi
 
-              RUN_OUTPUT=$(dispatch_skill "$skill" "$VAR" "$CTX_FILE")
+              EXPECTED_REVIEW_SHA=""
+              if [ "$CHAIN" = "dev-loop" ] && [ "$skill" = "pr-review" ]; then
+                EXPECTED_REVIEW_SHA="$FEATURE_SHA"
+              fi
+              RUN_OUTPUT=$(dispatch_skill "$skill" "$VAR" "$CTX_FILE" "$EXPECTED_REVIEW_SHA")
               DISPATCH_EXIT=$?
               RUN_ID=$(echo "$RUN_OUTPUT" | tail -1)
               if [ $DISPATCH_EXIT -ne 0 ] || [ -z "$RUN_ID" ]; then
@@ -438,7 +448,35 @@ jobs:
                 VERIFY_RC=0
                 FEATURE_PR=$(bash scripts/dev-loop-pr.sh verify-new-pr "$CHAIN_TARGET" "$FEATURE_OPEN_BEFORE" "$FEATURE_DISPATCH_ID") || VERIFY_RC=$?
                 case "$VERIFY_RC" in
-                  0) echo "  Verified feature PR: $FEATURE_PR" ;;
+                  0)
+                    echo "  Verified feature PR: $FEATURE_PR"
+                    FEATURE_SHA=$(bash scripts/dev-loop-repair.sh head "$FEATURE_PR") || {
+                      echo "::error::dev-loop could not bind checks to the feature PR head"
+                      CHAIN_FAILED=true
+                      break
+                    }
+                    INITIAL_CHECK_RESULT=""
+                    INITIAL_CHECKS_VERIFIED=false
+                    for attempt in $(seq 1 60); do
+                      CHECK_RC=0
+                      INITIAL_CHECK_RESULT=$(bash scripts/dev-loop-repair.sh verify-checks "$FEATURE_PR" "$FEATURE_SHA" 2>&1) || CHECK_RC=$?
+                      if [ "$CHECK_RC" -eq 0 ]; then
+                        echo "  Verified feature checks: $INITIAL_CHECK_RESULT"
+                        INITIAL_CHECKS_VERIFIED=true
+                        break
+                      elif [ "$CHECK_RC" -ne 3 ]; then
+                        echo "::error::$INITIAL_CHECK_RESULT"
+                        CHAIN_FAILED=true
+                        break
+                      fi
+                      sleep 30
+                    done
+                    if [ "$CHAIN_FAILED" = "false" ] && [ "$INITIAL_CHECKS_VERIFIED" != "true" ]; then
+                      echo "::error::dev-loop timed out waiting for feature checks"
+                      CHAIN_FAILED=true
+                    fi
+                    [ "$CHAIN_FAILED" = "false" ] || break
+                    ;;
                   3) FEATURE_PR=""; CHAIN_NO_ACTION=true; echo "::notice::dev-loop feature completed without a verified PR; reviewer will not run" ;;
                   *) echo "::error::dev-loop could not verify feature's claimed PR"; CHAIN_FAILED=true; break ;;
                 esac
@@ -536,7 +574,7 @@ jobs:
                 echo "::error::dev-loop cannot dispatch re-review: budget $MAX_DISPATCHES exhausted"
                 CHAIN_FAILED=true
               else
-                REREVIEW_OUTPUT=$(dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT")
+                REREVIEW_OUTPUT=$(dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT" "$REPAIRED_SHA")
                 REREVIEW_RUN_ID=$(echo "$REREVIEW_OUTPUT" | tail -1)
                 if [ -z "$REREVIEW_RUN_ID" ] || ! wait_for_runs "$REREVIEW_RUN_ID"; then
                   echo "::error::dev-loop re-review run failed"

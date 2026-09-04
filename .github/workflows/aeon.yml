@@ -67,6 +67,10 @@ on:
         description: 'Correlation ID for chain dispatches'
         required: false
         type: string
+      expected_sha:
+        description: 'Optional immutable PR head expected by a chained pr-review'
+        required: false
+        type: string
   workflow_call:
     inputs:
       skill:
@@ -91,6 +95,10 @@ on:
         type: string
       dispatch_id:
         description: 'Correlation ID for chain dispatches'
+        required: false
+        type: string
+      expected_sha:
+        description: 'Optional immutable PR head expected by a chained pr-review'
         required: false
         type: string
   issues:
@@ -187,6 +195,30 @@ jobs:
         run: |
           git config user.name "aeonframework"
           git config user.email "aeonframework@proton.me"
+
+      - name: Bind chained review to expected PR head
+        if: steps.work.outputs.mode != '' && inputs.expected_sha != ''
+        env:
+          GH_TOKEN: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
+          SKILL: ${{ steps.skill.outputs.name }}
+          TARGET: ${{ inputs.var }}
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          [ "$SKILL" = pr-review ] || { echo "::error::expected_sha is only valid for pr-review"; exit 1; }
+          [[ "$TARGET" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+#[1-9][0-9]*$ ]] || {
+            echo "::error::expected_sha requires var=owner/repo#pr"
+            exit 1
+          }
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::invalid expected_sha"; exit 1; }
+          repo=${TARGET%#*}
+          number=${TARGET##*#}
+          actual=$(gh api "repos/$repo/pulls/$number" --jq '.head.sha')
+          [ "$actual" = "$EXPECTED_SHA" ] || {
+            echo "::error::PR head changed before review (expected $EXPECTED_SHA, found $actual)"
+            exit 1
+          }
+          echo "review head bound to $EXPECTED_SHA"
 
       # Egress hardening P1: default-deny outbound to link-local + cloud metadata.
       # No skill has a legitimate reason to reach 169.254.0.0/16. Kills the SSRF /
@@ -721,6 +753,7 @@ jobs:
           RH_HARNESS_MODEL: ${{ steps.harness.outputs.HARNESS_MODEL }}
           INPUT_CHAIN_CTX: ${{ inputs.chain_context_file }}
           AEON_DISPATCH_ID: ${{ inputs.dispatch_id }}
+          EXPECTED_REVIEW_SHA: ${{ inputs.expected_sha }}
         run: |
           TODAY=$(date -u +%Y-%m-%d)
           export SKILL_NAME
@@ -949,6 +982,12 @@ jobs:
 
           Use this variable (override the default in the skill file):
           var=$VAR"
+          fi
+          if [ -n "$EXPECTED_REVIEW_SHA" ]; then
+            PROMPT="$PROMPT
+
+          Immutable review target: expected_sha=$EXPECTED_REVIEW_SHA
+          Review only this exact commit. Abort without posting comments if the PR head differs before fetching or immediately before posting the review."
           fi
           if [[ "$AEON_DISPATCH_ID" =~ ^chain-[0-9a-f]{32}$ ]]; then
             PROMPT="$PROMPT
