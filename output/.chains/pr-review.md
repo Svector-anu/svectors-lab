@@ -1,21 +1,11 @@
 **Verdict**: discussion-needed
 
-- [ISSUE] `.github/workflows/chain-runner.yml:445` — the initial gate validates `FEATURE_SHA`, but the later review step binds to the current PR head independently. A force-push between these points can send an unchecked commit to review.
+- [ISSUE] `.github/workflows/chain-runner.yml:360` — a force-push during context publication or dispatch can make `pr-review` evaluate a different, unchecked head because the reviewer receives only the mutable PR target.
+- Posted one inline comment and the consolidated GitHub review.
+- All targeted tests, config validation, diff checks, and both CI checks passed.
 
-Posted one inline comment and the consolidated review on PR #69.
-
-Verification passed:
-
-- `test_dev_loop_repair.sh`
-- `test_dev_loop_handoff.sh`
-- Configuration validation
-- `git diff --check`
-
-<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#69","sha":"9170a34c7024055192cb39eecc3d6cdc15701150","verdict":"discussion-needed","critical":0,"issues":1} -->
+<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#69","sha":"b422a90340f8341a6fc82078ce6f109fefb11dd4","verdict":"discussion-needed","critical":0,"issues":1} -->
 
 ## Summary
 
-- Reviewed 1 PR; skipped 0.
-- Logged the result in [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md).
-- Updated [review.md](/home/runner/work/svectors-lab/svectors-lab/review.md).
-- Notification delivery was attempted but the external queue filesystem was read-only.
+Reviewed PR #69 at `b422a90`, posted one issue, and updated [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md). Notification delivery was attempted but its external queue was read-only.
