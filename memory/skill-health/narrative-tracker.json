@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-04T13:39:04Z",
-  "quality_score": 3,
-  "assessment": "Substantive, sourced, and position-labeled, but it lacks a conclusion-first regime verdict, headlines prohibited live price levels, and presents weakly corroborated baselines as tradeable transitions.",
+  "last_analyzed": "2026-09-04T19:28:57Z",
+  "quality_score": 2,
+  "assessment": "Actionable and well-structured, but numerous precise claims, figures, incidents, rankings, and position calls lack direct evidence links and appear implausibly sourced despite the stated API failure, making the output unreliable.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
   "avg_score": 2.73,
   "history": [
-    {
-      "date": "2026-08-29",
-      "score": 2,
-      "ts": "2026-08-29T03:57:13Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-29",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-04",
       "score": 3,
       "ts": "2026-09-04T13:39:04Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 2,
+      "ts": "2026-09-04T19:28:57Z",
       "harness": "codex"
     }
   ]

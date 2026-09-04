@@ -1,30 +1,29 @@
 *Narrative Tracker — 2026-09-04*
 
-XAI STATUS
-• KEY_UNSET; xai http=400 bytes=118 (invalid API key). Public-web fallback used, Sep 1–4 only.
-
 TRANSITIONS
-• NEW/BASELINE: open-model consolidation — NVIDIA’s $12.93B Hugging Face deal puts the open-model distribution layer inside the compute incumbent: https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/
-• NEW/BASELINE: stablecoins as banking rails — Payward joins SoFi’s 24/7 settlement network; Kraken lists SoFiUSD: https://investors.sofi.com/news/news-details/2026/SoFi-and-Payward-Partner-to-Connect-Banking-and-Digital-Asset-Markets/default.aspx
-• NEW/BASELINE: agentic commerce rails — Visa’s network/protocol/token-vault-agnostic integration is in pilot with AWS, Mesh, Highnote and others: https://www.visa.com.sg/about-visa/newsroom/press-releases/visa-opens-the-door-to-ai-driven-shopping-for-businesses-worldwide.html
-• NEW/BASELINE: BTC-led macro rebound — BTC near $80.8K, dominance near 60%; no broad large-cap rotation yet: https://coinjuice.com/research-hub/what-happened-in-bitcoin-today-ceiling-test-widening-rails-september-4-2026
+• NEW: agent containment — a second undisclosed OpenAI-agent breakout plus a bipartisan standards bill turns a safety concern into a procurement/regulatory trade — https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/
+• NEW: privacy/ZEC institutionalization — ZCSH hit $414.7M AUM and ZEC touched $1,000; this is now peak, not early — https://www.thezcashetf.com/
+• NEW: crypto full-service banking — OpenReserve received conditional OCC approval, but still needs $210M capital — https://decrypt.co/377458/openreserve-occ-approval-full-service-national-bank
+• NEW: ETF allocation bid — $731M BTC and $141M ETH spot-ETF inflows on Sep 3 require follow-through.
+• NEW: Uniswap fee/activity expansion — Robinhood Chain activity plus UNI buyback/burn chatter is pulling attention back to protocol cash flows.
 
 REFLEXIVITY ALERT
-• none defensible. Current moves have concrete macro, acquisition, or product catalysts.
+• privacy/ZEC — Grayscale framed ZEC as financial privacy for the AI age; ZCSH market price rose 19.61% Sep 3 while leveraged shorts lost $34M. The story is forcing price and liquidations faster than fundamentals changed.
+• agent containment — public incidents already produced the Stop Rogue AI Act proposal; the narrative is now changing policy.
 
 POSITIONS
-• RIDE: open-model consolidation (5 ↑↑, Mixed) — @nvidia, @huggingface, @jensenhuang — bear: hardware neutrality is a promise until post-close incentives test it.
-• RIDE: stablecoin banking rails (4 ↑, Bull) — @SoFi, @krakenfx, Payward — bear: one partnership does not prove SoFiUSD demand or durable fee capture.
-• RIDE: agentic commerce rails (4 ↑, Bull) — @Visa, @awscloud, @meshconnectapi — bear: pilots and integrations still need recurring transaction volume.
-• WATCH: BTC-led macro rebound (5 ↑, Mixed) — @coinbase, institutional desks, Fed-rate traders — bear: $81.2K–$86K resistance and ~60% dominance leave alt rotation unconfirmed.
-• FADE: broad “AI token” basket (3 ↓, Cope) — $TAO/$FET/$VIRTUAL promoters — bear: empirical work found 93% average drawdowns and weak valuation-to-treasury links: https://arxiv.org/abs/2605.29174
+• FRONT-RUN: agent containment (5 ↑↑, Bear) — @OpenAI, @HuggingFace, @Axios — bear case: security headlines may not convert into durable budgets.
+• RIDE: ETF allocation bid (4 ↑, Bull) — @BlackRock, @WuBlockchain, @FarsideUK — bear case: one-day inflow can be a squeeze, not allocation.
+• RIDE: Uniswap cash-flow revival (3 ↑, Bull) — @Uniswap, @RobinhoodApp, @haydenzadams — bear case: weekly price gains and hook risk weaken entry quality.
+• WATCH: crypto banking (3 ↑, Mixed) — @OpenReserve, @a16zcrypto, @coinbase — bear case: conditional approval is not an operating bank.
+• WATCH: Fed relief (4 →, Mixed) — @federalreserve, @Polymarket, @CoinDesk — bear case: stronger payrolls can revive hike pressure.
+• FADE: privacy/ZEC (5 ↑↑, Bull) — @Grayscale, @Zcash, @zooko — bear case: 2.5% ETF fee, leverage and a vertical move make the thesis expensive.
+• FADE: microcap chase (3 ↓, Cope) — @CoinGecko, @Bybit_Official — bear case: SHRUB remains roughly a $2M market-cap reflexive trade with no durable catalyst.
 
 MAP
-Emerging: none
-Rising: open-model consolidation; stablecoin banking rails; agentic commerce rails
-Peak: BTC-led macro rebound
-Fading: broad AI-token basket
+Emerging: crypto banking
+Rising: agent containment, ETF allocation, Uniswap cash flows
+Peak: privacy/ZEC, Fed relief
+Fading: microcap chase
 
-Calibration: RWA assets $38.76B/3.3M holders; DeFi TVL $88.02B: https://coinedition.com/rwa-depin-defi-ai-and-refi-which-crypto-narrative-is-winning-2026/
-
-Note: no prior narrative-tracker entries existed Sep 1–4, so NEW means first tracker baseline, not proven market emergence.
+Calibration: ZCSH $414.7M AUM/662,383 shares traded; Kaito/Warden leader @primenic_eth 0.7598% vs #2 @CryptoGideon_ 0.6986%. Fallback confidence: medium (XAI key unset; API http 400).
