@@ -1,0 +1,267 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: step-security/harden-runner",
+        "description": "5 confirmed findings (all HIGH-severity dependency CVEs, patched)"
+      },
+      "children": [
+        "stack-main"
+      ]
+    },
+    "stack-main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat-findings",
+        "sep1",
+        "heading-scanner",
+        "stack-scanners",
+        "text-poc",
+        "sep2",
+        "heading-patched",
+        "text-patched-note",
+        "stack-patched-deps",
+        "sep3",
+        "heading-deferred",
+        "text-deferred-intro",
+        "stack-deferred-deps",
+        "sep4",
+        "text-code-findings",
+        "text-stale-prs",
+        "sep5",
+        "link-pr"
+      ]
+    },
+    "stat-findings": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Findings",
+        "value": "5",
+        "delta": "all patched"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-scanner": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "stack-scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-semgrep",
+        "badge-trufflehog",
+        "badge-osv",
+        "badge-fuzz",
+        "badge-agentic"
+      ]
+    },
+    "badge-semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      }
+    },
+    "badge-trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      }
+    },
+    "badge-osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      }
+    },
+    "badge-fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: n/a",
+        "variant": "secondary"
+      }
+    },
+    "badge-agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: ok",
+        "variant": "default"
+      }
+    },
+    "text-poc": {
+      "type": "Text",
+      "props": {
+        "text": "PoC gate: not-required (dependency CVEs only)",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-patched": {
+      "type": "Heading",
+      "props": {
+        "text": "Patched Dependencies",
+        "level": "h3"
+      }
+    },
+    "text-patched-note": {
+      "type": "Text",
+      "props": {
+        "text": "Same-major patch/minor bumps, no code changes needed",
+        "variant": "caption"
+      }
+    },
+    "stack-patched-deps": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-brace",
+        "text-fastxml",
+        "text-jsyaml",
+        "text-browserslist",
+        "text-fasturi"
+      ]
+    },
+    "text-brace": {
+      "type": "Text",
+      "props": {
+        "text": "• brace-expansion",
+        "variant": "body"
+      }
+    },
+    "text-fastxml": {
+      "type": "Text",
+      "props": {
+        "text": "• fast-xml-parser",
+        "variant": "body"
+      }
+    },
+    "text-jsyaml": {
+      "type": "Text",
+      "props": {
+        "text": "• js-yaml",
+        "variant": "body"
+      }
+    },
+    "text-browserslist": {
+      "type": "Text",
+      "props": {
+        "text": "• browserslist",
+        "variant": "body"
+      }
+    },
+    "text-fasturi": {
+      "type": "Text",
+      "props": {
+        "text": "• fast-uri",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-deferred": {
+      "type": "Heading",
+      "props": {
+        "text": "Deferred Dependencies",
+        "level": "h3"
+      }
+    },
+    "text-deferred-intro": {
+      "type": "Text",
+      "props": {
+        "text": "Both require major/breaking bumps and were deferred with documented rationale:",
+        "variant": "caption"
+      }
+    },
+    "stack-deferred-deps": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text-undici",
+        "text-uuid"
+      ]
+    },
+    "text-undici": {
+      "type": "Text",
+      "props": {
+        "text": "• undici (11 GHSA) — matches maintainers' existing risk-acceptance call for the same GHSA class",
+        "variant": "body"
+      }
+    },
+    "text-uuid": {
+      "type": "Text",
+      "props": {
+        "text": "• uuid (1 GHSA)",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text-code-findings": {
+      "type": "Text",
+      "props": {
+        "text": "Code findings: 0 (well-engineered security-vendor codebase)",
+        "variant": "body"
+      }
+    },
+    "text-stale-prs": {
+      "type": "Text",
+      "props": {
+        "text": "Stale Dependabot PRs superseded: 3",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "link-pr": {
+      "type": "Link",
+      "props": {
+        "label": "View PR #693",
+        "href": "https://github.com/step-security/harden-runner/pull/693"
+      }
+    }
+  }
+}
