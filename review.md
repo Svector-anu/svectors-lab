@@ -4,7 +4,9 @@ Reviewed 1, skipped 0.
 - Svector-anu/svectors-lab#69: discussion-needed — 0 critical, 1 issue
 
 **Verdict**: discussion-needed
+The immutable head is checked before setup, but it is still not bound into the reviewer itself.
 
-- [ISSUE] `.github/workflows/chain-runner.yml:445` — the successful initial gate does not re-check that the PR still points to `FEATURE_SHA` before review, so a force-push can send an unchecked commit to review.
+**Findings**
+- [ISSUE] `.github/workflows/aeon.yml:218` — `expected_sha` is checked only in preflight and is not passed into the review skill; a force-push after the comparison can make the reviewer fetch and approve an unchecked head.
 
-<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#69","sha":"9170a34c7024055192cb39eecc3d6cdc15701150","verdict":"discussion-needed","critical":0,"issues":1} -->
+<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#69","sha":"3bc2fd42b53447ecd59fcb1b38928978728b56d7","verdict":"discussion-needed","critical":0,"issues":1} -->
