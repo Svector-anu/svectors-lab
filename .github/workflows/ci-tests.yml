@@ -137,3 +137,5 @@ jobs:
         run: bash scripts/tests/test_secretcurl.sh
       - name: vuln-scanner PoC gate tests
         run: bash scripts/tests/test_vuln_poc_gate.sh
+      - name: vuln-scanner Riva dossier tests
+        run: bash scripts/tests/test_riva_context.sh
