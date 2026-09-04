@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-04T04:59:52Z",
-  "quality_score": 4,
-  "assessment": "Substantive, explicit position calls with evidence links and honest source limitations, though the verdict is not conclusion-first and several precise market claims rely on thin or indirect sourcing.",
-  "flags": [],
-  "avg_score": 2.7,
+  "last_analyzed": "2026-09-04T09:24:26Z",
+  "quality_score": 3,
+  "assessment": "Decision-grade and conclusion-first with explicit ride/fade/watch calls and source links, but several key claims rely on inferred social velocity, an unlinked repo snapshot, and fallback sources of uneven authority; the failed authenticated xAI attempt also conflicts with the public-data-only constraint.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.73,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T12:45:39Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T04:59:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 3,
+      "ts": "2026-09-04T09:24:26Z",
       "harness": "codex"
     }
   ]
