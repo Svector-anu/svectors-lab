@@ -356,6 +356,11 @@ jobs:
                   CHAIN_FAILED=true
                   break
                 }
+                if [ "$REVIEW_SHA" != "$FEATURE_SHA" ]; then
+                  echo "::error::dev-loop feature PR changed after its checks were verified"
+                  CHAIN_FAILED=true
+                  break
+                fi
               fi
 
               # Build context file if this step consumes outputs
