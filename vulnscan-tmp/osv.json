@@ -1,0 +1,776 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/home/runner/work/svectors-lab/svectors-lab/stripe-cli/go.mod",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "golang.org/x/crypto",
+            "version": "0.54.0",
+            "ecosystem": "Go"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GO-2026-5932"
+              ],
+              "aliases": [
+                "GO-2026-5932"
+              ],
+              "experimental_analysis": {
+                "GO-2026-5932": {
+                  "called": false,
+                  "unimportant": false
+                }
+              },
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2026-6303"
+              ],
+              "aliases": [
+                "CVE-2026-56854",
+                "GO-2026-6303"
+              ],
+              "experimental_analysis": {
+                "GO-2026-6303": {
+                  "called": false,
+                  "unimportant": false
+                }
+              },
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2026-6354"
+              ],
+              "aliases": [
+                "CVE-2026-78662",
+                "GO-2026-6354"
+              ],
+              "experimental_analysis": {
+                "GO-2026-6354": {
+                  "called": true,
+                  "unimportant": false
+                }
+              },
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2026-6355"
+              ],
+              "aliases": [
+                "CVE-2026-56855",
+                "GO-2026-6355"
+              ],
+              "experimental_analysis": {
+                "GO-2026-6355": {
+                  "called": true,
+                  "unimportant": false
+                }
+              },
+              "max_severity": ""
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-5932.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/crypto/openpgp"
+                      },
+                      {
+                        "path": "golang.org/x/crypto/openpgp/packet"
+                      },
+                      {
+                        "path": "golang.org/x/crypto/openpgp/armor"
+                      },
+                      {
+                        "path": "golang.org/x/crypto/openpgp/clearsign"
+                      },
+                      {
+                        "path": "golang.org/x/crypto/openpgp/errors"
+                      },
+                      {
+                        "path": "golang.org/x/crypto/openpgp/elgamal"
+                      },
+                      {
+                        "path": "golang.org/x/crypto/openpgp/s2k"
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/crypto",
+                    "purl": "pkg:golang/golang.org/x/crypto"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2026-5932"
+              },
+              "details": "The golang.org/x/crypto/openpgp package is unsafe by design, has numerous known security issues, is not maintained, and should not be used.\n\nIf you are required to interoperate with OpenPGP systems and need a maintained package, consider github.com/ProtonMail/go-crypto/openpgp which is a maintained fork that aims to be a drop-in replacement for this package.",
+              "id": "GO-2026-5932",
+              "modified": "2026-07-10T05:44:31.101996029Z",
+              "published": "2026-07-07T22:15:29Z",
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/44226"
+                }
+              ],
+              "related": [
+                "CGA-485h-x96h-hqh7"
+              ],
+              "schema_version": "1.7.5",
+              "summary": "The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues"
+            },
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6303.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/crypto/ssh",
+                        "symbols": [
+                          "NewServerConn",
+                          "connection.serverAuthenticate"
+                        ]
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/crypto",
+                    "purl": "pkg:golang/golang.org/x/crypto"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.55.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-56854"
+              ],
+              "credits": [
+                {
+                  "name": "Longwei Wang (@gn00295120)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2026-6303"
+              },
+              "details": "The source-address critical option in the Permissions returned by an authentication callback was only enforced for the PublicKeyCallback and VerifiedPublicKeyCallback paths, extending the fix for CVE-2026-46595. Permissions returned by the PasswordCallback, KeyboardInteractiveCallback, NoClientAuthCallback, and GSSAPIWithMICConfig.AllowLogin callbacks were not validated against the client's remote address, so a source-address restriction set by those callbacks was silently ignored. The check is now applied to the Permissions returned by any authentication callback.",
+              "id": "GO-2026-6303",
+              "modified": "2026-08-29T10:10:52.440319762Z",
+              "published": "2026-08-28T14:47:45Z",
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/80213"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/797040"
+                }
+              ],
+              "related": [
+                "CGA-gppf-q4hh-4rj4"
+              ],
+              "schema_version": "1.9.0",
+              "summary": "Source-address critical option not enforced for non-public-key auth callbacks in golang.org/x/crypto/ssh"
+            },
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6354.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/crypto/ssh",
+                        "symbols": [
+                          "Dial",
+                          "NewClientConn",
+                          "NewControlClientConn",
+                          "NewServerConn",
+                          "channel.Accept",
+                          "channel.handlePacket",
+                          "channel.responseMessageReceived"
+                        ]
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/crypto",
+                    "purl": "pkg:golang/golang.org/x/crypto"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.56.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-78662"
+              ],
+              "credits": [
+                {
+                  "name": "Will Mortensen"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2026-6354"
+              },
+              "details": "Previously, a channel registered in the mux's chanList is not usable until it is established. A malicious peer was able flood the channel's incomingRequests, deadlocking the entire connection.\n\nNow, we add an atomic established state, set when a channel becomes usable. Until such a time, handlePacket drops every packet other than the open confirmation/failure, without blocking and without tearing down the connection.",
+              "id": "GO-2026-6354",
+              "modified": "2026-09-03T10:10:55.147673102Z",
+              "published": "2026-09-02T19:12:04Z",
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/81316"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/826504"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/1y3fb2np35U"
+                }
+              ],
+              "related": [
+                "CGA-r4x5-7v6j-hmfg"
+              ],
+              "schema_version": "1.9.0",
+              "summary": "Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh"
+            },
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6355.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/crypto/ssh",
+                        "symbols": [
+                          "Dial",
+                          "NewClientConn",
+                          "NewControlClientConn",
+                          "NewServerConn",
+                          "channel.handlePacket"
+                        ]
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/crypto",
+                    "purl": "pkg:golang/golang.org/x/crypto"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.56.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-56855"
+              ],
+              "credits": [
+                {
+                  "name": "Will Mortensen"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2026-6355"
+              },
+              "details": "Previously, after a channel has been established, a malicious peer could send crafted messages that would deadlock the entire connection.\n\nNow, we handle all RFC 4254 channel messages; global requests are handled explicitly. Then, treat all other messages as a protocol error and tear the connection down instead of buffering and blocking.",
+              "id": "GO-2026-6355",
+              "modified": "2026-09-03T10:10:55.101133330Z",
+              "published": "2026-09-02T19:12:04Z",
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/81317"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/826524"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/1y3fb2np35U"
+                }
+              ],
+              "related": [
+                "CGA-rfw9-vqmf-556m"
+              ],
+              "schema_version": "1.9.0",
+              "summary": "Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "golang.org/x/mod",
+            "version": "0.37.0",
+            "ecosystem": "Go"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GO-2026-6179"
+              ],
+              "aliases": [
+                "BIT-golang-2026-56865",
+                "CVE-2026-56865",
+                "GO-2026-6179"
+              ],
+              "experimental_analysis": {
+                "GO-2026-6179": {
+                  "called": false,
+                  "unimportant": false
+                }
+              },
+              "max_severity": ""
+            },
+            {
+              "ids": [
+                "GO-2026-6180"
+              ],
+              "aliases": [
+                "BIT-golang-2026-56864",
+                "CVE-2026-56864",
+                "GO-2026-6180"
+              ],
+              "experimental_analysis": {
+                "GO-2026-6180": {
+                  "called": false,
+                  "unimportant": false
+                }
+              },
+              "max_severity": ""
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6179.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "cmd/go"
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "toolchain",
+                    "purl": "pkg:golang/toolchain"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.25.13"
+                        },
+                        {
+                          "introduced": "1.26.0-0"
+                        },
+                        {
+                          "fixed": "1.26.6"
+                        },
+                        {
+                          "introduced": "1.27.0-0"
+                        },
+                        {
+                          "fixed": "1.27.0-rc.3"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6179.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/mod/sumdb/tlog",
+                        "symbols": [
+                          "tileHashReader.ReadHashes"
+                        ]
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/mod",
+                    "purl": "pkg:golang/golang.org/x/mod"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.40.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "BIT-golang-2026-56865",
+                "CVE-2026-56865"
+              ],
+              "credits": [
+                {
+                  "name": "Filippo Valsorda (Geomys)"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2026-6179"
+              },
+              "details": "A malicious GOPROXY was previously capable of forging up to two sumdb tiles that allow for a requested module to bypass the GOSUMDB check and persist attacker-controlled module content to a local Go module cache.\n\nThis attack allows for a malicious GOPROXY to serve malicious module content that cannot be detected by evaluating the transparency log.\n\nAll tiles are now correctly verified against their parents.\n\nIn order to determine if you have been affected:\n\nrm -r go.sum go.work.sum vendor/ \u0026\u0026 go mod tidy",
+              "id": "GO-2026-6179",
+              "modified": "2026-08-19T12:25:40.780492871Z",
+              "published": "2026-08-13T21:43:54Z",
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/80744"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/94pEornpRlI"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/814960"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/815020"
+                }
+              ],
+              "related": [
+                "CGA-jw38-qq2g-45fw"
+              ],
+              "schema_version": "1.9.0",
+              "summary": "Fix transparency log tile verification bypass in golang.org/x/mod/sumdb/tlog"
+            },
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6180.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "cmd/go"
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "toolchain",
+                    "purl": "pkg:golang/toolchain"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.25.13"
+                        },
+                        {
+                          "introduced": "1.26.0-0"
+                        },
+                        {
+                          "fixed": "1.26.6"
+                        },
+                        {
+                          "introduced": "1.27.0-0"
+                        },
+                        {
+                          "fixed": "1.27.0-rc.3"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "source": "https://vuln.go.dev/ID/GO-2026-6180.json"
+                  },
+                  "ecosystem_specific": {
+                    "imports": [
+                      {
+                        "path": "golang.org/x/mod/sumdb",
+                        "symbols": [
+                          "Client.Lookup"
+                        ]
+                      }
+                    ]
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "golang.org/x/mod",
+                    "purl": "pkg:golang/golang.org/x/mod"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.40.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "BIT-golang-2026-56864",
+                "CVE-2026-56864"
+              ],
+              "credits": [
+                {
+                  "name": "mundur"
+                }
+              ],
+              "database_specific": {
+                "review_status": "REVIEWED",
+                "url": "https://pkg.go.dev/vuln/GO-2026-6180"
+              },
+              "details": "A malicious GOSUMDB was capable of serving arbitrary module content not contained within the transparency log.\n\nThis attack allows for a coordinating GOPROXY and GOSUMDB to serve a client malicious module content that cannot be detected by evaluating the transparency log.\n\nIn order to determine if you have been affected:\n\nrm -r go.sum go.work.sum vendor/ \u0026\u0026 go mod tidy",
+              "id": "GO-2026-6180",
+              "modified": "2026-08-19T12:25:49.995487491Z",
+              "published": "2026-08-13T21:43:54Z",
+              "references": [
+                {
+                  "type": "REPORT",
+                  "url": "https://go.dev/issue/80745"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://groups.google.com/g/golang-announce/c/94pEornpRlI"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/815000"
+                },
+                {
+                  "type": "FIX",
+                  "url": "https://go.dev/cl/815020"
+                }
+              ],
+              "related": [
+                "CGA-jjqg-jcfg-qc8v"
+              ],
+              "schema_version": "1.9.0",
+              "summary": "Ignore unrelated, unauthenticated hashes in Lookup in golang.org/x/mod/sumdb"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "google.golang.org/grpc",
+            "version": "1.82.1",
+            "ecosystem": "Go"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-vp52-pcj8-j9qc"
+              ],
+              "aliases": [
+                "CVE-2026-84304",
+                "GHSA-vp52-pcj8-j9qc"
+              ],
+              "max_severity": "8.7"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c= 1.83.0",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-vp52-pcj8-j9qc/GHSA-vp52-pcj8-j9qc.json"
+                  },
+                  "package": {
+                    "ecosystem": "Go",
+                    "name": "google.golang.org/grpc",
+                    "purl": "pkg:golang/google.golang.org/grpc"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "1.83.1"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-84304"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-400"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-09-01T21:32:41Z",
+                "nvd_published_at": "2026-09-01T19:17:30Z",
+                "severity": "HIGH"
+              },
+              "details": "### Impact\nAn unauthenticated remote attacker can initiate a gRPC stream and purposefully fragment their payload into millions of tiny (e.g., 1-byte) HTTP/2 DATA frames. Even if the total payload volume falls within the configured connection and stream flow-control windows, each independent fragment incurs memory overhead due to internal tracking structures and queue allocation.\n\nRepeated fragmentation massively inflates the heap space consumed by the stream. An attacker multiplexing multiple concurrent streams can exhaust the memory bounds of the runtime, forcing a runtime panic or OutOfMemory condition and leading to a remote Denial of Service (DoS).\n\n### Patches\nThe change to fix this issue is merged in `master` and a patch release, 1.83.1, has been published that contains this fix.\n\n### Workarounds\nThis vulnerability is mitigated by implementing receive buffer compaction. Consecutive small data buffers are automatically coalesced into larger buffers from a shared pool once the overhead is perceived to be excessive relative to actual payload data, drastically minimizing per-frame memory overheads.\n\nThis behavior is enabled by default. A temporary escape hatch is provided via the environment variable `GRPC_GO_EXPERIMENTAL_ENABLE_RECEIVE_BUFFER_COMPACTION=false` to disable the feature if unforeseen issues arise, but it will be removed in a future release.",
+              "id": "GHSA-vp52-pcj8-j9qc",
+              "modified": "2026-09-03T04:10:49.628887775Z",
+              "published": "2026-09-01T21:32:41Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/grpc/grpc-go/security/advisories/GHSA-vp52-pcj8-j9qc"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84304"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/grpc/grpc-go/pull/9331"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/grpc/grpc-go/pull/9333"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/grpc/grpc-go/commit/7354d9c8debb4bcf2225bf429857078de310c176"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/grpc/grpc-go/commit/8cfeca0e1ee5ea0980dcc320e20240fa1079ec77"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/grpc/grpc-go"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/grpc/grpc-go/releases/tag/v1.83.1"
+                }
+              ],
+              "related": [
+                "CGA-j4fx-vj29-fw4v"
+              ],
+              "schema_version": "1.9.0",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "gRPC-Go: Heap Memory Exhaustion (OOM) via HTTP/2 DATA Frame Fragmentation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "experimental_config": {
+    "licenses": {
+      "summary": false,
+      "allowlist": null
+    }
+  }
+}

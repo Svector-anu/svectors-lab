@@ -1,0 +1,185 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — stripe/stripe-cli"
+      },
+      "children": [
+        "summary-stack",
+        "disclosure-text",
+        "separator-1",
+        "findings-stack",
+        "separator-2",
+        "scanners-stack",
+        "separator-3",
+        "report-stack"
+      ]
+    },
+    "summary-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-confirmed",
+        "stat-needs-verification"
+      ]
+    },
+    "stat-confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Findings",
+        "value": "0"
+      }
+    },
+    "stat-needs-verification": {
+      "type": "Stat",
+      "props": {
+        "label": "Needs Verification",
+        "value": "1"
+      }
+    },
+    "disclosure-text": {
+      "type": "Text",
+      "props": {
+        "text": "Disclosed via: none",
+        "variant": "muted"
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "findings-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "findings-heading",
+        "cve-alert",
+        "auth-bypass-alert"
+      ]
+    },
+    "findings-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Findings",
+        "level": "h3"
+      }
+    },
+    "cve-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "CVE-2026-84304 (HIGH) — gRPC",
+        "message": "Duplicate-skipped. Already fixed by Dependabot PR #1984.",
+        "type": "warning"
+      }
+    },
+    "auth-bypass-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Auth-Bypass on Local stripe daemon gRPC (HIGH) — Plausible",
+        "message": "Public-constant header, no real secret check. Any local process can create webhook endpoints and trigger events using the CLI's own session. Could not clear PoC gate due to missing go toolchain permission this run.",
+        "type": "warning"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners-heading",
+        "scanners-table"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      }
+    },
+    "scanners-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "fail (no raw binary asset)"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "n/a"
+          ],
+          [
+            "agentic",
+            "ok"
+          ],
+          [
+            "PoC gate",
+            "needs-verification"
+          ]
+        ]
+      }
+    },
+    "separator-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "report-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "report-heading",
+        "report-link"
+      ]
+    },
+    "report-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Full Report",
+        "level": "h3"
+      }
+    },
+    "report-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "vuln-scan-2026-09-04-stripe-cli.md",
+        "href": "output/articles/vuln-scan-2026-09-04-stripe-cli.md"
+      }
+    }
+  }
+}

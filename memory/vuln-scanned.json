@@ -459,5 +459,12 @@
     "findings": 2,
     "channel": "pvr",
     "notes": "Python/TS Electron desktop agent (~241k stars). Audited commit 6327930. Scanners: semgrep=ok (415 findings triaged, most false-positive: unverified-jwt-decode diagnostic-only, subprocess-injection false-match on argv-list uv calls, GH Actions run-shell-injection on non-attacker-controlled base_ref, dangerouslySetInnerHTML#1 DOMPurify-sanitized OK), trufflehog=ok (1 verified: live Algolia key with settings ACL beyond the code's own 'search-only' comment), osv=ok (dep CVEs across browserslist/nanoid/qs/sanitize-html/fast-uri/extract-zip/tornado/h2/idna/electron; all JS ones already covered by open upstream PRs #91906/#94262/#101446 -> duplicate-skipped, not filed), agentic=ok (N=6, found real HIGH: BotFace/blobMarkup JSON.stringify+string-concat HTML injection via remote group-chat bot name, breaks data-bot-face attribute scope into a live <img onerror> DOM element). PoC gate: verified via local-command (jsdom harness against the literal extracted expression). Filed PVR GHSA-qjq9-cgwp-r73h bundling both confirmed findings. Report: output/articles/vuln-scan-2026-09-04-hermes-agent.md"
+  },
+  {
+    "repo": "stripe/stripe-cli",
+    "scanned_at": "2026-09-04T00:00:00Z",
+    "findings": 1,
+    "channel": "needs-verification",
+    "notes": "semgrep 77 hits all triaged non-issues (66 generated-protobuf unsafe.Pointer, rest intentional dev-tool/CI/tracing-ID behavior); osv grpc CVE-2026-84304 HIGH duplicate-skipped (open Dependabot PR #1984 same fix); x/crypto (4 CVE)/x/mod (2 CVE) indirect-dep bumps not filed, go toolchain unavailable in-run to regenerate go.sum; agentic candidate: stripe daemon local gRPC service (pkg/rpcservice) auth is presence-only header check (sec-x-stripe-cli, public constant, no secret value check), any local process can call WebhookEndpointCreate/Trigger/EventsResend using the CLI own authenticated session with no credential -- HIGH candidate blocked at A4.5 PoC gate (go toolchain not permitted this run), marked needs-verification, not filed/disclosed. No PVR/SECURITY.md on repo but org .github SECURITY.md points to Stripe bug bounty program (human-submission channel, out of scope for auto-disclosure)"
   }
 ]

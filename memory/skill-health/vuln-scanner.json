@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-04T07:09:34Z",
+  "last_analyzed": "2026-09-04T07:30:43Z",
   "quality_score": 4,
-  "assessment": "Substantive, well-structured vulnerability scan with specific reproducible findings (2 verified, line-number precision, PoC harness reproduction), honest scope management (scanner status, duplicate CVEs acknowledged), and verifiable external references (GHSA advisory, upstream PRs). Supports materialized report.",
+  "assessment": "Substantive, verifiable security scan with clear findings (0 confirmed, 1 needs-verification), specific CVE reference, honest about scanner limitations and missing toolchain permission — actionable result pointing to existing Dependabot fix.",
   "flags": [],
-  "avg_score": 3.9,
+  "avg_score": 3.87,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 5
-    },
     {
       "date": "2026-08-25",
       "score": 5
@@ -174,6 +170,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T07:09:34Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 4,
+      "ts": "2026-09-04T07:30:43Z",
       "harness": "claude"
     }
   ]
