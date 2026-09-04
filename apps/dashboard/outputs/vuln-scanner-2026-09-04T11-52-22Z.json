@@ -1,0 +1,206 @@
+{
+  "root": "main_card",
+  "state": {},
+  "elements": {
+    "main_card": {
+      "type": "Card",
+      "props": {
+        "title": "vuln-scanner: honojs/hono"
+      },
+      "children": [
+        "alert_clean",
+        "stats_section",
+        "separator_1",
+        "scanners_section",
+        "separator_2",
+        "findings_section"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "message": "Clean audit. 4 semgrep + 43 osv rows + 5 agentic entrypoints reviewed, 0 confirmed."
+      }
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_semgrep",
+        "stat_osv",
+        "stat_agentic",
+        "stat_confirmed"
+      ]
+    },
+    "stat_semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep",
+        "value": "4"
+      }
+    },
+    "stat_osv": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV Rows",
+        "value": "43"
+      }
+    },
+    "stat_agentic": {
+      "type": "Stat",
+      "props": {
+        "label": "Agentic Entrypoints",
+        "value": "5"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Issues",
+        "value": "0"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners_heading",
+        "scanners_badges"
+      ]
+    },
+    "scanners_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "scanners_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep=ok",
+        "variant": "default"
+      }
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog=ok",
+        "variant": "default"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv=ok",
+        "variant": "default"
+      }
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz=skip",
+        "variant": "secondary"
+      }
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic=ok",
+        "variant": "default"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "findings_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "findings_heading",
+        "findings_list"
+      ]
+    },
+    "findings_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Manual Review Findings",
+        "level": "h3"
+      }
+    },
+    "findings_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "finding_deps",
+        "finding_jwt",
+        "finding_static",
+        "finding_jsx"
+      ]
+    },
+    "finding_deps": {
+      "type": "Text",
+      "props": {
+        "text": "Hono ships zero runtime deps — all 43 osv hits were dev-tooling/benchmark-only, not shipped.",
+        "variant": "body"
+      }
+    },
+    "finding_jwt": {
+      "type": "Text",
+      "props": {
+        "text": "JWT alg-confusion guards held up on manual review.",
+        "variant": "body"
+      }
+    },
+    "finding_static": {
+      "type": "Text",
+      "props": {
+        "text": "serve-static traversal guard held up on manual review.",
+        "variant": "body"
+      }
+    },
+    "finding_jsx": {
+      "type": "Text",
+      "props": {
+        "text": "JSX streaming held up on manual review.",
+        "variant": "body"
+      }
+    }
+  }
+}
