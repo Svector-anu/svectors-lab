@@ -1,5 +1,3 @@
-ℹ️ Vuln Scanner — elysiajs/elysia
-
 *Vuln Scanner — elysiajs/elysia*
 Clean audit. 65 candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
 

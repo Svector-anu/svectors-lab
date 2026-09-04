@@ -1,0 +1,324 @@
+{
+  "root": "main_card",
+  "state": {},
+  "elements": {
+    "main_card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — elysiajs/elysia",
+        "description": "Security audit report"
+      },
+      "children": [
+        "alert_clean",
+        "metrics_stack",
+        "sep1",
+        "scanners_section",
+        "sep2",
+        "deps_section",
+        "sep3",
+        "analysis_section",
+        "sep4",
+        "note_section"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "title": "Clean Audit",
+        "message": "65 candidates reviewed, 0 confirmed vulnerabilities",
+        "type": "success"
+      }
+    },
+    "metrics_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_candidates",
+        "stat_confirmed",
+        "stat_deps"
+      ]
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed",
+        "value": "65"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Issues",
+        "value": "0"
+      }
+    },
+    "stat_deps": {
+      "type": "Stat",
+      "props": {
+        "label": "Core Runtime Dependencies",
+        "value": "4"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners_title",
+        "scanners_badges"
+      ]
+    },
+    "scanners_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      }
+    },
+    "scanners_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep=ok",
+        "variant": "secondary"
+      }
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog=ok",
+        "variant": "secondary"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv=ok",
+        "variant": "secondary"
+      }
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz=skip",
+        "variant": "outline"
+      }
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic=ok",
+        "variant": "secondary"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "deps_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deps_title",
+        "deps_summary",
+        "osv_finding",
+        "cves_title",
+        "cves_list",
+        "patch_note"
+      ]
+    },
+    "deps_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependencies",
+        "level": "h3"
+      }
+    },
+    "deps_summary": {
+      "type": "Text",
+      "props": {
+        "text": "Core package ships only 4 runtime deps: cookie, exact-mirror, fast-decode-uri-component, memoirist",
+        "variant": "body"
+      }
+    },
+    "osv_finding": {
+      "type": "Text",
+      "props": {
+        "text": "60 osv hits were devDependency/test-fixture-only or already-fixed self-CVEs",
+        "variant": "body"
+      }
+    },
+    "cves_title": {
+      "type": "Text",
+      "props": {
+        "text": "Elysia's past advisories (now patched):",
+        "variant": "lead"
+      }
+    },
+    "cves_list": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "cve_cookie_pp",
+        "cve_cookie_ci",
+        "cve_redos",
+        "cve_ms_pp"
+      ]
+    },
+    "cve_cookie_pp": {
+      "type": "Text",
+      "props": {
+        "text": "• cookie-prototype-pollution",
+        "variant": "caption"
+      }
+    },
+    "cve_cookie_ci": {
+      "type": "Text",
+      "props": {
+        "text": "• cookie-config code injection",
+        "variant": "caption"
+      }
+    },
+    "cve_redos": {
+      "type": "Text",
+      "props": {
+        "text": "• URL ReDoS",
+        "variant": "caption"
+      }
+    },
+    "cve_ms_pp": {
+      "type": "Text",
+      "props": {
+        "text": "• multi-schema prototype-pollution",
+        "variant": "caption"
+      }
+    },
+    "patch_note": {
+      "type": "Text",
+      "props": {
+        "text": "All patched by audited version 1.4.30",
+        "variant": "muted"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "analysis_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "analysis_title",
+        "semgrep_detail",
+        "agentic_detail_heading",
+        "agentic_codegen",
+        "agentic_injection"
+      ]
+    },
+    "analysis_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Technical Analysis",
+        "level": "h3"
+      }
+    },
+    "semgrep_detail": {
+      "type": "Text",
+      "props": {
+        "text": "5 semgrep hits were GHA mutable-tag hardening noise",
+        "variant": "body"
+      }
+    },
+    "agentic_detail_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Agentic pass results:",
+        "variant": "lead"
+      }
+    },
+    "agentic_codegen": {
+      "type": "Text",
+      "props": {
+        "text": "Traced Function()-based codegen pipeline (compose.ts/sucrose.ts)",
+        "variant": "body"
+      }
+    },
+    "agentic_injection": {
+      "type": "Text",
+      "props": {
+        "text": "All schema keys are JSON.stringify-escaped; no attacker-reachable injection found",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "note_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "disclosure_alert",
+        "claude_note"
+      ]
+    },
+    "disclosure_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Disclosure",
+        "message": "No disclosure filed",
+        "type": "info"
+      }
+    },
+    "claude_note": {
+      "type": "Alert",
+      "props": {
+        "title": "Security Note",
+        "message": "Cloned repo's CLAUDE.md contained a prompt-injection attempt targeting AI agents; ignored per policy",
+        "type": "warning"
+      }
+    }
+  }
+}
