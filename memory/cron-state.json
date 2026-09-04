@@ -372,14 +372,14 @@
   "feature": {
     "last_status": "success",
     "last_failed": "2026-09-01T05:38:07Z",
-    "total_runs": 6,
-    "total_successes": 5,
+    "total_runs": 7,
+    "total_successes": 6,
     "total_failures": 1,
     "consecutive_failures": 0,
-    "success_rate": 0.83,
+    "success_rate": 0.86,
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05b79-822d-7292-b97c-f933cb76e346\"} {\"type\":\"turn.started\"} {\"type\":\"error\"",
-    "last_success": "2026-09-03T10:35:52Z",
-    "last_quality_score": 4
+    "last_success": "2026-09-04T07:23:54Z",
+    "last_quality_score": 3
   },
   "pr-review": {
     "last_status": "success",
