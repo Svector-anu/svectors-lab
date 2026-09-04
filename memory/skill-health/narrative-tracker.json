@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-03T20:51:23Z",
+  "last_analyzed": "2026-09-04T04:59:52Z",
   "quality_score": 4,
-  "assessment": "Decision-grade, conclusion-first tracker with explicit calls, bearish invalidation cases, honest source limitations, and evidence links; some narrative scores and secondary claims remain weakly sourced.",
+  "assessment": "Substantive, explicit position calls with evidence links and honest source limitations, though the verdict is not conclusion-first and several precise market claims rely on thin or indirect sourcing.",
   "flags": [],
-  "avg_score": 2.67,
+  "avg_score": 2.7,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 3,
-      "ts": "2026-08-28T12:31:35Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-03",
       "score": 4,
       "ts": "2026-09-03T20:51:23Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 4,
+      "ts": "2026-09-04T04:59:52Z",
       "harness": "codex"
     }
   ]
