@@ -12,12 +12,11 @@ skills:
 
   # --- Mid-morning (9 AM UTC) ---
   pr-triage: { enabled: false, schedule: "30 9 * * *", var: "" } # first-touch external-PR triage (verdict + label + welcoming comment); var: owner/repo or owner/repo#N for one-shot
-  # Reviewer half of the dev loop: codex writes (feature, below), grok reviews here.
-  # Deliberately a different model family from the writer — a reviewer that shares the
-  # author's blind spots isn't a review. Posts comments only, never writes code, so the
-  # blast radius is low enough to run on cron. Pinned to grok regardless of the global
-  # harness so the split holds even if the fleet default changes.
-  pr-review: { enabled: true, schedule: "0 9 * * *", harness: "grok", var: "" } # var: empty/owner/repo=per-PR review (posts comments) | --survey [dry-run] [owner/repo]=risk-tiered PR triage digest (folds in pr-merge)
+  # Reviewer half of the dev loop. Temporarily pinned to codex while the fork's Grok
+  # OAuth path is unavailable, so this preserves the bounded review gate but not the
+  # intended cross-model independence. Keep the reviewer explicit if the fleet default
+  # changes; restore a different proven harness only after a real CI dispatch succeeds.
+  pr-review: { enabled: true, schedule: "0 9 * * *", harness: "codex", var: "" } # var: empty/owner/repo=per-PR review (posts comments) | --survey [dry-run] [owner/repo]=risk-tiered PR triage digest (folds in pr-merge)
   auto-merge: { enabled: true, schedule: "0 14 * * *" } # merge green PRs daily at 2 PM UTC; max 3 per run
   github-monitor: { enabled: false, schedule: "0 9 * * *", var: "" } # watch your repos. var: empty=combined monitor (PRs/issues/releases) | issues | releases | prs | owner/repo (folds in github-issues/github-releases/pr-tracker)
   github-trending: { enabled: true, schedule: "0 9 * * *", var: "" } # trending repos + Hugging Face Hub. var: empty=GitHub | <lang> | hf | hf:{models,datasets,spaces}
