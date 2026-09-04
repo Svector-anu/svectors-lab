@@ -53,6 +53,7 @@ case "$ACTION" in
   disclose|email)           ARM="disclose" ;;            # → Arm C
   poc-smoke|verify-gate)    ARM="poc-smoke" ;;           # → Arm D
   riva|research)            ARM="scan"; KERNEL="riva" ;; # → Arm A, Riva kernel
+  shadow|compare)           ARM="scan"; KERNEL="shadow" ;; # → Arm A, private comparison
   ""|scan)                  ARM="scan" ;;                # → Arm A (auto-select if TARGET empty)
   */*)                      ARM="scan"; TARGET="$SEL" ;; # bare owner/repo → scan that repo
   *)                        ARM="scan" ;;                # unknown → default to scan
@@ -507,6 +508,11 @@ evidence against the claim, not an obstacle to work around.
   Assign Medium only when the independently supported impact really is Medium.
 
 ### A5. Route each finding to the correct disclosure channel
+
+If `KERNEL=shadow`, do not execute A5's write actions. Record the legacy and
+Riva candidate sets, triage differences, and verification differences in the
+private shadow artifact, then continue to A6–A8 with `channel: shadow` and no
+PVR, email, issue, or public-PR side effect. Shadow mode is comparison-only.
 
 This is the core of the scan arm. Pick the channel by finding type:
 
