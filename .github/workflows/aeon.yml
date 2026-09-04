@@ -608,6 +608,14 @@ jobs:
           skill: ${{ steps.skill.outputs.name }}
           mode: ${{ vars.EGRESS_MODE || 'audit' }}
 
+      # The Run script must stay well below GitHub's 21,000-character expression
+      # ceiling after interpolation. Keep explanatory prose at YAML level rather
+      # than inside the run scalar; scripts/tests/test_workflow_harness_choices.sh
+      # enforces headroom for input expansion.
+      #
+      # Chain context is env-bound and restricted to output/.chains/ so an input
+      # cannot splice an arbitrary runner file into the prompt. Every harness then
+      # uses the adapter's normalized result/usage/session_id envelope.
       - name: Run
         id: run
         if: steps.work.outputs.mode != ''
@@ -895,12 +903,7 @@ jobs:
             fi
           fi
 
-          # Per-skill least-privilege secrets: inject ONLY the keys this skill
-          # declares in its `requires:` frontmatter (both required and `?` works-better
-          # tiers). Same resolve-from-ALL_SECRETS shape as the MCP loop above. A skill
-          # sees nothing else from the secret store — so an injected read skill has
-          # only its own (capped) keys to leak. Optional key with no secret set → not
-          # exported, skill degrades to its public path (unchanged behaviour).
+          # Inject only secrets declared by this skill's requires: frontmatter.
           SECRETS_JSON="${ALL_SECRETS:-}"; [ -z "$SECRETS_JSON" ] && SECRETS_JSON='{}'
           INJECTED=""
           while IFS= read -r key; do
@@ -916,12 +919,7 @@ jobs:
           SKILL_NAME="${{ steps.skill.outputs.name }}"
           VAR="$SKILL_VAR"
 
-          # Build prompt — inject chain context if running as part of a chain.
-          # env-bound (passed via env:, not expanded into this run: block) +
-          # path-contained: the context file
-          # must be a chain-runner artifact under output/.chains/, never an
-          # arbitrary path — otherwise cat would read any file on the runner (e.g.
-          # /proc/self/environ, secrets) into the prompt/logs. (GHSA-cqvj-gr78-24mc)
+          # Inject path-contained chain context when present. (GHSA-cqvj-gr78-24mc)
           CHAIN_CTX="$INPUT_CHAIN_CTX"
           if [ -n "$CHAIN_CTX" ]; then
             case "$CHAIN_CTX" in
@@ -958,13 +956,7 @@ jobs:
           elif [ -n "$AEON_DISPATCH_ID" ]; then
             echo "::warning::ignoring malformed dispatch correlation ID"
           fi
-          # Unified execution: EVERY harness runs through the harness-adapter
-          # (harness-adapter/run-harness), which speaks one Claude-Code-shaped
-          # contract — prompt on stdin, a normalized {result,usage{...},session_id}
-          # envelope on stdout, diagnostics on stderr — so everything downstream
-          # (.result/.usage jq, scoring, token accounting) is identical for all seven.
-          # There is no longer a native `claude -p` or `run-grok.sh` run path; the
-          # two features those paths carried are preserved AROUND the adapter call:
+          # Unified execution through harness-adapter; harness-specific behavior:
           #   * claude  — wrapped in the multi-provider gateway cascade below, so it
           #               keeps 9-provider failover + Langfuse tracing.
           #   * grok    — GROK_* run-knobs from frontmatter (adapters/grok.sh maps them).
