@@ -849,18 +849,7 @@ jobs:
           # the helper scripts need). A skill with `mode: read-only` frontmatter gets a
           # toolset with no Write/Edit/git/gh, so it physically cannot mutate the repo;
           # the post-run read-only guard reverts any stray redirected writes.
-          SHADOW_MODE=0
-          if [ "${SKILL_NAME}" = "vuln-scanner" ] && [[ "${SKILL_VAR:-}" == shadow:* || "${SKILL_VAR:-}" == compare:* ]]; then
-            SHADOW_MODE=1
-            SKILL_MODE=read-only
-            echo "Riva shadow mode: forcing read-only capability tier"
-          else
-            SKILL_MODE=$(bash scripts/skill_mode.sh mode "${{ steps.skill.outputs.name }}")
-          fi
-          ALLOWED=$(bash scripts/skill_mode.sh allowed-tools "$SKILL_MODE")
-          echo "SKILL_MODE=$SKILL_MODE" >> "$GITHUB_ENV"
-          echo "RIVA_SHADOW_MODE=$SHADOW_MODE" >> "$GITHUB_ENV"
-          echo "Capability mode: $SKILL_MODE"
+          source scripts/resolve-riva-capabilities.sh
 
           # MCP (opt-in): when a project .mcp.json exists, load it for this run
           # and allow each server's tools. No-op when the file is absent, so
