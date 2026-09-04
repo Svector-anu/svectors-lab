@@ -1,21 +1,16 @@
-## DeFi overview — 2026-09-04
+Take: chop, low conviction — BTC fell 2.1% and breadth weakened to 7/20, but Fear & Greed held at 74.
 
-Take: **chop, medium conviction**. BTC gained 0.81% and 16/20 top caps are green today, but only 5/20 remain green weekly.
+Positioning: fade broad beta; ride only activity-confirmed Uniswap/privacy strength; watch ETF-flow follow-through.
 
-- DeFi TVL: $88.58B; daily delta unavailable from source.
-- DEX volume: $10.37B, up 13.1%.
-- Stablecoin supply: $311.1B, up 0.35%.
-- Fear & Greed: 74, Greed.
-- Strongest protocol mover: Plume Vaults +23.6%.
-- Fees leader: Tether at $16.23M; Uniswap V4 reached $11.52M.
-- Privacy remains relatively strong: ZEC +23.2% and XMR +11.1% weekly.
-- U.S. spot BTC ETFs recorded $731M of September 3 inflows, the largest daily inflow since January. [The Block](https://www.theblock.co/news/markets/2026-09-04-us-bitcoin-etfs-largest-inflow-day-since-january-413515)
+- DeFi verdict: mixed — TVL −1.7%, DEX volume +13.2%, stable supply +0.4%.
+- Sustainable yields: Raydium WSOL-USDC 69.6%, Uniswap V3 WETH-USDT 55.9%, Uniswap V4 ETH-LINK 37.0%.
+- No tracked positions are configured.
+- All data sources succeeded.
+- Notification delivery was attempted but blocked by the harness’s read-only external queue.
 
 ## Summary
 
 - Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Appended the run to [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md).
+- Appended the full run to [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md).
 - Preserved the complete token-pick history.
-- Position monitoring was skipped cleanly because no positions are configured.
-- All data sources succeeded.
-- Notification delivery was attempted, but its external queue is read-only in this environment; the report remains persisted locally.
+- Validation passed with `git diff --check`.
