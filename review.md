@@ -1,6 +1,9 @@
-*PR Review — 2026-09-03*
+*PR Review — 2026-09-04*
 
 Reviewed 1, skipped 0.
-- Svector-anu/skopos#108: approve-ready — 0 critical, 0 issues
+- Svector-anu/svectors-lab#67: approve-ready — 0 critical, 0 issues
 
-Head: `87aed60`. Validation: the targeted reduced-motion hydration test passed. The latest commit safely restores `globalThis.window` after the test, preventing cross-test contamination.
+**Verdict**: approve-ready — no blockers.
+<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#67","sha":"082a8a2b79646b8cd0dc7a77956a39a6f9690a91","verdict":"approve-ready","critical":0,"issues":0} -->
+
+Validation at the PR head: config invariants, harness resolution, dev-loop review-contract tests, CI, and `git diff --check` all pass.
