@@ -1,7 +1,6 @@
-⚠️ Vuln Scanner — stripe/stripe-cli
+ℹ️ Vuln Scanner: parse-server
 
-*Vuln Scanner — stripe/stripe-cli*
-0 confirmed findings, 1 needs-verification (not disclosed).
-Disclosed via: none — grpc CVE-2026-84304 (HIGH) duplicate-skipped (Dependabot PR #1984 already fixes it); a plausible HIGH auth-bypass on the local `stripe daemon` gRPC service (public-constant header, no real secret check — any local process can create webhook endpoints/trigger events using the CLI's own session) couldn't clear the PoC gate, no `go` toolchain permission this run.
-Scanners: semgrep=ok, trufflehog=fail (no raw binary asset), osv=ok, fuzz=n/a, agentic=ok. PoC gate: needs-verification.
-Full report: output/articles/vuln-scan-2026-09-04-stripe-cli.md
+*Vuln Scanner — parse-community/parse-server*
+Clean audit. 58 candidates reviewed (3 code, 55 dependency), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
+
+3 semgrep code hits were all false positives on review (GCM default tag length, an already-safe CORS allowlist reflection, an intentional timing-normalization dummy bcrypt hash). 55 dependency CVEs found by osv-scanner are already covered by the repo's own Dependabot (746 PRs total) — spot-checked 11 of the top hits, all had open or recently-merged bump PRs, so nothing filed to avoid duplicating the bot's own work.

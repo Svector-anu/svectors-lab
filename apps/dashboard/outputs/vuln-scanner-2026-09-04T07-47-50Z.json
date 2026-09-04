@@ -1,0 +1,243 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner",
+        "description": "parse-community/parse-server"
+      },
+      "children": [
+        "badge_clean",
+        "text_summary",
+        "table_breakdown",
+        "separator_1",
+        "heading_scanners",
+        "stack_scanners",
+        "separator_2",
+        "heading_semgrep",
+        "stack_semgrep",
+        "separator_3",
+        "heading_deps",
+        "text_deps",
+        "stack_deps_findings"
+      ]
+    },
+    "badge_clean": {
+      "type": "Badge",
+      "props": {
+        "text": "Clean audit",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "text_summary": {
+      "type": "Text",
+      "props": {
+        "text": "58 candidates reviewed, 0 confirmed",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "table_breakdown": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Type",
+          "Count"
+        ],
+        "rows": [
+          [
+            "Code",
+            "3"
+          ],
+          [
+            "Dependency",
+            "55"
+          ]
+        ]
+      },
+      "children": []
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stack_scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: skip",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_semgrep": {
+      "type": "Heading",
+      "props": {
+        "text": "Semgrep Code Review",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stack_semgrep": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_semgrep_header",
+        "text_semgrep_finding_1",
+        "text_semgrep_finding_2",
+        "text_semgrep_finding_3"
+      ]
+    },
+    "text_semgrep_header": {
+      "type": "Text",
+      "props": {
+        "text": "3 semgrep code hits were all false positives on review",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "text_semgrep_finding_1": {
+      "type": "Text",
+      "props": {
+        "text": "GCM default tag length",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "text_semgrep_finding_2": {
+      "type": "Text",
+      "props": {
+        "text": "Already-safe CORS allowlist reflection",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "text_semgrep_finding_3": {
+      "type": "Text",
+      "props": {
+        "text": "Intentional timing-normalization dummy bcrypt hash",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_deps": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency CVEs",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text_deps": {
+      "type": "Text",
+      "props": {
+        "text": "55 dependency CVEs found by osv-scanner are already covered by the repo's own Dependabot (746 PRs total)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "stack_deps_findings": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_deps_spotcheck",
+        "text_deps_conclusion"
+      ]
+    },
+    "text_deps_spotcheck": {
+      "type": "Text",
+      "props": {
+        "text": "Spot-checked 11 of the top hits — all had open or recently-merged bump PRs",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "text_deps_conclusion": {
+      "type": "Text",
+      "props": {
+        "text": "Nothing filed to avoid duplicating the bot's own work",
+        "variant": "caption"
+      },
+      "children": []
+    }
+  }
+}

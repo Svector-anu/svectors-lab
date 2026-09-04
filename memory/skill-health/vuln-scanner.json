@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-04T07:30:43Z",
+  "last_analyzed": "2026-09-04T07:47:50Z",
   "quality_score": 4,
-  "assessment": "Substantive, verifiable security scan with clear findings (0 confirmed, 1 needs-verification), specific CVE reference, honest about scanner limitations and missing toolchain permission — actionable result pointing to existing Dependabot fix.",
+  "assessment": "Substantive security audit with specific scanner findings, honest about false positives and existing coverage, clear conclusion.",
   "flags": [],
-  "avg_score": 3.87,
+  "avg_score": 3.83,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 5
-    },
     {
       "date": "2026-08-25",
       "score": 4
@@ -176,6 +172,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T07:30:43Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 4,
+      "ts": "2026-09-04T07:47:50Z",
       "harness": "claude"
     }
   ]
