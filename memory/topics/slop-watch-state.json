@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-09-04T09:24:15Z",
+  "month": "2026-09",
+  "lanes": {
+    "asi": {
+      "slug": "asi",
+      "repo": "SlopDotCash/asi",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "slowing",
+      "last_merge_at": "2026-08-20T14:27:50Z",
+      "merges_7d": 0,
+      "merge_rate": 61.64,
+      "open_prs": [2246, 2235, 2155, 2139],
+      "changes_requested": [2235, 2155, 2139],
+      "status": "active",
+      "listing_tier": "featured",
+      "authority_state": "verified",
+      "checked_at": "2026-09-04T09:24:15Z"
+    },
+    "delta-star": {
+      "slug": "delta-star",
+      "repo": "SlopDotCash/proximityprize",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "slowing",
+      "last_merge_at": "2026-08-23T05:11:23Z",
+      "merges_7d": 0,
+      "merge_rate": 56.82,
+      "open_prs": [],
+      "changes_requested": [],
+      "status": "active",
+      "listing_tier": "featured",
+      "authority_state": "verified",
+      "checked_at": "2026-09-04T09:24:15Z"
+    },
+    "eliza": {
+      "slug": "eliza",
+      "repo": "elizaOS/eliza",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "live",
+      "last_merge_at": "2026-09-04T00:43:52Z",
+      "merges_7d": 169,
+      "merge_rate": 75.41,
+      "open_prs": [30500, 30059, 29731, 29726, 29717, 29353, 28180, 26474],
+      "changes_requested": [30500, 29717, 29353, 28180, 26474],
+      "status": "active",
+      "listing_tier": "featured",
+      "authority_state": "verified",
+      "checked_at": "2026-09-04T09:24:15Z"
+    },
+    "heir-elements-sdk": {
+      "slug": "heir-elements-sdk",
+      "repo": "heirlabs/element-sdk",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "slowing",
+      "last_merge_at": "2026-08-21T19:23:12Z",
+      "merges_7d": 0,
+      "merge_rate": 18.75,
+      "open_prs": [],
+      "changes_requested": [],
+      "status": "active",
+      "listing_tier": "community",
+      "authority_state": "unverified",
+      "checked_at": "2026-09-04T09:24:15Z"
+    }
+  }
+}

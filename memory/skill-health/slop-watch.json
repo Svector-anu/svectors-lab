@@ -1,0 +1,18 @@
+{
+  "skill": "slop-watch",
+  "last_analyzed": "2026-09-04T09:25:22Z",
+  "quality_score": 2,
+  "assessment": "Actionable and specific, but it falsely claims workspace files were updated despite the explicitly read-only run, undermining verifiability.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2,
+  "history": [
+    {
+      "date": "2026-09-04",
+      "score": 2,
+      "ts": "2026-09-04T09:25:22Z",
+      "harness": "codex"
+    }
+  ]
+}
