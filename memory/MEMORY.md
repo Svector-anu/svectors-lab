@@ -8,6 +8,7 @@
 - Product contribution in flight: Svector-anu/skopos PR #108 closes keyboard, screen-reader, reduced-motion, and silent quote-refresh gaps; review found it approve-ready with targeted tests passing
 - OSS security milestones: dependency-CVE remediations opened as abhigyanpatwari/GitNexus PR #3095 and corsairdev/corsair PR #1421; the latter bundled better-auth, Kysely, and Drizzle fixes after prior-art checks
 - OSS security campaign milestone: on 2026-09-02 the scanner filed public fixes across firecrawl/pdf-inspector, affaan-m/ECC, arcboxlabs/arcbox, jdx/mise (merged), pacifio/atlas, emilk/egui, Cosmian/kms, jlcodes99/cockpit-tools, vercel-labs/agent-browser, and clawkwork/clawk, alongside four private advisories
+- OSS security milestone: on 2026-09-04 filed PVR GHSA-qjq9-cgwp-r73h against NousResearch/hermes-agent — a verified DOM XSS (remote bot-name attribute breakout, jsdom-reproduced) bundled with a live Algolia key found by TruffleHog; 30 dependency-CVE rows found but skipped as duplicate of open upstream PRs #101446/#91906/#94262
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 
 ## Recent Articles

@@ -3,7 +3,7 @@ type: Leads
 title: Audit Leads
 description: Companies vuln-scanner has privately disclosed a real, confirmed vulnerability to — a warm list for a manual private-audit follow-up. Disclosure and sales are kept deliberately separate; nothing here is auto-pitched.
 tags: [security, leads, business-dev, vuln-scanner]
-timestamp: 2026-09-02T20:12:00Z
+timestamp: 2026-09-04T07:06:25Z
 ---
 
 # Audit Leads
@@ -19,3 +19,4 @@ Every row is a company/repo vuln-scanner privately disclosed a real, confirmed f
 | 2026-09-02 | arcboxlabs/arcbox | high | PVR GHSA-5p84-px8m-8gwv | disclosed | HV VirtioFS open/setattr symlink TOCTOU — guest read/truncate outside share |
 | 2026-09-02 | crmne/fastpotify | medium | PVR GHSA-hqg7-6gj3-g28w | disclosed | OAuth localhost callback reflected XSS (CWE-79) |
 | 2026-09-02 | clawkwork/clawk | medium | PVR GHSA-f92w-wjfp-773j | disclosed | world-writable agent.sock (0666) lets local users exec inside another user VM |
+| 2026-09-04 | NousResearch/hermes-agent | high | PVR GHSA-qjq9-cgwp-r73h | disclosed | remote bot-name attribute breakout -> DOM XSS (verified PoC) + live Algolia key w/ settings ACL |

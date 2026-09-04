@@ -1,0 +1,350 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — NousResearch/hermes-agent"
+      },
+      "children": [
+        "summary_section",
+        "scanner_status",
+        "sep1",
+        "finding1",
+        "sep2",
+        "finding2",
+        "sep3",
+        "cves_section",
+        "sep4",
+        "links_section"
+      ]
+    },
+    "summary_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "findings_count",
+        "disclosure_badge"
+      ]
+    },
+    "findings_count": {
+      "type": "Text",
+      "props": {
+        "text": "2 confirmed findings: 1 HIGH, 1 MEDIUM",
+        "variant": "lead"
+      }
+    },
+    "disclosure_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "PVR GHSA-qjq9-cgwp-r73h",
+        "variant": "outline"
+      }
+    },
+    "scanner_status": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanner_heading",
+        "scanner_grid"
+      ]
+    },
+    "scanner_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      }
+    },
+    "scanner_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "semgrep_badge",
+        "trufflehog_badge",
+        "osv_badge",
+        "fuzz_badge",
+        "agentic_badge",
+        "poc_badge"
+      ]
+    },
+    "semgrep_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "secondary"
+      }
+    },
+    "trufflehog_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "secondary"
+      }
+    },
+    "osv_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "secondary"
+      }
+    },
+    "fuzz_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: skip",
+        "variant": "outline"
+      }
+    },
+    "agentic_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: ok",
+        "variant": "secondary"
+      }
+    },
+    "poc_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "PoC gate: verified",
+        "variant": "default"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "finding1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "f1_title",
+        "f1_severity",
+        "f1_file",
+        "f1_desc",
+        "f1_poc"
+      ]
+    },
+    "f1_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Finding 1: XSS via SVG Markup Injection",
+        "level": "h3"
+      }
+    },
+    "f1_severity": {
+      "type": "Badge",
+      "props": {
+        "text": "HIGH (verified)",
+        "variant": "destructive"
+      }
+    },
+    "f1_file": {
+      "type": "Text",
+      "props": {
+        "text": "apps/desktop/src/plugins/hermes-bots/avatar.tsx:212",
+        "variant": "caption"
+      }
+    },
+    "f1_desc": {
+      "type": "Text",
+      "props": {
+        "text": "A remote group-chat participant's bot display name breaks out of an HTML attribute in string-built SVG markup. JSON.stringify does not neutralize \" for HTML context, allowing injection of a live DOM element with an executable event handler via dangerouslySetInnerHTML.",
+        "variant": "body"
+      }
+    },
+    "f1_poc": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "f1_poc_control",
+        "f1_poc_malicious"
+      ]
+    },
+    "f1_poc_control": {
+      "type": "Text",
+      "props": {
+        "text": "PoC (benign control): 0 injected elements",
+        "variant": "caption"
+      }
+    },
+    "f1_poc_malicious": {
+      "type": "Text",
+      "props": {
+        "text": "PoC (malicious): 1 live <img onerror> element. Reproduced with jsdom harness against literal shipped expression.",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "finding2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "f2_title",
+        "f2_severity",
+        "f2_file",
+        "f2_desc",
+        "f2_acl"
+      ]
+    },
+    "f2_title": {
+      "type": "Heading",
+      "props": {
+        "text": "Finding 2: Exposed Algolia API Key",
+        "level": "h3"
+      }
+    },
+    "f2_severity": {
+      "type": "Badge",
+      "props": {
+        "text": "MEDIUM (verified secret)",
+        "variant": "outline"
+      }
+    },
+    "f2_file": {
+      "type": "Text",
+      "props": {
+        "text": "website/docusaurus.config.ts:105",
+        "variant": "caption"
+      }
+    },
+    "f2_desc": {
+      "type": "Text",
+      "props": {
+        "text": "A live Algolia key with ACL browse, listIndexes, search, settings is committed to the repository.",
+        "variant": "body"
+      }
+    },
+    "f2_acl": {
+      "type": "Text",
+      "props": {
+        "text": "Broader than the code comment's claim of \"search-only, safe to commit\". Verified by TruffleHog.",
+        "variant": "caption"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "cves_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "cves_heading",
+        "cves_stat",
+        "cves_detail"
+      ]
+    },
+    "cves_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency CVEs",
+        "level": "h3"
+      }
+    },
+    "cves_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV findings",
+        "value": "30"
+      }
+    },
+    "cves_detail": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "cves_upstreams",
+        "cves_prs",
+        "cves_status"
+      ]
+    },
+    "cves_upstreams": {
+      "type": "Text",
+      "props": {
+        "text": "All rows have existing open upstream fix PRs available",
+        "variant": "body"
+      }
+    },
+    "cves_prs": {
+      "type": "Text",
+      "props": {
+        "text": "Upstream PRs: #101446, #91906, #94262",
+        "variant": "caption"
+      }
+    },
+    "cves_status": {
+      "type": "Text",
+      "props": {
+        "text": "Status: Not filed, logged as duplicate-skipped after prior-art check",
+        "variant": "caption"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "links_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "report_link",
+        "advisory_link"
+      ]
+    },
+    "report_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Vuln Scan Report",
+        "href": "output/articles/vuln-scan-2026-09-04-hermes-agent.md",
+        "source": "Local Report"
+      }
+    },
+    "advisory_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "GitHub Security Advisory GHSA-qjq9-cgwp-r73h",
+        "href": "https://github.com/NousResearch/hermes-agent/security/advisories/GHSA-qjq9-cgwp-r73h",
+        "source": "GitHub"
+      }
+    }
+  }
+}

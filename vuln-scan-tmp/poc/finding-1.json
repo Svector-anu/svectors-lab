@@ -1,0 +1,8 @@
+{
+  "id": "finding-1",
+  "target_repo": "NousResearch/hermes-agent",
+  "target_commit": "63279301bcbdc185c1b07b98a9312eb0c862f26d",
+  "severity": "high",
+  "attacker_controls": "a remote group-chat participant's bot display name (entry.from.name), rendered via BotFace for remote speakers with no local metadata",
+  "attacker_achieves": "breaks out of the data-bot-face HTML attribute in blobMarkup's string-built SVG markup and injects a live sibling DOM element (e.g. an img with an onerror handler) into the Electron desktop renderer via dangerouslySetInnerHTML, a DOM-based HTML/script injection"
+}

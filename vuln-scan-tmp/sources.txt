@@ -1,0 +1,6 @@
+semgrep=ok
+trufflehog=ok
+osv=ok
+slither=skipped (no Solidity files)
+fuzz=skipped (no fuzz/fuzz_targets)
+agentic=ok

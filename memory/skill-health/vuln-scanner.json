@@ -1,15 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-02T20:27:49Z",
+  "last_analyzed": "2026-09-04T07:09:34Z",
   "quality_score": 4,
-  "assessment": "Clean audit with concrete candidate counts and per-scanner status; verifiable zero-confirmed result.",
+  "assessment": "Substantive, well-structured vulnerability scan with specific reproducible findings (2 verified, line-number precision, PoC harness reproduction), honest scope management (scanner status, duplicate CVEs acknowledged), and verifiable external references (GHSA advisory, upstream PRs). Supports materialized report.",
   "flags": [],
-  "avg_score": 3.93,
+  "avg_score": 3.9,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 5
-    },
     {
       "date": "2026-08-25",
       "score": 5
@@ -173,6 +169,12 @@
       "score": 4,
       "ts": "2026-09-02T20:27:49Z",
       "harness": "grok"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 4,
+      "ts": "2026-09-04T07:09:34Z",
+      "harness": "claude"
     }
   ]
 }
