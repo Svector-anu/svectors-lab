@@ -25,6 +25,14 @@ if [ "$1" = api ] && [ "$2" = --paginate ] && [ "$3" = --slurp ] && [[ "$4" == r
   fi
   exit 0
 fi
+if [ "$1" = api ] && [[ "$2" == repos/acme/demo/commits/*/status ]]; then
+  if [ -n "${TEST_STATUSES:-}" ]; then
+    printf '%s\n' "$TEST_STATUSES"
+  else
+    printf '%s\n' '{"statuses":[]}'
+  fi
+  exit 0
+fi
 exit 1
 STUB
 chmod +x "$TMP/bin/gh"
@@ -59,6 +67,12 @@ if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":2,"check_runs":[{"status":"
   exit 1
 fi
 
+if TEST_HEAD_SHA="$NEW" TEST_STATUSES='{"statuses":[{"state":"failure","context":"Vercel"}]}' \
+  PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
+  echo 'failed commit status unexpectedly passed' >&2
+  exit 1
+fi
+
 if TEST_PR_STATE=closed PATH="$TMP/bin:$PATH" bash "$CHECK" repair-target acme/demo#42 "$OLD"; then
   echo 'closed PR unexpectedly produced a repair target' >&2
   exit 1
@@ -67,10 +81,12 @@ fi
 # The workflow must derive repair authority from a verified actionable receipt,
 # prove a new SHA, require checks, and only then dispatch the re-review.
 receipt_line=$(grep -n 'dev-loop-review.sh verify "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
+initial_checks_line=$(grep -n 'verify-checks "$FEATURE_PR" "$FEATURE_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 repair_line=$(grep -n 'repair-target "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 change_line=$(grep -n 'verify-change "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 checks_line=$(grep -n 'verify-checks "$FEATURE_PR" "$REPAIRED_SHA"' "$WORKFLOW" | head -1 | cut -d: -f1)
 rereview_line=$(grep -n 'REREVIEW_OUTPUT=$(dispatch_skill pr-review' "$WORKFLOW" | head -1 | cut -d: -f1)
+[ "$initial_checks_line" -lt "$receipt_line" ]
 [ "$receipt_line" -lt "$repair_line" ]
 [ "$repair_line" -lt "$change_line" ]
 [ "$change_line" -lt "$checks_line" ]

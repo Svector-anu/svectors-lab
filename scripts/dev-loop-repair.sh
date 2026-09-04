@@ -67,6 +67,7 @@ case "${1:-}" in
     validate_sha "$3"
     repo=${2%#*}
     pages=$(gh api --paginate --slurp "repos/$repo/commits/$3/check-runs?per_page=100")
+    statuses=$(gh api "repos/$repo/commits/$3/status")
     checks=$(jq '[.[].check_runs[]]' <<<"$pages")
     total=$(jq 'length' <<<"$checks")
     reported=$(jq '.[0].total_count // 0' <<<"$pages")
@@ -89,12 +90,24 @@ case "${1:-}" in
       exit 1
     }
     successful=$(jq '[.[] | select(.conclusion == "success")] | length' <<<"$checks")
-    [ "$successful" -gt 0 ] || {
-      echo "dev-loop repair: repaired SHA has no successful check" >&2
+    status_pending=$(jq '[.statuses[] | select(.state == "pending")] | length' <<<"$statuses")
+    [ "$status_pending" -eq 0 ] || {
+      echo "dev-loop repair: SHA still has $status_pending pending commit status(es)" >&2
+      exit 3
+    }
+    status_failed=$(jq '[.statuses[] | select(.state == "failure" or .state == "error")] | length' <<<"$statuses")
+    [ "$status_failed" -eq 0 ] || {
+      echo "dev-loop repair: SHA has $status_failed unsuccessful commit status(es)" >&2
       exit 1
     }
-    jq -cn --arg target "$2" --arg sha "$3" --argjson checks "$total" \
-      '{schema:1,target:$target,sha:$sha,checks:$checks,status:"passed"}'
+    status_successful=$(jq '[.statuses[] | select(.state == "success")] | length' <<<"$statuses")
+    [ $((successful + status_successful)) -gt 0 ] || {
+      echo "dev-loop repair: SHA has no successful check or commit status" >&2
+      exit 1
+    }
+    status_total=$(jq '.statuses | length' <<<"$statuses")
+    jq -cn --arg target "$2" --arg sha "$3" --argjson checks "$total" --argjson statuses "$status_total" \
+      '{schema:1,target:$target,sha:$sha,checks:$checks,statuses:$statuses,status:"passed"}'
     ;;
   *) usage ;;
 esac
