@@ -296,6 +296,12 @@ different things, and they route differently:
 
 ### A3.6. Agentic logic audit (what SAST and fuzzing both miss)
 
+For scan runs, load `skills/vuln-scanner/riva.md` as the focused research
+kernel. Riva supplies the threat-model, invariant, slice, and bounded
+exploration contract; this skill remains authoritative for tool execution,
+triage, PoC verification, disclosure, and persistence. Do not load disclosure
+or lifecycle instructions while doing the Riva code-exploration pass.
+
 Semgrep matches syntactic patterns and has weak dataflow reachability on custom code; fuzzing (A3.5) only reaches what a harness already drives. Both are blind to **authorization, business-logic, and multi-step trust-boundary** bugs. That whole class is what an agentic reviewer catches - and here **you are the agentic scanner**. Do the source-to-sink reasoning the tools can't, over this repo's real entrypoints. This pass runs on every scan (unlike A3.5, which only fires when the repo ships a fuzz harness) and produces *candidates*, not verdicts - everything still goes through A4 triage (the model surfacing a finding is not evidence it is real).
 
 **Bounded so it can't run away on run time.** Size the repo first, then set the entrypoint review budget `N` from it - deep-review the **top-N highest-exposure** entrypoints only, and note the rest in the A7 report as reviewed-but-not-deep so coverage stays honest:
