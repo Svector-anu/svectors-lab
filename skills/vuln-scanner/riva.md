@@ -40,7 +40,7 @@ each assumption with a reachable input.
 
 Search sibling handlers, alternate entry points, older versions, and related
 adapters for the same invariant violation. Compare against the safest local or
-upstream implementation available.
+upstream known-good implementation available.
 
 Stop after two consecutive rounds produce no evidence-backed candidate. Never
 use an adversarial assumption as evidence; it is only a hypothesis generator.
