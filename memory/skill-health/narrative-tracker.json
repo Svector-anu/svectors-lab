@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-04T09:24:26Z",
+  "last_analyzed": "2026-09-04T13:39:04Z",
   "quality_score": 3,
-  "assessment": "Decision-grade and conclusion-first with explicit ride/fade/watch calls and source links, but several key claims rely on inferred social velocity, an unlinked repo snapshot, and fallback sources of uneven authority; the failed authenticated xAI attempt also conflicts with the public-data-only constraint.",
+  "assessment": "Substantive, sourced, and position-labeled, but it lacks a conclusion-first regime verdict, headlines prohibited live price levels, and presents weakly corroborated baselines as tradeable transitions.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality"
   ],
   "avg_score": 2.73,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 3,
-      "ts": "2026-08-28T22:43:42Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-29",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-04",
       "score": 3,
       "ts": "2026-09-04T09:24:26Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 3,
+      "ts": "2026-09-04T13:39:04Z",
       "harness": "codex"
     }
   ]
