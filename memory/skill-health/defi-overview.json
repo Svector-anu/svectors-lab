@@ -1,20 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-04T00:32:18Z",
+  "last_analyzed": "2026-09-04T09:25:46Z",
   "quality_score": 2,
-  "assessment": "Concise regime read, but it lacks explicit position calls and verifiable anchors for most figures, while claiming workspace updates during a read-only run.",
+  "assessment": "Conclusion-first and concise, but it lacks explicit position calls and evidence anchors for numerous precise figures; it also claims workspace writes despite the run being read-only.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.1,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T12:25:12Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -187,6 +180,12 @@
       "date": "2026-09-04",
       "score": 2,
       "ts": "2026-09-04T00:32:18Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 2,
+      "ts": "2026-09-04T09:25:46Z",
       "harness": "codex"
     }
   ]

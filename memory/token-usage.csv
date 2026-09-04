@@ -232,4 +232,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-04,pr-review,codex-default,475938,3892,428928,0
 2026-09-04,pr-review,codex-default,430313,3287,382592,0
 2026-09-04,pr-review,codex-default,451056,3005,413952,0
-2026-09-04,slop-watch,codex-default,822235,5812,775808,0
+2026-09-04,defi-overview,codex-default,953377,8420,891904,0
