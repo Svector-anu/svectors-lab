@@ -1,18 +1,17 @@
-Shipped [Svector-anu/dieena PR #66](https://github.com/Svector-anu/dieena/pull/66).
+Fixed `Svector-anu/skopos#42` and opened [PR #109](https://github.com/Svector-anu/skopos/pull/109).
 
-The PR replaces stale placeholder-era documentation with:
+The change:
 
-- An accurate Android, API, worker, and package workspace map.
-- Current implemented capabilities.
-- Explicit production deployment and physical-device release gates.
-- Updated next steps tied to issue #8 without overlapping PR #65.
+- Prevents SSR/client hydration mismatches by reading viewport and local storage after mount.
+- Adds animation-frame cleanup.
+- Removes unreachable default props and requires values already supplied by every call site.
+- Includes the exact workflow correlation marker.
 
-Verification passed: typecheck, lint, formatting, and full tests. The PR contains the required workflow correlation marker.
+Verification passed: ESLint, TypeScript, 129/129 Vitest tests, and `git diff --check`. Vercel reported “Deployment was blocked,” while its Preview Comments check passed; this appears deployment-policy related rather than a code failure.
 
 ## Summary
 
-- Branch: `ai/refresh-project-status`
-- Commit: `3f213c1`
-- Modified: `README.md`, `docs/README.md`, `docs/project-status.md`
-- Recorded in [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md)
-- Notification delivery was attempted but blocked by the harness’s read-only notification queue.
+- Created commit `42edd7a`
+- Opened PR: https://github.com/Svector-anu/skopos/pull/109
+- Updated [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md)
+- Notification was attempted but external queues were read-only.
