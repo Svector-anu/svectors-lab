@@ -1,16 +1,12 @@
-🔴 **STATUS_PAGE=DEGRADED**
+Heartbeat completed.
 
-- New finding: `slop-watch` is scheduled daily at 08:00 UTC but has no scheduler-state entry.
-- Five PRs remain stalled over 24 hours.
-- `vuln-scanner` most recently failed; eleven enabled skills meet the chronic-failure threshold.
-- Existing findings were deduplicated against the previous 48 hours.
-- Notification was attempted, but the harness notification queue is read-only.
-
-Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md). Validation passed with all 30 enabled skills represented.
+- Overall: 🔴 DEGRADED
+- `vuln-scanner` is currently failed; 11 enabled skills meet the chronic-failure threshold.
+- Four critical issues remain open.
+- No stalled PRs; only today’s PRs #70 and #72 are open.
+- `slop-watch` recovered, clearing the prior scheduler gap.
+- No notification sent because all remaining findings were reported within 48 hours.
 
 ## Summary
 
-- Regenerated the public status page.
-- Recorded the heartbeat findings.
-- No token pulse was included because no token report exists.
-- Follow-up: investigate why `slop-watch` has never been dispatched.
+Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and appended the run to [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md). Validation passed; unrelated workspace changes were preserved.
