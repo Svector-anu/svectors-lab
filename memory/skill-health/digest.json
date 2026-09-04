@@ -1,14 +1,12 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-03T18:02:54Z",
+  "last_analyzed": "2026-09-04T17:06:23Z",
   "quality_score": 2,
-  "assessment": "Substantive and sourced, but it is off-strategy for crypto traders, lacks regime/position calls, and falsely claims workspace files were written during a read-only run.",
+  "assessment": "Actionable and conclusion-first, but it claims workspace files and memory were written during an explicitly read-only run, undermining verifiability despite otherwise specific sourcing.",
   "flags": [
-    "low_quality",
-    "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.36,
+  "avg_score": 2.34,
   "history": [
     {
       "date": "2026-07-28",
@@ -164,6 +162,12 @@
       "date": "2026-09-03",
       "score": 2,
       "ts": "2026-09-03T18:02:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 2,
+      "ts": "2026-09-04T17:06:23Z",
       "harness": "codex"
     }
   ]

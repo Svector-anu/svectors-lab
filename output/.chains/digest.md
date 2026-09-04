@@ -1,21 +1,25 @@
-*daily — 2026-09-03*
+*daily — 2026-09-04*
 
-_TL;DR: AI-assisted intrusion compressed two weeks of attacker work into under 10 hours; audit agent permissions and infrastructure-change controls now._
+_TL;DR: check Coinbase derivatives exposure now, exit KuCoin delisting pairs before September 7, and evaluate Cloudflare's new code-to-edge security workflow._
 
-1. *Audit agent access after a 10-hour AI-assisted ransomware breach*  
-   Unit 42 says a human attacker used frontier models and attack-specific agents to cross multiple defense layers, execute more than 50 MITRE ATT&CK techniques, raid source repositories, and seize root credentials in under 10 hours. Review which agents can reach repos, secrets, identity systems, and production, then add behavioral alerts and hard approval boundaries.  
-   Why it matters: intrusion timelines have collapsed from weeks to one shift  
-   https://unit42.paloaltonetworks.com/?search=9D8D8997D1083C4B2DFB2272F765733
+1. *Coinbase US derivatives positions are degraded*  
+   Coinbase is investigating degraded performance when some customers view derivatives positions; spot, international derivatives, APIs, and funds are reported operational.  
+   Why it matters: watch — verify positions through a second surface before changing exposure.  
+   https://status.coinbase.com/
 
-2. *Empirik launches with $21M for pre-deploy infrastructure checks*  
-   Empirik emerged from stealth with an agent that maps a proposed change across live cloud, SaaS, and on-prem dependencies before execution, returning blast radius, owners, and rollback context. The product is available for demo requests and is aimed at keeping infrastructure review aligned with agent-driven code velocity.  
-   Why it matters: teams can gate risky infrastructure mutations before deployment  
-   https://empirik.ai/
+2. *KuCoin will delist 25 tokens on September 7*  
+   KuCoin disabled deposits today and will stop trading ACX, AUDIO, WAXP, REEF and 21 other tokens at 08:00 UTC September 7; withdrawals close October 7.  
+   Why it matters: exit or withdraw affected holdings and shut trading bots before the deadline.  
+   https://www.kucoin.com/announcement/en-st-kucoin-will-delist-multiple-tokens-on-2026-09-07-1
 
-_Quiet news window: only two new stories cleared the freshness, sourcing, and three-day dedup checks._
+3. *Cloudflare opens early access to context-aware vulnerability remediation*  
+   Cloudflare Managed Defense can now combine production traffic, authorized code analysis and OpenAI Daybreak models to rank findings, draft patches and prepare edge mitigations; tool calls and proposals are checked outside the model.  
+   Why it matters: security teams can prioritize exploitable paths instead of raw scanner severity.  
+   https://blog.cloudflare.com/vulnerability-discovery-remediation/
 
 ## Summary
 
-- Saved the digest to [output/digest-2026-09-03-3.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-03-3.md).
-- Updated memory and the daily run log.
-- Notification was attempted but could not be queued because the external notification directories are read-only.
+- Created [digest-2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-04.md).
+- Updated digest memory and today’s run log.
+- Verified all three links return HTTP 200.
+- Notification delivery was attempted, but the external queues were read-only, so delivery could not be confirmed.

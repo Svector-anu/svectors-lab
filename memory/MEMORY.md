@@ -21,6 +21,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-04 | daily (web) | Coinbase derivatives, KuCoin delistings, Cloudflare remediation |
 | 2026-09-03 | daily (web, third run) | AI ransomware, infra change, agent permissions |
 | 2026-09-03 | daily (web, second run) | Firo fork, GitSpawn, NVIDIA-Hugging Face |
 | 2026-09-03 | daily (web) | SonicWall exploits, Gemini 3.8, FRNT reserves |
