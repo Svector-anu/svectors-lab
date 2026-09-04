@@ -25,11 +25,11 @@ workflow = yaml.safe_load(open(sys.argv[1], encoding="utf-8"))
 for job_name, job in workflow.get("jobs", {}).items():
     for step in job.get("steps", []):
         run = step.get("run") if isinstance(step, dict) else None
-        if isinstance(run, str) and len(run) > 20_900:
+        if isinstance(run, str) and len(run) > 20_500:
             name = step.get("name", "unnamed")
             raise SystemExit(
                 f"workflow run expression too large: {job_name}/{name} "
-                f"is {len(run)} characters (limit 21000, guard 20900)"
+                f"is {len(run)} characters (limit 21000, guard 20500)"
             )
 PY
 
