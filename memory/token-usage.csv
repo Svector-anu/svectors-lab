@@ -236,4 +236,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-04,feature,codex-default,2438778,6637,2363648,0
 2026-09-04,pr-review,codex-default,415441,2995,374144,0
 2026-09-04,vuln-scanner,claude-sonnet-5,3764,34065,9357028,144663
-2026-09-04,github-trending,codex-default,672363,4853,585472,0
+2026-09-04,token-pick,codex-default,719066,5615,663936,0
