@@ -1,10 +1,12 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-04T06:29:44Z",
-  "quality_score": 4,
-  "assessment": "Clear, decision-ready PR verdict with exact target/SHA, test results, and zero-finding counts, though it provides limited supporting detail for independently verifying the review.",
-  "flags": [],
-  "avg_score": 3.61,
+  "last_analyzed": "2026-09-04T07:26:38Z",
+  "quality_score": 2,
+  "assessment": "The review is concise but internally inconsistent with the read-only run: it claims workspace modifications and a posted GitHub acknowledgment, making key completion claims unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.54,
   "history": [
     {
       "date": "2026-09-01",
@@ -142,6 +144,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T06:29:44Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 2,
+      "ts": "2026-09-04T07:26:38Z",
       "harness": "codex"
     }
   ]
