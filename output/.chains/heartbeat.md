@@ -1,14 +1,16 @@
-Fleet status: 🔴 DEGRADED.
+🔴 **STATUS_PAGE=DEGRADED**
 
-- `vuln-scanner` has 10 consecutive failures due to invalid Grok model configuration.
-- 11 enabled skills meet the chronic-failure threshold.
-- Six PRs remain stalled; four critical issues remain open.
-- Notifications were suppressed because all findings were reported within 48 hours.
-- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
-- Logged the run in [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
+- New finding: `slop-watch` is scheduled daily at 08:00 UTC but has no scheduler-state entry.
+- Five PRs remain stalled over 24 hours.
+- `vuln-scanner` most recently failed; eleven enabled skills meet the chronic-failure threshold.
+- Existing findings were deduplicated against the previous 48 hours.
+- Notification was attempted, but the harness notification queue is read-only.
+
+Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md). Validation passed with all 30 enabled skills represented.
 
 ## Summary
 
-- `STATUS_PAGE=DEGRADED`
-- Files modified: `docs/status.md`, `memory/logs/2026-09-03.md`
-- Next scheduled run: `token-pick` at 12:00 UTC
+- Regenerated the public status page.
+- Recorded the heartbeat findings.
+- No token pulse was included because no token report exists.
+- Follow-up: investigate why `slop-watch` has never been dispatched.
