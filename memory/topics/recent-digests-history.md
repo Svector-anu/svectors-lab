@@ -5,13 +5,14 @@ tags:
   - digests
   - history
 resource: ""
-timestamp: 2026-09-03T01:14:27Z
+timestamp: 2026-09-04T00:00:00Z
 ---
 
 # Recent Digests History
 
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-29 | web3 developer tooling (web) | Base production RPC, Arc v0.8.0, Compass WTGXX |
 | 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 | 2026-08-21 | daily (web) | SEC token-offering framework, policy-driven crypto rally, Anthropic record IPO |
 | 2026-08-23 | daily (web, AM) | Grayscale Zcash spot ETF filing, BounceBit L1 sunset after $3M exploit, Nvidia–Poolside $6B license |
@@ -33,3 +34,4 @@ timestamp: 2026-09-03T01:14:27Z
 - Source: [2026-08-26 activity log](../logs/2026-08-26.md)
 - Source: [2026-08-27 activity log](../logs/2026-08-27.md)
 - Source: [2026-08-28 activity log](../logs/2026-08-28.md)
+- Source: [2026-08-29 activity log](../logs/2026-08-29.md)

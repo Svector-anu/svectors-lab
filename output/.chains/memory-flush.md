@@ -1,12 +1,19 @@
-Memory flush completed for 2026-09-03.
+Memory flush completed for the 2026-09-03–2026-09-04 window.
 
-- No new durable facts required promotion or pruning.
-- Confirmed six stalled PRs and three critical health issues remain open.
-- Confirmed the ZSvirt disclosure remains blocked.
-- No logs required rotation.
-- Appended `MEMORY_FLUSH_OK` to [memory/logs/2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
-- Stamped the consolidation watermark as `2026-09-03`.
+- Promoted Skopos accessibility PR #108.
+- Updated Grok failure priorities following merged fix PR #65.
+- Removed closed PR #30, leaving five stalled PRs.
+- Archived one excess digest entry.
+- Logged the run and stamped the watermark `2026-09-04`.
+- Verified with all 19 memory-prep tests.
 
 ## Summary
 
-Modified the daily memory log and refreshed the deterministic watermark. No follow-up action is required.
+Modified:
+
+- `memory/MEMORY.md`
+- `memory/topics/recent-digests-history.md`
+- `memory/logs/2026-09-04.md`
+- `memory/memory-flush-state.json`
+
+No follow-up needed beyond monitoring the live `vuln-scanner` and `pr-review` runs.
