@@ -1,75 +1,77 @@
-## Tweet Drafts: accessibility is part of execution
+## Tweet Drafts: Security fixes need judgment
 
 ### Tier 1 — One-liner
 
-**1a. hot take**
+**1a. Hot take**
 
-> crypto apps are not usable if the interface locks people out.
+> finding a cve is easy. shipping the right fix is the work
 
-**1b. reframe**
+**1b. Sardonic**
 
-> accessibility bugs are execution bugs.
+> a security patch that breaks production is just another incident
 
 ### Tier 2 — Two-punch
 
-**2a. observation**
+**2a. Reframe**
 
-> a trading flow is not complete when only a mouse can finish it. keyboard and screen-reader support belong in the execution path.
+> scanners found the vulnerable packages. judgment decided which fixes could ship today without breaking users
 
-**2b. sardonic**
+**2b. Data drop**
 
-> silent quote refresh looks smooth until the price changes without warning. good ux tells every user when execution moved.
+> five dependency fixes were safe patch bumps. two needed breaking upgrades, so i left them for deeper work. security is not a version-number contest
 
 ### Tier 3 — Paragraph
 
-**3a. data drop**
+**3a. Observation**
 
-> fixed the keyboard, screen-reader, reduced-motion and silent quote-refresh gaps in skopos. 130 tests passed. accessibility work is product work because a trading interface has to be usable before it can be useful.
+> a scanner can tell you a dependency is vulnerable. it cannot own the upgrade risk. five fixes were safe to ship today. two needed major version jumps and more testing, so i did not pretend the job was done
 
-**3b. reframe**
+**3b. Hot take**
 
-> crypto keeps trying to hide wallet complexity while leaving basic interface complexity untouched. users should not need perfect vision, a mouse and motion tolerance just to place a trade. fixed that in skopos.
+> the useful security report is not “60 vulnerabilities found.” it is five fixes shipped, two risky upgrades isolated, and evidence for every decision. scan volume is noise until someone does the engineering
 
 ### Tier 4 — Long tweet
 
-**4a. narrative**
+**4a. Narrative**
 
-> spent today fixing the parts of a trading interface that most demos never show: keyboard navigation, screen-reader labels, reduced-motion behavior and quote refresh announcements. 130 tests passed. if a user cannot understand that the price changed or complete the flow with their input method, the execution layer is not finished.
+> audited a security tool today. the scanner returned 60 dependency rows. after tracing what actually ships, most were dev or test-only. five production fixes were safe patch or minor bumps, so i opened the PR. two needed breaking major upgrades, so i documented the risk instead of forcing them in. finding version numbers is automation. deciding what can ship is engineering
 
-**4b. observation**
+**4b. Observation**
 
-> accessibility bugs get treated like polish because they rarely break the happy-path demo. but a silent quote refresh can hide a changed execution price. a missing focus state can stop a trade. motion can make the app unusable. fixed those gaps in skopos and added tests because this is correctness work, not cleanup.
+> dependency security gets flattened into “bump everything.” real repos are messier. some findings never reach production. some fixes are safe within the current major. others change APIs and need proper migration work. today’s result was five fixes shipped and two upgrades deliberately deferred. a smaller honest patch beats a large fake cleanup
 
 ### Tier 5 — Thread opener
 
-**5a. narrative**
+**5a. Data drop**
 
-> the hardest product bugs are often invisible in a demo. skopos looked fine with a mouse while keyboard, screen-reader, reduced-motion and quote-refresh flows still had gaps. fixed them.
-
----
-
-- why mouse-only testing misses real blockers
-- how silent quote refresh becomes an execution-risk problem
-- the reduced-motion hydration bug and its test
-- what 130 passing tests changed about confidence in the fix
-
-**5b. structural critique**
-
-> a non-custodial trading app can protect the user's keys and still fail them at the interface. accessibility is part of safe execution, not a separate polish pass.
+> a dependency scanner gave me 60 vulnerability rows. only five belonged in the patch i could safely ship today. here is what happened to the other 55
 
 ---
 
-- custody safety versus interaction safety
-- keyboard and screen-reader failure modes in a trade flow
-- why changing quotes must be announced
-- making accessibility part of the definition of done
+- separating production dependencies from dev and test tooling
+- checking whether existing upgrade PRs actually fix the disclosed CVEs
+- shipping five safe patch and minor upgrades
+- deferring two breaking major upgrades for proper migration work
 
-Best overall: **4b**. Best per tier: **1b, 2a, 3a, 4b, 5b**.
+**5b. Reframe**
+
+> security automation is good at producing findings. the hard part is turning them into a patch maintainers can merge without inheriting a second incident
+
+---
+
+- why raw vulnerability counts mislead
+- how reachability changes triage
+- where upgrade risk becomes engineering work
+- what evidence makes a security PR mergeable
+
+Best overall: **#4a**  
+Best per tier: **1a, 2b, 3b, 4a, 5a**
+
+The latest draft was saved to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md). Notification and revision-offer delivery were attempted but blocked by the read-only external queue.
 
 ## Summary
 
-- Saved the complete batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
-- All tweet bodies satisfy their tier limits.
-- xAI returned HTTP 403; public X search yielded no useful discussion.
-- Notification and revision prompt were attempted but could not be delivered because the external queues were read-only.
+- Generated 10 drafts across five size tiers.
+- Selected today’s verified harden-runner audit as the topic.
+- Saved the revisable draft and logged the run.
+- No X enrichment was used because `XAI_API_KEY` was unset.
