@@ -3,9 +3,11 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 WF="$ROOT/.github/workflows/aeon.yml"
 SKILL="$ROOT/skills/vuln-scanner/SKILL.md"
+CAPS="$ROOT/scripts/resolve-riva-capabilities.sh"
 
-grep -q 'SHADOW_MODE=1' "$WF"
-grep -q 'SKILL_MODE=read-only' "$WF"
+grep -q 'resolve-riva-capabilities.sh' "$WF"
+grep -q 'SHADOW_MODE=1' "$CAPS"
+grep -q 'SKILL_MODE=read-only' "$CAPS"
 grep -q 'SHADOW_MODE.*!=.*1' "$WF"
 grep -q 'unset ALL_SECRETS GH_GLOBAL GH_TOKEN GITHUB_TOKEN' "$WF"
 grep -q 'If `KERNEL=shadow`' "$SKILL"
