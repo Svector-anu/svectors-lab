@@ -49,6 +49,12 @@ TEST_HEAD_SHA="$NEW" PATH="$TMP/bin:$PATH" bash "$CHECK" verify-change acme/demo
 TEST_HEAD_SHA="$NEW" PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW" \
   | jq -e '.status == "passed" and .checks == 1 and .sha == "89abcdef0123456789abcdef0123456789abcdef"' >/dev/null
 
+TEST_HEAD_SHA="$NEW" \
+  TEST_CHECKS='[{"total_count":0,"check_runs":[]}]' \
+  TEST_STATUSES='{"statuses":[{"state":"success","context":"legacy-ci"}]}' \
+  PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW" \
+  | jq -e '.status == "passed" and .checks == 0 and .statuses == 1' >/dev/null
+
 if TEST_HEAD_SHA="$NEW" TEST_CHECKS='[{"total_count":1,"check_runs":[{"status":"completed","conclusion":"failure"}]}]' \
   PATH="$TMP/bin:$PATH" bash "$CHECK" verify-checks acme/demo#42 "$NEW"; then
   echo 'failed check unexpectedly passed' >&2

@@ -75,10 +75,6 @@ case "${1:-}" in
       echo "dev-loop repair: check-runs pagination was incomplete (received $total of $reported)" >&2
       exit 1
     }
-    [ "$total" -gt 0 ] || {
-      echo "dev-loop repair: repaired SHA has no GitHub check runs" >&2
-      exit 3
-    }
     pending=$(jq '[.[] | select(.status != "completed")] | length' <<<"$checks")
     [ "$pending" -eq 0 ] || {
       echo "dev-loop repair: repaired SHA still has $pending pending check(s)" >&2
