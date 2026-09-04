@@ -1,19 +1,18 @@
-Implemented issue #79 and opened [Svector-anu/skopos PR #108](https://github.com/Svector-anu/skopos/pull/108).
+Shipped [Svector-anu/dieena PR #66](https://github.com/Svector-anu/dieena/pull/66).
 
-Changes include:
+The PR replaces stale placeholder-era documentation with:
 
-- Accessible labels and state metadata for composer and icon controls
-- Escape-key dismissal for tier menu and mobile sidebar
-- Semantic landing-page `<h1>`
-- Reduced-motion support for hero particles and typewriter demo
-- Visible errors when quote refreshes fail
-- English, Vietnamese, and Chinese translations
+- An accurate Android, API, worker, and package workspace map.
+- Current implemented capabilities.
+- Explicit production deployment and physical-device release gates.
+- Updated next steps tied to issue #8 without overlapping PR #65.
 
-Vercel deployment and preview checks passed. The run was recorded in `memory/logs/2026-09-03.md`. External notification delivery was attempted but its queue was read-only.
+Verification passed: typecheck, lint, formatting, and full tests. The PR contains the required workflow correlation marker.
 
 ## Summary
 
-- Branch: `ai/fix-accessibility-gaps`
-- Commit: `6fc4207`
-- PR: https://github.com/Svector-anu/skopos/pull/108
-- Follow-up: review and merge PR #108
+- Branch: `ai/refresh-project-status`
+- Commit: `3f213c1`
+- Modified: `README.md`, `docs/README.md`, `docs/project-status.md`
+- Recorded in [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md)
+- Notification delivery was attempted but blocked by the harness’s read-only notification queue.
