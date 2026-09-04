@@ -1,12 +1,10 @@
 *PR Review — 2026-09-04*
 
 Reviewed 1, skipped 0.
-- Svector-anu/svectors-lab#69: discussion-needed — 0 critical, 1 issue
+- Svector-anu/skopos#110: approve-ready — 0 critical, 0 issues
 
-**Verdict**: discussion-needed
-The immutable head is checked before setup, but it is still not bound into the reviewer itself.
+**Verdict**: approve-ready — no blockers.
 
-**Findings**
-- [ISSUE] `.github/workflows/aeon.yml:218` — `expected_sha` is checked only in preflight and is not passed into the review skill; a force-push after the comparison can make the reviewer fetch and approve an unchecked head.
+<!-- aeon-review:{"schema":1,"target":"Svector-anu/skopos#110","sha":"e1b3da417fc736f428ed4ebb42a50146d73e1064","verdict":"approve-ready","critical":0,"issues":0} -->
 
-<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#69","sha":"3bc2fd42b53447ecd59fcb1b38928978728b56d7","verdict":"discussion-needed","critical":0,"issues":1} -->
+Correlation: `chain-b00f83043b3b4e5d27482a6ddb81e93d`
