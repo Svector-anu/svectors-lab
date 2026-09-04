@@ -395,8 +395,8 @@
     "last_dispatch": "2026-09-04T04:57:43Z"
   },
   "chain:dev-loop": {
-    "last_status": "dispatched",
-    "last_failed": "2026-09-02T18:37:29Z",
+    "last_status": "failed",
+    "last_failed": "2026-09-04T07:27:10Z",
     "last_success": "2026-09-01T18:19:58Z",
     "last_dispatch": "2026-09-03T10:07:45Z"
   },
