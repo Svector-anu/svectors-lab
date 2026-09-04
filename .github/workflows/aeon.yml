@@ -751,6 +751,7 @@ jobs:
           # plaintext variable is correct.
           HOOK_MAINNET_OK: ${{ vars.HOOK_MAINNET_OK }}
           SKILL_VAR: ${{ inputs.var }}
+          EXPECTED_REVIEW_SHA: ${{ inputs.expected_sha }}
           SKILL_NAME: ${{ steps.skill.outputs.name }}
           INPUT_MODEL: ${{ inputs.model }}
           RESOLVED_HARNESS: ${{ steps.harness.outputs.HARNESS }}
@@ -981,6 +982,12 @@ jobs:
 
           Use this variable (override the default in the skill file):
           var=$VAR"
+          fi
+          if [ -n "$EXPECTED_REVIEW_SHA" ]; then
+            PROMPT="$PROMPT
+
+          Immutable review target: expected_sha=$EXPECTED_REVIEW_SHA
+          Review only this exact commit. Abort without posting comments if the PR head differs before fetching or immediately before posting the review."
           fi
           if [[ "$AEON_DISPATCH_ID" =~ ^chain-[0-9a-f]{32}$ ]]; then
             PROMPT="$PROMPT

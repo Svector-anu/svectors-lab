@@ -108,6 +108,8 @@ grep -Fq 'args+=(-f expected_sha="$expected_sha")' "$WORKFLOW"
 grep -Fq 'dispatch_skill "$skill" "$VAR" "$CTX_FILE" "$EXPECTED_REVIEW_SHA"' "$WORKFLOW"
 grep -Fq 'dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT" "$REPAIRED_SHA"' "$WORKFLOW"
 grep -Fq 'Bind chained review to expected PR head' "$ROOT/.github/workflows/aeon.yml"
+grep -Fq 'Immutable review target: expected_sha=$EXPECTED_REVIEW_SHA' "$ROOT/.github/workflows/aeon.yml"
+grep -Fq 'If either comparison differs, abort without' "$ROOT/skills/pr-review/SKILL.md"
 grep -Fq 'repair:<owner/repo#N>@<40-character-lowercase-sha>' "$FEATURE"
 if ! sed -n '/^  dev-loop:/,/^  # routine:/p' "$CONFIG" | grep -Fq 'max_dispatches: 4'; then
   echo 'dev-loop dispatch budget is not exactly four (feature, review, repair, re-review)' >&2
