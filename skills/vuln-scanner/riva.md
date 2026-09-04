@@ -61,5 +61,10 @@ Every serious candidate must include:
 - prior-art result;
 - verifier required by the existing scanner policy.
 
+Write the candidate array to `/tmp/vuln-scan/riva-candidates.json` and validate
+it with `./scripts/validate-riva-candidates.sh` before handing it to A4. The
+validator checks file, line, severity, category, and a concrete claim; a
+validation failure means no candidate promotion.
+
 Do not report generic CWE possibilities, unreachable paths, intentional
 same-privilege capabilities, or hardening advice as confirmed vulnerabilities.
