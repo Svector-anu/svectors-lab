@@ -1,19 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-04T11:15:50Z",
-  "quality_score": 2,
-  "assessment": "The verdict is concise and decision-oriented, but the claimed workspace file updates contradict the read-only run constraint, undermining the reliability of the otherwise specific review claims.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 3.3,
+  "last_analyzed": "2026-09-04T13:37:38Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-op review: it clearly reports that no pull requests were open, though it provides little evidence beyond the assertion.",
+  "flags": [],
+  "avg_score": 3.27,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 4,
-      "ts": "2026-09-01T08:29:59Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-01",
       "score": 2,
@@ -186,6 +178,12 @@
       "date": "2026-09-04",
       "score": 2,
       "ts": "2026-09-04T11:15:50Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-04",
+      "score": 3,
+      "ts": "2026-09-04T13:37:38Z",
       "harness": "codex"
     }
   ]
