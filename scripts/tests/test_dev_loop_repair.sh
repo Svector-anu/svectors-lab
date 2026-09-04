@@ -103,6 +103,11 @@ grep -A4 'if \[ "$CHAIN_FAILED" = "true" \]; then' "$WORKFLOW" | grep -Fq 'exit 
 grep -Fq 'dev-loop-review.sh body "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW"
 grep -Fq '[ "$REVIEW_SHA" != "$FEATURE_SHA" ]' "$WORKFLOW"
 grep -Fq 'dev-loop feature PR changed after its checks were verified' "$WORKFLOW"
+grep -Fq 'EXPECTED_REVIEW_SHA="$FEATURE_SHA"' "$WORKFLOW"
+grep -Fq 'args+=(-f expected_sha="$expected_sha")' "$WORKFLOW"
+grep -Fq 'dispatch_skill "$skill" "$VAR" "$CTX_FILE" "$EXPECTED_REVIEW_SHA"' "$WORKFLOW"
+grep -Fq 'dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT" "$REPAIRED_SHA"' "$WORKFLOW"
+grep -Fq 'Bind chained review to expected PR head' "$ROOT/.github/workflows/aeon.yml"
 grep -Fq 'repair:<owner/repo#N>@<40-character-lowercase-sha>' "$FEATURE"
 if ! sed -n '/^  dev-loop:/,/^  # routine:/p' "$CONFIG" | grep -Fq 'max_dispatches: 4'; then
   echo 'dev-loop dispatch budget is not exactly four (feature, review, repair, re-review)' >&2

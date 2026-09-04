@@ -86,13 +86,14 @@ jobs:
 
           # --- Helper: dispatch a skill and return its uniquely correlated run ID ---
           dispatch_skill() {
-            local skill="$1" var="${2:-}" ctx_file="${3:-}"
+            local skill="$1" var="${2:-}" ctx_file="${3:-}" expected_sha="${4:-}"
             local before_ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
             local dispatch_id="chain-$(openssl rand -hex 16)"
 
             local args=(-f skill="$skill" -f dispatch_id="$dispatch_id")
             [ -n "$var" ] && args+=(-f var="$var")
             [ -n "$ctx_file" ] && args+=(-f chain_context_file="$ctx_file")
+            [ -n "$expected_sha" ] && args+=(-f expected_sha="$expected_sha")
 
             local expected_title="skill: $skill"
             [ -n "$var" ] && expected_title+=" ($var)"
@@ -389,7 +390,11 @@ jobs:
                 break 2
               fi
 
-              RUN_OUTPUT=$(dispatch_skill "$skill" "$VAR" "$CTX_FILE")
+              EXPECTED_REVIEW_SHA=""
+              if [ "$CHAIN" = "dev-loop" ] && [ "$skill" = "pr-review" ]; then
+                EXPECTED_REVIEW_SHA="$FEATURE_SHA"
+              fi
+              RUN_OUTPUT=$(dispatch_skill "$skill" "$VAR" "$CTX_FILE" "$EXPECTED_REVIEW_SHA")
               DISPATCH_EXIT=$?
               RUN_ID=$(echo "$RUN_OUTPUT" | tail -1)
               if [ $DISPATCH_EXIT -ne 0 ] || [ -z "$RUN_ID" ]; then
@@ -560,7 +565,7 @@ jobs:
                 echo "::error::dev-loop cannot dispatch re-review: budget $MAX_DISPATCHES exhausted"
                 CHAIN_FAILED=true
               else
-                REREVIEW_OUTPUT=$(dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT")
+                REREVIEW_OUTPUT=$(dispatch_skill pr-review "$FEATURE_PR" "$REREVIEW_CONTEXT" "$REPAIRED_SHA")
                 REREVIEW_RUN_ID=$(echo "$REREVIEW_OUTPUT" | tail -1)
                 if [ -z "$REREVIEW_RUN_ID" ] || ! wait_for_runs "$REREVIEW_RUN_ID"; then
                   echo "::error::dev-loop re-review run failed"
