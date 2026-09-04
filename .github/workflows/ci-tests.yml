@@ -143,3 +143,5 @@ jobs:
         run: bash scripts/tests/test_riva_shadow_guard.sh
       - name: vuln-scanner Riva shadow comparison tests
         run: bash scripts/tests/test_riva_shadow_compare.sh
+      - name: vuln-scanner Riva candidate validation tests
+        run: bash scripts/tests/test_riva_candidates.sh
