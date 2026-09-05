@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-04T06:05:17.614233Z",
-  "generator": "eyebrow/0.4.1",
+  "generatedAt": "2026-09-05T16:19:41.795659Z",
+  "generator": "eyebrow/0.4.2",
   "artifacts": [
     {
       "id": "019b953b97c439b3",
@@ -143,7 +143,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "b91efc14fbdd81a04576e71041e317afaba21afd72c7564a632c2d7af483ee4f"
+          "hash": "4eafd7da8bb2c05473f3a012c4d373c8c87bcdc82e4f22485a2941e52f019b79"
         }
       ],
       "findings": [
@@ -170,7 +170,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 324,
+          "line": 344,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -179,12 +179,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1114,
+          "line": 1149,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-ad237940f00b97428807dffdd44a23d667487eb58387dc609540a3b04bc6c842",
+      "contentHash": "sha256-27a7955c9bd2b66335c435e1bc5d4a986e32b2572820cdbc511d61da51a01bb4",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
@@ -341,10 +341,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "e602e572ca81d2f7ee9ad33fc569dd46f7df3034ab02f29538d0d60f5922acee"
+          "hash": "debd294162595320378b3def0a9569429565e5b4b36ddf3f5d84297d18ee5402"
         }
       ],
-      "contentHash": "sha256-45d9884f6a13977e5c77569d4bf10c6af7c78046a6953c33ada80f8a84c1d101",
+      "contentHash": "sha256-c25a5de65098db2d5c1b5c6608f28291c33f846cbc6b7bbe5fc6ed38479fc861",
       "discoveredFrom": "skills/pr-review/SKILL.md"
     },
     {
