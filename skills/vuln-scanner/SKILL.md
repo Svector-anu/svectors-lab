@@ -625,9 +625,8 @@ Append to `memory/vuln-scanned.json` (create if missing) so future runs skip thi
 
 ### A7. Write local report
 
-**There is no resume.** Every scanner step above is now bounded (timeouts on the
-slow ones, `command -v` guards on missing binaries), so nothing should genuinely
-hang forever — but if you are still running low on turns by this point, finish
+**There is no resume.** The git-history pass has a timeout; this does not bound
+every other scanner or installation step. If you are running low on turns, finish
 the report with whatever scanners actually completed, record the rest `fail` in
 `sources.txt` (§A3's rule: unfinished is `fail`, not a pending state), and write
 A7/A8 now. A single `workflow_dispatch` run is one shot with no continuation —
@@ -640,6 +639,12 @@ resume is not.
 
 Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata, scanner sources (ok/fail per tool), candidate count, confirmed findings with severity and channel, PoC gate status (`verified` with verifier/chain/block, `not-required` with reason, or `needs-verification`), and dedup note. Do **not** include exploit details for findings disclosed via PVR — redact file/line and link to the advisory ID instead.
 
+Copy each scanner status from `sources.txt` into the report, notification and log.
+Keep `trufflehog` (filesystem) and `trufflehog-git` (history) separate, preserving
+`timeout` exactly. Missing status is `fail`, never inferred `ok`. If any pass failed
+or timed out, say "limited audit" and name the incomplete coverage, even when zero
+findings were confirmed. Do not describe incomplete coverage as a clean audit.
+
 ### A8. Notify
 
 Use `./notify`. One paragraph. Lead with the verdict.
@@ -648,13 +653,13 @@ Use `./notify`. One paragraph. Lead with the verdict.
 *Vuln Scanner — <repo>*
 <N> confirmed findings (<severity-summary>).
 Disclosed via: <PVR: advisory #123 | public PR #45 | skipped (no channel)>
-Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
+Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
 ```
 
 If the audit was clean:
 ```
 *Vuln Scanner — <repo>*
-Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
+<Clean audit | Limited audit — name incomplete passes>. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail|none|skipped>, fuzz=<ok|fail|skip>, agentic=<ok|skipped>.
 ```
 
 Then log per the **Log** section below with `Mode: scan`.
@@ -1016,7 +1021,7 @@ specific bullets.
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
 - Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
-- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification
+- Scanner status: semgrep=ok|fail trufflehog=ok|fail trufflehog-git=ok|fail|timeout osv=ok|fail|none|skipped fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification
 - Advisory/PR links: [...]
 ```
 

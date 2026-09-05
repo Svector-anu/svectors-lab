@@ -117,7 +117,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "b95d1bdfe2014f6b233839ed07ae30e90a42ff1aefc0530c4e72baa262a06efd"
+          "hash": "5751c780fd7ab5c6467a8d483069f931a75b4fb819da2764e50d520291ea1a2d"
         }
       ],
       "findings": [
@@ -153,12 +153,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1046,
+          "line": 1051,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-a008bccdbad977d25b293a67d21ec00ae27a3465027ea442ab91235b500c80a0",
+      "contentHash": "sha256-40ce66cedfd8bc67730332d61729acc23d4be64304b177db0d25458951c372b3",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
