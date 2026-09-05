@@ -117,7 +117,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "b17491de609e1fa3b241a55012e60f21d63eaaac6ad9251c43509f40ec635872"
+          "hash": "b95d1bdfe2014f6b233839ed07ae30e90a42ff1aefc0530c4e72baa262a06efd"
         }
       ],
       "findings": [
@@ -144,7 +144,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 304,
+          "line": 324,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -153,12 +153,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1013,
+          "line": 1046,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-a81f0757d7b3bafe3baaa0c3d2c0e735eb284a7ebc9768264bdfe4e747b4aa9a",
+      "contentHash": "sha256-a008bccdbad977d25b293a67d21ec00ae27a3465027ea442ab91235b500c80a0",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
