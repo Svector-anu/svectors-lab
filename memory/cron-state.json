@@ -1,15 +1,15 @@
 {
   "heartbeat": {
     "last_dispatch": "2026-09-05T09:20:07Z",
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-08-25T00:17:56Z",
-    "total_runs": 341,
-    "total_successes": 31,
+    "total_runs": 342,
+    "total_successes": 32,
     "total_failures": 310,
     "consecutive_failures": 0,
     "success_rate": 0.09,
     "last_error": "kimi exited 1: error: failed to run prompt: auth.login_required: OAuth provider \"managed:kimi-code\" requires login before it can be used. See log: /tmp/run-harness.2vyFjd/kimi-home/logs/kimi-code.log ",
-    "last_success": "2026-09-04T19:26:18Z"
+    "last_success": "2026-09-05T09:23:01Z"
   },
   "defi-overview": {
     "last_status": "dispatched",
