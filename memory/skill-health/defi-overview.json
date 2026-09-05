@@ -1,19 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-05T09:25:10Z",
-  "quality_score": 3,
-  "assessment": "Substantive and conclusion-first, but it violates the qualitative-price constraint, lacks explicit front-run/ride/fade/watch calls, and leaves most figures without direct evidence links.",
+  "last_analyzed": "2026-09-05T12:53:02Z",
+  "quality_score": 2,
+  "assessment": "Useful conclusion-first market snapshot, but it lacks explicit position calls and claims workspace files were updated despite the run being read-only, undermining verifiability.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-08-29",
-      "score": 2,
-      "ts": "2026-08-29T18:39:27Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-30",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-05",
       "score": 3,
       "ts": "2026-09-05T09:25:10Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 2,
+      "ts": "2026-09-05T12:53:02Z",
       "harness": "codex"
     }
   ]
