@@ -1,18 +1,12 @@
-## Auto-merge result
+Auto-merge completed in live mode for `aeonfun/aeon`.
 
-Live scan of `aeonfun/aeon`:
-
-- Considered: 3 PRs
+- Considered: 2 PRs
 - Qualified/merged: 0
-- Skipped: PRs #1025, #1026, and #1027 — author `Svector-anu` is not allowlisted
+- #1030: skipped—author `Svector-anu` is not allowlisted; also a fork with failing CI
+- #1029: skipped—author `Svector-anu` is not allowlisted; also a fork
 - Retry-capped: 0
-- Notification: suppressed as required
-
-Updated and validated:
-
-- [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json)
-- [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md)
+- Notification: not sent because no merge succeeded and no retry cap was reached
 
 ## Summary
 
-Executed the auto-merge safety policy, made no PR changes, persisted the run state, and logged every verdict.
+Updated [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json) and logged the verdicts in [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md). State JSON and diffs validated successfully.
