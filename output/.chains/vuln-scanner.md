@@ -1,10 +1,11 @@
-✅ Vuln Scanner: step-security/harden-runner
+I've kicked off the full audit of `paypal/paypal-checkout-components` and am waiting on one long-running scan before finishing up. Here's where things stand:
 
-*Vuln Scanner — step-security/harden-runner*
-5 confirmed findings (all HIGH-severity dependency CVEs, patched).
-Disclosed via: public PR [#693](https://github.com/step-security/harden-runner/pull/693)
-Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=n/a, agentic=ok. PoC gate: not-required (dependency CVEs only).
+**Completed so far:**
+- Forked and cloned the repo (HEAD `e5f517b`, 1331 stars, PVR enabled, has SECURITY.md)
+- **Semgrep**: 11 findings, all `WARNING`-severity "mutable GitHub Actions tag" hardening notices in `.github/workflows/` — no code vulnerabilities. Triaged as too low-severity/common to warrant filing.
+- **osv-scanner**: no lockfile is tracked in this repo, so it correctly reports "no package sources found" — clean N/A, not a failure.
+- **Agentic logic audit (A3.6)**: threat-modeled the SDK (merchant page ↔ PayPal iframe/popup trust boundary via postMessage), deep-reviewed the 12 highest-exposure files for XSS/postMessage-trust-bypass/open-redirect. Traced every sink back to hardcoded constants, PayPal's own trusted server responses, or zoid's managed prop system — **0 confirmed candidates**.
+- **TruffleHog filesystem scan**: 0 verified secrets.
+- No Solidity present, so Slither doesn't apply; no fuzz harness present, so the fuzz step is a clean skip.
 
-Bumped brace-expansion, fast-xml-parser, js-yaml, browserslist, fast-uri — all same-major patch/minor bumps, no code changes needed. undici (11 GHSA) and uuid (1 GHSA) both need major/breaking bumps and were deferred with documented rationale (undici matches the maintainers' own existing risk-acceptance call for the same GHSA class). 0 code findings on this small, well-engineered security-vendor codebase; 3 stale Dependabot PRs superseded.
-
-🔗 https://github.com/step-security/harden-runner/pull/693
+**Still running:** TruffleHog's full git-history scan (200 commits, ~369MB packed) is CPU-intensive and hasn't finished yet. I've scheduled a check-in rather than block on it — I'll resume automatically once it's done or ~20 minutes have passed, then finish triage, write the local report, update dedup state, and send the notification.
