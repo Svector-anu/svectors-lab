@@ -510,5 +510,12 @@
     "notes": "Reconstructed entry: run 33967293482 completed real scan work and disclosure (notify fired) but the commit-results step failed on a git push race (10 retries, ref moved), so this never landed in the ledger. 2 confirmed HIGH: PVR GHSA-gqhm-vqwg-p28r (path traversal in update_shipment_tracking defeats tool-scoped authorization, PoC-verified) + public PR #101 (langchain/crewai-tools CVE bumps, real runtime deps). Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: verified.",
     "pr": "https://github.com/paypal/agent-toolkit/pull/101",
     "advisory": "GHSA-gqhm-vqwg-p28r"
+  },
+  {
+    "repo": "stripe/stripe-node",
+    "scanned_at": "2026-09-05T18:00:00Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "Forced target via var=stripe/stripe-node (bare owner/repo -> Arm A scan). 4,503 stars, TypeScript, Stripe official Node.js SDK. PVR disabled; org .github/SECURITY.md points to Stripe bug-bounty program (human-submission channel, out of scope for auto-disclosure, same pattern as stripe-cli 2026-09-04). Audited commit b64815c32436fa24bba60c1ea898b30d57391504. semgrep: 3 hits, 2 CI mutable-action-tag hardening (not filed) + 1 run-shell-injection flag on .github/workflows/rules.yml triaged false-positive (interpolated values are a boolean-returning contains() call and a GitHub-controlled enum, not attacker free text; workflow also has permissions: {}). trufflehog: 0 verified secrets (filesystem + bounded full git history, no timeout). osv-scanner: 33 unique vulnerable-package rows across yarn.lock (dev tooling) and examples/snippets/package-lock.json (isolated example project) -- published stripe package.json has dependencies: {} (zero runtime deps), so none reach production; same non-issue pattern as honojs/hono and paypal/paypal-js. Agentic pass (N=10 budget, ~330 code files): deep-reviewed Webhooks.ts signature verification end-to-end (constructEvent defaults to DEFAULT_TOLERANCE=300s replay protection on the real merchant entrypoint), secureCompare (Node crypto.timingSafeEqual, constant-time fallback), NodeCryptoProvider HMAC-SHA256 computation, createApiKeyAuthenticator Bearer header construction, and multipart.ts (explicit CRLF-stripping + quote-escaping on caller-supplied name/filename/content-type closes the classic multipart header-injection vector; boundary from cryptographically secure uuid4()). No eval/exec/child_process sinks in src/. 0 candidates survived triage. No .sol files (slither n/a), no fuzz/fuzz_targets (fuzz skip)."
   }
 ]

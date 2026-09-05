@@ -1,0 +1,246 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — stripe/stripe-node"
+      },
+      "children": [
+        "alert-clean",
+        "summary-stats",
+        "sep-1",
+        "scanners-section",
+        "sep-2",
+        "findings-section",
+        "sep-3",
+        "disclosure-section"
+      ]
+    },
+    "alert-clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "title": "Clean Audit",
+        "message": "0 confirmed vulnerabilities"
+      }
+    },
+    "summary-stats": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat-total",
+        "stat-semgrep",
+        "stat-osv"
+      ]
+    },
+    "stat-total": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed",
+        "value": "36"
+      }
+    },
+    "stat-semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep",
+        "value": "3"
+      }
+    },
+    "stat-osv": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV Rows",
+        "value": "33"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanners-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners-heading",
+        "scanners-table"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      }
+    },
+    "scanners-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "findings-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "findings-heading",
+        "webhook-subsection",
+        "runtime-deps"
+      ]
+    },
+    "findings-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Detailed Findings",
+        "level": "h3"
+      }
+    },
+    "webhook-subsection": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "webhook-heading",
+        "webhook-desc",
+        "webhook-items"
+      ]
+    },
+    "webhook-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Webhook-Signature Verification",
+        "level": "h4"
+      }
+    },
+    "webhook-desc": {
+      "type": "Text",
+      "props": {
+        "text": "SDK's highest-value surface reviewed end-to-end:",
+        "variant": "lead"
+      }
+    },
+    "webhook-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "item-constant-time",
+        "item-hmac",
+        "item-replay",
+        "item-crlf"
+      ]
+    },
+    "item-constant-time": {
+      "type": "Text",
+      "props": {
+        "text": "• Constant-time compare",
+        "variant": "body"
+      }
+    },
+    "item-hmac": {
+      "type": "Text",
+      "props": {
+        "text": "• Correct HMAC-SHA256",
+        "variant": "body"
+      }
+    },
+    "item-replay": {
+      "type": "Text",
+      "props": {
+        "text": "• Default replay-tolerance on the real entrypoint",
+        "variant": "body"
+      }
+    },
+    "item-crlf": {
+      "type": "Text",
+      "props": {
+        "text": "• Multipart CRLF-injection guard already in place",
+        "variant": "body"
+      }
+    },
+    "runtime-deps": {
+      "type": "Text",
+      "props": {
+        "text": "Published package ships zero runtime deps. All 33 osv rows are dev-tooling/example-only.",
+        "variant": "body"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "disclosure-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "disclosure-heading",
+        "disclosure-note"
+      ]
+    },
+    "disclosure-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Disclosure",
+        "level": "h3"
+      }
+    },
+    "disclosure-note": {
+      "type": "Text",
+      "props": {
+        "text": "PVR disabled. Only disclosure channel is Stripe's own bug-bounty program (out of scope for auto-disclosure).",
+        "variant": "body"
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-ℹ️ Vuln Scanner: paypal/paypal-js clean
+✅ Vuln Scanner — stripe/stripe-node
 
-*Vuln Scanner — paypal/paypal-js*
-Clean audit. 100 candidates reviewed (21 semgrep, 79 osv), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
-Semgrep hits were all GH Actions mutable-tag hardening, not code vulns. All 79 osv CVE rows are devDependency-only — neither published package (promise-polyfill / @paypal/sdk-constants / server-only) is affected. Agentic review of script-injection and options-processing found safe DOM-API usage throughout, no eval/innerHTML/postMessage.
+*Vuln Scanner — stripe/stripe-node*
+Clean audit. 36 candidates reviewed (3 semgrep, 33 osv rows), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok.
+Webhook-signature verification (the SDK's highest-value surface) reviewed end-to-end: constant-time compare, correct HMAC-SHA256, default replay-tolerance on the real entrypoint, multipart CRLF-injection guard already in place. Published package ships zero runtime deps, so all 33 osv rows are dev-tooling/example-only. PVR disabled; only channel is Stripe's own bug-bounty program (out of scope for auto-disclosure).
