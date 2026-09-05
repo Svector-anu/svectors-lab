@@ -1,13 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-04T13:40:02Z",
+  "last_analyzed": "2026-09-05T12:52:34Z",
   "quality_score": 2,
-  "assessment": "The output is only a generic prompt and provides no token signal, regime verdict, evidence, or actionable position call.",
+  "assessment": "Actionable and conclusion-led, but its precise token, catalyst, market, macro, and wallet-loss claims lack citations or verifiable evidence; it also violates the strategy’s qualitative-only live-price constraint.",
   "flags": [
-    "low_quality",
-    "generic_content"
+    "unverifiable_claim"
   ],
-  "avg_score": 2.58,
+  "avg_score": 2.56,
   "history": [
     {
       "date": "2026-07-11",
@@ -135,6 +134,12 @@
       "date": "2026-09-04",
       "score": 2,
       "ts": "2026-09-04T13:40:02Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 2,
+      "ts": "2026-09-05T12:52:34Z",
       "harness": "codex"
     }
   ]
