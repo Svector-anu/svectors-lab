@@ -1,0 +1,190 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: paypal/paypal-js clean"
+      },
+      "children": [
+        "alert_clean",
+        "stats_section",
+        "sep_1",
+        "scanner_heading",
+        "scanner_status",
+        "sep_2",
+        "semgrep_heading",
+        "semgrep_text",
+        "sep_3",
+        "osv_heading",
+        "osv_text",
+        "sep_4",
+        "agentic_heading",
+        "agentic_text"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "message": "Clean audit. 100 candidates reviewed (21 semgrep, 79 osv), 0 confirmed."
+      }
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_candidates",
+        "stat_semgrep",
+        "stat_osv",
+        "stat_confirmed"
+      ]
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed",
+        "value": "100"
+      }
+    },
+    "stat_semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep",
+        "value": "21"
+      }
+    },
+    "stat_osv": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV",
+        "value": "79"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Vulns",
+        "value": "0"
+      }
+    },
+    "sep_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanner_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h2"
+      }
+    },
+    "scanner_status": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep=ok",
+        "variant": "default"
+      }
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog=ok",
+        "variant": "default"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv=ok",
+        "variant": "default"
+      }
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz=skip",
+        "variant": "outline"
+      }
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic=ok",
+        "variant": "default"
+      }
+    },
+    "sep_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "semgrep_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Semgrep Findings",
+        "level": "h3"
+      }
+    },
+    "semgrep_text": {
+      "type": "Text",
+      "props": {
+        "text": "Semgrep hits were all GH Actions mutable-tag hardening, not code vulns.",
+        "variant": "body"
+      }
+    },
+    "sep_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "osv_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "OSV Findings",
+        "level": "h3"
+      }
+    },
+    "osv_text": {
+      "type": "Text",
+      "props": {
+        "text": "All 79 osv CVE rows are devDependency-only — neither published package (promise-polyfill / @paypal/sdk-constants / server-only) is affected.",
+        "variant": "body"
+      }
+    },
+    "sep_4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "agentic_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Agentic Review",
+        "level": "h3"
+      }
+    },
+    "agentic_text": {
+      "type": "Text",
+      "props": {
+        "text": "Agentic review of script-injection and options-processing found safe DOM-API usage throughout, no eval/innerHTML/postMessage.",
+        "variant": "body"
+      }
+    }
+  }
+}
