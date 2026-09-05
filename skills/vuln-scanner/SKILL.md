@@ -637,7 +637,7 @@ at all — the operator had to notice and re-dispatch by hand). A shorter, hones
 report with some scanners marked `fail` is a completed task; a promise to
 resume is not.
 
-Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata, scanner sources (ok/fail per tool), candidate count, confirmed findings with severity and channel, PoC gate status (`verified` with verifier/chain/block, `not-required` with reason, or `needs-verification`), and dedup note. Do **not** include exploit details for findings disclosed via PVR — redact file/line and link to the advisory ID instead.
+Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata, scanner sources (ok/fail per tool — `trufflehog` and `trufflehog-git` are two separate rows, not one; folding a timed-out history scan into a clean filesystem-scan's `ok` is exactly the silent-masking this split exists to prevent), candidate count, confirmed findings with severity and channel, PoC gate status (`verified` with verifier/chain/block, `not-required` with reason, or `needs-verification`), and dedup note. Do **not** include exploit details for findings disclosed via PVR — redact file/line and link to the advisory ID instead.
 
 Copy each scanner status from `sources.txt` into the report, notification and log.
 Keep `trufflehog` (filesystem) and `trufflehog-git` (history) separate, preserving
@@ -656,7 +656,9 @@ Disclosed via: <PVR: advisory #123 | public PR #45 | skipped (no channel)>
 Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
 ```
 
-If the audit was clean:
+`trufflehog-git=timeout` must always be spelled out here, never folded into a plain `trufflehog=ok` — a clean filesystem pass and a timed-out history pass are different facts, and this is the durable line an operator actually reads. Silently dropping the git-history state here reproduces the exact masking this field exists to prevent.
+
+If no findings were confirmed (choose clean or limited according to actual coverage):
 ```
 *Vuln Scanner — <repo>*
 <Clean audit | Limited audit — name incomplete passes>. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail|none|skipped>, fuzz=<ok|fail|skip>, agentic=<ok|skipped>.
