@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-05T09:23:00Z",
+  "last_analyzed": "2026-09-05T12:52:21Z",
   "quality_score": 3,
-  "assessment": "Actionable position labels and public links make this useful, but it lacks a clear opening regime verdict and several reflexivity claims and numeric assertions are uncited, weakening decision-grade verifiability.",
+  "assessment": "Decision-grade and conclusion-oriented with explicit calls and several evidence links, but some material figures and macro/RWA claims lack direct source anchors, while the acknowledged lower-confidence fallback limits conviction.",
   "flags": [],
-  "avg_score": 2.73,
+  "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-08-29",
-      "score": 2,
-      "ts": "2026-08-29T18:38:24Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-30",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-05",
       "score": 3,
       "ts": "2026-09-05T09:23:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 3,
+      "ts": "2026-09-05T12:52:21Z",
       "harness": "codex"
     }
   ]
