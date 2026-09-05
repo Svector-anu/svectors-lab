@@ -1,10 +1,12 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-09-04T09:23:19Z",
-  "quality_score": 4,
-  "assessment": "Good, concise no-signal verdict with a clear trigger rationale and appropriate restraint, though it lacks a source citation for independent verification.",
-  "flags": [],
-  "avg_score": 3.29,
+  "last_analyzed": "2026-09-05T09:21:50Z",
+  "quality_score": 2,
+  "assessment": "The trigger-based no-op is concise and useful, but the claimed workspace log write contradicts the read-only run constraint and is therefore unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.24,
   "history": [
     {
       "date": "2026-07-08",
@@ -126,6 +128,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T09:23:19Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 2,
+      "ts": "2026-09-05T09:21:50Z",
       "harness": "codex"
     }
   ]
