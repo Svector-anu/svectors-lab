@@ -150,14 +150,14 @@
     "last_quality_score": 2
   },
   "digest": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-23T14:29:47Z",
     "total_runs": 170,
     "total_successes": 30,
     "total_failures": 140,
     "consecutive_failures": 0,
     "success_rate": 0.18,
-    "last_dispatch": "2026-09-04T17:03:26Z",
+    "last_dispatch": "2026-09-05T15:38:21Z",
     "last_error": "41e1e2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-09-04T17:06:26Z",
     "last_quality_score": 2
@@ -174,27 +174,27 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-09-05T13:31:11Z",
     "total_runs": 160,
     "total_successes": 51,
     "total_failures": 109,
     "consecutive_failures": 1,
     "success_rate": 0.32,
-    "last_dispatch": "2026-09-05T05:38:17Z",
+    "last_dispatch": "2026-09-05T15:38:21Z",
     "last_error": "038e21\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-09-05T12:44:54Z",
     "last_quality_score": 4
   },
   "auto-merge": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-07-29T08:24:35Z",
     "total_runs": 21,
     "total_successes": 20,
     "total_failures": 1,
     "consecutive_failures": 0,
     "success_rate": 0.95,
-    "last_dispatch": "2026-09-04T17:03:26Z",
+    "last_dispatch": "2026-09-05T15:38:21Z",
     "last_success": "2026-09-04T17:05:00Z",
     "last_quality_score": 4
   },
@@ -255,7 +255,7 @@
     "last_quality_score": 1
   },
   "search-skill": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-04T17:06:08Z",
     "total_runs": 20,
     "total_successes": 20,
@@ -263,7 +263,7 @@
     "consecutive_failures": 0,
     "success_rate": 1,
     "last_quality_score": 3,
-    "last_dispatch": "2026-09-04T17:03:26Z"
+    "last_dispatch": "2026-09-05T15:38:21Z"
   },
   "skill-repair": {
     "last_status": "success",
