@@ -638,7 +638,7 @@ at all — the operator had to notice and re-dispatch by hand). A shorter, hones
 report with some scanners marked `fail` is a completed task; a promise to
 resume is not.
 
-Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata, scanner sources (ok/fail per tool), candidate count, confirmed findings with severity and channel, PoC gate status (`verified` with verifier/chain/block, `not-required` with reason, or `needs-verification`), and dedup note. Do **not** include exploit details for findings disclosed via PVR — redact file/line and link to the advisory ID instead.
+Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata, scanner sources (ok/fail per tool — `trufflehog` and `trufflehog-git` are two separate rows, not one; folding a timed-out history scan into a clean filesystem-scan's `ok` is exactly the silent-masking this split exists to prevent), candidate count, confirmed findings with severity and channel, PoC gate status (`verified` with verifier/chain/block, `not-required` with reason, or `needs-verification`), and dedup note. Do **not** include exploit details for findings disclosed via PVR — redact file/line and link to the advisory ID instead.
 
 ### A8. Notify
 
@@ -648,13 +648,15 @@ Use `./notify`. One paragraph. Lead with the verdict.
 *Vuln Scanner — <repo>*
 <N> confirmed findings (<severity-summary>).
 Disclosed via: <PVR: advisory #123 | public PR #45 | skipped (no channel)>
-Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
+Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
 ```
+
+`trufflehog-git=timeout` must always be spelled out here, never folded into a plain `trufflehog=ok` — a clean filesystem pass and a timed-out history pass are different facts, and this is the durable line an operator actually reads. Silently dropping the git-history state here reproduces the exact masking this field exists to prevent.
 
 If the audit was clean:
 ```
 *Vuln Scanner — <repo>*
-Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, osv=ok, fuzz=skip, agentic=ok.
+Clean audit. <M> candidates reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok.
 ```
 
 Then log per the **Log** section below with `Mode: scan`.
@@ -1016,7 +1018,7 @@ specific bullets.
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
 - Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
-- Scanner status: semgrep=ok trufflehog=ok osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification
+- Scanner status: semgrep=ok trufflehog=ok trufflehog-git=ok|fail|timeout osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification
 - Advisory/PR links: [...]
 ```
 
