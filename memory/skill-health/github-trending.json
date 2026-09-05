@@ -1,10 +1,12 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-04T13:39:26Z",
-  "quality_score": 4,
-  "assessment": "Substantive, conclusion-first trending report with direct repository links and useful categorization, though momentum labels and precise benchmark claims lack explicit evidence anchors and it offers little actionable relevance to the crypto-trader strategy.",
-  "flags": [],
-  "avg_score": 3.09,
+  "last_analyzed": "2026-09-05T12:52:39Z",
+  "quality_score": 2,
+  "assessment": "Substantive and source-linked, but it does not serve the crypto-trading strategy: there is no regime verdict, evidence-backed crypto signal, or explicit position call.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 3.04,
   "history": [
     {
       "date": "2026-07-28",
@@ -121,6 +123,12 @@
       "date": "2026-09-04",
       "score": 4,
       "ts": "2026-09-04T13:39:26Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 2,
+      "ts": "2026-09-05T12:52:39Z",
       "harness": "codex"
     }
   ]
