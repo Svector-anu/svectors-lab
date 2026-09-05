@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-05T16:05:55Z",
+  "last_analyzed": "2026-09-05T16:12:37Z",
   "quality_score": 4,
-  "assessment": "Good: concise, actionable review verdict with a specific file/line finding, clear technical rationale, CI status, and traceable PR metadata.",
+  "assessment": "Clear, conclusion-first, actionable PR verdict with exact commit and CI status, though direct evidence links would improve verifiability.",
   "flags": [],
-  "avg_score": 3.27,
+  "avg_score": 3.23,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 5,
-      "ts": "2026-09-01T16:00:28Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-01",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-05",
       "score": 4,
       "ts": "2026-09-05T16:05:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 4,
+      "ts": "2026-09-05T16:12:37Z",
       "harness": "codex"
     }
   ]
