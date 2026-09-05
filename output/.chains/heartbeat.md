@@ -1,12 +1,14 @@
 Heartbeat completed.
 
-- Overall: 🔴 DEGRADED
-- `vuln-scanner` is currently failed; 11 enabled skills meet the chronic-failure threshold.
-- Four critical issues remain open.
-- No stalled PRs; only today’s PRs #70 and #72 are open.
-- `slop-watch` recovered, clearing the prior scheduler gap.
-- No notification sent because all remaining findings were reported within 48 hours.
+- `STATUS_PAGE=DEGRADED`
+- `vuln-scanner` remains failed with four consecutive failures.
+- PR #70 is newly stalled beyond 24 hours.
+- No scheduled skills are missing or overdue.
+- Four critical health issues remain open.
+- Notification attempted, but the harness’s external queue is read-only, so delivery was not confirmed.
+- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
+- Appended the run to [memory/logs/2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
 
 ## Summary
 
-Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and appended the run to [memory/logs/2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md). Validation passed; unrelated workspace changes were preserved.
+Updated the public fleet status and heartbeat log. Validation passed; unrelated existing worktree changes were preserved.
