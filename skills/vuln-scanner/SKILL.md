@@ -142,9 +142,20 @@ fi
 if command -v trufflehog >/dev/null 2>&1; then
   trufflehog filesystem . --only-verified --json \
     > /tmp/vuln-scan/trufflehog.json 2>/dev/null || true
-  # Also scan full git history for secrets
-  trufflehog git file://. --only-verified --json \
-    > /tmp/vuln-scan/trufflehog-git.json 2>/dev/null || true
+  # Also scan full git history for secrets — BOUNDED. An unbounded `trufflehog git`
+  # walks every commit's every tree, and a large packed history (measured: 200
+  # commits / ~369MB on one real run) can eat the whole turn budget by itself,
+  # with nothing to show it happened until the run reports "success" anyway
+  # having produced no report at all. `timeout` turns that silent budget-burn
+  # into an ordinary, honestly-recorded `fail` — same as an install failure,
+  # never a reason to write a "still running, will resume" placeholder as the
+  # final output. There is no resume: a workflow_dispatch run is one shot, and
+  # a note promising to pick back up later is not truthful about what a single
+  # run can actually do.
+  timeout 300 trufflehog git file://. --only-verified --json \
+    > /tmp/vuln-scan/trufflehog-git.json 2>/dev/null
+  TRUFFLEHOG_GIT_RC=$?
+  [ "$TRUFFLEHOG_GIT_RC" = 124 ] && echo "VULN_SCANNER_TIMEOUT: trufflehog git history scan exceeded 300s on a large packed history — recorded as fail, not retried, not left unfinished"
 else
   echo "VULN_SCANNER_SKIPPED: trufflehog not available"
 fi
@@ -181,6 +192,15 @@ fi
 # Record what succeeded (empty output ≠ clean, could be tool failure)
 echo "semgrep=$([ -s /tmp/vuln-scan/semgrep.json ] && echo ok || echo fail)" >  /tmp/vuln-scan/sources.txt
 echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+# Recorded separately from the filesystem pass above: they can genuinely diverge
+# (filesystem scan clean and fast, git-history scan timed out on a large packed
+# repo, or vice versa) and collapsing both into one trufflehog= line hides
+# whichever one actually failed.
+if [ "${TRUFFLEHOG_GIT_RC:-1}" = 124 ]; then
+  echo "trufflehog-git=timeout"                                                  >> /tmp/vuln-scan/sources.txt
+else
+  echo "trufflehog-git=$([ -s /tmp/vuln-scan/trufflehog-git.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+fi
 echo "osv=${OSV_STATUS:-fail}"                                                    >> /tmp/vuln-scan/sources.txt
 ```
 
@@ -604,6 +624,19 @@ Append to `memory/vuln-scanned.json` (create if missing) so future runs skip thi
 ```
 
 ### A7. Write local report
+
+**There is no resume.** Every scanner step above is now bounded (timeouts on the
+slow ones, `command -v` guards on missing binaries), so nothing should genuinely
+hang forever — but if you are still running low on turns by this point, finish
+the report with whatever scanners actually completed, record the rest `fail` in
+`sources.txt` (§A3's rule: unfinished is `fail`, not a pending state), and write
+A7/A8 now. A single `workflow_dispatch` run is one shot with no continuation —
+writing "still running, will pick this up automatically" as the final output is
+not true of this run path (it was live-observed: a run reported workflow
+`success` having written that sentence instead of a report, with no ledger entry
+at all — the operator had to notice and re-dispatch by hand). A shorter, honest
+report with some scanners marked `fail` is a completed task; a promise to
+resume is not.
 
 Save to `output/articles/vuln-scan-${today}.md` with sections for: repo metadata, scanner sources (ok/fail per tool), candidate count, confirmed findings with severity and channel, PoC gate status (`verified` with verifier/chain/block, `not-required` with reason, or `needs-verification`), and dedup note. Do **not** include exploit details for findings disclosed via PVR — redact file/line and link to the advisory ID instead.
 
