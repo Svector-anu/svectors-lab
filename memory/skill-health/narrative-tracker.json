@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-05T12:52:21Z",
+  "last_analyzed": "2026-09-05T19:29:11Z",
   "quality_score": 3,
-  "assessment": "Decision-grade and conclusion-oriented with explicit calls and several evidence links, but some material figures and macro/RWA claims lack direct source anchors, while the acknowledged lower-confidence fallback limits conviction.",
+  "assessment": "Actionable and strategy-aligned, but several catalysts and figures lack direct supporting citations, and the privacy transition links to an apparently unrelated Bitcoin ETF article.",
   "flags": [],
-  "avg_score": 2.77,
+  "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-08-30",
-      "score": 2,
-      "ts": "2026-08-30T01:20:31Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-30",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-05",
       "score": 3,
       "ts": "2026-09-05T12:52:21Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 3,
+      "ts": "2026-09-05T19:29:11Z",
       "harness": "codex"
     }
   ]
