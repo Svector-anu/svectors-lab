@@ -1,77 +1,75 @@
-## Tweet Drafts: Security fixes need judgment
+## Tweet Drafts: a CVE count is not an attack surface
 
 ### Tier 1 — One-liner
 
 **1a. Hot take**
 
-> finding a cve is easy. shipping the right fix is the work
+> a CVE count is not an attack surface
 
-**1b. Sardonic**
+**1b. Data drop**
 
-> a security patch that breaks production is just another incident
+> 79 dependency CVEs, zero shipped runtime exposure. reachability matters.
 
 ### Tier 2 — Two-punch
 
 **2a. Reframe**
 
-> scanners found the vulnerable packages. judgment decided which fixes could ship today without breaking users
+> scanners find vulnerable versions. engineers still have to prove those versions ship, run, and are reachable.
 
-**2b. Data drop**
+**2b. Sardonic**
 
-> five dependency fixes were safe patch bumps. two needed breaking upgrades, so i left them for deeper work. security is not a version-number contest
+> 79 CVE rows looks terrifying. then you check the published package and find none of those dependencies reach production.
 
 ### Tier 3 — Paragraph
 
 **3a. Observation**
 
-> a scanner can tell you a dependency is vulnerable. it cannot own the upgrade risk. five fixes were safe to ship today. two needed major version jumps and more testing, so i did not pretend the job was done
+> a dependency scanner gives you candidates, not conclusions. the package may be vulnerable, dev-only, or trapped in a benchmark lockfile. the real security work starts after the report lands.
 
-**3b. Hot take**
+**3b. Data drop**
 
-> the useful security report is not “60 vulnerabilities found.” it is five fixes shipped, two risky upgrades isolated, and evidence for every decision. scan volume is noise until someone does the engineering
+> paypal-js returned 79 dependency CVE rows. zero touched either published package at runtime. counting findings is easy. proving what users install and attackers can reach is the security work.
 
 ### Tier 4 — Long tweet
 
 **4a. Narrative**
 
-> audited a security tool today. the scanner returned 60 dependency rows. after tracing what actually ships, most were dev or test-only. five production fixes were safe patch or minor bumps, so i opened the PR. two needed breaking major upgrades, so i documented the risk instead of forcing them in. finding version numbers is automation. deciding what can ship is engineering
+> scanned paypal-js today and got 79 dependency CVE rows. looked bad until i traced what actually ships. every flagged package lived in dev tooling, while the two published packages only carry a tiny runtime set with zero overlap. scanners are good at finding versions. they cannot replace checking the artifact, dependency role, and reachable path.
 
 **4b. Observation**
 
-> dependency security gets flattened into “bump everything.” real repos are messier. some findings never reach production. some fixes are safe within the current major. others change APIs and need proper migration work. today’s result was five fixes shipped and two upgrades deliberately deferred. a smaller honest patch beats a large fake cleanup
+> security scanners are candidate generators, not verdict machines. paypal-js produced 79 dependency CVE rows today, but none were part of the published runtime surface. the same pattern showed up in hono and stripe-node. if an audit ends at the count, it is measuring lockfile noise. the job is to prove what ships and whether an attacker can reach it.
 
 ### Tier 5 — Thread opener
 
 **5a. Data drop**
 
-> a dependency scanner gave me 60 vulnerability rows. only five belonged in the patch i could safely ship today. here is what happened to the other 55
+> i scanned paypal-js and found 79 dependency CVE rows. then i checked the published packages. zero of those dependencies shipped at runtime. this is why vulnerability counts without reachability are mostly noise.
 
 ---
 
-- separating production dependencies from dev and test tooling
-- checking whether existing upgrade PRs actually fix the disclosed CVEs
-- shipping five safe patch and minor upgrades
-- deferring two breaking major upgrades for proper migration work
+- Why lockfiles overstate production exposure
+- How to inspect published artifacts and dependency roles
+- Where reachability turns a CVE into real risk
+- The same pattern in Hono and Stripe Node
 
 **5b. Reframe**
 
-> security automation is good at producing findings. the hard part is turning them into a patch maintainers can merge without inheriting a second incident
+> three clean audits taught me the same thing: a scary dependency report can describe tooling and benchmark code, not the product users install. the lockfile is evidence. it is not the attack surface.
 
 ---
 
-- why raw vulnerability counts mislead
-- how reachability changes triage
-- where upgrade risk becomes engineering work
-- what evidence makes a security PR mergeable
+- What the scanners correctly found
+- Why dev tooling and benchmarks appeared
+- Tracing what users actually install
+- A better audit verdict than counting rows
 
-Best overall: **#4a**  
-Best per tier: **1a, 2b, 3b, 4a, 5a**
-
-The latest draft was saved to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md). Notification and revision-offer delivery were attempted but blocked by the read-only external queue.
+Best overall: **#4b**. Best per tier: **#1a, #2b, #3b, #4b, #5a**.
 
 ## Summary
 
-- Generated 10 drafts across five size tiers.
-- Selected today’s verified harden-runner audit as the topic.
-- Saved the revisable draft and logged the run.
-- No X enrichment was used because `XAI_API_KEY` was unset.
+- Saved the complete batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Recorded the run in [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
+- Verified every tweet against its character limit.
+- xAI enrichment was skipped because its key was unset.
+- Notification and revision-offer delivery were attempted, but the external queue was read-only.
