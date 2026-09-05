@@ -188,7 +188,7 @@ cmd_run() {
   local work; work="$(mktemp -d)"
   echo "dry-run: private local evidence directory: $work (do not commit raw output)" >&2
   local envfile="$work/synth.env" capture="$work/notify-capture"
-  mkdir -p "$(dirname "$verdict")" "$capture"
+  mkdir -p "$capture"
 
   # 1. Synthetic env for everything the skill declares.
   local reqs; reqs="$(bash "$ROOT/scripts/skill_requires.sh" "$skill" 2>/dev/null | paste -sd, - || true)"

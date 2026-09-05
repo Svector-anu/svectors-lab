@@ -41,7 +41,7 @@ elapsed time, result character count and reason. Stdout/stderr are captured in t
 private temporary directory printed at startup. Treat those files as private: inspect
 locally when diagnosing a failure, never commit them or publish them without review.
 
-## verification — 2026-09-05
+## verification - 2026-09-05
 
 The existing CI step invokes `scripts/tests/test_dry_run.sh`; that test now invokes
 `test_dry_run_dispatch.sh` too. Offline tests use the real dry-run and mode/requires
