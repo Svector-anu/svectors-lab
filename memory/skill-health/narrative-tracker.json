@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-05T01:07:03Z",
+  "last_analyzed": "2026-09-05T09:23:00Z",
   "quality_score": 3,
-  "assessment": "Actionable position calls and source links make this useful, but it lacks a conclusion-first regime verdict and leaves mindshare scores and several supporting claims insufficiently sourced.",
+  "assessment": "Actionable position labels and public links make this useful, but it lacks a clear opening regime verdict and several reflexivity claims and numeric assertions are uncited, weakening decision-grade verifiability.",
   "flags": [],
   "avg_score": 2.73,
   "history": [
-    {
-      "date": "2026-08-29",
-      "score": 3,
-      "ts": "2026-08-29T15:20:12Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-29",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-05",
       "score": 3,
       "ts": "2026-09-05T01:07:03Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 3,
+      "ts": "2026-09-05T09:23:00Z",
       "harness": "codex"
     }
   ]

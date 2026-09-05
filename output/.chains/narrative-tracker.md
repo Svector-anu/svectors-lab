@@ -1,22 +1,30 @@
 *Narrative Tracker — 2026-09-05*
 
 TRANSITIONS
-• NEW: Robinhood Chain memecoin flywheel — Pons fees and buybacks turned chain usage into a reflexive token loop — https://www.coindesk.com/tech/2026/09/03/a-memecoin-making-app-becomes-crypto-s-top-fee-generators-as-robinhood-chain-activity-explodes
-• NEW: regulated onchain banking — OpenReserve charter progress plus SoFi/Kraken settlement integration makes this more than stablecoin marketing — https://www.coindesk.com/policy/2026/09/03/u-s-banking-agency-gives-blockchain-bank-openreserve-initial-ok-to-operate
-• NEW: AI cyber arms race — autonomous exploit capability is pulling defensive access and funding forward — https://www.coindesk.com/tech/2026/09/04/openai-puts-usd1-billion-behind-cyber-defense-after-unveiling-ai-that-can-find-zero-days
+• NEW: bank-issued stablecoin rails — 21 institutions committed to a global USD coin company; strongest adoption signal — https://newsroom.wf.com/news-releases/news-details/2026/Group-of-leading-international-financial-institutions-to-establish-stablecoin-enterprise/default.aspx
+• NEW: agentic finance rails — Binance Agent OS bundled trading, wallets, x402 and MCP into one access layer — https://www.prnewswire.com/apac/news-releases/binance-introduces-agent-os-to-connect-ai-applications-to-financial-infrastructure-302865254.html
+• NEW: regulated prediction/perps convergence — Kalshi added five altcoin perpetuals; Polymarket also broadened perps — https://crypto.news/kalshi-adds-5-crypto-perpetuals-for-u-s-traders/
+• NEW: privacy ETF beta — ZEC attention accelerated around the Grayscale spot ETF rollout — https://decrypt.co/377393/morning-minute-crypto-stages-major-rally-on-rate-hopes
+• NEW: RWA/tokenized credit — $7.83B distributed value, +5.55% over 30 days; durable growth, but already crowded — https://coinedition.com/rwa-depin-defi-ai-and-refi-which-crypto-narrative-is-winning-2026/
 
 REFLEXIVITY ALERT
-• Robinhood Chain memecoins — Pons uses retained fees to buy and burn PONS; 29% of original supply was removed while the token rose 300% in a week. Narrative-driven trading also delivered roughly one-fifth of chain lifetime fees in one day.
+• macro-beta rally — Waller repricing triggered >$400M short liquidations, amplifying the move without a crypto fundamental shift.
+• BTC prediction loop — Polymarket odds for an $82.5K September print reportedly jumped 30 points to 82.5%, mirroring and reinforcing breakout belief.
+• tokenized-stock meme spillover — AMC/Robinhood attention coincided with MEME strength; story-led, not a disclosed protocol change.
 
 POSITIONS
-• FRONT-RUN: AI-native crypto security (mindshare 2 ↑↑, Mixed) — @OpenAI, @coinbase, @Blockstream — security budgets may accrue off-token; watch picks-and-shovels, not an “AI coin.”
-• RIDE: regulated onchain banking (4 ↑, Bull) — @a16zcrypto, @coinbase, @krakenfx — final charters and actual deposits still have to arrive.
-• RIDE: tokenized assets (4 ↑, Mixed) — @RobinhoodApp, @tZERO, @solana — synthetic-share objections can slow adoption.
-• FADE: Robinhood Chain memecoin flywheel (5 ↑↑, Cope) — @RobinhoodApp, @DefiLlama, @Arbitrum — fees are concentrated in speculative churn and buyback reflexivity.
-• WATCH: agentic crypto payments (3 →, Mixed) — @circle, @coinbase, @KiteAI — plenty of positioning, limited fresh three-day usage proof.
+• RIDE: bank stablecoins (5 ↑↑, Bull) — @WellsFargo, Citi, Goldman Sachs — launch is targeted for 2027, so execution risk is real.
+• FRONT-RUN: agentic finance rails (3 ↑↑, Bull) — @binance, @x402, @coinbase — native-token value capture remains unproven.
+• RIDE: regulated perps/prediction convergence (4 ↑, Bull) — @Kalshi, @Polymarket, @CFTC — fragmented liquidity and leverage costs can cap adoption.
+• RIDE: privacy ETF beta (3 ↑↑, Bull) — @Zcash, Grayscale, @decryptmedia — ETF-driven demand may not translate into network usage.
+• WATCH: RWA/tokenized credit (4 →, Mixed) — RWA.xyz, Aave, Hyperliquid — strong fundamentals, no contrarian edge at this saturation.
+• FADE: macro short-squeeze chase (5 →, Mixed) — Waller, IBIT/BlackRock, @coinbase — forced covering is weaker fuel than fresh spot demand.
+• WATCH: onchain revenue DeFi (3 ↑, Bull) — Hyperliquid, Uniswap, PONS — isolated records can hide incentive-driven or unsustained activity.
 
 MAP
-Emerging: AI-native crypto security; privacy-tech rebound
-Rising: regulated onchain banking; tokenized assets
-Peak: Robinhood Chain memecoins
-Fading: none (no prior baseline)
+Emerging: agentic finance rails
+Rising: bank stablecoins; regulated perps; privacy ETF beta; onchain revenue DeFi
+Peak: RWA/tokenized credit; macro short-squeeze
+Fading: none
+
+confidence: medium-low; required X.AI primary fetch failed (key-unset/http-400), so this map uses public web evidence.
