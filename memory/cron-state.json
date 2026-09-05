@@ -382,16 +382,16 @@
     "last_quality_score": 4
   },
   "pr-review": {
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-09-04T06:18:15Z",
-    "total_runs": 53,
-    "total_successes": 34,
+    "total_runs": 54,
+    "total_successes": 35,
     "total_failures": 19,
     "consecutive_failures": 0,
-    "success_rate": 0.64,
+    "success_rate": 0.65,
     "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
-    "last_success": "2026-09-04T13:37:40Z",
-    "last_quality_score": 3,
+    "last_success": "2026-09-05T12:52:22Z",
+    "last_quality_score": 4,
     "last_dispatch": "2026-09-05T12:49:38Z"
   },
   "chain:dev-loop": {
