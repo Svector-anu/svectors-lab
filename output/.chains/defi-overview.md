@@ -1,16 +1,17 @@
-Take: chop, low conviction — BTC fell 2.1% and breadth weakened to 7/20, but Fear & Greed held at 74.
+Take: chop — BTC fell 1.7% with only 6/20 top caps green, while Fear & Greed remained elevated at 73. Conviction: medium.
 
-Positioning: fade broad beta; ride only activity-confirmed Uniswap/privacy strength; watch ETF-flow follow-through.
+DeFi is mixed: TVL declined 1.1% to $87.36B and DEX volume fell 1.8%, while stablecoin supply expanded 0.43%. Privacy assets and Uniswap activity remain the strongest narratives.
 
-- DeFi verdict: mixed — TVL −1.7%, DEX volume +13.2%, stable supply +0.4%.
-- Sustainable yields: Raydium WSOL-USDC 69.6%, Uniswap V3 WETH-USDT 55.9%, Uniswap V4 ETH-LINK 37.0%.
-- No tracked positions are configured.
-- All data sources succeeded.
-- Notification delivery was attempted but blocked by the harness’s read-only external queue.
+Updated:
+
+- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
+- [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md)
+
+All data sources succeeded and `git diff --check` passed. No positions were configured. Notification delivery was attempted, but the harness’s external queues were read-only.
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Appended the full run to [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md).
-- Preserved the complete token-pick history.
-- Validation passed with `git diff --check`.
+- Refreshed the complete DeFi and macro snapshot.
+- Preserved the token-pick history.
+- Logged source health, yields, narratives, movers, and position status.
+- Notification generated but not delivered due to the read-only queue.
