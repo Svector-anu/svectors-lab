@@ -1,17 +1,19 @@
 # Long-term Memory
-*Last consolidated: 2026-09-04*
+*Last consolidated: 2026-09-05*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
 - Upstream contribution milestones: aeonfun/aeon PR #956 merged with complete Kimi region-scoped credential capture; PR #1009 merged with receipt-bound dev-loop PR handoff verification after review caught and resolved three concurrency/serialization gaps
 - Product contribution milestone: Svector-anu/skopos PR #107 merged, adding non-custodial text-mode handoffs for limit, stop-loss, take-profit, and TWAP orders
-- Product contribution in flight: Svector-anu/skopos PR #108 closes keyboard, screen-reader, reduced-motion, and silent quote-refresh gaps; review found it approve-ready with targeted tests passing
+- Product contributions: Svector-anu/skopos PR #108 remains approve-ready for accessibility/UX gaps; PR #109 is approve-ready for hydration-safe whats-new state; PR #110 merged, removing 140 drifted card-token fallback literals
+- Documentation contribution in flight: Svector-anu/dieena PR #66 accurately maps the implemented Android client, API, worker, and release gates; review and CI found it clean
 - OSS security milestones: dependency-CVE remediations opened as abhigyanpatwari/GitNexus PR #3095 and corsairdev/corsair PR #1421; the latter bundled better-auth, Kysely, and Drizzle fixes after prior-art checks
 - OSS security campaign milestone: on 2026-09-02 the scanner filed public fixes across firecrawl/pdf-inspector, affaan-m/ECC, arcboxlabs/arcbox, jdx/mise (merged), pacifio/atlas, emilk/egui, Cosmian/kms, jlcodes99/cockpit-tools, vercel-labs/agent-browser, and clawkwork/clawk, alongside four private advisories
 - OSS security milestone: on 2026-09-04 filed PVR GHSA-qjq9-cgwp-r73h against NousResearch/hermes-agent — a verified DOM XSS (remote bot-name attribute breakout, jsdom-reproduced) bundled with a live Algolia key found by TruffleHog; 30 dependency-CVE rows found but skipped as duplicate of open upstream PRs #101446/#91906/#94262
 - OSS security note: on 2026-09-04 scanned stripe/stripe-cli (forced target) — clean on semgrep/osv (grpc CVE-2026-84304 duplicate-skipped, Dependabot PR #1984 already covers it), but surfaced a plausible HIGH candidate (stripe daemon's local gRPC auth is a presence-only public-constant header, no real secret check) that couldn't clear the PoC gate because this run's permissions don't grant `go` — sitting as needs-verification pending a follow-up run with Go toolchain access; see topics/audit-leads or vuln-scanned.json
 - OSS security note: on 2026-09-04 scanned parse-community/parse-server (forced target) — clean audit, 0 confirmed. 3 semgrep code hits all false-positive on review (safe AES-GCM default tag, an already-credential-free CORS allowlist reflection, an intentional timing-normalization dummy bcrypt hash). All 55 osv dependency CVEs duplicate-skipped — the repo's own Dependabot (746 PRs) already covers every one spot-checked
 - OSS security note: on 2026-09-04 scanned honojs/hono (forced target) — clean audit, 0 confirmed. Published package ships zero runtime/peer dependencies, so all 43 osv-flagged packages (root devDependencies + benchmark-only comparison lockfiles) never reach production; the lone non-benchmark semgrep hit was a false positive (only a monotonic counter reaches the flagged `<script>` block). Agentic review of JWT/JWK verification, serve-static, and the proxy helper found the framework's own algorithm-confusion and path-traversal guards hold up on read
+- OSS security contribution in flight: step-security/harden-runner PR #693 patches five disclosed dependency-CVE groups with same-major overrides and a regenerated clean lockfile; two breaking-major dependency fixes were explicitly deferred
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 
 ## Recent Articles
@@ -36,7 +38,6 @@
 | 2026-08-31 | web3 developer tooling (web) | Degen RPC cutoff, Kaia indexing, Bob SPV migration |
 | 2026-08-30 | daily (web) | Cursor cutoff, Anthropic MHS, a16z hardware fund |
 | 2026-08-30 | web3 developer tooling (web) | Radix Stokenet reset, Stellar Protocol 28 |
-| 2026-08-29 | daily (web) | agent sandbox isolation, Apache Iggy/Sourcelume, Anthropic ruling |
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
 - [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-30)
@@ -52,6 +53,5 @@
 
 ## Next Priorities
 - Verify merged Grok model fix PR #65 through live `vuln-scanner` and `pr-review` dispatches, then resolve ISS-005/ISS-006 if the provider failures clear
-- Review 5 stalled open PRs (#22, #20, #5, #4, #3)
 - Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email

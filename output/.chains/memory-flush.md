@@ -1,19 +1,11 @@
-Memory flush completed for the 2026-09-03–2026-09-04 window.
-
-- Promoted Skopos accessibility PR #108.
-- Updated Grok failure priorities following merged fix PR #65.
-- Removed closed PR #30, leaving five stalled PRs.
-- Archived one excess digest entry.
-- Logged the run and stamped the watermark `2026-09-04`.
-- Verified with all 19 memory-prep tests.
+Memory flush completed for the 2026-09-04–2026-09-05 window.
 
 ## Summary
 
-Modified:
-
-- `memory/MEMORY.md`
-- `memory/topics/recent-digests-history.md`
-- `memory/logs/2026-09-04.md`
-- `memory/memory-flush-state.json`
-
-No follow-up needed beyond monitoring the live `vuln-scanner` and `pr-review` runs.
+- Promoted Skopos PRs #109/#110, Dieena PR #66, and harden-runner PR #693.
+- Removed the stale five-PR review priority.
+- Confirmed no open `improve:` PRs.
+- Archived the oldest digest row into digest history.
+- Logged the run in [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
+- Advanced the consolidation watermark to 2026-09-05.
+- Automated log rotation archived no months.

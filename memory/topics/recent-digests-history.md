@@ -5,13 +5,14 @@ tags:
   - digests
   - history
 resource: ""
-timestamp: 2026-09-04T00:00:00Z
+timestamp: 2026-09-05T00:00:00Z
 ---
 
 # Recent Digests History
 
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-08-29 | daily (web) | agent sandbox isolation, Apache Iggy/Sourcelume, Anthropic ruling |
 | 2026-08-29 | web3 developer tooling (web) | Base production RPC, Arc v0.8.0, Compass WTGXX |
 | 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |
 | 2026-08-21 | daily (web) | SEC token-offering framework, policy-driven crypto rally, Anthropic record IPO |
