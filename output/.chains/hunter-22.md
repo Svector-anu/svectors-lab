@@ -1,17 +1,18 @@
-## Hunter 22 report
+Hunter-22 completed.
 
-`HUNTER_22_EMPTY`
-
-- Free ClawHunter match request succeeded: HTTP 200, 25 candidates.
-- Four candidates were new; none survived honest delivery triage.
-- Two were social/video promotion campaigns.
-- Two were region-gated hackathons requiring external registration and complete contest submissions; one also required on-chain work within 48 hours.
-- Audit-shaped GitHub candidates: 0.
+- Free `/api/v1/match`: HTTP 200, 25 candidates.
+- New candidates: 2.
+- Genuine matches: 0.
+- Audit-shaped GitHub targets: 0.
 - No notification sent.
 - No paid endpoints, wallet actions, claims, or submissions performed.
-- Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [2026-09-04.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-04.md).
-- JSON and diff validation passed.
+- Updated `memory/topics/hunter-22-seen.json` and logged the run in `memory/logs/2026-09-05.md`.
+
+The two new candidates were rejected:
+
+- A full Cookie Chain app contest requiring deployment, wallet transactions, and social/community posting.
+- A token-promotion LinkedIn engagement task paying $8.56, below the $20 minimum.
 
 ## Summary
 
-The scan completed successfully with no genuine new opportunities. The required commit could not be created because this harness provides read-only access to `.git`; the validated workspace changes remain uncommitted.
+The output files validate cleanly. I could not create the requested branch or commit because this harness mounts `.git` read-only; the workspace changes remain ready for the outer workflow to persist. Existing unrelated changes were untouched.
