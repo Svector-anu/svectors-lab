@@ -1,19 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-05T15:55:48Z",
-  "quality_score": 2,
-  "assessment": "The finding is concrete and actionable, but claims of posting a GitHub review and updating workspace files contradict the explicitly read-only, public-data-only run constraints.",
-  "flags": [
-    "unverifiable_claim"
-  ],
+  "last_analyzed": "2026-09-05T16:05:55Z",
+  "quality_score": 4,
+  "assessment": "Good: concise, actionable review verdict with a specific file/line finding, clear technical rationale, CI status, and traceable PR metadata.",
+  "flags": [],
   "avg_score": 3.27,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 4,
-      "ts": "2026-09-01T15:48:42Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-01",
       "score": 5,
@@ -186,6 +178,12 @@
       "date": "2026-09-05",
       "score": 2,
       "ts": "2026-09-05T15:55:48Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 4,
+      "ts": "2026-09-05T16:05:55Z",
       "harness": "codex"
     }
   ]
