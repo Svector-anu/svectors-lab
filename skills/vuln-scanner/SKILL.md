@@ -140,8 +140,9 @@ fi
 
 # --- Secrets: TruffleHog (only-verified = actually authenticates) ---
 if command -v trufflehog >/dev/null 2>&1; then
+  TRUFFLEHOG_RC=0
   trufflehog filesystem . --only-verified --json \
-    > /tmp/vuln-scan/trufflehog.json 2>/dev/null || true
+    > /tmp/vuln-scan/trufflehog.json 2>/dev/null || TRUFFLEHOG_RC=$?
   # Also scan full git history for secrets — BOUNDED. An unbounded `trufflehog git`
   # walks every commit's every tree, and a large packed history (measured: 200
   # commits / ~369MB on one real run) can eat the whole turn budget by itself,
@@ -152,9 +153,9 @@ if command -v trufflehog >/dev/null 2>&1; then
   # final output. There is no resume: a workflow_dispatch run is one shot, and
   # a note promising to pick back up later is not truthful about what a single
   # run can actually do.
+  TRUFFLEHOG_GIT_RC=0
   timeout 300 trufflehog git file://. --only-verified --json \
-    > /tmp/vuln-scan/trufflehog-git.json 2>/dev/null
-  TRUFFLEHOG_GIT_RC=$?
+    > /tmp/vuln-scan/trufflehog-git.json 2>/dev/null || TRUFFLEHOG_GIT_RC=$?
   [ "$TRUFFLEHOG_GIT_RC" = 124 ] && echo "VULN_SCANNER_TIMEOUT: trufflehog git history scan exceeded 300s on a large packed history — recorded as fail, not retried, not left unfinished"
 else
   echo "VULN_SCANNER_SKIPPED: trufflehog not available"
@@ -191,15 +192,18 @@ fi
 
 # Record what succeeded (empty output ≠ clean, could be tool failure)
 echo "semgrep=$([ -s /tmp/vuln-scan/semgrep.json ] && echo ok || echo fail)" >  /tmp/vuln-scan/sources.txt
-echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+# TruffleHog JSON is finding-only: an exit-0 empty stream is a clean scan.
+echo "trufflehog=$([ "${TRUFFLEHOG_RC:-1}" = 0 ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
 # Recorded separately from the filesystem pass above: they can genuinely diverge
 # (filesystem scan clean and fast, git-history scan timed out on a large packed
 # repo, or vice versa) and collapsing both into one trufflehog= line hides
 # whichever one actually failed.
 if [ "${TRUFFLEHOG_GIT_RC:-1}" = 124 ]; then
   echo "trufflehog-git=timeout"                                                  >> /tmp/vuln-scan/sources.txt
+elif [ "${TRUFFLEHOG_GIT_RC:-1}" = 0 ]; then
+  echo "trufflehog-git=ok"                                                       >> /tmp/vuln-scan/sources.txt
 else
-  echo "trufflehog-git=$([ -s /tmp/vuln-scan/trufflehog-git.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+  echo "trufflehog-git=fail"                                                     >> /tmp/vuln-scan/sources.txt
 fi
 echo "osv=${OSV_STATUS:-fail}"                                                    >> /tmp/vuln-scan/sources.txt
 ```
