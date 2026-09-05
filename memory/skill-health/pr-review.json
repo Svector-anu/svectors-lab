@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-04T13:37:38Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op review: it clearly reports that no pull requests were open, though it provides little evidence beyond the assertion.",
+  "last_analyzed": "2026-09-05T12:52:19Z",
+  "quality_score": 4,
+  "assessment": "Substantive, conclusion-first PR review with actionable file-and-line findings, a clear blocked verdict, test status, and traceable PR/SHA metadata; concise but light on supporting detail.",
   "flags": [],
-  "avg_score": 3.27,
+  "avg_score": 3.33,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 2,
-      "ts": "2026-09-01T14:34:34Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-01",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-04",
       "score": 3,
       "ts": "2026-09-04T13:37:38Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 4,
+      "ts": "2026-09-05T12:52:19Z",
       "harness": "codex"
     }
   ]
