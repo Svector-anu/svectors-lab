@@ -1,53 +1,58 @@
 # Market Context (as of 2026-09-05)
 
-> **Take:** rotation — BTC gained 0.4% while 18/20 top caps rose and dominance slipped 0.07 pp. Conviction: medium.
+> **Take:** rotation — BTC gained 0.2% while 14/20 top caps rose and dominance slipped 0.10 pp. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $79,737 (+0.4% 24h, +2.5% 7d) · dominance 58.95% (-0.07 pp since prior refresh)
-- ETH $2,460 (+0.5% 24h, +0.8% 7d) · ETH/BTC 0.0308
-- SOL $102.95 (+1.8% 24h, -1.1% 7d)
-- Total mcap $2.711T (-3.8% 24h) · DEX vol $10.18B 24h
-- Breadth: 18/20 green 24h · 12/20 green 7d
+- BTC $79,956 (+0.2% 24h, +2.5% 7d) · dominance 58.85% (-0.10 pp since prior refresh)
+- ETH $2,480 (+1.0% 24h, +1.2% 7d) · ETH/BTC 0.0310
+- SOL $103.87 (+1.9% 24h, -0.9% 7d)
+- Total mcap $2.720T (-1.7% 24h) · DEX vol $10.18B 24h
+- Breadth: 14/20 green 24h · 11/20 green 7d
 - Fear & Greed: 73 (Greed) — yesterday 74
 
 ## What Changed Since Last Refresh
-- Regime shifted from chop to rotation as 24h breadth widened from 6/20 to 18/20 green.
+- Quiet — BTC/ETH remain within ±1%, TVL moved -0.2%, and the rotation regime is unchanged.
 
 ## Active Narratives
-- **Large-cap alt rotation** — phase: emerging. Evidence: 18/20 top caps rose while BTC gained only 0.4% and dominance slipped.
-- **Privacy relative strength** — phase: rising. Evidence: ZEC gained 25.9% and XMR 15.1% over seven days.
-- **Microcap speculation** — phase: peak. Evidence: trending PONS rose 25.6%, MarsCoin 38.3%, while SHRUB fell 32.5% in 24h.
+- **Large-cap alt rotation** — phase: rising. Evidence: 14/20 top caps rose while BTC gained 0.2% and dominance slipped 0.10 pp.
+- **Privacy relative strength** — phase: rising. Evidence: FIRO is CoinGecko's #1 trend (+27.2% 24h), while ZEC and XMR gained 22.4% and 16.7% over seven days.
+- **Uniswap activity expansion** — phase: rising. Evidence: UNI is #5 trending (+14.1% 24h), while V4 volume rose 12.8% daily and fees 293.2% weekly.
+- **Microcap speculation** — phase: peak. Evidence: trending PONS gained 32.6% while SHRUB fell 68.5% in 24h.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.82B (+1.4%)
-- Aave V3: $17.42B (+1.9%)
-- SSV Network: $12.81B (+4.6%)
-- Morpho Blue: $9.73B (+2.3%)
-- WBTC: $9.28B (+4.7%)
+- Lido: $23.90B (+1.2%)
+- Aave V3: $17.55B (+2.1%)
+- SSV Network: $12.86B (+4.3%)
+- Morpho Blue: $9.78B (+2.2%)
+- WBTC: $9.32B (+4.7%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.12B (n/a)
-- Solana: $5.88B (n/a)
-- BSC: $5.73B (n/a)
+- Ethereum: $49.37B (n/a)
+- Solana: $5.91B (n/a)
+- BSC: $5.87B (n/a)
 
 ## Stablecoins
-Total: $311.5B (+0.3% 7d). USDT $183.4B · USDC $74.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.5%.
+Total: $311.5B (+0.6% 7d). USDT $183.4B · USDC $74.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.5%.
 
 ## Trending (CoinGecko)
-- PONS — #1 trending, $0.889 (+25.6% 24h)
-- CP — #2 trending, $0.0315 (+0.8% 24h)
-- SHRUB — #3 trending, $0.0666 (-32.5% 24h)
+- FIRO — #1 trending, $0.864 (+27.2% 24h)
+- SHRUB — #2 trending, $0.0392 (-68.5% 24h)
+- PONS — #3 trending, $0.920 (+32.6% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| CLARITY Act signed into law in 2026 | 14.5% | $0.89M | $0.57M |
-| No Fed rate change after the September 2026 meeting | 48.5% | $0.81M | $0.49M |
-| Manchester City wins on September 5 | 83.5% | $0.78M | $0.76M |
+| OGC Nice wins on September 5 | 29.5% | $1.65M | $0.03M |
+| Alexander Blockx beats Flavio Cobolli | 86.5% | $1.21M | $0.20M |
+| Israel closes its airspace by September 30 | 66.5% | $0.55M | $0.10M |
+
+## Macro Catalysts (next 48h)
+- A hotter-than-expected August jobs report lifted Treasury yields and challenged the near-term Fed-easing trade; rate-sensitive crypto beta remains exposed ([market brief](https://haloterminal.ai/insights/2026-09-05)).
+- US spot BTC ETFs still drew $175M on September 4 and $987M for the week, cushioning the macro pressure ([flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/)).
 
 ## Implications for Downstream Skills
-- **token-pick:** favor alt relative strength with activity confirmation; avoid chasing trending microcaps with 30%+ daily dispersion.
-- **narrative-tracker:** watch whether 18/20 daily breadth persists and privacy strength broadens beyond ZEC/XMR.
+- **token-pick:** favor liquid alt relative strength with fee or volume confirmation; avoid chasing microcaps with 30%+ daily dispersion.
+- **narrative-tracker:** monitor privacy and Uniswap activity for rising-to-peak transitions; require breadth to recover above 14/20.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
