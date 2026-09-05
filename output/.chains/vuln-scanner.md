@@ -1,5 +1,3 @@
-✅ Vuln Scanner — stripe/stripe-node
-
-*Vuln Scanner — stripe/stripe-node*
-Clean audit. 36 candidates reviewed (3 semgrep, 33 osv rows), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok.
-Webhook-signature verification (the SDK's highest-value surface) reviewed end-to-end: constant-time compare, correct HMAC-SHA256, default replay-tolerance on the real entrypoint, multipart CRLF-injection guard already in place. Published package ships zero runtime deps, so all 33 osv rows are dev-tooling/example-only. PVR disabled; only channel is Stripe's own bug-bounty program (out of scope for auto-disclosure).
+*Vuln Scanner — stripe/stripe-php*
+Clean audit. 2 candidates reviewed, 0 confirmed. PVR disabled; org SECURITY.md routes to Stripe's own bug-bounty program (out of scope for auto-disclosure), same as stripe-cli/stripe-node.
+Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=n/a (no lockfile), fuzz=skip, agentic=ok. PoC gate: not-required.

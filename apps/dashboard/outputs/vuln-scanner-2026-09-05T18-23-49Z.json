@@ -1,0 +1,169 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — stripe/stripe-php"
+      },
+      "children": [
+        "sep-1",
+        "stack-findings",
+        "sep-2",
+        "stack-config",
+        "sep-3",
+        "heading-scanners",
+        "table-scanners"
+      ]
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stack-findings": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat-candidates",
+        "stat-confirmed",
+        "alert-clean"
+      ]
+    },
+    "stat-candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed",
+        "value": "2"
+      },
+      "children": []
+    },
+    "stat-confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Vulnerabilities",
+        "value": "0"
+      },
+      "children": []
+    },
+    "alert-clean": {
+      "type": "Alert",
+      "props": {
+        "title": "Audit Status",
+        "message": "Clean audit",
+        "type": "success"
+      },
+      "children": []
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stack-config": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading-config",
+        "text-pvr",
+        "text-routing",
+        "text-same"
+      ]
+    },
+    "heading-config": {
+      "type": "Heading",
+      "props": {
+        "text": "Configuration",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text-pvr": {
+      "type": "Text",
+      "props": {
+        "text": "PVR (Private Vulnerability Reporting) disabled"
+      },
+      "children": []
+    },
+    "text-routing": {
+      "type": "Text",
+      "props": {
+        "text": "Organization SECURITY.md routes to Stripe's own bug-bounty program (out of scope for auto-disclosure)"
+      },
+      "children": []
+    },
+    "text-same": {
+      "type": "Text",
+      "props": {
+        "text": "Same configuration as stripe-cli/stripe-node"
+      },
+      "children": []
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading-scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "table-scanners": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "n/a (no lockfile)"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ],
+          [
+            "PoC gate",
+            "not-required"
+          ]
+        ]
+      },
+      "children": []
+    }
+  }
+}
