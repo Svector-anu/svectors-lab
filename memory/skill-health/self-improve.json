@@ -1,12 +1,12 @@
 {
   "skill": "self-improve",
-  "last_analyzed": "2026-09-03T20:51:59Z",
-  "quality_score": 3,
-  "assessment": "Acceptable fail-closed run, but the bare exit code lacks diagnostic evidence needed to verify the gate failure or make the follow-up actionable.",
+  "last_analyzed": "2026-09-05T19:29:24Z",
+  "quality_score": 2,
+  "assessment": "The run handled the failed dry-run safely, but provides no error details, evidence, or actionable diagnosis, making the claimed issue and proposed repair difficult to verify or continue.",
   "flags": [
     "low_quality"
   ],
-  "avg_score": 3,
+  "avg_score": 2.88,
   "history": [
     {
       "date": "2026-08-25",
@@ -46,6 +46,12 @@
       "date": "2026-09-03",
       "score": 3,
       "ts": "2026-09-03T20:51:59Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-05",
+      "score": 2,
+      "ts": "2026-09-05T19:29:24Z",
       "harness": "codex"
     }
   ]

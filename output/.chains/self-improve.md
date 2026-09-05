@@ -1,11 +1,12 @@
-The `self-improve` run completed, but no fix was submitted.
+Executed `self-improve` in default improve mode.
 
-I identified a `vuln-scanner` timeout risk and tested a reduction from eight fuzz targets to three. The mandatory synthetic dry-run failed with `non-zero exit (1)`, so the change was reverted and no PR was opened, as required.
+- Identified heartbeat’s persistent chronic-failure classification as the highest-impact issue.
+- Proposed restricting it to currently unrecovered failures.
+- Required dry-run failed: `non-zero exit (1)`.
+- Reverted the proposed heartbeat change and opened no PR, as required.
+- Logged the result in [memory/logs/2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
+- Preserved all pre-existing worktree changes.
 
 ## Summary
 
-- Reviewed recent logs, cron health, open improvement PRs, and scanner instructions.
-- Preserved all unrelated workspace changes.
-- Logged the failed gate in [memory/logs/2026-09-03.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-03.md).
-- Files modified: `memory/logs/2026-09-03.md`.
-- Follow-up: diagnose the dry-run failure before retrying the timeout-budget change.
+No production change was retained because the dry-run gate failed. The heartbeat chronic-failure signal remains a valid candidate for a future repair after diagnosing its dry-run failure.
