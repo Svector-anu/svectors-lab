@@ -1,14 +1,15 @@
-**Verdict**: blocked: unrelated live model credentials can reach candidate skill code
+**Verdict**: discussion-needed
 
-- [CRITICAL] `scripts/dry-run.sh:45` — both credential families are globally exempted from synthesis, exposing unrelated real model credentials.
-- [ISSUE] `scripts/dry-run.sh:155` — leading flag-shaped inputs such as `--survey` are misparsed as runner options.
+- [ISSUE] `skills/vuln-scanner/SKILL.md:200` — `trufflehog-git=timeout` is absent from the prescribed report, notification, and log formats. A successful filesystem scan could therefore mask a timed-out history scan in durable output.
 
-Inline comments and consolidated review were posted. Exact-head tests and both CI checks passed.
+The inline comment and consolidated GitHub review were posted. Exact-head tests and all five CI checks passed.
 
-<!-- aeon-review:{"schema":1,"target":"aeonfun/aeon#1029","sha":"14980edac3a772f577c94acb837d040ded7664f0","verdict":"blocked","critical":1,"issues":1} -->
+<!-- aeon-review:{"schema":1,"target":"aeonfun/aeon#1030","sha":"08c6a4a20f7ac08fdfa1af82f6113f8f3399b5c3","verdict":"discussion-needed","critical":0,"issues":1} -->
 
 ## Summary
 
-- Reviewed 1 PR; skipped 0.
-- Updated `memory/logs/2026-09-05.md`.
-- Notification delivery failed because the external queue filesystem is read-only.
+- Reviewed: 1; skipped: 0
+- Findings: 0 critical, 1 issue
+- Updated [run log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md)
+- Saved [review summary](/home/runner/work/svectors-lab/svectors-lab/output/pr-review-1030.md)
+- Notification delivery was attempted, but its external queue is read-only in this harness.
