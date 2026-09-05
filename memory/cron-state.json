@@ -199,15 +199,15 @@
     "last_quality_score": 4
   },
   "hunter-22": {
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-08-22T17:54:46Z",
-    "total_runs": 30,
-    "total_successes": 23,
+    "total_runs": 31,
+    "total_successes": 24,
     "total_failures": 7,
     "consecutive_failures": 0,
     "success_rate": 0.77,
     "last_dispatch": "2026-09-05T12:49:38Z",
-    "last_success": "2026-09-04T13:38:48Z",
+    "last_success": "2026-09-05T12:52:37Z",
     "last_quality_score": 2,
     "last_error": "4982e4\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
