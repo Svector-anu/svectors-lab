@@ -1,26 +1,29 @@
 *Narrative Tracker — 2026-09-06*
 
+low-confidence fallback: X.AI unavailable (`KEY_UNSET`; `xai http=400 bytes=118`). no prior 3-day tracker baseline, so NEW means new to the log, not necessarily born today.
+
 TRANSITIONS
-• NEW: agentic-commerce rails — Anthropic shipped commerce-agent blueprints with Visa, Mastercard, Shopify and Accenture; distribution moved from demos to payment networks — https://claude.com/blog-category/announcements
-• PROMOTED: privacy relative strength, Rising → Peak — FIRO +25.6% 24h, ZEC +21.9% and XMR +17.6% 7d; ZEC briefly approached a $17B market cap. Momentum is real, entry quality is worse.
-• NEW: Polymarket perps — 10 markets expanded to 67 within hours, up to 20x leverage — https://decrypt.co/377483/polymarket-crypto-perpetual-futures
-• DEMOTED: large-cap alt rotation, Rising → Fading — 17/20 top caps green, but DEX volume fell 19.8% and BTC dominance rose 0.46pp.
+• NEW: Robinhood Chain / tokenized stocks — consumer distribution is translating into reported record DEX activity; subsidy expiry is the real retention test — https://newsletter.defillama.com/
+• NEW: ETH-led alt rotation — ETH relative strength plus broad category gains moved the timeline from BTC-only resilience toward rotation.
+• NEW: ETF bid absorbs macro shocks — institutional-flow story survived hawkish jobs and Iran volatility — https://x.com/BitcoinMagazine/status/2096292784516817257
+• NEW: Solana Transaction V1 — Sep 9 upgrade is a near-term technical catalyst, but unlock supply muddies the trade.
+• NEW: CLARITY failure — reported passage odds below 20% ahead of Sep 15; regulatory-sensitive tokens now trade the whip count.
+• NEW: rollup/social/meme beta — DefiLlama 7D category leaders are Rollup +93.45%, SocialFi +56.47%, Meme +46.91% — https://defillama.com/narrative-tracker
 
 REFLEXIVITY ALERT
-• Polymarket expansion — prediction-market Google Trends fell 86 in July → 36 in August; launching leveraged perps is a concrete product pivot to manufacture a second growth loop.
-• privacy coins — price itself is now the story: ZEC/XMR/FIRO strength is pulling attention without a same-window fundamentals change.
+• Robinhood Chain — subsidized gas plus memecoin activity reportedly helped drive $3.7B 24h DEX volume; narrative and incentives are manufacturing the activity being cited as product-market fit.
+• CLARITY — prediction-market odds below 20% are becoming the policy sentiment anchor before the vote.
 
 POSITIONS
-• RIDE: agentic-commerce rails (4 ↑↑, Bull) — @AnthropicAI, @Visa, @Mastercard — bear: real transaction volume still trails the partnership hype — https://www.digitalcommerce360.com/2026/09/02/anthropic-debuts-claude-features-focused-on-agentic-commerce/
-• FADE: privacy relative strength (5 →, Mixed) — @Zcash, @firoorg, @monero — bear: parabolic basket moves plus thin liquidity make narrative reversal violent.
-• WATCH: Arbitrum rebound (3 ↑↑, Mixed) — @arbitrum, @RobinhoodApp, ArbitrumDAO — ARB +47.2% 24h and reports cite $6.19M H1 DAO income/$1B tokenized assets; bear: DEX contraction and grant-misuse headlines undermine follow-through.
-• WATCH: Polymarket perps (3 ↑, Mixed) — @Polymarket, @Poly_Perps, @0xPolygon — bear: no launch volume/OI/collateral disclosure and US users excluded.
-• FADE: PONS speculation (2 ↓, Cope) — @PonsAI, CoinGecko traders — +33.4% price and +43.8% daily fees are reflexive, but no durable catalyst surfaced.
+• FRONT-RUN: Robinhood Chain/tokenized stocks (2 ↑↑, Bull, Emerging) — @RobinhoodApp, @vladtenev, @Uniswap — subsidy expiry could expose mercenary flow — https://defillama.com/narrative-tracker
+• RIDE: ETH-led alt rotation (4 ↑, Bull, Rising) — @ethereum, @BlackRock, @cointelegraph — late-cycle rotations can reverse fast; no contrarian edge.
+• RIDE: ETF-driven BTC resilience (4 ↑, Bull, Rising) — @FarsideUK, @BitcoinMagazine, @BlackRock — flow dependence becomes fragility when redemptions return.
+• WATCH: Solana Transaction V1 (3 ↑, Mixed, Rising) — @solana, @anza_xyz, @aeyakovenko — execution risk plus ecosystem unlock pressure.
+• FADE: CLARITY passage optimism (4 ↓↓, Bear, Fading) — @Polymarket, @coinbase, @EleanorTerrett — odds can snap back on a credible whip-count shift.
+• WATCH: rollup/social/meme beta (5 ↑, Mixed, Peak) — @DefiLlama, @arbitrum, @pumpdotfun — category performance is broad but can be reflexive and low-quality.
 
 MAP
-Emerging: Arbitrum rebound
-Rising: agentic-commerce rails, Polymarket perps
-Peak: privacy relative strength, PONS speculation
-Fading: large-cap alt rotation
-
-source mode: web fallback (xAI key unset; API http 400). calibration: DefiLlama reports prediction-market Google Trends 86→36; market snapshot DEX volume $8.17B, down 19.8%.
+Emerging: Robinhood Chain/tokenized stocks
+Rising: ETH rotation; ETF resilience; Solana V1
+Peak: rollup/social/meme beta
+Fading: CLARITY passage optimism

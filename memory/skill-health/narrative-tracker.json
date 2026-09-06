@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-06T09:37:52Z",
-  "quality_score": 3,
-  "assessment": "Actionable calls and clear regime mapping, but the opening lacks a single conclusion-first verdict and several precise market/DAO metrics lack direct evidence links, limiting decision-grade verifiability.",
-  "flags": [],
+  "last_analyzed": "2026-09-06T13:08:12Z",
+  "quality_score": 2,
+  "assessment": "Actionable position labels and regime mapping, but multiple precise catalysts, dates, odds, flows, and narrative claims lack direct supporting sources, making the output insufficiently verifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-08-30",
-      "score": 2,
-      "ts": "2026-08-30T19:31:27Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-31",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-06",
       "score": 3,
       "ts": "2026-09-06T09:37:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 2,
+      "ts": "2026-09-06T13:08:12Z",
       "harness": "codex"
     }
   ]
