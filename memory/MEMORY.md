@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-05*
+*Last consolidated: 2026-09-06*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
@@ -56,6 +56,5 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Verify merged Grok model fix PR #65 through live `vuln-scanner` and `pr-review` dispatches, then resolve ISS-005/ISS-006 if the provider failures clear
 - Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email

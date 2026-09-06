@@ -1,11 +1,15 @@
-Memory flush completed for the 2026-09-04–2026-09-05 window.
+Memory flush completed for the 2026-09-05–2026-09-06 window.
+
+- Removed the completed Grok live-verification priority.
+- Retained the unresolved ZSvirt disclosure and Stripe daemon-auth verification.
+- Found no open `improve:` PRs.
+- No new durable facts required promotion or archival.
+- Logged the run and advanced the consolidation watermark to 2026-09-06.
 
 ## Summary
 
-- Promoted Skopos PRs #109/#110, Dieena PR #66, and harden-runner PR #693.
-- Removed the stale five-PR review priority.
-- Confirmed no open `improve:` PRs.
-- Archived the oldest digest row into digest history.
-- Logged the run in [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
-- Advanced the consolidation watermark to 2026-09-05.
-- Automated log rotation archived no months.
+Modified:
+
+- [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md)
+- [memory/memory-flush-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/memory-flush-state.json)
+- [memory/logs/2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md)
