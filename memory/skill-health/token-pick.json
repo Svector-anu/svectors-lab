@@ -1,12 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-05T12:52:34Z",
-  "quality_score": 2,
-  "assessment": "Actionable and conclusion-led, but its precise token, catalyst, market, macro, and wallet-loss claims lack citations or verifiable evidence; it also violates the strategy’s qualitative-only live-price constraint.",
+  "last_analyzed": "2026-09-06T13:08:40Z",
+  "quality_score": 3,
+  "assessment": "Substantive and plausibly sourced, but it violates the qualitative-price constraint, lacks an explicit UNI position call, and does not lead with a clear trade verdict.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality"
   ],
-  "avg_score": 2.56,
+  "avg_score": 2.58,
   "history": [
     {
       "date": "2026-07-11",
@@ -140,6 +140,12 @@
       "date": "2026-09-05",
       "score": 2,
       "ts": "2026-09-05T12:52:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 3,
+      "ts": "2026-09-06T13:08:40Z",
       "harness": "codex"
     }
   ]

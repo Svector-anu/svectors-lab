@@ -1,21 +1,17 @@
-ℹ️ Daily Pick — 2026-09-05
+*Daily Pick — 2026-09-06*
 
-*Daily Pick — 2026-09-05*
+*Token: UNI*  [HIGH]  signal 10/10 (raw 11, capped)
+Price: $7.00 (+12.0% 24h / +37.8% 7d) | mcap $4.37B | vol $1.13B (vol/mcap 0.26)
+Score breakdown: 24h positive +1, 7d positive +1, both >5% +2, CoinGecko trending +2, vol/mcap ≥0.20 +3, RS vs BTC/ETH +2 = 11 raw, capped 10/10
+Catalyst: record Uniswap activity on Robinhood Chain plus protocol-fee-funded UNI burns are extending the rally ([source](https://coinmarketcap.com/top-stories/6a9c4ba898f4795d490f42d3/)).
+Risk: the trade is crowded after a 37.8% weekly move; overbought conditions and short-covering can reverse quickly if activity or burn flow fades.
+Vs recent picks: first time in the last 7 days.
 
-*Token: PONS*  [HIGH]  signal 10/10 (raw 11, capped)
-Snapshot: $0.911 (+29.3% 24h / +344.3% 7d) | mcap $648.1M | vol $208.6M (vol/mcap 0.32)
-Score breakdown: [24h positive +1, 7d positive +1, both >5% +2, CoinGecko trending +2, vol/mcap +3, RS vs BTC/ETH +2] = 11 raw, capped at 10/10
-Call: ride, do not chase size.
-Catalyst: Uniswap Labs bought PONS for its treasury on September 4; Pons also printed $5.95M in daily fees and entered Binance Alpha this week.
-Risk: this is already an ~18,000% move from July, and an on-chain review found 66.8% of participating wallets finished down—post-catalyst profit-taking can be violent.
-Vs recent picks: first time.
+*Market: “Will there be no change in Fed interest rates after the September 2026 meeting?”*  [MEDIUM]  edge 9.5pp
+Current: YES 49.5¢ / NO 50.5¢ | 24h vol $323k | resolves: 2026-09-16
+Fair YES: ~40% (inputs: CME priced a 60.4% hike after the strong August jobs report; inflation remains above 3%; Waller says Sep. 11 CPI is decisive — [AP](https://apnews.com/article/1af16359af43eb8abc66445465f633c8), [AP](https://apnews.com/article/5506d6b43cc2e3d4144f622f8cc29e43))
+Thesis: YES is about 9.5 points rich; the implied action is NO at 50.5¢.
+Risk: a soft Aug. CPI print could swing Waller and the committee back toward a hold.
 
-*Market: "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?"*  [MEDIUM]  edge 7.5pp
-Current: YES 49.5¢ / NO 50.5¢ | 24h vol $489.1K | resolves: 2026-09-16
-Fair YES: ~57% (inputs: CME-derived odds 60.4% after payrolls; August payrolls +162K vs +53K expected; Waller says next CPI will largely decide)
-Call: buy YES only below 52¢.
-Thesis: strong payrolls shifted the meeting toward a hike, but the contract still prices it below a calibrated 57%.
-Risk: a soft CPI print next week can flip the knife-edge decision back to hold.
-
-sources: cg=ok, dex=ok, poly=ok
+sources: cg=ok, dex=ok, poly=ok (events legacy sort failed; corrected field succeeded)
 not financial advice — pattern-matching only
