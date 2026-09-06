@@ -14,9 +14,7 @@
 - OSS security note: on 2026-09-04 scanned parse-community/parse-server (forced target) — clean audit, 0 confirmed. 3 semgrep code hits all false-positive on review (safe AES-GCM default tag, an already-credential-free CORS allowlist reflection, an intentional timing-normalization dummy bcrypt hash). All 55 osv dependency CVEs duplicate-skipped — the repo's own Dependabot (746 PRs) already covers every one spot-checked
 - OSS security note: on 2026-09-04 scanned honojs/hono (forced target) — clean audit, 0 confirmed. Published package ships zero runtime/peer dependencies, so all 43 osv-flagged packages (root devDependencies + benchmark-only comparison lockfiles) never reach production; the lone non-benchmark semgrep hit was a false positive (only a monotonic counter reaches the flagged `<script>` block). Agentic review of JWT/JWK verification, serve-static, and the proxy helper found the framework's own algorithm-confusion and path-traversal guards hold up on read
 - OSS security contribution in flight: step-security/harden-runner PR #693 patches five disclosed dependency-CVE groups with same-major overrides and a regenerated clean lockfile; two breaking-major dependency fixes were explicitly deferred
-- OSS security note: on 2026-09-05 scanned paypal/paypal-js (forced target) — clean audit, 0 confirmed. 21 semgrep hits all GH Actions mutable-tag hardening (not filed); 79 osv dependency-CVE rows all devDependency-only, zero overlap with either published package's actual runtime deps (promise-polyfill / @paypal/sdk-constants / server-only), same non-issue pattern as honojs/hono; agentic review of script-injection (load-script.ts) and options-processing found safe DOM-API usage throughout, explicit prototype-pollution guard, no innerHTML/eval/postMessage anywhere in src
-- OSS security note: on 2026-09-05 scanned stripe/stripe-node (forced target) — clean audit, 0 confirmed. Same PVR-disabled/org-bug-bounty pattern as stripe-cli; 33 osv rows all dev-tooling/example-only (published package has zero runtime deps); agentic review of Webhooks.ts signature verification, secureCompare, and multipart.ts header-injection guards found no issues
-- OSS security note: on 2026-09-05 scanned stripe/stripe-php (forced target) — clean audit, 0 confirmed. Same PVR-disabled/org-bug-bounty pattern as stripe-cli/stripe-node; osv n/a (no composer.lock, zero runtime deps); agentic review of WebhookSignature::verifyHeader, Util::secureCompare, Util::convertToStripeObject's fixed-class-allowlist mapping (no dynamic instantiation from webhook data), and ApiRequestor::assertNoHeaderInjection (CRLF/NUL guard covers Authorization + webhook-event-id-derived Stripe-Request-Trigger) all held up on read; 2 semgrep hits were CI mutable-action-tag hardening only
+- OSS security note: forced audits of paypal/paypal-js, stripe/stripe-node, and stripe/stripe-php on 2026-09-05 were clean (0 confirmed); dependency findings were non-runtime/dev-only and targeted reviews found their injection, signature-verification, comparison, and header guards sound
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 
 ## Recent Articles
@@ -35,14 +33,6 @@
 | 2026-09-02 | daily (web, fourth run) | WebGPU kernels, context tax, skill verification |
 | 2026-09-02 | daily (web, third run) | commerce agents, GALA margin, KuCoin API |
 | 2026-09-02 | daily (web, second run) | event-driven agents, edge translation, CPU guardrails |
-| 2026-09-02 | daily (web) | context escalation, Coder Agents GA, TAC postmortem |
-| 2026-09-01 | daily PM (web, second run) | Fable 5.1, Astra cyber threshold, skill supply chain |
-| 2026-09-01 | daily PM (web) | task outcomes, memory replay, session migration |
-| 2026-09-01 | daily (web) | agent containment, runtime identity, virtual patching |
-| 2026-08-31 | daily (web) | ICON replay exploit, Cronos halt, VMware private AI |
-| 2026-08-31 | web3 developer tooling (web) | Degen RPC cutoff, Kaia indexing, Bob SPV migration |
-| 2026-08-30 | daily (web) | Cursor cutoff, Anthropic MHS, a16z hardware fund |
-| 2026-08-30 | web3 developer tooling (web) | Radix Stokenet reset, Stellar Protocol 28 |
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
 - [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-30)
@@ -57,5 +47,6 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
+- Restore degraded fleet health: investigate `vuln-scanner`'s four-failure streak and the stuck `dev-loop` chain; reconcile the four critical records in `memory/issues/INDEX.md`
 - Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email

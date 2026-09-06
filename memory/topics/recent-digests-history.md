@@ -5,7 +5,7 @@ tags:
   - digests
   - history
 resource: ""
-timestamp: 2026-09-05T00:00:00Z
+timestamp: 2026-09-06T00:00:00Z
 ---
 
 # Recent Digests History
@@ -25,6 +25,14 @@ timestamp: 2026-09-05T00:00:00Z
 | 2026-08-28 | daily (web) | AI infrastructure attacks, Salesforce in Claude, double-blind evals |
 | 2026-08-28 | web3 developer tooling (web) | Midnight hackathon, cardano-init, RGB Lightning |
 | 2026-08-28 | daily (web, crypto) | Cosmos EVM exploit, Core Lightning patch, hard-asset ETF flows |
+| 2026-09-02 | daily (web) | context escalation, Coder Agents GA, TAC postmortem |
+| 2026-09-01 | daily PM (web, second run) | Fable 5.1, Astra cyber threshold, skill supply chain |
+| 2026-09-01 | daily PM (web) | task outcomes, memory replay, session migration |
+| 2026-09-01 | daily (web) | agent containment, runtime identity, virtual patching |
+| 2026-08-31 | daily (web) | ICON replay exploit, Cronos halt, VMware private AI |
+| 2026-08-31 | web3 developer tooling (web) | Degen RPC cutoff, Kaia indexing, Bob SPV migration |
+| 2026-08-30 | daily (web) | Cursor cutoff, Anthropic MHS, a16z hardware fund |
+| 2026-08-30 | web3 developer tooling (web) | Radix Stokenet reset, Stellar Protocol 28 |
 
 # Citations
 
@@ -36,3 +44,7 @@ timestamp: 2026-09-05T00:00:00Z
 - Source: [2026-08-27 activity log](../logs/2026-08-27.md)
 - Source: [2026-08-28 activity log](../logs/2026-08-28.md)
 - Source: [2026-08-29 activity log](../logs/2026-08-29.md)
+- Source: [2026-08-30 activity log](../logs/2026-08-30.md)
+- Source: [2026-08-31 activity log](../logs/2026-08-31.md)
+- Source: [2026-09-01 activity log](../logs/2026-09-01.md)
+- Source: [2026-09-02 activity log](../logs/2026-09-02.md)
