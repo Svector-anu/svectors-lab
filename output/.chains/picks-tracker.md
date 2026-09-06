@@ -1,10 +1,9 @@
-No token or prediction-market picks were found in the last 30 days. Per the skill’s stop condition:
+No eligible picks were found from 2026-08-08 through 2026-09-06.
 
-- No price lookups, scorecard, or notification were generated.
-- The skip result was logged in [memory/logs/2026-08-30.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-30.md).
+The ZAMA and Bitcoin entries were recap artifacts for July 28 picks, so they were excluded. Per the skill, no notification or scorecard was created.
 
 ## Summary
 
-- Result: `PICKS_TRACKER_SKIP`
-- Reason: no qualifying picks; August matches were prior scorecard recaps of July 28 picks, now outside the window.
-- Follow-up: enable or run `token-pick` / `monitor-polymarket` to produce trackable picks.
+- Logged `PICKS_TRACKER_SKIP` in [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md).
+- Verified with `git diff --check`.
+- Follow-up: enable `token-pick` or `monitor-polymarket` to generate trackable picks.
