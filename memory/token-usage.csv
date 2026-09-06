@@ -259,3 +259,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-06,defi-overview,codex-default,546598,7755,487040,0
 2026-09-06,defi-overview,codex-default,960027,9145,899072,0
 2026-09-06,defi-overview,codex-default,761747,8477,697216,0
+2026-09-06,auto-merge,codex-default,197951,1368,152832,0
