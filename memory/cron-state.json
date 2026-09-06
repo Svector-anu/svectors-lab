@@ -138,15 +138,15 @@
   },
   "github-trending": {
     "last_dispatch": "2026-09-06T13:05:37Z",
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-08-25T00:26:25Z",
-    "total_runs": 143,
-    "total_successes": 23,
+    "total_runs": 144,
+    "total_successes": 24,
     "total_failures": 120,
     "consecutive_failures": 0,
-    "success_rate": 0.16,
+    "success_rate": 0.17,
     "last_error": "read-only: workspace write-locked via bwrap kimi exited 1: error: failed to run prompt: auth.login_required: OAuth provider \"managed:kimi-code\" requires login before it can be used. See log: /tmp/run-",
-    "last_success": "2026-09-05T12:52:47Z",
+    "last_success": "2026-09-06T13:09:04Z",
     "last_quality_score": 2
   },
   "digest": {
