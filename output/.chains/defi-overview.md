@@ -1,13 +1,19 @@
-Take: rotation — BTC gained 0.3% while 17/20 top caps rose, but DEX volume dropped 19.8% to $8.17B. Conviction: medium; rising BTC dominance contradicts the alt breadth.
+Take: rotation — 18/20 top caps rose while BTC gained 0.4%, led by SOL at +4.1%.
+Conviction: medium — breadth and falling BTC dominance agree, but DEX volume fell 18.5%.
+Evidence: SOL outperformed BTC by 3.8 percentage points over 24 hours.
 
-- DeFi TVL: $87.94B, down 0.2% from the prior refresh.
-- Fees leader: Tether at $16.10M; Uniswap V4 fees rose 35.1%.
-- Sustainable-yield leaders: Raydium WSOL-USDC 39.9%, Uniswap LINK-WETH 19.3%, Hipo HGRAM 17.1%.
-- Main narratives: large-cap alt rotation, privacy strength, an emerging Arbitrum rebound, and peak-stage PONS speculation.
-- Macro pressure remains after strong US employment data, while September 4 spot-BTC ETF inflows of $174.6M provide some support ([market recap](https://coinmarketcap.com/top-stories/6a9b94d798f4795d490e8f5f/), [ETF flows](https://www.tftc.io/bitcoin-etf-flows)).
-- No tracked DeFi positions were configured, so the positions facet completed without alerts.
-- All required data sources succeeded and the notification was queued.
+DeFi is mixed: TVL reached $88.36B, stablecoin supply rose 0.09%, and Starknet Bridge gained 12.7%, but trading activity weakened. Tether led fees at $16.10M; Uniswap V4 fees rose 191% weekly against only 2.5% TVL growth.
+
+The strongest narratives are large-cap alt rotation, privacy—FIRO +28.5%, ZEC +17.7%—and Arbitrum, which gained 49.4%. Friday’s $174.6M spot-BTC ETF inflow provides support, while stronger employment data and higher yields remain headwinds. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
+
+Updated:
+
+- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
+- [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md)
 
 ## Summary
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and added [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md). Existing token-pick history was preserved.
+- Preserved the complete token-pick history.
+- Logged `DEFI_MONITOR_NO_CONFIG` because no positions are configured.
+- All data sources succeeded.
+- Notification was attempted but the external queue is read-only in this harness, so delivery was not confirmed.
