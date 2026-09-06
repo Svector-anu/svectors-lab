@@ -1,14 +1,15 @@
-Heartbeat completed.
+Heartbeat completed. Fleet status remains **🔴 DEGRADED**.
 
-- `STATUS_PAGE=DEGRADED`
-- `vuln-scanner` remains failed with four consecutive failures.
-- PR #70 is newly stalled beyond 24 hours.
-- No scheduled skills are missing or overdue.
+- `vuln-scanner`: failed, 4 consecutive failures.
+- `chain:dev-loop`: stuck in dispatched state for ~24 hours.
+- PR [#72](https://github.com/Svector-anu/svectors-lab/pull/72): stalled for ~46 hours.
 - Four critical health issues remain open.
-- Notification attempted, but the harness’s external queue is read-only, so delivery was not confirmed.
-- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
-- Appended the run to [memory/logs/2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
+- No missing or overdue scheduled skills.
+- Existing alerts were deduplicated against the prior 48 hours.
+- Notification delivery was attempted but blocked by the harness’s read-only external queues.
 
 ## Summary
 
-Updated the public fleet status and heartbeat log. Validation passed; unrelated existing worktree changes were preserved.
+- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
+- Appended the run record to [memory/logs/2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md).
+- Verified all 30 enabled skills appear on the status page and `git diff --check` passes.
