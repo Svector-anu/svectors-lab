@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T09:22:13Z",
+  "checked_at": "2026-09-06T09:37:26Z",
   "month": "2026-09",
   "lanes": {
     "asi": {
@@ -8,15 +8,15 @@
       "ordinal": 3,
       "next_merge_points": 5,
       "liveness": "live",
-      "last_merge_at": "2026-09-05T08:44:33Z",
-      "merges_7d": 88,
-      "merge_rate": 51.32,
+      "last_merge_at": "2026-09-06T06:12:21Z",
+      "merges_7d": 171,
+      "merge_rate": 54.93,
       "open_prs": [],
       "changes_requested": [],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-05T09:22:13Z"
+      "checked_at": "2026-09-06T09:37:26Z"
     },
     "delta-star": {
       "slug": "delta-star",
@@ -24,15 +24,15 @@
       "ordinal": 0,
       "next_merge_points": 10,
       "liveness": "live",
-      "last_merge_at": "2026-09-05T01:54:14Z",
-      "merges_7d": 2,
-      "merge_rate": 58.7,
+      "last_merge_at": "2026-09-05T22:40:07Z",
+      "merges_7d": 51,
+      "merge_rate": 96.97,
       "open_prs": [],
       "changes_requested": [],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-05T09:22:13Z"
+      "checked_at": "2026-09-06T09:37:26Z"
     },
     "eliza": {
       "slug": "eliza",
@@ -40,15 +40,15 @@
       "ordinal": 0,
       "next_merge_points": 10,
       "liveness": "live",
-      "last_merge_at": "2026-09-05T07:49:05Z",
-      "merges_7d": 173,
-      "merge_rate": 75.39,
-      "open_prs": [30500, 30059, 29731, 29726, 29717, 29353, 28180, 26474],
-      "changes_requested": [30500, 29717, 29353, 28180, 26474],
+      "last_merge_at": "2026-09-06T09:30:08Z",
+      "merges_7d": 247,
+      "merge_rate": 76.37,
+      "open_prs": [30500, 29731, 29726, 29353, 28180],
+      "changes_requested": [30500, 29353, 28180],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-05T09:22:13Z"
+      "checked_at": "2026-09-06T09:37:26Z"
     },
     "heir-elements-sdk": {
       "slug": "heir-elements-sdk",
@@ -64,7 +64,7 @@
       "status": "active",
       "listing_tier": "community",
       "authority_state": "unverified",
-      "checked_at": "2026-09-05T09:22:13Z"
+      "checked_at": "2026-09-06T09:37:26Z"
     }
   }
 }
