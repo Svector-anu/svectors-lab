@@ -1,75 +1,75 @@
-## Tweet Drafts: a CVE count is not an attack surface
+## Tweet Drafts: agent fleets need recovery loops
 
 ### Tier 1 — One-liner
 
 **1a. Hot take**
 
-> a CVE count is not an attack surface
+> an agent fleet without recovery is just parallel failure
 
-**1b. Data drop**
+**1b. Observation**
 
-> 79 dependency CVEs, zero shipped runtime exposure. reachability matters.
+> running five agents is easy. knowing which one quietly died is the product
 
 ### Tier 2 — Two-punch
 
 **2a. Reframe**
 
-> scanners find vulnerable versions. engineers still have to prove those versions ship, run, and are reachable.
+> concurrency makes an agent fleet look autonomous. recovery is what makes it real
 
 **2b. Sardonic**
 
-> 79 CVE rows looks terrifying. then you check the published package and find none of those dependencies reach production.
+> the demo is five agents running at once. the production test is one getting stuck at 3am and the fleet knowing what to do next
 
 ### Tier 3 — Paragraph
 
 **3a. Observation**
 
-> a dependency scanner gives you candidates, not conclusions. the package may be vulnerable, dev-only, or trapped in a benchmark lockfile. the real security work starts after the report lands.
+> agent fleets do not fail like chatbots. one chain gets stuck, another keeps reporting green, and the work looks alive from a distance. health, receipts and recovery paths are part of the product
 
-**3b. Data drop**
+**3b. Builder’s breakdown**
 
-> paypal-js returned 79 dependency CVE rows. zero touched either published package at runtime. counting findings is easy. proving what users install and attackers can reach is the security work.
+> everyone wants more agents running in parallel. i want the boring layer too: which run owns the task, where it stopped, what already shipped, and whether retrying will duplicate the action
 
 ### Tier 4 — Long tweet
 
 **4a. Narrative**
 
-> scanned paypal-js today and got 79 dependency CVE rows. looked bad until i traced what actually ships. every flagged package lived in dev tooling, while the two published packages only carry a tiny runtime set with zero overlap. scanners are good at finding versions. they cannot replace checking the artifact, dependency role, and reachable path.
+> had a dev loop stay dispatched for more than 24 hours while the rest of the fleet kept moving. this is the part of agent infrastructure the demos skip. concurrency is useful, but without health checks, durable receipts and a safe recovery path you have not built autonomy. you have built more places for work to disappear
 
 **4b. Observation**
 
-> security scanners are candidate generators, not verdict machines. paypal-js produced 79 dependency CVE rows today, but none were part of the published runtime surface. the same pattern showed up in hono and stripe-node. if an audit ends at the count, it is measuring lockfile noise. the job is to prove what ships and whether an attacker can reach it.
+> the hardest part of running an agent fleet is not starting five harnesses. it is knowing when one quietly stopped, whether another agent already completed the work, and if a retry will send the same email or open the same PR twice. orchestration gets the screenshots. recovery earns the trust
 
 ### Tier 5 — Thread opener
 
-**5a. Data drop**
+**5a. Narrative**
 
-> i scanned paypal-js and found 79 dependency CVE rows. then i checked the published packages. zero of those dependencies shipped at runtime. this is why vulnerability counts without reachability are mostly noise.
+> one of my agent chains stayed dispatched for 24+ hours while the rest of the fleet kept working. looked busy, was stuck. a small breakdown of what agent autonomy actually needs
 
 ---
 
-- Why lockfiles overstate production exposure
-- How to inspect published artifacts and dependency roles
-- Where reachability turns a CVE into real risk
-- The same pattern in Hono and Stripe Node
+- How apparently active fleets hide stalled work
+- Why health checks alone are insufficient
+- Durable execution receipts and ownership
+- Safe, idempotent recovery paths
 
 **5b. Reframe**
 
-> three clean audits taught me the same thing: a scary dependency report can describe tooling and benchmark code, not the product users install. the lockfile is evidence. it is not the attack surface.
+> running agents across multiple harnesses taught me this: portability gets them started, receipts tell you what happened, recovery keeps the fleet useful. the third part is where most systems are still weak
 
 ---
 
-- What the scanners correctly found
-- Why dev tooling and benchmarks appeared
-- Tracing what users actually install
-- A better audit verdict than counting rows
+- What harness portability solves
+- What execution receipts prove
+- Why blind retries create duplicate side effects
+- Recovery as the real autonomy layer
 
-Best overall: **#4b**. Best per tier: **#1a, #2b, #3b, #4b, #5a**.
+Best overall: **#4b**  
+Best per tier: **1a, 2a, 3b, 4b, 5a**
 
 ## Summary
 
-- Saved the complete batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Recorded the run in [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
-- Verified every tweet against its character limit.
-- xAI enrichment was skipped because its key was unset.
-- Notification and revision-offer delivery were attempted, but the external queue was read-only.
+- Generated 10 drafts across five size tiers.
+- Saved the revisable batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Logged the run in [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md).
+- Notification and revision prompt were attempted, but the external queues were read-only.
