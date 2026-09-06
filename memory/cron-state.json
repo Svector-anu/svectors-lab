@@ -12,7 +12,7 @@
     "last_success": "2026-09-06T09:39:28Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-06T09:39:36Z",
     "total_runs": 376,
     "total_successes": 67,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.18,
     "last_quality_score": 2,
-    "last_dispatch": "2026-09-06T09:35:28Z",
+    "last_dispatch": "2026-09-06T13:05:37Z",
     "last_failed": "2026-09-01T01:28:25Z",
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a94-e82f-7de2-9e63-534e99de5596\"} {\"type\":\"turn.started\"} {\"type\":\"error\""
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-09-01T01:28:39Z",
     "total_runs": 429,
     "total_successes": 79,
@@ -35,7 +35,7 @@
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a95-1f12-73f2-85d6-2b4a8c0a1529\"} {\"type\":\"turn.started\"} {\"type\":\"error\"",
     "last_success": "2026-09-06T09:37:55Z",
     "last_quality_score": 3,
-    "last_dispatch": "2026-09-06T09:35:28Z"
+    "last_dispatch": "2026-09-06T13:05:37Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -87,7 +87,7 @@
     "last_error": "d9cca1\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "token-pick": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-05T12:52:41Z",
     "total_runs": 289,
     "total_successes": 26,
@@ -95,7 +95,7 @@
     "consecutive_failures": 0,
     "success_rate": 0.09,
     "last_quality_score": 2,
-    "last_dispatch": "2026-09-05T12:49:38Z",
+    "last_dispatch": "2026-09-06T13:05:37Z",
     "last_failed": "2026-08-24T08:24:32Z",
     "last_error": "58c057\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
@@ -137,8 +137,8 @@
     "last_error": "4f65bd7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "github-trending": {
-    "last_dispatch": "2026-09-05T12:49:38Z",
-    "last_status": "success",
+    "last_dispatch": "2026-09-06T13:05:37Z",
+    "last_status": "dispatched",
     "last_failed": "2026-08-25T00:26:25Z",
     "total_runs": 143,
     "total_successes": 23,
@@ -174,14 +174,14 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-09-06T05:29:21Z",
     "total_runs": 168,
     "total_successes": 53,
     "total_failures": 115,
     "consecutive_failures": 4,
     "success_rate": 0.32,
-    "last_dispatch": "2026-09-06T05:27:36Z",
+    "last_dispatch": "2026-09-06T13:05:37Z",
     "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
     "last_success": "2026-09-05T18:24:25Z",
     "last_quality_score": 4
@@ -199,14 +199,14 @@
     "last_quality_score": 4
   },
   "hunter-22": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-08-22T17:54:46Z",
     "total_runs": 31,
     "total_successes": 24,
     "total_failures": 7,
     "consecutive_failures": 0,
     "success_rate": 0.77,
-    "last_dispatch": "2026-09-05T12:49:38Z",
+    "last_dispatch": "2026-09-06T13:05:37Z",
     "last_success": "2026-09-05T12:52:37Z",
     "last_quality_score": 2,
     "last_error": "4982e4\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
@@ -382,7 +382,7 @@
     "last_quality_score": 4
   },
   "pr-review": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-09-05T15:51:42Z",
     "total_runs": 58,
     "total_successes": 38,
@@ -392,7 +392,7 @@
     "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
     "last_success": "2026-09-05T16:12:40Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-09-05T12:49:38Z"
+    "last_dispatch": "2026-09-06T13:05:37Z"
   },
   "chain:dev-loop": {
     "last_status": "dispatched",
