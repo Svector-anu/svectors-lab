@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-05T19:29:11Z",
-  "quality_score": 3,
-  "assessment": "Actionable and strategy-aligned, but several catalysts and figures lack direct supporting citations, and the privacy transition links to an apparently unrelated Bitcoin ETF article.",
-  "flags": [],
+  "last_analyzed": "2026-09-06T00:58:11Z",
+  "quality_score": 2,
+  "assessment": "Decision-oriented and well structured, but several specific market, liquidation, fee-ranking, celebrity, political, and leaderboard claims lack direct supporting URLs, making the core signals insufficiently verifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-08-30",
-      "score": 2,
-      "ts": "2026-08-30T06:50:43Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-30",
       "score": 2,
@@ -184,6 +180,12 @@
       "date": "2026-09-05",
       "score": 3,
       "ts": "2026-09-05T19:29:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 2,
+      "ts": "2026-09-06T00:58:11Z",
       "harness": "codex"
     }
   ]

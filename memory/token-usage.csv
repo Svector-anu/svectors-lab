@@ -256,4 +256,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-05,vuln-scanner,claude-sonnet-5,4743,28673,8769368,120705
 2026-09-05,defi-overview,codex-default,949011,9877,881664,0
 2026-09-05,write-tweet,codex-default,385593,4645,347776,0
-2026-09-06,memory-flush,codex-default,230746,1941,204672,0
+2026-09-06,narrative-tracker,codex-default,341931,3945,303104,0

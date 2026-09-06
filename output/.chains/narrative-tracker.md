@@ -1,27 +1,40 @@
-*Narrative Tracker — 2026-09-05*
+*Narrative Tracker — 2026-09-06*
 
-macro is vetoing the tape, while privacy and Robinhood Chain are the only clean sector moves. ride privacy, ride Robinhood selectively, fade generic AI-token beta.
+RIDE privacy; FRONT-RUN Robinhood Chain retail rails and tokenized equities. FADE the ZEC squeeze if leverage, not usage, remains the bid.
 
 TRANSITIONS
-• NEW: Privacy coins — ZEC/DASH detached from the broad selloff on ETF + product catalysts; new means no tracker baseline, not first market appearance — https://www.theblock.co/news/markets/2026-09-04-us-bitcoin-etfs-largest-inflow-day-since-january-413515
-• NEW: Robinhood Chain consumer casino — Pons fees and fomo usage made the chain tradeable; same baseline caveat — https://newsletter.defillama.com/p/robinhood-chain-has-a-breakout-app
-• NEW: Macro-veto / ETF bid — hot jobs data reversed risk while $730.9m spot-BTC ETF inflows supplied a competing bid — https://apnews.com/article/1af16359af43eb8abc66445465f633c8
+• NEW/BASELINE: Privacy resurgence — ZEC crossed $1,000 and DASH joined the move; $34m+ ZEC shorts were forced out. https://www.coindesk.com/markets
+• NEW/BASELINE: Robinhood Chain retail speculation — a memecoin launcher became a top crypto fee generator as chain activity surged. https://www.coindesk.com/markets
+• NEW/BASELINE: Tokenized equities/RWA distribution — reported RWA holders reached 3.31m, >2x in 30 days, led by equities/consumer access. https://cryptobriefing.com/tokenized-assets-three-million-holders-rwa/
+• NEW/BASELINE: Regulated on-chain markets — LeBron teased Polymarket while Trump publicly invited Hyperliquid toward the US. https://www.theblock.co/news
 
 REFLEXIVITY ALERT
-• Robinhood Chain — record chain activity pulled ARB higher even though GMGN/Pons, not tokenized equities, led app revenue; the adoption story is repricing ecosystem exposure — https://www.coindesk.com/markets/2026/09/01/robinhood-s-new-crypto-network-is-printing-cash-and-it-s-sending-arbitrum-s-token-soaring
-• Privacy — ZEC/DASH price leadership amplified the privacy story while Grayscale’s Zcash vehicle supplied a concrete access catalyst.
+• Privacy — the story became the flow: ZEC's breakout liquidated roughly $34.5m of shorts, mechanically extending the rally.
+• Robinhood Chain memecoins — speculative activity itself pushed a launcher into the top fee ranks; fees validate the story and attract more issuance.
 
 POSITIONS
-• RIDE: Privacy coins (mindshare 4 ↑↑, Bull) — @Zcash, @Dashpay, @Grayscale — bear: vertical moves plus exchange/regulatory friction make crowded longs fragile.
-• RIDE: Robinhood Chain apps (4 ↑↑, Bull) — @RobinhoodApp, @arbitrum, @DefiLlama — bear: activity is launchpad/bot-heavy and two fomo outages expose weak durability.
-• WATCH: Macro-veto / ETF bid (5 ↑, Mixed) — @BlackRock, @SoSoValue, @AP — bear: ETF demand is real, but one hot macro print can overwhelm it.
-• WATCH: RWA/tokenized finance (3 →, Bull) — @RobinhoodApp, @CoinGecko, @DefiLlama — bear: sector adoption still does not reliably accrue to governance tokens.
-• FADE: Generic AI tokens (3 ↓, Bear) — @CoinMarketCap, @coinbase, @stripe — bear: utility-free tokens are losing attention to AI equities and actual payment rails.
+• RIDE: Privacy coins (mindshare 5 ↑↑, Bull) — @Zcash + @Dashpay + @CoinDesk — bear: a short squeeze is not durable adoption; trail it, don't chase vertical candles.
+• FRONT-RUN: Robinhood Chain retail rails (3 ↑↑, Bull) — @RobinhoodApp + @arbitrum + @CoinDesk — bear: fee leadership may be launch-week mercenary flow.
+• FRONT-RUN: Tokenized equities/RWA distribution (3 ↑↑, Bull) — @centrifuge + @RWA_xyz — bear: holders doubled while reported TVL stayed near $1.6b, so breadth may outrun capital depth.
+• RIDE: Regulated on-chain markets (4 ↑, Bull) — @Polymarket + @HyperliquidX + @TheBlock__ — bear: celebrity/political attention can front-run permissions and US product reality.
+• WATCH: BTC institutional/macro bid (5 →, Mixed) — @BlackRock + @CoinDesk — bear: jobs/Fed repricing reversed the breakout quickly; no contrarian edge.
+• WATCH: AI-agent payment rails (3 →, Mixed) — @KiteAI + @NEARProtocol + @virtuals_io — bear: fresh coverage is mostly sector promotion; token-value capture is unproven.
 
 MAP
-Emerging: none
-Rising: privacy coins; Robinhood Chain apps; macro-veto / ETF bid
-Peak: RWA/tokenized finance
-Fading: generic AI tokens
+Emerging: Robinhood Chain retail rails; tokenized equities/RWA distribution
+Rising: privacy coins; regulated on-chain markets
+Peak: BTC institutional/macro bid
+Fading: none verifiable without a prior baseline
 
-Calibration: DefiLlama’s category tracker showed RWA +4.81%, $71.958b market cap and $3.215b 24h volume at fetch time; Pons reported $31m 30d fees and fomo 1.2m August MAU. Scores remain directional because X search failed.
+CALIBRATION
+• Kaito/Warden account leaderboard: @primenic_eth 0.7598%, @CryptoGideon_ 0.6986%. These narrow account shares support treating 3/5 as sector-visible, not timeline-dominant. https://kaito.wardenprotocol.org/
+
+WATCH/IGNORE LOG
+• Stablecoin regulation — 3 → Mixed, WATCH; Singapore consultation is structural but not a three-day attention spike.
+• Revenue DeFi — 2 → Mixed, IGNORE; no distinct fresh catalyst verified.
+• Bitcoin DeFi — 2 → Mixed, IGNORE; present in monthly lists, absent from fresh signals.
+• ZK — 1 → Mixed, IGNORE; leaderboard exists but no fresh narrative catalyst verified.
+• DePIN/AI compute — 2 → Mixed, IGNORE; infrastructure theme persists, fresh acceleration not verified.
+• Generic memecoins — 3 → Cope, WATCH; only Robinhood Chain had a concrete fresh outcome, so broad beta is not the call.
+
+Source note: XAI primary failed: KEY_UNSET; xai http=400 bytes=118 (invalid key). Public-web fallback used. No prior narrative-tracker entries found for 2026-09-03 through 2026-09-05; this run establishes the baseline.
