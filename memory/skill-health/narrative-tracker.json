@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-06T13:08:12Z",
+  "last_analyzed": "2026-09-06T20:31:55Z",
   "quality_score": 2,
-  "assessment": "Actionable position labels and regime mapping, but multiple precise catalysts, dates, odds, flows, and narrative claims lack direct supporting sources, making the output insufficiently verifiable.",
+  "assessment": "Structured and position-labeled, but the regime calls, exact figures, narrative scores, and transitions rely on weak or mismatched links and are not adequately verifiable; it also fails the conclusion-first requirement.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.83,
+  "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-08-31",
-      "score": 3,
-      "ts": "2026-08-31T05:50:17Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-31",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-06",
       "score": 2,
       "ts": "2026-09-06T13:08:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 2,
+      "ts": "2026-09-06T20:31:55Z",
       "harness": "codex"
     }
   ]
