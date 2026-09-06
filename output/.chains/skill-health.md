@@ -1,20 +1,22 @@
-HEALTH: DEGRADED(15)
+# Skill Health — 2026-09-06
 
-- Degraded: 15
-- Warning: 10
-- Healthy: 5
-- Critical/flapping/no-data: 0
-- Open issues: 4
-- Filed/resolved this run: 0
-- Systemic failures: none
+**HEALTH: CRITICAL(1)**
 
-State matched the previous classification. Notification was attempted because the last confirmed delivery was over 24 hours ago, but the harness’s external queues were read-only.
-
-## Summary
+- `vuln-scanner`: 5 consecutive failures; configured `grok-4.5` model is invalid → existing `ISS-005`.
+- 15 skills degraded, 8 warning, 6 healthy.
+- Open issues: 4.
+- Filed: none.
+- Resolved: none.
+- Systemic failures: none.
+- Notification attempted, but external queues are read-only in this harness.
 
 Updated:
 
 - [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md)
+- [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md)
 
-Validated JSON and formatting with `git diff --check`.
+## Summary
+
+- Audited 30 enabled skills using local state, quality records, issues, logs, and 372 GitHub Actions runs.
+- Recorded the new critical classification and notification attempt.
+- No new issue was needed because the failure signature is already tracked.
