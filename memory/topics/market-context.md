@@ -1,58 +1,59 @@
-# Market Context (as of 2026-09-05)
+# Market Context (as of 2026-09-06)
 
-> **Take:** rotation — BTC gained 0.2% while 14/20 top caps rose and dominance slipped 0.10 pp. Conviction: medium.
+> **Take:** rotation — BTC gained 0.3% while 17/20 top caps rose, but DEX volume fell 19.8% from the prior snapshot. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $79,956 (+0.2% 24h, +2.5% 7d) · dominance 58.85% (-0.10 pp since prior refresh)
-- ETH $2,480 (+1.0% 24h, +1.2% 7d) · ETH/BTC 0.0310
-- SOL $103.87 (+1.9% 24h, -0.9% 7d)
-- Total mcap $2.720T (-1.7% 24h) · DEX vol $10.18B 24h
-- Breadth: 14/20 green 24h · 11/20 green 7d
-- Fear & Greed: 73 (Greed) — yesterday 74
+- BTC $79,886 (+0.3% 24h, +2.0% 7d) · dominance 59.31% (+0.46 pp since prior refresh)
+- ETH $2,489 (+1.4% 24h, +1.1% 7d) · ETH/BTC 0.0312
+- SOL $103.31 (+1.4% 24h, -2.2% 7d)
+- Total mcap $2.700T (-2.5% 24h) · DEX vol $8.17B 24h
+- Breadth: 17/20 green 24h · 13/20 green 7d
+- Fear & Greed: 73 (Greed) — yesterday 73
 
 ## What Changed Since Last Refresh
-- Quiet — BTC/ETH remain within ±1%, TVL moved -0.2%, and the rotation regime is unchanged.
+- DEX volume contracted 19.8% to $8.17B even as 17/20 top caps advanced, weakening the rotation's liquidity support.
+- BTC dominance rose 0.46 pp to 59.31%, pushing against the broad positive altcoin tape.
 
 ## Active Narratives
-- **Large-cap alt rotation** — phase: rising. Evidence: 14/20 top caps rose while BTC gained 0.2% and dominance slipped 0.10 pp.
-- **Privacy relative strength** — phase: rising. Evidence: FIRO is CoinGecko's #1 trend (+27.2% 24h), while ZEC and XMR gained 22.4% and 16.7% over seven days.
-- **Uniswap activity expansion** — phase: rising. Evidence: UNI is #5 trending (+14.1% 24h), while V4 volume rose 12.8% daily and fees 293.2% weekly.
-- **Microcap speculation** — phase: peak. Evidence: trending PONS gained 32.6% while SHRUB fell 68.5% in 24h.
+- **Large-cap alt rotation** — phase: rising. Evidence: 17/20 top caps rose while BTC gained only 0.3%; BNB and DOGE each added more than 6%.
+- **Privacy relative strength** — phase: rising. Evidence: FIRO is CoinGecko's #2 trend (+25.6% 24h), while ZEC and XMR gained 21.9% and 17.6% over seven days.
+- **Arbitrum rebound** — phase: emerging. Evidence: ARB is CoinGecko's #6 trend after a 47.2% daily gain.
+- **Pons speculation** — phase: peak. Evidence: PONS gained 33.4% and its protocol fees rose 43.8% daily and 393.5% weekly.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.90B (+1.2%)
-- Aave V3: $17.55B (+2.1%)
-- SSV Network: $12.86B (+4.3%)
-- Morpho Blue: $9.78B (+2.2%)
-- WBTC: $9.32B (+4.7%)
+- Lido: $24.05B (+1.9%)
+- Aave V3: $17.39B (+1.0%)
+- SSV Network: $12.95B (+4.9%)
+- Morpho Blue: $9.77B (+2.2%)
+- WBTC: $9.30B (+4.1%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.37B (n/a)
-- Solana: $5.91B (n/a)
-- BSC: $5.87B (n/a)
+- Ethereum: $49.26B (n/a)
+- Solana: $5.89B (n/a)
+- BSC: $5.83B (n/a)
 
 ## Stablecoins
-Total: $311.5B (+0.6% 7d). USDT $183.4B · USDC $74.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.5%.
+Total: $311.1B (+0.6% 7d). USDT $183.4B · USDC $74.7B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.5%.
 
 ## Trending (CoinGecko)
-- FIRO — #1 trending, $0.864 (+27.2% 24h)
-- SHRUB — #2 trending, $0.0392 (-68.5% 24h)
-- PONS — #3 trending, $0.920 (+32.6% 24h)
+- CP — #1 trending, $0.0319 (+5.0% 24h)
+- FIRO — #2 trending, $0.953 (+25.6% 24h)
+- PONS — #3 trending, $0.884 (+33.4% 24h)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| OGC Nice wins on September 5 | 29.5% | $1.65M | $0.03M |
-| Alexander Blockx beats Flavio Cobolli | 86.5% | $1.21M | $0.20M |
-| Israel closes its airspace by September 30 | 66.5% | $0.55M | $0.10M |
+| US Open ATP: Zizou Bergs vs Botic van de Zandschulp | 56.5% | $0.83M | $0.20M |
+| Will Fluminense FC win on 2026-09-05? | 28.5% | $0.52M | $0.02M |
+| Spread: Philadelphia Union (-1.5) | 23.0% | $0.51M | $0.01M |
 
 ## Macro Catalysts (next 48h)
-- A hotter-than-expected August jobs report lifted Treasury yields and challenged the near-term Fed-easing trade; rate-sensitive crypto beta remains exposed ([market brief](https://haloterminal.ai/insights/2026-09-05)).
-- US spot BTC ETFs still drew $175M on September 4 and $987M for the week, cushioning the macro pressure ([flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/)).
+- Friday's stronger-than-expected US jobs report reduced near-term Fed-easing expectations; crypto beta remains exposed to higher yields ([market recap](https://coinmarketcap.com/top-stories/6a9b94d798f4795d490e8f5f/)).
+- US spot BTC ETFs logged a $174.6M net inflow on September 4, their third straight inflow day, providing institutional support beneath the macro pressure ([flow tracker](https://www.tftc.io/bitcoin-etf-flows)).
 
 ## Implications for Downstream Skills
-- **token-pick:** favor liquid alt relative strength with fee or volume confirmation; avoid chasing microcaps with 30%+ daily dispersion.
-- **narrative-tracker:** monitor privacy and Uniswap activity for rising-to-peak transitions; require breadth to recover above 14/20.
+- **token-pick:** favor liquid alt relative strength with fee confirmation; avoid chasing high-dispersion microcaps while DEX volume contracts.
+- **narrative-tracker:** monitor privacy and Arbitrum for breadth confirmation; flag a rotation failure if BTC dominance keeps rising.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
