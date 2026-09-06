@@ -162,12 +162,6 @@
     "seen_at": "2026-09-02T21:17:34Z"
   },
   {
-    "id": "08508f3c-558b-45f8-8827-3a3675a71a12",
-    "title": "Test Seeker Flap & Share Feedback",
-    "reward": 25.4463818564098,
-    "seen_at": "2026-09-03T10:09:56Z"
-  },
-  {
     "id": "1ecc537c-a2be-4bd1-a193-6935874e5e17",
     "title": "$500 $SOL Maxi Content Bounty",
     "reward": 56.290118778283,
@@ -186,33 +180,9 @@
     "seen_at": "2026-09-03T10:09:56Z"
   },
   {
-    "id": "1a62d6e4-4d39-4621-8f44-019acd819146",
-    "title": "List your API to MPP32 Ecosystem",
-    "reward": 337.294063575814,
-    "seen_at": "2026-09-04T10:00:00Z"
-  },
-  {
-    "id": "superteam_aeonianbounty",
-    "title": "Write an X Thread Explaining Aeonian Trade & Introducing Upcoming Livestreams",
-    "reward": 166.666666666667,
-    "seen_at": "2026-09-04T10:00:00Z"
-  },
-  {
     "id": "4384e33c-39c2-4144-aa63-1b204b726a16",
     "title": "FAI CALLOUTS",
     "reward": 102.686137565124,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "6cfd8b5e-1a18-4009-992a-4e39bc71cd2c",
-    "title": "pilled.fun: Become Patient Zero",
-    "reward": 23.5765182601214,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "916587ca-7540-4012-adcf-d5b619f2210b",
-    "title": "Use #JesusPHI tags! Engage on lucrative Post!",
-    "reward": 8.55717813042696,
     "seen_at": "2026-09-05T10:00:00Z"
   },
   {
@@ -222,75 +192,9 @@
     "seen_at": "2026-09-05T10:00:00Z"
   },
   {
-    "id": "f07fa628-3d9e-415f-a887-900e37536bbf",
-    "title": "HELP EDSON FIND MORE STROKERS",
-    "reward": 17.8106835461009,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "shillz_0882bc2d-127e-4610-868b-37606676dc18",
-    "title": "Retire Shilling",
-    "reward": 57.68,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "shillz_1ca95cc2-8dd2-41f4-8c6d-b0675594f843",
-    "title": "Y2K Hardcore Shilling",
-    "reward": 114.897826086957,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "shillz_28f30133-01fa-4c23-94b0-013a20978527",
-    "title": "Cate Shilling #2",
-    "reward": 71.6194871794872,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
-    "title": "Clive Bagworking Campaign",
-    "reward": 15.085,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "shillz_f73603f6-6716-4cde-ab92-617360f8e4bb",
-    "title": "Kekius Maximus",
-    "reward": 15.6288888888889,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "shillz_fa278acb-6b1a-4f48-b587-17345fec04c1",
-    "title": "CarrotFunding Creator Campaign (2000 $USDC in rewards)",
-    "reward": 251.557142857143,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "superteam_build-and-demo-a-mermail-agent-skill",
-    "title": "Build and Demo a Mermail Agent Skill",
-    "reward": 83.3333333333333,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
     "id": "superteam_common-s3nse-solana-side-track",
     "title": "Common S3nse - Solana side-track",
     "reward": 666.666666666667,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "superteam_create-a-video-about-swapio",
-    "title": "Create a Video About Swap.io",
-    "reward": 100,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "superteam_create-an-app-on-cookie-chain-app",
-    "title": "Create an App on Cookie Chain",
-    "reward": 500,
-    "seen_at": "2026-09-05T10:00:00Z"
-  },
-  {
-    "id": "superteam_create-content-to-engage-new-builders-for-the-hackathon",
-    "title": "Create Content to Engage New Builders for the Hackathon",
-    "reward": 300,
     "seen_at": "2026-09-05T10:00:00Z"
   },
   {
@@ -300,51 +204,153 @@
     "seen_at": "2026-09-05T10:00:00Z"
   },
   {
+    "id": "08508f3c-558b-45f8-8827-3a3675a71a12",
+    "title": "Test Seeker Flap & Share Feedback",
+    "reward": 25.4463818564098,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "1a62d6e4-4d39-4621-8f44-019acd819146",
+    "title": "List your API to MPP32 Ecosystem",
+    "reward": 337.294063575814,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "6cfd8b5e-1a18-4009-992a-4e39bc71cd2c",
+    "title": "pilled.fun: Become Patient Zero",
+    "reward": 23.5765182601214,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "916587ca-7540-4012-adcf-d5b619f2210b",
+    "title": "Use #JesusPHI tags! Engage on lucrative Post!",
+    "reward": 8.8787325463479,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "d3ecf7a7-03f5-45a9-b0b5-16409128e502",
+    "title": "🚨 VNECK CALLOUT FIELD ASSIGNMENT",
+    "reward": 5.32723952780874,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "f07fa628-3d9e-415f-a887-900e37536bbf",
+    "title": "HELP EDSON FIND MORE STROKERS",
+    "reward": 18.4819012994773,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "shillz_0882bc2d-127e-4610-868b-37606676dc18",
+    "title": "Retire Shilling",
+    "reward": 53.8566666666667,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "shillz_1ca95cc2-8dd2-41f4-8c6d-b0675594f843",
+    "title": "Y2K Hardcore Shilling",
+    "reward": 120.758636363636,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "shillz_28f30133-01fa-4c23-94b0-013a20978527",
+    "title": "Cate Shilling #2",
+    "reward": 87.8318421052632,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
+    "title": "Clive Bagworking Campaign",
+    "reward": 15.68,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "shillz_f73603f6-6716-4cde-ab92-617360f8e4bb",
+    "title": "Kekius Maximus",
+    "reward": 16.2759259259259,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "shillz_fa278acb-6b1a-4f48-b587-17345fec04c1",
+    "title": "CarrotFunding Creator Campaign (2000 $USDC in rewards)",
+    "reward": 249.507142857143,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "superteam_aeonianbounty",
+    "title": "Write an X Thread Explaining Aeonian Trade & Introducing Upcoming Livestreams",
+    "reward": 166.666666666667,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "superteam_build-and-demo-a-mermail-agent-skill",
+    "title": "Build and Demo a Mermail Agent Skill",
+    "reward": 83.3333333333333,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "superteam_create-a-video-about-swapio",
+    "title": "Create a Video About Swap.io",
+    "reward": 100,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "superteam_create-an-app-on-cookie-chain-app",
+    "title": "Create an App on Cookie Chain",
+    "reward": 500,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
+    "id": "superteam_create-content-to-engage-new-builders-for-the-hackathon",
+    "title": "Create Content to Engage New Builders for the Hackathon",
+    "reward": 300,
+    "seen_at": "2026-09-06T10:00:00Z"
+  },
+  {
     "id": "superteam_hackathon-universitaria-superteam-brasil-1",
     "title": "Hackathon Universitária Superteam Brasil",
     "reward": 1000,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_ideathon-submit-innovative-ideas-for-the-hackathon",
     "title": "IDEATHON | Submit Innovative Ideas for the Hackathon",
     "reward": 200,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_nectarfi-x-dominion-market",
     "title": "NectarFi x Dominion Market",
     "reward": 333.333333333333,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_post-why-flint-beats-building-your-own-prop-amm",
     "title": "Post: Why Flint Beats Building Your Own Prop AMM",
     "reward": 500,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_road-to-colosseum-hackathon-germany-ideathon",
     "title": "Road to Colosseum Hackathon: Germany Ideathon",
     "reward": 300,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_solana-summit-canada-creator-challenge-part-1",
     "title": "Solana Summit Canada Creator Challenge - part 1",
     "reward": 384.615384615385,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_t3n-agent-build-challenge",
     "title": "Docs v2 refreshed! Build a trusted agent with T3N that we can distribute",
     "reward": 48.3333333333333,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   },
   {
     "id": "superteam_vibeathon-superteam-x-replit",
     "title": "Vibeathon Superteam x Replit",
     "reward": 1000,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-06T10:00:00Z"
   }
 ]
