@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-06T00:58:11Z",
-  "quality_score": 2,
-  "assessment": "Decision-oriented and well structured, but several specific market, liquidation, fee-ranking, celebrity, political, and leaderboard claims lack direct supporting URLs, making the core signals insufficiently verifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.8,
+  "last_analyzed": "2026-09-06T09:37:52Z",
+  "quality_score": 3,
+  "assessment": "Actionable calls and clear regime mapping, but the opening lacks a single conclusion-first verdict and several precise market/DAO metrics lack direct evidence links, limiting decision-grade verifiability.",
+  "flags": [],
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-08-30",
-      "score": 2,
-      "ts": "2026-08-30T16:48:49Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-30",
       "score": 2,
@@ -186,6 +178,12 @@
       "date": "2026-09-06",
       "score": 2,
       "ts": "2026-09-06T00:58:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 3,
+      "ts": "2026-09-06T09:37:52Z",
       "harness": "codex"
     }
   ]
