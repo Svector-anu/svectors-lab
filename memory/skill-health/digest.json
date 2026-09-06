@@ -1,19 +1,15 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-05T15:40:47Z",
+  "last_analyzed": "2026-09-06T16:13:53Z",
   "quality_score": 2,
-  "assessment": "Polished and linked, but it ignores the crypto-trader strategy, provides no regime or position calls, and implausibly claims workspace files were updated during a read-only run.",
+  "assessment": "Fresh and structured, but it is an agent-tool release digest rather than decision-grade crypto signal, provides no regime or position calls, and implausibly claims workspace updates during a read-only run.",
   "flags": [
     "low_quality",
     "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.33,
+  "avg_score": 2.27,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
     {
       "date": "2026-08-21",
       "score": 4
@@ -176,6 +172,12 @@
       "date": "2026-09-05",
       "score": 2,
       "ts": "2026-09-05T15:40:47Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 2,
+      "ts": "2026-09-06T16:13:53Z",
       "harness": "codex"
     }
   ]

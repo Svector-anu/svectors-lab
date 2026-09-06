@@ -26,6 +26,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-06 | daily (web) | AgentOS MCP, Qwen workflows, Ollama ChatGPT |
 | 2026-09-05 | daily (web) | GitHub CLI key, npm OIDC, agent containment |
 | 2026-09-04 | daily (web) | Coinbase derivatives, KuCoin delistings, Cloudflare remediation |
 | 2026-09-03 | daily (web, third run) | AI ransomware, infra change, agent permissions |
