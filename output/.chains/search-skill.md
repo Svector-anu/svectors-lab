@@ -1,11 +1,12 @@
 SEARCH_SKILL_EMPTY
 
-Searched for `heartbeat monitoring`, derived from `heartbeat`’s 0.09 success rate across 342 runs. The exact match was already installed; remaining results failed the capability-fit gate.
+Query: `agent health monitoring`, derived from `heartbeat`’s low recorded success rate.
 
-No skill installed or notification sent.
+No candidate passed the compatibility and gap-fit gates. Existing skills already cover this area: `heartbeat`, `skill-health`, and `fleet-control`. No skill was installed and no notification was sent.
 
 ## Summary
 
-- Catalogs checked: npx failed, Vercel 9, Anthropic 20, Bankr 37, skills.sh succeeded
-- Updated [memory/logs/2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md)
-- Follow-up needed: none
+- Searched Vercel (9), Anthropic (20), Bankr (37), and skills.sh.
+- `npx` search failed due to its read-only npm cache.
+- Logged the run in [memory/logs/2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md).
+- Preserved unrelated workspace changes.
