@@ -1,19 +1,18 @@
-Vulnerability lifecycle poll completed for 2026-09-05.
+Vuln tracker completed for 2026-09-06.
 
-- ★119,127 secured across 6 repositories.
-- ★514,537 in flight across 16 repositories.
-- 2 PRs need responses: `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
-- 3 PRs are stale without review.
-- 9 disclosure drafts remain: 0 escalations, 1 in-window, 1 operator action, 7 cleanup candidates.
-- ZSvirt’s CRITICAL disclosure remains the sole operator-only send.
+- ★119,695 secured across 6 repos; ★516,135 in flight across 16.
+- No PR merges, closures, or new response requirements.
+- Two PRs still need operator responses: `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
+- ZSvirt’s MEDIUM disclosure reached its 14-day threshold and remains blocked by the Resend 403.
+- A separate CRITICAL ZSvirt disclosure still requires manual operator delivery.
+- Seven retained disclosure drafts are cleanup/archive candidates.
 - No canonical `channel: pvr` files required triage polling.
-- Cosmian/kms #1163 was answered and left the action queue.
-- step-security/harden-runner #693 and paypal/agent-toolkit #101 entered flight.
+
+Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md). The notification was attempted, but delivery queues were read-only; the digest remains staged at `.pending-notify-temp/vuln-tracker-2026-09-06.md`.
 
 ## Summary
 
-- Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md).
-- Appended the run record to [2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-05.md).
-- Preserved the notification digest in [.pending-notify-temp/vuln-tracker-2026-09-05.md](/home/runner/work/svectors-lab/svectors-lab/.pending-notify-temp/vuln-tracker-2026-09-05.md).
-- External notification delivery failed because the harness notification queues are read-only.
+- Completed all three tracker arms.
+- Refreshed live PR states and star counts.
+- Logged one new disclosure escalation.
 - `git diff --check` passed.
