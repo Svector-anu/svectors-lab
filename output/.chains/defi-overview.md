@@ -1,19 +1,9 @@
-Take: rotation — 18/20 top caps rose while BTC gained 0.4%, led by SOL at +4.1%.
-Conviction: medium — breadth and falling BTC dominance agree, but DEX volume fell 18.5%.
-Evidence: SOL outperformed BTC by 3.8 percentage points over 24 hours.
+Rotation, medium conviction: 16/20 top caps advanced while BTC gained 0.3%, but DEX volume fell 18.5%. This is alt outperformance, not broad risk-on.
 
-DeFi is mixed: TVL reached $88.36B, stablecoin supply rose 0.09%, and Starknet Bridge gained 12.7%, but trading activity weakened. Tether led fees at $16.10M; Uniswap V4 fees rose 191% weekly against only 2.5% TVL growth.
+- DeFi verdict: Mixed; TVL was effectively flat and stablecoin supply rose 0.09%.
+- Strongest narratives: large-cap alt rotation, privacy strength, and Arbitrum rebound.
+- Sustainable-yield leaders: Raydium WSOL-USDC 57.4%, Raydium BOME-WSOL 38.9%, Uniswap LINK-WETH 29.5%.
+- Latest reported US spot BTC ETF session: +$175M, providing institutional support despite weak on-chain activity. [ETF flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/)
+- Positions: `DEFI_MONITOR_NO_CONFIG`; no watch configuration exists.
 
-The strongest narratives are large-cap alt rotation, privacy—FIRO +28.5%, ZEC +17.7%—and Arbitrum, which gained 49.4%. Friday’s $174.6M spot-BTC ETF inflow provides support, while stronger employment data and higher yields remain headwinds. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
-
-Updated:
-
-- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md)
-
-## Summary
-
-- Preserved the complete token-pick history.
-- Logged `DEFI_MONITOR_NO_CONFIG` because no positions are configured.
-- All data sources succeeded.
-- Notification was attempted but the external queue is read-only in this harness, so delivery was not confirmed.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md). All nine source groups succeeded and validation passed. Notification delivery was attempted, but the harness’s external notification and json-render queues are read-only.

@@ -1,20 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-06T09:39:34Z",
+  "last_analyzed": "2026-09-06T13:09:45Z",
   "quality_score": 2,
-  "assessment": "Useful conclusion-first market read, but it lacks explicit position calls, provides almost no source-level verification for numerous precise figures, and falsely claims workspace files were updated during a read-only run.",
+  "assessment": "Specific market figures and file updates are insufficiently verifiable, the claimed workspace writes contradict read-only mode, and the output lacks actionable position calls.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2.17,
   "history": [
-    {
-      "date": "2026-08-30",
-      "score": 2,
-      "ts": "2026-08-30T19:33:38Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-31",
       "score": 2,
@@ -187,6 +181,12 @@
       "date": "2026-09-06",
       "score": 2,
       "ts": "2026-09-06T09:39:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-06",
+      "score": 2,
+      "ts": "2026-09-06T13:09:45Z",
       "harness": "codex"
     }
   ]
