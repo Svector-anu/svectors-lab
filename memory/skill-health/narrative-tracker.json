@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-07T14:26:00Z",
+  "last_analyzed": "2026-09-07T18:49:52Z",
   "quality_score": 3,
-  "assessment": "Decision-oriented and conclusion-first with explicit calls and some source links, but many catalyst and regime claims lack direct evidence anchors, limiting verifiability and confidence.",
+  "assessment": "Actionable and well-structured with explicit calls, but several decisive figures and catalysts lack evidence, the regime verdict is not clearly led with, and hard live-price framing conflicts with the strategy.",
   "flags": [],
   "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 3,
-      "ts": "2026-09-01T16:22:55Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-01",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-07",
       "score": 3,
       "ts": "2026-09-07T14:26:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 3,
+      "ts": "2026-09-07T18:49:52Z",
       "harness": "codex"
     }
   ]
