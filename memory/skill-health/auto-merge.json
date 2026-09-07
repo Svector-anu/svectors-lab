@@ -1,10 +1,12 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-09-06T16:12:51Z",
-  "quality_score": 4,
-  "assessment": "Clear, concise, and actionable no-op report with repository, counts, notification behavior, state validation, and modified files explicitly documented.",
-  "flags": [],
-  "avg_score": 3.05,
+  "last_analyzed": "2026-09-07T14:23:52Z",
+  "quality_score": 2,
+  "assessment": "The no-op merge result is usable, but it unverifiably claims workspace files were updated during an explicitly read-only run and provides no evidence supporting the repository/PR count.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3,
   "history": [
     {
       "date": "2026-08-25",
@@ -126,6 +128,12 @@
       "date": "2026-09-06",
       "score": 4,
       "ts": "2026-09-06T16:12:51Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 2,
+      "ts": "2026-09-07T14:23:52Z",
       "harness": "codex"
     }
   ]
