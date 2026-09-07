@@ -1,25 +1,25 @@
-# shiplog: harness portability, reliability, and OSS security
+# Shiplog: the fleet learned to verify itself
 
-**Window:** 2026-08-25 → 2026-08-31  
-**Status:** `SHIPLOG_OK`
+**Status:** `SHIPLOG_OK`  
+**Window:** Aug 31 → Sep 7, 2026
 
-45 operator-authored PRs opened across 10 repositories: 28 merged, 11 open, and 6 closed. The watched Aeon repository recorded 43 commits.
+- 75 operator-authored PRs across 22 repositories
+- 51 merged
+- 10 Aeon PRs merged
+- 32 commits in the watched Aeon repository
+- 18 external security PRs, including 6 merged
 
-Key ships:
+The main theme was verification: proof-bound security findings, verified dev-loop handoffs, review receipts, accurate fleet-health recovery signals, and observable notification failures.
 
-- Added Cursor, Hermes, and GLM harness support, including auth-row and headless-workspace fixes.
-- Improved failure handling for Hermes and transient xAI searches.
-- Added bounded Telegram chunks and machine-readable vulnerability-scanner evidence.
-- Shipped stable RightStack JSON output and its Aeon web3-advisor integration.
-- GitNexus merged the external CVE dependency remediation, [PR #3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095).
-- Corsair’s better-auth, Kysely, and Drizzle remediation remains open in [PR #1421](https://github.com/corsairdev/corsair/pull/1421).
+Product highlights included Skopos advanced-order handoffs, removal of 140 drifted UI token fallbacks, and two Aeon Arena improvements.
 
-No star delta, X activity, ecosystem mentions, or product traction was reported because no flagship repositories, verified handles, scouts, or traction sources are configured.
+Stars, X engagement, and ecosystem traction are `n/a` because flagship repositories and verified X handles are not configured, and `XAI_API_KEY` was unset.
+
+The complete digest, ready-to-post shiplog, thread, and short variant are in [shiplog-2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/shiplog-2026-09-07.md).
 
 ## Summary
 
-- Created [shiplog-2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/output/articles/shiplog-2026-08-31.md)
-- Included the digest, ready-to-post shiplog, thread, and three-bullet variant
-- Advanced [shiplog-last.json](/home/runner/work/svectors-lab/svectors-lab/memory/state/shiplog-last.json)
-- Appended the run to [2026-08-31.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-08-31.md)
-- Notification delivery was attempted but failed because the external notification and feed queues were mounted read-only.
+- Created the shiplog article and social variants.
+- Advanced [shiplog-last.json](/home/runner/work/svectors-lab/svectors-lab/memory/state/shiplog-last.json).
+- Appended the run record to [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md:61).
+- Notification was attempted but could not enter the read-only delivery queues.
