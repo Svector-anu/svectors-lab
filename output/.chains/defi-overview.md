@@ -1,17 +1,19 @@
-Take: chop — BTC fell 0.7%, only 9/20 top caps are green, and DEX volume contracted 18.5%. Conviction: medium.
+Take: chop — BTC fell 1.0% with only 4/20 top caps green, while DEX volume rebounded 18.8%. Conviction: medium.
 
-DeFi remains sideways: TVL is $88.36B and stablecoin supply is flat. Privacy assets retain relative strength; LINK and TAO show selective momentum. No tracked positions were configured.
+DeFi is mixed: TVL held near $88.09B, stablecoin supply stayed flat, and DEX volume rose to $9.61B. RocketSwap Anubis led protocol gains at +100.8%; Lista CDP fell 13.0%. No tracked positions were configured.
 
-Updated:
+Sustainable-yield leaders:
 
-- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md)
+- Uniswap V3 WETH-USDT: 41.0% base APY
+- Uniswap V4 ETH-USDT: 31.3%
+- Uniswap V3 USDC-WETH: 22.4%
 
-All data sources succeeded. Notification delivery was attempted, but the external notification queues are read-only in this harness. Existing unrelated worktree changes were left untouched.
+Macro pressure comes from hot payrolls and renewed rate-hike expectations. Roughly $175M of Friday BTC ETF inflows offers some support, but the next flow print is September 9.
 
 ## Summary
 
-- Refreshed the full DeFi and macro overview.
+- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Appended the run to [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md).
 - Preserved the complete token-pick history.
-- Logged current figures and source status.
-- No commit or PR was created because `.git` is read-only.
+- All data sources succeeded.
+- Notification was attempted, but the harness’s external notification queues were read-only, so delivery was not confirmed.

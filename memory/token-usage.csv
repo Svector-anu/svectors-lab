@@ -267,4 +267,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-07,defi-overview,codex-default,862064,7241,790528,0
 2026-09-07,defi-overview,codex-default,1009957,9850,944256,0
 2026-09-07,fork-fleet,codex-default,1338861,12547,1252736,0
-2026-09-07,self-improve,codex-default,1146958,4017,1078400,0
+2026-09-07,defi-overview,codex-default,684975,7204,614912,0
