@@ -264,4 +264,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-06,narrative-tracker,codex-default,270812,4148,233344,0
 2026-09-06,write-tweet,codex-default,247106,3008,205056,0
 2026-09-06,memory-flush,codex-default,233541,3861,205568,0
-2026-09-07,narrative-tracker,codex-default,318368,3680,253568,0
+2026-09-07,defi-overview,codex-default,862064,7241,790528,0

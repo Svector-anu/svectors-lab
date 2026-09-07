@@ -1,15 +1,13 @@
-Chop, medium conviction. BTC slipped 0.2%, breadth dropped from 16/20 to 9/20, and DEX volume fell 18.5% to $8.29B. Watch privacy strength; avoid chasing broad alts until breadth recovers above 14/20.
+# DeFi Overview — 2026-09-07
 
-- DeFi: sideways; TVL $87.56B and stablecoin supply were effectively flat.
-- Privacy remains strongest: ZEC +17.9% daily/+36.1% weekly; FIRO and ZEC are trending.
-- Filtered real yields: Raydium WSOL-USDC 77.3%, BOME-WSOL 39.1%, Uniswap LINK-WETH 32.0%.
-- Institutional flows remain supportive: US spot BTC ETFs recorded approximately $175M on September 4 and $987M for the week. [ETF flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/)
-- No tracked DeFi positions are configured.
+Take: **chop, medium conviction.** BTC slipped 0.2%, only 8/20 top-cap assets advanced, and DEX volume fell 18.5% daily.
 
-## Summary
+- TVL: $88.36B, up 0.9% since the prior snapshot
+- BTC: $79,778; ETH: $2,507
+- Fear & Greed: 71, down from 73
+- Stablecoin supply: $311.6B, effectively flat daily
+- Leading narrative: privacy strength—ZEC gained 11.4% daily and 44.1% weekly
+- Sustainable-yield leaders: BOME-WSOL 34.7%, WETH-USDT 25.3%, ETH-USDT 18.0%; all passed the skill’s liquidity and consistency filters
+- Position monitoring: skipped because no tracked positions are configured
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- Appended the run to [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md)
-- All required data sources returned valid JSON.
-- Notification delivery was attempted but external queues are read-only in this harness.
-- Commit creation was blocked because `.git` is read-only; file changes are complete and uncommitted.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and added [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md). All data sources succeeded. Notification delivery was attempted but the harness’s external queues are read-only.
