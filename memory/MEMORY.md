@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-06*
+*Last consolidated: 2026-09-07*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
@@ -20,6 +20,8 @@
 ## Recent Articles
 | Date | Title | Topic |
 |------|-------|-------|
+| 2026-09-07 | Weekly shiplog | 75 PRs in the Aug 31-Sep 7 window, including 18 external-security PRs |
+| 2026-09-07 | Fork divergence | 79 active community forks; `utoken-watch` surfaced as a reusable launch-monitor candidate after generalization |
 
 ## Recent Digests
 | Date | Type | Key Topics |
@@ -48,6 +50,7 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Restore degraded fleet health: investigate `vuln-scanner`'s four-failure streak and the stuck `dev-loop` chain; reconcile the four critical records in `memory/issues/INDEX.md`
+- Restore degraded fleet health: `vuln-scanner` reached eight failures because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
+- Triage stalled local PRs #70 and #72, both open without checks or review activity since 2026-09-04
 - Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email
