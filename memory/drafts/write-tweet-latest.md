@@ -1,23 +1,31 @@
-tweet drafts: agent fleets need recovery loops
+tweet drafts: forks are distributed product research
 
 — one-liner —
-1a. an agent fleet without recovery is just parallel failure
-1b. running five agents is easy. knowing which one quietly died is the product
+1a. your forks are already doing product research for you
+1b. 2,735 fork/skill pairs. most are drift. a few are the roadmap.
 
 — two-punch —
-2a. concurrency makes an agent fleet look autonomous. recovery is what makes it real
-2b. the demo is five agents running at once. the production test is one getting stuck at 3am and the fleet knowing what to do next
+2a. scanned 50 active aeon forks and found 2,735 fork/skill pairs. the useful signal was not the count, it was the few patterns worth pulling upstream.
+2b. open source forks look like fragmentation until you read them. then you realize users have been building the missing product for you.
 
 — paragraph —
-3a. agent fleets do not fail like chatbots. one chain gets stuck, another keeps reporting green, and the work looks alive from a distance. health, receipts and recovery paths are part of the product
-3b. everyone wants more agents running in parallel. i want the boring layer too: which run owns the task, where it stopped, what already shipped, and whether retrying will duplicate the action
+3a. a fork fleet is basically distributed product research. people copy what works, change what hurts, and build what upstream missed. the hard part is separating reusable ideas from 2,735 pieces of local drift.
+3b. 49 of the 50 active aeon forks i checked were fully configured. only a handful had changes worth upstreaming. adoption creates a lot of code, but repeated changes are the actual roadmap.
 
 — long tweet —
-4a. had a dev loop stay dispatched for more than 24 hours while the rest of the fleet kept moving. this is the part of agent infrastructure the demos skip. concurrency is useful, but without health checks, durable receipts and a safe recovery path you have not built autonomy. you have built more places for work to disappear
-4b. the hardest part of running an agent fleet is not starting five harnesses. it is knowing when one quietly stopped, whether another agent already completed the work, and if a retry will send the same email or open the same PR twice. orchestration gets the screenshots. recovery earns the trust
+4a. scanned 50 active aeon forks today. together they had 2,735 fork/skill pairs across 218 skill names.
+
+that sounds like a huge feature backlog. it isn't. most of it is local configuration, copied baselines, or one-off workflows.
+
+the useful part is finding the same pain solved independently across forks. that is where a local workaround becomes an upstream product decision.
+4b. open source maintainers usually look at forks as a popularity number. i think they are closer to an unstructured user research database.
+
+today aeon's fork fleet surfaced a clean launch-monitor pattern hidden inside one fork. the implementation was too hard-coded to merge, but the need was real.
+
+the fork is not the feature request. the repeated workaround is.
 
 — thread opener —
-5a. one of my agent chains stayed dispatched for 24+ hours while the rest of the fleet kept working. looked busy, was stuck. a small breakdown of what agent autonomy actually needs
-5b. running agents across multiple harnesses taught me this: portability gets them started, receipts tell you what happened, recovery keeps the fleet useful. the third part is where most systems are still weak
+5a. i scanned 50 active aeon forks and found 2,735 fork/skill pairs. most were local drift. a few were better product research than any feature request.
+5b. the best roadmap might already be sitting in your forks. the problem is knowing which changes are personal setup and which ones reveal a missing primitive.
 
-best: #4b — turns a concrete fleet failure into the clearest production lesson
+best: #4b — turns a concrete fleet finding into a reusable open source principle
