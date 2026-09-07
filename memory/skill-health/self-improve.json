@@ -1,12 +1,10 @@
 {
   "skill": "self-improve",
-  "last_analyzed": "2026-09-05T19:29:24Z",
-  "quality_score": 2,
-  "assessment": "The run handled the failed dry-run safely, but provides no error details, evidence, or actionable diagnosis, making the claimed issue and proposed repair difficult to verify or continue.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.88,
+  "last_analyzed": "2026-09-07T18:50:28Z",
+  "quality_score": 3,
+  "assessment": "Acceptable fail-closed run with a concrete diagnosis and preserved workspace, but it delivered no verified repair and provides limited evidence for the claimed root cause.",
+  "flags": [],
+  "avg_score": 2.89,
   "history": [
     {
       "date": "2026-08-25",
@@ -52,6 +50,12 @@
       "date": "2026-09-05",
       "score": 2,
       "ts": "2026-09-05T19:29:24Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 3,
+      "ts": "2026-09-07T18:50:28Z",
       "harness": "codex"
     }
   ]
