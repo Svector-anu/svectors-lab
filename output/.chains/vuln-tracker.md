@@ -1,18 +1,21 @@
-Vuln tracker completed for 2026-09-06.
+Vuln tracker completed for 2026-09-07.
 
-- ★119,695 secured across 6 repos; ★516,135 in flight across 16.
-- No PR merges, closures, or new response requirements.
-- Two PRs still need operator responses: `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
-- ZSvirt’s MEDIUM disclosure reached its 14-day threshold and remains blocked by the Resend 403.
-- A separate CRITICAL ZSvirt disclosure still requires manual operator delivery.
-- Seven retained disclosure drafts are cleanup/archive candidates.
+Key findings:
+
+- 2 PRs need answers:
+  - `vllm-project/semantic-router#3425`: rebase and update `go.onnx.mod`.
+  - `NousResearch/hermes-agent#94342`: resolve unrelated lockfile drift.
+- `corsairdev/corsair#1421` newly became stale after 8 days without maintainer review.
+- 1 disclosure exceeds threshold: ZSvirt MEDIUM draft, 15 days old, blocked by Resend domain verification.
+- 1 CRITICAL ZSvirt disclosure still requires operator-controlled sending.
+- 7 retained disclosure drafts are cleanup candidates.
 - No canonical `channel: pvr` files required triage polling.
 
-Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md). The notification was attempted, but delivery queues were read-only; the digest remains staged at `.pending-notify-temp/vuln-tracker-2026-09-06.md`.
+Impact: ★120,486 secured across 6 repositories; ★517,592 in flight across 16 repositories.
 
 ## Summary
 
-- Completed all three tracker arms.
-- Refreshed live PR states and star counts.
-- Logged one new disclosure escalation.
-- `git diff --check` passed.
+- Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md).
+- Appended the run to [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md).
+- Preserved the notification digest in `.pending-notify-temp/vuln-tracker-2026-09-07.md`.
+- Notification delivery failed because the external notification queues are read-only in this harness.
