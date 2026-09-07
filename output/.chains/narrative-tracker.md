@@ -1,29 +1,26 @@
-*Narrative Tracker — 2026-09-06*
-
-fallback confidence: low-medium. X.AI was unset/invalid (`xai http=400`); web-only signal, no prior 3-day tracker baseline.
+*Narrative Tracker — 2026-09-07*
 
 TRANSITIONS
-• NEW: BTC $78–80K support / macro-rate shock — the only timeline-scale thread consistently visible across Sep 3–5; hot jobs/rate bets flipped the tone from breakout talk to defense — https://stop-fake.org/reports
-• NEW: privacy / ZEC — ZEC’s reported +17% move and expanding volume pulled privacy back into active rotation — https://www.reddit.com/r/kucoin/comments/1w6rmh2/kucoin_daily_market_watch_september_4_2026/
-• NEW: prediction markets → multi-asset perps — Polymarket’s perps launch broadens the story from event betting into on-chain trading infrastructure — same link above
-• NEW: ETF-led institutional bid — August’s ~$3.5B BTC ETF inflow remains the bull anchor, but Sep 1–2 outflows make this a contested rather than clean trend — https://www.reddit.com/r/TradeVerseNetwork/comments/1w87ugq/weekly_market_recap_week_ahead_aug_31_sep_4_2026/
+• NEW: prediction markets go mainstream — @KingJames teased a @Polymarket football campaign after $273M traded on his free-agency decision: https://www.theblock.co/news/deals/2026-09-05-lebron-james-teases-polymarket-partnership-in-new-social-media-video-413608
+• PROMOTED: Solana activity Emerging → Rising — PumpSwap now does $838.66M 24h volume and holds $324.75M TVL: https://defillama.com/protocol/pumpswap
+• PROMOTED: privacy Rising → Peak — ZEC extended the move, but the latest leg was described as leveraged narrative follow-through rather than a fresh catalyst: https://coinmarketcap.com/top-stories/6a999ae57b765559614fecc9/
+• NEW: tokenized-stock legitimacy fight — AMC challenged Robinhood’s synthetic stock tokens; the fight is now about rights and issuer consent: https://decrypt.co/377461/send-your-lawyers-robinhood-not-backing-down-amc
 
 REFLEXIVITY ALERT
-• privacy / ZEC — the strengthening “privacy” label coincided with a reported 17% ZEC move and sharp volume expansion; no matching fundamentals shift surfaced in-window.
-• BTC support battle — repeated $78–80K framing is concentrating positioning around the same level; treat a break as a liquidation catalyst, not fundamental confirmation.
+• tokenized stocks — the AMC/Robinhood dispute spawned 23+ copycats; one Robinhood Chain memecoin briefly exceeded $100M before crashing. story became the trade.
+• privacy — ZEC’s 11.4-point four-hour move was attributed to leveraged follow-through on the privacy story, without a matching fundamental event.
 
 POSITIONS
-• RIDE: privacy / ZEC (3 ↑↑, Bull; Emerging) — @Zcash, @ElectricCoinCo, @zooko — bear: one-token price action can masquerade as sector adoption.
-• RIDE: on-chain perps + prediction-market convergence (3 ↑, Bull; Rising) — @Polymarket, @HyperliquidX, @KaitoAI — bear: product expansion can dilute liquidity and invite regulation.
-• WATCH: BTC $78–80K macro support (5 →, Mixed; Peak) — @BitcoinMagazine, @glassnode, @saylor — bear: hot data and weak equities can overwhelm crypto-native flows.
-• WATCH: institutional ETF bid (4 →, Mixed; Peak) — @BlackRock, @coinbase, @EricBalchunas — bear: September flows already turned two-way.
-• WATCH: agentic payments / verifiable AI infra (3 →, Bull; Rising) — @CoinGecko, @KaitoAI, @a16zcrypto — bear: durable AI attention still does not prove token value capture.
-• WATCH: RWA + stablecoin rails (3 →, Bull; Rising) — @circle, @OndoFinance, @BlackRock — bear: adoption may accrue to issuers and chains, not sector tokens.
+• FRONT-RUN: prediction markets mainstream (2 ↑↑, Bull) — @KingJames, @Polymarket, @shayne_coplan — celebrity distribution is real; bear: partnership economics are undisclosed and sports attention may not convert to durable liquidity.
+• RIDE: Solana app activity (4 ↑, Bull) — @pumpdotfun, @solana, @Mert — real volume/fees; bear: activity remains reflexive and memecoin-heavy.
+• WATCH: tokenized stocks (4 ↑↑, Mixed) — @CEOAdam, @vladtenev, @RobinhoodApp — $15.1B Q1 spot volume validates demand; bear: tokens lack voting/ownership rights and invite issuer/regulatory pushback.
+• FADE: privacy coins (4 →, Bull) — @Zcash, @firoorg, @Grayscale — price confirmed mindshare; bear: leverage, not a new catalyst, drove the latest leg.
+• RIDE: BTC ETF absorption (4 ↑, Bull) — @EricBalchunas, @JSeyff, @sosovalue — nearly $1B weekly inflow absorbed payroll shock; bear: BTC still cannot clear $82K in thin weekend tape.
 
 MAP
-Emerging: privacy/ZEC
-Rising: on-chain perps/prediction markets; agentic payments; RWA/stablecoins
-Peak: BTC support/macro; ETF institutional bid
-Fading: none verified
+Emerging: prediction-market mainstreaming
+Rising: Solana app activity, tokenized stocks, BTC ETF absorption
+Peak: privacy coins
+Fading: Pons activity
 
-Calibration: an available Kaito-sourced sector chart (not current) puts AI at 28.85% and DeFi at 22.02% mindshare; Kaito’s live leaderboard failed to render, so these anchor scale only, not today’s ranking. Talos reported $2.79T total crypto market cap and only 20/50 large assets up for Aug 27–Sep 2, consistent with narrow breadth.
+source quality: degraded — XAI key check was unset and API returned http-400; web fallback used.

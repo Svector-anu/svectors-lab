@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-06T20:31:55Z",
+  "last_analyzed": "2026-09-07T03:18:20Z",
   "quality_score": 2,
-  "assessment": "Structured and position-labeled, but the regime calls, exact figures, narrative scores, and transitions rely on weak or mismatched links and are not adequately verifiable; it also fails the conclusion-first requirement.",
+  "assessment": "Decision-oriented and conclusion-first, but several precise claims and position inputs lack direct evidence links or clear sourcing, making the report insufficiently verifiable despite the disclosed degraded fallback.",
   "flags": [
     "unverifiable_claim"
   ],
   "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-08-31",
-      "score": 2,
-      "ts": "2026-08-31T11:55:36Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-31",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-06",
       "score": 2,
       "ts": "2026-09-06T20:31:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 2,
+      "ts": "2026-09-07T03:18:20Z",
       "harness": "codex"
     }
   ]
