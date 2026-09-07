@@ -1,13 +1,13 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-06T13:09:01Z",
+  "last_analyzed": "2026-09-07T14:25:50Z",
   "quality_score": 2,
-  "assessment": "Specific and structured, but it provides no crypto regime or position call, and several extraordinary repository metrics and benchmark claims lack visible evidence, making the output insufficiently verifiable and poorly aligned with the operator strategy.",
+  "assessment": "Substantive and linked, but it does not serve the crypto-trader strategy: there is no regime verdict, tradeable crypto signal, evidence-backed catalyst, or explicit front-run/ride/fade/watch call.",
   "flags": [
     "low_quality",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 3,
+  "avg_score": 2.96,
   "history": [
     {
       "date": "2026-07-28",
@@ -136,6 +136,12 @@
       "date": "2026-09-06",
       "score": 2,
       "ts": "2026-09-06T13:09:01Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 2,
+      "ts": "2026-09-07T14:25:50Z",
       "harness": "codex"
     }
   ]

@@ -1,27 +1,31 @@
-*GitHub Trending — 2026-09-06*
+*GitHub Trending — 2026-09-07*
 
-*Top pick* — [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)
-The rare agent skill with a reproducible benchmark: materially smaller diffs without dropping safety checks.
+*Top pick* — [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
+Agent-native media gets a credible open stack: deterministic HTML-to-MP4 rendering plus 20 task-specific creation skills.
 
 *AI/ML*
-• [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) — ★ 1,539 today (128.7k total) · JavaScript · ACCELERATING
-Its 12-task benchmark reports 54% less code, 20% lower cost, and full safety retention.
+• [mksglu/context-mode](https://github.com/mksglu/context-mode) — ★ 85 today (20.6k total) · TypeScript · ACCELERATING
+Sandboxes raw tool output and retrieves session history through SQLite FTS5.
 
-• [affaan-m/ECC](https://github.com/affaan-m/ECC) — ★ 1,486 today (250.5k total) · JavaScript · ACCELERATING
-One guided install carries skills, hooks, memory, and security tooling across multiple coding harnesses.
+• [bytedance/deer-flow](https://github.com/bytedance/deer-flow) — ★ 188 today (81.7k total) · Python · ACCELERATING
+Version 2 is a ground-up rewrite combining subagents, sandboxes, skills, memory, and scheduled tasks.
 
 *Devtools*
-• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 621 today (32.0k total) · HTML · ACCELERATING
-Ships 39 dependency-free SVG diagram grammars, including trust boundaries, Wardley maps, and database schemas.
+• [microsoft/markitdown](https://github.com/microsoft/markitdown) — ★ 771 today (179.5k total) · Python · ACCELERATING
+Preserves document structure while converting PDFs, Office files, audio, archives, and URLs for LLM pipelines.
 
-• [anomalyco/opencode](https://github.com/anomalyco/opencode) — ★ 552 today (205.0k total) · TypeScript · ACCELERATING
-A single coding-agent stack now spans terminal, desktop, and multiple package-manager distribution paths.
+• [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) — ★ 117 today (9.4k total) · JavaScript · RETURNING
+Pairs C++-level Firefox fingerprint spoofing with compact accessibility snapshots and stable element references.
 
-• [mattpocock/skills](https://github.com/mattpocock/skills) — ★ 2,206 today (253.7k total) · Shell · ACCELERATING
-Small composable workflows preserve developer control while supporting managed installs or editable project copies.
+• [lightpanda-io/browser](https://github.com/lightpanda-io/browser) — ★ 116 today (34.7k total) · Zig · RETURNING
+Its published 933-page benchmark reports 123MB peak memory versus Chrome’s 2GB.
 
-• [humanlayer/skills](https://github.com/humanlayer/skills) — ★ 451 today (2.9k total) · TypeScript · RETURNING
-Turns control-loop design and recurring agent work into repo-local, scheduled GitHub Actions workflows.
+*Web/Apps*
+• [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) — ★ 220 today (45.0k total) · TypeScript · ACCELERATING
+Turns seekable HTML animations into deterministic MP4s and ships 20 agent creation skills.
+
+• [pascalorg/editor](https://github.com/pascalorg/editor) — ★ 136 today (22.1k total) · TypeScript · ACCELERATING
+A local WebGPU building editor exposes persistent scene control directly to agents through MCP.
 
 ---
-sources: trending=ok · gh_api=ok · kept 6/16
+sources: trending=ok · gh_api=ok · kept 7/14
