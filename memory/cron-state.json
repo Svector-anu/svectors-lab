@@ -25,15 +25,15 @@
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a94-e82f-7de2-9e63-534e99de5596\"} {\"type\":\"turn.started\"} {\"type\":\"error\""
   },
   "narrative-tracker": {
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-09-01T01:28:39Z",
-    "total_runs": 431,
-    "total_successes": 81,
+    "total_runs": 432,
+    "total_successes": 82,
     "total_failures": 350,
     "consecutive_failures": 0,
     "success_rate": 0.19,
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a95-1f12-73f2-85d6-2b4a8c0a1529\"} {\"type\":\"turn.started\"} {\"type\":\"error\"",
-    "last_success": "2026-09-06T20:31:59Z",
+    "last_success": "2026-09-07T03:18:22Z",
     "last_quality_score": 2,
     "last_dispatch": "2026-09-07T03:15:57Z"
   },
