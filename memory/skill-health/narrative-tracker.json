@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-07T08:28:21Z",
-  "quality_score": 4,
-  "assessment": "Substantive, timely, decision-grade narrative map with explicit position calls, risks, calibration, and source links; however, several stablecoin, regulatory, and agentic-payment specifics lack direct source attribution, and the conclusion is not surfaced within the opening ~150 characters.",
+  "last_analyzed": "2026-09-07T14:26:00Z",
+  "quality_score": 3,
+  "assessment": "Decision-oriented and conclusion-first with explicit calls and some source links, but many catalyst and regime claims lack direct evidence anchors, limiting verifiability and confidence.",
   "flags": [],
-  "avg_score": 2.83,
+  "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 4,
-      "ts": "2026-09-01T12:01:18Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-01",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-07",
       "score": 4,
       "ts": "2026-09-07T08:28:21Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 3,
+      "ts": "2026-09-07T14:26:00Z",
       "harness": "codex"
     }
   ]
