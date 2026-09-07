@@ -1,13 +1,534 @@
 {
-  "last_run": "2026-08-31",
+  "last_run": "2026-09-07",
   "last_status": "FORK_FLEET_OK",
   "parent_repo": "aeonfun/aeon",
-  "active_total": 85,
+  "active_total": 79,
   "processed": 50,
   "truncated_at": 50,
   "forks": {
-    "Svector-anu/svectors-lab": {"pushed_at":"2026-08-31T11:52:25Z","default_branch":"main","ahead_by":3293,"behind_by":28,"new_skill_count":3,"score":92,"tier":"PROMOTE","unique_skills":["skills/fear-divergence/SKILL.md","skills/verdikta-hunter/SKILL.md","skills/x402-monitor/SKILL.md"]},
-    "MagIcKEarl/aeon": {"pushed_at":"2026-08-29T15:07:30Z","default_branch":"main","ahead_by":151,"behind_by":14,"new_skill_count":3,"score":80,"tier":"PROMOTE","unique_skills":["skills/forecasting/SKILL.md","skills/hyperliquid/SKILL.md","skills/yield-farming/SKILL.md"]},
-    "Boodszw/Boodszw_Bread": {"pushed_at":"2026-08-31T06:03:08Z","default_branch":"main","ahead_by":20444,"behind_by":812,"new_skill_count":4,"score":76,"tier":"PROMOTE","unique_skills":["skills/alchemy/SKILL.md","skills/bankr/SKILL.md","skills/opensea/SKILL.md","skills/zerion/SKILL.md"]}
+    "Svector-anu/svectors-lab": {
+      "pushed_at": "2026-09-07T14:23:08Z",
+      "default_branch": "main",
+      "ahead_by": 4077,
+      "behind_by": 60,
+      "new_skill_count": 0,
+      "score": 54,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "lawbworld-tech/aeon": {
+      "pushed_at": "2026-09-07T14:22:26Z",
+      "default_branch": "main",
+      "ahead_by": 6314,
+      "behind_by": 808,
+      "new_skill_count": 1,
+      "score": 43,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/lawb-pool-monitor/SKILL.md"
+      ]
+    },
+    "0xMal0u/aeon": {
+      "pushed_at": "2026-09-07T14:21:30Z",
+      "default_branch": "main",
+      "ahead_by": 8867,
+      "behind_by": 818,
+      "new_skill_count": 0,
+      "score": 35,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "darkstaryuri/aeon": {
+      "pushed_at": "2026-09-07T14:21:12Z",
+      "default_branch": "main",
+      "ahead_by": 14,
+      "behind_by": 0,
+      "new_skill_count": 0,
+      "score": 33,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "chxoky/aeon": {
+      "pushed_at": "2026-09-07T13:57:42Z",
+      "default_branch": "main",
+      "ahead_by": 16770,
+      "behind_by": 672,
+      "new_skill_count": 0,
+      "score": 36,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "madebyshun/blueagent-aeon": {
+      "pushed_at": "2026-09-07T13:13:53Z",
+      "default_branch": "main",
+      "ahead_by": 1417,
+      "behind_by": 834,
+      "new_skill_count": 0,
+      "score": 35,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "UIZorrot/aeon": {
+      "pushed_at": "2026-09-07T13:02:41Z",
+      "default_branch": "main",
+      "ahead_by": 1848,
+      "behind_by": 772,
+      "new_skill_count": 1,
+      "score": 47,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/careful-finance/SKILL.md"
+      ]
+    },
+    "stefrogovskyi/aeon": {
+      "pushed_at": "2026-09-07T12:27:52Z",
+      "default_branch": "main",
+      "ahead_by": 67,
+      "behind_by": 99,
+      "new_skill_count": 0,
+      "score": 33,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "gdalabs/aeon": {
+      "pushed_at": "2026-09-07T12:27:31Z",
+      "default_branch": "main",
+      "ahead_by": 152,
+      "behind_by": 151,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "thanhdat3007-create/aeon": {
+      "pushed_at": "2026-09-07T12:25:49Z",
+      "default_branch": "main",
+      "ahead_by": 2,
+      "behind_by": 0,
+      "new_skill_count": 0,
+      "score": 4,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "damo-nu11/aeon-minebean": {
+      "pushed_at": "2026-09-07T12:12:44Z",
+      "default_branch": "main",
+      "ahead_by": 5091,
+      "behind_by": 830,
+      "new_skill_count": 1,
+      "score": 48,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/mine-bean/SKILL.md"
+      ]
+    },
+    "gitlawbounty/aeon": {
+      "pushed_at": "2026-09-07T10:45:58Z",
+      "default_branch": "main",
+      "ahead_by": 2659,
+      "behind_by": 811,
+      "new_skill_count": 0,
+      "score": 31,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "abhirajprasad/aeon": {
+      "pushed_at": "2026-09-07T10:34:50Z",
+      "default_branch": "main",
+      "ahead_by": 2045,
+      "behind_by": 830,
+      "new_skill_count": 1,
+      "score": 44,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/aeonbook-onboarding/SKILL.md"
+      ]
+    },
+    "youpsla/aeon": {
+      "pushed_at": "2026-09-07T10:28:18Z",
+      "default_branch": "main",
+      "ahead_by": 4114,
+      "behind_by": 818,
+      "new_skill_count": 0,
+      "score": 35,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "Boodszw/Boodszw_Bread": {
+      "pushed_at": "2026-09-07T10:28:10Z",
+      "default_branch": "main",
+      "ahead_by": 21133,
+      "behind_by": 844,
+      "new_skill_count": 4,
+      "score": 76,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/alchemy/SKILL.md",
+        "skills/bankr/SKILL.md",
+        "skills/opensea/SKILL.md",
+        "skills/zerion/SKILL.md"
+      ]
+    },
+    "pezetel/aeon": {
+      "pushed_at": "2026-09-07T10:27:30Z",
+      "default_branch": "main",
+      "ahead_by": 5832,
+      "behind_by": 866,
+      "new_skill_count": 0,
+      "score": 33,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "alexverify/aeon": {
+      "pushed_at": "2026-09-07T10:12:31Z",
+      "default_branch": "main",
+      "ahead_by": 36,
+      "behind_by": 207,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "TakamiyaZee/aeon": {
+      "pushed_at": "2026-09-07T09:37:45Z",
+      "default_branch": "main",
+      "ahead_by": 2781,
+      "behind_by": 781,
+      "new_skill_count": 0,
+      "score": 32,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "antfleet-ops/aeon": {
+      "pushed_at": "2026-09-07T09:33:54Z",
+      "default_branch": "main",
+      "ahead_by": 2520,
+      "behind_by": 804,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "sparkleware/aeon": {
+      "pushed_at": "2026-09-07T09:32:41Z",
+      "default_branch": "main",
+      "ahead_by": 2433,
+      "behind_by": 690,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "enzoonchain/aeon": {
+      "pushed_at": "2026-09-07T09:18:25Z",
+      "default_branch": "main",
+      "ahead_by": 10887,
+      "behind_by": 830,
+      "new_skill_count": 2,
+      "score": 53,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/builder-post/SKILL.md",
+        "skills/delegation/SKILL.md"
+      ]
+    },
+    "taekwonv89/aeon": {
+      "pushed_at": "2026-09-07T08:38:32Z",
+      "default_branch": "main",
+      "ahead_by": 19498,
+      "behind_by": 811,
+      "new_skill_count": 0,
+      "score": 36,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "amritmirch/aeon": {
+      "pushed_at": "2026-09-07T08:31:26Z",
+      "default_branch": "main",
+      "ahead_by": 79,
+      "behind_by": 155,
+      "new_skill_count": 0,
+      "score": 33,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "hansj73/aeon": {
+      "pushed_at": "2026-09-07T05:51:50Z",
+      "default_branch": "main",
+      "ahead_by": 152,
+      "behind_by": 63,
+      "new_skill_count": 0,
+      "score": 37,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "danbuildss/aeon": {
+      "pushed_at": "2026-09-07T05:30:45Z",
+      "default_branch": "main",
+      "ahead_by": 63,
+      "behind_by": 52,
+      "new_skill_count": 1,
+      "score": 42,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/cortx-reliability/SKILL.md"
+      ]
+    },
+    "AwesomeAgentTools/aeon": {
+      "pushed_at": "2026-09-07T04:47:45Z",
+      "default_branch": "main",
+      "ahead_by": 38,
+      "behind_by": 29,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "swarm-ai-research/aeon-atlas": {
+      "pushed_at": "2026-09-06T21:37:30Z",
+      "default_branch": "main",
+      "ahead_by": 851,
+      "behind_by": 752,
+      "new_skill_count": 0,
+      "score": 37,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "beijiangqukuailian/aeon": {
+      "pushed_at": "2026-09-06T21:31:27Z",
+      "default_branch": "main",
+      "ahead_by": 250,
+      "behind_by": 690,
+      "new_skill_count": 0,
+      "score": 34,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "takanafur/aeon": {
+      "pushed_at": "2026-09-06T20:45:39Z",
+      "default_branch": "main",
+      "ahead_by": 874,
+      "behind_by": 834,
+      "new_skill_count": 0,
+      "score": 32,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "czijian729-oss/aeon": {
+      "pushed_at": "2026-09-04T07:37:16Z",
+      "default_branch": "main",
+      "ahead_by": 203,
+      "behind_by": 129,
+      "new_skill_count": 1,
+      "score": 56,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/utoken-watch/SKILL.md"
+      ]
+    },
+    "cyborganeh/aeon": {
+      "pushed_at": "2026-09-04T02:06:29Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 7,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "yugo-engineer/aeon": {
+      "pushed_at": "2026-09-03T20:06:23Z",
+      "default_branch": "main",
+      "ahead_by": 1447,
+      "behind_by": 971,
+      "new_skill_count": 0,
+      "score": 36,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "Jason9720/aeon": {
+      "pushed_at": "2026-09-01T19:30:10Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 18,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "dipanshuhappy/aeon": {
+      "pushed_at": "2026-09-01T17:49:15Z",
+      "default_branch": "main",
+      "ahead_by": 39,
+      "behind_by": 27,
+      "new_skill_count": 0,
+      "score": 31,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "forumchen388-debug/aeon": {
+      "pushed_at": "2026-08-31T16:04:36Z",
+      "default_branch": "main",
+      "ahead_by": 2,
+      "behind_by": 30,
+      "new_skill_count": 0,
+      "score": 5,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "yindaqiu/aeon": {
+      "pushed_at": "2026-08-31T12:20:16Z",
+      "default_branch": "main",
+      "ahead_by": 2347,
+      "behind_by": 522,
+      "new_skill_count": 0,
+      "score": 32,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "gitlumen-team/aeon": {
+      "pushed_at": "2026-08-31T12:11:38Z",
+      "default_branch": "main",
+      "ahead_by": 2258,
+      "behind_by": 534,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "aeoncity-hub/aeon": {
+      "pushed_at": "2026-08-31T07:24:50Z",
+      "default_branch": "main",
+      "ahead_by": 2314,
+      "behind_by": 566,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "keyurbodar/aeon": {
+      "pushed_at": "2026-08-30T20:20:27Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 43,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "clawhunter/add-clawhunter-pack": {
+      "pushed_at": "2026-08-30T12:19:16Z",
+      "default_branch": "main",
+      "ahead_by": 1789,
+      "behind_by": 481,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "ashneil12/aeon-upstream": {
+      "pushed_at": "2026-08-30T10:30:06Z",
+      "default_branch": "main",
+      "ahead_by": 3128,
+      "behind_by": 568,
+      "new_skill_count": 0,
+      "score": 30,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "nigelon11/aeon": {
+      "pushed_at": "2026-08-29T21:17:46Z",
+      "default_branch": "main",
+      "ahead_by": 495,
+      "behind_by": 441,
+      "new_skill_count": 0,
+      "score": 35,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "weezyf1995-boop/aeon": {
+      "pushed_at": "2026-08-29T18:32:29Z",
+      "default_branch": "main",
+      "ahead_by": 5,
+      "behind_by": 43,
+      "new_skill_count": 0,
+      "score": 10,
+      "tier": "REVIEW",
+      "unique_skills": []
+    },
+    "MADRIGAL007/aeon": {
+      "pushed_at": "2026-08-29T15:48:28Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 43,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "MagIcKEarl/aeon": {
+      "pushed_at": "2026-08-29T15:07:30Z",
+      "default_branch": "main",
+      "ahead_by": 151,
+      "behind_by": 46,
+      "new_skill_count": 3,
+      "score": 80,
+      "tier": "PROMOTE",
+      "unique_skills": [
+        "skills/forecasting/SKILL.md",
+        "skills/hyperliquid/SKILL.md",
+        "skills/yield-farming/SKILL.md"
+      ]
+    },
+    "elegarmco/aeon": {
+      "pushed_at": "2026-08-29T13:40:48Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 44,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "Calcutatator/aeon": {
+      "pushed_at": "2026-08-29T01:50:55Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 46,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "cultosagent/aeon": {
+      "pushed_at": "2026-08-28T12:44:35Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 46,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "jsfranklin221/aeon": {
+      "pushed_at": "2026-08-27T18:50:51Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 52,
+      "new_skill_count": 0,
+      "score": 0,
+      "tier": "NOTE",
+      "unique_skills": []
+    },
+    "thesmithdao/aeon": {
+      "pushed_at": "2026-08-27T17:32:56Z",
+      "default_branch": "main",
+      "ahead_by": 0,
+      "behind_by": 52,
+      "new_skill_count": 0,
+      "score": 1,
+      "tier": "NOTE",
+      "unique_skills": []
+    }
   }
 }
