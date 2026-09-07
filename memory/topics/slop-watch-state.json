@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-06T09:37:26Z",
+  "checked_at": "2026-09-07T08:27:55Z",
   "month": "2026-09",
   "lanes": {
     "asi": {
@@ -16,7 +16,7 @@
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-06T09:37:26Z"
+      "checked_at": "2026-09-07T08:27:55Z"
     },
     "delta-star": {
       "slug": "delta-star",
@@ -24,15 +24,15 @@
       "ordinal": 0,
       "next_merge_points": 10,
       "liveness": "live",
-      "last_merge_at": "2026-09-05T22:40:07Z",
-      "merges_7d": 51,
-      "merge_rate": 96.97,
+      "last_merge_at": "2026-09-06T17:29:41Z",
+      "merges_7d": 85,
+      "merge_rate": 98.0,
       "open_prs": [],
       "changes_requested": [],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-06T09:37:26Z"
+      "checked_at": "2026-09-07T08:27:55Z"
     },
     "eliza": {
       "slug": "eliza",
@@ -40,15 +40,15 @@
       "ordinal": 0,
       "next_merge_points": 10,
       "liveness": "live",
-      "last_merge_at": "2026-09-06T09:30:08Z",
-      "merges_7d": 247,
-      "merge_rate": 76.37,
+      "last_merge_at": "2026-09-07T07:49:06Z",
+      "merges_7d": 262,
+      "merge_rate": 76.21,
       "open_prs": [30500, 29731, 29726, 29353, 28180],
-      "changes_requested": [30500, 29353, 28180],
+      "changes_requested": [30500],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-06T09:37:26Z"
+      "checked_at": "2026-09-07T08:27:55Z"
     },
     "heir-elements-sdk": {
       "slug": "heir-elements-sdk",
@@ -64,7 +64,7 @@
       "status": "active",
       "listing_tier": "community",
       "authority_state": "unverified",
-      "checked_at": "2026-09-06T09:37:26Z"
+      "checked_at": "2026-09-07T08:27:55Z"
     }
   }
 }
