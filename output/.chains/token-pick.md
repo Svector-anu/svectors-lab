@@ -1,17 +1,13 @@
-*Daily Pick — 2026-09-06*
+ℹ️ Daily Pick — 2026-09-07
 
-*Token: UNI*  [HIGH]  signal 10/10 (raw 11, capped)
-Price: $7.00 (+12.0% 24h / +37.8% 7d) | mcap $4.37B | vol $1.13B (vol/mcap 0.26)
-Score breakdown: 24h positive +1, 7d positive +1, both >5% +2, CoinGecko trending +2, vol/mcap ≥0.20 +3, RS vs BTC/ETH +2 = 11 raw, capped 10/10
-Catalyst: record Uniswap activity on Robinhood Chain plus protocol-fee-funded UNI burns are extending the rally ([source](https://coinmarketcap.com/top-stories/6a9c4ba898f4795d490f42d3/)).
-Risk: the trade is crowded after a 37.8% weekly move; overbought conditions and short-covering can reverse quickly if activity or burn flow fades.
+*Daily Pick — 2026-09-07*
+
+*Token: TAO*  [HIGH]  signal 10/10
+Price: $262.95 (+8.6% 24h / +16.0% 7d) | mcap $2.52B | vol $433.9M (vol/mcap 0.17)
+Score breakdown: 24h positive +1, 7d positive +1, both >+5% +2, CoinGecko trending +2, vol/mcap >=0.10 +2, RS vs BTC/ETH +2 = 10/10
+Catalyst: Bittensor’s August conviction-normalization upgrade hardened subnet takeovers, while the subnet economy reached $1.12B across 128 active subnets; that gives the AI-token rotation something concrete underneath it.
+Risk: the move has no single verified same-day catalyst, and TAO’s ongoing emissions/unlocks can turn a positioning rally into fast supply pressure.
 Vs recent picks: first time in the last 7 days.
 
-*Market: “Will there be no change in Fed interest rates after the September 2026 meeting?”*  [MEDIUM]  edge 9.5pp
-Current: YES 49.5¢ / NO 50.5¢ | 24h vol $323k | resolves: 2026-09-16
-Fair YES: ~40% (inputs: CME priced a 60.4% hike after the strong August jobs report; inflation remains above 3%; Waller says Sep. 11 CPI is decisive — [AP](https://apnews.com/article/1af16359af43eb8abc66445465f633c8), [AP](https://apnews.com/article/5506d6b43cc2e3d4144f622f8cc29e43))
-Thesis: YES is about 9.5 points rich; the implied action is NO at 50.5¢.
-Risk: a soft Aug. CPI print could swing Waller and the committee back toward a hold.
-
-sources: cg=ok, dex=ok, poly=ok (events legacy sort failed; corrected field succeeded)
+sources: cg=ok, dex=ok, poly=ok
 not financial advice — pattern-matching only

@@ -1,12 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-06T13:08:40Z",
-  "quality_score": 3,
-  "assessment": "Substantive and plausibly sourced, but it violates the qualitative-price constraint, lacks an explicit UNI position call, and does not lead with a clear trade verdict.",
+  "last_analyzed": "2026-09-07T14:24:55Z",
+  "quality_score": 2,
+  "assessment": "Specific market figures and catalyst claims lack verifiable citations, the catalyst appears weakly substantiated, and the output violates strategy by emphasizing a hard live price without an explicit front-run/ride/fade/watch call.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 2.58,
+  "avg_score": 2.56,
   "history": [
     {
       "date": "2026-07-11",
@@ -146,6 +146,12 @@
       "date": "2026-09-06",
       "score": 3,
       "ts": "2026-09-06T13:08:40Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 2,
+      "ts": "2026-09-07T14:24:55Z",
       "harness": "codex"
     }
   ]
