@@ -1,7 +1,7 @@
 {
-  "hash": "9abe28659869476688f06ba706f6ede86f3fc65cbfe292823cdb1296c9ad83c6",
-  "last_notified_at": "2026-09-06T18:19:03Z",
-  "last_run_at": "2026-09-06T18:19:03Z",
+  "hash": "abc8e73115f0371489e2a17bab9949a0afd71a07a87efdae768d8d91a26bf9eb",
+  "last_notified_at": "2026-09-07T18:49:08Z",
+  "last_run_at": "2026-09-07T18:49:08Z",
   "classification": {
     "critical": [
       "vuln-scanner"
@@ -14,6 +14,7 @@
       "heartbeat",
       "narrative-tracker",
       "picks-tracker",
+      "shiplog",
       "skill-health",
       "slop-watch",
       "soul-builder",
@@ -31,8 +32,7 @@
       "hunter-22",
       "pr-review",
       "search-skill",
-      "self-improve",
-      "shiplog"
+      "self-improve"
     ],
     "healthy_count": 6,
     "no_data": []
