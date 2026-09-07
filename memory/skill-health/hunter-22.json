@@ -1,12 +1,10 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-06T13:08:51Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-signal completion with concrete run statistics and validation, but the verdict is buried and lacks even a brief evidence-based triage rationale.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.63,
+  "last_analyzed": "2026-09-07T14:25:42Z",
+  "quality_score": 4,
+  "assessment": "Good, concise no-op report with concrete filtering rationale, deduplication status, source outcome, and verification checks; actionable within the bounty-hunting task, though only indirectly aligned with the crypto-signal strategy.",
+  "flags": [],
+  "avg_score": 2.68,
   "history": [
     {
       "date": "2026-07-31",
@@ -136,6 +134,12 @@
       "date": "2026-09-06",
       "score": 3,
       "ts": "2026-09-06T13:08:51Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 4,
+      "ts": "2026-09-07T14:25:42Z",
       "harness": "codex"
     }
   ]

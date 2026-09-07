@@ -1,9 +1,13 @@
-Hunter-22 completed.
+No new credible bounty matches today.
 
-- ClawHunter free API returned 25 candidates.
-- No new credible matches survived triage.
-- No notification sent, per the no-signal rule.
-- Refreshed 25 records and retained 59 unique dedup entries in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Appended the run report to [2026-09-06.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-06.md).
-- JSON and diff validation passed.
-- Commit was blocked because this harness mounts `.git` read-only; changes remain unstaged for the outer runner.
+- Free `/api/v1/match` request succeeded: HTTP 200, 25 candidates.
+- Only new listing: “$RONK Callouts and engagement” (~$5.23). Rejected as below the $20 floor and social-engagement work.
+- Engineering matches were already surfaced on September 6, so no duplicate notification was sent.
+- Refreshed 25 entries in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
+- Logged the run in [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md).
+- JSON, uniqueness, timestamp coverage, and diff checks passed.
+- Commit could not be created because `.git` is read-only in this harness; both changes remain ready for the outer runner to commit.
+
+## Summary
+
+Executed `hunter-22` using only the free discovery endpoint. No notification, wallet action, paid call, bounty submission, or audit dispatch occurred.
