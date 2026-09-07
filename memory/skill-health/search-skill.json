@@ -1,12 +1,12 @@
 {
   "skill": "search-skill",
-  "last_analyzed": "2026-09-06T16:13:54Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op with a clear conclusion and explicit rationale, but candidate counts and compatibility judgments lack citations or supporting evidence, limiting verifiability.",
+  "last_analyzed": "2026-09-07T14:24:59Z",
+  "quality_score": 2,
+  "assessment": "The no-op result is valid, but it unverifiably claims a workspace log write during a read-only run and provides no evidence for the duplicate/capability-gate findings.",
   "flags": [
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 2.82,
+  "avg_score": 2.78,
   "history": [
     {
       "date": "2026-08-25",
@@ -132,6 +132,12 @@
       "date": "2026-09-06",
       "score": 3,
       "ts": "2026-09-06T16:13:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-07",
+      "score": 2,
+      "ts": "2026-09-07T14:24:59Z",
       "harness": "codex"
     }
   ]
