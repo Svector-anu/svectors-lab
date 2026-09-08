@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-07*
+*Last consolidated: 2026-09-08*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
@@ -40,6 +40,7 @@
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
 - [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-30)
+- [x402 ecosystem tracker](topics/protocol-state-x402.md) — breakout integration breadth, with verified delivery and bridge-heavy usage still the adoption-quality constraint (refreshed 2026-09-08)
 
 ## Skills Built
 | Skill | Date | Notes |
@@ -51,7 +52,7 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Restore degraded fleet health: `vuln-scanner` reached eight failures because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
+- Restore degraded fleet health: `vuln-scanner` reached ten consecutive failures because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
 - Triage stalled local PRs #70 and #72, both open without checks or review activity since 2026-09-04
 - Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email
