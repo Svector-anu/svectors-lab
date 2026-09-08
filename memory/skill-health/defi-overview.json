@@ -1,19 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-08T15:22:09Z",
+  "last_analyzed": "2026-09-08T18:51:25Z",
   "quality_score": 2,
-  "assessment": "Useful conclusion-first framing, but it claims workspace files were updated during an explicitly read-only run, making the reported execution and possibly the unsupported market figures unverifiable.",
+  "assessment": "Specific market figures lack evidence, no actionable position call is given, and the claimed workspace updates contradict the stated read-only harness.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.17,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 2,
-      "ts": "2026-09-02T06:11:52Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 3,
@@ -186,6 +181,12 @@
       "date": "2026-09-08",
       "score": 2,
       "ts": "2026-09-08T15:22:09Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T18:51:25Z",
       "harness": "codex"
     }
   ]
