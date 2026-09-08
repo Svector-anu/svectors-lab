@@ -1,13 +1,18 @@
 HEALTH: CRITICAL(1)
 
-- `vuln-scanner` — 8 consecutive failures, last success 2 days ago. Grok rejects model `grok-4.5` as unknown. Action: **FIX CONFIG** → ISS-005.
-- DEGRADED: 16 skills. `shiplog` newly entered this band after three quality samples averaged 2.33.
-- WARNING: 7 skills.
-- HEALTHY: 6 skills.
-- Systemic failures: none detected.
-- Issues: 4 open, 0 filed, 0 resolved.
-- Notification was attempted but external notification and json-render queues are read-only.
+- Critical: `vuln-scanner` — 11 consecutive failures; Grok rejects model `grok-4.5`. Existing ISS-005 remains applicable.
+- Degraded: 16 skills
+- Warning: 7 skills
+- Healthy: 6 skills
+- No data: 0
+- Open issues: 4
+- Filed/resolved: none
+- Systemic failures: none
+
+State matches the previous report. Notification was suppressed because the last identical alert was sent less than 24 hours earlier.
 
 ## Summary
 
-Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and appended the audit to [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md). No existing user changes were altered.
+- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) with the audit timestamp.
+- Appended `SKILL_HEALTH_NOOP` to [2026-09-08.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-08.md).
+- Validated JSON and repository diff formatting.

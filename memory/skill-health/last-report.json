@@ -1,7 +1,7 @@
 {
   "hash": "abc8e73115f0371489e2a17bab9949a0afd71a07a87efdae768d8d91a26bf9eb",
   "last_notified_at": "2026-09-07T18:49:08Z",
-  "last_run_at": "2026-09-07T18:49:08Z",
+  "last_run_at": "2026-09-08T18:47:16Z",
   "classification": {
     "critical": [
       "vuln-scanner"
