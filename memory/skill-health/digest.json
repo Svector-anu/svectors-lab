@@ -1,18 +1,15 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-07T14:24:35Z",
+  "last_analyzed": "2026-09-08T15:19:58Z",
   "quality_score": 2,
-  "assessment": "Useful Liquid risk call, but the digest drifts from tradeable crypto signal and falsely claims workspace files were updated during a read-only run.",
+  "assessment": "Useful sourced items and one explicit crypto action, but most of the digest is off-strategy and the summary implausibly claims workspace files were updated during a read-only run.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "generic_content",
+    "unverifiable_claim"
   ],
-  "avg_score": 2.2,
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-08-23",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -179,6 +176,12 @@
       "date": "2026-09-07",
       "score": 2,
       "ts": "2026-09-07T14:24:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T15:19:58Z",
       "harness": "codex"
     }
   ]
