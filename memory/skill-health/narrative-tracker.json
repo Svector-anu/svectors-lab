@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-08T15:21:24Z",
-  "quality_score": 2,
-  "assessment": "Actionable position labels and narrative map, but most specific figures, catalysts, and transitions lack source links or evidence anchors in the final output, making key trade calls unverifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.83,
+  "last_analyzed": "2026-09-08T18:48:15Z",
+  "quality_score": 3,
+  "assessment": "Substantive, decision-oriented regime map with explicit calls and candid data-quality caveats, but it misses the conclusion-first requirement and many precise figures and institutional claims lack direct source links, limiting verification.",
+  "flags": [],
+  "avg_score": 2.87,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 2,
-      "ts": "2026-09-02T11:14:25Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 2,
@@ -186,6 +178,12 @@
       "date": "2026-09-08",
       "score": 2,
       "ts": "2026-09-08T15:21:24Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 3,
+      "ts": "2026-09-08T18:48:15Z",
       "harness": "codex"
     }
   ]

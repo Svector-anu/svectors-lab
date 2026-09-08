@@ -1,26 +1,36 @@
 *Narrative Tracker — 2026-09-08*
 
+DATA QUALITY
+• X.AI primary unavailable: KEY_UNSET; xai http=400 bytes=118. Web fallback used. No narrative-tracker log baseline in Sep 5-8, so NEW means new to the tracker baseline, not necessarily born today.
+
 TRANSITIONS
-• NEW: stablecoin settlement rails — Visa crossed a $20B annualized run rate, >15x YoY; 160+ card programs make this operating traction, not a token story — https://www.theblock.co/news/business/2026-09-08-visa-stablecoin-settlement-tops-20-billion-annualized-run-rate-up-more-than-15x-year-over-year-413749
-• PROMOTED: privacy/ZEC Rising → Peak — ZEC +45% in 7d, $46M shorts liquidated and a new ETF; price has outrun the broader privacy thesis.
-• PROMOTED: BTC institutional resilience Emerging → Rising — $987M weekly ETF inflows for a third positive week while BTC absorbed renewed hike odds.
-• DEMOTED: large-cap alt/DEX rebound Rising → Fading — breadth fell to 4-6/20 green; BTC dominance remained near 58-59%.
-• NEW: agent autonomy vs containment — Portal completion and the 1,200-agent incident made capability, cost and security one debate.
+• NEW: AI-token beta — FET +4.88% without project-specific news; VVV +31.6% in the market snapshot. https://coinmarketcap.com/top-stories/6a9eb66a6799623b11470cbf/
+• NEW: DEX/trading infra rotation — RAY gained 40%+ and JUP ~20% as capital rotated out of memes; PumpSwap/Aerodrome daily volume rose 28.9%/24.0%.
+• NEW: privacy in the AI era — ZCSH ETF net inflows passed $34M while ZEC gained nearly 20%. https://www.kucoin.com/news/articles/crypto-daily-market-report-september-7-2026
+• NEW: Hyperliquid institutionalization — 30 institutions reportedly disclosed ~$74.9M of HYPE ETF exposure; HYPE touched ~$89.60.
 
 REFLEXIVITY ALERT
-• privacy/ZEC — the ETF + short squeeze drove price, then price itself became the proof for the privacy narrative.
-• CLARITY Act failure — Polymarket odds collapsed from 82% to 16%, turning belief about passage into the dominant regulatory signal.
+• AI-token beta — FET’s 4.88% move had no new FET-specific announcement; Anthropic IPO anticipation and social framing moved the sector proxy.
+• Privacy — Grayscale’s “financial privacy in the AI era” framing plus ZCSH flows amplified ZEC’s short squeeze.
+• Memecoin trenches — narrative heat remains price-led: MOO +55%, while CASHCAT -17% and PONS -10%; DEX volume is still only ~20% of 2025 highs. https://decrypt.co/377661/morning-minute-the-trenches-just-had-their-biggest-week-since-trump
 
 POSITIONS
-• FRONT-RUN: stablecoin settlement rails (2 ↑↑, Bull) — @Visa, Credit Coop, @Rain — bear: payment growth may accrue to private rails, not liquid tokens.
-• RIDE: BTC institutional resilience (4 ↑, Bull) — @FarsideUK, BlackRock, Wintermute — bear: hot CPI/rate hike can break $77-78K support.
-• FADE: privacy/ZEC (5 →, Mixed) — @Zcash, @zcashstrategy, Cypherpunk — bear: squeeze-led +45% week is peak reflexivity, not fresh protocol adoption.
-• WATCH: agent autonomy/containment (5 ↑↑, Mixed) — @DwarkeshPatel, @METR_Evals, Redwood, @CozyBlaze — bear: demos are costly/artificial and anthropomorphic framing obscures engineering causes.
-• WATCH: CLARITY failure (4 ↑↑, Bear) — @CryptoZachLA, Polymarket, US Senate — bear: one whip-count change reverses a crowded failure trade.
-• WATCH: memecoin rotation (3 ↑, Mixed) — @pumpdotfun, @pudgypenguins, CryptoQuant — bear: sector dominance is at a record low; this may be isolated squeeze/chop.
+• RIDE: DEX/trading infra (4 ↑↑, Bull) — @StonkFun, @RaydiumProtocol, @JupiterExchange — one-day volume spikes can reverse and RAY already retraced 8.7%.
+• RIDE: privacy / ZEC (3 ↑↑, Bull) — @Grayscale, @Zcash, @firoorg — ETF flows plus squeeze may have pulled demand forward.
+• RIDE: AI-token beta (4 ↑, Mixed) — @Fetch_ai, @bittensor_, @AnthropicAI — no fresh token-specific fundamental catalyst; empirical research found AI-agent tokens weakly tied to treasury value.
+• WATCH: Hyperliquid institutionalization (3 ↑, Bull) — @HyperliquidX, UBS, Jane Street — exposure disclosures and buybacks are strong, but the move is crowded near an ATH.
+• FADE: broad memecoin trenches (4 →, Cope) — @pumpdotfun, @RobinhoodApp, @StonkFun — dispersion is extreme, sector coverage is only 1.4% with 18/100 bearish sentiment, and DEX volume remains far below 2025 highs.
+• WATCH: tokenized-stock chains (3 →, Mixed) — @RobinhoodApp, @arbitrum, @OffchainLabs — real fee activity, but meme liquidity is obscuring durable stock-market demand.
 
 MAP
-Emerging: stablecoin settlement rails
-Rising: BTC institutional resilience, CLARITY failure, memecoin rotation
-Peak: privacy/ZEC, agent autonomy/containment
-Fading: large-cap alt/DEX rebound
+Emerging: privacy / ZEC; Hyperliquid institutionalization
+Rising: DEX/trading infra; AI-token beta
+Peak: broad memecoin trenches
+Fading: none confirmed
+
+CONSIDERED / DROPPED
+• AI-video pivots (2 ↑, Mixed, IGNORE) — @harmonyprotocol, @CoinStats, @CoinMarketCap — one distressed-chain pivot is not a sector.
+• token unlock fear (2 →, Bear, IGNORE) — @Tokenomist_ai, @WuBlockchain, @CoinStats — UB tracker estimates conflict.
+• macro/Hormuz crypto hedge (2 →, Mixed, IGNORE) — @Polymarket, @coinbase, @binance — macro risk, not a distinct crypto narrative yet.
+
+Calibration: CryptoSlate reports memecoin coverage at 1.4% and sentiment 18/100; Decrypt reports current DEX volume at ~20% of 2025 highs. Treat the scores as directional because the primary X mindshare feed failed.
