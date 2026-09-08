@@ -1,57 +1,57 @@
-# Market Context (as of 2026-09-07)
+# Market Context (as of 2026-09-08)
 
-> **Take:** chop — BTC fell 1.0% with only 4/20 top caps green, while DEX volume rebounded 18.8% daily. Conviction: medium.
+> **Take:** chop — only 6/20 top caps are green while Fear & Greed remains at 69; DEX volume rising 7.2% keeps this from a clean risk-off call. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $79,147 (-1.0% 24h, +0.7% 7d) · dominance 59.13% (+0.06 pp since prior refresh)
-- ETH $2,489 (-0.3% 24h, +1.0% 7d) · ETH/BTC 0.0315
-- SOL $103.83 (-2.1% 24h, +1.2% 7d)
-- Total mcap $2.682T (-3.2% 24h) · DEX vol $9.61B 24h
-- Breadth: 4/20 green 24h · 14/20 green 7d
-- Fear & Greed: 71 (Greed) — yesterday 73
+- BTC $79,398 (-0.7% 24h, +0.9% 7d) · dominance 59.09% (-0.04 pp since prior refresh)
+- ETH $2,503 (-0.1% 24h, +1.1% 7d) · ETH/BTC 0.0315
+- SOL $104.28 (-1.2% 24h, +1.0% 7d)
+- Total mcap $2.691T (-3.3% 24h) · DEX vol $10.30B 24h
+- Breadth: 6/20 green 24h · 14/20 green 7d
+- Fear & Greed: 69 (Greed) — yesterday 71
 
 ## What Changed Since Last Refresh
-- Daily breadth fell from 9/20 to 4/20 green, but DEX volume rose from $8.29B to $9.61B; the regime remains chop.
+- DEX volume rose from $9.61B to $10.30B, but daily breadth remains weak at 6/20 green; the regime stays chop.
 
 ## Active Narratives
-- **Privacy pullback** — phase: fading. Evidence: ZEC remains +39.2% weekly but fell 5.8% daily, while trending FIRO fell 8.2%.
-- **Memecoin rotation** — phase: rising. Evidence: trending PUMP gained 11.9% daily while only 4/20 top caps were green.
-- **Chainlink momentum** — phase: rising. Evidence: trending LINK gained 2.7% daily and 14.3% weekly.
+- **DEX-token rebound** — phase: emerging. Evidence: trending AERO gained 17.4% while aggregate DEX volume rose 7.2% daily.
+- **Launchpad activity** — phase: rising. Evidence: trending PUMP gained 11.7% while PumpSwap handled $678M in 24h volume.
+- **Privacy pullback** — phase: fading. Evidence: trending ZEC and FIRO fell 4.1% and 4.2% daily; ZEC remains +34.4% weekly.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.03B (+0.8%)
-- Aave V3: $17.46B (+0.9%)
-- SSV Network: $12.96B (+3.9%)
-- Morpho Blue: $9.71B (+1.5%)
-- Binance staked ETH: $9.23B (+0.5%)
+- Lido: $24.06B (+0.5%)
+- Aave V3: $17.47B (+0.6%)
+- SSV Network: $12.98B (+3.5%)
+- Morpho Blue: $9.70B (+1.1%)
+- Binance staked ETH: $9.24B (+0.2%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.43B (n/a)
-- Solana: $5.91B (n/a)
+- Ethereum: $49.12B (n/a)
+- Solana: $5.90B (n/a)
 - BSC: $5.66B (n/a)
 
 ## Stablecoins
-Total: $311.3B (+0.6% 7d). USDT $183.4B · USDC $74.4B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.6%.
+Total: $311.0B (+0.5% 7d). USDT $183.4B · USDC $74.4B · USDS $6.4B · DAI $4.8B · combined share of mcap 11.6%.
 
 ## Trending (CoinGecko)
-- PEAQ — up 22.9% in 24h; machine-economy attention
-- ZCAT — up 15.0% in 24h; speculative privacy attention
-- PUMP — up 11.9% in 24h; memecoin rotation
+- AERO — DEX-token rebound, +17.4% in 24h
+- INJ — selective exchange/DeFi strength, +17.4% in 24h
+- PUMP — launchpad momentum, +11.7% in 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Lazio wins on September 7 | 34.5% | $1.11M | $0.38M |
-| Udinese wins on September 7 | 32.5% | $0.69M | $0.25M |
-| No Fed rate change after the September 2026 meeting | 47.5% | $0.69M | $0.47M |
+| Khachanov beats Tien at the US Open | 35.5% | $2.96M | $0.26M |
+| Gea beats Van de Zandschulp at the US Open | 60.5% | $2.17M | $0.05M |
+| No Fed rate change after the September meeting | 47.5% | $0.66M | $0.75M |
 
 ## Macro Catalysts (next 48h)
-- Labor Day is thinning liquidity after hot payrolls revived hike risk; the next BTC ETF flow print is not due until September 9.
-- Friday's roughly $175M spot BTC ETF inflow cushions the macro pressure, but it is stale until markets reopen.
+- U.S. markets reopen today after Labor Day; treat the first ETF-flow print as confirmation, not Monday's thin-liquidity tape.
+- New York Fed one-year inflation expectations land today; U.S. PPI and ECB policy follow September 10, keeping rate-sensitive exposure tactical.
 
 ## Implications for Downstream Skills
-- **token-pick:** avoid broad-alt exposure; favor isolated LINK strength and treat PUMP momentum as tactical.
-- **narrative-tracker:** watch whether privacy stabilizes and whether DEX-volume strength persists despite weak breadth.
+- **token-pick:** watch AERO/INJ strength but do not chase broad alts; 6/20 daily breadth does not confirm the move. Fade privacy momentum until ZEC/FIRO stabilize.
+- **narrative-tracker:** monitor DEX-token rebound for emerging→rising confirmation if volume stays above $10B and breadth improves.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

@@ -1,19 +1,15 @@
-Take: chop — BTC fell 1.0% with only 4/20 top caps green, while DEX volume rebounded 18.8%. Conviction: medium.
+Take: chop — only 6/20 top caps are green while Fear & Greed remains 69. Rising DEX volume (+7.2% to $10.30B) prevents a clean risk-off call. Conviction: medium.
 
-DeFi is mixed: TVL held near $88.09B, stablecoin supply stayed flat, and DEX volume rose to $9.61B. RocketSwap Anubis led protocol gains at +100.8%; Lista CDP fell 13.0%. No tracked positions were configured.
-
-Sustainable-yield leaders:
-
-- Uniswap V3 WETH-USDT: 41.0% base APY
-- Uniswap V4 ETH-USDT: 31.3%
-- Uniswap V3 USDC-WETH: 22.4%
-
-Macro pressure comes from hot payrolls and renewed rate-hike expectations. Roughly $175M of Friday BTC ETF inflows offers some support, but the next flow print is September 9.
+- Positioning: watch AERO/INJ, fade privacy momentum, avoid broad-alt chasing until breadth confirms.
+- DeFi TVL: $87.73B, down 0.8% since the prior refresh.
+- Sustainable yields: WETH-USDT 33.9%, LINK-WETH 26.5%, ETH-USDT 25.4%; all passed the skill’s durability and liquidity filters.
+- Narratives: DEX-token rebound emerging, launchpad activity rising, privacy fading.
+- Macro: markets reopen after Labor Day ahead of inflation expectations, PPI, and the ECB decision. The latest confirmed BTC ETF print remains positive but stale after the holiday. [Macro calendar](https://www.kucoin.com/news/articles/crypto-daily-market-report-september-7-2026), [ETF flow table](https://bitbo.io/treasuries/etf-flows/).
 
 ## Summary
 
 - Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Appended the run to [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md).
-- Preserved the complete token-pick history.
+- Added [2026-09-08.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-08.md).
+- Positions status: `DEFI_MONITOR_NO_CONFIG`.
 - All data sources succeeded.
-- Notification was attempted, but the harness’s external notification queues were read-only, so delivery was not confirmed.
+- Notification attempted; delivery failed because the harness notification queues are read-only.
