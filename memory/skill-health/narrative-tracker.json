@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-08T11:34:54Z",
-  "quality_score": 4,
-  "assessment": "Conclusion-first and actionable, with explicit position calls, linked evidence, counterarguments, and honest confidence limits; reliance on secondary sources and an unsupported calibration comparison keep it below excellent.",
-  "flags": [],
-  "avg_score": 2.87,
+  "last_analyzed": "2026-09-08T15:21:24Z",
+  "quality_score": 2,
+  "assessment": "Actionable position labels and narrative map, but most specific figures, catalysts, and transitions lack source links or evidence anchors in the final output, making key trade calls unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 3,
-      "ts": "2026-09-02T01:27:34Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 2,
@@ -184,6 +180,12 @@
       "date": "2026-09-08",
       "score": 4,
       "ts": "2026-09-08T11:34:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T15:21:24Z",
       "harness": "codex"
     }
   ]
