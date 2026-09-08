@@ -1,31 +1,23 @@
-tweet drafts: forks are distributed product research
+tweet drafts: x402 adoption is not x402 reliability
 
 — one-liner —
-1a. your forks are already doing product research for you
-1b. 2,735 fork/skill pairs. most are drift. a few are the roadmap.
+1a. x402 does not need more demos. it needs more payments that actually deliver
+1b. 715 x402 services monitored. only 13 passed paid delivery verification. there is the roadmap
 
 — two-punch —
-2a. scanned 50 active aeon forks and found 2,735 fork/skill pairs. the useful signal was not the count, it was the few patterns worth pulling upstream.
-2b. open source forks look like fragmentation until you read them. then you realize users have been building the missing product for you.
+2a. x402 integration breadth is breaking out. verified delivery is not. the protocol wins when agents can trust the receipt, not when another demo ships
+2b. five new x402 integrations landed while npm usage fell. builders are testing the rail, but repeat usage will decide if it is infrastructure or just a very good demo
 
 — paragraph —
-3a. a fork fleet is basically distributed product research. people copy what works, change what hurts, and build what upstream missed. the hard part is separating reusable ideas from 2,735 pieces of local drift.
-3b. 49 of the 50 active aeon forks i checked were fully configured. only a handful had changes worth upstreaming. adoption creates a lot of code, but repeated changes are the actual roadmap.
+3a. x402 is spreading into payment gates, recurring api access, trading, signals and housing proofs. that breadth is real. but only 13 of 715 monitored services passed paid delivery verification. the next unlock is reliability, not another category
+3b. the interesting x402 metric is not how many services accept a payment. it is how many return the thing an agent paid for. discovery gets the first call. reliable delivery gets the second
 
 — long tweet —
-4a. scanned 50 active aeon forks today. together they had 2,735 fork/skill pairs across 218 skill names.
-
-that sounds like a huge feature backlog. it isn't. most of it is local configuration, copied baselines, or one-off workflows.
-
-the useful part is finding the same pain solved independently across forks. that is where a local workaround becomes an upstream product decision.
-4b. open source maintainers usually look at forks as a popularity number. i think they are closer to an unstructured user research database.
-
-today aeon's fork fleet surfaced a clean launch-monitor pattern hidden inside one fork. the implementation was too hard-coded to merge, but the need was real.
-
-the fork is not the feature request. the repeated workaround is.
+4a. x402 had five new integrations surface this week across serverless payment gates, recurring api access, trading, paid signals and housing proofs. that is useful breadth. but npm usage fell, and one reliability audit found only 13 of 715 monitored services passed paid delivery verification. ride the integrations, watch the repeat usage. agents need a payment rail they can trust after the payment clears
+4b. agent payments are moving past the single-demo stage. x402 now shows up in api access, trading, signals and even physical goods. but the hard product is not the payment request. it is paid delivery, receipts, retries and recovery when the service fails. 715 services monitored and 13 verified is not a reason to dismiss the protocol. it is a very clear engineering backlog
 
 — thread opener —
-5a. i scanned 50 active aeon forks and found 2,735 fork/skill pairs. most were local drift. a few were better product research than any feature request.
-5b. the best roadmap might already be sitting in your forks. the problem is knowing which changes are personal setup and which ones reveal a missing primitive.
+5a. x402 has the integration momentum everyone wanted. five new use cases surfaced this week. but only 13 of 715 monitored services passed paid delivery verification. the next phase is not discovery. it is trust after payment
+5b. agents paying agents is already real. the weak link is what happens after money moves. x402 can become core infrastructure, but only if paid delivery, receipts and failure recovery become boring
 
-best: #4b — turns a concrete fleet finding into a reusable open source principle
+best: #4b — turns the adoption gap into a concrete builder roadmap

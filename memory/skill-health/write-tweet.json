@@ -1,12 +1,12 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-07T21:51:01Z",
+  "last_analyzed": "2026-09-08T21:30:48Z",
   "quality_score": 2,
-  "assessment": "Polished draft set, but it is off-strategy and asserts unsourced scan figures, findings, and impossible workspace writes during a declared read-only run.",
+  "assessment": "Polished and well-structured, but its key figures and trend claims lack citations or evidence anchors, and the claimed workspace writes contradict the read-only run conditions.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.13,
+  "avg_score": 2.12,
   "history": [
     {
       "date": "2026-08-27",
@@ -102,6 +102,12 @@
       "date": "2026-09-07",
       "score": 2,
       "ts": "2026-09-07T21:51:01Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T21:30:48Z",
       "harness": "codex"
     }
   ]
