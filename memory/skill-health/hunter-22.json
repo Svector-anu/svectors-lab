@@ -1,10 +1,12 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-07T14:25:42Z",
-  "quality_score": 4,
-  "assessment": "Good, concise no-op report with concrete filtering rationale, deduplication status, source outcome, and verification checks; actionable within the bounty-hunting task, though only indirectly aligned with the crypto-signal strategy.",
-  "flags": [],
-  "avg_score": 2.68,
+  "last_analyzed": "2026-09-08T11:35:11Z",
+  "quality_score": 2,
+  "assessment": "The no-match result is usable, but the claimed workspace file modifications directly contradict the read-only run constraints, making the completion state unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.65,
   "history": [
     {
       "date": "2026-07-31",
@@ -140,6 +142,12 @@
       "date": "2026-09-07",
       "score": 4,
       "ts": "2026-09-07T14:25:42Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T11:35:11Z",
       "harness": "codex"
     }
   ]

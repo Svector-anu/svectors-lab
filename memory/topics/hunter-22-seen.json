@@ -1,47 +1,5 @@
 [
   {
-    "id": "70cecfe5-65ce-4e78-8fd0-a001f940dd88",
-    "title": "A short video/gif where Morphy does a morh",
-    "reward": 45.24,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "f70bd905-c366-4e40-bf94-da097dbe90be",
-    "title": "Get a streamer to play Whosmarter",
-    "reward": 13.57,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "shillz_5aa6af93-274b-4da0-807a-2c8c26125197",
-    "title": "Kintara Content 3",
-    "reward": 56.03,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "shillz_ccebf48d-8043-45e4-ac47-29d7c3f886a7",
-    "title": "Jimothy",
-    "reward": 115.13,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "superteam_ai-id",
-    "title": "Create Agent ID, claim free tokens, & deploy first RUST contract on the network",
-    "reward": 33.33,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "superteam_analyze-trader-behavior-cex-vs-solana-dex-perpetual-futures-report",
-    "title": "Analyze Trader Behavior: CEX vs. Solana DEX Perpetual Futures Report",
-    "reward": 50,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
-    "id": "superteam_era-security-discussion-bounty-x-reddit",
-    "title": "ERA Security Discussion Bounty (X + Reddit)",
-    "reward": 50,
-    "seen_at": "2026-08-08T13:10:00Z"
-  },
-  {
     "id": "35a33e5e-ed6f-4506-82d2-23649eca3462",
     "title": "Create a Botropolis real estate commercial with AI",
     "reward": 6,
@@ -98,8 +56,8 @@
   {
     "id": "bb35a0d7-ac6d-43ab-b4d0-68a5518d57ec",
     "title": "EKOS Community Content Challenge",
-    "reward": 15.8966497912264,
-    "seen_at": "2026-08-30T12:19:23Z"
+    "reward": 13.7665399012756,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "d3beb920-3526-4394-9a19-13eee1500fd0",
@@ -153,7 +111,7 @@
     "id": "db485bb7-979a-4f89-b0a7-40326f1ddeda",
     "title": "Install & review the RuntimeWire VS Code extension",
     "reward": 186.618040892371,
-    "seen_at": "2026-09-02T21:17:34Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "ef7a5bac-d1f7-40cd-bb0b-51b486b3a308",
@@ -165,7 +123,7 @@
     "id": "1ecc537c-a2be-4bd1-a193-6935874e5e17",
     "title": "$500 $SOL Maxi Content Bounty",
     "reward": 56.290118778283,
-    "seen_at": "2026-09-03T10:09:56Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "9afa62df-9275-47e3-ae68-7c678b82452a",
@@ -182,20 +140,20 @@
   {
     "id": "4384e33c-39c2-4144-aa63-1b204b726a16",
     "title": "FAI CALLOUTS",
-    "reward": 102.686137565124,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "reward": 103.945112803776,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "bb4e8256-580b-4116-88a6-073a27a5e6a3",
     "title": "Seeker Envelope Deep Dive Writing Bounty.",
-    "reward": 14.6694482235891,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "reward": 15.003428213359,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_common-s3nse-solana-side-track",
     "title": "Common S3nse - Solana side-track",
     "reward": 666.666666666667,
-    "seen_at": "2026-09-05T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_creator-program-tell-the-story-that-brings-thailands-next-talent-to-solana",
@@ -207,19 +165,19 @@
     "id": "08508f3c-558b-45f8-8827-3a3675a71a12",
     "title": "Test Seeker Flap & Share Feedback",
     "reward": 25.4463818564098,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "1a62d6e4-4d39-4621-8f44-019acd819146",
     "title": "List your API to MPP32 Ecosystem",
     "reward": 337.294063575814,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "6cfd8b5e-1a18-4009-992a-4e39bc71cd2c",
     "title": "pilled.fun: Become Patient Zero",
     "reward": 23.5765182601214,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "916587ca-7540-4012-adcf-d5b619f2210b",
@@ -230,8 +188,8 @@
   {
     "id": "d3ecf7a7-03f5-45a9-b0b5-16409128e502",
     "title": "🚨 VNECK CALLOUT FIELD ASSIGNMENT",
-    "reward": 5.20678555227345,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 5.14456663534561,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "f07fa628-3d9e-415f-a887-900e37536bbf",
@@ -242,62 +200,62 @@
   {
     "id": "shillz_0882bc2d-127e-4610-868b-37606676dc18",
     "title": "Retire Shilling",
-    "reward": 51.6266666666667,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 48.05,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "shillz_1ca95cc2-8dd2-41f4-8c6d-b0675594f843",
     "title": "Y2K Hardcore Shilling",
-    "reward": 105.583636363636,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 105.391818181818,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "shillz_28f30133-01fa-4c23-94b0-013a20978527",
     "title": "Cate Shilling #2",
-    "reward": 75.312972972973,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 63.5563888888889,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
     "title": "Clive Bagworking Campaign",
-    "reward": 15.215,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 12.995,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "shillz_f73603f6-6716-4cde-ab92-617360f8e4bb",
     "title": "Kekius Maximus",
-    "reward": 15.3996296296296,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 14.8896296296296,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "shillz_fa278acb-6b1a-4f48-b587-17345fec04c1",
     "title": "CarrotFunding Creator Campaign (2000 $USDC in rewards)",
-    "reward": 245.287142857143,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 243.454285714286,
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_aeonianbounty",
     "title": "Write an X Thread Explaining Aeonian Trade & Introducing Upcoming Livestreams",
     "reward": 166.666666666667,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_build-and-demo-a-mermail-agent-skill",
     "title": "Build and Demo a Mermail Agent Skill",
     "reward": 83.3333333333333,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_create-a-video-about-swapio",
     "title": "Create a Video About Swap.io",
     "reward": 100,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_create-an-app-on-cookie-chain-app",
     "title": "Create an App on Cookie Chain",
     "reward": 500,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_create-content-to-engage-new-builders-for-the-hackathon",
@@ -315,13 +273,13 @@
     "id": "superteam_ideathon-submit-innovative-ideas-for-the-hackathon",
     "title": "IDEATHON | Submit Innovative Ideas for the Hackathon",
     "reward": 200,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_nectarfi-x-dominion-market",
     "title": "NectarFi x Dominion Market",
     "reward": 333.333333333333,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_post-why-flint-beats-building-your-own-prop-amm",
@@ -339,13 +297,13 @@
     "id": "superteam_solana-summit-canada-creator-challenge-part-1",
     "title": "Solana Summit Canada Creator Challenge - part 1",
     "reward": 384.615384615385,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_t3n-agent-build-challenge",
     "title": "Docs v2 refreshed! Build a trusted agent with T3N that we can distribute",
     "reward": 48.3333333333333,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "seen_at": "2026-09-08T11:33:35Z"
   },
   {
     "id": "superteam_vibeathon-superteam-x-replit",
@@ -356,7 +314,7 @@
   {
     "id": "78eb1620-7b97-4261-829a-a89215b349b6",
     "title": "$RONK Callouts and engagement",
-    "reward": 5.22970004106948,
-    "seen_at": "2026-09-07T10:00:00Z"
+    "reward": 3.48288023042104,
+    "seen_at": "2026-09-08T11:33:35Z"
   }
 ]

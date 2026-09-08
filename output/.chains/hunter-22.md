@@ -1,13 +1,17 @@
-No new credible bounty matches today.
+Hunter 22 completed successfully.
 
-- Free `/api/v1/match` request succeeded: HTTP 200, 25 candidates.
-- Only new listing: “$RONK Callouts and engagement” (~$5.23). Rejected as below the $20 floor and social-engagement work.
-- Engineering matches were already surfaced on September 6, so no duplicate notification was sent.
-- Refreshed 25 entries in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Logged the run in [2026-09-07.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-07.md).
-- JSON, uniqueness, timestamp coverage, and diff checks passed.
-- Commit could not be created because `.git` is read-only in this harness; both changes remain ready for the outer runner to commit.
+- Free `/api/v1/match` request returned HTTP 200 with 25 candidates.
+- New genuine matches: **0**. Cookie Chain, Mermail, and T3N were credible engineering repeats already seen within 14 days.
+- No notification or audit-dispatch button was sent.
+- Refreshed 25 entries and pruned seven records older than 30 days.
+- Validated 53 retained unique IDs and valid JSON.
+- No paid endpoint, wallet action, claim, submission, or audit dispatch occurred.
 
 ## Summary
 
-Executed `hunter-22` using only the free discovery endpoint. No notification, wallet action, paid call, bounty submission, or audit dispatch occurred.
+Modified:
+
+- [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json)
+- [2026-09-08.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-08.md)
+
+The requested commit could not be created because this harness mounts `.git` read-only (`index.lock: Read-only file system`). The working-tree changes are complete and ready for the outer workflow to persist.
