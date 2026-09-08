@@ -1,26 +1,31 @@
 *Narrative Tracker — 2026-09-08*
 
+RIDE on-chain stock trading + fee capture; WATCH AI identity and agent payments. FADE the crowded “BTC ignores rates” framing into CPI.
+
 TRANSITIONS
-• PROMOTED: privacy/Zcash Rising → Peak — ZEC cleared $1,200 after a 2,300% yearly run, but the category now lags 4.26% over 24h; upside is crowded — https://www.coindesk.com/markets/2026/09/07/this-cat-memecoin-has-paid-holders-usd2-8-million-in-zcash-as-zec-tops-usd1-200
-• PROMOTED: oracle/tokenization Rising → Peak — Oracle leads DefiLlama categories at +51.30%; Chainlink bank-settlement headlines are now translating directly into LINK swings — https://defillama.com/narrative-tracker
-• NEW: agent containment — the wiki incident plus proposed U.S. standards moved agent security from research concern to policy narrative — https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/
-• DEMOTED: large-cap alt rotation Rising → Fading — weekend breadth rolled over as BTC returned below $80k.
-• DEMOTED: prediction markets Peak → Fading — Google Trends fell 86 → 36 from July to August.
+• NEW: on-chain stocks + protocol fee capture — Robinhood Chain crossed $3B daily DEX volume and Uniswap burned a record $1.15M of UNI; this is usage becoming token economics — https://financefeeds.com/robinhood-chain-surges-past-3-billion-a-day-as-uniswap-burns-record-1-15m-of-uni/
+• NEW: AI identity rotation — WLD led a wider AI-token move despite a large unlock; narrative has price confirmation but weak proof of new utility — https://ambcrypto.com/worldcoin-up-13-as-ai-coins-awaken-can-wld-stay-above-0-45/
+• NEW: macro-resilient BTC — ETF inflows are absorbing rate-hike fear, but the framing is already crowded before CPI — https://www.wintermute.com/insights/market-color/market-update/market-update-7-september-2026
+• NEW: agentic payments — x402 usage claims are circulating, but the strongest 14M-payment figure is secondary and not independently verified.
+• NEW: stablecoin/RWA rails — regulation and tokenization remain durable, but this three-day window lacks one clean sector-wide catalyst.
 
 REFLEXIVITY ALERT
-• ZCAT/privacy — a 3% transfer tax buys ZEC for holders; $22M daily ZCAT turnover funded 2,320 ZEC/$2.8M of payouts. Attention mechanically creates buy pressure, but stops when volume dries up.
-• Chainlink/tokenization — Bottomline’s 600-bank/CCIP announcement produced a sharp LINK breakout then profit-taking; the adoption story is already moving price.
+• AI identity — WLD gained >13% in 24h and >26% over seven days while NEAR, TAO, INJ and ICP also moved double digits; the AI/identity label is pulling a basket before fresh utility is evident.
+• STABLE/RWA — traders framed a ~$26M unlock as both supply risk and “supply shock” while renewed mortgage-tokenization chatter accompanied the move: https://coinmarketcap.com/top-stories/6a9ed2896799623b11474e94/
 
 POSITIONS
-• FADE: privacy/Zcash (5 ↓, Bull) — @Zcash, @zooko, @Delphi_Digital — real adoption exists, but parabolic price and negative daily category momentum leave poor entry asymmetry.
-• FADE: oracle/tokenization (5 →, Bull) — @chainlink, @SergeyNazarov, Bottomline — bank adoption is substantive; +51.30% category performance means the easy repricing likely happened.
-• RIDE: agent containment (4 ↑↑, Bear) — @OpenAI, @sydvnarx, @Axios — incidents and legislation reinforce each other; bear case: policy attention may outrun deployed risk.
-• WATCH: memecoin wrappers (4 ↑, Cope) — ZCAT, StonkFun, Pons — 7d Meme +36.92%, but rewards depend on recursive trading activity.
-• WATCH: macro-resilience/BTC (4 →, Mixed) — @CryptoQuant_com, LMAX, CME — realized cap improved, but hike/CPI risk caps beta.
-• FADE: prediction markets (3 ↓, Mixed) — Polymarket, DefiLlama Research — usage may decouple from search interest, but attention trend is plainly down.
+• RIDE: on-chain stocks + fee capture (mindshare 4 ↑↑, Bull) — @RobinhoodApp, @Uniswap, @SushiSwap — bear: incentive-driven launch volume may normalize fast.
+• WATCH: AI identity (3 ↑↑, Mixed) — @worldcoin, @sama, @alexblania — bear: price beta to AI headlines still outruns token utility.
+• FADE: macro-resilient BTC (5 →, Mixed) — @Wintermute_t, @SoSoValueCrypto, @CMEGroup — bear: ~60% implied hike odds and CPI can flip the absorption story quickly.
+• WATCH: agentic payments (2 ↑, Bull) — @circle, @base, @0xPolygon — bear: headline payment counts need primary on-chain verification.
+• WATCH: stablecoin/RWA rails (3 →, Bull) — @stable, @circle, @OndoFinance — bear: durable adoption does not guarantee near-term token capture.
 
 MAP
-Emerging: agent containment
-Rising: memecoin wrappers
-Peak: privacy/Zcash, oracle/tokenization, macro-resilience/BTC
-Fading: large-cap alt rotation, prediction markets
+Emerging: agentic payments
+Rising: on-chain stocks + fee capture; AI identity
+Peak: macro-resilient BTC
+Fading: none evidenced
+
+Calibration: DefiLlama’s Hyperliquid dashboard shows 223,999 views versus 14,180 for its stablecoin tracker, supporting higher trader mindshare for on-chain trading than stablecoin rails: https://defillama.com/pro
+
+Confidence: medium-low. Primary X search failed (`KEY_UNSET`; `xai http=400 bytes=118`), so this uses the required lower-quality web fallback. No prior three-day baseline existed; NEW means new to the tracker, not necessarily born today.
