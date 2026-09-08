@@ -1,31 +1,31 @@
-*GitHub Trending — 2026-09-07*
+*GitHub Trending — 2026-09-08*
 
 *Top pick* — [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
-Agent-native media gets a credible open stack: deterministic HTML-to-MP4 rendering plus 20 task-specific creation skills.
+Plain HTML becomes deterministic video, giving coding agents a production-grade media path without a React authoring stack.
 
 *AI/ML*
-• [mksglu/context-mode](https://github.com/mksglu/context-mode) — ★ 85 today (20.6k total) · TypeScript · ACCELERATING
-Sandboxes raw tool output and retrieves session history through SQLite FTS5.
+• [affaan-m/ECC](https://github.com/affaan-m/ECC) — ★ 1,426 today (253.9k total) · JavaScript · [ACCELERATING]
+Unifies skills, hooks, orchestration, and inspectable Markdown memory across multiple coding harnesses.
 
-• [bytedance/deer-flow](https://github.com/bytedance/deer-flow) — ★ 188 today (81.7k total) · Python · ACCELERATING
-Version 2 is a ground-up rewrite combining subagents, sandboxes, skills, memory, and scheduled tasks.
+• [mksglu/context-mode](https://github.com/mksglu/context-mode) — ★ 652 today (21.3k total) · TypeScript · [ACCELERATING]
+Benchmarks show 315KB of raw tool output compressed to 5.4KB across a full session.
 
 *Devtools*
-• [microsoft/markitdown](https://github.com/microsoft/markitdown) — ★ 771 today (179.5k total) · Python · ACCELERATING
-Preserves document structure while converting PDFs, Office files, audio, archives, and URLs for LLM pipelines.
+• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 1,070 today (34.1k total) · HTML · [ACCELERATING]
+Ships 39 semantic diagram patterns plus Mermaid/draw.io redraws as self-contained HTML and SVG.
 
-• [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) — ★ 117 today (9.4k total) · JavaScript · RETURNING
-Pairs C++-level Firefox fingerprint spoofing with compact accessibility snapshots and stable element references.
+• [openai/skills](https://github.com/openai/skills) — ★ 490 today (26.4k total) · Python · [ACCELERATING]
+Makes repeatable Codex capabilities installable instead of burying team workflows inside prompts.
 
-• [lightpanda-io/browser](https://github.com/lightpanda-io/browser) — ★ 116 today (34.7k total) · Zig · RETURNING
-Its published 933-page benchmark reports 123MB peak memory versus Chrome’s 2GB.
+• [microsoft/markitdown](https://github.com/microsoft/markitdown) — ★ 2,045 today (181.4k total) · Python · [ACCELERATING]
+Normalizes Office files, PDFs, and other documents into Markdown through CLI, Python, or MCP.
+
+• [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) — ★ 872 today (10.3k total) · JavaScript · [RETURNING]
+Gives agents a Firefox-based stealth browser when ordinary Playwright sessions hit bot defenses.
 
 *Web/Apps*
-• [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) — ★ 220 today (45.0k total) · TypeScript · ACCELERATING
-Turns seekable HTML animations into deterministic MP4s and ships 20 agent creation skills.
-
-• [pascalorg/editor](https://github.com/pascalorg/editor) — ★ 136 today (22.1k total) · TypeScript · ACCELERATING
-A local WebGPU building editor exposes persistent scene control directly to agents through MCP.
+• [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) — ★ 2,628 today (47.5k total) · TypeScript · [ACCELERATING]
+Turns plain HTML into deterministic MP4s, giving agents a CI-friendly video pipeline without React.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/14
+sources: trending=ok · gh_api=ok · kept 7/16
