@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-07T18:49:52Z",
+  "last_analyzed": "2026-09-08T01:32:27Z",
   "quality_score": 3,
-  "assessment": "Actionable and well-structured with explicit calls, but several decisive figures and catalysts lack evidence, the regime verdict is not clearly led with, and hard live-price framing conflicts with the strategy.",
+  "assessment": "Actionable and well-structured with explicit calls, but it misses the conclusion-first requirement, uses tradeable hard prices, and leaves several factual transitions without direct evidence links.",
   "flags": [],
-  "avg_score": 2.8,
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 2,
-      "ts": "2026-09-01T19:29:20Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-01",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-07",
       "score": 3,
       "ts": "2026-09-07T18:49:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 3,
+      "ts": "2026-09-08T01:32:27Z",
       "harness": "codex"
     }
   ]

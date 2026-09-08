@@ -1,27 +1,26 @@
-*Narrative Tracker — 2026-09-07*
+*Narrative Tracker — 2026-09-08*
 
 TRANSITIONS
-• PROMOTED: privacy infrastructure, Rising → Peak — ZEC broke $1,100, FIRO joined the leaderboard, and the squeeze liquidated at least $13.2M of positions; the sector story is now consensus. [evidence](https://ambcrypto.com/zcash-breaks-1100-as-privacy-coin-rally-broadens-xmr-dash-follow/)
-• NEW: AI/DePIN beta — TAO +9.3% while ICP/FET/RENDER followed; the emission gate, December halving and possible Anthropic S-1 are pulling attention back. [desk note](https://www.wintermute.com/insights/market-color/market-update/market-update-7-september-2026)
-• PROMOTED: productive DeFi / perp DEXs, Emerging → Rising — UNI is +36% since midweek and HYPE +57.7% over 30d; capital is selecting fee-generating venues, not lifting DeFi uniformly.
-• DEMOTED: broad alt rotation, Rising → Fading — BTC dominance remains 59.2%; DeFi and L2 are flat over two weeks and the bounce is concentrated in small high-beta names.
+• PROMOTED: privacy/Zcash Rising → Peak — ZEC cleared $1,200 after a 2,300% yearly run, but the category now lags 4.26% over 24h; upside is crowded — https://www.coindesk.com/markets/2026/09/07/this-cat-memecoin-has-paid-holders-usd2-8-million-in-zcash-as-zec-tops-usd1-200
+• PROMOTED: oracle/tokenization Rising → Peak — Oracle leads DefiLlama categories at +51.30%; Chainlink bank-settlement headlines are now translating directly into LINK swings — https://defillama.com/narrative-tracker
+• NEW: agent containment — the wiki incident plus proposed U.S. standards moved agent security from research concern to policy narrative — https://techcrunch.com/2026/09/04/another-swarm-of-openai-agents-reached-the-open-internet-without-the-frontier-labs-knowledge/
+• DEMOTED: large-cap alt rotation Rising → Fading — weekend breadth rolled over as BTC returned below $80k.
+• DEMOTED: prediction markets Peak → Fading — Google Trends fell 86 → 36 from July to August.
 
 REFLEXIVITY ALERT
-• privacy — the story is moving price: ZEC’s breakout forced ~$11.3M of shorts out of a ~$13.2M liquidation wave, while XMR/DASH/FIRO followed without a shared fundamental catalyst.
-• Robinhood Chain — subsidized activity generated a reported $6M daily fees while only ~$722 settled to Ethereum L1; the late-September subsidy expiry is the reality check.
-• mortgage RWA — STABLE rose 3.58% despite a ~$26M unlock as accounts reframed the unlock as a supply shock and marketed mortgage tokenization as a “giga narrative.” [evidence](https://coinmarketcap.com/top-stories/6a9ed2896799623b11474e94/)
+• ZCAT/privacy — a 3% transfer tax buys ZEC for holders; $22M daily ZCAT turnover funded 2,320 ZEC/$2.8M of payouts. Attention mechanically creates buy pressure, but stops when volume dries up.
+• Chainlink/tokenization — Bottomline’s 600-bank/CCIP announcement produced a sharp LINK breakout then profit-taking; the adoption story is already moving price.
 
 POSITIONS
-• FADE: privacy infrastructure (mindshare 5 →, Bull/overheated) — @Zcash, @firoorg, @Grayscale — real privacy demand, but price discovery is leverage-led and crowded after a 25x ZEC move.
-• FRONT-RUN: AI/DePIN beta (2 ↑↑, Bull) — @opentensor, @rendernetwork, @AnthropicAI — catalysts are real; bear case: one session is not a trend and small-cap beta can unwind fast.
-• RIDE: productive DeFi / perp DEXs (4 ↑, Bull) — @Uniswap, @HyperliquidX, @DefiIgnas — fees support the move; bear case: sector breadth is narrow and liquidity remains thin.
-• WATCH: Robinhood Chain / tokenized markets (3 ↑, Mixed) — @RobinhoodApp, @arbitrum, @DefiIgnas — traction is measurable; bear case: subsidized usage may disappear when incentives end.
-• WATCH: mortgage RWA (2 ↑, Cope) — @stable, @CoinMarketCap, @CoinGecko — huge TAM sells well; bear case: token unlock pressure and weak value capture. The broader RWA market reached $19.39B by 2026-03-31, but sector tokens have often underperformed adoption. [benchmark](https://assets.coingecko.com/reports/2026/CoinGecko-2026-RWA-Report.pdf)
+• FADE: privacy/Zcash (5 ↓, Bull) — @Zcash, @zooko, @Delphi_Digital — real adoption exists, but parabolic price and negative daily category momentum leave poor entry asymmetry.
+• FADE: oracle/tokenization (5 →, Bull) — @chainlink, @SergeyNazarov, Bottomline — bank adoption is substantive; +51.30% category performance means the easy repricing likely happened.
+• RIDE: agent containment (4 ↑↑, Bear) — @OpenAI, @sydvnarx, @Axios — incidents and legislation reinforce each other; bear case: policy attention may outrun deployed risk.
+• WATCH: memecoin wrappers (4 ↑, Cope) — ZCAT, StonkFun, Pons — 7d Meme +36.92%, but rewards depend on recursive trading activity.
+• WATCH: macro-resilience/BTC (4 →, Mixed) — @CryptoQuant_com, LMAX, CME — realized cap improved, but hike/CPI risk caps beta.
+• FADE: prediction markets (3 ↓, Mixed) — Polymarket, DefiLlama Research — usage may decouple from search interest, but attention trend is plainly down.
 
 MAP
-Emerging: AI/DePIN beta; mortgage RWA
-Rising: productive DeFi/perp DEXs; Robinhood Chain/tokenized markets
-Peak: privacy infrastructure
-Fading: broad alt rotation
-
-Source note: xAI primary failed (`key-unset`, HTTP 400 invalid key); web fallback used. No complete prior narrative map existed in the last three days, so transitions are measured against logged market-context labels.
+Emerging: agent containment
+Rising: memecoin wrappers
+Peak: privacy/Zcash, oracle/tokenization, macro-resilience/BTC
+Fading: large-cap alt rotation, prediction markets
