@@ -1,20 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-08T06:32:55Z",
+  "last_analyzed": "2026-09-08T15:22:09Z",
   "quality_score": 2,
-  "assessment": "Specific market and yield figures lack verifiable sourcing, the protocol-mover line is garbled, no explicit position calls are given, and claimed workspace updates contradict the read-only run constraints.",
+  "assessment": "Useful conclusion-first framing, but it claims workspace files were updated during an explicitly read-only run, making the reported execution and possibly the unsupported market figures unverifiable.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.17,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 2,
-      "ts": "2026-09-02T01:29:07Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 2,
@@ -187,6 +180,12 @@
       "date": "2026-09-08",
       "score": 2,
       "ts": "2026-09-08T06:32:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T15:22:09Z",
       "harness": "codex"
     }
   ]

@@ -1,12 +1,16 @@
-Take: **chop, medium conviction** — BTC fell 1.6% and only 4/20 top-cap assets were green, while DEX volume rose 8.6% to $10.44B. Weak breadth conflicts with improving on-chain activity.
+Take: chop — BTC stabilized and breadth recovered to 11/20 green, but TVL slipped 0.8%. Conviction: medium.
 
-- DeFi verdict: **Mixed**
-- TVL: $87.93B, down 0.2% since the prior refresh
-- Fear & Greed: 69, Greed
-- Sustainable-yield leaders: WETH-USDT 28.9%, ETH-USDT 24.5%, LINK-WETH 19.7%
-- Protocol movers: RocketSwap Anubis + Magnificent? No obvious catalyst; Lista CDP −13.6%
-- Macro watch: today’s ETF-flow print and inflation expectations; PPI and the ECB decision follow September 10. [Market report](https://www.kucoin.com/news/articles/crypto-daily-market-report-september-7-2026)
+- DeFi: mixed; DEX volume rose 6.8% while stablecoin supply stayed flat.
+- Rotation: DEX, memecoin, and AI-agent tokens show relative strength.
+- Positioning: watch, don’t chase—this is selective rotation, not broad risk-on.
+- Macro: September 10 PPI is the next catalyst; the last finalized BTC ETF session recorded $174.6M inflows. [Market context](https://bykaranteli.com/brief/2026-09-08)
+- Positions: `DEFI_MONITOR_NO_CONFIG`; no tracked pool or position entries were configured.
+- All nine data-source groups succeeded.
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [2026-09-08.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs étoiles/2026-09-08.md). Token-pick history was preserved.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-08.md). Notification delivery was attempted but its external queues are read-only in this harness.
 
-The notification was attempted but its external queues are read-only in this harness. Git commit creation was likewise blocked because `.git` is read-only; the workspace changes remain present.
+## Summary
+
+- Refreshed the complete DeFi and macro snapshot.
+- Preserved the token-picks history.
+- Logged source status, regime, movers, yields, and notification failure.
