@@ -26,6 +26,7 @@ metadata:
 > - `resubmit:vercel/next.js` → probe just that repo (one-off)
 > - `disclose` (alias `email`) → arm & queue eligible disclosure emails
 > - `poc-smoke` → exercise the PoC gate against a benign real Base fork (no audit or disclosure)
+> - `riva:owner/repo` → scan with the Riva research kernel (shadow/proposal only)
 
 Today is ${today}. Read `memory/MEMORY.md` and the last 30 days of `memory/logs/` before starting.
 
@@ -50,10 +51,19 @@ case "$ACTION" in
   resubmit|watchlist|pvr)   ARM="resubmit" ;;            # → Arm B
   disclose|email)           ARM="disclose" ;;            # → Arm C
   poc-smoke|verify-gate)    ARM="poc-smoke" ;;           # → Arm D
+  riva|research)            ARM="scan"; KERNEL="riva" ;; # → Arm A, Riva kernel
+  shadow|compare)           ARM="scan"; KERNEL="shadow" ;; # → Arm A, private comparison
   ""|scan)                  ARM="scan" ;;                # → Arm A (auto-select if TARGET empty)
   */*)                      ARM="scan"; TARGET="$SEL" ;; # bare owner/repo → scan that repo
   *)                        ARM="scan" ;;                # unknown → default to scan
 esac
+
+# Legacy remains the safe default while Riva is evaluated. `shadow` produces a
+# private comparison artifact; only an explicit `riva` selector or a reviewed
+# environment override selects it for a scan. Neither mode changes disclosure
+# authority or bypasses A4/A4.5.
+KERNEL="${KERNEL:-${VULN_RESEARCH_KERNEL:-legacy}}"
+case "$KERNEL" in legacy|shadow|riva) ;; *) KERNEL="legacy" ;; esac
 ```
 
 - `ARM=scan` → **Arm A — SCAN** (target = `$TARGET`, or auto-select if empty).
@@ -276,6 +286,32 @@ different things, and they route differently:
 
 ### A3.6. Agentic logic audit (what SAST and fuzzing both miss)
 
+For `KERNEL=riva` or `KERNEL=shadow`, load `skills/vuln-scanner/riva.md` as the
+focused research kernel. In `shadow`, produce a private comparison artifact
+and leave legacy routing authoritative. In `riva`, Riva supplies the
+threat-model, invariant, slice, and bounded exploration contract; this skill
+remains authoritative for tool execution, triage, PoC verification,
+disclosure, and persistence. Do not load disclosure or lifecycle instructions
+while doing the Riva code-exploration pass. With `KERNEL=legacy`, follow the
+existing A3.6 procedure unchanged.
+
+Before the Riva pass, build the compact target dossier from the Aeon checkout
+(the current working directory may still be the target clone):
+
+```bash
+RIVA_REPO="$PWD"
+cd "${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}"
+./scripts/build-vuln-context.sh --repo "$RIVA_REPO" \
+  --out /tmp/vuln-scan/riva-context.json \
+  --history "${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}/memory/vuln-scanned.json"
+cd "$RIVA_REPO"
+```
+
+Read only `/tmp/vuln-scan/riva-context.json` plus the selected code slice during
+the Riva exploration pass. In `KERNEL=shadow`, write Riva's private candidate
+and coverage comparison to `/tmp/vuln-scan/riva-shadow.json`; do not route it
+to PVR, email, or a public PR. The legacy candidate set remains authoritative.
+
 Semgrep matches syntactic patterns and has weak dataflow reachability on custom code; fuzzing (A3.5) only reaches what a harness already drives. Both are blind to **authorization, business-logic, and multi-step trust-boundary** bugs. That whole class is what an agentic reviewer catches - and here **you are the agentic scanner**. Do the source-to-sink reasoning the tools can't, over this repo's real entrypoints. This pass runs on every scan (unlike A3.5, which only fires when the repo ships a fuzz harness) and produces *candidates*, not verdicts - everything still goes through A4 triage (the model surfacing a finding is not evidence it is real).
 
 **Bounded so it can't run away on run time.** Size the repo first, then set the entrypoint review budget `N` from it - deep-review the **top-N highest-exposure** entrypoints only, and note the rest in the A7 report as reviewed-but-not-deep so coverage stays honest:
@@ -452,6 +488,11 @@ evidence against the claim, not an obstacle to work around.
   Assign Medium only when the independently supported impact really is Medium.
 
 ### A5. Route each finding to the correct disclosure channel
+
+If `KERNEL=shadow`, do not execute A5's write actions. Record the legacy and
+Riva candidate sets, triage differences, and verification differences in the
+private shadow artifact, then continue to A6–A8 with `channel: shadow` and no
+PVR, email, issue, or public-PR side effect. Shadow mode is comparison-only.
 
 This is the core of the scan arm. Pick the channel by finding type:
 
