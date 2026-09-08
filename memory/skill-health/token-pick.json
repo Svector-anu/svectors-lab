@@ -1,12 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-07T14:24:55Z",
+  "last_analyzed": "2026-09-08T15:21:16Z",
   "quality_score": 2,
-  "assessment": "Specific market figures and catalyst claims lack verifiable citations, the catalyst appears weakly substantiated, and the output violates strategy by emphasizing a hard live price without an explicit front-run/ride/fade/watch call.",
+  "assessment": "Actionable and structured, but the specific prices, catalyst, macro figures, quotations, and prediction-market inputs lack citations and are not verifiable from the final output; it also violates the strategy’s qualitative-only live-price constraint.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.56,
+  "avg_score": 2.54,
   "history": [
     {
       "date": "2026-07-11",
@@ -152,6 +152,12 @@
       "date": "2026-09-07",
       "score": 2,
       "ts": "2026-09-07T14:24:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 2,
+      "ts": "2026-09-08T15:21:16Z",
       "harness": "codex"
     }
   ]
