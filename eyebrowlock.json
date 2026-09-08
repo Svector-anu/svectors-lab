@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-04T16:37:07.361139Z",
+  "generatedAt": "2026-09-08T17:37:41.659425Z",
   "generator": "eyebrow/0.4.2",
   "artifacts": [
     {
@@ -117,7 +117,7 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "b17491de609e1fa3b241a55012e60f21d63eaaac6ad9251c43509f40ec635872"
+          "hash": "1328de6f3288fa062a50af59e80ffd23e9013e1c498bbfb920b9541e413bb02d"
         }
       ],
       "findings": [
@@ -144,7 +144,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 304,
+          "line": 328,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -153,12 +153,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1013,
+          "line": 1057,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-a81f0757d7b3bafe3baaa0c3d2c0e735eb284a7ebc9768264bdfe4e747b4aa9a",
+      "contentHash": "sha256-fd1fda98b06f22aa90c7434393c3cc605dd1c3c7527c5925dfdf5a454e24512a",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
@@ -397,7 +397,7 @@
         },
         {
           "path": "project/package-lock.json",
-          "hash": "a0de158bc359e26fcc320dc850358b26313d254eabb0e0100ab535c15dcc6561"
+          "hash": "c491727498df4bfb43cf230d10070fa84a339c881258b1cfb074555a3ad60685"
         },
         {
           "path": "project/package.json",
@@ -451,7 +451,7 @@
           "explanation": "contains consent-bypass or prompt-injection language"
         }
       ],
-      "contentHash": "sha256-dbaef1867bc84f9117c2e84c5bcb897f8737bc9aa5c82d89688ecf605f381c46",
+      "contentHash": "sha256-951f973d8b89f0fcf8b5ca0022e189451f3a2a68f38e59df7767f1ce8110c7f2",
       "discoveredFrom": "skills/remotion/SKILL.md"
     },
     {
@@ -556,10 +556,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "dfd812e4832da6958646746980e56d48f28a8a33bd2878cc0450ee84ebab69d4"
+          "hash": "86c10bfc5c4066d9bcbdd004459c4c957508f7ba2cbe2166074ed7e163b7f67b"
         }
       ],
-      "contentHash": "sha256-439f8e6953ca04fcf91b4d877bb66c5c09ec3ca20002adfe7b638f3374b43a42",
+      "contentHash": "sha256-02c5b0552fb2bfa8c70854abc72092db6f08bc00809491f8680581baf70db755",
       "discoveredFrom": "skills/skill-health/SKILL.md"
     },
     {
@@ -968,10 +968,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "963c9d733523db9f0d66f6db28f75f437a1a1d95ee5b1efdd9ab7cdab8f738ef"
+          "hash": "cb3cf34c2d9df22e91f4a1fd68fe05e31939093b1abce760dd20b3af00417899"
         }
       ],
-      "contentHash": "sha256-d3433068bf4a4a282db862cf93c2bc99b9d574c57fa406d4039a09699c8a4dda",
+      "contentHash": "sha256-01a65e1053807557f7ae0cdc1d4eaadb85ae1aeab32fc8fd714db1f8b834c035",
       "discoveredFrom": "skills/changelog/SKILL.md"
     },
     {
@@ -1489,31 +1489,35 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "605b296d976df6631c7d9d5310442a9f933794ba32188136b7e342bb635b4dfc"
+          "hash": "87176a76640114c0726ed15bd0e398a54ae4cb3fd115d01fb61cfd7edeacf0a9"
         },
         {
           "path": "hook-deploy.sh",
-          "hash": "923ac9765f435569d322c24cf4de4ccafb1ecd190901ecc75a5538900cc072b5"
+          "hash": "dc6973e281a50519c1144d7e065f53e5e76c37df1053a72e8b645bcc54f7455a"
+        },
+        {
+          "path": "templates/AeonFee.sol",
+          "hash": "fab937586cc42f991d06e9c4223469028901fb89ba37dd11a6b444d138f77e18"
         },
         {
           "path": "templates/DeployHook.s.sol",
-          "hash": "c97173a47b3bf4aeddb75e901033ed2d01a6903987d47cbdff94544dbd9e2f95"
+          "hash": "fe6e82990f051f2b0e7d4a7214bd5e4bdfae1cf478b5ae4feb65bb53bcc81ac0"
         },
         {
           "path": "templates/DynamicFeeHook.sol",
-          "hash": "e7a5e1a5b91e2e7db4e0cc3c793a2063ead9b9183f986c0892e2fa4bf95df8b8"
+          "hash": "036dae834218b0a614bb52b4c7f9abbfb0abcf2842a8f5b4abbe512c942e595c"
         },
         {
           "path": "templates/Hook.sol",
-          "hash": "7e63be28d67741a2b27a6db74553032d08e5555b7e1e2ef7e9c2c2d4cde82242"
+          "hash": "4564d0ce98ad9d4107d0705160c781012a630cd3808f92f065b50b999a7dc739"
         },
         {
           "path": "templates/Hook.t.sol",
-          "hash": "f563b5261e35565939b9ad10e9ebd1eb3838cf3fd85beb3872de58a704e1656b"
+          "hash": "e0324ec13ca8bd7a71ba23c502677f48f4ba35417d58d0b5be4db86de8572e8d"
         },
         {
           "path": "templates/HookFeeHook.sol",
-          "hash": "bb0e7a7bf69ea6c1cee61cee8080ba190e2085f0e1aac26aaadaaa73b9a4f511"
+          "hash": "24cff7aeb4a6671510bf6f3182d6570e6c325d224280f567a1ed4627c839e9c9"
         },
         {
           "path": "templates/MockERC20.sol",
@@ -1521,7 +1525,7 @@
         },
         {
           "path": "templates/NoOpHook.sol",
-          "hash": "a902c6d2ba1914c36da3f475b24e5b5f300f74386d207247e398eed8651fcc29"
+          "hash": "7f297cf7542a680d51ba60690d996b20b3eefe68ae487c33ded06476bbfbc1aa"
         },
         {
           "path": "templates/chains.tsv",
@@ -1543,7 +1547,7 @@
           "owasp": "ASK-06",
           "file": "SKILL.md",
           "line": 45,
-          "snippet": "- **Templates:** `skills/deploy-uni-hook/templates/` — `DynamicFeeHook.sol`, `NoOpHook.sol`, `HookFeeHook.sol` (pre-au…",
+          "snippet": "- **Templates:** `skills/deploy-uni-hook/templates/` - `AeonFee.sol` (the mandatory 10 bps protocol-fee base every hook …",
           "explanation": "references sensitive credential or secret paths"
         },
         {
@@ -1551,8 +1555,8 @@
           "severity": "high",
           "owasp": "ASK-06",
           "file": "SKILL.md",
-          "line": 116,
-          "snippet": "- **Freeform mode** (anything else): write the whole hook into `$HOOKBUILD_DIR/src/Hook.sol` — replace the `// --- AEO…",
+          "line": 124,
+          "snippet": "- **Freeform mode** (anything else): write the whole hook into `$HOOKBUILD_DIR/src/Hook.sol`, replacing the `// --- AEON…",
           "explanation": "references sensitive credential or secret paths"
         },
         {
@@ -1578,7 +1582,7 @@
           "severity": "high",
           "owasp": "ASK-06",
           "file": "hook-deploy.sh",
-          "line": 200,
+          "line": 213,
           "snippet": "[ -f hook.env ] \u0026\u0026 . ./hook.env",
           "explanation": "references sensitive credential or secret paths"
         },
@@ -1587,16 +1591,7 @@
           "severity": "high",
           "owasp": "ASK-06",
           "file": "templates/Hook.sol",
-          "line": 13,
-          "snippet": "//     For a return-delta callback, also list it in hook.env HOOK_RETURNS_DELTA.",
-          "explanation": "references sensitive credential or secret paths"
-        },
-        {
-          "ruleId": "SENSITIVE-PATH-READ",
-          "severity": "high",
-          "owasp": "ASK-06",
-          "file": "templates/Hook.sol",
-          "line": 14,
+          "line": 25,
           "snippet": "//   - A dynamic-fee hook sets HOOK_POOL_FEE=dynamic in hook.env and returns",
           "explanation": "references sensitive credential or secret paths"
         },
@@ -1610,7 +1605,7 @@
           "explanation": "references sensitive credential or secret paths"
         }
       ],
-      "contentHash": "sha256-aa6b3cb711be49025443c10a749f3a4f11a5c7468f8cc9125f09009f9033c2b6",
+      "contentHash": "sha256-09733fd6e11569ea9422aecc140265aafc9b7c9bc4a626869edf3a3d69b3cf53",
       "discoveredFrom": "skills/deploy-uni-hook/SKILL.md"
     },
     {
@@ -1770,6 +1765,103 @@
       ],
       "contentHash": "sha256-62b34c7ebab0b585675a5d10ae29eaf73dc39e4af53d1ca088747e1b359e9148",
       "discoveredFrom": "skills/article/SKILL.md"
+    },
+    {
+      "id": "b8b96a0f13ee55ec",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "compute-resell",
+      "source": {
+        "kind": "local",
+        "ref": "skills/compute-resell"
+      },
+      "capabilities": {
+        "network": [
+          "api.surplusintelligence.ai",
+          "llm.bankr.bot",
+          "your-gateway.example.com"
+        ]
+      },
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "c730c1bf05fea1c05d89ecbeb1b5abe928b5ecc1b85999eb18e494fb5d94d021"
+        },
+        {
+          "path": "allocate_caps.py",
+          "hash": "883e576ee58b92db160f05ad7c451101f22805120c4dff59b4fc8f5b71a22192"
+        },
+        {
+          "path": "bootstrap-siwe.mjs",
+          "hash": "8a4f818178fc7374028d031dc37b155e9d47c58410ca7a2f7853e84a736d94d4"
+        },
+        {
+          "path": "claim_ledger.py",
+          "hash": "f8516d7cd26ca0ad4dc33cfb9de7e9f4068adecb752473783284b66ae027ffc0"
+        },
+        {
+          "path": "config.example.json",
+          "hash": "a3cc12a4e536195c27528fcc36396a840ede3b32829f4eb2c5c169561f1329ec"
+        },
+        {
+          "path": "price_models.py",
+          "hash": "ee6461024861866011539de77df073a56d0ffc50e1d01351aaf9bf1be3c4e749"
+        },
+        {
+          "path": "score_models.py",
+          "hash": "a485a24b53ec5340343fada7a2c7f63a9a2800df39f49d407ce07f8e16704f68"
+        }
+      ],
+      "findings": [
+        {
+          "ruleId": "WALLET-THEFT",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "SKILL.md",
+          "line": 81,
+          "snippet": "**Mint it - the dashboard (recommended).** Settings → Secrets → the provider's wallet secret → **Connect wallet**.…",
+          "explanation": "references cryptocurrency wallet or seed-phrase material"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "bootstrap-siwe.mjs",
+          "line": 23,
+          "snippet": "const HOST = process.env.SURPLUS_HOST || 'https://api.surplusintelligence.ai';",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "bootstrap-siwe.mjs",
+          "line": 24,
+          "snippet": "const LABEL = process.argv[2] || process.env.KEY_LABEL || 'compute-resell';",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "bootstrap-siwe.mjs",
+          "line": 25,
+          "snippet": "const EXPIRES_AT = process.env.KEY_EXPIRES_AT || undefined;",
+          "explanation": "references sensitive credential or secret paths"
+        },
+        {
+          "ruleId": "SENSITIVE-PATH-READ",
+          "severity": "high",
+          "owasp": "ASK-06",
+          "file": "bootstrap-siwe.mjs",
+          "line": 27,
+          "snippet": "const pk = process.env.SELLER_WALLET_PRIVATE_KEY;",
+          "explanation": "references sensitive credential or secret paths"
+        }
+      ],
+      "contentHash": "sha256-6fac86cfd4e58a956747d06540c1bf5248ecd043701d5d375bb14a94ef7017a3",
+      "discoveredFrom": "skills/compute-resell/SKILL.md"
     },
     {
       "id": "b9020c5da66b44d0",
@@ -2091,7 +2183,7 @@
         },
         {
           "path": "references/secrets.md",
-          "hash": "76b8105069a91632daba058cfdd7afec0e3b6ee9542b083b99b4601a73fbcd96"
+          "hash": "41aa375c84cea1b0190bd7291176651d335dc1c41e2b8067900f164d4c4df670"
         },
         {
           "path": "references/skill-anatomy.md",
@@ -2102,7 +2194,7 @@
           "hash": "0edc7445542a21cb5518e813a6ae462a1d469636601a799efc1bec86b4058c5a"
         }
       ],
-      "contentHash": "sha256-c43ac760993f8c41c7aa85b20ce6b53b948607d61d767f21d321f3b9853aa5e5",
+      "contentHash": "sha256-4e9c576b6d6c7cad1e17df815ac9519e4af1dd7a827e3b06a5314675ca1478ce",
       "discoveredFrom": ".claude/skills/aeon/SKILL.md"
     },
     {
@@ -2147,10 +2239,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "67d4c34d7fcd2f87f70fa8462289898f05499575444f34587dabb73f307a7f4f"
+          "hash": "da2ac8b88d22076c227bee9fcd7b2ea1c7be407a866f35a8a64e316599bfd110"
         }
       ],
-      "contentHash": "sha256-fde5b3b54f16d08354f3d8df0e30f44b68180bce3470257e90405d376e032dd4",
+      "contentHash": "sha256-9666675528c0e0c8913c8fd4499eece477e9a8108e571ae16eedbb79d5138a67",
       "discoveredFrom": "skills/send-email/SKILL.md"
     },
     {
