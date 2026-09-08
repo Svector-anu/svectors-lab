@@ -1,12 +1,10 @@
 {
   "skill": "search-skill",
-  "last_analyzed": "2026-09-07T14:24:59Z",
-  "quality_score": 2,
-  "assessment": "The no-op result is valid, but it unverifiably claims a workspace log write during a read-only run and provides no evidence for the duplicate/capability-gate findings.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.78,
+  "last_analyzed": "2026-09-08T15:19:58Z",
+  "quality_score": 3,
+  "assessment": "Adequate no-install decision with a concrete candidate and rationale, but the fleet-monitoring gap remains unresolved and catalog counts lack verification links.",
+  "flags": [],
+  "avg_score": 2.79,
   "history": [
     {
       "date": "2026-08-25",
@@ -138,6 +136,12 @@
       "date": "2026-09-07",
       "score": 2,
       "ts": "2026-09-07T14:24:59Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-08",
+      "score": 3,
+      "ts": "2026-09-08T15:19:58Z",
       "harness": "codex"
     }
   ]
