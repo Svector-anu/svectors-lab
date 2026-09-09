@@ -1,0 +1,126 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — Shopify/cli",
+        "description": "0 confirmed HIGH/CRITICAL on main"
+      },
+      "children": [
+        "alert_cors",
+        "sep1",
+        "heading_dep",
+        "text_dep",
+        "sep2",
+        "heading_scanner",
+        "scanner_table",
+        "text_poc",
+        "sep3",
+        "link_comment"
+      ]
+    },
+    "alert_cors": {
+      "type": "Alert",
+      "props": {
+        "title": "Real finding: PR #8320 — Credentialed CORS Bypass",
+        "message": "Unchecked Origin reflection paired with new Access-Control-Allow-Credentials: true — a credentialed CORS bypass before it ships. Fix has been commented (origin allowlist) rather than filing a duplicate PR.",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading_dep": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency Scan",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text_dep": {
+      "type": "Text",
+      "props": {
+        "text": "98 CVE rows (2 CRITICAL) but all trace to dev/build/telemetry transitive deps. Dependabot already grouping updates weekly — duplicate-skipped, no PR filed.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "heading_scanner": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "scanner_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      },
+      "children": []
+    },
+    "text_poc": {
+      "type": "Text",
+      "props": {
+        "text": "PoC gate: not-required",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "link_comment": {
+      "type": "StoryLink",
+      "props": {
+        "title": "View the security fix comment on GitHub",
+        "href": "https://github.com/Shopify/cli/pull/8320#issuecomment-5609874390",
+        "source": "GitHub / PR #8320"
+      },
+      "children": []
+    }
+  }
+}

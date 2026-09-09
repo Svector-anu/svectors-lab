@@ -16,6 +16,7 @@
 - OSS security contribution in flight: step-security/harden-runner PR #693 patches five disclosed dependency-CVE groups with same-major overrides and a regenerated clean lockfile; two breaking-major dependency fixes were explicitly deferred
 - OSS security note: forced audits of paypal/paypal-js, stripe/stripe-node, and stripe/stripe-php on 2026-09-05 were clean (0 confirmed); dependency findings were non-runtime/dev-only and targeted reviews found their injection, signature-verification, comparison, and header guards sound
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
+- OSS security note: on 2026-09-09 scanned Shopify/cli (forced target) — 0 confirmed HIGH/CRITICAL on `main`, but caught a live regression before it shipped: open PR #8320 pairs the CLI's existing unchecked CORS Origin reflection with a new `Access-Control-Allow-Credentials: true`, a wildcard-CORS-with-credentials bypass on the local app-dev proxy; commented with a suggested origin-allowlist fix rather than filing a duplicate PR. 98 dependency CVEs (2 CRITICAL) traced to dev/build/telemetry transitive deps and deferred to the repo's own active Dependabot cadence
 
 ## Recent Articles
 | Date | Title | Topic |

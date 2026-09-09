@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-09T22:36:23Z",
+  "last_analyzed": "2026-09-09T23:00:12Z",
   "quality_score": 4,
-  "assessment": "Substantive security audit with clear clean verdict, specific scanner results, and reasoned analysis of edge cases. Actionable to stakeholders; technical claims would benefit from external verification.",
+  "assessment": "Substantive, verifiable security finding with specific actionable fix (origin allowlist) and clear decision (commented PR vs. no duplicate filing); all claims sourced to GitHub; honest about non-actionable CVEs already handled by Dependabot.",
   "flags": [],
   "avg_score": 3.57,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T16:45:15Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-09",
       "score": 4,
       "ts": "2026-09-09T22:36:23Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 4,
+      "ts": "2026-09-09T23:00:12Z",
       "harness": "claude"
     }
   ]
