@@ -1,58 +1,58 @@
 # Market Context (as of 2026-09-09)
 
-> **Take:** chop — BTC gained 1.0% with 14/20 top caps green, while Fear & Greed fell three points to 66. Conviction: medium.
+> **Take:** chop — BTC is flat at -0.1% with only 8/20 top caps green, while DEX volume rose 12.8%. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $79,181 (+1.0% 24h, +1.8% 7d) · dominance 58.42% (+0.03 pp since prior refresh)
-- ETH $2,501 (+1.3% 24h, +3.4% 7d) · ETH/BTC 0.0316
-- SOL $104.57 (+1.8% 24h, +4.0% 7d)
-- Total mcap $2.716T (-1.0% 24h) · DEX vol $11.44B 24h
-- Breadth: 14/20 green 24h · 13/20 green 7d
+- BTC $78,578 (-0.1% 24h, +2.4% 7d) · dominance 58.41% (-0.01 pp since prior refresh)
+- ETH $2,489 (flat 24h, +4.0% 7d) · ETH/BTC 0.0317
+- SOL $102.93 (-0.7% 24h, +4.3% 7d)
+- Total mcap $2.696T (-2.6% 24h) · DEX vol $11.62B 24h
+- Breadth: 8/20 green 24h · 15/20 green 7d
 - Fear & Greed: 66 (Greed) — yesterday 69
 
 ## What Changed Since Last Refresh
 - Quiet — all majors within ±1%, regime unchanged.
 
 ## Active Narratives
-- **AI-agent tokens** — phase: rising. Evidence: VVV is CoinGecko's top trend and gained 52.0% in 24h.
-- **DEX activity** — phase: rising. Evidence: aggregate volume gained 11.0%; Uniswap V3 rose 66.0% to $1.50B.
-- **Privacy relative strength** — phase: rising. Evidence: ZEC gained 44.7% over seven days versus BTC's 1.8%.
-- **Cross-chain liquidity** — phase: emerging. Evidence: Stargate V2 TVL gained 32.0% daily and 40.3% weekly.
+- **DEX activity** — phase: rising. Evidence: aggregate volume gained 12.8%; Uniswap V3 rose 71.0% to $1.55B.
+- **Privacy relative strength** — phase: rising. Evidence: ZEC gained 7.4% daily and 57.5% weekly, leading top-cap assets.
+- **AI-agent tokens** — phase: rising. Evidence: VVV remains third in CoinGecko trends and gained 11.5% in 24h.
+- **Cross-chain liquidity** — phase: emerging. Evidence: Stargate V2 TVL gained 32.2% daily and 40.6% weekly.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.28B (+3.8%)
-- Aave V3: $17.54B (+3.2%)
-- SSV Network: $13.01B (+3.3%)
-- Morpho Blue: $9.70B (+2.3%)
-- Binance staked ETH: $9.27B (+3.4%)
+- Lido: $24.25B (+4.3%)
+- Aave V3: $17.64B (+5.0%)
+- SSV Network: $13.09B (+4.6%)
+- Morpho Blue: $9.73B (+3.3%)
+- Binance staked ETH: $9.36B (+5.5%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $49.63B (n/a)
-- Solana: $5.94B (n/a)
-- BSC: $5.72B (n/a)
+- Ethereum: $49.84B (n/a)
+- Solana: $5.97B (n/a)
+- BSC: $5.77B (n/a)
 
 ## Stablecoins
-Total: $311.1B (+0.6% 7d). USDT $183.4B · USDC $74.5B · USDS $6.6B · DAI $4.8B · combined share of mcap 11.5%.
+Total: $311.0B (+0.6% 7d). USDT $183.4B · USDC $74.4B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.5%.
 
 ## Trending (CoinGecko)
-- VVV — top trending coin, +52.0% in 24h
-- LIT — second in trending, +11.5% in 24h
-- PONS — third in trending, +16.6% in 24h
+- LAPTOP — top trending coin, price data reported without a reliable 24h change
+- STONKLESS — second in trending, price data reported without a reliable 24h change
+- VVV — third in trending, +11.5% in 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| US Open ATP: Ben Shelton vs Carlos Alcaraz | 33.5% | $5.08M | $0.34M |
-| Counter-Strike: magic vs FaZe | 27.5% | $0.68M | $0.02M |
-| No Fed rate change after September 2026 meeting | 46.5% | $0.63M | $0.82M |
+| LAPTOP FDV above $1B one day after launch? | 32.5% | $0.80M | $0.11M |
+| No Fed rate change after September 2026 meeting | 46.5% | $0.69M | $0.41M |
+| Fed increases rates 25 bps after September 2026 meeting | 53.5% | $0.49M | $0.46M |
 
 ## Macro Catalysts (next 48h)
-- U.S. August PPI and the ECB decision land September 10, followed by CPI September 11; hotter inflation would pressure risk assets while oil remains elevated. ([calendar](https://www.kucoin.com/news/articles/crypto-daily-market-report-september-7-2026))
-- Spot BTC ETFs absorbed $174.6M in the latest reported session and $986.7M across five sessions; continued inflows would support the range floor, but have not forced a breakout. ([flow tracker](https://thecentralbulletin.com/bitcoin-etf-flow-monitor/))
+- U.S. inflation data is the immediate risk event; a hot print would reinforce rate-hike fears and pressure the $77K-$80K BTC range. ([market brief](https://www.mexc.co/crypto-pulse/article/mexc-alpha-trader-daily-market-brief-september-9-2026-149937))
+- U.S. spot BTC ETFs posted a $46.6M net outflow after three inflow sessions; weak follow-through reduces institutional support into the inflation prints. ([flow recap](https://www.fameex.com/en-AU/news/crypto-news-recap-20260909))
 
 ## Implications for Downstream Skills
-- **token-pick:** favor proven relative strength in AI-agent, DEX, and privacy assets; avoid treating improving breadth as a confirmed breakout before inflation data.
-- **narrative-tracker:** watch whether VVV broadens AI-agent momentum and whether DEX volume holds above $11B after the macro releases.
+- **token-pick:** favor proven relative strength in privacy and high-volume DEX assets; avoid treating strong weekly breadth as a breakout while daily breadth is 8/20.
+- **narrative-tracker:** watch whether DEX volume holds above $11B and whether VVV broadens AI-agent momentum beyond one token.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
