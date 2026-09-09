@@ -1,19 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-09T01:34:00Z",
-  "quality_score": 3,
-  "assessment": "Useful, conclusion-first regime snapshot with concrete metrics, but it lacks source links/evidence and provides no explicit front-run/ride/fade/watch calls, limiting verifiability and trader actionability.",
+  "last_analyzed": "2026-09-09T06:32:26Z",
+  "quality_score": 2,
+  "assessment": "Specific market figures lack source links, the hard live prices violate strategy, no actionable position calls are given, and claimed workspace updates contradict the read-only run.",
   "flags": [
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
   "avg_score": 2.17,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 2,
-      "ts": "2026-09-02T18:41:56Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-09",
       "score": 3,
       "ts": "2026-09-09T01:34:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T06:32:26Z",
       "harness": "codex"
     }
   ]
