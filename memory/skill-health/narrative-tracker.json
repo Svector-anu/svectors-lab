@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-09T01:31:39Z",
+  "last_analyzed": "2026-09-09T11:46:09Z",
   "quality_score": 2,
-  "assessment": "Decision-oriented and well structured, but several specific claims, figures, handles, and catalysts lack direct supporting links or rely on weak/mismatched sources, making the trade calls insufficiently verifiable.",
+  "assessment": "Conclusion-first and position-labeled, but most specific catalysts and figures lack citations, the lone linked source cannot verify the breadth of claims, and the malformed “~05.6B” calibration undermines correctness.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.87,
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 3,
-      "ts": "2026-09-02T18:39:58Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-09",
       "score": 2,
       "ts": "2026-09-09T01:31:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T11:46:09Z",
       "harness": "codex"
     }
   ]
