@@ -1836,13 +1836,25 @@ jobs:
         if: steps.work.outputs.mode != '' && env.SKILL_MODE == 'read-only'
         run: |
           # read-only skills (mode: read-only) get no Write/Edit/git/gh, so they can't
-          # mutate the repo. Two jobs here: (1) record the run-log entry on their behalf
-          # (they couldn't), (2) revert any code/config that slipped through a shell
-          # redirection. State/memory and output/ (incl. .chains/) are preserved for the commit step.
+          # mutate the repo. Three jobs here: (1) record the run-log entry on their
+          # behalf (they couldn't), (2) reuse the output "Capture skill output"
+          # already staged so that entry carries the skill's real structured output
+          # under the "### <skill>" heading its own SKILL.md instructs it to look
+          # for on the next run (dedup/diff/transition-detection all depend on that
+          # heading existing — a content-free stub here silently breaks every
+          # read-only skill's baseline every single run), (3) revert any code/config
+          # that slipped through a shell redirection. State/memory and output/
+          # (incl. .chains/) are preserved for the commit step.
           SKILL="${{ steps.skill.outputs.name }}"
+          RUN_OUTCOME="${{ steps.run.outcome }}"
           TODAY=$(date -u +%Y-%m-%d)
           mkdir -p memory/logs
-          printf '\n## %s (read-only)\nRan %s UTC.\n' "$SKILL" "$(date -u +%FT%TZ)" >> "memory/logs/${TODAY}.md"
+          CAPTURED="output/.chains/${SKILL}.md"
+          if [ "$RUN_OUTCOME" = "success" ] && [ -s "$CAPTURED" ]; then
+            { printf '\n### %s\n' "$SKILL"; cat "$CAPTURED"; printf '\n'; } >> "memory/logs/${TODAY}.md"
+          else
+            printf '\n## %s (read-only)\nRan %s UTC — no output captured (outcome=%s).\n' "$SKILL" "$(date -u +%FT%TZ)" "$RUN_OUTCOME" >> "memory/logs/${TODAY}.md"
+          fi
           CODE_PATHS="skills .github apps/mcp-server apps/webhook apps/dashboard/app apps/dashboard/lib apps/dashboard/components scripts docs catalog bin *.md *.json *.yml aeon"
           git checkout -- $CODE_PATHS 2>/dev/null || true
           # Same path set as CODE_PATHS above. `git checkout` only reverts EDITS to
