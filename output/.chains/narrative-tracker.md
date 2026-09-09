@@ -1,32 +1,30 @@
 *Narrative Tracker — 2026-09-09*
 
 TRANSITIONS
-• NEW: Liquid exploit / bridge security — ~4,000 BTC withdrawal made federation risk the dominant event; WATCH — https://www.tomshardware.com/tech-industry/cryptocurrency/hackers-drain-usd320-million-in-bitcoin-from-liquid-network-emptying-roughly-95-percent-of-federation-wallet-attackers-claim-theyre-the-good-guys-and-will-return-funds-after-the-vulnerability-is-fixed
-• NEW: agentic trading rails — Binance Agent OS/MCP shifts agents from demos toward execution; RIDE
-• NEW: tokenized-equity chain wars — BSC, Robinhood Chain, Base and Solana compete for attention; RIDE
-• NEW: Solana Transaction V1 — larger transactions are a real builder catalyst; FRONT-RUN
-• NEW: staked-TRON ETF — launch catalyst is real, but wrapped-TRON dislocation muddies the trade; WATCH
-• NEW: ZEC privacy/ETF mania — high mindshare after a parabolic week; FADE
+• NEW: Prediction-market distribution — Robinhood added OG.com routing, exposing event contracts to 28M+ funded accounts — https://www.axios.com/2026/09/08/robinhood-crypto-og-kalshi-prediction-markets
+• NEW: On-chain perps / Hyperliquid — HYPE at a fresh ATH while the sector remains a high-attention fundamentals trade.
+• NEW: Privacy rotation — FIRO held #1 for a second day while ZEC appeared four straight days — https://www.cryptocatalyst.news/articles/2026-09-07-crypto-research-morning-brief
+• NEW: Chain finality backlash — Cronos erased nearly two hours / 10,961 blocks after the Tectonic exploit — https://www.coindesk.com/business/2026/09/08/cronos-executes-controversial-blockchain-rollback-to-recover-crypto-worth-usd111-million
+• NEW: Robinhood Chain memecoins — Pons/ROBIN attention is large but already decelerating.
 
 REFLEXIVITY ALERT
-• ZEC — ETF growth and top-10/rally headlines are reinforcing price-led attention; no new protocol fundamental was identified.
-• Robinhood Chain memes — unconfirmed Trump-family-token rumors are directly rotating speculative flows.
-• Liquid — the attackers’ white-hat framing became part of negotiations; reports say 3,400 BTC was returned after the incident response.
+• Robinhood Chain memecoins — Pons generated nearly $6M fees in one day and ROBIN briefly crossed $25M; by Sep 8 volume had fallen 49.9% while liquidity rose 16%. The story drove launch/trading activity before durable demand was proven.
+• Cronos rollback — validators rewrote history to restore about $111M; the decentralization story directly changed settlement outcomes, while roughly $9.19M still escaped.
 
 POSITIONS
-• FRONT-RUN: Solana Transaction V1 (2 ↑↑, Bull) — @solana, @SolanaFndn — adoption may lag capacity.
-• RIDE: agentic trading rails (3 ↑, Bull) — @binance, @AlpacaHQ — execution risk and policy scrutiny remain.
-• RIDE: tokenized equities (4 ↑, Mixed) — @RobinhoodApp, @BNBCHAIN, @OndoFinance — meme activity can outrun real RWA demand.
-• FADE: ZEC/privacy mania (4 →, Cope) — @Zcash, @Grayscale — parabolic positioning leaves poor asymmetry.
-• WATCH: Liquid security (5 ↑↑, Mixed) — @Blockstream, @Liquid_BTC — restitution reduces tail risk, but bridge trust is impaired.
-• WATCH: staked TRON ETF (2 ↑↑, Mixed) — @trondao, @CanaryFunds — launch flow may not offset wrapper stress.
+• FRONT-RUN: Privacy rotation (mindshare 2 ↑↑, Bull) — @firoorg, @Zcash, @ZcashFoundation — bear: thin attention and regulatory/listing risk can unwind the rotation fast.
+• RIDE: Prediction markets (4 ↑, Bull) — @RobinhoodApp, @cryptocom, @Kalshi — bear: Supreme Court/state-gaming uncertainty can cap distribution.
+• RIDE: Hyperliquid/perps (4 ↑, Bull) — @HyperliquidX, @HyperFND — bear: ATH attention plus unlocks makes crowded positioning vulnerable.
+• FADE: Robinhood Chain memecoins (4 ↓, Cope) — @PonsFun, @RobinhoodApp — bear: volume already halved; fee spikes can be mercenary churn.
+• WATCH: Chain finality backlash (3 ↑↑, Bear) — @cronos_chain, @TectonicFi, @cryptocom — bear to the bear: recovering most user funds may normalize emergency governance.
+• WATCH: AI × crypto products (3 ↑, Mixed) — @a16zcrypto, @solana, @CoinbaseDev — bear: product claims still outrun fee-paying demand.
 
 MAP
-Emerging: Solana V1, staked-TRON ETF
-Rising: agentic trading, tokenized equities
-Peak: Liquid security, ZEC/privacy
+Emerging: Privacy rotation
+Rising: Prediction markets; Hyperliquid/perps; chain finality backlash; AI × crypto products
+Peak: Robinhood Chain memecoins
 Fading: none
 
-Calibration: DefiLlama shows RWA +11.20%, $73.242b market cap and $9.238b volume — https://defillama.com/narrative-tracker
+Calibration: DefiLlama shows AI +43.93% with $31.564B category cap and prediction markets +26.12% with $11.969B; directional only because the page window may not equal 3 days: https://defillama.com/narrative-tracker
 
-Fetch: KEY_UNSET; xai http=400 bytes=118. Web fallback used.
+Lower-confidence fallback: XAI key was unset; required API attempt returned HTTP 400.
