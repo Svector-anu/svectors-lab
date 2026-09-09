@@ -1836,13 +1836,36 @@ jobs:
         if: steps.work.outputs.mode != '' && env.SKILL_MODE == 'read-only'
         run: |
           # read-only skills (mode: read-only) get no Write/Edit/git/gh, so they can't
-          # mutate the repo. Two jobs here: (1) record the run-log entry on their behalf
-          # (they couldn't), (2) revert any code/config that slipped through a shell
-          # redirection. State/memory and output/ (incl. .chains/) are preserved for the commit step.
+          # mutate the repo. Three jobs here: (1) record the run-log entry on their
+          # behalf (they couldn't), (2) reuse the output "Capture skill output"
+          # already staged so that entry carries the skill's real structured output
+          # under the "### <skill>" heading CLAUDE.md's Log contract (and every
+          # read-only skill's own SKILL.md) expects — a content-free/wrong-level
+          # stub here silently breaks each skill's own dedup/diff baseline, AND
+          # trips aeon-doctor's own "wrong heading level" health check, (3) revert
+          # any code/config that slipped through a shell redirection. State/memory
+          # and output/ (incl. .chains/) are preserved for the commit step.
+          #
+          # NOTE: this step's `if:` (like "Capture skill output" and "Commit
+          # results" above/below it) has no `always()`, so on a genuine Run
+          # failure the whole step — including the "no output" branch below —
+          # is skipped by GitHub Actions' implicit success() gating, same as
+          # "Commit results" is; a real failure currently gets no guard-authored
+          # log entry at all. Widening that is a separate, wider-blast-radius
+          # change (it touches every skill's failure path, not just read-only
+          # ones) and is intentionally out of scope here — this branch stays as
+          # defensive handling for the cases where the step DOES run without a
+          # real capture (empty/placeholder output).
           SKILL="${{ steps.skill.outputs.name }}"
+          RUN_OUTCOME="${{ steps.run.outcome }}"
           TODAY=$(date -u +%Y-%m-%d)
           mkdir -p memory/logs
-          printf '\n## %s (read-only)\nRan %s UTC.\n' "$SKILL" "$(date -u +%FT%TZ)" >> "memory/logs/${TODAY}.md"
+          CAPTURED="output/.chains/${SKILL}.md"
+          if [ "$RUN_OUTCOME" = "success" ] && [ -s "$CAPTURED" ] && [ "$(cat "$CAPTURED")" != "_No output captured._" ]; then
+            { printf '\n### %s\n' "$SKILL"; cat "$CAPTURED"; printf '\n'; } >> "memory/logs/${TODAY}.md"
+          else
+            printf '\n### %s\nRun outcome=%s at %s UTC — no output captured; nothing to log.\n' "$SKILL" "$RUN_OUTCOME" "$(date -u +%FT%TZ)" >> "memory/logs/${TODAY}.md"
+          fi
           CODE_PATHS="skills .github apps/mcp-server apps/webhook apps/dashboard/app apps/dashboard/lib apps/dashboard/components scripts docs catalog bin *.md *.json *.yml aeon"
           git checkout -- $CODE_PATHS 2>/dev/null || true
           # Same path set as CODE_PATHS above. `git checkout` only reverts EDITS to
