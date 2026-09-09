@@ -1,0 +1,5 @@
+semgrep=fail
+trufflehog=fail
+trufflehog-git=fail
+osv=fail
+agentic=ok

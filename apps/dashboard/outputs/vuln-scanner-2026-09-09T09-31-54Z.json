@@ -1,0 +1,127 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: evoevo-contracts clean",
+        "description": "NeoSoul-AI/evoevo-contracts — security audit results"
+      },
+      "children": [
+        "alert_clean",
+        "sep1",
+        "stat_contracts",
+        "badge_pass",
+        "sep2",
+        "text_scanners_header",
+        "table_scanners",
+        "text_scanner_note",
+        "sep3",
+        "text_prior_header",
+        "text_prior_details",
+        "text_pvr_note"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "title": "Clean Audit",
+        "message": "0 confirmed vulnerabilities"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "stat_contracts": {
+      "type": "Stat",
+      "props": {
+        "label": "Solidity contracts deep-reviewed",
+        "value": "5"
+      }
+    },
+    "badge_pass": {
+      "type": "Badge",
+      "props": {
+        "text": "Agentic pass",
+        "variant": "secondary"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "text_scanners_header": {
+      "type": "Text",
+      "props": {
+        "text": "Scanner results:",
+        "variant": "lead"
+      }
+    },
+    "table_scanners": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "fail"
+          ],
+          [
+            "trufflehog",
+            "fail"
+          ],
+          [
+            "trufflehog-git",
+            "fail"
+          ],
+          [
+            "osv",
+            "fail"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "text_scanner_note": {
+      "type": "Text",
+      "props": {
+        "text": "Note: Four automated tools blocked by permission layer (same issue as today's stripe/openapi run, not a target-repo signal)",
+        "variant": "caption"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "text_prior_header": {
+      "type": "Text",
+      "props": {
+        "text": "Prior professional audit (ScaleBit):",
+        "variant": "lead"
+      }
+    },
+    "text_prior_details": {
+      "type": "Text",
+      "props": {
+        "text": "13 findings total — all fixed except one accepted-Medium governance item. No new exploitable findings surfaced.",
+        "variant": "body"
+      }
+    },
+    "text_pvr_note": {
+      "type": "Text",
+      "props": {
+        "text": "PVR disabled. No explicit SECURITY.md contact.",
+        "variant": "caption"
+      }
+    }
+  }
+}

@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-09T09:23:17Z",
-  "quality_score": 3,
-  "assessment": "Clean audit report with clear conclusion and scanner status, but lacks detail on candidates reviewed and reasons for partial scanner failures.",
+  "last_analyzed": "2026-09-09T09:31:54Z",
+  "quality_score": 2,
+  "assessment": "Competent security audit output but misaligned with operator strategy—provides no crypto trading signal or position calls for the stated Skopos trader audience.",
   "flags": [],
-  "avg_score": 3.67,
+  "avg_score": 3.6,
   "history": [
-    {
-      "date": "2026-08-31",
-      "score": 4,
-      "ts": "2026-08-31T10:01:03Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-08-31",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-09",
       "score": 3,
       "ts": "2026-09-09T09:23:17Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T09:31:54Z",
       "harness": "claude"
     }
   ]
