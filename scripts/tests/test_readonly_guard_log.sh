@@ -15,7 +15,7 @@ trap 'rm -rf "$TMP"' EXIT
 # the SKILL= assignment up to (excluding) the CODE_PATHS revert logic — same
 # anchored-sed extraction pattern as test_chain_runner_invalid_dispatch.sh.
 awk '
-  /^          # \(incl\. \.chains\/\) are preserved for the commit step\.$/ { on=1; next }
+  /^          # real capture \(empty\/placeholder output\)\.$/ { on=1; next }
   on && /^          SKILL=/ { print; next }
   on && /^          CODE_PATHS=/ { exit }
   on { print }
@@ -53,19 +53,31 @@ echo "$out" | grep -q '^### narrative-tracker$' && pass "success: writes a 3-has
 echo "$out" | grep -q 'NEW: ZCAT/privacy' && pass "success: real captured output lands in the log" \
   || bad "success: captured output missing from the log entry"
 
-# Failed run → falls back to the stub (no stale/wrong content masquerading as
-# this run's real output).
+# Failed run → falls back to the stub, but STILL under the same "### <skill>"
+# heading level (CLAUDE.md's Log contract + aeon-doctor's own health check both
+# expect every skill's entry at this level, regardless of outcome) — no
+# stale/wrong content masquerading as this run's real output either.
 out=$(run_guard narrative-tracker failure '')
-echo "$out" | grep -q '^## narrative-tracker (read-only)$' && pass "failure: falls back to the stub heading" \
-  || bad "failure: should fall back to the stub, not fabricate content"
+echo "$out" | grep -q '^### narrative-tracker$' && pass "failure: still uses the '### <skill>' heading" \
+  || bad "failure: heading level must match the success case (CLAUDE.md Log contract)"
 echo "$out" | grep -q 'outcome=failure' && pass "failure: stub records the real outcome" \
   || bad "failure: stub should record outcome=failure"
 
 # Successful run but nothing was captured (empty/missing output/.chains file)
 # → also falls back to the stub rather than logging an empty heading.
 out=$(run_guard narrative-tracker success '')
-echo "$out" | grep -q '^## narrative-tracker (read-only)$' && pass "success-but-empty: falls back to the stub" \
+echo "$out" | grep -q '^### narrative-tracker$' && echo "$out" | grep -q 'no output captured' \
+  && pass "success-but-empty: falls back to the stub" \
   || bad "success-but-empty: should fall back to the stub, not log an empty '### ' heading"
+
+# Successful run, but "Capture skill output" only wrote its own placeholder
+# ("_No output captured._" — the literal string it emits when there was
+# neither a pending notification nor a non-empty /tmp/skill-result.txt) →
+# must NOT be treated as real content (it's non-empty, so a bare -s check
+# would wrongly accept it and pollute the skill's own dedup baseline).
+out=$(run_guard narrative-tracker success '_No output captured._')
+echo "$out" | grep -q '_No output captured\._' && bad "placeholder: must not be logged as if it were real content" \
+  || pass "placeholder: '_No output captured._' is treated as empty, not real output"
 
 echo "---"
 [ "$fail" -eq 0 ] && echo "ALL PASS" || echo "SOME FAILED"
