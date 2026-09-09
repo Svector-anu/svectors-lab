@@ -1,0 +1,7 @@
+semgrep=ok
+trufflehog=ok
+trufflehog-git=ok
+osv=ok
+fuzz=skip (no fuzz/fuzz_targets in repo)
+slither=skip (no .sol files, Go repo)
+agentic=ok

@@ -1,0 +1,136 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner",
+        "description": "NeoSoul-AI/trusted-evidence-engine"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "alert_clean",
+        "stat_candidates",
+        "sep1",
+        "heading_scanners",
+        "table_scanners",
+        "sep2",
+        "heading_security",
+        "text_endpoint",
+        "sep3",
+        "heading_deps",
+        "text_cve"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "message": "Clean audit"
+      }
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed / Confirmed",
+        "value": "8 / 0"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      }
+    },
+    "table_scanners": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_security": {
+      "type": "Heading",
+      "props": {
+        "text": "Security Analysis",
+        "level": "h3"
+      }
+    },
+    "text_endpoint": {
+      "type": "Text",
+      "props": {
+        "text": "Unauthenticated evidence-resolve endpoint fans out to Brave/CoinGecko/AlphaVantage/Polymarket, but every outbound host is fixed server-side config with properly escaped query params — no SSRF, no injection."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_deps": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependencies",
+        "level": "h3"
+      }
+    },
+    "text_cve": {
+      "type": "Text",
+      "props": {
+        "text": "1 dependency CVE (golang.org/x/sys, Windows-only, unreachable on this Linux service) dropped as non-actionable."
+      }
+    }
+  }
+}

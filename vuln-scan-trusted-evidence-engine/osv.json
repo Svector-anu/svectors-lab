@@ -1,0 +1,45 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "/home/runner/work/svectors-lab/svectors-lab/trusted-evidence-engine/go.mod",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "golang.org/x/sys",
+            "version": "0.35.0",
+            "ecosystem": "Go"
+          },
+          "groups": [
+            {
+              "ids": ["GO-2026-5024"],
+              "aliases": ["CVE-2026-39824", "GO-2026-5024"],
+              "experimental_analysis": {
+                "GO-2026-5024": { "called": false, "unimportant": false }
+              },
+              "max_severity": ""
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "id": "GO-2026-5024",
+              "aliases": ["CVE-2026-39824"],
+              "summary": "Invoking integer overflow in NewNTUnicodeString in golang.org/x/sys/windows",
+              "details": "NewNTUnicodeString does not check for string length overflow. When provided with a string that overflows the maximum size of a NTUnicodeString (a 16-bit number of bytes), it returns a truncated string rather than an error.",
+              "ecosystem_specific_import": {
+                "goos": ["windows"],
+                "path": "golang.org/x/sys/windows",
+                "symbols": ["NewNTUnicodeString"]
+              },
+              "fixed": "0.44.0",
+              "references": ["https://go.dev/issue/78916", "https://go.dev/cl/770080"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "OSV_STATUS=ok; ran via `osv-scanner scan source --recursive --no-ignore --format=json .`; 1 dependency group (golang.org/x/sys 0.35.0, GO-2026-5024/CVE-2026-39824), experimental_analysis.called=false (Windows-only symbol, not invoked by this repo's call graph on any reachable path)."
+}

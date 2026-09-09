@@ -1,0 +1,3 @@
+{"level":"info-0","ts":"2026-09-09T22:31:04Z","logger":"trufflehog","msg":"running source","source_manager_worker_id":"238my","with_units":true}
+{"level":"info-0","ts":"2026-09-09T22:31:04Z","logger":"trufflehog","msg":"scanning repo","source_manager_worker_id":"238my","unit_kind":"dir","unit":"/tmp/trufflehog-15998-663979340","repo":"file:///home/runner/work/svectors-lab/svectors-lab/trusted-evidence-engine"}
+{"level":"info-0","ts":"2026-09-09T22:31:04Z","logger":"trufflehog","msg":"finished scanning","chunks":94,"bytes":179959,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"53.758348ms","trufflehog_version":"3.97.4","verification_caching":{"Hits":0,"Misses":0,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":0}}
