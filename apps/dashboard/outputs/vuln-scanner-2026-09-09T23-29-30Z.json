@@ -1,0 +1,223 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner",
+        "description": "cloudflare/workers-sdk"
+      },
+      "children": [
+        "findings-stat",
+        "sep1",
+        "disclosure-stack",
+        "sep2",
+        "scanners-stack",
+        "sep3",
+        "triaged-stack"
+      ]
+    },
+    "findings-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Findings",
+        "value": "1",
+        "delta": "Critical + High"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "disclosure-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "disclosure-title",
+        "pr-link",
+        "package-text",
+        "cve-badges-stack",
+        "impact-text"
+      ]
+    },
+    "disclosure-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Disclosed via",
+        "level": "h3"
+      }
+    },
+    "pr-link": {
+      "type": "Link",
+      "props": {
+        "label": "Public PR #15584",
+        "href": "https://github.com/cloudflare/workers-sdk/pull/15584"
+      }
+    },
+    "package-text": {
+      "type": "Text",
+      "props": {
+        "text": "shell-quote 1.8.1 → 1.10.0",
+        "variant": "lead"
+      }
+    },
+    "cve-badges-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "cve1-badge",
+        "cve2-badge"
+      ]
+    },
+    "cve1-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "CVE-2026-9277: quote() shell injection",
+        "variant": "destructive"
+      }
+    },
+    "cve2-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "CVE-2026-13311: parse() ReDoS",
+        "variant": "destructive"
+      }
+    },
+    "impact-text": {
+      "type": "Text",
+      "props": {
+        "text": "Direct wrangler dependency reachable from init/pages dev",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners-title",
+        "scanners-badges",
+        "poc-text"
+      ]
+    },
+    "scanners-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      }
+    },
+    "scanners-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "scanner1",
+        "scanner2",
+        "scanner3",
+        "scanner4",
+        "scanner5",
+        "scanner6"
+      ]
+    },
+    "scanner1": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep ✓",
+        "variant": "secondary"
+      }
+    },
+    "scanner2": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog ✓",
+        "variant": "secondary"
+      }
+    },
+    "scanner3": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog-git ✓",
+        "variant": "secondary"
+      }
+    },
+    "scanner4": {
+      "type": "Badge",
+      "props": {
+        "text": "osv ✓",
+        "variant": "secondary"
+      }
+    },
+    "scanner5": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz n/a",
+        "variant": "outline"
+      }
+    },
+    "scanner6": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic ✓",
+        "variant": "secondary"
+      }
+    },
+    "poc-text": {
+      "type": "Text",
+      "props": {
+        "text": "PoC gate: not-required (published dependency CVE)",
+        "variant": "caption"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "triaged-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "triaged-title",
+        "triaged-text"
+      ]
+    },
+    "triaged-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Triaged Out",
+        "level": "h3"
+      }
+    },
+    "triaged-text": {
+      "type": "Text",
+      "props": {
+        "text": "8 semgrep hits and 345 other dependency-CVE rows triaged out (false positives, maintainer-accepted risk, or transitive/fixture-only debt already covered by this repo's active Dependabot cadence)",
+        "variant": "body"
+      }
+    }
+  }
+}

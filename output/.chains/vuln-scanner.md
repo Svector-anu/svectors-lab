@@ -1,9 +1,9 @@
-ℹ️ Vuln Scanner: Shopify/cli
+✅ Vuln Scanner
 
-*Vuln Scanner — Shopify/cli*
-0 confirmed HIGH/CRITICAL on main. Real finding: open PR #8320 pairs unchecked Origin reflection with a new Access-Control-Allow-Credentials: true — a credentialed CORS bypass before it even ships. Commented with the fix (origin allowlist) rather than filing a duplicate PR.
-Dependency scan: 98 CVE rows (2 CRITICAL) but all trace to dev/build/telemetry transitive deps, and Dependabot's already grouping updates weekly — duplicate-skipped, no PR filed.
-Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
-Comment: https://github.com/Shopify/cli/pull/8320#issuecomment-5609874390
+*Vuln Scanner — cloudflare/workers-sdk*
+1 confirmed finding (critical + high, bundled).
+Disclosed via: public PR [#15584](https://github.com/cloudflare/workers-sdk/pull/15584) — `shell-quote` 1.8.1→1.10.0, fixing CVE-2026-9277 (quote() shell injection) + CVE-2026-13311 (parse() ReDoS), a direct wrangler dependency reachable from `init`/`pages dev`.
+Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=n/a, agentic=ok. PoC gate: not-required (published dependency CVE).
+8 semgrep hits and 345 other dependency-CVE rows triaged out (false positives, maintainer-accepted risk, or transitive/fixture-only debt already covered by this repo's active Dependabot cadence).
 
-🔗 https://github.com/Shopify/cli/pull/8320#issuecomment-5609874390
+🔗 https://github.com/cloudflare/workers-sdk/pull/15584
