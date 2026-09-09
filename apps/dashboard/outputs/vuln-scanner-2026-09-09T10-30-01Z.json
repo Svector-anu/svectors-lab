@@ -1,0 +1,87 @@
+{
+  "root": "card_vuln_scanner",
+  "state": {},
+  "elements": {
+    "card_vuln_scanner": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner",
+        "description": "NeoSoul-AI/neotrade-skills"
+      },
+      "children": [
+        "alert_clean",
+        "stat_candidates",
+        "separator_1",
+        "heading_scanners",
+        "table_scanner_status"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "message": "Clean audit",
+        "type": "success"
+      },
+      "children": []
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed / Confirmed",
+        "value": "8 / 0"
+      },
+      "children": []
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "table_scanner_status": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "none"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      },
+      "children": []
+    }
+  }
+}
