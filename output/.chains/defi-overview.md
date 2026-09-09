@@ -1,20 +1,17 @@
-## DeFi overview — 2026-09-09
+Take: **chop, medium conviction** — BTC is flat at $78,541, only 5/20 top-cap assets are green, while DEX volume remains elevated at $11.63B.
 
-Take: **chop, medium conviction**. BTC is flat at $78,578 with only 8/20 top-cap assets green, while DEX volume rose 12.8% to $11.62B.
-
-- DeFi verdict: mixed—activity accelerated, but stablecoin supply remained nearly flat.
-- TVL: $88.74B, up 1.2% since the prior refresh.
-- Top mover: Stargate V2 +32.2% daily; no downside mover cleared the filters.
-- Fees leader: Tether, $16.19M over 24 hours.
-- Sentiment: Fear & Greed 66, down from 69.
-- Strongest narratives: DEX activity, privacy/ZEC strength, AI-agent tokens, and cross-chain liquidity.
-- Macro risk: inflation data is approaching while spot BTC ETFs recorded a $46.6M daily outflow. [Market brief](https://www.mexc.co/crypto-pulse/article/mexc-alpha-trader-daily-market-brief-september-9-2026-149937), [ETF-flow recap](https://www.fameex.com/en-AU/news/crypto-news-recap-20260909).
+- DeFi TVL: $88.47B, down 0.3% since the prior refresh.
+- Fear & Greed: 66 (Greed), down from 69.
+- Strongest themes: DEX activity, ZEC-led privacy strength, and Stargate cross-chain inflows.
+- Stargate V2 TVL rose 30.8%; HTX fell 10.6%.
+- Sustainable-yield filter retained 3 pools; incentive-yield filter retained 2.
+- Friday’s U.S. CPI is the immediate macro risk. Latest U.S. spot BTC ETF flow was a $46.6M outflow.
+- No positions are configured in `memory/on-chain-watches.yml`.
+- Notification was suppressed because the regime and major prices did not change materially.
 
 ## Summary
 
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Appended the full run to [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md).
-- Preserved the token-pick history.
-- No tracked positions were configured: `DEFI_MONITOR_NO_CONFIG`.
-- All market sources succeeded.
-- Notification delivery was attempted, but the harness’s external notification queues were read-only.
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Appended the run to [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md).
+- Preserved the complete Token Picks table.
+- All required data sources returned valid JSON; validation and `git diff --check` passed.
