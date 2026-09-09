@@ -1,0 +1,143 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: stripe/openapi"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "status_row",
+        "separator_1",
+        "heading_scanners",
+        "scanners_table",
+        "separator_2",
+        "heading_details",
+        "details_stack"
+      ]
+    },
+    "status_row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_audit",
+        "stat_confirmed"
+      ]
+    },
+    "badge_audit": {
+      "type": "Badge",
+      "props": {
+        "text": "Clean audit",
+        "variant": "default"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed (2 reviewed)",
+        "value": "0",
+        "trend": "neutral"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      }
+    },
+    "scanners_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "fail"
+          ],
+          [
+            "trufflehog-git",
+            "fail"
+          ],
+          [
+            "osv",
+            "fail"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_details": {
+      "type": "Heading",
+      "props": {
+        "text": "Repository Details",
+        "level": "h3"
+      }
+    },
+    "details_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "repo_text",
+        "false_positives_text"
+      ]
+    },
+    "repo_text": {
+      "type": "Text",
+      "props": {
+        "text": "Repo is OpenAPI spec data + hardened CI/CD (SHA-pinned actions, minimal permissions, zizmor-gated).",
+        "variant": "body"
+      }
+    },
+    "false_positives_text": {
+      "type": "Text",
+      "props": {
+        "text": "Both semgrep hits were false positives on read.",
+        "variant": "caption"
+      }
+    }
+  }
+}
