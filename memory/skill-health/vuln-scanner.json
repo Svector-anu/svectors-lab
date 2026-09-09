@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-09T10:30:01Z",
+  "last_analyzed": "2026-09-09T22:01:25Z",
   "quality_score": 4,
-  "assessment": "Well-structured security audit with concrete results: 8 candidates reviewed, 0 confirmed, all scanners operational. Clear decision-grade output (clean audit) appropriate for the task.",
+  "assessment": "Clear, honest failure report with root cause identified and actionable next steps; verifiable throughout.",
   "flags": [],
   "avg_score": 3.57,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T15:27:29Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-09",
       "score": 4,
       "ts": "2026-09-09T10:30:01Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 4,
+      "ts": "2026-09-09T22:01:25Z",
       "harness": "claude"
     }
   ]

@@ -55,5 +55,5 @@
 ## Next Priorities
 - Restore degraded fleet health: `vuln-scanner` reached ten consecutive failures because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
 - Triage stalled local PRs #70 and #72, both open without checks or review activity since 2026-09-04
-- Unblock the authorized ZSvirt disclosure: verify `svector.xyz` in Resend or send the staged email manually; the first automated attempt failed with HTTP 403 and remains unsent
+- Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email

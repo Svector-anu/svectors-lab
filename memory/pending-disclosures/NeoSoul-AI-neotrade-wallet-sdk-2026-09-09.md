@@ -8,6 +8,8 @@ contact_email: dev@neosoul.ai
 cc: []
 email_subject: "Security: AES-GCM keystore accepts truncated auth tags in neotrade-wallet-sdk"
 detected_at: 2026-09-09T00:00:00Z
+send_attempts: 1
+last_send_error: "resend-403: svector.xyz domain not verified (attempted 2026-09-09)"
 ---
 
 # Staged private disclosure — NeoSoul-AI/neotrade-wallet-sdk
