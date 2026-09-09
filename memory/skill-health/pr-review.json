@@ -1,17 +1,13 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-08T15:17:58Z",
-  "quality_score": 3,
-  "assessment": "Acceptable completed no-op: it clearly reports zero open PRs and required no action, though the final output provides limited evidence for verification.",
-  "flags": [],
-  "avg_score": 3.13,
+  "last_analyzed": "2026-09-09T15:21:56Z",
+  "quality_score": 2,
+  "assessment": "The core finding is concise and actionable, but the output claims a posted GitHub review and workspace log modification despite the explicitly read-only harness, making key completion claims unreliable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.07,
   "history": [
-    {
-      "date": "2026-09-01",
-      "score": 4,
-      "ts": "2026-09-01T18:19:21Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-01",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-08",
       "score": 3,
       "ts": "2026-09-08T15:17:58Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T15:21:56Z",
       "harness": "codex"
     }
   ]
