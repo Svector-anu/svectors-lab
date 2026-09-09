@@ -1,12 +1,12 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-08T15:21:16Z",
+  "last_analyzed": "2026-09-09T15:21:34Z",
   "quality_score": 2,
-  "assessment": "Actionable and structured, but the specific prices, catalyst, macro figures, quotations, and prediction-market inputs lack citations and are not verifiable from the final output; it also violates the strategy’s qualitative-only live-price constraint.",
+  "assessment": "Actionable and structured, but specific live figures, catalyst claims, Fed inputs, and a Waller statement lack verifiable citations; it also violates the qualitative-price constraint and gives no explicit token position call.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.54,
+  "avg_score": 2.52,
   "history": [
     {
       "date": "2026-07-11",
@@ -158,6 +158,12 @@
       "date": "2026-09-08",
       "score": 2,
       "ts": "2026-09-08T15:21:16Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T15:21:34Z",
       "harness": "codex"
     }
   ]
