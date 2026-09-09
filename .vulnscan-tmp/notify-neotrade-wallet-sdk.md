@@ -1,5 +1,3 @@
-⚠️ Vuln Scanner: neotrade-wallet-sdk
-
 *Vuln Scanner — NeoSoul-AI/neotrade-wallet-sdk*
 2 confirmed findings (1 medium code flaw, 1 already-public dependency CVE).
 

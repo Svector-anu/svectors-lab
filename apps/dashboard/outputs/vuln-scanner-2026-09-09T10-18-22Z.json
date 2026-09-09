@@ -1,0 +1,300 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: neotrade-wallet-sdk",
+        "description": "2 confirmed findings (1 medium code flaw, 1 already-public dependency CVE)"
+      },
+      "children": [
+        "top-metrics",
+        "sep1",
+        "finding-1",
+        "sep2",
+        "finding-2",
+        "sep3",
+        "scanners-block",
+        "sep4",
+        "report-block"
+      ]
+    },
+    "top-metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "findings-count",
+        "poc-required"
+      ]
+    },
+    "findings-count": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Findings",
+        "value": "2"
+      }
+    },
+    "poc-required": {
+      "type": "Stat",
+      "props": {
+        "label": "PoC Gate",
+        "value": "Not Required",
+        "delta": "both graded medium"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "finding-1": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "f1-title",
+        "f1-severity",
+        "f1-issue",
+        "f1-verification",
+        "f1-impact",
+        "f1-risk-assessment",
+        "f1-context",
+        "f1-actions"
+      ]
+    },
+    "f1-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Finding 1: AES-256-GCM Keystore Auth Tag Truncation",
+        "level": "h3"
+      }
+    },
+    "f1-severity": {
+      "type": "Badge",
+      "props": {
+        "text": "Medium",
+        "variant": "destructive"
+      }
+    },
+    "f1-issue": {
+      "type": "Text",
+      "props": {
+        "text": "Keystore decrypt accepts truncated auth tags (missing authTagLength)"
+      }
+    },
+    "f1-verification": {
+      "type": "Text",
+      "props": {
+        "text": "Verified empirically",
+        "variant": "caption"
+      }
+    },
+    "f1-impact": {
+      "type": "Text",
+      "props": {
+        "text": "Practical exploit gated to infeasibility by keystore's own scrypt cost",
+        "variant": "caption"
+      }
+    },
+    "f1-risk-assessment": {
+      "type": "Text",
+      "props": {
+        "text": "Real defense-in-depth gap, not a live exploit",
+        "variant": "caption"
+      }
+    },
+    "f1-context": {
+      "type": "Text",
+      "props": {
+        "text": "No PVR/SECURITY.md found on repo",
+        "variant": "muted"
+      }
+    },
+    "f1-actions": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "f1-action-email",
+        "f1-action-fix"
+      ]
+    },
+    "f1-action-email": {
+      "type": "Text",
+      "props": {
+        "text": "✓ Private disclosure email staged (auto_send armed)",
+        "variant": "muted"
+      }
+    },
+    "f1-action-fix": {
+      "type": "Text",
+      "props": {
+        "text": "✓ Working fix pushed to fork-only branch for maintainer cherry-pick",
+        "variant": "muted"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "finding-2": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "f2-title",
+        "f2-cve",
+        "f2-package",
+        "f2-scope",
+        "f2-reachability",
+        "f2-status-alert"
+      ]
+    },
+    "f2-title": {
+      "type": "Heading",
+      "props": {
+        "text": "Finding 2: vitest Dependency CVE",
+        "level": "h3"
+      }
+    },
+    "f2-cve": {
+      "type": "Badge",
+      "props": {
+        "text": "GHSA-82fw-gwwq-j7x9",
+        "variant": "outline"
+      }
+    },
+    "f2-package": {
+      "type": "Text",
+      "props": {
+        "text": "vitest/@vitest/mocker — already-public dependency CVE"
+      }
+    },
+    "f2-scope": {
+      "type": "Text",
+      "props": {
+        "text": "devDependency only",
+        "variant": "caption"
+      }
+    },
+    "f2-reachability": {
+      "type": "Text",
+      "props": {
+        "text": "Unreachable in this repo's usage",
+        "variant": "caption"
+      }
+    },
+    "f2-status-alert": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "Pending Update",
+        "message": "Bump attempted but not filed — pnpm unavailable in this session to regenerate lockfile safely. Flagged for follow-up run."
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners-heading",
+        "scanners-results"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      }
+    },
+    "scanners-results": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "✓ ok"
+          ],
+          [
+            "trufflehog",
+            "✓ ok"
+          ],
+          [
+            "trufflehog-git",
+            "✓ ok"
+          ],
+          [
+            "osv",
+            "✓ ok"
+          ],
+          [
+            "fuzz",
+            "⊘ skip (no Rust)"
+          ],
+          [
+            "agentic",
+            "✓ ok"
+          ]
+        ]
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "report-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "report-heading",
+        "report-link"
+      ]
+    },
+    "report-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Full Report",
+        "level": "h3"
+      }
+    },
+    "report-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Vulnerability Scan Report — 2026-09-09",
+        "href": "output/articles/vuln-scan-2026-09-09-neotrade-wallet-sdk.md",
+        "source": "vuln-scanner"
+      }
+    }
+  }
+}
