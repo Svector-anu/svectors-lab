@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T17:37:41.659425Z",
+  "generatedAt": "2026-09-08T19:38:00.058458Z",
   "generator": "eyebrow/0.4.2",
   "artifacts": [
     {
@@ -117,7 +117,11 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "1328de6f3288fa062a50af59e80ffd23e9013e1c498bbfb920b9541e413bb02d"
+          "hash": "b412b8b56770ff762efbeb62aee0c995742a539fba8459ca6b3fcfec0328bee8"
+        },
+        {
+          "path": "riva.md",
+          "hash": "e055f507d81ebc4582d30e0c9d3483921e787c83953afb5f67290274d1654bd5"
         }
       ],
       "findings": [
@@ -126,7 +130,7 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 108,
+          "line": 118,
           "snippet": "network is open, but `pip install` / `curl | sh` / `tar` are **not** on the in-run",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         },
@@ -135,7 +139,7 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 122,
+          "line": 132,
           "snippet": "# open, but `pip install` / `curl | sh` / `tar` are NOT allow-listed — `python3 -m pip`,",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         },
@@ -144,7 +148,7 @@
           "severity": "medium",
           "owasp": "ASK-03",
           "file": "SKILL.md",
-          "line": 328,
+          "line": 364,
           "snippet": "- `exec` / `spawn` / `system` / `eval` sinks + subprocess with string interpolation (RCE)",
           "explanation": "uses a process-execution primitive"
         },
@@ -153,12 +157,12 @@
           "severity": "critical",
           "owasp": "ASK-01",
           "file": "SKILL.md",
-          "line": 1057,
+          "line": 1098,
           "snippet": "1. **Install** — the binaries (`semgrep`, `trufflehog`, `osv-scanner`, `slither`) are **not pre-installed**. Stage the…",
           "explanation": "downloads and executes remote code via a pipe to a shell"
         }
       ],
-      "contentHash": "sha256-fd1fda98b06f22aa90c7434393c3cc605dd1c3c7527c5925dfdf5a454e24512a",
+      "contentHash": "sha256-002b9bb2eeb24519300be4966998c147f694534ce93929a2e0a46ba07b1a6876",
       "discoveredFrom": "skills/vuln-scanner/SKILL.md"
     },
     {
