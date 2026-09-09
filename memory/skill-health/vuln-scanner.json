@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-09T04:29:00Z",
-  "quality_score": 3,
-  "assessment": "Scan completed competently—clean verdict delivered with scanner breakdown—but output is terse and lacks verification details (links, report excerpts, candidate specifics) that would enable independent verification. Honest findings with no invented threats. Fundamental strategy mismatch: this is defensive security scanning, not crypto trading signal.",
+  "last_analyzed": "2026-09-09T09:11:47Z",
+  "quality_score": 2,
+  "assessment": "Correctly identified target not suitable for scanning (no source code), reported honestly with no invented claims, but output is boilerplate with minimal substance.",
   "flags": [],
-  "avg_score": 3.77,
+  "avg_score": 3.7,
   "history": [
-    {
-      "date": "2026-08-30",
-      "score": 4,
-      "ts": "2026-08-30T17:55:31Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-08-31",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-09",
       "score": 3,
       "ts": "2026-09-09T04:29:00Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T09:11:47Z",
       "harness": "claude"
     }
   ]

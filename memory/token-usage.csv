@@ -280,3 +280,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-09,defi-overview,codex-default,830038,8693,714880,0
 2026-09-09,vuln-scanner,claude-sonnet-5,3335,24902,4948258,96303
 2026-09-09,defi-overview,codex-default,776042,8144,696704,0
+2026-09-09,vuln-scanner,claude-sonnet-5,2763,14568,2100650,76882

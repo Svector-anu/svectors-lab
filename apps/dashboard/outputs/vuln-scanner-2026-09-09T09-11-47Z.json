@@ -1,0 +1,195 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner",
+        "description": "NeoSoul-AI/0g-builders"
+      },
+      "children": [
+        "status-alert",
+        "separator-1",
+        "repo-info-section",
+        "separator-2",
+        "scan-results-section"
+      ]
+    },
+    "status-alert": {
+      "type": "Alert",
+      "props": {
+        "type": "info",
+        "title": "No scan performed",
+        "message": "Repo has no source code — single README.md (5KB, marketing copy for NeoSoul's EvoEvo prediction-agent platform). Nothing to audit — fails A1 selection criteria before fork/clone."
+      }
+    },
+    "separator-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "repo-info-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "repo-heading",
+        "repo-link",
+        "repo-stats-stack",
+        "missing-section"
+      ]
+    },
+    "repo-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Repository",
+        "level": "h3"
+      }
+    },
+    "repo-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "NeoSoul-AI/0g-builders",
+        "href": "https://github.com/NeoSoul-AI/0g-builders",
+        "source": "GitHub"
+      }
+    },
+    "repo-stats-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-stars",
+        "stat-readme-size"
+      ]
+    },
+    "stat-stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "0"
+      }
+    },
+    "stat-readme-size": {
+      "type": "Stat",
+      "props": {
+        "label": "README size",
+        "value": "5 KB"
+      }
+    },
+    "missing-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "missing-heading",
+        "missing-items"
+      ]
+    },
+    "missing-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Missing / Disabled",
+        "level": "h4"
+      }
+    },
+    "missing-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-manifests",
+        "badge-security-md",
+        "badge-pvr"
+      ]
+    },
+    "badge-manifests": {
+      "type": "Badge",
+      "props": {
+        "text": "No manifests",
+        "variant": "outline"
+      }
+    },
+    "badge-security-md": {
+      "type": "Badge",
+      "props": {
+        "text": "No SECURITY.md",
+        "variant": "outline"
+      }
+    },
+    "badge-pvr": {
+      "type": "Badge",
+      "props": {
+        "text": "PVR disabled",
+        "variant": "outline"
+      }
+    },
+    "separator-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scan-results-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "results-heading",
+        "results-grid"
+      ]
+    },
+    "results-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scan Results",
+        "level": "h3"
+      }
+    },
+    "results-grid": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-scanners",
+        "stat-candidates",
+        "stat-confirmed"
+      ]
+    },
+    "stat-scanners": {
+      "type": "Stat",
+      "props": {
+        "label": "Scanners",
+        "value": "n/a"
+      }
+    },
+    "stat-candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates",
+        "value": "0"
+      }
+    },
+    "stat-confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed",
+        "value": "0"
+      }
+    }
+  }
+}
