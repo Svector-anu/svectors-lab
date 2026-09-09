@@ -1,18 +1,21 @@
 HEALTH: CRITICAL(1)
 
-- Critical: `vuln-scanner` — 11 consecutive failures; Grok rejects model `grok-4.5`. Existing ISS-005 remains applicable.
-- Degraded: 16 skills
-- Warning: 7 skills
-- Healthy: 6 skills
-- No data: 0
-- Open issues: 4
-- Filed/resolved: none
-- Systemic failures: none
+- Critical: `vuln-scanner` — 5 consecutive failures; forced `grok-4.5` model is rejected. Tracked by ISS-005.
+- Degraded: 16 skills.
+- Warning: 7 skills.
+- Healthy: 5 skills.
+- No data / flapping: 0.
+- Open issues: 4.
+- Filed/resolved this run: 0/0.
+- Systemic failures: none.
 
-State matches the previous report. Notification was suppressed because the last identical alert was sent less than 24 hours earlier.
+The notification was attempted but the external queue is read-only. `last_notified_at` remains unchanged so delivery will retry next run.
 
 ## Summary
 
-- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) with the audit timestamp.
-- Appended `SKILL_HEALTH_NOOP` to [2026-09-08.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-08.md).
-- Validated JSON and repository diff formatting.
+Updated:
+
+- [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
+- [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md)
+
+Next action: fix the invalid Grok model configuration affecting `vuln-scanner`.
