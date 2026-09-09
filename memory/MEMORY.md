@@ -26,6 +26,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-09 | daily (web) | Windows zero-days, AlphaGenome Atlas, satellite agents |
 | 2026-09-08 | daily (web) | CoinEx exits, agent theft, Mistral funding |
 | 2026-09-07 | daily (web) | Liquid exploit, Binance deadline, research agents |
 | 2026-09-06 | daily (web) | AgentOS MCP, Qwen workflows, Ollama ChatGPT |

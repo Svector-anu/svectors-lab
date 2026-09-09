@@ -1,19 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-08T15:19:58Z",
+  "last_analyzed": "2026-09-09T15:21:05Z",
   "quality_score": 2,
-  "assessment": "Useful sourced items and one explicit crypto action, but most of the digest is off-strategy and the summary implausibly claims workspace files were updated during a read-only run.",
+  "assessment": "Substantive and cited, but it ignores the crypto-trader strategy: there is no market regime verdict, evidence-backed crypto signal, or explicit front-run/ride/fade/watch call.",
   "flags": [
     "low_quality",
-    "generic_content",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 2.13,
+  "avg_score": 2.07,
   "history": [
-    {
-      "date": "2026-08-23",
-      "score": 4
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -182,6 +177,12 @@
       "date": "2026-09-08",
       "score": 2,
       "ts": "2026-09-08T15:19:58Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T15:21:05Z",
       "harness": "codex"
     }
   ]
