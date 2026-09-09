@@ -54,6 +54,8 @@ jobs:
         run: bash scripts/tests/test_skill_mode.sh
       - name: read-only guard run-log tests
         run: bash scripts/tests/test_readonly_guard_log.sh
+      - name: read-only failure-commit tests
+        run: bash scripts/tests/test_readonly_failure_commit.sh
       - name: per-skill requires parse tests
         run: bash scripts/tests/test_skill_requires.sh
       - name: run actions summary tests
