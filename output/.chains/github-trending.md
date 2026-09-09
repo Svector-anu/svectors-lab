@@ -1,31 +1,34 @@
-*GitHub Trending — 2026-09-08*
+*GitHub Trending — 2026-09-09*
 
-*Top pick* — [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
-Plain HTML becomes deterministic video, giving coding agents a production-grade media path without a React authoring stack.
+*Top pick* — [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli)
+The standout is shared agent infrastructure that carries team rules and context across competing coding harnesses.
 
 *AI/ML*
-• [affaan-m/ECC](https://github.com/affaan-m/ECC) — ★ 1,426 today (253.9k total) · JavaScript · [ACCELERATING]
-Unifies skills, hooks, orchestration, and inspectable Markdown memory across multiple coding harnesses.
+• [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) — ★ 1,083 today (2.8k total) · TypeScript · RETURNING
+Turns a Git repo into a live, cross-harness distribution layer for team skills, rules, MCP, and learnings.
 
-• [mksglu/context-mode](https://github.com/mksglu/context-mode) — ★ 652 today (21.3k total) · TypeScript · [ACCELERATING]
-Benchmarks show 315KB of raw tool output compressed to 5.4KB across a full session.
+• [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — ★ 506 today (103.7k total) · Python · ACCELERATING
+Recent release fixes point-in-time leakage and adds resumable checkpoints—two gaps that invalidate many trading-agent demos.
 
 *Devtools*
-• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 1,070 today (34.1k total) · HTML · [ACCELERATING]
-Ships 39 semantic diagram patterns plus Mermaid/draw.io redraws as self-contained HTML and SVG.
+• [openai/plugins](https://github.com/openai/plugins) — ★ 505 today (6.1k total) · JavaScript · RETURNING
+Provides canonical plugin manifests and richer examples spanning skills, MCP, agents, commands, hooks, and assets.
 
-• [openai/skills](https://github.com/openai/skills) — ★ 490 today (26.4k total) · Python · [ACCELERATING]
-Makes repeatable Codex capabilities installable instead of burying team workflows inside prompts.
+• [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) — ★ 393 today (1.5k total) · TypeScript · RETURNING
+Puts BYO-model agents, permissions, diffs, and long-running sessions in one local-first desktop workspace.
 
-• [microsoft/markitdown](https://github.com/microsoft/markitdown) — ★ 2,045 today (181.4k total) · Python · [ACCELERATING]
-Normalizes Office files, PDFs, and other documents into Markdown through CLI, Python, or MCP.
-
-• [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) — ★ 872 today (10.3k total) · JavaScript · [RETURNING]
-Gives agents a Firefox-based stealth browser when ordinary Playwright sessions hit bot defenses.
+• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 2,286 today (36.2k total) · HTML · ACCELERATING
+Ships 39 zero-build HTML/SVG diagram grammars with semantic patterns and optional accessible motion.
 
 *Web/Apps*
-• [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) — ★ 2,628 today (47.5k total) · TypeScript · [ACCELERATING]
-Turns plain HTML into deterministic MP4s, giving agents a CI-friendly video pipeline without React.
+• [pascalorg/editor](https://github.com/pascalorg/editor) — ★ 442 today (22.8k total) · TypeScript · ACCELERATING
+Combines a WebGPU building editor with an authenticated local MCP service and persistent SQLite projects.
+
+*Other*
+CAD automation crosses developer tooling and physical engineering, so these fit neither bucket cleanly.
+
+• [earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad) — ★ 97 today (14.9k total) · Python · ACCELERATING
+Gives agents tested workflows for CAD, fabrication, robotics formats, inspection, slicing, and handoff.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/16
+sources: trending=ok · gh_api=ok · kept 7/13
