@@ -1,10 +1,12 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-09-08T15:18:40Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op report with clear counts and follow-up status, though it provides little evidence to independently verify the live repository check or state updates.",
-  "flags": [],
-  "avg_score": 3,
+  "last_analyzed": "2026-09-09T15:19:47Z",
+  "quality_score": 2,
+  "assessment": "The no-merge decision is clear and specific, but the claimed state and log-file updates are incompatible with the explicitly read-only run, making the completion report unreliable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.96,
   "history": [
     {
       "date": "2026-08-25",
@@ -138,6 +140,12 @@
       "date": "2026-09-08",
       "score": 3,
       "ts": "2026-09-08T15:18:40Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T15:19:47Z",
       "harness": "codex"
     }
   ]
