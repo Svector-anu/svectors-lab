@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-09T11:46:09Z",
+  "last_analyzed": "2026-09-09T15:21:15Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first and position-labeled, but most specific catalysts and figures lack citations, the lone linked source cannot verify the breadth of claims, and the malformed “~05.6B” calibration undermines correctness.",
+  "assessment": "Conclusion-first and position-labeled, but most catalysts, rankings, and directional claims lack evidence links or methodology, making the report insufficiently verifiable despite two cited data points.",
   "flags": [
     "unverifiable_claim"
   ],
   "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 2,
-      "ts": "2026-09-02T21:18:17Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-09",
       "score": 2,
       "ts": "2026-09-09T11:46:09Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T15:21:15Z",
       "harness": "codex"
     }
   ]
