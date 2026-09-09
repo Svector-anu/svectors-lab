@@ -283,3 +283,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-09,vuln-scanner,claude-sonnet-5,2763,14568,2100650,76882
 2026-09-09,vuln-scanner,claude-sonnet-5,3762,26816,9041588,129009
 2026-09-09,vuln-scanner,claude-sonnet-5,3206,28819,6367453,166715
+2026-09-09,vuln-scanner,claude-sonnet-5,2761,12819,2453682,100834

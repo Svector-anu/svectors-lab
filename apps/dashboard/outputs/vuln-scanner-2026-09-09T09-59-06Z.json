@@ -1,0 +1,234 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: neotrade-release",
+        "description": "Security scan skipped — not a source repository"
+      },
+      "children": [
+        "status_alert",
+        "sep1",
+        "repo_info",
+        "sep2",
+        "scan_results",
+        "sep3",
+        "scanner_status"
+      ]
+    },
+    "status_alert": {
+      "type": "Alert",
+      "props": {
+        "type": "info",
+        "message": "This repository was skipped as it is not a source repository — it indexes signed release binaries for the NeoTrade desktop trading-agent app. Actual source code lives elsewhere."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "repo_info": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_repo",
+        "stack_repo_details"
+      ]
+    },
+    "heading_repo": {
+      "type": "Heading",
+      "props": {
+        "text": "Repository Information",
+        "level": "h3"
+      }
+    },
+    "stack_repo_details": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_repo_name",
+        "stat_stars",
+        "text_content"
+      ]
+    },
+    "text_repo_name": {
+      "type": "Text",
+      "props": {
+        "text": "Repository: NeoSoul-AI/neotrade-release"
+      }
+    },
+    "stat_stars": {
+      "type": "Stat",
+      "props": {
+        "label": "Stars",
+        "value": "1"
+      }
+    },
+    "text_content": {
+      "type": "Text",
+      "props": {
+        "text": "Content: Single README.md (7KB) indexing signed release binaries for the NeoTrade desktop trading-agent application"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scan_results": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_scan",
+        "grid_scan"
+      ]
+    },
+    "heading_scan": {
+      "type": "Heading",
+      "props": {
+        "text": "Scan Results",
+        "level": "h3"
+      }
+    },
+    "grid_scan": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "stat_candidates",
+        "stat_confirmed"
+      ]
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Vulnerability Candidates",
+        "value": "0"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Vulnerabilities",
+        "value": "0"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanner_status": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "heading_scanners",
+        "stack_scanners",
+        "stack_security"
+      ]
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      }
+    },
+    "stack_scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_trufflehog_git",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: skipped",
+        "variant": "outline"
+      }
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: skipped",
+        "variant": "outline"
+      }
+    },
+    "badge_trufflehog_git": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog-git: skipped",
+        "variant": "outline"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: skipped",
+        "variant": "outline"
+      }
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: skipped",
+        "variant": "outline"
+      }
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: skipped",
+        "variant": "outline"
+      }
+    },
+    "stack_security": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "text_security",
+        "text_pvr"
+      ]
+    },
+    "text_security": {
+      "type": "Text",
+      "props": {
+        "text": "Security Policy: Not found (No SECURITY.md)",
+        "variant": "muted"
+      }
+    },
+    "text_pvr": {
+      "type": "Text",
+      "props": {
+        "text": "Proactive Vulnerability Reporting (PVR): Disabled — no source code to disclose",
+        "variant": "muted"
+      }
+    }
+  }
+}
