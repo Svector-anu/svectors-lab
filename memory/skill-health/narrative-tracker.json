@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-08T18:48:15Z",
-  "quality_score": 3,
-  "assessment": "Substantive, decision-oriented regime map with explicit calls and candid data-quality caveats, but it misses the conclusion-first requirement and many precise figures and institutional claims lack direct source links, limiting verification.",
-  "flags": [],
+  "last_analyzed": "2026-09-09T01:31:39Z",
+  "quality_score": 2,
+  "assessment": "Decision-oriented and well structured, but several specific claims, figures, handles, and catalysts lack direct supporting links or rely on weak/mismatched sources, making the trade calls insufficiently verifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.87,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 2,
-      "ts": "2026-09-02T15:09:31Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-02",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-08",
       "score": 3,
       "ts": "2026-09-08T18:48:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-09",
+      "score": 2,
+      "ts": "2026-09-09T01:31:39Z",
       "harness": "codex"
     }
   ]
