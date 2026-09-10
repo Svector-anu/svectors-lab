@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T18:09:15Z",
+  "last_analyzed": "2026-09-10T18:33:26Z",
   "quality_score": 4,
-  "assessment": "Solid security audit—completed all scans, reported specific results (17 reviewed, 0 confirmed), correctly identified and handled a duplicate OSV finding per policy, verifiable and scoped appropriately.",
+  "assessment": "Substantive security audit with specific verifiable results; well-structured scanner breakdown and concrete technical verification of path-traversal guard.",
   "flags": [],
   "avg_score": 3.57,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T07:09:34Z",
-      "harness": "claude"
-    },
     {
       "date": "2026-09-04",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-10",
       "score": 4,
       "ts": "2026-09-10T18:09:15Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T18:33:26Z",
       "harness": "claude"
     }
   ]

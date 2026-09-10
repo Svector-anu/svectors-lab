@@ -1,0 +1,204 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: aws/aws-cli"
+      },
+      "children": [
+        "heading_status",
+        "separator1",
+        "stats_container",
+        "separator2",
+        "scanner_section",
+        "separator3",
+        "notable_section"
+      ]
+    },
+    "heading_status": {
+      "type": "Heading",
+      "props": {
+        "text": "Clean audit",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stats_container": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_reviewed",
+        "stat_semgrep",
+        "stat_osv",
+        "stat_confirmed"
+      ]
+    },
+    "stat_reviewed": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates reviewed",
+        "value": "61"
+      },
+      "children": []
+    },
+    "stat_semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep",
+        "value": "57"
+      },
+      "children": []
+    },
+    "stat_osv": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV",
+        "value": "4"
+      },
+      "children": []
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed",
+        "value": "0"
+      },
+      "children": []
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "scanner_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "scanner_heading",
+        "scanner_badges"
+      ]
+    },
+    "scanner_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "scanner_badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_trufflehog_git",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog_git": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog-git: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: skip",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "separator3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "notable_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "notable_heading",
+        "notable_text"
+      ]
+    },
+    "notable_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Notable",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "notable_text": {
+      "type": "Text",
+      "props": {
+        "text": "Agentic pass traced the S3 sync/cp download path-traversal class end to end and confirmed HEAD's parent-reference guard correctly rejects it — verified, not assumed.",
+        "variant": "body"
+      },
+      "children": []
+    }
+  }
+}
