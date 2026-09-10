@@ -1,24 +1,17 @@
-Full vulnerability lifecycle poll completed.
+Vulnerability lifecycle poll completed.
 
-Key findings:
-
-- `emilk/egui#8481` closed without merge today; no maintainer explanation was visible.
-- Five PRs newly crossed the stale-review window.
-- Two PRs still need responses: `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
-- ZSvirt’s MEDIUM disclosure is 17 days old and still blocked by Resend’s unverified `svector.xyz` domain.
-- No canonical `channel: pvr` records were available for triage polling.
-- Impact: ★121,993 secured, ★489,966 in flight, and ★1,364,947 tracked.
-
-Updated:
-
-- [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md)
-- [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md)
-
-The combined notification was prepared, but delivery failed because the harness’s external notification queues are read-only.
+- Secured: ★127.5k across 7 repositories.
+- In flight: ★518.3k across 18 repositories.
+- Merged today: `cloudflare/workers-sdk#15584`.
+- Newly open: Fireblocks #344, Snowflake CLI #3158, and Vercel AI #20573.
+- One PR needs an answer: `NousResearch/hermes-agent#94342`.
+- Disclosure queue: 10 drafts; 1 past threshold, 1 operator-only CRITICAL send, 7 cleanup candidates.
+- No canonical PVR files required triage polling.
+- Notification delivery was attempted but the external queue is read-only in this harness.
 
 ## Summary
 
-- Ran all three tracker arms.
-- Refetched live PR, review, advisory-path, and star data.
-- Updated the lifecycle dashboard and daily log.
-- Preserved the undelivered digest in `.pending-notify-temp/vuln-tracker-2026-09-09.md`.
+- Refreshed [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md).
+- Appended the run record to [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md:307).
+- Preserved the notification digest in `.pending-notify-temp/vuln-tracker-2026-09-10.md`.
+- Follow-up: answer Hermes Agent #94342 and send the two blocked ZSvirt disclosures.

@@ -1,83 +1,68 @@
 # Vuln Tracker Status
 
-*Last updated: 2026-09-09*
+*Last updated: 2026-09-10*
 
 ## Stars Secured
 
-- **Merged-PR repos (secured):** ★ 122.0k across 6 repos
-- **Open-PR repos (in flight):** ★ 490.0k across 15 repos
-- **All tracked repos:** ★ 1.36m across 80 live repos
-
-Star counts were fetched live. `solana-mobile (SKR ecosystem)` is not a GitHub `owner/repo`; `Nervercc/gpt_nerver` returns 404. Both are excluded from aggregates.
+- **Merged-PR repos (secured):** ★ 127.5k across 7 repos
+- **Open-PR repos (in flight):** ★ 518.3k across 18 repos
+- **All tracked repos:** ★ 1.44m across 92 live repos
 
 ### Secured leaderboard — every merged PR ranked by repo stars
 
 | Rank | Repo | Stars | PR | Merged | Severity | Title |
-|------|------|-------|----|--------|----------|-------|
-| 1 | abhigyanpatwari/GitNexus | 47176 | [#3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095) | 2026-08-30 | HIGH/MODERATE | dependency CVE bumps |
-| 2 | THU-MAIC/OpenMAIC | 34288 | [#1357](https://github.com/THU-MAIC/OpenMAIC/pull/1357) | 2026-09-03 | HIGH | dependency CVE bumps |
-| 3 | jdx/mise | 33702 | [#12714](https://github.com/jdx/mise/pull/12714) | 2026-09-02 | HIGH | self_update / quick-xml advisory fix |
-| 4 | yetone/cumora | 3539 | [#8](https://github.com/yetone/cumora/pull/8) | 2026-08-18 | HIGH/MODERATE | axios, DOMPurify, nanoid, postcss fixes |
-| 5 | pacifio/atlas | 3287 | [#233](https://github.com/pacifio/atlas/pull/233) | 2026-09-03 | HIGH | ACP containment and browser-reader XSS fixes |
-| 6 | pacifio/atlas | 3287 | [#220](https://github.com/pacifio/atlas/pull/220) | 2026-09-02 | HIGH | dependency CVE bumps |
-| 7 | Svector-anu/skopos | 1 | [#104](https://github.com/Svector-anu/skopos/pull/104) | 2026-08-21 | MEDIUM | RegExp injection fix |
+|---|---|---:|---|---|---|---|
+| 1 | abhigyanpatwari/GitNexus | 47206 | [#3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095) | 2026-08-30 | PRE-HISTORY | fix(deps): bump transitive packages to patch disclosed CVEs |
+| 2 | THU-MAIC/OpenMAIC | 35141 | [#1357](https://github.com/THU-MAIC/OpenMAIC/pull/1357) | 2026-09-03 | PRE-HISTORY | fix(deps): bump next/js-yaml/undici/nanoid/lodash/sharp for disclosed CVEs |
+| 3 | jdx/mise | 33755 | [#12714](https://github.com/jdx/mise/pull/12714) | 2026-09-02 | PRE-HISTORY | fix(deps): bump self_update to 1.3 to clear quick-xml advisories |
+| 4 | cloudflare/workers-sdk | 4524 | [#15584](https://github.com/cloudflare/workers-sdk/pull/15584) | 2026-09-10 | PRE-HISTORY | fix(deps): bump shell-quote to patch CVE-2026-9277 / CVE-2026-13311 |
+| 5 | yetone/cumora | 3546 | [#8](https://github.com/yetone/cumora/pull/8) | 2026-08-18 | HIGH/MODERATE | fix(deps): patch known CVEs in axios, dompurify, nanoid, postcss |
+| 6 | pacifio/atlas | 3294 | [#233](https://github.com/pacifio/atlas/pull/233) | 2026-09-03 | PRE-HISTORY | fix(security): bind ACP fs handlers to session roots, strip inline event handlers |
+| 7 | pacifio/atlas | 3294 | [#220](https://github.com/pacifio/atlas/pull/220) | 2026-09-02 | PRE-HISTORY | fix(deps): bump gix/vite/mermaid/tar/js-yaml for disclosed CVEs |
+| 8 | Svector-anu/skopos | ★? | [#104](https://github.com/Svector-anu/skopos/pull/104) | 2026-08-21 | MEDIUM | fix(security): user text reached a RegExp unescaped in the polymarket filter |
 
 ### Per-repo breakdown — secured
 
 | Repo | Stars | Merged PRs | First merge | Latest merge | Severities landed |
-|------|-------|------------|-------------|--------------|-------------------|
-| abhigyanpatwari/GitNexus | 47176 | 1 | 2026-08-30 | 2026-08-30 | HIGH/MODERATE |
-| THU-MAIC/OpenMAIC | 34288 | 1 | 2026-09-03 | 2026-09-03 | HIGH |
-| jdx/mise | 33702 | 1 | 2026-09-02 | 2026-09-02 | HIGH |
-| yetone/cumora | 3539 | 1 | 2026-08-18 | 2026-08-18 | HIGH/MODERATE |
-| pacifio/atlas | 3287 | 2 | 2026-09-02 | 2026-09-03 | HIGH |
-| Svector-anu/skopos | 1 | 1 | 2026-08-21 | 2026-08-21 | MEDIUM |
+|---|---:|---:|---|---|---|
+| abhigyanpatwari/GitNexus | 47206 | 1 | 2026-08-30 | 2026-08-30 | PRE-HISTORY |
+| THU-MAIC/OpenMAIC | 35141 | 1 | 2026-09-03 | 2026-09-03 | PRE-HISTORY |
+| jdx/mise | 33755 | 1 | 2026-09-02 | 2026-09-02 | PRE-HISTORY |
+| cloudflare/workers-sdk | 4524 | 1 | 2026-09-10 | 2026-09-10 | PRE-HISTORY |
+| yetone/cumora | 3546 | 1 | 2026-08-18 | 2026-08-18 | HIGH/MODERATE |
+| pacifio/atlas | 3294 | 2 | 2026-09-02 | 2026-09-03 | PRE-HISTORY |
+| Svector-anu/skopos | ★? | 1 | 2026-08-21 | 2026-08-21 | MEDIUM |
 
 ### Per-repo breakdown — in flight
 
 | Repo | Stars | Open PRs | Oldest open | Severities open |
-|------|-------|----------|-------------|-----------------|
-| NousResearch/hermes-agent | 243791 | 1 | 2026-08-25 | HIGH |
-| rtk-ai/rtk | 79680 | 1 | 2026-08-25 | HIGH/MEDIUM |
-| vercel-labs/agent-browser | 42303 | 1 | 2026-09-02 | HIGH |
-| tinyhumansai/openhuman | 39567 | 1 | 2026-08-26 | HIGH |
-| AprilNEA/OpenLogi | 20324 | 1 | 2026-08-25 | HIGH/MEDIUM |
-| firecrawl/pdf-inspector | 18971 | 1 | 2026-09-02 | HIGH |
-| jlcodes99/cockpit-tools | 17389 | 1 | 2026-09-02 | HIGH |
-| corsairdev/corsair | 11315 | 1 | 2026-08-30 | HIGH |
-| vllm-project/semantic-router | 5697 | 1 | 2026-09-03 | pre-history |
-| arcboxlabs/arcbox | 4211 | 1 | 2026-09-02 | HIGH |
-| microsoft/skill-recorder | 3899 | 1 | 2026-08-18 | HIGH |
-| step-security/harden-runner | 1267 | 1 | 2026-09-04 | HIGH |
-| clawkwork/clawk | 1009 | 1 | 2026-09-02 | HIGH |
-| Cosmian/kms | 353 | 1 | 2026-09-02 | HIGH |
-| paypal/agent-toolkit | 190 | 1 | 2026-09-05 | HIGH |
-
-### Per-repo breakdown — queued / skipped / closed
-
-| Repo | Stars | Status | Severity | Note |
-|------|-------|--------|----------|------|
-| affaan-m/ECC | 255002 | closed-no-merge | HIGH | #2934 was superseded by merged #2948; fix and co-author credit landed there. |
-| dani-garcia/vaultwarden | 67068 | closed-no-merge | HIGH | Maintainer closed #7651; project prefers batched dependency/Rust updates. |
-| emilk/egui | 30480 | closed-no-merge | HIGH | #8481 closed on 2026-09-09 without merge; review closure reason. |
-| guillaumemeyer/watermarks-remover | 21236 | submitted / cleanup | MEDIUM | Accepted and already fixed via #146. |
-| jlcodes99/cockpit-tools | 17389 | submitted / cleanup | CRITICAL | Disclosure email sent. |
-| genspark-ai/genoffice | 5871 | submitted / cleanup | LOW | PVR submitted; draft retained as history. |
-| pacifio/atlas | 3287 | covered / cleanup | HIGH | Email sent and fix merged in #233. |
-| ZSvirt/zsvirt | 1644 | operator-todo + pending | CRITICAL/MEDIUM | Critical draft needs operator action; armed medium send remains blocked by Resend configuration. |
-| amirh00sain/SpiderPanel | 1185 | submitted / cleanup | HIGH | Disclosure email sent. |
-| NeoSoul-AI/neotrade-wallet-sdk | 0 | pending | MEDIUM | Armed for autonomous email; in-window at 0d. |
-| z-fi/zFi | 17 | submitted / cleanup | CRITICAL | Sent and discussed; retained draft is historical. |
-| DigitalShieldOfficial/USDTPAY-woocommerce | 2 | submitted / cleanup | MEDIUM | Disclosure email sent. |
+|---|---:|---:|---|---|
+| NousResearch/hermes-agent | 244154 | 1 | 2026-08-25 | PRE-HISTORY |
+| rtk-ai/rtk | 79823 | 1 | 2026-08-25 | PRE-HISTORY |
+| vercel-labs/agent-browser | 42358 | 1 | 2026-09-02 | PRE-HISTORY |
+| tinyhumansai/openhuman | 39612 | 1 | 2026-08-26 | PRE-HISTORY |
+| vercel/ai | 26673 | 1 | 2026-09-09 | PRE-HISTORY |
+| AprilNEA/OpenLogi | 20490 | 1 | 2026-08-25 | PRE-HISTORY |
+| firecrawl/pdf-inspector | 19006 | 1 | 2026-09-02 | PRE-HISTORY |
+| jlcodes99/cockpit-tools | 17445 | 1 | 2026-09-02 | PRE-HISTORY |
+| corsairdev/corsair | 11311 | 1 | 2026-08-30 | PRE-HISTORY |
+| vllm-project/semantic-router | 5717 | 1 | 2026-09-03 | PRE-HISTORY |
+| arcboxlabs/arcbox | 4597 | 1 | 2026-09-02 | PRE-HISTORY |
+| microsoft/skill-recorder | 3908 | 1 | 2026-08-18 | HIGH |
+| step-security/harden-runner | 1268 | 1 | 2026-09-04 | PRE-HISTORY |
+| clawkwork/clawk | 1009 | 1 | 2026-09-02 | PRE-HISTORY |
+| Cosmian/kms | 353 | 1 | 2026-09-02 | PRE-HISTORY |
+| snowflakedb/snowflake-cli | 267 | 1 | 2026-09-10 | PRE-HISTORY |
+| paypal/agent-toolkit | 190 | 1 | 2026-09-05 | PRE-HISTORY |
+| fireblocks/fireblocks-sdk-js | 84 | 1 | 2026-09-10 | PRE-HISTORY |
 
 ## Operator-action queue
 
-### Needs answer (2)
+### Needs answer (1)
 
 | Repo | Stars | PR | Title | Last activity | Latest commenter |
-|------|-------|----|-------|---------------|------------------|
-| NousResearch/hermes-agent | 243791 | [#94342](https://github.com/NousResearch/hermes-agent/pull/94342) | h2 security bump | 2026-08-25 | Enough1122 requested removal or explanation of unrelated lockfile marker drift |
-| vllm-project/semantic-router | 5697 | [#3425](https://github.com/vllm-project/semantic-router/pull/3425) | gRPC advisory bump | 2026-09-07 | Xunzhuo requested a rebase plus matching `go.onnx.mod` updates after exact-head E2E failed |
+|---|---:|---|---|---|---|
+| NousResearch/hermes-agent | 244154 | [#94342](https://github.com/NousResearch/hermes-agent/pull/94342) | fix(deps): bump h2 to 4.4.1 to patch GHSA-6hr6-w5qg-qmwg | 2026-08-25 | Enough1122: > AI code review — automated review for reference, author can ignore or act on any point. The core change is right: `h2` |
 
 ### Newly actionable — channel opened since original scan (0)
 
@@ -86,67 +71,65 @@ None.
 ### Stale or aging
 
 | Repo | Stars | PR | Age | Status | Suggested action |
-|------|-------|----|-----|--------|------------------|
-| microsoft/skill-recorder | 3899 | [#66](https://github.com/microsoft/skill-recorder/pull/66) | 22d | stale-no-review | Confirm CI, then consider a polite ping. |
-| AprilNEA/OpenLogi | 20324 | [#956](https://github.com/AprilNEA/OpenLogi/pull/956) | 15d | stale-no-review | Confirm CI, then consider a polite ping. |
-| rtk-ai/rtk | 79680 | [#3705](https://github.com/rtk-ai/rtk/pull/3705) | 15d | stale-no-review | Sign or recheck the CLA, then consider a ping. |
-| corsairdev/corsair | 11315 | [#1421](https://github.com/corsairdev/corsair/pull/1421) | 10d | stale-no-review | CI is green; consider a polite maintainer ping. |
-| firecrawl/pdf-inspector | 18971 | [#485](https://github.com/firecrawl/pdf-inspector/pull/485) | 7d | stale-no-review | Newly crossed the review window; consider a polite ping. |
-| arcboxlabs/arcbox | 4211 | [#709](https://github.com/arcboxlabs/arcbox/pull/709) | 7d | stale-no-review | Newly crossed the review window; automated review is approved. |
-| jlcodes99/cockpit-tools | 17389 | [#2217](https://github.com/jlcodes99/cockpit-tools/pull/2217) | 7d | stale-no-review | Newly crossed the review window; consider a polite ping. |
-| vercel-labs/agent-browser | 42303 | [#1764](https://github.com/vercel-labs/agent-browser/pull/1764) | 7d | stale-no-review | Newly crossed the review window; consider a polite ping. |
-| clawkwork/clawk | 1009 | [#18](https://github.com/clawkwork/clawk/pull/18) | 7d | stale-no-review | Newly crossed the review window; consider a polite ping. |
+|---|---:|---|---:|---|---|
+| microsoft/skill-recorder | 3908 | [#66](https://github.com/microsoft/skill-recorder/pull/66) | 23d | stale-no-review | Review and consider a polite maintainer ping. |
+| rtk-ai/rtk | 79823 | [#3705](https://github.com/rtk-ai/rtk/pull/3705) | 16d | stale-no-review | Review and consider a polite maintainer ping. |
+| AprilNEA/OpenLogi | 20490 | [#956](https://github.com/AprilNEA/OpenLogi/pull/956) | 16d | stale-no-review | Review and consider a polite maintainer ping. |
+| tinyhumansai/openhuman | 39612 | [#5814](https://github.com/tinyhumansai/openhuman/pull/5814) | 15d | aging-engaged | Review and consider a polite maintainer ping. |
+| corsairdev/corsair | 11311 | [#1421](https://github.com/corsairdev/corsair/pull/1421) | 11d | stale-no-review | Review and consider a polite maintainer ping. |
+| clawkwork/clawk | 1009 | [#18](https://github.com/clawkwork/clawk/pull/18) | 8d | stale-no-review | Review and consider a polite maintainer ping. |
+| vercel-labs/agent-browser | 42358 | [#1764](https://github.com/vercel-labs/agent-browser/pull/1764) | 8d | stale-no-review | Review and consider a polite maintainer ping. |
+| jlcodes99/cockpit-tools | 17445 | [#2217](https://github.com/jlcodes99/cockpit-tools/pull/2217) | 8d | stale-no-review | Review and consider a polite maintainer ping. |
+| arcboxlabs/arcbox | 4597 | [#709](https://github.com/arcboxlabs/arcbox/pull/709) | 8d | stale-no-review | Review and consider a polite maintainer ping. |
+| firecrawl/pdf-inspector | 19006 | [#485](https://github.com/firecrawl/pdf-inspector/pull/485) | 8d | stale-no-review | Review and consider a polite maintainer ping. |
 
-## Recently merged (last 30d, 7)
+## Recently merged (last 30d, 8)
 
 | Date merged | Repo | Stars | PR | Severity | Title |
-|-------------|------|-------|----|----------|-------|
-| 2026-09-03 | pacifio/atlas | 3287 | [#233](https://github.com/pacifio/atlas/pull/233) | HIGH | ACP containment and browser-reader XSS fixes |
-| 2026-09-03 | THU-MAIC/OpenMAIC | 34288 | [#1357](https://github.com/THU-MAIC/OpenMAIC/pull/1357) | HIGH | dependency CVE bumps |
-| 2026-09-02 | jdx/mise | 33702 | [#12714](https://github.com/jdx/mise/pull/12714) | HIGH | self_update / quick-xml advisory fix |
-| 2026-09-02 | pacifio/atlas | 3287 | [#220](https://github.com/pacifio/atlas/pull/220) | HIGH | dependency CVE bumps |
-| 2026-08-30 | abhigyanpatwari/GitNexus | 47176 | [#3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095) | HIGH/MODERATE | dependency CVE bumps |
-| 2026-08-21 | Svector-anu/skopos | 1 | [#104](https://github.com/Svector-anu/skopos/pull/104) | MEDIUM | RegExp injection fix |
-| 2026-08-18 | yetone/cumora | 3539 | [#8](https://github.com/yetone/cumora/pull/8) | HIGH/MODERATE | dependency CVE bumps |
+|---|---|---:|---|---|---|
+| 2026-09-10 | cloudflare/workers-sdk | 4524 | [#15584](https://github.com/cloudflare/workers-sdk/pull/15584) | PRE-HISTORY | fix(deps): bump shell-quote to patch CVE-2026-9277 / CVE-2026-13311 |
+| 2026-09-03 | pacifio/atlas | 3294 | [#233](https://github.com/pacifio/atlas/pull/233) | PRE-HISTORY | fix(security): bind ACP fs handlers to session roots, strip inline event handlers |
+| 2026-09-02 | pacifio/atlas | 3294 | [#220](https://github.com/pacifio/atlas/pull/220) | PRE-HISTORY | fix(deps): bump gix/vite/mermaid/tar/js-yaml for disclosed CVEs |
+| 2026-09-02 | jdx/mise | 33755 | [#12714](https://github.com/jdx/mise/pull/12714) | PRE-HISTORY | fix(deps): bump self_update to 1.3 to clear quick-xml advisories |
+| 2026-09-03 | THU-MAIC/OpenMAIC | 35141 | [#1357](https://github.com/THU-MAIC/OpenMAIC/pull/1357) | PRE-HISTORY | fix(deps): bump next/js-yaml/undici/nanoid/lodash/sharp for disclosed CVEs |
+| 2026-08-30 | abhigyanpatwari/GitNexus | 47206 | [#3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095) | PRE-HISTORY | fix(deps): bump transitive packages to patch disclosed CVEs |
+| 2026-08-18 | yetone/cumora | 3546 | [#8](https://github.com/yetone/cumora/pull/8) | HIGH/MODERATE | fix(deps): patch known CVEs in axios, dompurify, nanoid, postcss |
+| 2026-08-21 | Svector-anu/skopos | ★? | [#104](https://github.com/Svector-anu/skopos/pull/104) | MEDIUM | fix(security): user text reached a RegExp unescaped in the polymarket filter |
 
-## Open / clean (no operator action — wait) (2)
+## Open / clean (no operator action — wait) (7)
 
 | Repo | Stars | PR | Severity | Opened | Age |
-|------|-------|----|----------|--------|-----|
-| paypal/agent-toolkit | 190 | [#101](https://github.com/paypal/agent-toolkit/pull/101) | HIGH | 2026-09-05 | 4d |
-| step-security/harden-runner | 1267 | [#693](https://github.com/step-security/harden-runner/pull/693) | HIGH | 2026-09-04 | 5d |
-
-## Engaged, no operator action (2)
-
-| Repo | Stars | PR | Severity | Opened | Latest maintainer activity |
-|------|-------|----|----------|--------|----------------------------|
-| tinyhumansai/openhuman | 39567 | [#5814](https://github.com/tinyhumansai/openhuman/pull/5814) | HIGH | 2026-08-26 | Approved; waiting for second maintainer approval |
-| Cosmian/kms | 353 | [#1163](https://github.com/Cosmian/kms/pull/1163) | HIGH | 2026-09-02 | Maintainer feedback answered on 2026-09-05 |
+|---|---:|---|---|---|---:|
+| fireblocks/fireblocks-sdk-js | 84 | [#344](https://github.com/fireblocks/fireblocks-sdk-js/pull/344) | PRE-HISTORY | 2026-09-10 | 0d |
+| snowflakedb/snowflake-cli | 267 | [#3158](https://github.com/snowflakedb/snowflake-cli/pull/3158) | PRE-HISTORY | 2026-09-10 | 0d |
+| paypal/agent-toolkit | 190 | [#101](https://github.com/paypal/agent-toolkit/pull/101) | PRE-HISTORY | 2026-09-05 | 5d |
+| step-security/harden-runner | 1268 | [#693](https://github.com/step-security/harden-runner/pull/693) | PRE-HISTORY | 2026-09-04 | 6d |
+| vllm-project/semantic-router | 5717 | [#3425](https://github.com/vllm-project/semantic-router/pull/3425) | PRE-HISTORY | 2026-09-03 | 7d |
+| Cosmian/kms | 353 | [#1163](https://github.com/Cosmian/kms/pull/1163) | PRE-HISTORY | 2026-09-02 | 8d |
+| vercel/ai | 26673 | [#20573](https://github.com/vercel/ai/pull/20573) | PRE-HISTORY | 2026-09-09 | 1d |
 
 ## Closed without merge (last 30d, 3)
 
 | Date | Repo | Stars | PR | Severity | Title | Likely reason |
-|------|------|-------|----|----------|-------|---------------|
-| 2026-09-09 | emilk/egui | 30480 | [#8481](https://github.com/emilk/egui/pull/8481) | HIGH | event-listener security bump | Closed without a visible maintainer comment; inspect before deciding whether to revise. |
-| 2026-09-03 | affaan-m/ECC | 255002 | [#2934](https://github.com/affaan-m/ECC/pull/2934) | HIGH | @humanfs/node security bump | Superseded by merged #2948; fix and co-author credit incorporated. |
-| 2026-08-25 | dani-garcia/vaultwarden | 67068 | [#7651](https://github.com/dani-garcia/vaultwarden/pull/7651) | HIGH | h2 security bump | Unrelated package downgrades; maintainer prefers batched updates. |
+|---|---|---:|---|---|---|---|
+| 2026-09-09 | emilk/egui | 30496 | [#8481](https://github.com/emilk/egui/pull/8481) | PRE-HISTORY | fix(deps): bump event-listener to 5.4.2 to patch RUSTSEC-2026-0221 | Review closure context. |
+| 2026-09-03 | affaan-m/ECC | 255735 | [#2934](https://github.com/affaan-m/ECC/pull/2934) | PRE-HISTORY | fix(deps): bump @humanfs/node to patch GHSA-p498-v437-472g | Review closure context. |
+| 2026-08-25 | dani-garcia/vaultwarden | 67126 | [#7651](https://github.com/dani-garcia/vaultwarden/pull/7651) | PRE-HISTORY | fix(deps): bump h2 to 0.4.16 to patch RUSTSEC-2026-0258 | Review closure context. |
 
 ## Queued (no PR yet) (10 retained drafts)
 
 | Severity | Repo | Stars | State | Days queued |
-|----------|------|-------|-------|-------------|
-| CRITICAL | ZSvirt/zsvirt | 1644 | operator-todo | 17 |
-| CRITICAL | jlcodes99/cockpit-tools | 17389 | submitted / cleanup | 7 |
-| CRITICAL | z-fi/zFi | 17 | submitted / cleanup | 21 |
-| HIGH | pacifio/atlas | 3287 | covered by merged PR #233 / cleanup | 7 |
-| HIGH | amirh00sain/SpiderPanel | 1185 | submitted / cleanup | 15 |
-| MEDIUM | ZSvirt/zsvirt | 1644 | escalate; autonomous send blocked by Resend 403 | 17 |
-| MEDIUM | DigitalShieldOfficial/USDTPAY-woocommerce | 2 | submitted / cleanup | 22 |
-| MEDIUM | guillaumemeyer/watermarks-remover | 21236 | accepted, already fixed / cleanup | 25 |
-| MEDIUM | NeoSoul-AI/neotrade-wallet-sdk | 0 | pending autonomous send / in-window | 0 |
-| LOW | genspark-ai/genoffice | 5871 | submitted / cleanup | 27 |
-
-One retained draft remains a true past-threshold escalation: the automated ZSvirt dependency disclosure is 17 days old, beyond its 14-day MEDIUM threshold, while the Resend send remains blocked. One draft is operator-todo, one is in-window, and seven are cleanup candidates.
+|---|---|---:|---|---:|
+| MEDIUM | DigitalShieldOfficial/USDTPAY-woocommerce | 2 | cleanup (sent) | 23 |
+| MEDIUM | NeoSoul-AI/neotrade-wallet-sdk | 0 | pending (pending-operator-send) | 1 |
+| MEDIUM | ZSvirt/zsvirt | 1659 | escalate (pending-operator-send) | 18 |
+| CRITICAL | ZSvirt/zsvirt | 1659 | operator (pending-operator-send) | 18 |
+| HIGH | amirh00sain/SpiderPanel | 1258 | cleanup (email-sent) | 16 |
+| LOW | genspark-ai/genoffice | 6412 | cleanup (submitted) | 28 |
+| MEDIUM | guillaumemeyer/watermarks-remover | 21627 | cleanup (accepted-already-fixed) | 26 |
+| CRITICAL | jlcodes99/cockpit-tools | 17445 | cleanup (sent) | 8 |
+| HIGH | pacifio/atlas | 3294 | cleanup (sent) | 8 |
+| CRITICAL | z-fi/zFi | 17 | cleanup (sent-and-discussed) | 22 |
 
 ## Lost-draft ghosts
 
