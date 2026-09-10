@@ -1803,7 +1803,12 @@ jobs:
           rm -f "$Q"/*.json
 
       - name: Read-only capability guard
-        if: steps.work.outputs.mode != '' && env.SKILL_MODE == 'read-only'
+        # !cancelled() (same idiom "Send pending notifications" already uses for
+        # #912 R1, not always() — a manually-cancelled job should still skip
+        # this, only a genuine failure shouldn't): a bare `mode != ''` implies
+        # success() and skips this step entirely on a failed Run, so the "no
+        # output captured" branch below was previously unreachable in practice.
+        if: ${{ !cancelled() && steps.work.outputs.mode != '' && env.SKILL_MODE == 'read-only' }}
         run: |
           # read-only skills (mode: read-only) get no Write/Edit/git/gh, so they can't
           # mutate the repo. Three jobs here: (1) record the run-log entry on their
@@ -1814,18 +1819,10 @@ jobs:
           # stub here silently breaks each skill's own dedup/diff baseline, AND
           # trips aeon-doctor's own "wrong heading level" health check, (3) revert
           # any code/config that slipped through a shell redirection. State/memory
-          # and output/ (incl. .chains/) are preserved for the commit step.
-          #
-          # NOTE: this step's `if:` (like "Capture skill output" and "Commit
-          # results" above/below it) has no `always()`, so on a genuine Run
-          # failure the whole step — including the "no output" branch below —
-          # is skipped by GitHub Actions' implicit success() gating, same as
-          # "Commit results" is; a real failure currently gets no guard-authored
-          # log entry at all. Widening that is a separate, wider-blast-radius
-          # change (it touches every skill's failure path, not just read-only
-          # ones) and is intentionally out of scope here — this branch stays as
-          # defensive handling for the cases where the step DOES run without a
-          # real capture (empty/placeholder output).
+          # and output/ (incl. .chains/) are preserved for the commit step below —
+          # on a failed run specifically, "Commit read-only failure log" (next
+          # step) commits just the memory/logs/ entry, since "Commit results"
+          # still requires success() and stays that way (see that step's note).
           SKILL="${{ steps.skill.outputs.name }}"
           RUN_OUTCOME="${{ steps.run.outcome }}"
           TODAY=$(date -u +%Y-%m-%d)
@@ -1848,7 +1845,36 @@ jobs:
           git clean -fd -- $CODE_PATHS 2>/dev/null || true
           echo "read-only guard: logged run + reverted code/config writes for $SKILL"
 
+      - name: Commit read-only failure log
+        # Deliberately its own narrow step rather than widening "Commit
+        # results" to always()/!cancelled(): that step does `git add -A` for
+        # every skill including write-mode ones, and running it unconditionally
+        # would risk committing a write-mode skill's partial/broken mid-edit
+        # state on a genuine failure. Read-only skills can't Write/Edit at all,
+        # so the ONLY thing a failed read-only run could ever need committed is
+        # the memory/logs/ entry "Read-only capability guard" (previous step)
+        # just staged — this step stages that path and nothing else, so by
+        # construction it can't ship code, and it never fires for write-mode
+        # skills regardless (SKILL_MODE == 'read-only' gate).
+        if: ${{ !cancelled() && steps.work.outputs.mode != '' && env.SKILL_MODE == 'read-only' && steps.run.outcome != 'success' }}
+        run: |
+          git config user.name "aeonframework"
+          git config user.email "aeonframework@proton.me"
+          TODAY=$(date -u +%Y-%m-%d)
+          git add "memory/logs/${TODAY}.md"
+          if git diff --staged --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore(${{ steps.skill.outputs.name }}): log read-only failure $(date +%Y-%m-%d)"
+          bash scripts/git-push-retry.sh
+
       - name: Commit results
+        # (Read-only failures are handled above, in "Commit read-only failure
+        # log" — deliberately not by widening this step to always(), since
+        # this step's `git add -A` covers write-mode skills too and running it
+        # unconditionally would risk committing a partial/broken mid-edit state
+        # from a genuinely failed write-mode run.)
         if: steps.work.outputs.mode != ''
         env:
           STATE_BACKEND: ${{ vars.STATE_BACKEND }}
@@ -1903,40 +1929,7 @@ jobs:
           else
             git commit -m "chore($LABEL): auto-commit $(date +%Y-%m-%d)"
           fi
-          for i in 1 2 3 4 5 6 7 8 9 10; do
-            # Pull and rebase onto latest remote
-            if ! git pull --rebase origin main 2>/dev/null; then
-              echo "Rebase conflict on attempt $i, auto-resolving..."
-              while true; do
-                CONFLICTED=$(git diff --name-only --diff-filter=U) || true
-                [ -z "$CONFLICTED" ] && break
-                for f in $CONFLICTED; do
-                  if [[ "$f" == memory/logs/* ]] || [[ "$f" == memory/topics/* ]] || [[ "$f" == memory/MEMORY.md ]] || [[ "$f" == memory/skill-health/* ]] || [[ "$f" == apps/dashboard/outputs/* ]] || [[ "$f" == output/* ]]; then
-                    sed -i '/^<<<<<<< /d; /^=======/d; /^>>>>>>> /d' "$f"
-                    git add "$f"
-                  else
-                    git checkout --theirs "$f"
-                    git add "$f"
-                  fi
-                done
-                if git diff --cached --quiet; then
-                  git rebase --skip || true
-                else
-                  GIT_EDITOR=true git rebase --continue || true
-                fi
-              done
-            fi
-            # Try to push — if it fails, another job beat us, loop and re-pull
-            if git push -u origin HEAD 2>/dev/null; then
-              echo "Pushed successfully on attempt $i"
-              bash scripts/audit.sh "git.push" "$GITHUB_REPOSITORY@$(git rev-parse --abbrev-ref HEAD)" 0 "GH_GLOBAL" || true
-              exit 0
-            fi
-            echo "Push attempt $i failed (ref moved), retrying in ${i}s..."
-            sleep "$(( (RANDOM % 4) + i ))"  # jittered backoff - a deterministic sleep re-collides lockstep writers under push contention
-          done
-          echo "Failed to push after 5 attempts"
-          exit 1
+          bash scripts/git-push-retry.sh
 
       - name: Update cron state
         if: always() && steps.skill.outputs.name != ''

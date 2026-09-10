@@ -12,11 +12,14 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 # Extract the guard verbatim from the "Read-only capability guard" step: from
-# the SKILL= assignment up to (excluding) the CODE_PATHS revert logic — same
-# anchored-sed extraction pattern as test_chain_runner_invalid_dispatch.sh.
+# its first `SKILL=` assignment (there are several elsewhere in the workflow
+# for other steps — anchor on the step name first, then take the first match
+# after that) up to (excluding) the CODE_PATHS revert logic — same anchored
+# extraction pattern as test_chain_runner_invalid_dispatch.sh, deliberately
+# NOT keyed to comment wording (which is expected to keep changing).
 awk '
-  /^          # real capture \(empty\/placeholder output\)\.$/ { on=1; next }
-  on && /^          SKILL=/ { print; next }
+  /^      - name: Read-only capability guard$/ { step=1 }
+  step && !on && /^          SKILL=/ { on=1 }
   on && /^          CODE_PATHS=/ { exit }
   on { print }
 ' "$WORKFLOW" | sed 's/^          //' > "$TMP/guard.sh"
