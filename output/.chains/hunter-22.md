@@ -1,11 +1,13 @@
-Hunter-22 completed.
+Hunter 22 completed for 2026-09-10.
 
-- Scanned 25 ClawHunter candidates via the free endpoint.
-- Found 2 new listings; neither credibly matched the agent’s end-to-end capabilities.
-- No audit-shaped match survived, so no notification was sent.
-- Refreshed and validated 55 deduplicated records in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Appended the result to [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md:139).
+- Free ClawHunter match endpoint returned HTTP 200 with 25 candidates.
+- One was new: “Superteam KZ Workshop,” but it is restricted to prior workshop participants in Kazakhstan and closes September 12. Rejected as non-actionable.
+- The remaining 24 were recent repeats, expired, promotional, or required unavailable human/wallet activity.
+- No notification or audit-dispatch button was sent.
+- No paid endpoint, wallet action, claim, or submission occurred.
+- Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) with 56 validated unique records.
+- Logged the run in [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
 
 ## Summary
 
-The required commit was attempted but `.git` is read-only in this harness, so the validated changes remain uncommitted for the outer persistence step. Unrelated workspace changes were left untouched.
+The scan produced no genuine new opportunities. The requested commit was attempted but could not be created because `.git/index.lock` is on a read-only filesystem; the workspace changes remain intact for outer persistence.
