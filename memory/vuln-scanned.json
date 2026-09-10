@@ -656,5 +656,12 @@
     "findings": 1,
     "channel": "public-pr",
     "notes": "Clean code audit (semgrep/trufflehog/trufflehog-git/osv/agentic all reviewed, 0 confirmed code vulns -- well-hardened codebase with existing path-traversal guard in stage manager, list-form subprocess calls, safe YAML loaders). 152 osv dependency rows triaged: pyjwt/cryptography/urllib3/filelock/idna/pygments/setuptools/wheel all duplicate-skipped (open Dependabot PRs already cover them: #3111,#3115,#3009,#2895,#3035,#2844,#2469,#2894); aiohttp dropped as test-fixture-only (tests_integration/test_data). jaraco-context 6.0.1 (CVE-2026-23949, HIGH, zip-slip path traversal, transitive via keyring) had no prior art -- filed public PR #3158 bumping to 6.1.2 in snyk/requirements.txt. Repo has HackerOne bug-bounty program (hackerone.com/snowflake) per SECURITY.md alongside GitHub PVR -- any future confirmed HIGH/CRITICAL code finding should route to a human for the bounty program, not auto-PVR/email, same precedent as stripe-cli/braintree_ios."
+  },
+  {
+    "repo": "MetaMask/metamask-extension",
+    "scanned_at": "2026-09-10T13:10:59Z",
+    "findings": 0,
+    "channel": "clean",
+    "notes": "Forced target via var. 13,208 stars, TypeScript browser-extension wallet. Ran on claude-sonnet-5 via CLAUDE_CODE_OAUTH_TOKEN. PVR disabled; org SECURITY.md routes exclusively to MetaMask HackerOne bounty (no skill integration - any future HIGH would need manual operator submission). Scanners: semgrep=ok (6419 files, 234 raw hits all triaged - 231 CI-hardening FPs w/ fork-PR guard, 2 dev-tooling non-issues, 1 Snap-markdown safe usage), trufflehog=fail (binary blocked this session; manual grep found 0 secrets), osv=ok (custom OSV API query over 3945 yarn.lock packages since binary blocked - 20 flagged all reviewed), agentic=ok (N=6: dApp<->wallet postMessage bridge, Snap markdown/nav, all 3 dangerouslySetInnerHTML sites, dep pinning - all clean). 0 confirmed. 2 non-actionable dep CVEs noted for maintainers: react-router 6.30.6 GHSA-wrjc-x8rr-h8h6 open redirect (fix only in 7.x/8.x, real migration not a bump); elliptic 6.6.1 pinned CVE-2025-14505 ECDSA nonce (no upstream fix at any version). Ledger entry reconstructed manually: run 34478964395 completed the scan + full report but Commit results hit a real push race (10 genuine 'ref moved' failures) and never wrote this entry."
   }
 ]
