@@ -12,7 +12,7 @@
     "last_success": "2026-09-09T11:45:50Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-09T18:46:33Z",
     "total_runs": 390,
     "total_successes": 81,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.21,
     "last_quality_score": 2,
-    "last_dispatch": "2026-09-09T18:41:27Z",
+    "last_dispatch": "2026-09-10T01:07:06Z",
     "last_failed": "2026-09-01T01:28:25Z",
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a94-e82f-7de2-9e63-534e99de5596\"} {\"type\":\"turn.started\"} {\"type\":\"error\""
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-09-01T01:28:39Z",
     "total_runs": 443,
     "total_successes": 93,
@@ -35,7 +35,7 @@
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a95-1f12-73f2-85d6-2b4a8c0a1529\"} {\"type\":\"turn.started\"} {\"type\":\"error\"",
     "last_success": "2026-09-09T18:45:20Z",
     "last_quality_score": 3,
-    "last_dispatch": "2026-09-09T18:41:27Z"
+    "last_dispatch": "2026-09-10T01:07:06Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -87,7 +87,7 @@
     "last_error": "d9cca1\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "token-pick": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_success": "2026-09-09T15:21:37Z",
     "total_runs": 294,
     "total_successes": 30,
@@ -95,7 +95,7 @@
     "consecutive_failures": 1,
     "success_rate": 0.1,
     "last_quality_score": 2,
-    "last_dispatch": "2026-09-09T15:17:43Z",
+    "last_dispatch": "2026-09-10T01:07:06Z",
     "last_failed": "2026-09-10T00:22:02Z",
     "last_error": "read-only: workspace write-locked via bwrap Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message"
   },
@@ -174,14 +174,14 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-09-10T00:03:32Z",
     "total_runs": 197,
     "total_successes": 64,
     "total_failures": 133,
     "consecutive_failures": 1,
     "success_rate": 0.32,
-    "last_dispatch": "2026-09-09T15:17:43Z",
+    "last_dispatch": "2026-09-10T01:07:06Z",
     "last_error": "2d7ccf\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
     "last_success": "2026-09-09T23:30:39Z",
     "last_quality_score": 4
@@ -212,14 +212,14 @@
     "last_error": "4982e4\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
   },
   "memory-flush": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-08T23:34:56Z",
     "total_runs": 19,
     "total_successes": 18,
     "total_failures": 1,
     "consecutive_failures": 0,
     "success_rate": 0.95,
-    "last_dispatch": "2026-09-08T23:32:22Z",
+    "last_dispatch": "2026-09-10T01:07:06Z",
     "last_failed": "2026-09-01T01:28:39Z",
     "last_error": "01 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a05a95-1b79-7782-89b5-ae479c7a9040\"} {\"type\":\"turn.started\"} {\"type\":\"error\""
   },
