@@ -1,4 +1,5 @@
-ℹ️ Vuln Scanner: plaid/react-native-plaid-link-sdk
+ℹ️ vuln-scanner: braintree_ios clean
 
-*Vuln Scanner — plaid/react-native-plaid-link-sdk*
-Clean audit. 126 candidates reviewed (24 semgrep + 102 osv), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok.
+*Vuln Scanner — braintree/braintree_ios*
+Clean audit. 2 candidates reviewed (1 LOW unreachable dependency, 1 header-hygiene note), 0 confirmed HIGH/CRITICAL. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
+Note: repo is under PayPal's HackerOne bug-bounty program — any future confirmed finding routes to a human, not auto-PVR/email.

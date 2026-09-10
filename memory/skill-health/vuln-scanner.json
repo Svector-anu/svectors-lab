@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T03:37:18Z",
+  "last_analyzed": "2026-09-10T07:21:48Z",
   "quality_score": 4,
-  "assessment": "Clean scan with comprehensive methodology (126 candidates across 5 scanner types), clear conclusion upfront, verifiable counts, all scanners executed successfully.",
+  "assessment": "Substantive security audit with clear verdict, specific scanner results, and actionable context (HackerOne routing). Output artifacts (logs, scan directory, article) confirm real execution.",
   "flags": [],
   "avg_score": 3.6,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T19:04:35Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-10",
       "score": 4,
       "ts": "2026-09-10T03:37:18Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T07:21:48Z",
       "harness": "claude"
     }
   ]

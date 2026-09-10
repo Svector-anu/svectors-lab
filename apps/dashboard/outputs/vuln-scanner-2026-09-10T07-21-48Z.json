@@ -1,0 +1,178 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — braintree/braintree_ios"
+      },
+      "children": [
+        "alert_clean",
+        "sep1",
+        "findings_stack",
+        "sep2",
+        "scanners_section",
+        "sep3",
+        "bounty_note"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "title": "Clean Audit",
+        "message": "0 confirmed HIGH/CRITICAL vulnerabilities found",
+        "type": "success"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "findings_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "findings_heading",
+        "findings_grid"
+      ]
+    },
+    "findings_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Review Summary",
+        "level": "h3"
+      }
+    },
+    "findings_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "candidates_stat",
+        "low_badge",
+        "hygiene_badge"
+      ]
+    },
+    "candidates_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed",
+        "value": "2"
+      }
+    },
+    "low_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "1 LOW unreachable dependency",
+        "variant": "secondary"
+      }
+    },
+    "hygiene_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "1 header-hygiene note",
+        "variant": "outline"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanners_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners_heading",
+        "scanners_table"
+      ]
+    },
+    "scanners_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanners",
+        "level": "h3"
+      }
+    },
+    "scanners_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "bounty_note": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "bounty_heading",
+        "bounty_text",
+        "poc_badge"
+      ]
+    },
+    "bounty_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Bug Bounty & PoC",
+        "level": "h3"
+      }
+    },
+    "bounty_text": {
+      "type": "Text",
+      "props": {
+        "text": "Repository is under PayPal's HackerOne bug-bounty program. Any future confirmed finding routes to a human, not auto-PVR/email.",
+        "variant": "body"
+      }
+    },
+    "poc_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "PoC gate: not-required",
+        "variant": "outline"
+      }
+    }
+  }
+}
