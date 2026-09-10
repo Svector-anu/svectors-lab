@@ -1,34 +1,31 @@
-*GitHub Trending — 2026-09-09*
+*GitHub Trending — 2026-09-10*
 
-*Top pick* — [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli)
-The standout is shared agent infrastructure that carries team rules and context across competing coding harnesses.
+*Top pick* — [JustVugg/colibri](https://github.com/JustVugg/colibri)
+the standout systems bet: it turns disk into an inference tier instead of treating limited VRAM as the hard ceiling.
 
 *AI/ML*
-• [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) — ★ 1,083 today (2.8k total) · TypeScript · RETURNING
-Turns a Git repo into a live, cross-harness distribution layer for team skills, rules, MCP, and learnings.
+• [JustVugg/colibri](https://github.com/JustVugg/colibri) — ★ 157 today (27.3k total) · C · [ACCELERATING]
+Streams MoE experts across VRAM, RAM and disk, putting 744B–2.8T models on heterogeneous consumer hardware.
 
-• [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — ★ 506 today (103.7k total) · Python · ACCELERATING
-Recent release fixes point-in-time leakage and adds resumable checkpoints—two gaps that invalidate many trading-agent demos.
+• [AlexsJones/llmfit](https://github.com/AlexsJones/llmfit) — ★ 247 today (35.6k total) · Rust · [ACCELERATING]
+Benchmarks real local throughput, then feeds hardware-specific results back into future model-fit recommendations.
 
 *Devtools*
-• [openai/plugins](https://github.com/openai/plugins) — ★ 505 today (6.1k total) · JavaScript · RETURNING
-Provides canonical plugin manifests and richer examples spanning skills, MCP, agents, commands, hooks, and assets.
+• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 1,287 today (37.4k total) · HTML · [ACCELERATING]
+Ships 39 no-build HTML/SVG diagram grammars, including trust boundaries, Wardley maps and database schemas.
 
-• [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) — ★ 393 today (1.5k total) · TypeScript · RETURNING
-Puts BYO-model agents, permissions, diffs, and long-running sessions in one local-first desktop workspace.
+• [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) — ★ 837 today (3.6k total) · TypeScript · [RETURNING]
+Synchronizes skills, rules, MCP servers and knowledge across seven coding-agent environments.
 
-• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 2,286 today (36.2k total) · HTML · ACCELERATING
-Ships 39 zero-build HTML/SVG diagram grammars with semantic patterns and optional accessible motion.
+• [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) — ★ 636 today (2.1k total) · TypeScript · [RETURNING]
+Keeps models, tools and long-running coding sessions local, with no mandatory relay or editor lock-in.
 
 *Web/Apps*
-• [pascalorg/editor](https://github.com/pascalorg/editor) — ★ 442 today (22.8k total) · TypeScript · ACCELERATING
-Combines a WebGPU building editor with an authenticated local MCP service and persistent SQLite projects.
+• [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — ★ 1,588 today (22.7k total) · JavaScript · [ACCELERATING]
+Fuses live aircraft, ships, satellites, cameras and earthquakes into one browser globe with voice control.
 
-*Other*
-CAD automation crosses developer tooling and physical engineering, so these fit neither bucket cleanly.
-
-• [earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad) — ★ 97 today (14.9k total) · Python · ACCELERATING
-Gives agents tested workflows for CAD, fabrication, robotics formats, inspection, slicing, and handoff.
+• [armory3d/armorpaint](https://github.com/armory3d/armorpaint) — ★ 87 today (4.3k total) · C · [RETURNING]
+Gives developers full source for a cross-platform PBR texture painter while maintained binaries fund development.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/13
+sources: trending=ok · gh_api=ok · kept 7/16
