@@ -1,0 +1,246 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: hashicorp/vault",
+        "description": "Security vulnerability audit"
+      },
+      "children": [
+        "alert_clean",
+        "metrics_stack",
+        "sep1",
+        "scanners_section",
+        "sep2",
+        "deps_section",
+        "sep3",
+        "threat_section"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "title": "Clean audit",
+        "message": "No confirmed vulnerabilities found"
+      },
+      "children": []
+    },
+    "metrics_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_reviewed",
+        "stat_false_pos",
+        "stat_confirmed"
+      ]
+    },
+    "stat_reviewed": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates reviewed",
+        "value": "8,011"
+      },
+      "children": []
+    },
+    "stat_false_pos": {
+      "type": "Stat",
+      "props": {
+        "label": "Ember-template false positives",
+        "value": "7,746"
+      },
+      "children": []
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed vulnerabilities",
+        "value": "0"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "scanners_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners_heading",
+        "scanners_grid"
+      ]
+    },
+    "scanners_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "scanners_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 3,
+        "gap": "md"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_trufflehog_git",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog_git": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog-git: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: skip",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "deps_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "deps_heading",
+        "stat_deps",
+        "deps_note"
+      ]
+    },
+    "deps_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency Analysis",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "stat_deps": {
+      "type": "Stat",
+      "props": {
+        "label": "Findings (duplicate-skipped)",
+        "value": "178"
+      },
+      "children": []
+    },
+    "deps_note": {
+      "type": "Text",
+      "props": {
+        "text": "Skipped against Vault's own active Dependabot",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {},
+      "children": []
+    },
+    "threat_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "threat_heading",
+        "threat_text",
+        "threat_files_text",
+        "threat_result"
+      ]
+    },
+    "threat_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Threat Model Review",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "threat_text": {
+      "type": "Text",
+      "props": {
+        "text": "ACL/auth-bypass threat model reviewed",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "threat_files_text": {
+      "type": "Text",
+      "props": {
+        "text": "Files: acl.go, token_store.go, OIDC provider, approle login",
+        "variant": "caption"
+      },
+      "children": []
+    },
+    "threat_result": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "message": "No bypass found"
+      },
+      "children": []
+    }
+  }
+}

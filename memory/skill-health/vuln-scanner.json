@@ -1,19 +1,13 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T23:17:30Z",
-  "quality_score": 1,
-  "assessment": "No usable output: skill produced only a process state message ('waiting for background tasks') with zero substantive results, findings, or completion state",
+  "last_analyzed": "2026-09-10T23:43:32Z",
+  "quality_score": 2,
+  "assessment": "Well-structured security scan output, but fundamentally misaligned with stated strategy (crypto trading signals, not DevSecOps audit)",
   "flags": [
-    "empty_output"
+    "generic_content"
   ],
-  "avg_score": 3.47,
+  "avg_score": 3.4,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T07:47:50Z",
-      "harness": "claude"
-    },
     {
       "date": "2026-09-04",
       "score": 4,
@@ -186,6 +180,12 @@
       "date": "2026-09-10",
       "score": 1,
       "ts": "2026-09-10T23:17:30Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 2,
+      "ts": "2026-09-10T23:43:32Z",
       "harness": "claude"
     }
   ]
