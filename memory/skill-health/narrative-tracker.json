@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-09T18:45:16Z",
-  "quality_score": 3,
-  "assessment": "Useful, fresh, position-labeled narrative scan with several evidence links, but it lacks a clear conclusion-first regime verdict and leaves multiple specific claims and metrics without direct sourcing.",
-  "flags": [],
-  "avg_score": 2.87,
+  "last_analyzed": "2026-09-10T01:10:43Z",
+  "quality_score": 2,
+  "assessment": "Explicit position calls are useful, but most precise figures, catalysts, and institutional claims lack source links, making the report insufficiently verifiable and potentially invented; it also lacks a clear regime verdict up front.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.8,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 4,
-      "ts": "2026-09-03T01:15:03Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-09",
       "score": 3,
       "ts": "2026-09-09T18:45:16Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 2,
+      "ts": "2026-09-10T01:10:43Z",
       "harness": "codex"
     }
   ]
