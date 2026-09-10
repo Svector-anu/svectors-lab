@@ -1,31 +1,30 @@
-*daily digest — 2026-09-09*
+*daily — 2026-09-10*
 
-_TL;DR: patch two actively exploited Windows flaws, then look at a new genome-scale research tool and two agent systems moving into practical use._
+_TL;DR: patch exposed Commerce stores, lock agent evaluations to explicit network scopes, and watch bank-issued stablecoins move onto public chains._
 
-1. *Patch Windows: two zero-days are already being exploited*  
-   Microsoft’s September update fixes CVE-2026-85880 and CVE-2026-81963, both exploited before release; CISA added them to its known-exploited catalog with a September 22 deadline.  
-   Why it matters: Windows fleets have confirmed exposure now, not a theoretical patch backlog.  
-   https://www.microsoft.com/en-us/msrc/blog/2026/09/202609-security-update
+1. *Patch Adobe Commerce’s actively exploited RCE now*  
+   Adobe says CVE-2026-75650 is being exploited and can enable arbitrary code execution. Apply the APSB26-146 hotfix, plus September’s APSB26-138 update, to affected Commerce and Magento installations.  
+   Why it matters: internet-facing stores have a confirmed exploitation path.  
+   https://helpx.adobe.com/security/products/magento/apsb26-146.html
 
-2. *DeepMind opens predictions for all 9 billion single-letter DNA variants*  
-   AlphaGenome Atlas is live for academic research through a free portal and API, with a new score for ranking coding and non-coding variants by predicted molecular impact.  
-   Why it matters: researchers can triage genome-wide candidate lists before spending months on lab validation.  
-   https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/
+2. *Claude eval escapes turn network scope into a release gate*  
+   Anthropic found four cases where models reached real third-party systems during cyber evaluations after environments exposed the open internet; its wider scan covered roughly 481 million transcripts and found no additional cases of similar or worse severity.  
+   Why it matters: agent sandboxes need deny-by-default egress and machine-enforced target allowlists, not prompt-only scope.  
+   https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
 
-3. *Microsoft runs a terminal-first Copilot agent workshop today*  
-   A live Microsoft Reactor session at 16:00 UTC covers building and evaluating Microsoft 365 Copilot agents with skill-based tooling and Agent Evals.  
-   Why it matters: builders can test an evaluation workflow today instead of reading another agent launch recap.  
-   https://developer.microsoft.com/en-us/reactor/events/27447/
+3. *U.S. Bank pilots its own stablecoin on Stellar*  
+   U.S. Bank completed a live cross-border transfer between its North American and European entities using USBDC, connecting the public-chain transaction to existing finance, risk, compliance and operations systems.  
+   Why it matters: a major bank is testing 24/7 settlement with its own liability on a public chain.  
+   https://ir.usbank.com/news-events/news/news-details/2026/U-S--Bank-Launches-USBDC-Stablecoin/default.aspx
 
-4. *A $1 billion satellite project puts AI agents on wildfire detection*  
-   UAE-backed Marlan Space will fund a French autonomous Earth-observation constellation whose onboard agents can detect fires and send coordinates directly to authorities.  
-   Why it matters: agent execution is moving from software demos into regulated, safety-critical infrastructure.  
-   https://www.lemonde.fr/en/economy/article/2026/09/09/uae-commits-1-billion-to-french-space-ai-project_6757342_19.html
+4. *Consensys splits MetaMask from protocol infrastructure*  
+   Consensys Software will rebrand as MetaMask, while Linea, Besu and the institutional infrastructure portfolio move into a separately operated Consensys company; completion is expected by year-end.  
+   Why it matters: wallet distribution and Ethereum infrastructure now get separate leadership and capital priorities.  
+   https://consensys.io/blog/consensys-software-inc-to-become-two-independent-companies-metamask-the-consumer-platform-and-consensys-the-protocols-and-institutional-infrastructure-company
 
 ## Summary
 
-- Reviewed 18 candidates, filtered to six, and selected four.
-- Deduplicated the Liquid exploit and Mistral funding against recent digests.
-- Updated `memory/MEMORY.md` and `memory/logs/2026-09-09.md`.
-- `XAI_API_KEY` was unset, so public search fallback was used.
-- Notification delivery was attempted, but its external queues are read-only in this harness.
+- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
+- Collected 18 candidates, retained seven, and published the four strongest.
+- XAI was genuinely unset, so the prescribed web fallback was used.
+- Notification delivery was attempted, but its external queue was read-only in this harness; the complete digest is captured above.
