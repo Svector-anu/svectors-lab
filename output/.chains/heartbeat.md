@@ -1,17 +1,11 @@
-Fleet status: 🔴 DEGRADED.
+Heartbeat completed.
 
-- `vuln-scanner`: failed, 4 consecutive failures.
-- `dev-loop`: remains stuck.
-- PRs #70 and #72 remain stalled.
-- Four critical issues remain open.
-- All findings were reported within 48 hours, so no duplicate notification was sent.
-
-Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md).
+- `STATUS_PAGE=DEGRADED`
+- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
+- Logged findings in [memory/logs/2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md:159).
+- No notification sent: all findings were deduplicated within the 48-hour window.
+- Validation passed with no diff errors.
 
 ## Summary
 
-- Ran heartbeat in ambient mode.
-- Refreshed all 30 enabled skill rows.
-- Status page verdict: `DEGRADED`.
-- No new scheduled-skill gaps found.
-- Validation passed with no whitespace errors.
+Fleet degradation remains driven by chronic failure rates, the stuck `dev-loop`, two stalled PRs, and four critical issue records. No newly missing or overdue scheduled skills were found.

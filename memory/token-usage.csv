@@ -302,4 +302,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-10,vuln-scanner,claude-sonnet-5,3770,28255,8413018,128472
 2026-09-10,vuln-scanner,claude-sonnet-5,23811,41701,11899262,167022
 2026-09-10,vuln-scanner,claude-sonnet-5,4620,50540,15128048,160327
-2026-09-10,narrative-tracker,codex-default,324790,4275,267136,0
+2026-09-10,heartbeat,codex-default,366365,4610,312192,0
