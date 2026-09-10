@@ -294,4 +294,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-09,vuln-scanner,claude-sonnet-5,4935,50967,14193442,232609
 2026-09-09,vuln-scanner,claude-sonnet-5,8282,59482,16511775,242628
 2026-09-09,vuln-scanner,claude-sonnet-5,7619,50991,16819549,169725
-2026-09-10,narrative-tracker,codex-default,355140,3882,294016,0
+2026-09-10,token-pick,codex-default,469583,4812,428416,0
