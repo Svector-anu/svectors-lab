@@ -1,18 +1,17 @@
-Chop, leaning risk-off: BTC fell 2.5% and only 1/20 top caps is green. DeFi is more resilient—TVL held near $87.24B while DEX volume rose 6.8%.
+DeFi overview completed.
 
-Position call: fade broad beta; ride demonstrated DEX activity selectively. Uniswap V4 volume jumped 54.8%. Fear & Greed remains elevated at 69, creating a bearish price/sentiment divergence. September 9 spot-BTC ETF flow was provisionally −$100.7M. [ETF flow tracker](https://www.satsintel.io/en/etfs/flows)
+Take: chop, medium conviction — BTC −1.4%, only 4/20 top caps green, while Fear & Greed remains 69. DeFi is mixed: TVL and stablecoin supply are flat, but DEX volume rose 6.8%.
 
-Filtered yields:
-
-- Real/base: WETH-USDT 40.2%, ETH-USDT 30.8%, USDC-WETH 22.0%.
-- Incentive: USDC-AERO 25.8%, sdCRV 12.3%.
+- TVL: $87.04B
+- BTC: $77,140
+- ETH: $2,462
+- Fees leader: Tether, $16.32M
+- Top protocol movers: HTX +11.2%, SUNSwap V3 −11.2%
+- Polymarket: 65.5% odds of a 25-bps Fed increase
+- Positions: no watches configured
+- All data sources succeeded
+- Notification suppressed because the regime did not materially change
 
 ## Summary
 
-- Full report: [defi-overview-2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/output/defi-overview-2026-09-10.md)
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
-- Appended today’s position and macro logs.
-- No tracked-position configuration was present.
-- All data sources succeeded.
-- Notification delivery was attempted but its external queue was read-only.
-- Branch/commit creation was unavailable because `.git` is read-only in this harness. Existing unrelated changes were untouched.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md), including today’s ETHFI token pick.
