@@ -89,8 +89,16 @@ if [ -s output/.chains/github-trending.md ]; then
   # parse owner/repo lines; pick first that matches criteria below
   :
 else
-  gh api "search/repositories?q=created:>$(date -u -d '14 days ago' +%Y-%m-%d)&sort=stars&order=desc&per_page=25" \
-    --jq '.items[] | select(.fork==false) | select(.stargazers_count>=50) | {full_name, language, description, security_and_analysis}'
+  # Shadow runs have no GitHub credentials by design. A bare shadow selector
+  # may consume the chained trending output above, but otherwise must fail
+  # closed and be retried as shadow:owner/repo.
+  if [ "$KERNEL" = shadow ]; then
+    echo "VULN_SCANNER_SKIPPED shadow-target-required: use shadow:owner/repo or provide github-trending chain output"
+    exit 0
+  else
+    gh api "search/repositories?q=created:>$(date -u -d '14 days ago' +%Y-%m-%d)&sort=stars&order=desc&per_page=25" \
+      --jq '.items[] | select(.fork==false) | select(.stargazers_count>=50) | {full_name, language, description, security_and_analysis}'
+  fi
 fi
 ```
 
@@ -106,7 +114,11 @@ Selection criteria:
 
 ```bash
 REPO="owner/repo"
-gh repo fork "$REPO" --clone --default-branch-only -- --depth 200 --quiet
+if [ "$KERNEL" = shadow ]; then
+  git clone --depth 200 --quiet "https://github.com/${REPO}.git"
+else
+  gh repo fork "$REPO" --clone --default-branch-only -- --depth 200 --quiet
+fi
 cd "$(basename "$REPO")"
 ```
 
