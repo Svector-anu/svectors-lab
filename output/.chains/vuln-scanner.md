@@ -1,6 +1,3 @@
-ℹ️ Vuln Scanner
-
-*Vuln Scanner — vercel/ai*
-Clean audit. 4 scanner hits + 6 agentic entrypoints reviewed, 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok.
-108 HIGH/CRITICAL dependency findings triaged as non-reachable from published packages or already covered by the repo's own active Dependabot -- deferred, no PR filed.
-SSRF validateUrl guard hand-checked across ~25 call sites (own AGENTS.md flags it as sensitive) -- holds. Report: output/articles/vuln-scan-2026-09-10.md
+*Vuln Scanner — auth0/nextjs-auth0*
+Clean audit. 351 raw candidates (14 semgrep + 337 osv-scanner) reviewed, 0 confirmed. Manual source-to-sink pass over session-cookie encryption, redirect/returnTo validation, proxy SSRF surface, and popup-callback XSS defenses found no exploitable gaps.
+Scanners: semgrep=ok, trufflehog=fail (no raw binary release asset, staging gap), trufflehog-git=fail, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.

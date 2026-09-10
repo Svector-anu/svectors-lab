@@ -1,0 +1,248 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — auth0/nextjs-auth0"
+      },
+      "children": [
+        "alert_status",
+        "sep1",
+        "stats_stack",
+        "sep2",
+        "breakdown_stack",
+        "sep3",
+        "manual_stack",
+        "sep4",
+        "scanners_stack",
+        "sep5",
+        "poc_stack"
+      ]
+    },
+    "alert_status": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "title": "Audit Result",
+        "message": "Clean audit"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "stats_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_candidates",
+        "stat_confirmed"
+      ]
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Raw Candidates Reviewed",
+        "value": "351"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Vulnerabilities",
+        "value": "0"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "breakdown_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_breakdown",
+        "grid_sources"
+      ]
+    },
+    "heading_breakdown": {
+      "type": "Heading",
+      "props": {
+        "text": "Candidate Sources",
+        "level": "h3"
+      }
+    },
+    "grid_sources": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_osv"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "Semgrep: 14",
+        "variant": "outline"
+      }
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "OSV Scanner: 337",
+        "variant": "outline"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "manual_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_manual",
+        "text_areas",
+        "text_conclusion"
+      ]
+    },
+    "heading_manual": {
+      "type": "Heading",
+      "props": {
+        "text": "Manual Source-to-Sink Review",
+        "level": "h3"
+      }
+    },
+    "text_areas": {
+      "type": "Text",
+      "props": {
+        "text": "Coverage: session-cookie encryption, redirect/returnTo validation, proxy SSRF surface, popup-callback XSS defenses"
+      }
+    },
+    "text_conclusion": {
+      "type": "Text",
+      "props": {
+        "text": "No exploitable gaps found",
+        "variant": "lead"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_scanners",
+        "table_scanners"
+      ]
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "table_scanners": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok",
+            ""
+          ],
+          [
+            "trufflehog",
+            "fail",
+            "no raw binary release asset, staging gap"
+          ],
+          [
+            "trufflehog-git",
+            "fail",
+            ""
+          ],
+          [
+            "osv",
+            "ok",
+            ""
+          ],
+          [
+            "fuzz",
+            "skip",
+            ""
+          ],
+          [
+            "agentic",
+            "ok",
+            ""
+          ]
+        ]
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "poc_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading_poc",
+        "badge_poc"
+      ]
+    },
+    "heading_poc": {
+      "type": "Heading",
+      "props": {
+        "text": "PoC Gate",
+        "level": "h3"
+      }
+    },
+    "badge_poc": {
+      "type": "Badge",
+      "props": {
+        "text": "Not Required",
+        "variant": "secondary"
+      }
+    }
+  }
+}
