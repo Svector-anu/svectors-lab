@@ -141,8 +141,14 @@ fi
 
 # --- Secrets: TruffleHog (only-verified = actually authenticates) ---
 if command -v trufflehog >/dev/null 2>&1; then
-  trufflehog filesystem . --only-verified --json \
-    > /tmp/vuln-scan/trufflehog.json 2>/dev/null || true
+  # BOTH trufflehog passes are bounded. The filesystem walk over a very large
+  # working tree (a big monorepo checkout — aws-cli, azure-cli, vault) burns the
+  # whole turn budget exactly like an unbounded git-history walk: same silent
+  # budget-drain, same "success" with no report, same fix.
+  timeout 300 trufflehog filesystem . --only-verified --json \
+    > /tmp/vuln-scan/trufflehog.json 2>/dev/null
+  TRUFFLEHOG_FS_RC=$?
+  [ "$TRUFFLEHOG_FS_RC" = 124 ] && echo "VULN_SCANNER_TIMEOUT: trufflehog filesystem scan exceeded 300s on a very large tree — recorded as fail, not retried, not left unfinished"
   # Also scan full git history for secrets — BOUNDED. An unbounded `trufflehog git`
   # walks every commit's every tree, and a large packed history (measured: 200
   # commits / ~369MB on one real run) can eat the whole turn budget by itself,
@@ -192,7 +198,11 @@ fi
 
 # Record what succeeded (empty output ≠ clean, could be tool failure)
 echo "semgrep=$([ -s /tmp/vuln-scan/semgrep.json ] && echo ok || echo fail)" >  /tmp/vuln-scan/sources.txt
-echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+if [ "${TRUFFLEHOG_FS_RC:-1}" = 124 ]; then
+  echo "trufflehog=timeout"                                                        >> /tmp/vuln-scan/sources.txt
+else
+  echo "trufflehog=$([ -s /tmp/vuln-scan/trufflehog.json ] && echo ok || echo fail)" >> /tmp/vuln-scan/sources.txt
+fi
 # Recorded separately from the filesystem pass above: they can genuinely diverge
 # (filesystem scan clean and fast, git-history scan timed out on a large packed
 # repo, or vice versa) and collapsing both into one trufflehog= line hides
@@ -205,7 +215,16 @@ fi
 echo "osv=${OSV_STATUS:-fail}"                                                    >> /tmp/vuln-scan/sources.txt
 ```
 
-**Run this block, don't paraphrase it.** It has to go through a real Bash tool call —
+**Run this block, don't paraphrase it, and don't rewrite the scanner commands.**
+If you invoke `trufflehog` (or any scanner) yourself instead of running the block
+verbatim, every invocation still has to be `timeout 300`-wrapped — filesystem and
+git-history both — and **no scanner may be backgrounded with `&`**. A scanner still
+running when you're ready to write the report means you did not finish that scan:
+record it `fail`/`timeout` per §A7 and move on. There is no resume — a
+`workflow_dispatch` run is one shot, and "waiting for the background scan to
+finish, will pick back up" is never a truthful final output.
+
+It has to go through a real Bash tool call —
 summarizing what it would do, or reasoning about the target manually and moving on, is
 not the same thing, and the workflow can tell the difference: `stage-vuln-scanner.sh`
 wraps every staged binary so an actual invocation is logged to
@@ -749,7 +768,7 @@ is `fail`, not `ok`.
 *Vuln Scanner — <repo>*
 <N> confirmed findings (<severity-summary>).
 Disclosed via: <PVR: advisory #123 | public PR #45 | skipped (no channel)>
-Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
+Scanners: semgrep=<ok|fail>, trufflehog=<ok|fail|timeout>, trufflehog-git=<ok|fail|timeout>, osv=<ok|fail>, fuzz=<ok|fail|skip>. PoC gate: <verified|not-required|needs-verification>.
 ```
 
 `trufflehog-git=timeout` must always be spelled out here, never folded into a plain `trufflehog=ok` — a clean filesystem pass and a timed-out history pass are different facts, and this is the durable line an operator actually reads. Silently dropping the git-history state here reproduces the exact masking this field exists to prevent.
@@ -1119,7 +1138,7 @@ specific bullets.
 - Candidates: N | Confirmed: M
 - Channels used: PVR (x), public PR (y), skipped (z)
 - Prior-art check: N candidates checked, 0 matches | matched #123 → skipped/commented
-- Scanner status: semgrep=ok trufflehog=ok trufflehog-git=ok|fail|timeout osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification (ok = actually ran, per §A3 — a staged tool you skipped is fail, not ok)
+- Scanner status: semgrep=ok trufflehog=ok|fail|timeout trufflehog-git=ok|fail|timeout osv=ok fuzz=ok|fail|skip agentic=ok|skip poc=verified|not-required|needs-verification (ok = actually ran, per §A3 — a staged tool you skipped is fail, not ok)
 - Advisory/PR links: [...]
 ```
 
