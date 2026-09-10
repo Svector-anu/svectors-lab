@@ -1,17 +1,13 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T18:33:26Z",
-  "quality_score": 4,
-  "assessment": "Substantive security audit with specific verifiable results; well-structured scanner breakdown and concrete technical verification of path-traversal guard.",
-  "flags": [],
-  "avg_score": 3.57,
+  "last_analyzed": "2026-09-10T23:17:30Z",
+  "quality_score": 1,
+  "assessment": "No usable output: skill produced only a process state message ('waiting for background tasks') with zero substantive results, findings, or completion state",
+  "flags": [
+    "empty_output"
+  ],
+  "avg_score": 3.47,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T07:30:43Z",
-      "harness": "claude"
-    },
     {
       "date": "2026-09-04",
       "score": 4,
@@ -184,6 +180,12 @@
       "date": "2026-09-10",
       "score": 4,
       "ts": "2026-09-10T18:33:26Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 1,
+      "ts": "2026-09-10T23:17:30Z",
       "harness": "claude"
     }
   ]
