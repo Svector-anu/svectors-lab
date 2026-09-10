@@ -1,0 +1,4 @@
+semgrep=ok
+trufflehog=ok
+trufflehog-git=ok
+osv=ok

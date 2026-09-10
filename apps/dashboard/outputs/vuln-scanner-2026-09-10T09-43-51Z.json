@@ -1,0 +1,284 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — snowflakedb/snowflake-cli",
+        "description": "Security audit and vulnerability scan results"
+      },
+      "children": [
+        "high_cve_alert",
+        "sep1",
+        "findings_section",
+        "sep2",
+        "scanner_section",
+        "sep3",
+        "action_section",
+        "sep4",
+        "notes_section"
+      ]
+    },
+    "high_cve_alert": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "HIGH: CVE-2026-23949 in jaraco-context 6.0.1",
+        "message": "Zip-slip path traversal vulnerability detected. Requires update to 6.1.2."
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "findings_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "lg"
+      },
+      "children": [
+        "code_audit_subsection",
+        "dep_subsection"
+      ]
+    },
+    "code_audit_subsection": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "code_audit_heading",
+        "code_vulns_stat",
+        "audit_details_text",
+        "hardening_labels"
+      ]
+    },
+    "code_audit_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Code Audit",
+        "level": "h3"
+      }
+    },
+    "code_vulns_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Code Vulnerabilities",
+        "value": "0"
+      }
+    },
+    "audit_details_text": {
+      "type": "Text",
+      "props": {
+        "text": "Well-hardened codebase with security-conscious implementation patterns."
+      }
+    },
+    "hardening_labels": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge1",
+        "badge2",
+        "badge3"
+      ]
+    },
+    "badge1": {
+      "type": "Badge",
+      "props": {
+        "text": "Path-traversal guard",
+        "variant": "secondary"
+      }
+    },
+    "badge2": {
+      "type": "Badge",
+      "props": {
+        "text": "Safe deserialization",
+        "variant": "secondary"
+      }
+    },
+    "badge3": {
+      "type": "Badge",
+      "props": {
+        "text": "Safe subprocess usage",
+        "variant": "secondary"
+      }
+    },
+    "dep_subsection": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "dep_heading",
+        "new_cve_stat",
+        "dep_detail",
+        "covered_cve_stat"
+      ]
+    },
+    "dep_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency Vulnerabilities",
+        "level": "h3"
+      }
+    },
+    "new_cve_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "New CVEs (No Prior Coverage)",
+        "value": "1"
+      }
+    },
+    "dep_detail": {
+      "type": "Text",
+      "props": {
+        "text": "jaraco-context 6.0.1: CVE-2026-23949 (HIGH) — Zip-slip path traversal vulnerability."
+      }
+    },
+    "covered_cve_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Other CVEs (Covered by Dependabot PRs)",
+        "value": "10"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanner_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanner_heading",
+        "scanner_table",
+        "poc_label"
+      ]
+    },
+    "scanner_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Security Scanners",
+        "level": "h2"
+      }
+    },
+    "scanner_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "n/a"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "poc_label": {
+      "type": "Badge",
+      "props": {
+        "text": "PoC Gate: not-required",
+        "variant": "outline"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "action_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "action_heading",
+        "action_link"
+      ]
+    },
+    "action_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Action Taken",
+        "level": "h2"
+      }
+    },
+    "action_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #3158: Bump jaraco-context to 6.1.2",
+        "href": "https://github.com/snowflakedb/snowflake-cli/pull/3158",
+        "source": "GitHub"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "notes_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "notes_heading",
+        "hackerone_note"
+      ]
+    },
+    "notes_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Notes",
+        "level": "h2"
+      }
+    },
+    "hackerone_note": {
+      "type": "Text",
+      "props": {
+        "text": "This repo runs a HackerOne bounty program alongside PVR. Future HIGH/CRITICAL code findings route to a human, not auto-disclosure."
+      }
+    }
+  }
+}
