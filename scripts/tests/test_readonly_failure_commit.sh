@@ -76,7 +76,7 @@ run_step() {
   )
 }
 
-out=$(run_step narrative-tracker 'Run outcome=failure at 2026-09-10T00:00:00Z UTC — no output captured; nothing to log.')
+out=$(run_step narrative-tracker 'Run outcome=failure at 2026-09-10T00:00:00Z UTC - no output captured; nothing to log.')
 echo "$out" | grep -q 'PUSH_RETRY_CALLED' && pass "real failure content staged: commits and calls the shared push-retry script" \
   || bad "should have committed and invoked scripts/git-push-retry.sh"
 
