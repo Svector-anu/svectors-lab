@@ -1,17 +1,23 @@
-Take: **chop, medium conviction** — BTC is flat at $78,541, only 5/20 top-cap assets are green, while DEX volume remains elevated at $11.63B.
+Take: chop — BTC slipped 0.5% with only 3/20 top caps green, while DEX volume held at $11.88B.  
+Conviction: medium — weak breadth conflicts with Greed at 69 and positive weekly TVL.  
+Evidence: just 3/20 large caps advanced over 24 hours.
 
-- DeFi TVL: $88.47B, down 0.3% since the prior refresh.
-- Fear & Greed: 66 (Greed), down from 69.
-- Strongest themes: DEX activity, ZEC-led privacy strength, and Stargate cross-chain inflows.
-- Stargate V2 TVL rose 30.8%; HTX fell 10.6%.
-- Sustainable-yield filter retained 3 pools; incentive-yield filter retained 2.
-- Friday’s U.S. CPI is the immediate macro risk. Latest U.S. spot BTC ETF flow was a $46.6M outflow.
-- No positions are configured in `memory/on-chain-watches.yml`.
-- Notification was suppressed because the regime and major prices did not change materially.
+DeFi verdict: Sideways. TVL was $87.37B, essentially flat over 24h and +1.9% weekly. USDD was the only qualifying protocol mover, down 11.8%.
+
+Signals:
+
+- Privacy remains the strongest relative trade: ZEC +4.5% daily and +50.9% weekly.
+- Uniswap V4 volume rose 56.2% to $2.31B.
+- Sustainable-yield leaders: WETH-USDT 43.0%, ETH-LINK 42.2%, UNI-WETH 41.7%.
+- Latest complete BTC ETF session showed a $46.6M outflow. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
+- No positions were checked because no on-chain watches are configured.
+- Notification suppressed because the regime was unchanged.
+
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
 
 ## Summary
 
-- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Appended the run to [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md).
-- Preserved the complete Token Picks table.
-- All required data sources returned valid JSON; validation and `git diff --check` passed.
+- Executed the full combined DeFi overview.
+- All required market sources succeeded.
+- Preserved token-pick history.
+- No follow-up action required.
