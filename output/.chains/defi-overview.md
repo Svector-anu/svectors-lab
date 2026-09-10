@@ -1,23 +1,12 @@
-Take: chop — BTC slipped 0.5% with only 3/20 top caps green, while DEX volume held at $11.88B.  
-Conviction: medium — weak breadth conflicts with Greed at 69 and positive weekly TVL.  
-Evidence: just 3/20 large caps advanced over 24 hours.
+Take: chop — BTC fell 1.4% with only 4/20 top caps green, while Fear & Greed held at 69.  
+Conviction: medium — weak daily breadth conflicts with positive weekly breadth and greedy sentiment.  
+Evidence: only 4 of the top 20 assets were green over 24 hours.
 
-DeFi verdict: Sideways. TVL was $87.37B, essentially flat over 24h and +1.9% weekly. USDD was the only qualifying protocol mover, down 11.8%.
+DeFi verdict: Sideways — TVL moved 0.3%, DEX volume rose 3.1%, and stablecoin supply was flat. HTX gained 11.4%; USDD fell 16.2%. No tracked positions are configured.
 
-Signals:
+Updated:
 
-- Privacy remains the strongest relative trade: ZEC +4.5% daily and +50.9% weekly.
-- Uniswap V4 volume rose 56.2% to $2.31B.
-- Sustainable-yield leaders: WETH-USDT 43.0%, ETH-LINK 42.2%, UNI-WETH 41.7%.
-- Latest complete BTC ETF session showed a $46.6M outflow. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
-- No positions were checked because no on-chain watches are configured.
-- Notification suppressed because the regime was unchanged.
+- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
+- [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md)
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
-
-## Summary
-
-- Executed the full combined DeFi overview.
-- All required market sources succeeded.
-- Preserved token-pick history.
-- No follow-up action required.
+All sources succeeded and token-pick history was preserved. Notification suppressed because the regime and material signals were unchanged.
