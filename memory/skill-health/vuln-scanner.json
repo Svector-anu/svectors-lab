@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T07:48:38Z",
+  "last_analyzed": "2026-09-10T09:27:14Z",
   "quality_score": 4,
-  "assessment": "Clean audit with actionable dependency-hygiene finding; conclusion-first, verifiable, no invented claims.",
+  "assessment": "Clear audit with transparent scanner methodology; appropriately distinguished confirmed (0) vs. plausible (1) findings and explained verification blocks honestly",
   "flags": [],
   "avg_score": 3.6,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T19:38:40Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-10",
       "score": 4,
       "ts": "2026-09-10T07:48:38Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T09:27:14Z",
       "harness": "claude"
     }
   ]

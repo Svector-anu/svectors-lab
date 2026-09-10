@@ -1,0 +1,223 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "vuln-scanner: databricks/cli",
+        "description": "Clean audit, 0 confirmed HIGH/CRITICAL"
+      },
+      "children": [
+        "stack-overview",
+        "sep-1",
+        "findings-section",
+        "sep-2",
+        "scanners-section",
+        "sep-3",
+        "dependencies-section",
+        "sep-4",
+        "config-section"
+      ]
+    },
+    "stack-overview": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat-confirmed",
+        "stat-scanner",
+        "stat-agentic"
+      ]
+    },
+    "stat-confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed HIGH/CRITICAL",
+        "value": "0"
+      }
+    },
+    "stat-scanner": {
+      "type": "Stat",
+      "props": {
+        "label": "Scanner candidates reviewed",
+        "value": "39"
+      }
+    },
+    "stat-agentic": {
+      "type": "Stat",
+      "props": {
+        "label": "Agentic candidates reviewed",
+        "value": "1"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "findings-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-findings",
+        "alert-high-path-traversal"
+      ]
+    },
+    "heading-findings": {
+      "type": "Heading",
+      "props": {
+        "text": "Key Finding",
+        "level": "h3"
+      }
+    },
+    "alert-high-path-traversal": {
+      "type": "Alert",
+      "props": {
+        "title": "Path traversal in workspace export-dir (Plausible HIGH)",
+        "message": "Unsanitized server-returned object path. Status: needs verification. PoC gate blocked — no go toolchain available in this environment (same gap as open stripe-cli candidate from 2026-09-04).",
+        "type": "warning"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-scanners",
+        "table-scanners"
+      ]
+    },
+    "heading-scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "table-scanners": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ],
+          [
+            "PoC gate",
+            "blocked (no go toolchain)"
+          ]
+        ]
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "dependencies-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-deps",
+        "alert-deps"
+      ]
+    },
+    "heading-deps": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependencies",
+        "level": "h3"
+      }
+    },
+    "alert-deps": {
+      "type": "Alert",
+      "props": {
+        "title": "grpc: 2 HIGH CVEs",
+        "message": "Unreachable — no grpc server in this codebase. Deferred to the repo's active Dependabot.",
+        "type": "info"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "config-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "heading-config",
+        "badge-pvr",
+        "text-contact"
+      ]
+    },
+    "heading-config": {
+      "type": "Heading",
+      "props": {
+        "text": "Configuration",
+        "level": "h3"
+      }
+    },
+    "badge-pvr": {
+      "type": "Badge",
+      "props": {
+        "text": "PVR disabled",
+        "variant": "secondary"
+      }
+    },
+    "text-contact": {
+      "type": "Text",
+      "props": {
+        "text": "Security contact fallback (if candidate confirmed): security@databricks.com (per SECURITY.md)",
+        "variant": "caption"
+      }
+    }
+  }
+}

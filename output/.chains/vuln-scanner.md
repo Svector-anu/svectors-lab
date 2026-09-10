@@ -1,6 +1,7 @@
-ℹ️ Vuln Scanner — circlefin/circle-nodejs-sdk
+ℹ️ vuln-scanner: databricks/cli
 
-*Vuln Scanner — circlefin/circle-nodejs-sdk*
-Clean audit. 2 candidates reviewed, 0 confirmed. This is a thin OpenAPI-generated axios client SDK with no custom server/auth logic to exploit.
-One useful dependency-hygiene contribution: the repo's own open Dependabot PR #151 only bumps axios to 1.16.0, leaving 5 published medium-severity GHSAs open (fixed only in axios>=1.18.0) — commented with the gap and a suggestion to target 1.20.0 instead, rather than filing a duplicate PR.
-Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip(n/a), agentic=ok. PoC gate: not-required.
+*Vuln Scanner — databricks/cli*
+Clean audit, 0 confirmed HIGH/CRITICAL. 39 scanner candidates + 1 agentic candidate reviewed — 1 plausible HIGH (path traversal in `workspace export-dir` via unsanitized server-returned object path) left as needs-verification: this environment has no `go` toolchain to run the mandatory PoC gate (same gap as the open stripe-cli candidate from 2026-09-04).
+Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: blocked (no go toolchain).
+2 dependency HIGH CVEs (grpc, unreachable — no grpc server in this codebase) deferred to the repo's active Dependabot.
+PVR disabled; SECURITY.md gives security@databricks.com as fallback contact if the candidate is later confirmed.
