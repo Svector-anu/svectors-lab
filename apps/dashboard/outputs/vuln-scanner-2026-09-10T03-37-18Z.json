@@ -1,0 +1,126 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner: plaid/react-native-plaid-link-sdk",
+        "description": "Security vulnerability audit results"
+      },
+      "children": [
+        "alert",
+        "sep1",
+        "metrics",
+        "sep2",
+        "scanners"
+      ]
+    },
+    "alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Clean audit",
+        "message": "0 confirmed vulnerabilities",
+        "type": "success"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "metrics": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "stat-total",
+        "stat-semgrep",
+        "stat-osv"
+      ]
+    },
+    "stat-total": {
+      "type": "Stat",
+      "props": {
+        "label": "Total candidates reviewed",
+        "value": "126"
+      }
+    },
+    "stat-semgrep": {
+      "type": "Stat",
+      "props": {
+        "label": "Semgrep candidates",
+        "value": "24"
+      }
+    },
+    "stat-osv": {
+      "type": "Stat",
+      "props": {
+        "label": "OSV candidates",
+        "value": "102"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners-heading",
+        "scanner-table"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      }
+    },
+    "scanner-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    }
+  }
+}

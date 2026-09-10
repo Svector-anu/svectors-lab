@@ -1,3 +1,4 @@
-*Vuln Scanner — auth0/nextjs-auth0*
-Clean audit. 351 raw candidates (14 semgrep + 337 osv-scanner) reviewed, 0 confirmed. Manual source-to-sink pass over session-cookie encryption, redirect/returnTo validation, proxy SSRF surface, and popup-callback XSS defenses found no exploitable gaps.
-Scanners: semgrep=ok, trufflehog=fail (no raw binary release asset, staging gap), trufflehog-git=fail, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
+ℹ️ Vuln Scanner: plaid/react-native-plaid-link-sdk
+
+*Vuln Scanner — plaid/react-native-plaid-link-sdk*
+Clean audit. 126 candidates reviewed (24 semgrep + 102 osv), 0 confirmed. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok.

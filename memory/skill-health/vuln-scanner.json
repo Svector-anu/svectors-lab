@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T03:19:21Z",
+  "last_analyzed": "2026-09-10T03:37:18Z",
   "quality_score": 4,
-  "assessment": "Solid execution: conclusion-first clean verdict, specific verifiable findings (351 candidates, 0 confirmed), transparent about scanner reliability and coverage gaps, no invented claims.",
+  "assessment": "Clean scan with comprehensive methodology (126 candidates across 5 scanner types), clear conclusion upfront, verifiable counts, all scanners executed successfully.",
   "flags": [],
-  "avg_score": 3.57,
+  "avg_score": 3.6,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 3,
-      "ts": "2026-09-02T18:45:30Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-10",
       "score": 4,
       "ts": "2026-09-10T03:19:21Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T03:37:18Z",
       "harness": "claude"
     }
   ]
