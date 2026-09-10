@@ -1,0 +1,192 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — cli/cli"
+      },
+      "children": [
+        "alert_clean",
+        "stats_section",
+        "separator1",
+        "scanners_section",
+        "separator2",
+        "osv_section"
+      ]
+    },
+    "alert_clean": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "title": "Clean Audit",
+        "message": "0 confirmed vulnerabilities found"
+      }
+    },
+    "stats_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_candidates",
+        "stat_confirmed"
+      ]
+    },
+    "stat_candidates": {
+      "type": "Stat",
+      "props": {
+        "label": "Candidates Reviewed",
+        "value": "17"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Vulnerabilities",
+        "value": "0"
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "scanners_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "scanners_heading",
+        "scanners_table"
+      ]
+    },
+    "scanners_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "scanners_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "osv_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "osv_heading",
+        "osv_content"
+      ]
+    },
+    "osv_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "OSV Dependency Finding",
+        "level": "h3"
+      }
+    },
+    "osv_content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "osv_hit",
+        "osv_duplicate_group",
+        "osv_maintainer",
+        "osv_policy"
+      ]
+    },
+    "osv_hit": {
+      "type": "Text",
+      "props": {
+        "text": "1 osv dependency hit: x/mod CVE-2026-56864 / CVE-2026-56865",
+        "variant": "lead"
+      }
+    },
+    "osv_duplicate_group": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "osv_dup_text",
+        "osv_issue_link"
+      ]
+    },
+    "osv_dup_text": {
+      "type": "Text",
+      "props": {
+        "text": "Confirmed duplicate of already-closed issue"
+      }
+    },
+    "osv_issue_link": {
+      "type": "Link",
+      "props": {
+        "label": "#14201",
+        "href": "https://github.com/cli/cli/issues/14201"
+      }
+    },
+    "osv_maintainer": {
+      "type": "Text",
+      "props": {
+        "text": "Maintainer-confirmed unreachable"
+      }
+    },
+    "osv_policy": {
+      "type": "Text",
+      "props": {
+        "text": "SECURITY.md + AGENTS.md both ban public vuln filings here — nothing published"
+      }
+    }
+  }
+}

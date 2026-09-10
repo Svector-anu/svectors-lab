@@ -1,19 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T13:48:50Z",
-  "quality_score": 2,
-  "assessment": "Well-structured security report with verifiable PR/issue references, but contains an unverifiable claim (CVE-2026-12143 with future date) that appears invented.",
-  "flags": [
-    "unverifiable_claim"
-  ],
+  "last_analyzed": "2026-09-10T18:09:15Z",
+  "quality_score": 4,
+  "assessment": "Solid security audit—completed all scans, reported specific results (17 reviewed, 0 confirmed), correctly identified and handled a duplicate OSV finding per policy, verifiable and scoped appropriately.",
+  "flags": [],
   "avg_score": 3.57,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T20:27:49Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-04",
       "score": 4,
@@ -186,6 +178,12 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T13:48:50Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T18:09:15Z",
       "harness": "claude"
     }
   ]
