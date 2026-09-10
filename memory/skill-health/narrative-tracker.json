@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-10T01:10:43Z",
+  "last_analyzed": "2026-09-10T10:30:12Z",
   "quality_score": 2,
-  "assessment": "Explicit position calls are useful, but most precise figures, catalysts, and institutional claims lack source links, making the report insufficiently verifiable and potentially invented; it also lacks a clear regime verdict up front.",
+  "assessment": "Action-oriented and conclusion-first, but numerous malformed figures (for example “>00M,” “ATH 8,” and “0B”) and largely uncited specific claims make the signal unreliable and difficult to verify.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.8,
+  "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 3,
-      "ts": "2026-09-03T05:50:47Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T01:10:43Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 2,
+      "ts": "2026-09-10T10:30:12Z",
       "harness": "codex"
     }
   ]
