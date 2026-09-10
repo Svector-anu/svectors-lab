@@ -91,6 +91,13 @@
     "notes": "osv-scanner: fast-uri GHSA-7p8r-x3mc-p8w7 and js-yaml GHSA-5p4m-2wfm-xmqj already covered by open PRs #45/#59, skipped as duplicate prior art. nanoid@3.3.16 CVE-2026-67213/GHSA-2v37-7h3g-55p8 (high, custom generators loop indefinitely when size=0) had no prior art \u2014 transitive via vite->postcss (postcss declares nanoid ^3.3.16, 3.3.18 resolves in-range, lockfile-only 3-line diff). PR #66 opened. trufflehog clean."
   },
   {
+    "repo": "circlefin/circle-nodejs-sdk",
+    "scanned_at": "2026-09-10T07:50:00Z",
+    "findings": 0,
+    "channel": "duplicate-skipped",
+    "notes": "osv-scanner: 98 vulnerable-package rows in yarn.lock, but package.json shows a single runtime dependency (axios 1.13.5) \u2014 everything else (nestjs, babel, ajv, browserslist, etc.) is devDependency-only and never ships. axios's 28 CVE rows are already covered by open Dependabot PR #151 (bump to 1.16.0, mergeable) \u2014 duplicate-skipped, not re-filed. Added a substantive comment on #151: 1.16.0 still leaves 5 published medium-severity GHSAs open (GHSA-42h9-826w-cgv3, GHSA-pmv8-rq9r-6j72, GHSA-7q8q-rj6j-mhjq, GHSA-jqh4-m9w3-8hp9, GHSA-mwf2-3pr3-8698, all fixed only in axios>=1.18.0) and suggested targeting 1.20.0 instead. semgrep: 1 hit (secrets-inherit on a same-repo local reusable workflow, .github/workflows/release.yml -> ./npm-publish.yml) \u2014 discarded on triage, no attacker-controlled input, not third-party. trufflehog filesystem + git-history: 0 verified secrets. Agentic audit: repo is a pure OpenAPI-generated axios client SDK (src/index.ts is a 2-line re-export, src/generated/* is codegen output) \u2014 no HTTP server, no auth code, no exec/eval sinks, 0 candidates. No Solidity, no fuzz harness."
+  },
+  {
     "repo": "yetone/cumora",
     "scanned_at": "2026-08-18T15:00:00Z",
     "findings": 148,

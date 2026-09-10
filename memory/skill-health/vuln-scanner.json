@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T07:21:48Z",
+  "last_analyzed": "2026-09-10T07:48:38Z",
   "quality_score": 4,
-  "assessment": "Substantive security audit with clear verdict, specific scanner results, and actionable context (HackerOne routing). Output artifacts (logs, scan directory, article) confirm real execution.",
+  "assessment": "Clean audit with actionable dependency-hygiene finding; conclusion-first, verifiable, no invented claims.",
   "flags": [],
   "avg_score": 3.6,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T19:18:01Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-10",
       "score": 4,
       "ts": "2026-09-10T07:21:48Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T07:48:38Z",
       "harness": "claude"
     }
   ]

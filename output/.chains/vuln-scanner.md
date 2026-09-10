@@ -1,5 +1,6 @@
-ℹ️ vuln-scanner: braintree_ios clean
+ℹ️ Vuln Scanner — circlefin/circle-nodejs-sdk
 
-*Vuln Scanner — braintree/braintree_ios*
-Clean audit. 2 candidates reviewed (1 LOW unreachable dependency, 1 header-hygiene note), 0 confirmed HIGH/CRITICAL. Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip, agentic=ok. PoC gate: not-required.
-Note: repo is under PayPal's HackerOne bug-bounty program — any future confirmed finding routes to a human, not auto-PVR/email.
+*Vuln Scanner — circlefin/circle-nodejs-sdk*
+Clean audit. 2 candidates reviewed, 0 confirmed. This is a thin OpenAPI-generated axios client SDK with no custom server/auth logic to exploit.
+One useful dependency-hygiene contribution: the repo's own open Dependabot PR #151 only bumps axios to 1.16.0, leaving 5 published medium-severity GHSAs open (fixed only in axios>=1.18.0) — commented with the gap and a suggestion to target 1.20.0 instead, rather than filing a duplicate PR.
+Scanners: semgrep=ok, trufflehog=ok, trufflehog-git=ok, osv=ok, fuzz=skip(n/a), agentic=ok. PoC gate: not-required.

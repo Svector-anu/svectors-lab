@@ -1,0 +1,155 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner"
+      },
+      "children": [
+        "heading_repo",
+        "alert_status",
+        "text_desc",
+        "sep1",
+        "heading_findings",
+        "text_findings",
+        "sep2",
+        "heading_scanners",
+        "grid_scanners",
+        "text_poc"
+      ]
+    },
+    "heading_repo": {
+      "type": "Heading",
+      "props": {
+        "text": "circlefin/circle-nodejs-sdk",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "alert_status": {
+      "type": "Alert",
+      "props": {
+        "type": "success",
+        "message": "Clean audit — 2 candidates reviewed, 0 confirmed"
+      },
+      "children": []
+    },
+    "text_desc": {
+      "type": "Text",
+      "props": {
+        "text": "This is a thin OpenAPI-generated axios client SDK with no custom server/auth logic to exploit."
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_findings": {
+      "type": "Heading",
+      "props": {
+        "text": "Findings & Contribution",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "text_findings": {
+      "type": "Text",
+      "props": {
+        "text": "One useful dependency-hygiene contribution: the repo's own open Dependabot PR #151 only bumps axios to 1.16.0, leaving 5 published medium-severity GHSAs open (fixed only in axios>=1.18.0) — commented with the gap and a suggestion to target 1.20.0 instead, rather than filing a duplicate PR."
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "heading_scanners": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Results",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "grid_scanners": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "badge_semgrep",
+        "badge_trufflehog",
+        "badge_trufflehog_git",
+        "badge_osv",
+        "badge_fuzz",
+        "badge_agentic"
+      ]
+    },
+    "badge_semgrep": {
+      "type": "Badge",
+      "props": {
+        "text": "semgrep: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_trufflehog_git": {
+      "type": "Badge",
+      "props": {
+        "text": "trufflehog-git: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_osv": {
+      "type": "Badge",
+      "props": {
+        "text": "osv: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge_fuzz": {
+      "type": "Badge",
+      "props": {
+        "text": "fuzz: skip (n/a)",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "badge_agentic": {
+      "type": "Badge",
+      "props": {
+        "text": "agentic: ok",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "text_poc": {
+      "type": "Text",
+      "props": {
+        "text": "PoC gate: not-required",
+        "variant": "caption"
+      },
+      "children": []
+    }
+  }
+}
