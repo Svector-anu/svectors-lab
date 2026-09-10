@@ -1,17 +1,11 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-09T23:29:30Z",
+  "last_analyzed": "2026-09-10T02:21:15Z",
   "quality_score": 4,
-  "assessment": "Well-structured security report with specific, verifiable findings, clear triage methodology, and proper references. Output quality is high and actionable for its purpose.",
+  "assessment": "Substantive security audit with clear methodology, specific verifiable counts, and explicit conclusion; well-structured for the task domain, though output itself is compressed with full detail in external report.",
   "flags": [],
   "avg_score": 3.57,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 4,
-      "ts": "2026-09-02T18:02:00Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-09",
       "score": 4,
       "ts": "2026-09-09T23:29:30Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 4,
+      "ts": "2026-09-10T02:21:15Z",
       "harness": "claude"
     }
   ]

@@ -1,0 +1,196 @@
+{
+  "root": "card_root",
+  "state": {},
+  "elements": {
+    "card_root": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner",
+        "description": "vercel/ai — Clean audit"
+      },
+      "children": [
+        "summary_text",
+        "separator_1",
+        "metrics_stack",
+        "separator_2",
+        "scanner_status_section",
+        "separator_3",
+        "findings_section",
+        "separator_4",
+        "ssrf_section",
+        "separator_5",
+        "report_link"
+      ]
+    },
+    "summary_text": {
+      "type": "Text",
+      "props": {
+        "text": "4 scanner hits + 6 agentic entrypoints reviewed, 0 confirmed.",
+        "variant": "lead"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "metrics_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "stat_hits",
+        "stat_entrypoints",
+        "stat_confirmed"
+      ]
+    },
+    "stat_hits": {
+      "type": "Stat",
+      "props": {
+        "label": "Scanner Hits",
+        "value": "4"
+      }
+    },
+    "stat_entrypoints": {
+      "type": "Stat",
+      "props": {
+        "label": "Agentic Entrypoints",
+        "value": "6"
+      }
+    },
+    "stat_confirmed": {
+      "type": "Stat",
+      "props": {
+        "label": "Confirmed Vulnerabilities",
+        "value": "0"
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "scanner_status_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "scanner_heading",
+        "scanner_table"
+      ]
+    },
+    "scanner_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h3"
+      }
+    },
+    "scanner_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      }
+    },
+    "separator_3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "findings_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "findings_heading",
+        "findings_alert"
+      ]
+    },
+    "findings_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Dependency Findings",
+        "level": "h3"
+      }
+    },
+    "findings_alert": {
+      "type": "Alert",
+      "props": {
+        "title": "108 HIGH/CRITICAL findings",
+        "message": "Triaged as non-reachable from published packages or already covered by the repo's own active Dependabot — deferred, no PR filed.",
+        "type": "warning"
+      }
+    },
+    "separator_4": {
+      "type": "Separator",
+      "props": {}
+    },
+    "ssrf_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "ssrf_heading",
+        "ssrf_text"
+      ]
+    },
+    "ssrf_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "SSRF validateUrl Guard",
+        "level": "h3"
+      }
+    },
+    "ssrf_text": {
+      "type": "Text",
+      "props": {
+        "text": "Hand-checked across ~25 call sites (own AGENTS.md flags it as sensitive) — holds."
+      }
+    },
+    "separator_5": {
+      "type": "Separator",
+      "props": {}
+    },
+    "report_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Full Security Audit Report",
+        "href": "output/articles/vuln-scan-2026-09-10.md"
+      }
+    }
+  }
+}
