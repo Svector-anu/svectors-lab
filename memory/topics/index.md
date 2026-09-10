@@ -8,3 +8,4 @@ Durable knowledge notes live under `memory/topics/`, one concept per markdown fi
 * [Skill Spotlight — Rotation State](skill-spotlight.md) - Queue, coverage history, and blocklist config for the skill-spotlight rotation.
 * [Recent Digests History](recent-digests-history.md) - Older digest rows overflowed from the bounded long-term memory index.
 * [x402 Ecosystem Tracker](protocol-state-x402.md) - Adoption, package momentum, integrations, and verified-delivery quality signals for x402.
+* [About This Repo History](about-this-repo-history.md) - Older repository, product, documentation, and OSS security milestones overflowed from the bounded long-term memory index.

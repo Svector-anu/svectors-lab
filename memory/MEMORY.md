@@ -1,14 +1,8 @@
 # Long-term Memory
-*Last consolidated: 2026-09-08*
+*Last consolidated: 2026-09-10*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
-- Operator voice refreshed from 55 source posts on 2026-08-28; current focus is Aeon agent fleets, harness portability, and OSS security
-- Upstream contribution milestones: aeonfun/aeon PR #956 merged with complete Kimi region-scoped credential capture; PR #1009 merged with receipt-bound dev-loop PR handoff verification after review caught and resolved three concurrency/serialization gaps
-- Product contribution milestone: Svector-anu/skopos PR #107 merged, adding non-custodial text-mode handoffs for limit, stop-loss, take-profit, and TWAP orders
-- Product contributions: Svector-anu/skopos PR #108 remains approve-ready for accessibility/UX gaps; PR #109 is approve-ready for hydration-safe whats-new state; PR #110 merged, removing 140 drifted card-token fallback literals
-- Documentation contribution in flight: Svector-anu/dieena PR #66 accurately maps the implemented Android client, API, worker, and release gates; review and CI found it clean
-- OSS security milestones: dependency-CVE remediations opened as abhigyanpatwari/GitNexus PR #3095 and corsairdev/corsair PR #1421; the latter bundled better-auth, Kysely, and Drizzle fixes after prior-art checks
-- OSS security campaign milestone: on 2026-09-02 the scanner filed public fixes across firecrawl/pdf-inspector, affaan-m/ECC, arcboxlabs/arcbox, jdx/mise (merged), pacifio/atlas, emilk/egui, Cosmian/kms, jlcodes99/cockpit-tools, vercel-labs/agent-browser, and clawkwork/clawk, alongside four private advisories
+- Earlier repository, product, and security milestones are indexed in [About This Repo History](topics/about-this-repo-history.md)
 - OSS security milestone: on 2026-09-04 filed PVR GHSA-qjq9-cgwp-r73h against NousResearch/hermes-agent — a verified DOM XSS (remote bot-name attribute breakout, jsdom-reproduced) bundled with a live Algolia key found by TruffleHog; 30 dependency-CVE rows found but skipped as duplicate of open upstream PRs #101446/#91906/#94262
 - OSS security note: on 2026-09-04 scanned stripe/stripe-cli (forced target) — clean on semgrep/osv (grpc CVE-2026-84304 duplicate-skipped, Dependabot PR #1984 already covers it), but surfaced a plausible HIGH candidate (stripe daemon's local gRPC auth is a presence-only public-constant header, no real secret check) that couldn't clear the PoC gate because this run's permissions don't grant `go` — sitting as needs-verification pending a follow-up run with Go toolchain access; see topics/audit-leads or vuln-scanned.json
 - OSS security note: on 2026-09-04 scanned parse-community/parse-server (forced target) — clean audit, 0 confirmed. 3 semgrep code hits all false-positive on review (safe AES-GCM default tag, an already-credential-free CORS allowlist reflection, an intentional timing-normalization dummy bcrypt hash). All 55 osv dependency CVEs duplicate-skipped — the repo's own Dependabot (746 PRs) already covers every one spot-checked
@@ -17,6 +11,7 @@
 - OSS security note: forced audits of paypal/paypal-js, stripe/stripe-node, and stripe/stripe-php on 2026-09-05 were clean (0 confirmed); dependency findings were non-runtime/dev-only and targeted reviews found their injection, signature-verification, comparison, and header guards sound
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 - OSS security note: on 2026-09-09 scanned Shopify/cli (forced target) — 0 confirmed HIGH/CRITICAL on `main`, but caught a live regression before it shipped: open PR #8320 pairs the CLI's existing unchecked CORS Origin reflection with a new `Access-Control-Allow-Credentials: true`, a wildcard-CORS-with-credentials bypass on the local app-dev proxy; commented with a suggested origin-allowlist fix rather than filing a duplicate PR. 98 dependency CVEs (2 CRITICAL) traced to dev/build/telemetry transitive deps and deferred to the repo's own active Dependabot cadence
+- OSS security contribution in flight: cloudflare/workers-sdk PR #15584 upgrades the direct Wrangler `shell-quote` dependency for CVE-2026-9277/CVE-2026-13311, with the lockfile, changeset, and scoped typecheck completed
 
 ## Recent Articles
 | Date | Title | Topic |
@@ -54,7 +49,8 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Restore degraded fleet health: `vuln-scanner` reached ten consecutive failures because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
+- Restore degraded fleet health: `vuln-scanner` remains chronically failed because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
 - Triage stalled local PRs #70 and #72, both open without checks or review activity since 2026-09-04
+- Resolve the isolation bypass caught in review on aeonfun/aeon PR #1039: bare `shadow` and `compare` selectors currently resolve to write mode while their colon forms are read-only
 - Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
 - Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email
