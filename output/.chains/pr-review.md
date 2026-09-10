@@ -1,13 +1,13 @@
-**Verdict**: blocked: bare shadow selectors bypass isolation
+Reviewed 1 PR, skipped 0.
 
-- [CRITICAL] `scripts/resolve-riva-capabilities.sh:7` — Bare `shadow` / `compare` selectors retain write tools and declared credentials, violating comparison-only isolation.
-- Posted the consolidated review and [inline finding](https://github.com/aeonfun/aeon/pull/1039#discussion_r3970106537).
-- All five Riva tests and the existing PoC-gate suite passed; direct selector testing exposed the bypass.
-- Notification delivery failed because the external queue is read-only in this harness.
-- Logged the review in [2026-09-09.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-09.md).
+**Verdict**: approve-ready — no blockers.  
+<!-- aeon-review:{"schema":1,"target":"aeonfun/aeon#1039","sha":"e249ecdce92d8684bc0d0f35ee769042c8444a22","verdict":"approve-ready","critical":0,"issues":0} -->
 
-<!-- aeon-review:{"schema":1,"target":"aeonfun/aeon#1039","sha":"ae9a66834d8b30754d29c598bdc06c8a7e15c1ea","verdict":"blocked","critical":1,"issues":0} -->
+The previous shadow-selector isolation bug is fixed. All Riva tests, PoC-gate tests, and shell syntax checks passed. The review was posted to GitHub and recorded in [memory/logs/2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
 
 ## Summary
 
-Reviewed 1 PR, skipped 0. One file was modified: `memory/logs/2026-09-09.md`. PR #1039 needs its selector guard and regression tests updated before merging.
+- Reviewed `aeonfun/aeon#1039` at exact head SHA `e249ecd`.
+- Findings: 0 critical, 0 issues.
+- GitHub review posted successfully.
+- Notification attempted, but the external notification queue is read-only in this harness.
