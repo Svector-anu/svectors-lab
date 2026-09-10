@@ -1,17 +1,13 @@
 {
   "skill": "vuln-scanner",
-  "last_analyzed": "2026-09-10T09:43:51Z",
-  "quality_score": 3,
-  "assessment": "Well-executed security audit (code review + dependency scan) with specific finding and PR filed, but misaligned with operator's crypto-trading signal strategy",
-  "flags": [],
-  "avg_score": 3.6,
+  "last_analyzed": "2026-09-10T13:48:50Z",
+  "quality_score": 2,
+  "assessment": "Well-structured security report with verifiable PR/issue references, but contains an unverifiable claim (CVE-2026-12143 with future date) that appears invented.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.57,
   "history": [
-    {
-      "date": "2026-09-02",
-      "score": 3,
-      "ts": "2026-09-02T20:13:11Z",
-      "harness": "grok"
-    },
     {
       "date": "2026-09-02",
       "score": 4,
@@ -184,6 +180,12 @@
       "date": "2026-09-10",
       "score": 3,
       "ts": "2026-09-10T09:43:51Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-10",
+      "score": 2,
+      "ts": "2026-09-10T13:48:50Z",
       "harness": "claude"
     }
   ]

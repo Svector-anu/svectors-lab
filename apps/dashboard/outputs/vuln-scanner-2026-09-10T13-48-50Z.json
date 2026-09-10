@@ -1,0 +1,382 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "Vuln Scanner — fireblocks/fireblocks-sdk-js"
+      },
+      "children": [
+        "summary-section",
+        "finding-section",
+        "details-section"
+      ]
+    },
+    "summary-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "summary-text",
+        "summary-badges"
+      ]
+    },
+    "summary-text": {
+      "type": "Text",
+      "props": {
+        "text": "1 confirmed finding (bundled dependency-CVE fix, filed as public PR). No code vulnerabilities confirmed.",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "summary-badges": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge-findings",
+        "badge-safe"
+      ]
+    },
+    "badge-findings": {
+      "type": "Badge",
+      "props": {
+        "text": "1 Confirmed Finding",
+        "variant": "default"
+      },
+      "children": []
+    },
+    "badge-safe": {
+      "type": "Badge",
+      "props": {
+        "text": "No Code Vulnerabilities",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "finding-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "finding-heading",
+        "pr-link",
+        "pr-details-stack"
+      ]
+    },
+    "finding-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Main Finding: PR #344",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "pr-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Lockfile-only bump fixing 24/28 OSV-flagged CVEs",
+        "href": "https://github.com/fireblocks/fireblocks-sdk-js/pull/344",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "pr-details-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pr-summary",
+        "packages-heading",
+        "packages-list-text",
+        "related-issues-stack",
+        "breaking-changes-badge"
+      ]
+    },
+    "pr-summary": {
+      "type": "Text",
+      "props": {
+        "text": "9 packages bumped in lockfile. Zero breaking changes.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "packages-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Fixed Packages",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "packages-list-text": {
+      "type": "Text",
+      "props": {
+        "text": "qs, lodash, form-data (CVE-2026-12143), base-x, jws (HMAC-verify bug), +4 dev-only packages",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "related-issues-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "issue-333-link",
+        "pr-314-link"
+      ]
+    },
+    "issue-333-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Issue #333 — closed by base-x fix",
+        "href": "https://github.com/fireblocks/fireblocks-sdk-js/issues/333",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "pr-314-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR #314 — stale (qs bump target insufficient)",
+        "href": "https://github.com/fireblocks/fireblocks-sdk-js/pull/314",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "breaking-changes-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "0 Breaking Changes",
+        "variant": "secondary"
+      },
+      "children": []
+    },
+    "details-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "unfixed-cves-block",
+        "agentic-block",
+        "scanners-block",
+        "poc-gate-block"
+      ]
+    },
+    "unfixed-cves-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "unfixed-heading",
+        "unfixed-alert",
+        "unfixed-items"
+      ]
+    },
+    "unfixed-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "3 Dep CVEs Left Unfixed — No Safe Path",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "unfixed-alert": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "message": "No remediation path available for these dependencies"
+      },
+      "children": []
+    },
+    "unfixed-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "unfixed-1",
+        "unfixed-2",
+        "unfixed-3"
+      ]
+    },
+    "unfixed-1": {
+      "type": "Text",
+      "props": {
+        "text": "@stablelib/ed25519 (signature-malleability) — no patch available, even at latest v2.0.2",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "unfixed-2": {
+      "type": "Text",
+      "props": {
+        "text": "uuid — requires breaking major version bump",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "unfixed-3": {
+      "type": "Text",
+      "props": {
+        "text": "decode-uri-component — requires breaking major version bump",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "agentic-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "agentic-heading",
+        "agentic-alert",
+        "agentic-detail"
+      ]
+    },
+    "agentic-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "1 Agentic Candidate",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "agentic-alert": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "Needs Verification",
+        "message": "Unencoded ID interpolation into request paths — every SDK method affected"
+      },
+      "children": []
+    },
+    "agentic-detail": {
+      "type": "Text",
+      "props": {
+        "text": "Cannot safely test Fireblocks' own production path handling. Not filed as issue.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "scanners-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "scanners-heading",
+        "scanners-table"
+      ]
+    },
+    "scanners-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Scanner Status",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "scanners-table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Scanner",
+          "Status"
+        ],
+        "rows": [
+          [
+            "semgrep",
+            "ok"
+          ],
+          [
+            "trufflehog",
+            "ok"
+          ],
+          [
+            "trufflehog-git",
+            "ok"
+          ],
+          [
+            "osv",
+            "ok"
+          ],
+          [
+            "fuzz",
+            "skip"
+          ],
+          [
+            "agentic",
+            "ok"
+          ]
+        ]
+      },
+      "children": []
+    },
+    "poc-gate-block": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "poc-heading",
+        "poc-items"
+      ]
+    },
+    "poc-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "PoC Gate",
+        "level": "h2"
+      },
+      "children": []
+    },
+    "poc-items": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "poc-item-1",
+        "poc-item-2"
+      ]
+    },
+    "poc-item-1": {
+      "type": "Text",
+      "props": {
+        "text": "Published CVEs: not-required",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "poc-item-2": {
+      "type": "Text",
+      "props": {
+        "text": "Code candidates (1): needs-verification",
+        "variant": "body"
+      },
+      "children": []
+    }
+  }
+}
