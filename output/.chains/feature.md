@@ -1,19 +1,24 @@
-Implemented issue #39 and opened [Svector-anu/skopos PR #110](https://github.com/Svector-anu/skopos/pull/110).
+Shipped [PR #76](https://github.com/Svector-anu/svectors-lab/pull/76): `fix: validate complete reactive conditions`.
 
-- Removed 140 unreachable, drifted CSS fallback literals from `app/app/page.tsx`.
-- Preserved canonical dark/light theme-token behavior.
-- TypeScript passed.
-- Vitest passed: 129/129.
-- Static fallback check and `git diff --check` passed.
-- Focused ESLint only reported three pre-existing findings on untouched lines.
-- Included dispatch receipt `chain-e8601a4e0cf4a096a7e8d4ddb7c39182`.
-- Logged the run in `memory/logs/2026-09-04.md`.
-- Vercel Preview Comments passed; deployment remains pending.
-- Notification was attempted but the harness notification queue is read-only.
+The fix:
+
+- Rejects prefixed or suffixed reactive conditions that previously matched valid substrings.
+- Restricts `success_rate` thresholds to the documented 0–1 range.
+- Keeps runtime parsing and configuration validation aligned.
+- Adds regression tests for malformed expressions and boundary values.
+- Includes the required `aeon-dispatch:chain-3cec1d6d1e4093ea0cee5b9c21b7760b` marker.
+
+Validation passed:
+
+- Reactive evaluator: 26/26
+- Config validator: 14/14
+- Live structural validation
+- Shell lint
+- Both GitHub Actions checks
 
 ## Summary
 
-- External repo modified: `Svector-anu/skopos`
-- Commit: `e1b3da4`
-- PR: https://github.com/Svector-anu/skopos/pull/110
-- Follow-up: wait for Vercel deployment and PR review.
+- Modified four parser/test files in PR #76.
+- Updated `memory/logs/2026-09-11.md`.
+- Notification delivery was attempted but its external queue directory was read-only.
+- Follow-up: review and merge PR #76.
