@@ -140,13 +140,17 @@ test('validateWhen: accepts the three documented condition forms', () => {
   assert.equal(validateWhen('consecutive_failures >= 3'), true);
   assert.equal(validateWhen('last_status = success'), true);
   assert.equal(validateWhen('success_rate < 0.5'), true);
+  assert.equal(validateWhen('success_rate < .5'), true);
   assert.equal(validateWhen('success_rate >= 0.9'), true);
+  assert.equal(validateWhen('success_rate >= 1.0'), true);
 });
 
 test('validateWhen: rejects malformed / unsupported conditions', () => {
   assert.equal(validateWhen('score > abc'), false);
   assert.equal(validateWhen('consecutive_failures > 3'), false); // only >= supported
   assert.equal(validateWhen('success_rate = 0.5'), false);       // no = for rate
+  assert.equal(validateWhen('success_rate >= 1.5'), false);      // rate is bounded to 0..1
+  assert.equal(validateWhen('success_rate < -0.1'), false);
   assert.equal(validateWhen('last_status = 5'), false);          // value not [a-z]+
   assert.equal(validateWhen(''), false);
 });

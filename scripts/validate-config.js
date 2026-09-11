@@ -272,7 +272,7 @@ function validateWhen(when) {
   const w = String(when).trim();
   return /^consecutive_failures\s*>=\s*\d+$/.test(w)
     || /^last_status\s*=\s*[a-z]+$/.test(w)
-    || /^success_rate\s*(<=|>=|<|>)\s*[0-9]+(\.[0-9]+)?$/.test(w);
+    || /^success_rate\s*(<=|>=|<|>)\s*((0(\.[0-9]+)?)|(\.[0-9]+)|(1(\.0+)?))$/.test(w);
 }
 
 // Pure: returns { targets, sources, conditions }, each an array of {name/when, lineNum}.
