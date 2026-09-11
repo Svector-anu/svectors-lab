@@ -1,12 +1,10 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-10T10:29:49Z",
-  "quality_score": 2,
-  "assessment": "The no-op finding is usable and specific, but the output contradicts the read-only run by claiming workspace files were updated and changes remain intact, making key completion claims unverifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.61,
+  "last_analyzed": "2026-09-11T13:48:22Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-match report with explicit filtering rationale and actions, though limited supporting evidence makes the 25-candidate validation hard to audit.",
+  "flags": [],
+  "avg_score": 2.62,
   "history": [
     {
       "date": "2026-07-31",
@@ -160,6 +158,12 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T10:29:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 3,
+      "ts": "2026-09-11T13:48:22Z",
       "harness": "codex"
     }
   ]
