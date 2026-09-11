@@ -38,11 +38,17 @@ check "rate equal, strict lt"    '{"total_runs":10,"success_rate":0.5}' "success
 check "rate equal, lte"          '{"total_runs":10,"success_rate":0.5}' "success_rate <= 0.5" 0
 check "rate gt fires"            '{"total_runs":10,"success_rate":0.9}' "success_rate > 0.8"  0
 check "rate gte fires"           '{"total_runs":10,"success_rate":0.8}' "success_rate >= 0.8" 0
+check "rate leading-dot fires"   '{"total_runs":10,"success_rate":0.4}' "success_rate < .5"    0
+check "rate upper bound accepted" '{"total_runs":10,"success_rate":1}' "success_rate >= 1.0" 0
 check "never-run: no false fire" '{"total_runs":0,"success_rate":0.0}'  "success_rate < 0.5"  1
 check "missing total_runs quiet" '{"success_rate":0.0}'                 "success_rate < 0.5"  1
 
 # --- unparseable ---
 check "garbage condition"        '{"consecutive_failures":9}' "explode_now > yes"         2
+check "valid expression prefix"  '{"consecutive_failures":9}' "prefix consecutive_failures >= 3" 2
+check "valid expression suffix"  '{"last_status":"success"}' "last_status = success suffix" 2
+check "rate above one"           '{"total_runs":10,"success_rate":1}' "success_rate >= 1.5" 2
+check "rate negative"            '{"total_runs":10,"success_rate":0}' "success_rate >= -0.1" 2
 check "empty state ok"           ''                           "consecutive_failures >= 1" 1
 
 printf '\nreactive_when: %d passed, %d failed\n' "$pass" "$fail"
