@@ -1,17 +1,17 @@
-Take: chop — only 4/20 top caps are green and DEX volume fell 9.3%, while ETH held flat. Conviction: medium.
+Take: **chop, medium conviction** — ETH gained 3.9% and 14/20 top caps were green, but DEX volume fell 7.6%. The recovery has an alt-rotation bias, not yet broad risk-on confirmation.
 
-- DeFi verdict: mixed; TVL and stablecoin supply stayed flat while trading activity contracted.
-- TVL: $86.96B.
-- Fear & Greed: 56, down 13 points.
-- Rising narrative: Solana trading—RAY +19.0%, PumpSwap volume +37.3%.
-- Macro catalyst: U.S. CPI at 12:30 UTC; latest complete BTC ETF session recorded a $120.2M outflow.
-- Position monitoring: no DeFi positions configured.
+- DeFi verdict: Mixed; TVL was $86.74B, down 0.3% since the prior refresh.
+- Fear & Greed: 56, unchanged in Greed.
+- Strongest narrative: Solana trading—RAY +25.0%, MET +21.1%, PumpSwap volume +37.3%.
+- Polymarket priced a September 25-bps Fed hike at 80.5%.
+- Latest complete spot-BTC ETF session remained a $120.2M outflow on September 9. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
+- No tracked DeFi positions were configured.
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md). All sources succeeded. Notification delivery was attempted but the harness queue was read-only.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md). Token-pick history was preserved and validation passed.
 
 ## Summary
 
-- Ran the full positions and macro overview.
-- Refreshed market context while preserving token-pick history.
-- Logged all results and source status.
-- No follow-up action required.
+- Completed the full positions and macro overview.
+- All data sources succeeded.
+- Notification delivery was attempted but its external queue is read-only.
+- No commit was created because this harness mounts `.git` read-only.
