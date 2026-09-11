@@ -1,31 +1,31 @@
-*GitHub Trending — 2026-09-10*
+*GitHub Trending — 2026-09-11*
 
-*Top pick* — [JustVugg/colibri](https://github.com/JustVugg/colibri)
-the standout systems bet: it turns disk into an inference tier instead of treating limited VRAM as the hard ceiling.
+*Top pick* — [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)
+it turns accessibility needs into enforceable agent behavior: answer first, one action at a time, with concrete time estimates.
 
 *AI/ML*
-• [JustVugg/colibri](https://github.com/JustVugg/colibri) — ★ 157 today (27.3k total) · C · [ACCELERATING]
-Streams MoE experts across VRAM, RAM and disk, putting 744B–2.8T models on heterogeneous consumer hardware.
+• [nashsu/llm_wiki](https://github.com/nashsu/llm_wiki) — ★ 640 today (18.5k total) · TypeScript · [ACCELERATING]
+Compiles documents once into a persistent, source-linked graph instead of paying the RAG reconstruction tax every query.
 
-• [AlexsJones/llmfit](https://github.com/AlexsJones/llmfit) — ★ 247 today (35.6k total) · Rust · [ACCELERATING]
-Benchmarks real local throughput, then feeds hardware-specific results back into future model-fit recommendations.
+• [alphaXiv/OpenResearch](https://github.com/alphaXiv/OpenResearch) — ★ 210 today (1.1k total) · Rust · [RETURNING]
+Gives parallel research agents isolated git worktrees, keeping competing experiments reproducible instead of tangled.
+
+• [jihe520/MathModelAgent](https://github.com/jihe520/MathModelAgent) — ★ 132 today (4.8k total) · Python · [RETURNING]
+Chains modeling, code, Typst output and nine-step validation into a competition-ready research workflow.
 
 *Devtools*
-• [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) — ★ 1,287 today (37.4k total) · HTML · [ACCELERATING]
-Ships 39 no-build HTML/SVG diagram grammars, including trust boundaries, Wardley maps and database schemas.
+• [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) — ★ 3,440 today (40.2k total) · Python · [ACCELERATING]
+Forces coding agents to front-load answers, limit choices and expose one concrete next action.
 
-• [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) — ★ 837 today (3.6k total) · TypeScript · [RETURNING]
-Synchronizes skills, rules, MCP servers and knowledge across seven coding-agent environments.
+• [obra/superpowers](https://github.com/obra/superpowers) — ★ 731 today (285.1k total) · Shell · [ACCELERATING]
+Ports a spec-to-TDD workflow across 14 agent harnesses, including Codex, Claude, Gemini and Copilot.
 
-• [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop) — ★ 636 today (2.1k total) · TypeScript · [RETURNING]
-Keeps models, tools and long-running coding sessions local, with no mandatory relay or editor lock-in.
+• [github/spec-kit](https://github.com/github/spec-kit) — ★ 985 today (135.5k total) · Python · [ACCELERATING]
+Makes specifications executable, then adds a convergence loop that checks implementation against the agreed plan.
 
 *Web/Apps*
-• [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — ★ 1,588 today (22.7k total) · JavaScript · [ACCELERATING]
-Fuses live aircraft, ships, satellites, cameras and earthquakes into one browser globe with voice control.
-
-• [armory3d/armorpaint](https://github.com/armory3d/armorpaint) — ★ 87 today (4.3k total) · C · [RETURNING]
-Gives developers full source for a cross-platform PBR texture painter while maintained binaries fund development.
+• [pascalorg/editor](https://github.com/pascalorg/editor) — ★ 83 today (23.4k total) · TypeScript · [ACCELERATING]
+Exposes browser-based WebGPU architectural editing through a local CLI and authenticated MCP service.
 
 ---
 sources: trending=ok · gh_api=ok · kept 7/16
