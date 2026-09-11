@@ -1,20 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-11T13:49:07Z",
+  "last_analyzed": "2026-09-11T19:52:56Z",
   "quality_score": 2,
-  "assessment": "Specific market figures are mostly uncited, explicit front-run/ride/fade/watch calls are missing, and the claimed workspace updates contradict the read-only run constraint.",
+  "assessment": "Provides a clear regime call, but lacks explicit position calls, violates the qualitative-price constraint, weakly sources numerous precise figures, and claims workspace writes despite the read-only harness.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T09:25:46Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 2,
@@ -187,6 +181,12 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T13:49:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T19:52:56Z",
       "harness": "codex"
     }
   ]
