@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-11T09:33:50Z",
-  "quality_score": 3,
-  "assessment": "Actionable and conclusion-oriented with explicit calls, but several major catalysts and metrics lack evidence links, weakening verifiability and confidence in the regime map.",
+  "last_analyzed": "2026-09-11T13:47:55Z",
+  "quality_score": 2,
+  "assessment": "Conclusion-first and actionable, but numerous precise figures and catalyst claims lack evidence anchors, one cited URL appears mismatched to the Zcash claim, and hard performance numbers violate the qualitative-price constraint.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.67,
+  "avg_score": 2.6,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T04:59:52Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-11",
       "score": 3,
       "ts": "2026-09-11T09:33:50Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T13:47:55Z",
       "harness": "codex"
     }
   ]
