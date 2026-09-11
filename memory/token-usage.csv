@@ -313,3 +313,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-10,vuln-scanner,claude-sonnet-5,5475,37909,14430984,196452
 2026-09-10,vuln-scanner,claude-sonnet-5,4031,34350,7576842,117602
 2026-09-11,defi-overview,codex-default,625309,8100,572672,0
+2026-09-11,narrative-tracker,codex-default,352262,3774,305152,0

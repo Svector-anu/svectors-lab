@@ -1,19 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-10T20:09:15Z",
+  "last_analyzed": "2026-09-11T05:03:36Z",
   "quality_score": 2,
-  "assessment": "Substantive and position-labeled, but numerous precise market figures, catalysts, promotions, and regime calls lack evidence links, making key claims unverifiable and the output unsafe for trading decisions.",
+  "assessment": "Actionable and conclusion-oriented, but multiple corrupted figures and uncited specific metrics/catalysts make the regime calls unreliable and not independently verifiable.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.7,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 2,
-      "ts": "2026-09-03T18:03:00Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 4,
@@ -186,6 +181,12 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T20:09:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T05:03:36Z",
       "harness": "codex"
     }
   ]
