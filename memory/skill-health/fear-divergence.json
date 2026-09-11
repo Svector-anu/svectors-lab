@@ -1,15 +1,13 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-09-10T10:28:36Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-trigger verdict with a clear threshold, but the Fear & Greed value lacks a source or timestamp and the claimed workspace log is not verifiable from the final output.",
-  "flags": [],
-  "avg_score": 3.23,
+  "last_analyzed": "2026-09-11T09:32:40Z",
+  "quality_score": 2,
+  "assessment": "The skip decision is concise and actionable, but it claims a workspace log modification during a read-only run and gives an uncited live F&G value, undermining verifiability.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.17,
   "history": [
-    {
-      "date": "2026-07-08",
-      "score": 4
-    },
     {
       "date": "2026-07-11",
       "score": 3
@@ -162,6 +160,12 @@
       "date": "2026-09-10",
       "score": 3,
       "ts": "2026-09-10T10:28:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T09:32:40Z",
       "harness": "codex"
     }
   ]

@@ -1,10 +1,10 @@
-Fear divergence did not trigger.
+Fear divergence scan skipped: Fear & Greed is **56 (Greed)**, above the `<25` trigger.
 
-- Fear & Greed: **69 (Greed)**
-- Threshold: **below 25**
-- Notification: not sent
-- Logged the skip in [memory/logs/2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md)
+No notification sent and no market context changes made. Recorded the skip in [memory/logs/2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
 
 ## Summary
 
-No divergence scan was needed because market fear is above the qualifying threshold.
+- F&G: 56 (Greed)
+- Result: `FEAR_DIVERGENCE_SKIP`
+- File modified: `memory/logs/2026-09-11.md`
+- Follow-up: none; rerun when F&G falls below 25.
