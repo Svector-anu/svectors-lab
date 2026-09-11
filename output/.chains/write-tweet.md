@@ -1,75 +1,76 @@
-## Tweet Drafts: portable agent skills beat harness lock-in
+## Tweet Drafts: agent integrations are not usage
 
 ### Tier 1 — One-liner
 
-**1a. Observation**
+**1a. Hot take**
 
-> the best agent skill is the one that survives your next coding harness
+> agents do not need more tools. they need more completed flows.
 
-**1b. Data drop**
+**1b. Reframe**
 
-> seven harnesses , one SKILL.md. portability is the actual feature
+> an integration is a promise. a completed transaction is proof.
 
 ### Tier 2 — Two-punch
 
-**2a. Reframe**
+**2a. Observation**
 
-> agent skills should not belong to a model vendor. write the workflow once , then let claude, codex, grok or whatever ships next run it
+> giving an agent 40 tools looks impressive. the real metric is how many user intents it can finish without asking a human to rescue the flow.
 
-**2b. Sardonic**
+**2b. Data drop**
 
-> everyone is comparing coding agents. i care more about whether my skills still work when the winner changes next month
+> every agent demo has a growing tool list. i want the boring numbers: completion rate, time to recovery and how often a human had to step in.
 
 ### Tier 3 — Paragraph
 
-**3a. Observation**
+**3a. Reframe**
 
-> a useful agent skill should survive a harness change. same workflow, same memory, same tools. the model can change underneath it. that is how agent fleets become infrastructure instead of a folder of prompts
+> agents having access to defi is good. agents reliably completing a borrow, swap or repayment is the actual product. integrations show what could happen. finished flows show what works.
 
-**3b. Hot take**
+**3b. Observation**
 
-> model loyalty is expensive when every harness needs its own workflow. i would rather write one SKILL.md and run it across seven engines. switch the model , keep the capability
+> the agent interface is getting crowded with tools. the execution layer is still the hard part: permissions, signing, recovery and settlement. capability counts hide all of that.
 
 ### Tier 4 — Long tweet
 
-**4a. Reframe**
+**4a. Data drop**
 
-> the model is becoming the replaceable part of an agent stack. today codex might be better for one job, claude for another, a local model for something private. the real asset is the workflow around them: tools, memory, permissions, recovery paths. if that capability only runs in one harness , you did not build infrastructure. you built an integration
+> aave exposing around 40 mcp tools is a useful step. agents can inspect markets, simulate positions and prepare transactions through one interface. but tool count is not adoption. show me how many agents complete a real flow, how often execution fails and whether they can recover without a human. that is when an integration becomes infrastructure.
 
 **4b. Builder’s breakdown**
 
-> most agent tooling still starts with the wrong question: which model should run this? i care about a harder one: can the same skill move between codex, claude, grok, kimi and local runtimes without being rewritten? models will keep changing. the workflow should compound. seven harnesses running one SKILL.md feels much closer to the operating system agents actually need
+> we keep measuring agent products by how many tools they expose. i think the better benchmark is a plain request: borrow against this position, keep health factor above my limit and repay when conditions change. can the agent route it, check risk, get the right signature, settle and recover from failure? if not, the tool list is still a demo.
 
 ### Tier 5 — Thread opener
 
-**5a. Hot take**
+**5a. Question**
 
-> coding agents are getting better every month. that makes harness lock-in worse , not better. the capability layer needs to move faster than the model leaderboard
-
----
-
-- Why faster model cycles make vendor-specific workflows brittle
-- What belongs in the portable capability layer
-- Lessons from running one skill across seven harnesses
-- Where harness-specific adapters still matter
-
-**5b. Data drop**
-
-> i run the same SKILL.md across seven coding harnesses. the interesting part is not seven models. it is that the work survives when i replace any one of them
+> aave giving agents around 40 mcp tools is the easy part to count. the harder and more useful question is how many real defi intents those agents can complete safely from start to settlement.
 
 ---
 
-- What stays constant across the seven runtimes
-- How portability changes model selection
-- Failures that exposed hidden harness assumptions
-- Why workflows compound more than model preferences
+- What Aave’s MCP tools expose
+- Why tool counts exaggerate readiness
+- The complete borrow-to-repayment flow
+- Recovery, permissions and signing
+- Metrics that demonstrate real adoption
 
-Best overall: **#4b**  
-Best per tier: **#1b, #2b, #3a, #4b, #5b**
+**5b. Hot take**
+
+> agent infrastructure should be measured by completed flows, not available tools. a tool says the agent can call something. execution proves it can finish the job.
+
+---
+
+- Capability versus execution
+- Where real agent flows break
+- Why human intervention matters
+- Completion and recovery benchmarks
+
+Best overall: **4b**  
+Best per tier: **1a, 2b, 3b, 4b, 5b**
 
 ## Summary
 
-- Generated 10 drafts across five size tiers; all pass their character limits.
-- Saved the revisable copy to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
-- Notification and revision-prompt delivery were attempted but blocked by the harness’s read-only external queue.
+- Generated 10 drafts across five tiers and verified their character limits.
+- Saved the latest batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Logged the run in [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
+- Notification and revision-prompt delivery were attempted but the external queue was read-only.
