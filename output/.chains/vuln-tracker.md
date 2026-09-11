@@ -1,17 +1,17 @@
 Vulnerability lifecycle poll completed.
 
-- Secured: ★127.5k across 7 repositories.
-- In flight: ★518.3k across 18 repositories.
-- Merged today: `cloudflare/workers-sdk#15584`.
-- Newly open: Fireblocks #344, Snowflake CLI #3158, and Vercel AI #20573.
-- One PR needs an answer: `NousResearch/hermes-agent#94342`.
-- Disclosure queue: 10 drafts; 1 past threshold, 1 operator-only CRITICAL send, 7 cleanup candidates.
-- No canonical PVR files required triage polling.
-- Notification delivery was attempted but the external queue is read-only in this harness.
+- Secured: ★167,914 across 8 repositories.
+- Newly merged: `tinyhumansai/openhuman#5814`.
+- In flight: ★479,999 across 17 repositories.
+- Needs attention:
+  - `NousResearch/hermes-agent#94342` — unresolved lockfile-drift feedback.
+  - `vllm-project/semantic-router#3425` — still marked `CHANGES_REQUESTED`.
+- Disclosure backlog: 10 drafts.
+  - 1 overdue: `ZSvirt/zsvirt` MEDIUM, 19 days old.
+  - 1 operator-only: `ZSvirt/zsvirt` CRITICAL.
+  - 7 cleanup candidates.
+- PVR polling skipped: no schema-valid `channel: pvr` disclosure files exist on disk.
 
-## Summary
+Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
 
-- Refreshed [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md).
-- Appended the run record to [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md:307).
-- Preserved the notification digest in `.pending-notify-temp/vuln-tracker-2026-09-10.md`.
-- Follow-up: answer Hermes Agent #94342 and send the two blocked ZSvirt disclosures.
+Notification delivery was attempted but the external notification and feed queues are read-only. The complete digest remains staged locally.
