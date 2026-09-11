@@ -1,20 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-10T20:10:20Z",
+  "last_analyzed": "2026-09-11T00:32:00Z",
   "quality_score": 2,
-  "assessment": "Provides a regime verdict, but lacks evidence links, violates the qualitative-price constraint, omits the claimed ETHFI position, and implausibly claims workspace updates during a read-only run.",
+  "assessment": "Specific and conclusion-first, but it lacks explicit position calls or source links and implausibly claims workspace files were modified during a read-only run.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2.17,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 2,
-      "ts": "2026-09-03T18:05:20Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 3,
@@ -187,6 +181,12 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T20:10:20Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T00:32:00Z",
       "harness": "codex"
     }
   ]
