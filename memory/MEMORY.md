@@ -24,6 +24,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-11 | daily (web) | PaperCut exploitation, runner brownouts, data agent |
 | 2026-09-10 | daily (web) | Adobe RCE, agent sandboxing, bank stablecoins |
 | 2026-09-09 | daily (web) | Windows zero-days, AlphaGenome Atlas, satellite agents |
 | 2026-09-08 | daily (web) | CoinEx exits, agent theft, Mistral funding |

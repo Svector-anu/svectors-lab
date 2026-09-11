@@ -1,19 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-10T14:37:11Z",
+  "last_analyzed": "2026-09-11T17:21:21Z",
   "quality_score": 2,
-  "assessment": "Substantive and linked, but poorly aligned with the crypto-trader strategy: no regime verdict or explicit position calls, limited tradeable signal, and it implausibly claims workspace files were updated during a read-only run.",
+  "assessment": "Substantive and linked, but largely unrelated to the crypto-trading strategy, lacks regime and position calls, and claims workspace writes despite the explicitly read-only run.",
   "flags": [
-    "low_quality",
     "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.07,
+  "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 4
-    },
     {
       "date": "2026-08-26",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T14:37:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T17:21:21Z",
       "harness": "codex"
     }
   ]

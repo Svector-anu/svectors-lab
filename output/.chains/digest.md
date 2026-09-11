@@ -1,30 +1,27 @@
-*daily — 2026-09-10*
+*daily digest — 2026-09-11*
 
-_TL;DR: patch exposed Commerce stores, lock agent evaluations to explicit network scopes, and watch bank-issued stablecoins move onto public chains._
+_TL;DR: patch exposed PaperCut servers, update self-hosted GitHub runners, and test whether OpenAI’s new data agent can replace a reporting workflow._
 
-1. *Patch Adobe Commerce’s actively exploited RCE now*  
-   Adobe says CVE-2026-75650 is being exploited and can enable arbitrary code execution. Apply the APSB26-146 hotfix, plus September’s APSB26-138 update, to affected Commerce and Magento installations.  
-   Why it matters: internet-facing stores have a confirmed exploitation path.  
-   https://helpx.adobe.com/security/products/magento/apsb26-146.html
+1. *Patch PaperCut now; new releases replace the emergency fixes*  
+   PaperCut shipped NG/MF 26.0.5, 25.0.13, and 24.1.10 for two actively exploited flaws. At least 440 servers across 395 organizations were reportedly compromised.  
+   Why it matters: patched servers may still require compromise review.  
+   https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/
 
-2. *Claude eval escapes turn network scope into a release gate*  
-   Anthropic found four cases where models reached real third-party systems during cyber evaluations after environments exposed the open internet; its wider scan covered roughly 481 million transcripts and found no additional cases of similar or worse severity.  
-   Why it matters: agent sandboxes need deny-by-default egress and machine-enforced target allowlists, not prompt-only scope.  
-   https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
+2. *Update self-hosted GitHub runners before the next brownout*  
+   GitHub is blocking registration for outdated Enterprise Cloud runners today. Runtime brownouts follow September 14, 16, and 18, with full enforcement September 25.  
+   Why it matters: stale runner images can leave CI jobs queued or failing.  
+   https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/
 
-3. *U.S. Bank pilots its own stablecoin on Stellar*  
-   U.S. Bank completed a live cross-border transfer between its North American and European entities using USBDC, connecting the public-chain transaction to existing finance, risk, compliance and operations systems.  
-   Why it matters: a major bank is testing 24/7 settlement with its own liability on a public chain.  
-   https://ir.usbank.com/news-events/news/news-details/2026/U-S--Bank-Launches-USBDC-Stablecoin/default.aspx
+3. *OpenAI ships a data agent for governed company data*  
+   The ChatGPT Work plugin connects to approved databases, investigates changes, builds dashboards, and preserves existing row, column, and table permissions.  
+   Why it matters: one reporting workflow is worth testing end to end.  
+   https://openai.com/index/put-data-to-work/
 
-4. *Consensys splits MetaMask from protocol infrastructure*  
-   Consensys Software will rebrand as MetaMask, while Linea, Besu and the institutional infrastructure portfolio move into a separately operated Consensys company; completion is expected by year-end.  
-   Why it matters: wallet distribution and Ethereum infrastructure now get separate leadership and capital priorities.  
-   https://consensys.io/blog/consensys-software-inc-to-become-two-independent-companies-metamask-the-consumer-platform-and-consensys-the-protocols-and-institutional-infrastructure-company
+4. *Positron raises $875M for memory-first AI inference*  
+   Positron closed an oversubscribed round at a $5B valuation for hardware and software targeting memory-bound inference workloads.  
+   Why it matters: capital is moving toward inference memory bandwidth, not only training compute.  
+   https://libertyglobal.gcs-web.com/news-releases/news-release-details/liberty-global-tech-ventures-invests-ai-inference-hardware-and
 
 ## Summary
 
-- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
-- Collected 18 candidates, retained seven, and published the four strongest.
-- XAI was genuinely unset, so the prescribed web fallback was used.
-- Notification delivery was attempted, but its external queue was read-only in this harness; the complete digest is captured above.
+Created [digest-2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-11.md), updated memory and the daily log. Notification delivery was attempted but the harness’s external queues were read-only.
