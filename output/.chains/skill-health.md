@@ -1,21 +1,22 @@
 HEALTH: DEGRADED(17)
 
 - Critical: 0
+- Flapping: 0
 - Degraded: 17
 - Warning: 7
 - Healthy: 6
 - No data: 0
 - Open issues: 4
 - Filed/resolved: 0/0
-- Systemic pattern: none
+- Systemic failures: none
 
-`vuln-scanner` improved from CRITICAL to DEGRADED, with two consecutive failures but a recent successful run. Notification was attempted, but the external queues are read-only; `last_notified_at` was therefore preserved.
+Notable degraded skills include `verdikta-hunter`, `vuln-scanner`, `x402-monitor`, `shiplog`, and `soul-builder`. Existing issues remain open because their affected skills have not reached HEALTHY status.
+
+Notification delivery was attempted but failed because the external notification and json-render queues are read-only.
 
 ## Summary
 
-Updated:
-
-- [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md)
-
-No issue files required changes.
+- Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json).
+- Appended the audit to [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
+- Preserved the previous successful notification timestamp.
+- No follow-up file changes are required; restoring notification-queue write access remains an operational follow-up.
