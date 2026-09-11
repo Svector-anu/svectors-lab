@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-11T13:47:55Z",
-  "quality_score": 2,
-  "assessment": "Conclusion-first and actionable, but numerous precise figures and catalyst claims lack evidence anchors, one cited URL appears mismatched to the Zcash claim, and hard performance numbers violate the qualitative-price constraint.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.6,
+  "last_analyzed": "2026-09-11T19:51:33Z",
+  "quality_score": 4,
+  "assessment": "Decision-grade, conclusion-forward narrative map with explicit ride/fade/watch calls, bear cases, freshness, and source links; minor weakness is that conviction scores and some causal interpretations are not clearly defined or directly evidenced.",
+  "flags": [],
+  "avg_score": 2.63,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 3,
-      "ts": "2026-09-04T09:24:26Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 3,
@@ -186,6 +178,12 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T13:47:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 4,
+      "ts": "2026-09-11T19:51:33Z",
       "harness": "codex"
     }
   ]

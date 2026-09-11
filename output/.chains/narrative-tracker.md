@@ -1,37 +1,23 @@
-*Narrative Tracker — 2026-09-11 (rerun)*
-
-TAKE
-• FADE privacy after the first clean phase break; RIDE Solana trading selectively. The rest of the map is unchanged or too thin to trade.
+*Narrative Tracker — 2026-09-11*
 
 TRANSITIONS
-• NEW: Solana trading / launch-token speculation — RAY +19.0% with PumpSwap daily volume +37.3%; STONK and PRL also entered top-five trends. This is protocol-volume-backed, but the long-tail tokens are pure reflexivity.
-• DEMOTED: Zcash privacy Peak → Fading — ZEC remains +15.0% weekly but reversed -9.3% today, the first clear break after the vertical run: https://www.theblock.co/newsletters/data-and-insights/2026-09-09-data-robinhood-chain-aths-413967
-• UNCHANGED: agentic DeFi Emerging; Robinhood Chain and prediction markets Rising; DEX/perps Fading; CPI/Fed Peak.
+• DEMOTED: Zcash privacy Peak → Fading — the parabolic run reversed 11% today after 86%/30d; FADE remains the clean call: https://coinstats.app/ai/a/crypto-news-update-11-September-2026
+• No other intraday phase change versus today’s earlier map.
 
 REFLEXIVITY ALERT
-• Zcash privacy — Grayscale’s spot vehicle reportedly gained $400M+ AUM while ZEC returned 86% over 30 days; sponsor demand validated the scarcity story, but today’s reversal shows the same loop can unwind.
-• Robinhood Chain speculation — retail token narratives and chain activity reinforce each other; treat ecosystem-token beta as reflexive even while chain usage remains strong.
+• Zcash — Grayscale’s spot vehicle passed $400M AUM while the associated DAT rose 200%/30d; institutional demand validated scarcity, then crowded positioning amplified the reversal: https://www.theblock.co/newsletters/data-and-insights/2026-09-09-data-robinhood-chain-aths-413967
+• Robinhood prediction markets — a multi-year OG.com routing deal plus equity stakes ties distribution growth directly to the narrative: https://www.axios.com/2026/09/08/robinhood-crypto-og-kalshi-prediction-markets
 
 POSITIONS
-• RIDE: Solana trading (3 ↑, Bull) — @RaydiumProtocol, @pumpdotfun, @solana — bear: trend-token gains can vanish before protocol volume does.
-• FRONT-RUN: agentic DeFi interfaces (2 ↑, Bull) — @Aave, @Mastercard, x402 builders — bear: Aave MCP can read data and prepare unsigned transactions, but production usage is unproven: https://aave.com/blog/introducing-aave-mcp-server
-• RIDE: Robinhood Chain/tokenized assets (4 ↑, Bull) — @RobinhoodApp, @Arbitrum, @OffchainLabs — bear: ARB value capture remains indirect.
-• RIDE: prediction-market distribution (4 ↑, Mixed) — @RobinhoodApp, @Kalshi, @Polymarket — bear: legal uncertainty can impair distribution; calibration: DefiLlama shows the category +23.02%, $11.728B market cap and $51.31M volume: https://defillama.com/narrative-tracker
-• FADE: Zcash privacy (4 ↓, Mixed) — @Zcash, @Grayscale, @zooko — bear: crowded sponsor-led demand and a daily reversal make the entry asymmetric the wrong way.
-• FADE: DEX/perps (3 ↓, Mixed) — @HyperliquidX, @DefiLlama, @Aster_DEX — bear: weekly perp volume already fell 7.72%, and aggregate DEX volume fell another 12.2% from the prior snapshot.
-• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — bear to the bear case: soft CPI can reverse defensive positioning fast.
+• FADE: Zcash privacy (4 ↓, Mixed) — @Zcash, @Grayscale, @ZcashETF — bear: vertical gains and sponsor-concentrated demand leave weak downside asymmetry.
+• RIDE: Robinhood Chain/tokenized assets (4 ↑, Bull) — @RobinhoodApp, @Arbitrum, @OffchainLabs — bear: $913M TVL does not prove durable ARB value capture.
+• RIDE: prediction-market distribution (4 ↑, Mixed) — @RobinhoodApp, @cryptocom, @Kalshi — bear: state-gaming litigation can impair distribution economics.
+• FADE: DEX/perps (3 ↓, Mixed) — @HyperliquidX, @DefiLlama — bear: Hyperliquid spot-orderbook volume is down ~8% over 7d.
+• WATCH: agentic DeFi interfaces (2 ↑, Bull) — @Aave, @Mastercard, NPCI — bear: standards and launches still lack usage proof.
+• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — bear to the bear case: soft CPI can reverse defensive positioning.
 
 MAP
 Emerging: agentic DeFi interfaces
-Rising: Solana trading, Robinhood Chain/tokenized assets, prediction markets
+Rising: Robinhood Chain/tokenized assets, prediction markets
 Peak: CPI/Fed
 Fading: Zcash privacy, DEX/perps
-
-CONSIDERED / DROPPED
-• IGNORE: institutional multi-currency stablecoins (2 →, Bull) — BofA, Citi, Goldman Sachs — no in-window catalyst; 2027 execution remains distant.
-• IGNORE: x402 token basket (2 →, Mixed) — @coinbase, @Cloudflare, x402 builders — integration breadth is real, but npm downloads fell and only 13/715 monitored services had verified delivery at the last protocol check.
-• IGNORE: BNB ecosystem (2 →, Mixed) — @binance, @BNBCHAIN — broad metrics surfaced, but no distinct three-day catalyst or contrarian edge.
-• IGNORE: RWA broad basket (2 →, Bull) — @OndoFinance, @RobinhoodApp, @rwa_xyz — DefiLlama shows +6.55% and $71.88B market cap, but the trade overlaps Robinhood/tokenized assets and was deduplicated.
-
-SOURCE STATUS
-• Primary X search unavailable: key-unset; required API attempt returned xai http=400 bytes=118. Public-web fallback used, so confidence is medium-low and no unsupported X mention counts are claimed.
