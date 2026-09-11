@@ -1,4 +1,4 @@
-today: **delta-star** for new work — next merge is worth **10 points** at ordinal 0. It is live with 85 merges in seven days and a 98% all-time merge rate.
+today: `delta-star` — next merge worth 10 points (ordinal 0), with 85 merges in 7 days and a 98% all-time merge rate.
 
 | lane | next | ordinal | liveness | last merge |
 |---|---:|---:|---|---|
@@ -7,15 +7,14 @@ today: **delta-star** for new work — next merge is worth **10 points** at ordi
 | asi | 5 | 3 | live | Sep 6 |
 | heir-elements-sdk | 10 | 0 | slowing | Aug 21 |
 
-Highest-priority action: [eliza PR #30500](https://github.com/elizaOS/eliza/pull/30500) still has `CHANGES_REQUESTED`. Preserve the dirty address independently of selection and cover external-close plus tab-added-mid-typing cases before merge.
+waiting on you: [eliza PR #30500](https://github.com/elizaOS/eliza/pull/30500) still has `CHANGES_REQUESTED`. Addressing it is higher-value than starting another contribution.
 
-Heir Elements remains watch-only: unverified authority, no recent merges, and an 18.75% merge rate.
+`heir-elements-sdk` is not recommended despite its 10-point next merge: no merge in roughly 20 days, an 18.75% all-time merge rate, and unverified authority. No lane changed liveness and no new project appeared.
+
+`SLOP_WATCH_OK` — delivery degraded: notification was attempted, but the runner’s notification queue is read-only.
 
 ## Summary
 
 - Updated [slop-watch-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/slop-watch-state.json).
-- Appended the run to [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
-- Notification delivery failed because the harness notification queue is read-only.
-- Commit creation was blocked because Git metadata is read-only.
-
-`SLOP_WATCH_OK` — delivery degraded.
+- Appended today’s run to [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
+- Could not commit because `.git` is mounted read-only; unrelated workspace changes were untouched.
