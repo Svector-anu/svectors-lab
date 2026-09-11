@@ -5,7 +5,7 @@ tags:
   - digests
   - history
 resource: ""
-timestamp: 2026-09-06T00:00:00Z
+timestamp: 2026-09-11T00:00:00Z
 ---
 
 # Recent Digests History
@@ -26,6 +26,9 @@ timestamp: 2026-09-06T00:00:00Z
 | 2026-08-28 | web3 developer tooling (web) | Midnight hackathon, cardano-init, RGB Lightning |
 | 2026-08-28 | daily (web, crypto) | Cosmos EVM exploit, Core Lightning patch, hard-asset ETF flows |
 | 2026-09-02 | daily (web) | context escalation, Coder Agents GA, TAC postmortem |
+| 2026-09-02 | daily (web, second run) | event-driven agents, edge translation, CPU guardrails |
+| 2026-09-02 | daily (web, third run) | commerce agents, GALA margin, KuCoin API |
+| 2026-09-02 | daily (web, fourth run) | WebGPU kernels, context tax, skill verification |
 | 2026-09-01 | daily PM (web, second run) | Fable 5.1, Astra cyber threshold, skill supply chain |
 | 2026-09-01 | daily PM (web) | task outcomes, memory replay, session migration |
 | 2026-09-01 | daily (web) | agent containment, runtime identity, virtual patching |

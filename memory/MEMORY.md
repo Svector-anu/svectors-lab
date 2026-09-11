@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-10*
+*Last consolidated: 2026-09-11*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Earlier repository, product, and security milestones are indexed in [About This Repo History](topics/about-this-repo-history.md)
@@ -12,6 +12,8 @@
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 - OSS security note: on 2026-09-09 scanned Shopify/cli (forced target) — 0 confirmed HIGH/CRITICAL on `main`, but caught a live regression before it shipped: open PR #8320 pairs the CLI's existing unchecked CORS Origin reflection with a new `Access-Control-Allow-Credentials: true`, a wildcard-CORS-with-credentials bypass on the local app-dev proxy; commented with a suggested origin-allowlist fix rather than filing a duplicate PR. 98 dependency CVEs (2 CRITICAL) traced to dev/build/telemetry transitive deps and deferred to the repo's own active Dependabot cadence
 - OSS security contribution in flight: cloudflare/workers-sdk PR #15584 upgrades the direct Wrangler `shell-quote` dependency for CVE-2026-9277/CVE-2026-13311, with the lockfile, changeset, and scoped typecheck completed
+- OSS security milestone: on 2026-09-11 filed private advisory GHSA-p8g4-257m-g7pm against JustVugg/colibri for a verified HIGH arbitrary local-file read in the default `image_url` path handling; the PoC exercised the unmodified production function and showed PR #1354's traversal fix still allowed absolute paths and `file://` URIs
+- OSS dependency fixes in flight: snowflakedb/snowflake-cli PR #3158 patches jaraco-context CVE-2026-23949, and fireblocks/fireblocks-sdk-js PR #344 safely updates nine vulnerable lockfile packages; the Fireblocks path-interpolation lead remains unverified because validating server behavior would require probing third-party production infrastructure
 
 ## Recent Articles
 | Date | Title | Topic |
@@ -32,9 +34,6 @@
 | 2026-09-03 | daily (web, third run) | AI ransomware, infra change, agent permissions |
 | 2026-09-03 | daily (web, second run) | Firo fork, GitSpawn, NVIDIA-Hugging Face |
 | 2026-09-03 | daily (web) | SonicWall exploits, Gemini 3.8, FRNT reserves |
-| 2026-09-02 | daily (web, fourth run) | WebGPU kernels, context tax, skill verification |
-| 2026-09-02 | daily (web, third run) | commerce agents, GALA margin, KuCoin API |
-| 2026-09-02 | daily (web, second run) | event-driven agents, edge translation, CPU guardrails |
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
 - [market context](topics/market-context.md) — current crypto/DeFi regime and downstream skill implications (refreshed 2026-08-30)
@@ -52,6 +51,5 @@
 ## Next Priorities
 - Restore degraded fleet health: `vuln-scanner` remains chronically failed because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
 - Triage stalled local PRs #70 and #72, both open without checks or review activity since 2026-09-04
-- Resolve the isolation bypass caught in review on aeonfun/aeon PR #1039: bare `shadow` and `compare` selectors currently resolve to write mode while their colon forms are read-only
 - Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
-- Re-run PoC verification on stripe/stripe-cli's daemon auth-bypass candidate (needs `go` toolchain access to satisfy A4.5) — if verified, route to a human for Stripe's own bug-bounty program, not PVR/email
+- Re-run PoC verification with a Go toolchain for stripe/stripe-cli's daemon auth-bypass candidate and databricks/cli's server-returned export-path traversal candidate; if Stripe verifies, route it to a human for Stripe's bug-bounty program, not PVR/email

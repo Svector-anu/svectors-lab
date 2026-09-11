@@ -1,13 +1,20 @@
-Memory flush completed for the September 8–10 scan window.
+Memory flush completed for 2026-09-10 through 2026-09-11.
 
-- Promoted Cloudflare Workers SDK PR #15584.
-- Added aeonfun/aeon PR #1039’s isolation bypass to priorities.
-- Updated chronic fleet-health wording and confirmed no open `improve:` PRs.
-- Archived seven older milestones into [about-this-repo-history.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/about-this-repo-history.md).
-- Registered the new topic and logged the run.
-- Stamped the consolidation watermark to `2026-09-10`.
-- No monthly logs required rotation.
+- Promoted the verified JustVugg/colibri HIGH vulnerability advisory.
+- Recorded Snowflake CLI PR #3158 and Fireblocks SDK PR #344.
+- Added the Databricks CLI lead to the Go-toolchain verification priority.
+- Removed the resolved aeonfun/aeon PR #1039 priority.
+- Confirmed PRs #70/#72 and four critical issues remain open.
+- Archived three older digest entries to the existing digest history.
+- Advanced the consolidation watermark to 2026-09-11.
 
 ## Summary
 
-Modified [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md), [topics/index.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/index.md), and [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md). Created the repository-history archive and updated `memory-flush-state.json`.
+Modified:
+
+- [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md)
+- [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md)
+- [recent-digests-history.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/recent-digests-history.md)
+- [memory-flush-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/memory-flush-state.json)
+
+No monthly log rotation was required.
