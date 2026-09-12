@@ -1,20 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-12T08:49:22Z",
+  "last_analyzed": "2026-09-12T12:27:38Z",
   "quality_score": 2,
-  "assessment": "Specific market figures and claimed workspace updates are unverifiable—indeed file updates conflict with the read-only run—and the output violates the qualitative-price constraint while omitting explicit position calls.",
+  "assessment": "Useful regime framing, but it lacks explicit position calls, provides weak sourcing for most figures, and claims workspace files were updated despite the read-only constraint.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 2,
-      "ts": "2026-09-05T01:09:14Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 3,
@@ -187,6 +181,12 @@
       "date": "2026-09-12",
       "score": 2,
       "ts": "2026-09-12T08:49:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:27:38Z",
       "harness": "codex"
     }
   ]

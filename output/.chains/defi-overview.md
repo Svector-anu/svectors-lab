@@ -1,22 +1,16 @@
-Take: rotation — BTC was flat while ETH gained 2.2% and 16/20 top caps traded green.  
-Conviction: medium — daily breadth and DEX activity agree, but seven-day breadth remains weak.  
-Evidence: DEX volume increased 17.9% to $13.02B.
+Take: rotation — BTC gained 0.4% while ETH gained 3.1%, with 17/20 top caps green. Conviction: medium.
 
-DeFi verdict: Mixed — TVL rose 2.0% and DEX volume expanded, while stablecoin supply increased only 0.2%.
+DeFi remains mixed: DEX volume reached $12.97B (+17.5%), but broad TVL and stablecoin capital stayed relatively flat. USDD was the standout, with supply +6.5% and protocol TVL +42.9%; no verified catalyst was found. Fear & Greed remains 63 (Greed). Polymarket prices a September 25 bp Fed hike at 78.5%, while the latest reported spot-BTC ETF flow was only +$6M ([flow tracker](https://www.satsintel.io/en/etfs/flows)).
 
-- TVL: $88.24B, +2.0% daily and +3.4% weekly
-- BTC: $77,333 (-0.1%); ETH: $2,532 (+2.2%)
-- Fear & Greed: 63, Greed
-- Protocol mover: Avalon Superearn +74.0%; no verified catalyst
-- Fees leader: Tether, $16.58M
-- Polymarket: September 25-bps Fed increase at 78.5% YES
-- Positions: none configured
+Updated:
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-12.md). All data sources succeeded. Notification delivery was attempted but failed because the harness queues are read-only.
+- [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md)
+- [2026-09-12.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-12.md)
 
 ## Summary
 
-- Refreshed the complete DeFi and macro overview.
-- Preserved the full token-pick history.
-- Recorded the empty positions configuration.
-- No follow-up action required.
+- Refreshed all CoinGecko, DeFiLlama, sentiment, and Polymarket sources successfully.
+- Preserved the complete token-pick history.
+- Logged `DEFI_MONITOR_NO_CONFIG` because no positions are configured.
+- Notification delivery was attempted, but the harness notification queues are read-only.
+- No commit was created because `.git` is read-only in this harness.
