@@ -1,7 +1,7 @@
 {
-  "hash": "93ba0724fa01ebe977da899fd34ff718ea973f9df5d7e42da7223d43559dd498",
+  "hash": "83ca9d0bb074fae2dd01a039082039a064f555d0c6229e28ae2e2ece207aa76f",
   "last_notified_at": "2026-09-07T18:49:08Z",
-  "last_run_at": "2026-09-11T19:51:13Z",
+  "last_run_at": "2026-09-12T19:41:13Z",
   "classification": {
     "critical": [],
     "degraded": [
@@ -30,10 +30,9 @@
       "fork-fleet",
       "hunter-22",
       "pr-review",
-      "search-skill",
-      "self-improve"
+      "search-skill"
     ],
-    "healthy_count": 6,
+    "healthy_count": 7,
     "no_data": []
   }
 }
