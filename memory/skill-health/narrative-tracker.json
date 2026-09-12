@@ -1,19 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-12T04:30:30Z",
-  "quality_score": 3,
-  "assessment": "Actionable, conclusion-led regime calls with some source anchors, but several specific catalysts, figures, transitions, and handles are uncited or weakly substantiated, limiting decision-grade verifiability.",
+  "last_analyzed": "2026-09-12T08:47:12Z",
+  "quality_score": 2,
+  "assessment": "Conclusion-first with explicit calls, but it provides no evidence, sources, or rationale to verify the regime and narrative claims.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.63,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T19:28:57Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 3,
@@ -186,6 +181,12 @@
       "date": "2026-09-12",
       "score": 3,
       "ts": "2026-09-12T04:30:30Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T08:47:12Z",
       "harness": "codex"
     }
   ]
