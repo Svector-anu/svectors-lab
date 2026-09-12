@@ -1,20 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-12T08:47:12Z",
+  "last_analyzed": "2026-09-12T15:41:19Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first with explicit calls, but it provides no evidence, sources, or rationale to verify the regime and narrative claims.",
+  "assessment": "Conclusion-first with explicit calls, but it provides no evidence anchors or source links, making the regime and positioning claims insufficiently verifiable or actionable.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.63,
+  "avg_score": 2.6,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T01:07:03Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 3,
@@ -187,6 +181,12 @@
       "date": "2026-09-12",
       "score": 2,
       "ts": "2026-09-12T08:47:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T15:41:19Z",
       "harness": "codex"
     }
   ]
