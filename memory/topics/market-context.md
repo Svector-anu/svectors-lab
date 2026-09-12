@@ -1,58 +1,54 @@
 # Market Context (as of 2026-09-12)
 
-> **Take:** rotation — BTC held near flat while ETH gained 3.1% and SOL gained 3.6%. Conviction: medium.
+> **Take:** rotation — BTC was flat while ETH gained 2.2% and 16/20 top caps traded green. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $77,255 (+0.8% 24h, -3.1% 7d) · dominance 58.27% (+0.07 pp since prior refresh)
-- ETH $2,514 (+3.1% 24h, +2.6% 7d) · ETH/BTC 0.0325
-- SOL $102.31 (+3.6% 24h, +0.6% 7d)
-- Total mcap $2.661T (-1.4% 24h) · DEX vol $11.09B 24h
-- Breadth: 14/20 green 24h · 7/20 green 7d
+- BTC $77,333 (-0.1% 24h, -3.0% 7d) · dominance 58.20% (-0.07 pp since prior refresh)
+- ETH $2,532 (+2.2% 24h, +2.8% 7d) · ETH/BTC 0.0327
+- SOL $101.77 (+1.8% 24h, -0.7% 7d)
+- Total mcap $2.664T (-2.0% 24h) · DEX vol $13.02B 24h
+- Breadth: 16/20 green 24h · 6/20 green 7d
 - Fear & Greed: 63 (Greed) — yesterday 56
 
 ## What Changed Since Last Refresh
-- Fear & Greed rose 7 points to 63 while ETH and SOL outpaced BTC, shifting the read from chop to rotation.
+- DEX volume rose from $11.09B to $13.02B, with daily volume now 17.9% above the prior day.
+- ETH remained stronger than BTC, but SOL's seven-day return slipped below zero and seven-day breadth fell to 6/20.
 
 ## Active Narratives
-- **ETH/SOL rotation** — phase: rising. Evidence: ETH gained 3.1% and SOL 3.6% while BTC added only 0.8%.
-- **Solana DEX activity** — phase: rising. Evidence: RAY gained 16.5%, Raydium volume rose 25.5%, and fees rose 33.5% daily.
-- **Launch-token speculation** — phase: peak. Evidence: STONK gained 57.0% while LAPTOP lost 21.3%, sustaining extreme dispersion.
-- **Privacy rotation** — phase: peak. Evidence: ZEC is a top-three CoinGecko trend and gained another 7.5% daily.
+- **DEX activity** — phase: rising. Evidence: aggregate DEX volume rose 17.9% daily to $13.02B; Uniswap V3 and V4 each cleared $2.18B.
+- **ETH rotation** — phase: rising. Evidence: ETH gained 2.2% while BTC fell 0.1%, taking ETH/BTC to 0.0327.
+- **Launch-token speculation** — phase: fading. Evidence: trending PONS fell 3.2%, STONK fell 5.3%, and LAPTOP fell 15.6% in 24 hours.
+- **Privacy rotation** — phase: peak. Evidence: ZEC remained fourth in CoinGecko trends and gained 2.6%, while XMR gained 7.2%.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.44B (+2.8%)
-- Aave V3: $17.51B (+0.8%)
-- SSV Network: $13.24B (+3.4%)
-- Morpho Blue: $9.70B (flat)
-- Binance staked ETH: $9.39B (+2.8%)
+- Lido: $24.46B (+2.9%)
+- Aave V3: $17.52B (+0.7%)
+- SSV Network: $13.25B (+3.5%)
+- Morpho Blue: $9.70B (+0.1%)
+- Binance staked ETH: $9.40B (+2.9%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $50.08B (7d n/a)
-- Solana: $5.88B (7d n/a)
-- BSC: $5.64B (7d n/a)
+- Ethereum: $50.14B (7d n/a)
+- Solana: $5.89B (7d n/a)
+- BSC: $5.67B (7d n/a)
 
 ## Stablecoins
-Total: $312.9B (+0.1% 7d). USDT $183.1B · USDC $74.5B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.8%.
+Total: $311.2B (+0.1% 7d). USDT $183.5B · USDC $74.4B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.7%.
 
 ## Trending (CoinGecko)
-- STONK — first in CoinGecko trends, +57.0% in 24h
-- LAPTOP — second in CoinGecko trends, -21.3% in 24h
-- ZEC — third in CoinGecko trends, +7.5% in 24h
+- PONS — first in CoinGecko trends, -3.2% in 24h
+- STONK — second in CoinGecko trends, -5.3% in 24h
+- RAY — third in CoinGecko trends, +0.3% in 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after September 2026 meeting | 19.5% | $6.63M | $0.70M |
-| Fed raises rates 25 bps after September 2026 meeting | 80.5% | $5.24M | $0.82M |
-| Frances Tiafoe beats Ben Shelton at the US Open | 29.5% | $0.64M | $0.25M |
-
-## Macro Catalysts (next 48h)
-- Weekend liquidity is thin, increasing the risk that the alt-led move overstates conviction before U.S. markets reopen.
-- U.S. spot-BTC ETFs posted a $282.6M net outflow on September 10, the latest available session, limiting institutional confirmation of the rotation.
+| No Fed rate change after September 2026 meeting | 20.5% | $7.08M | $0.79M |
+| Fed raises rates 25 bps after September 2026 meeting | 78.5% | $5.59M | $0.77M |
 
 ## Implications for Downstream Skills
-- **token-pick:** favor selective ETH/Solana relative strength over broad beta; avoid chasing launch tokens after vertical moves.
-- **narrative-tracker:** monitor Solana DEX activity for rising→peak and privacy/launch-token themes for fading breadth.
+- **token-pick:** favor liquid ETH/DEX relative-strength setups; avoid launch-token momentum while trending names are rolling over.
+- **narrative-tracker:** monitor DEX activity for rising→peak and launch-token speculation for continued fading.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
