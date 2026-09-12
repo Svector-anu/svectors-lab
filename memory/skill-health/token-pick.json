@@ -1,18 +1,14 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-11T13:48:15Z",
+  "last_analyzed": "2026-09-12T12:26:06Z",
   "quality_score": 2,
-  "assessment": "Specific prices, macro figures, catalyst claims, and odds lack evidence links and appear potentially invented; it also violates the qualitative-price constraint and gives no explicit token position call.",
+  "assessment": "Specific price, catalyst, listing, and treasury claims lack verifiable citations; it also violates the qualitative-price constraint and gives no explicit front-run/ride/fade/watch call.",
   "flags": [
     "unverifiable_claim",
     "low_quality"
   ],
-  "avg_score": 2.33,
+  "avg_score": 2.27,
   "history": [
-    {
-      "date": "2026-07-19",
-      "score": 4
-    },
     {
       "date": "2026-07-28",
       "score": 4
@@ -175,6 +171,12 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T13:48:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:26:06Z",
       "harness": "codex"
     }
   ]
