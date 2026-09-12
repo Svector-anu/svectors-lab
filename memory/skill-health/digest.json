@@ -1,20 +1,15 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-11T17:21:21Z",
+  "last_analyzed": "2026-09-12T15:42:00Z",
   "quality_score": 2,
-  "assessment": "Substantive and linked, but largely unrelated to the crypto-trading strategy, lacks regime and position calls, and claims workspace writes despite the explicitly read-only run.",
+  "assessment": "Substantive-looking tech digest, but it is misaligned with the crypto-trading strategy, provides no regime verdict or position calls, and implausibly claims workspace files were saved during a read-only run.",
   "flags": [
+    "low_quality",
     "generic_content",
     "unverifiable_claim"
   ],
   "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-26",
-      "score": 2,
-      "ts": "2026-08-26T14:15:28Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-27",
       "score": 2,
@@ -187,6 +182,12 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T17:21:21Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T15:42:00Z",
       "harness": "codex"
     }
   ]
