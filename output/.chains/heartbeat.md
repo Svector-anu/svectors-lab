@@ -1,12 +1,17 @@
-Fleet remains 🔴 DEGRADED due to 11 chronically low success rates and four open critical issue records.
+Heartbeat completed.
 
-- `vuln-scanner`, `pr-review`, and `dev-loop` recovered successfully.
-- PRs #70 and #72 remain stalled.
-- No new or overdue scheduled skills.
-- Duplicate findings were suppressed; no notification sent.
-- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
-- Logged the run in [memory/logs/2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
+Fleet remains 🔴 DEGRADED:
+
+- 10 enabled non-heartbeat skills remain chronically below 50% success.
+- Four critical issue records remain open.
+- PR #70 remains stalled.
+- `chain:dev-loop` has another stale dispatch watermark.
+- No newly missing or overdue scheduled skills.
+- No duplicate notification sent due to the 48-hour dedup rule.
 
 ## Summary
 
-Heartbeat ambient check completed. Status page and daily log updated; no follow-up notification was necessary.
+- Regenerated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md).
+- Logged the ambient check in [memory/logs/2026-09-12.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-12.md).
+- Validation passed with `git diff --check`.
+- Unrelated pre-existing `CLAUDE.md` changes were left untouched.
