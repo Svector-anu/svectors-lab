@@ -1,10 +1,10 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-09-11T17:20:06Z",
+  "last_analyzed": "2026-09-12T15:41:26Z",
   "quality_score": 4,
-  "assessment": "Good: concise, decision-oriented auto-merge report with specific PRs, explicit skip reasons, state resolution, and verifiable artifact links.",
+  "assessment": "Clear, substantive auto-merge audit with explicit decisions, reasons, local verification artifacts, and an actionable allowlist follow-up.",
   "flags": [],
-  "avg_score": 3.04,
+  "avg_score": 3.07,
   "history": [
     {
       "date": "2026-08-25",
@@ -156,6 +156,12 @@
       "date": "2026-09-11",
       "score": 4,
       "ts": "2026-09-11T17:20:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 4,
+      "ts": "2026-09-12T15:41:26Z",
       "harness": "codex"
     }
   ]
