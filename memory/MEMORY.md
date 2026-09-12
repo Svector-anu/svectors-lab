@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-11*
+*Last consolidated: 2026-09-12*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Earlier repository, product, and security milestones are indexed in [About This Repo History](topics/about-this-repo-history.md)
@@ -10,6 +10,7 @@
 - OSS security contribution in flight: step-security/harden-runner PR #693 patches five disclosed dependency-CVE groups with same-major overrides and a regenerated clean lockfile; two breaking-major dependency fixes were explicitly deferred
 - OSS security note: forced audits of paypal/paypal-js, stripe/stripe-node, and stripe/stripe-php on 2026-09-05 were clean (0 confirmed); dependency findings were non-runtime/dev-only and targeted reviews found their injection, signature-verification, comparison, and header guards sound
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
+- Reliability milestone: local PR #76 merged on 2026-09-11, making reactive-trigger parsing fail closed for malformed substring expressions and out-of-range success-rate thresholds; its focused evaluator, config-validator, structural, and shell checks passed
 - OSS security note: on 2026-09-09 scanned Shopify/cli (forced target) — 0 confirmed HIGH/CRITICAL on `main`, but caught a live regression before it shipped: open PR #8320 pairs the CLI's existing unchecked CORS Origin reflection with a new `Access-Control-Allow-Credentials: true`, a wildcard-CORS-with-credentials bypass on the local app-dev proxy; commented with a suggested origin-allowlist fix rather than filing a duplicate PR. 98 dependency CVEs (2 CRITICAL) traced to dev/build/telemetry transitive deps and deferred to the repo's own active Dependabot cadence
 - OSS security contribution in flight: cloudflare/workers-sdk PR #15584 upgrades the direct Wrangler `shell-quote` dependency for CVE-2026-9277/CVE-2026-13311, with the lockfile, changeset, and scoped typecheck completed
 - OSS security milestone: on 2026-09-11 filed private advisory GHSA-p8g4-257m-g7pm against JustVugg/colibri for a verified HIGH arbitrary local-file read in the default `image_url` path handling; the PoC exercised the unmodified production function and showed PR #1354's traversal fix still allowed absolute paths and `file://` URIs
@@ -50,7 +51,7 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Restore degraded fleet health: `vuln-scanner` remains chronically failed because Grok OAuth rejects forced model `grok-4.5`; unblock a control-plane-safe harness rollback, recover the stuck `dev-loop` chain, and reconcile the four critical records in `memory/issues/INDEX.md`
-- Triage stalled local PRs #70 and #72, both open without checks or review activity since 2026-09-04
+- Reconcile the four critical records in `memory/issues/INDEX.md` with current fleet state: `vuln-scanner`, `pr-review`, and `chain:dev-loop` recovered to success on 2026-09-11, but 11 enabled skills still meet the chronic-failure rule
+- Triage local PRs #70, #77, and #78: #70 remains stalled without checks, #77 fails the skill-integrity check, and #78 is green; #72 merged on 2026-09-11
 - Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
 - Re-run PoC verification with a Go toolchain for stripe/stripe-cli's daemon auth-bypass candidate and databricks/cli's server-returned export-path traversal candidate; if Stripe verifies, route it to a human for Stripe's bug-bounty program, not PVR/email
