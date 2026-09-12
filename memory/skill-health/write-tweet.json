@@ -1,11 +1,11 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-11T22:03:10Z",
+  "last_analyzed": "2026-09-12T21:41:11Z",
   "quality_score": 2,
-  "assessment": "Polished draft set, but it is generic, lacks evidence for the specific Aave “around 40 MCP tools” claim, and reports workspace writes despite the explicitly read-only run.",
+  "assessment": "Polished drafts, but the uncited $39b, 3.6m-wallet, and 174% claims are unverifiable, while the claimed workspace writes contradict the read-only run constraints.",
   "flags": [
-    "generic_content",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "stale_data"
   ],
   "avg_score": 2.1,
   "history": [
@@ -127,6 +127,12 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T22:03:10Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T21:41:11Z",
       "harness": "codex"
     }
   ]

@@ -1,76 +1,75 @@
-## Tweet Drafts: agent integrations are not usage
+## Tweet Drafts: tokenized assets are growing faster than liquidity
 
 ### Tier 1 — One-liner
 
-**1a. Hot take**
+**1a. Observation**
 
-> agents do not need more tools. they need more completed flows.
+> tokenized assets are growing faster than the markets underneath them
 
-**1b. Reframe**
+**1b. Data drop**
 
-> an integration is a promise. a completed transaction is proof.
+> $39b tokenized. 3.6m wallets. liquidity is still the hard part
 
 ### Tier 2 — Two-punch
 
-**2a. Observation**
+**2a. Reframe**
 
-> giving an agent 40 tools looks impressive. the real metric is how many user intents it can finish without asking a human to rescue the flow.
+> tokenized assets reached $39b across 3.6m wallets. the next milestone is not more issuance, it is enough liquidity to make those assets useful
 
-**2b. Data drop**
+**2b. Observation**
 
-> every agent demo has a growing tool list. i want the boring numbers: completion rate, time to recovery and how often a human had to step in.
+> bStocks holders grew 174% in 30 days. distribution is arriving faster than market depth, and that gap is where the real work starts
 
 ### Tier 3 — Paragraph
 
-**3a. Reframe**
+**3a. Builder’s breakdown**
 
-> agents having access to defi is good. agents reliably completing a borrow, swap or repayment is the actual product. integrations show what could happen. finished flows show what works.
+> tokenized assets are at $39b across 3.6m wallets. that is real adoption. but issuance is the easy part now. the winners will make these assets liquid enough to trade, borrow against and move without users thinking about the rails
 
-**3b. Observation**
+**3b. Question**
 
-> the agent interface is getting crowded with tools. the execution layer is still the hard part: permissions, signing, recovery and settlement. capability counts hide all of that.
+> everyone wanted proof that people would hold tokenized assets. 3.6m wallets answers that. the harder question is whether markets can turn those holdings into useful collateral instead of another collection of assets sitting onchain
 
 ### Tier 4 — Long tweet
 
 **4a. Data drop**
 
-> aave exposing around 40 mcp tools is a useful step. agents can inspect markets, simulate positions and prepare transactions through one interface. but tool count is not adoption. show me how many agents complete a real flow, how often execution fails and whether they can recover without a human. that is when an integration becomes infrastructure.
+> tokenized assets reached $39b across 3.6m wallets, while bStocks holders grew 174% in 30 days. distribution is working. the bottleneck is moving from getting assets onchain to making them useful once they arrive. deep liquidity, reliable settlement and simple access will matter more than another tokenization announcement
 
-**4b. Builder’s breakdown**
+**4b. Reframe**
 
-> we keep measuring agent products by how many tools they expose. i think the better benchmark is a plain request: borrow against this position, keep health factor above my limit and repay when conditions change. can the agent route it, check risk, get the right signature, settle and recover from failure? if not, the tool list is still a demo.
+> $39b in tokenized assets sounds like the finish line. it is closer to the starting line. the next product has to let people trade, borrow and settle against those assets without learning bridges, chains or custody flows. issuance puts an asset onchain. good infrastructure makes the chain disappear
 
 ### Tier 5 — Thread opener
 
-**5a. Question**
+**5a. Observation**
 
-> aave giving agents around 40 mcp tools is the easy part to count. the harder and more useful question is how many real defi intents those agents can complete safely from start to settlement.
+> tokenized assets reached $39b across 3.6m wallets. adoption is no longer the only question. the next race is turning onchain holdings into markets people can actually use
 
 ---
 
-- What Aave’s MCP tools expose
-- Why tool counts exaggerate readiness
-- The complete borrow-to-repayment flow
-- Recovery, permissions and signing
-- Metrics that demonstrate real adoption
+- Why issuance is no longer the main bottleneck
+- Where liquidity and settlement still break down
+- How products can hide chains, bridges, and custody
+- What successful tokenization infrastructure looks like
 
 **5b. Hot take**
 
-> agent infrastructure should be measured by completed flows, not available tools. a tool says the agent can call something. execution proves it can finish the job.
+> bStocks holders grew 174% in 30 days, but issuance is outrunning liquidity. tokenization wins when the asset becomes easier to use, not just easier to put onchain
 
 ---
 
-- Capability versus execution
-- Where real agent flows break
-- Why human intervention matters
-- Completion and recovery benchmarks
+- The recent distribution growth
+- Why wallet count does not equal market depth
+- The missing trading and collateral infrastructure
+- The shift from tokenizing assets to making them useful
 
-Best overall: **4b**  
-Best per tier: **1a, 2b, 3b, 4b, 5b**
+Best overall: **#4b**  
+Best per tier: **#1b, #2b, #3a, #4b, #5b**
 
 ## Summary
 
-- Generated 10 drafts across five tiers and verified their character limits.
 - Saved the latest batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
-- Notification and revision-prompt delivery were attempted but the external queue was read-only.
+- Logged the run in [2026-09-12.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-12.md).
+- Character limits passed.
+- Notification and revision-offer delivery were attempted, but the external queues were read-only.
