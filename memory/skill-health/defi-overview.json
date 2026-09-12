@@ -1,20 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-12T12:27:38Z",
+  "last_analyzed": "2026-09-12T19:44:42Z",
   "quality_score": 2,
-  "assessment": "Useful regime framing, but it lacks explicit position calls, provides weak sourcing for most figures, and claims workspace files were updated despite the read-only constraint.",
+  "assessment": "Conclusion-first and actionable in tone, but it omits explicit position calls and presents numerous trade-relevant figures—including an unusual 25 bp hike probability—without sufficient source links or timestamps to verify them.",
   "flags": [
-    "low_quality",
     "unverifiable_claim"
   ],
-  "avg_score": 2.13,
+  "avg_score": 2.1,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T09:25:10Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 2,
@@ -187,6 +180,12 @@
       "date": "2026-09-12",
       "score": 2,
       "ts": "2026-09-12T12:27:38Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T19:44:42Z",
       "harness": "codex"
     }
   ]
