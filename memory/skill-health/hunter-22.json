@@ -1,10 +1,12 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-11T13:48:22Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-match report with explicit filtering rationale and actions, though limited supporting evidence makes the 25-candidate validation hard to audit.",
-  "flags": [],
-  "avg_score": 2.62,
+  "last_analyzed": "2026-09-12T12:26:22Z",
+  "quality_score": 2,
+  "assessment": "Concise no-match report, but it claims workspace files were modified despite the explicitly read-only run, making the reported persistence unverifiable and internally inconsistent.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.6,
   "history": [
     {
       "date": "2026-07-31",
@@ -164,6 +166,12 @@
       "date": "2026-09-11",
       "score": 3,
       "ts": "2026-09-11T13:48:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:26:22Z",
       "harness": "codex"
     }
   ]

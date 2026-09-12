@@ -1,13 +1,12 @@
-No genuine new bounty matches found.
+Hunter-22 completed: 25 bounties scanned, 2 new, 0 genuine matches.
 
-- Free ClawHunter match endpoint returned HTTP 200 with 25 candidates.
-- All were filtered out due to social-growth work, expired deadlines, regional restrictions, wallet/on-chain requirements, external credentials, or video/public-posting requirements.
-- No audit-shaped candidates found.
-- No notification sent and no bounty action taken.
-- Refreshed 25 entries in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
-- Appended the run record to [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
-- JSON and diff validation passed.
+- Rejected token-gated RAM video shilling.
+- Rejected the ~$10 MemeHuntr social-engagement task.
+- No audit-shaped GitHub candidates.
+- No notification, paid endpoint, submission, or wallet action.
+- Refreshed all 25 IDs in [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json).
+- Recorded the run in [2026-09-12.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-12.md).
 
 ## Summary
 
-The required commit could not be created because this environment mounts `.git` read-only (`index.lock: Read-only file system`). The validated workspace changes remain present and uncommitted.
+Files validate cleanly. Commit creation was blocked because this harness mounts `.git` read-only (`cannot lock ref`); the changes remain in the working tree.
