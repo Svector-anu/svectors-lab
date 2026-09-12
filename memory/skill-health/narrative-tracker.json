@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-11T19:51:33Z",
-  "quality_score": 4,
-  "assessment": "Decision-grade, conclusion-forward narrative map with explicit ride/fade/watch calls, bear cases, freshness, and source links; minor weakness is that conviction scores and some causal interpretations are not clearly defined or directly evidenced.",
-  "flags": [],
+  "last_analyzed": "2026-09-12T04:30:30Z",
+  "quality_score": 3,
+  "assessment": "Actionable, conclusion-led regime calls with some source anchors, but several specific catalysts, figures, transitions, and handles are uncited or weakly substantiated, limiting decision-grade verifiability.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.63,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 3,
-      "ts": "2026-09-04T13:39:04Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 2,
@@ -184,6 +180,12 @@
       "date": "2026-09-11",
       "score": 4,
       "ts": "2026-09-11T19:51:33Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 3,
+      "ts": "2026-09-12T04:30:30Z",
       "harness": "codex"
     }
   ]

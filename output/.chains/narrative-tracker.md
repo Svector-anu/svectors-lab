@@ -1,23 +1,32 @@
-*Narrative Tracker — 2026-09-11*
+ℹ️ Narrative Tracker — 2026-09-12
+
+*Narrative Tracker — 2026-09-12*
 
 TRANSITIONS
-• DEMOTED: Zcash privacy Peak → Fading — the parabolic run reversed 11% today after 86%/30d; FADE remains the clean call: https://coinstats.app/ai/a/crypto-news-update-11-September-2026
-• No other intraday phase change versus today’s earlier map.
+• PROMOTED: Robinhood Chain Rising → Peak — $38.8M REV in 15 days implies a $944M annualized run rate, but daily REV fell from $8.3M to ~$1M and leading memecoins are 30%+ off highs: https://blockworks.com/newsletter/0xresearch/issue/post_8b52ec36-84a2-470a-8626-e2a835bd4055
+• PROMOTED: DEX/perps Fading → Rising — HYPE hit an ATH while RWA perp volume reached $18.8B/day, 18.5% of venue futures volume: https://www.talos.com/insights/state-of-the-market-september-03-september-09-2026
+• DEMOTED: Zcash privacy Peak → Fading — ZEC led the Sep 11 selloff as leverage unwound after a 52.7% weekly gain.
+• NEW: institutional tokenization rails — India began tokenizing a $620B corporate-bond market while SEC/EU market-structure work advanced.
+• NEW: AI-control panic — an Anthropic resignation and rogue-agent reporting drove 142M X views; high mindshare, weak investable edge.
+• DEAD: agentic DeFi interfaces — Aave MCP remains useful, but no new adoption evidence surfaced in-window.
 
 REFLEXIVITY ALERT
-• Zcash — Grayscale’s spot vehicle passed $400M AUM while the associated DAT rose 200%/30d; institutional demand validated scarcity, then crowded positioning amplified the reversal: https://www.theblock.co/newsletters/data-and-insights/2026-09-09-data-robinhood-chain-aths-413967
-• Robinhood prediction markets — a multi-year OG.com routing deal plus equity stakes ties distribution growth directly to the narrative: https://www.axios.com/2026/09/08/robinhood-crypto-og-kalshi-prediction-markets
+• Robinhood Chain/Pons — one launchpad drove the fee spike; ~80% of Pons revenue funds buybacks and 28%+ of supply has burned, directly linking activity, scarcity and price.
+• Zcash — Grayscale ETF/DAT demand helped push ZEC +52.7% weekly, then crowded leverage amplified the reversal.
 
 POSITIONS
-• FADE: Zcash privacy (4 ↓, Mixed) — @Zcash, @Grayscale, @ZcashETF — bear: vertical gains and sponsor-concentrated demand leave weak downside asymmetry.
-• RIDE: Robinhood Chain/tokenized assets (4 ↑, Bull) — @RobinhoodApp, @Arbitrum, @OffchainLabs — bear: $913M TVL does not prove durable ARB value capture.
-• RIDE: prediction-market distribution (4 ↑, Mixed) — @RobinhoodApp, @cryptocom, @Kalshi — bear: state-gaming litigation can impair distribution economics.
-• FADE: DEX/perps (3 ↓, Mixed) — @HyperliquidX, @DefiLlama — bear: Hyperliquid spot-orderbook volume is down ~8% over 7d.
-• WATCH: agentic DeFi interfaces (2 ↑, Bull) — @Aave, @Mastercard, NPCI — bear: standards and launches still lack usage proof.
-• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — bear to the bear case: soft CPI can reverse defensive positioning.
+• FADE: Robinhood Chain (5 →, Cope) — @RobinhoodApp, @Pons, @Arbitrum — revenue is real, but the parabolic leg was memecoin-led and has locally peaked.
+• RIDE: RWA/perps (4 ↑↑, Bull) — @HyperliquidX, @Polymarket, @Coinbase — bear: crypto futures volume still fell 2.2% WoW and HYPE is priced at an ATH.
+• FADE: Zcash privacy (5 ↓, Mixed) — @Zcash, @Grayscale, @ZcashETF — thesis may hold, but leverage unwind makes entry quality poor.
+• RIDE: institutional tokenization (3 ↑, Bull) — @SECGov, Nasdaq, India/RBI — bear: regulatory pilots can take years to become liquid markets.
+• RIDE: prediction-market distribution (4 ↑, Mixed) — @RobinhoodApp, @Kalshi, @Polymarket — bear: EU authorization gaps and US jurisdiction fights threaten economics.
+• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — multiple hikes are being repriced, but one soft print can reverse positioning.
+• WATCH: AI-control panic (5 ↑↑, Bear) — @AnthropicAI, @OpenAI, @jacob_coxon — viral fear is not a clean asset catalyst.
 
 MAP
-Emerging: agentic DeFi interfaces
-Rising: Robinhood Chain/tokenized assets, prediction markets
-Peak: CPI/Fed
-Fading: Zcash privacy, DEX/perps
+Emerging: institutional tokenization
+Rising: RWA/perps, prediction markets
+Peak: Robinhood Chain, CPI/Fed, AI-control panic
+Fading: Zcash privacy
+
+Calibration: ZEC +52.7% WoW; HYPE +50% MTD near $20B market cap; RWA perps $18.8B/day. Web fallback used because KEY_UNSET and xai http=400.
