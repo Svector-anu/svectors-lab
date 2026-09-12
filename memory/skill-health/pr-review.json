@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-11T13:49:24Z",
+  "last_analyzed": "2026-09-12T12:26:54Z",
   "quality_score": 4,
-  "assessment": "Good, concise, decision-oriented PR review with explicit verdicts, a precise actionable finding, commit SHAs, and verifiable review links; useful but light on supporting technical rationale.",
+  "assessment": "Clear, decision-oriented review of three PRs with explicit verdicts, actionable blockers, commit SHAs, and test status, though supporting evidence is summarized rather than shown.",
   "flags": [],
-  "avg_score": 3.17,
+  "avg_score": 3.2,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 3,
-      "ts": "2026-09-03T10:48:39Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-11",
       "score": 4,
       "ts": "2026-09-11T13:49:24Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 4,
+      "ts": "2026-09-12T12:26:54Z",
       "harness": "codex"
     }
   ]
