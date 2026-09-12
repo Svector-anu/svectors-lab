@@ -1,31 +1,35 @@
-*GitHub Trending — 2026-09-11*
+*GitHub Trending — 2026-09-12*
 
-*Top pick* — [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)
-it turns accessibility needs into enforceable agent behavior: answer first, one action at a time, with concrete time estimates.
+*Top pick* — [multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE)
+YuE2 makes generated music inspectable and editable as a symbolic score, then renders it into a complete recording.
 
 *AI/ML*
-• [nashsu/llm_wiki](https://github.com/nashsu/llm_wiki) — ★ 640 today (18.5k total) · TypeScript · [ACCELERATING]
-Compiles documents once into a persistent, source-linked graph instead of paying the RAG reconstruction tax every query.
+• [multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE) — ★ 193 today (7.0k total) · Python · [RETURNING]
+Exposes melody and chords as editable plans before rendering 48 kHz stereo songs.
 
-• [alphaXiv/OpenResearch](https://github.com/alphaXiv/OpenResearch) — ★ 210 today (1.1k total) · Rust · [RETURNING]
-Gives parallel research agents isolated git worktrees, keeping competing experiments reproducible instead of tangled.
+• [alsk1992/CloddsBot](https://github.com/alsk1992/CloddsBot) — ★ 377 today (2.3k total) · TypeScript · [RETURNING]
+Connects one self-hosted agent to prediction markets, CEXs and onchain venues with execution and risk controls.
 
-• [jihe520/MathModelAgent](https://github.com/jihe520/MathModelAgent) — ★ 132 today (4.8k total) · Python · [RETURNING]
-Chains modeling, code, Typst output and nine-step validation into a competition-ready research workflow.
+• [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi) — ★ 193 today (23.1k total) · Go · [RETURNING]
+Runs 20-plus security tools inside isolated containers while preserving agent traces and findings in a vector-backed workspace.
 
 *Devtools*
-• [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) — ★ 3,440 today (40.2k total) · Python · [ACCELERATING]
-Forces coding agents to front-load answers, limit choices and expose one concrete next action.
+• [nab138/iloader](https://github.com/nab138/iloader) — ★ 209 today (3.0k total) · TypeScript · [RETURNING]
+Automates SideStore installation, signing and pairing-file placement across Windows, macOS and Linux.
 
-• [obra/superpowers](https://github.com/obra/superpowers) — ★ 731 today (285.1k total) · Shell · [ACCELERATING]
-Ports a spec-to-TDD workflow across 14 agent harnesses, including Codex, Claude, Gemini and Copilot.
-
-• [github/spec-kit](https://github.com/github/spec-kit) — ★ 985 today (135.5k total) · Python · [ACCELERATING]
-Makes specifications executable, then adds a convergence loop that checks implementation against the agreed plan.
+*Infra*
+• [p1neappleXpress/OpenFlux](https://github.com/p1neappleXpress/OpenFlux) — ★ 355 today (1.3k total) · Go · [RETURNING]
+Turns TCP tunneling into a transport-pluggable network research surface instead of a fixed proxy.
 
 *Web/Apps*
-• [pascalorg/editor](https://github.com/pascalorg/editor) — ★ 83 today (23.4k total) · TypeScript · [ACCELERATING]
-Exposes browser-based WebGPU architectural editing through a local CLI and authenticated MCP service.
+• [melgarafael/DeskcommCRM](https://github.com/melgarafael/DeskcommCRM) — ★ 505 today (1.6k total) · TypeScript · [RETURNING]
+Ships WhatsApp CRM, AI agents, Supabase and HTTPS as an idempotent one-command VPS deployment.
+
+• [Sonarr/Sonarr](https://github.com/Sonarr/Sonarr) — ★ 228 today (15.8k total) · C# · [RETURNING]
+Retries failed downloads and upgrades existing episodes automatically when better-quality releases appear.
+
+• [yuliskov/SmartTube](https://github.com/yuliskov/SmartTube) — ★ 247 today (33.1k total) · Java · [RETURNING]
+Keeps Android TV media browsing customizable and independent of the stock client’s interface rules.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/16
+sources: trending=ok · gh_api=ok · kept 8/16
