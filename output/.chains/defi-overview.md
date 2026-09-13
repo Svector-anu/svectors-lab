@@ -1,36 +1,22 @@
-# DeFi overview — 2026-09-13
+Take: chop — BTC held near flat at +0.1%, but only 5/20 top caps rose while DEX volume fell 48.5%. Conviction: medium.
 
-Take: **chop** — BTC held to −0.4%, but breadth collapsed from 12/20 to 4/20 green while DEX volume fell 48.5%.
+Evidence: DeFi TVL recovered 0.5% since the prior refresh to $88.01B and stablecoin supply gained 0.1%, suggesting sidelined liquidity rather than wholesale flight. Fear & Greed remains 61 (Greed).
 
-Conviction: **medium** — breadth, ETH, and DEX activity agree on defensive positioning; BTC and Fear & Greed remain resilient.
+Positioning: watch, don’t chase. The September 15 CLARITY cloture vote and September 16 Fed decision are the hinge; the 25 bp hike market is 77.5% YES. Reported weekly spot-BTC ETF flows were −$462.6M. [Macro source](https://plainlycrypto.com/weekly-crypto-brief-2026-09-13/)
 
-- BTC: $77,123 (−0.4%)
-- ETH: $2,488 (−2.0%)
-- TVL: $87.61B
-- DEX volume: $6.68B (−48.5%)
-- Fear & Greed: 61, Greed
-- Stablecoin supply: $311.5B (+0.1%)
-- Fed 25 bp increase market: 78.5% YES
-- Positions: `DEFI_MONITOR_NO_CONFIG`
+Key signals:
 
-Notable movers:
+- Lisk Bridge TVL surged 277% to $299.8M amid LSK burn and migration speculation.
+- PumpSwap fees rose 24.7% while TVL fell 6.4%—usage is outrunning deposits.
+- Sustainable-yield filters returned three pools; the highest was Raydium WSOL-USDC at 141.5% base APY, though that level warrants pool-specific risk review.
+- No tracked DeFi positions were configured.
+- All market-data sources succeeded.
 
-- Lisk Bridge +351.4% to $307.6M TVL
-- HTX −11.0% to $3.77B TVL; no obvious catalyst
-- LSK remained CoinGecko’s top trend at +239.7%
-
-Filtered yields:
-
-- Real: Raydium WSOL-USDC 162.8%, Uniswap UNI-WETH 21.6%, Axis sUSDX 18.8%
-- Incentive: Aerodrome USDC-AERO 25.2%, Stake DAO sdCRV 11.9%
-
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). All sources returned valid data, and all four historical token-pick rows were preserved.
-
-The notification was attempted, but the harness’s notification and json-render queues were read-only, so external delivery failed. Macro catalyst context came from the [September 13 crypto brief](https://plainlycrypto.com/weekly-crypto-brief-2026-09-13/) and [ETF flow tracker](https://www.satsintel.io/en/etfs/flows).
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). The LSK pick was added without altering earlier pick history. Notification delivery was attempted but its external queue was read-only.
 
 ## Summary
 
-- Refreshed the combined positions and macro overview.
-- Classified the market as defensive chop.
-- Persisted the updated context and run log.
-- External notification needs retry from a harness with writable delivery queues.
+- Regime: chop, medium conviction
+- DeFi verdict: mixed
+- Files modified: market context and daily log
+- Follow-up: monitor CLARITY/Fed outcomes and whether stablecoin growth converts into DEX participation
