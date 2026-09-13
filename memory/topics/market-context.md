@@ -1,57 +1,58 @@
 # Market Context (as of 2026-09-13)
 
-> **Take:** chop — BTC was flat at +0.1% and only 12/20 top caps rose while DEX volume fell 41.9%. Conviction: medium.
+> **Take:** chop — BTC held to -0.4%, but breadth collapsed to 4/20 green as DEX volume fell 48.5%. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $77,302 (+0.1% 24h, -3.2% 7d) · dominance 58.74% (+0.51 pp since prior refresh)
-- ETH $2,522 (+0.5% 24h, +0.7% 7d) · ETH/BTC 0.0326
-- SOL $101.76 (+0.2% 24h, -3.7% 7d)
-- Total mcap $2.637T (-3.4% 24h) · DEX vol $7.53B 24h
-- Breadth: 12/20 green 24h · 4/20 green 7d
+- BTC $77,123 (-0.4% 24h, -3.3% 7d) · dominance 58.87% (+0.13 pp since prior refresh)
+- ETH $2,488 (-2.0% 24h, -0.1% 7d) · ETH/BTC 0.0323
+- SOL $100.44 (-1.5% 24h, -6.0% 7d)
+- Total mcap $2.626T (-4.1% 24h) · DEX vol $6.68B 24h
+- Breadth: 4/20 green 24h · 3/20 green 7d
 - Fear & Greed: 61 (Greed) — yesterday 63
 
 ## What Changed Since Last Refresh
-- DEX volume fell another 11.1% from the earlier snapshot to $7.53B; the API's full-day comparison is -41.9%.
+- Breadth collapsed from 12/20 to 4/20 green while ETH weakened from +0.5% to -2.0%.
+- DEX volume fell another 11.3% to $6.68B; the API's full-day comparison is now -48.5%.
 
 ## Active Narratives
-- **DEX activity** — phase: fading. Evidence: aggregate volume fell 41.9% daily; Uniswap V4 fell 44.9% and V3 fell 71.5%.
-- **Stablecoin expansion** — phase: rising. Evidence: aggregate supply rose 0.4% daily as USDD added 6.5% and USDS 3.8%.
-- **Launch-token speculation** — phase: emerging. Evidence: four of CoinGecko's top eight trends gained double digits, led by LSK at +270.9%.
-- **Privacy rotation** — phase: fading. Evidence: ZEC gained 2.3% daily but only 0.9% weekly while XMR fell 1.4% daily and 4.6% weekly.
+- **Broad risk appetite** — phase: fading. Evidence: only 4/20 top caps are green daily and 3/20 weekly.
+- **DEX activity** — phase: fading. Evidence: aggregate volume fell 48.5%; Uniswap V4 fell 49.3% and V3 fell 67.8%.
+- **Launch-token speculation** — phase: peak. Evidence: three of CoinGecko's top four trends moved at least 85%, led by LSK at +239.7%.
+- **Stablecoin expansion** — phase: rising. Evidence: supply rose 0.1% daily while USDD added 6.5% and USDS 4.2%.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.45B (+0.8%)
-- Aave V3: $17.54B (-0.4%)
-- SSV Network: $13.24B (+1.3%)
-- Morpho Blue: $9.73B (-0.6%)
-- Binance staked ETH: $9.39B (+0.8%)
+- Lido: $24.00B (-1.0%)
+- Aave V3: $17.36B (-1.3%)
+- SSV Network: $13.02B (-0.3%)
+- Morpho Blue: $9.66B (-1.2%)
+- Binance staked ETH: $9.20B (-1.1%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $50.15B (7d n/a)
-- Solana: $5.91B (7d n/a)
-- BSC: $5.64B (7d n/a)
+- Ethereum: $49.65B (7d n/a)
+- Solana: $5.83B (7d n/a)
+- BSC: $5.59B (7d n/a)
 
 ## Stablecoins
-Total: $312.3B (+0.3% 7d). USDT $183.5B · USDC $74.4B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.8%.
+Total: $311.5B (+0.1% 7d). USDT $183.5B · USDC $74.3B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.9%.
 
 ## Trending (CoinGecko)
-- LSK — first in CoinGecko trends, +270.9% in 24h
-- STONK — second in CoinGecko trends, +13.0% in 24h
-- ZCAT — third in CoinGecko trends, +63.3% in 24h
+- LSK — first in CoinGecko trends, +239.7% in 24h
+- PONS — second in CoinGecko trends, -12.5% in 24h
+- CVC — third in CoinGecko trends, +85.5% in 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after September 2026 meeting | 20.5% | $2.09M | $1.19M |
-| Gen.G beats Hanwha Life Esports | 46.5% | $1.31M | $0.16M |
-| Fed raises rates 25 bps after September 2026 meeting | 79.5% | $1.01M | $1.07M |
+| No Fed rate change after September 2026 meeting | 20.5% | $2.05M | $1.25M |
+| Fed raises rates 25 bps after September 2026 meeting | 78.5% | $1.47M | $1.21M |
+| CLARITY Act signed into law in 2026 | 26.5% | $0.53M | $0.24M |
 
 ## Macro Catalysts (next 48h)
-- The September 15-16 Fed decision is the dominant positioning risk: Polymarket prices a 79.5% chance of a 25 bp hike, while the latest reported spot-BTC ETF flow was only +$6.0M on September 11.
+- The September 15 CLARITY Act vote and September 16 Fed decision are the binary risks: Polymarket prices a 78.5% chance of a 25 bp hike, while reported spot-BTC ETF flows ended the week $462.6M negative.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor liquid relative-strength setups; fade thin launch-token breakouts while aggregate DEX participation contracts.
-- **narrative-tracker:** watch whether stablecoin growth converts into post-Fed risk demand; DEX activity remains in a confirmed fading phase.
+- **token-pick:** require liquid relative strength; 4/20 breadth and collapsing DEX participation make thin breakouts poor entries.
+- **narrative-tracker:** watch launch-token speculation for peak-to-fading and whether post-Fed stablecoin liquidity becomes actual risk demand.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

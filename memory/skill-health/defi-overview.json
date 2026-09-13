@@ -1,19 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-13T06:12:07Z",
-  "quality_score": 3,
-  "assessment": "Substantive conclusion-first regime summary, but it lacks explicit front-run/ride/fade/watch calls and provides almost no source links for its many precise figures.",
+  "last_analyzed": "2026-09-13T15:08:36Z",
+  "quality_score": 2,
+  "assessment": "Substantive and conclusion-first, but exact trade-sensitive figures lack source-level verification, explicit position calls are missing, and claimed workspace updates contradict the read-only run.",
   "flags": [
+    "unverifiable_claim",
     "low_quality"
   ],
-  "avg_score": 2.17,
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-06",
-      "score": 3,
-      "ts": "2026-09-06T00:59:17Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-13",
       "score": 3,
       "ts": "2026-09-13T06:12:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:08:36Z",
       "harness": "codex"
     }
   ]
