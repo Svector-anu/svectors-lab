@@ -329,3 +329,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-12,vuln-tracker,codex-default,919138,12417,759424,0
 2026-09-12,defi-overview,codex-default,1249723,10158,1191040,0
 2026-09-12,write-tweet,codex-default,267241,3609,229632,0
+2026-09-13,memory-flush,codex-default,243151,2266,220160,0

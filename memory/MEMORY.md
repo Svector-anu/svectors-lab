@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-12*
+*Last consolidated: 2026-09-13*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Earlier repository, product, and security milestones are indexed in [About This Repo History](topics/about-this-repo-history.md)
@@ -52,7 +52,7 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Reconcile the four critical records in `memory/issues/INDEX.md` with current fleet state: `vuln-scanner`, `pr-review`, and `chain:dev-loop` recovered to success on 2026-09-11, but 11 enabled skills still meet the chronic-failure rule
-- Triage local PRs #70, #77, and #78: #70 remains stalled without checks, #77 fails the skill-integrity check, and #78 is green; #72 merged on 2026-09-11
+- Reconcile the three open critical records in `memory/issues/INDEX.md` with current fleet state: ISS-004 resolved on 2026-09-12, while five non-healthy skills still retain ChatGPT provider errors and three retain the `grok-4.5` unknown-model signature
+- Triage local PRs #70, #77, and #78: #70 is conflict-blocked and review found a critical bare `shadow`/`compare` selector bypass, #77 fails the skill-integrity check, and #78 is green
 - Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
 - Re-run PoC verification with a Go toolchain for stripe/stripe-cli's daemon auth-bypass candidate and databricks/cli's server-returned export-path traversal candidate; if Stripe verifies, route it to a human for Stripe's bug-bounty program, not PVR/email
