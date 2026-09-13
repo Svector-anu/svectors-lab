@@ -333,4 +333,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-13,defi-overview,codex-default,891496,9799,779136,0
 2026-09-13,slop-watch,codex-default,681478,7707,609664,0
 2026-09-13,defi-overview,codex-default,826419,8706,725248,0
-2026-09-13,defi-overview,codex-default,1112954,9250,1039872,0
+2026-09-13,vuln-tracker,codex-default,1115855,8876,985728,0
