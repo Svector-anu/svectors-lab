@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-12T19:42:23Z",
+  "last_analyzed": "2026-09-13T01:12:52Z",
   "quality_score": 2,
-  "assessment": "Strong positioning structure, but most catalysts and figures lack evidence links, making key regime calls insufficiently verifiable; the internal API-error note also distracts from the trader-facing output.",
+  "assessment": "Conclusion-first and position-labeled, but numerous precise figures, catalysts, and regime claims lack direct evidence links, making the report insufficiently verifiable and potentially misleading.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.57,
+  "avg_score": 2.53,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T12:52:21Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-12",
       "score": 2,
       "ts": "2026-09-12T19:42:23Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T01:12:52Z",
       "harness": "codex"
     }
   ]

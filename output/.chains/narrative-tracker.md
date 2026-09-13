@@ -1,27 +1,29 @@
-ℹ️ Narrative Tracker — 2026-09-12
-
-*Narrative Tracker — 2026-09-12 (intraday)*
+*Narrative Tracker — 2026-09-13*
 
 TRANSITIONS
-• PROMOTED: institutional tokenization Emerging → Rising — tokenized RWAs reached $39B across 3.6M wallets; bStocks holders rose 174% in 30 days, adding adoption evidence to the India/SEC/EU policy catalysts: https://sentora.com/research/articles/39b-tokenized-rwas-3.6-million-wallets-hip-3-allowlists-on-testnet
+• PROMOTED: AI-control panic Peak → Peak/accelerating — Anthropic’s Dario Amodei called for an industry slowdown, OpenAI delayed IPO plans around safety, and the warning cycle broadened beyond one resignation: https://apnews.com/article/d59552edcb27892d8ee4d98a48397706
+• DEMOTED: Robinhood Chain Peak → Fading — PONS is 40.3% below its Sep 5 ATH despite $108.39M of 30-day fees; activity remains huge, but price no longer validates the flywheel: https://defillama.com/protocol/pons
+• DEAD: Zcash privacy — no fresh 3-day catalyst beyond the prior leverage unwind.
+• DEAD: institutional tokenization rails — structurally intact, but no new in-window acceleration.
 
 REFLEXIVITY ALERT
-• Robinhood Chain/Pons — ~80% of launchpad revenue funds buybacks and 28%+ of supply has burned; activity is mechanically tightening float, but daily chain revenue already fell from $8.3M to ~$1M.
-• Zcash — Grayscale-linked demand validated the scarcity story into a +52.7% week, then crowded leverage amplified the Sep 11 reversal.
+• AI-control panic — public lab warnings are now changing corporate outcomes: OpenAI postponed an IPO while CEOs called for slower development.
+• Robinhood/Pons — 80% revenue-directed buybacks and 28%+ supply burned drove the loop up; PONS now being 40.3% below ATH shows that same narrative-price loop reversing.
 
 POSITIONS
-• RIDE: institutional tokenization (4 ↑, Bull) — @RobinhoodApp, @Nasdaq, @SECGov — bear: wallet growth is concentrated in tokenized stocks and liquidity still trails issuance.
-• RIDE: RWA/perps (4 ↑↑, Bull) — @HyperliquidX, @Polymarket, @Coinbase — bear: derivatives are driving nearly 9× spot volume, making the move liquidation-sensitive.
-• RIDE: prediction-market distribution (4 ↑, Mixed) — @RobinhoodApp, @Kalshi, @Polymarket — bear: ESMA authorization challenges can break EU distribution economics.
-• FADE: Robinhood Chain (5 →, Cope) — @RobinhoodApp, @Pons, @Arbitrum — real revenue, but the parabolic leg was memecoin-led and revenue momentum rolled over.
-• FADE: Zcash privacy (5 ↓, Mixed) — @Zcash, @Grayscale, @ZcashETF — privacy demand may persist, but vertical price action and leverage make entry quality poor.
-• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — derivatives-led risk-on can reverse sharply on the next macro surprise.
-• WATCH: AI-control panic (5 ↑↑, Bear) — @AnthropicAI, @OpenAI, @jacob_coxon — lab-CEO and congressional amplification is real, but there is no clean crypto positioning edge.
+• FADE: Robinhood Chain/Pons (4 ↓, Cope) — @RobinhoodApp, @Pons, @Arbitrum — $895.8M TVL and $1.88B daily DEX volume are real, but concentrated launchpad activity and a broken token-price loop make the trade late.
+• RIDE: RWA/perps (4 ↑, Bull) — @HyperliquidX, @Polymarket, @Coinbase — RWA perps reached $18.8B/day in the prior benchmark; bear: HYPE’s ATH pricing and unlock supply leave little room for execution misses.
+• WATCH: AI-control panic (5 ↑, Bear) — @AnthropicAI, @OpenAI, @jacob_coxon — policy and financing consequences are real, but there is no clean crypto asset expression.
+• WATCH: prediction-market distribution (4 →, Mixed) — @RobinhoodApp, @Kalshi, @Polymarket — distribution persists; bear: jurisdiction fights still threaten economics.
+• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — Sep 15–16 remains the catalyst; bear to the bear case: one soft print reverses defensive positioning.
+• IGNORE: stablecoin expansion (2 →, Bull) — @Tether_to, @circle, @SkyEcosystem — supply growth is structural but lacks a new three-day catalyst.
+• IGNORE: x402/agentic payments (2 →, Mixed) — @coinbase, @Cloudflare, @Alchemy — integration breadth persists; bear: only 13 of 715 monitored services had verified delivery at the last audit.
 
 MAP
 Emerging: none
-Rising: institutional tokenization, RWA/perps, prediction markets
-Peak: Robinhood Chain, CPI/Fed, AI-control panic
-Fading: Zcash privacy
+Rising: RWA/perps
+Peak: AI-control panic, prediction markets, CPI/Fed
+Fading: Robinhood Chain/Pons
+Dead: Zcash privacy, institutional tokenization
 
-Calibration: tokenized RWAs $39B / 3.6M wallets; bStocks holders +174% in 30 days; derivatives volume $856.3B vs $95.58B spot. Lower-confidence web fallback: KEY_UNSET; xai http=400 bytes=118.
+Calibration: DefiLlama reports Pons at $108.39M fees/30d and PONS -16.3%/7d; Robinhood Chain benchmark data shows $895.8M TVL (+7.2%/7d) and $1.88B DEX volume/24h.
