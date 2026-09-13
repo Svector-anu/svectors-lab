@@ -1,15 +1,11 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-09-12T08:47:11Z",
+  "last_analyzed": "2026-09-13T11:45:04Z",
   "quality_score": 3,
-  "assessment": "Acceptable no-signal result with a clear trigger-based skip, but the F&G value lacks a source or timestamp for verification.",
+  "assessment": "Acceptable no-signal report with a clear verdict and threshold comparison, but it lacks a source, retrieval timestamp, and evidence for the claim that market context was unchanged.",
   "flags": [],
-  "avg_score": 3.17,
+  "avg_score": 3.13,
   "history": [
-    {
-      "date": "2026-07-19",
-      "score": 4
-    },
     {
       "date": "2026-07-28",
       "score": 4
@@ -166,6 +162,12 @@
       "date": "2026-09-12",
       "score": 3,
       "ts": "2026-09-12T08:47:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 3,
+      "ts": "2026-09-13T11:45:04Z",
       "harness": "codex"
     }
   ]
