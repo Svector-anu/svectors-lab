@@ -1,14 +1,7 @@
-Self-improvement paused because the three-PR guard triggered:
-
-- #70 — Riva research kernel
-- #77 — scoped Aeon watermark
-- #78 — vuln-scanner RCE-gate wording
-
-No fix, branch, PR, dry-run, or notification was created. The outcome was logged in [memory/logs/2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md).
+Self-improve stopped at its backlog gate: three improvement PRs are already open (#70, #77, #78), so no additional change or PR was created.
 
 ## Summary
 
-- Mode: `improve`
-- Result: waiting for existing PR review
-- Modified: `memory/logs/2026-09-11.md`
-- Preserved unrelated pre-existing worktree changes.
+- Logged the improve-mode result in [memory/logs/2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md).
+- Left all pre-existing workspace changes untouched.
+- Follow-up: review or close an existing improvement PR before the next run.
