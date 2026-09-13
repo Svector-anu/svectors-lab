@@ -1,35 +1,28 @@
-*GitHub Trending — 2026-09-12*
+*GitHub Trending — 2026-09-13*
 
-*Top pick* — [multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE)
-YuE2 makes generated music inspectable and editable as a symbolic score, then renders it into a complete recording.
+*Top pick* — [JustVugg/colibri](https://github.com/JustVugg/colibri)
+Today’s v1.11 release makes a 744B MoE a storage-aware consumer-hardware workload, not a datacenter-only assumption.
 
 *AI/ML*
-• [multimodal-art-projection/YuE](https://github.com/multimodal-art-projection/YuE) — ★ 193 today (7.0k total) · Python · [RETURNING]
-Exposes melody and chords as editable plans before rendering 48 kHz stereo songs.
+• [JustVugg/colibri](https://github.com/JustVugg/colibri) — ★ 652 today (29.1k total) · C · [ACCELERATING]
+Streams inactive experts from disk, unifying VRAM, RAM and storage for 744B-to-2.8T MoE inference.
 
-• [alsk1992/CloddsBot](https://github.com/alsk1992/CloddsBot) — ★ 377 today (2.3k total) · TypeScript · [RETURNING]
-Connects one self-hosted agent to prediction markets, CEXs and onchain venues with execution and risk controls.
+• [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) — ★ 2,546 today (25.8k total) · Python · [ACCELERATING]
+Packs 16 TTS and 11 ASR engines into an account-free local workflow spanning 646 languages.
 
-• [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi) — ★ 193 today (23.1k total) · Go · [RETURNING]
-Runs 20-plus security tools inside isolated containers while preserving agent traces and findings in a vector-backed workspace.
+• [huggingface/transformers](https://github.com/huggingface/transformers) — ★ 102 today (165.3k total) · Python · [ACCELERATING]
+One model definition now bridges major training stacks and inference engines, reducing framework-specific integration work.
 
 *Devtools*
-• [nab138/iloader](https://github.com/nab138/iloader) — ★ 209 today (3.0k total) · TypeScript · [RETURNING]
-Automates SideStore installation, signing and pairing-file placement across Windows, macOS and Linux.
-
-*Infra*
-• [p1neappleXpress/OpenFlux](https://github.com/p1neappleXpress/OpenFlux) — ★ 355 today (1.3k total) · Go · [RETURNING]
-Turns TCP tunneling into a transport-pluggable network research surface instead of a fixed proxy.
+• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 438 today (23.0k total) · Go · [ACCELERATING]
+Combines deterministic rules with LLM review, preserving precise line comments where probabilistic agents usually drift.
 
 *Web/Apps*
-• [melgarafael/DeskcommCRM](https://github.com/melgarafael/DeskcommCRM) — ★ 505 today (1.6k total) · TypeScript · [RETURNING]
-Ships WhatsApp CRM, AI agents, Supabase and HTTPS as an idempotent one-command VPS deployment.
+• [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — ★ 2,898 today (31.2k total) · JavaScript · [ACCELERATING]
+Fuses aircraft, ships, satellites, earthquakes and cameras into one inspectable browser-native spatial view.
 
-• [Sonarr/Sonarr](https://github.com/Sonarr/Sonarr) — ★ 228 today (15.8k total) · C# · [RETURNING]
-Retries failed downloads and upgrades existing episodes automatically when better-quality releases appear.
-
-• [yuliskov/SmartTube](https://github.com/yuliskov/SmartTube) — ★ 247 today (33.1k total) · Java · [RETURNING]
-Keeps Android TV media browsing customizable and independent of the stock client’s interface rules.
+• [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) — ★ 383 today (58.2k total) · Python · [ACCELERATING]
+Builds editable timelines from real motion footage instead of disguising animated stills as agent-made video.
 
 ---
-sources: trending=ok · gh_api=ok · kept 8/16
+sources: trending=ok · gh_api=ok · kept 6/19
