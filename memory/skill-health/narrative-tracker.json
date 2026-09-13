@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-13T11:45:52Z",
+  "last_analyzed": "2026-09-13T15:07:15Z",
   "quality_score": 2,
-  "assessment": "Substantive and position-oriented, but most decisive claims, catalysts, market moves, and narrative classifications lack verifiable evidence; the lone Aave link cannot substantiate the broader assertions.",
+  "assessment": "Decision-oriented and well structured, but numerous specific claims and figures lack supporting sources, while the lone August 7 citation cannot verify the asserted September 10 text or September 15 vote schedule.",
   "flags": [
     "unverifiable_claim"
   ],
   "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T00:58:11Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T11:45:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:07:15Z",
       "harness": "codex"
     }
   ]
