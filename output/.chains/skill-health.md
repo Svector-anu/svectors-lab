@@ -1,29 +1,14 @@
-# Skill Health — 2026-09-12
+HEALTH: CRITICAL(1)
 
-**HEALTH: DEGRADED(17)**
-
-- 17 degraded
-- 6 warning
-- 7 healthy
-- 0 critical or flapping
-- 3 open issues
-
-Systemic signals:
-
-- Five non-healthy skills retain `chatgpt.com` provider errors.
-- Three retain the obsolete `grok-4.5` model signature.
-
-`self-improve` recovered and now meets the strict healthy criteria. ISS-004 was resolved and moved into the resolved index. ISS-003, ISS-005, and ISS-006 remain open.
-
-Notification delivery was attempted, but the external notification and json-render queues were read-only. The previous notification timestamp was preserved so the next audit retries.
+- `vuln-scanner`: 6 consecutive failures, 3 days since success; all 21 top-level runs failed over seven days. Existing `ISS-005` retained—no duplicate filed.
+- Degraded: 16
+- Warning: 6
+- Healthy: 7
+- Open issues: 3
+- Filed/resolved: 0/0
+- Systemic: three skills retain ChatGPT Unauthorized errors; three retain the `grok-4.5` unknown-model signature.
+- Notification attempted but external queues were read-only, so delivery failed.
 
 ## Summary
 
-Modified:
-
-- `memory/issues/ISS-004.md`
-- `memory/issues/INDEX.md`
-- `memory/skill-health/last-report.json`
-- `memory/logs/2026-09-12.md`
-
-Validation passed for JSON, issue YAML, and `git diff --check`. Existing unrelated workspace changes were left untouched.
+Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and appended the audit to [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). The report JSON was validated successfully.
