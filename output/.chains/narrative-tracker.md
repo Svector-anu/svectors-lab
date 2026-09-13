@@ -1,29 +1,27 @@
-*Narrative Tracker — 2026-09-13*
+*Narrative Tracker — 2026-09-13 (rerun)*
 
 TRANSITIONS
-• PROMOTED: AI-control panic Peak → Peak/accelerating — Anthropic’s Dario Amodei called for an industry slowdown, OpenAI delayed IPO plans around safety, and the warning cycle broadened beyond one resignation: https://apnews.com/article/d59552edcb27892d8ee4d98a48397706
-• DEMOTED: Robinhood Chain Peak → Fading — PONS is 40.3% below its Sep 5 ATH despite $108.39M of 30-day fees; activity remains huge, but price no longer validates the flywheel: https://defillama.com/protocol/pons
-• DEAD: Zcash privacy — no fresh 3-day catalyst beyond the prior leverage unwind.
-• DEAD: institutional tokenization rails — structurally intact, but no new in-window acceleration.
+• PROMOTED: agentic DeFi interfaces DEAD → Emerging — Aave MCP attention resurfaced inside the 3-day window and was linked to a ~3.16% AAVE move; this is fresh price validation, but still one-project evidence: https://aave.com/blog/introducing-aave-mcp-server
+• No other phase change versus the earlier 2026-09-13 run.
 
 REFLEXIVITY ALERT
-• AI-control panic — public lab warnings are now changing corporate outcomes: OpenAI postponed an IPO while CEOs called for slower development.
-• Robinhood/Pons — 80% revenue-directed buybacks and 28%+ supply burned drove the loop up; PONS now being 40.3% below ATH shows that same narrative-price loop reversing.
+• agentic DeFi — coverage tied AAVE’s short-term move to renewed MCP/AI-agent attention plus fee-switch discussion. The story is now moving the token before agent usage is proven.
+• AI-control panic — lab warnings are affecting financing: OpenAI deferred a 2026 IPO while Anthropic called for slower frontier development.
+• Robinhood/Pons — protocol-funded buybacks and burns drove the flywheel up; PONS remaining far below its high shows the loop reversing.
 
 POSITIONS
-• FADE: Robinhood Chain/Pons (4 ↓, Cope) — @RobinhoodApp, @Pons, @Arbitrum — $895.8M TVL and $1.88B daily DEX volume are real, but concentrated launchpad activity and a broken token-price loop make the trade late.
-• RIDE: RWA/perps (4 ↑, Bull) — @HyperliquidX, @Polymarket, @Coinbase — RWA perps reached $18.8B/day in the prior benchmark; bear: HYPE’s ATH pricing and unlock supply leave little room for execution misses.
-• WATCH: AI-control panic (5 ↑, Bear) — @AnthropicAI, @OpenAI, @jacob_coxon — policy and financing consequences are real, but there is no clean crypto asset expression.
-• WATCH: prediction-market distribution (4 →, Mixed) — @RobinhoodApp, @Kalshi, @Polymarket — distribution persists; bear: jurisdiction fights still threaten economics.
-• WATCH: CPI/Fed regime (5 →, Bear) — @federalreserve, @BLS_gov, @CMEGroup — Sep 15–16 remains the catalyst; bear to the bear case: one soft print reverses defensive positioning.
-• IGNORE: stablecoin expansion (2 →, Bull) — @Tether_to, @circle, @SkyEcosystem — supply growth is structural but lacks a new three-day catalyst.
-• IGNORE: x402/agentic payments (2 →, Mixed) — @coinbase, @Cloudflare, @Alchemy — integration breadth persists; bear: only 13 of 715 monitored services had verified delivery at the last audit.
+• FRONT-RUN: agentic DeFi interfaces (2 ↑↑, Bull) — @Aave, @aavechan, Aave Labs — bear: the MCP launched Sep 8 and there is no disclosed usage benchmark; one token bounce is not adoption.
+• FADE: Robinhood Chain/Pons (4 ↓, Cope) — @RobinhoodApp, @Pons, @Arbitrum — onchain activity is real, but concentrated launchpad activity and a broken price loop make the trade late.
+• RIDE: RWA/perps (4 ↑, Bull) — @HyperliquidX, @Polymarket, @Coinbase — bear: ATH pricing and unlock supply leave little room for execution misses.
+• WATCH: AI-control panic (5 ↑, Bear) — @AnthropicAI, @OpenAI, @DarioAmodei — real corporate consequences, no clean crypto expression.
+• WATCH: prediction-market distribution (4 →, Mixed) — @RobinhoodApp, @Kalshi, @Polymarket — bear: jurisdiction fights threaten economics.
+• WATCH: CPI/Fed + CLARITY regime (5 ↑, Bear) — @federalreserve, @BLS_gov, @SECGov — Sep 15–16 are binary catalysts; one benign outcome can reverse defensive positioning.
 
 MAP
-Emerging: none
+Emerging: agentic DeFi interfaces
 Rising: RWA/perps
-Peak: AI-control panic, prediction markets, CPI/Fed
+Peak: AI-control panic, prediction markets, CPI/Fed + CLARITY
 Fading: Robinhood Chain/Pons
 Dead: Zcash privacy, institutional tokenization
 
-Calibration: DefiLlama reports Pons at $108.39M fees/30d and PONS -16.3%/7d; Robinhood Chain benchmark data shows $895.8M TVL (+7.2%/7d) and $1.88B DEX volume/24h.
+Calibration: public-web fallback; AAVE coverage cited ~3.16% over ~17h. Kaito supplied no extractable live narrative percentage, so no Kaito number is claimed.

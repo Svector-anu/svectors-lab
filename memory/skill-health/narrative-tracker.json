@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-13T01:12:52Z",
+  "last_analyzed": "2026-09-13T11:45:52Z",
   "quality_score": 2,
-  "assessment": "Conclusion-first and position-labeled, but numerous precise figures, catalysts, and regime claims lack direct evidence links, making the report insufficiently verifiable and potentially misleading.",
+  "assessment": "Substantive and position-oriented, but most decisive claims, catalysts, market moves, and narrative classifications lack verifiable evidence; the lone Aave link cannot substantiate the broader assertions.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.53,
+  "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T19:29:11Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T01:12:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T11:45:52Z",
       "harness": "codex"
     }
   ]
