@@ -1,75 +1,74 @@
-## Tweet Drafts: tokenized assets are growing faster than liquidity
+## Tweet Drafts: Huge models become storage systems
 
 ### Tier 1 — One-liner
 
-**1a. Observation**
+**1a. Sardonic**
 
-> tokenized assets are growing faster than the markets underneath them
+> the next ai hardware flex might just be a really fast ssd
 
 **1b. Data drop**
 
-> $39b tokenized. 3.6m wallets. liquidity is still the hard part
+> 744b models on consumer hardware changes what local ai even means
 
 ### Tier 2 — Two-punch
 
-**2a. Reframe**
+**2a. Observation**
 
-> tokenized assets reached $39b across 3.6m wallets. the next milestone is not more issuance, it is enough liquidity to make those assets useful
+> colibri runs a 744b moe across vram, ram and storage. turns out the bottleneck was not model size, it was moving the right experts fast enough
 
-**2b. Observation**
+**2b. Reframe**
 
-> bStocks holders grew 174% in 30 days. distribution is arriving faster than market depth, and that gap is where the real work starts
+> we kept asking how much vram a huge model needs. colibri asks a better question: which tiny part of the model needs to be in vram right now
 
 ### Tier 3 — Paragraph
 
-**3a. Builder’s breakdown**
+**3a. Hot take**
 
-> tokenized assets are at $39b across 3.6m wallets. that is real adoption. but issuance is the easy part now. the winners will make these assets liquid enough to trade, borrow against and move without users thinking about the rails
+> a 744b model sounds like datacenter-only infrastructure. colibri streams inactive experts from disk and keeps only the active ones close. huge local models are becoming a systems problem, not just a gpu budget
 
-**3b. Question**
+**3b. Observation**
 
-> everyone wanted proof that people would hold tokenized assets. 3.6m wallets answers that. the harder question is whether markets can turn those holdings into useful collateral instead of another collection of assets sitting onchain
+> local ai does not need the whole model sitting in vram. it needs the right weights available at the right moment. vram, ram and storage are starting to look like one inference memory layer
 
 ### Tier 4 — Long tweet
 
-**4a. Data drop**
+**4a. Reframe**
 
-> tokenized assets reached $39b across 3.6m wallets, while bStocks holders grew 174% in 30 days. distribution is working. the bottleneck is moving from getting assets onchain to making them useful once they arrive. deep liquidity, reliable settlement and simple access will matter more than another tokenization announcement
+> colibri running a 744b moe on consumer hardware is a useful reframe. the machine does not need every expert loaded at once. it needs to predict which experts will be used, keep the hot ones nearby and stream the rest from disk. once vram, ram and storage become one managed layer, model size stops mapping directly to gpu size. the next local ai breakthrough might look more like an operating system than a new model
 
-**4b. Reframe**
+**4b. Builder’s breakdown**
 
-> $39b in tokenized assets sounds like the finish line. it is closer to the starting line. the next product has to let people trade, borrow and settle against those assets without learning bridges, chains or custody flows. issuance puts an asset onchain. good infrastructure makes the chain disappear
+> everyone compares local ai setups by gpu memory. colibri makes that number less useful. a mixture-of-experts model only activates part of itself for each token, so inactive experts can live on disk while the useful ones move through ram and vram. that turns 744b inference from an impossible allocation into a scheduling problem. fast storage and good orchestration can beat buying enough gpu to hold everything
 
 ### Tier 5 — Thread opener
 
-**5a. Observation**
+**5a. Technical thesis**
 
-> tokenized assets reached $39b across 3.6m wallets. adoption is no longer the only question. the next race is turning onchain holdings into markets people can actually use
-
----
-
-- Why issuance is no longer the main bottleneck
-- Where liquidity and settlement still break down
-- How products can hide chains, bridges, and custody
-- What successful tokenization infrastructure looks like
-
-**5b. Hot take**
-
-> bStocks holders grew 174% in 30 days, but issuance is outrunning liquidity. tokenization wins when the asset becomes easier to use, not just easier to put onchain
+> colibri is running 744b mixture-of-experts models on consumer hardware by treating vram, ram and storage as one system. this is less about fitting a huge model and more about moving the right experts at the right time
 
 ---
 
-- The recent distribution growth
-- Why wallet count does not equal market depth
-- The missing trading and collateral infrastructure
-- The shift from tokenizing assets to making them useful
+- Why MoE models only activate selected experts
+- How weights move between storage, RAM, and VRAM
+- Why expert prediction and caching matter
+- What this changes for local AI hardware
 
-Best overall: **#4b**  
-Best per tier: **#1b, #2b, #3a, #4b, #5b**
+**5b. Reframe**
+
+> huge local models might not require huge gpus. they might require better scheduling. colibri streams inactive experts from disk, keeps hot weights close and turns 744b inference into a storage orchestration problem
+
+---
+
+- The limits of comparing setups only by VRAM
+- Storage bandwidth as part of inference performance
+- Scheduling as the real systems challenge
+- Why local AI may become more hardware-accessible
+
+Best overall: **#4a**. Best per tier: **#1a, #2b, #3a, #4a, #5b**.
 
 ## Summary
 
-- Saved the latest batch to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-09-12.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-12.md).
-- Character limits passed.
-- Notification and revision-offer delivery were attempted, but the external queues were read-only.
+- Generated 10 drafts across five size tiers.
+- Saved the revisable version to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Logged the run in [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md).
+- External notification and revision prompt were attempted, but their queue was read-only.

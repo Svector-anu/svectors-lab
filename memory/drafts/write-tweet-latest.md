@@ -1,23 +1,23 @@
-tweet drafts: tokenized assets are growing faster than liquidity
+tweet drafts: huge models become storage systems
 
 — one-liner —
-1a. tokenized assets are growing faster than the markets underneath them
-1b. $39b tokenized. 3.6m wallets. liquidity is still the hard part
+1a. the next ai hardware flex might just be a really fast ssd
+1b. 744b models on consumer hardware changes what local ai even means
 
 — two-punch —
-2a. tokenized assets reached $39b across 3.6m wallets. the next milestone is not more issuance, it is enough liquidity to make those assets useful
-2b. bStocks holders grew 174% in 30 days. distribution is arriving faster than market depth, and that gap is where the real work starts
+2a. colibri runs a 744b moe across vram, ram and storage. turns out the bottleneck was not model size, it was moving the right experts fast enough
+2b. we kept asking how much vram a huge model needs. colibri asks a better question: which tiny part of the model needs to be in vram right now
 
 — paragraph —
-3a. tokenized assets are at $39b across 3.6m wallets. that is real adoption. but issuance is the easy part now. the winners will make these assets liquid enough to trade, borrow against and move without users thinking about the rails
-3b. everyone wanted proof that people would hold tokenized assets. 3.6m wallets answers that. the harder question is whether markets can turn those holdings into useful collateral instead of another collection of assets sitting onchain
+3a. a 744b model sounds like datacenter-only infrastructure. colibri streams inactive experts from disk and keeps only the active ones close. huge local models are becoming a systems problem, not just a gpu budget
+3b. local ai does not need the whole model sitting in vram. it needs the right weights available at the right moment. vram, ram and storage are starting to look like one inference memory layer
 
 — long tweet —
-4a. tokenized assets reached $39b across 3.6m wallets, while bStocks holders grew 174% in 30 days. distribution is working. the bottleneck is moving from getting assets onchain to making them useful once they arrive. deep liquidity, reliable settlement and simple access will matter more than another tokenization announcement
-4b. $39b in tokenized assets sounds like the finish line. it is closer to the starting line. the next product has to let people trade, borrow and settle against those assets without learning bridges, chains or custody flows. issuance puts an asset onchain. good infrastructure makes the chain disappear
+4a. colibri running a 744b moe on consumer hardware is a useful reframe. the machine does not need every expert loaded at once. it needs to predict which experts will be used, keep the hot ones nearby and stream the rest from disk. once vram, ram and storage become one managed layer, model size stops mapping directly to gpu size. the next local ai breakthrough might look more like an operating system than a new model
+4b. everyone compares local ai setups by gpu memory. colibri makes that number less useful. a mixture-of-experts model only activates part of itself for each token, so inactive experts can live on disk while the useful ones move through ram and vram. that turns 744b inference from an impossible allocation into a scheduling problem. fast storage and good orchestration can beat buying enough gpu to hold everything
 
 — thread opener —
-5a. tokenized assets reached $39b across 3.6m wallets. adoption is no longer the only question. the next race is turning onchain holdings into markets people can actually use
-5b. bStocks holders grew 174% in 30 days, but issuance is outrunning liquidity. tokenization wins when the asset becomes easier to use, not just easier to put onchain
+5a. colibri is running 744b mixture-of-experts models on consumer hardware by treating vram, ram and storage as one system. this is less about fitting a huge model and more about moving the right experts at the right time
+5b. huge local models might not require huge gpus. they might require better scheduling. colibri streams inactive experts from disk, keeps hot weights close and turns 744b inference into a storage orchestration problem
 
-best: #4b — connects the adoption number to the actual product work in anu's builder-first voice
+best: #4a — connects the technical mechanism to the bigger local ai shift
