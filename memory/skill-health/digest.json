@@ -1,21 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-12T15:42:00Z",
+  "last_analyzed": "2026-09-13T15:06:57Z",
   "quality_score": 2,
-  "assessment": "Substantive-looking tech digest, but it is misaligned with the crypto-trading strategy, provides no regime verdict or position calls, and implausibly claims workspace files were saved during a read-only run.",
+  "assessment": "Specific exploit, recovery, deadline, bill-text, and vote claims are supported only by generic catalog/profile pages, making them insufficiently verifiable; the digest also lacks a clear crypto regime verdict and consistently labeled position calls.",
   "flags": [
-    "low_quality",
-    "generic_content",
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "low_quality"
   ],
   "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-27",
-      "score": 2,
-      "ts": "2026-08-27T06:18:07Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-27",
       "score": 2,
@@ -188,6 +181,12 @@
       "date": "2026-09-12",
       "score": 2,
       "ts": "2026-09-12T15:42:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:06:57Z",
       "harness": "codex"
     }
   ]
