@@ -1,19 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-12T19:44:42Z",
-  "quality_score": 2,
-  "assessment": "Conclusion-first and actionable in tone, but it omits explicit position calls and presents numerous trade-relevant figures—including an unusual 25 bp hike probability—without sufficient source links or timestamps to verify them.",
+  "last_analyzed": "2026-09-13T01:14:15Z",
+  "quality_score": 3,
+  "assessment": "Actionable and conclusion-first with explicit WATCH/FADE calls, but key percentage moves lack time windows and source links, and the claimed workspace updates conflict with the stated read-only run.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality"
   ],
-  "avg_score": 2.1,
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 2,
-      "ts": "2026-09-05T12:53:02Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-12",
       "score": 2,
       "ts": "2026-09-12T19:44:42Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 3,
+      "ts": "2026-09-13T01:14:15Z",
       "harness": "codex"
     }
   ]
