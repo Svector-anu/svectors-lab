@@ -1,19 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-13T15:07:15Z",
+  "last_analyzed": "2026-09-13T20:46:35Z",
   "quality_score": 2,
-  "assessment": "Decision-oriented and well structured, but numerous specific claims and figures lack supporting sources, while the lone August 7 citation cannot verify the asserted September 10 text or September 15 vote schedule.",
+  "assessment": "Explicit calls are useful, but several consequential claims and figures lack direct evidence, rely on stale prior benchmarks, or appear implausibly sourced, undermining tradeability and verification.",
   "flags": [
-    "unverifiable_claim"
+    "unverifiable_claim",
+    "stale_data"
   ],
-  "avg_score": 2.5,
+  "avg_score": 2.47,
   "history": [
-    {
-      "date": "2026-09-06",
-      "score": 3,
-      "ts": "2026-09-06T09:37:52Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T15:07:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T20:46:35Z",
       "harness": "codex"
     }
   ]
