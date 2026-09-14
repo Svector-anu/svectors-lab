@@ -1,19 +1,22 @@
-Vuln Tracker completed for 2026-09-13.
+Vulnerability lifecycle poll completed.
 
-- ★168,746 secured across 8 repos; ★481,831 in flight.
-- 2 PRs still need attention; no new PR transitions.
-- 1 overdue disclosure: ZSvirt/zsvirt MEDIUM, 21 days old.
-- 1 operator action: send the separate ZSvirt CRITICAL disclosure.
-- 7 disclosure files are cleanup candidates.
-- No canonical `channel: pvr` submissions found.
-- Dashboard updated: [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md)
-- Run logged: [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md)
+Key findings:
 
-Notification delivery was attempted but could not persist because the workflow notification queues are read-only. The complete alert remains in the run output and staging buffer.
+- One new merge: `Svector-anu/vuln-template#5`.
+- ★170.3k secured across 8 live repositories.
+- 16 repositories remain in flight, representing ★478.8k.
+- Two PRs still need attention: `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
+- One disclosure exceeded its threshold: `ZSvirt/zsvirt` MEDIUM, 22 days old.
+- A separate CRITICAL `ZSvirt/zsvirt` disclosure requires manual sending.
+- The NeoSoul disclosure remains within its window, but Resend is blocked because `svector.xyz` is unverified.
+- Seven disclosure files are cleanup/archive candidates.
+- No compatible submitted-PVR records were present for triage polling.
+
+Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and [2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md). Notification delivery was attempted, but the harness’s external notification queue is read-only, so it did not persist.
 
 ## Summary
 
-- Modified `memory/topics/vuln-followup.md`
-- Modified `memory/logs/2026-09-13.md`
-- External notification not delivered due to read-only queue
-- `VULN_TRACKER_OK`
+- Ran Arms A, B, and C.
+- Refreshed live GitHub state and star counts.
+- Updated the vulnerability dashboard and activity log.
+- Immediate follow-up: verify `svector.xyz` in Resend or manually send both ZSvirt disclosures.

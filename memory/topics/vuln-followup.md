@@ -1,18 +1,18 @@
 # Vuln Tracker Status
 
-*Last updated: 2026-09-13*
+*Last updated: 2026-09-14*
 
 ## Stars Secured
 
-- **Merged-PR repos (secured):** ★ 168.7k across 8 repos
-- **Open-PR repos (in flight):** ★ 481.8k across 17 repos
-- **All tracked repos:** ★ 1.58m across 96 live repos
+- **Merged-PR repos (secured):** ★ 170.3k across 8 live repos
+- **Open-PR repos (in flight):** ★ 478.8k across 16 repos
+- **All tracked repos:** ★ 1.59m across 97 live repos
 
 ### Secured leaderboard — every merged PR ranked by repo stars
 
 | Rank | Repo | Stars | PR | Merged | Severity | Title |
 |---|---|---:|---|---|---|---|
-| 1 | abhigyanpatwari/GitNexus | 47292 | [#3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095) | 2026-08-30 | PRE-HISTORY | fix(deps): bump transitive packages to patch disclosed CVEs |
+| 1 | abhigyanpatwari/GitNexus | 47338 | [#3095](https://github.com/abhigyanpatwari/GitNexus/pull/3095) | 2026-08-30 | PRE-HISTORY | fix(deps): bump transitive packages to patch disclosed CVEs |
 | 2 | tinyhumansai/openhuman | 39737 | [#5814](https://github.com/tinyhumansai/openhuman/pull/5814) | 2026-09-11 | PRE-HISTORY | fix(deps): bump mobile Tauri to patch GHSA-7gmj-67g7-phm9 |
 | 3 | THU-MAIC/OpenMAIC | 36423 | [#1357](https://github.com/THU-MAIC/OpenMAIC/pull/1357) | 2026-09-03 | PRE-HISTORY | fix(deps): bump next/js-yaml/undici/nanoid/lodash/sharp for disclosed CVEs |
 | 4 | jdx/mise | 33865 | [#12714](https://github.com/jdx/mise/pull/12714) | 2026-09-02 | PRE-HISTORY | fix(deps): bump self_update to 1.3 to clear quick-xml advisories |
@@ -21,12 +21,13 @@
 | 7 | pacifio/atlas | 3311 | [#233](https://github.com/pacifio/atlas/pull/233) | 2026-09-03 | PRE-HISTORY | fix(security): bind ACP fs handlers to session roots, strip inline event handlers |
 | 8 | pacifio/atlas | 3311 | [#220](https://github.com/pacifio/atlas/pull/220) | 2026-09-02 | PRE-HISTORY | fix(deps): bump gix/vite/mermaid/tar/js-yaml for disclosed CVEs |
 | 9 | Svector-anu/skopos | 1 | [#104](https://github.com/Svector-anu/skopos/pull/104) | 2026-08-21 | MEDIUM | fix(security): user text reached a RegExp unescaped in the polymarket filter |
+| 10 | Svector-anu/vuln-template | 0 | [#5](https://github.com/Svector-anu/vuln-template/pull/5) | 2026-09-14 | PRE-HISTORY | fix(deps): bump packages to patch disclosed CVEs (next, hono, sharp, …) |
 
 ### Per-repo breakdown — secured
 
 | Repo | Stars | Merged PRs | First merge | Latest merge | Severities landed |
 |---|---:|---:|---|---|---|
-| abhigyanpatwari/GitNexus | 47292 | 1 | 2026-08-30 | 2026-08-30 | PRE-HISTORY |
+| abhigyanpatwari/GitNexus | 47338 | 1 | 2026-08-30 | 2026-08-30 | PRE-HISTORY |
 | tinyhumansai/openhuman | 39737 | 1 | 2026-09-11 | 2026-09-11 | PRE-HISTORY |
 | THU-MAIC/OpenMAIC | 36423 | 1 | 2026-09-03 | 2026-09-03 | PRE-HISTORY |
 | jdx/mise | 33865 | 1 | 2026-09-02 | 2026-09-02 | PRE-HISTORY |
@@ -34,6 +35,7 @@
 | yetone/cumora | 3588 | 1 | 2026-08-18 | 2026-08-18 | HIGH/MODERATE |
 | pacifio/atlas | 3311 | 2 | 2026-09-02 | 2026-09-03 | PRE-HISTORY |
 | Svector-anu/skopos | 1 | 1 | 2026-08-21 | 2026-08-21 | MEDIUM |
+| Svector-anu/vuln-template | 0 | 1 | 2026-09-14 | 2026-09-14 | PRE-HISTORY |
 
 ### Per-repo breakdown — in flight
 
@@ -86,10 +88,11 @@ None.
 | step-security/harden-runner | 1268 | [#693](https://github.com/step-security/harden-runner/pull/693) | 9d | stale-no-review | Review and consider a polite maintainer ping. |
 | paypal/agent-toolkit | 191 | [#101](https://github.com/paypal/agent-toolkit/pull/101) | 8d | stale-no-review | Review and consider a polite maintainer ping. |
 
-## Recently merged (last 30d, 9)
+## Recently merged (last 30d, 10)
 
 | Date merged | Repo | Stars | PR | Severity | Title |
 |---|---|---:|---|---|---|
+| 2026-09-14 | Svector-anu/vuln-template | 0 | [#5](https://github.com/Svector-anu/vuln-template/pull/5) | PRE-HISTORY | fix(deps): bump packages to patch disclosed CVEs (next, hono, sharp, …) |
 | 2026-09-11 | tinyhumansai/openhuman | 39737 | [#5814](https://github.com/tinyhumansai/openhuman/pull/5814) | PRE-HISTORY | fix(deps): bump mobile Tauri to patch GHSA-7gmj-67g7-phm9 |
 | 2026-09-10 | cloudflare/workers-sdk | 4529 | [#15584](https://github.com/cloudflare/workers-sdk/pull/15584) | PRE-HISTORY | fix(deps): bump shell-quote to patch CVE-2026-9277 / CVE-2026-13311 |
 | 2026-09-03 | pacifio/atlas | 3311 | [#233](https://github.com/pacifio/atlas/pull/233) | PRE-HISTORY | fix(security): bind ACP fs handlers to session roots, strip inline event handlers |
