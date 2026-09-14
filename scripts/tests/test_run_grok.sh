@@ -126,6 +126,18 @@ HOME="$OHOME" PATH="$OBIN:$PATH" GROK_CREDENTIALS="$CREDS" GH_SECRETS_PAT="pat-t
 { [ "$rc" = 0 ] && [ "$(authf key)" = "OLDACCESS" ] && grep -q "invalid_grant" "$OHOME/e4"; } \
   && pass "oauth: invalid_grant → warns, keeps token, rc 0" || bad "oauth invalid_grant (rc=$rc key=$(authf key) err=$(cat "$OHOME/e4"))"
 
+# 3d2. poc for the ISS-005 silent-failure bug: rc=0 is correct (3d, unchanged) but
+# the setup-complete line must not claim "staged" when we just warned refresh failed
+# - that false-positive is what let this run failed 21/21 times for 11 days with
+# nothing pointing at auth as the cause. reusing the same invalid_grant fixture as 3d.
+{ grep -q "DEGRADED" "$OHOME/e4" && ! grep -q "auth staged" "$OHOME/e4"; } \
+  && pass "oauth: invalid_grant → setup message is honestly DEGRADED, not falsely staged" \
+  || bad "oauth invalid_grant should not claim staged (err=$(cat "$OHOME/e4"))"
+# ...and the happy path (3a's successful refresh) must NOT cry wolf - no DEGRADED line.
+! grep -q "DEGRADED" "$OHOME/e1" \
+  && pass "oauth: successful refresh → no false DEGRADED warning" \
+  || bad "oauth successful refresh wrongly flagged DEGRADED (err=$(cat "$OHOME/e1"))"
+
 # 3e. XAI_API_KEY path (no GROK_CREDENTIALS) → the OAuth refresh never runs
 CURL_LOG="$OHOME/curl2.log"; : >"$CURL_LOG"
 HOME="$OHOME" PATH="$OBIN:$PATH" XAI_API_KEY=xai-test CURL_LOG="$CURL_LOG" bash "$RABS" setup >/dev/null 2>&1
