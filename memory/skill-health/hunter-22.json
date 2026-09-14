@@ -1,17 +1,11 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-13T11:46:27Z",
-  "quality_score": 2,
-  "assessment": "The candidate triage is clear and decision-oriented, but the claimed workspace file modifications contradict the explicitly read-only run environment, making the final output materially unverifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.53,
+  "last_analyzed": "2026-09-14T10:45:19Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-op scan with concrete triage and validation details, though it is process-heavy and confusingly claims workspace updates despite the stated read-only constraint.",
+  "flags": [],
+  "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-08-21",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -174,6 +168,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T11:46:27Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 3,
+      "ts": "2026-09-14T10:45:19Z",
       "harness": "codex"
     }
   ]
