@@ -1,28 +1,31 @@
-*GitHub Trending — 2026-09-13*
+*GitHub Trending — 2026-09-14*
 
-*Top pick* — [JustVugg/colibri](https://github.com/JustVugg/colibri)
-Today’s v1.11 release makes a 744B MoE a storage-aware consumer-hardware workload, not a datacenter-only assumption.
+*Top pick* — [ruvnet/RuView](https://github.com/ruvnet/RuView)
+RuView turns cheap ESP32 radio data into local automation signals, while explicitly separating synthetic accuracy from validated sensing.
 
 *AI/ML*
-• [JustVugg/colibri](https://github.com/JustVugg/colibri) — ★ 652 today (29.1k total) · C · [ACCELERATING]
-Streams inactive experts from disk, unifying VRAM, RAM and storage for 744B-to-2.8T MoE inference.
+• [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) — ★ 640 today (81.0k total) · Python · [ACCELERATING]
+Maintains fallback backends for blocked platforms, giving agents one CLI across Western and Chinese sources.
 
-• [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio) — ★ 2,546 today (25.8k total) · Python · [ACCELERATING]
-Packs 16 TTS and 11 ASR engines into an account-free local workflow spanning 646 languages.
+• [ruvnet/RuView](https://github.com/ruvnet/RuView) — ★ 370 today (93.7k total) · Rust · [ACCELERATING]
+Maps ESP32 WiFi sensing into 21 Home Assistant entities while flagging unvalidated accuracy claims.
 
-• [huggingface/transformers](https://github.com/huggingface/transformers) — ★ 102 today (165.3k total) · Python · [ACCELERATING]
-One model definition now bridges major training stacks and inference engines, reducing framework-specific integration work.
+• [tech-leads-club/agent-skills](https://github.com/tech-leads-club/agent-skills) — ★ 506 today (5.9k total) · TypeScript · [RETURNING]
+Adds content hashing, symlink guards and static scanning to skills portable across 19 agent clients.
 
-*Devtools*
-• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 438 today (23.0k total) · Go · [ACCELERATING]
-Combines deterministic rules with LLM review, preserving precise line comments where probabilistic agents usually drift.
+*Infra*
+• [localsend/localsend](https://github.com/localsend/localsend) — ★ 311 today (91.1k total) · Dart · [ACCELERATING]
+Moves files over local HTTPS across six operating systems without accounts, cloud servers or internet.
 
 *Web/Apps*
-• [bilawalsidhu/gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) — ★ 2,898 today (31.2k total) · JavaScript · [ACCELERATING]
-Fuses aircraft, ships, satellites, earthquakes and cameras into one inspectable browser-native spatial view.
+• [ever-co/ever-gauzy](https://github.com/ever-co/ever-gauzy) — ★ 1,095 today (5.8k total) · TypeScript · [RETURNING]
+Consolidates ERP, CRM, HR, recruiting and time tracking behind one self-hostable AGPL platform.
 
-• [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) — ★ 383 today (58.2k total) · Python · [ACCELERATING]
-Builds editable timelines from real motion footage instead of disguising animated stills as agent-made video.
+• [reconurge/flowsint](https://github.com/reconurge/flowsint) — ★ 279 today (8.2k total) · TypeScript · [RETURNING]
+Keeps graph-based OSINT evidence local and ships prebuilt containers for a one-command private deployment.
+
+• [peetzweg/opendisplay](https://github.com/peetzweg/opendisplay) — ★ 314 today (3.4k total) · Swift · [RETURNING]
+Implements true macOS display extension over USB or WiFi, including HiDPI and touch input.
 
 ---
-sources: trending=ok · gh_api=ok · kept 6/19
+sources: trending=ok · gh_api=ok · kept 7/20
