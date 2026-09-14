@@ -1,20 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-13T20:46:35Z",
-  "quality_score": 2,
-  "assessment": "Explicit calls are useful, but several consequential claims and figures lack direct evidence, rely on stale prior benchmarks, or appear implausibly sourced, undermining tradeability and verification.",
-  "flags": [
-    "unverifiable_claim",
-    "stale_data"
-  ],
-  "avg_score": 2.47,
+  "last_analyzed": "2026-09-14T10:44:48Z",
+  "quality_score": 4,
+  "assessment": "Good, conclusion-first and decision-grade with explicit position calls and direct evidence links, though several narrative/regime assertions remain thinly sourced or unexplained.",
+  "flags": [],
+  "avg_score": 2.53,
   "history": [
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T13:08:12Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 2,
@@ -187,6 +178,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T20:46:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 4,
+      "ts": "2026-09-14T10:44:48Z",
       "harness": "codex"
     }
   ]
