@@ -1,15 +1,14 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-09-13T11:45:04Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-signal report with a clear verdict and threshold comparison, but it lacks a source, retrieval timestamp, and evidence for the claim that market context was unchanged.",
-  "flags": [],
-  "avg_score": 3.13,
+  "last_analyzed": "2026-09-14T10:44:18Z",
+  "quality_score": 2,
+  "assessment": "The no-signal conclusion is clear, but the output lacks a source/evidence anchor and falsely claims a workspace log write during a read-only run.",
+  "flags": [
+    "low_quality",
+    "unverifiable_claim"
+  ],
+  "avg_score": 3.07,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
     {
       "date": "2026-08-21",
       "score": 3
@@ -168,6 +167,12 @@
       "date": "2026-09-13",
       "score": 3,
       "ts": "2026-09-13T11:45:04Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T10:44:18Z",
       "harness": "codex"
     }
   ]
