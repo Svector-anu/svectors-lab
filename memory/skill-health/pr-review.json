@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-13T15:05:48Z",
+  "last_analyzed": "2026-09-14T16:35:55Z",
   "quality_score": 4,
-  "assessment": "Good, concise, and auditable no-op report with explicit PR counts, deduplication reasons, head SHAs, and notification outcome.",
+  "assessment": "Good, concise no-op report with verifiable PR/commit identifiers, explicit duplicate-skip rationale, and clear follow-up conditions.",
   "flags": [],
-  "avg_score": 3.23,
+  "avg_score": 3.3,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 2,
-      "ts": "2026-09-03T11:12:52Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-13",
       "score": 4,
       "ts": "2026-09-13T15:05:48Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 4,
+      "ts": "2026-09-14T16:35:55Z",
       "harness": "codex"
     }
   ]
