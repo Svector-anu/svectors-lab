@@ -1,18 +1,17 @@
-Fleet status remains 🔴 DEGRADED.
+Fleet status: 🔴 DEGRADED.
 
-- `vuln-scanner`: failed, 4 consecutive `grok-4.5` model errors.
-- 10 enabled skills remain below the chronic-failure threshold.
-- `chain:dev-loop` remains stale after dispatch.
-- PRs #70, #77, and #78 are stalled beyond 24 hours.
-- No missing or newly overdue scheduled skills.
-- Notification suppressed because every finding was reported within 48 hours.
+- `vuln-scanner`: failed, 8 consecutive `grok-4.5` unknown-model errors.
+- 10 enabled non-heartbeat skills remain below 50% historical success.
+- PRs #70, #77, and #78 remain stalled over 24 hours.
+- Three critical issue records remain open.
+- No missing or overdue scheduled skills were found.
+- Duplicate notification suppressed under the 48-hour dedup rule.
 
-Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [memory/logs/2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). Validated all 30 enabled skills are represented and `git diff --check` passes.
+Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and recorded the run in [memory/logs/2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md).
 
 ## Summary
 
 - STATUS_PAGE=DEGRADED
-- Open critical issues: 3
+- Public status timestamp: 2026-09-14 10:44 UTC
 - Next scheduled run: `token-pick` at 12:00 UTC
-- No notification sent due to deduplication
-- Existing unrelated workspace changes were left untouched
+- Validation passed with all 30 enabled skills represented.
