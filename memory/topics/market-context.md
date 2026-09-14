@@ -1,61 +1,59 @@
 # Market Context (as of 2026-09-14)
 
-> **Take:** rotation — BTC gained 1.6% with 15/20 top caps green, while dominance eased 0.1 pp. Conviction: low.
+> **Take:** rotation — BTC gained 1.9% with 14/20 top caps green, while dominance eased 0.3 pp. Conviction: low.
 
 ## Signal Snapshot
-- BTC $77,929 (+1.6% 24h, -1.6% 7d) · dominance 58.9% (-0.1 pp since prior refresh)
-- ETH $2,516 (+1.5% 24h, +1.4% 7d) · ETH/BTC 0.0323
-- SOL $101.79 (+2.2% 24h, -2.5% 7d)
-- Total mcap $2.651T (-1.4% 24h) · DEX vol $6.76B 24h
-- Breadth: 15/20 green 24h · 3/20 green 7d
+- BTC $78,665 (+1.9% 24h, -0.8% 7d) · dominance 58.6% (-0.3 pp since prior refresh)
+- ETH $2,524 (+0.9% 24h, +0.7% 7d) · ETH/BTC 0.0321
+- SOL $102.52 (+1.9% 24h, -2.6% 7d)
+- Total mcap $2.685T (-0.2% 24h) · DEX vol $7.12B 24h
+- Breadth: 14/20 green 24h · 6/20 green 7d
 - Fear & Greed: 57 (Greed) — yesterday 61
 
 ## What Changed Since Last Refresh
-- BTC reversed from -0.7% to +1.6% and 24h breadth jumped from 1/20 to 15/20 green.
-- SOL reclaimed $100 and now leads BTC over 24h (+2.2% versus +1.6%).
-- LSK flipped from +131.7% to -22.5% while remaining first in CoinGecko trends, confirming a blow-off reversal.
+- Quiet — all majors within ±1%, regime unchanged.
 
 ## Active Narratives
-- **Broad risk appetite** — phase: emerging. Evidence: 15/20 top caps are green over 24h, up from 1/20 at the prior refresh.
-- **Launch-token speculation** — phase: fading. Evidence: LSK remains first in CoinGecko trends but fell 22.5% in 24h.
-- **DEX rotation** — phase: rising. Evidence: Uniswap V3 volume rose 58.2% daily while aggregate DEX volume gained only 2.7%.
+- **DEX rotation** — phase: rising. Evidence: aggregate volume rose 8.2% daily while Uniswap V3 gained 73.9%.
+- **Launch-token speculation** — phase: fading. Evidence: LSK remains second in CoinGecko trends but fell 61.2% in 24h.
+- **Pons speculation** — phase: peak. Evidence: PONS leads CoinGecko trends and rose 12.2%, while Pons V2 fees remain down 26.0% over 7d.
 - **Stablecoin expansion** — phase: rising. Evidence: supply added 0.3% daily and USDS expanded 4.4%.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.39B (+1.1%)
-- Aave V3: $17.50B (-0.1%)
-- SSV Network: $13.21B (+1.5%)
-- Morpho Blue: $9.77B (-0.3%)
-- Binance staked ETH: $9.27B (-0.5%)
+- Lido: $24.30B (+0.4%)
+- Aave V3: $17.48B (-0.4%)
+- SSV Network: $13.19B (+0.9%)
+- Morpho Blue: $9.87B (+0.7%)
+- Binance staked ETH: $9.35B (+0.7%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $50.04B (7d n/a)
-- BSC: $5.93B (7d n/a)
+- Ethereum: $50.07B (7d n/a)
 - Solana: $5.89B (7d n/a)
+- Base: $5.65B (7d n/a)
 
 ## Stablecoins
-Total: $312.1B (+0.3% 7d). USDT $183.3B · USDC $74.3B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.8%.
+Total: $312.1B (+0.3% 7d). USDT $183.4B · USDC $74.4B · USDS $6.7B · DAI $4.8B · combined share of mcap 11.6%.
 
 ## Trending (CoinGecko)
-- LSK — first in CoinGecko trends, -22.5% in 24h
-- ZEC — second in CoinGecko trends, +4.2% in 24h
-- FIL — third in CoinGecko trends, +22.9% in 24h
+- PONS — first in CoinGecko trends, +12.2% in 24h
+- LSK — second in CoinGecko trends, -61.2% in 24h
+- FIL — third in CoinGecko trends, +0.7% in 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after September 2026 meeting | 18.5% | $2.59M | $1.05M |
-| Fed raises rates 25 bps after September 2026 meeting | 79.5% | $1.96M | $1.35M |
-| CLARITY Act signed into law in 2026 | 31.0% | $0.96M | $0.39M |
+| No Fed rate change after September 2026 meeting | 14.5% | $3.55M | $1.04M |
+| Fed raises rates 25 bps after September 2026 meeting | 83.5% | $2.29M | $1.36M |
+| CLARITY Act signed into law in 2026 | 27.5% | $0.80M | $0.28M |
 
 ## Macro Catalysts (next 48h)
-- The September 15 CLARITY cloture vote remains the clean crypto binary; Polymarket's 31% signing probability says passage risk is still substantial.
-- The September 16 Fed decision and dot plot dominate positioning; markets price a 79.5% chance of a 25 bp hike.
-- The latest complete US spot-BTC ETF session was roughly flat after three larger outflow days, so institutional demand is not yet confirming the breadth rebound.
+- The September 15 CLARITY cloture vote is the clean crypto binary; Polymarket's 27.5% signing probability still implies substantial failure risk.
+- The September 16 Fed decision dominates positioning: Polymarket prices an 83.5% chance of a 25 bp hike.
+- US spot-BTC ETFs lost $463M last week, their first negative week since June; institutional flow does not confirm the daily breadth rebound.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor liquid relative strength, but require weekly confirmation; 3/20 weekly breadth makes today's rotation fragile.
-- **narrative-tracker:** monitor DEX rotation for broader participation and mark launch-token speculation fading after LSK's reversal.
+- **token-pick:** ride only liquid relative strength; 6/20 weekly breadth and ETF outflows make the rotation fragile.
+- **narrative-tracker:** monitor DEX rotation for broader participation; keep launch-token speculation fading after LSK's deeper reversal.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

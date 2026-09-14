@@ -1,24 +1,12 @@
-# DeFi Overview — 2026-09-14
+Take: rotation — BTC gained 1.9% with 14/20 top caps green, but weekly breadth remains weak at 6/20. Conviction: low.
 
-Take: **rotation** — BTC gained 1.6% with 15/20 top caps green while dominance eased 0.1 pp.  
-Conviction: **low** — weekly breadth remains weak at 3/20, and Fear & Greed fell from 61 to 57.  
-DeFi verdict: **Sideways** — TVL +0.5%, DEX volume +2.7%, stablecoins +0.3%.
+DeFi is mixed: TVL stayed flat at $88.46B while DEX volume rose 8.2% to $7.12B and stablecoin supply increased 0.3%. Uniswap V3 volume led with a 73.9% daily gain. US spot-BTC ETFs lost $463M last week, so institutional flows do not confirm the rebound.
 
-- BTC: $77,929 (+1.6%)
-- ETH: $2,516 (+1.5%)
-- TVL: $88.64B
-- DEX volume: $6.76B
-- Protocol movers: Uniswap V3 +18.2%; HTX −10.7%
+- Fear & Greed: 57, Greed
+- Top protocol mover: Nexus BTC +11.5%; no obvious catalyst
 - Fees leader: Tether, $16.59M
-- Polymarket: 79.5% probability of a 25 bp Fed hike
-- LSK reversed from +131.7% to −22.5% while remaining CoinGecko’s top trend—a clear blow-off signal
-- Latest BTC ETF session was approximately flat following three larger outflow days. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
+- Polymarket: 83.5% probability of a 25 bp Fed hike
+- Positions: `DEFI_MONITOR_NO_CONFIG`
+- Sources: all required endpoints succeeded
 
-No tracked DeFi positions were configured, so the positions facet recorded `DEFI_MONITOR_NO_CONFIG`.
-
-## Summary
-
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) while preserving the complete token-pick history.
-- Appended the run to [2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md).
-- All nine data-source groups succeeded.
-- Notification delivery was attempted, but its external queues were read-only; no external send persisted.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md). The notification was attempted, but external delivery queues were read-only.
