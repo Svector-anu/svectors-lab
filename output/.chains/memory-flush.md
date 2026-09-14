@@ -1,12 +1,19 @@
-Memory flush completed for the 2026-09-12–13 window.
+Memory flush completed for the `2026-09-13`–`2026-09-14` window.
 
-- Updated fleet health from four open critical issues to three after ISS-004’s resolution.
-- Updated PR #70’s status with its conflict and critical selector-bypass finding.
-- Avoided duplicating the existing digest and market context.
-- No logs required archival.
-- Logged the run in `memory/logs/2026-09-13.md`.
-- Advanced the consolidation watermark to 2026-09-13.
+- Refreshed the market-context pointer.
+- Archived four older digest rows into the existing digest history.
+- Verified current PR and critical-issue priorities remain unresolved.
+- Logged the run in `memory/logs/2026-09-14.md`.
+- Stamped the consolidation watermark to `2026-09-14`.
+- No monthly log rotation was required.
 
 ## Summary
 
-Modified `memory/MEMORY.md`, `memory/memory-flush-state.json`, and `memory/logs/2026-09-13.md`. No follow-up action is required for the flush itself.
+Modified:
+
+- `memory/MEMORY.md`
+- `memory/topics/recent-digests-history.md`
+- `memory/logs/2026-09-14.md`
+- `memory/memory-flush-state.json`
+
+No follow-up action is needed.

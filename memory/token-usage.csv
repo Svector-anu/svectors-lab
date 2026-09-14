@@ -336,3 +336,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-13,vuln-tracker,codex-default,1115855,8876,985728,0
 2026-09-13,narrative-tracker,codex-default,322214,4253,289536,0
 2026-09-13,write-tweet,codex-default,280935,3628,247424,0
+2026-09-14,memory-flush,codex-default,297296,2623,265088,0
