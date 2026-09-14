@@ -1,19 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-13T18:11:05Z",
+  "last_analyzed": "2026-09-14T00:29:09Z",
   "quality_score": 2,
-  "assessment": "Actionable and conclusion-first, but numerous precise market, event, and yield claims lack direct evidence, and the claimed workspace modifications contradict the read-only run constraint.",
+  "assessment": "Substantive but not decision-grade: it lacks explicit position calls, violates the qualitative-price constraint, provides weak sourcing for precise claims, and implausibly claims workspace files were written during a read-only run.",
   "flags": [
+    "low_quality",
     "unverifiable_claim"
   ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T13:09:45Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 2,
@@ -186,6 +181,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T18:11:05Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T00:29:09Z",
       "harness": "codex"
     }
   ]

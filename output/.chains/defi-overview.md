@@ -1,22 +1,31 @@
-Take: chop — BTC held near flat at +0.1%, but only 5/20 top caps rose while DEX volume fell 48.5%. Conviction: medium.
+*Crypto — 2026-09-14* — chop (medium conviction) | DeFi mixed: volume collapsed while TVL and stables held flat
 
-Evidence: DeFi TVL recovered 0.5% since the prior refresh to $88.01B and stablecoin supply gained 0.1%, suggesting sidelined liquidity rather than wholesale flight. Fear & Greed remains 61 (Greed).
+Take: BTC fell 0.7% with only 1/20 top-cap assets green.  
+Conviction: medium — breadth and majors weakened, but Fear & Greed remains at 57 and TVL is stable.  
+Evidence: DEX volume was $6.73B, down 48.1%.
 
-Positioning: watch, don’t chase. The September 15 CLARITY cloture vote and September 16 Fed decision are the hinge; the 25 bp hike market is 77.5% YES. Reported weekly spot-BTC ETF flows were −$462.6M. [Macro source](https://plainlycrypto.com/weekly-crypto-brief-2026-09-13/)
+- TVL: $88.22B, down 0.2% from the prior snapshot
+- BTC: $76,728 (-0.7%)
+- ETH: $2,478 (-1.8%)
+- SOL: $99.43 (-2.2%)
+- Fear & Greed: 57, down from 61
+- Stablecoin supply: $311.5B (+0.1%)
 
-Key signals:
+Top signals:
 
-- Lisk Bridge TVL surged 277% to $299.8M amid LSK burn and migration speculation.
-- PumpSwap fees rose 24.7% while TVL fell 6.4%—usage is outrunning deposits.
-- Sustainable-yield filters returned three pools; the highest was Raydium WSOL-USDC at 141.5% base APY, though that level warrants pool-specific risk review.
-- No tracked DeFi positions were configured.
-- All market-data sources succeeded.
-
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and appended the run to [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). The LSK pick was added without altering earlier pick history. Notification delivery was attempted but its external queue was read-only.
+- Lisk Bridge TVL rose 299.9%, though momentum slowed from yesterday’s 318.1%.
+- Uniswap V3 TVL rose 18.2% while its measured volume fell 66.0%.
+- PumpSwap fees rose 24.7% as TVL fell 4.7%.
+- Meteora DLMM fees rose 119.3% as TVL fell 10.7%.
+- Sustainable-yield filter leaders: WSOL-USDC 119.6%, ETH-LINK 27.6%, ETH-USDT 24.5%.
+- Polymarket prices a 78.5% chance of a 25 bp Fed hike.
+- The September 15 CLARITY vote and September 16 Fed decision remain the immediate binary risks. Latest complete spot-BTC ETF data showed only $6M inflows after $449.5M of outflows across September 8–10. [ETF flow data](https://www.satsintel.io/en/etfs/flows)
 
 ## Summary
 
-- Regime: chop, medium conviction
-- DeFi verdict: mixed
-- Files modified: market context and daily log
-- Follow-up: monitor CLARITY/Fed outcomes and whether stablecoin growth converts into DEX participation
+- Refreshed [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
+- Saved the full [DeFi overview](/home/runner/work/svectors-lab/svectors-lab/output/defi-overview-2026-09-14.md).
+- Logged the run in [2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md).
+- No tracked positions were configured.
+- All market sources succeeded.
+- External notification and git commit were attempted but blocked by read-only harness paths.
