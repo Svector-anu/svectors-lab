@@ -1,8 +1,8 @@
 {
   "skill": "fork-fleet",
-  "last_analyzed": "2026-09-07T14:30:06Z",
+  "last_analyzed": "2026-09-14T10:48:01Z",
   "quality_score": 2,
-  "assessment": "Specific fleet findings are plausible but not substantiated in the final output, which mostly points to a local report and impossibly claims workspace files were updated during a read-only run.",
+  "assessment": "Specific-looking but not decision-grade, and it claims workspace files/snapshots/logs were created during a read-only run while providing no evidence or report substance to verify them.",
   "flags": [
     "low_quality",
     "unverifiable_claim"
@@ -19,6 +19,12 @@
       "date": "2026-09-07",
       "score": 2,
       "ts": "2026-09-07T14:30:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T10:48:01Z",
       "harness": "codex"
     }
   ]
