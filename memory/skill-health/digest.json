@@ -1,20 +1,15 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-13T15:06:57Z",
+  "last_analyzed": "2026-09-14T16:37:25Z",
   "quality_score": 2,
-  "assessment": "Specific exploit, recovery, deadline, bill-text, and vote claims are supported only by generic catalog/profile pages, making them insufficiently verifiable; the digest also lacks a clear crypto regime verdict and consistently labeled position calls.",
+  "assessment": "Substantive and linked, but badly misaligned with the crypto-trader strategy, lacks regime and position calls, reverses the implication of higher yields by saying capital is cheaper, and claims workspace writes despite the read-only constraint.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "generic_content",
+    "unverifiable_claim"
   ],
   "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-27",
-      "score": 2,
-      "ts": "2026-08-27T16:31:20Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -187,6 +182,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T15:06:57Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T16:37:25Z",
       "harness": "codex"
     }
   ]

@@ -25,6 +25,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-14 | daily (web) | router leakage, AI policy, 5% Treasury |
 | 2026-09-13 | daily (web) | GitLab KEV, Symbiosis exploit, CLARITY vote |
 | 2026-09-12 | daily (web) | CRA reporting, Agents API, durable agents |
 | 2026-09-11 | daily (web) | PaperCut exploitation, runner brownouts, data agent |
