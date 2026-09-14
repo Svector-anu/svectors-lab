@@ -1,10 +1,10 @@
 {
   "skill": "auto-merge",
-  "last_analyzed": "2026-09-13T15:06:13Z",
-  "quality_score": 4,
-  "assessment": "Clear, decision-oriented auto-merge report with per-PR reasons, aggregate outcomes, and auditable state/log paths; concise and plausibly verifiable.",
+  "last_analyzed": "2026-09-14T16:36:30Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-op report with clear PR dispositions and retry status, though it lacks links or supporting checks for independent verification.",
   "flags": [],
-  "avg_score": 3.11,
+  "avg_score": 3.1,
   "history": [
     {
       "date": "2026-08-25",
@@ -168,6 +168,12 @@
       "date": "2026-09-13",
       "score": 4,
       "ts": "2026-09-13T15:06:13Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 3,
+      "ts": "2026-09-14T16:36:30Z",
       "harness": "codex"
     }
   ]

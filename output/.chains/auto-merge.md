@@ -1,17 +1,15 @@
-Auto-merge completed in live mode.
+## Auto Merge — 2026-09-14
 
-- Repositories checked: `aeonfun/aeon`, `Svector-anu/svectors-lab`
-- Open PRs considered: 3
-- Qualified/merged: 0
-- Retry-capped: 0
-- Notification: not sent, per policy
+No PRs merged.
 
-Verdicts:
-
-- #78 — `SKIP:author-not-allowlisted:Svector-anu`; otherwise clean and green
-- #77 — `SKIP:author-not-allowlisted:Svector-anu`; integrity check also failing
-- #70 — `SKIP:author-not-allowlisted:Svector-anu`; merge conflicts present
+- `aeonfun/aeon`: no open PRs
+- `Svector-anu/svectors-lab`: PRs #70, #77, and #78 skipped because `mergeStateStatus` remained `UNKNOWN` after retry
+- Retry-capped: none
+- Notification: correctly suppressed
 
 ## Summary
 
-Updated and validated [auto-merge-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/auto-merge-state.json) and recorded the complete run in [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). No PR state was changed.
+- Considered 3 PRs; qualified 0; merged 0
+- Updated `memory/topics/auto-merge-state.json`
+- Appended the run to `memory/logs/2026-09-14.md`
+- State JSON validation passed
