@@ -1,20 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-14T00:29:09Z",
+  "last_analyzed": "2026-09-14T10:46:08Z",
   "quality_score": 2,
-  "assessment": "Substantive but not decision-grade: it lacks explicit position calls, violates the qualitative-price constraint, provides weak sourcing for precise claims, and implausibly claims workspace files were written during a read-only run.",
+  "assessment": "Specific and structured, but it violates the qualitative-price constraint, lacks explicit front-run/ride/fade/watch calls, and provides almost no evidence links for its decision-driving figures or blow-off conclusion.",
   "flags": [
-    "low_quality",
-    "unverifiable_claim"
+    "low_quality"
   ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T18:20:41Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-07",
       "score": 2,
@@ -187,6 +180,12 @@
       "date": "2026-09-14",
       "score": 2,
       "ts": "2026-09-14T00:29:09Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T10:46:08Z",
       "harness": "codex"
     }
   ]
