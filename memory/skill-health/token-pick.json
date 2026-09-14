@@ -1,17 +1,11 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-13T15:06:54Z",
-  "quality_score": 2,
-  "assessment": "Actionable and conclusion-led, but specific prices, legislative status, catalyst details, and risk claims lack source URLs or evidence anchors, making the trade calls unverifiable and violating the qualitative-live-price constraint.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.2,
+  "last_analyzed": "2026-09-14T16:37:33Z",
+  "quality_score": 3,
+  "assessment": "Actionable, conclusion-first RIDE call with explicit scoring and risk, but it violates the qualitative-price constraint and provides no checkable URLs for its precise catalyst and unlock claims.",
+  "flags": [],
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-08-21",
-      "score": 5
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -178,6 +172,12 @@
       "date": "2026-09-13",
       "score": 2,
       "ts": "2026-09-13T15:06:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 3,
+      "ts": "2026-09-14T16:37:33Z",
       "harness": "codex"
     }
   ]
