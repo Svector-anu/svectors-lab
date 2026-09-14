@@ -137,6 +137,24 @@ HOME="$OHOME" PATH="$OBIN:$PATH" GROK_CREDENTIALS="$CREDS" GH_SECRETS_PAT="pat-t
   && pass "oauth: successful refresh → no false DEGRADED warning" \
   || bad "oauth successful refresh wrongly flagged DEGRADED (err=$(cat "$OHOME/e1"))"
 
+# 3d3. the degraded state must cross the process boundary via GROK_DEGRADED_MARKER
+# so install-harness.sh (which runs this script as a subprocess) can print an
+# honest line. Reuses the 3d invalid_grant fixture; the marker must be touched.
+MARK="$OHOME/degraded.marker"; rm -f "$MARK"
+HOME="$OHOME" PATH="$OBIN:$PATH" GROK_CREDENTIALS="$CREDS" GH_SECRETS_PAT="pat-test" \
+  CURL_FAKE_OUT='{"error":"invalid_grant","error_description":"Refresh token has been revoked"}' \
+  GROK_DEGRADED_MARKER="$MARK" bash "$RABS" setup >/dev/null 2>/dev/null
+[ -f "$MARK" ] \
+  && pass "oauth: degraded refresh touches GROK_DEGRADED_MARKER for the caller" \
+  || bad "oauth degraded did not write the marker file"
+# ...and a healthy setup (valid token, refresh skipped) must leave no marker.
+CREDS_OK="$(seed_auth "2099-01-01T00:00:00.000000Z")"; MARK_OK="$OHOME/healthy.marker"; rm -f "$MARK_OK"
+HOME="$OHOME" PATH="$OBIN:$PATH" GROK_CREDENTIALS="$CREDS_OK" GH_SECRETS_PAT="pat-test" \
+  GROK_DEGRADED_MARKER="$MARK_OK" bash "$RABS" setup >/dev/null 2>/dev/null
+[ ! -f "$MARK_OK" ] \
+  && pass "oauth: healthy setup leaves no degraded marker" \
+  || bad "oauth healthy path wrongly wrote the degraded marker"
+
 # 3e. XAI_API_KEY path (no GROK_CREDENTIALS) → the OAuth refresh never runs
 CURL_LOG="$OHOME/curl2.log"; : >"$CURL_LOG"
 HOME="$OHOME" PATH="$OBIN:$PATH" XAI_API_KEY=xai-test CURL_LOG="$CURL_LOG" bash "$RABS" setup >/dev/null 2>&1

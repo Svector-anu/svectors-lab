@@ -211,7 +211,14 @@ GROK_OAUTH_DEGRADED=0
 # clean setup right before the run dies downstream on an already-expired token.
 if [ "$GROK_OAUTH_DEGRADED" = 1 ]; then
   log "::warning::grok setup complete but auth is DEGRADED (OAuth refresh failed - see warning above); proceeding with the existing on-disk token, which may already be expired"
+  # Signal the degraded state across the process boundary. The caller
+  # (install-harness.sh) runs this script as a subprocess, so the shell flag
+  # above cannot reach it. When the caller hands us a marker path, touch it so
+  # it can print an honest "auth DEGRADED" line instead of a false "auth staged".
+  [ -n "${GROK_DEGRADED_MARKER:-}" ] && : > "$GROK_DEGRADED_MARKER"
 else
   log "::debug::grok setup complete (CLI + auth staged); runs go through run-harness grok"
+  # Clear any stale marker so a healthy run never reports as degraded.
+  [ -n "${GROK_DEGRADED_MARKER:-}" ] && rm -f "$GROK_DEGRADED_MARKER"
 fi
 exit 0
