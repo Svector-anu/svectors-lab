@@ -412,13 +412,15 @@
   },
   "slop-watch": {
     "last_dispatch": "2026-09-15T12:06:20Z",
-    "last_status": "dispatched",
+    "last_status": "failed",
     "last_success": "2026-09-14T10:45:58Z",
-    "total_runs": 11,
+    "total_runs": 12,
     "total_successes": 11,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 2
+    "total_failures": 1,
+    "consecutive_failures": 1,
+    "success_rate": 0.92,
+    "last_quality_score": 2,
+    "last_failed": "2026-09-15T12:07:22Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a4f6-ea41-72d2-97a0-24878075a4f7\"} {\"type\":\"turn.started\"} {\"typ"
   }
 }
