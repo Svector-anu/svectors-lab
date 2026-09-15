@@ -150,15 +150,15 @@
     "last_quality_score": 4
   },
   "digest": {
-    "last_status": "success",
-    "last_failed": "2026-08-23T14:29:47Z",
-    "total_runs": 180,
+    "last_status": "failed",
+    "last_failed": "2026-09-15T16:53:25Z",
+    "total_runs": 182,
     "total_successes": 40,
-    "total_failures": 140,
-    "consecutive_failures": 0,
+    "total_failures": 142,
+    "consecutive_failures": 2,
     "success_rate": 0.22,
     "last_dispatch": "2026-09-14T16:34:31Z",
-    "last_error": "41e1e2\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a5fc-ce9d-7612-adf5-cd38cd8f2694\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-14T16:37:27Z",
     "last_quality_score": 2
   },
