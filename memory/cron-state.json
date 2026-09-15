@@ -382,14 +382,14 @@
     "last_quality_score": 4
   },
   "pr-review": {
-    "last_status": "success",
-    "last_failed": "2026-09-05T15:51:42Z",
-    "total_runs": 68,
+    "last_status": "failed",
+    "last_failed": "2026-09-15T16:53:09Z",
+    "total_runs": 69,
     "total_successes": 48,
-    "total_failures": 20,
-    "consecutive_failures": 0,
-    "success_rate": 0.71,
-    "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
+    "total_failures": 21,
+    "consecutive_failures": 1,
+    "success_rate": 0.7,
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a5fc-915a-7c52-8ed3-cf0bd787072c\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-14T16:35:57Z",
     "last_quality_score": 4,
     "last_dispatch": "2026-09-14T16:34:31Z"
