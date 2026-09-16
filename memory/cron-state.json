@@ -258,15 +258,15 @@
   "search-skill": {
     "last_status": "failed",
     "last_success": "2026-09-14T16:37:01Z",
-    "total_runs": 36,
+    "total_runs": 37,
     "total_successes": 30,
-    "total_failures": 6,
-    "consecutive_failures": 6,
-    "success_rate": 0.83,
+    "total_failures": 7,
+    "consecutive_failures": 7,
+    "success_rate": 0.81,
     "last_quality_score": 3,
     "last_dispatch": "2026-09-14T16:34:31Z",
-    "last_failed": "2026-09-16T05:20:27Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a8a8-bc60-75d2-8038-997bd4af6a3f\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_failed": "2026-09-16T10:04:34Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a9ac-da58-7510-902e-d0fa2c60a9e9\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "skill-repair": {
     "last_status": "success",
