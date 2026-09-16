@@ -18,4 +18,3 @@ jq -e '
   (.research_fields.invariants | type == "array")
 ' "$OUT" >/dev/null
 echo "ok - Riva dossier schema is valid"
-
