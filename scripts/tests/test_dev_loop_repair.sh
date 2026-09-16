@@ -97,7 +97,7 @@ rereview_line=$(grep -n 'REREVIEW_OUTPUT=$(dispatch_skill pr-review' "$WORKFLOW"
 [ "$repair_line" -lt "$change_line" ]
 [ "$change_line" -lt "$checks_line" ]
 [ "$checks_line" -lt "$rereview_line" ]
-grep -Fq '$(jq -r '\''.actionable // false'\'' <<<"${REVIEW_RESULT:-{}}")' "$WORKFLOW"
+grep -Fq '$(jq -r '\''.actionable // false'\'' <<<"${REVIEW_RESULT:-null}")' "$WORKFLOW"
 grep -Fq 'stopped after one repair pass: re-review remains actionable' "$WORKFLOW"
 grep -A4 'if \[ "$CHAIN_FAILED" = "true" \]; then' "$WORKFLOW" | grep -Fq 'exit 1'
 grep -Fq 'dev-loop-review.sh body "$FEATURE_PR" "$REVIEW_SHA"' "$WORKFLOW"
