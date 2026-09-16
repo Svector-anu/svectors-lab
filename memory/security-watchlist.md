@@ -17,3 +17,4 @@ timestamp: 2026-09-09T00:00:00Z
 | amirh00sain/SpiderPanel | high | default admin credentials + hardcoded secret salt; session cookie and CORS hardening | 2026-08-25 | 2026-08-25 | sent 2026-08-25 via manual Gmail, awaiting vendor response |
 | jlcodes99/cockpit-tools | CRITICAL | hardcoded Google OAuth client secret (antigravity_enterprise) | 2026-09-02 | 2026-09-02 | pvr-disabled |
 | NeoSoul-AI/neotrade-wallet-sdk | medium | AES-256-GCM keystore accepts truncated auth tags (missing authTagLength) — exploitability gated by scrypt cost | 2026-09-09 | 2026-09-09 | pvr-disabled |
+| amirh00sain/SpiderPanel | high | unauthenticated arbitrary-method proxy enables SSRF/open-proxy abuse | 2026-09-16 | 2026-09-16 | pending-operator-send; follow-up to 2026-08-25 disclosure |
