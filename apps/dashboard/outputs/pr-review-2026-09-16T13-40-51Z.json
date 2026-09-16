@@ -1,0 +1,212 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "PR Review: svectors-lab#70"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "meta_date",
+        "sep1",
+        "review_summary",
+        "sep2",
+        "pr_status",
+        "sep3",
+        "pr_context",
+        "sep4",
+        "fixed_section",
+        "sep5",
+        "critical_section",
+        "sep6",
+        "links_section"
+      ]
+    },
+    "meta_date": {
+      "type": "Text",
+      "props": {
+        "text": "PR Review — 2026-09-16",
+        "variant": "caption"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "review_summary": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "lg"
+      },
+      "children": [
+        "stat_reviewed",
+        "stat_skipped"
+      ]
+    },
+    "stat_reviewed": {
+      "type": "Stat",
+      "props": {
+        "label": "Reviewed",
+        "value": "1"
+      }
+    },
+    "stat_skipped": {
+      "type": "Stat",
+      "props": {
+        "label": "Skipped",
+        "value": "0"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr_status": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "sm"
+      },
+      "children": [
+        "badge_blocked",
+        "badge_critical",
+        "badge_issues"
+      ]
+    },
+    "badge_blocked": {
+      "type": "Badge",
+      "props": {
+        "text": "Blocked",
+        "variant": "destructive"
+      }
+    },
+    "badge_critical": {
+      "type": "Badge",
+      "props": {
+        "text": "1 Critical",
+        "variant": "destructive"
+      }
+    },
+    "badge_issues": {
+      "type": "Badge",
+      "props": {
+        "text": "0 Issues",
+        "variant": "default"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pr_context": {
+      "type": "Text",
+      "props": {
+        "text": "PR merged at 13:28 UTC before this review ran, so the verdict is for traceability, not a merge gate.",
+        "variant": "body"
+      }
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fixed_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fixed_heading",
+        "fixed_issue",
+        "fixed_resolution"
+      ]
+    },
+    "fixed_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Previously-Flagged Critical (Fixed)",
+        "level": "h3"
+      }
+    },
+    "fixed_issue": {
+      "type": "Text",
+      "props": {
+        "text": "Issue: bare `shadow`/`compare` selector bypassing the read-only guard",
+        "variant": "body"
+      }
+    },
+    "fixed_resolution": {
+      "type": "Text",
+      "props": {
+        "text": "Resolved in commit `7e94c624` with regression test.",
+        "variant": "body"
+      }
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "critical_section": {
+      "type": "Alert",
+      "props": {
+        "title": "New CRITICAL Issue (Live on main)",
+        "message": "File: `apps/mcp-server/src/skill-executor.ts`\n\nProblem: Never sources the new `scripts/resolve-riva-capabilities.sh`. Currently resolves vuln-scanner to `mode=write` and passes full ambient environment.\n\nVulnerability: Running `var=shadow` or `var=compare` through the MCP server (not GitHub Actions) bypasses Riva's entire isolation guarantee — exposing full write tools and every live secret.\n\nAction Required: Urgent fast-follow PR needed.",
+        "type": "error"
+      }
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "links_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "link_review",
+        "link_pr"
+      ]
+    },
+    "link_review": {
+      "type": "Link",
+      "props": {
+        "label": "Full review comment",
+        "href": "https://github.com/Svector-anu/svectors-lab/pull/70#pullrequestreview-5223451897"
+      }
+    },
+    "link_pr": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Svector-anu/svectors-lab#70",
+        "href": "https://github.com/Svector-anu/svectors-lab/pull/70",
+        "source": "GitHub"
+      }
+    }
+  }
+}

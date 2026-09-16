@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-14T16:35:55Z",
+  "last_analyzed": "2026-09-16T13:40:51Z",
   "quality_score": 4,
-  "assessment": "Good, concise no-op report with verifiable PR/commit identifiers, explicit duplicate-skip rationale, and clear follow-up conditions.",
+  "assessment": "Substantive security review with specific, verifiable vulnerability findings and clear action items; output is concrete and actionable.",
   "flags": [],
   "avg_score": 3.3,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 4,
-      "ts": "2026-09-03T16:51:04Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 4,
@@ -185,6 +179,12 @@
       "score": 4,
       "ts": "2026-09-14T16:35:55Z",
       "harness": "codex"
+    },
+    {
+      "date": "2026-09-16",
+      "score": 4,
+      "ts": "2026-09-16T13:40:51Z",
+      "harness": "claude"
     }
   ]
 }
