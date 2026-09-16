@@ -600,5 +600,14 @@
     "findings": 1,
     "channel": "public-pr",
     "notes": "shell-quote CVE-2026-9277 (critical, quote() object-token injection) + CVE-2026-13311 (high, parse() ReDoS) in wrangler's direct dep, fixed 1.8.1->1.10.0; filed cloudflare/workers-sdk#15584. 8 semgrep hits all false-positive/accepted-risk (2 pull_request_target findings already zizmor-suppressed by maintainers). 0 verified secrets (fs+git). 346 osv dependency-CVE rows total but repo runs an active Dependabot (daily grouped bumps) so bulk transitive/fixture-only findings deferred to that cadence; shell-quote was the one direct, reachable, un-PR'd exception."
+  },
+  {
+    "repo": "amirh00sain/SpiderPanel",
+    "scanned_at": "2026-09-16T12:00:00Z",
+    "findings": 1,
+    "channel": "pending-private-email",
+    "notes": "Fresh audit at d8554ec confirmed a separate High CWE-918: unauthenticated /proxy/{target_url:path} forwards arbitrary methods, headers and bodies through an httpx client with follow_redirects=True; no auth dependency/global auth middleware, destination IP/scheme controls, redirect revalidation, rate limit, or response-size cap. Enables open-proxy abuse and SSRF into loopback/private/link-local/metadata-reachable networks. Static and local-only verification; no live deployment contacted. Prior default-credential finding was already emailed 2026-08-25 and was not duplicated. Follow-up draft staged and explicitly approved by the operator for private email delivery.",
+    "draft": "memory/pending-disclosures/amirh00sain-SpiderPanel-2026-09-16.md",
+    "audited_commit": "d8554ecbb4d0c099b87ab50835da683d02730840"
   }
 ]
