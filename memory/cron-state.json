@@ -427,5 +427,15 @@
     "last_quality_score": 2,
     "last_failed": "2026-09-16T10:04:35Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a9ac-dc00-7181-b953-d631722f43ef\"} {\"type\":\"turn.started\"} {\"typ"
+  },
+  "send-email": {
+    "last_status": "failed",
+    "last_failed": "2026-09-16T13:44:22Z",
+    "total_runs": 1,
+    "total_successes": 0,
+    "total_failures": 1,
+    "consecutive_failures": 1,
+    "success_rate": 0,
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0aa76-163e-7790-9e29-60ce0cced988\"} {\"type\":\"turn.started\"} {\"typ"
   }
 }
