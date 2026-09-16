@@ -15,6 +15,12 @@ One skill run, end to end:
 
 A self-healing loop runs on top: the **health skill** (`skill-health`) scores runs and files issues; **repair skills** (`skill-repair`) fix them by PR. Alternate entry points (`apps/mcp-server`, `apps/webhook`) launch the same skill prompt — behaviour is entry-point-agnostic. Config is managed by the dashboard (`apps/dashboard`) and pushed to GitHub as repo secrets/vars.
 
+## Product memory
+
+`docs/product/feature-map.md` is the source of truth for what this instance does and its current status; `docs/product/user-story-map.md` shows how the pieces connect into the operator's actual journey; `docs/product/roadmap.md` shows what's being worked on now. `ARCHITECTURE.md` has the capability, secret-scoping, and skill-integrity rules this repo actually enforces, and how.
+
+Read the relevant feature's entry in `feature-map.md` (and its PRD under `docs/prd/`, if one exists) before making a change that affects it. Verify before declaring something done: a feature's status only moves to `shipped` when every acceptance criterion has real, reproducible verification evidence, not a claim. If something looks worth building but isn't on the feature map, propose it (`docs/prd/proposed-*.md`, matching the shape in `docs/prd/proposed-upstream-contribution.md`) rather than building it.
+
 ## Strategy
 
 `STRATEGY.md` (imported below) is the operator's north-star — their overarching goal, priorities, audience, and hard constraints. Read it at the start of every task and align your output to it; when a choice isn't otherwise determined, let the strategy break the tie. Absorb it, don't quote it verbatim. If it still holds the unconfigured defaults, use general best judgment.

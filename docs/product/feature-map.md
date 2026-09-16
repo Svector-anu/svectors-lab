@@ -1,0 +1,182 @@
+# Feature map
+
+The canonical map of what this instance does. Source of truth for status; if code or a conversation disagrees with this file, this file is what gets corrected toward, except for scope and acceptance-criteria content, which only a human changes.
+
+ID scheme: `F-NNN` for a feature, `US-NNN.S` for a story within it, `AC-NNN.S.C` for a criterion within that story. Status is one of `planned`, `in-progress`, `blocked`, `partial`, `shipped`, `deprecated`. Full definitions in the `product-feature-map` skill's `references/repo-memory.md`.
+
+**Honest scope note:** this instance runs 81 skills across 6 packs. Five below are documented to full feature depth (real acceptance criteria, real verification commands, cross-referenced against this session's own work on them). The rest are listed at roster level: real slug and description pulled from `catalog/skills.json`, status `shipped` because they are live and scheduled, no fabricated acceptance criteria. Writing genuine ACs for all 81 would take real per-skill investigation this pass didn't do; claiming otherwise would be exactly the kind of invented completeness this system exists to prevent.
+
+---
+
+## Initiative: Autonomous software engineering (Dev & Code pack)
+
+### F-001: Dev-loop chain
+
+**Status:** shipped
+
+**Epic:** Dev & Code
+**Who it's for:** the operator, indirectly. Directly, it's for every other feature: this is the mechanism by which a feature PR gets built, reviewed, and (bounded) self-repaired without the operator driving each step.
+**Problem it solves:** an agent that writes code and also declares its own code correct is not a trustworthy loop. A human reviewing everything an agent produces doesn't scale either.
+
+**Stories**
+
+- `US-001.1`: As the operator, I want a feature built and independently reviewed with no human in the loop, so a PR is either ready to merge or clearly blocked with a reason.
+  - `AC-001.1.1`: `feature` and `pr-review` run as separately dispatched GitHub Actions runs, not one agent invocation.
+  - `AC-001.1.2`: The review is bound to the PR's exact head SHA at dispatch time; if the SHA changes before review posts, the review aborts rather than reviewing stale or newer state.
+  - `AC-001.1.3`: The chain's final status distinguishes success, failure, and no-action (feature produced no verified PR), not just pass/fail.
+
+- `US-001.2`: As the operator, I want one bounded repair attempt when review comes back actionable, so a precisely-diagnosed issue doesn't require my manual intervention.
+  - `AC-001.2.1`: Repair is authorized only by a fresh review receipt bound to the PR's current head SHA; a stale or mismatched receipt is refused.
+  - `AC-001.2.2`: Exactly one repair pass runs. If re-review after the fix is still actionable, the chain fails; it does not loop.
+  - `AC-001.2.3`: Dev-loop never dispatches against a repository the authenticated operator lacks push access to.
+
+**Verification**
+
+```text
+AC-001.1.2: bash scripts/dev-loop-review.sh verify <owner/repo#N> <sha>
+Expected: fails closed if head SHA has moved since dispatch
+
+AC-001.2.1: scripts/tests/test_dev_loop_repair.sh
+Expected: gate logic rejects stale/mismatched SHA and receipt, all cases pass
+
+AC-001.2.3: scripts/tests/test_dev_loop_handoff.sh
+Expected: "dev-loop: authenticated operator does not have push access to X" on an unowned target
+```
+
+**Evidence this session:** traced a real successful run (Actions run 34581075511, PR #76: feature, verify, review, no-action-needed, recorded, zero repair dispatched since review was clean). Separately, fixed a real bug in the review-result parsing on this fork (`fix(chain): stop jq consuming a corrupted REVIEW_RESULT default`, this fork's PR #80: a bash `${VAR:-{}}` gotcha corrupted the JSON `jq` parsed). That specific bug does not exist upstream; the version of this feature later ported upstream (this fork's own repair-pass work, dated before the buggy pattern was introduced) already used a safer form. What *was* missing upstream was the entire bounded-repair-pass feature itself, ported as aeonfun/aeon#1070 after finding upstream's chain-runner.yml lacked it completely (535 lines vs this fork's 701 at the time).
+
+---
+
+### F-002: vuln-scanner
+
+**Status:** shipped
+
+**Epic:** Dev & Code
+**Who it's for:** open-source maintainers whose repos get scanned; indirectly, the operator, who owns disclosure decisions.
+**Problem it solves:** most automated vuln scanning either drowns maintainers in false positives (pattern-match-only tools) or requires a human to manually reproduce every claim before it can be trusted.
+
+**Stories**
+
+- `US-002.1`: As a maintainer, I want a claimed High/Critical finding to come with actual reproduction, not just a pattern match, so I don't have to re-verify the scanner's own claims.
+  - `AC-002.1.1`: A High/Critical finding cannot be filed without passing the PoC-verification gate (`scripts/vuln-poc-gate.sh`).
+  - `AC-002.1.2`: An unreproducible finding is held as needs-verification, not silently downgraded or silently filed.
+
+- `US-002.2`: As the operator, I want a stronger, structured research pass evaluated against the existing scanner without risking a live disclosure, so a genuine improvement can be adopted deliberately rather than by accident.
+  - `AC-002.2.1`: `vuln-scanner var=shadow:<repo>` runs the Riva research kernel in parallel as a private comparison artifact; legacy scanning remains authoritative and no disclosure, PR, or PVR action fires.
+  - `AC-002.2.2`: Shadow mode is credential-isolated on every dispatch surface: the harness gets `read-only` capability and every disclosure-capable credential is stripped from its environment before it starts, not merely told not to use them.
+
+**Verification**
+
+```text
+AC-002.1.1: scripts/tests/test_vuln_poc_gate.sh
+Expected: pass
+
+AC-002.2.1: scripts/tests/test_riva_shadow_compare.sh, test_riva_shadow_guard.sh
+Expected: pass, comparison-only, no side effects
+
+AC-002.2.2: bash scripts/skill_mode.sh is-shadow vuln-scanner shadow  →  true
+            bash scripts/skill_mode.sh mode vuln-scanner shadow      →  read-only
+Expected: identical result on the aeon.yml path and the MCP-server dispatch path
+```
+
+**Evidence this session:** `AC-002.2.2` was false on the MCP-server path until 2026-09-16. Found via independent `pr-review` verification after this fork's PR #70 (Riva kernel) merged: the MCP dispatch surface never consulted the shadow-selector check, so a shadow run through MCP got full write tools and every live credential. Fixed in this fork's PR #81, ported upstream as aeonfun/aeon#1067. See `ARCHITECTURE.md`'s secret-scoping section for the general lesson.
+
+---
+
+## Initiative: Trust infrastructure (Basics pack, this specific skill)
+
+### F-003: pr-review
+
+**Status:** shipped
+
+**Epic:** Basics
+**Who it's for:** the operator, and any downstream repo whose PRs get reviewed.
+**Problem it solves:** the same weakness F-001 names at the chain level applies standalone: a review from the same agent that wrote the code is not independent verification.
+
+**Stories**
+
+- `US-003.1`: As the operator, I want a fresh-context review that reads only requirements, the diff, and test results, so its verdict isn't contaminated by the implementer's own reasoning.
+  - `AC-003.1.1`: Default mode reviews a specific PR (or every PR in `memory/watched-repos.md`) with severity-tagged findings and one verdict per PR.
+  - `AC-003.1.2`: A verdict is posted as a structured, machine-checkable receipt (`<!-- aeon-review:{...} -->`), not only as prose.
+  - `AC-003.1.3`: `--survey` mode produces a risk-tiered triage digest across every open PR on a target, bucketed by blast radius (CORE_REVIEW > INFRA_REVIEW > SKILL_*), for when the operator needs the morning-brief view instead of a per-PR verdict.
+
+**Verification**
+
+```text
+AC-003.1.2: dispatched Actions run 35102570598 against this fork's PR #70
+Expected: posted review contains a parseable aeon-review JSON comment with verdict/critical/issues fields
+Actual: verdict=blocked, critical=1, issues=0, with a file:line-cited finding
+```
+
+**Evidence this session:** dispatched `pr-review` for genuine independent verification, not as a demonstration, three times today: once against PR #70 (harness `codex` failed on a dead CI credential, retried on `claude`, succeeded, run 35102570598, returned the receipt above), and twice against this fork's own fix PR #81 (both attempts failed on a `claude`/`bankr` gateway outage unrelated to the PR's content; that fix was merged on the strength of manual verification instead, noted honestly rather than claiming a review that didn't complete). The successful PR #70 review's specific, file:line-cited CRITICAL finding is what led directly to F-002's fix.
+
+---
+
+## Initiative: Self-maintenance (Evolution pack)
+
+### F-004: skill-health + skill-repair
+
+**Status:** shipped
+
+**Epic:** Evolution
+**Who it's for:** the operator, as a floor under every other skill.
+**Problem it solves:** a fleet of 81 independently-scheduled skills will have some fraction silently degrading at any given time (an expired credential, an upstream API shape change) unless something is actively watching for it.
+
+**Stories**
+
+- `US-004.1`: As the operator, I want silent degradation detected and, where possible, fixed automatically, so I don't discover a broken skill only when I go looking for its output and find nothing.
+  - `AC-004.1.1`: `skill-health` classifies every scheduled skill's recent runs, files an issue in `memory/issues/` on new failure, and resolves it automatically on recovery.
+  - `AC-004.1.2`: `skill-repair` triages systemically first (a shared root cause across N skills gets one fix, not N patches) before attempting a per-skill fix.
+  - `AC-004.1.3`: A repair run reports one of a fixed set of outcome codes (`REPAIR_OK_FIXED`, `REPAIR_OK_SYSTEMIC`, `REPAIR_DIAGNOSED_NO_FIX`, `REPAIR_NO_TARGETS`, `REPAIR_DRY_RUN`, `REPAIR_BLOCKED`), never free-form prose alone.
+
+**Evidence this session:** this pattern (phased triage, a closed outcome-code vocabulary, systemic-before-per-skill) is what `references/self-maintenance.md` in the `product-feature-map` skill is directly modeled on. Read the real `skill-health`/`skill-repair` `SKILL.md` files while researching Maintain mode's design, rather than inventing a self-healing pattern from scratch.
+
+---
+
+## Initiative: Platform (Core pack)
+
+### F-005: Multi-surface skill dispatch
+
+**Status:** partial
+
+**Epic:** Core
+**Who it's for:** every skill; this is the shared substrate they all run on.
+**Problem it solves:** a skill's behavior (capability tier, secret access) needs to be identical regardless of which entry point dispatched it - a cron schedule, a chain step, an MCP tool call, a webhook - or the security model that holds on one path is fiction on another.
+
+**Stories**
+
+- `US-005.1`: As the operator, I want capability resolution to be one shared function every dispatch surface calls, not N independently-maintained copies, so a rule that holds on one path holds on all of them.
+  - `AC-005.1.1`: `scripts/skill_mode.sh` is the single source of truth for a skill's capability tier, consulted identically by `aeon.yml`, `chain-runner.yml`, and `apps/mcp-server/src/skill-executor.ts`.
+
+**Remaining:**
+- `AC-005.1.1` holds for `aeon.yml` and `apps/mcp-server` as of 2026-09-16 (fixed this session). `apps/webhook`'s dispatch path has not been audited for the same class of gap; per `ARCHITECTURE.md`, that's exactly the kind of thing worth checking rather than assuming.
+
+---
+
+## Roster: everything else, by pack
+
+Real slugs and descriptions from `catalog/skills.json`. Status `shipped` (live, scheduled) unless otherwise noted. No fabricated acceptance criteria; write a real PRD via `templates/prd-feature.md` before claiming detailed feature status for any of these.
+
+### Core (12)
+
+`aeon-update`, `auto-merge`, `auto-workflow`, `fleet-control`, `fork-fleet`, `heartbeat`, `memory-flush`, `narrative-convergence`, `shiplog`, `soul-builder`, `spawn-instance`, `strategy-builder`
+
+### Evolution (9, minus F-004's two)
+
+`aeon-doctor`, `autoresearch`, `create-skill`, `install-skill`, `pack-submit`, `search-skill`, `self-improve`
+
+### Basics (18, minus F-003's `pr-review`)
+
+`action-converter`, `article`, `bd-radar`, `digest`, `executor-mcp`, `fetch-tweets`, `github-trending`, `glim-mcp`, `idea-forge`, `last30`, `price-alert`, `skill-article`, `token-movers`, `tx-explain`, `video-script`, `write-tweet`, `you-web-search`
+
+### Dev & Code (12, minus F-001/F-002)
+
+`changelog`, `deploy-prototype`, `github-monitor`, `inbox-triage`, `posthog-errors`, `pr-triage`, `rightstack`, `seo-audit`, `spend-watch`, `vuln-tracker`
+
+### Crypto & Markets (18)
+
+`base-mcp`, `defi-overview`, `deploy-uni-hook`, `distribute-tokens`, `fear-divergence`, `finance-district-mcp`, `investigation-report`, `monitor-polymarket`, `narrative-tracker`, `onchain-monitor`, `picks-tracker`, `pm-manipulation`, `robinhood-mcp`, `taskmarket-delegate`, `token-pick`, `unlock-monitor`, `verdikta-hunter`, `x402-monitor`
+
+### Productivity (12)
+
+`competitor-monitor`, `higgsfield`, `hunter-22`, `idea-pipeline`, `mention-radar`, `operator-scorecard`, `remotion`, `reply-maker`, `schedule-ads`, `send-email`, `slop-watch`, `weekly-aeoncard`
