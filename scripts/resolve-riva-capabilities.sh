@@ -4,7 +4,9 @@
 set -u
 
 SHADOW_MODE=0
-if [ "${SKILL_NAME:-}" = "vuln-scanner" ] && [[ "${SKILL_VAR:-}" == shadow:* || "${SKILL_VAR:-}" == compare:* ]]; then
+if [ "${SKILL_NAME:-}" = "vuln-scanner" ] &&
+   [[ "${SKILL_VAR:-}" == shadow || "${SKILL_VAR:-}" == shadow:* ||
+      "${SKILL_VAR:-}" == compare || "${SKILL_VAR:-}" == compare:* ]]; then
   SHADOW_MODE=1
   SKILL_MODE=read-only
   echo "Riva shadow mode: forcing read-only capability tier"

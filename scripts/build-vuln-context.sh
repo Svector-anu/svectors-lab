@@ -12,7 +12,10 @@ while [ "$#" -gt 0 ]; do
     *) usage ;;
   esac
 done
-[ -d "$REPO/.git" ] || { echo "RIVA_CONTEXT_ERROR repo-not-git" >&2; exit 3; }
+git -C "$REPO" rev-parse --git-dir >/dev/null 2>&1 || {
+  echo "RIVA_CONTEXT_ERROR repo-not-git" >&2
+  exit 3
+}
 [ -n "$OUT" ] || usage
 command -v jq >/dev/null 2>&1 || { echo "RIVA_CONTEXT_ERROR jq-missing" >&2; exit 3; }
 
