@@ -489,8 +489,12 @@ jobs:
           # GitHub-posted review receipt must be valid, actionable, and bound to
           # the PR's unchanged head SHA. After the writer pushes, GitHub must show
           # a different SHA with completed successful checks before re-review.
+          # null, not {} - bash's ${VAR:-word} closes at word's first bare }, so a
+          # {} default leaves a stray trailing } appended whenever REVIEW_RESULT is
+          # set, corrupting the JSON (same class of bug called out in aeon.yml/
+          # messages.yml re: ${ALL_SECRETS:-{}}).
           if [ "$CHAIN" = "dev-loop" ] && [ "$CHAIN_FAILED" = "false" ] &&
-             [ "$(jq -r '.actionable // false' <<<"${REVIEW_RESULT:-{}}")" = "true" ]; then
+             [ "$(jq -r '.actionable // false' <<<"${REVIEW_RESULT:-null}")" = "true" ]; then
             REPAIR_VAR=$(bash scripts/dev-loop-repair.sh repair-target "$FEATURE_PR" "$REVIEW_SHA") || {
               echo "::error::dev-loop review became stale before repair"
               CHAIN_FAILED=true
