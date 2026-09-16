@@ -32,9 +32,12 @@ STATE_JSON="$(cat)"
 
 field() { printf '%s' "$STATE_JSON" | jq -r "$1"; }
 
-re_consec='consecutive_failures[[:space:]]*>=[[:space:]]*([0-9]+)'
-re_status='last_status[[:space:]]*=[[:space:]]*([a-z]+)'
-re_rate='success_rate[[:space:]]*(<=|>=|<|>)[[:space:]]*([0-9.]+)'
+re_consec='^[[:space:]]*consecutive_failures[[:space:]]*>=[[:space:]]*([0-9]+)[[:space:]]*$'
+re_status='^[[:space:]]*last_status[[:space:]]*=[[:space:]]*([a-z]+)[[:space:]]*$'
+# Keep the threshold inside the documented 0..1 range. This deliberately accepts
+# 0, 1, decimal fractions such as .5/0.5, and 1.0, while rejecting values that jq
+# could compare but that do not represent a success rate.
+re_rate='^[[:space:]]*success_rate[[:space:]]*(<=|>=|<|>)[[:space:]]*((0(\.[0-9]+)?)|(\.[0-9]+)|(1(\.0+)?))[[:space:]]*$'
 
 if [[ "$WHEN" =~ $re_consec ]]; then
   THRESHOLD="${BASH_REMATCH[1]}"

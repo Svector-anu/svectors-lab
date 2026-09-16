@@ -1,10 +1,10 @@
-*Daily Pick — 2026-09-10*
+*Daily Pick — 2026-09-14*
 
-*Token: ETHFI*  [HIGH]  signal 10/10
-Price: $0.6901 (+11.0% 24h / +13.6% 7d) | mcap $665.9M | vol $78.7M (vol/mcap 0.12)
+*Token: BR*  [HIGH]  signal 10/10 — RIDE momentum, size for unlock risk
+Price: $0.5194 (+75.5% 24h / +108.5% 7d) | mcap $154.1M | vol $20.5M (vol/mcap 0.13)
 Score breakdown: positive 24h +1, positive 7d +1, both >5% +2, CoinGecko trending +2, vol/mcap >=0.10 +2, RS vs BTC/ETH +2 = 10/10
-Catalyst: ether.fi launched its institutional Liquid ETH vault on Fordefi on Sep 9, adding a concrete product catalyst to the momentum.
-Risk: an 8.95M ETHFI insider unlock is scheduled for Sep 15 (~0.9% of total supply / ~1% of market cap), creating near-term supply pressure.
+Catalyst: Optimism Splash Phase 2 began Sep 10, adding fresh BR staking/farming incentives as Bedrock 2.0 and Bitcoin-restaking attention returned; this is the likeliest identifiable driver, not a confirmed attribution.
+Risk: CoinGecko shows 40.63M BR unlocking Sep 20 (4.1% of max supply and about 13.9% of the currently reported circulating supply), including team and seed allocations—a material near-term supply overhang after a parabolic move.
 Vs recent picks: first time in the 7-day window.
 
 sources: cg=ok, dex=ok, poly=ok

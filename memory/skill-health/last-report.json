@@ -1,9 +1,11 @@
 {
-  "hash": "d33578c39a0773712f43df15218d5228790dbe9e7e17e93906a38a4d8dd250bd",
+  "hash": "40ab664c728ba5994a899f32e8184e32471819c9d9b8198eb2e40b7849074c45",
   "last_notified_at": "2026-09-07T18:49:08Z",
-  "last_run_at": "2026-09-10T20:08:44Z",
+  "last_run_at": "2026-09-13T18:08:42Z",
   "classification": {
-    "critical": [],
+    "critical": [
+      "vuln-scanner"
+    ],
     "degraded": [
       "defi-overview",
       "digest",
@@ -18,7 +20,6 @@
       "soul-builder",
       "token-pick",
       "verdikta-hunter",
-      "vuln-scanner",
       "vuln-tracker",
       "write-tweet",
       "x402-monitor"
@@ -30,10 +31,9 @@
       "fork-fleet",
       "hunter-22",
       "pr-review",
-      "search-skill",
-      "self-improve"
+      "search-skill"
     ],
-    "healthy_count": 6,
+    "healthy_count": 7,
     "no_data": []
   }
 }

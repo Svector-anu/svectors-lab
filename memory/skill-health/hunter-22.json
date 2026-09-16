@@ -1,21 +1,11 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-10T10:29:49Z",
-  "quality_score": 2,
-  "assessment": "The no-op finding is usable and specific, but the output contradicts the read-only run by claiming workspace files were updated and changes remain intact, making key completion claims unverifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.61,
+  "last_analyzed": "2026-09-14T10:45:19Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-op scan with concrete triage and validation details, though it is process-heavy and confusingly claims workspace updates despite the stated read-only constraint.",
+  "flags": [],
+  "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-07-31",
-      "score": 4
-    },
-    {
-      "date": "2026-08-21",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -160,6 +150,30 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T10:29:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 3,
+      "ts": "2026-09-11T13:48:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:26:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T11:46:27Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 3,
+      "ts": "2026-09-14T10:45:19Z",
       "harness": "codex"
     }
   ]

@@ -1,13 +1,16 @@
-Reviewed 1 PR, skipped 0.
+No PR required a new review.
 
-**Verdict**: approve-ready — no blockers.  
-<!-- aeon-review:{"schema":1,"target":"aeonfun/aeon#1039","sha":"e249ecdce92d8684bc0d0f35ee769042c8444a22","verdict":"approve-ready","critical":0,"issues":0} -->
+- `aeonfun/aeon`: 0 open PRs
+- `Svector-anu/svectors-lab`: 3 open PRs, all skipped because their current SHAs were already reviewed:
+  - #70 — `8666d73`
+  - #77 — `c8259c0`
+  - #78 — `ee031a6`
 
-The previous shadow-selector isolation bug is fixed. All Riva tests, PoC-gate tests, and shell syntax checks passed. The review was posted to GitHub and recorded in [memory/logs/2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
+No GitHub comments or notification were sent. The run was recorded in [memory/logs/2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md).
 
 ## Summary
 
-- Reviewed `aeonfun/aeon#1039` at exact head SHA `e249ecd`.
-- Findings: 0 critical, 0 issues.
-- GitHub review posted successfully.
-- Notification attempted, but the external notification queue is read-only in this harness.
+- Reviewed: 0
+- Skipped as duplicate SHA: 3
+- Files modified: `memory/logs/2026-09-14.md`
+- Follow-up needed: none until a PR head changes or a new PR opens.

@@ -1,37 +1,15 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-10T14:37:11Z",
+  "last_analyzed": "2026-09-14T16:37:25Z",
   "quality_score": 2,
-  "assessment": "Substantive and linked, but poorly aligned with the crypto-trader strategy: no regime verdict or explicit position calls, limited tradeable signal, and it implausibly claims workspace files were updated during a read-only run.",
+  "assessment": "Substantive and linked, but badly misaligned with the crypto-trader strategy, lacks regime and position calls, reverses the implication of higher yields by saying capital is cheaper, and claims workspace writes despite the read-only constraint.",
   "flags": [
     "low_quality",
     "generic_content",
     "unverifiable_claim"
   ],
-  "avg_score": 2.07,
+  "avg_score": 2,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 4
-    },
-    {
-      "date": "2026-08-26",
-      "score": 2,
-      "ts": "2026-08-26T14:15:28Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-08-27",
-      "score": 2,
-      "ts": "2026-08-27T06:18:07Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-08-27",
-      "score": 2,
-      "ts": "2026-08-27T16:31:20Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -186,6 +164,30 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T14:37:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T17:21:21Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T15:42:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:06:57Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T16:37:25Z",
       "harness": "codex"
     }
   ]

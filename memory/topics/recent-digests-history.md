@@ -5,13 +5,17 @@ tags:
   - digests
   - history
 resource: ""
-timestamp: 2026-09-11T00:00:00Z
+timestamp: 2026-09-14T00:00:00Z
 ---
 
 # Recent Digests History
 
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-04 | daily (web) | Coinbase derivatives, KuCoin delistings, Cloudflare remediation |
+| 2026-09-03 | daily (web, third run) | AI ransomware, infra change, agent permissions |
+| 2026-09-03 | daily (web, second run) | Firo fork, GitSpawn, NVIDIA-Hugging Face |
+| 2026-09-03 | daily (web) | SonicWall exploits, Gemini 3.8, FRNT reserves |
 | 2026-08-29 | daily (web) | agent sandbox isolation, Apache Iggy/Sourcelume, Anthropic ruling |
 | 2026-08-29 | web3 developer tooling (web) | Base production RPC, Arc v0.8.0, Compass WTGXX |
 | 2026-07-28 | daily (web) | FOMC hike odds, Clarity cloture slip, Circle IBM patents |

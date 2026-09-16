@@ -1,8 +1,8 @@
 {
   "skill": "vuln-tracker",
-  "last_analyzed": "2026-09-10T17:58:26Z",
+  "last_analyzed": "2026-09-14T16:40:20Z",
   "quality_score": 2,
-  "assessment": "Specific repository counts, issue IDs, disclosure states, and claimed file writes lack evidence and conflict with the stated read-only harness, making the result unreliable.",
+  "assessment": "Specific findings are uncited and the claimed workspace updates contradict the explicitly read-only run, making the result unreliable despite its actionable structure.",
   "flags": [
     "unverifiable_claim"
   ],
@@ -130,6 +130,30 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T17:58:26Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T17:25:23Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T17:54:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T18:11:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T16:40:20Z",
       "harness": "codex"
     }
   ]

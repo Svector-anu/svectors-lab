@@ -1,92 +1,14 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-11T05:03:36Z",
+  "last_analyzed": "2026-09-14T16:36:49Z",
   "quality_score": 2,
-  "assessment": "Actionable and conclusion-oriented, but multiple corrupted figures and uncited specific metrics/catalysts make the regime calls unreliable and not independently verifiable.",
+  "assessment": "Usable no-change verdict, but it lacks evidence anchors, narrative details, and explicit position calls, making it too generic for decision-grade trading use.",
   "flags": [
     "low_quality",
-    "unverifiable_claim"
+    "generic_content"
   ],
-  "avg_score": 2.7,
+  "avg_score": 2.53,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 4,
-      "ts": "2026-09-03T20:51:23Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T04:59:52Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 3,
-      "ts": "2026-09-04T09:24:26Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 3,
-      "ts": "2026-09-04T13:39:04Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T19:28:57Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T01:07:03Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T09:23:00Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T12:52:21Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T19:29:11Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T00:58:11Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 3,
-      "ts": "2026-09-06T09:37:52Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T13:08:12Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T20:31:55Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-07",
       "score": 2,
@@ -187,6 +109,84 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T05:03:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 3,
+      "ts": "2026-09-11T09:33:50Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T13:47:55Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 4,
+      "ts": "2026-09-11T19:51:33Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 3,
+      "ts": "2026-09-12T04:30:30Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T08:47:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T15:41:19Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T19:42:23Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T01:12:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T11:45:52Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:07:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T20:46:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 4,
+      "ts": "2026-09-14T10:44:48Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T16:36:49Z",
       "harness": "codex"
     }
   ]

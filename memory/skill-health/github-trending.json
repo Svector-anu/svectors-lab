@@ -1,21 +1,11 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-10T14:37:19Z",
-  "quality_score": 3,
-  "assessment": "Substantive, concise, and repository-linked, but it does not translate the findings into crypto-relevant, explicitly labeled position calls aligned with the operator’s strategy.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.96,
+  "last_analyzed": "2026-09-14T16:37:11Z",
+  "quality_score": 4,
+  "assessment": "Substantive, concise, well-linked trending report with clear categorization and source-status disclosure, though it does not advance the operator’s crypto-trading priority or explain why the top pick is actionable.",
+  "flags": [],
+  "avg_score": 2.87,
   "history": [
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
-    {
-      "date": "2026-08-21",
-      "score": 4
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -159,6 +149,30 @@
       "date": "2026-09-10",
       "score": 3,
       "ts": "2026-09-10T14:37:19Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T13:47:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:26:08Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 3,
+      "ts": "2026-09-13T15:07:01Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 4,
+      "ts": "2026-09-14T16:37:11Z",
       "harness": "codex"
     }
   ]

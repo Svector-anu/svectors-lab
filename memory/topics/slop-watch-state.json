@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-10T10:28:31Z",
+  "checked_at": "2026-09-14T10:44:14Z",
   "month": "2026-09",
   "lanes": {
     "asi": {
@@ -7,32 +7,32 @@
       "repo": "SlopDotCash/asi",
       "ordinal": 3,
       "next_merge_points": 5,
-      "liveness": "live",
+      "liveness": "slowing",
       "last_merge_at": "2026-09-06T06:12:21Z",
-      "merges_7d": 171,
-      "merge_rate": 54.93,
+      "merges_7d": 0,
+      "merge_rate": 54.88,
       "open_prs": [],
       "changes_requested": [],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-10T10:28:31Z"
+      "checked_at": "2026-09-14T10:44:14Z"
     },
     "delta-star": {
       "slug": "delta-star",
       "repo": "SlopDotCash/proximityprize",
       "ordinal": 0,
       "next_merge_points": 10,
-      "liveness": "live",
+      "liveness": "slowing",
       "last_merge_at": "2026-09-06T17:29:41Z",
-      "merges_7d": 85,
+      "merges_7d": 0,
       "merge_rate": 98.0,
       "open_prs": [],
       "changes_requested": [],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-10T10:28:31Z"
+      "checked_at": "2026-09-14T10:44:14Z"
     },
     "eliza": {
       "slug": "eliza",
@@ -40,22 +40,22 @@
       "ordinal": 0,
       "next_merge_points": 10,
       "liveness": "live",
-      "last_merge_at": "2026-09-10T10:17:11Z",
+      "last_merge_at": "2026-09-14T03:05:24Z",
       "merges_7d": 152,
-      "merge_rate": 76.21,
+      "merge_rate": 76.31,
       "open_prs": [30500, 29731, 29726, 29353, 28180],
       "changes_requested": [30500],
       "status": "active",
       "listing_tier": "featured",
       "authority_state": "verified",
-      "checked_at": "2026-09-10T10:28:31Z"
+      "checked_at": "2026-09-14T10:44:14Z"
     },
     "heir-elements-sdk": {
       "slug": "heir-elements-sdk",
       "repo": "heirlabs/element-sdk",
       "ordinal": 0,
       "next_merge_points": 10,
-      "liveness": "slowing",
+      "liveness": "dormant",
       "last_merge_at": "2026-08-21T19:23:12Z",
       "merges_7d": 0,
       "merge_rate": 18.75,
@@ -64,7 +64,7 @@
       "status": "active",
       "listing_tier": "community",
       "authority_state": "unverified",
-      "checked_at": "2026-09-10T10:28:31Z"
+      "checked_at": "2026-09-14T10:44:14Z"
     }
   }
 }

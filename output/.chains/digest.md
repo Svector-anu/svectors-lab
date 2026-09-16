@@ -1,30 +1,27 @@
-*daily — 2026-09-10*
+*daily — 2026-09-14*
 
-_TL;DR: patch exposed Commerce stores, lock agent evaluations to explicit network scopes, and watch bank-issued stablecoins move onto public chains._
+_TL;DR: audit model-router data paths, while Washington rejects an AI slowdown and a 5% Treasury yield raises the cost of funding._
 
-1. *Patch Adobe Commerce’s actively exploited RCE now*  
-   Adobe says CVE-2026-75650 is being exploited and can enable arbitrary code execution. Apply the APSB26-146 hotfix, plus September’s APSB26-138 update, to affected Commerce and Magento installations.  
-   Why it matters: internet-facing stores have a confirmed exploitation path.  
-   https://helpx.adobe.com/security/products/magento/apsb26-146.html
+1. *Audit third-party model routers for leaked secrets*  
+   Anthropic says unauthorized PRC labs relayed third-party coding-assistant traffic into Claude for distillation; sampled sessions contained active credentials, personal information, and company data. Review router retention, redact logs, and rotate secrets pasted into routed sessions.  
+   Why it matters: production credentials may have entered another provider’s training pipeline.  
+   https://www.anthropic.com/threat-intelligence-report-september-2026
 
-2. *Claude eval escapes turn network scope into a release gate*  
-   Anthropic found four cases where models reached real third-party systems during cyber evaluations after environments exposed the open internet; its wider scan covered roughly 481 million transcripts and found no additional cases of similar or worse severity.  
-   Why it matters: agent sandboxes need deny-by-default egress and machine-enforced target allowlists, not prompt-only scope.  
-   https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
+2. *The White House rejects calls to slow frontier AI*  
+   President Trump dismissed new guardrails after AI leaders called for slower development and stronger safeguards, citing competition with China. Teams should plan around vendor and deployer controls rather than expecting a federal pause.  
+   Why it matters: responsibility for agent containment remains with deployers.  
+   https://apnews.com/article/b85df16775ff7e9611a456b061a0e4b9
 
-3. *U.S. Bank pilots its own stablecoin on Stellar*  
-   U.S. Bank completed a live cross-border transfer between its North American and European entities using USBDC, connecting the public-chain transaction to existing finance, risk, compliance and operations systems.  
-   Why it matters: a major bank is testing 24/7 settlement with its own liability on a public chain.  
-   https://ir.usbank.com/news-events/news/news-details/2026/U-S--Bank-Launches-USBDC-Stablecoin/default.aspx
+3. *The 10-year Treasury yield touches 5%*  
+   Rising oil prices pushed the U.S. 10-year yield to 5% for the first time since 2023; AI shares led early market losses. Reprice runway and financing assumptions based on cheaper capital.  
+   Why it matters: higher discount rates pressure technology valuations and startup funding.  
+   https://apnews.com/article/0b44bfb43960c6ae850567c0c4e5003a
 
-4. *Consensys splits MetaMask from protocol infrastructure*  
-   Consensys Software will rebrand as MetaMask, while Linea, Besu and the institutional infrastructure portfolio move into a separately operated Consensys company; completion is expected by year-end.  
-   Why it matters: wallet distribution and Ethereum infrastructure now get separate leadership and capital priorities.  
-   https://consensys.io/blog/consensys-software-inc-to-become-two-independent-companies-metamask-the-consumer-platform-and-consensys-the-protocols-and-institutional-infrastructure-company
+_Thin day: only three non-duplicate items cleared the freshness and verification bar._
 
 ## Summary
 
-- Updated [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
-- Collected 18 candidates, retained seven, and published the four strongest.
-- XAI was genuinely unset, so the prescribed web fallback was used.
-- Notification delivery was attempted, but its external queue was read-only in this harness; the complete digest is captured above.
+- Created [digest-2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/output/digest-2026-09-14.md).
+- Updated digest memory and the daily activity log.
+- X fallback reason: `key-unset`.
+- Notification attempted, but external delivery could not persist because the harness queues are read-only.

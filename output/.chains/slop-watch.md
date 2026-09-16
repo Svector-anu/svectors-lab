@@ -1,21 +1,21 @@
-today: **delta-star** for new work — next merge is worth **10 points** at ordinal 0. It is live with 85 merges in seven days and a 98% all-time merge rate.
+today: eliza — next merge worth 10 pts (ordinal 0), with 152 merges in the last 7 days.
 
-| lane | next | ordinal | liveness | last merge |
-|---|---:|---:|---|---|
-| delta-star | 10 | 0 | live | Sep 6 |
-| eliza | 10 | 0 | live | today |
-| asi | 5 | 3 | live | Sep 6 |
-| heir-elements-sdk | 10 | 0 | slowing | Aug 21 |
+| lane | next | ordinal | liveness | last merge | merge rate |
+|---|---:|---:|---|---|---:|
+| eliza | 10 | 0 | live | today | 76.31% |
+| delta-star | 10 | 0 | slowing | Sep 6 | 98.00% |
+| asi | 5 | 3 | slowing | Sep 6 | 54.88% |
+| heir-elements-sdk | 10 | 0 | dormant | Aug 21 | 18.75% |
 
-Highest-priority action: [eliza PR #30500](https://github.com/elizaOS/eliza/pull/30500) still has `CHANGES_REQUESTED`. Preserve the dirty address independently of selection and cover external-close plus tab-added-mid-typing cases before merge.
+waiting on you: [eliza PR #30500](https://github.com/elizaOS/eliza/pull/30500) still has `CHANGES_REQUESTED`. fixing that is the highest-value action before starting another PR.
 
-Heir Elements remains watch-only: unverified authority, no recent merges, and an 18.75% merge rate.
+watch: delta-star moved from live → slowing. its next merge is worth 10 points, but it is not currently merging, so don’t prioritize it yet.
+
+`SLOP_WATCH_OK`
 
 ## Summary
 
-- Updated [slop-watch-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/slop-watch-state.json).
-- Appended the run to [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md).
-- Notification delivery failed because the harness notification queue is read-only.
-- Commit creation was blocked because Git metadata is read-only.
-
-`SLOP_WATCH_OK` — delivery degraded.
+- Refreshed `memory/topics/slop-watch-state.json`.
+- Logged the run in `memory/logs/2026-09-14.md`.
+- Notification delivery was attempted, but the harness queues were read-only.
+- The state commit was also blocked because `.git` is read-only; file changes remain saved in the workspace.

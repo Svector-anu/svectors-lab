@@ -1,98 +1,14 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-11T00:32:00Z",
+  "last_analyzed": "2026-09-14T16:38:33Z",
   "quality_score": 2,
-  "assessment": "Specific and conclusion-first, but it lacks explicit position calls or source links and implausibly claims workspace files were modified during a read-only run.",
+  "assessment": "Conclusion-first and numerically specific, but it lacks verifiable source links, provides no actionable position calls, and falsely claims workspace updates during a read-only run.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "low_quality",
+    "unverifiable_claim"
   ],
-  "avg_score": 2.17,
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 3,
-      "ts": "2026-09-03T20:52:32Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T00:32:18Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T09:25:46Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T13:46:05Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T19:30:45Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 2,
-      "ts": "2026-09-05T01:09:14Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 3,
-      "ts": "2026-09-05T09:25:10Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 2,
-      "ts": "2026-09-05T12:53:02Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-05",
-      "score": 2,
-      "ts": "2026-09-05T19:31:27Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 3,
-      "ts": "2026-09-06T00:59:17Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T09:39:34Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T13:09:45Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-06",
-      "score": 2,
-      "ts": "2026-09-06T18:20:41Z",
-      "harness": "codex"
-    },
-    {
-      "date": "2026-09-07",
-      "score": 2,
-      "ts": "2026-09-07T03:19:53Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-07",
       "score": 2,
@@ -187,6 +103,90 @@
       "date": "2026-09-11",
       "score": 2,
       "ts": "2026-09-11T00:32:00Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T09:38:02Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T13:49:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T19:52:56Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T00:11:56Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T08:49:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:27:38Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T19:44:42Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 3,
+      "ts": "2026-09-13T01:14:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 3,
+      "ts": "2026-09-13T06:12:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:08:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T18:11:05Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T00:29:09Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T10:46:08Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T16:38:33Z",
       "harness": "codex"
     }
   ]

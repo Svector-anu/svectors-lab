@@ -1,20 +1,19 @@
-Memory flush completed for 2026-09-10 through 2026-09-11.
+Memory flush completed for the `2026-09-13`–`2026-09-14` window.
 
-- Promoted the verified JustVugg/colibri HIGH vulnerability advisory.
-- Recorded Snowflake CLI PR #3158 and Fireblocks SDK PR #344.
-- Added the Databricks CLI lead to the Go-toolchain verification priority.
-- Removed the resolved aeonfun/aeon PR #1039 priority.
-- Confirmed PRs #70/#72 and four critical issues remain open.
-- Archived three older digest entries to the existing digest history.
-- Advanced the consolidation watermark to 2026-09-11.
+- Refreshed the market-context pointer.
+- Archived four older digest rows into the existing digest history.
+- Verified current PR and critical-issue priorities remain unresolved.
+- Logged the run in `memory/logs/2026-09-14.md`.
+- Stamped the consolidation watermark to `2026-09-14`.
+- No monthly log rotation was required.
 
 ## Summary
 
 Modified:
 
-- [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md)
-- [2026-09-11.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-11.md)
-- [recent-digests-history.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/recent-digests-history.md)
-- [memory-flush-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/memory-flush-state.json)
+- `memory/MEMORY.md`
+- `memory/topics/recent-digests-history.md`
+- `memory/logs/2026-09-14.md`
+- `memory/memory-flush-state.json`
 
-No monthly log rotation was required.
+No follow-up action is needed.

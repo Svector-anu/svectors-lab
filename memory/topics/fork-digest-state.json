@@ -1,7 +1,7 @@
 {
-  "last_run": "2026-09-07",
+  "last_run": "2026-09-14",
   "target_repo": "aeonfun/aeon",
-  "n_active": 79,
+  "n_active": 69,
   "n_processed": 50,
   "n_configured": 49,
   "n_template": 1,
@@ -11,38 +11,38 @@
     "DEFAULT_FLIP_DISABLE": [
       {
         "skill": "auto-merge",
-        "forks": 46,
-        "pct": 0.9388
+        "forks": 47,
+        "pct": 0.9592
       },
       {
         "skill": "defi-overview",
-        "forks": 47,
-        "pct": 0.9592
+        "forks": 48,
+        "pct": 0.9796
       },
       {
         "skill": "digest",
+        "forks": 46,
+        "pct": 0.9388
+      },
+      {
+        "skill": "fork-fleet",
         "forks": 47,
         "pct": 0.9592
       },
       {
-        "skill": "fork-fleet",
-        "forks": 46,
-        "pct": 0.9388
-      },
-      {
         "skill": "github-trending",
-        "forks": 46,
-        "pct": 0.9388
+        "forks": 47,
+        "pct": 0.9592
       },
       {
         "skill": "memory-flush",
-        "forks": 30,
-        "pct": 0.6122
+        "forks": 31,
+        "pct": 0.6327
       },
       {
         "skill": "narrative-tracker",
-        "forks": 41,
-        "pct": 0.8367
+        "forks": 42,
+        "pct": 0.8571
       },
       {
         "skill": "picks-tracker",
@@ -51,8 +51,8 @@
       },
       {
         "skill": "pr-review",
-        "forks": 48,
-        "pct": 0.9796
+        "forks": 49,
+        "pct": 1.0
       },
       {
         "skill": "search-skill",
@@ -61,8 +61,8 @@
       },
       {
         "skill": "self-improve",
-        "forks": 46,
-        "pct": 0.9388
+        "forks": 47,
+        "pct": 0.9592
       },
       {
         "skill": "shiplog",
@@ -76,23 +76,23 @@
       },
       {
         "skill": "skill-repair",
-        "forks": 47,
-        "pct": 0.9592
+        "forks": 48,
+        "pct": 0.9796
       },
       {
         "skill": "token-pick",
-        "forks": 44,
-        "pct": 0.898
+        "forks": 45,
+        "pct": 0.9184
       },
       {
         "skill": "vuln-scanner",
-        "forks": 47,
-        "pct": 0.9592
+        "forks": 48,
+        "pct": 0.9796
       },
       {
         "skill": "vuln-tracker",
-        "forks": 34,
-        "pct": 0.6939
+        "forks": 35,
+        "pct": 0.7143
       },
       {
         "skill": "write-tweet",
@@ -100,11 +100,1005 @@
         "pct": 0.9184
       }
     ],
-    "MODEL_CONSENSUS": [],
+    "MODEL_CONSENSUS": [
+      {
+        "skill": "monitor-polymarket",
+        "model": "claude-sonnet-4-6",
+        "forks": 20
+      }
+    ],
     "VAR_HOTSPOT": [],
     "EMERGING": []
   },
   "fork_only_skills": [
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "competitor-launch-radar"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "0xMal0u/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "thanhdat3007-create/aeon",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "thanhdat3007-create/aeon",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "thanhdat3007-create/aeon",
+      "skill": "miroshark-matchday"
+    },
+    {
+      "fork": "thanhdat3007-create/aeon",
+      "skill": "submit-hook"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "agent-displacement"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "api-health-probe"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "approval-audit"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "article-queue"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "atrium-catalog-watcher"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "batch-health"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "beat-tracker"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "builder-map"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "capabilities-map"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "chart-request"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "close-trade"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "competitor-launch-radar"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "compute-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "concierge"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "config-validator"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "content-performance"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "contract-audit"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "deployer-trace"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "disclosure-tracker"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "discord-trader-monitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "ecosystem-entrants"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "ecosystem-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "engagement-act"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fear-divergence-scout"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fleet-scorecard"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fleet-skill-adoption"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "follow-up-patrol"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-health-score"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "fund-flow"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "holder-concentration"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "honeypot-check"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "idea-validator"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "janitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "kraken-execute"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "launch-radar"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "linked-wallets"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "liquidpad-launch"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "lp-lock-check"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "mcp-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "memory-structural-dedupe"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "milestone-tracker"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "note-taking"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pm-intel"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pm-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "polymarket"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pr-merge-queue"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pr-skill-triage"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pr-tracker"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pvr-triage-monitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "pvr-watchlist"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "repo-revive"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "rug-scan"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "run-frequency-guard"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "rwa-pulse"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "self-review"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "signal-verdict"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-enabler"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-of-the-day"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "sparkleware-catalog"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "spend-monitor"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "thread-writer"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "topic-momentum"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "trader-bootstrap"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "trader-memory-compact"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "trader-x-bootstrap"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "trading-brief"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "tweet-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "vigil"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "wallet-digest"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "wallet-profile"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "wallet-risk-weekly"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "chxoky/aeon",
+      "skill": "x-trader-monitor"
+    },
     {
       "fork": "lawbworld-tech/aeon",
       "skill": "agent-buzz"
@@ -454,1792 +1448,20 @@
       "skill": "workflow-security-audit"
     },
     {
-      "fork": "0xMal0u/aeon",
-      "skill": "agent-buzz"
+      "fork": "niu12503/aeon",
+      "skill": "compute-resell"
     },
     {
-      "fork": "0xMal0u/aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "competitor-launch-radar"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fork-first-run-alert"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "fork-skill-gap"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "0xMal0u/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "darkstaryuri/aeon",
+      "fork": "niu12503/aeon",
       "skill": "cortx-reliability"
     },
     {
-      "fork": "chxoky/aeon",
-      "skill": "agent-buzz"
+      "fork": "niu12503/aeon",
+      "skill": "miroshark-matchday"
     },
     {
-      "fork": "chxoky/aeon",
-      "skill": "agent-displacement"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "api-health-probe"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "approval-audit"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "article-queue"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "atrium-catalog-watcher"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "batch-health"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "beat-tracker"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "builder-map"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "capabilities-map"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "chart-request"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "close-trade"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "competitor-launch-radar"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "compute-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "concierge"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "config-validator"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "content-performance"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "contract-audit"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "deployer-trace"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "disclosure-tracker"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "discord-trader-monitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "ecosystem-entrants"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "ecosystem-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "engagement-act"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fear-divergence-scout"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fleet-scorecard"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fleet-skill-adoption"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "follow-up-patrol"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-first-run-alert"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-health-score"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fork-skill-gap"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "fund-flow"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "holder-concentration"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "honeypot-check"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "idea-validator"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "janitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "kraken-execute"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "launch-radar"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "linked-wallets"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "liquidpad-launch"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "lp-lock-check"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "mcp-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "memory-structural-dedupe"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "milestone-tracker"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "note-taking"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pm-intel"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pm-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "polymarket"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pr-merge-queue"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pr-skill-triage"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pr-tracker"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pvr-triage-monitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "pvr-watchlist"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "repo-revive"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "rug-scan"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "run-frequency-guard"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "rwa-pulse"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "self-review"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "signal-verdict"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-enabler"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-of-the-day"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "sparkleware-catalog"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "spend-monitor"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "thread-writer"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "topic-momentum"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "trader-bootstrap"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "trader-memory-compact"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "trader-x-bootstrap"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "trading-brief"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "tweet-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "vigil"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "wallet-digest"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "wallet-profile"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "wallet-risk-weekly"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "chxoky/aeon",
-      "skill": "x-trader-monitor"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "agent-buzz"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "madebyshun/blueagent-aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "agent-buzz"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "agent-displacement"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "batch-health"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "builder-map"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "careful-finance"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "competitor-launch-radar"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "compute-pulse"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "config-validator"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "disclosure-tracker"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "ecosystem-pulse"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "engagement-act"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fleet-skill-adoption"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fork-first-run-alert"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "fork-skill-gap"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "idea-validator"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "janitor"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "launch-radar"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "memory-structural-dedupe"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "milestone-tracker"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "note-taking"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "pm-intel"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "pm-pulse"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "polymarket"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "pr-skill-triage"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "pr-tracker"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "pvr-triage-monitor"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "pvr-watchlist"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "repo-revive"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "run-frequency-guard"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "rwa-pulse"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "self-review"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "signal-verdict"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-enabler"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "sparkleware-catalog"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "topic-momentum"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "tweet-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "wallet-digest"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "UIZorrot/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "thanhdat3007-create/aeon",
-      "skill": "cortx-reliability"
+      "fork": "niu12503/aeon",
+      "skill": "submit-hook"
     },
     {
       "fork": "damo-nu11/aeon-minebean",
@@ -2586,1035 +1808,547 @@
       "skill": "workflow-security-audit"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "agent-buzz"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "agent-displacement"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "ai-framework-watch"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "aixbt-pulse"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "approval-audit"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "batch-health"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "builder-map"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "capabilities-map"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "channel-recap"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "code-health"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "competitor-launch-radar"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "compute-pulse"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "config-validator"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "contract-audit"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "contributor-reward"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "contributor-spotlight"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "cost-report"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "create-campaign"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "daily-routine"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "deal-flow"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "deep-research"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "defi-monitor"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "deployer-trace"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "disclosure-tracker"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "ecosystem-pulse"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "engagement-act"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "evening-recap"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "external-feature"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "farcaster-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "fleet-scorecard"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "fleet-skill-adoption"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "fleet-state"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "follow-up-patrol"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "fork-cohort"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "fork-contributor-leaderboard"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "fork-first-run-alert"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "fork-health-score"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "fork-release-tracker"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "fork-skill-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "fork-skill-gap"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "fund-flow"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "github-issues"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "github-releases"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "goal-tracker"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "hacker-news-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "holder-concentration"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "honeypot-check"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "huggingface-trending"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "idea-capture"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "idea-validator"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "issue-triage"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "janitor"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "launch-radar"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "linked-wallets"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "liquidpad-launch"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "list-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "lp-lock-check"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "market-context-refresh"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "mcp-pulse"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "memory-structural-dedupe"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "milestone-tracker"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "monitor-kalshi"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "monitor-runners"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "morning-brief"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "note-taking"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "on-chain-monitor"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "onboard"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "paper-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "paper-pick"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "pm-intel"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "pm-pulse"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "polymarket"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "polymarket-comments"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "pr-merge-queue"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "pr-skill-triage"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "pr-tracker"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "price-threshold-alert"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "product-hunt-launch"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "project-lens"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "push-recap"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "pvr-triage-monitor"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "pvr-watchlist"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "reddit-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "reflect"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "refresh-x"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "reg-monitor"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "remix-tweets"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "repo-actions"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "repo-article"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "repo-pulse"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "repo-revive"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "repo-scanner"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "research-brief"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "rss-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "rss-feed"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "rug-scan"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "run-frequency-guard"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "rwa-pulse"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "security-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "self-review"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "show-hn-draft"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "signal-verdict"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "skill-analytics"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "skill-enabler"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "skill-evals"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "skill-freshness"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "skill-graph"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "skill-leaderboard"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "skill-security-scan"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "skill-update-check"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "smithery-manifest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "sparkleware-catalog"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "spend-monitor"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "star-milestone"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "star-momentum-alert"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "startup-idea"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "syndicate-article"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "technical-explainer"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "telegram-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "thread-formatter"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "token-alert"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "token-report"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "tool-builder"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "topic-momentum"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "treasury-info"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "tweet-digest"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "tweet-roundup"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "update-gallery"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "v4-readiness"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "vercel-projects"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "vibecoding-digest"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
+      "skill": "wallet-digest"
+    },
+    {
+      "fork": "sparkleware/aeon",
+      "skill": "wallet-profile"
+    },
+    {
+      "fork": "sparkleware/aeon",
       "skill": "weekly-review"
     },
     {
-      "fork": "gitlawbounty/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "weekly-shiplog"
     },
     {
-      "fork": "gitlawbounty/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "aeonbook-onboarding"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "agent-buzz"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fork-first-run-alert"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "fork-skill-gap"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "abhirajprasad/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "agent-buzz"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "competitor-launch-radar"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fork-first-run-alert"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "fork-skill-gap"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "youpsla/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "youpsla/aeon",
+      "fork": "sparkleware/aeon",
       "skill": "workflow-security-audit"
     },
     {
@@ -3946,1747 +2680,691 @@
       "skill": "zerion"
     },
     {
-      "fork": "pezetel/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "agent-buzz"
     },
     {
-      "fork": "pezetel/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "pezetel/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "alexverify/aeon",
-      "skill": "okf-export"
-    },
-    {
-      "fork": "alexverify/aeon",
-      "skill": "okf-ingest"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "agent-buzz"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "agent-displacement"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "ai-framework-watch"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "aixbt-pulse"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "batch-health"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "builder-map"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "channel-recap"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "code-health"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "competitor-launch-radar"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "compute-pulse"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "config-validator"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "contributor-reward"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "contributor-spotlight"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "cost-report"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "create-campaign"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "daily-routine"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "deal-flow"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "deep-research"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "defi-monitor"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "disclosure-tracker"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "ecosystem-pulse"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "engagement-act"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "evening-recap"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "external-feature"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "farcaster-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "fleet-skill-adoption"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fleet-state"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fork-cohort"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fork-contributor-leaderboard"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fork-first-run-alert"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fork-release-tracker"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fork-skill-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "fork-skill-gap"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "github-issues"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "github-releases"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "goal-tracker"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "hacker-news-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "huggingface-trending"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "idea-capture"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "idea-validator"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "issue-triage"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "janitor"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "launch-radar"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "list-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "market-context-refresh"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "memory-structural-dedupe"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "milestone-tracker"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "monitor-kalshi"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "monitor-runners"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "morning-brief"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "note-taking"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "on-chain-monitor"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "onboard"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "paper-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "paper-pick"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "pm-intel"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "pm-pulse"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "polymarket-comments"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "polymarket"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "pr-tracker"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "price-threshold-alert"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "product-hunt-launch"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "project-lens"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "push-recap"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "pvr-triage-monitor"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "pvr-watchlist"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "reddit-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "reflect"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "refresh-x"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "reg-monitor"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "remix-tweets"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "repo-actions"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "repo-article"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "repo-pulse"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "repo-revive"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "repo-scanner"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "research-brief"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "rss-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "rss-feed"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "run-frequency-guard"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "rwa-pulse"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "security-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "self-review"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "show-hn-draft"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "signal-verdict"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-analytics"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "skill-enabler"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-evals"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-freshness"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-graph"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-leaderboard"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-security-scan"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "skill-update-check"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "smithery-manifest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "sparkleware-catalog"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "star-milestone"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "star-momentum-alert"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "startup-idea"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "syndicate-article"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "technical-explainer"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "telegram-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "thread-formatter"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "token-alert"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "token-report"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "tool-builder"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "topic-momentum"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "treasury-info"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "tweet-digest"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "tweet-roundup"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "update-gallery"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "v4-readiness"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "vercel-projects"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "vibecoding-digest"
     },
     {
-      "fork": "TakamiyaZee/aeon",
-      "skill": "wallet-digest"
-    },
-    {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "weekly-review"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "weekly-shiplog"
     },
     {
-      "fork": "TakamiyaZee/aeon",
+      "fork": "gitlawbounty/aeon",
       "skill": "workflow-security-audit"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "agent-buzz"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "agent-displacement"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "ai-framework-watch"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "aixbt-pulse"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "batch-health"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "builder-map"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "channel-recap"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "code-health"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "competitor-launch-radar"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "compute-pulse"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "config-validator"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "contributor-reward"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "contributor-spotlight"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "cost-report"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "create-campaign"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "daily-routine"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "deal-flow"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "deep-research"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "defi-monitor"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "disclosure-tracker"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "engagement-act"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "evening-recap"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "external-feature"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "farcaster-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fleet-state"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fork-cohort"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fork-contributor-leaderboard"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fork-first-run-alert"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fork-release-tracker"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fork-skill-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "fork-skill-gap"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "github-issues"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "github-releases"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "goal-tracker"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "hacker-news-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "huggingface-trending"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "idea-capture"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "idea-validator"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "issue-triage"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "janitor"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "launch-radar"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "list-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "market-context-refresh"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "memory-structural-dedupe"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "milestone-tracker"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "monitor-kalshi"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "monitor-runners"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "morning-brief"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "note-taking"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "on-chain-monitor"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "onboard"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "paper-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "paper-pick"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "pm-intel"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "pm-pulse"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "polymarket-comments"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "polymarket"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "pr-tracker"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "price-threshold-alert"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "product-hunt-launch"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "project-lens"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "push-recap"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "pvr-triage-monitor"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "pvr-watchlist"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "reddit-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "reflect"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "refresh-x"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "reg-monitor"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "remix-tweets"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "repo-actions"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "repo-article"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "repo-pulse"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "repo-revive"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "repo-scanner"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "research-brief"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "rss-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "rss-feed"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "run-frequency-guard"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
-      "skill": "rwa-pulse"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "security-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "self-review"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "show-hn-draft"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "signal-verdict"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-analytics"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "skill-enabler"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-evals"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-freshness"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-graph"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-leaderboard"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-security-scan"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "skill-update-check"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "smithery-manifest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "star-milestone"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "star-momentum-alert"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "startup-idea"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "syndicate-article"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "technical-explainer"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "telegram-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "thread-formatter"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "token-alert"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "token-report"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "tool-builder"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "topic-momentum"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "treasury-info"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "tweet-digest"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "tweet-roundup"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "update-gallery"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "v4-readiness"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "vercel-projects"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "vibecoding-digest"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "wallet-digest"
-    },
-    {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "weekly-review"
     },
     {
-      "fork": "antfleet-ops/aeon",
+      "fork": "youpsla/aeon",
       "skill": "weekly-shiplog"
     },
     {
-      "fork": "antfleet-ops/aeon",
-      "skill": "workflow-security-audit"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "agent-buzz"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "agent-displacement"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "ai-framework-watch"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "aixbt-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "approval-audit"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "batch-health"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "builder-map"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "capabilities-map"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "channel-recap"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "code-health"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "competitor-launch-radar"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "compute-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "config-validator"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "contract-audit"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "contributor-reward"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "contributor-spotlight"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "cost-report"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "create-campaign"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "daily-routine"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "deal-flow"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "deep-research"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "defi-monitor"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "deployer-trace"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "disclosure-tracker"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "ecosystem-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "engagement-act"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "evening-recap"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "external-feature"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "farcaster-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fleet-scorecard"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fleet-skill-adoption"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fleet-state"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "follow-up-patrol"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-cohort"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-contributor-leaderboard"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-first-run-alert"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-health-score"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-release-tracker"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-skill-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fork-skill-gap"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "fund-flow"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "github-issues"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "github-releases"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "goal-tracker"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "hacker-news-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "holder-concentration"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "honeypot-check"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "huggingface-trending"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "idea-capture"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "idea-validator"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "issue-triage"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "janitor"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "launch-radar"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "linked-wallets"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "liquidpad-launch"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "list-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "lp-lock-check"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "market-context-refresh"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "mcp-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "memory-structural-dedupe"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "milestone-tracker"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "monitor-kalshi"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "monitor-runners"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "morning-brief"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "note-taking"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "on-chain-monitor"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "onboard"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "paper-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "paper-pick"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pm-intel"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pm-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "polymarket-comments"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "polymarket"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pr-merge-queue"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pr-skill-triage"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pr-tracker"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "price-threshold-alert"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "product-hunt-launch"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "project-lens"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "push-recap"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pvr-triage-monitor"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "pvr-watchlist"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "reddit-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "reflect"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "refresh-x"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "reg-monitor"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "remix-tweets"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "repo-actions"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "repo-article"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "repo-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "repo-revive"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "repo-scanner"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "research-brief"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "rss-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "rss-feed"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "rug-scan"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "run-frequency-guard"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "rwa-pulse"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "security-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "self-review"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "show-hn-draft"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "signal-verdict"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-analytics"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-enabler"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-evals"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-freshness"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-graph"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-leaderboard"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-security-scan"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "skill-update-check"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "smithery-manifest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "sparkleware-catalog"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "spend-monitor"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "star-milestone"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "star-momentum-alert"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "startup-idea"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "syndicate-article"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "technical-explainer"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "telegram-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "thread-formatter"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "token-alert"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "token-report"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "tool-builder"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "topic-momentum"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "treasury-info"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "tweet-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "tweet-roundup"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "update-gallery"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "v4-readiness"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "vercel-projects"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "vibecoding-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "wallet-digest"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "wallet-profile"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "weekly-review"
-    },
-    {
-      "fork": "sparkleware/aeon",
-      "skill": "weekly-shiplog"
-    },
-    {
-      "fork": "sparkleware/aeon",
+      "fork": "youpsla/aeon",
       "skill": "workflow-security-audit"
     },
     {
@@ -6038,6 +3716,1566 @@
       "skill": "workflow-security-audit"
     },
     {
+      "fork": "UIZorrot/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "agent-displacement"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "batch-health"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "builder-map"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "careful-finance"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "competitor-launch-radar"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "compute-pulse"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "config-validator"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "disclosure-tracker"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "ecosystem-pulse"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "engagement-act"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fleet-skill-adoption"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "idea-validator"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "janitor"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "launch-radar"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "memory-structural-dedupe"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "milestone-tracker"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "note-taking"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "pm-intel"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "pm-pulse"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "polymarket"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "pr-skill-triage"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "pr-tracker"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "pvr-triage-monitor"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "pvr-watchlist"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "repo-revive"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "run-frequency-guard"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "rwa-pulse"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "self-review"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "signal-verdict"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-enabler"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "sparkleware-catalog"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "topic-momentum"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "tweet-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "wallet-digest"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "UIZorrot/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "danbuildss/aeon",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "pezetel/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "aeonbook-onboarding"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "abhirajprasad/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "AwesomeAgentTools/aeon",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "AwesomeAgentTools/aeon",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "AwesomeAgentTools/aeon",
+      "skill": "submit-hook"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "agent-displacement"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "batch-health"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "builder-map"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "competitor-launch-radar"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "compute-pulse"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "config-validator"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "disclosure-tracker"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "engagement-act"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "idea-validator"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "janitor"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "launch-radar"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "memory-structural-dedupe"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "milestone-tracker"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "note-taking"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "pm-intel"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "pm-pulse"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "polymarket"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "pr-tracker"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "pvr-triage-monitor"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "pvr-watchlist"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "repo-revive"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "run-frequency-guard"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "rwa-pulse"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "self-review"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "signal-verdict"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-enabler"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "topic-momentum"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "tweet-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "wallet-digest"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "antfleet-ops/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
       "fork": "taekwonv89/aeon",
       "skill": "agent-buzz"
     },
@@ -6382,12 +5620,492 @@
       "skill": "workflow-security-audit"
     },
     {
-      "fork": "danbuildss/aeon",
+      "fork": "TakamiyaZee/aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "agent-displacement"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "batch-health"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "builder-map"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "competitor-launch-radar"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "compute-pulse"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "config-validator"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "disclosure-tracker"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "ecosystem-pulse"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "engagement-act"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fleet-skill-adoption"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "idea-validator"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "janitor"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "launch-radar"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "memory-structural-dedupe"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "milestone-tracker"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "note-taking"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "pm-intel"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "pm-pulse"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "polymarket"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "pr-tracker"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "pvr-triage-monitor"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "pvr-watchlist"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "repo-revive"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "run-frequency-guard"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "rwa-pulse"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "self-review"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "signal-verdict"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-enabler"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "sparkleware-catalog"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "topic-momentum"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "tweet-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "wallet-digest"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "TakamiyaZee/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "0xsnackbaker/aeon",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "0xsnackbaker/aeon",
       "skill": "cortx-reliability"
     },
     {
-      "fork": "AwesomeAgentTools/aeon",
-      "skill": "cortx-reliability"
+      "fork": "0xsnackbaker/aeon",
+      "skill": "miroshark-matchday"
+    },
+    {
+      "fork": "0xsnackbaker/aeon",
+      "skill": "moltycash-campaign-agent"
+    },
+    {
+      "fork": "0xsnackbaker/aeon",
+      "skill": "submit-hook"
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
@@ -6407,15 +6125,15 @@
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
+      "skill": "atlas"
+    },
+    {
+      "fork": "swarm-ai-research/aeon-atlas",
       "skill": "atlas-improve"
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
       "skill": "atlas-layers"
-    },
-    {
-      "fork": "swarm-ai-research/aeon-atlas",
-      "skill": "atlas"
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
@@ -6659,11 +6377,11 @@
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
-      "skill": "polymarket-comments"
+      "skill": "polymarket"
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
-      "skill": "polymarket"
+      "skill": "polymarket-comments"
     },
     {
       "fork": "swarm-ai-research/aeon-atlas",
@@ -7199,11 +6917,11 @@
     },
     {
       "fork": "beijiangqukuailian/aeon",
-      "skill": "polymarket-comments"
+      "skill": "polymarket"
     },
     {
       "fork": "beijiangqukuailian/aeon",
-      "skill": "polymarket"
+      "skill": "polymarket-comments"
     },
     {
       "fork": "beijiangqukuailian/aeon",
@@ -7455,6 +7173,338 @@
     },
     {
       "fork": "beijiangqukuailian/aeon",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "code-health"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "onboard"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "reflect"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "token-report"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "madebyshun/blueagent-aeon",
       "skill": "workflow-security-audit"
     },
     {
@@ -7788,6 +7838,622 @@
     {
       "fork": "takanafur/aeon",
       "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "alexverify/aeon",
+      "skill": "okf-export"
+    },
+    {
+      "fork": "alexverify/aeon",
+      "skill": "okf-ingest"
+    },
+    {
+      "fork": "Pinont/aeon.fun",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "Pinont/aeon.fun",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "Pinont/aeon.fun",
+      "skill": "miroshark-matchday"
+    },
+    {
+      "fork": "Pinont/aeon.fun",
+      "skill": "submit-hook"
+    },
+    {
+      "fork": "caseykreps-eng/aeon",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "caseykreps-eng/aeon",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "caseykreps-eng/aeon",
+      "skill": "miroshark-matchday"
+    },
+    {
+      "fork": "caseykreps-eng/aeon",
+      "skill": "submit-hook"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "agent-buzz"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "agent-displacement"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "ai-framework-watch"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "aixbt-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "approval-audit"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "batch-health"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "builder-map"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "capabilities-map"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "channel-recap"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "code-health"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "competitor-launch-radar"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "compute-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "config-validator"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "contract-audit"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "contributor-reward"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "contributor-spotlight"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "cost-report"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "create-campaign"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "daily-routine"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "deal-flow"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "deep-research"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "defi-monitor"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "deployer-trace"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "disclosure-tracker"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "ecosystem-entrants"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "ecosystem-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "engagement-act"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "evening-recap"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "external-feature"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "farcaster-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fleet-scorecard"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fleet-skill-adoption"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fleet-state"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "follow-up-patrol"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-cohort"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-contributor-leaderboard"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-first-run-alert"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-health-score"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-release-tracker"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-skill-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fork-skill-gap"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "fund-flow"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "github-issues"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "github-releases"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "goal-tracker"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "hacker-news-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "holder-concentration"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "honeypot-check"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "huggingface-trending"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "idea-capture"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "idea-validator"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "issue-triage"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "janitor"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "launch-radar"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "linked-wallets"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "liquidpad-launch"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "list-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "lp-lock-check"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "market-context-refresh"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "mcp-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "memory-structural-dedupe"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "milestone-tracker"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "monitor-kalshi"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "monitor-runners"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "morning-brief"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "note-taking"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "on-chain-monitor"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "onboard"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "paper-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "paper-pick"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pm-intel"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pm-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "polymarket"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "polymarket-comments"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pr-merge-queue"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pr-skill-triage"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pr-tracker"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "price-threshold-alert"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "product-hunt-launch"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "project-lens"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "push-recap"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pvr-triage-monitor"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "pvr-watchlist"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "reddit-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "reflect"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "refresh-x"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "reg-monitor"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "remix-tweets"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "repo-actions"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "repo-article"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "repo-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "repo-revive"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "repo-scanner"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "research-brief"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "rss-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "rss-feed"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "rug-scan"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "run-frequency-guard"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "rwa-pulse"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "security-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "self-review"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "show-hn-draft"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "signal-verdict"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-analytics"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-enabler"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-evals"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-freshness"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-graph"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-leaderboard"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-security-scan"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "skill-update-check"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "smithery-manifest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "sparkleware-catalog"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "spend-monitor"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "star-milestone"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "star-momentum-alert"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "startup-idea"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "syndicate-article"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "technical-explainer"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "telegram-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "thread-formatter"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "token-alert"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "token-report"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "tool-builder"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "topic-momentum"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "treasury-info"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "tweet-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "tweet-roundup"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "update-gallery"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "v4-readiness"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "vercel-projects"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "vibecoding-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "wallet-digest"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "wallet-profile"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "weekly-review"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "weekly-shiplog"
+    },
+    {
+      "fork": "NurstarK/aeon-upstream",
+      "skill": "workflow-security-audit"
+    },
+    {
+      "fork": "corinth1ans/aeon",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "corinth1ans/aeon",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "corinth1ans/aeon",
+      "skill": "nq-research-scout"
+    },
+    {
+      "fork": "corinth1ans/aeon",
+      "skill": "submit-hook"
+    },
+    {
+      "fork": "krpx0341/aeon",
+      "skill": "compute-resell"
+    },
+    {
+      "fork": "krpx0341/aeon",
+      "skill": "cortx-reliability"
+    },
+    {
+      "fork": "darkstaryuri/aeon",
+      "skill": "cortx-reliability"
     },
     {
       "fork": "czijian729-oss/aeon",
@@ -8559,11 +9225,11 @@
     },
     {
       "fork": "yindaqiu/aeon",
-      "skill": "vigil-revoke"
+      "skill": "vigil"
     },
     {
       "fork": "yindaqiu/aeon",
-      "skill": "vigil"
+      "skill": "vigil-revoke"
     },
     {
       "fork": "yindaqiu/aeon",
@@ -9087,11 +9753,11 @@
     },
     {
       "fork": "gitlumen-team/aeon",
-      "skill": "vigil-revoke"
+      "skill": "vigil"
     },
     {
       "fork": "gitlumen-team/aeon",
-      "skill": "vigil"
+      "skill": "vigil-revoke"
     },
     {
       "fork": "gitlumen-team/aeon",
@@ -9415,11 +10081,11 @@
     },
     {
       "fork": "aeoncity-hub/aeon",
-      "skill": "polymarket-comments"
+      "skill": "polymarket"
     },
     {
       "fork": "aeoncity-hub/aeon",
-      "skill": "polymarket"
+      "skill": "polymarket-comments"
     },
     {
       "fork": "aeoncity-hub/aeon",
@@ -9675,11 +10341,11 @@
     },
     {
       "fork": "aeoncity-hub/aeon",
-      "skill": "vigil-revoke"
+      "skill": "vigil"
     },
     {
       "fork": "aeoncity-hub/aeon",
-      "skill": "vigil"
+      "skill": "vigil-revoke"
     },
     {
       "fork": "aeoncity-hub/aeon",
@@ -10219,11 +10885,11 @@
     },
     {
       "fork": "clawhunter/add-clawhunter-pack",
-      "skill": "vigil-revoke"
+      "skill": "vigil"
     },
     {
       "fork": "clawhunter/add-clawhunter-pack",
-      "skill": "vigil"
+      "skill": "vigil-revoke"
     },
     {
       "fork": "clawhunter/add-clawhunter-pack",
@@ -10547,11 +11213,11 @@
     },
     {
       "fork": "ashneil12/aeon-upstream",
-      "skill": "polymarket-comments"
+      "skill": "polymarket"
     },
     {
       "fork": "ashneil12/aeon-upstream",
-      "skill": "polymarket"
+      "skill": "polymarket-comments"
     },
     {
       "fork": "ashneil12/aeon-upstream",
@@ -10807,11 +11473,11 @@
     },
     {
       "fork": "ashneil12/aeon-upstream",
-      "skill": "vigil-revoke"
+      "skill": "vigil"
     },
     {
       "fork": "ashneil12/aeon-upstream",
-      "skill": "vigil"
+      "skill": "vigil-revoke"
     },
     {
       "fork": "ashneil12/aeon-upstream",
@@ -11012,38 +11678,6 @@
     {
       "fork": "weezyf1995-boop/aeon",
       "skill": "cortx-reliability"
-    },
-    {
-      "fork": "MADRIGAL007/aeon",
-      "skill": "cortx-reliability"
-    },
-    {
-      "fork": "MagIcKEarl/aeon",
-      "skill": "cortx-reliability"
-    },
-    {
-      "fork": "MagIcKEarl/aeon",
-      "skill": "forecasting"
-    },
-    {
-      "fork": "MagIcKEarl/aeon",
-      "skill": "hyperliquid"
-    },
-    {
-      "fork": "MagIcKEarl/aeon",
-      "skill": "yield-farming"
-    },
-    {
-      "fork": "elegarmco/aeon",
-      "skill": "cortx-reliability"
-    },
-    {
-      "fork": "Calcutatator/aeon",
-      "skill": "cortx-reliability"
-    },
-    {
-      "fork": "cultosagent/aeon",
-      "skill": "cortx-reliability"
     }
   ],
   "fingerprints": [
@@ -11063,12 +11697,12 @@
       "dominant_category": "fork-only"
     },
     {
-      "fork": "sparkleware/aeon",
-      "total_overrides": 169,
+      "fork": "NurstarK/aeon-upstream",
+      "total_overrides": 170,
       "dominant_category": "fork-only"
     },
     {
-      "fork": "beijiangqukuailian/aeon",
+      "fork": "sparkleware/aeon",
       "total_overrides": 169,
       "dominant_category": "fork-only"
     }

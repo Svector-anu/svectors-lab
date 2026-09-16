@@ -1,29 +1,11 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-10T14:37:39Z",
-  "quality_score": 2,
-  "assessment": "Specific price, unlock, and catalyst claims lack evidence links and are not verifiable from the output; it also violates the qualitative-price constraint and gives no explicit position call.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.4,
+  "last_analyzed": "2026-09-14T16:37:33Z",
+  "quality_score": 3,
+  "assessment": "Actionable, conclusion-first RIDE call with explicit scoring and risk, but it violates the qualitative-price constraint and provides no checkable URLs for its precise catalyst and unlock claims.",
+  "flags": [],
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-07-11",
-      "score": 4
-    },
-    {
-      "date": "2026-07-19",
-      "score": 4
-    },
-    {
-      "date": "2026-07-28",
-      "score": 4
-    },
-    {
-      "date": "2026-08-21",
-      "score": 5
-    },
     {
       "date": "2026-08-22",
       "score": 4
@@ -172,6 +154,30 @@
       "date": "2026-09-10",
       "score": 2,
       "ts": "2026-09-10T14:37:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-11",
+      "score": 2,
+      "ts": "2026-09-11T13:48:15Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-12",
+      "score": 2,
+      "ts": "2026-09-12T12:26:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-13",
+      "score": 2,
+      "ts": "2026-09-13T15:06:54Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 3,
+      "ts": "2026-09-14T16:37:33Z",
       "harness": "codex"
     }
   ]

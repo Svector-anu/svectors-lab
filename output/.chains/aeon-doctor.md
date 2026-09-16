@@ -1,22 +1,24 @@
 ⚠️ aeon-doctor: 22 config issue(s)
 
-## Warnings
+## Warnings (22)
 
-### 7 on-disk skills are absent from `aeon.yml`
+These defects are silent: none creates a failed run in the Actions tab.
 
-These skills silently default to disabled and never appear as deliberately configured choices. Decide whether each should remain uninstalled; to register it safely as disabled, run the command shown.
+### On disk but absent from `aeon.yml` (7)
 
-- `competitor-monitor` — `skills/competitor-monitor/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  competitor-monitor: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
-- `higgsfield` — `skills/higgsfield/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  higgsfield: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
-- `remotion` — `skills/remotion/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  remotion: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
-- `skill-article` — `skills/skill-article/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  skill-article: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
-- `spend-watch` — `skills/spend-watch/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  spend-watch: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
-- `video-script` — `skills/video-script/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  video-script: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
-- `weekly-aeoncard` — `skills/weekly-aeoncard/SKILL.md:2`. Fix: `sed -i '/^  # --- Fallback/i\  weekly-aeoncard: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml && node scripts/validate-config.js`
+- `competitor-monitor` — `skills/competitor-monitor/SKILL.md:2` exists but has no config entry, so it is indistinguishable from deliberately disabled. Register it disabled with: `sed -i '/^  # --- Fallback/i\  competitor-monitor: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
+- `higgsfield` — `skills/higgsfield/SKILL.md:2` exists but has no config entry. Fix: `sed -i '/^  # --- Fallback/i\  higgsfield: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
+- `remotion` — `skills/remotion/SKILL.md:2` exists but has no config entry. Fix: `sed -i '/^  # --- Fallback/i\  remotion: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
+- `skill-article` — `skills/skill-article/SKILL.md:2` exists but has no config entry. Fix: `sed -i '/^  # --- Fallback/i\  skill-article: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
+- `spend-watch` — `skills/spend-watch/SKILL.md:2` exists but has no config entry. Fix: `sed -i '/^  # --- Fallback/i\  spend-watch: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
+- `video-script` — `skills/video-script/SKILL.md:2` exists but has no config entry. Fix: `sed -i '/^  # --- Fallback/i\  video-script: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
+- `weekly-aeoncard` — `skills/weekly-aeoncard/SKILL.md:2` exists but has no config entry. Fix: `sed -i '/^  # --- Fallback/i\  weekly-aeoncard: { enabled: false, schedule: "workflow_dispatch", var: "" }' aeon.yml`
 
-### 14 inert schedules in skill frontmatter
+If any is intentionally uninstalled, removing its directory instead is the alternative; use `skill-repair` to make the chosen mechanical change.
 
-These schedule declarations are silently ignored; only `aeon.yml` controls dispatch. Remove each inert line so future editors do not mistake it for the live schedule.
+### Inert schedules in skill frontmatter (14)
+
+The scheduler reads only `aeon.yml`; each declaration below looks load-bearing but is ignored. Remove the inert line (the real schedules already live in `aeon.yml`):
 
 - `aeon-update` — `skills/aeon-update/SKILL.md:11`. Fix: `sed -i '11d' skills/aeon-update/SKILL.md`
 - `fear-divergence` — `skills/fear-divergence/SKILL.md:6`. Fix: `sed -i '6d' skills/fear-divergence/SKILL.md`
@@ -33,8 +35,8 @@ These schedule declarations are silently ignored; only `aeon.yml` controls dispa
 - `strategy-builder` — `skills/strategy-builder/SKILL.md:6`. Fix: `sed -i '6d' skills/strategy-builder/SKILL.md`
 - `unlock-monitor` — `skills/unlock-monitor/SKILL.md:7`. Fix: `sed -i '7d' skills/unlock-monitor/SKILL.md`
 
-### 1 daily-log heading is not keyed by slug
+### Health-log attribution (1)
 
-- `fear-divergence` — `skills/fear-divergence/SKILL.md` logs under `## Fear Divergence`, so health attribution and cross-skill dedup silently degrade. Fix: `sed -i 's/^## Fear Divergence$/### fear-divergence/' skills/fear-divergence/SKILL.md`
+- `fear-divergence` — `skills/fear-divergence/SKILL.md:136` and `:147` prescribe `## Fear Divergence Scout`, so the health loop cannot key the narrative log by slug. Fix both examples with: `sed -i 's/^## Fear Divergence Scout$/### fear-divergence/' skills/fear-divergence/SKILL.md`
 
-No critical issues were found. Unquoted schedules, duplicate keys, enabled entries without skill files, invalid `requires:` values, invalid modes, unresolved MCP variables, multiline entries, unquoted model/harness overrides, and invalid categories all passed.
+No critical findings. Duplicate keys, enabled missing skills, invalid `requires:`, mode typos, unresolved MCP variables, split config entries, unquoted schedules/overrides, and invalid categories are clean.

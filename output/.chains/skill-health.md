@@ -1,21 +1,14 @@
-HEALTH: DEGRADED(17)
+HEALTH: CRITICAL(1)
 
-- Critical: 0
-- Degraded: 17
-- Warning: 7
-- Healthy: 6
-- No data: 0
-- Open issues: 4
+- `vuln-scanner`: 6 consecutive failures, 3 days since success; all 21 top-level runs failed over seven days. Existing `ISS-005` retained—no duplicate filed.
+- Degraded: 16
+- Warning: 6
+- Healthy: 7
+- Open issues: 3
 - Filed/resolved: 0/0
-- Systemic pattern: none
-
-`vuln-scanner` improved from CRITICAL to DEGRADED, with two consecutive failures but a recent successful run. Notification was attempted, but the external queues are read-only; `last_notified_at` was therefore preserved.
+- Systemic: three skills retain ChatGPT Unauthorized errors; three retain the `grok-4.5` unknown-model signature.
+- Notification attempted but external queues were read-only, so delivery failed.
 
 ## Summary
 
-Updated:
-
-- [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- [2026-09-10.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-10.md)
-
-No issue files required changes.
+Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and appended the audit to [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). The report JSON was validated successfully.

@@ -1,13 +1,13 @@
 {
   "skill": "shiplog",
-  "last_analyzed": "2026-09-07T14:27:51Z",
+  "last_analyzed": "2026-09-14T10:46:01Z",
   "quality_score": 2,
-  "assessment": "The output is concise and plausibly data-backed, but it provides only a high-level recap and inaccessible file pointer instead of the promised digest, offers no evidence anchors for exact metrics, and does not serve the crypto-trader strategy with a regime verdict or position call.",
+  "assessment": "Specific and structured, but it is entirely misaligned with the crypto-trading strategy and claims workspace files/state were created or updated during an explicitly read-only run, making key completion claims unverifiable.",
   "flags": [
     "low_quality",
-    "generic_content"
+    "unverifiable_claim"
   ],
-  "avg_score": 2.33,
+  "avg_score": 2.25,
   "history": [
     {
       "date": "2026-08-25",
@@ -23,6 +23,12 @@
       "date": "2026-09-07",
       "score": 2,
       "ts": "2026-09-07T14:27:51Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-14",
+      "score": 2,
+      "ts": "2026-09-14T10:46:01Z",
       "harness": "codex"
     }
   ]
