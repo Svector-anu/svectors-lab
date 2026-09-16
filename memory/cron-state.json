@@ -2,13 +2,13 @@
   "heartbeat": {
     "last_dispatch": "2026-09-15T12:06:20Z",
     "last_status": "failed",
-    "last_failed": "2026-09-16T14:52:20Z",
-    "total_runs": 360,
+    "last_failed": "2026-09-16T18:31:33Z",
+    "total_runs": 361,
     "total_successes": 41,
-    "total_failures": 319,
-    "consecutive_failures": 9,
+    "total_failures": 320,
+    "consecutive_failures": 10,
     "success_rate": 0.11,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0aab4-50a4-7b83-97d4-2c124b69e4fd\"} {\"type\":\"turn.started\"} {\"typ",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ab7c-fff5-7af1-9d1d-c49d50cf7b05\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-14T10:45:12Z"
   },
   "defi-overview": {
