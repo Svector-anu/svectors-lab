@@ -215,14 +215,14 @@
   "memory-flush": {
     "last_status": "failed",
     "last_success": "2026-09-14T00:27:05Z",
-    "total_runs": 31,
+    "total_runs": 32,
     "total_successes": 23,
-    "total_failures": 8,
-    "consecutive_failures": 7,
-    "success_rate": 0.74,
+    "total_failures": 9,
+    "consecutive_failures": 8,
+    "success_rate": 0.72,
     "last_dispatch": "2026-09-15T12:06:20Z",
-    "last_failed": "2026-09-16T00:45:22Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a7ac-e2a7-7b41-8905-e444a2d74912\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_failed": "2026-09-16T05:20:53Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a8a9-20d0-7ee2-94b5-5473bcd9d007\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "aeon-doctor": {
     "last_status": "success",
