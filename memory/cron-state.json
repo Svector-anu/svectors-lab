@@ -349,14 +349,14 @@
     "last_dispatch": "2026-09-15T12:06:20Z",
     "last_status": "failed",
     "last_success": "2026-09-13T22:40:38Z",
-    "total_runs": 37,
+    "total_runs": 38,
     "total_successes": 22,
-    "total_failures": 15,
-    "consecutive_failures": 12,
-    "success_rate": 0.59,
+    "total_failures": 16,
+    "consecutive_failures": 13,
+    "success_rate": 0.58,
     "last_quality_score": 2,
-    "last_failed": "2026-09-16T14:52:08Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0aab4-2082-76b2-b8b5-c4583c0c124e\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_failed": "2026-09-16T18:30:52Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ab7c-61e2-7863-a03d-cd95d6f0be0a\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "chain:web3-stack-watch": {
     "last_status": "success",
