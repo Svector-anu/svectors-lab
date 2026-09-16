@@ -188,16 +188,16 @@
   },
   "auto-merge": {
     "last_status": "failed",
-    "last_failed": "2026-09-16T05:20:03Z",
-    "total_runs": 39,
+    "last_failed": "2026-09-16T10:03:57Z",
+    "total_runs": 40,
     "total_successes": 30,
-    "total_failures": 9,
-    "consecutive_failures": 8,
-    "success_rate": 0.77,
+    "total_failures": 10,
+    "consecutive_failures": 9,
+    "success_rate": 0.75,
     "last_dispatch": "2026-09-14T16:34:31Z",
     "last_success": "2026-09-14T16:36:33Z",
     "last_quality_score": 3,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a8a8-5ebb-7870-8721-d2662c73ca78\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0a9ac-47ae-7263-bfca-b3df3dd9b935\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "hunter-22": {
     "last_status": "failed",
