@@ -1,23 +1,23 @@
-tweet drafts: huge models become storage systems
+tweet drafts: autonomy needs observability
 
 — one-liner —
-1a. the next ai hardware flex might just be a really fast ssd
-1b. 744b models on consumer hardware changes what local ai even means
+1a. autonomy without observability is just failure on a schedule.
+1b. if your agent dies with “no output captured,” you built a mystery box.
 
 — two-punch —
-2a. colibri runs a 744b moe across vram, ram and storage. turns out the bottleneck was not model size, it was moving the right experts fast enough
-2b. we kept asking how much vram a huge model needs. colibri asks a better question: which tiny part of the model needs to be in vram right now
+2a. an agent that fails is normal. an agent that fails without telling you why is not autonomous, it is just unsupervised.
+2b. everyone wants agents that run all day. i want agents that can explain the exact minute they stopped being useful.
 
 — paragraph —
-3a. a 744b model sounds like datacenter-only infrastructure. colibri streams inactive experts from disk and keeps only the active ones close. huge local models are becoming a systems problem, not just a gpu budget
-3b. local ai does not need the whole model sitting in vram. it needs the right weights available at the right moment. vram, ram and storage are starting to look like one inference memory layer
+3a. the hard part of running an agent fleet is not making tasks start. cron already solved that. the hard part is making every failure leave enough evidence for the next run to recover.
+3b. “no output captured” is not an error message. it is a second failure hiding the first one. agent infrastructure is only useful when the failure path is as observable as the happy path.
 
 — long tweet —
-4a. colibri running a 744b moe on consumer hardware is a useful reframe. the machine does not need every expert loaded at once. it needs to predict which experts will be used, keep the hot ones nearby and stream the rest from disk. once vram, ram and storage become one managed layer, model size stops mapping directly to gpu size. the next local ai breakthrough might look more like an operating system than a new model
-4b. everyone compares local ai setups by gpu memory. colibri makes that number less useful. a mixture-of-experts model only activates part of itself for each token, so inactive experts can live on disk while the useful ones move through ram and vram. that turns 744b inference from an impossible allocation into a scheduling problem. fast storage and good orchestration can beat buying enough gpu to hold everything
+4a. three scheduled skills failed again today: token picks, narrative tracking, github trends. the interesting part is not that agents fail. software fails. the real problem is that every run ended with the same useless line: “no output captured.” autonomy starts after the crash, when the system can preserve evidence, classify the failure, and make the next run better.
+4b. running more agents does not make the system more autonomous. it multiplies whatever your harness already does well or badly. if one failed task leaves no trace, five concurrent agents give you five mystery boxes. logs, typed outcomes, and recovery paths are not ops polish. they are the product.
 
 — thread opener —
-5a. colibri is running 744b mixture-of-experts models on consumer hardware by treating vram, ram and storage as one system. this is less about fitting a huge model and more about moving the right experts at the right time
-5b. huge local models might not require huge gpus. they might require better scheduling. colibri streams inactive experts from disk, keeps hot weights close and turns 744b inference into a storage orchestration problem
+5a. my agent fleet kept failing today and the most useful signal was what it did not say: why. “no output captured” is where autonomy ends and guessing begins.
+5b. cron can start an agent. the real test is what happens when it fails at 2am: does the system preserve evidence and recover, or just schedule the same mystery again?
 
-best: #4a — connects the technical mechanism to the bigger local ai shift
+best: #4a — turns a concrete fleet failure into a clear definition of autonomy

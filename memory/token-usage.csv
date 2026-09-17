@@ -341,4 +341,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-14,fork-fleet,codex-default,1234215,12094,1138048,0
 2026-09-14,vuln-tracker,codex-default,1278946,9328,1215360,0
 2026-09-16,pr-review,claude-sonnet-5,3768,35035,7724131,133521
-2026-09-17,digest,codex-default,565396,2692,480128,0
+2026-09-17,write-tweet,codex-default,355566,3943,296832,0

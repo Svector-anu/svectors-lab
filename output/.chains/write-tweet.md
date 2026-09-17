@@ -1,74 +1,75 @@
-## Tweet Drafts: Huge models become storage systems
+## Tweet Drafts: autonomy needs observability
 
 ### Tier 1 — One-liner
 
-**1a. Sardonic**
+**1a. Reframe**
 
-> the next ai hardware flex might just be a really fast ssd
+> autonomy without observability is just failure on a schedule.
 
-**1b. Data drop**
+**1b. Sardonic**
 
-> 744b models on consumer hardware changes what local ai even means
+> if your agent dies with “no output captured,” you built a mystery box.
 
 ### Tier 2 — Two-punch
 
-**2a. Observation**
+**2a. Hot take**
 
-> colibri runs a 744b moe across vram, ram and storage. turns out the bottleneck was not model size, it was moving the right experts fast enough
+> an agent that fails is normal. an agent that fails without telling you why is not autonomous, it is just unsupervised.
 
-**2b. Reframe**
+**2b. Observation**
 
-> we kept asking how much vram a huge model needs. colibri asks a better question: which tiny part of the model needs to be in vram right now
+> everyone wants agents that run all day. i want agents that can explain the exact minute they stopped being useful.
 
 ### Tier 3 — Paragraph
 
-**3a. Hot take**
+**3a. Builder’s reframe**
 
-> a 744b model sounds like datacenter-only infrastructure. colibri streams inactive experts from disk and keeps only the active ones close. huge local models are becoming a systems problem, not just a gpu budget
+> the hard part of running an agent fleet is not making tasks start. cron already solved that. the hard part is making every failure leave enough evidence for the next run to recover.
 
-**3b. Observation**
+**3b. Structural critique**
 
-> local ai does not need the whole model sitting in vram. it needs the right weights available at the right moment. vram, ram and storage are starting to look like one inference memory layer
+> “no output captured” is not an error message. it is a second failure hiding the first one. agent infrastructure is only useful when the failure path is as observable as the happy path.
 
 ### Tier 4 — Long tweet
 
-**4a. Reframe**
+**4a. Narrative**
 
-> colibri running a 744b moe on consumer hardware is a useful reframe. the machine does not need every expert loaded at once. it needs to predict which experts will be used, keep the hot ones nearby and stream the rest from disk. once vram, ram and storage become one managed layer, model size stops mapping directly to gpu size. the next local ai breakthrough might look more like an operating system than a new model
+> three scheduled skills failed again today: token picks, narrative tracking, github trends. the interesting part is not that agents fail. software fails. the real problem is that every run ended with the same useless line: “no output captured.” autonomy starts after the crash, when the system can preserve evidence, classify the failure, and make the next run better.
 
-**4b. Builder’s breakdown**
+**4b. Reframe**
 
-> everyone compares local ai setups by gpu memory. colibri makes that number less useful. a mixture-of-experts model only activates part of itself for each token, so inactive experts can live on disk while the useful ones move through ram and vram. that turns 744b inference from an impossible allocation into a scheduling problem. fast storage and good orchestration can beat buying enough gpu to hold everything
+> running more agents does not make the system more autonomous. it multiplies whatever your harness already does well or badly. if one failed task leaves no trace, five concurrent agents give you five mystery boxes. logs, typed outcomes, and recovery paths are not ops polish. they are the product.
 
 ### Tier 5 — Thread opener
 
-**5a. Technical thesis**
+**5a. Narrative**
 
-> colibri is running 744b mixture-of-experts models on consumer hardware by treating vram, ram and storage as one system. this is less about fitting a huge model and more about moving the right experts at the right time
-
----
-
-- Why MoE models only activate selected experts
-- How weights move between storage, RAM, and VRAM
-- Why expert prediction and caching matter
-- What this changes for local AI hardware
-
-**5b. Reframe**
-
-> huge local models might not require huge gpus. they might require better scheduling. colibri streams inactive experts from disk, keeps hot weights close and turns 744b inference into a storage orchestration problem
+> my agent fleet kept failing today and the most useful signal was what it did not say: why. “no output captured” is where autonomy ends and guessing begins.
 
 ---
 
-- The limits of comparing setups only by VRAM
-- Storage bandwidth as part of inference performance
-- Scheduling as the real systems challenge
-- Why local AI may become more hardware-accessible
+- The three scheduled skills that failed
+- Why missing diagnostics constitute a second failure
+- What evidence a recoverable run must preserve
+- Why autonomy begins after the crash
 
-Best overall: **#4a**. Best per tier: **#1a, #2b, #3a, #4a, #5b**.
+**5b. Question**
+
+> cron can start an agent. the real test is what happens when it fails at 2am: does the system preserve evidence and recover, or just schedule the same mystery again?
+
+---
+
+- Scheduling versus genuine autonomy
+- How concurrent agents multiply opaque failures
+- Typed outcomes and recovery paths
+- Building fleets that improve after failure
+
+Best overall: **4a**  
+Best per tier: **1a, 2a, 3b, 4a, 5b**
 
 ## Summary
 
-- Generated 10 drafts across five size tiers.
-- Saved the revisable version to [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
-- Logged the run in [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md).
-- External notification and revision prompt were attempted, but their queue was read-only.
+- Generated and saved ten drafts in [write-tweet-latest.md](/home/runner/work/svectors-lab/svectors-lab/memory/drafts/write-tweet-latest.md).
+- Updated [today’s activity log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md).
+- X enrichment was skipped because `XAI_API_KEY` was unset.
+- Notification delivery could not reach the configured read-only workflow queue; recoverable payloads were staged under `/tmp/aeon-pending-write-tweet/`.
