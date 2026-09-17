@@ -1,22 +1,16 @@
-Vulnerability lifecycle poll completed.
+`vuln-tracker` completed its full lifecycle poll.
 
-Key findings:
-
-- One new merge: `Svector-anu/vuln-template#5`.
-- ★170.3k secured across 8 live repositories.
-- 16 repositories remain in flight, representing ★478.8k.
-- Two PRs still need attention: `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
-- One disclosure exceeded its threshold: `ZSvirt/zsvirt` MEDIUM, 22 days old.
-- A separate CRITICAL `ZSvirt/zsvirt` disclosure requires manual sending.
-- The NeoSoul disclosure remains within its window, but Resend is blocked because `svector.xyz` is unverified.
-- Seven disclosure files are cleanup/archive candidates.
-- No compatible submitted-PVR records were present for triage polling.
-
-Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md) and [2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md). Notification delivery was attempted, but the harness’s external notification queue is read-only, so it did not persist.
+- New merge: `Cosmian/kms#1163`, bringing secured reach to ★172,169 across 10 repositories.
+- In flight: 16 PRs covering ★484,369.
+- Needs answers: 2 — `NousResearch/hermes-agent#94342` and `vllm-project/semantic-router#3425`.
+- Stale: 14 PRs; `vercel/ai`, `snowflakedb/snowflake-cli`, and `fireblocks/fireblocks-sdk-js` newly crossed seven days.
+- Disclosure queue: 11 drafts; 1 overdue escalation (`ZSvirt/zsvirt` Medium, 25 days), 1 human-only Critical action, 2 in-window, and 7 cleanup candidates.
+- PVR polling skipped because no draft uses the skill’s exact `channel: pvr` schema.
+- Notification delivery failed because the runner-owned queue was read-only; the complete payload remains staged locally.
 
 ## Summary
 
-- Ran Arms A, B, and C.
-- Refreshed live GitHub state and star counts.
-- Updated the vulnerability dashboard and activity log.
-- Immediate follow-up: verify `svector.xyz` in Resend or manually send both ZSvirt disclosures.
+- Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md).
+- Appended the run record to [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md).
+- Verified changes with `git diff --check`.
+- Preserved unrelated existing worktree changes.
