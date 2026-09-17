@@ -1,17 +1,17 @@
-Fleet status: 🔴 DEGRADED.
+🔴 Fleet status: DEGRADED.
 
-- `vuln-scanner`: failed, 8 consecutive `grok-4.5` unknown-model errors.
-- 10 enabled non-heartbeat skills remain below 50% historical success.
-- PRs #70, #77, and #78 remain stalled over 24 hours.
+- 18 enabled skills share ChatGPT 401 authentication failures.
+- `vuln-scanner` has 24 consecutive Grok unknown-model failures.
+- `price-alert` remains stuck; `send-email` has two Kimi login failures.
 - Three critical issue records remain open.
-- No missing or overdue scheduled skills were found.
-- Duplicate notification suppressed under the 48-hour dedup rule.
+- No open PRs; repository issues are disabled.
+- Alert queued successfully after redirecting the unwritable notification queue.
 
-Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and recorded the run in [memory/logs/2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md).
+Updated [docs/status.md](/home/runner/work/svectors-lab/svectors-lab/docs/status.md) and logged the run in [memory/logs/2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md).
 
 ## Summary
 
-- STATUS_PAGE=DEGRADED
-- Public status timestamp: 2026-09-14 10:44 UTC
-- Next scheduled run: `token-pick` at 12:00 UTC
-- Validation passed with all 30 enabled skills represented.
+- Regenerated the public status page.
+- Recorded and deduplicated fleet findings.
+- `STATUS_PAGE=DEGRADED`.
+- Next scheduled run: `vuln-tracker` at 16:30 UTC.
