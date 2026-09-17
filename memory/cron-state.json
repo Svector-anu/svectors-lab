@@ -89,15 +89,15 @@
   "token-pick": {
     "last_status": "failed",
     "last_success": "2026-09-14T16:37:37Z",
-    "total_runs": 314,
+    "total_runs": 316,
     "total_successes": 36,
-    "total_failures": 278,
-    "consecutive_failures": 14,
+    "total_failures": 280,
+    "consecutive_failures": 16,
     "success_rate": 0.11,
     "last_quality_score": 3,
     "last_dispatch": "2026-09-15T12:06:20Z",
-    "last_failed": "2026-09-17T01:47:47Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ad0c-5da5-7741-946a-df4c864a3392\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_failed": "2026-09-17T06:45:34Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-f88b-7f61-9b27-19a0e173127f\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "skill-health": {
     "last_dispatch": "2026-09-15T06:38:43Z",
