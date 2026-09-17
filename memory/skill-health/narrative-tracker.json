@@ -1,20 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-14T16:36:49Z",
+  "last_analyzed": "2026-09-17T12:11:23Z",
   "quality_score": 2,
-  "assessment": "Usable no-change verdict, but it lacks evidence anchors, narrative details, and explicit position calls, making it too generic for decision-grade trading use.",
+  "assessment": "Actionable structure and explicit calls, but numerous precise claims and metrics lack direct supporting citations or appear implausibly sourced, making the output insufficiently verifiable.",
   "flags": [
-    "low_quality",
-    "generic_content"
+    "unverifiable_claim"
   ],
   "avg_score": 2.53,
   "history": [
-    {
-      "date": "2026-09-07",
-      "score": 2,
-      "ts": "2026-09-07T03:18:20Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-07",
       "score": 4,
@@ -187,6 +180,12 @@
       "date": "2026-09-14",
       "score": 2,
       "ts": "2026-09-14T16:36:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T12:11:23Z",
       "harness": "codex"
     }
   ]
