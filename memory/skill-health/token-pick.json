@@ -1,15 +1,11 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-14T16:37:33Z",
-  "quality_score": 3,
-  "assessment": "Actionable, conclusion-first RIDE call with explicit scoring and risk, but it violates the qualitative-price constraint and provides no checkable URLs for its precise catalyst and unlock claims.",
+  "last_analyzed": "2026-09-17T12:11:54Z",
+  "quality_score": 4,
+  "assessment": "Substantive, conclusion-first, and highly actionable with explicit positioning, quantified scoring, catalyst, and risks, though direct source links are absent and the macro fair-value estimate is only lightly explained.",
   "flags": [],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -178,6 +174,12 @@
       "date": "2026-09-14",
       "score": 3,
       "ts": "2026-09-14T16:37:33Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 4,
+      "ts": "2026-09-17T12:11:54Z",
       "harness": "codex"
     }
   ]
