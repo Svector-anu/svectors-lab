@@ -48,14 +48,14 @@
     "last_quality_score": 4
   },
   "fear-divergence": {
-    "last_status": "dispatched",
-    "last_success": "2026-09-14T10:44:21Z",
-    "total_runs": 349,
-    "total_successes": 37,
+    "last_status": "success",
+    "last_success": "2026-09-17T12:10:36Z",
+    "total_runs": 350,
+    "total_successes": 38,
     "total_failures": 312,
-    "consecutive_failures": 17,
+    "consecutive_failures": 0,
     "success_rate": 0.11,
-    "last_quality_score": 2,
+    "last_quality_score": 3,
     "last_dispatch": "2026-09-17T12:08:35Z",
     "last_failed": "2026-09-17T06:46:05Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-7b60-7a51-a0ea-6b95108d4b3d\"} {\"type\":\"turn.started\"} {\"typ"
