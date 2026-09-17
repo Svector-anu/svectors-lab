@@ -1,43 +1,41 @@
 {
-  "hash": "c92c4a86ec4de4f4c4d2f69adf31cf166cadd04cdf4300a0effadf3433aec3b8",
-  "last_notified_at": "2026-09-17T12:10:55Z",
-  "last_run_at": "2026-09-17T12:10:55Z",
+  "hash": "cc088636c438532ed9fb0e8667a207cba92eafd5d33e2915464334ef9bbd574a",
+  "last_notified_at": "2026-09-17T20:00:47Z",
+  "last_run_at": "2026-09-17T20:00:47Z",
   "classification": {
     "critical": [
-      "pr-review",
-      "auto-merge",
-      "github-trending",
-      "defi-overview",
-      "token-pick",
-      "narrative-tracker",
-      "digest",
-      "search-skill",
-      "vuln-scanner",
-      "skill-health",
-      "self-improve",
-      "x402-monitor",
-      "vuln-tracker",
-      "hunter-22",
-      "slop-watch",
-      "fear-divergence",
-      "feature",
-      "write-tweet",
-      "memory-flush",
-      "heartbeat"
+      "vuln-scanner"
     ],
     "degraded": [
-      "verdikta-hunter",
+      "defi-overview",
+      "digest",
+      "fear-divergence",
       "fork-fleet",
+      "github-trending",
+      "heartbeat",
+      "hunter-22",
+      "memory-flush",
+      "narrative-tracker",
       "picks-tracker",
       "shiplog",
-      "soul-builder"
+      "skill-health",
+      "slop-watch",
+      "soul-builder",
+      "token-pick",
+      "verdikta-hunter",
+      "vuln-tracker",
+      "write-tweet",
+      "x402-monitor"
     ],
     "flapping": [],
     "warning": [
+      "auto-merge",
       "autoresearch",
-      "create-skill"
+      "create-skill",
+      "pr-review",
+      "search-skill"
     ],
-    "healthy_count": 3,
+    "healthy_count": 4,
     "no_data": []
   }
 }
