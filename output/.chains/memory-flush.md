@@ -1,19 +1,15 @@
-Memory flush completed for the `2026-09-13`–`2026-09-14` window.
+Memory flush completed for 2026-09-14 through 2026-09-17.
 
-- Refreshed the market-context pointer.
-- Archived four older digest rows into the existing digest history.
-- Verified current PR and critical-issue priorities remain unresolved.
-- Logged the run in `memory/logs/2026-09-14.md`.
-- Stamped the consolidation watermark to `2026-09-14`.
-- No monthly log rotation was required.
+- Promoted the repeated failures affecting `github-trending`, `token-pick`, and `narrative-tracker`.
+- Removed the stale PR #77/#78 priority; both merged September 16.
+- Preserved the live MCP-server Riva isolation priority.
+- No logs required rotation and no new topic files were needed.
+- Advanced the consolidation watermark to 2026-09-17.
 
 ## Summary
 
 Modified:
 
 - `memory/MEMORY.md`
-- `memory/topics/recent-digests-history.md`
-- `memory/logs/2026-09-14.md`
+- `memory/logs/2026-09-17.md`
 - `memory/memory-flush-state.json`
-
-No follow-up action is needed.

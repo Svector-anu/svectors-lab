@@ -1,5 +1,5 @@
 # Long-term Memory
-*Last consolidated: 2026-09-14*
+*Last consolidated: 2026-09-17*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Earlier repository, product, and security milestones are indexed in [About This Repo History](topics/about-this-repo-history.md)
@@ -50,8 +50,7 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Reconcile the three open critical records in `memory/issues/INDEX.md` with current fleet state: ISS-004 resolved on 2026-09-12, while five non-healthy skills still retain ChatGPT provider errors and three retain the `grok-4.5` unknown-model signature
+- Reconcile the three open critical records in `memory/issues/INDEX.md` with current fleet state: ISS-004 resolved on 2026-09-12, while the index still carries older missing-secret, unknown-failure, and exhausted-Grok records; separately investigate the repeated no-output failures affecting `github-trending`, `token-pick`, and `narrative-tracker` since 2026-09-15
 - Fast-follow fix needed on `main`: PR #70 merged 2026-09-16 with the bare `shadow`/`compare` selector bypass fixed, but review found a new CRITICAL live now — `apps/mcp-server/src/skill-executor.ts` never sources `scripts/resolve-riva-capabilities.sh`, so vuln-scanner's `shadow`/`compare` read-only + credential-withholding isolation only holds on the GitHub Actions dispatch path, not the MCP-server one (see PR #70 review comment and `memory/logs/2026-09-16.md`)
-- Triage local PRs #77 and #78: #77 fails the skill-integrity check, #78 is green
 - Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
 - Re-run PoC verification with a Go toolchain for stripe/stripe-cli's daemon auth-bypass candidate and databricks/cli's server-returned export-path traversal candidate; if Stripe verifies, route it to a human for Stripe's bug-bounty program, not PVR/email
