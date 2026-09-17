@@ -174,12 +174,12 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "dispatched",
-    "last_failed": "2026-09-17T06:47:23Z",
-    "total_runs": 246,
+    "last_status": "failed",
+    "last_failed": "2026-09-17T12:11:36Z",
+    "total_runs": 248,
     "total_successes": 76,
-    "total_failures": 170,
-    "consecutive_failures": 24,
+    "total_failures": 172,
+    "consecutive_failures": 26,
     "success_rate": 0.31,
     "last_dispatch": "2026-09-17T12:08:35Z",
     "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
