@@ -25,6 +25,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-17 | daily update (web) | Arc mainnet, wallet malware, Copilot Rust |
 | 2026-09-17 | daily (web) | crypto tax, CLARITY blocked, agent controls |
 | 2026-09-14 | daily (web) | router leakage, AI policy, 5% Treasury |
 | 2026-09-13 | daily (web) | GitLab KEV, Symbiosis exploit, CLARITY vote |

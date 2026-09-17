@@ -1,17 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-17T12:11:41Z",
-  "quality_score": 4,
-  "assessment": "Fresh, conclusion-first, actionable digest with explicit position calls and direct, credible links supporting the key claims; concise and well aligned to the trader-focused strategy.",
-  "flags": [],
+  "last_analyzed": "2026-09-17T16:58:56Z",
+  "quality_score": 2,
+  "assessment": "Substantive and linked, but it lacks an explicit regime verdict and position calls, while claiming workspace files were updated during a read-only run, making the final output materially unverifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.07,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T12:29:40Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -184,6 +180,12 @@
       "date": "2026-09-17",
       "score": 4,
       "ts": "2026-09-17T12:11:41Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T16:58:56Z",
       "harness": "codex"
     }
   ]
