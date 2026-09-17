@@ -1,10 +1,12 @@
 {
   "skill": "self-improve",
-  "last_analyzed": "2026-09-17T12:16:28Z",
-  "quality_score": 3,
-  "assessment": "Acceptable fail-closed result: it identifies the attempted improvement, reports concrete validation failures, reverts safely, and links the log, though it delivers no successful improvement or actionable follow-up diagnosis.",
-  "flags": [],
-  "avg_score": 3,
+  "last_analyzed": "2026-09-17T20:06:08Z",
+  "quality_score": 2,
+  "assessment": "The run failed closed safely, but produced no fix, diagnosis, evidence, or actionable technical detail beyond a timeout status.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 2.93,
   "history": [
     {
       "date": "2026-08-25",
@@ -80,6 +82,12 @@
       "date": "2026-09-17",
       "score": 3,
       "ts": "2026-09-17T12:16:28Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T20:06:08Z",
       "harness": "codex"
     }
   ]
