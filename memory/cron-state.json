@@ -388,13 +388,13 @@
   },
   "pr-review": {
     "last_status": "failed",
-    "last_failed": "2026-09-16T23:49:27Z",
-    "total_runs": 81,
+    "last_failed": "2026-09-17T01:47:43Z",
+    "total_runs": 82,
     "total_successes": 49,
-    "total_failures": 32,
-    "consecutive_failures": 4,
+    "total_failures": 33,
+    "consecutive_failures": 5,
     "success_rate": 0.6,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0aca0-0bb6-7f60-84e3-012f2739da84\"} {\"type\":\"turn.started\"} {\"typ",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ad0c-555f-72c1-b606-093abf280266\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-16T13:41:42Z",
     "last_quality_score": 4,
     "last_dispatch": "2026-09-14T16:34:31Z"
