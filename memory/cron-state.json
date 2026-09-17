@@ -313,14 +313,14 @@
     "last_dispatch": "2026-09-14T16:34:31Z",
     "last_status": "failed",
     "last_success": "2026-09-14T16:40:30Z",
-    "total_runs": 36,
+    "total_runs": 38,
     "total_successes": 25,
-    "total_failures": 11,
-    "consecutive_failures": 11,
-    "success_rate": 0.69,
+    "total_failures": 13,
+    "consecutive_failures": 13,
+    "success_rate": 0.66,
     "last_quality_score": 2,
-    "last_failed": "2026-09-16T23:50:01Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0aca0-9317-7cd3-9b76-6d4781cbfe51\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_failed": "2026-09-17T01:48:42Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ad0d-3ad4-73f3-9d30-22d5b469cdeb\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "self-improve": {
     "last_dispatch": "2026-09-13T18:06:40Z",
