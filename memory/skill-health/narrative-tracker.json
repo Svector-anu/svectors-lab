@@ -1,19 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-17T12:11:23Z",
+  "last_analyzed": "2026-09-17T16:58:43Z",
   "quality_score": 2,
-  "assessment": "Actionable structure and explicit calls, but numerous precise claims and metrics lack direct supporting citations or appear implausibly sourced, making the output insufficiently verifiable.",
+  "assessment": "Actionable and well-structured, but numerous specific governance, ownership, legislative, TVL, performance, and lifecycle claims lack direct authoritative evidence; the fallback cites only two weak sources and an unexplained tracker view.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.53,
+  "avg_score": 2.47,
   "history": [
-    {
-      "date": "2026-09-07",
-      "score": 4,
-      "ts": "2026-09-07T08:28:21Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-07",
       "score": 3,
@@ -186,6 +180,12 @@
       "date": "2026-09-17",
       "score": 2,
       "ts": "2026-09-17T12:11:23Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T16:58:43Z",
       "harness": "codex"
     }
   ]

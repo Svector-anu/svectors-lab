@@ -1,26 +1,24 @@
-*Narrative Tracker — 2026-09-17*
+*Narrative Tracker — 2026-09-17 (intraday)*
 
 TRANSITIONS
-• DEMOTED: CLARITY vote Rising → Fading — cloture failed 49–50; 60 were required. Fade near-term passage hopium. https://www.axios.com/2026/09/15/clarity-act-senate-no
-• PROMOTED: hawkish Fed regime Peak → Peak/confirmed — unanimous 25 bp hike, with another hike signaled. https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm
-• PROMOTED: RWA perps Peak → Rising — Hyperliquid weekly volume +9.1% to $55.1B; RWA share rose to 28.4%. https://pacific-meta.co.jp/magazine/reports/158099/
-• NEW: agentic payment rails — Kakao Pay stablecoin-agent PoC plus Coinbase Agent Payment Stack; adoption evidence remains early. https://paidbyagent.com/
-• DEAD: AI-control panic — absent from fresh three-day crypto signals.
+• PROMOTED: privacy Emerging → Rising — ZEC governance, Paradigm ownership disclosure, and NEAR Confidential Intents crossing $70M TVL turned a morning trend into the clearest alt-sector trade. https://www.prnewswire.com/news-releases/nearcoms-confidential-tvl-reaches-70-million-triggering-the-near3-33-snapshot-amid-industry-wide-privacy-wave-302881903.html
+• DEMOTED: broad AI-chain beta Emerging → WATCH — NEAR/VVV strength is better explained by privacy and project catalysts than a sector-wide AI rotation. https://dailycoin.com/venice-near-rally-points-to-privacy-not-a-broad-ai-rotation/
 
 REFLEXIVITY ALERT
-• CLARITY — passage odds reportedly fell to single digits after the failed vote; the legislative story repriced crypto before durable rules changed.
-• Pons — $2.49M fees/24h remain real, but fees fell 39.5% day-on-day and Robinhood Chain DEX volume fell 20.8% week-on-week: the buyback/burn flywheel is losing velocity.
+• NEAR confidential execution — crossing $70M TVL automatically triggered a reward snapshot; the incentive milestone is now reinforcing deposits and the privacy story.
+• ZEC privacy — governance momentum plus Paradigm's disclosed ownership amplified attention into a leverage-heavy move; NU7 is not live yet.
 
 POSITIONS
-• RIDE: RWA/perps (4 ↑, Bull) — @HyperliquidX, @Coinbase, @Polymarket — bear: crowded leverage and unlock risk make execution fragile.
-• WATCH: hawkish Fed (5 ↑, Bear) — @federalreserve, @CMEGroup, @Polymarket — first hike since 2023 confirms the regime; bear: much was anticipated.
-• WATCH: agentic payments (2 ↑↑, Bull) — @coinbase, @kakaopay, @Lightning — bear: PoCs and launches are not recurring settlement volume.
-• FADE: CLARITY passage (5 ↓↓, Cope) — @SenLummis, @brian_armstrong, @circle — negotiations may return, but this Congress failed the threshold.
-• FADE: Robinhood Chain/Pons (3 ↓, Cope) — @Pons, @RobinhoodApp, @Arbitrum — cash flow persists; participation is contracting.
-• WATCH: prediction markets (4 →, Mixed) — @Polymarket, @Kalshi, @RobinhoodApp — event repricing validates utility; jurisdiction risk remains.
+• RIDE: privacy/confidential execution (4 ↑↑, Bull) — @Zcash, @NEARProtocol, @VeniceAI — bear: ZEC is concentrated, NU7 lacks an activation date, and NEAR deposits are incentive-shaped.
+• WATCH: DEX/perps (4 ↑, Bull) — @HyperliquidX, @Uniswap, @DefiLlama — bear: strong category performance can conceal crowded leverage and venue rotation.
+• WATCH: broad AI tokens (3 →, Mixed) — @NEARProtocol, @VeniceAI, @KaitoAI — bear: current leaders have privacy-specific catalysts; no clean sector-wide confirmation.
+• FADE: CLARITY passage (5 ↓↓, Cope) — @SenLummis, @brian_armstrong, @circle — the failed threshold leaves passage hopium without a near-term path.
+• WATCH: agentic payments (2 ↑, Bull) — @coinbase, @kakaopay, @x402 — bear: integration breadth still outruns verified recurring agent spend.
 
 MAP
 Emerging: agentic payments
-Rising: RWA/perps
+Rising: privacy/confidential execution, DEX/perps
 Peak: hawkish Fed, prediction markets
 Fading: CLARITY passage, Robinhood Chain/Pons
+
+Source note: X.AI unavailable (`KEY_UNSET`; attempted request `http=400`), so this is a lower-confidence public-web fallback. DeFiLlama calibration: DEXs +47.09%, perps/derivatives +40.80%, AI +40.11% on the tracker view.
