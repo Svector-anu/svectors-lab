@@ -14,15 +14,15 @@
   "defi-overview": {
     "last_status": "failed",
     "last_success": "2026-09-14T16:38:35Z",
-    "total_runs": 426,
+    "total_runs": 427,
     "total_successes": 100,
-    "total_failures": 326,
-    "consecutive_failures": 17,
+    "total_failures": 327,
+    "consecutive_failures": 18,
     "success_rate": 0.23,
     "last_quality_score": 2,
     "last_dispatch": "2026-09-15T12:06:20Z",
-    "last_failed": "2026-09-17T01:47:41Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ad0c-4de9-77b2-b59e-e2c01c9c3ef6\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_failed": "2026-09-17T06:45:29Z",
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-efc5-7d00-9ec0-7b39cf69abc1\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "narrative-tracker": {
     "last_status": "failed",
