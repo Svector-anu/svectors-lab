@@ -1,21 +1,11 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-14T16:37:25Z",
-  "quality_score": 2,
-  "assessment": "Substantive and linked, but badly misaligned with the crypto-trader strategy, lacks regime and position calls, reverses the implication of higher yields by saying capital is cheaper, and claims workspace writes despite the read-only constraint.",
-  "flags": [
-    "low_quality",
-    "generic_content",
-    "unverifiable_claim"
-  ],
-  "avg_score": 2,
+  "last_analyzed": "2026-09-17T12:11:41Z",
+  "quality_score": 4,
+  "assessment": "Fresh, conclusion-first, actionable digest with explicit position calls and direct, credible links supporting the key claims; concise and well aligned to the trader-focused strategy.",
+  "flags": [],
+  "avg_score": 2.07,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T01:07:55Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-28",
       "score": 2,
@@ -188,6 +178,12 @@
       "date": "2026-09-14",
       "score": 2,
       "ts": "2026-09-14T16:37:25Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 4,
+      "ts": "2026-09-17T12:11:41Z",
       "harness": "codex"
     }
   ]
