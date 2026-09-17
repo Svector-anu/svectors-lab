@@ -50,6 +50,8 @@ jobs:
         run: bash scripts/tests/test_pr_review_notification_gate.sh
       - name: telegram router tests
         run: bash scripts/tests/test_telegram_route.sh
+      - name: webhook capability-path tests
+        run: bash scripts/tests/test_webhook_capability_path.sh
       - name: capability mode tests
         run: bash scripts/tests/test_skill_mode.sh
       - name: read-only guard run-log tests

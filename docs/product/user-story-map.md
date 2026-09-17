@@ -27,14 +27,14 @@ There is no meaningful "Later" or "Future" row for this instance in the MVP-plan
 |---|---|---|---|
 | Pick capabilities | Enable a pack, flip individual skills on | roster: dashboard (`apps/dashboard`) | shipped |
 | Wire multi-step work | Define a chain in `aeon.yml` | `F-001` | shipped |
-| Connect entry points | Configure MCP server / webhook alongside cron | `F-005` | partial |
+| Connect entry points | Configure MCP server / webhook alongside cron | `F-005` | shipped |
 
 ## Run
 
 | Step | Task | Feature | Status |
 |---|---|---|---|
-| Scheduled or manual dispatch | Cron fires, or an operator triggers "Run now" | `F-005` | partial |
-| Capability + secret resolution | Correct tier and only declared secrets, on every entry point | `F-005` | partial |
+| Scheduled or manual dispatch | Cron fires, or an operator triggers "Run now" | `F-005` | shipped |
+| Capability + secret resolution | Correct tier and only declared secrets, on every entry point | `F-005` | shipped |
 | Skill executes | Harness runs the skill's own `SKILL.md` instructions | roster (all 81) | shipped |
 
 ## Review output
