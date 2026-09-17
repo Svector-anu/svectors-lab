@@ -1,21 +1,18 @@
-today: eliza — next merge worth 10 pts (ordinal 0), with 152 merges in the last 7 days.
+today: eliza — next merge worth 10 pts at ordinal 0; 217 merges in 7d. PR #29726 is approved with no changes requested.
 
 | lane | next | ordinal | liveness | last merge | merge rate |
 |---|---:|---:|---|---|---:|
-| eliza | 10 | 0 | live | today | 76.31% |
-| delta-star | 10 | 0 | slowing | Sep 6 | 98.00% |
-| asi | 5 | 3 | slowing | Sep 6 | 54.88% |
-| heir-elements-sdk | 10 | 0 | dormant | Aug 21 | 18.75% |
+| eliza | 10 | 0 | live | today | 75.60% |
+| delta-star | 10 | 0 | slowing | 11d ago | 98.00% |
+| asi | 5 | 3 | slowing | 11d ago | 54.80% |
+| heir-elements-sdk | 10 | 0 | dormant | 27d ago | 18.75% |
 
-waiting on you: [eliza PR #30500](https://github.com/elizaOS/eliza/pull/30500) still has `CHANGES_REQUESTED`. fixing that is the highest-value action before starting another PR.
+No new review blocker, liveness transition, tracked project, or monthly reset. Notification suppressed as required.
 
-watch: delta-star moved from live → slowing. its next merge is worth 10 points, but it is not currently merging, so don’t prioritize it yet.
-
-`SLOP_WATCH_OK`
+`SLOP_WATCH_QUIET`
 
 ## Summary
 
-- Refreshed `memory/topics/slop-watch-state.json`.
-- Logged the run in `memory/logs/2026-09-14.md`.
-- Notification delivery was attempted, but the harness queues were read-only.
-- The state commit was also blocked because `.git` is read-only; file changes remain saved in the workspace.
+- Updated [slop-watch-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/slop-watch-state.json).
+- Appended the run to [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md).
+- Could not commit because this environment mounts `.git` read-only; the files remain updated in the workspace.
