@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-16T13:40:51Z",
-  "quality_score": 4,
-  "assessment": "Substantive security review with specific, verifiable vulnerability findings and clear action items; output is concrete and actionable.",
+  "last_analyzed": "2026-09-17T16:58:38Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-findings review with a clear verdict and traceable PR/commit, but little substantive verification evidence is included in the final output.",
   "flags": [],
-  "avg_score": 3.3,
+  "avg_score": 3.27,
   "history": [
-    {
-      "date": "2026-09-03",
-      "score": 4,
-      "ts": "2026-09-03T16:58:29Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-03",
       "score": 4,
@@ -185,6 +179,12 @@
       "score": 4,
       "ts": "2026-09-16T13:40:51Z",
       "harness": "claude"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 3,
+      "ts": "2026-09-17T16:58:38Z",
+      "harness": "codex"
     }
   ]
 }
