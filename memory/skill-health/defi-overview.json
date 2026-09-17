@@ -1,19 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-17T12:12:53Z",
+  "last_analyzed": "2026-09-17T20:03:59Z",
   "quality_score": 2,
-  "assessment": "Decision-oriented and concise, but the specific market figures and yield claims lack source links, and the claimed workspace updates contradict the read-only run constraint, undermining verifiability.",
+  "assessment": "Conclusion-first and actionable, but most figures and macro claims lack supporting sources, the hard live-price data violates strategy, and claimed workspace writes contradict the read-only run.",
   "flags": [
     "unverifiable_claim"
   ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-09-07",
-      "score": 2,
-      "ts": "2026-09-07T14:26:07Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-07",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-17",
       "score": 2,
       "ts": "2026-09-17T12:12:53Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T20:03:59Z",
       "harness": "codex"
     }
   ]
