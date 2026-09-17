@@ -1,15 +1,11 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-14T16:37:11Z",
-  "quality_score": 4,
-  "assessment": "Substantive, concise, well-linked trending report with clear categorization and source-status disclosure, though it does not advance the operator’s crypto-trading priority or explain why the top pick is actionable.",
+  "last_analyzed": "2026-09-17T16:58:57Z",
+  "quality_score": 3,
+  "assessment": "Substantive, concise, and plausibly sourced, but it lacks a crypto relevance filter, regime verdict, and explicit position calls required by the operator strategy.",
   "flags": [],
-  "avg_score": 2.87,
+  "avg_score": 2.83,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -173,6 +169,12 @@
       "date": "2026-09-14",
       "score": 4,
       "ts": "2026-09-14T16:37:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 3,
+      "ts": "2026-09-17T16:58:57Z",
       "harness": "codex"
     }
   ]

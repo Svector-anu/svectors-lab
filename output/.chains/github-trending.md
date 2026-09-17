@@ -1,31 +1,32 @@
-*GitHub Trending — 2026-09-14*
+*GitHub Trending — 2026-09-17*
 
-*Top pick* — [ruvnet/RuView](https://github.com/ruvnet/RuView)
-RuView turns cheap ESP32 radio data into local automation signals, while explicitly separating synthetic accuracy from validated sensing.
+*Top pick* — [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)
+Cloudflare turned security review into a portable, verification-gated agent workflow—the most reusable release in today’s slate.
 
 *AI/ML*
-• [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) — ★ 640 today (81.0k total) · Python · [ACCELERATING]
-Maintains fallback backends for blocked platforms, giving agents one CLI across Western and Chinese sources.
+• [JustVugg/colibri](https://github.com/JustVugg/colibri) — ★ 872 today (35.6k total) · C · [ACCELERATING]
+Streams MoE experts across VRAM, RAM, and disk, making 744B-class inference practical on local hardware.
 
-• [ruvnet/RuView](https://github.com/ruvnet/RuView) — ★ 370 today (93.7k total) · Rust · [ACCELERATING]
-Maps ESP32 WiFi sensing into 21 Home Assistant entities while flagging unvalidated accuracy claims.
+*Devtools*
+• [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) — ★ 3,606 today (10.0k total) · JavaScript · [ACCELERATING]
+Adds isolated audit phases and independent claim verification instead of trusting one agent’s vulnerability verdict.
 
-• [tech-leads-club/agent-skills](https://github.com/tech-leads-club/agent-skills) — ★ 506 today (5.9k total) · TypeScript · [RETURNING]
-Adds content hashing, symlink guards and static scanning to skills portable across 19 agent clients.
+• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 3,290 today (34.2k total) · Go · [ACCELERATING]
+Combines deterministic checks with repository-aware agents that place findings on exact changed lines.
+
+• [alphaXiv/OpenResearch](https://github.com/alphaXiv/OpenResearch) — ★ 940 today (5.0k total) · Rust · [RETURNING]
+Makes parallel research runs reproducible through isolated worktrees and immutable commit archives.
+
+• [abue-ammar/tinycast](https://github.com/abue-ammar/tinycast) — ★ 738 today (6.0k total) · Swift · [ACCELERATING]
+Runs existing Raycast extensions in native SwiftUI while keeping launcher, hotkeys, and clipboard under 100MB.
 
 *Infra*
-• [localsend/localsend](https://github.com/localsend/localsend) — ★ 311 today (91.1k total) · Dart · [ACCELERATING]
-Moves files over local HTTPS across six operating systems without accounts, cloud servers or internet.
+• [cilium/cilium](https://github.com/cilium/cilium) — ★ 153 today (25.3k total) · Go · [RETURNING]
+Three patch releases landed yesterday across maintained branches of the eBPF networking and security stack.
 
-*Web/Apps*
-• [ever-co/ever-gauzy](https://github.com/ever-co/ever-gauzy) — ★ 1,095 today (5.8k total) · TypeScript · [RETURNING]
-Consolidates ERP, CRM, HR, recruiting and time tracking behind one self-hostable AGPL platform.
-
-• [reconurge/flowsint](https://github.com/reconurge/flowsint) — ★ 279 today (8.2k total) · TypeScript · [RETURNING]
-Keeps graph-based OSINT evidence local and ships prebuilt containers for a one-command private deployment.
-
-• [peetzweg/opendisplay](https://github.com/peetzweg/opendisplay) — ★ 314 today (3.4k total) · Swift · [RETURNING]
-Implements true macOS display extension over USB or WiFi, including HiDPI and touch input.
+*Other*
+• [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) — ★ 912 today (78.3k total) · Java · [RETURNING]
+A mature reverse-engineering suite is surging again, outside the app, infra, data, and agent-tool buckets.
 
 ---
 sources: trending=ok · gh_api=ok · kept 7/20
