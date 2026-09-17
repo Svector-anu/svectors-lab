@@ -137,7 +137,7 @@ Actual: verdict=blocked, critical=1, issues=0, with a file:line-cited finding
 
 ### F-005: Multi-surface skill dispatch
 
-**Status:** partial
+**Status:** shipped
 
 **Epic:** Core
 **Who it's for:** every skill; this is the shared substrate they all run on.
@@ -148,8 +148,22 @@ Actual: verdict=blocked, critical=1, issues=0, with a file:line-cited finding
 - `US-005.1`: As the operator, I want capability resolution to be one shared function every dispatch surface calls, not N independently-maintained copies, so a rule that holds on one path holds on all of them.
   - `AC-005.1.1`: `scripts/skill_mode.sh` is the single source of truth for a skill's capability tier, consulted identically by `aeon.yml`, `chain-runner.yml`, and `apps/mcp-server/src/skill-executor.ts`.
 
-**Remaining:**
-- `AC-005.1.1` holds for `aeon.yml` and `apps/mcp-server` as of 2026-09-16 (fixed this session). `apps/webhook`'s dispatch path has not been audited for the same class of gap; per `ARCHITECTURE.md`, that's exactly the kind of thing worth checking rather than assuming.
+**Verification**
+
+```text
+AC-005.1.1: bash scripts/tests/test_skill_mode.sh
+             bash scripts/tests/test_webhook_capability_path.sh
+Expected: direct runners resolve through scripts/skill_mode.sh; the webhook remains
+          a relay into aeon.yml and preserves the runtime selector (`var`)
+```
+
+**Evidence this session:** `aeon.yml` and `apps/mcp-server` both resolve direct
+skill runs through `scripts/skill_mode.sh`. The webhook audit completed on
+2026-09-17 and found no parallel skill executor: authenticated updates are
+classified into `messages.yml`, its router dispatches `aeon.yml` with both the
+skill and `var`, and that canonical workflow applies capability resolution,
+secret scoping, and the harness sandbox. `test_webhook_capability_path.sh` now
+locks that convergence and fails if the Worker grows a direct execution path.
 
 ---
 

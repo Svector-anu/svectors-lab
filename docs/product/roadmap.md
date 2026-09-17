@@ -4,9 +4,8 @@ What's being built now versus planned versus explicitly out of scope. This is a 
 
 ## Now
 
-| Feature | Status | Notes |
-|---|---|---|
-| `F-005` | partial | `apps/webhook`'s dispatch path hasn't been audited for the same capability/secret-scoping gap found and fixed on `apps/mcp-server` (2026-09-16). |
+No feature-map item is currently in progress. `F-005` shipped after the webhook
+dispatch audit on 2026-09-17; the next scoped work starts under "Next" below.
 
 ## Next
 
