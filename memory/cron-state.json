@@ -201,16 +201,16 @@
   },
   "hunter-22": {
     "last_status": "failed",
-    "last_failed": "2026-09-17T01:48:06Z",
-    "total_runs": 53,
+    "last_failed": "2026-09-17T06:45:55Z",
+    "total_runs": 54,
     "total_successes": 33,
-    "total_failures": 20,
-    "consecutive_failures": 13,
-    "success_rate": 0.62,
+    "total_failures": 21,
+    "consecutive_failures": 14,
+    "success_rate": 0.61,
     "last_dispatch": "2026-09-15T12:06:20Z",
     "last_success": "2026-09-14T10:45:21Z",
     "last_quality_score": 3,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ad0c-afbf-75f2-a09a-cec30b91303b\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-5776-7981-a2f8-21d25e764c62\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "memory-flush": {
     "last_status": "failed",
