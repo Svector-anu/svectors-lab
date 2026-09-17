@@ -344,3 +344,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-17,vuln-tracker,codex-default,1565685,13258,1493248,0
 2026-09-17,vuln-tracker,codex-default,1350208,7876,1239424,0
 2026-09-17,feature,codex-default,2581635,7944,2491136,0
+2026-09-17,pr-review,codex-default,742191,4922,686848,0
