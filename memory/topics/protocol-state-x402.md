@@ -3,12 +3,12 @@ type: Reference
 title: x402 Ecosystem Tracker
 description: Per-run state for the x402 Protocol Monitor — known integrations, npm stats, GitHub repo counts, signal log.
 tags: [x402, protocol-monitor, micropayments, ai-agents]
-timestamp: 2026-09-08T00:00:00Z
+timestamp: 2026-09-17T00:00:00Z
 ---
 
 # x402 Ecosystem Tracker
 
-*Last run: 2026-09-08*
+*Last run: 2026-09-17*
 
 ## Known Integrations
 - cloudflare/agents (5234★) — official Cloudflare agents framework; x402 listed as native pay-per-call feature
@@ -49,13 +49,18 @@ timestamp: 2026-09-08T00:00:00Z
 - randomizedhoomanity/ox-alpha-signals (0★) — autonomous crypto-signal API charging $0.001 per call over x402 on Base
 - xinyuzjj/bazz.agent (0★) — Binance-native trading copilot combining MCP, an agent wallet, and x402 payments
 - kylebrodeur/rent-resilience (0★) — x402-paid trust services for verifiable rent history and privacy-preserving housing proofs
+- tollstile/Tollstile (2★) — open-source payment middleware for APIs and MCP tools with tested x402 support, refunds, spend caps, and reconciliation
+- thesmithdao/x402-seal (1★) — capped paid-request verifier that checks x402 settlement and delivered responses, then emits signed evidence
+- PANDeveloper001/openai-agents-nano-x402 (0★) — OpenAI Agents SDK tool for self-custodied Nano payments to x402-priced endpoints
+- ZendIQ/ZendIQ-Agent-API (1★) — Solana trade-analysis and unsigned-transaction API callable through MCP or x402
+- api-evangelist/social-fetch (1★) — hosted social-data API with MCP discovery and x402 pay-per-call access
 
 ## Key Stats
-- npm @coinbase/x402: 62,952 weekly downloads (-6,108 vs prior run; +24,818 vs 2026-07-08 baseline)
-- npm x402: 278,092 weekly downloads (-114,643 vs prior run; +32,151 vs 2026-07-08 baseline)
+- npm @coinbase/x402: 43,829 weekly downloads (-19,123 vs prior run; +5,695 vs 2026-07-08 baseline)
+- npm x402: 313,007 weekly downloads (+34,915 vs prior run; +67,066 vs 2026-07-08 baseline)
 - npm paykit: 404 (not found — skipped)
-- GitHub repos matching x402: 3,409 broad matches reported by GitHub search; the latest broad and strict results were reviewed. Five newly created integrations were retained after baseline and relevance checks.
-- Notable announcements: x402 List reported 715 monitored services but only 13 delivery-verified; ForgeMesh documented an agent completing a physical-goods purchase; Bitquery found August volume was dominated by bridging rather than agent purchases.
+- GitHub repos matching x402: 10,165 broad matches reported by GitHub search; 723 repositories matched x402 in README/description and were created since 2026-09-10. Five newly created integrations were retained after baseline and relevance checks.
+- Notable announcements: Cardano Foundation engineers added client, server, facilitator, and example support to the official x402 codebase; X Pay launched a Base-mainnet gateway; an independent seller-index audit found only 1,253 of 4,278 indexed sellers currently dispatchable by its measured router.
 
 ## Signal Log
 - 2026-07-08: First run. 6+ new integrations in last 7d. cloudflare/agents (5234★) is highest-signal. x402=245k/wk, @coinbase/x402=38k/wk npm. Momentum: breakout (14pts).
@@ -65,6 +70,7 @@ timestamp: 2026-09-08T00:00:00Z
 - 2026-09-01 (rerun): Five additional integrations absent from the earlier baseline passed relevance review (+10), spanning buyer-side preflight, Stellar WebMCP, byte-receipt delivery, output notarization, and an agent marketplace. npm's measurement window had not advanced, so both packages were flat for scoring. Stellar's x402 documentation update counted as one new tutorial (+1). Momentum: breakout (11pts). Read: integrations are branching into pre-payment safety and delivery proof, not just settlement; watch whether these controls become shared infrastructure.
 - 2026-09-01 (third run): Five more integrations absent from both earlier baselines passed relevance review (+10), spanning conformance testing, a Zenon settlement experiment, paid informant markets, WebMCP admission, and a 25-tool MCP suite. npm's measurement window remained unchanged, so installs were flat for scoring. Alchemy's dated MCP payment builder guide added one tutorial signal (+1). Momentum: breakout (11pts). Read: x402 is spreading across both application experiments and interoperability tooling; watch whether conformance suites gain independent users and protocol alignment.
 - 2026-09-08: Five newly created integrations passed relevance review (+10), spanning serverless payment gates, recurring API access, paid crypto signals, agent trading, and housing proofs. Both npm packages declined and scored zero. A physical-goods purchase (+2), a fresh reliability report (+2), and an on-chain usage analysis (+1) brought momentum to breakout (15pts). Read: ride integration breadth, but watch conversion to verified delivery—13 of 715 monitored services have passed a paid fulfillment probe, while headline volume is still bridge-heavy.
+- 2026-09-17: Five newly created integrations passed relevance review (+10), spanning multi-rail payment middleware, paid-call delivery evidence, Nano settlement, Solana trade infrastructure, and social-data APIs. `x402` npm downloads rose (+3), while `@coinbase/x402` declined and scored zero. Native Cardano tooling (+2) and X Pay's Base-mainnet gateway (+2) brought momentum to breakout (17pts). Read: ride the widening chain and middleware surface; watch usable supply—the latest independent seller audit found only 1,253 of 4,278 indexed sellers dispatchable by its router.
 
 # Citations
 - [GitHub repository search API](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-18&sort=updated&order=desc&per_page=20)
@@ -90,3 +96,9 @@ timestamp: 2026-09-08T00:00:00Z
 - [x402 Ecosystem Reliability Report — September 2026](https://x402-list.com/blog/x402-reliability-report)
 - [ForgeMesh: An AI Agent Bought a T-Shirt With curl](https://forgemesh.io/blog)
 - [Bitquery: x402 Protocol August 2026 on-chain audit](https://bitquery.io/investigations/x402-ai-agent-payments-audit)
+- [GitHub repository search API — new x402 repos, 2026-09-17](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20created%3A%3E%3D2026-09-10&sort=stars&order=desc&per_page=100)
+- [npm downloads: @coinbase/x402 — week ending 2026-09-11](https://api.npmjs.org/downloads/point/last-week/%40coinbase%2Fx402)
+- [npm downloads: x402 — week ending 2026-09-11](https://api.npmjs.org/downloads/point/last-week/x402)
+- [Cardano gains native x402 integration](https://tangem.com/en/news/adoption/41324-cardano-gains-native-x402-integration-for-digital-payments/)
+- [X Pay Base-mainnet launch](https://www.globenewswire.com/news-release/2026/09/11/3360413/0/en/x-pay-is-live-on-mainnet.html)
+- [Measured audit of x402 seller payability](https://github.com/kairenndev/x402-unpayable)
