@@ -7,6 +7,7 @@
 | ISS-003 | verdikta-hunter has no successful run | critical | missing-secret | 2026-08-25 | verdikta-hunter |
 | ISS-005 | vuln-scanner has four consecutive failures | critical | unknown | 2026-09-02 | vuln-scanner |
 | ISS-006 | pr-review blocked by exhausted Grok usage balance | critical | rate-limit | 2026-09-03 | pr-review |
+| ISS-007 | Fleet blocked by ChatGPT WebSocket authentication failures | critical | config | 2026-09-17 | auto-merge, github-trending, defi-overview, token-pick, narrative-tracker, digest, search-skill, skill-health, self-improve, x402-monitor, vuln-tracker, hunter-22, slop-watch, fear-divergence, feature, write-tweet, memory-flush, heartbeat |
 
 ## Resolved
 

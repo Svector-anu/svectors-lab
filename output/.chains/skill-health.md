@@ -1,14 +1,21 @@
-HEALTH: CRITICAL(1)
+HEALTH: CRITICAL(20) — 19 enabled skills share a ChatGPT Codex WebSocket `401 Unauthorized` failure.
 
-- `vuln-scanner`: 6 consecutive failures, 3 days since success; all 21 top-level runs failed over seven days. Existing `ISS-005` retained—no duplicate filed.
-- Degraded: 16
-- Warning: 6
-- Healthy: 7
-- Open issues: 3
-- Filed/resolved: 0/0
-- Systemic: three skills retain ChatGPT Unauthorized errors; three retain the `grok-4.5` unknown-model signature.
-- Notification attempted but external queues were read-only, so delivery failed.
+- Filed [ISS-007](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-007.md) covering 18 affected skills.
+- Updated ISS-006 for `pr-review`’s new 401 signature.
+- `vuln-scanner` remains separately critical due to the unknown `grok-4.5` model.
+- 5 skills degraded, 2 warning, 3 healthy.
+- Open issues: 4; resolved this run: 0.
+- Notification queued after redirecting around the read-only workflow queue.
+- Updated the issue index, health snapshot, and today’s activity log.
 
 ## Summary
 
-Updated [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json) and appended the audit to [2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md). The report JSON was validated successfully.
+Files modified:
+
+- `memory/issues/INDEX.md`
+- `memory/issues/ISS-006.md`
+- `memory/issues/ISS-007.md`
+- `memory/skill-health/last-report.json`
+- `memory/logs/2026-09-17.md`
+
+Primary action: restore the Codex/ChatGPT authentication session, then fix or replace the configured `grok-4.5` model.
