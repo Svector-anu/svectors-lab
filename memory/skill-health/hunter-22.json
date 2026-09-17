@@ -1,15 +1,14 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-14T10:45:19Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-op scan with concrete triage and validation details, though it is process-heavy and confusingly claims workspace updates despite the stated read-only constraint.",
-  "flags": [],
-  "avg_score": 2.5,
+  "last_analyzed": "2026-09-17T12:11:36Z",
+  "quality_score": 2,
+  "assessment": "The no-match verdict is concise, but it provides no candidate-level evidence and implausibly claims workspace files were modified despite the explicitly read-only harness.",
+  "flags": [
+    "unverifiable_claim",
+    "low_quality"
+  ],
+  "avg_score": 2.43,
   "history": [
-    {
-      "date": "2026-08-23",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 4
@@ -174,6 +173,12 @@
       "date": "2026-09-14",
       "score": 3,
       "ts": "2026-09-14T10:45:19Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T12:11:36Z",
       "harness": "codex"
     }
   ]

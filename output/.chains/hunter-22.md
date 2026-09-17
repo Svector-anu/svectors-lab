@@ -1,13 +1,17 @@
-Hunter 22 scan completed.
+No new credible bounty match.
 
-- Free `/match` request succeeded with 25 candidates.
-- No new credible opportunities survived triage.
-- Two unseen listings were expired social/outreach tasks.
-- No audit-shaped GitHub bounty was found.
-- No notification was sent.
-- Updated [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json) and [2026-09-14.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-14.md).
-- Validation passed: 64 unique records, 25 refreshed, valid JSON.
+- Free ClawHunter scan succeeded: HTTP 200, 25 candidates.
+- Five were new; all failed capability or eligibility checks.
+- No audit-shaped GitHub candidate found.
+- No notification sent and no paid or wallet action taken.
+- Refreshed the seen ledger to 69 unique records and updated today’s activity log.
+- Validation passed. Commit was attempted but `.git` is read-only in this harness.
 
 ## Summary
 
-The required commit could not be created because this harness exposes `.git/refs` as read-only. The workspace changes are ready for the outer persistence step.
+Modified:
+
+- [hunter-22-seen.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/hunter-22-seen.json)
+- [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md)
+
+The outer persistence step must commit these changes.
