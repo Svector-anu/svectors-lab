@@ -1,12 +1,12 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-17T12:11:46Z",
+  "last_analyzed": "2026-09-17T22:46:16Z",
   "quality_score": 2,
-  "assessment": "Strong draft variety, but it asserts workspace writes during a read-only run and includes specific failure claims without evidence in the final output.",
+  "assessment": "Strong framing and explicit ride/watch calls, but the $70m TVL, snapshot-reward mechanism, and NEAR attribution lack citations or evidence in the final output, making the central thesis unverifiable.",
   "flags": [
     "unverifiable_claim"
   ],
-  "avg_score": 2.09,
+  "avg_score": 2.08,
   "history": [
     {
       "date": "2026-08-27",
@@ -144,6 +144,12 @@
       "date": "2026-09-17",
       "score": 2,
       "ts": "2026-09-17T12:11:46Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-17",
+      "score": 2,
+      "ts": "2026-09-17T22:46:16Z",
       "harness": "codex"
     }
   ]
