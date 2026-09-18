@@ -190,7 +190,8 @@ locks that convergence and fails if the Worker grows a direct execution path.
 
 ```text
 AC-006.1.1: gh workflow run chain-runner.yml -f chain=dev-loop -f target=external:<owner/repo>
-Expected: CHAIN_STATUS=success with a verified PR + PASS receipt, CHAIN_STATUS=no-action,
+Expected: CHAIN_STATUS=success with a verified PR + PASS receipt + behavioral proof receipt,
+          CHAIN_STATUS=proof-missing when no valid behavior evidence exists, CHAIN_STATUS=no-action,
           or CHAIN_STATUS=failed with a specific error - never an unexplained hang or silent drop
 ```
 
@@ -204,9 +205,12 @@ The same headless-harness-bench branch was submitted to its independently owned 
 
 `pr-review`'s reviewer harness was restored to a genuine second model 2026-09-18: `aeon.yml` had pinned both `feature` and `pr-review` to `codex` (a documented temporary compromise, not an oversight — a comment on the line named the intent to restore cross-model independence once a replacement was proven), which meant "independent review" was independent in dispatch and context but not in model — codex checking its own sibling's work. Proven live before the change: a `-f harness=claude` dispatch against the still-open `headless-harness-bench#1` (run 35338667251) posted a real `approve-ready` verdict. `pr-review`'s default is now `claude`, distinct from `feature`'s `codex`, for every review this skill runs, not only inside `dev-loop`. Grok stays out (OAuth still down); revisit only once that's fixed and proven the same way.
 
+Live behavioral proof now gates Dev Loop success for the first supported target shape, a PR changing one runnable Aeon skill. `create-prove` dispatches the changed skill from the immutable PR head, requires a successful correlated run with non-empty output, rechecks the SHA, and posts a machine receipt. The chain reports `proof-missing` rather than success when that evidence is absent or invalid. Outer run 35345681403 proved the path against `Svector-anu/svectors-lab#94` at SHA `d26c4e685298494e98130268d69f33d0246e3af5`; nested run 35345785449 exercised `idea-pipeline`'s owned-target offer, delivered Telegram message 362, preserved the target SHA, and produced a receipt accepted by `scripts/dev-loop-proof.sh verify`. Conventional app launch and workflow-only proof remain unsupported and fail closed.
+
+The Telegram producer gap is also closed at the prompt boundary. `idea-pipeline` can offer `[dev-loop::ship]` only for an explicit owned repository target with confirmed push access, and it does not dispatch until the operator replies. Run 35345785449 exercised the exact `offer:Svector-anu/svectors-lab` path and Telegram accepted the force-reply as message 362. `scripts/tests/test_telegram_route.sh` proves the reply marker dispatches `chain-runner.yml` and rejects unscoped free text. No operator reply was sent during the proof run, so this evidence does not claim a fresh live inbound round-trip.
+
 **Remaining, stated honestly:**
 - **Third-party upstream contribution is manual.** The Dev Loop can target another repository only when the operator already has push access. It cannot create or select a fork, push there, and open a cross-repository PR against an independently owned upstream. The upstream `headless-harness-bench#1` handoff proves the resulting branch can be submitted, but a human performed that handoff.
-- **Telegram has a chain route but no producer prompt.** A `[dev-loop::ship]` force-reply now routes an owned `owner/repo` or GitHub issue URL into `chain-runner.yml -f chain=dev-loop -f target=external:<owner/repo[#N]>`, distinct from the existing single-skill route. `scripts/tests/test_telegram_route.sh` covers repository normalization, issue URL normalization, and rejection of unscoped free text. No current skill emits that prompt: the documented `repo-scanner` sender no longer exists, and the closest current producer (`idea-pipeline`) deliberately marks a backlog choice without selecting an owned repository. Telegram therefore still cannot initiate Aeon Engineer from a normal product flow until a real producer is separately approved and built.
 - **The CI-side harness credentials are not reliably up.** This session alone hit a dead `CODEX_AUTH` and a `claude`/`bankr` gateway outage, on two separate days. `F-006` inherits whatever reliability the underlying harnesses have; it doesn't add any credential-monitoring of its own — though credential *degradation* is now at least distinguishable from a real regression, see above.
 
 ---

@@ -15,6 +15,7 @@ trap cleanup EXIT
 
 cat > "$BIN/codex" <<'EOF'
 #!/usr/bin/env bash
+[ -n "${CODEX_ARGS_FILE:-}" ] && printf '%s\n' "$@" > "$CODEX_ARGS_FILE"
 printf '%s\n' "${CODEX_FAKE_STDERR:-}" >&2
 printf '%s\n' '{"type":"thread.started","thread_id":"synthetic"}'
 exit "${CODEX_FAKE_RC:-1}"
@@ -42,6 +43,17 @@ out=$(run_failure 'fatal: repository checkout failed'); rc=$?
 { [ "$rc" = 1 ] && ! grep -Fq 'CREDENTIAL_DEGRADED:' <<<"$out" && grep -Fq 'codex exited 1:' <<<"$out"; } \
   && pass "unrelated failure remains generic" \
   || bad "generic failure was misclassified (rc=$rc out=$out)"
+
+ARGS_FILE="$BIN/codex-args"
+PENDING="$BIN/aeon-pending"
+mkdir -p "$PENDING"
+CODEX_ARGS_FILE="$ARGS_FILE" AEON_PENDING_DIR="$PENDING" \
+  run_failure 'synthetic failure after argument capture' >/dev/null
+if awk -v pending="$PENDING" 'previous == "--add-dir" && $0 == pending { found=1 } { previous=$0 } END { exit !found }' "$ARGS_FILE"; then
+  pass "write mode grants codex access to aeon notification staging"
+else
+  bad "write mode omitted the aeon notification staging directory"
+fi
 
 echo "---"
 [ "$fail" = 0 ] && echo "ALL PASS" || echo "SOME FAILED"
