@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T13:25:56Z",
-  "quality_score": 4,
-  "assessment": "Well-structured PR review with specific, verifiable technical issues and evidence; substantive and actionable, though lacks remediation suggestions",
+  "last_analyzed": "2026-09-18T13:33:14Z",
+  "quality_score": 3,
+  "assessment": "Legitimate skip decision with clear reasoning and verifiable specifics (commit hash, PR review link, merge timestamp), but no substantive PR review delivered",
   "flags": [],
   "avg_score": 3.43,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 3,
-      "ts": "2026-09-04T13:37:38Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T13:25:56Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 3,
+      "ts": "2026-09-18T13:33:14Z",
       "harness": "claude"
     }
   ]
