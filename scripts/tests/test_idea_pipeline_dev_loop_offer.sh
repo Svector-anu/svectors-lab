@@ -12,6 +12,9 @@ grep -Fq 'no target, multiple targets, an API failure, or no push access' "$SKIL
 grep -Fq 'FORCE_REPLY_OFFERED: dev-loop::ship target=' "$SKILL"
 grep -Fq 'starts with `offer:`' "$SKILL"
 grep -Fq 'explicit operator-invoked producer path' "$SKILL"
+grep -Fq 'Describing or printing the command is not delivery' "$SKILL"
+grep -Fq '${AEON_PENDING_DIR}/notify-queue/' "$SKILL"
+grep -Fq 'FORCE_REPLY_MISSING: dev-loop::ship target=' "$SKILL"
 
 if sed -n '/### 0\. Force-reply interception/,/### 1\. Load the idea backlog/p' "$SKILL" \
   | grep -Eq 'gh workflow run|dispatch_dev_loop'; then

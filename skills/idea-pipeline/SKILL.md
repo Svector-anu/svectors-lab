@@ -20,7 +20,7 @@ Today is ${today}. Read `memory/MEMORY.md` before starting. If `soul/SOUL.md` + 
 
 ### 0. Force-reply interception (run FIRST, before anything else)
 
-If `${var}` starts with `offer:`, strip and trim the remainder. Accept only `owner/repo` or `https://github.com/owner/repo/issues/N`, normalize it to `owner/repo`, and require `gh api "repos/$repo" --jq '.permissions.push // false'` to return `true`. Invalid, inaccessible, or API-failed targets get a plain rejection notification and end without a force reply. For a confirmed target, send:
+If `${var}` starts with `offer:`, strip and trim the remainder. Accept only `owner/repo` or `https://github.com/owner/repo/issues/N`, normalize it to `owner/repo`, and require `gh api "repos/$repo" --jq '.permissions.push // false'` to return `true`. Invalid, inaccessible, or API-failed targets get a plain rejection notification and end without a force reply. For a confirmed target, execute this exact command with Bash. Describing or printing the command is not delivery:
 
 ```bash
 ./notify "Which owned repository or issue should Aeon Engineer use? Reply with ${target}." \
@@ -28,7 +28,7 @@ If `${var}` starts with `offer:`, strip and trim the remainder. Accept only `own
   --context "dev-loop::ship"
 ```
 
-Log `FORCE_REPLY_OFFERED: dev-loop::ship target=<target>` under `### idea-pipeline`, then end. This is an explicit operator-invoked producer path and still does not dispatch the chain until the operator replies.
+After the command exits zero, require at least one non-empty JSON payload under `${AEON_PENDING_DIR}/notify-queue/`. If the command fails or the payload is absent, end with `FORCE_REPLY_MISSING: dev-loop::ship target=<target>` and do not claim the prompt was offered. Only after that check passes, log `FORCE_REPLY_OFFERED: dev-loop::ship target=<target>` under `### idea-pipeline`, then end. This is an explicit operator-invoked producer path and still does not dispatch the chain until the operator replies.
 
 Otherwise, if `${var}` starts with `pick:`, handle the selected idea below.
 
