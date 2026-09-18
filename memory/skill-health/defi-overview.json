@@ -1,19 +1,11 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-18T09:55:40Z",
-  "quality_score": 2,
-  "assessment": "Decision-grade and conclusion-first, but most figures lack source links and the claimed workspace updates contradict the read-only run constraint.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.13,
+  "last_analyzed": "2026-09-18T13:58:28Z",
+  "quality_score": 4,
+  "assessment": "Strong conclusion-first, decision-grade DeFi brief with explicit positioning and transparent source-status markers, though high-conviction regime labeling and extreme “sustainable” yields need clearer evidence or caveats.",
+  "flags": [],
+  "avg_score": 2.2,
   "history": [
-    {
-      "date": "2026-09-08",
-      "score": 2,
-      "ts": "2026-09-08T06:32:55Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-08",
       "score": 2,
@@ -186,6 +178,12 @@
       "date": "2026-09-18",
       "score": 2,
       "ts": "2026-09-18T09:55:40Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T13:58:28Z",
       "harness": "codex"
     }
   ]

@@ -1,18 +1,36 @@
-Risk-on, medium conviction — BTC gained 2.1% and 16/20 top caps are green. Ride the alt rebound, but size down: DEX volume contracted 11.2%.
+*Crypto — 2026-09-18* — risk-on (conviction high) | DeFi Mixed: prices broadened, but DEX participation contracted
 
-- DeFi verdict: mixed; stablecoin supply rose 0.3%, but onchain participation weakened.
-- Leaders: SOL +6.0%, ETH +2.7%, BTC +2.1%.
-- Narratives: DEX tokens, privacy, NEAR, and perps.
-- Protocol movers: Tydro +48.0%; Anemoy Capital −46.1%, with no obvious catalyst for either.
-- Fees: Tether $17.13M, Circle $6.94M, Uniswap V4 $4.68M.
-- ETF confirmation remains mixed: latest daily inflow was $160M, while weekly flows were −$427M. [ETF flow monitor](https://axeladlerjr.com/charts/bitcoin-etf-flow-monitor/)
-- No tracked DeFi positions were configured.
+*TVL:* $89.90B (24h n/a)
 
-Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and [today’s log](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-18.md). All data sources succeeded, and the notification was queued through the writable fallback after the default queue was read-only.
+*Top chains*
+1. Ethereum — $50.87B
+2. Solana — $6.05B
+3. Base — $5.69B
 
-## Summary
+*Protocol movers*
+↑ Aera V3 +62.4% ($187M TVL) — no obvious catalyst
+↓ Anemoy Capital −46.1% ($350M TVL) — no obvious catalyst
 
-- Refreshed the full DeFi and macro overview.
-- Preserved the complete token-pick history.
-- Logged source status, yields, movers, and regime.
-- Delivered one combined signal notification.
+*Fees leaders (24h)*
+1. Tether — $17.13M (+1.8% vs 7d avg)
+2. Circle USDC — $6.94M (+1.3%)
+3. Uniswap V4 — $4.66M (+27.1%)
+
+*DEX vol (24h):* $10.06B (−11.0%) — price breadth is not yet converting into onchain participation
+
+*Stables:* $310.98B (+0.3% 24h) — USDe +1.1% was the only notable issuer move
+
+*Real yield (sustainable, ≥$10M, filtered)*
+• WSOL-USDC (Raydium, Solana) — 91.9% apyBase ($36.6M TVL)
+• WETH-USDT (Uniswap V3, Ethereum) — 38.9% apyBase ($113.7M TVL)
+• ETH-USDT (Uniswap V4, Ethereum) — 34.4% apyBase ($29.1M TVL)
+
+*Incentive yield (emissions, ≥$25M)*
+• USDC-AERO (Aerodrome, Base) — 26.1% APY via AERO rewards ($36.0M TVL)
+• sdCRV (Stake DAO, Ethereum) — 12.6% APY via CRV rewards ($39.7M TVL)
+
+*Macro:* BTC +5.0% / ETH +4.6% · F&G 56 (Greed) · breadth 17/20 · BTC ETF flows returned to about $160M inflow on Sep 17
+
+*Position call:* ride strength, do not front-run more leverage; watch DEX volume and a second ETF inflow day for confirmation.
+
+_sources: llama_tvl=ok llama_dex=ok llama_fees=ok llama_stables=ok llama_yields=ok coingecko=ok fng=ok polymarket=ok websearch=ok | var: none_
