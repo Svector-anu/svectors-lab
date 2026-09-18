@@ -1,58 +1,59 @@
-# Market Context (as of 2026-09-17)
+# Market Context (as of 2026-09-18)
 
-> **Take:** rotation — BTC is only +0.6% while 18/20 top caps are green and dominance eased to 58.2%. Conviction: medium.
+> **Take:** chop — BTC is flat over 24h and 13/20 top caps are green, but DEX volume fell 9.6%. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $76,493 (+0.6% 24h, -1.0% 7d) · dominance 58.2% (-0.1 pp since prior refresh)
-- ETH $2,448.44 (+1.7% 24h, -0.6% 7d) · ETH/BTC 0.0320
-- SOL $100.76 (+2.8% 24h, +0.9% 7d)
-- Total mcap $2.631T (-1.3% 24h) · DEX vol $11.30B 24h
-- Breadth: 18/20 green 24h · 5/20 green 7d
-- Fear & Greed: 50 (Neutral) — yesterday 51
+- BTC $76,352 (-0.0% 24h, -0.5% 7d) · dominance 58.1% (-0.1 pp since prior refresh)
+- ETH $2,439.54 (+0.8% 24h, +0.1% 7d) · ETH/BTC 0.0320
+- SOL $101.15 (+2.3% 24h, +2.4% 7d)
+- Total mcap $2.632T (-2.0% 24h) · DEX vol $10.21B 24h
+- Breadth: 13/20 green 24h · 7/20 green 7d
+- Fear & Greed: 56 (Greed) — yesterday 50
 
 ## What Changed Since Last Refresh
-- DeFi TVL rose 2.8% day over day to $88.41B.
+- The regime shifted from rotation to chop as daily breadth fell from 18/20 to 13/20 and DEX volume contracted 9.6%.
+- Fear & Greed rose 6 points into Greed even as total market cap fell 2.0%, a sentiment/participation divergence.
 
 ## Active Narratives
-- **Broad alt rotation** — phase: rising. Evidence: 18/20 top caps are green daily while BTC is only +0.6%.
-- **Privacy** — phase: rising. Evidence: ZEC is #2 in CoinGecko trends and +16.4% in 24h; FIRO is #1 and +12.1%.
-- **DEX rotation** — phase: rising. Evidence: Uniswap V4 volume is +43.9% daily and UNI is #7 in trends at +20.4%.
-- **AI-chain beta** — phase: emerging. Evidence: NEAR is #6 in CoinGecko trends and +19.2% in 24h.
+- **Privacy** — phase: rising. Evidence: ZEC is #2 in CoinGecko trends, +8.4% daily and +34.2% weekly; FIRO is #1 and +11.0% daily.
+- **AI-chain beta** — phase: rising. Evidence: NEAR is #3 in CoinGecko trends and +15.2% in 24h.
+- **DEX-token rebound** — phase: emerging. Evidence: UNI is #6 in trends and +15.0% daily, while Uniswap V4 volume fell 33.2%.
+- **Perps** — phase: rising. Evidence: HYPE gained 9.9% daily and 7.1% weekly among the top 20.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $23.88B (-0.0%)
-- Aave V3: $17.08B (-0.1%)
-- SSV Network: $12.96B (+1.2%)
-- Morpho Blue: $10.28B (+7.2%)
-- Binance staked ETH: $9.19B (+1.2%)
+- Lido: $23.84B (-0.0%)
+- Aave V3: $16.99B (-1.0%)
+- SSV Network: $12.86B (-0.3%)
+- Morpho Blue: $10.22B (+6.8%)
+- Binance staked ETH: $9.11B (-0.6%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $50.22B (n/a)
+- Ethereum: $50.10B (n/a)
 - Solana: $5.87B (n/a)
-- Base: $5.59B (n/a)
+- Base: $5.58B (n/a)
 
 ## Stablecoins
-Total: $312.6B (+0.5% 7d). USDT $183.2B · USDC $75.1B · USDS $6.5B · DAI $4.8B · combined share of mcap 11.9%.
+Total: $311.3B (+0.0% 7d). USDT $183.3B · USDC $73.9B · USDS $6.5B · DAI $4.8B · combined share of mcap 11.8%.
 
 ## Trending (CoinGecko)
-- FIRO — first in CoinGecko trends, +12.1% in 24h
-- ZEC — second in CoinGecko trends, +16.4% in 24h
-- TRUMP — third in CoinGecko trends, +4.5% in 24h
+- FIRO — first in CoinGecko trends, +11.0% in 24h
+- ZEC — second in CoinGecko trends, +8.4% in 24h
+- NEAR — third in CoinGecko trends, +15.2% in 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| No Fed rate change after October 2026 meeting | 48.5% | $0.68M | $0.39M |
-| China invades Taiwan by end of 2026 | 4.2% | $0.55M | $0.49M |
-| United Russia gains most seats in next parliamentary election | 76.5% | $0.49M | $0.79M |
+| China invades Taiwan by end of 2026 | 4.7% | $0.61M | $0.50M |
+| No Fed rate change after October 2026 meeting | 49.5% | $0.59M | $0.57M |
+| United Russia gains most seats in next parliamentary election | 76.5% | $0.54M | $0.82M |
 
 ## Macro Catalysts (next 48h)
-- The market is absorbing the Fed's 25 bp hike; $245.3M of settled spot-crypto ETF outflows argues against chasing the broad daily bounce.
-- The Bank of Japan rate decision on September 18 is the next scheduled macro volatility test.
+- The Bank of Japan rate decision is the next scheduled volatility test; stay defensive until the rates and FX response are visible.
+- Finalized U.S. spot-BTC ETF flows totaled -$746.3M across September 15-16, weakening institutional confirmation for the bounce.
 
 ## Implications for Downstream Skills
-- **token-pick:** ride liquid alt relative strength, but keep sizing defensive; daily breadth is strong while weekly breadth, sentiment, and ETF flows do not confirm.
-- **narrative-tracker:** monitor privacy and DEX rotation for follow-through; both have two independent trend or volume anchors.
+- **token-pick:** watch privacy, NEAR, and HYPE relative strength; avoid chasing the UNI rebound until volume confirms.
+- **narrative-tracker:** monitor DEX-token rebound for confirmation or failure because token price and protocol volume currently diverge.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

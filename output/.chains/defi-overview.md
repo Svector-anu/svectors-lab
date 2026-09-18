@@ -1,19 +1,17 @@
-Take: **rotation** — BTC is only +0.6% while 18/20 top caps are green. **Ride liquid alt strength, but size defensively.**
+Chop — BTC is flat and 13/20 majors are green, but DEX volume fell 9.6%. Conviction: medium.
 
-Conviction: **medium**. Daily breadth and alt strength agree; weekly breadth, neutral sentiment, and $245.3M of settled ETF outflows disagree. The Fed’s 25 bp hike and September 18 Bank of Japan decision remain the main macro risks. [ETF-flow report](https://inflowscan.com/brief/premarket/2026-09-17-btc-etfs-245m-btc-76-474-0-4-arkb-feth-fbtc-lead-redemptions)
+- DeFi verdict: Mixed; stablecoin supply rose 0.3% while participation contracted.
+- Positioning: watch privacy, NEAR, and HYPE strength; avoid chasing UNI until protocol volume confirms.
+- Fear & Greed rose from 50 to 56.
+- Finalized spot-BTC ETF flows totaled −$746.3M across September 15–16, weakening institutional confirmation. [ETF flow tracker](https://www.tftc.io/bitcoin-etf-flows)
+- Sustainable-yield leaders: Raydium WSOL-USDC 115.5%, Uniswap V4 ETH-USDT 55.7%, Uniswap V3 WETH-USDT 44.2%; all passed the skill’s liquidity, stability, confidence, and outlier filters.
+- No tracked positions were configured.
 
-- DeFi verdict: **Mixed** — TVL and DEX volume are rising while stablecoin supply lags.
-- TVL: $88.41B, +2.8% daily and +2.2% weekly.
-- DEX volume: $11.30B, +2.4%.
-- Fear & Greed: 50, Neutral.
-- Leading narratives: broad alt rotation, privacy, and DEX rotation.
-- Positions: `DEFI_MONITOR_NO_CONFIG`; no tracked positions were configured.
-- Sources: all requested sources succeeded.
-- Notification: queued successfully through the writable fallback after the default runner queue was read-only.
+Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md) and recorded the run in [2026-09-18.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-18.md). All nine source groups succeeded. Notification delivery was staged through a writable temporary queue because the workflow’s standard queue was read-only.
 
 ## Summary
 
-- Updated [market-context.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/market-context.md).
-- Preserved the complete token-pick history and added today’s DRV pick.
-- Appended the run results to [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md).
+- Refreshed the decision-ready crypto/DeFi context.
+- Preserved the complete token-pick history.
+- Logged source status, yields, movers, and regime.
 - No follow-up action required.
