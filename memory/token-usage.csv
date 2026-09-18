@@ -364,4 +364,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-18,pr-review,claude-sonnet-5,3339,20711,5618261,101834
 2026-09-18,pr-review,claude-sonnet-5,3190,30173,4177145,95058
 2026-09-18,pr-review,claude-sonnet-5,2602,4279,493447,49140
-2026-09-18,github-trending,codex-default,532659,4141,467072,0
+2026-09-18,token-pick,codex-default,1032794,6115,958080,0
