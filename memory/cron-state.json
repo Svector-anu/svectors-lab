@@ -12,7 +12,7 @@
     "last_success": "2026-09-17T12:12:32Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-17T20:04:01Z",
     "total_runs": 429,
     "total_successes": 102,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.24,
     "last_quality_score": 2,
-    "last_dispatch": "2026-09-17T19:58:53Z",
+    "last_dispatch": "2026-09-18T00:48:05Z",
     "last_failed": "2026-09-17T06:45:29Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-efc5-7d00-9ec0-7b39cf69abc1\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-09-17T06:45:37Z",
     "total_runs": 486,
     "total_successes": 115,
@@ -35,7 +35,7 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-0400-7c93-bf41-408414860808\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-17T20:01:40Z",
     "last_quality_score": 3,
-    "last_dispatch": "2026-09-17T19:58:53Z"
+    "last_dispatch": "2026-09-18T00:48:05Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -213,14 +213,14 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-5776-7981-a2f8-21d25e764c62\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "memory-flush": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-17T12:11:04Z",
     "total_runs": 41,
     "total_successes": 24,
     "total_failures": 17,
     "consecutive_failures": 0,
     "success_rate": 0.59,
-    "last_dispatch": "2026-09-17T12:08:35Z",
+    "last_dispatch": "2026-09-18T00:48:05Z",
     "last_failed": "2026-09-17T06:46:15Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-a472-7162-aa16-11d0243c34c2\"} {\"type\":\"turn.started\"} {\"typ"
   },
