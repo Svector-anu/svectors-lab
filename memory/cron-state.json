@@ -387,15 +387,15 @@
     "last_quality_score": 4
   },
   "pr-review": {
-    "last_status": "dispatched",
+    "last_status": "success",
     "last_failed": "2026-09-17T06:45:08Z",
-    "total_runs": 99,
-    "total_successes": 65,
+    "total_runs": 100,
+    "total_successes": 66,
     "total_failures": 34,
     "consecutive_failures": 0,
     "success_rate": 0.66,
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-9f7c-7550-9a37-daeddba51084\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-18T13:33:17Z",
+    "last_success": "2026-09-18T13:56:19Z",
     "last_quality_score": 3,
     "last_dispatch": "2026-09-18T13:54:41Z"
   },
