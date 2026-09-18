@@ -1,42 +1,42 @@
-*Narrative Tracker — 2026-09-18 (update)*
+*Narrative Tracker — 2026-09-18*
 
-**Take:** WATCH the UNI/DEX rebound; ride stablecoin rails; fade crowded privacy and weakening agent-payment activity.
+**Call:** front-run regulated onchain stocks; avoid chasing privacy and RWA/perps after their moves became consensus.
 
 ### Transitions
 
-- **NEW: DEX/UNI value capture** — attention and derivatives activity accelerated, but protocol-volume confirmation remains mixed. [Evidence](https://coinmarketcap.com/top-stories/6aac2c52ac7e975cd33435c2/)
-- **PROMOTED: stablecoin rails, Rising → Rising/confirmed** — Circle launched Arc with 100+ builders while dtcpay raised $25M. Institutional distribution is widening, but end-user adoption remains unproven. [Circle](https://www.circle.com/pressroom)
+- **NEW:** Regulated onchain stocks — the SEC’s five-year conditional exemption lets qualifying venues trade tokenized NMS shares now. This is a real policy catalyst, not CLARITY hopium. [SEC statement](https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726)
+- **PROMOTED:** Privacy Peak → Peak/confirmed — Zcash scheduled NU7 testnet for October 6 and mainnet for November 5; 25-second blocks add execution to an already crowded story. [NU7 timeline](https://forum.zcashcommunity.com/t/nu7-timeline/57655)
+- **DEMOTED:** Hawkish-Fed shock Peak → Fading — the hike landed, crypto held up, and attention is shifting toward the timing of another increase. [AP](https://apnews.com/article/cbf10411b50040aed24ec5a28e4c0c5a)
+- **DEAD:** Robinhood Chain/Pons — absent from fresh three-day signals after the previous fee and volume slowdown.
 
 ### Reflexivity alerts
 
-- **UNI value capture** — fee-and-burn framing plus the breakout pulled futures open interest 20.8% higher; positioning is accelerating faster than underlying protocol-volume evidence. [Evidence](https://www.cryptotimes.io/2026/09/18/uniswap-token-surges-23-5-as-trading-volume-hits-1-27b/)
-- **ZEC privacy** — NU7 voting and “privacy repricing” reinforced the move despite reports that shielded supply stagnated through much of 2026. [Evidence](https://decrypt.co/378460/zcash-closes-on-1400-after-coinholders-vote-to-keep-bitcoin-style-halvings)
+- **ZEC privacy:** Rally-driven governance attention now has an October testnet milestone capable of keeping leverage engaged.
+- **Tokenized stocks:** Congress failed to advance CLARITY, then the SEC used exemptive authority to create a live permissioned route. The narrative changed the regulatory path itself.
 
 ### Positions
 
-- **WATCH:** DEX/UNI value capture `(3 ↑↑, Mixed)` — @Uniswap, @haydenzadams, @DefiLlama. Bear: short-covering and fee/burn framing are outrunning volume confirmation.
-- **RIDE:** stablecoin rails `(4 ↑, Bull)` — @circle, @Visa, @dtcpay. Bear: institutional integrations still overstate organic payment adoption.
-- **FADE:** privacy/ZEC `(5 →, Mixed)` — @Zcash, @matthuang, @Paradigm. Bear: attention is saturated and shielded usage has not kept pace.
-- **WATCH:** RWA/perps `(5 →, Bull)` — @HyperliquidX, @hosseeb, @trade_xyz. Bear: real adoption, but venue concentration and leverage leave no contrarian edge.
-- **FADE:** agentic payments `(3 ↓, Cope)` — @coinbase, @x402, @circle. Bear: new interfaces and catalog growth do not reverse the latest daily-throughput collapse.
-- **WATCH:** prediction markets `(4 →, Bull)` — @Polymarket, @Kalshi, @RobinhoodApp. Bear: proven utility, no fresh transition.
-- **WATCH:** hawkish central banks `(4 →, Bear)` — @federalreserve, @Bank_of_Japan_e, @CMEGroup. Bear: the rate path is known and much of the shock has been absorbed.
-- **FADE:** CLARITY passage `(4 ↓↓, Cope)` — @SenLummis, @brian_armstrong, @circle. Bear: no credible near-term Senate path.
+- **FRONT-RUN:** Regulated onchain stocks — **3 ↑↑, Bull** — @SECGov, @HesterPeirce, @AtkinsSEC. Bear: issuer objections, volume caps, and permissioning could leave early liquidity thin.
+- **WATCH:** Privacy/confidential execution — **5 →, Bull** — @Zcash, @NEARProtocol, @ElectricCoinCo. Bear: NU7 is dated but not live, while ZEC attention is saturated.
+- **WATCH:** RWA/perps — **5 →, Bull** — @HyperliquidX, @DefiLlama, @hosseeb. Bear: policy validation helps, but crowded leverage and HYPE unlocks weaken entry asymmetry.
+- **WATCH:** Agentic payments — **3 ↑, Bull** — @coinbase, @x402, @AEON_Community. Bear: integrations continue to outrun verified recurring agent spend.
+- **FADE:** CLARITY passage — **4 ↓↓, Cope** — @SenLummis, @brian_armstrong, @circle. Agency relief does not repair the failed 49–50 cloture vote.
+- **WATCH:** Prediction markets — **4 →, Mixed** — @Polymarket, @Kalshi, @RobinhoodApp. Bear: macro repricing demonstrates utility but adds no fresh adoption inflection.
 
 ### Map
 
-- **Emerging:** DEX/UNI value capture
-- **Rising:** stablecoin rails
-- **Peak:** privacy/ZEC, RWA/perps, prediction markets, hawkish central banks
-- **Fading:** agentic payments, CLARITY passage
-- **Dropped:** broad AI-chain beta; Robinhood Chain/Pons
+- **Emerging:** Regulated onchain stocks
+- **Rising:** Agentic payments
+- **Peak:** Privacy/confidential execution, RWA/perps, prediction markets
+- **Fading:** Hawkish-Fed shock, CLARITY passage
+- **Ignored:** Broad AI-chain beta (**2 →, Mixed**); no sector-wide catalyst. Robinhood Chain/Pons (**2 ↓↓, Cope**); now classified dead.
 
-Calibration: RWA-perp volume rose from approximately $85B in January to $470B in June, while HIP-3 approached 50% of Hyperliquid perp volume earlier this summer. [Source](https://www.theblock.co/news/ecosystems/2026-09-17-as-rwa-trading-surges-hyperliquid-dragonflys-qureshi-makes-case-multichain-future-415406)
+DeFiLlama calibration showed DEXs **+52.87%**, data availability **+48.85%**, and perpetuals/derivatives **+45.81%**, supporting high—not emerging—mindshare for exchange/perp beta. [DeFiLlama tracker](https://enterprise.defillama.com/narrative-tracker)
 
-Source quality is lower-confidence public web. Primary X.AI failed: `KEY_UNSET`; `xai http=400 bytes=118`.
+Source quality is lower than normal: `KEY_UNSET`; required request completed with `xai http=400 bytes=118`, so public-web fallback was used.
 
 ## Summary
 
 - Notification queued successfully.
-- No workspace files were modified because this run is read-only.
-- The workflow’s captured output must append the corresponding memory log.
+- No workspace files were modified because this run was read-only.
+- The required log entry could not be appended; this output contains the complete baseline for the next run.
