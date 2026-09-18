@@ -50,6 +50,8 @@ jobs:
         run: bash scripts/tests/test_pr_review_notification_gate.sh
       - name: telegram router tests
         run: bash scripts/tests/test_telegram_route.sh
+      - name: idea-pipeline dev-loop offer tests
+        run: bash scripts/tests/test_idea_pipeline_dev_loop_offer.sh
       - name: webhook capability-path tests
         run: bash scripts/tests/test_webhook_capability_path.sh
       - name: capability mode tests
