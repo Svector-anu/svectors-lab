@@ -401,7 +401,7 @@
   },
   "chain:dev-loop": {
     "last_status": "failed",
-    "last_failed": "2026-09-18T09:54:10Z",
+    "last_failed": "2026-09-18T10:00:33Z",
     "last_success": "2026-09-17T18:06:45Z",
     "last_dispatch": "2026-09-18T09:51:44Z"
   },
