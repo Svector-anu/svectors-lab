@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-18T00:50:29Z",
-  "quality_score": 4,
-  "assessment": "Substantive, fresh, and decision-oriented with explicit FADE/WATCH calls and evidence links, though it lacks a crisp opening regime verdict and leaves several calibration and political claims insufficiently sourced.",
+  "last_analyzed": "2026-09-18T09:54:16Z",
+  "quality_score": 3,
+  "assessment": "Decision-grade and strategy-aligned with clear calls and some linked evidence, but several major narrative ratings and claims—especially agent-payment throughput, CLARITY timing, and protocol-volume confirmation—lack direct supporting citations, limiting verification.",
   "flags": [],
   "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-08",
-      "score": 3,
-      "ts": "2026-09-08T01:32:27Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-08",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T00:50:29Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 3,
+      "ts": "2026-09-18T09:54:16Z",
       "harness": "codex"
     }
   ]
