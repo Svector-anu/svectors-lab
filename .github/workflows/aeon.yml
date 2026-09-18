@@ -187,9 +187,7 @@ jobs:
           fi
 
       - name: Checkout repo
-        # create-prove must observe a target branch without writing telemetry back
-        # into the branch whose behavior it is trying to attest.
-        if: steps.work.outputs.mode != '' && steps.skill.outputs.name != 'create-prove'
+        if: steps.work.outputs.mode != ''
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           token: ${{ secrets.GH_GLOBAL || secrets.GITHUB_TOKEN }}
@@ -1911,7 +1909,8 @@ jobs:
         # this step's `git add -A` covers write-mode skills too and running it
         # unconditionally would risk committing a partial/broken mid-edit state
         # from a genuinely failed write-mode run.)
-        if: steps.work.outputs.mode != ''
+        # create-prove must not write telemetry into the branch it attests.
+        if: steps.work.outputs.mode != '' && steps.skill.outputs.name != 'create-prove'
         env:
           STATE_BACKEND: ${{ vars.STATE_BACKEND }}
         run: |
