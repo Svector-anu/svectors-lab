@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-18T12:35:22.076278Z",
+  "generatedAt": "2026-09-18T12:35:33.59898Z",
   "generator": "eyebrow/0.4.2",
   "artifacts": [
     {
@@ -1147,10 +1147,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "565915c291914fbcb0a3800d73c6c45c16b90ae59e28d6b9487f69cc355aae38"
+          "hash": "995c9defc776ad8a267bbdb9d5f10fdee4fec11f73ec63b2ef497685f7915330"
         }
       ],
-      "contentHash": "sha256-d37755816078a64a585127d8a62c707adf014a52a9b0201a67b5223205312fd3",
+      "contentHash": "sha256-22171aa5bf1584700ee4b240810954922ceae0980d098809b006bb0ce60ee045",
       "discoveredFrom": "skills/idea-pipeline/SKILL.md"
     },
     {

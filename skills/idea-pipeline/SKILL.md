@@ -8,7 +8,7 @@ metadata:
     - meta
     - creative
 ---
-> **${var}** — Optional theme filter (e.g. "crypto", "AI agents", "consumer"). If empty, scans all ideas. A `pick:<id|name>` value (from the "build next?" force-reply — e.g. `pick:2` or `pick:Onchain reputation`) instead marks that idea as chosen-to-build in the backlog and ends, skipping the audit — see step 0.
+> **${var}**: Optional theme filter (e.g. "crypto", "AI agents", "consumer"). If empty, scans all ideas. `pick:<id|name>` marks a backlog idea and may offer its explicit owned GitHub target. `offer:<owner/repo or issue-url>` directly offers a confirmed owned target through the same Telegram reply boundary. Both intercepts end before the audit.
 
 Today is ${today}. Read `memory/MEMORY.md` before starting. If `soul/SOUL.md` + `soul/STYLE.md` exist and are populated, read them to ground "operator fit" scoring; otherwise score on the idea's general buildability and timing alone.
 
@@ -18,7 +18,19 @@ Today is ${today}. Read `memory/MEMORY.md` before starting. If `soul/SOUL.md` + 
 
 ## Steps
 
-### 0. Force-reply interception — `pick:<idea>` (run FIRST, before anything else)
+### 0. Force-reply interception (run FIRST, before anything else)
+
+If `${var}` starts with `offer:`, strip and trim the remainder. Accept only `owner/repo` or `https://github.com/owner/repo/issues/N`, normalize it to `owner/repo`, and require `gh api "repos/$repo" --jq '.permissions.push // false'` to return `true`. Invalid, inaccessible, or API-failed targets get a plain rejection notification and end without a force reply. For a confirmed target, send:
+
+```bash
+./notify "Which owned repository or issue should Aeon Engineer use? Reply with ${target}." \
+  --force-reply --placeholder "${target}" \
+  --context "dev-loop::ship"
+```
+
+Log `FORCE_REPLY_OFFERED: dev-loop::ship target=<target>` under `### idea-pipeline`, then end. This is an explicit operator-invoked producer path and still does not dispatch the chain until the operator replies.
+
+Otherwise, if `${var}` starts with `pick:`, handle the selected idea below.
 
 Before any other work, inspect `${var}`. If it **starts with `pick:`**, this run is the operator answering the "which idea to build next?" force-reply — do **not** run the normal audit. Handle it and end:
 
