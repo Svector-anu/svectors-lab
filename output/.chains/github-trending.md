@@ -1,32 +1,34 @@
-*GitHub Trending — 2026-09-17*
+ℹ️ GitHub Trending — 2026-09-18
+
+*GitHub Trending — 2026-09-18*
 
 *Top pick* — [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)
-Cloudflare turned security review into a portable, verification-gated agent workflow—the most reusable release in today’s slate.
+The standout is a six-phase agent audit workflow that requires fresh-agent verification before findings become final.
 
 *AI/ML*
-• [JustVugg/colibri](https://github.com/JustVugg/colibri) — ★ 872 today (35.6k total) · C · [ACCELERATING]
-Streams MoE experts across VRAM, RAM, and disk, making 744B-class inference practical on local hardware.
+• [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) — ★ 1,319 today (4.9k total) · TypeScript · ACCELERATING
+Gives shell-capable agents a separate visible browser window while preserving the user’s active session.
+
+• [TencentCloud/Octop](https://github.com/TencentCloud/Octop) — ★ 571 today (3.8k total) · Python · ACCELERATING
+Packs multi-user isolation, approvals, MCP connectors, memory and IM channels into one self-hosted process.
 
 *Devtools*
-• [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) — ★ 3,606 today (10.0k total) · JavaScript · [ACCELERATING]
-Adds isolated audit phases and independent claim verification instead of trusting one agent’s vulnerability verdict.
+• [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) — ★ 3,019 today (12.2k total) · JavaScript · ACCELERATING
+Makes architecture coverage, candidate validation and independent verification explicit artifacts instead of hidden agent reasoning.
 
-• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 3,290 today (34.2k total) · Go · [ACCELERATING]
-Combines deterministic checks with repository-aware agents that place findings on exact changed lines.
+• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 2,724 today (36.2k total) · Go · ACCELERATING
+Combines deterministic per-file rule matching with repository-aware LLM reviews and precise line comments.
 
-• [alphaXiv/OpenResearch](https://github.com/alphaXiv/OpenResearch) — ★ 940 today (5.0k total) · Rust · [RETURNING]
-Makes parallel research runs reproducible through isolated worktrees and immutable commit archives.
-
-• [abue-ammar/tinycast](https://github.com/abue-ammar/tinycast) — ★ 738 today (6.0k total) · Swift · [ACCELERATING]
-Runs existing Raycast extensions in native SwiftUI while keeping launcher, hotkeys, and clipboard under 100MB.
+• [coder/coder](https://github.com/coder/coder) — ★ 478 today (15.1k total) · Go · RETURNING
+Runs agents in Terraform-defined workspaces while keeping model credentials in the control plane.
 
 *Infra*
-• [cilium/cilium](https://github.com/cilium/cilium) — ★ 153 today (25.3k total) · Go · [RETURNING]
-Three patch releases landed yesterday across maintained branches of the eBPF networking and security stack.
+• [rustfs/rustfs](https://github.com/rustfs/rustfs) — ★ 559 today (33.0k total) · Rust · RETURNING
+Ships distributed S3 storage plus CI-tracked compatibility matrices and an opt-in Iceberg REST catalog.
 
-*Other*
-• [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) — ★ 912 today (78.3k total) · Java · [RETURNING]
-A mature reverse-engineering suite is surging again, outside the app, infra, data, and agent-tool buckets.
+*Web/Apps*
+• [asciimoo/hister](https://github.com/asciimoo/hister) — ★ 842 today (4.7k total) · Go · RETURNING
+Indexes visited-page and local-file contents privately, then exposes retrieval through web, terminal and MCP.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/20
+sources: trending=ok · gh_api=ok · kept 7/17
