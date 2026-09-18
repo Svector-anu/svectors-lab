@@ -1,17 +1,14 @@
-⚠️ PR Review: svectors-lab#93
-
 *PR Review — 2026-09-18*
 Reviewed 1, skipped 0.
-- Svector-anu/svectors-lab#93: blocked — 1 critical, 1 issue
+- Svector-anu/svectors-lab#93: approve-ready — 0 critical, 0 issues
 
-**Verdict**: blocked: dead commit-safety guard in create-prove's nested dispatch
+**feat: require live dev loop proof** (SHA `6742ac7`) — both findings from the prior review are fixed:
+- `create-prove` now instructs setting a `prove-`-prefixed `dispatch_id` on its nested target-skill dispatch, matching `aeon.yml`'s commit-skip guard so the proved skill's run can't push to the immutable PR head branch.
+- `proof-missing` is now excluded from the skill-health lifetime ratio in `chain-runner.yml`, same treatment as `no-action`/`invalid-dispatch`.
 
-[CRITICAL] `skills/create-prove/SKILL.md:48` — the nested target-skill dispatch never sets a `prove-`-prefixed `dispatch_id`, so `aeon.yml`'s new commit-skip guard (`!startsWith(inputs.dispatch_id, 'prove-')`) never engages for it. The skill run being proved can still commit/push to the contributor's PR head branch that the proof is supposed to leave immutable — the SHA recheck in step 6 stops a false "proven" receipt, but the unwanted commit would already have landed.
+Cross-checked the PR's two live-proof claims (runs 35345681403 and 35346432212) directly via `gh run view` and the `aeon-proof` receipts on PR #94 — both completed successfully and match. All 9 CI checks pass at head.
 
-[ISSUE] `.github/workflows/chain-runner.yml:640` — `proof-missing` isn't excluded from the skill-health lifetime ratio the way `no-action` is, even though create-prove's current scope (single-skill-file PRs only) means most real feature PRs — multi-file changes like this PR itself — will hit `PROVE_UNSUPPORTED` and land here as `proof-missing` on every run, dragging down `chain:dev-loop`'s recorded reliability for scope reasons, not regressions.
+https://github.com/Svector-anu/svectors-lab/pull/93
 
-Everything else checked out clean: dispatch budget accounting, receipt schema/parsing, the codex pending-dir write fix, and the doc/catalog counts.
-
-Review: https://github.com/Svector-anu/svectors-lab/pull/93#pullrequestreview
-
-🔗 https://github.com/Svector-anu/svectors-lab/pull/93
+**Verdict**: approve-ready — no blockers.
+<!-- aeon-review:{"schema":1,"target":"Svector-anu/svectors-lab#93","sha":"6742ac76742dd97d9edee64560ee82d84eb868b3","verdict":"approve-ready","critical":0,"issues":0} -->
