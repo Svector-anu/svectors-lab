@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T11:22:17Z",
+  "last_analyzed": "2026-09-18T13:05:40Z",
   "quality_score": 4,
-  "assessment": "Substantive PR review with specific, verifiable evidence and clear decision-grade verdict.",
+  "assessment": "Substantive technical findings with specific file/line references, clear verdict, and actionable recommendations; verifiable against linked GitHub review",
   "flags": [],
   "avg_score": 3.33,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T09:01:16Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T11:22:17Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T13:05:40Z",
       "harness": "claude"
     }
   ]
