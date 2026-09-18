@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T10:29:04Z",
-  "quality_score": 3,
-  "assessment": "Acceptable and verifiable approval verdict with a concrete review link, but too terse to show what was checked or substantiate the no-blockers conclusion.",
+  "last_analyzed": "2026-09-18T10:33:09Z",
+  "quality_score": 4,
+  "assessment": "Clear, conclusion-first PR verdict with concrete verification evidence, target SHA, test/check status, and machine-readable review metadata, though it omits test and check names.",
   "flags": [],
   "avg_score": 3.4,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T08:41:39Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 3,
       "ts": "2026-09-18T10:29:04Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T10:33:09Z",
       "harness": "codex"
     }
   ]
