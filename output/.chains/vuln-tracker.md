@@ -1,20 +1,24 @@
-Vuln tracker completed.
+*Vuln Tracker — 2026-09-18*
 
-- ★172,257 secured across 10 repos
-- ★484,574 in flight across 16 repos
-- 2 PRs need answers: `NousResearch/hermes-agent#94342`, `vllm-project/semantic-router#3425`
-- 14 stale PRs
-- 11 disclosure drafts
-- Escalate: `ZSvirt/zsvirt` MEDIUM draft, 25 days old
-- Operator action: `ZSvirt/zsvirt` CRITICAL disclosure
-- No submitted PVR files matched the required schema
-- No new PR lifecycle transitions since today’s earlier poll
+*Disclosure queue*
 
-Notification delivery failed because the runner-owned queue is read-only; the complete payload remains staged locally.
+disclosure queue: 1 past threshold (of 11 drafts).
 
-## Summary
+ESCALATE:
+- ZSvirt/zsvirt — MEDIUM, 26d old (threshold: 14d). Automated email delivery remains blocked after 2 attempts because `svector.xyz` is not verified in Resend.
 
-- Updated [vuln-followup.md](/home/runner/work/svectors-lab/svectors-lab/memory/topics/vuln-followup.md)
-- Appended the run to [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md)
-- Staged `.pending-notify-temp/vuln-tracker-2026-09-17.md`
-- Status: `VULN_TRACKER_OK`
+operator-todo (1):
+- ZSvirt/zsvirt — CRITICAL, 26d — human-only disclosure; send manually or explicitly approve an alternate private channel.
+
+in-window (2):
+- NeoSoul-AI/neotrade-wallet-sdk — MEDIUM, 9d — auto-send armed; same Resend domain blocker.
+- amirh00sain/SpiderPanel — HIGH, 2d — auto-send ready.
+
+cleanup candidates (7):
+- DigitalShieldOfficial/USDTPAY-woocommerce — sent
+- amirh00sain/SpiderPanel (2026-08-25) — email sent
+- genspark-ai/genoffice — submitted PVR
+- guillaumemeyer/watermarks-remover — accepted/fixed
+- jlcodes99/cockpit-tools — sent
+- pacifio/atlas — sent
+- z-fi/zFi — sent/discussed
