@@ -213,10 +213,10 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-5776-7981-a2f8-21d25e764c62\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "memory-flush": {
-    "last_status": "dispatched",
-    "last_success": "2026-09-18T00:50:52Z",
-    "total_runs": 42,
-    "total_successes": 25,
+    "last_status": "success",
+    "last_success": "2026-09-18T23:54:28Z",
+    "total_runs": 43,
+    "total_successes": 26,
     "total_failures": 17,
     "consecutive_failures": 0,
     "success_rate": 0.6,
