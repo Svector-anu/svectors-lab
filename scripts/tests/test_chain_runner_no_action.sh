@@ -29,9 +29,10 @@ grep -q 'invalid-dispatch' "$TMP/guard.sh" && grep -q 'no-action' "$TMP/guard.sh
 printf 'echo REACHED_STATE_WRITE\n' >> "$TMP/guard.sh"
 
 run_status() {
-  local failed="$1" no_action="$2" env_file="$TMP/env"
+  local failed="$1" no_action="$2" proof_missing="${3:-false}" env_file="$TMP/env"
   : > "$env_file"
   CHAIN="dev-loop" CHAIN_FAILED="$failed" CHAIN_NO_ACTION="$no_action" \
+    CHAIN_PROOF_MISSING="$proof_missing" \
     GITHUB_ENV="$env_file" bash "$TMP/status.sh"
   local rc=$?
   STATUS_RESULT="$(sed -n 's/^CHAIN_STATUS=//p' "$env_file" | tail -1)"
@@ -65,6 +66,16 @@ out=$(run_guard "$STATUS_RESULT"); rc=$?
 [ "$rc" -eq 0 ] && echo "$out" | grep -q 'REACHED_STATE_WRITE' \
   && pass "failure still reaches the cron-state write" \
   || bad "failure must reach cron-state write (rc=$rc)"
+
+# review without behavioral evidence: distinct failure status and reliability write.
+run_status false false true; rc=$?
+[ "$rc" -eq 1 ] && [ "$STATUS_RESULT" = "proof-missing" ] \
+  && pass "missing proof emits CHAIN_STATUS=proof-missing" \
+  || bad "missing proof should emit proof-missing and exit 1 (status=$STATUS_RESULT rc=$rc)"
+out=$(run_guard "$STATUS_RESULT"); rc=$?
+[ "$rc" -eq 0 ] && echo "$out" | grep -q 'REACHED_STATE_WRITE' \
+  && pass "proof-missing reaches the cron-state reliability write" \
+  || bad "proof-missing must reach cron-state write (rc=$rc)"
 
 # Normal reviewed completion: unchanged success status and reliability write.
 run_status false false; rc=$?

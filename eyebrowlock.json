@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-18T09:27:45.200988Z",
+  "generatedAt": "2026-09-18T11:53:45.676899Z",
   "generator": "eyebrow/0.4.2",
   "artifacts": [
     {
@@ -841,10 +841,10 @@
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "6372a28b7461e8ac19e639763f967c0ddbeee20a32a932aed69f29d44bb00495"
+          "hash": "2defa18c1ce89f0fe920681f2ad6018c3792f68f6ae017cb7864f3f49e99fee0"
         }
       ],
-      "contentHash": "sha256-36f45d8c5f15b0d28e72e8aa1fa08cb2ac29b8464f1ba364b24ec114b3ec2df6",
+      "contentHash": "sha256-3583f7200b539cba9ea11967a0d3e1b72f8df60065278c2f958db2b59b9643ba",
       "discoveredFrom": "skills/feature/SKILL.md"
     },
     {
@@ -1954,6 +1954,26 @@
       ],
       "contentHash": "sha256-d511b0f4a4d2326e03bbfe113c99de6eb4b7fcfc780bef42b68856e4a1b8ba4f",
       "discoveredFrom": "skills/install-skill/SKILL.md"
+    },
+    {
+      "id": "c636e1b4782ecd09",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "create-prove",
+      "source": {
+        "kind": "local",
+        "ref": "skills/create-prove"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "a9754db8973b801ac4bfd3e6f94d04114a015419cafb15f6db7e89f4a208a008"
+        }
+      ],
+      "contentHash": "sha256-e8b26ff00aef443b09cd57413fbcbe999b0dc20c90baf0a179ff1037dc2c31b8",
+      "discoveredFrom": "skills/create-prove/SKILL.md"
     },
     {
       "id": "c87437853e0ee112",
