@@ -25,6 +25,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-18 | daily (web) | Cisco ISE KEV, Elliptic Decode, agent workflow ROI |
 | 2026-09-17 | daily update (web) | Arc mainnet, wallet malware, Copilot Rust |
 | 2026-09-17 | daily (web) | crypto tax, CLARITY blocked, agent controls |
 | 2026-09-14 | daily (web) | router leakage, AI policy, 5% Treasury |

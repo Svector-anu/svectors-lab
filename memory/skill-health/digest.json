@@ -1,19 +1,13 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-17T16:58:56Z",
-  "quality_score": 2,
-  "assessment": "Substantive and linked, but it lacks an explicit regime verdict and position calls, while claiming workspace files were updated during a read-only run, making the final output materially unverifiable.",
+  "last_analyzed": "2026-09-18T17:27:40Z",
+  "quality_score": 3,
+  "assessment": "Substantive, timely, and source-linked, but mostly a general tech/security digest rather than a decision-grade crypto signal; it lacks a regime verdict and explicit front-run/ride/fade/watch calls.",
   "flags": [
-    "unverifiable_claim"
+    "low_quality"
   ],
-  "avg_score": 2.07,
+  "avg_score": 2.1,
   "history": [
-    {
-      "date": "2026-08-28",
-      "score": 2,
-      "ts": "2026-08-28T22:44:02Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-29",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-17",
       "score": 2,
       "ts": "2026-09-17T16:58:56Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 3,
+      "ts": "2026-09-18T17:27:40Z",
       "harness": "codex"
     }
   ]
