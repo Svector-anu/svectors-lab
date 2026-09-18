@@ -35,6 +35,7 @@
 set -uo pipefail
 . "$RH_LIB/envelope.sh"
 . "$RH_LIB/mcp-translate.sh"
+. "$RH_LIB/credential-errors.sh"
 
 command -v codex >/dev/null 2>&1 || {
   echo "codex CLI not found (npm i -g @openai/codex)" >&2; exit 1; }
@@ -123,9 +124,15 @@ ${PROMPT}"
 ${PROMPT}"
 
 EVENTS="$RH_TMPDIR/codex-events.jsonl"
-printf '%s' "$PROMPT" | codex "${ARGS[@]}" ${MCP_ARGS[@]+"${MCP_ARGS[@]}"} - > "$EVENTS"
+CODEX_ERR="$RH_TMPDIR/codex-stderr.txt"
+printf '%s' "$PROMPT" | codex "${ARGS[@]}" ${MCP_ARGS[@]+"${MCP_ARGS[@]}"} - > "$EVENTS" 2> "$CODEX_ERR"
 rc=$?
+cat "$CODEX_ERR" >&2
 if [ $rc -ne 0 ]; then
+  if reason=$(credential_degraded_reason codex "$CODEX_ERR" "$EVENTS"); then
+    echo "CREDENTIAL_DEGRADED: codex: $reason; run 'aeon auth --harness codex' and replace CODEX_AUTH" >&2
+    exit $rc
+  fi
   # 300 chars silently discarded the actual error whenever it was longer
   # than that; widened to match claude.sh's own harness-adapter precedent.
   echo "codex exited $rc: $(tail -c 4000 "$EVENTS" | tr '\n' ' ')" >&2
