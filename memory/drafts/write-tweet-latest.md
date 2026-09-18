@@ -1,23 +1,23 @@
-tweet drafts: privacy needs execution
+tweet drafts: agentic payments need recurring usage
 
 — one-liner —
-1a. privacy narratives fade. private execution becomes infrastructure
-1b. privacy that only hides balances is a feature. privacy that can execute is a product
+1a. agent payments need repeat customers, not cumulative counters
+1b. x402 has an adoption story. the latest daily activity tells a different one
 
 — two-punch —
-2a. privacy is moving from a token narrative to an execution layer. the protocols that make private intent usable will outlast the trade
-2b. $70m in confidential tvl sounds like adoption. if rewards triggered the deposits, retention after incentives is the actual test
+2a. x402 fell from roughly 189k daily transactions to 16,265. cumulative charts can hide a live demand problem
+2b. agents paying agents is still the right direction. but integrations are supply, recurring spend is demand
 
 — paragraph —
-3a. privacy is finally moving past hiding balances. confidential intents let users express an outcome without exposing the route. watch the execution layer, not just the privacy token beta
-3b. the privacy trade is real, but the clean signal is not a token pumping. it is users moving capital into confidential execution. if that capital stays after rewards cool, the narrative became infrastructure
+3a. i still believe agents need native payment rails. but a growing integration list is not recurring demand. when daily x402 activity falls from roughly 189k to 16,265, the useful question is not how many agents can pay. it is how many keep coming back
+3b. agent payments should be measured like a product, not a protocol launch. repeat buyers, repeat sellers, useful services. cumulative transactions look good forever. current usage tells you whether anyone still needs the rail
 
 — long tweet —
-4a. privacy in crypto used to mean hiding a transfer. the more useful version hides the machinery around an intent: the route, counterparties and execution path. that is why confidential execution matters more than another privacy token cycle. the trade can fade and the product can still win
-4b. near confidential intents crossing $70m tvl is interesting, but the snapshot reward makes the number reflexive. incentives pull deposits, deposits trigger attention, attention pulls more deposits. i would ride the privacy narrative and watch retention. if capital stays when the reward loop cools, confidential execution has a real product signal
+4a. i want agents to discover a service, pay for it and finish the job without asking a human for an api key. that thesis has not changed. the evidence bar should still be recurring spend. x402 dropping from roughly 189k daily transactions to 16,265 is not a reason to abandon agent payments. it is a reason to stop treating cumulative counters and integration announcements as product-market fit
+4b. agent payment infrastructure is getting judged by the easiest numbers to grow: supported wallets, listed services and lifetime transactions. the harder test is whether useful buyers return. x402's latest daily activity fell from roughly 189k transactions to 16,265. build the rail, yes. but watch repeat demand before calling the machine economy live
 
 — thread opener —
-5a. privacy is becoming an execution problem, not just a transaction problem. that changes which products matter and which tokens are only borrowing the narrative
-5b. $70m in confidential tvl is not the end of the privacy thesis. it is the start of the harder question: did users arrive for private execution or for the reward snapshot?
+5a. i still think agents paying for services is inevitable. but x402 falling from roughly 189k daily transactions to 16,265 shows why cumulative adoption charts are not enough. the machine economy needs retention
+5b. the agent payment stack is filling up faster than agent demand. wallets, protocols and service catalogs keep shipping. recurring autonomous spend is still the part that has to prove itself
 
-best: #4b — it separates the trade from the product signal and gives a clear ride/watch position
+best: #4a — keeps the thesis, names the failed evidence test, and lands on the metric that matters
