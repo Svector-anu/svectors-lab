@@ -1,42 +1,31 @@
 *Narrative Tracker — 2026-09-18*
 
-**Call:** front-run regulated onchain stocks; avoid chasing privacy and RWA/perps after their moves became consensus.
+privacy is still the loudest trade, but the fresh move is broader: ride DEX infrastructure, watch AI compute, fade crowded ZEC and x402 headlines.
 
-### Transitions
+TRANSITIONS
+• NEW: DEX infrastructure — UNI returned to the trend board after 15 days while aggregate DEX volume still lagged the rally; this is a price-led probe, not confirmed usage. https://www.cryptocatalyst.news/articles/2026-09-18-crypto-research-morning-brief
+• NEW: AI-compute L1 — NEAR held the trend board for a second day; persistence upgrades it from a one-session probe, but it still lacks a fresh fundamental catalyst. https://www.cryptocatalyst.news/articles/2026-09-18-crypto-research-morning-brief
+• DEMOTED: agentic payments Rising → Fading — a fresh x402 article recycled cumulative adoption while acknowledging that meme activity inflated transactions and USDC captures 98.8% of agent-driven value. https://247wallst.com/investing/cryptocurrency/2026/09/18/ai-agents-are-starting-to-pay-for-things-in-crypto-which-coin-do-they-use-xrp-solana-or-usdc/
+• DEAD: Robinhood Chain/Pons — absent again from fresh three-day signals.
 
-- **NEW:** Regulated onchain stocks — the SEC’s five-year conditional exemption lets qualifying venues trade tokenized NMS shares now. This is a real policy catalyst, not CLARITY hopium. [SEC statement](https://www.sec.gov/newsroom/speeches-statements/atkins-innovation-exemption-bridge-toward-durable-rulemaking-091726)
-- **PROMOTED:** Privacy Peak → Peak/confirmed — Zcash scheduled NU7 testnet for October 6 and mainnet for November 5; 25-second blocks add execution to an already crowded story. [NU7 timeline](https://forum.zcashcommunity.com/t/nu7-timeline/57655)
-- **DEMOTED:** Hawkish-Fed shock Peak → Fading — the hike landed, crypto held up, and attention is shifting toward the timing of another increase. [AP](https://apnews.com/article/cbf10411b50040aed24ec5a28e4c0c5a)
-- **DEAD:** Robinhood Chain/Pons — absent from fresh three-day signals after the previous fee and volume slowdown.
+REFLEXIVITY ALERT
+• privacy/ZEC — FIRO and ZEC held two of the top three trend slots while ZEC reached a sixth consecutive day; the privacy story is pulling flows across proxies faster than fresh usage evidence is arriving.
+• x402 — cumulative transaction and agent counts keep manufacturing adoption optics even as published analysis says meme traffic overstated real service purchases.
 
-### Reflexivity alerts
+POSITIONS
+• RIDE: DEX infrastructure (3 ↑↑, Bull) — @Uniswap, @arbitrum, @DefiLlama — bear: UNI’s return is price-led and DEX volume has not confirmed participation.
+• WATCH: AI-compute L1 (3 ↑, Bull) — @NEARProtocol, @NEARAIx, @ilblackdragon — bear: two trending sessions without a new catalyst can unwind as beta.
+• FADE: privacy/ZEC (5 ↑, Mixed) — @Zcash, @matthuang, @Paradigm — bear: six straight trend days and cross-proxy chasing leave little contrarian edge.
+• WATCH: RWA/perps (5 →, Bull) — @HyperliquidX, @hosseeb, @trade_xyz — HIP-3 neared 50% of Hyperliquid perp volume earlier this summer, but leverage and concentration are crowded. https://www.theblock.co/news/ecosystems/2026-09-17-as-rwa-trading-surges-hyperliquid-dragonflys-qureshi-makes-case-multichain-future-415406
+• WATCH: stablecoin rails (4 →, Bull) — @circle, @Mastercard, @Ripple — bear: settlement expansion still overstates end-user payment demand.
+• FADE: agentic payments (3 →, Cope) — @coinbase, @circle, @x402 — bear: real autonomous purchases remain much smaller than cumulative headline activity.
+• FADE: CLARITY passage (3 ↓↓, Cope) — @SenLummis, @brian_armstrong, @circle — bear: the failed Senate vote removed the near-term catalyst.
+• WATCH: prediction markets (4 →, Mixed) — @Kalshi, @Polymarket, @RobinhoodApp — bear: roughly 80% of Kalshi volume since July 2024 is sports, and fresh court setbacks raise regulatory risk. https://www.axios.com/2026/09/15/us-hispanic-chamber-of-commerce-kalshi-ushcc
 
-- **ZEC privacy:** Rally-driven governance attention now has an October testnet milestone capable of keeping leverage engaged.
-- **Tokenized stocks:** Congress failed to advance CLARITY, then the SEC used exemptive authority to create a live permissioned route. The narrative changed the regulatory path itself.
+MAP
+Emerging: AI-compute L1
+Rising: DEX infrastructure
+Peak: privacy/ZEC, RWA/perps, stablecoin rails, prediction markets
+Fading: agentic payments, CLARITY passage
 
-### Positions
-
-- **FRONT-RUN:** Regulated onchain stocks — **3 ↑↑, Bull** — @SECGov, @HesterPeirce, @AtkinsSEC. Bear: issuer objections, volume caps, and permissioning could leave early liquidity thin.
-- **WATCH:** Privacy/confidential execution — **5 →, Bull** — @Zcash, @NEARProtocol, @ElectricCoinCo. Bear: NU7 is dated but not live, while ZEC attention is saturated.
-- **WATCH:** RWA/perps — **5 →, Bull** — @HyperliquidX, @DefiLlama, @hosseeb. Bear: policy validation helps, but crowded leverage and HYPE unlocks weaken entry asymmetry.
-- **WATCH:** Agentic payments — **3 ↑, Bull** — @coinbase, @x402, @AEON_Community. Bear: integrations continue to outrun verified recurring agent spend.
-- **FADE:** CLARITY passage — **4 ↓↓, Cope** — @SenLummis, @brian_armstrong, @circle. Agency relief does not repair the failed 49–50 cloture vote.
-- **WATCH:** Prediction markets — **4 →, Mixed** — @Polymarket, @Kalshi, @RobinhoodApp. Bear: macro repricing demonstrates utility but adds no fresh adoption inflection.
-
-### Map
-
-- **Emerging:** Regulated onchain stocks
-- **Rising:** Agentic payments
-- **Peak:** Privacy/confidential execution, RWA/perps, prediction markets
-- **Fading:** Hawkish-Fed shock, CLARITY passage
-- **Ignored:** Broad AI-chain beta (**2 →, Mixed**); no sector-wide catalyst. Robinhood Chain/Pons (**2 ↓↓, Cope**); now classified dead.
-
-DeFiLlama calibration showed DEXs **+52.87%**, data availability **+48.85%**, and perpetuals/derivatives **+45.81%**, supporting high—not emerging—mindshare for exchange/perp beta. [DeFiLlama tracker](https://enterprise.defillama.com/narrative-tracker)
-
-Source quality is lower than normal: `KEY_UNSET`; required request completed with `xai http=400 bytes=118`, so public-web fallback was used.
-
-## Summary
-
-- Notification queued successfully.
-- No workspace files were modified because this run was read-only.
-- The required log entry could not be appended; this output contains the complete baseline for the next run.
+Calibration: DefiLlama’s narrative tracker lists memes at +35.93%, $33.886B market cap and $2.621B volume; HIP-3 approached 50% of Hyperliquid perp volume earlier this summer. Source confidence: lower — public-web fallback after KEY_UNSET and xai http=400.

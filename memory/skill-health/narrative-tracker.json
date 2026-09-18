@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-18T13:57:18Z",
+  "last_analyzed": "2026-09-18T19:51:49Z",
   "quality_score": 4,
-  "assessment": "Conclusion-first, actionable, and mostly well-sourced with explicit position calls, transition logic, risks, and honest disclosure of fallback sourcing; some precise calibration figures and weaker narrative classifications lack direct supporting evidence.",
+  "assessment": "Strong, conclusion-first and decision-grade narrative map with explicit positioning, caveats, freshness signals, and several source links; however, some material claims and exact calibration figures lack direct citations, reducing verifiability.",
   "flags": [],
-  "avg_score": 2.5,
+  "avg_score": 2.57,
   "history": [
-    {
-      "date": "2026-09-08",
-      "score": 2,
-      "ts": "2026-09-08T15:21:24Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-08",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T13:57:18Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T19:51:49Z",
       "harness": "codex"
     }
   ]
