@@ -24,7 +24,7 @@ awk '
   on && /^          STATE_FILE="memory\/cron-state\.json"$/ { exit }
   on { print }
 ' "$WORKFLOW" | sed 's/^          //' > "$TMP/guard.sh"
-grep -q 'invalid-dispatch' "$TMP/guard.sh" && grep -q 'no-action' "$TMP/guard.sh" \
+grep -q 'invalid-dispatch' "$TMP/guard.sh" && grep -q 'no-action' "$TMP/guard.sh" && grep -q 'proof-missing' "$TMP/guard.sh" \
   || { echo "FAIL: cron-state extraction anchor drifted" >&2; cat "$TMP/guard.sh" >&2; exit 1; }
 printf 'echo REACHED_STATE_WRITE\n' >> "$TMP/guard.sh"
 
@@ -73,9 +73,9 @@ run_status false false true; rc=$?
   && pass "missing proof emits CHAIN_STATUS=proof-missing" \
   || bad "missing proof should emit proof-missing and exit 1 (status=$STATUS_RESULT rc=$rc)"
 out=$(run_guard "$STATUS_RESULT"); rc=$?
-[ "$rc" -eq 0 ] && echo "$out" | grep -q 'REACHED_STATE_WRITE' \
-  && pass "proof-missing reaches the cron-state reliability write" \
-  || bad "proof-missing must reach cron-state write (rc=$rc)"
+[ "$rc" -eq 0 ] && ! echo "$out" | grep -q 'REACHED_STATE_WRITE' \
+  && pass "proof-missing skips the cron-state reliability write" \
+  || bad "proof-missing must not reach cron-state write (rc=$rc)"
 
 # Normal reviewed completion: unchanged success status and reliability write.
 run_status false false; rc=$?

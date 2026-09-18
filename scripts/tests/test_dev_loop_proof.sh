@@ -62,6 +62,20 @@ if printf '%s\n' "$checkout_block" | grep -Fq "steps.skill.outputs.name != 'crea
 fi
 printf '%s\n' "$commit_block" | grep -Fq "steps.skill.outputs.name != 'create-prove'"
 printf '%s\n' "$commit_block" | grep -Fq "!startsWith(inputs.dispatch_id, 'prove-')"
+
+# the commit-skip guard only engages if create-prove's own nested dispatch actually
+# sets a matching-prefixed dispatch_id - a guard string alone proves nothing if the
+# skill that's supposed to trigger it never does. static check, since create-prove
+# is a prompt file with no runtime to execute here.
+SKILL="$ROOT/skills/create-prove/SKILL.md"
+if ! grep -Fq 'must start with the literal prefix `prove-`' "$SKILL"; then
+  echo 'create-prove does not instruct setting a prove--prefixed dispatch_id' >&2
+  exit 1
+fi
+if ! grep -Fq 'dispatch_id="prove-' "$SKILL"; then
+  echo 'create-prove has no concrete prove--prefixed dispatch_id example' >&2
+  exit 1
+fi
 if ! sed -n '/^  dev-loop:/,/^  # routine:/p' "$CONFIG" | grep -Fq 'max_dispatches: 5'; then
   echo 'dev-loop dispatch budget is not five' >&2
   exit 1

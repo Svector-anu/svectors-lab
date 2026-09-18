@@ -36,8 +36,9 @@ Never prove `create-prove` by recursively dispatching itself. Exit `PROVE_UNSUPP
    - the slug is not `create-prove`.
    Any mismatch exits `PROVE_UNSUPPORTED` or `PROVE_STALE` without a receipt.
 3. Inspect the changed skill's frontmatter and instructions. Choose the smallest real, non-destructive variable that exercises the changed behavior. If no safe real invocation exists, exit `PROVE_UNSAFE` rather than inventing evidence. Do not use synthetic credentials or a dry-run mode.
-4. Dispatch the target branch's workflow by filename, with a unique correlation ID:
+4. Dispatch the target branch's workflow by filename, with a unique correlation ID whose `dispatch_id` **must start with the literal prefix `prove-`** — `.github/workflows/aeon.yml`'s commit-skip guard only recognizes that exact prefix to know this run is being proved, not a normal dispatch, and must not commit or push to the branch it's proving. Getting this prefix wrong silently defeats the immutable-head guarantee this whole skill exists to provide:
    ```bash
+   dispatch_id="prove-${pr_number}-$(date -u +%Y%m%dT%H%M%SZ)-${RANDOM}"
    gh workflow run aeon.yml --repo "$repo" --ref "$head_branch" \
      -f skill="$skill" -f var="$proof_var" -f dispatch_id="$dispatch_id"
    ```
