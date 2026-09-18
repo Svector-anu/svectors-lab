@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-17T20:01:36Z",
-  "quality_score": 3,
-  "assessment": "Actionable and well-sourced with explicit position calls, but it lacks a conclusion-first regime verdict, introduces unsupported map entries, and includes an unlabeled DeFiLlama percentage dump despite its stated lower-confidence fallback.",
+  "last_analyzed": "2026-09-18T00:50:29Z",
+  "quality_score": 4,
+  "assessment": "Substantive, fresh, and decision-oriented with explicit FADE/WATCH calls and evidence links, though it lacks a crisp opening regime verdict and leaves several calibration and political claims insufficiently sourced.",
   "flags": [],
-  "avg_score": 2.47,
+  "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-07",
-      "score": 3,
-      "ts": "2026-09-07T18:49:52Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-08",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-17",
       "score": 3,
       "ts": "2026-09-17T20:01:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T00:50:29Z",
       "harness": "codex"
     }
   ]

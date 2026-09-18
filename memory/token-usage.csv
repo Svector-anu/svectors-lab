@@ -347,3 +347,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-17,pr-review,codex-default,742191,4922,686848,0
 2026-09-17,self-improve,codex-default,2147936,4624,2101120,0
 2026-09-17,write-tweet,codex-default,335677,3180,286336,0
+2026-09-18,narrative-tracker,codex-default,291782,3533,234112,0
