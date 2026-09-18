@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T09:41:34Z",
+  "last_analyzed": "2026-09-18T09:48:33Z",
   "quality_score": 4,
-  "assessment": "Good: concise, actionable, and verifiable, with an exact PR review link, commit SHA, clear validator flaw, test context, and explicit verdict.",
+  "assessment": "Good: concise, decision-oriented review with a specific actionable finding, exact commit SHA, test status, and direct GitHub evidence.",
   "flags": [],
   "avg_score": 3.33,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T06:29:44Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T09:41:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T09:48:33Z",
       "harness": "codex"
     }
   ]
