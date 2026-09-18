@@ -1,18 +1,13 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-17T12:11:36Z",
+  "last_analyzed": "2026-09-18T13:57:10Z",
   "quality_score": 2,
-  "assessment": "The no-match verdict is concise, but it provides no candidate-level evidence and implausibly claims workspace files were modified despite the explicitly read-only harness.",
+  "assessment": "Clear no-op result, but exact candidate and ledger counts lack evidence, and claimed workspace modifications contradict the read-only run constraint.",
   "flags": [
-    "unverifiable_claim",
-    "low_quality"
+    "unverifiable_claim"
   ],
-  "avg_score": 2.43,
+  "avg_score": 2.37,
   "history": [
-    {
-      "date": "2026-08-23",
-      "score": 4
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -179,6 +174,12 @@
       "date": "2026-09-17",
       "score": 2,
       "ts": "2026-09-17T12:11:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 2,
+      "ts": "2026-09-18T13:57:10Z",
       "harness": "codex"
     }
   ]
