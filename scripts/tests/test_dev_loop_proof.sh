@@ -53,6 +53,7 @@ success_line=$(grep -n 'CHAIN_STATUS=success' "$WORKFLOW" | head -1 | cut -d: -f
 grep -Fq 'CHAIN_STATUS=proof-missing' "$WORKFLOW"
 grep -Fq 'proof_run=${PROOF_RUN_ID:-none}' "$WORKFLOW"
 grep -Fq 'PROOF_SHA="${REPAIRED_SHA:-$FEATURE_SHA}"' "$WORKFLOW"
+grep -Fq "steps.skill.outputs.name != 'create-prove'" "$ROOT/.github/workflows/aeon.yml"
 if ! sed -n '/^  dev-loop:/,/^  # routine:/p' "$CONFIG" | grep -Fq 'max_dispatches: 5'; then
   echo 'dev-loop dispatch budget is not five' >&2
   exit 1
