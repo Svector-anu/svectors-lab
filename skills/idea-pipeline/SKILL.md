@@ -28,7 +28,7 @@ If `${var}` starts with `offer:`, strip and trim the remainder. Accept only `own
   --context "dev-loop::ship"
 ```
 
-After the command exits zero, require at least one non-empty JSON payload under `${AEON_PENDING_DIR}/notify-queue/`. If the command fails or the payload is absent, end with `FORCE_REPLY_MISSING: dev-loop::ship target=<target>` and do not claim the prompt was offered. Only after that check passes, log `FORCE_REPLY_OFFERED: dev-loop::ship target=<target>` under `### idea-pipeline`, then end. This is an explicit operator-invoked producer path and still does not dispatch the chain until the operator replies.
+After the command exits zero, require at least one non-empty JSON payload under `${AEON_PENDING_DIR}/notify-queue/` **and** that payload's `.reply_markup.force_reply == true`. A queued payload alone isn't enough — `notify.sh` queues one even when the inbound Messages workflow is disabled, but in that case sends the prompt as plain text (`reply_markup:null`) with no reply routing, so the operator's answer would never come back to this skill. If the command fails, the payload is absent, or `force_reply` isn't `true`, end with `FORCE_REPLY_MISSING: dev-loop::ship target=<target>` and do not claim the prompt was offered. Only after both checks pass, log `FORCE_REPLY_OFFERED: dev-loop::ship target=<target>` under `### idea-pipeline`, then end. This is an explicit operator-invoked producer path and still does not dispatch the chain until the operator replies.
 
 Otherwise, if `${var}` starts with `pick:`, handle the selected idea below.
 
@@ -43,16 +43,9 @@ Before any other work, inspect `${var}`. If it **starts with `pick:`**, this run
    - If nothing matches, or two rows tie with no clear winner, send a plain re-ask listing 3–5 candidate names and end: `./notify "Couldn't find an idea matching \"<sel>\". Reply with the exact name or backlog number. Candidates: <name1>, <name2>, <name3>."`
 5. **Mark it chosen-to-build** — the shared marking convention (identical in idea-forge): append ` ✓ selected ${today}` to the end of that row's `name` cell, keeping the table pipes intact. If the cell already carries a `✓ selected` marker, leave it (idempotent) — it's already queued.
 6. Confirm with a short `./notify` (keep it clean, with no diagnostic probe words): `./notify "Marked \"<idea name>\" as next to build - flagged in the backlog."` Marking remains the only automatic action.
-7. Inspect the selected row for an explicit GitHub target. Accept only either `https://github.com/<owner>/<repo>/issues/<number>` or a literal `<owner>/<repo>` token. Normalize an issue URL to its repository, deduplicate matches, then require exactly one candidate. Confirm operator scope with `gh api "repos/$repo" --jq '.permissions.push // false'`. Do not infer a repository from the idea name, fuzzy similarity, recent work, or the operator's account.
-8. If and only if exactly one candidate exists and push permission is `true`, offer a separate force-reply prompt:
-   ```bash
-   ./notify "Which owned repository or issue should Aeon Engineer use for this selected idea? Reply with ${candidate}." \
-     --force-reply --placeholder "${candidate}" \
-     --context "dev-loop::ship"
-   ```
-   This prompt does not dispatch work. The existing Telegram router validates the reply and dispatches `chain-runner.yml` only after the operator sends the target. If the row has no target, multiple targets, an API failure, or no push access, skip the prompt without substituting another repository.
-9. Log to `memory/logs/${today}.md` under a `### idea-pipeline` heading: `- IDEA_PIPELINE_PICK: marked "<idea name>" as chosen-to-build (from a pick: reply)`. When the chain prompt was actually sent, also log `- FORCE_REPLY_OFFERED: dev-loop::ship target=<owner/repo or issue URL>`.
-10. **End the run.** Do not proceed to step 1 or run the audit.
+7. **Do not try to infer a GitHub target from the row.** The backlog's row schema (step 4, and its only producer, `idea-forge`) is `| date | name | one-liner | fit | T+F+E |` — no column ever carries a repo or issue reference, so a per-row target lookup here would never match a real row. If the marked idea maps to a repo the operator wants Aeon Engineer to build it in, tell them to say so directly: `./notify "Marked \"<idea name>\" as next to build. To have Aeon Engineer start on it, reply with: offer:<owner/repo>"`. This reuses step 0's `offer:` path (already push-permission-gated and delivery-verified) instead of duplicating that logic here.
+8. Log to `memory/logs/${today}.md` under a `### idea-pipeline` heading: `- IDEA_PIPELINE_PICK: marked "<idea name>" as chosen-to-build (from a pick: reply)`.
+9. **End the run.** Do not proceed to step 1 or run the audit.
 
 ### 1. Load the idea backlog
 
