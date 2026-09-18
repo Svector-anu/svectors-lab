@@ -61,6 +61,7 @@ if printf '%s\n' "$checkout_block" | grep -Fq "steps.skill.outputs.name != 'crea
   exit 1
 fi
 printf '%s\n' "$commit_block" | grep -Fq "steps.skill.outputs.name != 'create-prove'"
+printf '%s\n' "$commit_block" | grep -Fq "!startsWith(inputs.dispatch_id, 'prove-')"
 if ! sed -n '/^  dev-loop:/,/^  # routine:/p' "$CONFIG" | grep -Fq 'max_dispatches: 5'; then
   echo 'dev-loop dispatch budget is not five' >&2
   exit 1
