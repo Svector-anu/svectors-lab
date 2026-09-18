@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T11:17:12Z",
-  "quality_score": 3,
-  "assessment": "Correctly executed PR automation (skipped duplicate commit), verifiable and transparent, but does not serve operator's stated crypto-signal priorities.",
+  "last_analyzed": "2026-09-18T11:22:17Z",
+  "quality_score": 4,
+  "assessment": "Substantive PR review with specific, verifiable evidence and clear decision-grade verdict.",
   "flags": [],
   "avg_score": 3.33,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 4,
-      "ts": "2026-09-04T08:53:42Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 3,
       "ts": "2026-09-18T11:17:12Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T11:22:17Z",
       "harness": "claude"
     }
   ]

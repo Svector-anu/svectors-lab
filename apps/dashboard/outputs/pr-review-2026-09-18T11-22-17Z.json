@@ -1,0 +1,116 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "PR Review — svectors-lab#92"
+      },
+      "children": [
+        "heading_pr_title",
+        "stack_verdict",
+        "separator_1",
+        "heading_verification",
+        "stack_findings",
+        "separator_2",
+        "text_final"
+      ]
+    },
+    "heading_pr_title": {
+      "type": "Heading",
+      "props": {
+        "text": "fix(aeon.yml): restore cross-model independence for pr-review",
+        "level": "h3"
+      }
+    },
+    "stack_verdict": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge_ready",
+        "alert_no_blockers"
+      ]
+    },
+    "badge_ready": {
+      "type": "Badge",
+      "props": {
+        "text": "approve-ready",
+        "variant": "default"
+      }
+    },
+    "alert_no_blockers": {
+      "type": "Alert",
+      "props": {
+        "message": "No blockers",
+        "type": "success"
+      }
+    },
+    "separator_1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_verification": {
+      "type": "Heading",
+      "props": {
+        "text": "Verification",
+        "level": "h3"
+      }
+    },
+    "stack_findings": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "text_ci_run",
+        "text_harness_values",
+        "text_model_independence",
+        "text_docs"
+      ]
+    },
+    "text_ci_run": {
+      "type": "Text",
+      "props": {
+        "text": "CI run 35338667251 verified: real, successful dispatch of pr-review against headless-harness-bench#1, matching the PR's claim that harness: claude was proven live before flipping the default."
+      }
+    },
+    "text_harness_values": {
+      "type": "Text",
+      "props": {
+        "text": "claude is a valid, wired harness value; feature stays pinned to codex."
+      }
+    },
+    "text_model_independence": {
+      "type": "Text",
+      "props": {
+        "text": "The two dev-loop halves are now genuinely different models instead of one reviewing its own sibling's work."
+      }
+    },
+    "text_docs": {
+      "type": "Text",
+      "props": {
+        "text": "Docs addition checks out and cites the same run ID."
+      }
+    },
+    "separator_2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text_final": {
+      "type": "Text",
+      "props": {
+        "text": "Review posted inline on the PR.",
+        "variant": "muted"
+      }
+    }
+  }
+}

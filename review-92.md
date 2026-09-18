@@ -1,5 +1,3 @@
-✅ PR Review — svectors-lab#92
-
 ## PR Review — Svector-anu/svectors-lab#92
 
 **fix(aeon.yml): restore cross-model independence for pr-review**
