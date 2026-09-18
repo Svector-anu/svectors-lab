@@ -377,13 +377,13 @@
   "feature": {
     "last_status": "success",
     "last_failed": "2026-09-16T17:56:47Z",
-    "total_runs": 15,
-    "total_successes": 13,
+    "total_runs": 16,
+    "total_successes": 14,
     "total_failures": 2,
     "consecutive_failures": 0,
-    "success_rate": 0.87,
+    "success_rate": 0.88,
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ab5d-2c5b-7ac0-b01e-69e920fedbf5\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-18T09:54:00Z",
+    "last_success": "2026-09-18T10:00:16Z",
     "last_quality_score": 4
   },
   "pr-review": {
