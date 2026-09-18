@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T13:56:16Z",
-  "quality_score": 3,
-  "assessment": "Skill executed correctly—checked two repos, found no open PRs, logged status, and suppressed notification per documented pattern. Routine negative result, properly completed but not actionable.",
+  "last_analyzed": "2026-09-18T14:13:46Z",
+  "quality_score": 4,
+  "assessment": "Substantive code review with verified claims, clear verdict, and actionable feedback; well-structured and specific",
   "flags": [],
-  "avg_score": 3.4,
+  "avg_score": 3.47,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 2,
-      "ts": "2026-09-05T15:55:48Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-05",
       "score": 4,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 3,
       "ts": "2026-09-18T13:56:16Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T14:13:46Z",
       "harness": "claude"
     }
   ]

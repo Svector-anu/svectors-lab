@@ -365,3 +365,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-18,pr-review,claude-sonnet-5,3190,30173,4177145,95058
 2026-09-18,pr-review,claude-sonnet-5,2602,4279,493447,49140
 2026-09-18,defi-overview,codex-default,658615,8116,603776,0
+2026-09-18,pr-review,claude-sonnet-5,3482,28429,5692752,92215

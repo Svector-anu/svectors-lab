@@ -1,0 +1,112 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "PR Review — Svector-anu/svectors-lab#95",
+        "description": "fix(idea-pipeline): pick: can't offer a target that doesn't exist"
+      },
+      "children": [
+        "verdict-badge",
+        "sep-1",
+        "context-heading",
+        "context-text",
+        "sep-2",
+        "claims-heading",
+        "claim-1",
+        "claim-2",
+        "claim-3",
+        "sep-3",
+        "nit-alert",
+        "sep-4",
+        "review-link"
+      ]
+    },
+    "verdict-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "approve-ready — no blockers",
+        "variant": "default"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "context-heading": {
+      "type": "Text",
+      "props": {
+        "text": "Context",
+        "variant": "lead"
+      }
+    },
+    "context-text": {
+      "type": "Text",
+      "props": {
+        "text": "Follow-up to #94 (orphaned before its fix landed). Verified both claims against the exact head commit."
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "claims-heading": {
+      "type": "Text",
+      "props": {
+        "text": "Verified Claims",
+        "variant": "lead"
+      }
+    },
+    "claim-1": {
+      "type": "Text",
+      "props": {
+        "text": "The removed per-row GitHub-target lookup was dead code — idea-forge's backlog schema (| date | name | one-liner | fit | T+F+E |) never carried a repo/issue column."
+      }
+    },
+    "claim-2": {
+      "type": "Text",
+      "props": {
+        "text": "The new reply_markup.force_reply == true delivery gate closes a real gap in scripts/notify.sh — a force-reply payload can queue with reply_markup:null when the inbound Messages workflow is disabled, sending plain text with no reply routing; the old check would've silently claimed success."
+      }
+    },
+    "claim-3": {
+      "type": "Text",
+      "props": {
+        "text": "Replicated the test script's grep/sed assertions by hand against PR head content (couldn't execute the .sh in this sandbox) — all pass, including both negative assertions."
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "nit-alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Note",
+        "message": "Step 7 now sends a second ./notify right after step 6's confirmation, so marking an idea fires two back-to-back messages. Not a blocker.",
+        "type": "info"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "review-link": {
+      "type": "Link",
+      "props": {
+        "label": "View Full Review",
+        "href": "https://github.com/Svector-anu/svectors-lab/pull/95#pullrequestreview-5248719224"
+      }
+    }
+  }
+}
