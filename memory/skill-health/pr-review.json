@@ -1,19 +1,13 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T10:08:22Z",
-  "quality_score": 3,
-  "assessment": "Completed the review with a clear verdict and traceable PR metadata, but provides little substantive evidence explaining why the documentation changes are approve-ready.",
+  "last_analyzed": "2026-09-18T10:21:11Z",
+  "quality_score": 2,
+  "assessment": "The verdict is concise and actionable, but it provides almost no review evidence and claims workspace files were written despite the explicitly read-only run, undermining verifiability.",
   "flags": [
-    "generic_content"
+    "unverifiable_claim"
   ],
-  "avg_score": 3.4,
+  "avg_score": 3.37,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 3,
-      "ts": "2026-09-04T08:19:19Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 2,
@@ -186,6 +180,12 @@
       "date": "2026-09-18",
       "score": 3,
       "ts": "2026-09-18T10:08:22Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 2,
+      "ts": "2026-09-18T10:21:11Z",
       "harness": "codex"
     }
   ]
