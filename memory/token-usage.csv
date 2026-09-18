@@ -356,3 +356,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-18,pr-review,codex-default,467604,2943,429824,0
 2026-09-18,pr-review,codex-default,448772,3222,408320,0
 2026-09-18,pr-review,codex-default,331039,2608,295808,0
+2026-09-18,pr-review,codex-default,520070,2934,481536,0
