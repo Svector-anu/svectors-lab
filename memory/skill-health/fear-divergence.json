@@ -1,15 +1,11 @@
 {
   "skill": "fear-divergence",
-  "last_analyzed": "2026-09-17T12:10:34Z",
-  "quality_score": 3,
-  "assessment": "Acceptable threshold-based no-op with a clear reason, though the F&G value lacks a source or timestamp for verification.",
+  "last_analyzed": "2026-09-18T09:53:36Z",
+  "quality_score": 4,
+  "assessment": "Clear, conclusion-first no-op with an explicit trigger comparison and appropriate restraint; useful and plausible, though the final output does not cite the F&G data source or freshness timestamp.",
   "flags": [],
   "avg_score": 3.07,
   "history": [
-    {
-      "date": "2026-08-22",
-      "score": 4
-    },
     {
       "date": "2026-08-23",
       "score": 3
@@ -172,6 +168,12 @@
       "date": "2026-09-17",
       "score": 3,
       "ts": "2026-09-17T12:10:34Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T09:53:36Z",
       "harness": "codex"
     }
   ]

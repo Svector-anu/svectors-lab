@@ -352,3 +352,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-18,pr-review,codex-default,744641,5277,699904,0
 2026-09-18,feature,codex-default,2061477,6710,1990144,0
 2026-09-18,pr-review,codex-default,329372,3911,293376,0
+2026-09-18,fear-divergence,codex-default,181134,1184,153600,0
