@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-18T13:15:44Z",
+  "last_analyzed": "2026-09-18T13:25:56Z",
   "quality_score": 4,
-  "assessment": "Substantive PR review with specific findings, clear verdict, and verifiable claims via cited run IDs and links.",
+  "assessment": "Well-structured PR review with specific, verifiable technical issues and evidence; substantive and actionable, though lacks remediation suggestions",
   "flags": [],
-  "avg_score": 3.37,
+  "avg_score": 3.43,
   "history": [
-    {
-      "date": "2026-09-04",
-      "score": 2,
-      "ts": "2026-09-04T11:15:50Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-04",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T13:15:44Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 4,
+      "ts": "2026-09-18T13:25:56Z",
       "harness": "claude"
     }
   ]

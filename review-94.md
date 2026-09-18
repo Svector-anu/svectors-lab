@@ -1,5 +1,3 @@
-⚠️ PR Review — svectors-lab#94
-
 **PR Review — Svector-anu/svectors-lab#94**
 
 **Verdict: discussion-needed** — 0 critical, 2 issues
@@ -11,5 +9,3 @@ The `pick:` extension is weaker:
 - `skills/idea-pipeline/SKILL.md:54` — its `FORCE_REPLY_OFFERED` log claim has no delivery-verification gate, unlike the `offer:` path added in the same PR. Even that stricter gate can pass with `reply_markup:null` if the inbound Messages workflow is disabled — a real state `scripts/notify.sh` already handles elsewhere.
 
 Posted 2 inline comments + 1 consolidated review: https://github.com/Svector-anu/svectors-lab/pull/94#pullrequestreview-5248258105
-
-🔗 https://github.com/Svector-anu/svectors-lab/pull/94

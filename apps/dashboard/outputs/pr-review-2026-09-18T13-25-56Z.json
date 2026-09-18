@@ -1,0 +1,146 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "⚠️ PR Review — svectors-lab#94"
+      },
+      "children": [
+        "verdict-stack",
+        "description-text",
+        "sep-1",
+        "issues-intro-text",
+        "issues-section",
+        "sep-2",
+        "references-section"
+      ]
+    },
+    "verdict-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "verdict-badge",
+        "issues-stat"
+      ]
+    },
+    "verdict-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "discussion-needed",
+        "variant": "outline"
+      },
+      "children": []
+    },
+    "issues-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Issues",
+        "value": "2",
+        "delta": "0 critical"
+      },
+      "children": []
+    },
+    "description-text": {
+      "type": "Text",
+      "props": {
+        "text": "\"feat: offer dev loop from selected ideas\" extends `idea-pipeline` with two new Telegram force-reply entry points into `dev-loop::ship`: an `offer:<owner/repo>` producer boundary and an extension of the existing `pick:<idea>` handler. The `offer:` path — the one this PR's live proof run actually exercised — checks out: push-permission gated, and it verifies a real queued notification payload before claiming success.",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "issues-intro-text": {
+      "type": "Text",
+      "props": {
+        "text": "The `pick:` extension is weaker:",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "issues-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "issue-1",
+        "issue-2"
+      ]
+    },
+    "issue-1": {
+      "type": "Alert",
+      "props": {
+        "title": "skills/idea-pipeline/SKILL.md:46",
+        "message": "It inspects the selected backlog row for a GitHub target field, but the row schema (5 columns: date/name/one-liner/fit/T+F+E) never stores one — same schema in its only producer, `idea-forge`. The offer will never actually fire through this path.",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "issue-2": {
+      "type": "Alert",
+      "props": {
+        "title": "skills/idea-pipeline/SKILL.md:54",
+        "message": "Its `FORCE_REPLY_OFFERED` log claim has no delivery-verification gate, unlike the `offer:` path added in the same PR. Even that stricter gate can pass with `reply_markup:null` if the inbound Messages workflow is disabled — a real state `scripts/notify.sh` already handles elsewhere.",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "references-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "references-heading",
+        "review-link",
+        "pr-link"
+      ]
+    },
+    "references-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "References",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "review-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "PR Review: 2 inline comments + 1 consolidated review",
+        "href": "https://github.com/Svector-anu/svectors-lab/pull/94#pullrequestreview-5248258105",
+        "source": "GitHub"
+      },
+      "children": []
+    },
+    "pr-link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "svectors-lab#94",
+        "href": "https://github.com/Svector-anu/svectors-lab/pull/94",
+        "source": "GitHub"
+      },
+      "children": []
+    }
+  }
+}
