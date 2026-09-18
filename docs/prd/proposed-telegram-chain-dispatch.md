@@ -6,7 +6,7 @@ Per `references/scope-control.md`: an idea noticed mid-task, reported rather tha
 
 **Potential improvement discovered:** route a Telegram force-reply into a `chain-runner.yml` dispatch (e.g. `dev-loop`), not only into a single `aeon.yml` skill dispatch.
 
-**Status:** Not currently in product map.
+**Status:** Router implemented; producer prompt still proposed.
 
 **Where this came from:** packaging `F-006` (Aeon Engineer) and checking the roadmap's own claim that "Telegram is the primary interaction" against what's actually wired. It isn't: `apps/webhook` forwards a classified update as a `repository_dispatch` event, `messages.yml` parses the `[skill::intent]` marker embedded in the prompt it's replying to, and dispatches exactly one skill via `aeon.yml -f skill=... -f var=...`. There is no path from a Telegram reply to `chain-runner.yml -f chain=... -f target=...`.
 
@@ -18,5 +18,7 @@ Per `references/scope-control.md`: an idea noticed mid-task, reported rather tha
 - Explicitly out of scope for this proposal: any change to how the chain itself runs, verifies, or merges. This is purely about the trigger surface.
 
 **Action:** report as a proposed feature. Do not implement unless explicitly approved.
+
+**Implementation finding (2026-09-18):** the stale reference was confirmed. No current skill emits "ship which opportunity?" or a `feature::build` context. `idea-pipeline` is the closest opportunity producer, but its force-reply selects a backlog idea and deliberately stops without dispatching work; it does not establish the owned repository target required by `dev-loop`. The router can therefore accept `[dev-loop::ship]` safely, but adding that prompt to a real product surface remains separate work requiring an explicit trigger-point decision.
 
 ---
