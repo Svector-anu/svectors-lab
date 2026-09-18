@@ -1,25 +1,20 @@
-Shipped [nightshift-game PR #1](https://github.com/Svector-anu/nightshift-game/pull/1).
+Implemented issue #38 for Skopos and opened [PR #117](https://github.com/Svector-anu/skopos/pull/117).
 
-The pause menu now:
+The change replaces fragile wallet-error text matching with typed API error codes across automatic retries, persisted retries, specialized UI cards, and execution guards.
 
-- Toggles with `Escape` or `P`
-- Exposes proper labeled modal semantics
-- Moves focus to Resume when opened
-- Restores focus when gameplay resumes
-- Documents the new control in-game and in the README
+Verification:
 
-Verification passed:
+- 189 tests passed across 13 files
+- TypeScript passed
+- Targeted ESLint passed
+- Required correlation receipt included in the PR body
+- Repository-wide lint retains two unrelated pre-existing errors
 
-- 15 unit tests
-- Production build
-- Full Playwright delivery flow with pause/focus assertions
-
-The PR includes the required correlation receipt: `chain-90dc6fc5e336d16194f6289debc049e6`.
+Notification delivery was attempted, but the harness notification queues were read-only.
 
 ## Summary
 
-- Created branch `ai/accessible-pause-dialog`
-- Committed `b50c451`
-- Opened PR #1 against `game/initial-import`
-- Updated `memory/logs/2026-09-18.md`
-- Queued the feature notification through the writable fallback queue
+- Repo: `Svector-anu/skopos`
+- Commit: `3380797`
+- PR: https://github.com/Svector-anu/skopos/pull/117
+- Updated `memory/logs/2026-09-18.md` with the result and correlation ID.
