@@ -167,6 +167,42 @@ locks that convergence and fails if the Worker grows a direct execution path.
 
 ---
 
+## Initiative: Aeon Engineer (composition, Core + Dev & Code + Evolution)
+
+### F-006: Aeon Engineer
+
+**Status:** partial
+
+**Epic:** cross-cutting (composes `F-001`, `F-003`, `F-004`, `F-005`; not a new subsystem)
+**Who it's for:** an operator who wants a real task done on a repo they own, without driving each step themselves.
+**Problem it solves:** `F-001` through `F-005` are each independently real and independently proven, but nothing before this named them as one coherent thing an operator could point at a task and use. This feature is that packaging, not new capability.
+
+**Stories**
+
+- `US-006.1`: As an operator, I want to point Aeon Engineer at any repo I own and get a verified result back, so I don't have to drive feature build, review, and repair myself.
+  - `AC-006.1.1`: Given a target repo the operator has push access to, dispatching the `dev-loop` chain against it produces either a merge-ready PR carrying an independent PASS verdict, an honest no-action result, or a clearly blocked result. Never a silent failure.
+  - `AC-006.1.2`: Setup requires no code changes to the target repo itself, only push access for the operator and a chain dispatch.
+
+- `US-006.2`: As an operator, I want the skills Aeon Engineer depends on to self-monitor and self-heal, so a degraded dependency doesn't silently break it.
+  - `AC-006.2.1`: `F-004` (skill-health/skill-repair) covers `feature` and `pr-review`, the two skills `F-006` depends on directly, with the same systemic-first triage as every other skill.
+
+**Verification**
+
+```text
+AC-006.1.1: gh workflow run chain-runner.yml -f chain=dev-loop -f target=external:<owner/repo>
+Expected: CHAIN_STATUS=success with a verified PR + PASS receipt, CHAIN_STATUS=no-action,
+          or CHAIN_STATUS=failed with a specific error - never an unexplained hang or silent drop
+```
+
+**Evidence this session:** dispatched for real against this fork (2026-09-17, run 35255721576). Found the CI-side `CODEX_AUTH` credential dead (blocking the `feature` step entirely), diagnosed the exact fix (`tar czf - -C $HOME .codex/auth.json | base64 | gh secret set CODEX_AUTH`), the operator applied it, and the re-dispatch ran clean end to end: `feature` opened PR #83 in ~6 minutes, independent `pr-review` (a genuinely separate run) returned `verdict: approve-ready, critical: 0, actionable: false` in ~4.5 more minutes, no repair pass was needed, the operator reviewed and merged. The task itself was not staged: `feature` picked up the real `F-005` "remaining" note from this file and closed it out on its own.
+
+**Remaining, stated honestly:**
+- **Telegram cannot trigger this today.** `apps/webhook` and `messages.yml` route a `[skill::intent]` force-reply into a single skill dispatch (`aeon.yml -f skill=... -f var=...`); nothing routes a reply into a `chain-runner.yml -f chain=dev-loop` dispatch. The roadmap names "Telegram as primary interaction" for Aeon Engineer specifically; that does not exist yet. Dispatch is GitHub Actions UI or `gh workflow run` only.
+- **Proven on one repo: this fork, which the operator already owns and knows intimately.** `AC-006.1.1` has not been exercised against a genuinely external repo the operator doesn't maintain day to day. That's a materially different reliability claim, and this feature's status stays `partial` until it's been run that way at least once.
+- **The CI-side harness credentials are not reliably up.** This session alone hit a dead `CODEX_AUTH` and a `claude`/`bankr` gateway outage, on two separate days. `F-006` inherits whatever reliability the underlying harnesses have; it doesn't add any credential-monitoring of its own.
+
+---
+
 ## Roster: everything else, by pack
 
 Real slugs and descriptions from `catalog/skills.json`. Status `shipped` (live, scheduled) unless otherwise noted. No fabricated acceptance criteria; write a real PRD via `templates/prd-feature.md` before claiming detailed feature status for any of these.
