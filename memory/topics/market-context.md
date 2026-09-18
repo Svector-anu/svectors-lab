@@ -1,60 +1,61 @@
 # Market Context (as of 2026-09-18)
 
-> **Take:** risk-on — BTC gained 5.0% over 24h and 17/20 top caps are green. Conviction: high.
+> **Take:** risk-on — BTC gained 6.3% over 24h and 18/20 top caps are green. Conviction: high.
 
 ## Signal Snapshot
-- BTC $80,347 (+5.0% 24h, +1.3% 7d) · dominance 58.4% (+0.3 pp since prior refresh)
-- ETH $2,567.79 (+4.6% 24h, +1.7% 7d) · ETH/BTC 0.0320
-- SOL $108.99 (+8.7% 24h, +6.3% 7d)
-- Total mcap $2.757T (+1.0% 24h) · DEX vol $10.06B 24h
-- Breadth: 17/20 green 24h · 13/20 green 7d
+- BTC $81,260 (+6.3% 24h, +4.3% 7d) · dominance 58.4% (flat since prior refresh)
+- ETH $2,642.47 (+8.1% 24h, +1.7% 7d) · ETH/BTC 0.0325
+- SOL $114.03 (+13.2% 24h, +10.0% 7d)
+- Total mcap $2.781T (+2.8% 24h) · DEX vol $10.06B 24h
+- Breadth: 18/20 green 24h · 14/20 green 7d
 - Fear & Greed: 56 (Greed) — yesterday 50
 
 ## What Changed Since Last Refresh
-- BTC accelerated from +2.1% to +5.0% daily while breadth widened from 16/20 to 17/20 green.
-- SOL accelerated from +6.0% to +8.7% daily, extending its lead over BTC and ETH.
-- DEX volume remains the main disagreement: $10.06B, down 11.0% day over day despite broader price strength.
+- BTC rose another 1.1% since the prior refresh; its 24h gain widened from 5.0% to 6.3%.
+- ETH rose 2.9% and SOL 4.6% since the prior refresh, widening the high-beta lead over BTC.
+- DeFi TVL increased 2.4% to $92.08B while DEX volume stayed near $10.06B; deposits, not trading, drove the extension.
 
 ## Active Narratives
-- **Privacy** — phase: rising. Evidence: FIRO and ZANO are #1 and #4 in CoinGecko trends; ZEC is #5 and +32.9% weekly.
-- **DEX-token rebound** — phase: rising. Evidence: UNI is #3 in CoinGecko trends at +23.1% daily, though aggregate DEX volume fell 11.0%.
-- **AI-chain beta** — phase: rising. Evidence: NEAR is #2 in CoinGecko trends and +25.9% daily.
-- **High-beta majors** — phase: rising. Evidence: SOL gained 8.7%, ADA 9.2%, and HYPE 11.0% over 24h.
+- **Privacy** — phase: peak. Evidence: ZANO, FIRO, and ZEC occupy three of CoinGecko's top seven trending slots.
+- **Regulated onchain stocks** — phase: emerging. Evidence: ARB is sixth in CoinGecko trends after the SEC's five-year tokenized-securities exemption.
+- **DEX-token rebound** — phase: rising. Evidence: UNI is eighth in CoinGecko trends and Uniswap V4 fees rose 23.8% day over day.
+- **High-beta majors** — phase: rising. Evidence: SOL gained 13.2%, ADA 10.8%, and HYPE 10.4% over 24h.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $24.39B (+2.4%)
-- Aave V3: $17.33B (+0.4%)
-- SSV Network: $13.15B (+1.5%)
-- Morpho Blue: $10.41B (+8.6%)
-- Binance staked ETH: $9.32B (+1.3%)
+- Lido: $25.31B (+1.6%)
+- Aave V3: $17.85B (+1.1%)
+- SSV Network: $13.64B (+0.8%)
+- Morpho Blue: $10.63B (+9.8%)
+- Binance staked ETH: $9.66B (+1.7%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $50.87B (n/a)
-- Solana: $6.05B (n/a)
-- Base: $5.69B (n/a)
+- Ethereum: $52.18B (n/a)
+- Solana: $6.24B (n/a)
+- Base: $5.85B (n/a)
 
 ## Stablecoins
-Total: $311.0B (+0.2% 7d). USDT $183.3B · USDC $73.9B · USDS $6.5B · USDe $4.8B · combined share of mcap 11.3%.
+Total: $311.2B (+0.2% 7d). USDT $183.4B · USDC $74.1B · USDS $6.6B · USDe $4.8B · combined share of mcap 11.2%.
 
 ## Trending (CoinGecko)
-- FIRO — first in CoinGecko trends, +42.8% in 24h
-- NEAR — second in CoinGecko trends, +25.9% in 24h
-- UNI — third in CoinGecko trends, +23.1% in 24h
+- ZANO — first in CoinGecko trends; live price-change data unavailable
+- FIRO — second in CoinGecko trends; live price-change data unavailable
+- PENGU — third in CoinGecko trends; live price-change data unavailable
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| United Russia gains most seats in next parliamentary election | 77.5% | $0.75M | $0.80M |
-| FC Bayern München wins on 2026-09-18 | 94.5% | $0.70M | $1.15M |
-| Counter-Strike: magic beats MIBR | 11.5% | $0.59M | $0.14M |
+| Chelsea FC wins on 2026-09-18 | 36.5% | $6.27M | $0.11M |
+| United Russia gains most seats in next parliamentary election | 79.5% | $1.43M | $0.69M |
+| Brentford FC wins on 2026-09-18 | 29.5% | $1.37M | $0.06M |
 
 ## Macro Catalysts (next 48h)
-- The post-Fed relief rally is fighting a hawkish liquidity backdrop; ride the move, but do not front-run a sustained easing cycle.
-- US spot BTC ETFs took in about $160M on Sep 17, the first inflow day after a negative week; confirmation needs more than one session.
+- Friday's $6.2T US options expiry can amplify low-conviction price moves; ride confirmed strength rather than front-run continuation.
+- US spot BTC ETFs logged about $160M of inflows on September 17 after a negative week; one positive session is tentative confirmation, not a trend.
+- BTC is absorbing a Fed hike, a stronger dollar, and the CLARITY setback; resilience is bullish, but the liquidity backdrop still argues against chasing.
 
 ## Implications for Downstream Skills
-- **token-pick:** ride privacy, DEX, NEAR, and high-beta major strength; size conservatively while DEX volume contracts.
-- **narrative-tracker:** watch whether rising token prices convert into DEX participation and whether ETF inflows persist.
+- **token-pick:** ride regulated onchain-stock and high-beta strength, but size for expiry-driven reversal and weak DEX-volume confirmation.
+- **narrative-tracker:** monitor regulated onchain stocks emerging→rising; treat privacy as crowded until breadth expands beyond three trending names.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
@@ -66,6 +67,7 @@ Total: $311.0B (+0.2% 7d). USDT $183.3B · USDC $73.9B · USDS $6.5B · USDe $4.
 | 2026-09-13 | LSK | $0.8987 | Proposed 100M LSK burn and chain wind-down concentrated attention; mandatory migration and blow-off momentum raise unwind risk |
 | 2026-09-17 | DRV | $0.2300 | Derive V3, protocol-fee buybacks, and strong relative momentum; parabolic price action and the Oct 15 unlock are the main risks |
 | 2026-09-14 | BR | $0.5194 | Optimism incentives and Bitcoin-restaking attention supported momentum; the Sep 20 unlock is the near-term risk |
+| 2026-09-18 | ARB | $0.2112 | SEC tokenized-securities relief and record tokenized-fund value on Arbitrum supported the RWA breakout; unlock and mean-reversion risk remain |
 
 ---
 *Sources — btc/eth: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*

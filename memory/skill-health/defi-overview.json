@@ -1,17 +1,11 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-18T13:58:28Z",
-  "quality_score": 4,
-  "assessment": "Strong conclusion-first, decision-grade DeFi brief with explicit positioning and transparent source-status markers, though high-conviction regime labeling and extreme “sustainable” yields need clearer evidence or caveats.",
+  "last_analyzed": "2026-09-18T19:53:33Z",
+  "quality_score": 3,
+  "assessment": "Substantive and conclusion-first with an explicit position call, but the high-conviction regime and options-expiry warning lack direct evidence links, while the yield section presents volatile LP APYs as sustainable without risk context.",
   "flags": [],
-  "avg_score": 2.2,
+  "avg_score": 2.23,
   "history": [
-    {
-      "date": "2026-09-08",
-      "score": 2,
-      "ts": "2026-09-08T15:22:09Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-08",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T13:58:28Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-18",
+      "score": 3,
+      "ts": "2026-09-18T19:53:33Z",
       "harness": "codex"
     }
   ]
