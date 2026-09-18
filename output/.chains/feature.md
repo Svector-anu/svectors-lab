@@ -1,13 +1,25 @@
-Repaired [PR #1](https://github.com/Svector-anu/headless-harness-bench/pull/1) at commit `03c4554`.
+Shipped [nightshift-game PR #1](https://github.com/Svector-anu/nightshift-game/pull/1).
 
-- T1–T8 now require populated result cells.
-- Task success now requires an explicit verdict.
-- Added regressions for token-only labels and empty cells.
-- Updated OMP’s report with an explicit `PASS`.
-- All 7 unit tests and both CI checks pass.
-- Added workflow receipt `chain-61aa38231088fa2313df9fb75e5d9cc5` to the PR body.
-- Logged the repair in `memory/logs/2026-09-18.md`.
+The pause menu now:
+
+- Toggles with `Escape` or `P`
+- Exposes proper labeled modal semantics
+- Moves focus to Resume when opened
+- Restores focus when gameplay resumes
+- Documents the new control in-game and in the README
+
+Verification passed:
+
+- 15 unit tests
+- Production build
+- Full Playwright delivery flow with pause/focus assertions
+
+The PR includes the required correlation receipt: `chain-90dc6fc5e336d16194f6289debc049e6`.
 
 ## Summary
 
-The review finding is fixed and pushed to the existing PR branch. Notification delivery was attempted but the runner-owned queue was read-only.
+- Created branch `ai/accessible-pause-dialog`
+- Committed `b50c451`
+- Opened PR #1 against `game/initial-import`
+- Updated `memory/logs/2026-09-18.md`
+- Queued the feature notification through the writable fallback queue
