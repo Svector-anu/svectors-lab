@@ -1,18 +1,12 @@
-HEALTH: CRITICAL(1) — `vuln-scanner` has 26 consecutive failures from the invalid `grok-4.5` model configuration.
+HEALTH: CRITICAL(1)
 
-- 19 degraded, 5 warning, 4 healthy, 0 no-data.
-- The earlier ChatGPT 401 failure streaks have reset, though 18 non-healthy skills retain that historical error.
-- Removed recovered `feature` from ISS-007.
-- No issues filed or resolved; 4 remain open.
-- Notification queued successfully through the writable `/tmp` fallback.
+- `vuln-scanner`: 29 consecutive failures; `grok-4.5` is rejected as an unknown model. Tracked by ISS-005.
+- 19 skills remain degraded, five warning, four healthy, zero no-data.
+- No issue changes or systemic failures detected.
+- State hash unchanged within 24 hours, so no duplicate notification was sent.
 
 ## Summary
 
-Updated:
-
-- [last-report.json](/home/runner/work/svectors-lab/svectors-lab/memory/skill-health/last-report.json)
-- [ISS-007.md](/home/runner/work/svectors-lab/svectors-lab/memory/issues/ISS-007.md)
-- [INDEX.md](/home/runner/work/svectors-lab/svectors-lab/memory/issues/INDEX.md)
-- [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md)
-
-Validation passed: JSON parses correctly and `git diff --check` is clean. Existing unrelated worktree changes were preserved.
+- Updated `memory/skill-health/last-report.json`.
+- Logged `SKILL_HEALTH_NOOP` in `memory/logs/2026-09-18.md`.
+- Open issues remain: ISS-003, ISS-005, ISS-006, ISS-007.
