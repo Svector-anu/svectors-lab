@@ -29,7 +29,7 @@ This skill merges three repo-work modes behind one selector so no capability is 
 | **external** (§B) | `external[:owner/repo[#N]]` | **Single** repo per run | `memory/topics/repos.md` catalog (or `${var}` override) | Targeted enhancement / issue fix on one repo |
 | **dormant** (§C) | `dormant[:owner/repo]` | **Single** dormant repo per run | `memory/watched-repos.md` scored by dormancy | Reactivate a stale high-★ repo with one visible fix |
 
-Today is ${today}. Read `memory/MEMORY.md` and the last 7 days of `memory/logs/` before starting — and before notifying, drop anything already reported in the last ~3 days of logs.
+Today is ${today}. Read `memory/MEMORY.md` and the last 7 days of `memory/logs/` before starting — and before notifying, drop anything already reported in the last ~3 days of logs. If the target repo has `docs/product/feature-map.md`, read it before deciding what to build: skip anything it already lists as `shipped` or `in-progress` for that repo, and note in the PR body when a change relates to an existing `F-NNN` entry so the map stays traceable to real work instead of drifting from it.
 
 ## Selector
 
