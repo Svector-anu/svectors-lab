@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-19T01:49:05Z",
-  "quality_score": 4,
-  "assessment": "Fresh, decision-grade narrative map with explicit position calls, credible catalysts, useful bear cases, and honest source-confidence disclosure; several secondary narratives lack direct evidence links, keeping it below excellent.",
+  "last_analyzed": "2026-09-19T06:44:26Z",
+  "quality_score": 3,
+  "assessment": "Actionable and strategy-aligned with clear regime and position calls, but several exact market figures, catalyst assertions, and phase transitions lack direct supporting sources, limiting verifiability.",
   "flags": [],
-  "avg_score": 2.6,
+  "avg_score": 2.63,
   "history": [
-    {
-      "date": "2026-09-09",
-      "score": 2,
-      "ts": "2026-09-09T01:31:39Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-09",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-19",
       "score": 4,
       "ts": "2026-09-19T01:49:05Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-19",
+      "score": 3,
+      "ts": "2026-09-19T06:44:26Z",
       "harness": "codex"
     }
   ]
