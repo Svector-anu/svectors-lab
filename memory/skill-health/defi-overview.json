@@ -1,17 +1,11 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-19T06:45:36Z",
+  "last_analyzed": "2026-09-19T14:48:45Z",
   "quality_score": 3,
-  "assessment": "Substantive, conclusion-first regime report with explicit positioning, but source-status labels provide no direct citations and the onchain-stocks/privacy-beta calls lack supporting evidence.",
+  "assessment": "Substantive and decision-oriented with clear regime and position calls, but the privacy-beta fade and BTC breadth-divergence calls lack visible evidence, yield sustainability is insufficiently justified, and the cited prediction market is not meaningfully tied to the thesis.",
   "flags": [],
-  "avg_score": 2.27,
+  "avg_score": 2.3,
   "history": [
-    {
-      "date": "2026-09-09",
-      "score": 2,
-      "ts": "2026-09-09T06:32:26Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-09",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T06:45:36Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-19",
+      "score": 3,
+      "ts": "2026-09-19T14:48:45Z",
       "harness": "codex"
     }
   ]
