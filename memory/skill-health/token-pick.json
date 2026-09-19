@@ -1,17 +1,11 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-18T13:58:11Z",
-  "quality_score": 2,
-  "assessment": "Decision-grade and conclusion-first, but the precise market data, polling, seat projections, RSI, unlock, and SEC catalyst lack usable citations and are therefore not verifiable from the final output.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.13,
+  "last_analyzed": "2026-09-19T14:47:58Z",
+  "quality_score": 3,
+  "assessment": "Actionable and conclusion-first with explicit RIDE and BUY NO calls, but the many precise live figures and catalyst claims lack source links, weakening verifiability, and the hard-price emphasis conflicts with the qualitative-price strategy.",
+  "flags": [],
+  "avg_score": 2.17,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-26",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-18",
       "score": 2,
       "ts": "2026-09-18T13:58:11Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-19",
+      "score": 3,
+      "ts": "2026-09-19T14:47:58Z",
       "harness": "codex"
     }
   ]
