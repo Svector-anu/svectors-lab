@@ -1,23 +1,23 @@
-tweet drafts: agentic payments need recurring usage
+tweet drafts: regulated onchain stocks
 
 — one-liner —
-1a. agent payments need repeat customers, not cumulative counters
-1b. x402 has an adoption story. the latest daily activity tells a different one
+1a. tokenized stocks just got a real opening. permissionless crypto did not
+1b. the sec opened a door for tokenized stocks, then put a permissioned venue behind it
 
 — two-punch —
-2a. x402 fell from roughly 189k daily transactions to 16,265. cumulative charts can hide a live demand problem
-2b. agents paying agents is still the right direction. but integrations are supply, recurring spend is demand
+2a. tokenized stocks got regulatory relief. the catch is the product still has to live on permissioned venues
+2b. crypto did not win wall street today. wall street got five years to test crypto-shaped market rails
 
 — paragraph —
-3a. i still believe agents need native payment rails. but a growing integration list is not recurring demand. when daily x402 activity falls from roughly 189k to 16,265, the useful question is not how many agents can pay. it is how many keep coming back
-3b. agent payments should be measured like a product, not a protocol launch. repeat buyers, repeat sellers, useful services. cumulative transactions look good forever. current usage tells you whether anyone still needs the rail
+3a. the sec just made tokenized stocks more real and less crypto-native at the same time. conditional relief helps trading move onchain, but permissioned venues keep the open-market thesis outside the room
+3b. everyone will trade the tokenized-stock headline. i am watching the stack beneath it. compliant amms, identity, custody and settlement now have a five-year window to prove they work
 
 — long tweet —
-4a. i want agents to discover a service, pay for it and finish the job without asking a human for an api key. that thesis has not changed. the evidence bar should still be recurring spend. x402 dropping from roughly 189k daily transactions to 16,265 is not a reason to abandon agent payments. it is a reason to stop treating cumulative counters and integration announcements as product-market fit
-4b. agent payment infrastructure is getting judged by the easiest numbers to grow: supported wallets, listed services and lifetime transactions. the harder test is whether useful buyers return. x402's latest daily activity fell from roughly 189k transactions to 16,265. build the rail, yes. but watch repeat demand before calling the machine economy live
+4a. the sec giving tokenized u.s. stocks five years of conditional relief is real progress. but the permissioned venue requirement tells you where the opportunity is: not “stocks onchain” as a slogan. the work is identity, compliant liquidity, custody and settlement that users never have to think about. front-run the rails, not the headline beta
+4b. this is how crypto gets adopted most of the time: the interface survives and the ideology gets negotiated. tokenized stocks can move through amms, but only inside a permissioned setup under temporary relief. that is not permissionless finance winning. it is regulated market infrastructure borrowing the machinery that works
 
 — thread opener —
-5a. i still think agents paying for services is inevitable. but x402 falling from roughly 189k daily transactions to 16,265 shows why cumulative adoption charts are not enough. the machine economy needs retention
-5b. the agent payment stack is filling up faster than agent demand. wallets, protocols and service catalogs keep shipping. recurring autonomous spend is still the part that has to prove itself
+5a. the sec just gave tokenized u.s. stocks a five-year test window on permissioned amms. this is not crypto replacing wall street. it is wall street starting to absorb crypto rails
+5b. tokenized stocks are finally moving from roadmap to rulebook. the trade is not every asset with an rwa label. it is the identity, custody, liquidity and settlement stack the new market actually needs
 
-best: #4a — keeps the thesis, names the failed evidence test, and lands on the metric that matters
+best: #4a — it turns the rule change into a clear position: front-run compliant rails, not headline beta
