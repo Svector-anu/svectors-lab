@@ -1,20 +1,20 @@
-today: eliza — next merge worth 10 pts (ordinal 0), with 211 merges in 7d
+today: eliza — next merge worth 10 pts (ordinal 0), with 209 merges in 7d
 
-| lane | next | ordinal | liveness | last merge | merge rate |
-|---|---:|---:|---|---|---:|
-| eliza | 10 | 0 | live | today | 75.6% |
-| asi | 5 | 3 | slowing | 12d ago | 54.8% |
-| delta-star | 10 | 0 | slowing | 11d ago | 98.0% |
-| heir-elements-sdk | 10 | 0 | dormant | 27d ago | 18.8% |
+| lane | next | ordinal | liveness | last merge |
+|---|---:|---:|---|---|
+| eliza | 10 | 0 | live | today |
+| delta-star | 10 | 0 | slowing | 12d ago |
+| asi | 5 | 3 | slowing | 13d ago |
+| heir-elements-sdk | 10 | 0 | dormant | 29d ago |
 
-Eliza PR #29726 has approvals and no `CHANGES_REQUESTED`. Heir Elements SDK remains unverified, so its uncapped-looking 10 points are not actionable.
+waiting on you: none. Eliza PR #29726 is approved with no change request.
 
-No new blocker, liveness transition, project, or monthly reset. No notification sent.
+No new review blocker, liveness transition, project, or monthly reset. No notification sent.
 
 `SLOP_WATCH_QUIET`
 
 ## Summary
 
 - Updated `memory/topics/slop-watch-state.json`.
-- Appended the run to `memory/logs/2026-09-18.md`.
-- Commit could not be created because this harness mounts `.git` read-only (`index.lock: Read-only file system`).
+- Appended today’s run to `memory/logs/2026-09-19.md`.
+- Commit could not be created because this harness mounts `.git` read-only; workspace changes remain available for the outer workflow to persist.
