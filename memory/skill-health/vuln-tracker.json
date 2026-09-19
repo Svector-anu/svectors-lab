@@ -1,12 +1,10 @@
 {
   "skill": "vuln-tracker",
-  "last_analyzed": "2026-09-18T17:32:08Z",
+  "last_analyzed": "2026-09-19T17:33:35Z",
   "quality_score": 3,
-  "assessment": "Useful, concise queue with clear actions, but the same ZSvirt item is inconsistently labeled MEDIUM and CRITICAL, weakening decision-grade reliability.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.04,
+  "assessment": "Useful and specific status report with clear follow-ups, but the same ZSvirt disclosure is inconsistently labeled MEDIUM and CRITICAL, and the claims lack direct links for verification.",
+  "flags": [],
+  "avg_score": 2.07,
   "history": [
     {
       "date": "2026-08-25",
@@ -172,6 +170,12 @@
       "date": "2026-09-18",
       "score": 3,
       "ts": "2026-09-18T17:32:08Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-19",
+      "score": 3,
+      "ts": "2026-09-19T17:33:35Z",
       "harness": "codex"
     }
   ]
