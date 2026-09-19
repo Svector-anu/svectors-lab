@@ -12,7 +12,7 @@
     "last_success": "2026-09-18T09:56:05Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-19T01:51:16Z",
     "total_runs": 434,
     "total_successes": 107,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.25,
     "last_quality_score": 3,
-    "last_dispatch": "2026-09-19T01:46:30Z",
+    "last_dispatch": "2026-09-19T06:41:57Z",
     "last_failed": "2026-09-17T06:45:29Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-efc5-7d00-9ec0-7b39cf69abc1\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-09-17T06:45:37Z",
     "total_runs": 491,
     "total_successes": 120,
@@ -35,7 +35,7 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-0400-7c93-bf41-408414860808\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-19T01:49:08Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-09-19T01:46:30Z"
+    "last_dispatch": "2026-09-19T06:41:57Z"
   },
   "token-movers": {
     "last_status": "success",
@@ -174,14 +174,14 @@
     "last_quality_score": 1
   },
   "vuln-scanner": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-09-18T21:58:14Z",
     "total_runs": 252,
     "total_successes": 76,
     "total_failures": 176,
     "consecutive_failures": 30,
     "success_rate": 0.3,
-    "last_dispatch": "2026-09-18T21:56:29Z",
+    "last_dispatch": "2026-09-19T06:41:57Z",
     "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
     "last_success": "2026-09-10T23:44:07Z",
     "last_quality_score": 2
