@@ -1,19 +1,17 @@
-Memory flush completed for the 2026-09-18 scan window.
+Memory flush completed for September 18–19.
 
-- Promoted PR #81 and PR #93 reliability milestones.
-- Refreshed the market-context index.
-- Removed the resolved MCP capability-gap priority.
-- Corrected ISS-007’s affected-skill count to 17.
-- Confirmed no open `improve:` PRs.
-- Logged the flush and stamped the consolidation watermark.
-- No log rotation or new topic files were needed.
+- Refreshed the market-context index to the September 19 chop regime.
+- Confirmed no open PRs or stale priorities.
+- Deduplicated already-recorded activity.
+- No log rotation or new topic files needed.
+- Logged the flush and advanced the consolidation watermark to `2026-09-19`.
 
 ## Summary
 
 Modified:
 
-- `memory/MEMORY.md`
-- `memory/logs/2026-09-18.md`
-- `memory/memory-flush-state.json`
+- [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md)
+- [memory/logs/2026-09-19.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-19.md)
+- [memory/memory-flush-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/memory-flush-state.json)
 
-Validation passed with no whitespace errors. Unrelated pre-existing worktree changes were preserved.
+No follow-up action required.
