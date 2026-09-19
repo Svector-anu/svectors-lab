@@ -12,7 +12,7 @@
     "last_success": "2026-09-18T09:56:05Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-18T19:53:37Z",
     "total_runs": 433,
     "total_successes": 106,
@@ -20,12 +20,12 @@
     "consecutive_failures": 0,
     "success_rate": 0.24,
     "last_quality_score": 3,
-    "last_dispatch": "2026-09-18T19:49:10Z",
+    "last_dispatch": "2026-09-19T01:46:30Z",
     "last_failed": "2026-09-17T06:45:29Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-efc5-7d00-9ec0-7b39cf69abc1\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "narrative-tracker": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_failed": "2026-09-17T06:45:37Z",
     "total_runs": 490,
     "total_successes": 119,
@@ -35,7 +35,7 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-0400-7c93-bf41-408414860808\"} {\"type\":\"turn.started\"} {\"typ",
     "last_success": "2026-09-18T19:51:53Z",
     "last_quality_score": 4,
-    "last_dispatch": "2026-09-18T19:49:10Z"
+    "last_dispatch": "2026-09-19T01:46:30Z"
   },
   "token-movers": {
     "last_status": "success",
