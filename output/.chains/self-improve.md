@@ -1,10 +1,12 @@
-Self-improve ran in default `improve` mode.
+`self-improve` completed in default improve mode.
 
-The highest-impact viable fix was a writable notification-queue fallback for `vuln-tracker`. The required synthetic dry-run timed out with exit 124 and empty output, so the change was reverted and no PR or notification was created.
+- Targeted `vuln-scanner`, which has 32 consecutive failures from Grok rejecting `grok-4.5`.
+- Proposed switching it to the known-working Claude harness.
+- Synthetic dry-run failed: nonzero exit and control-plane modification detection.
+- Reverted the configuration change as required.
+- No PR or notification was created.
+- Recorded the result in [memory/logs/2026-09-19.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-19.md:49).
 
 ## Summary
 
-- Dry-run verdict: failed closed
-- Production changes: none
-- Log updated: [2026-09-17.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-17.md)
-- Follow-up: investigate why `vuln-tracker` cannot complete the synthetic dry-run before retrying the delivery fix.
+Only the required run log was modified. The scanner remains on Grok and still needs a repair that can pass the dry-run gate.
