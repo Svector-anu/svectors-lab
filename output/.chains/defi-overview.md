@@ -1,34 +1,40 @@
-*Crypto — 2026-09-19* — risk-on (conviction high) | DeFi Mixed: volume and TVL rose; stablecoin supply barely moved
+**Crypto — 2026-09-19** — risk-on (conviction high) | DeFi Mixed: DEX activity surged; stable balances barely moved.
 
-*Position call:* RIDE broad strength; WATCH DEX/UNI continuation; FADE vertical DRV/privacy entries.
+Take: risk-on — BTC +4.6% over 24h with 19/20 top caps green.
+Conviction: high — BTC, breadth, sentiment, and DEX participation agree; stable inflows lag.
+Evidence: DEX volume reached $12.03B, up 21.1% day over day.
 
-*TVL:* $92.41B (+0.4% vs prior snapshot)
+**TVL:** $93.18B (+0.8% vs prior refresh; daily/7d delta n/a)
 
-*Top chains*
-1. Ethereum — $52.21B
-2. Solana — $6.40B
-3. Base — $5.87B
+**Top chains**
+1. Ethereum — $52.55B
+2. Solana — $6.31B
+3. Base — $5.89B
 
-*Protocol movers*
-↑ Starknet Bridge +35.9% ($239M) — bridge TVL expansion; no independent catalyst confirmed
-↑ Rhea Lend +19.6% ($150M) — second straight daily gain; no obvious catalyst
+**Movers**
+↑ Starknet Bridge +23.4% to $228M — second straight gain; no obvious catalyst in source data
+↑ CIAN Yield Layer +13.1% to $296M — no obvious catalyst
+_No chain or protocol loser cleared the size and move filters._
 
-*Fees leaders (24h)*
-1. Tether — $17.13M (+3.3% over 7d)
-2. Circle — $6.94M (+2.6% over 7d)
-3. PumpSwap — $3.81M (+33.7% over 7d)
+**Fees leaders (24h)**
+1. Tether — $17.04M (−0.5% vs prior day)
+2. Circle USDC — $6.91M (−0.3%)
+3. PumpSwap — $3.75M (−1.6%)
 
-*DEX vol (24h):* $11.21B (+12.9%) — Uniswap V3 $1.78B (+49.6%), Uniswap V4 $1.41B (-5.5%)
+**DEX vol (24h):** $12.03B (+21.1%) · Uniswap V3 $1.70B, Uniswap V4 $1.42B, PancakeSwap V3 $905M
 
-*Real yield (sustainable, filtered)*
-• WSOL-USDC (Raydium, Solana) — 133.3% apyBase ($38.4M TVL)
-• WETH-USDT (Uniswap V3, Ethereum) — 56.4% apyBase ($111.9M TVL)
-• ETH-LINK (Uniswap V4, Ethereum) — 56.1% apyBase ($21.9M TVL)
+**Stables:** $311.9B (+0.47% 24h) — USDe +1.44% and USDS +1.06% were the notable issuer moves.
 
-*Incentive yield (emissions, filtered)*
-• USDC-AERO (Aerodrome, Base) — 28.7% rewards ($34.3M TVL)
-• sdCRV (Stake DAO, Ethereum) — 12.4% rewards ($41.0M TVL)
+**Real yield (base fees, filtered; LP risk applies)**
+• WSOL-USDC (Raydium, Solana) — 120.2% apyBase ($38.9M TVL)
+• WETH-USDT (Uniswap V3, Ethereum) — 52.9% apyBase ($111.3M TVL)
+• USDC-WETH (Uniswap V3, Ethereum) — 32.4% apyBase ($35.0M TVL)
 
-*Macro:* BTC +5.9% / ETH +6.4% · F&G 71 (Greed) · breadth 20/20 · BTC ETF flows returned positive on Sep 17
+**Incentive yield (emissions, filtered)**
+• USDC-AERO (Aerodrome, Base) — 29.2% via AERO rewards ($34.8M TVL)
+• sdCRV (Stake DAO, Ethereum) — 12.5% via CRV/crvUSD rewards ($40.6M TVL)
+
+**Macro:** BTC +4.6% / ETH +5.8% · F&G 71 (Greed) · breadth 19/20 · BTC ETF inflows $324.6M on Sep 18
+**Positioning:** RIDE broad strength; WATCH regulated onchain stocks; FADE thin privacy-beta chasing.
 
 _sources: llama_tvl=ok llama_dex=ok llama_fees=ok llama_stables=ok llama_yields=ok coingecko=ok fng=ok polymarket=ok websearch=ok | var: none_
