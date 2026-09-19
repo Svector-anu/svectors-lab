@@ -1,61 +1,60 @@
-# Market Context (as of 2026-09-18)
+# Market Context (as of 2026-09-19)
 
-> **Take:** risk-on — BTC gained 6.3% over 24h and 18/20 top caps are green. Conviction: high.
+> **Take:** risk-on — BTC is +5.9% over 24h with 20/20 top caps green. Conviction: high.
 
 ## Signal Snapshot
-- BTC $81,260 (+6.3% 24h, +4.3% 7d) · dominance 58.4% (flat since prior refresh)
-- ETH $2,642.47 (+8.1% 24h, +1.7% 7d) · ETH/BTC 0.0325
-- SOL $114.03 (+13.2% 24h, +10.0% 7d)
-- Total mcap $2.781T (+2.8% 24h) · DEX vol $10.06B 24h
-- Breadth: 18/20 green 24h · 14/20 green 7d
-- Fear & Greed: 56 (Greed) — yesterday 50
+- BTC $81,143 (+5.9% 24h, +5.6% 7d) · dominance 58.4% (live value unavailable; carried from prior refresh)
+- ETH $2,610.96 (+6.4% 24h, +4.3% 7d) · ETH/BTC 0.0322
+- SOL $113.39 (+10.9% 24h, 7d n/a)
+- Total mcap $2.783T (+2.6% 24h) · DEX vol $11.21B 24h
+- Breadth: 20/20 green 24h · 13/20 green 7d
+- Fear & Greed: 71 (Greed) — yesterday 56
 
 ## What Changed Since Last Refresh
-- BTC rose another 1.1% since the prior refresh; its 24h gain widened from 5.0% to 6.3%.
-- ETH rose 2.9% and SOL 4.6% since the prior refresh, widening the high-beta lead over BTC.
-- DeFi TVL increased 2.4% to $92.08B while DEX volume stayed near $10.06B; deposits, not trading, drove the extension.
+- Fear & Greed jumped 15 points to 71 while daily breadth widened from 18/20 to 20/20 green.
+- DEX volume rose 11.5% versus the prior snapshot to $11.21B, led by Uniswap V3 at $1.78B.
+- BTC and ETH slipped 0.1% and 1.2% from yesterday's snapshot despite large trailing 24h gains: momentum is broad, but no longer accelerating.
 
 ## Active Narratives
-- **Privacy** — phase: peak. Evidence: ZANO, FIRO, and ZEC occupy three of CoinGecko's top seven trending slots.
-- **Regulated onchain stocks** — phase: emerging. Evidence: ARB is sixth in CoinGecko trends after the SEC's five-year tokenized-securities exemption.
-- **DEX-token rebound** — phase: rising. Evidence: UNI is eighth in CoinGecko trends and Uniswap V4 fees rose 23.8% day over day.
-- **High-beta majors** — phase: rising. Evidence: SOL gained 13.2%, ADA 10.8%, and HYPE 10.4% over 24h.
+- **DEX / UNI value capture** — phase: rising. Evidence: UNI is sixth in CoinGecko trends and Uniswap V3 volume rose 49.6% day over day to $1.78B.
+- **Privacy** — phase: peak. Evidence: FIRO, ZEC, and ZANO occupy three of CoinGecko's top five trends and gained 37.8%, 6.7%, and 24.8% over 24h.
+- **DRV derivatives momentum** — phase: peak. Evidence: DRV is first in CoinGecko trends after a 91.7% daily gain.
+- **Broad alt rotation** — phase: rising. Evidence: all 20 top-cap assets are green over 24h while SOL leads BTC by 5.0 percentage points.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $25.31B (+1.6%)
-- Aave V3: $17.85B (+1.1%)
-- SSV Network: $13.64B (+0.8%)
-- Morpho Blue: $10.63B (+9.8%)
-- Binance staked ETH: $9.66B (+1.7%)
+- Lido: $25.54B (+4.5%)
+- Aave V3: $17.77B (+1.5%)
+- SSV Network: $13.77B (+3.6%)
+- Morpho Blue: $10.80B (+9.7%)
+- Binance staked ETH: $9.73B (+4.5%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $52.18B (n/a)
-- Solana: $6.24B (n/a)
-- Base: $5.85B (n/a)
+- Ethereum: $52.21B (n/a)
+- Solana: $6.40B (n/a)
+- Base: $5.87B (n/a)
 
 ## Stablecoins
-Total: $311.2B (+0.2% 7d). USDT $183.4B · USDC $74.1B · USDS $6.6B · USDe $4.8B · combined share of mcap 11.2%.
+Total: $311.9B (+0.3% 7d). USDT $183.3B · USDC $74.4B · USDS $6.5B · USDe $4.8B · combined share of mcap 11.2%.
 
 ## Trending (CoinGecko)
-- ZANO — first in CoinGecko trends; live price-change data unavailable
-- FIRO — second in CoinGecko trends; live price-change data unavailable
-- PENGU — third in CoinGecko trends; live price-change data unavailable
+- DRV — first in CoinGecko trends, +91.7% over 24h
+- FIRO — second in CoinGecko trends, +37.8% over 24h
+- PENGU — third in CoinGecko trends, +5.7% over 24h
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Chelsea FC wins on 2026-09-18 | 36.5% | $6.27M | $0.11M |
-| United Russia gains most seats in next parliamentary election | 79.5% | $1.43M | $0.69M |
-| Brentford FC wins on 2026-09-18 | 29.5% | $1.37M | $0.06M |
+| United Russia gains most seats in next parliamentary election | 76.5% | $2.33M | $0.49M |
+| Houston vs. Texas Tech | 40.5% | $0.60M | $0.54M |
+| New People gains most seats in next Russian parliamentary election | 22.5% | $0.55M | $0.21M |
 
 ## Macro Catalysts (next 48h)
-- Friday's $6.2T US options expiry can amplify low-conviction price moves; ride confirmed strength rather than front-run continuation.
-- US spot BTC ETFs logged about $160M of inflows on September 17 after a negative week; one positive session is tentative confirmation, not a trend.
-- BTC is absorbing a Fed hike, a stronger dollar, and the CLARITY setback; resilience is bullish, but the liquidity backdrop still argues against chasing.
+- The SEC's conditional tokenized-stock exemptions support regulated onchain-market infrastructure, but implementation and issuer participation remain the next proof points.
+- US spot BTC ETFs returned to roughly $160M of net inflows on September 17 after two outflow sessions; ride confirmation, but do not extrapolate one session into a trend.
 
 ## Implications for Downstream Skills
-- **token-pick:** ride regulated onchain-stock and high-beta strength, but size for expiry-driven reversal and weak DEX-volume confirmation.
-- **narrative-tracker:** monitor regulated onchain stocks emerging→rising; treat privacy as crowded until breadth expands beyond three trending names.
+- **token-pick:** ride DEX infrastructure and broad alt strength, but avoid chasing DRV/privacy after vertical moves.
+- **narrative-tracker:** monitor DEX/UNI rising→peak; privacy and DRV are already crowded.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
