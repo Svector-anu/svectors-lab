@@ -1,34 +1,31 @@
-ℹ️ GitHub Trending — 2026-09-18
+*GitHub Trending — 2026-09-19*
 
-*GitHub Trending — 2026-09-18*
-
-*Top pick* — [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)
-The standout is a six-phase agent audit workflow that requires fresh-agent verification before findings become final.
+*Top pick* — [cactus-compute/needle](https://github.com/cactus-compute/needle)
+Needle makes useful agent actions local: tiny binaries, constrained tool calls and calibrated confidence across edge hardware.
 
 *AI/ML*
-• [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) — ★ 1,319 today (4.9k total) · TypeScript · ACCELERATING
-Gives shell-capable agents a separate visible browser window while preserving the user’s active session.
+• [cactus-compute/needle](https://github.com/cactus-compute/needle) — ★ 207 today (11.5k total) · Python · [ACCELERATING]
+Runs typed tool calls and extraction in 8–29MB binaries, including phones, browsers and microcontrollers.
 
-• [TencentCloud/Octop](https://github.com/TencentCloud/Octop) — ★ 571 today (3.8k total) · Python · ACCELERATING
-Packs multi-user isolation, approvals, MCP connectors, memory and IM channels into one self-hosted process.
+• [higgsfield-ai/higgsfield](https://github.com/higgsfield-ai/higgsfield) — ★ 325 today (4.8k total) · Jupyter Notebook · [RETURNING]
+Combines GPU allocation, experiment queues and ZeRO-3/FSDP training behind GitHub-driven deployment workflows.
+
+• [docling-project/docling](https://github.com/docling-project/docling) — ★ 94 today (66.8k total) · Python · [ACCELERATING]
+New video, XBRL and email parsers extend one local pipeline from documents into multimodal agent inputs.
 
 *Devtools*
-• [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) — ★ 3,019 today (12.2k total) · JavaScript · ACCELERATING
-Makes architecture coverage, candidate validation and independent verification explicit artifacts instead of hidden agent reasoning.
+• [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — ★ 547 today (96.8k total) · JavaScript · [ACCELERATING]
+Packages 25 installable, cross-agent engineering workflows with explicit build, test, review and ship gates.
 
-• [alibaba/open-code-review](https://github.com/alibaba/open-code-review) — ★ 2,724 today (36.2k total) · Go · ACCELERATING
-Combines deterministic per-file rule matching with repository-aware LLM reviews and precise line comments.
+• [trycua/cua](https://github.com/trycua/cua) — ★ 383 today (24.0k total) · Python · [RETURNING]
+Unifies cross-OS desktop drivers, isolated fleets and trajectory-exporting benchmarks for computer-use agents.
 
-• [coder/coder](https://github.com/coder/coder) — ★ 478 today (15.1k total) · Go · RETURNING
-Runs agents in Terraform-defined workspaces while keeping model credentials in the control plane.
-
-*Infra*
-• [rustfs/rustfs](https://github.com/rustfs/rustfs) — ★ 559 today (33.0k total) · Rust · RETURNING
-Ships distributed S3 storage plus CI-tracked compatibility matrices and an opt-in Iceberg REST catalog.
+• [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) — ★ 280 today (25.0k total) · Python · [ACCELERATING]
+Open-sources 11 role-specific plugin bundles spanning skills, connectors, commands and specialist agents.
 
 *Web/Apps*
-• [asciimoo/hister](https://github.com/asciimoo/hister) — ★ 842 today (4.7k total) · Go · RETURNING
-Indexes visited-page and local-file contents privately, then exposes retrieval through web, terminal and MCP.
+• [Open-Dev-Society/OpenStock](https://github.com/Open-Dev-Society/OpenStock) — ★ 477 today (15.8k total) · TypeScript · [RETURNING]
+Makes a self-hostable market dashboard inspectable, including alerts, provider integrations and delayed-data caveats.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/17
+sources: trending=ok · gh_api=ok · kept 7/15

@@ -1,15 +1,11 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-18T13:57:26Z",
-  "quality_score": 4,
-  "assessment": "Substantive, concise, conclusion-first trending report with direct repository links and useful categorization, though its sourcing is only summarized and it offers limited relevance to the crypto-trading north star.",
+  "last_analyzed": "2026-09-19T14:47:08Z",
+  "quality_score": 3,
+  "assessment": "Clear, concise, and plausibly sourced, but it provides developer-trend curation rather than a crypto regime verdict or explicit tradeable position calls aligned with the operator strategy.",
   "flags": [],
-  "avg_score": 2.83,
+  "avg_score": 2.87,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -177,6 +173,12 @@
       "date": "2026-09-18",
       "score": 4,
       "ts": "2026-09-18T13:57:26Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-19",
+      "score": 3,
+      "ts": "2026-09-19T14:47:08Z",
       "harness": "codex"
     }
   ]
