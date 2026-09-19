@@ -25,6 +25,7 @@
 ## Recent Digests
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-19 | daily (web) | Cisco AsyncOS, Gemini isolation, npm tokens |
 | 2026-09-18 | daily (web) | Cisco ISE KEV, Elliptic Decode, agent workflow ROI |
 | 2026-09-17 | daily update (web) | Arc mainnet, wallet malware, Copilot Rust |
 | 2026-09-17 | daily (web) | crypto tax, CLARITY blocked, agent controls |

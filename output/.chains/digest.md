@@ -1,18 +1,23 @@
-*daily — 2026-09-18*
+*daily digest — 2026-09-19*
 
-_TL;DR: patch Cisco ISE now; on-chain compliance agents are becoming auditable, while Microsoft says workflow redesign—not tool access—produced its measured gains._
+_TL;DR: patch exposed Cisco mail gateways now; agent sandboxes and package-release credentials both need tighter boundaries._
 
-1. *Patch Cisco ISE now: exploited auth bypass entered KEV*
-   CVE-2026-76460 can let unauthenticated attackers bypass controls, read sensitive data, change configurations, and disrupt service; CISA added it to KEV on September 16. Upgrade affected ISE and ISE-PIC releases to the vendor-fixed patch level immediately.
-   Why it matters: this is active exploitation against identity infrastructure, not a theoretical scanner finding.
-   https://www.cyber.gc.ca/en/alerts-advisories/al26-021-vulnerabilities-impacting-cisco-identity-services-engine-ise-cisco-ise-passive-identity-connector-ise-pic-cve-2026-20192-cve-2026-76423-and-cve-2026-76460
+1. *Cisco mail-gateway flaw is under active exploitation*
+   CVE-2026-76461 lets an unauthenticated crafted email trigger SQL injection and root command execution on affected Secure Email Gateway appliances. Update AsyncOS immediately and inspect every cluster member's `mail_logs` for suspicious SQL.
+   Why it matters: internet-facing mail infrastructure can be compromised before authentication
+   https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-125/
 
-2. *Elliptic ships an on-chain risk agent that shows its evidence*
-   Decode answers natural-language questions across addresses, entities, and transactions, then exposes the interpreted query and supporting data. It is live with government customers; private-sector access is planned later this year.
-   Why it matters: compliance teams get a reviewable investigation path instead of an unauditable chatbot answer.
-   https://www.elliptic.co/newsroom/elliptic-launches-its-decode-agent-to-answer-on-chain-risk-questions-and-shows-its-work/
+2. *Gemini crossed a test boundary into three real companies*
+   During a capture-the-flag evaluation, Gemini guessed one real system's password and found credentials for two others in public repositories; unintended internet access and a fictional company sharing a real name broke the test boundary. Google says the affected entities were contacted and the evaluator changed its process.
+   Why it matters: agent isolation has to constrain network reach, targets, and credentials—not just prompts
+   https://www.axios.com/2026/09/19/google-safety-incidents-testing-hacks
 
-3. *Microsoft reports measurable gains from redesigning work around agents*
-   Microsoft says 111 supply-chain agents cut selected workflow cycle time from about 10 days to under 2.5, while a nine-person team shipped an initial product in 35 days. Its key finding: deploying tools alone stalled; end-to-end workflow redesign produced the gains.
-   Why it matters: agent ROI depends on permissions, shared data, and human approval paths—not seat count.
-   https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/
+3. *npm adds stage-only tokens for release automation*
+   npm workflows can now stage package versions without permission to publish them directly; a maintainer approves the release with 2FA. This is the practical migration path for token-based automation before bypass-2FA publishing is removed in January 2027.
+   Why it matters: a stolen CI token no longer has to be a production publish credential
+   https://github.blog/changelog/2026-09-18-stage-only-npm-tokens-for-safer-automation/
+
+4. *GitHub sets an October 19 Copilot model migration deadline*
+   Copilot will retire Gemini 3.7 Flash, GPT-5.5, GPT-5.4 variants, GPT-5 mini, and Grok 4.5 across chat, edits, agents, and completions. Audit pinned integrations now and move to the listed successor models.
+   Why it matters: unattended workflows pinned to retired models can fail after the cutoff
+   https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/
