@@ -213,14 +213,14 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-5776-7981-a2f8-21d25e764c62\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "memory-flush": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-18T23:54:28Z",
     "total_runs": 43,
     "total_successes": 26,
     "total_failures": 17,
     "consecutive_failures": 0,
     "success_rate": 0.6,
-    "last_dispatch": "2026-09-18T23:52:30Z",
+    "last_dispatch": "2026-09-19T23:32:16Z",
     "last_failed": "2026-09-17T06:46:15Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-a472-7162-aa16-11d0243c34c2\"} {\"type\":\"turn.started\"} {\"typ"
   },
