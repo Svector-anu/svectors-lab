@@ -1,17 +1,11 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-19T19:33:06Z",
+  "last_analyzed": "2026-09-20T01:36:49Z",
   "quality_score": 4,
-  "assessment": "Substantive, fresh, conclusion-first and actionable with an explicit WATCH call, though source-status labels without URLs and weak justification for calling volatile LP yields “sustainable” limit verifiability.",
+  "assessment": "Fresh, conclusion-first and evidence-backed regime read with a useful watch call, though the yield opportunities lack explicit position labels and risk context.",
   "flags": [],
-  "avg_score": 2.37,
+  "avg_score": 2.43,
   "history": [
-    {
-      "date": "2026-09-09",
-      "score": 2,
-      "ts": "2026-09-09T18:46:31Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-19",
       "score": 4,
       "ts": "2026-09-19T19:33:06Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 4,
+      "ts": "2026-09-20T01:36:49Z",
       "harness": "codex"
     }
   ]
