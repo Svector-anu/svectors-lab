@@ -12,7 +12,7 @@
     "last_success": "2026-09-20T11:57:04Z"
   },
   "defi-overview": {
-    "last_status": "success",
+    "last_status": "dispatched",
     "last_success": "2026-09-20T15:12:41Z",
     "total_runs": 440,
     "total_successes": 113,
@@ -20,7 +20,7 @@
     "consecutive_failures": 0,
     "success_rate": 0.26,
     "last_quality_score": 2,
-    "last_dispatch": "2026-09-20T15:08:45Z",
+    "last_dispatch": "2026-09-20T18:11:28Z",
     "last_failed": "2026-09-17T06:45:29Z",
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-efc5-7d00-9ec0-7b39cf69abc1\"} {\"type\":\"turn.started\"} {\"typ"
   },
@@ -100,8 +100,8 @@
     "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-f88b-7f61-9b27-19a0e173127f\"} {\"type\":\"turn.started\"} {\"typ"
   },
   "skill-health": {
-    "last_dispatch": "2026-09-19T19:29:37Z",
-    "last_status": "success",
+    "last_dispatch": "2026-09-20T18:11:28Z",
+    "last_status": "dispatched",
     "last_success": "2026-09-19T19:32:22Z",
     "total_runs": 342,
     "total_successes": 42,
@@ -310,8 +310,8 @@
     "last_quality_score": 3
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-09-19T17:27:56Z",
-    "last_status": "success",
+    "last_dispatch": "2026-09-20T18:11:28Z",
+    "last_status": "dispatched",
     "last_success": "2026-09-19T17:33:39Z",
     "total_runs": 43,
     "total_successes": 29,
