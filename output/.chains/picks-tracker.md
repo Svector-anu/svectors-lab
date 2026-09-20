@@ -1,10 +1,14 @@
-PICKS_TRACKER_SKIP: no qualifying picks in the last 30 days.
+*picks scorecard — 2026-08-22 → 2026-09-20*
 
-- Window checked: 2026-08-15 → 2026-09-13
-- Recursive August scorecard entries were excluded; their underlying picks date to July 28.
-- No scorecard or notification was produced.
-- Logged in [memory/logs/2026-09-13.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-13.md).
+*token picks (1 total)*
+ZAMA 2026-09-19 — picked $0.0823 → now $0.089905 (+9.2%) 🟡
 
-## Summary
+*score: 0W 1H 0L | avg +9.2% | hit rate 0%*
+*best: ZAMA +9.2% | worst: ZAMA +9.2%*
 
-Enable or fix the output format for `token-pick` / `monitor-polymarket` to produce same-line `**Token:**` or `**Market:**` entries that this tracker can ingest.
+*market picks*
+Will Bitcoin reach $85,000 in September? — NO ⏳ still open
+
+no financial advice. just tracking the record.
+
+read it: https://github.com/aeonfun/aeon/blob/main/output/articles/picks-scorecard-2026-09-20.md

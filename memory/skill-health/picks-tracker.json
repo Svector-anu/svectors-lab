@@ -1,10 +1,10 @@
 {
   "skill": "picks-tracker",
-  "last_analyzed": "2026-09-13T11:45:23Z",
-  "quality_score": 4,
-  "assessment": "Good, concise no-op result with a defined window, exclusion rationale, and an actionable ingestion-format fix; it is appropriately honest and decision-oriented.",
+  "last_analyzed": "2026-09-20T11:56:24Z",
+  "quality_score": 3,
+  "assessment": "Concise, current, and plausibly verifiable scorecard, but limited sample size and no actionable position call or methodology context reduce its decision value.",
   "flags": [],
-  "avg_score": 3.63,
+  "avg_score": 3.56,
   "history": [
     {
       "date": "2026-07-11",
@@ -42,6 +42,12 @@
       "date": "2026-09-13",
       "score": 4,
       "ts": "2026-09-13T11:45:23Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 3,
+      "ts": "2026-09-20T11:56:24Z",
       "harness": "codex"
     }
   ]

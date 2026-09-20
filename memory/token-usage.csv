@@ -380,4 +380,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-19,memory-flush,codex-default,523255,3010,480768,0
 2026-09-20,defi-overview,codex-default,650795,10418,578304,0
 2026-09-20,defi-overview,codex-default,386470,6827,333056,0
-2026-09-20,fear-divergence,codex-default,134592,1019,110976,0
+2026-09-20,picks-tracker,codex-default,386469,3107,345344,0
