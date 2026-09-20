@@ -1,1 +1,1 @@
-*Narrative Tracker — 2026-09-20*: no phase transitions, map unchanged from the 2026-09-20 intraday baseline.
+*Narrative Tracker — 2026-09-20*: no phase transitions, map unchanged from 2026-09-20. Source confidence lower: KEY_UNSET; xai http=000.

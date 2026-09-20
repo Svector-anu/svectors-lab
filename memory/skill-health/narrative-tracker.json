@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-20T15:10:40Z",
-  "quality_score": 3,
-  "assessment": "Acceptable no-change report: concise and conclusion-first, but it lacks evidence anchors and an explicit watch/position call.",
-  "flags": [],
-  "avg_score": 2.73,
+  "last_analyzed": "2026-09-20T20:50:12Z",
+  "quality_score": 2,
+  "assessment": "Produced a concise status, but it lacks evidence, narrative details, and explicit position calls, making the claimed lack of transitions minimally useful and difficult to verify.",
+  "flags": [
+    "low_quality"
+  ],
+  "avg_score": 2.7,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 3,
-      "ts": "2026-09-10T14:36:54Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 2,
@@ -184,6 +180,12 @@
       "date": "2026-09-20",
       "score": 3,
       "ts": "2026-09-20T15:10:40Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T20:50:12Z",
       "harness": "codex"
     }
   ]
