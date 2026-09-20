@@ -1,15 +1,11 @@
 {
   "skill": "github-trending",
-  "last_analyzed": "2026-09-19T14:47:08Z",
+  "last_analyzed": "2026-09-20T15:11:34Z",
   "quality_score": 3,
-  "assessment": "Clear, concise, and plausibly sourced, but it provides developer-trend curation rather than a crypto regime verdict or explicit tradeable position calls aligned with the operator strategy.",
+  "assessment": "A concise, structured, plausibly verifiable trending digest, but it offers no crypto relevance, regime verdict, or actionable position call aligned with the operator’s strategy.",
   "flags": [],
-  "avg_score": 2.87,
+  "avg_score": 2.9,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 2
-    },
     {
       "date": "2026-08-25",
       "score": 2
@@ -179,6 +175,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T14:47:08Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 3,
+      "ts": "2026-09-20T15:11:34Z",
       "harness": "codex"
     }
   ]

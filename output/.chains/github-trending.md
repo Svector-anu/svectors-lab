@@ -1,31 +1,25 @@
-*GitHub Trending — 2026-09-19*
+*GitHub Trending — 2026-09-20*
 
-*Top pick* — [cactus-compute/needle](https://github.com/cactus-compute/needle)
-Needle makes useful agent actions local: tiny binaries, constrained tool calls and calibrated confidence across edge hardware.
+*Top pick* — [anthropics/financial-services](https://github.com/anthropics/financial-services)
+The standout turns finance-agent demos into review-gated reference workflows deployable through both a user interface and an API.
 
 *AI/ML*
-• [cactus-compute/needle](https://github.com/cactus-compute/needle) — ★ 207 today (11.5k total) · Python · [ACCELERATING]
-Runs typed tool calls and extraction in 8–29MB binaries, including phones, browsers and microcontrollers.
+• [anthropics/financial-services](https://github.com/anthropics/financial-services) — ★ 236 today (35.2k total) · Python · [ACCELERATING]
+Ships reusable comps, DCF and reconciliation agents with explicit human sign-off instead of autonomous financial decisions.
 
-• [higgsfield-ai/higgsfield](https://github.com/higgsfield-ai/higgsfield) — ★ 325 today (4.8k total) · Jupyter Notebook · [RETURNING]
-Combines GPU allocation, experiment queues and ZeRO-3/FSDP training behind GitHub-driven deployment workflows.
+• [BuilderIO/agent-native](https://github.com/BuilderIO/agent-native) — ★ 89 today (5.0k total) · TypeScript · [RETURNING]
+One action definition powers agent tools and UI calls with shared validation, permissions and state.
 
-• [docling-project/docling](https://github.com/docling-project/docling) — ★ 94 today (66.8k total) · Python · [ACCELERATING]
-New video, XBRL and email parsers extend one local pipeline from documents into multimodal agent inputs.
+• [affaan-m/ECC](https://github.com/affaan-m/ECC) — ★ 1,012 today (263.4k total) · JavaScript · [ACCELERATING]
+Standardizes skills, memory and security across seven coding harnesses instead of locking workflows to one runtime.
 
 *Devtools*
-• [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — ★ 547 today (96.8k total) · JavaScript · [ACCELERATING]
-Packages 25 installable, cross-agent engineering workflows with explicit build, test, review and ship gates.
-
-• [trycua/cua](https://github.com/trycua/cua) — ★ 383 today (24.0k total) · Python · [RETURNING]
-Unifies cross-OS desktop drivers, isolated fleets and trajectory-exporting benchmarks for computer-use agents.
-
-• [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) — ★ 280 today (25.0k total) · Python · [ACCELERATING]
-Open-sources 11 role-specific plugin bundles spanning skills, connectors, commands and specialist agents.
+• [anthropics/claude-code](https://github.com/anthropics/claude-code) — ★ 415 today (147.0k total) · TypeScript · [ACCELERATING]
+Keeps terminal, IDE and GitHub coding workflows in one official distribution with extensible plugin examples.
 
 *Web/Apps*
-• [Open-Dev-Society/OpenStock](https://github.com/Open-Dev-Society/OpenStock) — ★ 477 today (15.8k total) · TypeScript · [RETURNING]
-Makes a self-hostable market dashboard inspectable, including alerts, provider integrations and delayed-data caveats.
+• [vercel-labs/json-render](https://github.com/vercel-labs/json-render) — ★ 585 today (17.1k total) · TypeScript · [ACCELERATING]
+Constrains generated interfaces to predefined components and actions, with React and React Native renderers.
 
 ---
-sources: trending=ok · gh_api=ok · kept 7/15
+sources: trending=ok · gh_api=ok · kept 5/13
