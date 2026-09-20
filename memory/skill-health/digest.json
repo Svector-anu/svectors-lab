@@ -1,17 +1,14 @@
 {
   "skill": "digest",
-  "last_analyzed": "2026-09-19T14:47:07Z",
-  "quality_score": 3,
-  "assessment": "Fresh, concrete, actionable, and source-linked, but it does not serve the crypto-trading strategy or provide a regime verdict and explicit position calls.",
-  "flags": [],
+  "last_analyzed": "2026-09-20T15:11:34Z",
+  "quality_score": 2,
+  "assessment": "Polished and source-linked, but it ignores the crypto-trader mandate, offers no regime verdict or position calls, and provides a generic coding-agent news digest instead of actionable market signal.",
+  "flags": [
+    "low_quality",
+    "generic_content"
+  ],
   "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-08-29",
-      "score": 2,
-      "ts": "2026-08-29T15:19:30Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-30",
       "score": 2,
@@ -184,6 +181,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T14:47:07Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T15:11:34Z",
       "harness": "codex"
     }
   ]
