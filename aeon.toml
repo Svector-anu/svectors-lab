@@ -68,6 +68,17 @@ daily_cost_cap_usd = 0.0
 [grants.notify]
 capabilities = ["sends_notifications"]
 
+[grants.web]
+capabilities = ["public_web_read", "external_api"]
+
+[grants.repo-read]
+capabilities = ["repository_read"]
+targets = ["Svector-anu/svectors-lab"]
+
+[grants.repo-write]
+capabilities = ["repository_write"]
+targets = ["Svector-anu/svectors-lab"]
+
 [skills.heartbeat]
 enabled = true
 schedule = "0 8 * * *"
