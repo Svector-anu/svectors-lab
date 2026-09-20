@@ -1,17 +1,11 @@
 {
   "skill": "pr-review",
-  "last_analyzed": "2026-09-19T14:46:06Z",
+  "last_analyzed": "2026-09-20T15:10:21Z",
   "quality_score": 3,
-  "assessment": "Skill completed its task correctly: checked two repos, found no open PRs, logged the result, and followed the exit rule (no notify on empty queue). Clear, verifiable, and accurate—a legitimate no-op, not a failure.",
+  "assessment": "Correctly executed no-op: verified no PRs across watched repos, followed the stated rule (no notify on empty result), logged cleanly.",
   "flags": [],
-  "avg_score": 3.43,
+  "avg_score": 3.4,
   "history": [
-    {
-      "date": "2026-09-05",
-      "score": 4,
-      "ts": "2026-09-05T16:12:37Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-06",
       "score": 3,
@@ -184,6 +178,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T14:46:06Z",
+      "harness": "claude"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 3,
+      "ts": "2026-09-20T15:10:21Z",
       "harness": "claude"
     }
   ]

@@ -1,16 +1,7 @@
-Per the skill's exit rule, no open PRs means no notification — just the log entry, which is done.
-
-## PR Review — 2026-09-19
-
-**Mode**: review (per-PR deep review), `${var}` empty → all watched repos.
-
-Checked both repos in `memory/watched-repos.md`:
-- `aeonfun/aeon` — 0 open PRs
-- `Svector-anu/svectors-lab` — 0 open PRs
-
-No PRs to review, no skips to report. Logged `PR_REVIEW_OK` to `memory/logs/2026-09-19.md` and exited without notifying (per skill rule: no open PRs → log and end, no notify).
+Both watched repos (`aeonfun/aeon` and `Svector-anu/svectors-lab`) have no open PRs right now, so there's nothing to review. Per the skill's rule ("If every PR was skipped, do not notify — just log"), I logged `PR_REVIEW_OK` to `memory/logs/2026-09-20.md` and sent no notification — a clean/no-change run.
 
 ## Summary
-- Ran the REVIEW branch of `skills/pr-review/SKILL.md` against both watched repos; found zero open PRs in either.
-- Modified: `memory/logs/2026-09-19.md` (appended `### pr-review` log block).
-- No follow-up action needed — queue is empty.
+- Ran the `pr-review` skill (default REVIEW branch, no scope var — every watched repo).
+- Checked open PRs on `aeonfun/aeon` and `Svector-anu/svectors-lab` via `gh pr list`: both empty.
+- Appended a `PR_REVIEW_OK` entry to `memory/logs/2026-09-20.md`; no notification sent (no signal to report).
+- No follow-up needed — next scheduled run will re-check.
