@@ -1,0 +1,11 @@
+name = "hunter-22"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "worker"
+risk = "low"
+model = "small"
+write_scope = "own-memory"
+feedback_mode = "none"
+on_missed_run = "run_latest_only"
+capabilities = ["external_api", "public_web_read"]
+tools = ["read", "write", "bash"]

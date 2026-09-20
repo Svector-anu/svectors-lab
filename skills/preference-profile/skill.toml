@@ -1,0 +1,11 @@
+name = "preference-profile"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "thinker"
+risk = "low"
+model = "standard"
+write_scope = "shared-memory"
+feedback_mode = "none"
+on_missed_run = "run_latest_only"
+capabilities = []
+tools = ["read", "write"]

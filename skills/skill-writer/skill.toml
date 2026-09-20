@@ -1,0 +1,11 @@
+name = "skill-writer"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "worker"
+risk = "low"
+model = "small"
+write_scope = "skills"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = []
+tools = ["read", "write"]
