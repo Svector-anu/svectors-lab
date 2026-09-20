@@ -1,9 +1,12 @@
 {
   "skill": "vuln-tracker",
-  "last_analyzed": "2026-09-19T17:33:35Z",
-  "quality_score": 3,
-  "assessment": "Useful and specific status report with clear follow-ups, but the same ZSvirt disclosure is inconsistently labeled MEDIUM and CRITICAL, and the claims lack direct links for verification.",
-  "flags": [],
+  "last_analyzed": "2026-09-20T18:17:50Z",
+  "quality_score": 2,
+  "assessment": "Action-oriented and structured, but internally contradictory severity/status entries and unsupported repository, PR, star-count, and quote specifics make the report unreliable.",
+  "flags": [
+    "low_quality",
+    "unverifiable_claim"
+  ],
   "avg_score": 2.07,
   "history": [
     {
@@ -176,6 +179,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T17:33:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T18:17:50Z",
       "harness": "codex"
     }
   ]

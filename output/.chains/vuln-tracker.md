@@ -1,20 +1,22 @@
-*Vuln Tracker — 2026-09-19*
+*Vuln Tracker — 2026-09-20*
 
 *PR & advisory status*
 
-★ secured: 172.8k across 10 repos (in flight: 486.5k / 16)
+★ secured: 173.1k across 10 repos (in flight: 481.8k / 15)
 
-needs answer: 2
-- NousResearch/hermes-agent (★247100) #94342 — Enough1122: unrelated lockfile drift still needs cleanup.
-- vllm-project/semantic-router (★5870) #3425 — changes remain requested after the issue/link follow-up.
+needs answer: 1
+NousResearch/hermes-agent (★247426) #94342 — Enough1122: "Unrelated lockfile drift should be removed before merge."
+
+closed without merge: 1 new
+vllm-project/semantic-router (★5875) #3425 — superseded by merged #3944, which updates every affected module graph beyond this PR's target.
 
 newly actionable: 0
-merged this week: 3 — tinyhumansai/openhuman ★39887; cloudflare/workers-sdk ★4549; Cosmian/kms ★355
+merged this week: 2
 opened, waiting: 0
 stale: 14
 queued: 11 (3C / 3H / 5M+L)
 
-leaderboard top-3 (PRs by ★): #1 abhigyanpatwari/GitNexus ★47449 (#3095) — #2 tinyhumansai/openhuman ★39887 (#5814) — #3 THU-MAIC/OpenMAIC ★37966 (#1357)
+leaderboard top-3 (PRs by ★): #1 abhigyanpatwari/GitNexus ★47466 (#3095) — #2 tinyhumansai/openhuman ★39928 (#5814) — #3 THU-MAIC/OpenMAIC ★38160 (#1357)
 
 dashboard: memory/topics/vuln-followup.md
 
@@ -23,9 +25,20 @@ dashboard: memory/topics/vuln-followup.md
 disclosure queue: 1 past threshold (of 11 drafts).
 
 ESCALATE:
-- ZSvirt/zsvirt — MEDIUM, 27d old (threshold: 14d); auto-send is blocked by Resend domain verification.
+- ZSvirt/zsvirt — MEDIUM, 28d old (threshold: 14d); automated email delivery remains blocked by the unverified svector.xyz domain.
 
 operator-todo (1):
-- ZSvirt/zsvirt — CRITICAL, 27d — human-only disclosure requires manual send.
+- ZSvirt/zsvirt — CRITICAL, 28d — human-controlled send timing required for live credential exposure.
 
-cleanup candidates (7): sent, submitted, or fixed drafts are safe to archive from `memory/pending-disclosures/`.
+in-window (2):
+- NeoSoul-AI/neotrade-wallet-sdk — MEDIUM, 11d, auto-send armed.
+- amirh00sain/SpiderPanel — HIGH, 4d, auto-send ready.
+
+cleanup candidates (7):
+- DigitalShieldOfficial/USDTPAY-woocommerce — sent
+- amirh00sain/SpiderPanel — email sent
+- genspark-ai/genoffice — submitted PVR
+- guillaumemeyer/watermarks-remover — accepted/fixed
+- jlcodes99/cockpit-tools — sent
+- pacifio/atlas — sent
+- z-fi/zFi — sent/discussed
