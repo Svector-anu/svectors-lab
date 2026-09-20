@@ -1,17 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-19T19:31:37Z",
+  "last_analyzed": "2026-09-20T01:35:44Z",
   "quality_score": 3,
-  "assessment": "Acceptable no-op: it clearly reports no phase transitions and identifies the comparison baseline, but provides no evidence or explicit watch/position call.",
+  "assessment": "Actionable and strategy-aligned with clear regime transitions and position calls, but most narratives lack direct evidence links, source confidence is explicitly low, and the precise basket metrics are uncited.",
   "flags": [],
   "avg_score": 2.7,
   "history": [
-    {
-      "date": "2026-09-09",
-      "score": 3,
-      "ts": "2026-09-09T18:45:16Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T19:31:37Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 3,
+      "ts": "2026-09-20T01:35:44Z",
       "harness": "codex"
     }
   ]
