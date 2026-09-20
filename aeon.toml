@@ -31,8 +31,13 @@ small = "anthropic/claude-haiku-4-5-20251001"
 scorer = "anthropic/claude-haiku-4-5-20251001"
 
 [cascade]
-order = []
-on = ["unavailable", "rate_limited", "quota_exceeded", "timeout"]
+# Actions holds an anthropic subscription token; this laptop has an OpenRouter
+# key. One config has to work in both, so cascade on auth as well: the run
+# tries anthropic, and falls through to openrouter where that credential is the
+# one that exists. Without "auth" in this list a missing credential is a hard
+# run failure instead of a fallback.
+order = ["anthropic", "openrouter"]
+on = ["unavailable", "rate_limited", "quota_exceeded", "timeout", "auth"]
 
 [subscriptions.primary]
 provider = "auto"
