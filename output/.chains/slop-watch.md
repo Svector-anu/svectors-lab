@@ -1,20 +1,18 @@
-today: eliza — next merge worth 10 pts (ordinal 0), with 209 merges in 7d
+today: eliza — next merge worth 10 pts at ordinal 0; 220 merges in 7d. existing PR #29726 is approved with no requested changes.
 
-| lane | next | ordinal | liveness | last merge |
-|---|---:|---:|---|---|
-| eliza | 10 | 0 | live | today |
-| delta-star | 10 | 0 | slowing | 12d ago |
-| asi | 5 | 3 | slowing | 13d ago |
-| heir-elements-sdk | 10 | 0 | dormant | 29d ago |
+| lane | next | ordinal | liveness | last merge | merge rate |
+|---|---:|---:|---|---|---:|
+| eliza | 10 | 0 | live | today | 75.6% |
+| delta-star | 10 | 0 | slowing | 14d ago | 98.0% |
+| asi | 5 | 3 | slowing | 14d ago | 54.7% |
+| heir-elements-sdk | 10 | 0 | dormant | 30d ago | 18.8% |
 
-waiting on you: none. Eliza PR #29726 is approved with no change request.
-
-No new review blocker, liveness transition, project, or monthly reset. No notification sent.
+No new review blockers, liveness transitions, projects, or monthly reset. No notification sent.
 
 `SLOP_WATCH_QUIET`
 
 ## Summary
 
-- Updated `memory/topics/slop-watch-state.json`.
-- Appended today’s run to `memory/logs/2026-09-19.md`.
-- Commit could not be created because this harness mounts `.git` read-only; workspace changes remain available for the outer workflow to persist.
+- Refreshed [slop-watch-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/topics/slop-watch-state.json).
+- Appended the run to [2026-09-20.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-20.md).
+- Could not commit because this harness mounts `.git` read-only (`index.lock: Read-only file system`).
