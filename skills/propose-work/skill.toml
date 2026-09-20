@@ -1,0 +1,11 @@
+name = "propose-work"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "thinker"
+risk = "low"
+model = "standard"
+write_scope = "shared-memory"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = []
+tools = ["read", "write"]

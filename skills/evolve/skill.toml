@@ -1,0 +1,13 @@
+name = "evolve"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "thinker"
+risk = "high"
+model = "standard"
+write_scope = "skills"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = ["repository_write"]
+tools = ["read", "write"]
+requires = ["skill-health"]
+min_score = 3

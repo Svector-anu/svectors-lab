@@ -1,0 +1,222 @@
+version = 1
+
+[omp]
+provider = "openrouter"
+profile = "miniaeon"
+binary = "omp"
+
+[scheduler]
+timezone = "UTC"
+tick_seconds = 300
+catch_up_hours = 12
+circuit_fails = 3
+circuit_pause_hours = 6
+stuck_after_minutes = 45
+
+# The generated GitHub Actions workflow builds the miniaeon binary before each
+# run. By default it builds from THIS repo, so a repo carrying the workspace must
+# also carry the miniaeon source. Set source_repo to an "owner/name" slug to
+# build from a separate source repo instead, which lets a state-only workspace
+# repo run on Actions. source_ref pins a branch or tag; empty uses that repo's
+# default branch. Change it with `miniaeon source set <owner/repo> [--ref x]`.
+# A private source_repo needs a MINIAEON_SOURCE_TOKEN secret with read access.
+[actions]
+source_repo = ""
+source_ref = ""
+
+[models]
+top = "openrouter/anthropic/claude-sonnet-5"
+standard = "openrouter/anthropic/claude-haiku-4.5"
+small = "openrouter/anthropic/claude-haiku-4.5"
+scorer = "openrouter/anthropic/claude-haiku-4.5"
+
+[cascade]
+order = []
+on = ["unavailable", "rate_limited", "quota_exceeded", "timeout"]
+
+[subscriptions.primary]
+provider = "auto"
+# renewal_date = "2026-09-15"
+# renewal_time = "00:00"
+# timezone = "America/Toronto"   # renewal wall-clock zone; defaults to [scheduler].timezone
+usage_target_percent = 80
+reserve_percent = 10
+# no discoverable omp usage row on a pay-as-you-go provider key; let scheduled
+# work proceed instead of gating every non-verifier skill. set to false once a
+# real subscription with a readable quota is configured.
+allow_unknown_usage = true
+
+[channels.telegram]
+enabled = false
+
+[channels.slack]
+enabled = false
+
+[maintenance]
+enabled = true
+allow_prs = false
+
+# The self-directed loop (section 17). Off by default; enable on one
+# non-critical instance running the local daemon. default_wake_minutes is the
+# gap between ticks when the loop names none; daily_cost_cap_usd of 0 leaves
+# only the scheduler-wide cap.
+[heartbeat]
+enabled = false
+default_wake_minutes = 30
+daily_cost_cap_usd = 0.0
+
+[grants.notify]
+capabilities = ["sends_notifications"]
+
+[skills.heartbeat]
+enabled = true
+schedule = "0 8 * * *"
+runtime = "any"
+model = "small"
+role = "verifier"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "catch_up"
+
+[skills.digest]
+enabled = false
+schedule = "0 14 * * *"
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "catch_up"
+
+[skills.memory-flush]
+enabled = true
+schedule = "0 3 * * 0"
+runtime = "any"
+model = "small"
+role = "worker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "run_latest_only"
+
+[skills.github-monitor]
+enabled = false
+schedule = "0 12 * * *"
+runtime = "any"
+model = "small"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.skill-health]
+enabled = true
+schedule = "0 16 * * 1"
+runtime = "any"
+model = "small"
+role = "verifier"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "run_latest_only"
+
+# Recommended, installed disabled. Enable after you inspect it.
+[skills.changelog]
+enabled = false
+schedule = "0 20 * * 1"
+runtime = "any"
+model = "small"
+role = "thinker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "run_latest_only"
+
+[skills.evolve]
+enabled = false
+schedule = "0 18 * * 1"
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "high"
+write_scope = "skills"
+on_missed_run = "skip_stale"
+requires = ["skill-health"]
+min_score = 3
+
+[skills.monolith]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.monolith.delegate]
+skills = ["digest", "github-monitor", "memory-flush", "changelog"]
+actions = ["run"]
+
+[skills.learning-loop]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.skill-writer]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "small"
+role = "worker"
+risk = "low"
+write_scope = "skills"
+on_missed_run = "skip_stale"
+
+[skills.search-skill]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+# Keeps memory/me.md current from your reactions and approvals, so every skill
+# leads with what you repeatedly care about. Weekly; low-risk and self-quiets
+# (silent success) until you have reacted to a few runs.
+[skills.preference-profile]
+enabled = true
+schedule = "0 15 * * 0"
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "run_latest_only"
+
+# Proposes the highest-leverage next work, RISE-scored, into memory/candidates/
+# (read with `miniaeon rank`). On-demand (no schedule); it only proposes, never
+# acts, so enabling just makes it runnable.
+[skills.propose-work]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "skip_stale"
+
+[skills.hunter-22]
+enabled = true
+schedule = "0 10 * * *"
+runtime = "any"
+model = "small"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "run_latest_only"
