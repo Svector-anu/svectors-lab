@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-20T06:55:49Z",
-  "quality_score": 2,
-  "assessment": "Action-oriented and candid about weak sourcing, but most catalysts, flow figures, transition calls, and narrative scores lack supporting links or explained methodology, making the trade recommendations insufficiently verifiable.",
-  "flags": [
-    "unverifiable_claim"
-  ],
-  "avg_score": 2.7,
+  "last_analyzed": "2026-09-20T15:10:40Z",
+  "quality_score": 3,
+  "assessment": "Acceptable no-change report: concise and conclusion-first, but it lacks evidence anchors and an explicit watch/position call.",
+  "flags": [],
+  "avg_score": 2.73,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 2,
-      "ts": "2026-09-10T10:30:12Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 3,
@@ -186,6 +178,12 @@
       "date": "2026-09-20",
       "score": 2,
       "ts": "2026-09-20T06:55:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 3,
+      "ts": "2026-09-20T15:10:40Z",
       "harness": "codex"
     }
   ]
