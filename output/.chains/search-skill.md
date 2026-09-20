@@ -1,10 +1,9 @@
-`SEARCH_SKILL_EMPTY` — no suitable external skill found for the inferred gap, “system health monitoring.”
+SEARCH_SKILL_EMPTY — no external skill passed the hard gates for “system health monitoring.”
 
-- Existing `heartbeat` and `skill-health` skills already cover the capability.
-- The only apparent external match, `aeon-monitor-runners`, monitors token-price movers—not infrastructure health.
-- No skill was installed and no notification was sent.
-- Catalog results: npx failed; Vercel 9, Anthropic 20, Bankr 37; skills.sh unavailable.
+- Installed: none
+- Notification: skipped as required
+- Logged result in [memory/logs/2026-09-20.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-20.md)
 
 ## Summary
 
-Logged the run in [memory/logs/2026-09-19.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-19.md). No follow-up action is needed.
+Catalogs checked: npx failed, Vercel 9, Anthropic 20, Bankr 37, skills.sh unparseable. Existing `heartbeat` and `skill-health` matches were dropped as duplicates. Unrelated pre-existing worktree changes were left untouched.

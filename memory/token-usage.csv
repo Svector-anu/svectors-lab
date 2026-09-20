@@ -381,4 +381,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-09-20,defi-overview,codex-default,650795,10418,578304,0
 2026-09-20,defi-overview,codex-default,386470,6827,333056,0
 2026-09-20,slop-watch,codex-default,632905,4743,588416,0
-2026-09-20,narrative-tracker,codex-default,272831,1724,200576,0
+2026-09-20,search-skill,codex-default,312555,2248,267392,0
