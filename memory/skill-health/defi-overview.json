@@ -1,17 +1,11 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-20T01:36:49Z",
+  "last_analyzed": "2026-09-20T06:56:38Z",
   "quality_score": 4,
-  "assessment": "Fresh, conclusion-first and evidence-backed regime read with a useful watch call, though the yield opportunities lack explicit position labels and risk context.",
+  "assessment": "Good: conclusion-first, decision-grade, fresh-looking, internally consistent, and transparent about unavailable data, though source-status labels without direct links limit independent verification.",
   "flags": [],
-  "avg_score": 2.43,
+  "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 2,
-      "ts": "2026-09-10T01:12:30Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 2,
@@ -184,6 +178,12 @@
       "date": "2026-09-20",
       "score": 4,
       "ts": "2026-09-20T01:36:49Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 4,
+      "ts": "2026-09-20T06:56:38Z",
       "harness": "codex"
     }
   ]

@@ -1,58 +1,60 @@
 # Market Context (as of 2026-09-20)
 
-> **Take:** chop — BTC is flat over 24h while breadth fell to 7/20 and DEX volume dropped 21.9%. Conviction: medium.
+> **Take:** risk-off — only 2/20 top caps are green and DEX volume fell 22.2% as ETH lost 2.0%. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $81,077 (-0.1% 24h, +5.2% 7d) · dominance 58.9% (+0.5 pp vs prior refresh)
-- ETH $2,619.62 (+0.4% 24h, +4.0% 7d) · ETH/BTC 0.0323
-- SOL $110.15 (-2.7% 24h, +8.9% 7d)
-- Total mcap $2.767T (-3.8% 24h) · DEX vol $9.65B 24h
-- Breadth: 7/20 green 24h · 14/20 green 7d
+- BTC $80,365 (-0.8% 24h, +4.3% 7d) · dominance 59.0% (roughly flat vs prior refresh)
+- ETH $2,573.65 (-2.0% 24h, +2.3% 7d) · ETH/BTC 0.0320
+- SOL $108.38 (-2.9% 24h, +6.9% 7d)
+- Total mcap $2.726T (-4.6% 24h) · DEX vol $9.62B 24h
+- Breadth: 2/20 green 24h · 14/20 green 7d
 - Fear & Greed: 71 (Greed) — yesterday 71
 
 ## What Changed Since Last Refresh
-- DEX volume fell 21.9% to $9.65B from $12.36B, weakening participation behind otherwise stable majors.
-- Breadth contracted from 13/20 to 7/20 green over 24h; SOL fell 2.7% and privacy leaders ZEC and XMR fell more than 6%.
-- Total market cap fell 3.8% while BTC dominance rose about 0.5 percentage points, showing risk concentrating in BTC.
+- Breadth collapsed from 7/20 to 2/20 green while ETH fell 2.0%, shifting the regime from chop to risk-off.
+- Total market cap fell another 4.6%; BTC's smaller 0.8% decline shows risk concentrating in BTC.
+- DeFi TVL slipped about 1.0% from the prior snapshot to $92.38B; DEX volume remained weak at -22.2% daily.
 
 ## Active Narratives
-- **Privacy** — phase: fading. Evidence: ZEC and FIRO remain first-page CoinGecko trends, but ZEC fell 7.3% and FIRO fell 1.1% over 24h.
-- **Avalanche DeFi** — phase: rising. Evidence: AVAX is fourth in CoinGecko trends at +18.9% while Benqi Staked AVAX TVL rose 22.0% daily.
-- **Ethena / synthetic dollars** — phase: rising. Evidence: ENA is seventh in CoinGecko trends at +23.5%, while USDe supply rose 5.2% over seven days.
+- **Avalanche DeFi** — phase: rising. Evidence: AVAX is tenth in CoinGecko trends at +14.3%, while Benqi Staked AVAX TVL rose 12.8% daily.
+- **Confidential DeFi** — phase: peak. Evidence: ZAMA is second in CoinGecko trends and +37.6% daily after a +67% prior-week move.
+- **Privacy** — phase: fading. Evidence: ZEC remains ninth in CoinGecko trends but fell 7.3% daily; XMR fell 8.7%.
+- **Broad alt rotation** — phase: fading. Evidence: only 2/20 top caps are green daily despite 14/20 remaining green weekly.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $25.72B (+5.2%)
-- Aave V3: $18.06B (+3.0%)
-- SSV Network: $13.83B (+4.4%)
-- Morpho Blue: $10.73B (+10.4%)
-- Binance staked ETH: $9.81B (+4.3%)
+- Lido: $25.26B (+3.3%)
+- Aave V3: $17.82B (+1.6%)
+- SSV Network: $13.60B (+2.6%)
+- Morpho Blue: $10.60B (+8.5%)
+- Binance staked ETH: $9.63B (+2.1%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $52.65B (n/a)
-- Solana: $6.19B (n/a)
-- Base: $5.92B (n/a)
+- Ethereum: $52.11B (n/a)
+- Solana: $6.15B (n/a)
+- Base: $5.86B (n/a)
 
 ## Stablecoins
-Total: $310.7B (+0.0% 7d). USDT $183.3B · USDC $74.3B · USDS $6.5B · USDe $4.8B · combined share of mcap 11.2%.
+Total: $310.75B (+0.0% 7d). USDT $183.28B · USDC $74.33B · USDS $6.56B · USDe $4.84B · combined share of mcap 11.4%.
 
 ## Trending (CoinGecko)
-- FIRO — first in CoinGecko trends, -1.1% over 24h as privacy momentum cools
-- AVAX — fourth in CoinGecko trends, +18.9% over 24h alongside stronger Benqi TVL
-- ENA — seventh in CoinGecko trends, +23.5% over 24h as USDe supply expands
+- ONE — first in CoinGecko trends, +67.2% over 24h, but outside the top 400 by market cap
+- ZAMA — second in CoinGecko trends, +37.6% over 24h as confidential DeFi stays crowded
+- AVAX — tenth in CoinGecko trends, +14.3% over 24h alongside stronger Benqi TVL
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| United Russia gains most seats in next parliamentary election | 80.5% | $1.72M | $0.50M |
-| LSU vs. Ole Miss | 13.5% | $1.38M | $0.21M |
-| UFC 331: Pantoja vs. Van | 41.5% | $0.85M | $0.52M |
+| United Russia gains most seats in next parliamentary election | 81.5% | $1.64M | $0.42M |
+| CLARITY Act signed into law in 2026 | 7.1% | $0.55M | $0.41M |
+| Bengals vs. Texans | 41.5% | $0.51M | $2.29M |
 
 ## Macro Catalysts (next 48h)
-- Friday's $433M spot-BTC ETF inflow left the full week barely positive at $6.2M; watch Monday cash flows before treating the rebound as institutionally confirmed.
+- Friday's $433M spot-BTC ETF inflow left the full week barely positive; watch Monday flows before treating the rebound as institutionally confirmed.
+- Elevated Treasury yields keep pressure on duration-sensitive risk; BTC holding up better than ETH and alts favors defense over broad-beta exposure.
 
 ## Implications for Downstream Skills
-- **token-pick:** watch Avalanche and Ethena strength, but avoid broad alt chasing while only 7/20 top caps are green.
-- **narrative-tracker:** monitor privacy for peak→fading confirmation and Avalanche DeFi for rising→peak acceleration.
+- **token-pick:** favor idiosyncratic AVAX/Benqi strength; fade broad alt beta until breadth repairs above half the top 20.
+- **narrative-tracker:** watch Avalanche DeFi for continuation and confidential DeFi for a peak-to-fading transition.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
