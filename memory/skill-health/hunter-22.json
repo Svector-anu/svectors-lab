@@ -1,15 +1,13 @@
 {
   "skill": "hunter-22",
-  "last_analyzed": "2026-09-19T11:38:02Z",
-  "quality_score": 3,
-  "assessment": "Acceptable and concise with a direct listing URL, reward details, rationale, and urgency, but lacks verification context and an explicit action call such as pursue/watch/pass.",
-  "flags": [],
-  "avg_score": 2.4,
+  "last_analyzed": "2026-09-20T11:57:02Z",
+  "quality_score": 2,
+  "assessment": "Concise no-signal verdict, but its claimed workspace file updates contradict the stated read-only environment, undermining verifiability.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.33,
   "history": [
-    {
-      "date": "2026-08-25",
-      "score": 4
-    },
     {
       "date": "2026-08-26",
       "score": 3
@@ -180,6 +178,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T11:38:02Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T11:57:02Z",
       "harness": "codex"
     }
   ]
