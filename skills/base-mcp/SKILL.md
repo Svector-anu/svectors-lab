@@ -1,18 +1,3 @@
----
-name: base-mcp
-description: Access a Base Account via the Base MCP server (mcp.base.org) - wallet, portfolio, sending, swapping, signing, x402 payments, batched calls, and transaction history.
-metadata:
-  title: Base MCP
-  mode: read-only
-  category: crypto
-  tags:
-    - crypto
-    - onchain
-  mcp:
-    - base
-  version: 0.1.0
----
-
 # Base MCP
 
 > [!IMPORTANT]
@@ -85,3 +70,10 @@ Native plugin HTTP hosts may be allowlisted in the Base MCP `web_request` tool. 
 ```bash
 npx skills add base/skills --skill base-mcp
 ```
+
+## Do not
+
+- Do not write outside `output/base-mcp/` and `memory/skills/base-mcp/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

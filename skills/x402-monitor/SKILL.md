@@ -1,17 +1,10 @@
----
-type: Skill
-name: Protocol Monitor (x402 default)
-category: crypto
-description: Configurable weekly vertical/ecosystem tracker. Defaults to x402 (agent micropayments); preset selectors track RWA tokenization, the AI compute market, the MCP ecosystem, or AI agent job-displacement — each with its own sources, scoring, and output format. Repoint the default protocol via memory/topics/tracked-protocol.md.
-var: ""
-tags: [dev, protocol, ecosystem, crypto, research, ai, compute, infra, depin, mcp, agent-infra]
-commits: true
-permissions:
-  - contents:write
----
-> **${var}** — vertical selector. **Empty** → the default protocol (x402) via `memory/topics/tracked-protocol.md`. A **reserved preset keyword** selects a specialized vertical: `rwa` | `compute` | `mcp` | `agent-displacement` (aliases: `agents`, `displacement`). A value starting with `add-topic:` (e.g. `add-topic:RWA tokenization`) is the Telegram force-reply shape — it appends a new protocol stanza to the registry and ends the run without tracking (see **Inbound reply handler** below). **Any other value** is treated as a protocol name and must match a stanza in `memory/topics/tracked-protocol.md` (runs the generic Protocol Monitor branch on that protocol).
+# x402-monitor
 
-Today is ${today}. Read `memory/MEMORY.md` before starting, and scan the last ~3 days of `memory/logs/` — drop anything already reported so you don't re-emit the same signal.
+Configurable weekly vertical/ecosystem tracker. Defaults to x402 (agent micropayments); preset selectors track RWA tokenization, the AI compute market, the MCP ecosystem, or AI agent job-displacement — each with its own sources, scoring, and output format. Repoint the default protocol via memory/topics/tracked-protocol.md.
+
+> The `Operator var` — vertical selector. **Empty** → the default protocol (x402) via `memory/skills/x402-monitor/tracked-protocol.md`. A **reserved preset keyword** selects a specialized vertical: `rwa` | `compute` | `mcp` | `agent-displacement` (aliases: `agents`, `displacement`). A value starting with `add-topic:` (e.g. `add-topic:RWA tokenization`) is the Telegram force-reply shape — it appends a new protocol stanza to the registry and ends the run without tracking (see **Inbound reply handler** below). **Any other value** is treated as a protocol name and must match a stanza in `memory/skills/x402-monitor/tracked-protocol.md` (runs the generic Protocol Monitor branch on that protocol).
+
+Today is today's date. Read `memory/MEMORY.md` before starting, and scan the last ~3 days of `memory/logs/` — drop anything already reported so you don't re-emit the same signal.
 
 ## Voice
 
@@ -21,7 +14,7 @@ If `soul/SOUL.md` and `soul/STYLE.md` are populated, read both and match the ope
 
 Several fast-moving verticals each need a recurring weekly "is this still spreading or stalling?" answer. This skill turns that question into a recurring measurement and folds five distinct trackers behind one selector:
 
-- **Protocol Monitor (default, x402)** — ecosystem velocity of a configured protocol: new GitHub integrations, npm adoption, notable announcements, composite momentum score. Parameterized — by default tracks **x402** (HTTP-native micropayments for AI agents); repoint at any protocol via `memory/topics/tracked-protocol.md`.
+- **Protocol Monitor (default, x402)** — ecosystem velocity of a configured protocol: new GitHub integrations, npm adoption, notable announcements, composite momentum score. Parameterized — by default tracks **x402** (HTTP-native micropayments for AI agents); repoint at any protocol via `memory/skills/x402-monitor/tracked-protocol.md`.
 - **`rwa`** — Real World Asset tokenization momentum: protocol launches, TVL milestones, institutional adoption, regulatory approvals.
 - **`compute`** — the AI compute market: GPU/hardware deals, inference-pricing trends, decentralized-compute token signals, lab vs hyperscaler dynamics.
 - **`mcp`** — the Model Context Protocol ecosystem: new server implementations, adoption velocity, npm/GitHub signals, protocol evolution. Thesis check — is MCP becoming the default tool-call rail for agents? (Pairs with the x402 branch: payments + tool-calls.)
@@ -29,17 +22,16 @@ Several fast-moving verticals each need a recurring weekly "is this still spread
 
 Each vertical keeps its own sources, signal definitions, scoring, output format, and state file. Only the memory read, voice, and selector are shared.
 
-**Original cadences** (wired in `aeon.yml`, not here): Protocol Monitor/x402 = Tue 12:00 UTC; `rwa` = Mon 12:00; `compute` = Sat 11:00; `mcp` = Fri 10:00; `agent-displacement` = Sun 11:00. One invocation runs exactly one vertical, chosen by `${var}`.
+**Original cadences** (wired in `aeon.yml`, not here): Protocol Monitor/x402 = Tue 12:00 UTC; `rwa` = Mon 12:00; `compute` = Sat 11:00; `mcp` = Fri 10:00; `agent-displacement` = Sun 11:00. One invocation runs exactly one vertical, chosen by the `Operator var`.
 
 ## Inbound reply handler + onboarding offer (Telegram force-reply wiring)
 
-**Check this BEFORE the selector.** If `${var}` starts with `add-topic:`, this run is the operator answering the "track a new vertical?" prompt — do NOT run any tracker branch:
+**Check this BEFORE the selector.** If the `Operator var` starts with `add-topic:`, this run is the operator answering the "track a new vertical?" prompt — do NOT run any tracker branch:
 
-1. Strip the prefix and trim: `topic="${var#add-topic:}"` then strip surrounding whitespace. The value is free text and may contain spaces (e.g. `RWA tokenization`, `stablecoin infra`) — keep it whole. Derive `slug` = `topic` lowercased with spaces → hyphens (this is what the selector will normalize `${var}` to when the operator later runs the vertical).
+1. Strip the prefix and trim: `topic="${var#add-topic:}"` then strip surrounding whitespace. The value is free text and may contain spaces (e.g. `RWA tokenization`, `stablecoin infra`) — keep it whole. Derive `slug` = `topic` lowercased with spaces → hyphens (this is what the selector will normalize the `Operator var` to when the operator later runs the vertical).
 2. If `topic` is empty/blank after trimming, send a friendly re-ask (no force-reply loop) and END the run:
-   `./notify "No vertical received — reply to the prompt with a protocol or ecosystem to track (for example: RWA tokenization, or stablecoin infra), and I'll add it to the tracked-protocol registry."`
 3. If `slug` collides with a **reserved preset keyword** (`rwa`, `compute`, `mcp`, `agent-displacement`, or their aliases `agents`/`displacement`/`real-world-assets`/`tokenization`/`gpu`/`depin-compute`/`model-context-protocol`/`jobs`), it's already tracked — skip the append and confirm that (see step 6), then END.
-4. Ensure `memory/topics/tracked-protocol.md` exists (create the seed from the **Config** section if missing). **Dedup:** if a `### ${slug}` stanza already exists under `## Verticals`, skip the append. Otherwise append a new protocol-monitor stanza, matching the registry's documented format:
+4. Ensure `memory/skills/x402-monitor/tracked-protocol.md` exists (create the seed from the **Config** section if missing). **Dedup:** if a `### ${slug}` stanza already exists under `## Verticals`, skip the append. Otherwise append a new protocol-monitor stanza, matching the registry's documented format:
    ```markdown
    ### ${slug}   (preset: protocol-monitor)
    - **Search queries (GitHub):**
@@ -53,22 +45,20 @@ Each vertical keeps its own sources, signal definitions, scoring, output format,
    - **One-line context:** Operator-added vertical (via Telegram force-reply). Tracks ${topic} ecosystem velocity.
    ```
    (All three of Search queries / npm packages / WebSearch queries are populated so the stanza is complete and won't trip `PROTOCOL_MONITOR_NO_CONFIG`. If the guessed npm package 404s, Branch A skips it gracefully.)
-5. Log under `### x402-monitor`: `- add-topic: "${topic}" → appended stanza ### ${slug} to memory/topics/tracked-protocol.md`.
+5. Log under `### x402-monitor`: `- add-topic: "${topic}" → appended stanza ### ${slug} to memory/skills/x402-monitor/tracked-protocol.md`.
 6. Confirm (keep it ≥120 chars so a topic containing a filtered word can't be dropped as a probe) and **END the run**:
-   `./notify "Now tracking \"${topic}\" as a Protocol Monitor vertical — a stanza was added to memory/topics/tracked-protocol.md. Run it any time with var=${slug}, or add a cron for it in aeon.yml."`
 
-**Onboarding offer (normal runs only, deduped).** If `${var}` did NOT start with `add-topic:` AND `memory/topics/tracked-protocol.md` did not exist before this run (i.e. you're about to create the seed) AND the last 3 days of `memory/logs/` contain no `FORCE_REPLY_OFFERED: add-topic` marker for this skill, send one force-reply offer, then continue into the selector below:
+**Onboarding offer (normal runs only, deduped).** If the `Operator var` did NOT start with `add-topic:` AND `memory/skills/x402-monitor/tracked-protocol.md` did not exist before this run (i.e. you're about to create the seed) AND the last 3 days of `memory/logs/` contain no `FORCE_REPLY_OFFERED: add-topic` marker for this skill, send one force-reply offer, then continue into the selector below:
 ```bash
-./notify "Want the Protocol Monitor to track another vertical beyond x402? Reply with a protocol or ecosystem (e.g. RWA tokenization) and I'll add it to the registry." \
   --force-reply --placeholder "a topic to track" --context "x402-monitor::add-topic"
 ```
 Then log a `FORCE_REPLY_OFFERED: add-topic` marker line under `### x402-monitor` so it doesn't re-offer next run. (The force-reply is a standalone notify, never combined with a digest.)
 
-## Selector — resolve `${var}` to a branch
+## Selector — resolve the `Operator var` to a branch
 
-Normalize `${var}`: trim, lowercase, spaces → hyphens. Then:
+Normalize the `Operator var`: trim, lowercase, spaces → hyphens. Then:
 
-| `${var}` | Branch |
+| the `Operator var` | Branch |
 |----------|--------|
 | *(empty)* | **A · Protocol Monitor** using the `Default` stanza in `tracked-protocol.md` (x402) |
 | `rwa`, `real-world-assets`, `tokenization` | **B · RWA Pulse** |
@@ -79,9 +69,9 @@ Normalize `${var}`: trim, lowercase, spaces → hyphens. Then:
 
 Reserved preset keywords win over stanza lookup. Everything not a reserved keyword is a Protocol Monitor protocol name. Run ONLY the selected branch.
 
-## Config — `memory/topics/tracked-protocol.md` registry
+## Config — `memory/skills/x402-monitor/tracked-protocol.md` registry
 
-All tunable **sources/keywords** for every vertical live in `memory/topics/tracked-protocol.md`. This is the single registry an operator edits to retune a vertical (or add a new protocol) without touching this skill. If the file doesn't exist, create the seed below and continue with the x402 default:
+All tunable **sources/keywords** for every vertical live in `memory/skills/x402-monitor/tracked-protocol.md`. This is the single registry an operator edits to retune a vertical (or add a new protocol) without touching this skill. If the file doesn't exist, create the seed below and continue with the x402 default:
 
 ```markdown
 # Tracked Protocol / Vertical Registry
@@ -105,21 +95,21 @@ x402
 - **One-line context:** HTTP-native micropayments rail for AI agents. Stablecoin payments per API call.
 
 ### rwa   (preset: rwa)
-- **State file:** memory/topics/rwa.md   (protocol list + prior TVL baseline + signal log)
+- **State file:** memory/skills/x402-monitor/rwa.md   (protocol list + prior TVL baseline + signal log)
 - **Default protocols:** Ondo Finance, Maple Finance, Centrifuge, Figure, BlackRock BUIDL, Franklin Templeton
 - **WebFetch:** https://app.rwa.xyz   (total tokenized RWA mcap + top protocols)
 - **Primary keywords:** RWA tokenization, tokenized treasury, institutional crypto, TVL, SEC regulation
 - **One-line context:** Real World Asset tokenization — launches, TVL milestones, institutional adoption, regulatory approvals. (Full step-bound queries in Branch B.)
 
 ### compute   (preset: compute)
-- **State file:** memory/topics/compute-pulse.md
-- **Watched tokens file:** memory/topics/compute-tokens.md   (optional; default sweep RENDER, AKT, IO, TAO)
+- **State file:** memory/skills/x402-monitor/compute-pulse.md
+- **Watched tokens file:** memory/skills/x402-monitor/compute-tokens.md   (optional; default sweep RENDER, AKT, IO, TAO)
 - **WebFetch:** API pricing/docs pages when WebSearch yields exact links
 - **Primary keywords:** inference API pricing, GPU cluster, hyperscaler capex, decentralized compute / DePIN, commoditization
 - **One-line context:** AI compute market — inference pricing, GPU/cluster deals, DePIN compute tokens, lab vs hyperscaler. (Full step-bound queries in Branch C.)
 
 ### mcp   (preset: mcp)
-- **State file:** memory/topics/mcp-ecosystem.md
+- **State file:** memory/skills/x402-monitor/mcp-ecosystem.md
 - **GitHub org:** modelcontextprotocol
 - **npm packages:** `@modelcontextprotocol/sdk`   ·   **PyPI:** `mcp`
 - **GitHub search seeds:** `mcp-server in:topics OR in:description`, `model-context-protocol in:topics OR modelcontextprotocol in:description`
@@ -127,7 +117,7 @@ x402
 - **One-line context:** Model Context Protocol — the default tool-call rail for agents. (Full step-bound queries in Branch D.)
 
 ### agent-displacement   (preset: agent-displacement)
-- **State file:** memory/topics/agent-displacement.md
+- **State file:** memory/skills/x402-monitor/agent-displacement.md
 - **Primary keywords:** AI agent layoffs, headcount reduction, workforce automation, Klarna/Duolingo/Salesforce/IBM, white-collar displacement
 - **One-line context:** AI agent labor substitution — named roles, actual headcount numbers, real deployments only. (Full step-bound queries in Branch E.)
 
@@ -138,17 +128,17 @@ x402
 - **One-line context:** ...
 ```
 
-For Branch A: if `${var}` is a protocol name, select that stanza; if empty, use the `Default` stanza. If the resolved protocol-monitor stanza is missing any of `Search queries`, `npm packages`, or `WebSearch queries`, log `PROTOCOL_MONITOR_NO_CONFIG: incomplete stanza for <protocol>` and exit (no notification). The four preset branches (B–E) carry their own default sources and are runnable even if their registry entry is absent.
+For Branch A: if the `Operator var` is a protocol name, select that stanza; if empty, use the `Default` stanza. If the resolved protocol-monitor stanza is missing any of `Search queries`, `npm packages`, or `WebSearch queries`, log `PROTOCOL_MONITOR_NO_CONFIG: incomplete stanza for <protocol>` and exit (no notification). The four preset branches (B–E) carry their own default sources and are runnable even if their registry entry is absent.
 
 ---
 
-## Branch A — Protocol Monitor (default; `${var}` empty or a protocol name)
+## Branch A — Protocol Monitor (default; the `Operator var` empty or a protocol name)
 
 Tracks a single protocol's ecosystem velocity. `<protocol>` = the resolved stanza name (default `x402`).
 
 ### A.State
 
-Per-protocol state lives at `memory/topics/protocol-state-<protocol>.md`. If it doesn't exist, create with this seed:
+Per-protocol state lives at `memory/skills/x402-monitor/protocol-state-<protocol>.md`. If it doesn't exist, create with this seed:
 
 ```markdown
 # <protocol> Ecosystem Tracker
@@ -225,23 +215,22 @@ Flag any result that's genuinely new vs baseline.
 
 **Momentum levels:** 0–2 quiet week · 3–6 building · 7–10 accelerating · 11+ breakout
 
-### A.5 Update `memory/topics/protocol-state-<protocol>.md`
+### A.5 Update `memory/skills/x402-monitor/protocol-state-<protocol>.md`
 
-Rewrite with: updated `*Last run: ${today}*`; updated `Known Integrations` (add newly discovered); updated `npm_last_known` per package; updated `gh_repo_count_last`; appended entry to `Signal Log`.
+Rewrite with: updated `*Last run: today's date*`; updated `Known Integrations` (add newly discovered); updated `npm_last_known` per package; updated `gh_repo_count_last`; appended entry to `Signal Log`.
 
 ### A.6 Notify
 
-Write to `.pending-notify-temp/protocol-monitor-${protocol}-${today}.md` (create dir if needed), then:
+Write to `.pending-notify-temp/protocol-monitor-${protocol}-today's date.md` (create dir if needed), then:
 
 ```bash
 mkdir -p .pending-notify-temp
-./notify -f .pending-notify-temp/protocol-monitor-${protocol}-${today}.md
 ```
 
 Format (voice per the Voice section):
 
 ```
-<protocol> pulse — ${today}
+<protocol> pulse — today's date
 
 momentum: <level> (<score> pts)
 
@@ -257,10 +246,8 @@ signals:
 
 quiet week. ecosystem still compounding.   ← only if momentum == 0
 
-state: memory/topics/protocol-state-<protocol>.md
+state: memory/skills/x402-monitor/protocol-state-<protocol>.md
 ```
-
-Keep total under 900 chars. Do NOT use `./notify "$(cat ...)"` — write the file first, pass `-f path`.
 
 If momentum score is 0, no new repos, no news: log `PROTOCOL_MONITOR_OK: quiet` and skip notification.
 
@@ -282,18 +269,18 @@ Append under the single `### x402-monitor` heading (see **Log**), branch `protoc
 
 ---
 
-## Branch B — RWA Pulse (`${var}` = `rwa`)
+## Branch B — RWA Pulse (the `Operator var` = `rwa`)
 
-Also read `memory/topics/market-context.md` (if present) before starting.
+Also read `memory/skills/x402-monitor/market-context.md` (if present) before starting.
 
 ### B.1 Load current context
 
 Read:
 - `memory/MEMORY.md` — current RWA notes and last known stats
-- `memory/topics/rwa.md` — protocol list, prior TVL baseline, signal log
-- `memory/topics/market-context.md` — most recent market context snapshot (if present)
+- `memory/skills/x402-monitor/rwa.md` — protocol list, prior TVL baseline, signal log
+- `memory/skills/x402-monitor/market-context.md` — most recent market context snapshot (if present)
 
-Config: read `memory/topics/rwa.md` for an operator-defined `## Protocols` list. If the file doesn't exist or has no `## Protocols` section, default to: `Ondo Finance`, `Maple Finance`, `Centrifuge`, `Figure`, `BlackRock BUIDL`, `Franklin Templeton`. Append any newly discovered protocols each run. Note the last-known RWA TVL baseline (if any) — it's the comparison point.
+Config: read `memory/skills/x402-monitor/rwa.md` for an operator-defined `## Protocols` list. If the file doesn't exist or has no `## Protocols` section, default to: `Ondo Finance`, `Maple Finance`, `Centrifuge`, `Figure`, `BlackRock BUIDL`, `Franklin Templeton`. Append any newly discovered protocols each run. Note the last-known RWA TVL baseline (if any) — it's the comparison point.
 
 ### B.2 Search for developments from the last 7 days
 
@@ -332,32 +319,30 @@ Keep top 4–5 items. Deduplicate against recent logs.
 
 ### B.5 Update memory
 
-Append (or create) an `## RWA Pulse — ${today}` section in `memory/topics/rwa.md`:
+Append (or create) an `## RWA Pulse — today's date section in `memory/skills/x402-monitor/rwa.md`:
 
 ```markdown
-## RWA Pulse — ${today}
+## RWA Pulse — today's date
 - **Total RWA market:** [$ figure if found, else "N/A"]
 - **Top move:** [biggest development in one line]
 - **Notable items:** [2-3 short bullets]
 - **Next watch:** [what to check next week]
 ```
 
-If `memory/topics/market-context.md` exists, mirror a single-line summary into its `## RWA` section.
+If `memory/skills/x402-monitor/market-context.md` exists, mirror a single-line summary into its `## RWA` section.
 
 ### B.6 Notify
 
-Write to `.pending-notify-temp/rwa-pulse-${today}.md` (create dir if needed), then `./notify -f .pending-notify-temp/rwa-pulse-${today}.md`.
-
 Format:
 ```
-rwa pulse — ${today}
+rwa pulse — today's date
 
 [top development in one punchy line]
 [second development]
 [third development]
 [fourth if notable]
 
-read it: memory/topics/rwa.md
+read it: memory/skills/x402-monitor/rwa.md
 ```
 
 Keep under 800 chars. Lowercase. Direct. No hedging.
@@ -373,27 +358,27 @@ Append under the single `### x402-monitor` heading (see **Log**), branch `rwa`:
 - **Total RWA market:** [figure or N/A]
 - **Developments found:** N
 - **Top item:** [one line]
-- **Updated:** memory/topics/rwa.md
+- **Updated:** memory/skills/x402-monitor/rwa.md
 - **Notification:** sent / skipped
 - RWA_PULSE_OK
 ```
 
-**Output feeds:** `article` (source `memory/topics/rwa.md`) · `topic-momentum` (RWA now has dedicated weekly data) · `weekly-newsletter` (RWA developments → weekly picks).
+**Output feeds:** `article` (source `memory/skills/x402-monitor/rwa.md`) · `topic-momentum` (RWA now has dedicated weekly data) · `weekly-newsletter` (RWA developments → weekly picks).
 
 ---
 
-## Branch C — Compute Pulse (`${var}` = `compute`)
+## Branch C — Compute Pulse (the `Operator var` = `compute`)
 
 ### C.1 Load current context
 
 Read:
 - `memory/MEMORY.md` — overall context, prior compute signals
-- `memory/topics/compute-pulse.md` — compute baseline (create with seed if missing — see end of this step)
-- `memory/topics/compute-tokens.md` — operator-defined watched tokens (optional)
+- `memory/skills/x402-monitor/compute-pulse.md` — compute baseline (create with seed if missing — see end of this step)
+- `memory/skills/x402-monitor/compute-tokens.md` — operator-defined watched tokens (optional)
 
 Extract from the topic file: `inference_prices_last`, `depin_tokens_last`, `hardware_signals_last`, `last_run`.
 
-Watched-token list format (`memory/topics/compute-tokens.md`):
+Watched-token list format (`memory/skills/x402-monitor/compute-tokens.md`):
 
 ```markdown
 # Watched Compute Tokens
@@ -408,7 +393,7 @@ Watched-token list format (`memory/topics/compute-tokens.md`):
 
 If absent, fall back to a generic DePIN sweep on the major narrative tokens of the moment via WebSearch (no hardcoded list).
 
-If `memory/topics/compute-pulse.md` doesn't exist, create it:
+If `memory/skills/x402-monitor/compute-pulse.md` doesn't exist, create it:
 
 ```markdown
 # Compute Pulse Tracker
@@ -420,7 +405,7 @@ If `memory/topics/compute-pulse.md` doesn't exist, create it:
 - *Note: GPT-4 class inference fell ~97% in 2 years — track the compression curve over time.*
 
 ## Decentralized Compute Tokens
-- Populated from `memory/topics/compute-tokens.md` (or a default DePIN sweep when absent).
+- Populated from `memory/skills/x402-monitor/compute-tokens.md` (or a default DePIN sweep when absent).
 - *Track price, mcap, narrative velocity — not financial advice.*
 
 ## Hardware Signal Log
@@ -464,7 +449,7 @@ Rate each: **Major** (new cluster >50k GPUs or >$1B) high · **Notable** (new pa
 
 ### C.4 Decentralized compute token check
 
-For each token from `memory/topics/compute-tokens.md` (or a fallback list if absent):
+For each token from `memory/skills/x402-monitor/compute-tokens.md` (or a fallback list if absent):
 
 ```
 WebSearch: "${SYMBOL} ${PROJECT_NAME} token ${year}"
@@ -502,22 +487,21 @@ Look for: essays/analyses framing the compute market; evidence of operator-layer
 **Read:** in one sentence:
 > **Read:** Compute commoditization [advancing / holding / stalling / reversing] — [one concrete data point].
 
-### C.7 Update `memory/topics/compute-pulse.md`
+### C.7 Update `memory/skills/x402-monitor/compute-pulse.md`
 
-Rewrite with: updated `*Last run: ${today}*`; updated `Inference Pricing Baseline` with current prices; updated `Decentralized Compute Tokens` with current price context; appended `Hardware Signal Log` entry `- ${today}: [top hardware signal or "quiet"] / [top depin signal or "—"] / momentum: [level]`; appended `Pricing Signal Log` entry `- ${today}: [price cuts if any, or "stable"] / read: [advancing/holding/stalling/reversing]`.
+Rewrite with: updated `*Last run: today's date*`; updated `Inference Pricing Baseline` with current prices; updated `Decentralized Compute Tokens` with current price context; appended `Hardware Signal Log` entry `- today's date: [top hardware signal or "quiet"] / [top depin signal or "—"] / momentum: [level]`; appended `Pricing Signal Log` entry `- today's date: [price cuts if any, or "stable"] / read: [advancing/holding/stalling/reversing]`.
 
 ### C.8 Notify
 
-Write to `.pending-notify-temp/compute-pulse-${today}.md`, then:
+Write to `.pending-notify-temp/compute-pulse-today's date.md`, then:
 ```bash
 mkdir -p .pending-notify-temp
-./notify -f .pending-notify-temp/compute-pulse-${today}.md
 ```
 
 Format (match operator voice if soul populated, else direct/neutral):
 
 ```
-compute pulse — ${today}
+compute pulse — today's date
 
 momentum: {level} ({score} pts)
 
@@ -574,17 +558,17 @@ Append under the single `### x402-monitor` heading (see **Log**), branch `comput
 
 ---
 
-## Branch D — MCP Pulse (`${var}` = `mcp`)
+## Branch D — MCP Pulse (the `Operator var` = `mcp`)
 
 ### D.1 Load current context
 
 Read:
 - `memory/MEMORY.md` — overall ecosystem context and last-known MCP stats
-- `memory/topics/mcp-ecosystem.md` — MCP baseline (create with seed if missing — see end of this step)
+- `memory/skills/x402-monitor/mcp-ecosystem.md` — MCP baseline (create with seed if missing — see end of this step)
 
 Extract: `npm_last_known` (`@modelcontextprotocol/sdk` weekly downloads), `gh_repo_count_last`, `known_servers`, `last_run`.
 
-If `memory/topics/mcp-ecosystem.md` doesn't exist, create it:
+If `memory/skills/x402-monitor/mcp-ecosystem.md` doesn't exist, create it:
 
 ```markdown
 # MCP Ecosystem Tracker
@@ -678,18 +662,16 @@ Flag any result from the last 7 days. Discard opinion/speculative pieces — kee
 **Thesis check:** in one sentence:
 > **Thesis check:** MCP-as-default-tool-call-rail thesis [advancing / holding / stalling / reversing] — [one concrete data point].
 
-### D.7 Update `memory/topics/mcp-ecosystem.md`
+### D.7 Update `memory/skills/x402-monitor/mcp-ecosystem.md`
 
-Rewrite with: updated `*Last run: ${today}*`; updated `Known Servers` (add newly discovered); updated `npm_last_known` with this week's count; updated `gh_repo_count_last`; appended `Signal Log` entry `- ${today}: [N new repos] / npm [downloads]/wk / momentum: [level] / [top signal]`.
+Rewrite with: updated `*Last run: today's date*`; updated `Known Servers` (add newly discovered); updated `npm_last_known` with this week's count; updated `gh_repo_count_last`; appended `Signal Log` entry `- today's date: [N new repos] / npm [downloads]/wk / momentum: [level] / [top signal]`.
 
 ### D.8 Notify
-
-Write to `.pending-notify-temp/mcp-pulse-${today}.md` (create dir if needed), then `./notify -f .pending-notify-temp/mcp-pulse-${today}.md`.
 
 Format (match operator voice if soul populated, else direct/neutral):
 
 ```
-mcp pulse — ${today}
+mcp pulse — today's date
 
 momentum: {level} ({score} pts)
 
@@ -744,15 +726,15 @@ Append under the single `### x402-monitor` heading (see **Log**), branch `mcp`:
 
 ---
 
-## Branch E — Agent Displacement (`${var}` = `agent-displacement`)
+## Branch E — Agent Displacement (the `Operator var` = `agent-displacement`)
 
 ### E.1 Load context
 
 Read:
 - `memory/MEMORY.md` — current state + any prior displacement signals logged
-- `memory/topics/agent-displacement.md` — if it exists, extract baseline: last-known companies, roles, displacement scale
+- `memory/skills/x402-monitor/agent-displacement.md` — if it exists, extract baseline: last-known companies, roles, displacement scale
 
-If `memory/topics/agent-displacement.md` doesn't exist, create it with this seed and continue:
+If `memory/skills/x402-monitor/agent-displacement.md` doesn't exist, create it with this seed and continue:
 
 ```markdown
 # Agent Displacement Tracker
@@ -812,7 +794,7 @@ If WebFetch fails, fall back to `WebSearch: "[company name] AI agent headcount $
 | Research report with quantified estimates | +2 |
 | Vague "AI productivity" with no specifics | -3 (discard) |
 
-Keep top 4-5 items. Deduplicate against the baseline in `memory/topics/agent-displacement.md` — only count if new or a meaningful update to an existing event.
+Keep top 4-5 items. Deduplicate against the baseline in `memory/skills/x402-monitor/agent-displacement.md` — only count if new or a meaningful update to an existing event.
 
 ### E.5 Categorize by role type
 
@@ -835,23 +817,22 @@ Criteria:
 - **Holding** — consistent signals in same verticals, no major new breaches
 - **Decelerating** — fewer signals than typical, company reversals or rehiring mentioned
 
-### E.7 Update `memory/topics/agent-displacement.md`
+### E.7 Update `memory/skills/x402-monitor/agent-displacement.md`
 
-Rewrite: `*Last run: ${today}*`; append new events to `Known Displacement Events` (keep all, don't prune — historical); update `Roles Under Pressure` if a new role type emerged; update `Displacement Scale Estimates` if new research gives better numbers; append entry to `Signal Log`.
+Rewrite: `*Last run: today's date*`; append new events to `Known Displacement Events` (keep all, don't prune — historical); update `Roles Under Pressure` if a new role type emerged; update `Displacement Scale Estimates` if new research gives better numbers; append entry to `Signal Log`.
 
 Keep file under ~200 lines. If it grows beyond that, consolidate older signal-log entries into a single "Prior signals (archived)" bullet.
 
 ### E.8 Notify
 
-Write to `.pending-notify-temp/agent-displacement-${today}.md`, then:
+Write to `.pending-notify-temp/agent-displacement-today's date.md`, then:
 ```bash
 mkdir -p .pending-notify-temp
-./notify -f .pending-notify-temp/agent-displacement-${today}.md
 ```
 
 Format:
 ```
-agent displacement — ${today}
+agent displacement — today's date
 
 [thesis check in one line: accelerating/holding/decelerating + why]
 
@@ -877,18 +858,18 @@ Append under the single `### x402-monitor` heading (see **Log**), branch `agent-
 - **Top item:** [company/role/number in one line]
 - **Thesis check:** [accelerating/holding/decelerating]
 - **Categories touched:** [comma-separated]
-- **Updated:** memory/topics/agent-displacement.md
+- **Updated:** memory/skills/x402-monitor/agent-displacement.md
 - **Notification:** sent / skipped
 - AGENT_DISPLACEMENT_OK
 ```
 
-**Output feeds:** `article` (source `memory/topics/agent-displacement.md` for "agent substitution" angle pieces) · `weekly-newsletter` / `digest` ("what's moving" section) · `paper-pick` (displacement research papers flagged for deeper coverage).
+**Output feeds:** `article` (source `memory/skills/x402-monitor/agent-displacement.md` for "agent substitution" angle pieces) · `weekly-newsletter` / `digest` ("what's moving" section) · `paper-pick` (displacement research papers flagged for deeper coverage).
 
 ---
 
 ## Log
 
-All branches append to `memory/logs/${today}.md` under a single heading so the health loop parses one shape:
+All branches append to `memory/logs/today's date.md` under a single heading so the health loop parses one shape:
 
 ```markdown
 ### x402-monitor
@@ -907,3 +888,10 @@ None. Uses the `gh` CLI (GITHUB_TOKEN via workflow — Branches A and D), WebFet
 - WebSearch: built-in tool, always available (all branches).
 - Do NOT use curl for external APIs — the sandbox blocks outbound network. WebFetch or WebSearch are the paths.
 - No prefetch/postprocess scripts needed.
+
+## Do not
+
+- Do not write outside `output/x402-monitor/` and `memory/skills/x402-monitor/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

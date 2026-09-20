@@ -1,0 +1,12 @@
+name = "pack-submit"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "verifier"
+risk = "medium"
+model = "standard"
+write_scope = "own-memory"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = ["public_web_read", "repository_read", "repository_write"]
+tools = ["read", "write", "bash", "web_search"]
+secrets = ["GH_GLOBAL?"]

@@ -16,7 +16,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-TRUSTED_FILE="$REPO_ROOT/skills/security/trusted-sources.txt"
+TRUSTED_FILE="$REPO_ROOT/memory/security/trusted-sources.txt"
 
 # Colors (disabled if not a terminal)
 if [[ -t 1 ]]; then

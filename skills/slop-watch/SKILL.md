@@ -1,19 +1,8 @@
----
-name: slop-watch
-description: Every morning, report which slop.cash contribution lanes are actually worth working today - per-lane liveness (is anyone merging?), the operator's current ordinal and what their NEXT merge is worth there, review feedback waiting on their open PRs, and any dormant lane waking back up. Discovery only - never opens, edits, or merges a PR.
-metadata:
-  title: Slop Watch
-  mode: write
-  category: productivity
-  var: ""
-  tags: [contribution, discovery, leaderboard, oss]
-  requires: []
-schedule: "0 8 * * *"
----
+# slop-watch
 
-> **${var}** - optional scope. Empty → every tracked project. A project slug (`eliza`, `asi`, `delta-star`, `heir-elements-sdk`) → that lane only.
+Every morning, report which slop.cash contribution lanes are actually worth working today - per-lane liveness (is anyone merging?), the operator's current ordinal and what their NEXT merge is worth there, review feedback waiting on their open PRs, and any dormant lane waking back up. Discovery only - never opens, edits, or merges a PR.
 
-Today is ${today}.
+> The `Operator var` - optional scope. Empty → every tracked project. A project slug (`eliza`, `asi`, `delta-star`, `heir-elements-sdk`) → that lane only.
 
 ## What this is
 
@@ -32,7 +21,7 @@ That makes "which lane, and what's my ordinal there" the whole game. But a high 
 
 ## What to do
 
-1. Read `memory/topics/slop-watch-state.json` (prior snapshot, for change detection). Create as `{}` if missing.
+1. Read `memory/skills/slop-watch/slop-watch-state.json` (prior snapshot, for change detection). Create as `{}` if missing.
 
 2. **Resolve the tracked projects live - never hardcode repo paths.** List `projects/` in `SlopDotCash/slopdotcash` and read each `project.json`:
    ```bash
@@ -62,7 +51,7 @@ That makes "which lane, and what's my ordinal there" the whole game. But a high 
 
 7. Diff against the prior snapshot. **Notify only on signal** (per CLAUDE.md): a new `CHANGES_REQUESTED`, a liveness transition, a new tracked project, or the first run of a UTC month (ordinals reset - worth saying once). If nothing changed and nothing is waiting, write the state file and exit `SLOP_WATCH_QUIET` **without notifying**.
 
-8. Write `memory/topics/slop-watch-state.json` with this run's snapshot per lane (`{slug, repo, ordinal, next_merge_points, liveness, last_merge_at, open_prs, changes_requested, checked_at}`) and commit it.
+8. Write `memory/skills/slop-watch/slop-watch-state.json` with this run's snapshot per lane (`{slug, repo, ordinal, next_merge_points, liveness, last_merge_at, open_prs, changes_requested, checked_at}`).
 
 9. Keep the brief in captured output too, not just the notification - the dashboard, chains, and health scoring read captured output.
 
@@ -84,7 +73,7 @@ waiting on you: PR #19330 has CHANGES_REQUESTED (2d)
 
 ## Guardrails
 
-- **Read-only against every tracked project.** Never open, edit, comment on, review, or merge a PR. The only writes are this fork's own `memory/topics/slop-watch-state.json`.
+- **Read-only against every tracked project.** Never open, edit, comment on, review, or merge a PR. The only writes are this fork's own `memory/skills/slop-watch/slop-watch-state.json`.
 - **Never recommend a dormant lane** on point value alone. Liveness gates the recommendation; say plainly when a high-value lane is not currently merging.
 - **Never fabricate a rank, payout figure, or leaderboard position.** slop.cash is a client-rendered SPA that cannot be read by WebFetch - if a standing is not obtainable from the GitHub API, report it as unavailable rather than estimating.
 - Never recommend volume for its own sake. Past ~25 merges in one project-month the marginal merge is worth 1 point; say so instead of encouraging a grind that reads as slop.
@@ -96,3 +85,10 @@ waiting on you: PR #19330 has CHANGES_REQUESTED (2d)
 - `SLOP_WATCH_QUIET` - checked, nothing changed and nothing waiting; no notification.
 - `SLOP_WATCH_NO_PROJECTS` - manifest read but no active tracked projects found.
 - `SLOP_WATCH_TOOL_ERROR` - the manifest or GitHub API could not be read.
+
+## Do not
+
+- Do not write outside `output/slop-watch/` and `memory/skills/slop-watch/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

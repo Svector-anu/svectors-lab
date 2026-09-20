@@ -1,15 +1,8 @@
----
-name: video-script
-description: Turn a repo, product page, or update into a recording-ready video script in a receipts-first format - verifies every claim against live sources, then writes timestamped VO + on-screen direction with a plain-language glossary, assets checklist, anti-tells, and a verify-before-recording list
-metadata:
-  title: Video Script
-  category: basics
-  var: ""
-  tags:
-    - content
----
+# video-script
 
-> **${var}** — Selector: `<source> [--minutes N]`.
+Turn a repo, product page, or update into a recording-ready video script in a receipts-first format - verifies every claim against live sources, then writes timestamped VO + on-screen direction with a plain-language glossary, assets checklist, anti-tells, and a verify-before-recording list
+
+> The `Operator var` — Selector: `<source> [--minutes N]`.
 >
 > - **`repo:<owner/repo>`** → script about that repo's latest update wave (README + recent releases/commits decide what "the update" is).
 > - **`<url>`** → script about that product page / doc / announcement.
@@ -19,13 +12,13 @@ metadata:
 >
 > Examples: `"repo:aeonfun/aeon --minutes 6"`, `"https://example.com/launch"`, `"our new payments integration --minutes 3"`.
 
-Today is ${today}. Write a recording-ready video script. No placeholders — every number, address, and date in it must be verified this run.
+Today is today's date. Write a recording-ready video script. No placeholders — every number, address, and date in it must be verified this run.
 
 ## Shared preamble
 
 1. Read `memory/MEMORY.md` and the last 7 days of `memory/logs/` — know what has already been covered, and don't script the same story twice.
 2. If a `soul/` directory exists, read `soul/SOUL.md` and `soul/STYLE.md` for voice calibration. The script is *the operator talking to a smart friend* — if `soul/` is empty, default to terse, direct, first-person.
-3. Parse `${var}` per the selector above into `source` + `minutes`.
+3. Parse the `Operator var` per the selector above into `source` + `minutes`.
 
 ## Step 1 — Research and verify (never skip)
 
@@ -50,7 +43,7 @@ Header block:
 **Framing:** receipts-first (open on <the artifact>)
 **Byline:** <the project's public handle>
 **One-line pitch:** <one sentence, no hype>
-**Rev:** v1, ${today} — plain-language pass baked in; every technical term explained in one line or cut.
+**Rev:** v1, today's date — plain-language pass baked in; every technical term explained in one line or cut.
 ```
 
 Chapters, each with a time range:
@@ -88,17 +81,23 @@ After the chapters, ALWAYS:
 
 ## Step 4 — Deliver
 
-1. Write the script to `output/video-scripts/${today}-<slug>.md` (shell redirection; `mkdir -p` first).
-2. Notify with `./notify -f /tmp/video-script-notify.md` (write the body under `/tmp/`, never `memory/` or `output/`): the working title, runtime, the chosen angle in one line, one thing deliberately left out, and a **clickable** link to the script built from the run's environment:
+1. Write the script to `output/video-scripts/today's date-<slug>.md` (shell redirection; `mkdir -p` first).
 
    ```bash
    SCRIPT_URL="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY}/blob/main/output/video-scripts/<file>.md"
    ```
 
-3. Log to `memory/logs/${today}.md` under a `### video-script` heading: source, angle, runtime, output path, and any claims deferred to day-of verification. Status codes: `VIDEO_SCRIPT_OK` on success, `VIDEO_SCRIPT_NO_SOURCE` when `${var}` was empty and the logs offered nothing script-worthy.
+3. Log to `memory/logs/today's date.md` under a `### video-script` heading: source, angle, runtime, output path, and any claims deferred to day-of verification. Status codes: `VIDEO_SCRIPT_OK` on success, `VIDEO_SCRIPT_NO_SOURCE` when the `Operator var` was empty and the logs offered nothing script-worthy.
 
 ## Limits
 
 - This writes the script; it does not record, edit, or generate footage. The assets checklist is a to-do list for a human (or other skills).
 - Verification is only as fresh as this run — volatile facts must still be re-checked day-of; that is what the "Verify before recording" section is for.
 - If the source is private or unreachable, say so and stop — a script built on unverifiable claims defeats the format.
+
+## Do not
+
+- Do not write outside `output/video-script/` and `memory/skills/video-script/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

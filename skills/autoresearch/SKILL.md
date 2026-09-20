@@ -1,17 +1,10 @@
----
-name: autoresearch
-description: Evolve a skill by generating variations, evaluating them, and updating the best version
-metadata:
-  title: Autoresearch
-  category: evolution
-  var: ""
-  tags:
-    - meta
-    - dev
----
-> **${var}** — Name of the skill to evolve (e.g. `token-movers`). Required.
+# autoresearch
 
-If `${var}` is empty, abort with: "autoresearch requires var= set to a skill name" and exit.
+Evolve a skill by generating variations, evaluating them, and updating the best version
+
+> The `Operator var` — Name of the skill to evolve (e.g. `token-movers`). Required.
+
+If the `Operator var` is empty, abort with: "autoresearch requires var= set to a skill name" and exit.
 
 Read memory/MEMORY.md for context.
 
@@ -23,7 +16,7 @@ Improve an existing skill by researching better approaches, generating 4 distinc
 
 ### 1. Load the target skill
 
-Read `skills/${var}/SKILL.md`. If the file doesn't exist, abort and notify: "Skill '${var}' not found."
+Read `skills/the `Operator var`/SKILL.md`. If the file doesn't exist, abort and notify: "Skill 'the `Operator var`' not found."
 
 Parse the skill's:
 - **Purpose**: what it does
@@ -59,7 +52,6 @@ Create 4 distinct improved versions of the SKILL.md, each with a different thesi
 
 Each variation must:
 - Preserve the original frontmatter format (name, description, var, tags)
-- Follow Aeon skill conventions (read memory, log to memory/logs/${today}.md, notify via `./notify`)
 - Be a complete, ready-to-run SKILL.md — no placeholders
 - Include a one-line comment at the top of the body: `<!-- autoresearch: variation X — thesis description -->`
 
@@ -86,44 +78,43 @@ Write out your scoring with brief justification for each score. Calculate a weig
 
 Pick the highest-scoring variation. If scores are very close (within 2 points total), prefer the variation that makes the biggest single improvement rather than small incremental changes.
 
-Write the winning variation to `skills/${var}/SKILL.md`, replacing the original.
+Write the winning variation to `skills/the `Operator var`/SKILL.md`, replacing the original.
 
 ### 6. Create a PR
 
-Create a branch named `autoresearch/${var}` and commit the change:
+Create a branch named `autoresearch/the `Operator var` and commit the change:
 ```bash
-git checkout -b autoresearch/${var}
-git add skills/${var}/SKILL.md
-git commit -m "improve(${var}): autoresearch evolution
+git checkout -b autoresearch/the `Operator var`
+git add skills/the `Operator var`/SKILL.md
+git commit -m "improve(the `Operator var`): autoresearch evolution
 
 Variation chosen: [A/B/C/D] — [thesis]
 Key changes: [1-2 sentence summary]"
-git push -u origin autoresearch/${var}
+git push -u origin autoresearch/the `Operator var`
 ```
 
 Open a PR with:
-- **Title**: `improve(${var}): autoresearch evolution`
+- **Title**: `improve(the `Operator var`): autoresearch evolution`
 - **Body**: Include the full scoring table, the winning variation's thesis, and a diff summary of what changed. Include all 4 variation summaries so the reviewer can see what was considered.
 
 ```bash
-gh pr create --title "improve(${var}): autoresearch evolution" --body "..."
+gh pr create --title "improve(the `Operator var`): autoresearch evolution" --body "..."
 ```
 
 ### 7. Notify and log
 
-Send via `./notify`:
 ```
-*Autoresearch — ${var}*
+*Autoresearch — the `Operator var`*
 Winner: Variation [X] — [thesis]
 Score: [total]/50
 Key changes: [summary]
 PR: [url]
 ```
 
-Log to `memory/logs/${today}.md`:
+Log to `memory/logs/today's date.md`:
 ```
 ### autoresearch
-- Target: ${var}
+- Target: the `Operator var`
 - Winner: Variation [X] ([score]/50)
 - Thesis: [description]
 - PR: [url]
@@ -136,7 +127,14 @@ There is no network sandbox — `curl` works, with **WebFetch** as the fallback 
 
 ## Constraints
 
-- Never downgrade a working skill. If all variations score lower than or equal to the original on "Improvement", skip the update and notify: "No improvement found for ${var} — all variations scored at baseline."
+- Never downgrade a working skill. If all variations score lower than or equal to the original on "Improvement", skip the update and notify: "No improvement found for the `Operator var` — all variations scored at baseline."
 - Preserve the skill's core purpose — evolution, not replacement.
 - Do not change the skill's tags or var semantics without strong justification.
 - Do not add env vars that aren't already available in the workflow (check aeon.yml secrets).
+
+## Do not
+
+- Do not write outside `output/autoresearch/` and `memory/skills/autoresearch/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

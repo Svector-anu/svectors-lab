@@ -1,17 +1,10 @@
----
-name: auto-merge
-description: Automatically merge open PRs that have passing CI, no blocking reviews, and no conflicts
-metadata:
-  title: Auto Merge
-  category: core
-  tags:
-    - dev
-    - meta
-  var: ""
----
+# auto-merge
+
+Automatically merge open PRs that have passing CI, no blocking reviews, and no conflicts
+
 <!-- autoresearch: variation C — safety-hardened (author allowlist, size cap, UNKNOWN retry, fork block, dry-run mode) so an autonomous agent with merge credentials cannot accidentally ship a hostile or oversized PR -->
 
-> **${var}** — Repo (owner/repo) to target. If empty, uses every repo in memory/watched-repos.md.
+> The `Operator var` — Repo (owner/repo) to target. If empty, uses every repo in memory/watched-repos.md.
 > Env: `AUTO_MERGE_DRY_RUN=1` logs intent without merging. `MAX_AUTO_MERGE=N` caps merges per run (default 3).
 
 Merge open PRs that are fully green **and** pass an explicit safety policy. The policy exists because this skill runs autonomously with write access — a bug in the gate is a bug that ships to main.
@@ -37,10 +30,10 @@ A PR merges only when every one of the following holds:
 
 ## Steps
 
-0. **Bootstrap state** — per-PR retry counter lives in `memory/topics/auto-merge-state.json`:
+0. **Bootstrap state** — per-PR retry counter lives in `memory/skills/auto-merge/auto-merge-state.json`:
    ```bash
    mkdir -p memory/topics
-   [ -f memory/topics/auto-merge-state.json ] || echo '{"prs":{},"last_run":null}' > memory/topics/auto-merge-state.json
+   [ -f memory/skills/auto-merge/auto-merge-state.json ] || echo '{"prs":{},"last_run":null}' > memory/skills/auto-merge/auto-merge-state.json
    ```
    Schema:
    ```json
@@ -85,7 +78,7 @@ A PR merges only when every one of the following holds:
 
    5a. **At least one merge succeeded:**
    ```
-   *Auto Merge — ${today}*
+   *Auto Merge — today's date*
    Merged N PR(s) on owner/repo:
    - #123: PR title (+45/-12, by @author) — squash merged abc1234
    Queue cleared. Self-improve cycle unblocked.
@@ -100,9 +93,9 @@ A PR merges only when every one of the following holds:
    ```
    Dedup: suppress re-notify if the *exact same* set of cap-hit PR keys already notified within the last 24h (grep `memory/logs/` for prior `AUTO_MERGE_RETRY_CAP` entries).
 
-6. **Persist state** — write the updated `memory/topics/auto-merge-state.json`. Update `last_run` to current timestamp. Validate with `jq empty`; on failure restore from a `.bak` written before this run.
+6. **Persist state** — write the updated `memory/skills/auto-merge/auto-merge-state.json`. Update `last_run` to current timestamp. Validate with `jq empty`; on failure restore from a `.bak` written before this run.
 
-7. **Log to memory/logs/${today}.md** under an `### auto-merge` heading:
+7. **Log to memory/logs/today's date.md** under an `### auto-merge` heading:
    - `Mode`: live | dry-run
    - `Repo(s)`: list
    - `Merged`: `#N title @author +A-D SHA` per line
@@ -134,3 +127,10 @@ To close the loop on PRs the agent itself opens (from `feature`, `external-featu
 ```
 
 Once allowlisted, agent PRs flow through the same safety policy as bot PRs and get auto-merged on green CI. The retry cap protects against runaway behavior on a stuck PR.
+
+## Do not
+
+- Do not write outside `output/auto-merge/` and `memory/skills/auto-merge/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

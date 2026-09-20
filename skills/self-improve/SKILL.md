@@ -1,13 +1,8 @@
----
-name: self-improve
-description: Improve the agent itself, or audit its recent performance - better skills, prompts, workflows, and config, plus a quality/reliability/memory-hygiene review of what it did and what failed
-metadata:
-  category: evolution
-  var: ""
-  tags:
-    - meta
----
-> **${var}** — Mode selector, optionally with a focus area, as `mode` or `mode:focus`.
+# self-improve
+
+Improve the agent itself, or audit its recent performance - better skills, prompts, workflows, and config, plus a quality/reliability/memory-hygiene review of what it did and what failed
+
+> The `Operator var` — Mode selector, optionally with a focus area, as `mode` or `mode:focus`.
 > - **empty** or **`improve`** → improve mode: find and fix the highest-impact issue from recent logs, then propose + apply the fix via PR (default).
 > - **`improve:<area>`** (or a bare area like `notifications`) → improve mode focused on that specific area (e.g. `heartbeat`, `notifications`, `memory`).
 > - **`audit`** → audit mode: review what the agent did, what failed, and what to improve; save a full review and apply safe, obvious fixes directly.
@@ -15,11 +10,11 @@ metadata:
 
 ## Setup (both modes)
 
-Parse `${var}` into a **mode** and an optional **focus area**:
+Parse the `Operator var` into a **mode** and an optional **focus area**:
 - Split on the first `:` — the part before is the mode, the part after is the focus.
 - If the mode is `audit` → run the **Mode: audit** branch below (focus = optional area to concentrate the review on).
 - If the mode is `improve` or empty → run the **Mode: improve** branch below (focus = optional area to fix).
-- If the token is neither keyword but non-empty (e.g. `notifications`) → treat it as **improve** mode with the whole `${var}` as the focus area (backward compatibility).
+- If the token is neither keyword but non-empty (e.g. `notifications`) → treat it as **improve** mode with the whole the `Operator var` as the focus area (backward compatibility).
 
 Then:
 - Read `memory/MEMORY.md` for high-level context and goals.
@@ -81,7 +76,7 @@ Improve the agent itself based on recent performance. **ONE change per run.**
 
 5. **Create a branch and PR:**
    ```bash
-   git checkout -b fix/self-improve-${today}
+   git checkout -b fix/self-improve-today's date
    git add -A
    git commit -m "fix: [description of what was improved]
 
@@ -104,7 +99,6 @@ Improve the agent itself based on recent performance. **ONE change per run.**
    - [Error pattern: ...]"
    ```
 
-6. **Notify.** Send via `./notify`:
    ```
    self-improve: [what was fixed] — PR: [url]
    ```
@@ -146,13 +140,12 @@ Read `memory/MEMORY.md` for context and goals. Read ALL `memory/logs/` entries f
    - Schedule adjustments
    - Config changes (feeds, repos, addresses to add/remove)
    - Quality improvements (better prompts, new data sources)
-5. **Save the full review** to `output/articles/self-review-${today}.md`.
+5. **Save the full review** to `output/articles/self-review-today's date.md`.
 6. **Apply any safe, obvious improvements directly:**
    - Prune stale `MEMORY.md` entries
    - Update `feeds.yml` if feeds are dead
-7. **Send a summary** via `./notify`:
    ```
-   *Self Review — ${today}*
+   *Self Review — today's date*
    Quality: assessment
    Reliability: X/Y skills ran
    Actions taken: what was fixed
@@ -164,7 +157,7 @@ Read `memory/MEMORY.md` for context and goals. Read ALL `memory/logs/` entries f
 
 ## Log
 
-After completing the run, append a log entry to `memory/logs/${today}.md` under a single `### self-improve` heading, with a discriminator line naming the mode that ran:
+After completing the run, append a log entry to `memory/logs/today's date.md` under a single `### self-improve` heading, with a discriminator line naming the mode that ran:
 
 ```
 ### self-improve
@@ -181,7 +174,7 @@ Then, for **improve** mode:
 
 For **audit** mode:
 ```
-- **Review:** output/articles/self-review-${today}.md
+- **Review:** output/articles/self-review-today's date.md
 - **Quality:** [assessment]
 - **Reliability:** [X/Y skills ran]
 - **Actions taken:** [what was fixed directly]
@@ -190,4 +183,11 @@ For **audit** mode:
 
 ## Network note
 
-Write mode. Both branches touch the repo (improve opens a PR via `git`/`gh`; audit writes `output/articles/self-review-${today}.md` and may prune `MEMORY.md`/`feeds.yml`). For the GitHub API, use the `gh` CLI (`gh pr list`, `gh pr create`) — it handles auth internally, so no `$SECRET` ever touches the command line (a bare secret on the line is what the Bash permission layer refuses; there is no network sandbox). No pre-fetch or post-process side-channel is needed.
+Write mode. Both branches touch the repo (improve opens a PR via `git`/`gh`; audit writes `output/articles/self-review-today's date.md` and may prune `MEMORY.md`/`feeds.yml`). For the GitHub API, use the `gh` CLI (`gh pr list`, `gh pr create`) — it handles auth internally, so no `$SECRET` ever touches the command line (a bare secret on the line is what the Bash permission layer refuses; there is no network sandbox). No pre-fetch or post-process side-channel is needed.
+
+## Do not
+
+- Do not write outside `output/self-improve/` and `memory/skills/self-improve/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

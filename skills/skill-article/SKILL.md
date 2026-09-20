@@ -1,16 +1,8 @@
----
-name: skill-article
-description: Turn any skill in this instance into a publish-ready launch article - proof-stat headline, one contrarian thesis, mechanics, war stories from real run history, a mental-model reframe, and the full SKILL.md embedded verbatim so readers can steal it. Optional Higgsfield title banner with --banner.
-metadata:
-  title: Skill Article
-  category: basics
-  var: ""
-  tags:
-    - content
-    - meta
----
+# skill-article
 
-> **${var}** — Selector: `<skill-name> [--brand <handle>] [--banner]`.
+Turn any skill in this instance into a publish-ready launch article - proof-stat headline, one contrarian thesis, mechanics, war stories from real run history, a mental-model reframe, and the full SKILL.md embedded verbatim so readers can steal it. Optional Higgsfield title banner with --banner.
+
+> The `Operator var` — Selector: `<skill-name> [--brand <handle>] [--banner]`.
 >
 > - **`<skill-name>`** → announce that skill (must exist under `skills/<skill-name>/`).
 > - **empty** → pick the most article-worthy skill from the last 14 days of `memory/logs/`: prefer a skill that shipped recently, produced verified output, or hit a milestone. If nothing qualifies, log `SKILL_ARTICLE_NO_TARGET`, send no notification, and exit clean.
@@ -19,7 +11,7 @@ metadata:
 >
 > Examples: `"aeon-update"`, `"rug-scan --brand @myproject --banner"`.
 
-Today is ${today}. Write a launch article for one skill, modeled on the security-industry "skill announcement" format: the article sells the *insight* the skill encodes, not the file - and then gives the file away.
+Today is today's date. Write a launch article for one skill, modeled on the security-industry "skill announcement" format: the article sells the *insight* the skill encodes, not the file - and then gives the file away.
 
 ## Shared preamble
 
@@ -89,14 +81,13 @@ Embed the result at the top of the article file, next to the alts block:
 
 ## Step 6 — Deliver
 
-1. Write the article to `output/skill-articles/${today}-<skill-name>.md` (shell redirection; `mkdir -p` first). Include an `<!-- alts -->` comment block at the top with 2 alternative headline + thesis-heading pairs so the operator can iterate without a rewrite.
-2. Notify with `./notify -f /tmp/skill-article-notify.md` (write the body under `/tmp/`): the headline, the thesis in one line, whether the stats are real or the headline fell back to mechanism, the banner URL when one was generated (with a save-it note if the URL is signed/expiring), and a **clickable** link built from the run's environment:
+1. Write the article to `output/skill-articles/today's date-<skill-name>.md` (shell redirection; `mkdir -p` first). Include an `<!-- alts -->` comment block at the top with 2 alternative headline + thesis-heading pairs so the operator can iterate without a rewrite.
 
    ```bash
    ARTICLE_URL="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY}/blob/main/output/skill-articles/<file>.md"
    ```
 
-3. Log to `memory/logs/${today}.md` under a `### skill-article` heading: target skill, headline, thesis pair, stats-real-or-mechanism, output path, and - when `--banner` was passed - a `banner:` line (`HIGGS_OK <url>` | `HIGGS_NOT_CONNECTED` | `HIGGS_AUTH_STALE` | `HIGGS_NO_CREDITS` | `HIGGS_FAILED` | `skipped`). Status codes: `SKILL_ARTICLE_OK` on success, `SKILL_ARTICLE_NO_TARGET` when `${var}` was empty and nothing article-worthy exists, `SKILL_ARTICLE_NOT_FOUND` when the named skill has no `SKILL.md`.
+3. Log to `memory/logs/today's date.md` under a `### skill-article` heading: target skill, headline, thesis pair, stats-real-or-mechanism, output path, and - when `--banner` was passed - a `banner:` line (`HIGGS_OK <url>` | `HIGGS_NOT_CONNECTED` | `HIGGS_AUTH_STALE` | `HIGGS_NO_CREDITS` | `HIGGS_FAILED` | `skipped`). Status codes: `SKILL_ARTICLE_OK` on success, `SKILL_ARTICLE_NO_TARGET` when the `Operator var` was empty and nothing article-worthy exists, `SKILL_ARTICLE_NOT_FOUND` when the named skill has no `SKILL.md`.
 
 ## Limits
 
@@ -104,3 +95,10 @@ Embed the result at the top of the article file, next to the alts block:
 - The banner is opt-in and spends real Higgsfield credits - one image per run, hard cap, and its failure never blocks the article.
 - Track-record mining is only as good as `memory/logs/` - a skill that runs but never logs will read as unproven, and the article will say so rather than guess.
 - One skill per run. Announcing a pack is a different article; run once per skill instead.
+
+## Do not
+
+- Do not write outside `output/skill-article/` and `memory/skills/skill-article/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

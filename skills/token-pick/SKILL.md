@@ -1,22 +1,10 @@
----
-name: token-pick
-description: One token recommendation and one prediction market pick - scored, quantified, with a skip branch when signals are weak
-metadata:
-  title: Token Pick
-  mode: read-only
-  category: crypto
-  var: ""
-  tags:
-    - crypto
-  requires:
-    - COINGECKO_API_KEY?
-  capabilities:
-    - external_api
-    - sends_notifications
----
+# token-pick
+
+One token recommendation and one prediction market pick - scored, quantified, with a skip branch when signals are weak
+
 <!-- autoresearch: variation B — sharper output via signal scoring, edge calculation, conviction tiers, and a skip-day branch -->
 
-> **${var}** — Focus area or thesis (e.g. "AI tokens", "election markets", "contrarian bets"). If empty, scans broadly.
+> The `Operator var` — Focus area or thesis (e.g. "AI tokens", "election markets", "contrarian bets"). If empty, scans broadly.
 
 Read `memory/MEMORY.md` for context.
 Read the last 7 days of `memory/logs/` and grep for prior `Token Pick` entries — extract the symbols and market questions already picked. **Hard dedup gate**: do not re-pick the same token or the same prediction market unless there is a materially new catalyst that you can name in one sentence.
@@ -72,15 +60,15 @@ For each token in the top 250 (and the trending list), compute a signal score:
 | Volume/MarketCap ratio ≥ 0.20 (replaces above) | +3 |
 | Outperforming BOTH BTC and ETH on the 7d | +2 |
 | Confirmed on DexScreener trending/gainers (cross-source) | +1 |
-| Matches `${var}` thesis when set | +1 |
+| Matches the `Operator var` thesis when set | +1 |
 
-Drop candidates with market cap < $20M (too pumpable) unless `${var}` explicitly targets micro-caps. Drop any token already picked in the last 7 days (per dedup gate) unless you can name a fresh catalyst.
+Drop candidates with market cap < $20M (too pumpable) unless the `Operator var` explicitly targets micro-caps. Drop any token already picked in the last 7 days (per dedup gate) unless you can name a fresh catalyst.
 
 Pick the highest-scoring token. Use **WebSearch** to surface the most likely catalyst and at least one named risk (regulatory, unlock, narrative-faded, exchange listing, etc.).
 
 ### 4. Score prediction markets — edge calculation
 
-For the top ~10 markets by 24h volume that pass the dedup gate (and `${var}` filter when set), do this for each:
+For the top ~10 markets by 24h volume that pass the dedup gate (and the `Operator var` filter when set), do this for each:
 
 1. Read the question and current YES price (`price`/`outcomePrices`).
 2. Use **WebSearch** to gather 1–3 recent data points relevant to the resolution.
@@ -102,10 +90,8 @@ Pick the market with the largest edge that clears the gate. If you cannot defend
 
 ### 6a. Notification — normal day (under 4000 chars)
 
-Send via `./notify`:
-
 ```
-*Daily Pick — ${today}*
+*Daily Pick — today's date*
 
 *Token: SYMBOL*  [HIGH | MEDIUM]  signal X/10
 Price: $X.XX (±X.X% 24h / ±X.X% 7d) | mcap $XB | vol $XM (vol/mcap X.XX)
@@ -129,7 +115,7 @@ If only one of the two pick types qualifies, send just that one section (omit th
 ### 6b. Notification — skip day
 
 ```
-*Daily Pick — ${today}* — no picks
+*Daily Pick — today's date* — no picks
 
 Token signals weak today (best: SYMBOL @ score 3/10).
 Markets either thin liquidity or no defensible edge ≥ 5pp (best: "Question?" edge 2pp).
@@ -142,10 +128,7 @@ If all sources failed, send `TOKEN_PICK_NO_DATA` with the source-status line —
 
 ### 6c. Offer a deep-dive (force-reply — normal-day only)
 
-Only after a **normal-day** send (6a) — never on the skip-day (6b) or the no-data path (weak signals → no pick, so no offer). This skill is `read-only`, so it can't run the deep report itself; instead it offers to hand off to **token-movers** (write mode), which owns the single-token deep report and the `deep-dive:` handler. Because `force_reply` and inline buttons can't share one message, send this as a SEPARATE `./notify` AFTER the 6a pick — with `--no-jsonrender`, since without it this second notify would overwrite the real 6a pick capture that downstream consumers (e.g. `output/.chains/token-pick.md`) read from:
-
 ```bash
-./notify "Want a deeper report on a token? Reply with a ticker or contract." \
   --force-reply --placeholder "e.g. WIF" \
   --context "token-movers::deep-dive" \
   --no-jsonrender
@@ -155,7 +138,7 @@ The `token-movers::deep-dive` marker routes the operator's reply to **token-move
 
 **Dedup.** token-pick runs once daily, so one offer per run is already once-per-day. Being `read-only`, it can't write a `FORCE_REPLY_OFFERED` marker — but it already reads recent logs, so if today's log already carries a `FORCE_REPLY_OFFERED: deep-dive` line (e.g. token-movers offered earlier today), SKIP this offer to avoid double-nagging.
 
-### 7. Log to `memory/logs/${today}.md`
+### 7. Log to `memory/logs/today's date.md`
 
 ```
 ### token-pick
@@ -186,3 +169,10 @@ There is no network sandbox — `curl` works, with **WebFetch** as the fallback 
 - **Show your work**: every score must show the breakdown; every edge must show the inputs.
 - Liquidity gates (mcap ≥ $20M for tokens, 24h vol ≥ $50k for markets) are hard floors — ignoring them turns the feed into a degen casino.
 - One token + one market max. Never bundle "honorable mentions" — that defeats the discipline.
+
+## Do not
+
+- Do not write outside `output/token-pick/` and `memory/skills/token-pick/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

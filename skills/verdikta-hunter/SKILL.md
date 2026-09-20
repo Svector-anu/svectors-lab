@@ -1,15 +1,8 @@
----
-type: Skill
-name: Verdikta Hunter
-category: crypto
-description: Hunt Verdikta AI-judged bounties on Base — discover open bounties, write rubric-targeted reports, and queue hard-capped on-chain submissions (signing happens post-run via scripts/postprocess-verdikta.sh, never in-skill)
-var: ""
-tags: [crypto, bounties, base, verdikta, web3]
-requires: [VERDIKTA_API_KEY, VERDIKTA_WALLET_KEY?]
-capabilities: [external_api, writes_external_host, onchain_writes, sends_notifications]
----
+# verdikta-hunter
 
-> **${var}** — Mode selector.
+Hunt Verdikta AI-judged bounties on Base — discover open bounties, write rubric-targeted reports, and queue hard-capped on-chain submissions (signing happens post-run via scripts/postprocess-verdikta.sh, never in-skill)
+
+> The `Operator var` — Mode selector.
 > - `` (empty) → **discover + settle**: rank open bounties, notify a shortlist, and queue finalize for any prior submissions ready to claim. Never queues a new submission — zero new spend. *[default]*
 > - `hunt` / `hunt:<jobId>` → discover + settle, then pick the best-fit bounty (or the given `<jobId>`), write the report, and queue one on-chain submission for post-run execution.
 > - `dry-run` / `dry-run:<jobId>` → same as `hunt` but the queued request is validation-only: the postprocess script calls the API's `/submit/dry-run` and sends **no transactions**.
@@ -40,7 +33,7 @@ This skill can spend real ETH. The safety envelope, enforced by `scripts/postpro
 
 ## Steps
 
-### 0. Parse `${var}` and load context
+### 0. Parse the `Operator var` and load context
 
 - Parse the mode: empty → `MODE=discover`; `hunt[:<jobId>]` → `MODE=hunt`; `dry-run[:<jobId>]` → `MODE=hunt` with `DRY_RUN=true`. A trailing `<jobId>` pins the target bounty.
 - Read `memory/MEMORY.md` and the last ~3 days of `memory/logs/` (don't re-report signals already sent).
@@ -99,8 +92,6 @@ Write `.pending-verdikta/submit-<jobId>.json`:
 The postprocess script executes this after the run: upload → `prepareSubmission` tx (value 0) → confirm → cap-check → `startPreparedSubmission` tx (value = `ethMaxBudget`), then records tx hashes, `submissionId`, and spend into `memory/state/verdikta-hunter.json` and appends a `### verdikta-hunter (postprocess)` entry to today's log. **This run cannot see those results** — the next run reports them (step 1).
 
 ### 5. Notify
-
-One `./notify -f` message per run with real signal, following soul/ voice if present. Write the message body to `.verdikta-cache/notify.md` (gitignored and regenerated each run — the harness can't `rm`, so scratch files anywhere else end up auto-committed):
 
 - Settlements first: won (score, payout), lost (score vs threshold, one-line diagnosis from `.verdikta-cache/` evaluation data if available), finalizes queued.
 - Then the action taken: shortlist (discover), or "queued submission to #<jobId> (<reward> ETH, threshold <t>%) — pending postprocess" (hunt), or dry-run verdict.
@@ -249,3 +240,10 @@ The GitHub Actions sandbox blocks secret-bearing outbound calls from the skill i
 - `VERDIKTA_HUNTER_DRY_RUN` — dry-run queued, no transactions will be sent
 - `VERDIKTA_HUNTER_CAPPED` — daily submission cap reached; fell back to discover
 - `VERDIKTA_HUNTER_ERROR` — missing cache/key or malformed state; notified
+
+## Do not
+
+- Do not write outside `output/verdikta-hunter/` and `memory/skills/verdikta-hunter/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

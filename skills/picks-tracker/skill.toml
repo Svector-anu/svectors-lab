@@ -1,0 +1,12 @@
+name = "picks-tracker"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "thinker"
+risk = "low"
+model = "standard"
+write_scope = "own-memory"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = ["public_web_read", "repository_read"]
+tools = ["read", "write", "bash", "web_search"]
+secrets = ["COINGECKO_API_KEY?"]

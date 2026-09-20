@@ -1,18 +1,8 @@
----
-name: shiplog
-description: Recap of everything shipped since the last run - cross-repo PRs, security fixes, star deltas, and X traction, synthesized into a digest article and a ready-to-post shiplog in your voice.
-metadata:
-  title: Shiplog
-  category: core
-  var: ""
-  requires:
-    - XAI_API_KEY?
-    - GH_GLOBAL?
-  tags:
-    - content
-    - social
----
-> **${var}** — Optional, space-separated flags:
+# shiplog
+
+Recap of everything shipped since the last run - cross-repo PRs, security fixes, star deltas, and X traction, synthesized into a digest article and a ready-to-post shiplog in your voice.
+
+> The `Operator var` — Optional, space-separated flags:
 > - `since:YYYY-MM-DD` — override the window start (default: when this skill last ran).
 > - `days:N` — window = last N days.
 > - `dry-run` — render to stdout; write no article, no state, no notify.
@@ -56,7 +46,7 @@ SINCE="${LAST:-$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date
 SINCE_DATE="${SINCE%%T*}"
 ```
 
-- `since:YYYY-MM-DD` in `${var}` → `SINCE` = that date at `T00:00:00Z`; `days:N` → N days ago. These override the state file.
+- `since:YYYY-MM-DD` in the `Operator var` → `SINCE` = that date at `T00:00:00Z`; `days:N` → N days ago. These override the state file.
 - Use `$SINCE` for ALL time filtering — never substitute "since Monday" or other drift-prone shortcuts. The window is `[$SINCE, $NOW)`; state the span (`$SINCE_DATE → $TODAY`) in the output.
 - **Idempotency is the state file** (step 8 advances it each run, so windows never overlap). No once-per-day lock — a back-to-back re-run just yields an empty window → `SHIPLOG_NOTHING_NEW`. Write the digest to `output/articles/shiplog-${TODAY}.md`; if that name exists and there's genuinely new activity since the last run, use `output/articles/shiplog-${TODAY}-2.md` rather than clobbering.
 
@@ -161,7 +151,7 @@ From the **operator** text, separate **original posts** from **RTs** (RT text st
 | < 3 substantive ships total | `SHIPLOG_LIGHT` | Short post (3-bullet form). |
 | Otherwise | `SHIPLOG_OK` | Full digest + post. |
 
-If `${var}` narrows to one repo/project and nothing matched, status `SHIPLOG_NO_MATCH` — notify and exit (still advance state).
+If the `Operator var` narrows to one repo/project and nothing matched, status `SHIPLOG_NO_MATCH` — notify and exit (still advance state).
 
 ### 6. Synthesize + write the article
 
@@ -210,8 +200,6 @@ REPO_URL=$(gh repo view --json url -q .url)
 ARTICLE_URL="${REPO_URL}/blob/main/output/articles/shiplog-${TODAY}.md"
 ```
 
-Write the ready-to-post shiplog to a temp file — `/tmp/shiplog-notify.md` — and send it with `./notify -f /tmp/shiplog-notify.md` (use `-f` rather than `./notify "$(cat …)"` so a long multi-line post is passed as a file instead of a giant argv). Append `${ARTICLE_URL}` as the last line. For `SHIPLOG_NOTHING_NEW` / `SHIPLOG_NO_MATCH`, send a one-line status instead of the post (or stay silent on sub-daily cadences).
-
 ### 10. Log
 
 Append to `memory/logs/${TODAY}.md`:
@@ -235,10 +223,17 @@ Append to `memory/logs/${TODAY}.md`:
 
 ## Constraints
 
-- The window is **always** "since last run" (state file) unless `${var}` overrides it — never hardcode 7 days except as the first-run default. Always advance `memory/state/shiplog-last.json` on a real run, even a quiet one.
+- The window is **always** "since last run" (state file) unless the `Operator var` overrides it — never hardcode 7 days except as the first-run default. Always advance `memory/state/shiplog-last.json` on a real run, even a quiet one.
 - Content, not code: write the article to `output/articles/` and let the workflow commit it to `main`. Never open a per-run PR for the shiplog.
 - Every concrete claim traces to real data — a PR `(#N)`, a commit, a measured number, or a fetched tweet (with its permalink). No invented activity, no fabricated star deltas.
 - RTs are amplification, not ships — narrative/ecosystem only, never "the bytes".
 - Verify a handle before @-mentioning it; an unverified tag stays untagged.
 - Voice from `soul/`; neutral and direct if `soul/` is empty. No hype adjectives, no hashtags.
 - The notify URL is the GitHub web URL via `gh repo view --json url`, not the SSH remote.
+
+## Do not
+
+- Do not write outside `output/shiplog/` and `memory/skills/shiplog/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,22 +1,15 @@
----
-name: fork-fleet
-description: Fork divergence monitor - tracks where the fleet's active forks diverge in CODE (unique commits, new/modified skills) and CONFIG (enable/var/model/schedule vs upstream), gated on real change.
-metadata:
-  category: core
-  var: ""
-  tags:
-    - dev
-    - meta
-  cron: "0 10 * * 1"
----
-> **${var}** — Divergence scope selector; space-separated tokens, order-independent, all optional:
+# fork-fleet
+
+Fork divergence monitor - tracks where the fleet's active forks diverge in CODE (unique commits, new/modified skills) and CONFIG (enable/var/model/schedule vs upstream), gated on real change.
+
+> The `Operator var` — Divergence scope selector; space-separated tokens, order-independent, all optional:
 > - **scope** (`code` | `config` | `both`, default `both`) — which divergence dimension to run.
 > - **`repo=owner/name`** — override the parent repo whose forks are scanned (else auto-resolved).
 > - **`fork=owner/name`** — drill into a single fork (forces `code` scope; config math needs a fleet).
 >
 > Empty ⇒ **both** dimensions over the auto-resolved parent. Examples: `` (both, all forks) · `code` · `config` · `config repo=octo/aeon` · `fork=alice/aeon`.
 
-Today is ${today}. This is the fleet's **divergence monitor**. It answers two questions the popularity/liveness skills don't:
+Today is today's date. This is the fleet's **divergence monitor**. It answers two questions the popularity/liveness skills don't:
 1. **Code divergence** — which active forks are building real work (unique commits, new/modified skills) that's worth pulling back upstream?
 2. **Config divergence** — where does the configured fleet systematically disagree with upstream's `enabled` / `var` / `model` / `schedule` defaults, so the operator can flip a default the fleet has already voted on?
 
@@ -38,19 +31,19 @@ Today is ${today}. This is the fleet's **divergence monitor**. It answers two qu
 ```bash
 mkdir -p memory/topics
 [ -f memory/instances.json ] || echo '{}' > memory/instances.json
-[ -f memory/topics/fork-fleet-state.json ] || echo '{"forks":{},"last_run":null}' > memory/topics/fork-fleet-state.json
-[ -f memory/topics/fork-digest-state.json ] || echo '{"last_run":null}' > memory/topics/fork-digest-state.json
+[ -f memory/skills/fork-fleet/fork-fleet-state.json ] || echo '{"forks":{},"last_run":null}' > memory/skills/fork-fleet/fork-fleet-state.json
+[ -f memory/skills/fork-fleet/fork-digest-state.json ] || echo '{"last_run":null}' > memory/skills/fork-fleet/fork-digest-state.json
 ```
 
 Read `memory/MEMORY.md` for high-level context and scan the last ~3 days of `memory/logs/` — drop anything already reported so a weekly signal isn't re-sent.
 
 - Read `memory/instances.json` → the set of repo `full_name`s that are **managed instances** (tagged separately from organic community forks in the report).
-- Read `memory/topics/fork-fleet-state.json` → prior run's per-fork `{pushed_at, ahead_by, default_branch, new_skill_count}` keyed by `full_name`. Used for the **code** what-changed delta.
-- Read `memory/topics/fork-digest-state.json` → prior config-divergence snapshot (schema in step B8). Used for the **config** week-over-week delta.
+- Read `memory/skills/fork-fleet/fork-fleet-state.json` → prior run's per-fork `{pushed_at, ahead_by, default_branch, new_skill_count}` keyed by `full_name`. Used for the **code** what-changed delta.
+- Read `memory/skills/fork-fleet/fork-digest-state.json` → prior config-divergence snapshot (schema in step B8). Used for the **config** week-over-week delta.
 
 ### S1. Parse the scope selector
 
-Parse `${var}` into tokens:
+Parse the `Operator var` into tokens:
 - `SCOPE` = `code`, `config`, or `both` (default `both` if no scope keyword present).
 - `REPO_OVERRIDE` = value of a `repo=owner/name` token, if any.
 - `SINGLE_FORK` = value of a `fork=owner/name` token, if any. **If `SINGLE_FORK` is set, force `SCOPE=code`** (single-fork config divergence is meaningless — the config math needs a fleet of ≥2 configured forks).
@@ -65,7 +58,7 @@ Resolve `PARENT_REPO` in priority order:
    ```
 3. Else fall back to the first non-comment, non-empty line of `memory/watched-repos.md`.
 
-If none resolves, write status `FORK_DIVERGENCE_NO_TARGET` to `memory/logs/${today}.md` and stop (no notification).
+If none resolves, write status `FORK_DIVERGENCE_NO_TARGET` to `memory/logs/today's date.md` and stop (no notification).
 
 ```bash
 PARENT_NAME="${PARENT_REPO##*/}"
@@ -224,11 +217,11 @@ If PROMOTE has >5 forks, keep only the top 5 by score; list the rest in REVIEW.
 
 ### A8. Update code state
 
-Write `memory/topics/fork-fleet-state.json`:
+Write `memory/skills/fork-fleet/fork-fleet-state.json`:
 
 ```json
 {
-  "last_run": "${today}",
+  "last_run": "today's date",
   "last_status": "FORK_FLEET_OK",
   "parent_repo": "owner/repo",
   "forks": {
@@ -356,7 +349,7 @@ Rank forks by `total_overrides` desc. Top 5 = "heaviest customizers" — surface
 
 ### B7. Config week-over-week delta
 
-Read the prior `memory/topics/fork-digest-state.json` snapshot (schema in B8). If it exists and `last_run` is within the last 14 days, compute:
+Read the prior `memory/skills/fork-fleet/fork-digest-state.json` snapshot (schema in B8). If it exists and `last_run` is within the last 14 days, compute:
 - **NEW_FLIP**: skills now in DEFAULT_FLIP_* that weren't last run
 - **STRENGTHENED**: skills that moved EMERGING → DEFAULT_FLIP_ENABLE
 - **FADED**: skills that left a flip bucket since last run
@@ -375,11 +368,11 @@ Config verdict line, strongest single claim first:
 5. Else any `EMERGING`: `"${skill} adoption building (${pct}% of configured) — watchlist"`
 6. Else: `"${N_CONFIGURED} configured forks; no divergence pattern crossed flip threshold"`
 
-Persist `memory/topics/fork-digest-state.json` (overwrite each run — the JSON is the delta contract; do NOT parse last week's article):
+Persist `memory/skills/fork-fleet/fork-digest-state.json` (overwrite each run — the JSON is the delta contract; do NOT parse last week's article):
 
 ```json
 {
-  "last_run": "${today}",
+  "last_run": "today's date",
   "target_repo": "${PARENT_REPO}",
   "n_active": N_ACTIVE,
   "n_configured": N_CONFIGURED,
@@ -486,10 +479,10 @@ ${"First divergence snapshot — no comparison" OR list of NEW_FLIP / STRENGTHEN
 
 ### R1. Write the combined article
 
-To `output/articles/fork-divergence-${today}.md`. Header first, then whichever parts ran:
+To `output/articles/fork-divergence-today's date.md`. Header first, then whichever parts ran:
 
 ```markdown
-# Fork Divergence — ${today}
+# Fork Divergence — today's date
 
 **Verdict:** {lead with the stronger of the two sub-verdicts — a code PROMOTE/NEW-UPSTREAM-CANDIDATE outranks a config flip only if it's a genuinely new skill; otherwise a DEFAULT_FLIP leads. Use judgment; one line.}
 
@@ -522,10 +515,8 @@ Read `soul/` (if present) to match the operator's voice. **Skip notify entirely*
 
 If either branch hit `FORK_FLEET_API_FAIL`, send an **error** notify (`--severity warn`) noting the failure and source status.
 
-Otherwise send one combined message via `./notify` (include only the sub-blocks whose branch produced signal; keep it tight):
-
 ```
-*Fork Divergence — ${today}*
+*Fork Divergence — today's date*
 {combined verdict line}
 
 Fleet: N_ACTIVE active / N_TOTAL total. {1 sentence on shape — "mostly managed instances", "community picking up", "template-heavy", etc.}
@@ -553,14 +544,14 @@ Model consensus:
 {If config delta NEW_FORK_ONLY non-empty:}
 New fork-only skills: {comma-separated owner/skill, capped at 3}
 
-Full report: https://github.com/${GITHUB_REPOSITORY}/blob/main/output/articles/fork-divergence-${today}.md
+Full report: https://github.com/${GITHUB_REPOSITORY}/blob/main/output/articles/fork-divergence-today's date.md
 ```
 
 Use `$GITHUB_REPOSITORY` for the URL (the article lives in this running instance's repo, not the target repo).
 
 ### R3. Log
 
-Append to `memory/logs/${today}.md` under **one** heading. Include a discriminator line naming the scope that ran, then only the sub-blocks for branches that ran:
+Append to `memory/logs/today's date.md` under **one** heading. Include a discriminator line naming the scope that ran, then only the sub-blocks for branches that ran:
 
 ```
 ### fork-fleet
@@ -580,7 +571,7 @@ Append to `memory/logs/${today}.md` under **one** heading. Include a discriminat
 - DEFAULT_FLIP_ENABLE: N · DEFAULT_FLIP_DISABLE: N · MODEL_CONSENSUS: N · VAR_HOTSPOT: N · EMERGING: N
 - Fork-only skills: N · Heaviest customizer: {fork} ({N} overrides)
 
-- Article: output/articles/fork-divergence-${today}.md
+- Article: output/articles/fork-divergence-today's date.md
 - Notification sent: yes/no
 ```
 
@@ -612,3 +603,10 @@ The combined status rolls up the per-branch statuses (kept verbatim in A9 / B-st
 ## Network note
 
 Every GitHub call uses `gh api`, which authenticates via `GITHUB_TOKEN` automatically — no `curl`, no `$SECRET` on the command line (so nothing for the Bash permission layer to refuse), no secrets beyond the default `GITHUB_TOKEN`. Retry policy: on `429`/`5xx` (compare) back off per step A1; on `403` with `X-RateLimit-Remaining: 0` (tree/contents) sleep 60s and retry once, then mark that fork `rate_limited` and proceed with a partial fleet (the verdict and source-status footers surface the gap). If the initial `/forks` listing fails after retry, combined status = `FORK_DIVERGENCE_API_FAIL` with `forks_list=fail`.
+
+## Do not
+
+- Do not write outside `output/fork-fleet/` and `memory/skills/fork-fleet/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

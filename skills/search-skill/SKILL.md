@@ -1,24 +1,18 @@
----
-name: search-skill
-description: Search the open agent skills ecosystem for skills that fill a real gap and install them via the native add-skill path
-metadata:
-  title: Search Skills
-  category: evolution
-  var: ""
-  tags:
-    - meta
----
+# search-skill
+
+Search the open agent skills ecosystem for skills that fill a real gap and install them via the native add-skill path
+
 <!-- autoresearch: variation B — sharper output + native install path + hard gates + silent skips -->
 
-> **${var}** — Capability to search for (e.g. `rss`, `gas alert`, `farcaster`). If empty, derives a query from concrete repo gaps (failing skills, open issues, non-template priorities). If no gap can be derived, abort as `SEARCH_SKILL_NO_GAP` — silent, log-only.
+> The `Operator var` — Capability to search for (e.g. `rss`, `gas alert`, `farcaster`). If empty, derives a query from concrete repo gaps (failing skills, open issues, non-template priorities). If no gap can be derived, abort as `SEARCH_SKILL_NO_GAP` — silent, log-only.
 
-Today is ${today}. Your task is to find an external skill that fills a **real** gap in this repo, install it via `bin/add-skill` (so `skills.lock` + `aeon.yml` + the trust-gated security scan all fire), and notify **only** when something was installed or surfaces as a strong recommendation. Silence on no-gap / empty-result runs is correct — it prevents training the operator to ignore this channel.
+Today is today's date. Your task is to find an external skill that fills a **real** gap in this repo, install it via `bin/add-skill` (so `skills.lock` + `aeon.yml` + the trust-gated security scan all fire), and notify **only** when something was installed or surfaces as a strong recommendation. Silence on no-gap / empty-result runs is correct — it prevents training the operator to ignore this channel.
 
 ## Steps
 
 ### 1. Derive the query
 
-If `${var}` is set → use it as-is, skip inference.
+If the `Operator var` is set → use it as-is, skip inference.
 
 Otherwise infer a gap from these sources, in order. Stop at the first concrete capability word.
 
@@ -103,10 +97,8 @@ Commit `skills/<name>/`, `skills.lock`, and `aeon.yml` changes on a branch `sear
 
 Skip notify entirely for **SEARCH_SKILL_NO_GAP**, **SEARCH_SKILL_EMPTY**, and **SEARCH_SKILL_ERROR**. Log only.
 
-For **SEARCH_SKILL_OK_INSTALLED** — send via `./notify`:
-
 ```
-*Search Skills — ${today}*
+*Search Skills — today's date*
 Gap: <one-line gap description from step 1>
 Installed: <skill-name> from <owner/repo> (gap-fit X/5, sum Y/15, TRUSTED)
 Why: <one sentence — cites the failing skill, open issue, or priority by name>
@@ -118,7 +110,7 @@ Sources: npx=<ok|fail> vercel=<N> anthropics=<N> bankr=<N> skills.sh=<ok|fail>
 For **SEARCH_SKILL_OK_CANDIDATES** (weak matches or any UNTRUSTED):
 
 ```
-*Search Skills — ${today}*
+*Search Skills — today's date*
 Gap: <one-line gap description>
 Candidates (not auto-installed):
 - <name> — <owner/repo> (gap-fit X/5, sum Y/15, <TRUSTED|UNTRUSTED|WEAK>) — <one-sentence why>
@@ -128,7 +120,7 @@ Manual install: bin/add-skill <owner/repo> <name>
 Sources: npx=<ok|fail> vercel=<N> anthropics=<N> bankr=<N> skills.sh=<ok|fail>
 ```
 
-### 8. Log to `memory/logs/${today}.md`
+### 8. Log to `memory/logs/today's date.md`
 
 Append:
 
@@ -158,3 +150,10 @@ Append:
 - **Never use `npx skills add` for installs.** Search only. Install goes through `bin/add-skill`.
 - **Silent on NO_GAP / EMPTY / ERROR.** Do not notify, do not create articles. Log only.
 - **Do not advance `skills.lock`** for existing entries — that is `skill-update`'s job. This skill only creates new entries (via `bin/add-skill`).
+
+## Do not
+
+- Do not write outside `output/search-skill/` and `memory/skills/search-skill/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

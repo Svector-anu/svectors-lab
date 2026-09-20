@@ -1,28 +1,14 @@
----
-name: soul-builder
-description: Build a SOUL from an X handle - read a wide sample of a public X account, then draft SOUL.md (identity, worldview, opinions), STYLE.md (voice), and examples so every skill speaks in that voice.
-metadata:
-  category: core
-  schedule: "workflow_dispatch"
-  commits: true
-  permissions:
-    - contents:write
-  var: ""
-  tags:
-    - social
-    - content
-    - meta
-  requires:
-    - XAI_API_KEY?
----
+# soul-builder
 
-> **${var}** — a source brief. Two accepted shapes:
+Build a SOUL from an X handle - read a wide sample of a public X account, then draft SOUL.md (identity, worldview, opinions), STYLE.md (voice), and examples so every skill speaks in that voice.
+
+> The `Operator var` — a source brief. Two accepted shapes:
 > - **Structured (from the dashboard):** ` | `-separated `key=value` tokens — any of `x=<handle>`, `name=<full name>`, `links=<url1>,<url2>`. Example: `x=karpathy | name=Andrej Karpathy | links=https://karpathy.ai,https://github.com/karpathy`.
 > - **Bare handle (back-compat / scheduled runs):** just an X handle like `aeonfun` (optionally `@`/URL).
 >
-> If `${var}` is empty, reuse the handle already referenced in `soul/SOUL.md`. If no source at all can be resolved, log `SOUL_BUILDER_SKIP: no source — set var (x=, name=, or links=)` and stop with no notification.
+> If the `Operator var` is empty, reuse the handle already referenced in `soul/SOUL.md`. If no source at all can be resolved, log `SOUL_BUILDER_SKIP: no source — set var (x=, name=, or links=)` and stop with no notification.
 
-Today is ${today}. This skill turns someone's public footprint — their X account, their name on the open web, their own writing and profiles — into a **SOUL**: the identity-and-voice files every content-generating skill reads (see the "Voice" section of `CLAUDE.md`). The goal, borrowed from the soul.md project: produce files where **someone reading them could predict the person's take on a new topic**. Favour specific opinions with reasoning over safe, nuanced mush. Keep real contradictions — they make an identity recognisable.
+Today is today's date. This skill turns someone's public footprint — their X account, their name on the open web, their own writing and profiles — into a **SOUL**: the identity-and-voice files every content-generating skill reads (see the "Voice" section of `CLAUDE.md`). The goal, borrowed from the soul.md project: produce files where **someone reading them could predict the person's take on a new topic**. Favour specific opinions with reasoning over safe, nuanced mush. Keep real contradictions — they make an identity recognisable.
 
 This is the agent behind the dashboard's **Soul → Build my soul** button.
 
@@ -34,14 +20,14 @@ A blank `soul/SOUL.md` means every article, tweet, and digest comes out in gener
 
 ### 0. Parse the source brief
 
-Parse `${var}` into up to three sources:
+Parse the `Operator var` into up to three sources:
 
 - If it contains `=`, split on ` | ` and read the `x=`, `name=`, and `links=` tokens (`links` is a comma-separated URL list).
 - If it has no `=`, treat the whole value as the **X handle** (back-compat).
-- If `${var}` is empty, look for an `@handle` in `soul/SOUL.md` and use it as `x`.
+- If the `Operator var` is empty, look for an `@handle` in `soul/SOUL.md` and use it as `x`.
 - Normalise the handle: strip a leading `@` and any `x.com/` / `twitter.com/` prefix and trailing path.
 
-If **no** source resolves (no `x`, no `name`, no `links`): log `SOUL_BUILDER_SKIP: no source — set var` to `memory/logs/${today}.md` and stop. No notification.
+If **no** source resolves (no `x`, no `name`, no `links`): log `SOUL_BUILDER_SKIP: no source — set var` to `memory/logs/today's date.md` and stop. No notification.
 
 ### 1. Pull the source material
 
@@ -78,7 +64,7 @@ Gather from **every** source provided and **merge** everything useful — more s
 - LinkedIn → **best-effort**: profiles are often login-walled. If a fetch returns little, note `LINKEDIN_THIN` in the log and lean on the other sources — don't fail.
 - If a link 404s or is unreachable, skip it and log `SOUL_BUILDER_LINK_SKIP: <url>`.
 
-If **all** sources come back empty (X dry + web search/fetch yielded nothing): log `SOUL_BUILDER_NO_DATA: ${var}` and send a one-line notification saying the subject couldn't be read (private/suspended account, dead links, or no XAI_API_KEY + web search dry). Do not write empty soul files.
+If **all** sources come back empty (X dry + web search/fetch yielded nothing): log `SOUL_BUILDER_NO_DATA: the `Operator var` and send a one-line notification saying the subject couldn't be read (private/suspended account, dead links, or no XAI_API_KEY + web search dry). Do not write empty soul files.
 
 ### 1·5 Stay on the right person (provenance) — READ THIS
 
@@ -213,11 +199,9 @@ If `soul/SOUL.md` already had real (non-scaffold) operator content, the previous
 
 ### 8. Notify
 
-Write the body to a temp file and send with `./notify -f` (avoids the long-argv sandbox issue):
-
 ```bash
 mkdir -p .pending-notify-temp
-cat > ".pending-notify-temp/soul-builder-${today}.md" << 'NOTIF_EOF'
+cat > ".pending-notify-temp/soul-builder-today's date.md" << 'NOTIF_EOF'
 soul built — ${subject}
 
 identity: ${one-line identity}
@@ -228,12 +212,11 @@ ${1-2 sentence read on the voice in Aeon's own plain tone — the single most di
 
 review + edit in the dashboard Soul tab, then Pull to refresh.
 NOTIF_EOF
-./notify -f ".pending-notify-temp/soul-builder-${today}.md"
 ```
 
 ### 9. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```markdown
 ## Soul Builder
@@ -265,8 +248,6 @@ Append to `memory/logs/${today}.md`:
 
 **x-mcp / WebSearch are last-resort fallbacks only** for the X read — lower quality (WebSearch favours old high-engagement posts and undersamples the quiet range). Never reach for them while the key works.
 
-The **name** and **links** sources are a **separate, non-X read**: they use Claude's built-in **WebSearch** and **WebFetch** against about pages, blogs, GitHub, interviews, etc. — no key needed, and they are the intended primary path for those sources (leave them as-is). `XAI_API_KEY` is optional and only sharpens the X read; with just a name or links the skill runs fine without it. Notifications use `./notify -f`.
-
 ## Edge cases
 
 - **No var, soul/SOUL.md has a handle** — reuse it; this lets a scheduled re-run refresh the soul as the account evolves.
@@ -276,3 +257,10 @@ The **name** and **links** sources are a **separate, non-X read**: they use Clau
 - **Thin account (<10 readable posts)** — still build, but write fewer examples, keep opinions tighter to what's evidenced, and add a one-line `_note: thin sample — soul will sharpen with more posts_` near the top of SOUL.md.
 - **Account is mostly retweets/replies** — replies still carry voice and opinion; analyse them. Note in the log if originals were scarce.
 - **Re-run over a customised soul** — overwrite, relying on git history as the backup, and say so in the notification. The operator chose to rebuild.
+
+## Do not
+
+- Do not write outside `output/soul-builder/` and `memory/skills/soul-builder/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

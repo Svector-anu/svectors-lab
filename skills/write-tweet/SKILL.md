@@ -1,31 +1,22 @@
----
-name: write-tweet
-description: Multi-format tweet studio - standalone drafts (10 across 5 size tiers), a 5-10 tweet thread, or 10 remixes of past tweets, selected via ${var}
-metadata:
-  title: Write Tweet
-  category: basics
-  var: ""
-  tags:
-    - social
-    - content
-  requires:
-    - XAI_API_KEY?
----
-> **${var}** — `[format] [argument]`. Pick one of three formats, then pass its argument. Empty ⇒ **drafts** (standalone tweet drafts). `thread …` ⇒ a multi-tweet **thread**. `remix …` ⇒ **remix** of your past tweets. `revise:<instruction>` ⇒ **revise** the last saved draft (the Telegram force-reply shape, e.g. `revise:make it punchier`). See Selector below.
+# write-tweet
+
+Multi-format tweet studio - standalone drafts (10 across 5 size tiers), a 5-10 tweet thread, or 10 remixes of past tweets, selected via the `Operator var`
+
+> The `Operator var` — `[format] [argument]`. Pick one of three formats, then pass its argument. Empty ⇒ **drafts** (standalone tweet drafts). `thread …` ⇒ a multi-tweet **thread**. `remix …` ⇒ **remix** of your past tweets. `revise:<instruction>` ⇒ **revise** the last saved draft (the Telegram force-reply shape, e.g. `revise:make it punchier`). See Selector below.
 
 Read `memory/MEMORY.md` for context on recent articles, digests, topics being tracked, and the operator's tracked handles/token. Each branch then reads its own `memory/logs/` window (drafts: 3 days, thread: 7 days, remix: 14 days) — see the branch.
 
 ## Selector
 
-**Revise intercept first (Telegram force-reply).** If `${var}` starts with `revise:` → jump straight to **Branch: REVISE** (below) and stop; do **not** token-parse. This is the shape `scripts/telegram-route.sh` sends when the operator replies to a "refine this draft?" prompt — the `revise:` prefix would otherwise fall through to the drafts branch.
+**Revise intercept first (Telegram force-reply).** If the `Operator var` starts with `revise:` → jump straight to **Branch: REVISE** (below) and stop; do **not** token-parse. This is the shape `scripts/telegram-route.sh` sends when the operator replies to a "refine this draft?" prompt — the `revise:` prefix would otherwise fall through to the drafts branch.
 
-Otherwise, parse `${var}` once, before doing anything else:
+Otherwise, parse the `Operator var` once, before doing anything else:
 
 1. Trim whitespace. Take the **first token** (everything up to the first space **or** the first `:`), lowercased.
-2. If that token is one of `drafts`, `thread`, `remix` → that's the **format**. The **argument** is the remainder of `${var}` after stripping the keyword and one optional following `:` and surrounding whitespace.
-3. Otherwise → format is **drafts** and the argument is the **entire** `${var}` (backward-compatible with the legacy `var = topic/URL` behaviour).
+2. If that token is one of `drafts`, `thread`, `remix` → that's the **format**. The **argument** is the remainder of the `Operator var` after stripping the keyword and one optional following `:` and surrounding whitespace.
+3. Otherwise → format is **drafts** and the argument is the **entire** the `Operator var` (backward-compatible with the legacy `var = topic/URL` behaviour).
 
-| `${var}` | Format | Argument | Behaviour |
+| the `Operator var` | Format | Argument | Behaviour |
 |---|---|---|---|
 | `` (empty) | drafts | — | Auto-select the most tweetable insight from today's logs |
 | `prediction markets are broken` | drafts | `prediction markets are broken` | Drafts on that topic |
@@ -46,13 +37,10 @@ Then dispatch to the matching branch below. Only run the selected branch.
 The operator tapped the "refine this draft?" prompt and sent a free-text revision instruction. Handle it before any normal generation:
 
 1. **Strip the prefix.** The instruction is `${var#revise:}` (the remainder may itself contain colons — keep them). Trim surrounding whitespace. Example values: `make it punchier`, `drop the emoji`, `lead with the number`.
-2. **Load the last draft.** Read `memory/drafts/write-tweet-latest.md` — the stable path every normal run saves to (see **Save draft + offer revision**). If it's missing or empty, there's nothing to refine yet: send `./notify "Nothing to revise yet — run a tweet draft first, then reply here to refine it."` and **end the run**.
 3. **Apply the instruction.** Re-read `soul/` (`SOUL.md`, `STYLE.md`, examples) for voice, then regenerate the saved draft applying the operator's instruction. Keep the **same format** (drafts / thread / remix) and structure as the saved draft — you're refining it, not starting over — and respect the same character limits and anti-patterns as the originating branch (no hashtags, no emojis unless the draft had them, per-tier/thread length caps).
 4. **Re-save.** Overwrite `memory/drafts/write-tweet-latest.md` with the revised draft, so a further `revise:` refines the newest version.
-5. **Re-send** via `./notify` in the same shape the originating branch uses for its draft, with a first line that flags it as a revision, e.g. `revised (${var#revise:}):` followed by the refreshed draft body. (For multi-line output use `./notify -f <file>`.)
 6. **Re-offer** a further revision (the operator is actively iterating, so this is expected, not a nag — skip the daily dedup guard here):
    ```bash
-   ./notify "Want another pass? Reply with a change and I'll revise again." \
      --force-reply --placeholder "e.g. cut the last line" \
      --context "write-tweet::revise"
    ```
@@ -60,7 +48,7 @@ The operator tapped the "refine this draft?" prompt and sent a free-text revisio
 
 ---
 
-# Branch: DRAFTS (default / empty ${var})
+# Branch: DRAFTS (default / empty the `Operator var`)
 
 Generate 10 standalone tweet drafts across 5 size tiers (2 variations each). The **argument** is the topic or URL; empty ⇒ auto-select.
 
@@ -70,7 +58,7 @@ Read the last **3 days** of `memory/logs/` to understand what's been covered and
 
 If the argument is set, use it as the topic (it may be a keyword, a thesis, or a URL).
 
-Otherwise, read today's `memory/logs/${today}.md` and pick the **single most tweetable insight**. Prioritize:
+Otherwise, read today's `memory/logs/today's date.md` and pick the **single most tweetable insight**. Prioritize:
 1. A take from today's article (already researched and opinionated)
 2. A surprising connection between two of today's findings
 3. A reaction to something from a tweet roundup or digest
@@ -191,7 +179,6 @@ After all 10, add a one-line pick for **best overall** and **best per tier**.
 
 ## Notify (drafts)
 
-Send the drafts via `./notify` — write the body to `/tmp/wt-drafts.md` first, then `./notify -f /tmp/wt-drafts.md` (keeps the long body off argv and out of the repo root):
 ```
 tweet drafts: [topic]
 
@@ -241,11 +228,11 @@ If soul is absent, use a clear, direct, plain-spoken tone — but the anti-patte
 ## Topic Selection (thread)
 
 **If the argument is set**, use it as the topic (keyword, thesis, or URL). Skip scoring and go straight to research and drafting. Pick the sharpest angle from:
-- Today's `memory/logs/${today}.md` — article thesis, paper finding, market signal
+- Today's `memory/logs/today's date.md` — article thesis, paper finding, market signal
 - `memory/MEMORY.md` notable signals — anything with reflexivity, contradiction, or structural insight
 - A connection between two recent findings that most people aren't seeing
 
-**If the argument is empty**, auto-pick the day's highest-signal event. Every run produces something worth amplifying — a feature shipped, a price move, a milestone crossed, a notable tweet — and most of it dies unposted. Read `memory/logs/${today}.md` end-to-end, score the events that actually happened, and thread the single highest-scoring one.
+**If the argument is empty**, auto-pick the day's highest-signal event. Every run produces something worth amplifying — a feature shipped, a price move, a milestone crossed, a notable tweet — and most of it dies unposted. Read `memory/logs/today's date.md` end-to-end, score the events that actually happened, and thread the single highest-scoring one.
 
 ### Auto-pick scoring (empty-argument mode)
 
@@ -356,7 +343,6 @@ The payoff. The implication, the action, or the reframe. Should feel like the po
 
 ## Notify (thread)
 
-Send via `./notify` — write the thread body to `/tmp/wt-thread.md` first, then `./notify -f /tmp/wt-thread.md` (keeps the long body off argv and out of the repo root):
 ```
 thread: [topic — 3-5 words]
 
@@ -402,7 +388,7 @@ We over-fetch so the remixability pre-filter (step 2) has room to drop un-remixa
 **Fetch directly from the X.AI Responses API** — this is the primary path (see **Fetching**; set the Bash tool `timeout` ≥180000). Resolve the time window (from the branch argument) and call the API:
 
 ```bash
-TIME_WINDOW="${ARG:-180d}"   # ARG = the remix argument parsed from ${var}; default 180d
+TIME_WINDOW="${ARG:-180d}"   # ARG = the remix argument parsed from the `Operator var`; default 180d
 
 if echo "$TIME_WINDOW" | grep -q ':'; then
   FROM_DATE=$(echo "$TIME_WINDOW" | cut -d: -f1)
@@ -507,9 +493,8 @@ Track drops in the log (step 7). If you drop more than 3, emit `REMIX_TWEETS_DEG
 
 Lead with a one-line **batch verdict** summarizing strategy spread (e.g., "3 sharpens, 2 flips, 2 updates, 2 concretizes, 1 escalate"). Keep the whole message ≤4000 chars. No leading indentation.
 
-Send via `./notify` — write the message body to `/tmp/wt-remix.md` first, then `./notify -f /tmp/wt-remix.md` (keeps the long body off argv and out of the repo root):
 ```
-*Remix Tweets — ${today}*
+*Remix Tweets — today's date*
 Batch: [one-line strategy spread]. Drops: N.
 
 1. *[strategy]*
@@ -533,11 +518,11 @@ On a successful (`OK`/`DEGRADED`) run, after notifying, **save the draft and off
 
 ### 7. Log (remix)
 
-Append to `memory/logs/${today}.md` under the shared `### write-tweet` heading (see **Log**, format `remix`).
+Append to `memory/logs/today's date.md` under the shared `### write-tweet` heading (see **Log**, format `remix`).
 
 The URL list logged there is the canonical dedup source — every subsequent run reads these URLs back and drops any re-appearance (persistent dedup).
 
-Save the fetched originals (even the filtered-out ones) to `memory/topics/tweet-archive.md` (append, deduplicated by URL) so other skills (article, drafts branch) can reference them as source material.
+Save the fetched originals (even the filtered-out ones) to `memory/skills/write-tweet/tweet-archive.md` (append, deduplicated by URL) so other skills (article, drafts branch) can reference them as source material.
 
 ## Constraints (remix)
 
@@ -560,22 +545,20 @@ After a normal run (drafts / thread / remix) has produced and notified a draft, 
    mkdir -p memory/drafts
    ```
    Write the full draft you just sent — the same content as the notification body (all tiers / the whole thread / all remixes) — to `memory/drafts/write-tweet-latest.md`, overwriting any previous file. Only the newest draft is revisable.
-2. **Offer a revision.** Because `force_reply` and inline buttons can't share one Telegram message, send this as a **separate** `./notify` after the draft:
    ```bash
-   ./notify "Want to refine this draft? Reply with a change and I'll revise it." \
      --force-reply --placeholder "e.g. make it punchier" \
      --context "write-tweet::revise"
    ```
    The reply routes back as `var="revise:<instruction>"` and re-dispatches this skill into **Branch: REVISE**.
 
-   **Dedup — once per produced draft.** Before offering, scan the last ~2 days of `memory/logs/` for a `FORCE_REPLY_OFFERED: revise` line dated `${today}`; if present, skip the offer. When you send it, append the marker under the run's `### write-tweet` entry:
+   **Dedup — once per produced draft.** Before offering, scan the last ~2 days of `memory/logs/` for a `FORCE_REPLY_OFFERED: revise` line dated today's date; if present, skip the offer. When you send it, append the marker under the run's `### write-tweet` entry:
    ```
    - FORCE_REPLY_OFFERED: revise
    ```
 
 ## Log
 
-Append **one** entry to `memory/logs/${today}.md` under a single `### write-tweet` heading. The first bullet is always the `**Format:**` discriminator naming the branch that ran; the rest are that branch's fields.
+Append **one** entry to `memory/logs/today's date.md` under a single `### write-tweet` heading. The first bullet is always the `**Format:**` discriminator naming the branch that ran; the rest are that branch's fields.
 
 **Format `drafts`:**
 ```
@@ -640,3 +623,10 @@ Append **one** entry to `memory/logs/${today}.md` under a single `### write-twee
 4. **Fall back only on a real failure**, and **record the true reason** — never write "XAI_API_KEY unavailable" when the key was set. Use one of: `key-unset` (only if step 1 said `KEY_UNSET`), `http-<code>` (non-2xx), `empty` (200 but nothing parsed), `timeout` (curl exceeded `--max-time`).
 
 **WebSearch / WebFetch are last-resort fallbacks only** — lower quality, never a primary or co-equal path. Reach for them only after a real Path A failure. The **thread** branch's WebSearch use is for general fresh context, not an X-tweet fetch, and is unaffected.
+
+## Do not
+
+- Do not write outside `output/write-tweet/` and `memory/skills/write-tweet/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,18 +1,8 @@
----
-name: inbox-triage
-description: Daily GitHub notification inbox triage - surfaces aging vuln PR replies, security advisories, review requests, and mentions that need action
-metadata:
-  title: Inbox Triage
-  category: dev
-  var: ""
-  tags:
-    - github
-    - security
-    - meta
-  schedule: "30 11 * * *"
----
+# inbox-triage
 
-Today is ${today}. Read `memory/MEMORY.md` before starting.
+Daily GitHub notification inbox triage - surfaces aging vuln PR replies, security advisories, review requests, and mentions that need action
+
+Today is today's date. Read `memory/MEMORY.md` before starting.
 
 ## Why this skill exists
 
@@ -69,7 +59,7 @@ Flag urgency:
 - `AGING` — age_days 3–7
 - `FRESH` — age_days < 3
 
-Cross-reference with `memory/topics/vuln-followup.md` if it exists: look for the PR title in that file and pull any tracked notes (e.g. "approved", "NEEDS-ANSWER", merge status).
+Cross-reference with `memory/skills/inbox-triage/vuln-followup.md` if it exists: look for the PR title in that file and pull any tracked notes (e.g. "approved", "NEEDS-ANSWER", merge status).
 
 ### 5. Resolve HTML URLs for action items
 
@@ -88,7 +78,7 @@ If that fails, construct the URL manually:
 
 ### 6. Write triage summary
 
-Overwrite `memory/topics/inbox-triage.md`:
+Overwrite `memory/skills/inbox-triage/inbox-triage.md`:
 
 ```markdown
 # GitHub Inbox Triage
@@ -152,7 +142,7 @@ Only send if at least one of:
 - Any REVIEW_NEEDED item
 - Three or more MENTION items
 
-Write to `.pending-notify-temp/inbox-triage-${today}.md`:
+Write to `.pending-notify-temp/inbox-triage-today's date.md`:
 
 ```
 inbox — {today}
@@ -169,19 +159,18 @@ review needed: {comma-separated repo list}
 {if 3+ MENTION:}
 {N} mentions
 
-read it: memory/topics/inbox-triage.md
+read it: memory/skills/inbox-triage/inbox-triage.md
 ```
 
 Then:
 ```bash
-./notify -f .pending-notify-temp/inbox-triage-${today}.md
 ```
 
 If nothing meets the threshold: skip notification. Log that no notification was sent.
 
 ### 9. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```markdown
 ### inbox-triage
@@ -214,3 +203,10 @@ Uses `gh api` for all GitHub calls — it handles auth internally, so no `$SECRE
 - Not a duplicate of `followup-patrol` — followup-patrol reads manually curated items in MEMORY.md. This reads the raw GitHub inbox.
 - Not a duplicate of `vuln-tracker` — vuln-tracker tracks lifecycle by branch name. This catches inbound maintainer replies via notifications.
 - Not a duplicate of `disclosure-tracker` — disclosure-tracker manages `memory/pending-disclosures/` advisory drafts. This reads GitHub security alerts and PR responses.
+
+## Do not
+
+- Do not write outside `output/inbox-triage/` and `memory/skills/inbox-triage/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

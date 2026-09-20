@@ -1,25 +1,8 @@
----
-name: investigation-report
-description: One-shot Base-token investigation - runs any subset of six onchain-security checks (rug-scan, contract-audit, deployer-trace, holder-concentration, honeypot, lp-lock) into one verdict. Keyless core.
-metadata:
-  title: Investigation Report
-  mode: read-only
-  category: crypto
-  var: ""
-  tags:
-    - crypto
-    - security
-    - base
-  requires:
-    - ETHERSCAN_API_KEY?
-    - BASESCAN_API_KEY?
-    - BASE_RPC_URL?
-  capabilities:
-    - external_api
-    - read_only
-    - sends_notifications
----
-> **${var}** — Base subject to investigate, plus optional flags: `<token-address> [--checks=rug,contract,deployer,holders,honeypot,lp] [--depth=quick|deep]`. The first token is the subject contract address (`0x…`, required). `--checks=` is a comma-list selecting which analyzers to run (**default = all six**). `--depth=` is `quick` (the old rug-scan fast path — minimal reads) or `deep` (full standalone logic of each selected check; **default**). If the subject address is empty, log `REPORT_NO_TARGET` and exit cleanly (no notify).
+# investigation-report
+
+One-shot Base-token investigation - runs any subset of six onchain-security checks (rug-scan, contract-audit, deployer-trace, holder-concentration, honeypot, lp-lock) into one verdict. Keyless core.
+
+> The `Operator var` — Base subject to investigate, plus optional flags: `<token-address> [--checks=rug,contract,deployer,holders,honeypot,lp] [--depth=quick|deep]`. The first token is the subject contract address (`0x…`, required). `--checks=` is a comma-list selecting which analyzers to run (**default = all six**). `--depth=` is `quick` (the old rug-scan fast path — minimal reads) or `deep` (full standalone logic of each selected check; **default**). If the subject address is empty, log `REPORT_NO_TARGET` and exit cleanly (no notify).
 >
 > Examples:
 > - `0xToken` → all six checks, deep report.
@@ -33,13 +16,13 @@ Designed to **degrade gracefully**: each selected section runs independently, so
 
 ## Config
 
-- Subject = the first token of `${var}` (validate: `0x` + 40 hex). Chain = Base (`chainid=8453`, explorer `basescan.org`).
+- Subject = the first token of the `Operator var` (validate: `0x` + 40 hex). Chain = Base (`chainid=8453`, explorer `basescan.org`).
 - **Etherscan v2 unified API** (`https://api.etherscan.io/v2/api?chainid=8453&…`) — used by the `rug`, `contract`, `deployer`, `holders` checks. Works **keyless** at a lower rate limit.
 - **Base RPC** (`${BASE_RPC_URL:-https://mainnet.base.org}`) — used by `honeypot`, `lp`, and the `eth_call`/`eth_getLogs`/`eth_getStorageAt`/`eth_getCode` reads inside the other checks. Keyless; any standard JSON-RPC endpoint works.
 - Secrets (all **optional**):
   - `ETHERSCAN_API_KEY` (a.k.a. `BASESCAN_API_KEY` — same Etherscan v2 key) — appended to the Etherscan URL as `&apikey=…` via `./secretcurl`'s `{ETHERSCAN_API_KEY}` placeholder (never a bare `$SECRET` on the line, never a header). Raises the rate limit and unlocks verified source, full deployer history, and the holder list. Used by `rug`, `contract`, `deployer`, `holders`.
   - `BASE_RPC_URL` — overrides the default public Base RPC. Used by every RPC read; primary for `honeypot` and `lp`.
-- **Preamble (run once, before dispatch):** read `memory/MEMORY.md` and the last ~2–3 days of `memory/logs/` so a repeat investigation can note what changed since last time and avoid re-reporting the same signal. Parse `${var}` → subject address, `--checks` (default all six), `--depth` (default `deep`).
+- **Preamble (run once, before dispatch):** read `memory/MEMORY.md` and the last ~2–3 days of `memory/logs/` so a repeat investigation can note what changed since last time and avoid re-reporting the same signal. Parse the `Operator var` → subject address, `--checks` (default all six), `--depth` (default `deep`).
 
 ## Steps
 
@@ -51,7 +34,7 @@ A fast, opinionated rug verdict: does the contract let someone print, freeze, or
 
 **1. Verify contract + pull source**
 ```bash
-TOKEN="${var}"
+TOKEN="the `Operator var`"
 # ./secretcurl substitutes {ETHERSCAN_API_KEY} internally, so no `$SECRET` hits the
 # command line (a bare one is refused by the Bash permission analyzer). Append the key
 # only when set — Etherscan v2 works keyless at a lower rate limit.
@@ -106,7 +89,7 @@ Deep structural inspection: what powers exist, who holds them, and whether they'
 
 **1. Source + verification**
 ```bash
-ADDR="${var}"
+ADDR="the `Operator var`"
 KEYQ=""; [ -n "${ETHERSCAN_API_KEY:+x}" ] && KEYQ="&apikey={ETHERSCAN_API_KEY}"
 ./secretcurl -m 10 -s "https://api.etherscan.io/v2/api?chainid=8453&module=contract&action=getsourcecode&address=${ADDR}${KEYQ}" | jq '.result[0] | {ContractName, Proxy, Implementation, CompilerVersion, verified: (.SourceCode != "")}'
 ```
@@ -148,7 +131,7 @@ Check whether the owner address itself has code (multisig/contract) vs is an EOA
 
 **1. Resolve deployer** — the subject is a token, so resolve its creator first:
 ```bash
-TARGET="${var}"
+TARGET="the `Operator var`"
 KEYQ=""; [ -n "${ETHERSCAN_API_KEY:+x}" ] && KEYQ="&apikey={ETHERSCAN_API_KEY}"
 ./secretcurl -m 10 -s "https://api.etherscan.io/v2/api?chainid=8453&module=contract&action=getcontractcreation&contractaddresses=${TARGET}${KEYQ}" | jq -r '.result[0].contractCreator'
 ```
@@ -174,7 +157,7 @@ How concentrated is *real circulating* supply, once you strip out LP, lockers, a
 
 **1. Fetch supply + top holders**
 ```bash
-TOKEN="${var}"
+TOKEN="the `Operator var`"
 KEYQ=""; [ -n "${ETHERSCAN_API_KEY:+x}" ] && KEYQ="&apikey={ETHERSCAN_API_KEY}"
 ./secretcurl -m 10 -s "https://api.etherscan.io/v2/api?chainid=8453&module=stats&action=tokensupply&contractaddress=${TOKEN}${KEYQ}" | jq -r '.result'
 ./secretcurl -m 10 -s "https://api.etherscan.io/v2/api?chainid=8453&module=token&action=tokenholderlist&contractaddress=${TOKEN}&page=1&offset=100${KEYQ}" | jq '.result'
@@ -215,7 +198,7 @@ If `tokenholderlist` returns empty on the keyless tier, reconstruct top holders 
 
 **1. Confirm it's a contract**
 ```bash
-TOKEN="${var}"
+TOKEN="the `Operator var`"
 RPC="${BASE_RPC_URL:-https://mainnet.base.org}"
 curl -m 10 -s -X POST "$RPC" -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":1,"method":"eth_getCode","params":["'"$TOKEN"'","latest"]}' | jq -r '.result'
@@ -260,9 +243,9 @@ curl -m 10 -s -X POST "$RPC" -H "Content-Type: application/json" \
 
 "Can the team pull the liquidity?" Resolves the token's main pool and classifies LP custody. Runs **keyless** on the Base RPC.
 
-**1. Locate the main pool** — fetch recent `Transfer` events (topic0 `0xddf252ad…`); the address that appears most as a counterparty is the dominant venue. Confirm a candidate is a real **pair** (not a router) by calling `token0()` (`0x0dfe1681`) / `token1()` (`0xd21220a7`) — a pool returns two addresses, one of which is `${var}`:
+**1. Locate the main pool** — fetch recent `Transfer` events (topic0 `0xddf252ad…`); the address that appears most as a counterparty is the dominant venue. Confirm a candidate is a real **pair** (not a router) by calling `token0()` (`0x0dfe1681`) / `token1()` (`0xd21220a7`) — a pool returns two addresses, one of which is the `Operator var`:
 ```bash
-TOKEN="${var}"; RPC="${BASE_RPC_URL:-https://mainnet.base.org}"
+TOKEN="the `Operator var`"; RPC="${BASE_RPC_URL:-https://mainnet.base.org}"
 # (1) eth_getLogs Transfer for $TOKEN, tally counterparties
 # (2) for the busiest, eth_call token0()/token1() and keep the one whose pair includes $TOKEN
 curl -m 10 -s -X POST "$RPC" -H "Content-Type: application/json" \
@@ -327,8 +310,6 @@ Only render sections for checks that were selected. An `unavailable` section mea
 
 ### Notify
 
-Send **one** consolidated alert via `./notify` — never one per check (don't double-notify).
-
 - **Single-check run:** use that check's own notify trigger and format verbatim:
   - `rug` → notify if verdict ≥ `ELEVATED`.
   - `contract` → notify if a live, non-renounced power in {upgrade, mint, blacklist, drain} exists.
@@ -368,7 +349,7 @@ Token: https://basescan.org/token/0xToken     Pool: https://basescan.org/address
 
 ### Log
 
-Append to `memory/logs/${today}.md` under **one** heading (regardless of verdict — audit trail), with a discriminator line naming the checks + depth that ran:
+Append to `memory/logs/today's date.md` under **one** heading (regardless of verdict — audit trail), with a discriminator line naming the checks + depth that ran:
 
 ```
 ### investigation-report
@@ -402,3 +383,10 @@ The Base RPC is public and keyless; Etherscan v2 is called through `./secretcurl
 - `honeypot`: a **sell-restriction** check, not a tax meter — `SELLABLE` ≠ low tax; a revert can be transient, so report `LIKELY_HONEYPOT` as a strong signal to investigate, not a certainty.
 - `lp`: only V2-style (fungible-LP) pools are classifiable by custody; V3/V4 → `UNKNOWN`; `LOCKED` means LP can't be pulled, not that the token is otherwise safe; the locker list isn't exhaustive.
 - Don't double-notify: even when several sub-checks would each notify, the composite sends **one** consolidated alert.
+
+## Do not
+
+- Do not write outside `output/investigation-report/` and `memory/skills/investigation-report/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

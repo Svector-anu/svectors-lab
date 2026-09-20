@@ -1,19 +1,8 @@
----
-name: picks-tracker
-description: Retrospective on past token and prediction market picks - what hit, what flopped, what the score is
-metadata:
-  title: Picks Tracker
-  category: crypto
-  schedule: "0 9 * * 0"
-  tags:
-    - crypto
-    - review
-    - meta
-  requires:
-    - COINGECKO_API_KEY?
----
+# picks-tracker
 
-Today is ${today}. Your task is to audit the last 30 days of token picks and score them against current prices.
+Retrospective on past token and prediction market picks - what hit, what flopped, what the score is
+
+Today is today's date. Your task is to audit the last 30 days of token picks and score them against current prices.
 
 Read memory/MEMORY.md for context.
 
@@ -129,8 +118,6 @@ Keep it honest. No cherry-picking dates.
 
 ### 6. Format and send notification
 
-Send via `./notify` (inline multi-line literal — do NOT pipe or use `$(cat)`):
-
 ```
 *picks scorecard — [START_DATE] → [TODAY]*
 
@@ -147,14 +134,14 @@ Send via `./notify` (inline multi-line literal — do NOT pipe or use `$(cat)`):
 
 no financial advice. just tracking the record.
 
-read it: https://github.com/aeonfun/aeon/blob/main/output/articles/picks-scorecard-${today}.md
+read it: https://github.com/aeonfun/aeon/blob/main/output/articles/picks-scorecard-today's date.md
 ```
 
 Keep the message under 3000 chars. If too long, truncate to the most recent 10 picks.
 
 ### 7. Save scorecard
 
-Write a brief scorecard to `output/articles/picks-scorecard-${today}.md`:
+Write a brief scorecard to `output/articles/picks-scorecard-today's date.md`:
 ```markdown
 # Picks Scorecard — [DATE]
 
@@ -177,7 +164,7 @@ Write a brief scorecard to `output/articles/picks-scorecard-${today}.md`:
 
 ### 8. Log to memory
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 ```
 ### picks-tracker
 - **Window:** last 30 days (N picks)
@@ -191,3 +178,10 @@ Append to `memory/logs/${today}.md`:
 ## Environment Variables
 
 - `COINGECKO_API_KEY` — optional, increases rate limits. Skill works without it via free tier + WebFetch fallback.
+
+## Do not
+
+- Do not write outside `output/picks-tracker/` and `memory/skills/picks-tracker/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

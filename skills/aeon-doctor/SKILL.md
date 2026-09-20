@@ -1,26 +1,17 @@
----
-name: aeon-doctor
-description: Static config-correctness linter for this instance - catches the silent-failure class (unquoted schedules, duplicate keys, unconfigured skills, mode typos, broken requires/MCP refs) that no run-based health skill can see. Notifies only on problems.
-metadata:
-  title: Aeon Doctor
-  category: evolution
-  var: ""  # ""=lint the whole instance config | <skill-slug>=lint one skill's entry + SKILL.md
-  tags:
-    - meta
-    - health
-  mode: read-only
----
+# aeon-doctor
 
-> **${var}** — scope. **Empty (default)** = lint the entire instance config (`aeon.yml` + every `skills/*/SKILL.md` + `.mcp.json`). A **skill slug** (e.g. `digest`) = lint just that one skill's `aeon.yml` entry and its `SKILL.md`.
+Static config-correctness linter for this instance - catches the silent-failure class (unquoted schedules, duplicate keys, unconfigured skills, mode typos, broken requires/MCP refs) that no run-based health skill can see. Notifies only on problems.
 
-Today is ${today}. You are this instance's **config doctor**. Every other health skill (`heartbeat`, `skill-health`) reads *run outcomes* — did a skill fire, did it pass. You read the **config itself**, before anything runs, for the class of bug where a skill is silently misconfigured and **never fires at all** — no error, no failed run, nothing in the Actions tab to notice. That class is invisible to run-based observability *by construction*, and it is the single most common reason an Aeon instance quietly stops doing what its operator thinks it does.
+> The `Operator var` — scope. **Empty (default)** = lint the entire instance config (`aeon.yml` + every `skills/*/SKILL.md` + `.mcp.json`). A **skill slug** (e.g. `digest`) = lint just that one skill's `aeon.yml` entry and its `SKILL.md`.
+
+Today is today's date. You are this instance's **config doctor**. Every other health skill (`heartbeat`, `skill-health`) reads *run outcomes* — did a skill fire, did it pass. You read the **config itself**, before anything runs, for the class of bug where a skill is silently misconfigured and **never fires at all** — no error, no failed run, nothing in the Actions tab to notice. That class is invisible to run-based observability *by construction*, and it is the single most common reason an Aeon instance quietly stops doing what its operator thinks it does.
 
 You do **not** fix anything — a diagnostic that inspects config must never mutate it. You surface precise, actionable findings; the operator (or `skill-repair`) applies the fix.
 
 ## Preamble (always)
 
 1. Read `memory/MEMORY.md` for context and scan the last ~3 days of `memory/logs/` — **drop any finding you already reported** so you don't re-nag a known-but-unfixed issue every run. (A finding is "the same" if it's the same check on the same skill.)
-2. Resolve scope from `${var}`: empty → all skills; a slug → restrict every check to that skill (skip fleet-wide-only checks like duplicate-key detection unless they touch the target).
+2. Resolve scope from the `Operator var`: empty → all skills; a slug → restrict every check to that skill (skip fleet-wide-only checks like duplicate-key detection unless they touch the target).
 3. Every check below is a **pure local file read** — `grep`, `comm`, `node scripts/*.js`, `bash scripts/*.sh`. No network, no secrets, no GitHub API. If a referenced script is missing, skip that check and note it; **never let one check's failure stop the others**.
 
 ## Steps — run every check, collect findings
@@ -128,9 +119,7 @@ Each hit → **warn**. Fix: change the Log-section heading (the instruction line
 ## Report
 
 - **No findings → send nothing and exit.** A clean config is the common case; silence is correct and keeps this channel trustworthy.
-- **Findings → one consolidated `./notify`**, most-severe first. Write the body to a scratch file and send with `-f` (never a long argv):
   ```bash
-  ./notify -f <file> \
     --title "aeon-doctor: <N> config issue(s)" \
     --severity <critical if any critical else warn> \
     --mute-key "aeon-doctor"
@@ -147,5 +136,12 @@ Each hit → **warn**. Fix: change the Log-section heading (the instruction line
 
 ## Log
 
-Append to `memory/logs/${today}.md` under a `### aeon-doctor` heading (the health loop parses this shape), as bullets: checks run, findings by severity (or `clean`), and whether a notification was sent.
+Append to `memory/logs/today's date.md` under a `### aeon-doctor` heading (the health loop parses this shape), as bullets: checks run, findings by severity (or `clean`), and whether a notification was sent.
 End-states: `AEON_DOCTOR_CLEAN`, `AEON_DOCTOR_FINDINGS`, `AEON_DOCTOR_ERROR`.
+
+## Do not
+
+- Do not write outside `output/aeon-doctor/` and `memory/skills/aeon-doctor/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,34 +1,24 @@
----
-name: digest
-description: Generate and send a digest on a configurable topic, optionally pulling RSS/Atom feeds as an input source alongside web + X signal
-metadata:
-  title: Digest
-  mode: write
-  category: basics
-  var: ""
-  tags:
-    - content
-    - news
-  requires:
-    - XAI_API_KEY?
----
+# digest
+
+Generate and send a digest on a configurable topic, optionally pulling RSS/Atom feeds as an input source alongside web + X signal
+
 <!-- autoresearch: variation B — curatorial discipline (filter → distill → structure → sanity-check) folded with direct-curl xAI + web/RSS inputs and memory-aware dedup; RSS feed-reading + item-selection absorbed from rss-digest as an additional source class -->
 
-> **${var}** — Selects the digest's topic and which source classes feed it. Grammar:
+> The `Operator var` — Selects the digest's topic and which source classes feed it. Grammar:
 > - `""` (empty) → **digest's default sources** (WebSearch + xAI/Grok + aggregators), no topic filter — a broad daily digest.
 > - `"<topic>"` → topic-focused digest on the default web sources, filtered to `<topic>` (e.g. `"solana"`, `"AI agents"`, `"rust"`).
 > - `"rss"` → **RSS-only**: pull feeds from `memory/feeds.yml`, no topic filter.
 > - `"rss: <topic>"` → RSS-only, filtered to `<topic>` (e.g. `"rss: rust"`).
 > - `"<topic> +rss"` → default web sources **and** RSS feeds combined, both filtered to `<topic>` (e.g. `"AI agents +rss"`).
 
-Today is ${today}. Generate and send a daily **${var}** digest.
+Today is today's date. Generate and send a daily The `Operator var` digest.
 
 The whole point of a digest is **signal, not volume**. A reader skimming for 60 seconds should walk away with three things they didn't know that morning and one of them should change a decision they'd make this week. Anything that doesn't clear that bar gets cut.
 
 ## Preamble — orient and parse the selector
 
 1. Read `memory/MEMORY.md` for high-level context and tracked topics, and scan the last 3 days of `memory/logs/` so you can dedup against anything already reported.
-2. Parse `${var}` into **`{topic, sources}`**:
+2. Parse the `Operator var` into **`{topic, sources}`**:
    - Strip a trailing `+rss` → adds RSS to the default web sources. Remainder is the `topic`.
    - A leading `rss:` (or the bare token `rss`) → **RSS-only** source set; text after the colon is the `topic` (empty = no filter).
    - Otherwise the whole string is the `topic` and `sources = default web` (empty string = default web, no topic filter).
@@ -50,13 +40,13 @@ feeds:
 
 ## Phase 1 — Gather (cast a wide net)
 
-Pull from the source classes selected by `${var}`. Never rely on a single one — if `sources = web`, use at least two of the web classes below; if `sources = web+rss`, RSS counts as one class and you still want a second.
+Pull from the source classes selected by the `Operator var`. Never rely on a single one — if `sources = web`, use at least two of the web classes below; if `sources = web+rss`, RSS counts as one class and you still want a second.
 
 ### Web sources (active when `sources` is `web` or `web+rss`)
 
 1. **WebSearch** (built-in) — run 2 distinct queries:
-   - `"${topic}" news ${today}` (broad). If `topic` is empty, run a general query for the day's notable stories in the operator's tracked areas (from `memory/MEMORY.md`).
-   - One narrower query you choose based on `${topic}` (e.g. for "solana" → `"solana" launches OR funding OR exploit ${today}`; for "AI agents" → `"agent framework" OR "agentic" release ${today}`).
+   - `"${topic}" news today's date (broad). If `topic` is empty, run a general query for the day's notable stories in the operator's tracked areas (from `memory/MEMORY.md`).
+   - One narrower query you choose based on `${topic}` (e.g. for "solana" → `"solana" launches OR funding OR exploit today's date; for "AI agents" → `"agent framework" OR "agentic" release today's date).
 2. **xAI x_search via Grok** — pulls the X/Twitter signal layer. `XAI_API_KEY` is injected into this skill's environment (declared in `requires:`) and is the **primary** path; see **Fetching the X signal** below for the full contract (attempt the curl before any fallback, set the Bash tool `timeout` ≥180000, record the true failure reason).
 
    **Path A — X.AI API (primary):** a direct `curl` to the Responses API. First confirm the key with `[ -n "$XAI_API_KEY" ] && echo KEY_PRESENT || echo KEY_UNSET`; if `KEY_PRESENT` (it will be), this path is required. When you run the curl, set the Bash tool's `timeout` to at least `180000`.
@@ -109,7 +99,7 @@ Pick the **3–5 strongest** items. Lead with the **single most actionable** one
 Format the digest exactly like this (**unified format** — used for `web`, `rss`, and `web+rss` runs):
 
 ```
-*${var} — ${today}*
+*the `Operator var` — today's date*
 
 _TL;DR: <one sentence covering the day's gravity. Concrete, no adjectives.>_
 
@@ -137,7 +127,7 @@ _TL;DR: <one sentence covering the day's gravity. Concrete, no adjectives.>_
 **Alternate RSS layout (RSS-only runs):** when `sources = rss`, you may instead group items by feed name if that reads better than a single ranked list — this preserves the original RSS-digest presentation:
 
 ```
-*RSS Digest — ${today}*
+*RSS Digest — today's date*
 
 *Feed Name*
 - [Title](url) — summary
@@ -151,8 +141,6 @@ The grouped RSS layout stays **≤4000 chars**. Prefer the unified ranked format
 
 ## Phase 4 — Sanity-check (last pass before sending)
 
-Before calling `./notify`, walk this checklist mentally:
-
 - [ ] Lead item is the most actionable one I have, not just the most dramatic.
 - [ ] Every link resolves to a real URL (no `[link]` placeholders, no truncated IDs).
 - [ ] No item is paraphrasing a hot take — each has a verifiable underlying fact.
@@ -164,17 +152,16 @@ If the digest fails any check, fix it before sending. If after filtering you hav
 
 ## Phase 5 — Send and log
 
-1. Send via `./notify "<digest body>"`.
-2. Append to `memory/logs/${today}.md` under **one** `### digest` heading:
+2. Append to `memory/logs/today's date.md` under **one** `### digest` heading:
    ```
-   ### digest (${var})
+   ### digest (the `Operator var`)
    - Source mode: <web | rss | web+rss>
    - Sources used: <list — e.g. WebSearch, xAI API (api|fallback:reason), feeds.yml (Feed A, Feed B)>
    - Raw candidates: <N> (web <Nw> / rss <Nr>), after filter: <M>, sent: <K>
    - Lead item: <title>
    - Notes: <anything unusual — xAI fetch fallback + true reason (http-<code>/empty/timeout/key-unset), thin day (DIGEST_THIN/DIGEST_FETCH_EMPTY), RSS_DIGEST_OK, dedup against prior log>
    ```
-3. Update `memory/MEMORY.md` "Recent Digests" table with one row: date, topic (or `${var}`), key topics (3 short keywords).
+3. Update `memory/MEMORY.md` "Recent Digests" table with one row: date, topic (or the `Operator var`), key topics (3 short keywords).
 
 ## Fetching the X signal
 
@@ -201,3 +188,10 @@ WebFetch / WebSearch are **last-resort fallbacks only** for the X signal (lower 
 - Never send a digest with placeholder links or "TBD" sections.
 - Never invent items to hit a target count. Fewer good items beats more weak ones.
 - Never repeat a story already in the last 3 days of `memory/logs/` unless there's a material update — and say so explicitly when you do.
+
+## Do not
+
+- Do not write outside `output/digest/` and `memory/skills/digest/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

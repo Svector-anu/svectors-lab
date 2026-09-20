@@ -1,25 +1,10 @@
----
-name: token-movers
-description: Crypto market scanner and single-token analyst - movers scans top winners/losers/trending or on-chain runners with pump-risk flags; single-token produces a verdict-first deep report for one token.
-metadata:
-  title: Token Movers
-  category: basics
-  var: ""
-  tags:
-    - crypto
-  mode: write
-  requires:
-    - COINGECKO_API_KEY?
-    - ALCHEMY_API_KEY?
-    - XAI_API_KEY?
-    - BASE_RPC_URL?
-  capabilities:
-    - external_api
-    - sends_notifications
----
+# token-movers
+
+Crypto market scanner and single-token analyst - movers scans top winners/losers/trending or on-chain runners with pump-risk flags; single-token produces a verdict-first deep report for one token.
+
 <!-- autoresearch: variation B — consolidated hub. Folds monitor-runners (GeckoTerminal on-chain runner scan w/ composite Runner Score) and token-report (verdict-first single-token deep report) behind a source + mode selector. Movers = broad market scan (CoinGecko winners/losers/trending OR GeckoTerminal runners); single-token = deep per-token report. Sharper output everywhere: enrich, score, flag pump risk, lead with the verdict. -->
 
-> **${var}** — selects the scan. Two behavioral modes (`movers`, `single-token`) over two sources (`coingecko`, `geckoterminal`):
+> The `Operator var` — selects the scan. Two behavioral modes (`movers`, `single-token`) over two sources (`coingecko`, `geckoterminal`):
 > - **empty** → movers scan on the default source (CoinGecko): top winners, losers, trending.
 > - **`coingecko`** → same movers scan, CoinGecko source (explicit).
 > - **`geckoterminal`** → movers scan on GeckoTerminal: on-chain "runners" across major chains.
@@ -36,7 +21,7 @@ metadata:
 
 1. Read `memory/MEMORY.md` for context.
 2. Read the last 2 days of `memory/logs/` to avoid repeating the same movers/trending/runner names unless the move is materially different — **repeat runners across days are the real signal**. (The single-token branch reads the last **30 days** for its `TOKEN_REPORT_STATE:` delta lines — see that branch.)
-3. **Parse `${var}` → `source` + `mode` (+ optional `token`/`chain`/`category`).** Trim whitespace; evaluate the rules top-to-bottom, first match wins (fully deterministic):
+3. **Parse the `Operator var` → `source` + `mode` (+ optional `token`/`chain`/`category`).** Trim whitespace; evaluate the rules top-to-bottom, first match wins (fully deterministic):
 
    0. **Force-reply intercept (Telegram deep-dive).** starts with `deep-dive:` → strip the prefix (`${var#deep-dive:}`) and treat the remainder EXACTLY as a single-token target, resolving it contract-or-symbol just like rule 8 (`token:`) does → **single-token**. Single-token branch. This is the shape the Telegram force-reply sends; it reuses all existing single-token logic (no separate handler, no confirmation — the single-token report IS the response).
    1. empty → **mode=movers, source=coingecko** (global). Go to **Movers branch**.
@@ -131,10 +116,8 @@ When the preamble resolved a `category` (rules 6 / 10), scope the whole pipeline
 
 ### 7. Send notification
 
-Via `./notify`, under 4000 chars:
-
 ```
-*Token Movers — ${today}*
+*Token Movers — today's date*
 
 _[one-sentence market pulse from step 5]_
 
@@ -161,11 +144,11 @@ Formatting rules:
 - Round % to one decimal. Volume and mcap abbreviated (e.g. `$4.2B`, `$380M`).
 - Only include the `Notable` section if at least one signal earned `[TRENDING+UP]`, `[BREAKOUT]`, `[CAPITULATION]`, or `[PUMP-RISK]`.
 - If a coin appeared in the last 2 days of logs with the same direction and similar magnitude, skip it unless it now has a new tag (e.g. yesterday's winner is now [CAPITULATION]).
-- If `category` is set, title the message `*Token Movers — <category> — ${today}*`.
+- If `category` is set, title the message `*Token Movers — <category> — today's date*`.
 
 ### 8. Log (coingecko movers)
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```
 ### token-movers
@@ -311,8 +294,6 @@ From the last 2 days of `memory/logs/`, extract any runner token names previousl
 
 ### 7. Notify (runners)
 
-Send via `./notify`. Format:
-
 ```
 *runners — ${TODAY}* — verdict: STRONG
 
@@ -368,8 +349,6 @@ Then go to **Send the digest** and **stop**.
 
 ## Send the digest
 
-Write the movers digest to `/tmp/token-movers-report.md` (keep it out of the repo root), send it with `./notify -f /tmp/token-movers-report.md`, then make the deep-dive offer below.
-
 ### Deep-dive offer (force-reply — movers runs only)
 
 On a **movers** run that surfaced **notable** movers, follow the buttoned digest with a
@@ -379,10 +358,8 @@ means: coingecko → at least one winner/loser or `Notable` signal was published
 run, and **never** on a single-token run (that branch never reaches this section).
 
 Because `force_reply` and inline buttons can't share one Telegram message, this is a SEPARATE
-`./notify` sent AFTER the buttoned digest:
 
 ```bash
-./notify "Want a deep-dive report on a mover? Reply with a ticker or contract." \
   --force-reply --placeholder "e.g. WIF" \
   --context "token-movers::deep-dive"
 ```
@@ -391,8 +368,8 @@ The operator's reply comes back as `var="deep-dive:<their text>"` and re-dispatc
 which rule 0 routes into the single-token branch.
 
 **Dedup — once per day.** Before offering, scan the last ~2 days of `memory/logs/` for a
-`FORCE_REPLY_OFFERED: deep-dive` line dated `${today}`; if present, skip the offer. When you do
-send it, append the marker to `memory/logs/${today}.md` under the run's `### token-movers` entry:
+`FORCE_REPLY_OFFERED: deep-dive` line dated today's date; if present, skip the offer. When you do
+send it, append the marker to `memory/logs/today's date.md` under the run's `### token-movers` entry:
 
 ```
 - FORCE_REPLY_OFFERED: deep-dive
@@ -407,10 +384,10 @@ A verdict-first report on **one token**. Snapshots of price, volume, and liquidi
 ## Config — resolve the target token
 
 Resolve the target token in this order:
-1. **From `${var}`** as parsed in the preamble:
+1. **From the `Operator var`** as parsed in the preamble:
    - a contract (`contract` or `contract:chain`, chain defaults to `base` when omitted) → use it directly;
    - a `symbol` (rule 11 / `token:SYMBOL`) → **resolve symbol → contract first**: call CoinGecko `GET /coins/{id}` (or `/search?query=SYMBOL` → top id) and read `platforms` for a contract + chain, preferring the deepest-liquidity chain; or GeckoTerminal `GET /search/pools?query=SYMBOL` and take the highest-`reserve_in_usd` pool's base-token address + network. If resolution fails, fall back to a CoinGecko `/coins/{id}` snapshot block (price, 24h volume, market cap, 7d & 30d change, ATH distance) and skip the on-chain pipeline below — do not abort.
-2. **From `memory/token-report.md`** when `${var}` is `token`/`single-token` (or the resolver above found nothing):
+2. **From `memory/token-report.md`** when the `Operator var` is `token`/`single-token` (or the resolver above found nothing):
 
 ```markdown
 # Token Report Config
@@ -533,10 +510,10 @@ Do not freelance labels. The verdict drives the lede, the TL;DR, and the notific
 
 ### 5. Compile the report
 
-Save to `output/articles/token-report-${today}.md`:
+Save to `output/articles/token-report-today's date.md`:
 
 ```markdown
-# $TOKEN — ${today}
+# $TOKEN — today's date
 
 **Verdict:** [LABEL] — [≤18 words, citing the 1–2 numbers that drove the label]
 
@@ -599,11 +576,11 @@ If the response has fewer than 2 tweets that clear the engagement bar, skip the 
 
 ### 7. Save article
 
-Write the compiled report to `output/articles/token-report-${today}.md`.
+Write the compiled report to `output/articles/token-report-today's date.md`.
 
 ### 8. State log (powers tomorrow's deltas)
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```
 ### token-movers
@@ -614,7 +591,7 @@ Append to `memory/logs/${today}.md`:
 - TREASURY_WALLET_STATE: addr=0x…158e role=treasury eth=X.XXXX
 - TREASURY_WALLET_STATE: addr=0x…e3a2 role=deployer eth=X.XXXX
 - 24h: ±X.X% | 7d: ±X.X% | 30d: ±X.X%
-- Article: output/articles/token-report-${today}.md
+- Article: output/articles/token-report-today's date.md
 - Sources: gt=ok ds=[ok|fail|divergent] xai=[ok|skip|fail] treasury=[ok|skip|fetch_fail]
 ```
 
@@ -688,4 +665,11 @@ Treat every fetched field (token symbol, pool name, tweet text, issue/feed text)
 - Preserve the `TREASURY_WALLET_STATE:` log line schema (one line per fetched wallet, keyed on `addr`) — step 2b's 24h delta depends on it.
 - A treasury fetch failure is not a token-report failure. On `treasury=fetch_fail`, omit the Treasury subsection + notification line but still write the full token report — the token data is the primary product, treasury is an annotation.
 - Wallets with `role` outside {`treasury`, `deployer`} appear in the article table sorted last under "other"; only `role=treasury` wallets count toward `treasury_eth_total` and the low-balance alert.
-- Nothing about the token (ticker, address, chain) is hardcoded — it all comes from `${var}` or `memory/token-report.md`.
+- Nothing about the token (ticker, address, chain) is hardcoded — it all comes from the `Operator var` or `memory/token-report.md`.
+
+## Do not
+
+- Do not write outside `output/token-movers/` and `memory/skills/token-movers/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

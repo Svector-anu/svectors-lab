@@ -1,38 +1,15 @@
----
-name: schedule-ads
-description: Manage paid ads on AdManage.ai from declarative config - default schedules launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn (always PAUSED); create provisions Meta campaigns and ad sets.
-metadata:
-  title: Schedule Ads
-  category: productivity
-  var: |
-    Selects which flow runs (parse from ${var}):
-    - empty / unset (default) → SCHEDULE branch: read config.yaml, pick schedule
-      entries matching today, and launch those ads in-run via AdManage.ai.
-      Launches PAUSED by default; dailySpendCap circuit-breaker; never auto-activates
-      live spend.
-    - "create" → CREATE branch: read config.create.yaml, diff against
-      .admanage-state/campaigns.json, and create the missing Meta campaigns + ad sets
-      in-run. On-demand; creates entities PAUSED; returned IDs are written back into
-      state so the schedule branch can launch into them.
-  schedule: "0 8 * * *"
-  commits: true
-  permissions:
-    - contents:write
-  tags:
-    - growth
-    - ads
-  requires:
-    - ADMANAGE_API_KEY
----
+# schedule-ads
 
-> **${var}** selects the flow. Empty/unset = **schedule** (launch ads into existing ad sets). `create` = **create-campaign** (provision Meta campaigns + ad sets). Both are config-driven, PAUSED-by-default, and make the AdManage API calls **in-run** via `./secretcurl` (the `{ADMANAGE_API_KEY}` placeholder keeps the key off the command line), behind fail-closed spend guardrails.
+Manage paid ads on AdManage.ai from declarative config - default schedules launches across Meta/TikTok/Snapchat/Pinterest/LinkedIn (always PAUSED); create provisions Meta campaigns and ad sets.
+
+> The `Operator var` selects the flow. Empty/unset = **schedule** (launch ads into existing ad sets). `create` = **create-campaign** (provision Meta campaigns + ad sets). Both are config-driven, PAUSED-by-default, and make the AdManage API calls **in-run** via `./secretcurl` (the `{ADMANAGE_API_KEY}` placeholder keeps the key off the command line), behind fail-closed spend guardrails.
 
 Reads a declarative config, computes what to do, and makes the AdManage.ai API calls **in-run** via `./secretcurl`. The calls are an irreversible outbound side-effect (real ad spend), so they are each branch's **final** actions and run only behind the guardrails below (PAUSED-by-default, `dailySpendCap` circuit-breaker, dry-run). `ADMANAGE_API_KEY` is injected in-run via this skill's `requires:` — always write it as the `{ADMANAGE_API_KEY}` placeholder, never a bare `$ADMANAGE_API_KEY` (the Bash permission layer refuses that).
 
 ## Preamble (both branches)
 
 1. Read `memory/MEMORY.md` for context. Read the last ~3 days of `memory/logs/` for recent launch / provisioning activity — don't re-report a signal already logged.
-2. Parse `${var}`:
+2. Parse the `Operator var`:
    - empty / unset → run the **Schedule branch** below.
    - `create` → run the **Create branch** below.
    - anything else → log `SCHEDULE_ADS_UNKNOWN_SELECTOR: <value>` and exit cleanly (no notify).
@@ -40,7 +17,7 @@ Reads a declarative config, computes what to do, and makes the AdManage.ai API c
 
 ---
 
-# Schedule branch (default — empty `${var}`)
+# Schedule branch (default — empty the `Operator var`)
 
 Reads `skills/schedule-ads/config.yaml`, picks schedule entries matching today, and launches those ads **in-run** via AdManage.ai (`POST /v1/launch` through `./secretcurl`), behind the spend guardrails below.
 
@@ -59,7 +36,6 @@ This branch **spends real money on ad platforms**. Guardrails, in priority order
 Launching ads is an irreversible outbound side-effect (real ad spend), so it is the branch's **final** action and runs only after the guardrails above pass:
 
 - Auth'd calls go through `./secretcurl` with the `{ADMANAGE_API_KEY}` placeholder — never a bare `$ADMANAGE_API_KEY` (the Bash permission layer refuses that). `ADMANAGE_API_KEY` is injected in-run via `requires:`.
-- The branch checks the daily spend cap (`GET /v1/spend/daily`), then per batch calls `POST /v1/launch`, polls `GET /v1/batch-status/{id}` to a terminal state, and reports via `./notify`.
 - If `ADMANAGE_API_KEY` is unset, or the launch/spend call fails, skip the launch and notify — do not retry blindly. There is no deferred postprocess fallback.
 
 ## Steps (schedule)
@@ -142,7 +118,7 @@ Launching ads is an irreversible outbound side-effect (real ad spend), so it is 
 
 8. **Write artifact to `output/.chains/schedule-ads.md`** so downstream chain consumers can read what was queued. Format:
    ```markdown
-   # Schedule Ads — ${today}
+   # Schedule Ads — today's date
 
    Queued: N launches across M schedules.
    Dry-run: yes|no.
@@ -152,9 +128,8 @@ Launching ads is an irreversible outbound side-effect (real ad spend), so it is 
      - <adName> — <title>
    ```
 
-9. **Notify** via `./notify`. Keep it tight:
    ```
-   *Ads queued — ${today}${dryRunSuffix}*
+   *Ads queued — today's date${dryRunSuffix}*
 
    <N> launches queued from <M> schedules.
 
@@ -204,7 +179,7 @@ schedules:
 
 ## What the schedule branch does NOT do
 
-- **Does not create campaigns or ad sets.** Those must pre-exist in AdManage — use the **`create` branch** (`${var}=create`), the dashboard, or `POST /v1/manage/create-campaign` separately. This branch only launches *ads into existing ad sets*.
+- **Does not create campaigns or ad sets.** Those must pre-exist in AdManage — use the **`create` branch** (the `Operator var`=create`), the dashboard, or `POST /v1/manage/create-campaign` separately. This branch only launches *ads into existing ad sets*.
 - **Does not upload creative.** Media URLs must be hosted somewhere accessible (AdManage CDN, your own CDN, Supabase, wherever). If you need upload, add a separate `upload-ad-media` skill that calls `POST /v1/media/upload/url`.
 - **Does not generate copy.** Titles/descriptions come from config. If the operator wants AI-written variants, a separate skill can write them into `config.yaml` and commit — keeps the launch path boring and auditable.
 - **Does not manage budgets, bids, or targeting.** Everything downstream of launch (scaling, pausing losers, budget shifts) lives in follow-up skills or the dashboard.
@@ -212,7 +187,7 @@ schedules:
 
 ---
 
-# Create branch (`${var}=create`)
+# Create branch (the `Operator var`=create`)
 
 Reads `skills/schedule-ads/config.create.yaml`, figures out which campaigns/ad sets don't exist yet, and creates them **in-run** via AdManage.ai (`/v1/manage/create-*` through `./secretcurl`) — campaigns first, then ad sets referencing the returned campaign IDs — writing the new IDs back to `.admanage-state/campaigns.json`.
 
@@ -344,7 +319,7 @@ Provisioning campaigns and ad sets is an irreversible outbound side-effect, so i
 
 10. **Write artifact to `output/.chains/create-campaign.md`** so chain consumers can see what was queued:
     ```markdown
-    # Create Campaign — ${today}
+    # Create Campaign — today's date
 
     New campaigns: N.
     New ad sets: M.
@@ -358,9 +333,8 @@ Provisioning campaigns and ad sets is an irreversible outbound side-effect, so i
     - <name>
     ```
 
-11. **Notify via `./notify`.** Tight format:
     ```
-    *Campaigns queued — ${today}${dryRunSuffix}*
+    *Campaigns queued — today's date${dryRunSuffix}*
 
     <N> campaigns, <M> ad sets queued for creation.
 
@@ -413,7 +387,7 @@ The create branch writes new IDs to `.admanage-state/campaigns.json` **within th
 - **create branch** provisions structure (container).
 - **schedule branch** launches creative into that structure (contents).
 
-They still don't auto-chain — the schedule branch reads `config.yaml`, which you edit by hand. Pattern is: run `${var}=create` (provisions + writes IDs in-run) → read the new IDs from `.admanage-state/campaigns.json` / the create-run notify → copy them into `config.yaml` → next default (schedule) run launches into them.
+They still don't auto-chain — the schedule branch reads `config.yaml`, which you edit by hand. Pattern is: run the `Operator var`=create` (provisions + writes IDs in-run) → read the new IDs from `.admanage-state/campaigns.json` / the create-run notify → copy them into `config.yaml` → next default (schedule) run launches into them.
 
 ## What the create branch does NOT do
 
@@ -427,7 +401,7 @@ They still don't auto-chain — the schedule branch reads `config.yaml`, which y
 
 ## Log (both branches)
 
-Append to `memory/logs/${today}.md` under ONE `### schedule-ads` heading. First bullet is a discriminator naming which branch ran.
+Append to `memory/logs/today's date.md` under ONE `### schedule-ads` heading. First bullet is a discriminator naming which branch ran.
 
 **Schedule branch:**
 ```
@@ -458,3 +432,10 @@ Append to `memory/logs/${today}.md` under ONE `### schedule-ads` heading. First 
 End with a `## Summary` block naming the branch that ran:
 - **schedule:** schedules matched today, payload count, dry-run yes/no, files written.
 - **create:** new campaigns queued, new ad sets queued, skipped (already-exist) count, dry-run yes/no, files written.
+
+## Do not
+
+- Do not write outside `output/schedule-ads/` and `memory/skills/schedule-ads/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

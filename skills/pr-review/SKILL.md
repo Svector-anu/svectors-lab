@@ -1,18 +1,11 @@
----
-name: pr-review
-description: Review open PRs two ways - default is a per-PR deep review with severity-tagged findings, inline comments, and a verdict; --survey runs a risk-tiered triage digest of what's safe to merge first
-metadata:
-  title: PR Review
-  category: basics
-  var: ""
-  tags:
-    - dev
-    - community
----
+# pr-review
+
+Review open PRs two ways - default is a per-PR deep review with severity-tagged findings, inline comments, and a verdict; --survey runs a risk-tiered triage digest of what's safe to merge first
+
 <!-- autoresearch: variation B — sharper output: severity-tagged & capped findings, inline comments on exact lines, one-line verdict; folds in skip rules (A) and SHA dedup + large-diff fallback (C). Absorbs pr-merge as the `--survey` risk-tiered triage-digest branch (no capability lost). -->
 
-> **${var}** — Selects the branch and scopes it.
-> - **Default (no `--survey`)** → per-PR deep review. `${var}` empty reviews every repo in `memory/watched-repos.md`; `${var}=owner/repo` scopes to one repo; `${var}=owner/repo#N` scopes to that exact PR.
+> The `Operator var` — Selects the branch and scopes it.
+> - **Default (no `--survey`)** → per-PR deep review. the `Operator var` empty reviews every repo in `memory/watched-repos.md`; the `Operator var`=owner/repo` scopes to one repo; the `Operator var`=owner/repo#N` scopes to that exact PR.
 > - **`--survey`** (alias `survey`) → risk-tiered triage digest (the former `pr-merge`). In this branch the remaining tokens follow pr-merge's grammar: pass `dry-run` to skip notify (article + state still write), pass `owner/repo` to override the target repo, combine with a space (`--survey dry-run owner/repo`). Empty target = `aeonfun/aeon`.
 >
 > Examples: `` (review every watched repo) · `owner/repo` (review one repo) · `owner/repo#42` (review exactly PR 42) · `--survey` (triage digest of aeonfun/aeon) · `--survey dry-run` (refresh digest, no notify) · `--survey owner/repo` (triage a specific repo).
@@ -21,9 +14,9 @@ metadata:
 
 Read `memory/MEMORY.md` for high-level context. Scan the last ~3 days of `memory/logs/` for recent activity and to avoid re-reporting the same signal.
 
-**Parse `${var}` → branch:** split `${var}` on whitespace.
+**Parse the `Operator var` → branch:** split the `Operator var` on whitespace.
 - If a `--survey` or `survey` token is present → **SURVEY branch** (jump to "Survey branch"). Remove that token; the remaining tokens are parsed by the survey branch (`dry-run`, `owner/repo` override, unknown → BAD_VAR).
-- Otherwise → **REVIEW branch** (default; continue below). The remaining `${var}` is an optional `owner/repo` or `owner/repo#N` scope (empty = every watched repo).
+- Otherwise → **REVIEW branch** (default; continue below). The remaining the `Operator var` is an optional `owner/repo` or `owner/repo#N` scope (empty = every watched repo).
 
 The two branches never share mutation logic: the REVIEW branch posts PR comments/reviews via `gh`; the SURVEY branch writes the digest article + state file and (gated) notifies — neither performs an actual `gh pr merge`. Dispatch to exactly one branch per run.
 
@@ -34,7 +27,7 @@ The two branches never share mutation logic: the REVIEW branch posts PR comments
 Read `memory/MEMORY.md` and `memory/watched-repos.md`.
 Read the last 2 days of `memory/logs/` to pull the `headRefOid` of any PR reviewed recently — used for dedup.
 
-If `${var}` names `owner/repo#N`, fetch and review only that exact open PR; do not list or comment on any other PR. If `${var}` names `owner/repo`, review that repo's open PRs. Otherwise review every repo listed in `memory/watched-repos.md`.
+If the `Operator var` names `owner/repo#N`, fetch and review only that exact open PR; do not list or comment on any other PR. If the `Operator var` names `owner/repo`, review that repo's open PRs. Otherwise review every repo listed in `memory/watched-repos.md`.
 
 When the workflow prompt supplies `expected_sha=<40-character SHA>`, it is an
 immutable chain boundary. Confirm the PR's `headRefOid` equals that SHA before
@@ -170,21 +163,19 @@ The captured final output must include the same `**Verdict**` line and exact
 Do not replace them with a generic "review posted" summary. The chain consumes
 the receipt, and the notification gate uses the verdict line as its signal.
 
-Send **one** combined message per run via `./notify`:
 ```
-*PR Review — ${today}*
+*PR Review — today's date*
 Reviewed N, skipped K (drafts: x, bots: y, dup-SHA: z, bot-reviewed-recently: w).
 - owner/repo#123: [verdict] — N critical, M issues
 ```
 
 **Telegram summary.** When the run was scoped to a **single repo or PR**
-(`${var}=owner/repo` or `${var}=owner/repo#N`), send a Telegram summary of the
-review with `./notify -f review.md` so the operator sees the verdict at a
+(the `Operator var`=owner/repo` or the `Operator var`=owner/repo#N`), send a Telegram summary of the
 glance. Skip it only on an all-repos run.
 
 If every PR was skipped, do not notify — just log.
 
-Log to `memory/logs/${today}.md` under the shared `### pr-review` heading with a mode discriminator:
+Log to `memory/logs/today's date.md` under the shared `### pr-review` heading with a mode discriminator:
 ```
 ### pr-review
 - **Mode**: review (per-PR deep review)
@@ -200,7 +191,7 @@ If no open PRs across all repos, log `PR_REVIEW_OK` and end.
 
 *(This is the former `pr-merge` skill, folded in verbatim. It surveys the queue and buckets by blast radius; it does **not** merge anything — `auto-merge` owns the actual-merge action behind its own author-allowlist + size-cap + branch-protection policy. This branch is the decision-support layer that lives *before* auto-merge, sized for the much larger pool of PRs auto-merge's safety policy intentionally skips.)*
 
-Today is ${today}. The open-PR queue on `aeonfun/aeon` has crossed the threshold where a human reviewer working alone falls behind: yesterday (June 1) eighteen PRs were merged in a single 37-minute Monday catch-up window, but on every prior weekend day they stacked up untouched. As community skill packs become the primary contribution model and external contributors keep landing skill PRs every other day, the queue's *steady-state* size will keep climbing — `skill-scan` evaluates one inbound skill PR at a time, but no skill answers the operator's actual morning question: *"of the N open PRs right now, which N1 can I merge in one click and which N2 need real review?"*
+Today is today's date. The open-PR queue on `aeonfun/aeon` has crossed the threshold where a human reviewer working alone falls behind: yesterday (June 1) eighteen PRs were merged in a single 37-minute Monday catch-up window, but on every prior weekend day they stacked up untouched. As community skill packs become the primary contribution model and external contributors keep landing skill PRs every other day, the queue's *steady-state* size will keep climbing — `skill-scan` evaluates one inbound skill PR at a time, but no skill answers the operator's actual morning question: *"of the N open PRs right now, which N1 can I merge in one click and which N2 need real review?"*
 
 This branch is that answer. It surveys every open PR on a target repo, categorises each by the files it touches, runs `scripts/skill-scan.sh` against every changed `SKILL.md` (same scanner `skill-scan` reuses verbatim), and emits one structured Telegram digest with four risk buckets sorted by PR age. The operator can fire-and-forget the FAST_TRACK bucket, glance at SKILL_PASS, and budget real attention for INFRA_REVIEW + SKILL_WARN_OR_BLOCK + CORE_REVIEW.
 
@@ -232,10 +223,9 @@ The four compose. `pr-triage` runs once per PR open; `skill-scan` runs on demand
 No new secrets. GitHub access via `gh` CLI (`GH_TOKEN`) per CLAUDE.md.
 
 Writes:
-- `output/articles/pr-merge-${today}.md` — full digest with one row per open PR, sortable by bucket + age (every non-error run, including `QUIET`)
-- `memory/topics/pr-merge-state.json` — prior-run snapshot (per-PR bucket + first_seen date + last_head_sha, used to suppress re-notification on the same head SHA)
-- `memory/logs/${today}.md` — one log block per run
-- Notification via `./notify` — only when ≥1 new PR appeared in a non-FAST_TRACK bucket since the last run, or a SKILL_BLOCK / CORE_REVIEW PR is present and operator has not been notified about it on this head SHA yet, or it's the first (baseline) run (see step 8)
+- `output/articles/pr-merge-today's date.md` — full digest with one row per open PR, sortable by bucket + age (every non-error run, including `QUIET`)
+- `memory/skills/pr-review/pr-merge-state.json` — prior-run snapshot (per-PR bucket + first_seen date + last_head_sha, used to suppress re-notification on the same head SHA)
+- `memory/logs/today's date.md` — one log block per run
 
 ## Steps
 
@@ -243,7 +233,7 @@ Writes:
 
 ```bash
 mkdir -p memory/topics output/articles
-[ -f memory/topics/pr-merge-state.json ] || cat > memory/topics/pr-merge-state.json <<'EOF'
+[ -f memory/skills/pr-review/pr-merge-state.json ] || cat > memory/skills/pr-review/pr-merge-state.json <<'EOF'
 {"last_run":null,"last_status":null,"last_repo":null,"prs":{}}
 EOF
 ```
@@ -257,7 +247,7 @@ If `jq empty` fails on the state file (corrupt JSON from an aborted write), back
 The `--survey`/`survey` token has already been consumed by the shared preamble. Parse the remaining tokens:
 
 - Tokens: `dry-run`, anything matching `^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$` (treated as `REPO_OVERRIDE`), anything else.
-- If any unknown token is present → log `PR_MERGE_QUEUE_BAD_VAR: ${var}` and exit (no writes, no notify).
+- If any unknown token is present → log `PR_MERGE_QUEUE_BAD_VAR: the `Operator var` and exit (no writes, no notify).
 - `DRY_RUN=yes` if the `dry-run` token is present, else `no` (execute).
 - `TARGET_REPO=${REPO_OVERRIDE:-aeonfun/aeon}`.
 
@@ -331,10 +321,10 @@ Within each bucket, sort by `age_days DESC, then updated_age_days DESC, then num
 
 ### 7. Write the article
 
-Overwrite `output/articles/pr-merge-${today}.md`:
+Overwrite `output/articles/pr-merge-today's date.md`:
 
 ```markdown
-# PR Merge Queue — ${TARGET_REPO} — ${today}
+# PR Merge Queue — ${TARGET_REPO} — today's date
 
 *Open PRs surveyed: N · Drafts skipped: D · Trusted-author PRs (auto-merge handles): T*
 
@@ -410,7 +400,7 @@ When notifying, set `state.prs[k].last_notified_head_sha = head_sha` for every P
 ### 9. Notification format
 
 ```
-*PR Merge Queue — ${TARGET_REPO} — ${today}*
+*PR Merge Queue — ${TARGET_REPO} — today's date*
 
 {open_count} open · {new_count} new since last run · {trusted_count} trusted (auto-merge)
 
@@ -422,16 +412,14 @@ CORE_REVIEW ({n}): #J ⚠️ touches aeon.yml · #K
 {If unknown_count > 0:} UNKNOWN ({n}): #L — files API failed
 
 Oldest in queue: #M (Nd, {bucket})
-Full digest: output/articles/pr-merge-${today}.md
+Full digest: output/articles/pr-merge-today's date.md
 ```
 
 Keep under 900 chars. Drop any bucket row whose count is zero. Drop the "oldest in queue" line if `open_count == 0`. The `⚠️ HIGH security finding` / `⚠️ touches aeon.yml` annotations are appended only to PRs the operator has not been notified about on this head SHA — repeat-rendering them would dilute the alert signal.
 
-Send via `./notify "$MSG"` (single positional argument — the heredoc-built message; aeon's `./notify` accepts a positional argument or `-f file`, this branch uses positional to keep the message inline with the other locals computed in this step, and keeps it under 900 chars).
-
 ### 10. Log (SURVEY branch)
 
-Append to `memory/logs/${today}.md` under the shared `### pr-review` heading with a mode discriminator:
+Append to `memory/logs/today's date.md` under the shared `### pr-review` heading with a mode discriminator:
 
 ```markdown
 ### pr-review
@@ -442,7 +430,7 @@ Append to `memory/logs/${today}.md` under the shared `### pr-review` heading wit
 - **New since last run**: G (excluding FAST_TRACK and TRUSTED_AUTHOR)
 - **Oldest open PR**: #N (Mt days, bucket={bucket})
 - **Scan results**: PASS=P · WARN=W · BLOCK=B · scan_error=E
-- **Article**: output/articles/pr-merge-${today}.md
+- **Article**: output/articles/pr-merge-today's date.md
 - **Notification**: sent / skipped (gated)
 - **Status**: PR_MERGE_QUEUE_OK
 ```
@@ -457,7 +445,7 @@ Append to `memory/logs/${today}.md` under the shared `### pr-review` heading wit
 | `PR_MERGE_QUEUE_API_FAIL` | `pulls` endpoint failed | Yes (one-line failure notify) |
 | `PR_MERGE_QUEUE_DRY_RUN` | `DRY_RUN=yes`; article + state wrote, notify skipped | No |
 | `PR_MERGE_QUEUE_STATE_CORRUPT` | State JSON unreadable, recreated; silent recovery this run | No |
-| `PR_MERGE_QUEUE_BAD_VAR` | `${var}` parse failed | No |
+| `PR_MERGE_QUEUE_BAD_VAR` | the `Operator var` parse failed | No |
 
 `PR_MERGE_QUEUE_OK` and `PR_MERGE_QUEUE_QUIET` are the two success states. The split exists so the dashboard can show "ran clean, nothing changed" without overloading the OK row.
 
@@ -469,15 +457,20 @@ Append to `memory/logs/${today}.md` under the shared `### pr-review` heading wit
 - **TRUSTED_AUTHOR bypasses every other bucket.** A bot PR touching `aeon.yml` is still a `auto-merge`-handled PR — listing it under CORE_REVIEW would suggest the operator should look, but `auto-merge`'s policy already gates this. The split keeps the operator's mental model: this digest is *the queue you have to think about*, not *everything that's open*.
 - **Re-notification is gated on head SHA, not on date.** A queue that grows by one PR per day shouldn't re-notify yesterday's whole queue every morning. State carries `last_notified_head_sha` per PR; a force-push or rebase reopens the review surface and is the only thing that re-notifies. Same dedup pattern `skill-scan` uses.
 - **No auto-merge action, no PR comments, no labels.** This branch is operator-facing only. If a comment-on-PR layer is wanted, that is the default REVIEW branch / `pr-triage` / `skill-scan` territory and should grow there.
-- **`memory/watched-repos.md` is read for `## Trusted Authors` only** (in this branch). The branch does not iterate every watched repo by default because the digest format only renders cleanly for one repo at a time and the operator's morning question ("what's safe to merge on aeon today") is per-repo. Multi-repo support is the `${var}` override path.
+- **`memory/watched-repos.md` is read for `## Trusted Authors` only** (in this branch). The branch does not iterate every watched repo by default because the digest format only renders cleanly for one repo at a time and the operator's morning question ("what's safe to merge on aeon today") is per-repo. Multi-repo support is the the `Operator var` override path.
 
 ---
 
 ## Network note
 
-`gh` CLI handles GitHub auth internally — use it over raw `curl`, which would put a bare `$SECRET` on the command line for the Bash permission layer to refuse. Both branches route all outbound GitHub calls through `gh` / `gh api` (`GH_TOKEN`, or `GITHUB_TOKEN` in CI — provided by the runner, no new secret to provision). No postprocess wrapper required. The only other outbound call is `./notify`, which stages for re-delivery after the run.
-
 - **REVIEW branch**: if `gh` fails at the repo level, log the error and continue to the next repo. As a last-resort fallback, use **WebFetch** on the raw PR URL to read the diff.
 - **SURVEY branch**: the `pulls` list endpoint is the floor (see step 2) — on failure, one-line failure notify + exit `API_FAIL`. A single PR's files-endpoint failure degrades that PR to `UNKNOWN` but keeps it in the digest.
 
 No third-party API keys. No on-chain reads. No file writes outside `memory/`, `output/articles/`, and `/tmp/`.
+
+## Do not
+
+- Do not write outside `output/pr-review/` and `memory/skills/pr-review/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

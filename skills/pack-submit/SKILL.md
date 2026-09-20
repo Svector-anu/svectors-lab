@@ -1,37 +1,20 @@
----
-name: pack-submit
-description: Package one of this agent's own skills as a standalone community pack and submit it to the aeon registry as a PR
-metadata:
-  title: Pack Submit
-  category: evolution
-  var: ""
-  tags:
-    - dev
-    - meta
-    - packs
-  mode: write
-  requires:
-    - GH_GLOBAL?
-  capabilities:
-    - external_api
-    - writes_external_host
-    - sends_notifications
----
+# pack-submit
 
-> **${var}** — The local skill to publish as a community pack: a skill **slug** (a directory name under `skills/`), optionally followed by flags. **Required.**
+Package one of this agent's own skills as a standalone community pack and submit it to the aeon registry as a PR
+
+> The `Operator var` — The local skill to publish as a community pack: a skill **slug** (a directory name under `skills/`), optionally followed by flags. **Required.**
 > Examples:
 > - `token-movers` — package `skills/token-movers/` into a fresh public repo and submit it to the aeon registry
 > - `token-movers --repo myorg/aeon-token-movers` — override the pack repo name (default `aeon-skill-pack-<slug>`)
 > - `token-movers --no-register` — create and push the pack repo, but skip the registry PR against `aeonfun/aeon`
 > - `token-movers --dry-run` — build and validate the pack locally, write nothing to GitHub
 
-If `${var}` is empty, exit `PACK_SUBMIT_NO_VAR`:
+If the `Operator var` is empty, exit `PACK_SUBMIT_NO_VAR`:
 ```bash
-./notify "pack-submit aborted: var empty — pass a skill slug e.g. \"token-movers\""
 ```
 Then stop.
 
-Today is ${today}. Your task is to take the **existing** skill named in `${var}`, wrap it in a standalone community-pack repo (its own GitHub repo with a `skills-pack.json` manifest), and **submit it to the aeon community registry** — a PR against `aeonfun/aeon` that adds both surfaces the registry demands in one diff: a row in the README's **Community Packs** table AND a matching entry in `catalog/skill-packs.json`. This is the inverse of `install-skill`: instead of pulling a community pack in, it pushes one of your own skills out for every other Aeon agent to install with `bin/install-skill-pack`.
+Today is today's date. Your task is to take the **existing** skill named in the `Operator var`, wrap it in a standalone community-pack repo (its own GitHub repo with a `skills-pack.json` manifest), and **submit it to the aeon community registry** — a PR against `aeonfun/aeon` that adds both surfaces the registry demands in one diff: a row in the README's **Community Packs** table AND a matching entry in `catalog/skill-packs.json`. This is the inverse of `install-skill`: instead of pulling a community pack in, it pushes one of your own skills out for every other Aeon agent to install with `bin/install-skill-pack`.
 
 ## What a community pack is (so you build the right thing)
 
@@ -39,15 +22,13 @@ A community pack is a **public GitHub repo** that holds one or more skills plus 
 
 ## Steps
 
-1. **Parse and validate `${var}`.** The first whitespace-separated token is the skill slug; the rest are flags (`--repo owner/name`, `--no-register`, `--dry-run`). The slug must match `^[a-z0-9][a-z0-9-]*$` and resolve to a real directory:
+1. **Parse and validate the `Operator var`.** The first whitespace-separated token is the skill slug; the rest are flags (`--repo owner/name`, `--no-register`, `--dry-run`). The slug must match `^[a-z0-9][a-z0-9-]*$` and resolve to a real directory:
    ```bash
-   SLUG=$(echo "${var}" | awk '{print $1}')
-   FLAGS=$(echo "${var}" | cut -s -d' ' -f2-)
+   SLUG=$(echo "the `Operator var`" | awk '{print $1}')
+   FLAGS=$(echo "the `Operator var`" | cut -s -d' ' -f2-)
    if ! echo "$SLUG" | grep -qE '^[a-z0-9][a-z0-9-]*$'; then
-     ./notify "pack-submit aborted: \"$SLUG\" is not a valid skill slug (lowercase kebab-case)"; exit 0
    fi
    if [ ! -f "skills/$SLUG/SKILL.md" ]; then
-     ./notify "pack-submit aborted: skills/$SLUG/SKILL.md not found — run with a slug from \`ls skills/\`"; exit 0
    fi
    ```
    If validation fails, exit `PACK_SUBMIT_BAD_VAR` with the notify above and stop. Extract the boolean flags from `$FLAGS` and the optional `--repo` value.
@@ -98,7 +79,7 @@ A community pack is a **public GitHub repo** that holds one or more skills plus 
      ]
    }
    ```
-   Write a `README.md` that names the skill, states its schedule assumption, lists required/optional secrets, and shows the one-line install (`bin/install-skill-pack <owner>/<pack-repo>`). Write a standard MIT `LICENSE` (year `${today}`'s year, copyright the operator handle). Resolve the operator handle once: `OWNER=$(gh api user --jq .login)`.
+   Write a `README.md` that names the skill, states its schedule assumption, lists required/optional secrets, and shows the one-line install (`bin/install-skill-pack <owner>/<pack-repo>`). Write a standard MIT `LICENSE` (year today's date's year, copyright the operator handle). Resolve the operator handle once: `OWNER=$(gh api user --jq .login)`.
 
 4. **Pre-flight the pack.** Run the repo's own validator against the staged directory — it enforces exactly what `bin/install-skill-pack` requires (valid JSON manifest, clean slug, no `..` in paths, the `SKILL.md` present, locked-taxonomy capabilities):
    ```bash
@@ -112,7 +93,6 @@ A community pack is a **public GitHub repo** that holds one or more skills plus 
    ```bash
    PACK_REPO="${REPO_OVERRIDE:-aeon-skill-pack-$SLUG}"     # owner defaults to $OWNER
    gh repo view "$PACK_REPO" >/dev/null 2>&1 \
-     && { ./notify "pack-submit aborted: repo $PACK_REPO already exists — pass --repo to pick another name"; exit 0; }
    ( cd "$PACK_DIR" && git init -q && git add -A \
        && git commit -q -m "Aeon community pack: $SLUG" \
        && gh repo create "$PACK_REPO" --public --source=. --push )
@@ -187,7 +167,7 @@ A community pack is a **public GitHub repo** that holds one or more skills plus 
    ```
    Capture `PR_URL`. If `gh pr create` fails because a PR already exists for the branch, capture the existing URL instead of erroring. This PR is **not** self-merging — it lands in someone else's repo and is reviewed by the aeon maintainers.
 
-7. **Log.** Append to `memory/logs/${today}.md`:
+7. **Log.** Append to `memory/logs/today's date.md`:
    ```
    ### pack-submit
    - Skill: {SLUG} ({TITLE})
@@ -197,7 +177,6 @@ A community pack is a **public GitHub repo** that holds one or more skills plus 
    - Exit: PACK_SUBMIT_OK (or the code that applied)
    ```
 
-8. **Notify.** Send one concise line via `./notify` (≤4000 chars, clickable URLs):
    ```
    *pack-submit — {TITLE}*
    Pack repo: https://github.com/{FULL_REPO}
@@ -212,7 +191,7 @@ A community pack is a **public GitHub repo** that holds one or more skills plus 
 | Code | When | Action |
 |------|------|--------|
 | `PACK_SUBMIT_OK` | Pack repo pushed and registry PR opened (or `--no-register` completed) | Notify with pack repo + PR link |
-| `PACK_SUBMIT_NO_VAR` | `${var}` empty | Notify abort reason; stop |
+| `PACK_SUBMIT_NO_VAR` | the `Operator var` empty | Notify abort reason; stop |
 | `PACK_SUBMIT_BAD_VAR` | Slug malformed or `skills/<slug>/SKILL.md` missing | Notify with the slug; stop |
 | `PACK_SUBMIT_INVALID_PACK` | `validate-pack.sh` reported an ERROR | Notify with the failing line; stop (nothing pushed) |
 | `PACK_SUBMIT_DRY_RUN` | `--dry-run` — built + validated, wrote nothing to GitHub | Notify with the staged path + manifest summary |
@@ -231,3 +210,10 @@ There is no network sandbox — `git` and `gh` reach GitHub directly. `gh` is au
 - **Never** open the registry PR on a red `validate-skill-packs.mjs` — a broken registry entry takes down `bin/install-skill-pack --list` and the dashboard panel for everyone.
 - **Keep the two registry surfaces in lockstep** — the README row and the `skill-packs.json` entry ship in one diff, with matching skill counts and the counter bumped. That is what the CI gate enforces.
 - **Don't leak secret values.** The manifest lists secret **names** only (from the skill's `requires:`), never values.
+
+## Do not
+
+- Do not write outside `output/pack-submit/` and `memory/skills/pack-submit/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

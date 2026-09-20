@@ -1,27 +1,14 @@
----
-name: tx-explain
-description: Decode any Base transaction into a plain-English story - method, token movements, swaps/approvals, counterparties, and suspicious-approval flags. Keyless via Base RPC + Etherscan v2.
-metadata:
-  title: Tx Explain
-  mode: read-only
-  category: basics
-  var: ""
-  tags:
-    - crypto
-    - base
-  requires:
-    - ETHERSCAN_API_KEY?
-  capabilities:
-    - external_api
-    - sends_notifications
----
-> **${var}** — Transaction hash (`0x...`, 66 chars) on Base. Required. If empty, log `TX_EXPLAIN_NO_TARGET` and exit cleanly (no notify).
+# tx-explain
+
+Decode any Base transaction into a plain-English story - method, token movements, swaps/approvals, counterparties, and suspicious-approval flags. Keyless via Base RPC + Etherscan v2.
+
+> The `Operator var` — Transaction hash (`0x...`, 66 chars) on Base. Required. If empty, log `TX_EXPLAIN_NO_TARGET` and exit cleanly (no notify).
 
 Turns a raw transaction into a human-readable account of what happened and whether anything looks dangerous. Runs keyless on public endpoints.
 
 ## Config
 
-- Target = `${var}`. Chain = Base (`chainid=8453`, explorer `basescan.org`).
+- Target = the `Operator var`. Chain = Base (`chainid=8453`, explorer `basescan.org`).
 - `ETHERSCAN_API_KEY` — optional, used only to fetch a verified ABI for richer decoding. Appended to the URL as `&apikey=…` via `./secretcurl`'s `{ETHERSCAN_API_KEY}` placeholder (never a bare `$SECRET` on the line, never a header).
 
 ## Steps
@@ -29,7 +16,7 @@ Turns a raw transaction into a human-readable account of what happened and wheth
 ### 1. Fetch tx + receipt
 
 ```bash
-TX="${var}"
+TX="the `Operator var`"
 curl -m 10 -s -X POST "https://mainnet.base.org" -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["'"$TX"'"],"id":1}' | jq '.result'
 curl -m 10 -s -X POST "https://mainnet.base.org" -H "Content-Type: application/json" \
@@ -70,8 +57,6 @@ Parse `Transfer` (topic0 `0xddf252ad...`) and `Approval` (`0x8c5be1e5...`) event
 
 ### 5. Notify
 
-This skill is usually invoked on demand. Notify via `./notify` only if a suspicious-approval or drain flag fires. Under 4000 chars, clickable URL:
-
 ```
 *Tx Explain — 0xhash…12 (Base)*
 ✅ Swap on Aerodrome — block 18.2M
@@ -88,7 +73,7 @@ Tx: https://basescan.org/tx/0xhash...12
 
 ### 6. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```
 ### tx-explain
@@ -109,3 +94,10 @@ Base RPC is public and keyless; Etherscan v2's optional key is appended as `&api
 - No trade advice.
 - Don't invent token amounts — every figure traces to a decoded log.
 - A reverted tx changed no state; say so rather than narrating intended effects as if they happened.
+
+## Do not
+
+- Do not write outside `output/tx-explain/` and `memory/skills/tx-explain/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

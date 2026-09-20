@@ -1,20 +1,8 @@
----
-name: send-email
-description: Compose and send a one-off email to a named recipient via Resend - written in the operator's voice, then sent in-run through the shared send caps with an operator audit copy
-metadata:
-  title: Send Email
-  category: productivity
-  var: ""
-  requires:
-    - RESEND_API_KEY?
-    - RESEND_FROM?
-    - RESEND_REPLY_TO?
-  tags:
-    - productivity
-    - email
-    - outreach
----
-> **${var}** — who to email and why, e.g. `to=jane@acme.com | subject=Intro | about=propose a 20-min call on X`. Freeform also works ("email jane@acme.com to follow up on yesterday's demo"). `cc=` is optional. The reply-shape `revise:<instruction>` (Telegram force-reply, e.g. `revise:make it warmer`) refines the **last composed draft for review only — it never sends**.
+# send-email
+
+Compose and send a one-off email to a named recipient via Resend - written in the operator's voice, then sent in-run through the shared send caps with an operator audit copy
+
+> The `Operator var` — who to email and why, e.g. `to=jane@acme.com | subject=Intro | about=propose a 20-min call on X`. Freeform also works ("email jane@acme.com to follow up on yesterday's demo"). `cc=` is optional. The reply-shape `revise:<instruction>` (Telegram force-reply, e.g. `revise:make it warmer`) refines the **last composed draft for review only — it never sends**.
 
 Read `soul/` (for voice) and `memory/MEMORY.md` (for context) before composing.
 
@@ -28,13 +16,11 @@ This is **not** a bulk or cold-outreach tool. One deliberate recipient per run, 
 
 ### Revise intercept (Telegram force-reply — re-stage for review only, NEVER auto-send)
 
-**Before anything else**, if `${var}` starts with `revise:`, the operator replied to a "refine this email?" prompt. Handle it here and **end the run** — the normal compose/send flow below does NOT run, and **nothing is ever sent**:
+**Before anything else**, if the `Operator var` starts with `revise:`, the operator replied to a "refine this email?" prompt. Handle it here and **end the run** — the normal compose/send flow below does NOT run, and **nothing is ever sent**:
 
 1. **Strip the prefix.** The instruction is `${var#revise:}` (keep any inner colons), e.g. `make it warmer`, `shorten to 3 lines`, `drop the meeting ask`.
-2. **Load the last draft** from `memory/drafts/send-email-latest.md` (the review copy the normal run saves in step 4). If it's missing or empty, there's nothing to refine: send `./notify "Nothing to revise yet — compose an email first, then reply here to refine it."` and end the run.
 3. **Regenerate** the email applying the instruction — re-read `soul/` for voice; keep the same recipient / cc / subject unless the instruction changes them; keep the body as the exact send-ready text (operator-only notes stay out).
 4. **Re-stage for REVIEW ONLY.** Overwrite `memory/drafts/send-email-latest.md` with the revised draft. **Do NOT run the Send step.** A `revise:` reply never sends — the operator confirms a real send by invoking send-email normally (which re-composes and sends in-run).
-5. **Notify** the operator with the full revised draft for review — multi-line ⇒ `./notify -f <file>`:
    ```
    revised draft (not sent) → <to>: <subject>
 
@@ -42,15 +28,14 @@ This is **not** a bulk or cold-outreach tool. One deliberate recipient per run, 
    ```
 6. **Re-offer** a further revision (the operator is iterating — skip the daily dedup guard here):
    ```bash
-   ./notify "Want another pass? Reply with a change and I'll revise the draft again (still won't send)." \
      --force-reply --placeholder "e.g. make it warmer" \
      --context "send-email::revise"
    ```
-7. **Log** `- SEND_EMAIL_REVISED (draft re-staged for review, not sent)` under a `### send-email` heading in `memory/logs/${today}.md`, then **end the run**.
+7. **Log** `- SEND_EMAIL_REVISED (draft re-staged for review, not sent)` under a `### send-email` heading in `memory/logs/today's date.md`, then **end the run**.
 
 Otherwise (no `revise:` prefix), run the normal flow:
 
-1. **Parse the request** from `${var}`: `to` (required — one valid email address), optional `cc`, optional `subject`, and the `about` (the goal / what to say). If `to` or the purpose is missing, check `memory/outreach.md` for a queued request; if still nothing, log `SEND_EMAIL_SKIP: no recipient/purpose` and stop.
+1. **Parse the request** from the `Operator var`: `to` (required — one valid email address), optional `cc`, optional `subject`, and the `about` (the goal / what to say). If `to` or the purpose is missing, check `memory/outreach.md` for a queued request; if still nothing, log `SEND_EMAIL_SKIP: no recipient/purpose` and stop.
 
 2. **Sanity-check the recipient.** A single, plausible, individual address with a real reason to be contacted. Refuse scraped addresses, list blasts, or anything spam-shaped → `SEND_EMAIL_REFUSED`.
 
@@ -101,19 +86,16 @@ The send is the skill's **final** action and is **fail-closed**: apply every che
    Print `http=<code>`. A response body with `.id` = sent; no `.id` (or non-2xx) = failed → `SEND_EMAIL_FAILED: <message>`, stop (it's a one-off — nothing to retry).
 10. **Record.** On success only, append one row to `memory/email-log.json` (via `python3` read-modify-write or the `Write` tool — there is no `mv`): `{slug:$SLUG, to:$TO, subject:$SUBJECT, resend_id:<id>, sent_at:<date -u +%FT%TZ>}`.
 
-5. **Notify** the operator (audit copy) via `./notify`:
    ```
    email sent → <to>: <subject>
    ```
-   Then **offer a revision** — a **separate** `./notify` (dedup: once per produced draft — scan the last ~2 days of `memory/logs/` for a `FORCE_REPLY_OFFERED: revise` line dated `${today}` and skip if present):
    ```bash
-   ./notify "Want to refine this email? Reply with a change and I'll revise the draft (won't re-send)." \
      --force-reply --placeholder "e.g. make it warmer" \
      --context "send-email::revise"
    ```
    The reply routes back as `var="revise:<instruction>"` → the **Revise intercept** above, which re-stages the draft for review only and never sends. Note: the email was already sent in-run (step "Send"), so this offer refines the **review copy** for the operator's records — any real re-send is a fresh normal invocation, not a change to the message that already went out.
 
-6. **Log** to `memory/logs/${today}.md`:
+6. **Log** to `memory/logs/today's date.md`:
    ```
    ### send-email
    - **To:** <to>  (cc: <cc>)
@@ -130,3 +112,10 @@ The send is the skill's **final** action and is **fail-closed**: apply every che
 ## Environment / config (shared with `disclosure-emailer` = vuln-scanner Arm C)
 - `RESEND_API_KEY`, `RESEND_FROM` (verified sender), `RESEND_REPLY_TO` — injected in-run via this skill's `requires:`. `RESEND_CC` (operator audit copy) is a repo var bound in the run env.
 - Send caps gate the shared ledger `memory/email-log.json`, so this skill and `disclosure-emailer` share one daily budget: `DISCLOSURE_EMAIL_DAILY_CAP` (default 1 — raise for more outreach), `DISCLOSURE_EMAIL_COOLDOWN_DAYS`, and the kill-switch `DISCLOSURE_EMAIL_PAUSED`.
+
+## Do not
+
+- Do not write outside `output/send-email/` and `memory/skills/send-email/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

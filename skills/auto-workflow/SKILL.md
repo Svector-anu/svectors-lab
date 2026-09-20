@@ -1,21 +1,9 @@
----
-name: auto-workflow
-description: Two-mode aeon.yml workflow builder - analyze inspects URLs and emits a tiered, signal-verified skill-enablement plan plus an aeon.yml diff; enable flips slugs to enabled:true and opens a PR.
-metadata:
-  title: Auto-Workflow Builder
-  category: core
-  var: ""
-  tags:
-    - meta
-    - dev
-  mode: write
-  commits: true
-  permissions:
-    - contents:write
-    - pull-requests:write
----
+# auto-workflow
+
+Two-mode aeon.yml workflow builder - analyze inspects URLs and emits a tiered, signal-verified skill-enablement plan plus an aeon.yml diff; enable flips slugs to enabled:true and opens a PR.
+
 <!-- autoresearch: variation B — sharper output (priority tiers + data-verification gates + delta-against-existing + exit taxonomy) + slug-enable execution branch (validate → commit → PR) -->
-> **${var}** — selects the mode:
+> The `Operator var` — selects the mode:
 > - **Analyze (default):** a URL to analyze (GitHub repo, X account, blog, project site, API docs, etc.). Multiple URLs comma-separated. Prefix a URL with `force:` to re-analyze one already in the ledger. Produces a tiered recommendation article + an `aeon.yml` diff — it does **not** mutate `aeon.yml`.
 > - **Enable:** `enable:slug1,slug2,…` — flip those skills' `enabled: false → true` in `aeon.yml`, validate each against `skills/`, then commit + open a PR. `enable:dry-run:slug1,slug2` validates and reports without editing, committing, or opening a PR.
 >
@@ -34,9 +22,9 @@ One skill, two ends of the same loop: **analyze** decides *what to enable* for a
 ## Shared preamble (run for both modes)
 
 1. Read `memory/MEMORY.md` for high-level context and skim the last ~3 days of `memory/logs/` — drop anything already reported so you don't re-emit the same signal.
-2. Parse `${var}` to pick the branch:
-   - `${var}` is empty → **Analyze** branch, empty-input path → exit `AUTO_WORKFLOW_EMPTY`, notify `auto-workflow: set var= to one or more URLs (comma-separated), or enable:slug1,slug2 to flip skills on`.
-   - `${var}` starts with `enable:` (case-insensitive) → **Enable** branch. Strip the `enable:` prefix; the remainder is the slug list (which may itself begin with `dry-run:`). Go to **Mode B**.
+2. Parse the `Operator var` to pick the branch:
+   - the `Operator var` is empty → **Analyze** branch, empty-input path → exit `AUTO_WORKFLOW_EMPTY`, notify `auto-workflow: set var= to one or more URLs (comma-separated), or enable:slug1,slug2 to flip skills on`.
+   - the `Operator var` starts with `enable:` (case-insensitive) → **Enable** branch. Strip the `enable:` prefix; the remainder is the slug list (which may itself begin with `dry-run:`). Go to **Mode B**.
    - Otherwise → **Analyze** branch. Go to **Mode A**.
 
 ---
@@ -47,7 +35,7 @@ One skill, two ends of the same loop: **analyze** decides *what to enable* for a
 
 If the (post-preamble) input is empty → exit `AUTO_WORKFLOW_EMPTY`, notify as above.
 
-Parse `${var}`:
+Parse the `Operator var`:
 - Split on `,`, trim each entry
 - Detect `force:` prefix on any entry → sets `force=true` for that URL (skip ledger dedup)
 - Normalize each URL:
@@ -62,7 +50,7 @@ Read context:
 - `memory/MEMORY.md` — operator interests
 - `aeon.yml` — CURRENT skill enablement, `var`, `schedule`, `model` per skill (this is the comparison baseline)
 - `skills.json` — authoritative installed-skill list
-- `memory/topics/auto-workflow-analyzed.md` (if exists) — for ledger dedup
+- `memory/skills/auto-workflow/auto-workflow-analyzed.md` (if exists) — for ledger dedup
 
 **Ledger dedup:** If a URL is in the ledger with `analyzed_at` within the last 14 days and `force` is not set for it, skip it with `already_analyzed` reason. If ALL inputs are dedup-skipped → exit `AUTO_WORKFLOW_NO_CHANGE`, notify nothing, log a one-line skip entry.
 
@@ -158,7 +146,7 @@ For each tiered recommendation, compute the delta:
 | already enabled matching suggestion | — | `NO_CHANGE` |
 
 Skills with action `NO_CHANGE` drop out of the output. If EVERY tiered recommendation is `NO_CHANGE` → exit `AUTO_WORKFLOW_NO_CHANGE`:
-- Log: `### auto-workflow\n- Mode: analyze\n- Input: ${var}\n- Exit: NO_CHANGE — existing config covers ${N_OK}/${N_TOTAL} URLs\n- Ledger updated`
+- Log: `### auto-workflow\n- Mode: analyze\n- Input: the `Operator var`\n- Exit: NO_CHANGE — existing config covers ${N_OK}/${N_TOTAL} URLs\n- Ledger updated`
 - **Notify nothing** (silence on no-op preserves signal-to-noise)
 - Still update the ledger
 
@@ -184,7 +172,7 @@ Output shape (keep it tight — no tables for empty categories):
 
 ```markdown
 # Auto-Workflow: ${input_summary}
-*${today} · ${exit_mode}*
+*today's date · ${exit_mode}*
 
 **Verdict:** ${one_line}
 <!-- examples:
@@ -256,19 +244,17 @@ feeds:
 ${AUTO_WORKFLOW_OK | AUTO_WORKFLOW_NO_CHANGE | AUTO_WORKFLOW_EMPTY | AUTO_WORKFLOW_FETCH_FAILED | AUTO_WORKFLOW_UNCLASSIFIED | AUTO_WORKFLOW_ERROR}
 ```
 
-Append to `memory/topics/auto-workflow-analyzed.md`:
+Append to `memory/skills/auto-workflow/auto-workflow-analyzed.md`:
 ```markdown
-## ${today}
-- ${normalized_url} — ${category} — ${N_must} MUST / ${N_should} SHOULD — output/articles/auto-workflow-${today}.md
+## today's date
+- ${normalized_url} — ${category} — ${N_must} MUST / ${N_should} SHOULD — output/articles/auto-workflow-today's date.md
 ```
 
-Log to `memory/logs/${today}.md` (see the shared **Log** section — analyze discriminator).
-
-Notify via `./notify` — but **only** if exit_mode ∈ {OK, FETCH_FAILED_PARTIAL, ERROR, UNCLASSIFIED}. Skip on NO_CHANGE.
+Log to `memory/logs/today's date.md` (see the shared **Log** section — analyze discriminator).
 
 Template:
 ```
-*Auto-Workflow — ${today}*
+*Auto-Workflow — today's date*
 ${exit_mode}
 
 ${verdict_one_line}
@@ -280,14 +266,14 @@ MUST (${N}):
 ${missing_secrets_line_if_any}
 
 Apply: enable:${comma_separated_ENABLE_slugs}
-Full: output/articles/auto-workflow-${today}.md
+Full: output/articles/auto-workflow-today's date.md
 ```
 
 ---
 
 ## Mode B — Enable: flip skills enabled by slug (validate → commit → PR)
 
-Today is ${today}. Skills can sit at `enabled: false` for days while the operator is occupied elsewhere. The human review of "is this skill ready to run" is not what blocks activation — the typing is. This branch makes the typing one dispatch.
+Today is today's date. Skills can sit at `enabled: false` for days while the operator is occupied elsewhere. The human review of "is this skill ready to run" is not what blocks activation — the typing is. This branch makes the typing one dispatch.
 
 Flipping `enabled: false → true` in `aeon.yml` is mechanical:
 - The text-edit is a single regex-safe substitution per skill
@@ -296,7 +282,7 @@ Flipping `enabled: false → true` in `aeon.yml` is mechanical:
 
 **Explicit opt-in is the safety bar.** No scheduled run, no automatic discovery. The operator names the slugs (or copies them from an analyze run's `enable:` line). The branch validates them and writes a PR — nothing flips on `main` until the operator clicks merge.
 
-The input to this branch is the post-`enable:` remainder of `${var}` (call it `ENABLE_INPUT`).
+The input to this branch is the post-`enable:` remainder of the `Operator var` (call it `ENABLE_INPUT`).
 
 ### B1. Parse the slug list
 
@@ -358,10 +344,10 @@ If zero slugs are `ELIGIBLE`:
 ### B5. Commit, branch, push (skip in dry-run)
 
 ```bash
-git checkout -b feat/enable-skills-${today}
+git checkout -b feat/enable-skills-today's date
 git add aeon.yml
 git commit -m "chore: enable ${N} skill(s) — ${comma_separated_slugs}"
-git push -u origin feat/enable-skills-${today}
+git push -u origin feat/enable-skills-today's date
 ```
 
 `${N}` is the count of `ELIGIBLE` slugs that were patched. `${comma_separated_slugs}` lists their slugs (capped at 6 in the title; if more, append `+${overflow}`).
@@ -399,10 +385,8 @@ Capture the PR URL from `gh pr create`'s stdout. If `gh pr create` fails, log `S
 
 ### B7. Notify
 
-Send via `./notify`:
-
 ```
-*Auto-Workflow (enable) — ${today}*
+*Auto-Workflow (enable) — today's date*
 
 Enabled ${N} skill(s) in aeon.yml via PR:
 ${bullet_list_eligible_slugs}
@@ -410,7 +394,7 @@ ${bullet_list_eligible_slugs}
 ${ineligible_section_if_any}
 
 PR: ${pr_url}
-Branch: feat/enable-skills-${today}
+Branch: feat/enable-skills-today's date
 
 Note: cron picks up the change on next scheduled tick after the PR merges. Use \`gh workflow run aeon.yml -f skill=<slug>\` to fire any of them immediately if you want a same-day signal.
 ```
@@ -429,7 +413,7 @@ For `dry-run` mode, prefix the notification with `[DRY RUN — no changes made]`
 
 ### B8. Log
 
-Log to `memory/logs/${today}.md` (see the shared **Log** section — enable discriminator).
+Log to `memory/logs/today's date.md` (see the shared **Log** section — enable discriminator).
 
 Status mapping (the `Status` field in the log):
 - `SKILL_ENABLER_OK` — every input slug was `ELIGIBLE` and got patched
@@ -445,18 +429,18 @@ Status mapping (the `Status` field in the log):
 
 ## Log
 
-Append to `memory/logs/${today}.md` under ONE `### auto-workflow` heading (the health loop parses this shape). The first bullet is a **`Mode:` discriminator** naming which branch ran.
+Append to `memory/logs/today's date.md` under ONE `### auto-workflow` heading (the health loop parses this shape). The first bullet is a **`Mode:` discriminator** naming which branch ran.
 
 **Analyze run:**
 ```
 ### auto-workflow
 - Mode: analyze
-- Input: ${var}
+- Input: the `Operator var`
 - Exit: ${exit_mode}
 - URLs: ${N_OK}/${N_TOTAL} analyzed
 - Recommendations: ${N_must} MUST, ${N_should} SHOULD, ${N_nice} NICE (${N_no_change} already active, dropped)
 - Missing secrets: ${list or "none"}
-- Article: output/articles/auto-workflow-${today}.md
+- Article: output/articles/auto-workflow-today's date.md
 ```
 
 **Enable run:**
@@ -510,8 +494,15 @@ Append to `memory/logs/${today}.md` under ONE `### auto-workflow` heading (the h
 
 - **Slug appears twice in `aeon.yml` (e.g. defined as a top-level skill AND referenced inside a `chains:` block):** gate 4 catches this and tags `CHAIN_CONFLICT`. The slug is not patched. The operator must resolve the duplication manually.
 - **Slug's `enabled:` line uses unusual whitespace (e.g. `enabled : false` or `enabled:false` with no space):** the substitution should be tolerant — match `enabled\s*:\s*false`. If no match is found despite gate 5 reporting `enabled: false`, tag `UNPARSEABLE_STATE` and report it in the ineligible breakdown.
-- **Branch-name collision** (`feat/enable-skills-${today}` already exists locally because the operator ran enable twice in one day): pick a numeric suffix — `feat/enable-skills-${today}-${run_count}` — and proceed. The existing branch is left untouched; a separate PR is opened.
+- **Branch-name collision** (`feat/enable-skills-today's date already exists locally because the operator ran enable twice in one day): pick a numeric suffix — `feat/enable-skills-today's date-${run_count}` — and proceed. The existing branch is left untouched; a separate PR is opened.
 - **Skill is `enabled: false` AND has `schedule: workflow_dispatch`:** still eligible. The operator's intent is to mark it as "active in this fork" so heartbeat treats it as expected-but-on-demand rather than `disabled-and-ignored`. The PR is the right outcome.
 - **`aeon.yml` line has a trailing comment that mentions `false`:** the substitution must scope to the `enabled:` key only — match `enabled\s*:\s*false`, do not touch other `false` tokens on the line. The most likely format is `${slug}: { enabled: false, ... } # comment` and the substitution should change `enabled: false,` (with the comma) without touching the comment.
 - **Operator passes the same slug twice in the list (e.g. `slug-a,slug-a`):** deduplicate during parsing in B1 — second occurrence is dropped silently. Don't fail the run.
 - **`MODE=dry-run` with a valid slug list:** report all gates as if executing, but include `[DRY RUN]` in every log line and notification, and DO NOT branch / commit / push / open a PR. Status: `SKILL_ENABLER_DRY_RUN`.
+
+## Do not
+
+- Do not write outside `output/auto-workflow/` and `memory/skills/auto-workflow/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

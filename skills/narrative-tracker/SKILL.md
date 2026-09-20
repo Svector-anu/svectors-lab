@@ -1,20 +1,7 @@
----
-name: narrative-tracker
-description: Track rising, peaking, and fading crypto/tech narratives with quantitative mindshare + velocity signals and explicit positioning calls
-metadata:
-  schedule: "0 14 * * *"
-  commits: true
-  permissions:
-    - contents:write
-  title: Narrative Tracker
-  mode: read-only
-  category: crypto
-  tags:
-    - crypto
-    - research
-  requires:
-    - XAI_API_KEY
----
+# narrative-tracker
+
+Track rising, peaking, and fading crypto/tech narratives with quantitative mindshare + velocity signals and explicit positioning calls
+
 <!-- autoresearch: variation B — sharper output (quantitative mindshare + velocity + explicit positioning calls, with multi-angle inputs from A, dedup/empty-state handling from C, and transition detection from D) -->
 
 Read `memory/MEMORY.md` for context on prior narrative observations.
@@ -52,7 +39,7 @@ echo "xai http=$HTTP bytes=$(wc -c </tmp/xai-nt.json)"
 ```
 Run that block **verbatim** (do not hand-reassemble the JSON — the `jq -n` builder exists precisely so quoting/expansion can't break; keep the jq and the `./secretcurl` as two separate commands). The `echo "xai http=$HTTP ..."` line **must appear in your output** — it is your proof the call ran. On `HTTP=200` with a non-empty body, parse `/tmp/xai-nt.json` with `jq -r '.output[] | select(.type == "message") | .content[] | select(.type == "output_text") | .text'` and use that as the primary narrative signal (`SOURCE=api`).
 
-**b. WebSearch / WebFetch fallback (last-resort only).** You may reach for this **only after** you have shown an `xai http=<code>` line proving Path A actually ran and returned a non-2xx code (or an empty body, or timed out). If you have no `xai http=` line, you did not run the call — go back and run it. Reach for the fallback **only** when Path A genuinely fails — `KEY_UNSET`, a non-2xx HTTP code, an empty parse, or a timeout. It is lower quality (WebSearch favours old high-engagement posts) and is **never co-equal** with Path A. Log the fetch failure to `memory/logs/${today}.md` recording the **true reason** — `key-unset` | `http-<code>` | `empty` | `timeout` — never "XAI_API_KEY unavailable" when the key was set (a slow curl is a `timeout`, not a missing key). Then compile narratives via WebSearch (`crypto narrative ${TO_DATE}`, `AI agent crypto trend this week`) and WebFetch on individual tweet URLs; discard anything older than the 3-day window.
+**b. WebSearch / WebFetch fallback (last-resort only).** You may reach for this **only after** you have shown an `xai http=<code>` line proving Path A actually ran and returned a non-2xx code (or an empty body, or timed out). If you have no `xai http=` line, you did not run the call — go back and run it. Reach for the fallback **only** when Path A genuinely fails — `KEY_UNSET`, a non-2xx HTTP code, an empty parse, or a timeout. It is lower quality (WebSearch favours old high-engagement posts) and is **never co-equal** with Path A. Log the fetch failure to `memory/logs/today's date.md` recording the **true reason** — `key-unset` | `http-<code>` | `empty` | `timeout` — never "XAI_API_KEY unavailable" when the key was set (a slow curl is a `timeout`, not a missing key). Then compile narratives via WebSearch (`crypto narrative ${TO_DATE}`, `AI agent crypto trend this week`) and WebFetch on individual tweet URLs; discard anything older than the 3-day window.
 
 **c. Quantitative reference points (supplement).** Independently of the fetch path, cross-check mindshare against external quantitative benchmarks with one WebSearch: `DefiLlama narrative tracker` OR `Kaito mindshare leaderboard`. Pull 1-2 concrete numbers (project name, metric, link) to calibrate the mindshare scores in step 2. This is a calibration cross-check, **not** a narrative source. Do not paraphrase — extract facts.
 
@@ -99,7 +86,7 @@ Only flag explicit cases with a concrete example. "Reflexivity" without evidence
 Keep under 4000 chars. Lead with transitions and reflexivity — those are the decisions. Classification goes below.
 
 ```
-*Narrative Tracker — ${today}*
+*Narrative Tracker — today's date*
 
 TRANSITIONS
 • NEW: <label> — <why it matters> — <link>
@@ -122,11 +109,9 @@ Peak: <labels>
 Fading: <labels>
 ```
 
-If absolutely nothing new or notable (no transitions, no reflexivity, no FRONT-RUN/FADE calls): send a one-line update instead of the full template — `*Narrative Tracker — ${today}*: no phase transitions, map unchanged from <last_date>.`
+If absolutely nothing new or notable (no transitions, no reflexivity, no FRONT-RUN/FADE calls): send a one-line update instead of the full template — `*Narrative Tracker — today's date*: no phase transitions, map unchanged from <last_date>.`
 
-### 6. Send via `./notify`
-
-### 7. Log to `memory/logs/${today}.md`
+### 7. Log to `memory/logs/today's date.md`
 
 Append a `### narrative-tracker` section with the full structured output (not just the notification — include all narratives considered, even IGNOREd ones, so future diffs work). If a full run produced nothing actionable, log `NARRATIVE_TRACKER_OK` with the narrative labels seen (so tomorrow's diff still has a baseline).
 
@@ -156,3 +141,10 @@ Rules:
 
 - `XAI_API_KEY` — X.AI API key for Grok's `x_search` tool. Declared in `requires:`, so it is **injected into this skill's environment** and is the **primary fetch path** for the narrative signal (step 1a). If it is ever unset, the skill degrades to WebSearch/WebFetch at lower quality.
 - Notification channels configured via repo secrets (see CLAUDE.md).
+
+## Do not
+
+- Do not write outside `output/narrative-tracker/` and `memory/skills/narrative-tracker/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,18 +1,12 @@
----
-name: spawn-instance
-description: Clone this Aeon agent into a new GitHub repo - fork, configure skills, validate, and register in the fleet
-metadata:
-  title: Spawn Instance
-  category: core
-  var: ""
-  tags:
-    - dev
----
+# spawn-instance
+
+Clone this Aeon agent into a new GitHub repo - fork, configure skills, validate, and register in the fleet
+
 <!-- autoresearch: variation C — robust: skill-existence validation, exit taxonomy, idempotent recovery, dynamic SETUP.md, pre/post-flight verification -->
 
-> **${var}** — Name and purpose of the new instance. Format `name: purpose`, e.g. `crypto-tracker: monitor DeFi protocols and token movements`. If empty, notify the owner and **stop** with exit `SPAWN_INVALID_VAR`.
+> The `Operator var` — Name and purpose of the new instance. Format `name: purpose`, e.g. `crypto-tracker: monitor DeFi protocols and token movements`. If empty, notify the owner and **stop** with exit `SPAWN_INVALID_VAR`.
 
-Today is ${today}. Create a new Aeon instance by forking this repo, configuring it for a specific purpose, validating the configuration, and registering it in the fleet.
+Today is today's date. Create a new Aeon instance by forking this repo, configuring it for a specific purpose, validating the configuration, and registering it in the fleet.
 
 Read `memory/MEMORY.md` at the start for context.
 
@@ -42,7 +36,7 @@ Every run ends with one of these status codes, written to the log and (where rel
 
 ### 1. Parse and validate the var
 
-- If `${var}` is empty, log `SPAWN_INVALID_VAR: empty var` to `memory/logs/${today}.md`, notify: `spawn-instance: empty var — re-run with "name: purpose"`, and **stop**.
+- If the `Operator var` is empty, log `SPAWN_INVALID_VAR: empty var` to `memory/logs/today's date.md`, notify: `spawn-instance: empty var — re-run with "name: purpose"`, and **stop**.
 - Split on the first `:` — left is `NAME_RAW`, right is `PURPOSE` (trim whitespace). If either is empty, exit `SPAWN_INVALID_VAR`.
 - Derive `NAME`: lowercase `NAME_RAW`, replace non-alphanumeric runs with `-`, strip leading/trailing `-`, truncate to 40 chars. If empty after sanitization, exit `SPAWN_INVALID_VAR`.
 - Set `REPO_NAME="aeon-${NAME}"`.
@@ -258,7 +252,7 @@ git commit -m "chore: configure instance — ${PURPOSE}
 
 Skills enabled: ${SKILLS_ENABLED_CSV}
 Parent: ${PARENT_UPSTREAM}
-Spawned: ${today}"
+Spawned: today's date"
 git push origin main 2>/dev/null \
   || git push origin HEAD:main 2>/dev/null \
   || { echo "SPAWN_PUSH_FAILED"; cd - >/dev/null; exit 1; }
@@ -305,7 +299,7 @@ Update `memory/instances.json` in the **parent** repo. Append:
   "name": "${NAME}",
   "repo": "${OWNER}/${REPO_NAME}",
   "purpose": "${PURPOSE}",
-  "created": "${today}",
+  "created": "today's date",
   "status": "pending_secrets",
   "skills_enabled": ${SKILLS_ENABLED_JSON},
   "parent": "${PARENT_UPSTREAM}"
@@ -316,7 +310,7 @@ If `FORK_STATE == "exists"` at step 5, the final exit status is `SPAWN_FORK_EXIS
 
 ### 10. Log to memory
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 ```
 ### spawn-instance
 - Status: ${EXIT_CODE}
@@ -326,8 +320,6 @@ Append to `memory/logs/${today}.md`:
 - Dropped skills: ${DROPPED_CSV or "(none)"}
 - Actions enabled: yes
 ```
-
-### 11. Notify via `./notify`
 
 On success (`SPAWN_OK` or `SPAWN_FORK_EXISTS_RECOVERED`):
 ```
@@ -366,8 +358,15 @@ This skill runs entirely through `gh` CLI, which handles auth internally, so no 
 
 - **No secret propagation.** Never read or write `ANTHROPIC_API_KEY`, `TELEGRAM_*`, `DISCORD_*`, `SLACK_*`, or any API key into the child repo. The whole security model depends on this.
 - **No hardcoded skill list.** Always enumerate `skills/*/SKILL.md` at runtime to avoid referencing renamed or removed skills.
-- **Idempotent.** Re-running with the same `${var}` must never produce duplicate registry entries, duplicate CLAUDE.md lines, or a second fork.
+- **Idempotent.** Re-running with the same the `Operator var` must never produce duplicate registry entries, duplicate CLAUDE.md lines, or a second fork.
 - **Never delete a fork.** If anything fails partway through, leave the fork in place and emit recovery guidance — the operator is the only party authorized to delete it.
 - **Never push to the parent without committing `memory/instances.json` via the normal Aeon workflow.** The parent commit happens through the same path as any other skill output.
 
 Write complete, working code. No TODOs or placeholders.
+
+## Do not
+
+- Do not write outside `output/spawn-instance/` and `memory/skills/spawn-instance/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

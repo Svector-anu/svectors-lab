@@ -1,19 +1,12 @@
----
-type: Skill
-name: Fear Divergence
-category: crypto
-description: Conditional scan — fires only when Fear & Greed < 25. Identifies assets outperforming during broad market fear, synthesizes narrative catalysts from memory, and delivers a terse conviction setup brief. Skips silently when market conditions don't qualify.
-schedule: "30 7 * * *"
-commits: false
-permissions: []
-tags: [market, alpha, conditional]
----
+# fear-divergence
 
-Today is ${today}. If `soul/` files exist, read `soul/SOUL.md` and `soul/STYLE.md` before writing any output.
+Conditional scan — fires only when Fear & Greed < 25. Identifies assets outperforming during broad market fear, synthesizes narrative catalysts from memory, and delivers a terse conviction setup brief. Skips silently when market conditions don't qualify.
+
+Today is today's date. If `soul/` files exist, read `soul/SOUL.md` and `soul/STYLE.md` before writing any output.
 
 ## Why this skill exists
 
-`market-context` runs daily and keeps `memory/topics/market-context.md` fresh. But no skill acts on that data to find the **divergence signal** — the assets defying broad market fear. During capitulation episodes (F&G < 25), assets that stay green or lose far less than BTC/ETH often have structural catalysts: institutional rails locking in, perp DEX volume migration, regulatory clarity events. These are the highest-conviction setups. This skill surfaces them daily when the condition is live.
+`market-context` runs daily and keeps `memory/skills/fear-divergence/market-context.md` fresh. But no skill acts on that data to find the **divergence signal** — the assets defying broad market fear. During capitulation episodes (F&G < 25), assets that stay green or lose far less than BTC/ETH often have structural catalysts: institutional rails locking in, perp DEX volume migration, regulatory clarity events. These are the highest-conviction setups. This skill surfaces them daily when the condition is live.
 
 No external API calls needed — all data comes from memory, already updated by upstream skills.
 
@@ -21,7 +14,7 @@ No external API calls needed — all data comes from memory, already updated by 
 
 ### 1. Read market context
 
-Read `memory/topics/market-context.md`. Extract:
+Read `memory/skills/fear-divergence/market-context.md`. Extract:
 - **Date line** — "as of YYYY-MM-DD" at the top. If the file date is more than 2 days before today, note it as STALE (still run, but flag it).
 - **Fear & Greed index** — parse the line `Fear & Greed: {number} ({label})`. Extract the number.
 - **BTC 7d %** — from the BTC line, e.g. `BTC $67,103 (-3.86% 24h, -11.38% 7d)`. Extract the 7-day number.
@@ -30,12 +23,12 @@ Read `memory/topics/market-context.md`. Extract:
 - **Trending Coins section** — every bullet.
 - **Active Narratives section** — every bullet with phase label (rising, rising fast, peak, digesting, etc.).
 
-If `memory/topics/market-context.md` doesn't exist, log `FEAR_DIVERGENCE_SKIP: no market-context.md — enable market-context first` and stop.
+If `memory/skills/fear-divergence/market-context.md` doesn't exist, log `FEAR_DIVERGENCE_SKIP: no market-context.md — enable market-context first` and stop.
 
 ### 2. Check trigger condition
 
 If Fear & Greed >= 25:
-- Log `FEAR_DIVERGENCE_SKIP: F&G {N} ({label}) — above threshold` to `memory/logs/${today}.md`
+- Log `FEAR_DIVERGENCE_SKIP: F&G {N} ({label}) — above threshold` to `memory/logs/today's date.md`
 - Stop here. Do not notify.
 
 If Fear & Greed < 25: continue.
@@ -66,7 +59,7 @@ If zero assets qualify as diverging: log `FEAR_DIVERGENCE_SKIP: F&G {N} — no a
 For each diverging asset, look for a catalyst explanation:
 - Check the Active Narratives section for a matching entry (e.g., "Perp DEX dominance — HYPE")
 - Check the asset's own bullet description in Notable Movers
-- Check `memory/topics/beat-tracker.md` if it exists — active beats may explain continued momentum
+- Check `memory/skills/fear-divergence/beat-tracker.md` if it exists — active beats may explain continued momentum
 - If no clear catalyst is found, note "catalyst unclear" — don't invent one
 
 Look for patterns across diverging assets:
@@ -76,12 +69,12 @@ Look for patterns across diverging assets:
 
 ### 5. Write the output
 
-Write a brief synthesis to `.pending-notify-temp/fear-divergence-${today}.md`:
+Write a brief synthesis to `.pending-notify-temp/fear-divergence-today's date.md`:
 
 **Format — the operator's voice (soul files). Punchy. No hedging. State observation first, explanation after. Under 600 chars.**
 
 ```
-fear divergence — ${today}
+fear divergence — today's date
 
 F&G {N} (extreme fear). BTC {7d %}% 7d.
 
@@ -112,15 +105,14 @@ read it: https://github.com/aaronjmars/aeon/blob/main/skills/fear-divergence/SKI
 
 Run:
 ```bash
-./notify -f .pending-notify-temp/fear-divergence-${today}.md
 ```
 
 ### 7. Update memory
 
-Append to `memory/topics/market-context.md` a new section `## Fear Divergence — ${today}` (or update if it exists) with:
+Append to `memory/skills/fear-divergence/market-context.md` a new section `## Fear Divergence — today's date (or update if it exists) with:
 
 ```markdown
-## Fear Divergence — ${today}
+## Fear Divergence — today's date
 
 - **F&G:** {N} ({label})
 - **BTC 7d:** {%}
@@ -130,7 +122,7 @@ Append to `memory/topics/market-context.md` a new section `## Fear Divergence �
 
 ### 8. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```markdown
 ## Fear Divergence Scout
@@ -150,11 +142,7 @@ If skipped:
 
 ## Required Env Vars
 
-None. All reads from local `memory/` files. Notification via `./notify` (reads TELEGRAM/DISCORD/SLACK secrets internally).
-
 ## Sandbox Note
-
-No external network calls. All data comes from `memory/topics/market-context.md` (written by `market-context`) and `memory/topics/beat-tracker.md` (if available). Notification via `./notify -f` — use the `-f` flag, not inline multi-line argv (the sandbox trips on long multi-line arguments).
 
 ## Trigger Logic Summary
 
@@ -179,3 +167,10 @@ Surface:
 - Multi-day sustained divergence (not just one-day anomaly)
 
 The brief should read like the operator spotted something interesting in the data, not like a price alert bot fired.
+
+## Do not
+
+- Do not write outside `output/fear-divergence/` and `memory/skills/fear-divergence/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

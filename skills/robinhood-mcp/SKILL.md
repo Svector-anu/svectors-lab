@@ -1,25 +1,10 @@
----
-name: robinhood-mcp
-description: Read your Robinhood Agentic brokerage account via the Robinhood Trading MCP - portfolio, buying power, positions, and order history - and place a single operator-instructed trade. OAuth Connect via the dashboard MCP panel.
-metadata:
-  capabilities:
-    - external_api
-    - writes_external_host
-    - sends_notifications
-  title: Robinhood MCP
-  mode: read-only
-  category: crypto
-  tags:
-    - markets
-    - trading
-    - mcp
-  var: ""
-  mcp:
-    - robinhood-trading
----
-> **${var}** — empty = portfolio report (read-only). `orders[:N]` = last N orders (default 10). `trade:<instruction>` = place **one** order, e.g. `trade: buy $50 of AAPL` — the only branch that writes. Anything else = treat as a question about the account and answer it read-only.
+# robinhood-mcp
 
-Access the operator's **Robinhood Agentic Trading** account through the Robinhood MCP server (`agent.robinhood.com/mcp/trading`). Trades execute in a dedicated Agentic brokerage account the operator authorized — real money, irreversible. The default posture is read-only reporting; an order is placed only when `${var}` explicitly instructs it.
+Read your Robinhood Agentic brokerage account via the Robinhood Trading MCP - portfolio, buying power, positions, and order history - and place a single operator-instructed trade. OAuth Connect via the dashboard MCP panel.
+
+> The `Operator var` — empty = portfolio report (read-only). `orders[:N]` = last N orders (default 10). `trade:<instruction>` = place **one** order, e.g. `trade: buy $50 of AAPL` — the only branch that writes. Anything else = treat as a question about the account and answer it read-only.
+
+Access the operator's **Robinhood Agentic Trading** account through the Robinhood MCP server (`agent.robinhood.com/mcp/trading`). Trades execute in a dedicated Agentic brokerage account the operator authorized — real money, irreversible. The default posture is read-only reporting; an order is placed only when the `Operator var` explicitly instructs it.
 
 ## Detection & auth
 
@@ -34,7 +19,7 @@ The server is wired by the dashboard MCP panel's one-click **Connect** (OAuth; t
 
 Whatever the branch, start with the reads — portfolio value, buying power, positions (symbol, quantity, cost basis, current value, unrealized P/L), and open orders. For `orders[:N]`, pull order history and take the most recent N (default 10) with status, side, symbol, quantity/notional, and fill price.
 
-### 2. Trade branch (only when `${var}` starts with `trade:`)
+### 2. Trade branch (only when the `Operator var` starts with `trade:`)
 
 Operator-initiated only — never trade on a scheduled/default run, and never invent an order.
 
@@ -44,8 +29,6 @@ Operator-initiated only — never trade on a scheduled/default run, and never in
 4. Capture the server's response verbatim (order id, status). If the tool call fails, log `RH_MCP_ORDER_ERROR` with the error body — never claim an order was placed without an order id back.
 
 ### 3. Notify
-
-This skill is on-demand — deliver the result via `./notify -f <file>` (ordinary Markdown), **exactly one `./notify` call per run** (each call overwrites the `.pending-<skill>.md` file the chain artifact is captured from — a second ping would clobber the report):
 
 - **Report branches:** portfolio value + day change, buying power, a positions table, open orders, and one line of what stands out (concentration, a position moving hard). Keep it tight — signal, not a data dump.
 - **Trade branch:** the exact order placed (side, symbol, size, order id, status) — or, on refusal, exactly what was ambiguous and how to restate it. Severity `success` for a placed order, `warn` for a refusal.
@@ -63,7 +46,14 @@ This skill is `read-only`, so it can't write the repo during the run (the sandbo
 
 ## Constraints
 
-- **No unprompted trading, no advice.** Report what the account holds; place only the order `${var}` spells out. Never recommend a trade in the notify.
+- **No unprompted trading, no advice.** Report what the account holds; place only the order the `Operator var` spells out. Never recommend a trade in the notify.
 - One order per run — a `trade:` instruction that describes multiple orders is refused, not partially executed.
 - Every figure in the notify traces to a tool response; never estimate fills or balances.
 - The operator is responsible for every order this agent places — when in doubt, refuse and say why.
+
+## Do not
+
+- Do not write outside `output/robinhood-mcp/` and `memory/skills/robinhood-mcp/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

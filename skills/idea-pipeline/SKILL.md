@@ -1,16 +1,10 @@
----
-name: idea-pipeline
-description: Execution-gap audit - cross-references the startup idea backlog against shipped skills, prototypes, and cross-repo PRs, surfacing the top 3 ideas to build next by narrative and operator fit.
-metadata:
-  category: productivity
-  var: ""
-  tags:
-    - meta
-    - creative
----
-> **${var}** — Optional theme filter (e.g. "crypto", "AI agents", "consumer"). If empty, scans all ideas. A `pick:<id|name>` value (from the "build next?" force-reply — e.g. `pick:2` or `pick:Onchain reputation`) instead marks that idea as chosen-to-build in the backlog and ends, skipping the audit — see step 0.
+# idea-pipeline
 
-Today is ${today}. Read `memory/MEMORY.md` before starting. If `soul/SOUL.md` + `soul/STYLE.md` exist and are populated, read them to ground "operator fit" scoring; otherwise score on the idea's general buildability and timing alone.
+Execution-gap audit - cross-references the startup idea backlog against shipped skills, prototypes, and cross-repo PRs, surfacing the top 3 ideas to build next by narrative and operator fit.
+
+> The `Operator var` — Optional theme filter (e.g. "crypto", "AI agents", "consumer"). If empty, scans all ideas. A `pick:<id|name>` value (from the "build next?" force-reply — e.g. `pick:2` or `pick:Onchain reputation`) instead marks that idea as chosen-to-build in the backlog and ends, skipping the audit — see step 0.
+
+Today is today's date. Read `memory/MEMORY.md` before starting. If `soul/SOUL.md` + `soul/STYLE.md` exist and are populated, read them to ground "operator fit" scoring; otherwise score on the idea's general buildability and timing alone.
 
 ## Why this skill exists
 
@@ -20,29 +14,25 @@ Today is ${today}. Read `memory/MEMORY.md` before starting. If `soul/SOUL.md` + 
 
 ### 0. Force-reply interception — `pick:<idea>` (run FIRST, before anything else)
 
-Before any other work, inspect `${var}`. If it **starts with `pick:`**, this run is the operator answering the "which idea to build next?" force-reply — do **not** run the normal audit. Handle it and end:
+Before any other work, inspect the `Operator var`. If it **starts with `pick:`**, this run is the operator answering the "which idea to build next?" force-reply — do **not** run the normal audit. Handle it and end:
 
 1. Strip the prefix: `sel="${var#pick:}"`, then trim surrounding whitespace. The remainder may contain colons/spaces — keep them.
-2. If `sel` is empty, send a plain re-ask (no force-reply) and end: `./notify "Which idea should I mark as next to build? Reply with its name or backlog number."`
-3. Read the shared backlog `memory/topics/startup-ideas.md`. If it's missing or has no idea rows, `./notify "No idea backlog yet — nothing to mark. Run idea-forge generate to fill it first."` and end.
 4. Resolve `sel` to exactly one idea row in the table (columns `| date | name | one-liner | fit | T+F+E |`):
    - **By name (preferred):** case-insensitive exact match on the `name` cell; else fuzzy — the row whose name shares the most significant words with `sel`, or where `sel` is a substring of the name (or vice-versa). Require one clear best match.
    - **By number:** if `sel` is a bare integer N and no name matches, take the Nth data row (1-based, in file order).
-   - If nothing matches, or two rows tie with no clear winner, send a plain re-ask listing 3–5 candidate names and end: `./notify "Couldn't find an idea matching \"<sel>\". Reply with the exact name or backlog number. Candidates: <name1>, <name2>, <name3>."`
-5. **Mark it chosen-to-build** — the shared marking convention (identical in idea-forge): append ` ✓ selected ${today}` to the end of that row's `name` cell, keeping the table pipes intact. If the cell already carries a `✓ selected` marker, leave it (idempotent) — it's already queued.
-6. Confirm with a short `./notify` (keep it clean — no `test`/`trace`/`ping`/`debug` substrings): `./notify "Marked \"<idea name>\" as next to build — flagged in the backlog. Run /feature or /deploy-prototype on it when you're ready."` Do not auto-dispatch any skill — marking chosen is the safe action.
-7. Log to `memory/logs/${today}.md` under a `### idea-pipeline` heading: `- IDEA_PIPELINE_PICK: marked "<idea name>" as chosen-to-build (from a pick: reply)`.
+5. **Mark it chosen-to-build** — the shared marking convention (identical in idea-forge): append ` ✓ selected today's date to the end of that row's `name` cell, keeping the table pipes intact. If the cell already carries a `✓ selected` marker, leave it (idempotent) — it's already queued.
+7. Log to `memory/logs/today's date.md` under a `### idea-pipeline` heading: `- IDEA_PIPELINE_PICK: marked "<idea name>" as chosen-to-build (from a pick: reply)`.
 8. **End the run.** Do not proceed to step 1 or run the audit.
 
 ### 1. Load the idea backlog
 
-Read `memory/topics/startup-ideas.md`. If it doesn't exist, log `IDEA_PIPELINE_SKIP: no backlog at memory/topics/startup-ideas.md` and stop — there's nothing to audit.
+Read `memory/skills/idea-pipeline/startup-ideas.md`. If it doesn't exist, log `IDEA_PIPELINE_SKIP: no backlog at memory/skills/idea-pipeline/startup-ideas.md` and stop — there's nothing to audit.
 
 Parse the ideas table: extract name, one-liner, category/vertical, and date added for each idea. Total = N_total.
 
 ### 2. Load screening results
 
-Read `memory/topics/startup-ideas-screened.md` (create if missing — empty table header only).
+Read `memory/skills/idea-pipeline/startup-ideas-screened.md` (create if missing — empty table header only).
 
 Extract ideas that have been screened. N_screened = count of rows.
 
@@ -56,13 +46,13 @@ ls skills/
 ```
 Collect the list of skill directory names. These are "executed ideas" in the agent space.
 
-**Scan cross-repo PRs by the operator and their bot accounts.** Read `memory/topics/git-identities.md` if present (operator-defined list of GitHub usernames to scan). Fall back to the workflow's `GITHUB_ACTOR` if no list is configured.
+**Scan cross-repo PRs by the operator and their bot accounts.** Read `memory/skills/idea-pipeline/git-identities.md` if present (operator-defined list of GitHub usernames to scan). Fall back to the workflow's `GITHUB_ACTOR` if no list is configured.
 
 ```bash
 gh pr list --author ${USERNAME} --state merged --limit 30 --json title,url,mergedAt
 ```
 
-**Scan deployed prototypes:** read `memory/topics/prototypes.md` (or `memory/topics/vercel.md`) if either exists. Treat any project flagged as a prototype/MVP as a shipped idea.
+**Scan deployed prototypes:** read `memory/skills/idea-pipeline/prototypes.md` (or `memory/skills/idea-pipeline/vercel.md`) if either exists. Treat any project flagged as a prototype/MVP as a shipped idea.
 
 **Scan recent builds:** read the last 14 days of `memory/logs/` and collect any `BUILD_SKILL_OK`, `CREATE_SKILL_OK`, or `DEPLOY_PROTOTYPE_OK` entries.
 
@@ -77,7 +67,7 @@ N_gap = N_total − N_executed.
 
 ### 5. Load narrative context
 
-Read `memory/topics/market-context.md` if present for current narrative keywords (tokens trending, tech themes, regulatory signals).
+Read `memory/skills/idea-pipeline/market-context.md` if present for current narrative keywords (tokens trending, tech themes, regulatory signals).
 
 Read recent logs for any narrative signals (last 3 days).
 
@@ -85,7 +75,7 @@ Compile a list of 8–12 active narrative keywords (e.g. "agent payments", "RWA"
 
 ### 5b. Load builder-ecosystem signal
 
-Read `memory/topics/ecosystem.md` if it exists (written by `builder-map`). This is the second-stream feed — "who's adopting the watched stack" becomes idea fodder.
+Read `memory/skills/idea-pipeline/ecosystem.md` if it exists (written by `builder-map`). This is the second-stream feed — "who's adopting the watched stack" becomes idea fodder.
 
 Extract two things:
 
@@ -96,7 +86,7 @@ Compile:
 - `underserved_categories` — list of 2–5 categories with thin builder coverage
 - `adjacent_verticals` — list of 2–4 non-obvious verticals with active builders
 
-If `memory/topics/ecosystem.md` doesn't exist yet, skip this step and log `idea_pipeline: ecosystem_feed=unavailable` in step 10. Do not block the run.
+If `memory/skills/idea-pipeline/ecosystem.md` doesn't exist yet, skip this step and log `idea_pipeline: ecosystem_feed=unavailable` in step 10. Do not block the run.
 
 ### 6. Score unexecuted ideas for "build this week"
 
@@ -113,16 +103,16 @@ ecosystem_gap_bonus:    3 if idea's category matches an `underserved_category` f
 
 Tie-break preference when scores match: ideas that fill an underserved-category gap > ideas that hit a hot narrative. The ecosystem signal is structural (where the stack is going); narratives rotate.
 
-If `${var}` is set, additionally filter to ideas whose category/text matches `${var}`.
+If the `Operator var` is set, additionally filter to ideas whose category/text matches the `Operator var`.
 
 Sort descending. Pick top 3. For each pick, in step 7's `Why now:` line, name the ecosystem signal explicitly if `ecosystem_gap_bonus > 0` (e.g. "no builders on the stack in this category yet" or "adjacent-vertical adoption arc").
 
 ### 7. Format and write the report
 
-Write to `output/articles/idea-pipeline-${today}.md`:
+Write to `output/articles/idea-pipeline-today's date.md`:
 
 ```markdown
-# Idea Pipeline — ${today}
+# Idea Pipeline — today's date
 
 **Total ideas:** N_total | **Screened:** N_screened | **Executed:** N_executed | **Gap:** N_gap
 
@@ -151,7 +141,7 @@ Top 3 ideas not yet screened by idea-validator that look most promising by keywo
 - ...
 
 ---
-*Source: memory/topics/startup-ideas.md | Generated by idea-pipeline*
+*Source: memory/skills/idea-pipeline/startup-ideas.md | Generated by idea-pipeline*
 ```
 
 ### 8. Decide whether to notify
@@ -160,17 +150,16 @@ Always notify.
 
 ### 9. Format and send notification
 
-Write to `.pending-notify-temp/idea-pipeline-${today}.md` (create dir if needed), then:
+Write to `.pending-notify-temp/idea-pipeline-today's date.md` (create dir if needed), then:
 
 ```bash
 mkdir -p .pending-notify-temp
-./notify -f .pending-notify-temp/idea-pipeline-${today}.md
 ```
 
 **Notification format** — match the operator's voice if soul files are populated, otherwise direct and neutral:
 
 ```
-idea pipeline — ${today}
+idea pipeline — today's date
 
 ${N_total} ideas. ${N_screened} screened. ${N_executed} executed. ${N_gap} waiting.
 
@@ -193,12 +182,9 @@ Keep under 3000 chars.
 
 ### 9b. Offer a "build next?" follow-up (force-reply)
 
-If **at least one** idea was surfaced under "Build This Week", offer the operator a one-tap way to pick which to build — as a **separate** `./notify` after the digest (a digest and a force-reply prompt can't share one Telegram message). Skip the offer entirely on a run that surfaced no picks.
-
 Dedup to once per day: scan the last ~2 days of `memory/logs/` for `FORCE_REPLY_OFFERED: idea-pipeline::pick`; if present, skip this offer. Otherwise send:
 
 ```bash
-./notify "Which of these should I mark as next to build? Reply with the idea's number or name." \
   --force-reply --placeholder "idea # or name" \
   --context "idea-pipeline::pick"
 ```
@@ -207,7 +193,7 @@ Then record the `FORCE_REPLY_OFFERED: idea-pipeline::pick` marker in step 10. A 
 
 ### 10. Log to memory
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```markdown
 ### idea-pipeline
@@ -230,4 +216,11 @@ None. Uses local file reads and `gh` CLI (authenticated via GITHUB_TOKEN in work
 
 ## Network Note
 
-No external network calls in the main logic. `gh pr list` uses the `gh` CLI which handles auth internally (no curl + token pattern needed). WebSearch not required — narrative context comes from `memory/topics/market-context.md` if a `market-context` skill has populated it.
+No external network calls in the main logic. `gh pr list` uses the `gh` CLI which handles auth internally (no curl + token pattern needed). WebSearch not required — narrative context comes from `memory/skills/idea-pipeline/market-context.md` if a `market-context` skill has populated it.
+
+## Do not
+
+- Do not write outside `output/idea-pipeline/` and `memory/skills/idea-pipeline/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

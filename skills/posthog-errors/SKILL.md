@@ -1,33 +1,15 @@
----
-name: posthog-errors
-description: Weekly cross-project error overview from PostHog - enumerates every project the OAuth grant covers, pulls the last 7 days of error-tracking issues per project, ranks them by impact, flags what's new vs ongoing, and sends one digest with per-project totals, the top issues, and a clickable link to a full committed report of every issue.
-metadata:
-  title: PostHog Error Digest
-  mode: read-only
-  category: dev
-  var: ""
-  tags:
-    - monitoring
-    - errors
-    - mcp
-  mcp:
-    - posthog
-  capabilities:
-    - external_api
-    - read_only
-    - sends_notifications
----
+# posthog-errors
 
-Today is ${today}.
+Weekly cross-project error overview from PostHog - enumerates every project the OAuth grant covers, pulls the last 7 days of error-tracking issues per project, ranks them by impact, flags what's new vs ongoing, and sends one digest with per-project totals, the top issues, and a clickable link to a full committed report of every issue.
 
-> **${var}** — optional scope override. Empty (default) → **all** projects the OAuth
+> The `Operator var` — optional scope override. Empty (default) → **all** projects the OAuth
 > grant covers, **last 7 days**. Accepts:
 > - `Nd` — change the window, e.g. `14d` or `30d` (bare number also read as days).
 > - a comma-list of project name substrings — e.g. `web, api` limits to projects
 >   whose name contains one of those (case-insensitive). Combine with a window:
 >   `web, api, 14d`.
 >
-> This runs unattended — treat `${var}` as final, no confirmation step.
+> This runs unattended — treat the `Operator var` as final, no confirmation step.
 
 Give the operator a single, scannable overview of the errors across **every** one of
 their PostHog projects for the past week. The heavy lifting is the **PostHog MCP
@@ -41,10 +23,8 @@ across projects, rank by impact, separate new from ongoing, and write the digest
 `mode: read-only` is load-bearing and shapes **how** this skill writes. The read-only
 toolset (`scripts/skill_mode.sh`) drops `Write`, `Edit`, and `python`; it keeps `Read`,
 the MCP tools, `curl`, `jq`, and `Bash` for `node`/`cat`/`echo`/`mkdir`/`date`/`jq`. So
-every file this skill produces — the `./notify` body and the state snapshot — is
 written with a **`cat` heredoc (or `node`) redirection**, never the Write tool and
 never `python`. Reaching for `python` to build or send the digest gets denied mid-run
-and the notification silently never ships. `./notify` itself works in read-only, but
 its multi-line body must be a file written the way above — and that scratch file goes
 under **`/tmp/`**, never `memory/`/`output/` (those are committed; only the Step 4
 snapshot and Step 4b report are meant to persist).
@@ -87,7 +67,7 @@ include them — say so once rather than silently under-reporting.
 List the organizations the key can access, then the projects in each (switch the
 active organization first if the server requires it before listing its projects).
 Build the working set of `{org, project id, project name, region host}`. Apply any
-`${var}` name filter here. Region host: prefer whatever the tool returns; otherwise
+the `Operator var` name filter here. Region host: prefer whatever the tool returns; otherwise
 `us.posthog.com` for US, `eu.posthog.com` for EU — you need it to build links later.
 
 **Call budget: ≤ 60 MCP tool calls per run.** These calls are read-only and unmetered
@@ -101,8 +81,8 @@ isn't — see seo-audit's `--max` discipline).
 ### 2. Pull each project's errors
 
 For each project in scope: switch the active project to it, then list its errors for
-the window — `dateFrom` = 7 days before ${today} (or the `${var}` window), `dateTo` =
-${today}. Order by **occurrences** and request the top ~15 issues; filter out test
+the window — `dateFrom` = 7 days before today's date (or the the `Operator var` window), `dateTo` =
+today's date. Order by **occurrences** and request the top ~15 issues; filter out test
 accounts if the tool offers it. Capture per issue, **verbatim from the tool result —
 never invent or round a number**: the error name/message, occurrence count, users
 affected, first-seen and last-seen timestamps, and any status (resolved/suppressed)
@@ -132,7 +112,7 @@ already have — no stored state required:
 
 ### 4. Cross-week diff (optional, graceful)
 
-Read the most recent prior snapshot if one exists — `memory/posthog-errors/*.json`,
+Read the most recent prior snapshot if one exists — `memory/skills/posthog-errors/*.json`,
 named `YYYY-MM-DD.json` — and match issues by id (fall back to project+title). Surface
 two extra signals: issues **new since last week's run** (not in the prior snapshot),
 and issues **cleared since** (in the prior snapshot, absent or zero now). First run,
@@ -145,8 +125,8 @@ copy the numeric fields straight from the tool results, don't retype from prose:
 
 ```bash
 mkdir -p memory/posthog-errors
-cat > memory/posthog-errors/${today}.json <<'JSON'
-{"date":"${today}","window_days":7,"projects":[
+cat > memory/skills/posthog-errors/today's date.json <<'JSON'
+{"date":"today's date","window_days":7,"projects":[
   {"id":123,"name":"web-app","issues":[
     {"id":"<issueId>","title":"TypeError: …","occurrences":3412,"users":890,"first_seen":"2026-07-15T…","last_seen":"2026-07-21T…","status":"active"}
   ]}
@@ -169,7 +149,7 @@ numbers verbatim from the tool results:
 mkdir -p output/posthog-errors
 cat > output/posthog-errors/report.md <<'REPORT'
 # PostHog errors — full report
-_<window> · <M> projects · <N> issues (<new> new) · generated ${today}_
+_<window> · <M> projects · <N> issues (<new> new) · generated today's date_
 
 ## <project name> — <count> issues · <occurrences> occurrences
 ### <error title / message>
@@ -183,7 +163,6 @@ REPORT
 
 Same content discipline as the digest: real fields only, no invented numbers. This
 file is what the digest's "full report" link opens (built below), so it must be written
-**before** the `./notify` call.
 
 ### 5. Notify — one message, the overview they asked for
 
@@ -195,28 +174,24 @@ in the window, send a single all-clear line rather than an empty report.
 Build the message as ordinary Markdown, **write it to a file the read-only-safe way,
 then send that file.** `mode: read-only` has **no `Write`/`Edit` tool and no `python`**
 (`scripts/skill_mode.sh`) — so build the body with a `cat` heredoc (never `python`,
-never the Write tool, never a long inline `./notify "$(…)"` argv), then pass it to
-`./notify -f`:
 
 ```bash
 cat > /tmp/posthog-digest.md <<'NOTIFY'
 <the full digest markdown, built from the shape below>
 NOTIFY
 [ -s /tmp/posthog-digest.md ] || { echo "digest file empty — aborting send"; exit 1; }
-./notify -f /tmp/posthog-digest.md \
   --severity "<critical|warn|success|info>" \
   --title "PostHog errors — last 7 days" \
   --mute-key "posthog-errors"
 ```
 
 Pick a heredoc delimiter (`NOTIFY`) that does **not** appear in the body, and **verify
-the file is non-empty before calling `./notify`** — a `./notify` with no valid `-f`
 body ships an empty/`--help` digest (exactly what a blocked `python`/Write attempt
 leaves behind in read-only mode).
 
 **The notify body file MUST live under `/tmp/` — never `memory/` or `output/`.** Those
 two are committed to the repo by the post-run step, so a scratch `.md` written there
-ships as junk. Only the Step 4 snapshot (`memory/posthog-errors/*.json`) and the Step 4b report
+ships as junk. Only the Step 4 snapshot (`memory/skills/posthog-errors/*.json`) and the Step 4b report
 (`output/posthog-errors/report.md`) are meant to persist; everything else is `/tmp`.
 
 Shape the body, highest-signal first:
@@ -259,7 +234,6 @@ REPORT_URL="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY}/blob/m
 then write the final line as `[open]($REPORT_URL)` (a Markdown link, never the bare
 path). It resolves once this run's commit lands, seconds after the send.
 
-**Exactly one `./notify` call per run.** Each call overwrites
 `apps/dashboard/outputs/.pending-posthog-errors.md` (last-writer-wins), which becomes
 the chain artifact `output/.chains/posthog-errors.md` the feed and any `consume:`
 steps read — a follow-up "headline" ping would replace the digest with a stub.
@@ -271,7 +245,7 @@ reading is a muted message.
 
 ### 6. Log
 
-Append to `memory/logs/${today}.md` under a `### posthog-errors` heading:
+Append to `memory/logs/today's date.md` under a `### posthog-errors` heading:
 
 ```
 ### posthog-errors
@@ -279,7 +253,7 @@ Append to `memory/logs/${today}.md` under a `### posthog-errors` heading:
 - Scope: <P> projects (<Q> reached) · window <N>d
 - Issues: <total> (<new> new, <spiking> spiking, <resolved> resolved) · MCP calls: <n>/60
 - Top: <project — top error — hits/users>
-- Snapshot: memory/posthog-errors/${today}.json (written|skipped)
+- Snapshot: memory/skills/posthog-errors/today's date.json (written|skipped)
 ```
 
 ## Constraints
@@ -312,7 +286,14 @@ Append to `memory/logs/${today}.md` under a `### posthog-errors` heading:
   it's healthy. Note a 0-issue project as "no errors ingested" rather than implying a
   clean bill of health.
 - **The window is a snapshot.** Occurrence and user counts are for the last 7 days
-  (or the `${var}` window); an error that raged last month and stopped won't show.
+  (or the the `Operator var` window); an error that raged last month and stopped won't show.
 - One `list-errors` sweep per project — deep root-causing (full stacks, sessions,
   linked replays) stays in PostHog behind the links. This digest points, it doesn't
   diagnose.
+
+## Do not
+
+- Do not write outside `output/posthog-errors/` and `memory/skills/posthog-errors/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,24 +1,10 @@
----
-name: distribute-tokens
-description: Two-phase contributor rewards - plan builds a tier-priced payout from the repo's merged-PR ranking; send executes it on-chain via Bankr Wallet API with per-recipient idempotency and dry-run.
-metadata:
-  title: Distribute Tokens
-  category: crypto
-  var: ""
-  tags:
-    - community
-    - crypto
-  requires:
-    - BANKR_API_KEY?
-  capabilities:
-    - external_api
-    - writes_external_host
-    - onchain_writes
-    - sends_notifications
----
+# distribute-tokens
+
+Two-phase contributor rewards - plan builds a tier-priced payout from the repo's merged-PR ranking; send executes it on-chain via Bankr Wallet API with per-recipient idempotency and dry-run.
+
 <!-- autoresearch: variation C — robustness via per-recipient idempotency state, two-phase resolve→execute, dry-run, retries, 403/429 handling, recovery. Merged: contributor-reward's tier-priced reward-computation folded in as the plan/input phase; the on-chain distribution stays the execute phase. -->
 
-> **${var}** — Phase + target selector. Grammar: `[plan:|all:][dry-run:]<target>`
+> The `Operator var` — Phase + target selector. Grammar: `[plan:|all:][dry-run:]<target>`
 > - `` (empty) / `<label>` / `dry-run:<label>` → **send** phase: distribute a list from `memory/distributions.yml` (empty = first list). *[default — no prefix]*
 > - `plan:` / `plan:<week>` / `plan:dry-run` / `plan:dry-run:<week>` → **plan** phase only: compute rewards from the repo's merged PRs and write the list into `memory/distributions.yml`.
 > - `all:` / `all:<week>` / `all:dry-run` / `all:dry-run:<week>` → **plan then send** in one run.
@@ -107,9 +93,9 @@ Read `memory/MEMORY.md` and scan the last ~3 days of `memory/logs/` for anything
 
 Resolve time anchors up front: `today=$(date -u +%F)` and `today_utc="$today"`.
 
-Parse `${var}`:
+Parse the `Operator var`:
 
-1. **Phase prefix.** If `${var}` starts with `plan:` → `PHASE=plan`, strip `plan:`. Else if it starts with `all:` → `PHASE=all`, strip `all:`. Else → `PHASE=send` and **do not strip anything** (the remaining legacy grammar is parsed by the send phase itself).
+1. **Phase prefix.** If the `Operator var` starts with `plan:` → `PHASE=plan`, strip `plan:`. Else if it starts with `all:` → `PHASE=all`, strip `all:`. Else → `PHASE=send` and **do not strip anything** (the remaining legacy grammar is parsed by the send phase itself).
 2. **Dry-run.** For `PHASE=plan`/`all`: if the remainder starts with `dry-run` (optionally `dry-run:`), set `MODE=dry-run` and strip that token; else `MODE=execute`. (For `PHASE=send`, the send phase parses `dry-run:` itself — see Send Step 1.)
 3. **Target.**
    - `PHASE=send`: the (unstripped) var is the send target — `dry-run:<label>` or `<label>` or empty.
@@ -142,7 +128,7 @@ Compute the ranking directly from GitHub — no upstream skill or article requir
 - Drop bot authors (`*[bot]`, `dependabot*`, `github-actions*`). Count each remaining login's merged PRs → `score`. Rank by `score` descending; tie-break by earliest merge time, then login ascending.
 - **First-PR ✨** per ranked login — did they have any *prior* merged PR to the repo?
   `gh api -X GET search/issues -f q="repo:${REPO} is:pr is:merged author:${login} merged:<${WEEK_START}" --jq '.total_count'` → `0` means this is their first-ever merged PR (set `first_pr_marker = ✨`).
-- If zero merged PRs in the window → log `CONTRIBUTOR_REWARD_NO_MERGED_PRS — week ${TARGET_WEEK}` to `memory/logs/${today}.md`, exit silently (no notify). Nothing shipped, nothing to reward.
+- If zero merged PRs in the window → log `CONTRIBUTOR_REWARD_NO_MERGED_PRS — week ${TARGET_WEEK}` to `memory/logs/today's date.md`, exit silently (no notify). Nothing shipped, nothing to reward.
 - If the GitHub API is unreachable (see Network note for the `gh api` → WebFetch fallback) → log `CONTRIBUTOR_REWARD_API_FAIL`, notify the operator, exit.
 
 ### A3. Load plan idempotency state
@@ -203,7 +189,7 @@ Next: distribute-tokens "dry-run:contributors-${TARGET_WEEK}" (preview)
       distribute-tokens "contributors-${TARGET_WEEK}"          (execute)
 ```
 
-If `MODE=dry-run` (plan-only dry-run, i.e. `plan:dry-run...`): notify this plan with header `*Contributor Reward Plan — ${TARGET_WEEK}* — DRY RUN`, log to `memory/logs/${today}.md`, exit `CONTRIBUTOR_REWARD_DRY_RUN`. **Do not** touch `memory/distributions.yml` or the state file.
+If `MODE=dry-run` (plan-only dry-run, i.e. `plan:dry-run...`): notify this plan with header `*Contributor Reward Plan — ${TARGET_WEEK}* — DRY RUN`, log to `memory/logs/today's date.md`, exit `CONTRIBUTOR_REWARD_DRY_RUN`. **Do not** touch `memory/distributions.yml` or the state file.
 
 > **`all:` mode note:** when this phase runs as part of `all:` with `MODE=dry-run`, do **not** notify here and do **not** exit — hand the computed plan rows straight to Phase B (see Phase C). When `all:` runs with `MODE=execute`, continue through A6–A8 normally but replace the trailing `Next:` line in the A9 notification with `Distributing now (phase=all)…`.
 
@@ -277,8 +263,6 @@ Next: run `distribute-tokens dry-run:contributors-${TARGET_WEEK}` to preview, th
 
 Plan: https://github.com/${GITHUB_REPOSITORY}/blob/main/memory/distributions.yml
 ```
-
-Suppress the `${IF_DEDUP}` line when no entries were deduped. Use `$GITHUB_REPOSITORY` env var for the link target. Send via `./notify`.
 
 **Significance gate:** notify only when `N_NEW ≥ 1`. Re-process runs that produced zero new entries (RE_PROCESS with all rewards already paid) → silent log only. (In `all:` execute, skip this notify per the A5 note; the send-phase summary carries the report.)
 
@@ -411,8 +395,6 @@ Unresolvable: ${n_unresolved}
 Sender balance after: ${remaining} ${TOKEN}
 ```
 
-Suppress empty sections (no `Skipped:` line if `n_dedup=0`, etc.). Send via `./notify`. Then log (see **Log**) and exit with the send verdict code (`DISTRIBUTE_TOKENS_COMPLETE` / `DISTRIBUTE_TOKENS_PARTIAL` / `DISTRIBUTE_TOKENS_OK` for nothing-to-send).
-
 ---
 
 ## Phase C — All (plan then send)
@@ -432,7 +414,7 @@ Runs Phase A, then feeds it into Phase B in one invocation. `TARGET_WEEK` and `M
 
 ## Log
 
-Append to `memory/logs/${today}.md` under **one** heading (the health loop parses this shape). Always use `### distribute-tokens`; the `Phase`/`Mode` discriminator lines say which branch ran.
+Append to `memory/logs/today's date.md` under **one** heading (the health loop parses this shape). Always use `### distribute-tokens`; the `Phase`/`Mode` discriminator lines say which branch ran.
 
 ```
 ### distribute-tokens
@@ -478,7 +460,7 @@ For `all:`, the terminal exit code is the send phase's code (or the Phase A earl
 
 ## Network note
 
-- **Plan phase (A):** ranks contributors via `gh api search/issues` (`gh` handles GitHub auth internally, so no secret ever lands on the command line). If `gh api` fails, fall back to **WebFetch** on the public `https://api.github.com/search/issues?q=…` URL. Also reads/writes `memory/state/contributor-reward-state.json`, `memory/distributions.yml`, `memory/logs/${today}.md`. No postprocess scripts required.
+- **Plan phase (A):** ranks contributors via `gh api search/issues` (`gh` handles GitHub auth internally, so no secret ever lands on the command line). If `gh api` fails, fall back to **WebFetch** on the public `https://api.github.com/search/issues?q=…` URL. Also reads/writes `memory/state/contributor-reward-state.json`, `memory/distributions.yml`, `memory/logs/today's date.md`. No postprocess scripts required.
 - **Send phase (B):** every Bankr call is auth'd, so make it with `./secretcurl` using the `{BANKR_API_KEY}` placeholder — never a bare `$BANKR_API_KEY` (the Bash permission layer refuses a secret on the command line) and never plain `curl`. `/wallet/transfer` is an irreversible money-movement write; it runs **in-run** as the executor's final action (Phase B4), behind the B2 balance preflight and the per-recipient idempotency in `memory/state/distributions.json` (persisted after every send, so re-runs never double-pay). There is **no** deferred/postprocess step — a failed transfer is recorded (`FAILED` with its reason) and the run continues to the next row. **Never silently drop a transfer.**
 
 ## Constraints
@@ -501,3 +483,10 @@ For `all:`, the terminal exit code is the send phase's code (or the Phase A earl
 - Schedule `all:` directly (weekly, after the week closes) for full hands-off payout — the plan computes its own ranking from merged PRs, so no upstream skill or chain wiring is needed.
 - Add a Bankr Agent API "wallet-linked?" pre-filter in the plan phase so contributors without linked wallets are flagged in the notification (prevents the send phase from logging RESOLVE_FAILED rows on every run).
 - Tier table should become operator-configurable via `memory/contributor-reward-config.yml` once the first month of runs reveals the right curve. Hardcoded for v1.
+
+## Do not
+
+- Do not write outside `output/distribute-tokens/` and `memory/skills/distribute-tokens/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

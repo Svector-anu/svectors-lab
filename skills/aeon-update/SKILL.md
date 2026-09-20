@@ -1,24 +1,15 @@
----
-name: aeon-update
-description: Pull framework updates from the upstream Aeon repo into this instance - 3-way merges canon's new commits into a PR, never clobbering operator config.
-metadata:
-  title: Aeon Update
-  category: core
-  var: ""
-  tags:
-    - dev
-    - meta
-  cron: "0 11 * * 1"
-  mode: write
----
-> **${var}** — mode selector; space-separated tokens, order-independent, all optional:
+# aeon-update
+
+Pull framework updates from the upstream Aeon repo into this instance - 3-way merges canon's new commits into a PR, never clobbering operator config.
+
+> The `Operator var` — mode selector; space-separated tokens, order-independent, all optional:
 > - **mode** (`sync` | `report`, default `sync`) — `sync` opens a PR with the framework changes; `report` computes the delta and notifies, mutating nothing (dry run).
 > - **`repo=owner/name`** — override the upstream source repo (else auto-resolved from this instance's `parent`, falling back to `aeonfun/aeon`).
 > - **`reset=<sha|fork-point>`** — force the stored baseline to `<sha>` (or the merge-base with upstream) before running. Recovery / backfill lever.
 >
 > Empty ⇒ **sync** from the auto-resolved upstream. Examples: `` · `report` · `repo=aeonfun/aeon` · `reset=fork-point`.
 
-Today is ${today}. This is the fleet's **downstream updater** - the counterpart to `fork-fleet`. `fork-fleet` looks *outward* from the parent to find work in the forks worth pulling *up*; this skill runs *inside* an instance and pulls the parent's shipped framework changes *down* - new skills, script/harness fixes, workflow and doc updates - and lands them as a reviewable PR. It is how an instance stays current with `aeonfun/aeon` without a hand-run rsync-overlay rebase.
+Today is today's date. This is the fleet's **downstream updater** - the counterpart to `fork-fleet`. `fork-fleet` looks *outward* from the parent to find work in the forks worth pulling *up*; this skill runs *inside* an instance and pulls the parent's shipped framework changes *down* - new skills, script/harness fixes, workflow and doc updates - and lands them as a reviewable PR. It is how an instance stays current with `aeonfun/aeon` without a hand-run rsync-overlay rebase.
 
 ## Operating principles
 
@@ -36,14 +27,14 @@ Today is ${today}. This is the fleet's **downstream updater** - the counterpart 
 
 ```bash
 mkdir -p memory/topics
-[ -f memory/topics/aeon-update-state.json ] || echo '{"baseline_sha":null,"upstream":null,"last_run":null,"last_pr":null,"pending_conflicts":[]}' > memory/topics/aeon-update-state.json
+[ -f memory/skills/aeon-update/aeon-update-state.json ] || echo '{"baseline_sha":null,"upstream":null,"last_run":null,"last_pr":null,"pending_conflicts":[]}' > memory/skills/aeon-update/aeon-update-state.json
 ```
 
 Read `memory/MEMORY.md` for context and scan the last ~3 days of `memory/logs/` - drop anything already reported so a repeat run isn't re-sent. Read the state file:
 - `BASELINE` = `.baseline_sha` (the upstream commit this instance was last synced to).
 - `PENDING` = `.pending_conflicts` (files surfaced as conflicts in a prior run, not yet resolved).
 
-### S1. Parse `${var}`
+### S1. Parse the `Operator var`
 
 - `MODE` = `report` if the token `report` (or `dry`) is present, else `sync`.
 - `REPO_OVERRIDE` = value of a `repo=owner/name` token, if any.
@@ -57,7 +48,7 @@ UPSTREAM="${REPO_OVERRIDE:-$(gh api "repos/${SELF}" --jq '.parent.full_name // e
 [ -z "$UPSTREAM" ] && UPSTREAM="aeonfun/aeon"
 ```
 
-If `UPSTREAM` == `SELF`, this instance **is** canon - there is nothing upstream to pull. Write status `AEON_UPDATE_IS_UPSTREAM` to `memory/logs/${today}.md`, send **no** notification, and stop.
+If `UPSTREAM` == `SELF`, this instance **is** canon - there is nothing upstream to pull. Write status `AEON_UPDATE_IS_UPSTREAM` to `memory/logs/today's date.md`, send **no** notification, and stop.
 
 ```bash
 UP_DEFAULT=$(gh api "repos/${UPSTREAM}" --jq '.default_branch')
@@ -208,13 +199,13 @@ If **nothing CLEAN applied** (every upstream change was CONFLICT or OPERATOR): o
 
 Recompute `PENDING`: for every CONFLICT file this run **plus** every prior `PENDING` entry, keep it only if `sha256(local) != sha256(HEAD blob)` (still genuinely divergent). Drop the rest (resolved). **A file that was CLEAN-MERGE-applied this run is resolved - never carry it as pending** (its `sha256(local) != sha256(HEAD blob)` because it still holds the operator's edits, but the upstream change is now merged in, so the naive test would wrongly keep it forever; a 3-way-merged file is only a CONFLICT again if a *future* upstream change overlaps the operator's lines). Likewise drop any prior PENDING entry whose file was CLEAN-MERGE- or CLEAN-UPDATE-applied this run. Exception: `enabled-skill-removed-upstream` entries have no HEAD blob to diff (the path is deleted upstream) - resolve them instead when the skill is no longer `enabled: true` in the operator's current `aeon.yml` (they disabled it, so the CLEAN-DELETE rule can now apply next run) or upstream re-adds a path of that name (re-classify as CONFLICT/modified or CLEAN-UPDATE under the normal rules).
 
-Write `memory/topics/aeon-update-state.json` and commit it **with** the sync so merging advances the watermark:
+Write `memory/skills/aeon-update/aeon-update-state.json` and commit it **with** the sync so merging advances the watermark:
 
 ```json
 {
   "baseline_sha": "${HEAD_SHA}",
   "upstream": "${UPSTREAM}",
-  "last_run": "${today}",
+  "last_run": "today's date",
   "last_pr": null,
   "applied": { "added": N, "updated": N, "deleted": N },
   "pending_conflicts": [
@@ -282,12 +273,12 @@ Capture the PR URL; write it back into `last_pr` in the branch's state file (ame
 
 ### S10. Log + notify
 
-Append to `memory/logs/${today}.md` under `### aeon-update`: status, `UPSTREAM`, `${BASE7}..${HEAD7}`, applied/conflict counts, PR URL (or `report`/`manual-only`), and `pending_conflicts` count.
+Append to `memory/logs/today's date.md` under `### aeon-update`: status, `UPSTREAM`, `${BASE7}..${HEAD7}`, applied/conflict counts, PR URL (or `report`/`manual-only`), and `pending_conflicts` count.
 
 **Notify only on signal** - match `soul/` voice if present. Send when there is a PR, a report with changes, or a manual-only situation; stay silent for `IN_SYNC` / `BASELINE_SET`-with-nothing. Keep it ≤4000 chars:
 
 ```
-*aeon-update — ${today}*
+*aeon-update — today's date*
 {verdict: "synced N commits → PR" | "N changes need manual merge" | "report: N commits behind"}
 
 Upstream `${UPSTREAM}` is ${AHEAD} commits ahead. Applied ${N_APPLIED} cleanly, ${N_CONFLICT} need review.
@@ -323,3 +314,10 @@ Pass `--mute-key "aeon-update:${HEAD7}"` so a muted sync doesn't re-ping for the
 ## Network note
 
 Every network call is `gh api`, which authenticates via `GITHUB_TOKEN` automatically - no `curl`, no `./secretcurl`, no `$SECRET` on the command line for the Bash permission layer to refuse, and no secret beyond the default `GITHUB_TOKEN`. There are no irreversible side-effects: the skill's only mutation is a PR against this instance's own repo, which the operator reviews and merges. Retry policy: on `403` with `X-RateLimit-Remaining: 0`, sleep 60s and retry once; on a persistent contents-API failure for one file, mark it `UNREADABLE` in the report and continue with a partial sync rather than aborting the whole run.
+
+## Do not
+
+- Do not write outside `output/aeon-update/` and `memory/skills/aeon-update/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

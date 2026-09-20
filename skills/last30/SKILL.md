@@ -1,23 +1,14 @@
----
-name: last30
-description: Cross-platform social research - narrative-first intelligence on what people are saying about a topic across Reddit, X, HN, Polymarket, and the web over the last 30 days
-metadata:
-  title: Last 30 Days
-  category: basics
-  var: ""
-  tags:
-    - research
-    - social
-  requires:
-    - XAI_API_KEY
----
+# last30
+
+Cross-platform social research - narrative-first intelligence on what people are saying about a topic across Reddit, X, HN, Polymarket, and the web over the last 30 days
+
 <!-- autoresearch: variation B — narrative-first output with sentiment splits, contrarian view, and what-changed delta -->
 
-> **${var}** — Topic to research (required). Append `--quick` for a lighter pass (≤15 sources), or `--days=N` to change the lookback window (default: 30).
+> The `Operator var` — Topic to research (required). Append `--quick` for a lighter pass (≤15 sources), or `--days=N` to change the lookback window (default: 30).
 
 Google aggregates editors. A flat "top N posts per platform" aggregates noise. This skill does two things differently: (1) reframes output around **narratives** (clusters the same story across platforms) instead of platform-siloed recaps, and (2) makes the **disagreement** between platforms the primary signal — where Reddit is bearish and X is bullish on the same story, that divergence is usually the most actionable finding.
 
-If `${var}` is empty, abort and notify: `"last30 requires var= set to a topic"`. Exit.
+If the `Operator var` is empty, abort and notify: `"last30 requires var= set to a topic"`. Exit.
 
 ---
 
@@ -25,7 +16,7 @@ If `${var}` is empty, abort and notify: `"last30 requires var= set to a topic"`.
 
 ### 0. Parse parameters and bootstrap
 
-Extract from `${var}`:
+Extract from the `Operator var`:
 - **topic**: everything before any `--` flags, trimmed
 - **--quick**: lighter mode (fewer sources, shorter report)
 - **--days=N**: custom lookback window (default: 30)
@@ -41,7 +32,7 @@ TOPIC_SLUG=$(echo "$TOPIC" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-
 ```
 
 Read `memory/MEMORY.md` for tracked interests.
-Read `memory/topics/last30-${TOPIC_SLUG}.md` if it exists — it holds the prior snapshot used for the **What Changed** section below. If absent, this is a cold run.
+Read `memory/skills/last30/last30-${TOPIC_SLUG}.md` if it exists — it holds the prior snapshot used for the **What Changed** section below. If absent, this is a cold run.
 Read the last 3 `memory/logs/` entries to avoid duplicating very recent work on the same topic.
 
 ---
@@ -237,7 +228,7 @@ Work from these briefs for the clustering and writing steps. Raw payloads stay a
 
 ### 8. What changed vs prior snapshot
 
-Load `memory/topics/last30-${TOPIC_SLUG}.md` if it exists.
+Load `memory/skills/last30/last30-${TOPIC_SLUG}.md` if it exists.
 
 - **Cold run (no prior)**: skip this section; mark the report as `baseline`.
 - **Prior exists**: compare narrative titles and sentiment splits.
@@ -246,7 +237,7 @@ Load `memory/topics/last30-${TOPIC_SLUG}.md` if it exists.
   - **Sentiment flipped** (bull→bear or similar on ≥1 platform): call out as `FLIPPED — was X on Reddit, now Y`.
   - **Sustained** (same narrative, same sentiment): don't report unless engagement 2x'd (then `HEATING`).
 
-After writing the report, overwrite `memory/topics/last30-${TOPIC_SLUG}.md` with the new snapshot (narrative titles + sentiment splits + date) so the next run has a baseline.
+After writing the report, overwrite `memory/skills/last30/last30-${TOPIC_SLUG}.md` with the new snapshot (narrative titles + sentiment splits + date) so the next run has a baseline.
 
 ---
 
@@ -347,7 +338,6 @@ Append to `memory/logs/${TODAY}.md`:
 - Output: output/articles/last30-${TOPIC_SLUG}-${TODAY}.md
 ```
 
-Send via `./notify`:
 ```
 *Last 30 Days — ${topic}*
 
@@ -393,4 +383,11 @@ For `LAST30_EMPTY` or `LAST30_ERROR`, skip the verdict/narrative lines and inste
 - **Divergence is the point**: where platforms disagree on the same narrative, that's usually the most actionable signal in the whole report. Lead with it.
 - **No hallucination**: every quote, statistic, and claim traces to a fetched source. Never invent engagement numbers or counts.
 - **Best takes > most popular**: a 50-upvote comment with genuine insight beats a 500-upvote meme.
-- **Snapshot hygiene**: always overwrite `memory/topics/last30-${TOPIC_SLUG}.md` after a successful run so the next run has a baseline for the "What Changed" section.
+- **Snapshot hygiene**: always overwrite `memory/skills/last30/last30-${TOPIC_SLUG}.md` after a successful run so the next run has a baseline for the "What Changed" section.
+
+## Do not
+
+- Do not write outside `output/last30/` and `memory/skills/last30/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+
