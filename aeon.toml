@@ -1,7 +1,7 @@
 version = 1
 
 [omp]
-provider = "openrouter"
+provider = "anthropic"
 profile = "miniaeon"
 binary = "omp"
 
@@ -21,14 +21,14 @@ stuck_after_minutes = 45
 # default branch. Change it with `miniaeon source set <owner/repo> [--ref x]`.
 # A private source_repo needs a MINIAEON_SOURCE_TOKEN secret with read access.
 [actions]
-source_repo = ""
-source_ref = ""
+source_repo = "aaronjmars/miniaeon"
+source_ref = "main"
 
 [models]
-top = "openrouter/anthropic/claude-sonnet-5"
-standard = "openrouter/anthropic/claude-haiku-4.5"
-small = "openrouter/anthropic/claude-haiku-4.5"
-scorer = "openrouter/anthropic/claude-haiku-4.5"
+top = "anthropic/claude-sonnet-5"
+standard = "anthropic/claude-sonnet-5"
+small = "anthropic/claude-haiku-4-5-20251001"
+scorer = "anthropic/claude-haiku-4-5-20251001"
 
 [cascade]
 order = []
@@ -109,6 +109,9 @@ risk = "low"
 write_scope = "shared-memory"
 on_missed_run = "run_latest_only"
 
+
+[skills.memory-flush.permissions]
+write = ["memory/memory-flush-state.json", "output/articles"]
 [skills.github-monitor]
 enabled = false
 schedule = "0 12 * * *"
@@ -130,6 +133,9 @@ write_scope = "own-memory"
 on_missed_run = "run_latest_only"
 
 # Recommended, installed disabled. Enable after you inspect it.
+
+[skills.skill-health.permissions]
+write = ["memory/issues", "output/articles"]
 [skills.changelog]
 enabled = false
 schedule = "0 20 * * 1"
@@ -244,7 +250,7 @@ write_scope = "shared-memory"
 on_missed_run = "skip_stale"
 
 [skills.pr-review.permissions]
-write = ["output/articles"]
+write = ["memory/watched-repos.md", "output/articles"]
 
 [skills.auto-merge]
 enabled = true
@@ -256,6 +262,9 @@ risk = "low"
 write_scope = "shared-memory"
 on_missed_run = "skip_stale"
 
+
+[skills.auto-merge.permissions]
+write = ["memory/watched-repos.md"]
 [skills.github-trending]
 enabled = true
 schedule = "0 9 * * *"
@@ -317,7 +326,7 @@ write_scope = "own-memory"
 on_missed_run = "skip_stale"
 
 [skills.vuln-scanner.permissions]
-write = ["output/articles"]
+write = ["memory/email-log.json", "memory/pending-disclosures", "memory/security-watchlist.md", "memory/vuln-scanned.json", "output/articles"]
 
 [skills.autoresearch]
 enabled = true
@@ -339,6 +348,9 @@ risk = "low"
 write_scope = "own-memory"
 on_missed_run = "skip_stale"
 
+
+[skills.skill-repair.permissions]
+write = ["memory/issues", "memory/state"]
 [skills.fork-fleet]
 enabled = true
 schedule = "0 10 * * 1"
@@ -363,7 +375,7 @@ write_scope = "own-memory"
 on_missed_run = "skip_stale"
 
 [skills.shiplog.permissions]
-write = ["output/articles"]
+write = ["memory/MEMORY.md", "memory/state", "output/articles"]
 
 [skills.auto-workflow]
 enabled = true
@@ -473,3 +485,12 @@ role = "verifier"
 risk = "low"
 write_scope = "own-memory"
 on_missed_run = "skip_stale"
+
+[skills.verdikta-hunter.permissions]
+write = ["memory/state"]
+
+[skills.vuln-tracker.permissions]
+write = ["memory/pending-disclosures", "memory/pending-disclosures/resolved", "memory/vuln-scanned.json"]
+
+[skills.write-tweet.permissions]
+write = ["memory/drafts/write-tweet-latest.md"]

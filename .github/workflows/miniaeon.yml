@@ -11,12 +11,15 @@ on:
     - cron: "*/15 * * * *"
   repository_dispatch:
     types: [miniaeon-ping]
-  issues:
-    types: [opened, edited]
-  issue_comment:
-    types: [created]
-  pull_request:
-    types: [opened, synchronize, edited]
+  # Reactive event triggers are OFF by default: with no reactive skill enabled
+  # they only fire an empty run-event (wasted runner minutes). Uncomment the
+  # events a reactive skill subscribes to (see a skill's `on = [...]`).
+  # issues:
+  #   types: [opened, edited]
+  # issue_comment:
+  #   types: [created]
+  # pull_request:
+  #   types: [opened, synchronize, edited]
 
 concurrency:
   group: miniaeon-${{ github.ref }}
@@ -27,6 +30,12 @@ permissions:
   actions: read
   issues: read
   pull-requests: write
+
+env:
+  # Workspace directory relative to the repo root. "." = the repo root itself.
+  # `miniaeon init <subdir>` rewrites this so MiniAeon can run from a subdirectory
+  # alongside another framework that already owns the root skills/.
+  MINIAEON_WORKSPACE: "."
 
 jobs:
   run:
@@ -44,26 +53,31 @@ jobs:
       - name: Build miniaeon
         env:
           GH_TOKEN: ${{ github.token }}
-          MINIAEON_SOURCE_TOKEN: ${{ secrets.MINIAEON_SOURCE_TOKEN }}
+          # A private source_repo needs a token that can READ it. github.token is
+          # scoped to THIS repo only; on a multi-identity fleet the general PAT may
+          # be a different identity that is not a collaborator on the source repo.
+          # Prefer an operator token that owns the source, then fall back.
+          MINIAEON_SOURCE_TOKEN: ${{ secrets.MINIAEON_SOURCE_TOKEN || secrets.GH_OPERATOR_TOKEN || secrets.GH_GLOBAL }}
         run: |
           set -euo pipefail
           # By default build from this repo. When [actions].source_repo is set in
           # aeon.toml, build the binary from that repo instead, so a state-only
-          # workspace (no Go source of its own) can still run on Actions. A private
-          # source_repo needs a MINIAEON_SOURCE_TOKEN secret; github.token cannot
-          # read other private repos.
-          SRC_REPO="$(sed -n 's/^[[:space:]]*source_repo[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' aeon.toml | head -n1)"
-          SRC_REF="$(sed -n 's/^[[:space:]]*source_ref[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' aeon.toml | head -n1)"
+          # workspace (no Go source of its own) can still run on Actions. Build to
+          # $RUNNER_TEMP so the binary never collides with a "miniaeon/" workspace
+          # directory in the checkout.
+          BIN="$RUNNER_TEMP/miniaeon-bin"
+          SRC_REPO="$(sed -n 's/^[[:space:]]*source_repo[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$MINIAEON_WORKSPACE/aeon.toml" | head -n1)"
+          SRC_REF="$(sed -n 's/^[[:space:]]*source_ref[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$MINIAEON_WORKSPACE/aeon.toml" | head -n1)"
           if [ -n "$SRC_REPO" ]; then
             echo "building miniaeon from $SRC_REPO${SRC_REF:+@$SRC_REF}"
             TOKEN="${MINIAEON_SOURCE_TOKEN:-$GH_TOKEN}"
             git clone --depth 1 ${SRC_REF:+--branch "$SRC_REF"} \
               "https://x-access-token:${TOKEN}@github.com/${SRC_REPO}.git" "$RUNNER_TEMP/miniaeon-src"
-            ( cd "$RUNNER_TEMP/miniaeon-src" && go build -o "$GITHUB_WORKSPACE/miniaeon" ./cmd/miniaeon )
+            ( cd "$RUNNER_TEMP/miniaeon-src" && go build -o "$BIN" ./cmd/miniaeon )
           else
-            go build -o miniaeon ./cmd/miniaeon
+            go build -o "$BIN" ./cmd/miniaeon
           fi
-          ./miniaeon version
+          "$BIN" version
 
       - name: Install omp
         env:
@@ -83,12 +97,31 @@ jobs:
           git config user.email "miniaeon@users.noreply.github.com"
 
       - name: Run skill
+        working-directory: ${{ env.MINIAEON_WORKSPACE }}
         env:
+          # Subscription (preferred on Actions): a Claude Code setup-token
+          # (sk-ant-oat...), minted with `miniaeon auth token anthropic --repo owner/name`.
+          # omp reads ANTHROPIC_OAUTH_TOKEN directly and never refreshes it.
+          ANTHROPIC_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Pay-as-you-go keys. A GitHub instance needs at least one of: the
+          # setup-token above, or any of these.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # More subscription logins (durable OAuth bearers omp reads directly, no
+          # paid API key). Push one with `miniaeon auth token <provider> --repo o/n`:
+          #   Grok  -> MINIAEON_TOKEN_XAI_OAUTH      Cursor -> MINIAEON_TOKEN_CURSOR
+          #   Codex -> MINIAEON_TOKEN_OPENAI_CODEX   Z.ai   -> MINIAEON_TOKEN_ZAI
+          #   Qwen  -> MINIAEON_TOKEN_QWEN_PORTAL
+          # A refresh-free token does not rot on a stateless runner the way a seeded
+          # /login vault grant does. The gate below runs the skill on any one of them.
+          XAI_OAUTH_TOKEN: ${{ secrets.MINIAEON_TOKEN_XAI_OAUTH }}
+          CURSOR_ACCESS_TOKEN: ${{ secrets.MINIAEON_TOKEN_CURSOR }}
+          OPENAI_CODEX_OAUTH_TOKEN: ${{ secrets.MINIAEON_TOKEN_OPENAI_CODEX }}
+          ZAI_OAUTH_TOKEN: ${{ secrets.MINIAEON_TOKEN_ZAI }}
+          QWEN_OAUTH_TOKEN: ${{ secrets.MINIAEON_TOKEN_QWEN_PORTAL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -96,31 +129,36 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           INPUT_SKILL: ${{ inputs.skill }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          # Extra skill secrets: add a line here and list the name in that
+          # skill's skill.toml secrets = []. Channel tokens stay out of omp.
         run: |
           set -euo pipefail
-          if [ -z "${ANTHROPIC_API_KEY-}${OPENAI_API_KEY-}${OPENROUTER_API_KEY-}${XAI_API_KEY-}${GEMINI_API_KEY-}" ]; then
-            echo "no provider API key in secrets; skipping run (local subscriptions are not on this runner)"
+          BIN="$RUNNER_TEMP/miniaeon-bin"
+          if [ -z "${ANTHROPIC_OAUTH_TOKEN-}${ANTHROPIC_API_KEY-}${OPENAI_API_KEY-}${OPENROUTER_API_KEY-}${XAI_API_KEY-}${GEMINI_API_KEY-}${XAI_OAUTH_TOKEN-}${CURSOR_ACCESS_TOKEN-}${OPENAI_CODEX_OAUTH_TOKEN-}${ZAI_OAUTH_TOKEN-}${QWEN_OAUTH_TOKEN-}" ]; then
+            echo "no provider credential in secrets (API key or subscription OAuth token); skipping run"
             exit 0
           fi
           EVENT="${GITHUB_EVENT_NAME:-}"
           # repository_dispatch is an external pinger that only WAKES the
           # scheduler (run-due). It never dispatches a skill directly.
           if [ "$EVENT" = "repository_dispatch" ]; then
-            ./miniaeon run-due
+            "$BIN" run-due
           elif [ "$EVENT" = "schedule" ] || [ "$EVENT" = "workflow_dispatch" ]; then
             if [ -n "${INPUT_SKILL:-}" ]; then
-              ./miniaeon run "$INPUT_SKILL"
+              "$BIN" run "$INPUT_SKILL"
             else
-              ./miniaeon run-due
+              "$BIN" run-due
             fi
           else
-            ./miniaeon run-event
+            "$BIN" run-event
           fi
 
       - name: Push publication
         id: publish
+        working-directory: ${{ env.MINIAEON_WORKSPACE }}
         run: |
           set -euo pipefail
+          BIN="$RUNNER_TEMP/miniaeon-bin"
           git status --short
           if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
             echo "unpublished=false" >> "$GITHUB_OUTPUT"
@@ -132,7 +170,7 @@ jobs:
           # concurrent local publish self-heals rather than looping to no effect. A
           # failure here is publication-pending, not a skill failure: record it and
           # let the artifact fallback carry the state to the next run.
-          if ./miniaeon sync; then
+          if "$BIN" sync; then
             echo "unpublished=false" >> "$GITHUB_OUTPUT"
           else
             echo "push failed; publication is pending, not a skill failure"
@@ -145,7 +183,7 @@ jobs:
         with:
           name: unpublished-${{ github.run_id }}
           path: |
-            memory/
-            output/
+            ${{ env.MINIAEON_WORKSPACE }}/memory/
+            ${{ env.MINIAEON_WORKSPACE }}/output/
           if-no-files-found: ignore
           retention-days: 7
