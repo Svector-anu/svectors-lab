@@ -1,0 +1,11 @@
+name = "gh-probe"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "verifier"
+risk = "low"
+model = "small"
+write_scope = "own-memory"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = ["repository_read"]
+tools = ["bash", "read", "write"]

@@ -463,3 +463,13 @@ role = "worker"
 risk = "low"
 write_scope = "own-memory"
 on_missed_run = "skip_stale"
+
+[skills.gh-probe]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "small"
+role = "verifier"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
