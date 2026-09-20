@@ -1,19 +1,11 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-20T15:12:39Z",
-  "quality_score": 2,
-  "assessment": "Actionable and conclusion-first, but precise figures lack source citations and the claimed workspace updates contradict the read-only run constraint.",
-  "flags": [
-    "unverifiable_claim"
-  ],
+  "last_analyzed": "2026-09-20T18:15:13Z",
+  "quality_score": 3,
+  "assessment": "Substantive, conclusion-first, and plausibly sourced, but it lacks direct citations and clear position calls beyond “watch,” while presenting high yields and live prices with insufficient verification context.",
+  "flags": [],
   "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 3,
-      "ts": "2026-09-10T14:40:42Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 2,
@@ -186,6 +178,12 @@
       "date": "2026-09-20",
       "score": 2,
       "ts": "2026-09-20T15:12:39Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 3,
+      "ts": "2026-09-20T18:15:13Z",
       "harness": "codex"
     }
   ]
