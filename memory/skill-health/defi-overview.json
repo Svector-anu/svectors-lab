@@ -1,17 +1,13 @@
 {
   "skill": "defi-overview",
-  "last_analyzed": "2026-09-20T06:56:38Z",
-  "quality_score": 4,
-  "assessment": "Good: conclusion-first, decision-grade, fresh-looking, internally consistent, and transparent about unavailable data, though source-status labels without direct links limit independent verification.",
-  "flags": [],
+  "last_analyzed": "2026-09-20T15:12:39Z",
+  "quality_score": 2,
+  "assessment": "Actionable and conclusion-first, but precise figures lack source citations and the claimed workspace updates contradict the read-only run constraint.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.5,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 2,
-      "ts": "2026-09-10T10:32:46Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-20",
       "score": 4,
       "ts": "2026-09-20T06:56:38Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T15:12:39Z",
       "harness": "codex"
     }
   ]
