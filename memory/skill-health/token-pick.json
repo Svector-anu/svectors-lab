@@ -1,17 +1,13 @@
 {
   "skill": "token-pick",
-  "last_analyzed": "2026-09-19T14:47:58Z",
-  "quality_score": 3,
-  "assessment": "Actionable and conclusion-first with explicit RIDE and BUY NO calls, but the many precise live figures and catalyst claims lack source links, weakening verifiability, and the hard-price emphasis conflicts with the qualitative-price strategy.",
-  "flags": [],
-  "avg_score": 2.17,
+  "last_analyzed": "2026-09-20T15:11:45Z",
+  "quality_score": 2,
+  "assessment": "Substantive and actionable, but the highly specific market data, catalyst, unlock, and Venezuela claims lack citations or verifiable source links, making the core thesis untrustworthy.",
+  "flags": [
+    "unverifiable_claim"
+  ],
+  "avg_score": 2.13,
   "history": [
-    {
-      "date": "2026-08-26",
-      "score": 3,
-      "ts": "2026-08-26T12:22:41Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-08-27",
       "score": 3,
@@ -184,6 +180,12 @@
       "date": "2026-09-19",
       "score": 3,
       "ts": "2026-09-19T14:47:58Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T15:11:45Z",
       "harness": "codex"
     }
   ]
