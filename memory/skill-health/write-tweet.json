@@ -1,12 +1,12 @@
 {
   "skill": "write-tweet",
-  "last_analyzed": "2026-09-19T21:41:35Z",
+  "last_analyzed": "2026-09-20T22:45:58Z",
   "quality_score": 1,
-  "assessment": "The output contains only a revision prompt and no tweet draft or substantive result.",
+  "assessment": "The output contains only a revision prompt and no actual tweet draft or usable deliverable.",
   "flags": [
     "empty_output"
   ],
-  "avg_score": 2,
+  "avg_score": 1.96,
   "history": [
     {
       "date": "2026-08-27",
@@ -162,6 +162,12 @@
       "date": "2026-09-19",
       "score": 1,
       "ts": "2026-09-19T21:41:35Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 1,
+      "ts": "2026-09-20T22:45:58Z",
       "harness": "codex"
     }
   ]
