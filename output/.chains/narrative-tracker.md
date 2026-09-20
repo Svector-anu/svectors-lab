@@ -1,27 +1,28 @@
 *Narrative Tracker — 2026-09-20*
 
 TRANSITIONS
-• PROMOTED: regulated onchain stocks Emerging → Rising — ICE/NYSE disclosed a year of Avalanche testing after the SEC exemption; the trade is shifting from regulatory optionality to infrastructure selection. https://www.theblock.co/news/ecosystems/2026-09-18-ava-labs-president-says-nyse-spent-a-year-testing-avalanche-technology-tokenization-plans-415509
-• NEW: AI-token catch-up — FET attention returned with an 18% rotation, but no matching product catalyst surfaced. Treat it as beta, not a fresh fundamental cycle. https://coinmarketcap.com/top-stories/6aadedf618d5f96e3a1696da/
+• PROMOTED: regulated onchain stocks Emerging → Rising — the SEC exemption now has concrete chain competition: NYSE spent a year testing Avalanche, while Arc launched with tokenized funds and 700+ Dinari equities. https://www.theblock.co/news/ecosystems/2026-09-18-ava-labs-president-says-nyse-spent-a-year-testing-avalanche-technology-tokenization-plans-415509
+• NEW: Avalanche institutional rails — AVAX attention accelerated on NYSE testing plus Helicon; important caveat: NYSE has not selected Avalanche.
+• DEAD: RWA/perps — absent from fresh three-day signals after already fading; no longer a standalone trade.
+• DEAD: CLARITY passage — no fresh path after the failed Senate vote.
 
 REFLEXIVITY ALERT
-• AVAX/tokenized stocks — ICE has not selected a chain, yet the testing disclosure and adjacent RWA launches drove an attention-led AVAX move. The story is pricing a contract that does not exist yet.
+• Avalanche — AVAX moved on the idea of NYSE adoption even though Ava Labs only confirmed testing, not selection. The story is pricing an outcome ahead of proof.
+• ZEC/privacy — the Zcash ETF reportedly pulled $98.2M for the week ending Sep 18; ETF demand and shrinking float keep reinforcing the privacy trade after attention was already saturated.
 
 POSITIONS
-• RIDE: regulated onchain stocks (4 ↑, Bull) — @SECGov, @avax, @NYSE — bear: SEC relief is temporary and permissioned, while ICE has made no chain selection.
-• WATCH: AI-token catch-up (3 ↑↑, Mixed) — @Fetch_ai, @NEARProtocol, @rendernetwork — bear: the move is broad risk-on beta without a new sector catalyst.
-• WATCH: DEX infrastructure (5 →, Bull) — @Uniswap, @DefiLlama, @arbitrum — bear: DeFiLlama’s +52.87% 7D DEX basket still says the clean entry passed.
-• WATCH: stablecoin rails (4 ↑, Bull) — @circle, @Visa, @Mastercard — bear: institutional launches still do not prove recurring payment demand.
-• FADE: privacy/ZEC (5 ↓, Mixed) — @Zcash, @Paradigm, @NEARProtocol — bear: governance, ETF and squeeze framing still outrun private usage.
-• FADE: RWA/perps (4 ↓, Mixed) — @HyperliquidX, @trade_xyz, @hosseeb — bear: leverage and concentration leave weak asymmetry.
-• FADE: agentic payments (3 ↓, Cope) — @coinbase, @circle, @x402 — bear: cumulative counts still obscure limited verified commerce.
+• RIDE: regulated onchain stocks / Avalanche rails (4 ↑↑, Bull) — @SECGov, @avax, @NYSE — bear: conditional relief is temporary and Avalanche has not won the venue.
+• RIDE: AI-compute rotation (4 ↑, Bull) — @Fetch_ai, @rendernetwork, @NEARProtocol — bear: basket flows still lack a fresh project-specific catalyst.
+• WATCH: stablecoin rails / Arc (4 ↑, Bull) — @circle, @BlackRock, @DinariGlobal — bear: launch breadth does not prove sustained transaction demand.
+• WATCH: DEX infrastructure (5 →, Bull) — @Uniswap, @arbitrum, @DefiLlama — bear: the expression is crowded after the prior weekly surge.
+• FADE: privacy/ZEC (5 →, Mixed) — @Zcash, @Grayscale, @Paradigm — bear: ETF flows are real, but saturation and concentration leave poor asymmetry.
+• FADE: agentic payments (3 ↓, Cope) — @coinbase, @circle, @x402 — bear: huge cumulative counts still do not isolate durable agent commerce.
 • WATCH: prediction markets (4 →, Mixed) — @Polymarket, @Kalshi, @HyperliquidX — bear: no fresh demand inflection.
-• FADE: CLARITY passage (2 ↓↓, Cope) — @SenLummis, @brian_armstrong, @circle — bear: the failed Senate vote leaves no credible near-term path.
 
 MAP
-Emerging: AI-token catch-up
-Rising: regulated onchain stocks, stablecoin rails
-Peak: DEX infrastructure, prediction markets
-Fading: privacy/ZEC, RWA/perps, agentic payments, CLARITY passage
+Emerging: Avalanche institutional rails
+Rising: regulated onchain stocks, AI-compute rotation, stablecoin rails
+Peak: DEX infrastructure, privacy/ZEC, prediction markets
+Fading: agentic payments
 
-Source confidence: lower — public-web fallback after KEY_UNSET; xai http=400 bytes=118 (invalid key). Calibration: DeFiLlama 7D DEXs +52.87% ($33.877B cap, $2.28B volume); AI +33.11% ($20.056B cap, $1.589B volume).
+Source confidence: lower — public-web fallback after KEY_UNSET; xai http=400 bytes=118. Calibration: the last available DeFiLlama snapshot had DEXs +52.87% and perps/derivatives +45.81% over 7D; today’s direct page exposed no parseable live figures.

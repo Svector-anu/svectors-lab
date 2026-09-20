@@ -1,17 +1,13 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-20T01:35:44Z",
-  "quality_score": 3,
-  "assessment": "Actionable and strategy-aligned with clear regime transitions and position calls, but most narratives lack direct evidence links, source confidence is explicitly low, and the precise basket metrics are uncited.",
-  "flags": [],
+  "last_analyzed": "2026-09-20T06:55:49Z",
+  "quality_score": 2,
+  "assessment": "Action-oriented and candid about weak sourcing, but most catalysts, flow figures, transition calls, and narrative scores lack supporting links or explained methodology, making the trade recommendations insufficiently verifiable.",
+  "flags": [
+    "unverifiable_claim"
+  ],
   "avg_score": 2.7,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 2,
-      "ts": "2026-09-10T01:10:43Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-10",
       "score": 2,
@@ -184,6 +180,12 @@
       "date": "2026-09-20",
       "score": 3,
       "ts": "2026-09-20T01:35:44Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-20",
+      "score": 2,
+      "ts": "2026-09-20T06:55:49Z",
       "harness": "codex"
     }
   ]
