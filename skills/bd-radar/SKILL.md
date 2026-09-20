@@ -1,22 +1,10 @@
----
-name: bd-radar
-description: Business-development radar across your product family - find who's building, forking, integrating, and mentioning your products, ranked into a who-to-talk-to-this-week lead list.
-metadata:
-  title: BD Radar
-  category: basics
-  var: ""
-  tags:
-    - research
-    - social
-    - ecosystem
-  requires:
-    - XAI_API_KEY?
-    - GH_READ_PAT?
----
+# bd-radar
 
-> **${var}** — Optional. `dry-run` skips notify (state + leads still update). Empty = normal run.
+Business-development radar across your product family - find who's building, forking, integrating, and mentioning your products, ranked into a who-to-talk-to-this-week lead list.
 
-Today is ${today}. Read `STRATEGY.md` and `memory/MEMORY.md`. Read `memory/products.md` for your repos, handles, and search terms. If `soul/SOUL.md` + `soul/STYLE.md` are populated, write in the operator's voice; otherwise neutral.
+> The `Operator var` — Optional. `dry-run` skips notify (state + leads still update). Empty = normal run.
+
+Today is today's date. Read `STRATEGY.md` and `memory/MEMORY.md`. Read `memory/products.md` for your repos, handles, and search terms. If `soul/SOUL.md` + `soul/STYLE.md` are populated, write in the operator's voice; otherwise neutral.
 
 ## Why this exists
 
@@ -42,7 +30,7 @@ Ranked strongest → weakest. Tag each lead with its class:
 ### 0. Bootstrap
 ```bash
 mkdir -p memory/topics output/articles
-[ -f memory/topics/bd-radar-leads.json ] || echo '{"leads":[],"surfaced":[]}' > memory/topics/bd-radar-leads.json
+[ -f memory/skills/bd-radar/bd-radar-leads.json ] || echo '{"leads":[],"surfaced":[]}' > memory/skills/bd-radar/bd-radar-leads.json
 ```
 `surfaced` is an LRU (cap 300) of already-reported lead keys (`{source}:{handle_or_repo}`) so each lead fires once. Also read the last 14 days of `memory/logs/` and extract names from prior `### bd-radar` blocks into the dedup set.
 
@@ -109,9 +97,9 @@ Each entry is a post (@handle, text, date, builder/project note, engagement, lin
 One concrete line each, in the operator's voice, e.g. "DM @x — they forked your repo + shipped an extension, invite to the community"; "reply to the HN thread, drop your product link"; "open an issue offer: we'll write the integration if they host". Keep it to a verb + who + why now.
 
 ### 5. Write + state
-- `output/articles/bd-radar-${today}.md`: ranked lead table (class · who · signal · fit · suggested move). Cap the digest at the top **10** leads; note total found.
+- `output/articles/bd-radar-today's date.md`: ranked lead table (class · who · signal · fit · suggested move). Cap the digest at the top **10** leads; note total found.
 - Append new lead keys to `surfaced` (LRU 300). Persist full lead objects under `leads` (cap 200).
-- `memory/logs/${today}.md`: `### bd-radar` block — counts by class, top 3 leads.
+- `memory/logs/today's date.md`: `### bd-radar` block — counts by class, top 3 leads.
 
 ### 6. Notify (gated)
 Quiet by default to avoid lead-noise. Self-notify only when `MODE=execute` AND there is **≥1 new `building` or `integrating` lead** (the high-intent classes) — those are time-sensitive. One paragraph, operator's voice, name the lead + the one move. Lower-intent leads stay in `memory/` for the next review.
@@ -121,3 +109,10 @@ GitHub: forks/issues of your repos are fetched **in-run** via `./secretcurl` aga
 
 ## Summary
 Writes the ranked lead digest + leads state + log. Self-notifies only on a new high-intent (building/integrating) lead.
+
+## Do not
+
+- Do not write outside `output/bd-radar/` and `memory/skills/bd-radar/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

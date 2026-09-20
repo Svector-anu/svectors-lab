@@ -1,35 +1,27 @@
----
-name: fetch-tweets
-description: Search and curate X/Twitter behind one selector - keyword, topic roundup, a single or tracked-account digest, an X list, or the AI-agent buzz preset - clustered into signal-scored sub-narratives.
-metadata:
-  title: Fetch Tweets
-  category: basics
-  var: ""
-  tags:
-    - social
-  requires:
-    - XAI_API_KEY?
----
-<!-- autoresearch: variation B — sharper output via clustering + signal scoring + insight extraction. Merged HUB: absorbs tweet-digest, tweet-roundup, list-digest, refresh-x, agent-buzz behind a `source:` selector. -->
-> **${var}** — `<source>:<arg>` where `<source>` ∈ `keyword | topic | account | list | agent-buzz`. The `<arg>` is source-specific (a query, a topic, a handle, comma-separated list IDs, or an optional focus). If no `source:` prefix is given, the source is inferred from the shape of `<arg>` (see **Source selector**). **Required** for `keyword` and `list`; optional for `topic`, `account`, and `agent-buzz`.
+# fetch-tweets
 
-Today is ${today}. This skill fetches X/Twitter content along one of five **source axes** and produces a *curated* digest — clustered by sub-narrative, ranked by signal, one insight per item — never a flat chronological dump.
+Search and curate X/Twitter behind one selector - keyword, topic roundup, a single or tracked-account digest, an X list, or the AI-agent buzz preset - clustered into signal-scored sub-narratives.
+
+<!-- autoresearch: variation B — sharper output via clustering + signal scoring + insight extraction. Merged HUB: absorbs tweet-digest, tweet-roundup, list-digest, refresh-x, agent-buzz behind a `source:` selector. -->
+> The `Operator var` — `<source>:<arg>` where `<source>` ∈ `keyword | topic | account | list | agent-buzz`. The `<arg>` is source-specific (a query, a topic, a handle, comma-separated list IDs, or an optional focus). If no `source:` prefix is given, the source is inferred from the shape of `<arg>` (see **Source selector**). **Required** for `keyword` and `list`; optional for `topic`, `account`, and `agent-buzz`.
+
+Today is today's date. This skill fetches X/Twitter content along one of five **source axes** and produces a *curated* digest — clustered by sub-narrative, ranked by signal, one insight per item — never a flat chronological dump.
 
 ## Source selector
 
-Parse `${var}` into `SOURCE` and `ARG` before doing anything else.
+Parse the `Operator var` into `SOURCE` and `ARG` before doing anything else.
 
 **Explicit form (recommended):** `<source>:<arg>`
 - `keyword:$SOL OR solana OR "solana network"` — raw X search query, passed to Grok **verbatim** (OR/AND honored).
 - `topic:brain-computer interfaces` — a single topic roundup. `topic:` (empty arg) → resolve a topic **list** from MEMORY.md, then built-in defaults.
-- `account:vitalikbuterin` — one account's recent tweets. `account:` (empty arg) → digest **every** handle in `memory/topics/tracked-accounts.yml`.
+- `account:vitalikbuterin` — one account's recent tweets. `account:` (empty arg) → digest **every** handle in `memory/skills/fetch-tweets/tracked-accounts.yml`.
 - `list:1953536336675365173,1937207796270829766` — one or more numeric X list IDs. Append `|<topic>` for a topic booster: `list:195...,193...|AI agents`.
 - `agent-buzz` — the curated AI-agent-ecosystem preset. `agent-buzz:MCP protocol` prioritizes a project/topic within the preset.
 
-**Implicit form (back-compat with migrated bare-var configs):** when `${var}` has **no** recognized `source:` prefix, infer `SOURCE` in this order:
-1. `${var}` is empty → `topic` (default multi-topic roundup).
-2. `${var}` is all-digits, or comma-separated all-digits (optionally with a `|<topic>` suffix) → `list`.
-3. `${var}` is `@handle` or matches `^[A-Za-z0-9_]{1,15}$` (a bare handle) → `account`.
+**Implicit form (back-compat with migrated bare-var configs):** when the `Operator var` has **no** recognized `source:` prefix, infer `SOURCE` in this order:
+1. the `Operator var` is empty → `topic` (default multi-topic roundup).
+2. the `Operator var` is all-digits, or comma-separated all-digits (optionally with a `|<topic>` suffix) → `list`.
+3. the `Operator var` is `@handle` or matches `^[A-Za-z0-9_]{1,15}$` (a bare handle) → `account`.
 4. Anything else → `keyword`.
 
 Note: `agent-buzz` has **no** distinct implicit shape (its arg looks like a keyword/topic), so it is **only** selectable via the explicit `agent-buzz` / `agent-buzz:...` prefix.
@@ -104,9 +96,8 @@ Search X for tweets matching `ARG` and produce a curated digest grouped by sub-n
 
 6. **Save + update seen-file** (see Log). Append each kept tweet URL (one per line) to `memory/fetch-tweets-seen.txt` (create if missing).
 
-7. **Notify via `./notify`** with the clustered output:
    ```
-   *Top Tweets — ${ARG} (${today})*
+   *Top Tweets — ${ARG} (today's date)*
    _${signal_one_liner}_
 
    *${cluster_1_name}*
@@ -157,7 +148,7 @@ Gist of the latest X chatter on one or more configurable topics.
    ```
    Parse with the standard `jq` extractor. If it yields text, `SOURCE=api`. Extract each tweet's `@handle`, text, engagement counts, and permalink.
 
-   **Path B — WebSearch fallback** (only if `XAI_API_KEY` unset, or Path A errors/empty): `site:x.com "<topic keywords>" after:<YESTERDAY>`. Always include the word "today" and `${today}` to force fresh results. Discard any result whose visible date is older than 48h. Collect up to 5 candidates per topic. Mark `SOURCE=websearch`. If both paths return nothing, mark `SOURCE=failed`.
+   **Path B — WebSearch fallback** (only if `XAI_API_KEY` unset, or Path A errors/empty): `site:x.com "<topic keywords>" after:<YESTERDAY>`. Always include the word "today" and today's date to force fresh results. Discard any result whose visible date is older than 48h. Collect up to 5 candidates per topic. Mark `SOURCE=websearch`. If both paths return nothing, mark `SOURCE=failed`.
 
 3. **Score and filter.** Require: a known `@handle`; a `https://x.com/<handle>/status/<id>` URL (if missing, keep but mark "link unavailable"); posted within 48h; URL **not** in `SEEN_TWEETS`. Compute `signal_score = likes + 2×retweets + replies` (on WebSearch path with no counts, use result rank as a weak proxy). **Demote −50%**: replies to a parent tweet; near-duplicates of a higher-scoring tweet (>70% text overlap or same linked URL).
 
@@ -167,9 +158,8 @@ Gist of the latest X chatter on one or more configurable topics.
    - **4+ survivors** → group into 2–3 sub-narratives (shared keywords/entity/claim); label each, surface the top-1 tweet per narrative as exemplar.
    Write an **insight** per reported tweet (what it asserts/reveals, not a headline paraphrase). Write a one-line **conversation shape** per topic ("bullish momentum, dissenters quiet", "split opinion on X's launch", "single story dominating — Y").
 
-5. **Notify.** If every topic dropped: log `TWEET_ROUNDUP_EMPTY` and **stop — no notify**. Otherwise send via `./notify` (≤4000 chars):
    ```
-   *Tweet Roundup — ${today}*
+   *Tweet Roundup — today's date*
    _Source: api:X websearch:Y failed:Z_
 
    *[Topic 1]* — _conversation shape_
@@ -194,8 +184,6 @@ Two sub-modes: **single handle** (decision-ready gist of one account) vs. **all 
 **Seen set:** last 2 days of logs — extract every `https://x.com/` URL under a prior `### fetch-tweets` account entry into `SEEN_URLS`.
 
 ### account — single handle (`ARG` is one @handle)
-
-1. **Normalize `ARG`.** Strip leading `@`, `https://x.com/`, `https://twitter.com/`, `https://nitter.net/`, trailing slash / `/status/...`. Lowercase. Reject if empty, contains whitespace, or >15 chars. On reject → `REFRESH_X_NO_VAR`: send `./notify "fetch-tweets: REFRESH_X_NO_VAR — set an X handle"` and exit 0. Store the cleaned handle as `ACCOUNT`.
 
 2. **Load tweets:**
    - **Path A — X.AI API** (primary): search this account's recent tweets via Grok's `x_search`.
@@ -233,7 +221,6 @@ Two sub-modes: **single handle** (decision-ready gist of one account) vs. **all 
 
 9. **Update MEMORY.md (conditional):** only if a cluster carries an announcement, specific claim, named project, or stance shift — add one bullet under a `## Tracked X Accounts` section (create if missing): `- @ACCOUNT YYYY-MM-DD: [one-sentence claim] — [permalink]`. No paraphrases/memes/generic opinions.
 
-10. **Notify via `./notify`.** On `REFRESH_X_OK`:
     ```
     x refresh — @ACCOUNT ([VERDICT])
     [lede]
@@ -248,7 +235,7 @@ Two sub-modes: **single handle** (decision-ready gist of one account) vs. **all 
 
 Use this to answer "what did *these specific people* post" across a watchlist.
 
-1. **Read config** `memory/topics/tracked-accounts.yml`. If missing or `accounts: []` → log `TWEET_DIGEST_NO_CONFIG` and exit (no notification). Schema:
+1. **Read config** `memory/skills/fetch-tweets/tracked-accounts.yml`. If missing or `accounts: []` → log `TWEET_DIGEST_NO_CONFIG` and exit (no notification). Schema:
    ```yaml
    accounts:
      - handle: vitalikbuterin
@@ -275,9 +262,8 @@ Use this to answer "what did *these specific people* post" across a watchlist.
 
 4. **Write a one-sentence take per notable tweet** — what the tweet says, not your opinion of it. Voice per the **Voice** section.
 
-5. **Notify** via `./notify`:
    ```
-   *Tweet Digest — ${today}*
+   *Tweet Digest — today's date*
 
    *Theme: <theme>*
    @handle: <one-sentence summary> — [link](url)
@@ -357,9 +343,8 @@ Cross-list narrative resonance + signal-scored top tweets from tracked X lists i
 
 6. **Compose the digest** (cap 4000 chars): up to **3 narratives** at top (by narrative score); then up to **5 standalone tweets per list** (highest individual score, not already in a narrative); hard total cap **12 items** — cut from the bottom of standalones. **Insight discipline:** every item needs a one-line **so-what** (implication, contrarian angle, missing number, deal-flow signal); a paraphrase must be rewritten. **Quiet-list rule:** if a list's top surviving tweet scores <2.0 (≈<8 likes raw), write a one-line "quiet day" for that list. **Topic filter** is a scoring booster (step 4), NOT a hard filter. **Verdict line:** one line at the very top capturing what today's lists collectively say.
 
-7. **Send the notification** via `./notify`, verbatim format (`x.com/handle`, `[label](url)`):
    ```
-   *List Digest — ${today}*
+   *List Digest — today's date*
 
    [VERDICT LINE — one line, ≤140 chars, plain text]
 
@@ -382,7 +367,7 @@ Cross-list narrative resonance + signal-scored top tweets from tracked X lists i
    sources: list1=ok | list2=quiet | list3=error(no-access)
    status: LIST_DIGEST_OK
    ```
-   If cross-list narratives is empty, drop that whole section. If every list is `quiet`/`empty`, send a single-line "*List Digest — ${today}* — quiet across all tracked lists" instead of padding.
+   If cross-list narratives is empty, drop that whole section. If every list is `quiet`/`empty`, send a single-line "*List Digest — today's date* — quiet across all tracked lists" instead of padding.
 
 8. **Log and persist** (see Log). Append every reported URL (one per line) to `memory/list-digest-seen.txt` (create if missing).
 
@@ -413,7 +398,7 @@ A topic-filtered preset: a curated, narrative-aware read on what the AI-agent sc
      -d @/tmp/xai-ft-buzz.json
    ```
    Parse with the standard `jq` extractor. Record `source=xai`.
-   **Path B — WebSearch fallback** (only if `XAI_API_KEY` unset, or Path A errors/empty): forced-fresh query `"AI agents twitter today ${today}"` — discard anything >48h old, expect degraded metadata. Record `source=websearch`.
+   **Path B — WebSearch fallback** (only if `XAI_API_KEY` unset, or Path A errors/empty): forced-fresh query `"AI agents twitter today today's date"` — discard anything >48h old, expect degraded metadata. Record `source=websearch`.
 
    If `ARG` is set, also issue a second call constrained to that topic with the same schema; merge results.
 
@@ -432,9 +417,8 @@ A topic-filtered preset: a curated, narrative-aware read on what the AI-agent sc
 
 6. **Conversation-shape lead** — one opening sentence (≤25 words) naming what the conversation was actually about ("Mostly protocol debate — MCP vs. A2A — with two concrete launches on the side."). If you can't characterize it honestly in one sentence, the clustering is wrong — redo step 4.
 
-7. **Notify** via `./notify`:
    ```
-   *Agent Buzz — ${today}*
+   *Agent Buzz — today's date*
    _<conversation-shape one-liner>_
 
    **<Cluster 1 name>**
@@ -451,13 +435,13 @@ A topic-filtered preset: a curated, narrative-aware read on what the AI-agent sc
    ```
    Keep the footer — it's how future self-audits debug empty days. Never pad to hit 10. 6 good > 10 mid.
 
-**Status codes:** `AGENT_BUZZ_OK` (≥1 cluster notified) | `AGENT_BUZZ_EMPTY` (fetch succeeded, nothing survived — send `Agent Buzz — ${today}: quiet day, no survivors.`) | `AGENT_BUZZ_ERROR` (all sources failed — notify `Agent Buzz — ${today}: all sources failed (${error summary}).` and log the per-source failure).
+**Status codes:** `AGENT_BUZZ_OK` (≥1 cluster notified) | `AGENT_BUZZ_EMPTY` (fetch succeeded, nothing survived — send `Agent Buzz — today's date: quiet day, no survivors.`) | `AGENT_BUZZ_ERROR` (all sources failed — notify `Agent Buzz — today's date: all sources failed (${error summary}).` and log the per-source failure).
 
 ---
 
 ## Log (all branches)
 
-Append ONE entry per run to `memory/logs/${today}.md` under a single `### fetch-tweets` heading (the health loop parses this shape). The first bullet is the **discriminator** naming the branch/mode that ran; the rest are branch-specific bullets. Always include the reported tweet URLs as bullets (for next-run dedup).
+Append ONE entry per run to `memory/logs/today's date.md` under a single `### fetch-tweets` heading (the health loop parses this shape). The first bullet is the **discriminator** naming the branch/mode that ran; the rest are branch-specific bullets. Always include the reported tweet URLs as bullets (for next-run dedup).
 
 ```
 ### fetch-tweets
@@ -504,3 +488,10 @@ No chain consumes this skill's output as of this commit (no `consume: [fetch-twe
 ## Environment Variables
 
 - `XAI_API_KEY` — X.AI API key for Grok's `x_search` tool. Declared in `requires:`, so it is **injected into this skill's environment** and is the primary fetch path for every branch. If it is ever unset, branches degrade to WebSearch/WebFetch at lower quality; the `account (all)` sub-mode instead hard-exits (`TWEET_DIGEST_NO_KEY`).
+
+## Do not
+
+- Do not write outside `output/fetch-tweets/` and `memory/skills/fetch-tweets/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

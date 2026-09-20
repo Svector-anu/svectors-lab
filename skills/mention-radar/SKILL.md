@@ -1,19 +1,8 @@
----
-name: mention-radar
-description: Monitor external web and social mentions of the operator's active projects - surface what people are discovering, where they're confused, and where to engage
-metadata:
-  title: Mention Radar
-  category: productivity
-  schedule: "25 7 2/2 * *"
-  commits: false
-  var: ""
-  tags:
-    - social
-    - dev
-  requires:
-    - XAI_API_KEY?
----
-> **${var}** — Comma-separated project names to track (e.g. "MyApp, my-lib"). If empty, derives targets from MEMORY.md and memory/topics/projects.md.
+# mention-radar
+
+Monitor external web and social mentions of the operator's active projects - surface what people are discovering, where they're confused, and where to engage
+
+> The `Operator var` — Comma-separated project names to track (e.g. "MyApp, my-lib"). If empty, derives targets from MEMORY.md and memory/skills/mention-radar/projects.md.
 
 Read memory/MEMORY.md for current project status.
 Read the last 3 days of memory/logs/ to avoid re-surfacing already-noted mentions.
@@ -21,10 +10,10 @@ Read the last 3 days of memory/logs/ to avoid re-surfacing already-noted mention
 ## Steps
 
 1. **Define the targets.**
-   - If `${var}` is set: parse it as a comma-separated list of project names.
-   - Otherwise: scan `memory/MEMORY.md` (goals, active topics) and `memory/topics/projects.md` (if it exists) for the operator's active projects. A target needs at least a name; collect a site/domain and a GitHub `owner/repo` too when known.
+   - If the `Operator var` is set: parse it as a comma-separated list of project names.
+   - Otherwise: scan `memory/MEMORY.md` (goals, active topics) and `memory/skills/mention-radar/projects.md` (if it exists) for the operator's active projects. A target needs at least a name; collect a site/domain and a GitHub `owner/repo` too when known.
    - Cap at 6 targets — prefer the most active ones.
-   - If zero targets can be derived: log `MENTION_RADAR_SKIP: no projects configured — set var or add projects to memory/topics/projects.md` and stop. No notification.
+   - If zero targets can be derived: log `MENTION_RADAR_SKIP: no projects configured — set var or add projects to memory/skills/mention-radar/projects.md` and stop. No notification.
 
    For each target, build search terms:
    - The exact project name in quotes (e.g. `"MyApp" site:x.com OR site:reddit.com OR site:news.ycombinator.com`)
@@ -78,7 +67,7 @@ Read the last 3 days of memory/logs/ to avoid re-surfacing already-noted mention
 
 6. **Format the output** (under 4000 chars):
    ```
-   *Mention Radar — ${today}*
+   *Mention Radar — today's date*
 
    {PROJECT NAME, uppercased}
    - [source] — [what they said] — [category]
@@ -95,9 +84,7 @@ Read the last 3 days of memory/logs/ to avoid re-surfacing already-noted mention
 
 7. **Only notify if there's signal.** Skip notification if ALL projects are quiet and no GitHub deltas > 5 stars. Log `MENTION_RADAR_QUIET` instead.
 
-8. **Send via `./notify`** if there's anything worth surfacing.
-
-9. **Log to memory/logs/${today}.md**:
+9. **Log to memory/logs/today's date.md**:
    ```
    ### mention-radar
    - **{project}:** [N mentions / QUIET]
@@ -138,3 +125,10 @@ Read the last 3 days of memory/logs/ to avoid re-surfacing already-noted mention
 
 - `XAI_API_KEY` — X.AI API key for Grok's `x_search` tool. Declared in `requires:` (optional `?`), so it is **injected into this skill's environment** and is the primary path for X/Twitter mentions. If it is ever unset, X mentions degrade to the WebSearch fallback at lower quality; the broader-web search is unaffected.
 - `gh` CLI — pre-authenticated in GitHub Actions; used for the GitHub network-signal check (step 3). Not an env var you set here.
+
+## Do not
+
+- Do not write outside `output/mention-radar/` and `memory/skills/mention-radar/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

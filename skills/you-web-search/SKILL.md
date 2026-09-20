@@ -1,22 +1,10 @@
----
-name: you-web-search
-description: Web search using You.com Search API with high-quality, cited results and optional real-time web crawling
-metadata:
-  title: You.com Web Search
-  mode: read-only
-  category: basics
-  var: ""
-  tags:
-    - web
-    - search
-    - research
-  requires:
-    - YDC_API_KEY
----
+# you-web-search
 
-> **${var}** — Search query or topic. When empty, uses a general search for current notable developments across tracked areas.
+Web search using You.com Search API with high-quality, cited results and optional real-time web crawling
 
-Today is ${today}. Perform web search using You.com's Search API to find current, high-quality information on **${var}**.
+> The `Operator var` — Search query or topic. When empty, uses a general search for current notable developments across tracked areas.
+
+Today is today's date. Perform web search using You.com's Search API to find current, high-quality information on The `Operator var`.
 
 ## Overview
 
@@ -114,9 +102,9 @@ Apply basic quality filters:
 Structure the output for easy consumption:
 
 ```
-*You.com Web Search Results — ${today}*
+*You.com Web Search Results — today's date*
 
-Query: "${var}"
+Query: "the `Operator var`"
 Source: You.com Search API (${auth_mode}) 
 Results: ${result_count} found
 
@@ -136,7 +124,6 @@ API Status: ${http_status} | Auth: ${auth_mode} | Quality: ${quality_score}/5
 
 ### Notification
 
-Send formatted results via `./notify`:
 - Include query, result count, and source attribution
 - Highlight most relevant results (top 5-7)  
 - Note authentication mode (`authenticated`)
@@ -146,10 +133,10 @@ Send formatted results via `./notify`:
 
 Log the search for future reference:
 
-1. **Append to daily log** — `memory/logs/${today}.md` under `### you-web-search`:
+1. **Append to daily log** — `memory/logs/today's date.md` under `### you-web-search`:
    ```
    ### you-web-search
-   - Query: "${var}"
+   - Query: "the `Operator var`"
    - Source: You.com API (authenticated)
    - Results: N found, M delivered  
    - Status: HTTP ${code}
@@ -221,3 +208,10 @@ This skill works well with:
 - **mention-radar** — Broader web mention detection beyond X/Twitter
 
 The You.com search results can inform other skills' web research needs while providing a higher-quality alternative to basic web search.
+
+## Do not
+
+- Do not write outside `output/you-web-search/` and `memory/skills/you-web-search/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

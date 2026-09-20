@@ -1,22 +1,13 @@
----
-name: skill-repair
-description: Diagnose and fix failing or degraded skills automatically - systemic-first triage, per-category playbooks, and a verification plan
-metadata:
-  title: Skill Repair
-  category: evolution
-  var: ""
-  tags:
-    - meta
-    - dev
-  depends_on:
-    - skill-health
----
+# skill-repair
+
+Diagnose and fix failing or degraded skills automatically - systemic-first triage, per-category playbooks, and a verification plan
+
 <!-- autoresearch: variation D — systemic-first triage + per-category playbooks + verification (folds A's regression hunter, B's structured PR + risk class + verdict, C's exit taxonomy + preflight + cooldown) -->
 
-> **${var}** — Skill name to repair. If empty, runs systemic triage and picks the worst fixable target.
-> **`${var}` modifiers**: prefix `dry-run:` to diagnose only without writing a PR (e.g. `dry-run:digest`).
+> The `Operator var` — Skill name to repair. If empty, runs systemic triage and picks the worst fixable target.
+> **the `Operator var` modifiers**: prefix `dry-run:` to diagnose only without writing a PR (e.g. `dry-run:digest`).
 
-Today is ${today}. Your task is to diagnose and repair the worst-impact failing or degraded skill — preferring a single shared fix over N per-skill patches when failures cluster.
+Today is today's date. Your task is to diagnose and repair the worst-impact failing or degraded skill — preferring a single shared fix over N per-skill patches when failures cluster.
 
 ## Phases
 
@@ -51,15 +42,15 @@ Bail early with `REPAIR_BLOCKED` (and notify with the reason) if any of these fa
 - An open PR already exists matching `fix/skill-repair-{name}-*` — `gh pr list --state open --search "head:fix/skill-repair-{name}"`.
 - More than 3 skill-repair PRs already opened in the current UTC day — rate-limit our own PRs.
 
-If `${var}` starts with `dry-run:`, strip the prefix to get the target name and skip the cooldown.
+If the `Operator var` starts with `dry-run:`, strip the prefix to get the target name and skip the cooldown.
 
 ## 2. TRIAGE
 
 Identify the target. Two paths:
 
-**Path A — `${var}` set explicitly:** repair that skill. Skip step 2's clustering.
+**Path A — the `Operator var` set explicitly:** repair that skill. Skip step 2's clustering.
 
-**Path B — `${var}` empty (auto-select):**
+**Path B — the `Operator var` empty (auto-select):**
 
 1. Read `memory/issues/INDEX.md`. Extract open issues. Skip `permanent-limitation`.
 2. Read `memory/cron-state.json`. Compute candidates where any of:
@@ -149,7 +140,7 @@ Every PR (except `REPAIR_DIAGNOSED_NO_FIX`) must include a Verification section 
 
 **Expected result:**
 - Workflow conclusion: `success`
-- Output file matches `{evals.json output_pattern or "memory/logs/${today}.md mentions {name}"}`
+- Output file matches `{evals.json output_pattern or "memory/logs/today's date.md mentions {name}"}`
 - {category-specific signal — e.g. "no `rate limit` strings in run logs" / "produces ≥ {min_words} words" / "annotation count ≤ 0"}
 
 **If still failing after this PR:** delete `memory/state/skill-repair-history.json[{name}]` to remove the cooldown, then re-dispatch `skill-repair` with `var={name}` for a second pass.
@@ -160,7 +151,7 @@ Record the chosen verification command in the issue file's `## Repair Attempt` s
 ## 6. Branch, commit, PR
 
 ```bash
-TODAY="${today}"
+TODAY="today's date"
 BRANCH="fix/skill-repair-{name}-${TODAY}"
 git checkout -b "$BRANCH"
 git add skills/{name}/SKILL.md  # plus aeon.yml or scripts/* iff in playbook
@@ -197,8 +188,8 @@ If risk is HIGH, also: `gh pr edit "$PR_URL" --add-label manual-review`.
 ## 7. Update issue tracker (`memory/issues/`)
 
 - If an open issue for this skill exists:
-  - Fix applied → set `status: resolved`, `resolved_at: ${today}`, `fix_pr: <url>`. Move row from Open → Resolved in `INDEX.md`.
-  - No fix possible → append `## Repair Attempt — ${today}` with the dossier and reason.
+  - Fix applied → set `status: resolved`, `resolved_at: today's date, `fix_pr: <url>`. Move row from Open → Resolved in `INDEX.md`.
+  - No fix possible → append `## Repair Attempt — today's date with the dossier and reason.
 - If no issue exists but a real problem was found and fixed → create `memory/issues/ISS-{NNN}.md` with status already `resolved` (NNN = next free number from INDEX.md).
 - If systemic clustering fired in step 2 → ensure `affected_skills:` lists every skill matched by the signature.
 
@@ -209,7 +200,7 @@ Update `memory/state/skill-repair-history.json`:
 ```json
 {
   "{name}": {
-    "last_repair_at": "${today}T...Z",
+    "last_repair_at": "today's dateT...Z",
     "exit_code": "REPAIR_OK_FIXED",
     "fix_pr": "https://github.com/.../pull/N",
     "issue": "ISS-NNN"
@@ -218,8 +209,6 @@ Update `memory/state/skill-repair-history.json`:
 ```
 
 ## 9. Notify
-
-Send via `./notify` (one-paragraph max — verdict line first):
 
 ```
 *skill-repair — {EXIT_CODE}*
@@ -232,7 +221,7 @@ Verify: workflow_dispatch skill={name}
 
 ## 10. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```markdown
 ### skill-repair
@@ -260,4 +249,11 @@ Append to `memory/logs/${today}.md`:
 - Never push to `main`. Always branch + PR.
 - Never auto-merge HIGH-risk PRs. They carry the `manual-review` label.
 - If a skill has been failing > 7 days with no clear root cause and the category is `unknown`, recommend (in the issue and notify) `enabled: false` in `aeon.yml` — but **do not apply that change** without an explicit operator-approved issue.
-- Skip when `${var}` matches a skill that has been repaired in the last 24h unless operator clears the cooldown entry. This prevents repair loops on fixes that didn't take.
+- Skip when the `Operator var` matches a skill that has been repaired in the last 24h unless operator clears the cooldown entry. This prevents repair loops on fixes that didn't take.
+
+## Do not
+
+- Do not write outside `output/skill-repair/` and `memory/skills/skill-repair/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

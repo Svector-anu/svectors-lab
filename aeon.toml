@@ -220,3 +220,235 @@ role = "worker"
 risk = "low"
 write_scope = "own-memory"
 on_missed_run = "run_latest_only"
+
+
+[skills.pr-review]
+enabled = true
+schedule = "0 9 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "skip_stale"
+
+[skills.pr-review.permissions]
+write = ["output/articles"]
+
+[skills.auto-merge]
+enabled = true
+schedule = "0 14 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "skip_stale"
+
+[skills.github-trending]
+enabled = true
+schedule = "0 9 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.defi-overview]
+enabled = true
+schedule = "0 */6 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.verdikta-hunter]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.token-pick]
+enabled = true
+schedule = "0 12 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.narrative-tracker]
+enabled = true
+schedule = "30 */6 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.vuln-scanner]
+enabled = true
+schedule = "0 16 * * 6"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.vuln-scanner.permissions]
+write = ["output/articles"]
+
+[skills.autoresearch]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.skill-repair]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.fork-fleet]
+enabled = true
+schedule = "0 10 * * 1"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "skip_stale"
+
+[skills.fork-fleet.permissions]
+write = ["output/articles"]
+
+[skills.shiplog]
+enabled = true
+schedule = "0 9 * * 1"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.shiplog.permissions]
+write = ["output/articles"]
+
+[skills.auto-workflow]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.auto-workflow.permissions]
+write = ["output/articles"]
+
+[skills.x402-monitor]
+enabled = true
+schedule = "0 12 * * 2"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "skip_stale"
+
+[skills.vuln-tracker]
+enabled = true
+schedule = "30 16 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.slop-watch]
+enabled = true
+schedule = "0 8 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.fear-divergence]
+enabled = true
+schedule = "30 7 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.picks-tracker]
+enabled = true
+schedule = "0 9 * * 0"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.picks-tracker.permissions]
+write = ["output/articles"]
+
+[skills.soul-builder]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.feature]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
+
+[skills.feature.permissions]
+write = ["output/articles"]
+
+[skills.write-tweet]
+enabled = true
+schedule = "0 21 * * *"
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "low"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"

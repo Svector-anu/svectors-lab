@@ -1,30 +1,20 @@
----
-name: heartbeat
-description: Ambient fleet-health check that surfaces anything worth attention (default), or an on-demand priority brief - the 3 things to focus on, why now, and what moved (var=brief)
-scorable: false  # meta skill: no gradable output, skip the post-run quality scorer
-metadata:
-  title: Heartbeat
-  category: core
-  var: ""  # ""=ambient fleet check (LIVE scheduled path, unchanged); "brief"/"brief:<area>"=priority brief; any other value=ambient check focused on that area
-  tags:
-    - meta
-  requires:
-    - RESEND_API_KEY?
----
-> **${var}** — selector. **Empty (default)** = the ambient fleet check — the live path a cron runs once a day; leave it empty for the scheduled run. **`brief`** = the priority brief. See the grammar below.
+# heartbeat
 
-## Selector / `${var}` grammar
+Ambient fleet-health check that surfaces anything worth attention (default), or an on-demand priority brief - the 3 things to focus on, why now, and what moved (var=brief)
 
-- **`` (empty)** — **Ambient check** across all skills / PRs / issues, and regenerate the public status page. This is the live, scheduled path (08:00 UTC daily); its behaviour is unchanged. Leave `${var}` empty for the cron.
+> The `Operator var` — selector. **Empty (default)** = the ambient fleet check — the live path a cron runs once a day; leave it empty for the scheduled run. **`brief`** = the priority brief. See the grammar below.
+
+## Selector / the `Operator var` grammar
+
+- **`` (empty)** — **Ambient check** across all skills / PRs / issues, and regenerate the public status page. This is the live, scheduled path (08:00 UTC daily); its behaviour is unchanged. Leave the `Operator var` empty for the cron.
 - **`<area>`** (any non-empty value that is not `brief`, e.g. `crypto`, `prs`) — **Ambient check**, with the checks focused on that area (original heartbeat focus-area behaviour).
-- **`brief`** — **Priority brief**: rank the 3 things to focus on today, why now, and what moved since yesterday; send via `./notify` + email.
 - **`brief:<area>`** (e.g. `brief:crypto`) — **Priority brief** biased toward `<area>`.
 
 ## Shared setup (every run)
 
 Read `memory/MEMORY.md` and the last 2 days of `memory/logs/` for context.
 
-Parse `${var}` to pick the branch:
+Parse the `Operator var` to pick the branch:
 - **starts with `brief`** (i.e. `brief` or `brief:<area>`) → run the **Priority brief** branch. Any text after `brief:` is the emphasis area.
 - **otherwise** (empty, or any other value) → run the **Ambient check** branch. A non-empty value is the focus area; empty runs all checks.
 
@@ -32,9 +22,9 @@ The two branches are mutually exclusive — run exactly one per invocation.
 
 ---
 
-## Ambient check  (default — empty `${var}`; the LIVE scheduled path)
+## Ambient check  (default — empty the `Operator var`; the LIVE scheduled path)
 
-If `${var}` is set to a focus area, focus checks on that specific area.
+If the `Operator var` is set to a focus area, focus checks on that specific area.
 
 ### Checks (in priority order)
 
@@ -209,13 +199,12 @@ If nothing needs attention, log "HEARTBEAT_OK" (plus the overall status page ver
 **A bootstrapping / warming-up fleet counts as "nothing needs attention".** Still regenerate `docs/status.md` (verdict `🟢 OK`, warming-up note), log `HEARTBEAT_OK · STATUS_PAGE=OK (warming up)`, and **send no notification** — a fresh fork should be quiet, not a red alert. Warming-up skills are not "findings".
 
 If something needs attention:
-1. Send a single concise notification via `./notify` (grouped by priority as above)
-2. Log the findings and actions taken to memory/logs/${today}.md (under the shared `### heartbeat` heading — see [Log](#log) — with a `mode: ambient` discriminator line)
+2. Log the findings and actions taken to memory/logs/today's date.md (under the shared `### heartbeat` heading — see [Log](#log) — with a `mode: ambient` discriminator line)
 3. Log one line with the status-page verdict, e.g. `STATUS_PAGE=DEGRADED — wrote docs/status.md`
 
 ---
 
-## Priority brief  (`${var}` = `brief` or `brief:<area>`)
+## Priority brief  (the `Operator var` = `brief` or `brief:<area>`)
 
 <!-- autoresearch: variation B — priority-driven, decision-ready output (cut noise, demand "why now") -->
 
@@ -223,7 +212,7 @@ Runs **instead of** the ambient check. Any text after `brief:` (e.g. `brief:cryp
 
 A good brief is a **priming document**, not a news dump. Every line must answer "so what?".
 
-Today is ${today}. Read `memory/MEMORY.md`, `memory/logs/${yesterday}.md` (and today's if it exists), and `memory/cron-state.json` (if present).
+Today is today's date. Read `memory/MEMORY.md`, `memory/logs/${yesterday}.md` (and today's if it exists), and `memory/cron-state.json` (if present).
 
 ### 1. Rank, don't aggregate
 
@@ -247,7 +236,7 @@ Use `WebSearch` for 2 headlines in the user's tracked areas (AI and crypto by de
 ### 3. Format — terse, scannable, opinionated
 
 ```
-*Priority Brief — ${today}*
+*Priority Brief — today's date*
 
 *Focus today*
 1. [item] — why now: [≤12 words]
@@ -273,14 +262,9 @@ Style rules:
 - If fewer than 3 candidates survive the why-now bar, allow **up to 1 background item** (tagged `background:` instead of `why now:`) so the brief still surfaces something worth knowing on quiet days. Never invent items, and never include more than 1 background item.
 - If soul files under `soul/` are populated, match that voice; otherwise keep it direct and neutral (per CLAUDE.md).
 
-### 4. Send via `./notify` and email
-
-- Send the formatted brief with `./notify "..."`.
 - Send email via Resend (**optional — skip cleanly when unconfigured**):
-  - **Preflight:** if `$RESEND_API_KEY` is empty/unset **or** `$BRIEF_RECIPIENTS` has no addresses, **skip the email step entirely** — the `./notify` send above already delivered the brief. Note the skip in the log (`email: skipped (no RESEND_API_KEY)`) and continue; do **not** fail the run. `RESEND_API_KEY` is an optional dependency.
   - When configured:
     - Build the brief as HTML (wrap each section in `<h2>` headers, `<ul>/<li>` bullets)
-    - Also keep a plain-text copy (the `./notify` content above, as-is)
     - Parse `$BRIEF_RECIPIENTS` as a comma-separated list of addresses
     - POST to `https://api.resend.com/emails`:
       ```
@@ -290,23 +274,30 @@ Style rules:
       {
         "from": "Aeon Briefings <onboarding@resend.dev>",
         "to": ["<each recipient>"],
-        "subject": "[Aeon] Priority Brief — ${today}",
+        "subject": "[Aeon] Priority Brief — today's date",
         "html": "<html version>",
         "text": "<plain-text version>"
       }
       ```
-    - Log the `id` field from the Resend response to `memory/logs/${today}.md` for traceability
+    - Log the `id` field from the Resend response to `memory/logs/today's date.md` for traceability
     - If the key **is** set and Resend returns an error, log the full error body and fail loudly (do not silently continue) — a real send failure is a signal, an absent optional key is not
-- Append to `memory/logs/${today}.md` under the shared `### heartbeat` heading (see [Log](#log)) with a `mode: brief` discriminator line: timestamp, the 3 focus items (one line each), headline count, and any skills flagged from cron-state. This becomes tomorrow's "since yesterday" input.
+- Append to `memory/logs/today's date.md` under the shared `### heartbeat` heading (see [Log](#log)) with a `mode: brief` discriminator line: timestamp, the 3 focus items (one line each), headline count, and any skills flagged from cron-state. This becomes tomorrow's "since yesterday" input.
 
 ---
 
 ## Log
 
-Both branches append to `memory/logs/${today}.md` under a **single `### heartbeat` heading** (the health loop parses this shape). Begin the entry with a discriminator line naming the branch that ran:
+Both branches append to `memory/logs/today's date.md` under a **single `### heartbeat` heading** (the health loop parses this shape). Begin the entry with a discriminator line naming the branch that ran:
 - `mode: ambient` — the default fleet check. Log the status-page verdict, e.g. `STATUS_PAGE=OK`, or `HEARTBEAT_OK · STATUS_PAGE=OK` when nothing needed attention; on findings, log the findings and actions taken plus the `STATUS_PAGE=…` line.
 - `mode: brief` — the priority brief. Log the timestamp, the 3 focus items (one line each), the headline count, and any skills flagged from cron-state.
 
 ## Network note
 
 Applies to both branches. `curl` works — there is no network sandbox. Use **WebFetch** as a fallback for a flaky public GET. For GitHub queries (both branches use `gh pr list` / `gh issue list`), use the `gh` CLI (handles auth internally) rather than curl. The priority-brief Resend POST carries the `RESEND_API_KEY` secret — a bare `$RESEND_API_KEY` on the command line is refused by the Bash permission layer, so send it with `./secretcurl` using a `{RESEND_API_KEY}` placeholder (WebFetch can't carry a secret).
+
+## Do not
+
+- Do not write outside `output/heartbeat/` and `memory/skills/heartbeat/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

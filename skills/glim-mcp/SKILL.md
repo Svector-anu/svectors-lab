@@ -1,22 +1,8 @@
----
-name: glim-mcp
-description: Live-data research via the glim.sh MCP - web search, full page extraction, X/Twitter, Reddit, GitHub, Amazon, and YouTube transcripts - synthesized into a cited digest. Pay-per-call from the connected account balance; OAuth Connect via the dashboard MCP panel.
-metadata:
-  title: Glim MCP
-  mode: read-only
-  category: basics
-  var: ""
-  tags:
-    - research
-    - data
-    - mcp
-  mcp:
-    - glim
-  capabilities:
-    - external_api
-    - sends_notifications
----
-> **${var}** — the research question or task, e.g. `what are people saying about MCP servers this week` or `pull the top HN + Reddit takes on <topic>`. Append `--deep` for a wider sweep. Required. If empty, log `GLIM_NO_QUERY` and exit cleanly (no notify).
+# glim-mcp
+
+Live-data research via the glim.sh MCP - web search, full page extraction, X/Twitter, Reddit, GitHub, Amazon, and YouTube transcripts - synthesized into a cited digest. Pay-per-call from the connected account balance; OAuth Connect via the dashboard MCP panel.
+
+> The `Operator var` — the research question or task, e.g. `what are people saying about MCP servers this week` or `pull the top HN + Reddit takes on <topic>`. Append `--deep` for a wider sweep. Required. If empty, log `GLIM_NO_QUERY` and exit cleanly (no notify).
 
 Answer one research question with **live data** through the glim.sh MCP server (`glim.sh/mcp`): web search, full-page extraction, and platform-native access to X/Twitter, Reddit, GitHub, Amazon, and YouTube transcripts. Every call draws from the operator's prepaid glim balance — spend is real, so the sweep is bounded.
 
@@ -32,7 +18,7 @@ The server is wired by the dashboard MCP panel's one-click **Connect** (OAuth wi
 
 ### 1. Plan the sweep
 
-Parse `${var}` into 2–4 sub-questions and pick the glim tools that fit each — platform tools (X, Reddit, GitHub, YouTube, Amazon) when the question names a platform or the answer obviously lives there; web search + page extraction otherwise. Don't fan out for its own sake: a question one search answers gets one search.
+Parse the `Operator var` into 2–4 sub-questions and pick the glim tools that fit each — platform tools (X, Reddit, GitHub, YouTube, Amazon) when the question names a platform or the answer obviously lives there; web search + page extraction otherwise. Don't fan out for its own sake: a question one search answers gets one search.
 
 **Spend budget:** ≤ 10 tool calls per run, ≤ 25 with `--deep`. Count as you go; when the budget is spent, synthesize from what's in hand rather than making "one more" call. This is a hard cap (STRATEGY: stay within configured spend limits).
 
@@ -46,17 +32,13 @@ Write the digest: a 2–3 sentence answer up top, then the supporting evidence g
 
 ### 4. Notify
 
-Deliver via `./notify -f <file>` (ordinary Markdown): the answer, the evidence, a `Sources` list of clickable URLs, and a final line `calls: N/<budget>`. This skill is on-demand — a completed run always notifies (unlike monitors, silence isn't signal here).
-
-**Exactly one `./notify` call per run.** Each call overwrites `apps/dashboard/outputs/.pending-<skill>.md` (last-writer-wins), which becomes the chain artifact `output/.chains/glim-mcp.md` that `consume:` steps and the feed read — a follow-up "headline" ping would replace the digest with a stub. Everything goes in the single `-f` file.
-
 ### 5. Result record
 
 This skill is `read-only`, so it can't write the repo during the run (the sandbox write-locks the workspace). Don't append to `memory/logs/` yourself — put this record in your **final output**; the workflow persists it to `memory/logs/` and `output/.chains/glim-mcp.md` on your behalf after the run:
 
 ```
 ### glim-mcp
-- Query: <${var}, truncated>
+- Query: <the `Operator var`, truncated>
 - Result: GLIM_OK | GLIM_NO_QUERY | GLIM_NOT_CONNECTED | GLIM_AUTH_STALE | GLIM_NO_BALANCE | GLIM_ERROR
 - Calls: N (budget 10|25) | sources cited: M
 ```
@@ -69,3 +51,10 @@ If the answer is durable knowledge about a tracked topic (a token, a protocol, a
 - Cite or drop: a claim with no fetched source behind it doesn't ship.
 - Respect the call budget even when results are thin — say the evidence was thin instead of overspending.
 - No paywalled-content laundering: if extraction returns a stub, report the stub, don't reconstruct the article from memory.
+
+## Do not
+
+- Do not write outside `output/glim-mcp/` and `memory/skills/glim-mcp/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

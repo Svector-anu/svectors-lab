@@ -1,40 +1,32 @@
----
-name: create-skill
-description: Generate a complete new skill from a one-line prompt and ship it as a PR
-metadata:
-  title: Create Skill
-  category: evolution
-  var: ""
-  tags:
-    - dev
-    - meta
----
-> **${var}** — A natural-language description of the skill to create. **Required.** Example: `"monitor Hacker News for AI papers and send a summary"` or `"track gas prices on Ethereum and alert when below 10 gwei"`.
+# create-skill
+
+Generate a complete new skill from a one-line prompt and ship it as a PR
+
+> The `Operator var` — A natural-language description of the skill to create. **Required.** Example: `"monitor Hacker News for AI papers and send a summary"` or `"track gas prices on Ethereum and alert when below 10 gwei"`.
 
 <!-- autoresearch: variation B — sharper output via PR-first workflow + quality enforcement + exit taxonomy + new-secret guard -->
 
-If `${var}` is empty, exit `CREATE_SKILL_NO_VAR`:
+If the `Operator var` is empty, exit `CREATE_SKILL_NO_VAR`:
 ```bash
-./notify "create-skill aborted: var empty — pass a description e.g. \"monitor X for Y\""
 ```
 Then stop.
 
-Today is ${today}. Your task is to generate a complete, production-ready skill from `${var}`, score it against a quality bar, and ship it as a PR — **never commit directly to `main`**.
+Today is today's date. Your task is to generate a complete, production-ready skill from the `Operator var`, score it against a quality bar, and ship it as a PR — **never commit directly to `main`**.
 
 ## Steps
 
-1. **Parse the request.** Extract from `${var}`:
+1. **Parse the request.** Extract from the `Operator var`:
    - Core action verb (monitor, fetch, generate, analyze, alert, track, scan, etc.)
    - Data source(s) — APIs, websites, RSS, on-chain, GitHub, etc.
    - Output format — notification, article, file, PR, dashboard, etc.
-   - Configurable parameter(s) the new skill will accept via its own `${var}`
+   - Configurable parameter(s) the new skill will accept via its own the `Operator var`
    - Suggested cadence (daily, hourly, weekly, on-demand)
 
    Save a one-paragraph structured request summary; you'll use it in the PR body.
 
 2. **Duplicate detection (deep — not just `ls`).** Find functional overlap, not just name collision.
    ```bash
-   keywords=$(echo "${var}" | tr '[:upper:]' '[:lower:]' | grep -oE '[a-z]{4,}' \
+   keywords=$(echo "the `Operator var`" | tr '[:upper:]' '[:lower:]' | grep -oE '[a-z]{4,}' \
      | grep -vE '^(send|with|from|that|this|when|each|into|over|some|like|just|than|then|also|will|have|been|using|monitor|track|fetch|alert)$' \
      | sort -u)
    for kw in $keywords; do
@@ -52,22 +44,19 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    - Note every required environment variable / API key.
    - Determine fallback strategy when an optional API key isn't set (WebSearch / WebFetch / cached data / public endpoint).
 
-   **Research bar (soft):** at least one confirmed source URL or exemplar (a working docs page or a public repo using the API). If none, do **not** hard-abort — log `CREATE_SKILL_INSUFFICIENT_RESEARCH`, ask the operator via `./notify` with what was tried and why each source failed, and stop. The operator can re-dispatch with a clearer prompt or a source hint.
-
 4. **New-secret guard.** Secrets values are never inspectable from the workflow — only names are listed. Use `gh api repos/:owner/:repo/actions/secrets --jq '.secrets[].name'` to read the **names** of secrets already configured (this endpoint returns names only, never values). Cross-reference with env-var usage in `aeon.yml` and existing workflows. For each env var the new skill needs:
    - **Name present** → continue.
    - **Name missing** → record as `NEW_SECRET_REQUIRED`. The generated skill **must** gracefully degrade or skip when the secret is absent (no hard crash). Add a `### Required secrets` section to the PR body listing what the operator must add to GitHub Actions secrets before enabling.
 
    If the secret has no graceful fallback, the generated skill's step 1 must do:
    ```bash
-   if [ -z "$VAR" ]; then ./notify "{skill} skipped: VAR not set"; exit 0; fi
    ```
 
 5. **Design the skill.** Decide:
    - **Skill name** — lowercase, hyphenated, 2-3 words max (e.g., `gas-alert`, `hn-papers`). Must not collide with any existing entry under `skills/`.
    - **Description** — one sentence, starts with a verb, ≤90 chars.
    - **Tags** — pick from: `content`, `crypto`, `dev`, `meta`, `news`, `research`, `social`. Max 3.
-   - **Variable behavior** — what `${var}` controls; what happens when empty (sane default OR clean abort with notify).
+   - **Variable behavior** — what the `Operator var` controls; what happens when empty (sane default OR clean abort with notify).
    - **Steps** — 4-8 numbered, following the standard pattern: read context → fetch/search → process/analyze → write output → log → notify.
    - **Schedule suggestion** — choose a cron slot. Read existing schedules in `aeon.yml`; avoid co-scheduling at the same minute as heavy skills (article, repo-scanner, deep-research, telegram-digest) unless the new skill is lightweight (<30s expected). Prefer a `:30` minute offset if the natural hour is already crowded.
    - **Model** — default `claude-sonnet-5`. Pick `claude-haiku-4-5-20251001` if the skill is high-frequency aggregation/digestion (cost optimization), or `claude-opus-4-8` if it needs the strongest reasoning. Document the choice in the PR body.
@@ -86,9 +75,9 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
      tags:
        - {tag}
    ---
-   > **${var}** — {What the variable controls}. {If-empty behavior}.
+   > The `Operator var` — {What the variable controls}. {If-empty behavior}.
 
-   Today is ${today}. {One sentence describing the task.}
+   Today is today's date. {One sentence describing the task.}
 
    ## Steps
 
@@ -98,11 +87,10 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 
    ...
 
-   N-1. **Log.** Append to `memory/logs/${today}.md`:
+   N-1. **Log.** Append to `memory/logs/today's date.md`:
    - Skill: {skill-name}
    - What was done and key outputs
 
-   N. **Notify.** Send via `./notify`:
    {Output format template — specify ≤4000 chars, clickable URLs}
 
    ## Network note
@@ -116,7 +104,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
    - Notification character limit explicitly stated (under 4000 chars total).
    - Every link clickable (full URLs, not placeholders).
    - Fallback behavior defined for every optional secret.
-   - Use only `${var}` and `${today}` template variables — no other invented variables.
+   - Use only the `Operator var` and today's date template variables — no other invented variables.
    - No TODOs, no placeholders, no "fill in later".
    - Mandatory `## Network note` section (accurate model — see the `## Network note` in this skill for the canonical wording; there is no network sandbox).
 
@@ -136,9 +124,8 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 8. **Post-write validation.** Re-read the SKILL.md from disk and verify:
    - Frontmatter YAML is parseable; required keys present.
    - No literal substring matches: `TODO`, `FIXME`, `XXX`, `placeholder`, `fill in`, `lorem`, `<your-`, `your_api_key_here`, `example.com`.
-   - Every `${...}` template variable resolves to `${var}` or `${today}`.
-   - At least one `./notify` invocation appears in the body.
-   - At least one `memory/logs/${today}.md` write appears.
+   - Every `${...}` template variable resolves to the `Operator var` or today's date.
+   - At least one `memory/logs/today's date.md` write appears.
    - `## Network note` section exists.
 
    Any failure → delete the partial file and any other writes, exit `CREATE_SKILL_VALIDATION_FAILED` with a notify listing the failed checks. No partial state.
@@ -184,7 +171,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 
     ## Request
     ```
-    ${var}
+    the `Operator var`
     ```
 
     ## Sources researched
@@ -212,7 +199,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
     ```
     Capture the PR URL.
 
-11. **Log.** Append to `memory/logs/${today}.md`:
+11. **Log.** Append to `memory/logs/today's date.md`:
     ```
     ### create-skill
     - Request: {var, ≤80 chars}
@@ -224,7 +211,6 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
     - Exit: CREATE_SKILL_OK (or CREATE_SKILL_NEW_SECRET_REQUIRED)
     ```
 
-12. **Notify.** Send via `./notify`:
     ```
     *create-skill — {skill-name}*
     {one-line description}
@@ -240,7 +226,7 @@ Today is ${today}. Your task is to generate a complete, production-ready skill f
 |------|------|--------|
 | `CREATE_SKILL_OK` | New skill created, validated, PR opened | Notify with PR link |
 | `CREATE_SKILL_NEW_SECRET_REQUIRED` | Same as OK plus operator must add a new secret before enabling | Notify with PR link + secret call-out |
-| `CREATE_SKILL_NO_VAR` | `${var}` empty | Notify abort reason; stop |
+| `CREATE_SKILL_NO_VAR` | the `Operator var` empty | Notify abort reason; stop |
 | `CREATE_SKILL_DUPLICATE` | Existing skill covers the request | Notify with existing-skill suggestion; stop |
 | `CREATE_SKILL_INSUFFICIENT_RESEARCH` | Couldn't confirm ≥1 working data source after WebSearch + WebFetch | Notify with what was tried; stop |
 | `CREATE_SKILL_VALIDATION_FAILED` | Quality enforcement or post-write checks failed | Delete partial files; revert aeon.yml; notify with failed criteria; stop |
@@ -257,3 +243,10 @@ There is no network sandbox — `curl` works, with **WebFetch** as the fallback 
 - **Never** add an API key/secret to the workflow that isn't already there. Surface as `NEW_SECRET_REQUIRED` and document in the PR body.
 - **Never** ship a skill that fails validation. Aborting cleanly is always better than shipping broken.
 - **Never** overwrite an existing `skills/{name}/SKILL.md` — name collisions are blocking errors.
+
+## Do not
+
+- Do not write outside `output/create-skill/` and `memory/skills/create-skill/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

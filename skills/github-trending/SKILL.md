@@ -1,18 +1,10 @@
----
-name: github-trending
-description: Curated trending across GitHub repos and the Hugging Face Hub (models, datasets, spaces) - filtered, clustered, and labeled by momentum with a one-line why-notable per pick.
-metadata:
-  title: GitHub Trending
-  mode: read-only
-  category: basics
-  var: ""
-  tags:
-    - dev
-    - research
----
+# github-trending
+
+Curated trending across GitHub repos and the Hugging Face Hub (models, datasets, spaces) - filtered, clustered, and labeled by momentum with a one-line why-notable per pick.
+
 <!-- autoresearch: variation B — sharper output via curation, clustering, "why notable" gate, momentum tags -->
 
-> **${var}** — Source selector plus optional sub-scope:
+> The `Operator var` — Source selector plus optional sub-scope:
 > - empty or `github` → **GitHub trending**, all languages (default)
 > - `github:<lang>` — or a bare language token like `python`, `typescript`, `rust` (backward-compatible with the old GitHub var) → GitHub trending filtered to that language
 > - `hf` or `huggingface` → **Hugging Face trending** across models + datasets + spaces
@@ -26,13 +18,13 @@ Read `memory/MEMORY.md` for context.
 Read the last 3 days of `memory/logs/` to dedupe items you've already featured (the GitHub branch dedupes against the last **2** days, the Hugging Face branch against the last **3** — see each branch's filter step).
 Read `soul/SOUL.md` + `soul/STYLE.md` if populated to match voice.
 
-**Parse `${var}` into a source + optional sub-scope** (deterministic):
+**Parse the `Operator var` into a source + optional sub-scope** (deterministic):
 
-1. If `${var}` is empty → **GitHub branch**, no language filter.
+1. If the `Operator var` is empty → **GitHub branch**, no language filter.
 2. Otherwise trim + lowercase and split on the first `:` into `head` and optional `tail`.
 3. `head` ∈ {`hf`, `huggingface`} → **Hugging Face branch**. If `tail` is present it must be one of `models` / `datasets` / `spaces` (that becomes the resource sub-scope); any other `tail` → exit `HF_TRENDING_BAD_VAR` (no notify). No `tail` → pull all three resource types.
 4. `head` == `github` → **GitHub branch**. If `tail` is present, it's the language filter.
-5. Any other value (no colon, `head` not `hf`/`huggingface`/`github`) → **GitHub branch**, treating the whole `${var}` as the language filter (e.g. `rust`).
+5. Any other value (no colon, `head` not `hf`/`huggingface`/`github`) → **GitHub branch**, treating the whole the `Operator var` as the language filter (e.g. `rust`).
 
 Then jump to the matching branch below and run it end to end.
 
@@ -48,7 +40,7 @@ Fetch the daily trending page via **WebFetch** (it renders the HTML for you; `cu
 ```
 https://github.com/trending?since=daily
 ```
-If a language filter was resolved from `${var}`, append the language segment: `https://github.com/trending/<lang>?since=daily`.
+If a language filter was resolved from the `Operator var`, append the language segment: `https://github.com/trending/<lang>?since=daily`.
 
 Extract for each of the ~25 returned repos:
 - `owner/repo`
@@ -118,10 +110,8 @@ Pick the single most interesting survivor (highest-signal regardless of category
 
 ### A8. Notify
 
-Send via `./notify`:
-
 ```
-*GitHub Trending — ${today}*
+*GitHub Trending — today's date*
 
 *Top pick* — [owner/repo](url)
 One-sentence framing of why this is the standout today.
@@ -143,7 +133,7 @@ Replace `Xt` with stars today, `Yk` with total stars in thousands, `[TAG]` with 
 
 ### A9. Log and exit
 
-Append to `memory/logs/${today}.md` under a single `### github-trending` heading, with a discriminator line `- branch: github` as the first bullet, followed by:
+Append to `memory/logs/today's date.md` under a single `### github-trending` heading, with a discriminator line `- branch: github` as the first bullet, followed by:
 - picked repos (owner/repo + tag)
 - dropped-for-noise count
 - source status
@@ -163,7 +153,7 @@ If fetch succeeds but every repo fails filters (rare but possible on slow days),
 
 ## Branch B — Hugging Face trending (source = `hf`)
 
-Today is ${today}. The Hugging Face Hub is where new AI artifacts land first — models hours after a paper, datasets before they get cited, spaces as the first runnable form of a technique. The Hub's own front page lists "trending" but doesn't filter the noise (test models, gated previews, redundant fine-tunes of the same base). This branch mirrors the GitHub contract for the AI ecosystem: don't dump the top 10, deliver a **curated** slate of 5–8 picks a busy AI/dev reader would actually want to click, with a one-line "why notable" each.
+Today is today's date. The Hugging Face Hub is where new AI artifacts land first — models hours after a paper, datasets before they get cited, spaces as the first runnable form of a technique. The Hub's own front page lists "trending" but doesn't filter the noise (test models, gated previews, redundant fine-tunes of the same base). This branch mirrors the GitHub contract for the AI ecosystem: don't dump the top 10, deliver a **curated** slate of 5–8 picks a busy AI/dev reader would actually want to click, with a one-line "why notable" each.
 
 ### B1. Fetch candidates
 
@@ -257,10 +247,8 @@ Pick the single most interesting survivor (highest signal regardless of bucket) 
 
 ### B7. Notify
 
-Send via `./notify`:
-
 ```
-*Hugging Face Trending — ${today}*
+*Hugging Face Trending — today's date*
 
 *Top pick* — [owner/name](url)
 One-sentence framing of why this is the standout today.
@@ -292,7 +280,7 @@ If fewer than 3 survivors after filtering, send a short note: *"Hugging Face Tre
 
 ### B8. Log and exit
 
-Append to `memory/logs/${today}.md` under a single `### github-trending` heading (the shared hub slug — the health loop parses this shape), with a discriminator line `- branch: hf (scope: <models|datasets|spaces|all>)` as the first bullet, followed by:
+Append to `memory/logs/today's date.md` under a single `### github-trending` heading (the shared hub slug — the health loop parses this shape), with a discriminator line `- branch: hf (scope: <models|datasets|spaces|all>)` as the first bullet, followed by:
 
 - picked artifacts (`id` + resource type + tag)
 - dropped-for-noise count per filter category
@@ -307,7 +295,7 @@ Append to `memory/logs/${today}.md` under a single `### github-trending` heading
 | `HF_TRENDING_OK` | Fetched at least one source, sent a notification | Yes |
 | `HF_TRENDING_QUIET` | All sources fetched, but every survivor failed a filter | Yes (the "quiet day" note) |
 | `HF_TRENDING_ERROR` | Every source (models + datasets + spaces — or the single one selected by the sub-scope) failed both `curl` and the WebFetch fallback | Yes (the "sources unavailable" note) |
-| `HF_TRENDING_BAD_VAR` | `${var}` selected the HF branch but the sub-scope after `hf:` / `huggingface:` was non-empty and not one of `models` / `datasets` / `spaces` | No |
+| `HF_TRENDING_BAD_VAR` | the `Operator var` selected the HF branch but the sub-scope after `hf:` / `huggingface:` was non-empty and not one of `models` / `datasets` / `spaces` | No |
 
 **Cleanup.** These live under `/tmp` (`/tmp/hf-models.json`, `/tmp/hf-datasets.json`, `/tmp/hf-spaces.json`) — throwaway intermediates outside the repo, so no cleanup is required.
 
@@ -336,3 +324,10 @@ Append to `memory/logs/${today}.md` under a single `### github-trending` heading
 ## Why this exists
 
 aeon already has `paper-pick` (one daily HF Papers pick) and `paper-digest` (multiple paper summaries). Both surface *research*. Neither surfaces *artifacts* — the models, datasets, and spaces that ship alongside (and frequently before) the paper. The GitHub branch covers the repo layer; the Hugging Face branch covers the model / dataset / space layer that lives one floor above on the AI stack. Together they give a complete picture of where the ecosystem's attention is moving today: papers (theory) → repos (code) → HF Hub (artifacts).
+
+## Do not
+
+- Do not write outside `output/github-trending/` and `memory/skills/github-trending/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

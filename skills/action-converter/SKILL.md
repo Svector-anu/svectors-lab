@@ -1,16 +1,10 @@
----
-name: action-converter
-description: 5 concrete real-life actions, leverage-scored against open loops with specificity and anti-fluff gates
-metadata:
-  title: Action Converter
-  category: basics
-  var: ""
-  tags:
-    - meta
----
+# action-converter
+
+5 concrete real-life actions, leverage-scored against open loops with specificity and anti-fluff gates
+
 <!-- autoresearch: variation B — sharper output via specificity gates, leverage scoring, banned-phrase lint, open-loop anchoring, empty-state taxonomy -->
 
-> **${var}** — Optional focus area (e.g. `health`, `networking`, `learning`, `shipping`, `crypto`, `repo`). If empty, covers all areas. Treated as a tiebreaker, not a hard filter.
+> The `Operator var` — Optional focus area (e.g. `health`, `networking`, `learning`, `shipping`, `crypto`, `repo`). If empty, covers all areas. Treated as a tiebreaker, not a hard filter.
 
 Read `memory/MEMORY.md` for stated goals, "Next Priorities", tracked items, and current topics.
 Read the last 7 days of `memory/logs/` for recent activity, patterns, and what's already been suggested or done.
@@ -44,7 +38,7 @@ Sources to mine:
 - **`memory/cron-state.json`** — every skill with `consecutive_failures > 0` OR `last_status != success` becomes a loop: `fix <skill>`. Urgency = `blocker` if consecutive_failures ≥ 3.
 - **Recent logs (last 7 days)** — any line ending in `?`, containing "blocked", "next:", "todo", "follow-up", "unfinished", or naming a deferred decision.
 - **Recent articles (last 7 days)** — each new article opens a distribution/syndication loop ("syndicate <slug>") if `syndicate-article` is enabled, and a feedback loop ("respond to comments on <slug>") if traffic is plausible.
-- **${var}** — if set, add a synthetic loop "advance ${var}" so at least one action ties to the requested focus area.
+- The `Operator var` — if set, add a synthetic loop "advance the `Operator var`" so at least one action ties to the requested focus area.
 
 Deduplicate by similarity in `text`. Cap the loop list at 25.
 
@@ -58,7 +52,7 @@ Score every loop on three 1–5 axes. Total = leverage × urgency × concretenes
 | **urgency** | nice-to-have | this week | today (deadline / blocker / >5 day stall on hot loop) |
 | **concreteness** | "think about X" | known shape, no draft | next step is one named action |
 
-Drop any loop scoring <8 from the candidate pool. If `${var}` is set, give a +0.5 leverage bump to loops touching that area.
+Drop any loop scoring <8 from the candidate pool. If the `Operator var` is set, give a +0.5 leverage bump to loops touching that area.
 
 ### 4. Convert loops to actions
 
@@ -90,12 +84,8 @@ Build one **today's shape** line: ≤14 words capturing the dominant theme of th
 
 Order the 5 actions by descending quality score, then by descending urgency.
 
-### 6. Send via `./notify`
-
-Use this exact format (`./notify` renders the Markdown per-channel — just write it cleanly):
-
 ```
-*5 Actions — ${today}*
+*5 Actions — today's date*
 Shape: <today's shape line>
 
 1. <action — one imperative sentence, names a specific entity>
@@ -131,7 +121,7 @@ Notification rules:
 - If mode is `ACTION_CONVERTER_NO_CONTEXT`, skip the action list entirely and notify: `*Action Converter — no context yet*` plus a one-line pointer ("Populate memory/MEMORY.md or run a skill to seed memory/logs/").
 - If mode is `ACTION_CONVERTER_BOOTSTRAP`, prefix the shape line with `Bootstrap mode: ` and pull all actions from the setup-completion pool.
 
-### 7. Log to `memory/logs/${today}.md`
+### 7. Log to `memory/logs/today's date.md`
 
 Append:
 ```
@@ -152,3 +142,10 @@ Carrying loops forward in the log is what powers the 14-day novelty check and le
 `gh pr list` works in a GitHub Actions run via the `gh` CLI (handles auth internally, so no token touches the command line). If `gh` is unavailable or returns empty, treat the open-PR loop source as `prs=0` and continue — do not block the whole run.
 
 No outbound HTTP is required. All inputs are local files and `gh`. No new env vars.
+
+## Do not
+
+- Do not write outside `output/action-converter/` and `memory/skills/action-converter/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,16 +1,8 @@
----
-name: monitor-polymarket
-description: Monitor Polymarket and/or Kalshi prediction markets for 24h price moves, volume changes, fresh comments, and high-conviction alerts
-metadata:
-  title: Monitor Prediction Markets
-  mode: read-only
-  category: crypto
-  var: ""
-  tags:
-    - crypto
-    - research
----
-> **${var}** — Platform selector with an optional single-market override:
+# monitor-polymarket
+
+Monitor Polymarket and/or Kalshi prediction markets for 24h price moves, volume changes, fresh comments, and high-conviction alerts
+
+> The `Operator var` — Platform selector with an optional single-market override:
 > - **empty** (`""`) — run **both** platforms from their watchlists.
 > - `polymarket` — run Polymarket's whole watchlist (`skills/monitor-polymarket/watchlist-polymarket.md`).
 > - `kalshi` — run Kalshi's whole watchlist (`skills/monitor-polymarket/watchlist-kalshi.md`).
@@ -26,13 +18,13 @@ A table of prices isn't useful. An operator reading this notification wants to a
 
 ## Dispatch
 
-Parse `${var}` into a platform choice and an optional single-market override, then run the matching branch(es).
+Parse the `Operator var` into a platform choice and an optional single-market override, then run the matching branch(es).
 
 ```bash
 PLATFORM="both"   # both | polymarket | kalshi
 SINGLE=""         # optional single event slug (Polymarket) or ticker (Kalshi)
 
-case "${var}" in
+case "the `Operator var`" in
   "")            PLATFORM="both" ;;
   polymarket)   PLATFORM="polymarket" ;;
   kalshi)       PLATFORM="kalshi" ;;
@@ -40,7 +32,7 @@ case "${var}" in
   kalshi:*)     PLATFORM="kalshi";     SINGLE="${var#kalshi:}" ;;
   *)            # unrecognised prefix — don't guess a venue; fall back to both watchlists
                 PLATFORM="both"; SINGLE=""
-                echo "unrecognised selector '${var}' — running both watchlists" ;;
+                echo "unrecognised selector 'the `Operator var`' — running both watchlists" ;;
 esac
 ```
 
@@ -251,7 +243,7 @@ Rank events by the max `move_score` of any market within them. Cap the report at
 ## K6. Build the Kalshi report
 
 ```
-*Kalshi monitor — ${today}*
+*Kalshi monitor — today's date*
 verdict: [1 sentence — dominant theme or "all quiet"]
 
 **[Event Title]** (EVENT_TICKER) — category
@@ -310,11 +302,9 @@ Scan for events with high `volume_24h` (top 10) whose tickers are **not** in the
 
 # Notify
 
-Send via `./notify` (under 4000 chars). Emit only the section(s) for the branch(es) that ran.
-
 - **Polymarket only** — send the Polymarket report from P4.
 - **Kalshi only** — send the Kalshi report from K6.
-- **Both** — send one combined message: the Kalshi report (K6) first (it's the ranked, decision-oriented view), then a `— — —` divider, then the Polymarket report (P4). Lead with a one-line cross-venue verdict, e.g. `prediction markets — ${today}: [dominant theme across both, or "all quiet both venues"]`.
+- **Both** — send one combined message: the Kalshi report (K6) first (it's the ranked, decision-oriented view), then a `— — —` divider, then the Polymarket report (P4). Lead with a one-line cross-venue verdict, e.g. `prediction markets — today's date: [dominant theme across both, or "all quiet both venues"]`.
 
 If the combined report exceeds the budget, trim in this order: (1) drop Kalshi's "Trending (not tracked)" block, (2) truncate Kalshi events from the bottom of the ranked list, (3) drop Polymarket comment lines, (4) truncate Polymarket events from the bottom.
 
@@ -322,11 +312,11 @@ If the combined report exceeds the budget, trim in this order: (1) drop Kalshi's
 
 # Log
 
-Append to `memory/logs/${today}.md` under a single `### monitor-polymarket` heading, with a bullet group for **each platform that ran**:
+Append to `memory/logs/today's date.md` under a single `### monitor-polymarket` heading, with a bullet group for **each platform that ran**:
 
 ```
 ### monitor-polymarket
-- **Platform(s):** both | polymarket | kalshi   (selector: `${var}`)
+- **Platform(s):** both | polymarket | kalshi   (selector: the `Operator var`)
 
 #### Polymarket        (only if the Polymarket branch ran)
 - **Events monitored:** N
@@ -352,4 +342,9 @@ If a market moved dramatically — Polymarket >5pp, or Kalshi >10pp on a non-thi
 
 ## Network note
 
-Both branches only fetch **public** APIs (`mode: read-only`), so there are no secret-bearing calls. `curl` works — there is no network sandbox; use **WebFetch** as a fallback for a flaky public GET (per-platform endpoint lists are in the Polymarket Network note P5 and the Kalshi Network note K9). Never write to the repo beyond `memory/logs/` (and an optional `memory/MEMORY.md` note); produce all output via `./notify` and `memory/`.
+## Do not
+
+- Do not write outside `output/monitor-polymarket/` and `memory/skills/monitor-polymarket/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,14 +1,6 @@
----
-name: pm-manipulation
-description: Detect suspected manipulation on prediction markets over the past 3 days by cross-referencing price/volume/comment anomalies with multilingual local-press coverage
-metadata:
-  title: PM Manipulation
-  category: crypto
-  tags:
-    - crypto
-    - research
-    - security
----
+# pm-manipulation
+
+Detect suspected manipulation on prediction markets over the past 3 days by cross-referencing price/volume/comment anomalies with multilingual local-press coverage
 
 Read `memory/MEMORY.md` for context.
 Read the last 3 days of `memory/logs/` to avoid re-flagging markets you already covered, and to compare current readings against prior ones.
@@ -25,9 +17,9 @@ This skill looks at the **past 3 days** of activity on a configurable prediction
 
 ## Configuration
 
-Read `memory/topics/prediction-markets.md` if it exists for an optional `## Platform` line naming the target API root. Defaults to Polymarket's public Gamma + CLOB APIs (`gamma-api.polymarket.com`, `clob.polymarket.com`, `data-api.polymarket.com`). The candidate selection, scoring rubric, and multilingual sweep are platform-agnostic; only the endpoints differ.
+Read `memory/skills/pm-manipulation/prediction-markets.md` if it exists for an optional `## Platform` line naming the target API root. Defaults to Polymarket's public Gamma + CLOB APIs (`gamma-api.polymarket.com`, `clob.polymarket.com`, `data-api.polymarket.com`). The candidate selection, scoring rubric, and multilingual sweep are platform-agnostic; only the endpoints differ.
 
-The keyword filter and locale table below are starting points — the operator can edit `memory/topics/prediction-markets.md` to add `## Keywords` and `## Locales` sections that override the defaults.
+The keyword filter and locale table below are starting points — the operator can edit `memory/skills/pm-manipulation/prediction-markets.md` to add `## Keywords` and `## Locales` sections that override the defaults.
 
 ## Network note
 
@@ -51,7 +43,7 @@ From the union of those two lists, pick **6–10 candidates** that meet at least
 - Question references a non-US country, region, or conflict
 - Question references a regulatory body, election, or coup/conflict event
 - 7d volume > $500k AND 24h volume > $50k (real money, not just liquidity-mining)
-- Slug contains keywords (default set; operator can override in `memory/topics/prediction-markets.md`): `russia`, `iran`, `israel`, `china`, `taiwan`, `ukraine`, `venezuela`, `argentina`, `mexico`, `brazil`, `india`, `pakistan`, `nigeria`, `france`, `germany`, `italy`, `spain`, `eu-`, `nato`, `cartel`, `coup`, `nuclear`, `assassination`, `ceasefire`, `election`, `vote`, `referendum`, `oracle`, `dispute`, `umip`
+- Slug contains keywords (default set; operator can override in `memory/skills/pm-manipulation/prediction-markets.md`): `russia`, `iran`, `israel`, `china`, `taiwan`, `ukraine`, `venezuela`, `argentina`, `mexico`, `brazil`, `india`, `pakistan`, `nigeria`, `france`, `germany`, `italy`, `spain`, `eu-`, `nato`, `cartel`, `coup`, `nuclear`, `assassination`, `ceasefire`, `election`, `vote`, `referendum`, `oracle`, `dispute`, `umip`
 
 Skip anything sports, weather, or pure crypto-price (BTC > $X by Y) — those have different manipulation signatures and aren't this skill's job.
 
@@ -158,7 +150,7 @@ Build the body in a temp file (multi-line content; never argv-pipe long strings)
 ```bash
 TEMP=$(mktemp -t pm-manipulation.XXXXXX.md)
 cat > "$TEMP" <<'MSG'
-PM Manipulation Watch — ${today} (past 3d)
+PM Manipulation Watch — today's date (past 3d)
 
 scanned: N markets · flagged: M · suspicious: K · high-conf: J
 
@@ -180,7 +172,7 @@ scanned: N markets · flagged: M · suspicious: K · high-conf: J
 --- CLEAN (scanned but no flags) ---
 N markets, no anomalies above threshold.
 
-read it: output/articles/pm-manipulation-${today}.md
+read it: output/articles/pm-manipulation-today's date.md
 MSG
 ```
 
@@ -188,10 +180,10 @@ Keep the notification under 3500 chars. If it exceeds, drop the CLEAN section an
 
 ### 7. Save the full report
 
-Write the unabridged report to `output/articles/pm-manipulation-${today}.md`:
+Write the unabridged report to `output/articles/pm-manipulation-today's date.md`:
 
 ```markdown
-# PM Manipulation Watch — ${today}
+# PM Manipulation Watch — today's date
 
 **Window:** past 3 days · **Scanned:** N markets · **Suspicious (≥3):** K · **High-confidence (≥4):** J
 
@@ -226,14 +218,13 @@ Cite every source with a URL. No untranslated quotes longer than ~10 words — r
 ### 8. Notify
 
 ```bash
-./notify -f "$TEMP"
 ```
 
 If status is **high-confidence (≥4)**, prepend `[URGENT] ` to the notification subject so it surfaces in chat.
 
 ### 9. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 ```
 ### pm-manipulation
 - **Scanned:** N markets (past 3d)
@@ -259,3 +250,10 @@ Append to `memory/logs/${today}.md`:
 
 - None — uses public Polymarket APIs + WebSearch/WebFetch
 - Notification channels configured via repo secrets (see CLAUDE.md)
+
+## Do not
+
+- Do not write outside `output/pm-manipulation/` and `memory/skills/pm-manipulation/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

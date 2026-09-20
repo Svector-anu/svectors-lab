@@ -1,25 +1,14 @@
----
-name: strategy-builder
-description: Draft STRATEGY.md from a goal - read the operator's brief (goal, repo, links) plus the repo README and memory, then write a tight north-star/priorities/audience/constraints strategy.
-metadata:
-  category: core
-  schedule: "workflow_dispatch"
-  commits: true
-  permissions:
-    - contents:write
-  var: ""
-  tags:
-    - meta
-    - productivity
----
+# strategy-builder
 
-> **${var}** — a brief. Two accepted shapes:
+Draft STRATEGY.md from a goal - read the operator's brief (goal, repo, links) plus the repo README and memory, then write a tight north-star/priorities/audience/constraints strategy.
+
+> The `Operator var` — a brief. Two accepted shapes:
 > - **Structured (from the dashboard):** ` | `-separated tokens — any of `repo=<owner/repo>`, `links=<url1,url2>`, `goal=<free text>`. `goal` is the **last** token; everything after `goal=` is the goal text. Example: `repo=acme/widgets | links=https://acme.com | goal=grow paying teams, win on reliability`.
 > - **Bare text:** just the goal, e.g. `growing my open-source agent framework — active contributors, not stars`.
 >
-> If `${var}` is empty, fall back to the repo README + `memory/MEMORY.md` to infer direction. If even that yields nothing usable, log `STRATEGY_BUILDER_SKIP: no brief — set var or add a goal` and stop with no notification.
+> If the `Operator var` is empty, fall back to the repo README + `memory/MEMORY.md` to infer direction. If even that yields nothing usable, log `STRATEGY_BUILDER_SKIP: no brief — set var or add a goal` and stop with no notification.
 
-Today is ${today}. This skill writes **`STRATEGY.md`** — the operator's north-star. It's imported into `CLAUDE.md`, so it rides along in the context of **every** skill run. That sets the bar: it must be **tight** (it costs tokens every run) and **specific** (a vague strategy can't break a tie when a skill has to choose what to work on).
+Today is today's date. This skill writes **`STRATEGY.md`** — the operator's north-star. It's imported into `CLAUDE.md`, so it rides along in the context of **every** skill run. That sets the bar: it must be **tight** (it costs tokens every run) and **specific** (a vague strategy can't break a tie when a skill has to choose what to work on).
 
 This is the agent behind the dashboard's **Strategy → Build my strategy** button.
 
@@ -31,7 +20,7 @@ Most forks never tailor `STRATEGY.md` — it sits on the unconfigured defaults, 
 
 ### 0. Parse the brief
 
-- If `${var}` contains `=`, split on ` | ` and read `repo=`, `links=`, and `goal=` (goal is the remainder after `goal=`).
+- If the `Operator var` contains `=`, split on ` | ` and read `repo=`, `links=`, and `goal=` (goal is the remainder after `goal=`).
 - If it has no `=`, treat the whole value as the **goal**.
 - If empty, set goal/repo/links all empty and rely on repo context (next step).
 
@@ -97,11 +86,9 @@ Write the file in this shape (match the repo's existing STRATEGY.md structure). 
 
 ### 5. Notify
 
-Write to a temp file and send with `./notify -f`:
-
 ```bash
 mkdir -p .pending-notify-temp
-cat > ".pending-notify-temp/strategy-builder-${today}.md" << 'NOTIF_EOF'
+cat > ".pending-notify-temp/strategy-builder-today's date.md" << 'NOTIF_EOF'
 strategy drafted
 
 north-star: ${one-line north-star}
@@ -112,12 +99,11 @@ ${1 sentence in Aeon's plain voice: the single bet this strategy makes}
 
 review + edit in the dashboard Strategy tab, then Pull to refresh.
 NOTIF_EOF
-./notify -f ".pending-notify-temp/strategy-builder-${today}.md"
 ```
 
 ### 6. Log
 
-Append to `memory/logs/${today}.md`:
+Append to `memory/logs/today's date.md`:
 
 ```markdown
 ## Strategy Builder
@@ -140,11 +126,16 @@ Append to `memory/logs/${today}.md`:
 
 ## Network note
 
-All inputs are local file reads, `gh api` (auth handled internally by the workflow's `GITHUB_TOKEN`, so no secret ever lands on the command line), or built-in **WebFetch** for links (a Claude tool that runs outside the Bash permission layer). No third-party API key required. Notifications use `./notify -f`.
-
 ## Edge cases
 
 - **Empty var, this fork is generic** — read README + MEMORY.md and draft from what's being built. If the repo is itself unconfigured (fresh fork, empty memory), skip with `STRATEGY_BUILDER_SKIP` rather than writing a generic strategy.
 - **External repo unreadable** (private/404) — fall back to goal + links; note `repo: unreadable` in the log.
 - **Goal contradicts the repo** — trust the explicit goal text; it's the operator's stated intent. Note the tension in the log if stark.
 - **Over the soft limit** — trim priorities and prose until under ~2000 chars before committing; never ship a bloated STRATEGY.md.
+
+## Do not
+
+- Do not write outside `output/strategy-builder/` and `memory/skills/strategy-builder/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

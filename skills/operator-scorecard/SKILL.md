@@ -1,16 +1,8 @@
----
-name: operator-scorecard
-description: Three recap modes - default synthesizes agent health, community growth, and economic activity into a was-it-worth-it verdict; ops recaps what shipped and failed; push ranks push impact.
-metadata:
-  category: productivity
-  var: ""
-  tags:
-    - meta
-    - productivity
-    - dev
----
+# operator-scorecard
 
-> **${var}** — Mode selector. The first token picks the branch; the remainder is branch-specific.
+Three recap modes - default synthesizes agent health, community growth, and economic activity into a was-it-worth-it verdict; ops recaps what shipped and failed; push ranks push impact.
+
+> The `Operator var` — Mode selector. The first token picks the branch; the remainder is branch-specific.
 > - **empty** → **operator scorecard** (default): synthesize the week into agent health + community growth + economic activity with a worst-of-three OK/WATCH/DEGRADED verdict. Also accepts `dry-run` (skip the notification — article + JSON spec still write) and/or an integer `N` to override the window in hours (default 168 = 7d, cap 720). Examples: `` , `dry-run`, `336`, `dry-run 336`.
 > - **`ops`** → **ops recap**: operational summary of one day — what shipped, what failed, what needs follow-up. Optional date override after the keyword (`ops 2026-06-30` or `ops:2026-06-30`); empty date = today (UTC).
 > - **`push`** → **push recap**: deep-dive recap of all pushes — reads diffs, ranks impact, separates user-visible shipments from internal work, delivers a verdict. Optional repo scope after the keyword (`push aeonfun/aeon` or `push:owner/repo`); empty = all watched repos.
@@ -28,18 +20,18 @@ One skill, three recap views over Aeon's own activity. They share a preamble (re
 ## Shared preamble (run for every branch)
 
 1. Read `memory/MEMORY.md` for high-level context and scan the last ~3 days of `memory/logs/` for recent activity — drop anything already reported so you don't re-report the same signal.
-2. Compute `${today}` (UTC date, `YYYY-MM-DD`).
-3. **Parse `${var}` → branch + branch argument** (trim whitespace first). Let `FIRST` be the lowercase first token (split on the first whitespace or `:`), `REST` the remainder:
+2. Compute today's date (UTC date, `YYYY-MM-DD`).
+3. **Parse the `Operator var` → branch + branch argument** (trim whitespace first). Let `FIRST` be the lowercase first token (split on the first whitespace or `:`), `REST` the remainder:
    - `FIRST == "ops"` → `BRANCH=ops`, `ARG=REST` (a date override, or empty).
    - `FIRST == "push"` → `BRANCH=push`, `ARG=REST` (an `owner/repo` scope, or empty).
-   - anything else (empty, `dry-run`, a bare integer, or an unrecognized token) → `BRANCH=scorecard`; pass the **whole** `${var}` through to the scorecard branch's own grammar (dry-run prefix + optional integer window).
+   - anything else (empty, `dry-run`, a bare integer, or an unrecognized token) → `BRANCH=scorecard`; pass the **whole** the `Operator var` through to the scorecard branch's own grammar (dry-run prefix + optional integer window).
 4. Dispatch: run the matching branch below. Only that branch executes.
 
 ---
 
 # Scorecard branch (default — empty / `dry-run` / integer window)
 
-Today is ${today}. Synthesize the last 7 days of agent activity into a single plain-language scorecard the operator can read in 30 seconds. Three paragraphs (agent health / community growth / economic activity) plus a one-line verdict (OK / WATCH / DEGRADED). The point of this branch is to answer the question every operator quietly asks after a week of autonomous runs: **was this week worth it?**
+Today is today's date. Synthesize the last 7 days of agent activity into a single plain-language scorecard the operator can read in 30 seconds. Three paragraphs (agent health / community growth / economic activity) plus a one-line verdict (OK / WATCH / DEGRADED). The point of this branch is to answer the question every operator quietly asks after a week of autonomous runs: **was this week worth it?**
 
 ## Why this exists
 
@@ -64,7 +56,7 @@ No outbound HTTP. No `gh api` calls. Pure file scanning + arithmetic.
 
 ### 1. Parse var and resolve window
 
-- If `${var}` matches `^dry-run` → `MODE=dry-run`. Strip the prefix; remainder treated as window override.
+- If the `Operator var` matches `^dry-run` → `MODE=dry-run`. Strip the prefix; remainder treated as window override.
 - Otherwise `MODE=execute`.
 - If the remaining var parses as a positive integer N → `WINDOW_HOURS=N` and `WINDOW_DAYS=$((N / 24))` (round down). Cap at 720h (30 days).
 - Otherwise `WINDOW_HOURS=168`, `WINDOW_DAYS=7`.
@@ -117,14 +109,14 @@ b. **Compute economic verdict (paragraph 3):**
 
 ### 6. Build the article
 
-Path: `output/articles/operator-scorecard-${today}.md`. Overwrite if exists (idempotent same-day reruns).
+Path: `output/articles/operator-scorecard-today's date.md`. Overwrite if exists (idempotent same-day reruns).
 
 ```markdown
-# Operator Scorecard — ${today}
+# Operator Scorecard — today's date
 
 **Verdict:** ${verdict_emoji} ${verdict_label} — ${one_line_summary}
 
-*Window: last ${WINDOW_DAYS}d (${WINDOW_START_DATE} → ${today})*
+*Window: last ${WINDOW_DAYS}d (${WINDOW_START_DATE} → today's date)*
 
 ## Agent health
 
@@ -171,12 +163,12 @@ Path: `apps/dashboard/outputs/operator-scorecard.json`. Use the catalog componen
   "version": "1",
   "generated_at": "${ISO timestamp}",
   "skill": "operator-scorecard",
-  "title": "Operator Scorecard — ${today}",
+  "title": "Operator Scorecard — today's date",
   "spec": {
     "type": "Stack",
     "props": {"direction": "vertical", "gap": "md"},
     "children": [
-      {"type": "Heading", "props": {"level": 2, "children": "Operator Scorecard — ${today}"}},
+      {"type": "Heading", "props": {"level": 2, "children": "Operator Scorecard — today's date"}},
       {"type": "Alert", "props": {"variant": "${alert_variant}", "children": "${verdict_label} — ${one_line_summary}"}},
       {"type": "Grid", "props": {"columns": 3, "gap": "sm"}, "children": [
         {"type": "Card", "props": {"children": [
@@ -221,10 +213,8 @@ If the file write fails (filesystem read-only, missing directory), log a warning
 
 If `MODE == dry-run`: skip notify, log `OPERATOR_SCORECARD_DRY_RUN`, exit.
 
-Otherwise call `./notify`:
-
 ```
-*Operator Scorecard — ${today}*
+*Operator Scorecard — today's date*
 ${verdict_emoji} ${verdict_label} — ${one_line_summary}
 
 Agent health: ${success_pct}% across ${total_runs} runs (${anomaly_count} anomalies, ${heartbeat_ok} clean heartbeats)
@@ -236,14 +226,12 @@ Economic activity: $${total_distributed} in $AEON to ${recipient_count} recipien
 ${notable_addendum_or_omit}
 
 Window: last ${WINDOW_DAYS}d
-Full: output/articles/operator-scorecard-${today}.md
+Full: output/articles/operator-scorecard-today's date.md
 ```
 
 `notable_addendum`: if any "What was notable" bullet exists, prefix with `Notable:` and inline the first one only (cap at ~120 chars). If none, omit the line.
 
-Keep it tight for signal — the verdict + three lane lines are the priority; drop "Notable" first if it runs long. (`./notify` auto-chunks, so length is about signal, not transport.)
-
-### 9. Log to `memory/logs/${today}.md`
+### 9. Log to `memory/logs/today's date.md`
 
 Append under the shared `### operator-scorecard` heading (see the **Log** section) with a `branch: scorecard` discriminator, then:
 
@@ -255,7 +243,7 @@ Append under the shared `### operator-scorecard` heading (see the **Log** sectio
 - **Agent health**: ${success_pct}% success across ${total_runs} runs · ${anomaly_count} anomalies · ${heartbeat_p0+p1} flagged heartbeats · ${open_issues} open issues
 - **Community growth**: +${total_stars_added}⭐ +${total_forks_added} forks · ${new_contributors} new contributors
 - **Economic activity**: $${total_distributed} in $AEON to ${recipient_count} recipients · token ${token_7d_pct}% 7d (${token_verdict})
-- **Article**: output/articles/operator-scorecard-${today}.md
+- **Article**: output/articles/operator-scorecard-today's date.md
 - **Dashboard**: apps/dashboard/outputs/operator-scorecard.json
 - **Notification sent**: ${yes|no — dry-run|no — INSUFFICIENT_DATA}
 - **Status**: OPERATOR_SCORECARD_OK | OPERATOR_SCORECARD_QUIET | OPERATOR_SCORECARD_NO_DATA
@@ -325,8 +313,6 @@ Read `memory/MEMORY.md` for context and `memory/issues/INDEX.md` for open issues
    - "two regressions opened, one resolved; net negative"
    - "first failure of `fetch-tweets` in a week — investigate before tomorrow's run"
    No hedging, no "today saw...", no "various activity occurred".
-
-9. **Compose and send the recap via `./notify`.**
 
    ```
    *Ops Recap — ${TODAY}*
@@ -405,7 +391,7 @@ gh pr list --repo OWNER/REPO --state merged --search "merged:>=$SINCE" --json nu
 
 **Bot filter.** Drop commits whose author matches `dependabot[bot]`, `renovate[bot]`, `github-actions[bot]`, `*-bot`, or whose message starts with `chore(deps):` **unless** they touch files outside `package*.json`/`*.lock`/`.github/`. Note the dropped count — you'll surface it in the footer.
 
-**Significance gate.** After bot-filtering, if the remaining set is all empty across every watched repo: log `PUSH_RECAP_QUIET` to `memory/logs/${today}.md` and **stop — send no notification, write no article**.
+**Significance gate.** After bot-filtering, if the remaining set is all empty across every watched repo: log `PUSH_RECAP_QUIET` to `memory/logs/today's date.md` and **stop — send no notification, write no article**.
 
 If any fetch errors (non-empty `stderr`, rate-limit hit, 5xx), record the repo under `errors[]` and continue with partial data. If **every** fetch fails, log `PUSH_RECAP_ERROR` with the per-repo reasons and notify `push-recap: all sources failed — [reasons]` then stop.
 
@@ -464,10 +450,10 @@ If a theme has no user-visible commits, label it `Internal: <theme>` and push it
 
 ### 6. Write the deep recap
 
-Write to `output/articles/push-recap-${today}.md`:
+Write to `output/articles/push-recap-today's date.md`:
 
 ```markdown
-# Push Recap — ${today}
+# Push Recap — today's date
 
 ## Verdict
 > <one-line verdict>
@@ -527,7 +513,7 @@ Keep it substantive. If there are fewer than 3 user-visible commits, drop the `T
 
 ### 7. Log before notifying
 
-Append to `memory/logs/${today}.md` under the shared `### operator-scorecard` heading (see the **Log** section) with a `branch: push` discriminator:
+Append to `memory/logs/today's date.md` under the shared `### operator-scorecard` heading (see the **Log** section) with a `branch: push` discriminator:
 
 ```
 ### operator-scorecard
@@ -536,7 +522,7 @@ Append to `memory/logs/${today}.md` under the shared `### operator-scorecard` he
 - Commits: <total> (user-visible: X, internal: Y, infra: Z, bot-filtered: B)
 - Merged PRs: <count>
 - Verdict: <the one-line verdict>
-- Article: output/articles/push-recap-${today}.md
+- Article: output/articles/push-recap-today's date.md
 - Sources: <per-repo ok/error/empty>
 ```
 
@@ -547,10 +533,8 @@ Append to `memory/logs/${today}.md` under the shared `### operator-scorecard` he
 - ≤3 internal commits
 - Zero merged PRs
 
-Otherwise send via `./notify`:
-
 ```
-*Push Recap — ${today}*
+*Push Recap — today's date*
 <repo> — <verdict>
 
 Shipped to users:
@@ -564,7 +548,7 @@ Under the hood:
 Shape: X user-visible · Y internal · Z infra · N bot-filtered · P merged PRs
 Volume: X files, +Y/-Z lines
 
-Full recap: https://github.com/$(git remote get-url origin | sed -E 's|.*github.com[:/]([^/]+/[^/.]+).*|\1|')/blob/main/output/articles/push-recap-${today}.md
+Full recap: https://github.com/$(git remote get-url origin | sed -E 's|.*github.com[:/]([^/]+/[^/.]+).*|\1|')/blob/main/output/articles/push-recap-today's date.md
 ```
 
 The notification must let a reader know what shipped without clicking through. Names and numbers, not "various improvements." Each bullet must cite at least one: specific file, specific feature, specific user impact.
@@ -606,6 +590,11 @@ Append one block per run (never overwrite) so re-running the same branch on the 
 
 ## Network note
 
-- **scorecard branch:** Pure local file I/O — no curl, no `gh api`, no secrets on the command line. Works in a GitHub Actions run without any of the extra auth handling the other branches need. The only outbound call is `./notify` itself, which stages to `.pending-notify/` for the workflow to re-deliver after the run.
-- **ops branch:** All inputs are local file reads (logs, issues index, cron-state). `gh pr list` runs through the GitHub CLI (auth handled internally) — if it fails, treat the source as unavailable and skip the PR-staleness check. `./notify` stages to `.pending-notify/` for re-delivery after the run, so delivery is reliable.
 - **push branch:** `gh api` and `gh pr list` handle auth internally and work in a GitHub Actions run. If a call returns a rate-limit error (403 with `X-RateLimit-Remaining: 0`), record it in the source-status footer and continue with what you have. For large diffs where the `patch` field is `null`, fall back to filename + additions/deletions stats. Never use raw `curl` against the GitHub API — always `gh api`.
+
+## Do not
+
+- Do not write outside `output/operator-scorecard/` and `memory/skills/operator-scorecard/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

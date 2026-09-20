@@ -1,48 +1,34 @@
----
-name: idea-forge
-description: Three-mode idea engine - generate collides the week's zeitgeist with what you can ship into scored wedges; validate viability-screens the idea backlog; memo writes evidence-backed startup memos.
-metadata:
-  title: Idea Forge
-  category: basics
-  var: ""
-  tags:
-    - research
-    - ideas
-    - creative
-    - meta
----
+# idea-forge
 
-> **${var}** — Selector `mode [theme/constraint]`. First token picks the mode: `generate` (default) collides the zeitgeist with the capability surface into ranked wedges; `validate` screens the existing backlog for viability; `memo` writes 2 rigorous evidence-backed startup memos. Anything after the mode is a theme/constraint bias. A bare theme with no mode keyword (e.g. `payments`, `crypto`) = `generate` biased to that theme. `dry-run` anywhere skips the notify. Examples: `` (empty → generate, open-ended) · `simulation` (generate, themed) · `validate crypto` (screen crypto ideas) · `memo solo founder` (memos under a constraint) · `generate payments dry-run` (generate, no notify). A `pick:<id|name>` value (from the "build next?" force-reply — e.g. `pick:Onchain reputation`) is intercepted **before** mode dispatch: it marks that idea as chosen-to-build in the shared backlog and ends — see "Force-reply interception" below.
+Three-mode idea engine - generate collides the week's zeitgeist with what you can ship into scored wedges; validate viability-screens the idea backlog; memo writes evidence-backed startup memos.
 
-Today is ${today}. **Read `soul/SOUL.md` + `soul/STYLE.md` + `STRATEGY.md` first and read them closely** — this skill thinks *as the operator*, in their worldview, not about them. If `soul/` is the empty template, ground purely on `STRATEGY.md` + the capability surface and write in a clear, direct tone. Then read `memory/MEMORY.md` for current goals and active topics. Each mode below names its own `memory/logs/` scan window for dedup — honor it.
+> The `Operator var` — Selector `mode [theme/constraint]`. First token picks the mode: `generate` (default) collides the zeitgeist with the capability surface into ranked wedges; `validate` screens the existing backlog for viability; `memo` writes 2 rigorous evidence-backed startup memos. Anything after the mode is a theme/constraint bias. A bare theme with no mode keyword (e.g. `payments`, `crypto`) = `generate` biased to that theme. `dry-run` anywhere skips the notify. Examples: `` (empty → generate, open-ended) · `simulation` (generate, themed) · `validate crypto` (screen crypto ideas) · `memo solo founder` (memos under a constraint) · `generate payments dry-run` (generate, no notify). A `pick:<id|name>` value (from the "build next?" force-reply — e.g. `pick:Onchain reputation`) is intercepted **before** mode dispatch: it marks that idea as chosen-to-build in the shared backlog and ends — see "Force-reply interception" below.
+
+Today is today's date. **Read `soul/SOUL.md` + `soul/STYLE.md` + `STRATEGY.md` first and read them closely** — this skill thinks *as the operator*, in their worldview, not about them. If `soul/` is the empty template, ground purely on `STRATEGY.md` + the capability surface and write in a clear, direct tone. Then read `memory/MEMORY.md` for current goals and active topics. Each mode below names its own `memory/logs/` scan window for dedup — honor it.
 
 ## Force-reply interception — `pick:<idea>` (run FIRST, before mode dispatch)
 
-Before tokenizing `${var}` for the mode, check it. If `${var}` **starts with `pick:`**, this run is the operator answering the "which idea to build next?" force-reply — do **not** run generate/validate/memo. Handle it and end. This is behaviorally identical to idea-pipeline's step 0 (same backlog, same marking convention), so a `pick` reply works whichever skill it routes to:
+Before tokenizing the `Operator var` for the mode, check it. If the `Operator var` **starts with `pick:`**, this run is the operator answering the "which idea to build next?" force-reply — do **not** run generate/validate/memo. Handle it and end. This is behaviorally identical to idea-pipeline's step 0 (same backlog, same marking convention), so a `pick` reply works whichever skill it routes to:
 
 1. Strip the prefix: `sel="${var#pick:}"`, then trim whitespace (the remainder may contain colons/spaces — keep them).
-2. If `sel` is empty → `./notify "Which idea should I mark as next to build? Reply with its name or backlog number."` and end.
-3. Read the shared backlog `memory/topics/startup-ideas.md`. If missing or no idea rows → `./notify "No idea backlog yet — nothing to mark. Run generate first to fill it."` and end.
 4. Resolve `sel` to exactly one row in the table (`| date | name | one-liner | fit | T+F+E |`):
    - **By name (preferred):** case-insensitive exact match on the `name` cell; else fuzzy — most significant-word overlap, or `sel` a substring of the name (or vice-versa). Require one clear best match.
    - **By number:** a bare integer N with no name match → the Nth data row (1-based, in file order).
-   - No match / ambiguous tie → `./notify "Couldn't find an idea matching \"<sel>\". Reply with the exact name or backlog number. Candidates: <name1>, <name2>, <name3>."` and end.
-5. **Mark it chosen-to-build** — the shared marking convention, identical to idea-pipeline: append ` ✓ selected ${today}` to the end of that row's `name` cell, keeping the table pipes intact. If already marked, leave it (idempotent).
-6. Confirm with a short `./notify` (keep it clean — no `test`/`trace`/`ping`/`debug` substrings): `./notify "Marked \"<idea name>\" as next to build — flagged in the backlog. Run /feature or /deploy-prototype on it when you're ready."` Do not auto-dispatch any skill — marking chosen is the safe action.
-7. Log under a `### idea-forge` heading in `memory/logs/${today}.md`: a `- Mode: pick` line, then `- IDEA_FORGE_PICK: marked "<idea name>" as chosen-to-build (from a pick: reply)`.
+5. **Mark it chosen-to-build** — the shared marking convention, identical to idea-pipeline: append ` ✓ selected today's date to the end of that row's `name` cell, keeping the table pipes intact. If already marked, leave it (idempotent).
+7. Log under a `### idea-forge` heading in `memory/logs/today's date.md`: a `- Mode: pick` line, then `- IDEA_FORGE_PICK: marked "<idea name>" as chosen-to-build (from a pick: reply)`.
 8. **End the run** — do not run mode dispatch.
 
 ## Mode dispatch
 
-Parse `${var}` once, up front:
+Parse the `Operator var` once, up front:
 1. Tokenize on whitespace/colons. If the token `dry-run` appears anywhere, set `DRY_RUN=1` and strip it.
 2. If the first remaining token is `generate`, `validate`, or `memo`, that is the **mode**; the rest is the **theme/constraint**.
-3. If `${var}` is empty, mode = `generate`, no theme.
+3. If the `Operator var` is empty, mode = `generate`, no theme.
 4. Otherwise (a bare theme like `crypto`/`payments`/`simulation`), mode = `generate` and the whole string is the theme.
 
 Then run exactly one branch:
 - **`generate`** → weekly zeitgeist × capability-surface wedge engine (writes `output/articles/` digest + state + appends the shared backlog).
-- **`validate`** → viability screen + scoring of `memory/topics/startup-ideas.md`.
+- **`validate`** → viability screen + scoring of `memory/skills/idea-forge/startup-ideas.md`.
 - **`memo`** → 2 evidence-backed startup memos (pain-cited, tarpit-filtered, full schema).
 
 `DRY_RUN=1` skips the notify step in whichever branch runs.
@@ -67,12 +53,12 @@ Also, for current state, read the latest `product-pulse` + `bd-radar` digests if
 #### 0. Bootstrap
 ```bash
 mkdir -p memory/topics output/articles
-[ -f memory/topics/idea-forge-state.json ] || echo '{"ideas":[]}' > memory/topics/idea-forge-state.json
+[ -f memory/skills/idea-forge/idea-forge-state.json ] || echo '{"ideas":[]}' > memory/skills/idea-forge/idea-forge-state.json
 ```
 Load prior idea titles/one-liners into a dedup set (don't re-pitch the same wedge unless materially evolved). Also scan the last 21 days of `memory/logs/` for `### idea-forge` blocks.
 
 #### 1. Read the zeitgeist (this week)
-Derive 4-6 search axes from the capability surface + the `STRATEGY.md` wedge — the spaces the operator's products occupy, plus the fast-moving adjacent areas they could ride. Run WebSearch (use current month + year) across each axis and pull a 1-line "what's moving" per theme. Don't work from a fixed theme list — let the surface and strategy choose the axes each week. Also fold in: notables from the latest `product-pulse`, leads from `bd-radar` (a cluster of similar leads = a demand signal), and anything in MEMORY's active topics. If a source fails, log `IDEA_FORGE_SOURCE_MISS` and continue. If a theme was passed in `${var}`, bias the axes toward it.
+Derive 4-6 search axes from the capability surface + the `STRATEGY.md` wedge — the spaces the operator's products occupy, plus the fast-moving adjacent areas they could ride. Run WebSearch (use current month + year) across each axis and pull a 1-line "what's moving" per theme. Don't work from a fixed theme list — let the surface and strategy choose the axes each week. Also fold in: notables from the latest `product-pulse`, leads from `bd-radar` (a cluster of similar leads = a demand signal), and anything in MEMORY's active topics. If a source fails, log `IDEA_FORGE_SOURCE_MISS` and continue. If a theme was passed in the `Operator var`, bias the axes toward it.
 
 #### 2. Collide → generate
 Produce **8-12 raw ideas** by colliding a zeitgeist signal × a capability-surface primitive. Bias toward the operator's instincts as read from `soul/` + `STRATEGY.md`: contrarian-but-defensible, distribution-aware, refuses its own category, fits a timing window now. No safe/generic SaaS takes. Don't self-censor for "too weird."
@@ -94,26 +80,23 @@ For each kept idea, write:
 - **Fit tag** — which product(s) from `memory/products.md` it rides, or `skill` / `chain` if it's a harness capability
 
 #### 5. Write + state
-- `output/articles/idea-forge-${today}.md`: the 3-5 sharpened ideas, ranked, each as the block above; a short "zeitgeist this week" header; a one-line "what I'd build if I could only build one."
+- `output/articles/idea-forge-today's date.md`: the 3-5 sharpened ideas, ranked, each as the block above; a short "zeitgeist this week" header; a one-line "what I'd build if I could only build one."
 - Append kept ideas to `idea-forge-state.json` (cap 60).
-- **Append to the shared backlog** `memory/topics/startup-ideas.md` so `validate` (this skill's screen mode), `idea-pipeline` (execution-gap), and `launch-radar` (market-watch) have something to consume — this is what turns generation into a pipeline. Create the file with this header if missing, then append one row per kept idea:
+- **Append to the shared backlog** `memory/skills/idea-forge/startup-ideas.md` so `validate` (this skill's screen mode), `idea-pipeline` (execution-gap), and `launch-radar` (market-watch) have something to consume — this is what turns generation into a pipeline. Create the file with this header if missing, then append one row per kept idea:
   ```markdown
   # Startup Ideas — backlog
   | date | name | one-liner | fit | T+F+E |
   |------|------|-----------|-----|-------|
   ```
-  Row format: `| ${today} | <name> | <one-liner> | <product name(s) / skill / chain> | <score> |`. Don't duplicate a name already in the table (dedupe on name).
+  Row format: `| today's date | <name> | <one-liner> | <product name(s) / skill / chain> | <score> |`. Don't duplicate a name already in the table (dedupe on name).
 - Log (see the **Log** section) under `### idea-forge` with `Mode: generate`.
 
 #### 6. Notify (gated)
-Unless `DRY_RUN`: `./notify` the **single best idea** — one-liner + why-now + the smallest shippable cut, in the operator's voice, with a link to the full digest. One paragraph. This is a deliberate weekly think, so it's worth one push even on a quiet week — but only the #1, never the whole list. Build the digest URL via `gh repo view --json url -q .url` (not the SSH remote), and send multi-line content with `./notify -f <file>`.
 
 #### 6b. Offer a "build next?" follow-up (force-reply)
-Unless `DRY_RUN`, and only when **≥1 idea was appended to the backlog** this run: offer the operator a one-tap pick of which fresh idea to build — a **separate** `./notify` after the step-6 push (a digest and a force-reply prompt can't share one Telegram message).
 
 Dedup once per day: scan the last ~2 days of `memory/logs/` for `FORCE_REPLY_OFFERED: idea-forge::pick`; if present, skip. Otherwise:
 ```bash
-./notify "Which of this week's ideas should I mark as next to build? Reply with the idea's name." \
   --force-reply --placeholder "idea name" \
   --context "idea-forge::pick"
 ```
@@ -128,11 +111,11 @@ Turns the backlog from an archive into an active pipeline. Idea backlogs accumul
 ### Steps
 
 #### 1. Load the idea backlog
-Read `memory/topics/startup-ideas.md`. If it doesn't exist, log `IDEA_VALIDATOR_SKIP: no backlog at memory/topics/startup-ideas.md` and stop.
+Read `memory/skills/idea-forge/startup-ideas.md`. If it doesn't exist, log `IDEA_VALIDATOR_SKIP: no backlog at memory/skills/idea-forge/startup-ideas.md` and stop.
 
-Read `memory/topics/startup-ideas-screened.md` (create if missing — it's the screening database).
+Read `memory/skills/idea-forge/startup-ideas-screened.md` (create if missing — it's the screening database).
 
-From the main ideas table, extract ideas that have NOT yet appeared in `startup-ideas-screened.md`. If a theme was passed in `${var}`, additionally filter by theme/domain match.
+From the main ideas table, extract ideas that have NOT yet appeared in `startup-ideas-screened.md`. If a theme was passed in the `Operator var`, additionally filter by theme/domain match.
 
 Pick up to **8 ideas** to screen this run — prioritize oldest unscreened (earliest date first).
 
@@ -186,7 +169,7 @@ size_bonus: large=2, medium=1, small=0
 Max ~16. Sort descending.
 
 #### 4. Update the screening database
-Append to `memory/topics/startup-ideas-screened.md` (create if missing):
+Append to `memory/skills/idea-forge/startup-ideas-screened.md` (create if missing):
 ```markdown
 # Startup Ideas — Screening Notes
 
@@ -204,14 +187,13 @@ Always notify (unless `DRY_RUN`) — screened ideas are always worth surfacing.
 Write to a temp file, then send:
 ```bash
 mkdir -p .pending-notify-temp
-TEMP=".pending-notify-temp/idea-forge-validate-${today}.md"
+TEMP=".pending-notify-temp/idea-forge-validate-today's date.md"
 # (write the body below to $TEMP)
-./notify -f "$TEMP"
 ```
 
 **Notification format** — match the operator's voice if soul files are populated, otherwise direct and neutral:
 ```
-idea screener — ${today}
+idea screener — today's date
 
 screened: N ideas. top picks:
 
@@ -232,7 +214,7 @@ screened: N ideas. top picks:
 
 skipped: [Name] — [crowded/saturated], [Name] — [too early]
 
-full notes: memory/topics/startup-ideas-screened.md
+full notes: memory/skills/idea-forge/startup-ideas-screened.md
 ```
 Surface top 3 by viability score. List the rest as "skipped" with one-word reason. Keep total under 4000 chars.
 
@@ -260,7 +242,7 @@ From memory, soul, and recent logs, extract:
 - **Recent signal** — topics, papers, market moves tracked this week
 - **Recently proposed ideas** — scan the last 14 days of logs; do not re-pitch these
 
-If none of this exists, generate broadly applicable ideas anchored to the `${var}` constraint and 2026 tech trends.
+If none of this exists, generate broadly applicable ideas anchored to the the `Operator var` constraint and 2026 tech trends.
 
 #### 2. Gather fresh pain evidence
 Use WebSearch + WebFetch to collect **real customer pain signals**, not model priors. Aim for ≥3 high-signal sources across at least 2 of these channels:
@@ -271,7 +253,7 @@ Use WebSearch + WebFetch to collect **real customer pain signals**, not model pr
 - **Upwork / job postings** — people paying humans to do it → productizable
 - **ProductHunt comment sections** (not launches) — gaps in recent launches
 
-Save 2+ permalinks per idea with a one-line quote of the pain. If a constraint/theme is set in `${var}`, scope the search to it. **Vary domains across runs** — if recent logs pitched crypto, go elsewhere this time.
+Save 2+ permalinks per idea with a one-line quote of the pain. If a constraint/theme is set in the `Operator var`, scope the search to it. **Vary domains across runs** — if recent logs pitched crypto, go elsewhere this time.
 
 Fallback: if curl/WebFetch both fail for a source, note `[source unreachable]` inline and proceed with remaining sources. Never fabricate quotes.
 
@@ -316,12 +298,11 @@ Quality bar before emitting:
 If an idea fails the bar, iterate. Do not emit slop.
 
 #### 5. Feed the pipeline
-Append the 2 memo ideas to the shared backlog `memory/topics/startup-ideas.md` (same header + row format as generate mode; dedupe on name) so `validate` can later screen them. Use `memo` as the fit tag and leave the T+F+E column blank (`—`) — memos aren't scored on that axis. This is additive; it never replaces the full memos, which go to the log.
+Append the 2 memo ideas to the shared backlog `memory/skills/idea-forge/startup-ideas.md` (same header + row format as generate mode; dedupe on name) so `validate` can later screen them. Use `memo` as the fit tag and leave the T+F+E column blank (`—`) — memos aren't scored on that axis. This is additive; it never replaces the full memos, which go to the log.
 
-#### 6. Send via `./notify` (under 4000 chars)
 Unless `DRY_RUN`:
 ```
-*Startup Ideas — ${today}*${var ? ` (${var})` : ``}
+*Startup Ideas — today's date*${var ? ` (the `Operator var`)` : ``}
 
 *1. [Name]* (executable) — [thesis]
 ICP: [role + trigger]
@@ -352,7 +333,7 @@ Log the full 2-memo output (all fields from step 4) plus the summary bullets in 
 
 ## Log
 
-After any mode, append to `memory/logs/${today}.md` under a single `### idea-forge` heading (the health loop parses this shape). Start the block with a `- Mode: <generate|validate|memo>` discriminator line, then the mode-specific bullets:
+After any mode, append to `memory/logs/today's date.md` under a single `### idea-forge` heading (the health loop parses this shape). Start the block with a `- Mode: <generate|validate|memo>` discriminator line, then the mode-specific bullets:
 
 **generate:**
 - Mode: generate
@@ -391,3 +372,10 @@ All research runs through WebSearch/WebFetch for unauthenticated fetches. No ext
 
 ## Summary
 End every run with a `## Summary`. **generate:** the kept ideas, their T+F+E scores, and the config source. **validate:** ideas screened, the top pick + viability score, counts of open vs skipped. **memo:** the 2 memo names/one-liners and the count of cited permalinks. In all modes, list files created/modified and whether the notify fired.
+
+## Do not
+
+- Do not write outside `output/idea-forge/` and `memory/skills/idea-forge/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

@@ -1,32 +1,15 @@
----
-name: deploy-uni-hook
-description: "Generate, simulate, audit, and deploy a Uniswap v4 hook + test pool from a brief, on any Uniswap v4 chain (every testnet and mainnet) - pre-audited templates or a from-scratch freeform hook (flags auto-derived; static audit + dangerous-pattern scan + a behavioral forge test + fork sim gate the deploy). Dry-run by default; explicit arm: to broadcast; testnet default, mainnet behind a double opt-in; records the deploy to main."
-metadata:
-  title: Deploy Uni Hook
-  category: crypto
-  var: "arm: to broadcast (default is a dry-run), template:dynamic|noop|skim to force a mode, chain:<name> to pick a chain (default base-sepolia), then the hook brief. Empty prints the grammar."
-  tags:
-    - crypto
-    - dev
-    - onchain
-  requires:
-    - HOOK_DEPLOYER_PRIVATE_KEY?
-    - ALCHEMY_API_KEY?
-    - ETHERSCAN_API_KEY?
-  capabilities:
-    - onchain_writes
-    - writes_external_host
-    - sends_notifications
----
+# deploy-uni-hook
 
-> **${var}** — the hook brief. Grammar: `[arm:][template:<name>] [chain:<name>] <brief>`
+Generate, simulate, audit, and deploy a Uniswap v4 hook + test pool from a brief, on any Uniswap v4 chain (every testnet and mainnet) - pre-audited templates or a from-scratch freeform hook (flags auto-derived; static audit + dangerous-pattern scan + a behavioral forge test + fork sim gate the deploy). Dry-run by default; explicit arm: to broadcast; testnet default, mainnet behind a double opt-in; records the deploy to main.
+
+> The `Operator var` — the hook brief. Grammar: `[arm:][template:<name>] [chain:<name>] <brief>`
 > - `` (empty) → print help and exit `DEPLOY_HOOK_EMPTY`.
 > - `<brief>` → **dry-run**: generate, compile, mine, and simulate. Never broadcasts. *[default — no prefix]*
 > - `arm:<brief>` → **broadcast**: do the full dry-run first, then deploy for real if the simulation passes.
 > - `template:<name>` → force a mode: `dynamic` | `noop` | `skim` (pre-audited templates) or `freeform` (build a whole hook from the prompt). Omit to auto-pick: a brief that matches a template uses it; anything else → `freeform`.
 > - `chain:<name>` → any Uniswap v4 chain in `chains.tsv` (run `./hook-deploy.sh chains` to list). Default `base-sepolia`. Testnets: `base-sepolia`, `unichain-sepolia`, `arbitrum-sepolia`. Mainnets (`testnet: false`, e.g. `base`, `ethereum`, `unichain`, `arbitrum`, `optimism`, `polygon`, `bnb`, `avalanche`, ...) require BOTH `arm:` and an explicit `chain:` — the skill never targets mainnet by default. `base-mainnet` is accepted as an alias for `base`.
 
-Today is ${today}. This skill turns a one-line brief into a live Uniswap v4 hook. It is built to be safe: it simulates every deploy before it broadcasts, it defaults to a dry-run on testnet, and it needs an explicit `arm:` to move on-chain.
+Today is today's date. This skill turns a one-line brief into a live Uniswap v4 hook. It is built to be safe: it simulates every deploy before it broadcasts, it defaults to a dry-run on testnet, and it needs an explicit `arm:` to move on-chain.
 
 ## Why this design
 
@@ -34,9 +17,9 @@ A hook binding is immutable and a bad hook can brick a pool or steal funds. So t
 
 ## Safety contract (do not skip)
 
-1. **Mainnet needs a triple lock.** Never target a `testnet: false` chain unless `${var}` has BOTH `arm:` AND an explicit `chain:<mainnet-name>` — AND the instance has `HOOK_MAINNET_OK=1` set as a **repo variable** (a third, operator-level lock enforced inside `hook-deploy.sh`, exit 7; store it as a variable, not a secret - a secret value of `1` masks every `1` in the run log, so tx hashes and links print as `***`). An instance that never authorized mainnet cannot broadcast there even if an armed message asks it to. This skill must only run on an instance whose inbound path is owner-gated (`TELEGRAM_ALLOWED_USER_ID` / the multi-channel allowlist) — a mainnet deploy spends real gas, so an untrusted sender must never be able to dispatch it. On a mainnet chain, first read the deployer balance with `cast balance` and abort (`DEPLOY_HOOK_UNDERFUNDED`) if it cannot cover the simulation's `Estimated amount required`; `hook-deploy.sh` independently enforces a funding floor (exit 8), an optional `MAX_GAS_GWEI` gas-price ceiling (exit 9), and warns if the deployer holds more than `HOOK_MAX_FLOAT_ETH` (default 0.25) — a deploy key must hold gas float only, never LP or treasury capital. Log a clear `MAINNET` warning in the output.
+1. **Mainnet needs a triple lock.** Never target a `testnet: false` chain unless the `Operator var` has BOTH `arm:` AND an explicit `chain:<mainnet-name>` — AND the instance has `HOOK_MAINNET_OK=1` set as a **repo variable** (a third, operator-level lock enforced inside `hook-deploy.sh`, exit 7; store it as a variable, not a secret - a secret value of `1` masks every `1` in the run log, so tx hashes and links print as `***`). An instance that never authorized mainnet cannot broadcast there even if an armed message asks it to. This skill must only run on an instance whose inbound path is owner-gated (`TELEGRAM_ALLOWED_USER_ID` / the multi-channel allowlist) — a mainnet deploy spends real gas, so an untrusted sender must never be able to dispatch it. On a mainnet chain, first read the deployer balance with `cast balance` and abort (`DEPLOY_HOOK_UNDERFUNDED`) if it cannot cover the simulation's `Estimated amount required`; `hook-deploy.sh` independently enforces a funding floor (exit 8), an optional `MAX_GAS_GWEI` gas-price ceiling (exit 9), and warns if the deployer holds more than `HOOK_MAX_FLOAT_ETH` (default 0.25) — a deploy key must hold gas float only, never LP or treasury capital. Log a clear `MAINNET` warning in the output.
 2. **Simulate before every broadcast.** If the simulation reverts, do not broadcast. Report the revert and exit `DEPLOY_HOOK_SIM_FAILED`.
-3. **Dry-run is the default.** Broadcast only when `${var}` starts with `arm:`.
+3. **Dry-run is the default.** Broadcast only when the `Operator var` starts with `arm:`.
 4. **Key hygiene.** The deployer key is a burner. Never print it. Never put it on a shell command line — always go through `./hook-deploy.sh`, which reads it from the env inside the script.
 5. **Idempotency.** Before broadcasting, read `memory/state/hook-deploys.json`. If an identical brief already deployed within the last hour, do not re-deploy. The deploy script is also idempotent at the address level: it deploys to the *canonical* address (the first flag-matching CREATE2 salt for this exact `(creationCode, flags, PoolManager)`). If that address already holds code, an identical hook is already live, so the script logs `ALREADY_DEPLOYED <addr>` and does nothing — the runner reports the existing address instead of deploying a duplicate. (HookMiner itself skips occupied addresses, so without this check a re-run would silently deploy another copy at a new address.)
 
@@ -59,9 +42,9 @@ A hook binding is immutable and a bad hook can brick a pool or steal funds. So t
 
 ## Steps
 
-1. **Parse `${var}`.** Extract the `arm:` flag, the optional `template:`, the optional `chain:`, and the free-text brief. Empty brief → exit `DEPLOY_HOOK_EMPTY` with the grammar.
+1. **Parse the `Operator var`.** Extract the `arm:` flag, the optional `template:`, the optional `chain:`, and the free-text brief. Empty brief → exit `DEPLOY_HOOK_EMPTY` with the grammar.
 
-2. **Resolve the chain.** The chain name resolves in `chains.tsv` (default `base-sepolia`); `hook-deploy.sh` maps it to the official `PoolManager` + RPC, so you pass the NAME, not the address. Run `./hook-deploy.sh chains` to see the list, or read `chains.tsv`. If the name is not in the registry, exit `DEPLOY_HOOK_BAD_CHAIN`. Look up the row's `testnet` column: if it is `false` (mainnet), enforce the double opt-in — require BOTH `arm:` and an explicit `chain:` in `${var}`, else exit `DEPLOY_HOOK_BAD_CHAIN`. Every Uniswap v4 chain is supported (Base, Ethereum, Unichain, Arbitrum, Optimism, Polygon, BNB, Avalanche, Robinhood, Worldchain, Ink, Soneium, Celo, X Layer + their testnets).
+2. **Resolve the chain.** The chain name resolves in `chains.tsv` (default `base-sepolia`); `hook-deploy.sh` maps it to the official `PoolManager` + RPC, so you pass the NAME, not the address. Run `./hook-deploy.sh chains` to see the list, or read `chains.tsv`. If the name is not in the registry, exit `DEPLOY_HOOK_BAD_CHAIN`. Look up the row's `testnet` column: if it is `false` (mainnet), enforce the double opt-in — require BOTH `arm:` and an explicit `chain:` in the `Operator var`, else exit `DEPLOY_HOOK_BAD_CHAIN`. Every Uniswap v4 chain is supported (Base, Ethereum, Unichain, Arbitrum, Optimism, Polygon, BNB, Avalanche, Robinhood, Worldchain, Ink, Soneium, Celo, X Layer + their testnets).
 
 3. **Confirm the staged toolchain + project.** The workflow pre-stages everything before this run (`scripts/stage-deploy-uni-hook.sh`): Foundry on `$PATH`, a pre-built v4 project at `$HOOKBUILD_DIR` (default `$HOME/hookbuild`) holding all three templates + `MockERC20.sol` + `DeployHook.s.sol` + the v4 libraries, and `./hook-deploy.sh` copied to the repo root. Do **not** install Foundry or clone the libs in-run — the sandbox blocks that. Check `command -v forge` and that `$HOOKBUILD_DIR` exists; if either is missing, degrade to `DEPLOY_HOOK_NO_TOOLCHAIN` (emit the generated source + plan).
 
@@ -81,7 +64,7 @@ A hook binding is immutable and a bad hook can brick a pool or steal funds. So t
    On a compile error, fix and retry (max 3). On a sim revert, exit `DEPLOY_HOOK_SIM_FAILED`. Capture the mined hook address, the derived flags, and the `Estimated amount required`. On mainnet, compare that estimate to the deployer balance (`cast balance <addr> --rpc-url <rpc>`) and exit `DEPLOY_HOOK_UNDERFUNDED` if it will not cover it.
    For a freeform hook, also **read the generated `Hook.sol` and reason about safety** before arming: does any callback let a caller steal funds, brick the pool (unconditional revert), or reenter? If unsure, stop at the dry-run and report the concern.
 
-6. **Dry-run stop.** If `${var}` did NOT start with `arm:`, STOP here. Report: template, mined address (with its flag bits), the pool key, and the simulation result. Exit `DEPLOY_HOOK_DRY_RUN`.
+6. **Dry-run stop.** If the `Operator var` did NOT start with `arm:`, STOP here. Report: template, mined address (with its flag bits), the pool key, and the simulation result. Exit `DEPLOY_HOOK_DRY_RUN`.
 
 7. **Arm checks (only if `arm:`).**
    - Confirm `HOOK_DEPLOYER_PRIVATE_KEY` is set (it is injected via `requires:`). If not, degrade to the dry-run report and exit `DEPLOY_HOOK_NO_KEY`.
@@ -124,3 +107,10 @@ A hook binding is immutable and a bad hook can brick a pool or steal funds. So t
 - **Any Uniswap v4 chain works.** `chains.tsv` carries every official v4 deployment (Base, Ethereum, Unichain, Arbitrum, Optimism, Polygon, BNB, Avalanche, Robinhood, Worldchain, Ink, Soneium, Celo, X Layer + the Sepolia testnets), each verified to hold the PoolManager. The same flow runs on all of them — only the `PoolManager`/RPC differ, resolved by name. The CREATE2 deployer (`0x4e59…4956C`) is required for the mined address; if a chain lacks it the fork simulation fails closed before any broadcast.
 - **Mainnet is gas-only.** The deploy mints its own `MockERC20` tokens to itself (free) and seeds the demo pool with those mock tokens — a mainnet broadcast risks GAS ONLY, never real capital. The deployed pool is a MockA/MockB demo; the reusable hook contract is the real deliverable. The deployer key must be a funded burner holding gas float only (the runner warns above `HOOK_MAX_FLOAT_ETH`); mainnet also needs the `HOOK_MAINNET_OK=1` operator lock. A future version can add the keyless Base MCP `send_calls` rail so no key sits in the runner.
 - **Authenticated RPC + receipt + verify.** On mainnet the runner prefers an Alchemy endpoint (`ALCHEMY_API_KEY` + the chain's `alchemy` slug) over the public RPC, so a lying public node can't fake a clean sim. After a broadcast it prints a receipt (address, decoded flags, explorer link, tx hashes) and, with `ETHERSCAN_API_KEY` on an Etherscan-family chain, auto-verifies the source (best-effort). All of this is opt-in: with no keys set the skill still runs on public RPCs, unverified.
+
+## Do not
+
+- Do not write outside `output/deploy-uni-hook/` and `memory/skills/deploy-uni-hook/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

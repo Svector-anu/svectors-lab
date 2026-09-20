@@ -1,23 +1,8 @@
----
-name: competitor-monitor
-description: Watch a list of competitor web pages on a cadence - snapshots each page's real signals (pricing, headings, CTAs, new/removed pages, title/description), diffs against the last run, and reports only what actually changed.
-metadata:
-  title: Competitor Monitor
-  mode: read-only
-  category: productivity
-  var: ""
-  tags:
-    - monitoring
-    - web
-  capabilities:
-    - external_api
-    - read_only
-    - sends_notifications
----
+# competitor-monitor
 
-Today is ${today}.
+Watch a list of competitor web pages on a cadence - snapshots each page's real signals (pricing, headings, CTAs, new/removed pages, title/description), diffs against the last run, and reports only what actually changed.
 
-> **${var}** — the pages to watch, comma-separated.
+> The `Operator var` — the pages to watch, comma-separated.
 > - **empty** → read the watch list from `memory/competitors.md`.
 > - **`https://rival.com/pricing, https://rival.com`** → watch exactly these
 >   pages this run (a bare host gets `https://` prepended). Watch specific
@@ -70,10 +55,10 @@ This skill is `mode: read-only`, and that is load-bearing (same contract as
 
 ### 1. Resolve the watch list
 
-Parse `${var}`:
+Parse the `Operator var`:
 
 ```bash
-RAW="$(printf '%s' "${var}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+RAW="$(printf '%s' "the `Operator var`" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
 
 # Config capture (Telegram force-reply): var="add:<url>" appends to the watch list and ends.
 case "$RAW" in
@@ -81,15 +66,12 @@ case "$RAW" in
     CAND="$(printf '%s' "${RAW#add:}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]].*$//')"
     case "$CAND" in http://*|https://*) ;; *) CAND="https://$CAND" ;; esac
     if ! printf '%s' "$CAND" | grep -qiE '^https?://[a-z0-9.-]+\.[a-z]{2,}(/.*)?$'; then
-      ./notify "Couldn't read \"$CAND\" as a URL. Reply with a full page URL (e.g. https://rival.com/pricing)."
       exit 0
     fi
     mkdir -p memory; touch memory/competitors.md
     if grep -qiF "$CAND" memory/competitors.md; then
-      ./notify "Already watching $CAND."
     else
       printf -- '- %s\n' "$CAND" >> memory/competitors.md
-      ./notify "Now watching $CAND — it'll show up in the next Competitor Monitor run."
     fi
     exit 0 ;;
 esac
@@ -111,7 +93,6 @@ Telegram force-reply, but **only if no `add` prompt was already offered in the
 last 3 days of `memory/logs/`** (don't nag an unconfigured fork every run):
 
 ```bash
-./notify "No competitor pages on the watch list yet. Which page should I watch? Reply with a full URL." \
   --force-reply --placeholder "https://rival.com/pricing" \
   --context "competitor-monitor::add"
 ```
@@ -129,7 +110,7 @@ it's the file the next diff trusts):
 ```bash
 mkdir -p memory/competitor-monitor
 STAMP=$(date -u +%Y-%m-%dT%H-%M-%SZ)
-node scripts/competitor-monitor.mjs snapshot <url1> <url2> ... --out "memory/competitor-monitor/${STAMP}.json"
+node scripts/competitor-monitor.mjs snapshot <url1> <url2> ... --out "memory/skills/competitor-monitor/${STAMP}.json"
 ```
 
 Pass the targets as arguments (`--out` may sit anywhere in the args). The script
@@ -143,8 +124,8 @@ The baseline is the **newest snapshot that already exists** — i.e. the previou
 run's, since this run wrote its file in step 2. Exclude the file you just wrote:
 
 ```bash
-CUR="memory/competitor-monitor/${STAMP}.json"
-PREV=$(ls -1 memory/competitor-monitor/*.json 2>/dev/null | grep -vF "$CUR" | sort | tail -1)
+CUR="memory/skills/competitor-monitor/${STAMP}.json"
+PREV=$(ls -1 memory/skills/competitor-monitor/*.json 2>/dev/null | grep -vF "$CUR" | sort | tail -1)
 ```
 
 If `$PREV` is empty, this is the **first run** — there is nothing to diff. Send a
@@ -183,8 +164,6 @@ Notify when at least one page has a change. Lead with the most significant.
 
 ### 5. Notify
 
-Compose **one** consolidated `./notify` message. Rules:
-
 - Verdict line first: `*Competitor Monitor* — N page(s), M change(s)`.
 - Group by page (use the host + path, not the full URL, as the header).
 - Each bullet **names the concrete change** — the actual before→after, the actual
@@ -212,7 +191,7 @@ found inside a competitor's page.
 
 ### 6. Persist the durable change log
 
-Append every notified change to `memory/competitor-monitor/CHANGES.md` — the
+Append every notified change to `memory/skills/competitor-monitor/CHANGES.md` — the
 standing record someone can open to see a competitor's trajectory over time (the
 notification scrolls away; this doesn't). Rewrite it in full each run, newest
 first, preserving prior history.
@@ -222,10 +201,10 @@ Read-only mode blocks `>`, so write it by **piping the content into a one-line
 blocked). Compose the full markdown between the `MD` markers:
 
 ```bash
-node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>require("fs").writeFileSync("memory/competitor-monitor/CHANGES.md",d))' <<'MD'
+node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>require("fs").writeFileSync("memory/skills/competitor-monitor/CHANGES.md",d))' <<'MD'
 # Competitor changes
 
-## ${today}
+## today's date
 ### rival.com/pricing
 - New Pro tier at $49/mo (added $49/mo)
 - New heading "Usage-based billing"
@@ -238,14 +217,14 @@ MD
 
 To preserve prior history, first read the existing file, then re-emit it with
 today's section prepended. On the first run, seed the file with a
-`_Baseline saved ${today} — N pages_` line and no changes.
+`_Baseline saved today's date — N pages_` line and no changes.
 
 ### 7. Log
 
-Append to `memory/logs/${today}.md` under a single `### competitor-monitor`
+Append to `memory/logs/today's date.md` under a single `### competitor-monitor`
 heading:
 
-- `- var: "${var}"` and the resolved page count.
+- `- var: "the `Operator var`"` and the resolved page count.
 - One line per page with its change count and top change type
   (`rival.com/pricing: 2 changes (pricing)`), so the next run has a trail.
 - The `sources:` line mirroring any fetch errors.
@@ -258,7 +237,7 @@ heading:
 
 Snapshots accumulate one file per run. This skill is `read-only` and has no `rm`,
 so it can't prune them — the newest file is all the diff ever needs, and old ones
-stay valid baselines. If `memory/competitor-monitor/` ever grows unwieldy, clear
+stay valid baselines. If `memory/skills/competitor-monitor/` ever grows unwieldy, clear
 out old snapshots out-of-band (a write-mode sweep or manual delete). Keep at least
 the most recent so the next run has a baseline.
 
@@ -267,3 +246,10 @@ the most recent so the next run has a baseline.
 Uses global `fetch` inside `scripts/competitor-monitor.mjs` (Node ≥ 18). No auth,
 no API keys, no `gh`. A page that 4xx/5xx/times out is recorded as `ok:false` with
 its status and skipped — never retried in a loop.
+
+## Do not
+
+- Do not write outside `output/competitor-monitor/` and `memory/skills/competitor-monitor/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

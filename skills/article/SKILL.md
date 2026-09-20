@@ -1,17 +1,8 @@
----
-name: article
-description: Write a publication-ready article in one of three angles - a trending long-form piece, a watched-repo thesis, or a project-through-a-lens essay. Optional Replicate hero image with --visual.
-metadata:
-  title: Article
-  category: basics
-  var: ""
-  tags:
-    - content
-    - dev
-  requires:
-    - REPLICATE_API_TOKEN?
----
-> **${var}** — Selector: `[angle:arg] [--visual]`. The **angle** prefix picks the article type; append **`--visual`** (or `visual`) anywhere to also generate a Replicate hero image.
+# article
+
+Write a publication-ready article in one of three angles - a trending long-form piece, a watched-repo thesis, or a project-through-a-lens essay. Optional Replicate hero image with --visual.
+
+> The `Operator var` — Selector: `[angle:arg] [--visual]`. The **angle** prefix picks the article type; append **`--visual`** (or `visual`) anywhere to also generate a Replicate hero image.
 >
 > - **empty** → `standard` general long-form article on an auto-selected trending topic. If the resolved topic is a single explainable mechanism, it becomes a technical explainer instead.
 > - **`<topic>`** (no recognized prefix) → `standard` article on that topic.
@@ -21,14 +12,14 @@ metadata:
 >
 > Examples: `""`, `"entropy trajectory reasoning --visual"`, `"repo:aeonfun/aeon"`, `"repo:roadmap"`, `"lens:regulation wave --visual"`.
 
-Today is ${today}. Write a high-quality, publication-ready article. No placeholders.
+Today is today's date. Write a high-quality, publication-ready article. No placeholders.
 
 ## Shared preamble (every run)
 
 1. Read `memory/MEMORY.md` for context on what topics/articles have been covered recently.
 2. Read the last 3–7 days of `memory/logs/` for recent activity — and **don't re-report** something already covered.
-3. **Parse `${var}` into `angle` + `visual`:**
-   - Detect a standalone `--visual` or `visual` token anywhere in `${var}`; if present set **`visual = true`** and strip that token. Otherwise `visual = false`.
+3. **Parse the `Operator var` into `angle` + `visual`:**
+   - Detect a standalone `--visual` or `visual` token anywhere in the `Operator var`; if present set **`visual = true`** and strip that token. Otherwise `visual = false`.
    - From what remains: if it starts with `repo:` → `angle = repo`, `arg =` the rest. If it starts with `lens:` → `angle = lens`, `arg =` the rest. Otherwise → `angle = standard`, `arg =` the whole remaining string (empty ⇒ auto-select).
 4. Dispatch to the matching angle section below. If `visual = true`, run the **Visual add-on** after the article body is written, regardless of angle.
 
@@ -117,16 +108,14 @@ A numbered walkthrough of the mechanism in **3-7 steps**. Each step is one or tw
 
 ### Save & notify (standard)
 
-- **General article:** save to `output/articles/${today}.md`.
-- **Technical explainer:** save to `output/articles/explainer-${today}.md`. If a hero image was generated (see Visual add-on), put it at the very top: `![hero](../images/explainer-${today}.<ext>)` — relative path, skip the line if no image — and add an HTML comment with the image prompt used (for future audits).
-
-Update `memory/MEMORY.md` to record the article and its topic (add to the `Recent Articles` list/table). Append the consolidated log entry (see **Log**), then notify via `./notify`:
+- **General article:** save to `output/articles/today's date.md`.
+- **Technical explainer:** save to `output/articles/explainer-today's date.md`. If a hero image was generated (see Visual add-on), put it at the very top: `![hero](../images/explainer-today's date.<ext>)` — relative path, skip the line if no image — and add an HTML comment with the image prompt used (for future audits).
 
 - **General article:**
   ```
   New article written: [title]
 
-  https://github.com/${GITHUB_REPOSITORY}/blob/main/output/articles/${today}.md
+  https://github.com/${GITHUB_REPOSITORY}/blob/main/output/articles/today's date.md
   ```
   Use the `$GITHUB_REPOSITORY` env var (GitHub Actions sets it to `owner/repo` of the running instance).
 
@@ -138,7 +127,7 @@ Update `memory/MEMORY.md` to record the article and its topic (add to the `Recen
 
   [hero image URL if generated — original Replicate URL still works for ~24h]
 
-  read it: output/articles/explainer-${today}.md
+  read it: output/articles/explainer-today's date.md
   ```
 
 ---
@@ -253,16 +242,15 @@ If any item still fails after one rewrite pass, publish with status `REPO_ARTICL
 
 ### Phase 5 — Save, log, notify (repo)
 
-1. Save the article to `output/articles/repo-article-${today}.md`. (If a hero image was generated via the Visual add-on, put `![hero](../images/repo-article-${today}.<ext>)` at the top.)
+1. Save the article to `output/articles/repo-article-today's date.md`. (If a hero image was generated via the Visual add-on, put `![hero](../images/repo-article-today's date.<ext>)` at the top.)
 2. Append the consolidated log entry (see **Log**) **before** notifying.
 3. Update the `Recent Articles` table in `memory/MEMORY.md` (Date | Title | Topic).
-4. Notify via `./notify`:
    ```
    *[Article title]*
 
    Thesis: [one sentence]
 
-   Read: [link to output/articles/repo-article-${today}.md in THIS repo — get the repo name from `git remote get-url origin`, not the watched repo]
+   Read: [link to output/articles/repo-article-today's date.md in THIS repo — get the repo name from `git remote get-url origin`, not the watched repo]
    ```
 
 ### Banned phrase lexicon (repo angle)
@@ -366,7 +354,7 @@ Rules:
 
 ### Phase 5 — Draft (700–1000 words)
 
-Save to `output/articles/project-lens-${today}.md` with this structure:
+Save to `output/articles/project-lens-today's date.md` with this structure:
 ```markdown
 # [Title: leads with the lens, works for a reader who doesn't know the project]
 
@@ -412,22 +400,21 @@ Go through this checklist after the first draft. If any gate fails, rewrite the 
 
 ### Phase 7 — Output (lens)
 
-1. **Save** `output/articles/project-lens-${today}.md`. (If a hero image was generated via the Visual add-on, put `![hero](../images/project-lens-${today}.<ext>)` at the top.)
+1. **Save** `output/articles/project-lens-today's date.md`. (If a hero image was generated via the Visual add-on, put `![hero](../images/project-lens-today's date.<ext>)` at the top.)
 2. **Append** to `memory/project-lens-angles.md` (create if missing):
    ```markdown
-   ## ${today}
+   ## today's date
    - Angle: [category]
    - Thesis: [one-line falsifiable claim]
    - Title: [article title]
    - Sources: [3-5 URLs]
    ```
-3. **Notify** via `./notify`:
    ```
    *New Article: [title]*
 
    [3-4 sentence summary: the external thing the article connects to, the thesis claim, one specific project detail.]
 
-   Read: [URL to output/articles/project-lens-${today}.md — use `git remote get-url origin` for this repo]
+   Read: [URL to output/articles/project-lens-today's date.md — use `git remote get-url origin` for this repo]
    ```
 4. **Log** the consolidated entry (see **Log**).
 
@@ -449,7 +436,7 @@ Go through this checklist after the first draft. If any gate fails, rewrite the 
 
 ## Visual add-on (`--visual`) — Replicate hero image
 
-Runs **only when `visual = true`**, after the article body is written and saved, for **any** angle. Use Replicate's Nano Banana Pro (Gemini 3 Pro Image). It renders **text labels well** — exploit that by writing prompts that ask for labeled diagrams or schematics, not stock-photo metaphors. Set `IMG_BASENAME` to match the article file for the angle: `explainer-${today}` (standard/explainer), `article-${today}` (standard/general), `repo-article-${today}` (repo), or `project-lens-${today}` (lens).
+Runs **only when `visual = true`**, after the article body is written and saved, for **any** angle. Use Replicate's Nano Banana Pro (Gemini 3 Pro Image). It renders **text labels well** — exploit that by writing prompts that ask for labeled diagrams or schematics, not stock-photo metaphors. Set `IMG_BASENAME` to match the article file for the angle: `explainer-today's date (standard/explainer), `article-today's date (standard/general), `repo-article-today's date (repo), or `project-lens-today's date (lens).
 
 1. **Preflight**: check presence with the `${VAR:+x}` form — `[ -n "${REPLICATE_API_TOKEN:+x}" ]` (a bare `$REPLICATE_API_TOKEN` trips the secret-expansion analyzer and falsely reads as unset). If it's unset, log `IMAGE_SKIPPED reason=no-token` and skip to step 5 (no-image path). Do not attempt any Replicate call. The article must ship without an image in this case.
 
@@ -497,7 +484,7 @@ Once the image is saved, add the hero-image line to the top of the article file 
 
 ## Log
 
-Append **one** entry under a single `### article` heading in `memory/logs/${today}.md`, as bullet points. Start with a discriminator line naming the branch/mode that ran, then the branch-specific fields:
+Append **one** entry under a single `### article` heading in `memory/logs/today's date.md`, as bullet points. Start with a discriminator line naming the branch/mode that ran, then the branch-specific fields:
 
 ```
 ### article
@@ -513,7 +500,7 @@ Append **one** entry under a single `### article` heading in `memory/logs/${toda
 - Image: generated | fallback-model | skipped (<reason>) | n/a
 - Image prompt: [prompt used, or "n/a"]
 - Primary source: [URL]            (technical-explainer only)
-- File: output/articles/${today}.md | output/articles/explainer-${today}.md
+- File: output/articles/today's date.md | output/articles/explainer-today's date.md
 - Notification sent: yes | no
 ```
 
@@ -552,3 +539,10 @@ The Replicate call runs **in-run** via `./secretcurl` (see the Visual add-on). I
 - `REPLICATE_API_TOKEN` — Replicate API key, used only by the `--visual` add-on. Optional: article text ships without it via the no-image path.
 
 Write complete, publication-ready content. No placeholders.
+
+## Do not
+
+- Do not write outside `output/article/` and `memory/skills/article/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

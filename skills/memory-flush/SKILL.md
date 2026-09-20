@@ -1,17 +1,10 @@
----
-name: memory-flush
-description: Promote important recent log entries into MEMORY.md and prune stale ones
-scorable: false  # meta skill: no gradable output, skip the post-run quality scorer
-metadata:
-  title: Memory Flush
-  category: core
-  var: ""
-  tags:
-    - meta
----
-> **${var}** - Topic to focus on. If empty, flushes all recent activity.
+# memory-flush
 
-If `${var}` is set, only promote entries related to that topic. Pruning (step 3), the index upkeep (step 6), and the deterministic watermark + rotation (steps 0 and 8) still run globally - a focused flush must never leave the rest of the store stale.
+Promote important recent log entries into MEMORY.md and prune stale ones
+
+> The `Operator var` - Topic to focus on. If empty, flushes all recent activity.
+
+If the `Operator var` is set, only promote entries related to that topic. Pruning (step 3), the index upkeep (step 6), and the deterministic watermark + rotation (steps 0 and 8) still run globally - a focused flush must never leave the rest of the store stale.
 
 Read `memory/MEMORY.md` for current memory state. **The scan window and log rotation are computed for you in step 0** - you no longer parse the watermark or rotate logs by hand.
 
@@ -64,7 +57,7 @@ Do NOT rewrite the whole file - make targeted additions and removals.
 
 ### 6. Register any new topic files in the index
 
-If step 4 created a new `memory/topics/<topic>.md` (or a `*-history.md` archive in step 3d), add a one-line pointer to it under the `# Reference` section of `memory/topics/index.md`, matching the existing row format. New topic notes that aren't linked from the index become orphans no other run can find.
+If step 4 created a new `memory/topics/<topic>.md` (or a `*-history.md` archive in step 3d), add a one-line pointer to it under the `# Reference` section of `memory/skills/memory-flush/index.md`, matching the existing row format. New topic notes that aren't linked from the index become orphans no other run can find.
 
 ### 7. (Automated) Log rotation
 
@@ -72,7 +65,7 @@ Log rotation now runs deterministically in step 0 (`memory_prep.py window`): who
 
 ### 8. Log the run, then stamp the watermark
 
-Log what you promoted, pruned, and archived, plus the scan window you used (start date to today; note if a >14-day gap was clamped), to `memory/logs/${today}.md`.
+Log what you promoted, pruned, and archived, plus the scan window you used (start date to today; note if a >14-day gap was clamped), to `memory/logs/today's date.md`.
 
 Then run `python3 scripts/memory_prep.py stamp` as your **final** action - it writes today's date to `memory/memory-flush-state.json` and mirrors it into the MEMORY.md `*Last consolidated:*` line.
 
@@ -89,3 +82,10 @@ If nothing was worth promoting or removing, log `MEMORY_FLUSH_OK` - but still ru
 - Pruning stale entries is as important as adding new ones.
 - The watermark and log rotation are owned by `scripts/memory_prep.py` (steps 0 and 8), not by hand. The model's job is judgment: what to promote, dedup, and prune.
 - **This skill owns MEMORY.md consolidation.** Other skills (e.g. `self-improve`) may *flag* memory-hygiene problems, but structural pruning and archiving of MEMORY.md should land here to avoid two skills thrashing the same file. If `self-improve` prunes in an audit, treat it as a stopgap, not a reason to skip the next flush.
+
+## Do not
+
+- Do not write outside `output/memory-flush/` and `memory/skills/memory-flush/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

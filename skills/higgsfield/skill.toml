@@ -1,0 +1,11 @@
+name = "higgsfield"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "worker"
+risk = "low"
+model = "standard"
+write_scope = "own-memory"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = ["public_web_read", "repository_read"]
+tools = ["read", "write", "bash"]

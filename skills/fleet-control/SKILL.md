@@ -1,25 +1,12 @@
----
-name: fleet-control
-description: Operate managed Aeon instances from memory/instances.json - health-check, dispatch, and status snapshots (control), plus a fleet scorecard of runs, tokens, cost, and reliability (scorecard).
-metadata:
-  title: Fleet Control
-  category: core
-  var: ""
-  tags:
-    - dev
-    - meta
-    - fleet
-    - report
-    - cost
-  requires:
-    - GH_READ_PAT?
-  cron: "0 9,15 * * *"
----
+# fleet-control
+
+Operate managed Aeon instances from memory/instances.json - health-check, dispatch, and status snapshots (control), plus a fleet scorecard of runs, tokens, cost, and reliability (scorecard).
+
 <!-- autoresearch: variation B — sharper output: verdict line + delta vs prior + per-instance action column + state-change-gated notify -->
 
-> **${var}** — Command / view selector. Empty (or unrecognized) → **Health Check** (default control view). `status` → full **Status Mode** (control view). `dispatch <instance|*> <skill> [var=<value>]` → **Dispatch Mode**: trigger a skill on one child or all healthy/degraded children (control view). `scorecard` → **Scorecard Mode**: fleet-wide runs/tokens/cost/reliability scorecard with day-over-day deltas + alerts (scorecard view).
+> The `Operator var` — Command / view selector. Empty (or unrecognized) → **Health Check** (default control view). `status` → full **Status Mode** (control view). `dispatch <instance|*> <skill> [var=<value>]` → **Dispatch Mode**: trigger a skill on one child or all healthy/degraded children (control view). `scorecard` → **Scorecard Mode**: fleet-wide runs/tokens/cost/reliability scorecard with day-over-day deltas + alerts (scorecard view).
 
-Today is ${today}. Operate the fleet of Aeon instances registered in `memory/instances.json`. The **control view** (health/status/dispatch) is **decision-ready**: every run leads with a verdict, then a delta vs prior check, then per-instance lines that name the next concrete action. The **scorecard view** publishes the daily fleet-wide cost/reliability scorecard.
+Today is today's date. Operate the fleet of Aeon instances registered in `memory/instances.json`. The **control view** (health/status/dispatch) is **decision-ready**: every run leads with a verdict, then a delta vs prior check, then per-instance lines that name the next concrete action. The **scorecard view** publishes the daily fleet-wide cost/reliability scorecard.
 
 The fleet is **discovered at runtime, never hardcoded**: it is this repo ("self") plus every non-archived entry in `memory/instances.json` (the registry `fleet-control` and `spawn-instance` maintain). With zero managed instances the scorecard simply covers the single self repo — still useful.
 
@@ -29,7 +16,7 @@ The fleet is **discovered at runtime, never hardcoded**: it is this repo ("self"
 
 2. **Voice** — if `soul/SOUL.md` and `soul/STYLE.md` exist and are populated, read them and match the operator's voice in every notification. If they are empty templates or absent, use a clear, direct, neutral tone — terse, lowercase, no fluff.
 
-3. **Parse `${var}` → mode**:
+3. **Parse the `Operator var` → mode**:
    - empty / unrecognized → **Health Check Mode** (control view; default)
    - exactly `status` → **Status Mode** (control view)
    - starts with `dispatch ` → **Dispatch Mode** (control view)
@@ -43,12 +30,12 @@ The fleet is **discovered at runtime, never hardcoded**: it is this repo ("self"
 
 ## Control-view pre-flight (health / status / dispatch only)
 
-1. **Verify gh auth** — `gh auth status` must succeed. If not, log `FLEET_NO_AUTH` to `memory/logs/${today}.md` and notify `Fleet Control: gh auth missing — check GITHUB_TOKEN secret.` Stop.
+1. **Verify gh auth** — `gh auth status` must succeed. If not, log `FLEET_NO_AUTH` to `memory/logs/today's date.md` and notify `Fleet Control: gh auth missing — check GITHUB_TOKEN secret.` Stop.
 
 2. **Check rate limit** — `REMAINING=$(gh api rate_limit --jq '.resources.core.remaining')`. If `REMAINING < 50`, log `FLEET_RATE_LIMITED:remaining=${REMAINING}` and notify a one-line warning, then stop.
 
 3. **Load the registry** — read `memory/instances.json`. If the file is missing, write `{"instances": []}` to bootstrap. If `.instances` is absent or `[]`:
-   - Log `FLEET_EMPTY: no managed instances` to `memory/logs/${today}.md`.
+   - Log `FLEET_EMPTY: no managed instances` to `memory/logs/today's date.md`.
    - **Stop. Do NOT notify.**
 
 4. **Load prior state** — read `memory/state/fleet-control-state.json` (create the directory and file with `{"instances": {}, "last_full_summary_date": ""}` if missing). Shape:
@@ -119,7 +106,7 @@ For each instance compute a **next_action** (one short imperative phrase):
 
 **Update the state file** — write the current per-instance health snapshot to `memory/state/fleet-control-state.json`. Update `last_full_summary_date` to today **only when this run notifies**. Increment `consecutive_unreachable` for unreachable instances; reset to 0 otherwise.
 
-**Log** to `memory/logs/${today}.md` (under the consolidated heading — see **Log** section):
+**Log** to `memory/logs/today's date.md` (under the consolidated heading — see **Log** section):
 ```
 ### fleet-control
 - Mode: health check
@@ -138,7 +125,7 @@ Otherwise skip notify (silent no-op when nothing changed mid-day — operator is
 
 **Notification body** (when sent):
 ```
-*Fleet Control — ${today}*
+*Fleet Control — today's date*
 Verdict: <FLEET_OK | NEEDS_ATTENTION:N>
 
 [If deltas exist]:
@@ -241,9 +228,9 @@ For each registered instance (skip `archived` from detail blocks but count them 
 
 Compute the same delta block, but compare against the most recent prior `output/articles/fleet-status-*.md` (parse the per-instance health rows; if none exists, mark the section "no prior status to diff against").
 
-Write to `output/articles/fleet-status-${today}.md`:
+Write to `output/articles/fleet-status-today's date.md`:
 ```markdown
-# Fleet Status — ${today}
+# Fleet Status — today's date
 
 ## Verdict
 <one line: FLEET_OK | NEEDS_ATTENTION:N | DEGRADED:N — top issue first>
@@ -283,18 +270,18 @@ gh=ok · rate_remaining=N · registry=N instances · prior_status=<filename or "
 ```
 ### fleet-control
 - Mode: status
-- Article: output/articles/fleet-status-${today}.md
+- Article: output/articles/fleet-status-today's date.md
 - Verdict: <line>
 - Sizes: total=N, healthy=N, ...
 ```
 
 **Notify** (always, in status mode):
 ```
-*Fleet Status — ${today}*
+*Fleet Status — today's date*
 <verdict>
 Top issue: <one line, or "none">
 Counts: healthy <H> · warning <W> · degraded <D> · stale <S> · pending <P> · unreachable <U>
-Article: output/articles/fleet-status-${today}.md
+Article: output/articles/fleet-status-today's date.md
 ```
 
 ---
@@ -344,7 +331,7 @@ Scan the computed tables in `scorecard-body.md` and flag:
 Structure (overwrite the file):
 
 ```
-# 🛰️ Aeon Fleet Scorecard — as of ${today}
+# 🛰️ Aeon Fleet Scorecard — as of today's date
 
 _Auto-generated daily by skills/fleet-control (scorecard view). Tokens reported OpenRouter-style (cached_tokens ⊆ prompt_tokens)._
 
@@ -375,15 +362,13 @@ Append one line to `memory/scorecard-history.csv` (create with a header if it do
 date,total_runs,total_failures,generations,prompt_tokens,cached_tokens,completion_tokens,total_tokens,est_cost_usd,cache_discount_usd
 ```
 
-Use `${today}` for the date and the values straight from `metrics.json`. **Append, never rewrite** prior rows.
+Use today's date for the date and the values straight from `metrics.json`. **Append, never rewrite** prior rows.
 
 #### 6. Notify
 
-Write a terse daily pulse to `/tmp/scorecard-notify.md` and send it with `./notify -f /tmp/scorecard-notify.md`. One short paragraph — today's totals (runs, est. cost, total tokens), the headline deltas, and any alert. Example shape: _"fleet at 12.5k runs, ~$7.8k notional. +312 runs / +$148 since yesterday. cost-report still failing (88% fail). caching saved ~$43k."_ Also copy this text to `/tmp/skill-result.txt` so the framework captures it.
-
 #### 7. Memory log
 
-Append the scorecard entry under the consolidated `### fleet-control` heading in `memory/logs/${today}.md` (see **Log** section), noting the headline numbers (so future skills like self-improve/reflect see it).
+Append the scorecard entry under the consolidated `### fleet-control` heading in `memory/logs/today's date.md` (see **Log** section), noting the headline numbers (so future skills like self-improve/reflect see it).
 
 ### Scorecard notes
 - Numbers come only from the collector's output files (`/tmp/fleet-scorecard/*`) — never invent or estimate figures yourself.
@@ -394,7 +379,7 @@ Append the scorecard entry under the consolidated `### fleet-control` heading in
 
 ## Log
 
-All modes append under **one** `### fleet-control` heading in `memory/logs/${today}.md`, with a `- Mode:` discriminator line (the health loop parses this shape). Use the per-mode block shown in each mode section above. For **Scorecard Mode** use:
+All modes append under **one** `### fleet-control` heading in `memory/logs/today's date.md`, with a `- Mode:` discriminator line (the health loop parses this shape). Use the per-mode block shown in each mode section above. For **Scorecard Mode** use:
 ```
 ### fleet-control
 - Mode: scorecard
@@ -439,3 +424,10 @@ Write complete, working code. No TODOs or placeholders.
 ## Output
 
 After completing any task, end with a `## Summary` listing what you did, files created/modified, and any follow-up actions needed.
+
+## Do not
+
+- Do not write outside `output/fleet-control/` and `memory/skills/fleet-control/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

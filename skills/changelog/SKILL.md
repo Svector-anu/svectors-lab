@@ -1,25 +1,10 @@
----
-name: changelog
-description: Generate a user-facing changelog from recent commits/PRs across watched repos - write it in-repo (Keep a Changelog format) or open a cross-repo changelog PR on a docs/marketing repo.
-metadata:
-  title: Changelog
-  category: dev
-  var: ""
-  tags:
-    - dev
-    - content
-    - build
-  mode: write
-  commits: true
-  permissions:
-    - contents:write
-    - pull-requests:write
-  requires:
-    - GH_GLOBAL?
----
+# changelog
+
+Generate a user-facing changelog from recent commits/PRs across watched repos - write it in-repo (Keep a Changelog format) or open a cross-repo changelog PR on a docs/marketing repo.
+
 <!-- autoresearch: variation B — sharper output: Keep a Changelog categories, breaking-change surfacing, plain-English rewrites, noise filtering -->
 
-> **${var}** — Selects the mode and target:
+> The `Operator var` — Selects the mode and target:
 > - **empty** → in-repo changelog across every repo in `memory/watched-repos.md`.
 > - **`owner/repo`** (bare slug) → in-repo changelog for that single repo only.
 > - **`push-to:owner/website-repo`** → cross-repo mode: publish the product's merged PRs as a changelog PR on `owner/website-repo` (product repo comes from `memory/docs-sync.md`).
@@ -35,9 +20,9 @@ A changelog is not a commit log. Raw commit dumps grouped by conventional prefix
 
 Read `memory/MEMORY.md` and the last 3 days of `memory/logs/` for context (prior runs, known issues). Before notifying, drop anything already reported in that window.
 
-Parse `${var}` to pick the branch:
+Parse the `Operator var` to pick the branch:
 
-| `${var}` | Branch | Target |
+| the `Operator var` | Branch | Target |
 |----------|--------|--------|
 | empty | **A — in-repo** | all repos in `memory/watched-repos.md` |
 | `owner/repo` (no `push-to:`, no `->`) | **A — in-repo** | only that repo |
@@ -62,11 +47,11 @@ Reads repos from `memory/watched-repos.md`. If the file doesn't exist, abort and
 - another-owner/another-repo
 ```
 
-If `${var}` is set to a bare `owner/repo`, scan only that repo (skip the file list).
+If the `Operator var` is set to a bare `owner/repo`, scan only that repo (skip the file list).
 
 ### A.1. Pick the scan set
 
-- If `${var}` is a bare `owner/repo`, scan only `${var}`.
+- If the `Operator var` is a bare `owner/repo`, scan only the `Operator var`.
 - Otherwise, read `memory/watched-repos.md` and parse `- owner/repo` lines.
 - If the list is empty, notify "changelog: no repos configured" and exit cleanly.
 
@@ -135,12 +120,12 @@ Commit message → changelog line rules:
 
 ### A.6. Assemble the article
 
-Save to `output/articles/changelog-${today}.md`:
+Save to `output/articles/changelog-today's date.md`:
 
 ```markdown
-# Changelog — Week of ${today}
+# Changelog — Week of today's date
 
-*Window: ${SINCE_date} → ${today} · Sources: repo1=ok, repo2=empty, repo3=fail*
+*Window: ${SINCE_date} → today's date · Sources: repo1=ok, repo2=empty, repo3=fail*
 
 ## owner/repo
 
@@ -176,11 +161,9 @@ Rules:
 
 ### A.7. Notify
 
-Send one concise paragraph via `./notify`:
-
 ```
-*Changelog — Week of ${today}*
-${total_repos} repos: ${total_user_facing} user-facing changes (${breaking_count} breaking, ${added_count} added, ${fixed_count} fixed, ${security_count} security). Top: ${one_line_most_important_change}. Full: output/articles/changelog-${today}.md
+*Changelog — Week of today's date*
+${total_repos} repos: ${total_user_facing} user-facing changes (${breaking_count} breaking, ${added_count} added, ${fixed_count} fixed, ${security_count} security). Top: ${one_line_most_important_change}. Full: output/articles/changelog-today's date.md
 ```
 
 If zero user-facing changes across all repos: send `CHANGELOG_QUIET — no user-facing changes across ${N} repos this week.`
@@ -259,7 +242,7 @@ Split the new PRs:
 - Every new PR (including the noise) still goes into the entry's `prs` array so idempotency stays exact — but only the substantive ones get their own highlight bullet.
 
 Compose ONE `ChangelogEntry`:
-- `date`: `${today}` (YYYY-MM-DD).
+- `date`: today's date (YYYY-MM-DD).
 - `title`: 4–8 words naming the dominant theme of the batch (e.g. "i18n expansion + simulation fixes"). Derive it from the substantive PR titles, not boilerplate. Never "various improvements".
 - `summary`: 1–2 plain-language sentences — what a builder following the project would care about. No hype, no "we're excited".
 - `highlights`: one bullet per substantive PR (plus the single maintenance rollup if any). Each bullet ≤ 18 words, names the concrete change, ends with the PR ref `(#N)`. Translate commit-speak into plain English.
@@ -299,7 +282,7 @@ Match indentation, quote style, and naming of each repo exactly. After editing, 
 ## B.5. Branch, commit, PR
 
 ```bash
-BRANCH="aeon/changelog-${today}"
+BRANCH="aeon/changelog-today's date"
 git checkout -b "$BRANCH"
 git add -A
 git commit -m "docs(changelog): sync N merged PRs from ${PRODUCT_REPO}"
@@ -310,7 +293,7 @@ Open the PR on the **website** repo (draft unless config says otherwise):
 
 ```bash
 gh pr create --repo "$WEBSITE_REPO" --draft \
-  --title "docs(changelog): ${today} — <entry title>" \
+  --title "docs(changelog): today's date — <entry title>" \
   --body "$(cat <<'EOF'
 ## Summary
 Auto-generated changelog sync from merged PRs in `${PRODUCT_REPO}`.
@@ -335,7 +318,7 @@ Use `--draft` when `draft` config is true (the default). Build the PR body from 
 Send only on `DOCS_SYNC_OK` / `DOCS_SYNC_BOOTSTRAP` (a real entry was written) and on `DOCS_SYNC_NO_CONFIG` (one-line config prompt). Stay silent on `DOCS_SYNC_NOTHING_NEW` / `DOCS_SYNC_BELOW_THRESHOLD`.
 
 ```
-*Changelog (push-to) — ${today}*
+*Changelog (push-to) — today's date*
 ${PRODUCT_REPO} → ${WEBSITE_REPO}
 N new PRs → changelog entry "<title>"
 ```
@@ -346,17 +329,17 @@ Then log (see the shared **Log** section) with `Mode: push-to`.
 
 ## Log
 
-Consolidate both branches under ONE `### changelog` heading in `memory/logs/${today}.md`, with a `Mode:` discriminator line naming which branch ran.
+Consolidate both branches under ONE `### changelog` heading in `memory/logs/today's date.md`, with a `Mode:` discriminator line naming which branch ran.
 
 **Branch A — in-repo:**
 ```
 ### changelog
 - Mode: in-repo
-- Window: ${SINCE_date} → ${today}
+- Window: ${SINCE_date} → today's date
 - Repos: ${ok_count} ok, ${empty_count} empty, ${fail_count} fail
 - User-facing: ${breaking} breaking, ${added} added, ${changed} changed, ${fixed} fixed, ${security} security
 - Internal filtered: ${internal_count} commits, ${bot_count} bot commits
-- Article: output/articles/changelog-${today}.md
+- Article: output/articles/changelog-today's date.md
 - Notes: [anything surprising — e.g. big breaking change, repo with no activity, first run for a new repo]
 ```
 
@@ -384,7 +367,7 @@ Consolidate both branches under ONE `### changelog` heading in `memory/logs/${to
 - **Idempotent by PR number** — never publish a PR already in `PUBLISHED_PR_NUMBERS`. Re-running must be a no-op when nothing new merged.
 - **Never rewrite existing changelog entries** — only prepend.
 - **Never push to the website's main branch** — always branch + PR. Draft by default.
-- **Never hardcode repo names or commit identity** — both come from `memory/docs-sync.md` (or `${var}`), with safe defaults.
+- **Never hardcode repo names or commit identity** — both come from `memory/docs-sync.md` (or the `Operator var`), with safe defaults.
 - One changelog entry per run, covering all new PRs since the last entry.
 - Match each website's existing design + code conventions; on bootstrap reuse the site's chrome/CSS, don't invent a new style.
 - Every highlight bullet cites a real `(#N)`. No invented activity.
@@ -403,3 +386,10 @@ Consolidate both branches under ONE `### changelog` heading in `memory/logs/${to
 - **One operation per Bash call:** the sandbox rejects compound commands (`&&`, `||`, `|`, `;`) and `$(...)`/`$VAR` expansion in skill bash blocks. Split into separate calls; the working directory persists, so run `cd "$WORK_DIR"` as its own call then run commands. Compute literal values (repo names, branch) in your reasoning, not via shell substitution.
 - **npm/build may be unavailable:** if `npm run build`/`lint` isn't available or fails, skip it and note "build not verified" in the PR body rather than aborting.
 - **Requires `GH_GLOBAL`** (a token with cross-repo write to the website repo) — only this branch needs it. `GITHUB_TOKEN` alone only covers the current repo and cannot push to the website.
+
+## Do not
+
+- Do not write outside `output/changelog/` and `memory/skills/changelog/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

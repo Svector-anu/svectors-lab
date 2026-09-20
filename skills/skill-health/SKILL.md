@@ -1,15 +1,8 @@
----
-name: skill-health
-description: Fleet skill observability with two views - health audits per-skill metrics and files/resolves issues in memory/issues/; analytics ranks the fleet by 7d runs, success rates, and anomaly flags.
-scorable: false  # meta skill: no gradable output, skip the post-run quality scorer
-metadata:
-  title: Skill Health
-  category: evolution
-  var: ""
-  tags:
-    - meta
----
-> **${var}** — View selector.
+# skill-health
+
+Fleet skill observability with two views - health audits per-skill metrics and files/resolves issues in memory/issues/; analytics ranks the fleet by 7d runs, success rates, and anomaly flags.
+
+> The `Operator var` — View selector.
 > - **empty** → health check across all scheduled skills (default).
 > - a **skill slug** (e.g. `token-movers`) → health check for that one skill.
 > - `analytics` or `metrics` (optionally `analytics:HOURS`, e.g. `metrics:72`) → fleet metrics view over the last HOURS (default 168 = 7d, cap 720).
@@ -21,14 +14,14 @@ metadata:
 
 This skill provides two views over the same GitHub-Actions skill-run data. They share a preamble but branch into distinct logic:
 
-- **health** (default): per-skill classification, issue filing/resolution against `memory/issues/`, and a state-change-gated notification. This is the load-bearing self-healing view — its issue contract, `memory/skill-health/` scoring, and `### skill-health` log shape are depended on by the health loop and other skills. Do not weaken it.
+- **health** (default): per-skill classification, issue filing/resolution against `memory/issues/`, and a state-change-gated notification. This is the load-bearing self-healing view — its issue contract, `memory/skills/skill-health/` scoring, and `### skill-health` log shape are depended on by the health loop and other skills. Do not weaken it.
 - **analytics** (metrics): a fleet-wide ranked view — top runners, failure rates, exit-taxonomy distribution, silent-scheduled detection, and anomaly flags — with a significance-gated notification plus an article and a dashboard JSON spec. `heartbeat` gives binary ok/not-ok per run and the health view audits skills one degradation-band at a time; the analytics view is the only place the operator sees the entire fleet ranked side-by-side.
 
 ## Shared preamble (run for either view)
 
 1. Read `memory/MEMORY.md` for high-level context and scan the last ~3 days of `memory/logs/` for recent activity — drop anything already reported so you don't re-report the same signal.
-2. Compute `${today}` (UTC date, `YYYY-MM-DD`).
-3. **Parse `${var}` → selector** (trim whitespace first):
+2. Compute today's date (UTC date, `YYYY-MM-DD`).
+3. **Parse the `Operator var` → selector** (trim whitespace first):
    - **empty** → `VIEW=health`, `TARGET=all` (all scheduled skills).
    - lowercase first token is `analytics` or `metrics` → `VIEW=analytics`. Parse an optional window argument after a `:` or a space (`analytics:72`, `metrics 336`): if it is a positive integer, `WINDOW_HOURS = min(that, 720)`; otherwise `WINDOW_HOURS = 168`.
    - a bare positive integer (e.g. `168`) → `VIEW=analytics`, `WINDOW_HOURS = min(that, 720)` (legacy skill-analytics shorthand).
@@ -44,8 +37,8 @@ This skill provides two views over the same GitHub-Actions skill-run data. They 
 ## Data sources
 
 1. **`memory/cron-state.json`** — Per-skill quality metrics (as before).
-2. **`memory/skill-health/*.json`** — Per-skill quality analysis (Haiku post-run).
-3. **`memory/skill-health/last-report.json`** — Last run's classification snapshot (this skill writes it). Used to dedup notifications and detect flapping.
+2. **`memory/skills/skill-health/*.json`** — Per-skill quality analysis (Haiku post-run).
+3. **`memory/skills/skill-health/last-report.json`** — Last run's classification snapshot (this skill writes it). Used to dedup notifications and detect flapping.
 4. **`aeon.yml`** — Enabled skills and schedules.
 5. **`memory/issues/INDEX.md`** and `memory/issues/ISS-*.md` — Open issues tracker. Check before filing, update on recovery.
 6. **`./scripts/skill-runs --hours 168 --failures --json`** — Fallback source for failures that never wrote to cron-state (runs that crashed before writing, etc.). Run once, parse JSON.
@@ -57,8 +50,8 @@ This skill provides two views over the same GitHub-Actions skill-run data. They 
 
 - Parse `aeon.yml` → list of enabled skills with schedules. If `TARGET` is a single skill, filter to just that skill.
 - Load `memory/cron-state.json` (if missing or unparseable, treat as empty — first run, not failure).
-- Load every `memory/skill-health/*.json` (except `last-report.json`).
-- Load `memory/skill-health/last-report.json` if present → `prev_report`. If missing, `prev_report = {}`.
+- Load every `memory/skills/skill-health/*.json` (except `last-report.json`).
+- Load `memory/skills/skill-health/last-report.json` if present → `prev_report`. If missing, `prev_report = {}`.
 - Run `./scripts/skill-runs --hours 168 --failures --json 2>/dev/null || echo '{}'` → extract any skill with failures in the last 7d that isn't in cron-state (runs that failed before writing state).
 - Parse `memory/issues/INDEX.md` → extract open issues with `detected_by: skill-health` and their affected skills. If missing, treat as empty.
 
@@ -90,7 +83,7 @@ Group non-HEALTHY skills by shared `api_host` OR shared `last_error` signature. 
 
 ### 4. Reconcile with memory/issues/
 
-**Precondition guard:** only perform issue filing/resolution if `memory/issues/INDEX.md` already exists. If it is missing, the operator has not opted into the issue-tracker contract yet — log `SKILL_HEALTH_ISSUE_TRACKER_MISSING` to `memory/logs/${today}.md`, skip this entire step (and the reconciliation side of step 5), and continue with classification + notification only. Do **not** auto-create `INDEX.md`.
+**Precondition guard:** only perform issue filing/resolution if `memory/issues/INDEX.md` already exists. If it is missing, the operator has not opted into the issue-tracker contract yet — log `SKILL_HEALTH_ISSUE_TRACKER_MISSING` to `memory/logs/today's date.md`, skip this entire step (and the reconciliation side of step 5), and continue with classification + notification only. Do **not** auto-create `INDEX.md`.
 
 For each CRITICAL or FLAPPING skill, check if an open issue already exists with this skill in `affected_skills` AND a matching `root_cause` signature:
 
@@ -138,7 +131,7 @@ Build a stable signature from the current classification: sorted list of `CRITIC
 - If `current_hash == prev_report.hash` AND `now - prev_report.last_notified_at < 24h` → **do not notify**. State unchanged.
 - Otherwise → **notify** (there's new signal or the daily reminder cadence elapsed).
 
-Always write `memory/skill-health/last-report.json`:
+Always write `memory/skills/skill-health/last-report.json`:
 ```json
 {
   "hash": "<current_hash>",
@@ -155,7 +148,7 @@ Always write `memory/skill-health/last-report.json`:
 **Body (notify-channel format, max 1 message):**
 
 ```
-*Skill Health — ${today}*
+*Skill Health — today's date*
 HEALTH: CRITICAL(2)  [systemic: api.coingecko.com rate_limit — 3 skills]
 
 🔴 CRITICAL
@@ -179,15 +172,13 @@ Rules for formatting:
 
 ### 7. Notify and log
 
-- If the gate in step 5 said notify → `./notify "<report body>"`. Update `last_notified_at` in last-report.json to now.
-- If gate said skip → do not call `./notify`. Log to memory/logs/${today}.md:
   ```
   ### skill-health
   - view: health
   - SKILL_HEALTH_NOOP — state unchanged since <prev_run_at>, hash=<short>
   ```
 
-On notify, log to memory/logs/${today}.md:
+On notify, log to memory/logs/today's date.md:
 ```
 ### skill-health
 - view: health
@@ -232,7 +223,7 @@ If all skills healthy, the body-only shortcut from step 6 still fires (once per 
 ```
 
 If the script fails (auth, rate limit, network error) or the JSON is empty:
-- Log `SKILL_ANALYTICS_NO_DATA — skill-runs returned empty (gh api / network error?)` to `memory/logs/${today}.md` (under the `### skill-health` heading, see step 13) and stop with **no notification**. A silent fleet view is correct on data-fetch failure — fall back rather than guess.
+- Log `SKILL_ANALYTICS_NO_DATA — skill-runs returned empty (gh api / network error?)` to `memory/logs/today's date.md` (under the `### skill-health` heading, see step 13) and stop with **no notification**. A silent fleet view is correct on data-fetch failure — fall back rather than guess.
 
 The script's JSON shape (see `scripts/skill-runs`):
 ```json
@@ -321,10 +312,10 @@ If gate says skip, still write the article and JSON spec, and log `SKILL_ANALYTI
 
 ### 10. Write the article
 
-Path: `output/articles/skill-analytics-${today}.md`. Overwrite if it exists (idempotent same-day reruns).
+Path: `output/articles/skill-analytics-today's date.md`. Overwrite if it exists (idempotent same-day reruns).
 
 ```markdown
-# Skill Analytics — ${today}
+# Skill Analytics — today's date
 
 **Verdict:** ${verdict_line}
 
@@ -401,12 +392,12 @@ Path: `apps/dashboard/outputs/skill-analytics.json`. Use the catalog components 
   "version": "1",
   "generated_at": "${ISO timestamp}",
   "skill": "skill-analytics",
-  "title": "Skill Analytics — ${today}",
+  "title": "Skill Analytics — today's date",
   "spec": {
     "type": "Stack",
     "props": {"direction": "vertical", "gap": "md"},
     "children": [
-      {"type": "Heading", "props": {"level": 2, "children": "Skill Analytics — ${today}"}},
+      {"type": "Heading", "props": {"level": 2, "children": "Skill Analytics — today's date"}},
       {"type": "Text", "props": {"variant": "muted", "children": "${verdict_line}"}},
       {"type": "Grid", "props": {"columns": 4, "gap": "sm"}, "children": [
         {"type": "Card", "props": {"children": [
@@ -454,10 +445,8 @@ If the file write fails (filesystem read-only, missing directory), log a warning
 
 ### 12. Send notification (only if gate from step 9 passed)
 
-Via `./notify`:
-
 ```
-*Skill Analytics — ${today}*
+*Skill Analytics — today's date*
 ${verdict_line}
 
 Window: ${WINDOW_LABEL} · ${total_runs} runs · ${distinct_skills} skills · ${overall_success_pct}% success
@@ -477,12 +466,10 @@ ${If 🟡 flags (top 3, only if no 🔴/🟠 already filled the slots):}
 
 Top by runs: ${top_3_skills_by_run_count_with_counts}
 
-Full: output/articles/skill-analytics-${today}.md
+Full: output/articles/skill-analytics-today's date.md
 ```
 
-Keep the message body tight for signal. Drop the "Top by runs" line first if it runs long; flags are higher signal. (`./notify` auto-chunks, so length is about signal, not transport.)
-
-### 13. Log to `memory/logs/${today}.md`
+### 13. Log to `memory/logs/today's date.md`
 
 Log under the shared `### skill-health` heading (the health loop parses this shape), with a `view: analytics` discriminator:
 
@@ -497,7 +484,7 @@ Log under the shared `### skill-health` heading (the health loop parses this sha
 - **Top runner**: ${top_skill} (${top_runs} runs)
 - **Exit dominant**: ${exit_dominant_summary}
 - **Verdict**: ${verdict_line}
-- **Article**: output/articles/skill-analytics-${today}.md
+- **Article**: output/articles/skill-analytics-today's date.md
 - **Dashboard**: apps/dashboard/outputs/skill-analytics.json
 - **Notification sent**: ${yes|no — quiet (no anomalies)}
 - **Status**: SKILL_ANALYTICS_OK | SKILL_ANALYTICS_QUIET | SKILL_ANALYTICS_NO_DATA
@@ -513,7 +500,6 @@ Log under the shared `### skill-health` heading (the health loop parses this sha
 
 ## Analytics-view constraints
 
-- **Significance-gated.** A clean fleet must produce zero notifications. Article and JSON spec still write so the dashboard reflects the latest state, but `./notify` is silent.
 - **Never invent runs.** If `skill-runs` returns empty, exit `SKILL_ANALYTICS_NO_DATA` — do not synthesise data from cron-state alone (cron-state's view is per-skill, not chronologically ordered, and would produce a misleading "top runners" table).
 - **Best-effort exit-taxonomy parsing.** Log markers are human-written; expect a 10–20% miss rate. Do not block the article on parse failures — drop the affected skill into `uncategorized` and continue.
 - **Idempotent.** Same-day reruns overwrite the article and JSON spec. The log entry is appended (one block per run, lets the operator see analytic drift across reruns).
@@ -528,3 +514,10 @@ This skill fetches no URLs directly — all data is local or via `gh` / `./scrip
 
 - **Health view:** if `./scripts/skill-runs` fails, log `SKILL_HEALTH_PARTIAL — skill-runs unavailable` and continue with cron-state only.
 - **Analytics view:** if `gh api` is rate-limited or the runner's network is degraded, `./scripts/skill-runs` exits non-zero; catch that and fall through to `SKILL_ANALYTICS_NO_DATA` rather than emitting a partial fleet view that would mislead.
+
+## Do not
+
+- Do not write outside `output/skill-health/` and `memory/skills/skill-health/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

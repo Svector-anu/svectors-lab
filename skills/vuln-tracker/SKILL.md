@@ -1,30 +1,15 @@
----
-name: vuln-tracker
-description: One lifecycle poll over everything vuln-scanner produces - PR and advisory status, PVR triage transitions, and pending-disclosure aging, with a stars-secured impact headline and one action queue.
-metadata:
-  title: Vuln Tracker
-  category: dev
-  var: ""
-  mode: write
-  tags:
-    - meta
-    - security
-    - github
-  depends_on:
-    - vuln-scanner
-  requires:
-    - GH_TOKEN?
-    - GH_GLOBAL?
----
+# vuln-tracker
 
-> **${var}** — Scope selector for the lifecycle poll:
+One lifecycle poll over everything vuln-scanner produces - PR and advisory status, PVR triage transitions, and pending-disclosure aging, with a stars-secured impact headline and one action queue.
+
+> The `Operator var` — Scope selector for the lifecycle poll:
 > - empty → **full lifecycle poll**: PR/advisory status + PVR triage + disclosure-queue aging (default).
 > - `prs` (also `pr` / `tracker`) → **Arm A only** — PR/advisory status audit + stars-secured dashboard.
 > - `pvr` → **Arm B only** — PVR triage-state poll on submitted advisories.
 > - `queue` (also `disclosures` / `backlog`) → **Arm C only** — pending-disclosure queue aging + escalation.
 > - a bare `GHSA-xxxx-xxxx-xxxx` → **Arm B, single-advisory mode** — check just that one advisory's triage state on demand.
 
-Today is ${today}. This skill is the daily read/poll arm of the vuln pipeline: `vuln-scanner` opens PRs, submits PVRs, and queues disclosure drafts, then moves on. This skill polls everything it produced and surfaces what the operator must look at — it does not open PRs or submit advisories itself (those are `vuln-scanner`'s write actions).
+Today is today's date. This skill is the daily read/poll arm of the vuln pipeline: `vuln-scanner` opens PRs, submits PVRs, and queues disclosure drafts, then moves on. This skill polls everything it produced and surfaces what the operator must look at — it does not open PRs or submit advisories itself (those are `vuln-scanner`'s write actions).
 
 ## Voice
 
@@ -44,21 +29,21 @@ No sibling writes a repo file **outside** `memory/`, so there was nothing to rel
 1. Read `memory/MEMORY.md` for context.
 2. Read the last ~3 days of `memory/logs/` and drop anything already reported — don't re-surface the same signal twice.
 3. Read `soul/SOUL.md` + `soul/STYLE.md` if populated (voice).
-4. **Parse `${var}` → scope** (deterministic; trim + lowercase, except a `GHSA-` value which is compared case-insensitively but preserved verbatim):
+4. **Parse the `Operator var` → scope** (deterministic; trim + lowercase, except a `GHSA-` value which is compared case-insensitively but preserved verbatim):
    - empty → `scope = full` (run Arm A, then B, then C).
    - matches `^GHSA-` (case-insensitive) → `scope = pvr`, `single_advisory = <the GHSA value>` (Arm B filtered to one advisory).
    - `prs` / `pr` / `tracker` → `scope = prs` (Arm A only).
    - `pvr` → `scope = pvr` (Arm B only, all advisories).
    - `queue` / `disclosures` / `backlog` → `scope = queue` (Arm C only).
    - anything else → log `VULN_TRACKER_BAD_VAR: unrecognized scope '<var>'`, send no notification, exit.
-5. `mkdir -p .pending-notify-temp` and start an empty combined-notification buffer at `.pending-notify-temp/vuln-tracker-${today}.md`. Each arm that has signal **appends its section** to this buffer; at the very end (step "Notify") the skill sends the buffer **once** if it is non-empty. This keeps notifications tight — a full poll with signal in two arms is one message, not two.
+5. `mkdir -p .pending-notify-temp` and start an empty combined-notification buffer at `.pending-notify-temp/vuln-tracker-today's date.md`. Each arm that has signal **appends its section** to this buffer; at the very end (step "Notify") the skill sends the buffer **once** if it is non-empty. This keeps notifications tight — a full poll with signal in two arms is one message, not two.
 
 Then run the arm(s) selected by `scope`, and finish with the shared **Notify** and **Log** steps.
 
 ## Network Note
 
 - **Arm A & Arm B (GitHub reads):** all data via `gh api` / `gh search` / `gh pr view`. `gh` handles auth internally via `GH_TOKEN` (and Arm B's private-advisory reads need the elevated `GH_GLOBAL` PAT). No env-var-authenticated `curl` from bash — a bare `$SECRET` on the command line is refused by the Bash permission layer, so `gh api` (auth handled internally) is the reliable path; no postprocess scripts needed. Arm B keeps a documented `curl` fallback for the advisory endpoint — see Arm B step B2 — but `gh api` is preferred.
-- **Arm C (local only):** reads only local files (`memory/pending-disclosures/`, `memory/issues/`, `memory/topics/pr-status.md`). No outbound network or auth required.
+- **Arm C (local only):** reads only local files (`memory/pending-disclosures/`, `memory/issues/`, `memory/skills/vuln-tracker/pr-status.md`). No outbound network or auth required.
 
 ---
 
@@ -164,7 +149,7 @@ For every unique `repo` across the union from step A2 (JSON history + bot-author
 gh api "repos/$REPO" --jq '{stars: .stargazers_count, archived: .archived}' 2>/dev/null
 ```
 
-**Refetch every run.** Do NOT carry star counts forward from the previous `memory/topics/vuln-followup.md` — per-repo counts drift between runs and the secured-stars headline is the operator's load-bearing metric. Cache only within a single run, keyed by `nameWithOwner`, so a repo with multiple PRs is fetched once.
+**Refetch every run.** Do NOT carry star counts forward from the previous `memory/skills/vuln-tracker/vuln-followup.md` — per-repo counts drift between runs and the secured-stars headline is the operator's load-bearing metric. Cache only within a single run, keyed by `nameWithOwner`, so a repo with multiple PRs is fetched once.
 
 Repo-state handling:
 - **200 with stars**: use `.stargazers_count` (raw integer).
@@ -202,7 +187,7 @@ For each historical entry where the disclosure couldn't ship, re-check whether t
 | `lost-draft` | JSON says pending-disclosure but draft file is gone. Display once, then suppress. |
 | `pre-history` | PR found via search but predates `vuln-scanned.json`. Fill what we can. |
 
-Then rewrite `memory/topics/vuln-followup.md` (rewrite — don't append; this file is a living dashboard, not a log).
+Then rewrite `memory/skills/vuln-tracker/vuln-followup.md` (rewrite — don't append; this file is a living dashboard, not a log).
 
 The **Stars Secured** block goes at the top so the operator sees aggregate impact before drilling into rows. `total_stars_secured` = sum of stargazers across every unique repo where vuln-scanner has landed at least one merged PR. `total_stars_in_flight` = sum across repos with an open PR. `total_stars_tracked` = sum across the full union. Track all three because celebration uses `secured`, prioritization uses `in_flight`, and historical review uses `tracked`.
 
@@ -211,7 +196,7 @@ Round star counts to abbreviated form for the headline (12.4k, 1.8k, 940). Keep 
 ```markdown
 # Vuln Tracker Status
 
-*Last updated: ${today}*
+*Last updated: today's date*
 
 ## Stars Secured
 
@@ -278,11 +263,11 @@ Round star counts to abbreviated form for the headline (12.4k, 1.8k, 940). Keep 
 - Zero items moved to `closed-no-merge` since the last run
 - Zero items aged into `stale-no-review` or `aging-engaged` since the last run
 
-To detect "since last run," diff today's categorization against the previous `memory/topics/vuln-followup.md`. If the file doesn't exist (first run), treat all entries as new and surface the full backlog.
+To detect "since last run," diff today's categorization against the previous `memory/skills/vuln-tracker/vuln-followup.md`. If the file doesn't exist (first run), treat all entries as new and surface the full backlog.
 
 ### A8. Emit Arm A's notification section (when it has signal)
 
-Append this section to the combined buffer (`.pending-notify-temp/vuln-tracker-${today}.md`). Keep the whole message under 4000 chars; if tight, drop the merged/opened/stale section bodies and keep counts only.
+Append this section to the combined buffer (`.pending-notify-temp/vuln-tracker-today's date.md`). Keep the whole message under 4000 chars; if tight, drop the merged/opened/stale section bodies and keep counts only.
 
 ```
 *PR & advisory status*
@@ -302,7 +287,7 @@ queued: <N> (<critical>C / <high>H / <other>M+L)
 
 leaderboard top-3 (PRs by ★): #1 <repo1> ★<s1> (PR #<pr1>) — #2 <repo2> ★<s2> (PR #<pr2>) — #3 <repo3> ★<s3> (PR #<pr3>)
 
-dashboard: memory/topics/vuln-followup.md (full leaderboard inside)
+dashboard: memory/skills/vuln-tracker/vuln-followup.md (full leaderboard inside)
 ```
 
 Record Arm A status `VULN_TRACKER_OK` for the log.
@@ -493,7 +478,7 @@ Resolution rules:
    - `pending-operator-send` (without `auto_send: true`), `queued for operator manual send`, `email-failed`, any string mentioning "operator" → `operator-todo`
    - `pending`, blank, or missing → fall through to rule 2
 
-2. **Cross-reference `memory/topics/pr-status.md`** (if present) — grep for the `{repo}` slug (frontmatter `repo:` or filename) in the Open section and Recent Merges section. If a row exists with a `fix(security)` or `chore(security)` title against that repo, opened on or after the draft's `detected_at` / `reconstructed_at` / filed-date, classify as `covered-by-pr` and capture the PR number / title for the summary. If `memory/topics/pr-status.md` doesn't exist, skip this lookup and fall to rule 3.
+2. **Cross-reference `memory/skills/vuln-tracker/pr-status.md`** (if present) — grep for the `{repo}` slug (frontmatter `repo:` or filename) in the Open section and Recent Merges section. If a row exists with a `fix(security)` or `chore(security)` title against that repo, opened on or after the draft's `detected_at` / `reconstructed_at` / filed-date, classify as `covered-by-pr` and capture the PR number / title for the summary. If `memory/skills/vuln-tracker/pr-status.md` doesn't exist, skip this lookup and fall to rule 3.
 
 3. **Fall through** — if no status hint and no canonical PR found, classify as `pending`. Then check age vs the severity-tier threshold (CRITICAL 3d / HIGH 7d / MED-LOW 14d) — if past, promote to `escalate`.
 
@@ -592,17 +577,16 @@ Record Arm C status `DISCLOSURE_TRACKER_OK` for the log.
 
 ## Notify (shared, runs once at the end)
 
-If the combined buffer `.pending-notify-temp/vuln-tracker-${today}.md` has at least one arm section, prepend the header line `*Vuln Tracker — ${today}*` and send once:
+If the combined buffer `.pending-notify-temp/vuln-tracker-today's date.md` has at least one arm section, prepend the header line `*Vuln Tracker — today's date*` and send once:
 
 ```bash
-./notify -f .pending-notify-temp/vuln-tracker-${today}.md
 ```
 
 If the buffer is empty (every arm that ran was silent), **send nothing** — a clean poll is silent. Keep the whole message under 4000 chars; if over, trim Arm A's body first (keep counts), then Arm C's cleanup list, keeping every `needs-answer` / `newly-actionable` / `ESCALATE` line.
 
 ## Log (shared, runs once at the end)
 
-Append to `memory/logs/${today}.md` under ONE heading (the health loop parses `### <skill-name>`), with a discriminator line naming the scope/arms that ran:
+Append to `memory/logs/today's date.md` under ONE heading (the health loop parses `### <skill-name>`), with a discriminator line naming the scope/arms that ran:
 
 ```
 ### vuln-tracker
@@ -676,4 +660,11 @@ When a canonical PR lands but the draft's `status:` was never set, Arm C falls t
 
 - **`vuln-scanned.json` schema is loose** — `cwe` may be a string or an array; `advisory_ids` may be present or absent. Handle both.
 - **Sibling skill:** `vuln-scanner` produces the records this skill audits (its write actions — open PR, submit PVR, queue draft — are deliberately NOT here). `pvr-watchlist` probes repos *waiting to open* PVR; Arm B picks up once a PVR is submitted. `inbox-triage` catches inbound maintainer replies via the GitHub notification layer (complementary, not a duplicate of Arm A's branch-name lifecycle audit).
-- Arm A, Arm B, and Arm C all read `memory/pending-disclosures/` from different angles; coordinate via the shared `memory/topics/vuln-followup.md` dashboard to avoid duplicate escalation.
+- Arm A, Arm B, and Arm C all read `memory/pending-disclosures/` from different angles; coordinate via the shared `memory/skills/vuln-tracker/vuln-followup.md` dashboard to avoid duplicate escalation.
+
+## Do not
+
+- Do not write outside `output/vuln-tracker/` and `memory/skills/vuln-tracker/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

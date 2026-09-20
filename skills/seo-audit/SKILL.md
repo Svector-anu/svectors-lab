@@ -1,30 +1,13 @@
----
-name: seo-audit
-description: Daily on-page and technical SEO audit of every page on a site - discovers URLs from the sitemap, scores each page, adds cross-page checks (duplicate titles, canonicals, sitemap gaps), diffs against yesterday, and sends the score line plus any regressions
-metadata:
-  title: SEO Audit
-  mode: read-only
-  category: dev
-  var: ""
-  tags:
-    - monitoring
-    - web
-  requires:
-    - PAGESPEED_API_KEY?
-  capabilities:
-    - external_api
-    - read_only
-    - sends_notifications
----
+# seo-audit
 
-Today is ${today}.
+Daily on-page and technical SEO audit of every page on a site - discovers URLs from the sitemap, scores each page, adds cross-page checks (duplicate titles, canonicals, sitemap gaps), diffs against yesterday, and sends the score line plus any regressions
 
-> **${var}** — the target **sites**, comma-separated (an origin, not a page:
+> The `Operator var` — the target **sites**, comma-separated (an origin, not a page:
 > `https://www.example.com`). Each site is audited whole and independently. A
-> bare host gets `https://` prepended. A path in `${var}` (`…/docs`) still works
+> bare host gets `https://` prepended. A path in the `Operator var` (`…/docs`) still works
 > — its origin is what gets crawled.
 >
-> **Empty `${var}` → there is nothing to audit.** This skill has no built-in
+> **Empty the `Operator var` → there is nothing to audit.** This skill has no built-in
 > default site (it ships general-purpose). Log `SEO_NO_TARGET`, send **no**
 > notification, and exit clean — a daily "set a target" ping would just get
 > muted. Set the target once in the dashboard (the skill's `var`) and it runs
@@ -82,8 +65,8 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
 
 ## Workflow
 
-1. **Resolve the targets.** Split `${var}` on commas and trim. No confirmation
-   step — this runs unattended, so treat `${var}` as final. **If `${var}` is
+1. **Resolve the targets.** Split the `Operator var` on commas and trim. No confirmation
+   step — this runs unattended, so treat the `Operator var` as final. **If the `Operator var` is
    empty, there is no site to audit:** log `SEO_NO_TARGET` (Step 8), send no
    notification, and exit. Do not invent a default origin.
 
@@ -120,7 +103,7 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    Filenames sort chronologically, so:
 
    ```bash
-   PREV=$(ls -1 memory/seo-audit/*.json 2>/dev/null | sort | tail -1)
+   PREV=$(ls -1 memory/skills/seo-audit/*.json 2>/dev/null | sort | tail -1)
    ```
 
    `$PREV` is the baseline (empty on the very first run). Match pages **by URL**,
@@ -166,21 +149,21 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    re-run (or a second scheduled run) safe: it can't clobber or fail to update an
    earlier run's snapshot, and the diff in step 4 always picks up the newest one.
    Shell redirection, not the Write tool. Loop the script over every origin in
-   `${var}` and fold the per-site JSON into one snapshot — **redirect the
+   the `Operator var` and fold the per-site JSON into one snapshot — **redirect the
    script's own output, never retype it:**
 
    ```bash
    mkdir -p memory/seo-audit
    export STAMP=$(date -u +%Y-%m-%dT%H-%M-%SZ)   # e.g. 2026-07-24T13-00-07Z
    i=0; files=""
-   for site in <each trimmed origin from ${var}>; do
+   for site in <each trimmed origin from the `Operator var`>; do
      i=$((i+1))
      node scripts/seo-audit.mjs --site "$site" > "/tmp/seo-$i.json"
      files="$files /tmp/seo-$i.json"
    done
    node -e 'const fs=require("fs"); const sites=process.argv.slice(1).map(f=>JSON.parse(fs.readFileSync(f)));
-     console.log(JSON.stringify({date:"${today}",run:process.env.STAMP,sites},null,2))' $files \
-     > "memory/seo-audit/${STAMP}.json"
+     console.log(JSON.stringify({date:"today's date",run:process.env.STAMP,sites},null,2))' $files \
+     > "memory/skills/seo-audit/${STAMP}.json"
    ```
 
    **Redirect the script's own JSON; never retype it.** A hand-copied 20-page
@@ -193,14 +176,14 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    clear out old snapshots out-of-band (a write-mode maintenance step or a manual
    sweep). The newest file is all the diff ever needs.
 
-6. **Update the remediation doc, `memory/seo-audit/FIXES.md`.** This is the
+6. **Update the remediation doc, `memory/skills/seo-audit/FIXES.md`.** This is the
    durable half of the skill: the notification is a daily nudge that scrolls
    away, this is the standing work list someone can open and act on. Rewrite it
    in full each run (shell redirection — no Write tool), preserving history from
    the previous copy.
 
    Structure, highest-impact first (site names below are placeholders — use the
-   real hosts from `${var}`):
+   real hosts from the `Operator var`):
 
    ```markdown
    ---
@@ -209,7 +192,7 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    ---
 
    # SEO fixes
-   _Updated ${today} · auditor v<n> · example.com 94 (18 pages)_
+   _Updated today's date · auditor v<n> · example.com 94 (18 pages)_
 
    ## example.com — open
 
@@ -288,8 +271,6 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    one site is audited. Include the "weakest pages" line only when a page sits
    clearly below its site's average.
 
-   Send it with `./notify -f <file>.md` (multi-line always goes through `-f`).
-
    **Write that body under `/tmp/`, never `memory/` or `output/`.** Those two are
    preserved by the read-only guard and committed by the post-run step, so a
    scratch notify body written there ships as junk on `main`, not a cosmetic
@@ -300,21 +281,20 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    cat > /tmp/seo-notify.md <<'NOTIFY'
    <the digest markdown>
    NOTIFY
-   ./notify -f /tmp/seo-notify.md
    ```
 
    The only files this skill is meant to persist are the Step 5 snapshot
-   (`memory/seo-audit/<STAMP>.json`) and the Step 6 `memory/seo-audit/FIXES.md`.
+   (`memory/skills/seo-audit/<STAMP>.json`) and the Step 6 `memory/skills/seo-audit/FIXES.md`.
 
    **Any file you point at must be a clickable link, never a bare path.**
    Telegram delivery runs `parse_mode=HTML` and `scripts/notify_format.py`
    converts `[text](url)` into `<a href="url">text</a>` — but a bare
-   `memory/seo-audit/FIXES.md` passes through as dead plain text that nobody can
+   `memory/skills/seo-audit/FIXES.md` passes through as dead plain text that nobody can
    open from their phone. Build the URL from the run's own environment so it
    stays correct in any fork:
 
    ```bash
-   FIXES_URL="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY}/blob/main/memory/seo-audit/FIXES.md"
+   FIXES_URL="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY}/blob/main/memory/skills/seo-audit/FIXES.md"
    ```
 
    then write the pointer as `[FIXES.md]($FIXES_URL)`. Same rule for the audited
@@ -334,9 +314,9 @@ unset, Core Web Vitals are simply absent. That is a degraded run, not a failed o
    - `references/checklist.md` has the target and a copy-paste pattern for
      every check.
 
-8. **Log it.** Append to `memory/logs/${today}.md` under a `### seo-audit`
+8. **Log it.** Append to `memory/logs/today's date.md` under a `### seo-audit`
    heading — again by redirection — recording the per-URL scores, what
-   regressed, what was fixed, and any URL that failed to fetch. If `${var}` was
+   regressed, what was fixed, and any URL that failed to fetch. If the `Operator var` was
    empty, log a single `SEO_NO_TARGET` line and nothing else.
 
 ## Prioritizing what to report
@@ -376,7 +356,7 @@ factors this skill doesn't measure.
 
 ## Limits
 
-- One site per script run. The workflow above loops over `${var}`.
+- One site per script run. The workflow above loops over the `Operator var`.
 - **Discovery is only as good as the sitemap.** A page absent from `sitemap.xml`
   and unlinked from the pages that are in it will not be audited. The
   `sitemap_coverage` finding catches the linked-but-unlisted case; nothing
@@ -394,3 +374,10 @@ factors this skill doesn't measure.
   looks SPA-shaped, then not repeating it daily.
 - On-page and technical only. No keyword research, rank tracking, or backlinks.
 - Never edit the audited site. This skill reports; a human decides what ships.
+
+## Do not
+
+- Do not write outside `output/seo-audit/` and `memory/skills/seo-audit/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

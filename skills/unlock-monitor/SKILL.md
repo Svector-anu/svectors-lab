@@ -1,16 +1,6 @@
----
-name: unlock-monitor
-description: Token unlock and vesting tracker - quantify supply pressure via absorption ratio, classify cliff vs linear, and deliver one-line market reads
-metadata:
-  title: Unlock Monitor
-  category: crypto
-  schedule: "0 10 * * 1"
-  commits: true
-  tags:
-    - crypto
-  permissions:
-    - contents:write
----
+# unlock-monitor
+
+Token unlock and vesting tracker - quantify supply pressure via absorption ratio, classify cliff vs linear, and deliver one-line market reads
 
 <!-- autoresearch: variation B — sharper output via Absorption Ratio (unlock $ / avg daily volume), Cliff vs Linear classification, and a one-line market-read verdict per unlock. Replaces qualitative HIGH/MED/LOW tiers with quantitative liquidity-strain thresholds backed by Keyrock's 16k-unlock study. Folds in source-status observability (from C) and CoinGecko volume enrichment (from A) as cheap wins. -->
 
@@ -97,8 +87,6 @@ Deduplicate against `memory/state/unlock-monitor-seen.json` and the last 7 days 
 
 If the resulting list is empty, that's a real signal — output `UNLOCK_MONITOR_QUIET` and a one-line note explaining why (e.g. "No unlocks above 0.3× absorption ratio this week — supply side is calm").
 
-### 6. Send via `./notify` (under 4000 chars)
-
 Lead with the headline — the single most-leveraged unlock — then tiered groups, then the read.
 
 ```
@@ -129,7 +117,7 @@ sources: tokenomist=ok, defillama=ok, cryptorank=ok, dropstab=fail, coingecko=ok
 
 Append every shipped event's key (`${ticker}:${unlock_date}`) to `memory/state/unlock-monitor-seen.json` (create the file and `memory/state/` directory if absent). Trim the file to the last 90 days of keys.
 
-Log to `memory/logs/${today}.md`:
+Log to `memory/logs/today's date.md`:
 
 ```
 ### unlock-monitor
@@ -161,3 +149,10 @@ Log to `memory/logs/${today}.md`:
 
 - None (uses WebSearch + WebFetch only)
 - Notification channels configured via repo secrets (see CLAUDE.md)
+
+## Do not
+
+- Do not write outside `output/unlock-monitor/` and `memory/skills/unlock-monitor/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+

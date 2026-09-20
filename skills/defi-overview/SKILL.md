@@ -1,30 +1,12 @@
----
-name: defi-overview
-description: One-pass crypto read - tracked-protocol positions and health plus macro context, with regime take, DeFi verdict, biggest movers, yields, fees, breadth, Fear & Greed, and prediction markets.
-metadata:
-  title: DeFi Overview
-  category: crypto
-  var: ""
-  tags:
-    - crypto
-    - defi
-    - macro
-    - positions
-  mode: write
-  requires:
-    - COINGECKO_API_KEY?
-  commits: true
-  permissions:
-    - contents:write
-  capabilities:
-    - external_api
-    - sends_notifications
----
-<!-- autoresearch: variation B — sharper output via regime verdict + Market Take + sustainable-vs-incentive yield split + fees fundamentals + per-mover "why it matters". Consolidated: folds in defi-monitor (tracked-protocol positions/health) and market-context (broad crypto macro + memory/topics/market-context.md refresh) so one run covers positions + macro in a single pass. -->
+# defi-overview
 
-> **${var}** — Scope selector. **Empty → full combined overview** (tracked-protocol positions + macro context). `positions` → positions facet only (all watched positions); `positions:<label>` → a single tracked position by label. `macro` → macro facet only. **Any other value** → treat as a chain or protocol focus (e.g. `solana`, `aave`, `arbitrum`) applied to the macro read; positions are filtered to that chain when applicable.
+One-pass crypto read - tracked-protocol positions and health plus macro context, with regime take, DeFi verdict, biggest movers, yields, fees, breadth, Fear & Greed, and prediction markets.
 
-Read `memory/MEMORY.md` for context. Read the last 2 days of `memory/logs/` to avoid repeating numbers, to diff position values over time, and to cite yesterday's figure when flagging today's change. Read `memory/on-chain-watches.yml` (tracked positions) and the existing `memory/topics/market-context.md` (prior macro snapshot) — both are inputs below.
+<!-- autoresearch: variation B — sharper output via regime verdict + Market Take + sustainable-vs-incentive yield split + fees fundamentals + per-mover "why it matters". Consolidated: folds in defi-monitor (tracked-protocol positions/health) and market-context (broad crypto macro + memory/skills/defi-overview/market-context.md refresh) so one run covers positions + macro in a single pass. -->
+
+> The `Operator var` — Scope selector. **Empty → full combined overview** (tracked-protocol positions + macro context). `positions` → positions facet only (all watched positions); `positions:<label>` → a single tracked position by label. `macro` → macro facet only. **Any other value** → treat as a chain or protocol focus (e.g. `solana`, `aave`, `arbitrum`) applied to the macro read; positions are filtered to that chain when applicable.
+
+Read `memory/MEMORY.md` for context. Read the last 2 days of `memory/logs/` to avoid repeating numbers, to diff position values over time, and to cite yesterday's figure when flagging today's change. Read `memory/on-chain-watches.yml` (tracked positions) and the existing `memory/skills/defi-overview/market-context.md` (prior macro snapshot) — both are inputs below.
 
 ## Thesis
 
@@ -32,7 +14,7 @@ The original produced a table of numbers. This version produces a **read of the 
 
 ## Facets & var routing
 
-The skill has two facets. `${var}` selects which run and how to scope them:
+The skill has two facets. the `Operator var` selects which run and how to scope them:
 
 - **Empty** → run **both** facets: Positions **and** Macro. This is the comprehensive default.
 - `positions` → **Positions facet only**, all watched positions.
@@ -41,15 +23,15 @@ The skill has two facets. `${var}` selects which run and how to scope them:
 - **Any other value** → Macro facet, run in **focus mode**:
   - matches a chain name in `/v2/chains` (case-insensitive) → chain focus: scope DEX volume, fees, and yields to that chain; keep a 2-line market header for context; filter positions (if the Positions facet also runs) to that chain.
   - matches a protocol slug in `/protocols` → protocol focus: pull `/protocol/{slug}`, `/summary/fees/{slug}`, `/summary/dexs/{slug}` if it is a DEX; compare against its chain and its 30-day self.
-  - matches neither → proceed as a full macro overview and note `var unresolved: ${var}` in the footer.
+  - matches neither → proceed as a full macro overview and note `var unresolved: the `Operator var` in the footer.
 
-When both facets run (empty var), send **one** combined notification (Take → position alerts if any → DeFi read → macro snapshot) and still write `memory/topics/market-context.md`.
+When both facets run (empty var), send **one** combined notification (Take → position alerts if any → DeFi read → macro snapshot) and still write `memory/skills/defi-overview/market-context.md`.
 
 ---
 
 # FACET A — Positions (tracked-protocol health)
 
-*(Runs when `${var}` is empty, `positions`, `positions:<label>`, or a chain focus. Skip entirely for `macro`.)*
+*(Runs when the `Operator var` is empty, `positions`, `positions:<label>`, or a chain focus. Skip entirely for `macro`.)*
 
 ## Position config
 
@@ -76,7 +58,7 @@ watches:
 
 ### A1. Query each DeFi position
 
-For each DeFi position in `memory/on-chain-watches.yml` (`type: pool` or `type: position`), filtered by `${var}` if a label (`positions:<label>`) or chain focus is set:
+For each DeFi position in `memory/on-chain-watches.yml` (`type: pool` or `type: position`), filtered by the `Operator var` if a label (`positions:<label>`) or chain focus is set:
 
 - Query the contract for current state using `eth_call`:
   ```bash
@@ -103,13 +85,12 @@ Compare current values against the last logged values for each position (grep pr
 
 ### A4. Positions output
 
-- **`positions` / `positions:<label>` run:** notify via `./notify` (under 4000 chars) **only if** at least one position produced a noteworthy flag; otherwise log `DEFI_MONITOR_OK` and end (no notification on a quiet run).
 - **Combined (empty var) run:** the positions block is included in the single combined notification **only when there is at least one flag**; a quiet positions check contributes nothing to the message (but still logs its per-position values).
 
 Positions block template:
 
 ```
-*DeFi Monitor — ${today}*
+*DeFi Monitor — today's date*
 
 *Pool/Protocol Label* (chain)
 TVL: $X | APR: Y%
@@ -121,13 +102,13 @@ Change since last check: summary
 
 # FACET B — Macro (DeFi market read + crypto context)
 
-*(Runs when `${var}` is empty, `macro`, or a chain/protocol focus. Skip entirely for `positions` / `positions:<label>`.)*
+*(Runs when the `Operator var` is empty, `macro`, or a chain/protocol focus. Skip entirely for `positions` / `positions:<label>`.)*
 
 ## Steps — Macro
 
 ### B0. Load prior macro snapshot (for deltas + preserve-on-failure)
 
-Read the existing `memory/topics/market-context.md` if present. Extract, for delta computation later:
+Read the existing `memory/skills/defi-overview/market-context.md` if present. Extract, for delta computation later:
 - BTC price, ETH price, Total mcap, BTC dominance, Total TVL, Fear & Greed value, and the prior DEX 24h volume.
 - The full **Token Picks Made** table (never truncate — you will rebuild the new file with this table intact).
 
@@ -176,15 +157,15 @@ For each endpoint, if curl fails or returns non-JSON, retry once with **WebFetch
 
 Notes on fields:
 - `/protocols` and `/v2/chains` already include `change_1d` / `change_7d` / `tvl` — use these directly, do not diff manually. `/overview/dexs` and `/overview/fees` return `total24h`, `total7d`, `change_1d`, `change_7d`, `change_1m`, `protocols[]`.
-- If `${var}` is a **chain** focus, additionally fetch `/overview/dexs/{chain}` and `/overview/fees/{chain}` and filter pools by `chain == var`.
-- If `${var}` is a **protocol** focus, additionally fetch `/protocol/{slug}`, `/summary/fees/{slug}`, and `/summary/dexs/{slug}` (if a DEX).
+- If the `Operator var` is a **chain** focus, additionally fetch `/overview/dexs/{chain}` and `/overview/fees/{chain}` and filter pools by `chain == var`.
+- If the `Operator var` is a **protocol** focus, additionally fetch `/protocol/{slug}`, `/summary/fees/{slug}`, and `/summary/dexs/{slug}` (if a DEX).
 - From `/coins/markets` compute **breadth**: how many of the top 20 are green on 24h vs 7d. Breadth is a regime signal — 18/20 green = risk-on, 4/20 green = risk-off.
 
 ### B2. WebSearch — macro catalysts (2 queries only; noise is expensive)
 
 Use the built-in **WebSearch** tool for exactly:
-- `crypto market today ${today} macro catalyst`
-- `BTC ETF flows ${today}` (institutional flow signal)
+- `crypto market today today's date macro catalyst`
+- `BTC ETF flows today's date (institutional flow signal)
 
 Keep only items that would change a trader's positioning **today**. Discard recap/explainer articles. Mark `websearch=ok|fail`.
 
@@ -269,12 +250,12 @@ No narrative without an evidence anchor. If you cannot point to a number or conc
 
 For each market: `outcomes` and `outcomePrices` are JSON-encoded arrays that map 1:1. `YES% = parseFloat(outcomePrices[0]) * 100` (first element is always YES). Skip any market where YES% is <3% or >97% (effectively settled — no signal). Take the top few by 24h volume and by liquidity.
 
-### B9. Write the updated `memory/topics/market-context.md`
+### B9. Write the updated `memory/skills/defi-overview/market-context.md`
 
-Overwrite `memory/topics/market-context.md` with this **exact** structure. Lead with the Take so downstream skills get the conclusion in the first ~150 chars:
+Overwrite `memory/skills/defi-overview/market-context.md` with this **exact** structure. Lead with the Take so downstream skills get the conclusion in the first ~150 chars:
 
 ```markdown
-# Market Context (as of ${today})
+# Market Context (as of today's date)
 
 > **Take:** [regime] — [one-sentence why, citing 2 concrete numbers]. Conviction: [high|medium|low].
 
@@ -344,18 +325,16 @@ Keep to 1-2 lines per skill. Only write implications that follow from the Take a
 *Source status: coingecko=[ok|fail] defillama=[ok|fail] fng=[ok|fail] polymarket=[ok|fail] websearch=[ok|fail]*
 ```
 
-**Preserve-on-failure rule:** If 3+ sources fail, **do not overwrite** `market-context.md`. Instead, append a one-line staleness note to the existing file's Source Status line (`last attempt ${today} failed: sources [...]`) and skip the overwrite. A stale-but-valid file is strictly better than a broken one. Use the last known value from the prior file for any single failed source (do not fabricate).
+**Preserve-on-failure rule:** If 3+ sources fail, **do not overwrite** `market-context.md`. Instead, append a one-line staleness note to the existing file's Source Status line (`last attempt today's date failed: sources [...]`) and skip the overwrite. A stale-but-valid file is strictly better than a broken one. Use the last known value from the prior file for any single failed source (do not fabricate).
 
 ---
 
 ## Notify
 
-Send via `./notify` (single call, plain markdown). Cap the message at **4000 chars** — trim lowest-signal sections first (order: Stablecoins, DEX top-3, Top chains #3, Prediction Markets).
-
 **Combined (empty var):** one notification, leading with the Take, then the positions alert block *only if any position flagged*, then the DeFi read, then the macro snapshot:
 
 ```
-*Crypto — ${today}* — <Take regime> (conviction <level>) | DeFi <Verdict>: <≤12-word regime read>
+*Crypto — today's date* — <Take regime> (conviction <level>) | DeFi <Verdict>: <≤12-word regime read>
 
 <positions alert block — include ONLY if ≥1 position flagged (see Facet A template)>
 
@@ -403,7 +382,7 @@ _sources: llama_tvl=ok llama_dex=ok llama_fees=ok llama_stables=ok llama_yields=
 
 **Short macro-only alternative** (when you prefer the terse market-context ping, e.g. a `macro` focus with no DeFi movers surviving filters, under 500 chars):
 ```
-market context — ${today}
+market context — today's date
 
 take: [regime] (conviction [level])
 BTC $X (±X%) / ETH $X (±X%) · F&G X ([label])
@@ -421,7 +400,7 @@ Edit rules before sending:
 
 ## Log
 
-Append to `memory/logs/${today}.md`. Include the blocks for whichever facets ran.
+Append to `memory/logs/today's date.md`. Include the blocks for whichever facets ran.
 
 **Positions facet** — per-position current values and any flags raised (the next run's diff depends on these lines being present). If no DeFi positions configured, log `DEFI_MONITOR_NO_CONFIG`; on a quiet run with positions present, log `DEFI_MONITOR_OK`:
 ```
@@ -445,7 +424,7 @@ Append to `memory/logs/${today}.md`. Include the blocks for whichever facets ran
 - Polymarket highlight: "<question>" YES X%
 - Real-yield count: N   Incentive-yield count: N
 - Sources: tvl=ok dex=ok fees=ok stables=ok yields=ok coingecko=ok fng=ok polymarket=ok websearch=ok
-- Updated memory/topics/market-context.md: yes|no (preserve-on-failure)
+- Updated memory/skills/defi-overview/market-context.md: yes|no (preserve-on-failure)
 ```
 
 ## Network note
@@ -471,3 +450,10 @@ Append to `memory/logs/${today}.md`. Include the blocks for whichever facets ran
 - **Drop empty sections** rather than padding with low-conviction items.
 - **Positions config is authoritative** — no protocols hardcoded here; an empty `memory/on-chain-watches.yml` is not an error.
 - Keep the notification under 4000 chars — trim lowest-signal sections first (Stablecoins, DEX top-3, Top chains #3, Prediction Markets).
+
+## Do not
+
+- Do not write outside `output/defi-overview/` and `memory/skills/defi-overview/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+
