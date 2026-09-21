@@ -1,58 +1,58 @@
-# Market Context (as of 2026-09-20)
+# Market Context (as of 2026-09-21)
 
-> **Take:** chop — BTC is nearly flat while only 7/20 top caps are green and DEX volume fell 25.6%. Conviction: medium.
+> **Take:** rotation — 19/20 top caps are green while BTC is only +0.6% and dominance fell 0.7 pp. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $81,126 (-0.4% 24h, +5.0% 7d) · dominance 58.8% (-0.2 pp vs prior refresh)
-- ETH $2,626.33 (-0.6% 24h, +4.8% 7d) · ETH/BTC 0.0324
-- SOL $109.85 (-1.2% 24h, +9.0% 7d)
-- Total mcap $2.764T (-3.9% 24h) · DEX vol $9.20B 24h
-- Breadth: 7/20 green 24h · 15/20 green 7d
-- Fear & Greed: 71 (Greed) — yesterday 71
+- BTC $81,727 (+0.6% 24h, +5.8% 7d) · dominance 58.1% (-0.7 pp vs prior refresh)
+- ETH $2,684.55 (+2.2% 24h, +6.8% 7d) · ETH/BTC 0.0328
+- SOL $112.31 (+1.3% 24h, +11.4% 7d)
+- Total mcap $2.823T (-0.9% 24h) · DEX vol $9.20B 24h
+- Breadth: 19/20 green 24h · 14/20 green 7d
+- Fear & Greed: 70 (Greed) — yesterday 71
 
 ## What Changed Since Last Refresh
-- Regime improved from risk-off to chop as daily breadth recovered from 2/20 to 7/20 green, though DEX volume remains weak.
+- Regime shifted from chop to rotation as daily breadth jumped from 7/20 to 19/20 green while BTC stayed below the +2% risk-on threshold.
+- ETH moved +2.2% and SOL +1.3% against BTC's +0.6%, while BTC dominance fell about 0.7 pp.
 
 ## Active Narratives
-- **Avalanche DeFi** — phase: rising. Evidence: AVAX is eighth in CoinGecko trends at +13.7%, while Benqi staking and lending TVL rose 20.3% and 17.2% daily.
-- **NEAR attention** — phase: emerging. Evidence: NEAR leads CoinGecko trends with a +11.9% daily move.
-- **Privacy** — phase: fading. Evidence: ZEC and FIRO remain trending but fell 2.2% and 13.3% daily.
-- **Broad alt rotation** — phase: fading. Evidence: only 7/20 top caps are green daily despite 15/20 remaining green weekly.
+- **NEAR liquid staking** — phase: rising. Evidence: NEAR is sixth in CoinGecko trends at +18.8%, while Meta Pool Near and LiNEAR TVL rose 19.7% and 18.2% daily.
+- **Avalanche DeFi** — phase: rising. Evidence: AVAX is fourth in CoinGecko trends at +11.8%, while Benqi staking and lending TVL rose 17.4% and 14.6% daily.
+- **Privacy** — phase: rising. Evidence: ZANO leads CoinGecko trends at +3.9% and ZEC gained 4.1% daily and 40.9% weekly, though FIRO fell 6.4%.
+- **Broad alt rotation** — phase: rising. Evidence: 19/20 top caps are green daily while BTC gained only 0.6% and dominance fell.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $25.61B (+6.3%)
-- Aave V3: $17.97B (+3.2%)
-- SSV Network: $13.70B (+4.8%)
-- Morpho Blue: $10.69B (+10.1%)
-- Binance staked ETH: $9.76B (+5.3%)
+- Lido: $25.84B (+6.2%)
+- Aave V3: $18.06B (+3.3%)
+- SSV Network: $13.83B (+4.8%)
+- Morpho Blue: $10.71B (+9.4%)
+- Binance staked ETH: $9.85B (+5.3%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $52.56B (n/a)
-- Solana: $6.14B (n/a)
-- Base: $5.89B (n/a)
+- Ethereum: $52.71B (n/a)
+- Solana: $6.22B (n/a)
+- Base: $5.92B (n/a)
 
 ## Stablecoins
-Total: $311.44B (+0.2% 7d). USDT $183.30B · USDC $74.28B · USDS $6.59B · USDe $4.87B · combined share of mcap 11.3%.
+Total: $311.58B (+0.3% 7d). USDT $183.31B · USDC $74.43B · USDS $6.59B · USDe $4.88B · combined share of mcap 11.0%.
 
 ## Trending (CoinGecko)
-- NEAR — first in CoinGecko trends, +11.9% over 24h
-- TRUMP — second in CoinGecko trends, down 2.4% over 24h
-- ZEC — third in CoinGecko trends, down 2.2% as privacy attention lacks price confirmation
+- ZANO — first in CoinGecko trends, +3.9% over 24h
+- AVAX — fourth in CoinGecko trends, +11.8% over 24h with Benqi TVL confirming DeFi activity
+- NEAR — sixth in CoinGecko trends, +18.8% over 24h with two liquid-staking protocols above +18% TVL
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| United Russia gains most seats in next parliamentary election | 92.5% | $2.89M | $0.31M |
-| Packers beat Jets | 67.5% | $2.62M | $0.10M |
-| Panthers beat Falcons | 90.5% | $2.47M | $0.25M |
+| Spread: Chiefs (-6.5) | 35.0% | $1.38M | $0.04M |
+| Colts vs. Chiefs | 38.5% | $1.28M | $0.07M |
+| Spread: KC (-5.5) | 37.5% | $0.75M | $0.04M |
 
 ## Macro Catalysts (next 48h)
-- Friday's $433M spot-BTC ETF inflow left the week roughly flat; Monday's flow is the next test of institutional follow-through.
-- Elevated Treasury yields and the recent hawkish Fed hike keep pressure on broad alt beta despite BTC holding its weekly gain.
+- Monday's spot-BTC ETF flow is unresolved after Friday's reported $433M inflow; positive follow-through would validate institutional demand, while a reversal would weaken the rotation.
 
 ## Implications for Downstream Skills
-- **token-pick:** watch AVAX/Benqi and NEAR relative strength; avoid broad alt beta until daily breadth clears half the top 20.
-- **narrative-tracker:** monitor Avalanche DeFi for continuation and privacy for further fading.
+- **token-pick:** favor relative-strength alts with onchain confirmation—NEAR liquid staking and Avalanche DeFi—over undifferentiated beta.
+- **narrative-tracker:** monitor broad alt rotation for breadth persistence and privacy for a mixed-to-rising transition.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
@@ -66,6 +66,7 @@ Total: $311.44B (+0.2% 7d). USDT $183.30B · USDC $74.28B · USDS $6.59B · USDe
 | 2026-09-14 | BR | $0.5194 | Optimism incentives and Bitcoin-restaking attention supported momentum; the Sep 20 unlock is the near-term risk |
 | 2026-09-18 | ARB | $0.2112 | SEC tokenized-securities relief and record tokenized-fund value on Arbitrum supported the RWA breakout; unlock and mean-reversion risk remain |
 | 2026-09-19 | ZAMA | $0.0823 | Confidential Morpho vaults and private swaps drove momentum; the Oct 2 unlock is the near-term risk |
+| 2026-09-20 | AVAX | $11.00 | NYSE testing disclosure supported institutional-tokenization momentum; Sep 21 unlock and reversal risk remain |
 
 ---
 *Sources — btc/eth: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*
