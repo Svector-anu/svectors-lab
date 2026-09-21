@@ -54,6 +54,16 @@
     "total_successes": 0,
     "total_failures": 0
   },
+  "create-prove": {
+    "last_run_id": "run_20260921T112606Z_create-prove_bc6fdb",
+    "last_dispatch": "2026-09-21T11:26:45.35781Z",
+    "last_status": "completed",
+    "last_failed": "2026-09-21T11:33:11.594315Z",
+    "total_runs": 1,
+    "total_successes": 0,
+    "total_failures": 1,
+    "consecutive_fails": 1
+  },
   "create-skill": {
     "last_status": "success",
     "last_success": "2026-08-25T01:03:58Z",

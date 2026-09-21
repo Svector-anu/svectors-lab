@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260921T112606Z_create-prove_bc6fdb",
+  "skill": "create-prove",
+  "status": "completed",
+  "executor": "local",
+  "trigger_kind": "manual",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "openrouter/openai/gpt-5.5",
+  "provider": "openrouter",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5",
+      "reason": "auth"
+    },
+    {
+      "provider": "openrouter",
+      "model": "openrouter/openai/gpt-5.5"
+    }
+  ],
+  "omp_version": "omp/18.1.22",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": true,
+  "publish": "pending",
+  "notify": "skipped",
+  "score_status": "skipped",
+  "score": null,
+  "usage": {
+    "input_tokens": 134950,
+    "output_tokens": 4044,
+    "cache_read_input_tokens": 571904,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.0820219999999998
+  },
+  "error": "background job bash was not awaited before omp exited; a headless run cannot join a backgrounded job",
+  "result_path": "/Users/mac/Desktop/coding and projects/svectors-lab/output/create-prove/run_20260921T112606Z_create-prove_bc6fdb.md",
+  "result_hash": "sha256:71e83f0cf666f4237a8c76ce1a2620c16683bb396c63b32bd3161ee6f006ad82",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 9
+    },
+    {
+      "name": "bash",
+      "count": 20
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "fallback_reason": "auth",
+  "attempts": 2,
+  "deadline": "2026-09-21T11:36:06.550991Z",
+  "created_at": "2026-09-21T11:26:06.550991Z",
+  "updated_at": "2026-09-21T11:33:11.594327Z",
+  "completed_at": "2026-09-21T11:33:11.594315Z"
+}

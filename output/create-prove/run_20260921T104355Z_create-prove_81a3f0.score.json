@@ -1,0 +1,17 @@
+{
+  "run_id": "run_20260921T104355Z_create-prove_81a3f0",
+  "score": 0,
+  "correctness": 0,
+  "usefulness": 0,
+  "strategy_alignment": 0,
+  "evidence": 0,
+  "scope_compliance": 0,
+  "memory_hygiene": 0,
+  "channel_formatting": 0,
+  "flags": [],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "d0814b8d7f9f3621fbcfb3c7ab2225a571cb2719",
+  "error": "omp exit 1: 876403 | ` + `Use /login, set an API key environment variable, or create ${Ln()}\n876404 | \n876405 | ` + \"Then use /model to select a model.\");\n876406 |       }\n876407 |       const n = await this.#Te.getApiKey(this.model, this.sessionId);\n876408 |         throw new Error(`No API key found for ${this.model.provider}.\n                       ^\nerror: No API key found for anthropic.\n\nUse /login, set an API key environment variable, or create /var/folders/tk/z6jj8q_j4w97twc2l3589sm00000gp/T/miniaeon-omp-home/.omp/profiles/miniaeon/agent/agent.db\n      at #fo (/$bunfs/root/omp-darwin-arm64:876408:15)\n      at async prompt (/$bunfs/root/omp-darwin-arm64:876312:25)"
+}
