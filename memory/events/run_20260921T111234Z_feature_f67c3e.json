@@ -54,8 +54,18 @@
   ],
   "fallback_reason": "auth",
   "attempts": 2,
+  "proposal_url": "https://github.com/Svector-anu/svectors-lab/pull/97",
+  "proposal_sha": "04d365548d3d804adc25fabeb41b78f89634a869",
+  "approval": {
+    "state": "pending",
+    "kind": "proposal",
+    "ref": "https://github.com/Svector-anu/svectors-lab/pull/97",
+    "prompt": "Merge the pull request feature opened?",
+    "merge_method": "squash",
+    "at": "0001-01-01T00:00:00Z"
+  },
   "deadline": "2026-09-21T11:22:34.529725Z",
   "created_at": "2026-09-21T11:12:34.529725Z",
-  "updated_at": "2026-09-21T11:17:55.345383Z",
+  "updated_at": "2026-09-21T11:17:59.053971Z",
   "completed_at": "2026-09-21T11:17:51.551942Z"
 }
