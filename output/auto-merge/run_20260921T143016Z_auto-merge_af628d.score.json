@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260921T143016Z_auto-merge_af628d",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 3,
+  "strategy_alignment": 3,
+  "evidence": 1,
+  "scope_compliance": 2,
+  "memory_hygiene": 1,
+  "channel_formatting": 4,
+  "flags": [
+    "CRITICAL: claimed log entry missing from actual file — run asserts it logged '### auto-merge' to memory/logs/2026-09-21.md, but actual file content shows only '### narrative-tracker'; the claimed auto-merge entry is absent",
+    "CRITICAL: event metadata incomplete — run_*.json shows status='running', skill_success=null, actual_model='', usage.unknown=true; suggests run did not properly finalize or event was not updated",
+    "CRITICAL: claimed reads unverified — run claims to have read memory/MEMORY.md and memory/watched-repos.md per contract but provides no evidence; cannot confirm author allowlist was actually consulted",
+    "CRITICAL: cannot verify claimed prerequisite work — skill contract requires reading last 2 days of memory/logs/ to avoid re-logging; no evidence shown",
+    "Core safety logic appears sound (found PR #96, correctly identified merge conflict, applied allowlist gate) but cannot establish ground truth due to file discrepancies"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

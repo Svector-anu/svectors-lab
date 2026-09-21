@@ -100,8 +100,24 @@
     ]
   },
   {
-    "skill": "heartbeat",
+    "skill": "auto-merge",
     "rank": 8,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 2,
+    "scored_runs": 1,
+    "last_score": 2,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T143016Z_auto-merge_af628d",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "heartbeat",
+    "rank": 9,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -117,7 +133,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 9,
+    "rank": 10,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -133,7 +149,7 @@
   },
   {
     "skill": "hunter-22",
-    "rank": 10,
+    "rank": 11,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -149,7 +165,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 11,
+    "rank": 12,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -165,7 +181,7 @@
   },
   {
     "skill": "create-prove",
-    "rank": 12,
+    "rank": 13,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -179,7 +195,7 @@
   },
   {
     "skill": "feature",
-    "rank": 13,
+    "rank": 14,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -193,7 +209,7 @@
   },
   {
     "skill": "fork-fleet",
-    "rank": 14,
+    "rank": 15,
     "runs": 1,
     "successes": 0,
     "failures": 1,

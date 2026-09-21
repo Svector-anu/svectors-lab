@@ -1,0 +1,59 @@
+{
+  "run_id": "run_20260921T143016Z_auto-merge_af628d",
+  "skill": "auto-merge",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "auto-merge|2026-09-21T14:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "CRITICAL: claimed log entry missing from actual file — run asserts it logged '### auto-merge' to memory/logs/2026-09-21.md, but actual file content shows only '### narrative-tracker'; the claimed auto-merge entry is absent",
+    "CRITICAL: event metadata incomplete — run_*.json shows status='running', skill_success=null, actual_model='', usage.unknown=true; suggests run did not properly finalize or event was not updated",
+    "CRITICAL: claimed reads unverified — run claims to have read memory/MEMORY.md and memory/watched-repos.md per contract but provides no evidence; cannot confirm author allowlist was actually consulted",
+    "CRITICAL: cannot verify claimed prerequisite work — skill contract requires reading last 2 days of memory/logs/ to avoid re-logging; no evidence shown",
+    "Core safety logic appears sound (found PR #96, correctly identified merge conflict, applied allowlist gate) but cannot establish ground truth due to file discrepancies"
+  ],
+  "usage": {
+    "input_tokens": 13,
+    "output_tokens": 3362,
+    "cache_read_input_tokens": 147472,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.2356806
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/auto-merge/run_20260921T143016Z_auto-merge_af628d.md",
+  "result_hash": "sha256:fd2aa9d01fb29f17e632a8e9806b82bcc2959edc33ec5677f41cf2307fc324af",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 6
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "auto-merge|2026-09-21T14:00:00Z",
+  "scheduled_at": "2026-09-21T14:00:00Z",
+  "deadline": "2026-09-21T14:40:16.15136228Z",
+  "created_at": "2026-09-21T14:30:16.15136228Z",
+  "updated_at": "2026-09-21T14:31:49.288822681Z",
+  "completed_at": "2026-09-21T14:31:49.288813872Z"
+}

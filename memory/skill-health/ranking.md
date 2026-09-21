@@ -9,11 +9,12 @@
 | 5 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 6 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
 | 7 | defi-overview | 2 | 2 | 0 | 2.5 | 3 | low_score |
-| 8 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 9 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 10 | hunter-22 | 1 | 0 | 1 | 2.0 | 2 | low_score |
-| 11 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
-| 12 | create-prove | 1 | 0 | 1 | - | - | - |
-| 13 | feature | 1 | 0 | 1 | - | - | - |
-| 14 | fork-fleet | 1 | 0 | 1 | - | - | - |
+| 8 | auto-merge | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 9 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 10 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 11 | hunter-22 | 1 | 0 | 1 | 2.0 | 2 | low_score |
+| 12 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
+| 13 | create-prove | 1 | 0 | 1 | - | - | - |
+| 14 | feature | 1 | 0 | 1 | - | - | - |
+| 15 | fork-fleet | 1 | 0 | 1 | - | - | - |
 
