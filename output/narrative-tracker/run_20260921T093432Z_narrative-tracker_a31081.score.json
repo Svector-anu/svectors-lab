@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260921T093432Z_narrative-tracker_a31081",
+  "score": 3,
+  "correctness": 2,
+  "usefulness": 3,
+  "strategy_alignment": 3,
+  "evidence": 2,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "xai_api_contract_violation: Skill contract requires showing `echo 'xai http=$HTTP'` proof of X.AI API call; run claims KEY_UNSET instead, contradicting contract precondition that key is injected and present.",
+    "sourcing_opaque: Run claims 6+ outlet corroboration and MSJ primary source for Polymarket story but shows zero curl/WebFetch/fetch proof; narrative is specific but unverified.",
+    "no_fallback_evidence: Contract requires WebSearch/WebFetch fallback only after proving primary path failed; no fallback attempt shown, no HTTP failure proof shown.",
+    "context_dependency: Output is intraday delta referencing 'morning report'; trader reading this standalone loses context on other unchanged narratives (AI-compute, Avalanche, etc.), reducing standalone utility.",
+    "missing_sourcing_methodology: Run provides no explanation of how it sourced the Polymarket scandal details if X search was unavailable (KEY_UNSET)—contradiction between stated constraint and delivered output."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

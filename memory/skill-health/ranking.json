@@ -14,8 +14,22 @@
     "flags": []
   },
   {
-    "skill": "defi-overview",
+    "skill": "narrative-tracker",
     "rank": 2,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 3,
+    "scored_runs": 1,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T093432Z_narrative-tracker_a31081",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "defi-overview",
+    "rank": 3,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -31,7 +45,7 @@
   },
   {
     "skill": "heartbeat",
-    "rank": 3,
+    "rank": 4,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -47,7 +61,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 4,
+    "rank": 5,
     "runs": 1,
     "successes": 1,
     "failures": 0,
