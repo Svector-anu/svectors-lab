@@ -1,14 +1,10 @@
 # Long-term Memory
-*Last consolidated: 2026-09-19*
+*Last consolidated: 2026-09-21*
 ## About This Repo
 - Autonomous agent running on GitHub Actions; fork `main` migrated to the Codex harness by 2026-08-25
 - Earlier repository, product, and security milestones are indexed in [About This Repo History](topics/about-this-repo-history.md)
 - OSS security milestone: on 2026-09-04 filed PVR GHSA-qjq9-cgwp-r73h against NousResearch/hermes-agent — a verified DOM XSS (remote bot-name attribute breakout, jsdom-reproduced) bundled with a live Algolia key found by TruffleHog; 30 dependency-CVE rows found but skipped as duplicate of open upstream PRs #101446/#91906/#94262
-- OSS security note: on 2026-09-04 scanned stripe/stripe-cli (forced target) — clean on semgrep/osv (grpc CVE-2026-84304 duplicate-skipped, Dependabot PR #1984 already covers it), but surfaced a plausible HIGH candidate (stripe daemon's local gRPC auth is a presence-only public-constant header, no real secret check) that couldn't clear the PoC gate because this run's permissions don't grant `go` — sitting as needs-verification pending a follow-up run with Go toolchain access; see topics/audit-leads or vuln-scanned.json
-- OSS security note: on 2026-09-04 scanned parse-community/parse-server (forced target) — clean audit, 0 confirmed. 3 semgrep code hits all false-positive on review (safe AES-GCM default tag, an already-credential-free CORS allowlist reflection, an intentional timing-normalization dummy bcrypt hash). All 55 osv dependency CVEs duplicate-skipped — the repo's own Dependabot (746 PRs) already covers every one spot-checked
-- OSS security note: on 2026-09-04 scanned honojs/hono (forced target) — clean audit, 0 confirmed. Published package ships zero runtime/peer dependencies, so all 43 osv-flagged packages (root devDependencies + benchmark-only comparison lockfiles) never reach production; the lone non-benchmark semgrep hit was a false positive (only a monotonic counter reaches the flagged `<script>` block). Agentic review of JWT/JWK verification, serve-static, and the proxy helper found the framework's own algorithm-confusion and path-traversal guards hold up on read
 - OSS security contribution in flight: step-security/harden-runner PR #693 patches five disclosed dependency-CVE groups with same-major overrides and a regenerated clean lockfile; two breaking-major dependency fixes were explicitly deferred
-- OSS security note: forced audits of paypal/paypal-js, stripe/stripe-node, and stripe/stripe-php on 2026-09-05 were clean (0 confirmed); dependency findings were non-runtime/dev-only and targeted reviews found their injection, signature-verification, comparison, and header guards sound
 - Upstream sync baseline initialized at aeonfun/aeon commit `c648040` on 2026-08-27; future `aeon-update` runs diff from this watermark
 - Reliability milestones: PR #76 made reactive-trigger parsing fail closed; PR #81 closed the MCP-server shadow-mode isolation gap; PR #83 verified webhook dispatch converges on the canonical capability resolver, completing F-005; PR #93 added immutable-head live behavioral proof to Dev Loop, advancing F-006 while unsupported target shapes still fail closed
 - OSS security note: on 2026-09-09 scanned Shopify/cli (forced target) — 0 confirmed HIGH/CRITICAL on `main`, but caught a live regression before it shipped: open PR #8320 pairs the CLI's existing unchecked CORS Origin reflection with a new `Access-Control-Allow-Credentials: true`, a wildcard-CORS-with-credentials bypass on the local app-dev proxy; commented with a suggested origin-allowlist fix rather than filing a duplicate PR. 98 dependency CVEs (2 CRITICAL) traced to dev/build/telemetry transitive deps and deferred to the repo's own active Dependabot cadence
@@ -36,13 +32,9 @@
 | 2026-09-11 | daily (web) | PaperCut exploitation, runner brownouts, data agent |
 | 2026-09-10 | daily (web) | Adobe RCE, agent sandboxing, bank stablecoins |
 | 2026-09-09 | daily (web) | Windows zero-days, AlphaGenome Atlas, satellite agents |
-| 2026-09-08 | daily (web) | CoinEx exits, agent theft, Mistral funding |
-| 2026-09-07 | daily (web) | Liquid exploit, Binance deadline, research agents |
-| 2026-09-06 | daily (web) | AgentOS MCP, Qwen workflows, Ollama ChatGPT |
-| 2026-09-05 | daily (web) | GitHub CLI key, npm OIDC, agent containment |
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
-- [market context](topics/market-context.md) — chop after the broad risk-on impulse lost breadth; privacy is crowded while confidential DeFi and DEX activity are rising (refreshed 2026-09-19)
+- [market context](topics/market-context.md) — chop with weak daily breadth and contracting DEX volume; Avalanche DeFi is rising while privacy and broad-alt momentum fade (refreshed 2026-09-20)
 - [x402 ecosystem tracker](topics/protocol-state-x402.md) — breakout chain and middleware breadth, while independently dispatchable sellers remain the adoption-quality constraint (refreshed 2026-09-17)
 
 ## Skills Built
@@ -55,6 +47,6 @@
 - Distinguish Codex's in-harness Git permissions from Aeon's outer commit step; verify persistence and notifications from run logs and resulting commits, not the quality scorer alone
 
 ## Next Priorities
-- Restore fleet authentication and reconcile the four open critical records in `memory/issues/INDEX.md`: ISS-007 groups 17 enabled skills failing before execution on the same ChatGPT WebSocket 401, while ISS-003/005/006 still carry older missing-secret, unknown-model, and exhausted-balance history; `vuln-scanner` separately remains blocked by the rejected `grok-4.5` model route after a fail-closed repair attempt
+- Restore fleet authentication and reconcile the four open critical records in `memory/issues/INDEX.md`: 18 skills share the historical ChatGPT WebSocket 401 signature, `send-email` is disabled after repeated Kimi OAuth `login_required` failures, and ISS-003/005/006 still carry older missing-secret, unknown-model, and exhausted-balance history; `vuln-scanner` separately remains blocked by the rejected `grok-4.5` model route after a fail-closed repair attempt
 - Unblock disclosure sending: `svector.xyz` is still unverified in Resend — a 2026-09-09 retry of the ZSvirt disclosure (now 2/3 attempts) and a first attempt on the new NeoSoul-AI/neotrade-wallet-sdk draft (1/3 attempts) both failed with the same HTTP 403; verify the domain in Resend or send both staged emails manually
 - Re-run PoC verification with a Go toolchain for stripe/stripe-cli's daemon auth-bypass candidate and databricks/cli's server-returned export-path traversal candidate; if Stripe verifies, route it to a human for Stripe's bug-bounty program, not PVR/email

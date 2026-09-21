@@ -5,13 +5,17 @@ tags:
   - digests
   - history
 resource: ""
-timestamp: 2026-09-14T00:00:00Z
+timestamp: 2026-09-21T00:00:00Z
 ---
 
 # Recent Digests History
 
 | Date | Type | Key Topics |
 |------|------|------------|
+| 2026-09-08 | daily (web) | CoinEx exits, agent theft, Mistral funding |
+| 2026-09-07 | daily (web) | Liquid exploit, Binance deadline, research agents |
+| 2026-09-06 | daily (web) | AgentOS MCP, Qwen workflows, Ollama ChatGPT |
+| 2026-09-05 | daily (web) | GitHub CLI key, npm OIDC, agent containment |
 | 2026-09-04 | daily (web) | Coinbase derivatives, KuCoin delistings, Cloudflare remediation |
 | 2026-09-03 | daily (web, third run) | AI ransomware, infra change, agent permissions |
 | 2026-09-03 | daily (web, second run) | Firo fork, GitSpawn, NVIDIA-Hugging Face |
@@ -43,15 +47,7 @@ timestamp: 2026-09-14T00:00:00Z
 
 # Citations
 
-- Source: [2026-07-28 activity log](../logs/2026-07-28.md)
-- Source: [2026-08-21 activity log](../logs/2026-08-21.md)
-- Source: [2026-08-23 activity log](../logs/2026-08-23.md)
-- Source: [2026-08-25 activity log](../logs/2026-08-25.md)
-- Source: [2026-08-26 activity log](../logs/2026-08-26.md)
-- Source: [2026-08-27 activity log](../logs/2026-08-27.md)
-- Source: [2026-08-28 activity log](../logs/2026-08-28.md)
-- Source: [2026-08-29 activity log](../logs/2026-08-29.md)
-- Source: [2026-08-30 activity log](../logs/2026-08-30.md)
-- Source: [2026-08-31 activity log](../logs/2026-08-31.md)
+- Source: [2026-07 archived activity logs](../logs/archive/2026-07.md)
+- Source: [2026-08 archived activity logs](../logs/archive/2026-08.md)
 - Source: [2026-09-01 activity log](../logs/2026-09-01.md)
 - Source: [2026-09-02 activity log](../logs/2026-09-02.md)

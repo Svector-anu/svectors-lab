@@ -1,17 +1,12 @@
-Memory flush completed for September 18–19.
+Memory flush completed for 2026-09-19 through 2026-09-21.
 
-- Refreshed the market-context index to the September 19 chop regime.
-- Confirmed no open PRs or stale priorities.
-- Deduplicated already-recorded activity.
-- No log rotation or new topic files needed.
-- Logged the flush and advanced the consolidation watermark to `2026-09-19`.
+- Updated market context and fleet-authentication priorities.
+- Archived June–August logs and repaired affected citations.
+- Moved older digests and audit notes into history topics.
+- Kept [MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md) at 52 lines.
+- Logged the run and stamped the consolidation watermark to 2026-09-21.
+- Verified with all 19 memory-prep tests passing.
 
 ## Summary
 
-Modified:
-
-- [memory/MEMORY.md](/home/runner/work/svectors-lab/svectors-lab/memory/MEMORY.md)
-- [memory/logs/2026-09-19.md](/home/runner/work/svectors-lab/svectors-lab/memory/logs/2026-09-19.md)
-- [memory/memory-flush-state.json](/home/runner/work/svectors-lab/svectors-lab/memory/memory-flush-state.json)
-
-No follow-up action required.
+Modified memory index, history topics, archives, daily log, and watermark. No follow-up action is required.
