@@ -7,6 +7,10 @@ on:
         description: Skill to run. Empty runs every due skill.
         required: false
         default: ""
+      var:
+        description: Optional Operator var passed to the selected skill.
+        required: false
+        default: ""
   schedule:
     - cron: "*/15 * * * *"
   repository_dispatch:
@@ -128,6 +132,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
           INPUT_SKILL: ${{ inputs.skill }}
+          INPUT_VAR: ${{ inputs.var }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           # Extra skill secrets: add a line here and list the name in that
           # skill's skill.toml secrets = []. Channel tokens stay out of omp.
@@ -145,7 +150,11 @@ jobs:
             "$BIN" run-due
           elif [ "$EVENT" = "schedule" ] || [ "$EVENT" = "workflow_dispatch" ]; then
             if [ -n "${INPUT_SKILL:-}" ]; then
-              "$BIN" run "$INPUT_SKILL"
+              if [ -n "${INPUT_VAR:-}" ]; then
+                "$BIN" run "$INPUT_SKILL" --var "$INPUT_VAR"
+              else
+                "$BIN" run "$INPUT_SKILL"
+              fi
             else
               "$BIN" run-due
             fi
