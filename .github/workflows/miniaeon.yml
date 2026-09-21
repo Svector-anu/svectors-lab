@@ -145,6 +145,10 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           # Extra skill secrets: add a line here and list the name in that
           # skill's skill.toml secrets = []. Channel tokens stay out of omp.
+          GH_GLOBAL: ${{ secrets.GH_GLOBAL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          RESEND_REPLY_TO: ${{ secrets.RESEND_REPLY_TO }}
         run: |
           set -euo pipefail
           BIN="$RUNNER_TEMP/miniaeon-bin"
