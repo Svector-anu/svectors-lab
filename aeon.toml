@@ -173,8 +173,14 @@ risk = "low"
 write_scope = "own-memory"
 on_missed_run = "skip_stale"
 
+# The Epoch composition under test: feature builds and opens a PR, pr-review
+# verifies it independently, create-prove re-checks the immutable PR SHA and
+# captures behavioral evidence. Aeon expressed this as a declared chain with
+# var: "$feature_pr" passing step 1's output into step 2. MiniAeon has no
+# variable passing between runs, so pr-review must discover the PR from the
+# ledger. Whether that is sufficient is the thing this wiring exists to answer.
 [skills.monolith.delegate]
-skills = ["digest", "github-monitor", "memory-flush", "changelog"]
+skills = ["digest", "github-monitor", "memory-flush", "changelog", "feature", "pr-review", "create-prove"]
 actions = ["run"]
 
 [skills.learning-loop]
@@ -502,3 +508,17 @@ write = ["memory/drafts/write-tweet-latest.md"]
 
 [skills.heartbeat.permissions]
 write = ["docs/status.md"]
+
+# The proof gate: dispatches the changed skill from the PR head, waits for the
+# correlated run, requires a successful conclusion and non-empty output, and
+# re-checks the immutable PR SHA before posting a receipt. Manual-only; it is
+# the last step of a composition, never something to fire on a schedule.
+[skills.create-prove]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "verifier"
+risk = "medium"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"
