@@ -56,8 +56,22 @@
     "flags": []
   },
   {
-    "skill": "defi-overview",
+    "skill": "slop-watch",
     "rank": 5,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 3,
+    "scored_runs": 1,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T094359Z_slop-watch_a7f04d",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "defi-overview",
+    "rank": 6,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -73,7 +87,7 @@
   },
   {
     "skill": "heartbeat",
-    "rank": 6,
+    "rank": 7,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -89,7 +103,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 7,
+    "rank": 8,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -105,7 +119,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 8,
+    "rank": 9,
     "runs": 1,
     "successes": 1,
     "failures": 0,

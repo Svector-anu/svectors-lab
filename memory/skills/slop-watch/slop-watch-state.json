@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-09-21T00:00:00Z",
+  "month": "2026-09",
+  "operator_login": "Svector-anu",
+  "lanes": {
+    "eliza": {
+      "slug": "eliza",
+      "repo": "elizaOS/eliza",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "live",
+      "last_merge_at": "2026-09-21T07:45:41Z",
+      "merges_7d": 186,
+      "merge_rate": 75.6,
+      "open_prs": [29726],
+      "changes_requested": [],
+      "status": "active",
+      "listing_tier": "featured",
+      "authority_state": "verified"
+    },
+    "asi": {
+      "slug": "asi",
+      "repo": "SlopDotCash/asi",
+      "ordinal": 3,
+      "next_merge_points": 5,
+      "liveness": "slowing",
+      "last_merge_at": "2026-09-05T14:47:35Z",
+      "merges_7d": 0,
+      "merge_rate": 54.7,
+      "open_prs": [],
+      "changes_requested": [],
+      "status": "active",
+      "listing_tier": "featured",
+      "authority_state": "verified"
+    },
+    "delta-star": {
+      "slug": "delta-star",
+      "repo": "SlopDotCash/proximityprize",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "slowing",
+      "last_merge_at": "2026-09-06T17:29:41Z",
+      "merges_7d": 0,
+      "merge_rate": 98.0,
+      "open_prs": [],
+      "changes_requested": [],
+      "status": "active",
+      "listing_tier": "featured",
+      "authority_state": "verified"
+    },
+    "heir-elements-sdk": {
+      "slug": "heir-elements-sdk",
+      "repo": "heirlabs/element-sdk",
+      "ordinal": 0,
+      "next_merge_points": 10,
+      "liveness": "dormant",
+      "last_merge_at": "2026-08-21T19:23:12Z",
+      "merges_7d": 0,
+      "merge_rate": 18.75,
+      "open_prs": [],
+      "changes_requested": [],
+      "status": "active",
+      "listing_tier": "community",
+      "authority_state": "unverified"
+    }
+  }
+}
