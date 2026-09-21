@@ -1,63 +1,66 @@
 # Market Context (as of 2026-09-21)
 
-> **Take:** risk-on — BTC +5.71% 24h to $85,074 with 18/20 top-cap majors green and DeFi TVL up ~4.3% on the day. Conviction: high.
+> **Take:** risk-on — BTC $85,855 (+5.84% 24h) with 17/20 top-cap breadth and DeFi TVL extending to +4.63% 24h (+9.06% 7d). Conviction: high.
 
 ## Signal Snapshot
-- BTC $85,074 (+5.71% 24h, +9.82% 7d) · dominance 58.7% (-0.4 pp since last refresh)
-- ETH $2,723.25 (+5.64% 24h, +9.13% 7d) · ETH/BTC 0.0320
-- SOL $117.05 (+8.26% 24h, +15.35% 7d)
-- Total mcap $2.905T (+3.3% 24h) · DEX vol $9.29B 24h
-- Breadth: 18/20 green 24h · 15/20 green 7d
+- BTC $85,855 (+5.84% 24h, +8.99% 7d) · dominance 58.97% (+0.27 pp since last refresh)
+- ETH $2,741.90 (+4.45% 24h, +8.42% 7d) · ETH/BTC 0.0319
+- SOL $117.05 (+6.53% 24h, +14.12% 7d)
+- Total mcap $2.908T (+2.3% 24h) · DEX vol $9.29B 24h
+- Breadth: 17/20 green 24h · 18/20 green 7d
 - Fear & Greed: 70 (Greed) — yesterday 71
 
 ## What Changed Since Last Refresh
-- BTC extended the breakout further, from +4.65% to +5.71% 24h intraday — the rally is broadening in magnitude, not just holding.
-- BTC dominance slipped to 58.7% (from 59.1% at the last same-day refresh) even as BTC itself kept climbing — alts (SOL +8.3%, ADA +9.9%, DOGE +9.6%, SUI +28.6%) are outrunning BTC on a % basis, the first real rotation signal of the day.
-- DeFi TVL posted its first clean positive 24h read of the day at +4.3% (tvl-weighted, $1M+ protocols) — capital is now following the price move, not lagging it.
-- Zcash (ZEC) jumped onto the CoinGecko trending list (#4) at +35.8% 7d / +6.7% 24h — a sharp reversal; privacy-sector momentum was flagged fading as of yesterday's snapshot.
+- BTC pushed to a fresh intraday high ($85,855, an 8-month high per market reporting) on its first weekly close above the 50-week moving average in 45 weeks — reporting ties this to a ~$300M short squeeze (MSTR +7%). New technical catalyst not in the prior snapshot.
+- Alt-rotation stalled: BTC dominance ticked UP to 58.97% from 58.7% at the last refresh (first uptick today) as breadth slipped 18/20 → 17/20 — the broadening-into-alts signal flagged at midday is reversing.
+- NEAR flipped negative (-3.97% 24h, its first red print today) and Rhea Dex TVL fell -42.8% 1d — the "peak" call on NEAR liquid staking from midday is now cracking toward fading.
+- Avalanche DeFi's 3-day "rising" streak stalled: Benqi Staked AVAX and Benqi Lending TVL adds slowed to +0.02%/+0.39% 1d, down from the +13-20% multi-day pace.
+- HyperLend Pooled cleared the -10% protocol-mover filter for the first time today (-10.3% 1d, worsening from -6.3% at midday).
+- Zcash dropped off CoinGecko's trending top 10 this refresh (was #4 at midday); ZEC 24h cooled to +1.26% from +6.7%.
 
 ## Active Narratives
-- **Sui** — phase: rising. Evidence: SUI +28.6% 24h, Sui chain TVL +16.0% 1d, Suilend +17.6% 1d and NAVI Lending +10.1% 1d — price move now has multi-protocol onchain confirmation, upgraded from this morning's "emerging" call.
-- **NEAR liquid staking** — phase: peak. Evidence: Meta Pool Near/LiNEAR/Rhea Lend TVL adds decelerated to +14.7-16.8% 1d from this morning's +20.9-23.2% pace, even as NEAR price is still +13.0% 24h — momentum topping under continued price strength.
-- **Avalanche DeFi** — phase: rising (3rd consecutive day). Evidence: Benqi Lending +14.5% and Benqi Staked AVAX +13.5% TVL 1d; Avalanche chain TVL +9.6% 1d.
-- **Zcash / privacy** — phase: emerging (reversal). Evidence: ZEC +35.8% 7d / +6.7% 24h, trending #4 on CoinGecko — snapping back after being flagged fading.
-- **Bittensor** — phase: emerging. Evidence: TAO +13.5% 24h, Bittensor chain TVL +13.3% 1d, Bittensor dTAO protocol +13.4% 1d to $505M — new entrant to the trending list with onchain confirmation.
+- **Sui** — phase: rising. Evidence: NAVI Lending +9.7%, Suilend +16.5%, SpringSui +16.7%, AlphaFi Lending +28.5% TVL 1d; SUI +11.6% 24h — the broadest multi-protocol confirmation of the day, persisting since midday.
+- **Bittensor** — phase: rising (upgrade from emerging). Evidence: dTAO +12.1%, Chutes +11.9%, wTAO +11.8%, Tensorplex +12.4% TVL 1d — persistence beyond a single-day pop confirms the move.
+- **Avalanche DeFi** — phase: peak (downgrade from rising). Evidence: Benqi Staked AVAX +0.02% and Benqi Lending +0.39% TVL 1d, down from +13-14.5% the prior three days — the streak has stalled.
+- **NEAR liquid staking** — phase: fading (downgrade from peak). Evidence: NEAR price -3.97% 24h (first red print today), Rhea Dex TVL -42.8% 1d.
+- **Zcash / privacy** — phase: fading (reversal from this morning's emerging call). Evidence: off CoinGecko's trending top 10 this refresh; 24h momentum cooled to +1.26% from +6.7% at midday.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $26.65B (+9.2%)
-- Aave V3: $18.68B (+6.9%)
-- SSV Network: $14.24B (+7.9%)
-- Morpho Blue: $10.96B (+11.2%)
-- Binance staked ETH: $10.15B (+8.5%)
+- Lido: $26.99B (+11.1%)
+- Aave V3: $18.75B (+7.3%)
+- SSV Network: $14.44B (+9.8%)
+- Morpho Blue: $10.95B (+10.4%)
+- Binance staked ETH: $10.29B (+10.3%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $61.37B (+6.9%)
-- Bitcoin: $23.16B (+10.1%)
-- Solana: $14.90B (+12.5%)
+- Ethereum: $61.89B (+8.1%)
+- Bitcoin: $23.45B (+10.6%)
+- Solana: $15.00B (+13.3%)
 
 ## Stablecoins
-Total: $311.75B (+0.4% 7d). USDT $183.44B · USDC $75.02B · USDS $6.63B (+1.8% 24h, the one notable single-issuer move) · USDe $4.87B · combined share of mcap 10.7%.
+Total: $311.17B (+0.19% 24h). USDT $183.47B · USDC $74.48B · USDS $6.54B · USDe $4.89B · combined share of mcap 10.7%. No single issuer cleared the ±1% 24h filter this refresh (USDe led at +0.89%).
 
 ## Trending (CoinGecko)
-- ZEC — Zcash privacy narrative snapping back: +6.7% 24h, +35.8% 7d, trending #4
-- SUI — +28.6% 24h, trending #2, chain TVL +16.0% 1d — price and onchain data agree
-- TAO — Bittensor +13.5% 24h, chain TVL +13.3% 1d, dTAO protocol +13.4% 1d — new trending entrant with onchain confirmation
+- SUI — +11.6% 24h, onchain data agrees (see Active Narratives) — the cleanest trending confirmation today
+- NEAR — -3.97% 24h, trending for the wrong reason: first red print since the liquid-staking run began
+- STONK — +33.5% 24h ($0.3794), resurfacing on trending; up ~28% from the 2026-09-11 token pick ($0.2961)
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Will the price of Bitcoin be above $84,000 on September 21 | 84.0% | $0.28M | $0.02M |
-| Friedrich Merz out as Chancellor of Germany before Dec 31, 2026 | 19.5% | $0.32M | $0.09M |
-| Will the US confirm that aliens exist before 2027 | 3.5% | $0.29M | $0.97M |
+| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 49.5% | $0.38m | $0.45m |
+| Will the US confirm that aliens exist before 2027? | 4.2% | $0.31m | $0.93m |
+| 2026 Balance of Power: R Senate, R House | 7.5% | $0.30m | $0.48m |
 
 ## Macro Catalysts (next 48h)
-- Brent crude fell for a 4th straight day to ~$102, the longest oil losing streak in three months — an easing-inflation read supporting today's risk-on tape.
-- FOMC voters: Chicago Fed's Goolsbee speaks today; NY Fed's Williams speaks tomorrow at the Treasury Market Conference — rate-path headline risk into a stretched tape.
-- BTC spot ETFs swung to $593M net inflow Thu/Fri, reversing a ~$746M two-day outflow to net roughly +$6M for the week — a fragile, barely-positive recovery, not yet a confirmed trend (Bloomberg/Farside).
+- BTC's first weekly close above the 50-week MA in 45 weeks triggered a ~$300M short squeeze (MSTR +7%) — the technical driver behind today's extension past $85K.
+- Brent crude's 4th straight losing session (~$102) continues to ease inflation fears and support the risk-on tape.
+- Trump-Xi summit in Washington this week, overlapping FOMC voter speeches (Goolsbee today, Williams Tuesday at the Treasury Market Conference) — headline-risk window into a stretched tape.
+- BTC spot ETFs: $593M net inflow Thu/Fri reversed a prior 2-day outflow to a barely-positive +$6M for the week — fragile, not yet a confirmed institutional trend.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor Sui and Bittensor exposure — both now have fresh multi-protocol TVL confirmation; treat generic top-cap beta cautiously with breadth at 18/20 (near-ceiling, mean-reversion risk rising).
-- **narrative-tracker:** watch NEAR liquid staking for a peak→fading transition (TVL-add pace already decelerating); confirm whether Zcash's reversal survives past today's single trending spike.
+- **token-pick:** alt-rotation is stalling (dominance up, NEAR -3.97%, Avalanche flat) — favor Sui/Bittensor exposure over NEAR-liquid-staking or broad-alt beta; treat DOGE/XRP strength as BTC-beta, not a fresh thesis.
+- **narrative-tracker:** confirm the Avalanche DeFi rising→peak and NEAR liquid-staking peak→fading transitions against tomorrow's TVL read; Zcash's drop off trending is the cleaner of the two fading calls.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

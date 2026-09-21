@@ -1,0 +1,25 @@
+{
+  "run_id": "run_20260921T180043Z_defi-overview_a082d4",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 3,
+  "memory_hygiene": 3,
+  "channel_formatting": 3,
+  "flags": [
+    "memory/logs/2026-09-21.md file provided is truncated — cannot verify the claimed ### defi-overview append (Summary claims both facet blocks were appended, but only narrative-tracker section is visible in the provided file content, and it cuts off mid-sentence)",
+    "git rm cleanup narrative claimed in Summary but not evidenced in provided artifacts — the claim about restoring stray files via git checkout is unverifiable",
+    "event metadata shows statuses as pending — snapshot is from early in the run, not final state, but this is expected; substantive files were written",
+    "market-context.md file confirmed written with proper Take/Conviction/Signal structure",
+    "canonical result output is substantive and well-structured for decision-grade use (risk-on take, high conviction, concrete movers with TVL/price anchors, narrative phase transitions with evidence), but the actual logged append to memory/logs could not be fully verified due to truncation",
+    "notification delivery not evidenced in provided artifacts (run claimed it sent but no evidence of channel delivery shown)",
+    "positions facet correctly skipped due to empty on-chain-watches.yml with DEFI_MONITOR_NO_CONFIG message (contract-compliant)",
+    "channel formatting leads with facet status ('Positions facet: empty...') rather than pure decision outcome — minor structural issue per strategy emphasis on 'conclusion first'"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

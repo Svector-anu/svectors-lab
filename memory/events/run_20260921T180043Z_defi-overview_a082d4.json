@@ -1,0 +1,70 @@
+{
+  "run_id": "run_20260921T180043Z_defi-overview_a082d4",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-21T18:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "memory/logs/2026-09-21.md file provided is truncated — cannot verify the claimed ### defi-overview append (Summary claims both facet blocks were appended, but only narrative-tracker section is visible in the provided file content, and it cuts off mid-sentence)",
+    "git rm cleanup narrative claimed in Summary but not evidenced in provided artifacts — the claim about restoring stray files via git checkout is unverifiable",
+    "event metadata shows statuses as pending — snapshot is from early in the run, not final state, but this is expected; substantive files were written",
+    "market-context.md file confirmed written with proper Take/Conviction/Signal structure",
+    "canonical result output is substantive and well-structured for decision-grade use (risk-on take, high conviction, concrete movers with TVL/price anchors, narrative phase transitions with evidence), but the actual logged append to memory/logs could not be fully verified due to truncation",
+    "notification delivery not evidenced in provided artifacts (run claimed it sent but no evidence of channel delivery shown)",
+    "positions facet correctly skipped due to empty on-chain-watches.yml with DEFI_MONITOR_NO_CONFIG message (contract-compliant)",
+    "channel formatting leads with facet status ('Positions facet: empty...') rather than pure decision outcome — minor structural issue per strategy emphasis on 'conclusion first'"
+  ],
+  "usage": {
+    "input_tokens": 99,
+    "output_tokens": 39322,
+    "cache_read_input_tokens": 3763528,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.4248694
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260921T180043Z_defi-overview_a082d4.md",
+  "result_hash": "sha256:414e6fbf380de12e004a42d3ff182cd4119df62be84cc1c185e71522d3454255",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 46
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 1
+    },
+    {
+      "name": "read",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-21T18:00:00Z",
+  "scheduled_at": "2026-09-21T18:00:00Z",
+  "deadline": "2026-09-21T18:10:43.995292335Z",
+  "created_at": "2026-09-21T18:00:43.995292335Z",
+  "updated_at": "2026-09-21T18:08:16.019372707Z",
+  "completed_at": "2026-09-21T18:08:16.019364675Z"
+}

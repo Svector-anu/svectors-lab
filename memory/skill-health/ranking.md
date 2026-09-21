@@ -8,7 +8,7 @@
 | 4 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 5 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 6 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
-| 7 | defi-overview | 2 | 2 | 0 | 2.5 | 3 | low_score |
+| 7 | defi-overview | 3 | 3 | 0 | 2.7 | 3 | low_score |
 | 8 | auto-merge | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 9 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 10 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
