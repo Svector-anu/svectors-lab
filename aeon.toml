@@ -499,3 +499,6 @@ write = ["memory/pending-disclosures", "memory/pending-disclosures/resolved", "m
 
 [skills.write-tweet.permissions]
 write = ["memory/drafts/write-tweet-latest.md"]
+
+[skills.heartbeat.permissions]
+write = ["docs/status.md"]
