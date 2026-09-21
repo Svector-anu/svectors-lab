@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260921T214922Z_write-tweet_cfbf52",
+  "skill": "write-tweet",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "write-tweet|2026-09-21T21:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "usage": {
+    "input_tokens": 19,
+    "output_tokens": 8982,
+    "cache_read_input_tokens": 555543,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.7528899000000001
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/write-tweet/run_20260921T214922Z_write-tweet_cfbf52.md",
+  "result_hash": "sha256:71324730eac1ad707a100004ed52de88adfee0e06fdb43744a1da9fa0d8018f7",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 6
+    },
+    {
+      "name": "bash",
+      "count": 8
+    },
+    {
+      "name": "web_search",
+      "count": 1
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "write-tweet|2026-09-21T21:00:00Z",
+  "scheduled_at": "2026-09-21T21:00:00Z",
+  "deadline": "2026-09-21T21:59:22.858641627Z",
+  "created_at": "2026-09-21T21:49:22.858641627Z",
+  "updated_at": "2026-09-21T21:52:27.316295622Z",
+  "completed_at": "2026-09-21T21:52:27.316286996Z"
+}

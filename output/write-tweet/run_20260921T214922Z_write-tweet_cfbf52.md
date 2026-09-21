@@ -47,3 +47,16 @@
 - the CFTC preservation order, filed mid-raise
 - why "compliant per outside counsel" isn't the same as "safe"
 - what it means for anyone still treating polymarket as risk-free rails
+
+**Best overall:** #2a (data drop / two-punch) — tightest hook, hard number, matches the casual/direct voice. **Best per tier:** 1b, 2a, 3a, 4a, 5a.
+
+---
+
+## Summary
+
+- Format: **drafts** (empty Operator var → auto-selected topic).
+- Topic selection: today's `narrative-tracker` runs flipped prediction markets WATCH→FADE on a verified WSJ story (CFTC investigation + fraud/compliance fallout at Polymarket) — highest-signal, least-covered angle in the last 3 days (prior two days' write-tweet topics were AVAX/regulated-onchain-stocks, unrelated).
+- X search: `XAI_API_KEY` present but Path A returned `http=403` (team billing/credit limit exhausted — same real failure `narrative-tracker` hit at 14:04Z today, not key-unset). Fell back to WebSearch; corroborated across WSJ-sourced coverage (The Block, PYMNTS, qz.com, Cryptonews) — $10M stolen-card fraud, 80%+ Checkout.com fraud-flag rate, CCO resignation, US CEO firing, CFTC preservation order, $1B raise at $21B valuation.
+- Files written: `memory/drafts/write-tweet-latest.md` (full draft, revisable via `revise:` reply), `memory/logs/2026-09-21.md` (appended `### write-tweet` entry, format `drafts`, with `FORCE_REPLY_OFFERED: revise` marker).
+- No repo code changes. Nothing sent to Telegram/Slack directly — MiniAeon delivers this output and offers the revise follow-up.
+- Follow-up: none required; operator can reply `revise:<instruction>` to refine the saved draft.
