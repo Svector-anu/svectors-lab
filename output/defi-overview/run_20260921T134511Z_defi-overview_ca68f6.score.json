@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260921T134511Z_defi-overview_ca68f6",
+  "score": 3,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 5,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 1,
+  "flags": [
+    "notification_format_violates_decision_card_rubric",
+    "telegram_render_is_status_log_not_signal",
+    "log_append_to_memory_logs_unverified_from_provided_content",
+    "missing_explicit_position_call_or_action_vector_in_notification"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
