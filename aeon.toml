@@ -471,7 +471,7 @@ runtime = "any"
 model = "standard"
 role = "worker"
 risk = "low"
-write_scope = "skills"
+write_scope = "own-memory"
 on_missed_run = "skip_stale"
 
 [skills.feature.permissions]
