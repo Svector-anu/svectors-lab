@@ -21,8 +21,8 @@ stuck_after_minutes = 45
 # default branch. Change it with `miniaeon source set <owner/repo> [--ref x]`.
 # A private source_repo needs a MINIAEON_SOURCE_TOKEN secret with read access.
 [actions]
-source_repo = "aaronjmars/miniaeon"
-source_ref = "main"
+source_repo = "Svector-anu/miniaeon-"
+source_ref = "instance"
 
 [models]
 top = "anthropic/claude-sonnet-5"
