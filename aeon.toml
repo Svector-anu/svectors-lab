@@ -12,6 +12,10 @@ catch_up_hours = 12
 circuit_fails = 3
 circuit_pause_hours = 6
 stuck_after_minutes = 45
+# Stop a run mid-flight past these (busiest run so far: 59 calls, 48 turns, $2.08).
+max_tool_calls = 150
+max_turns = 100
+max_run_cost_usd = 5.0
 
 # The generated GitHub Actions workflow builds the miniaeon binary before each
 # run. By default it builds from THIS repo, so a repo carrying the workspace must
