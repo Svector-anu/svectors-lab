@@ -11,4 +11,7 @@
 | 7 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 8 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 9 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
+| 10 | create-prove | 1 | 1 | 0 | - | - | - |
+| 11 | monolith | 1 | 1 | 0 | - | - | - |
+| 12 | feature | 2 | 0 | 2 | - | - | - |
 

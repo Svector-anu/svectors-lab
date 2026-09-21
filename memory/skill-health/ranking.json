@@ -132,5 +132,47 @@
     "flags": [
       "low_score"
     ]
+  },
+  {
+    "skill": "create-prove",
+    "rank": 10,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 0,
+    "scored_runs": 0,
+    "last_score": 0,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T104355Z_create-prove_81a3f0",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "monolith",
+    "rank": 11,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 0,
+    "scored_runs": 0,
+    "last_score": 0,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T101625Z_monolith_f39cbb",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "feature",
+    "rank": 12,
+    "runs": 2,
+    "successes": 0,
+    "failures": 2,
+    "avg_score": 0,
+    "scored_runs": 0,
+    "last_score": 0,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T111234Z_feature_f67c3e",
+    "consecutive_fails": 1,
+    "flags": []
   }
 ]

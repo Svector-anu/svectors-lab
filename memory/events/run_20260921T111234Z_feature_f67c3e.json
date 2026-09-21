@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260921T111234Z_feature_f67c3e",
+  "skill": "feature",
+  "status": "completed",
+  "executor": "local",
+  "trigger_kind": "manual",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "openrouter/openai/gpt-5.5",
+  "provider": "openrouter",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5",
+      "reason": "auth"
+    },
+    {
+      "provider": "openrouter",
+      "model": "openrouter/openai/gpt-5.5"
+    }
+  ],
+  "omp_version": "omp/18.1.22",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": true,
+  "publish": "pending",
+  "notify": "skipped",
+  "score_status": "skipped",
+  "score": null,
+  "usage": {
+    "input_tokens": 150597,
+    "output_tokens": 8892,
+    "cache_read_input_tokens": 2128384,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.0839370000000006
+  },
+  "error": "background job bash was not awaited before omp exited; a headless run cannot join a backgrounded job",
+  "result_path": "/Users/mac/Desktop/coding and projects/svectors-lab/output/feature/run_20260921T111234Z_feature_f67c3e.md",
+  "result_hash": "sha256:66deb95973ec43275f43fe4ff3f8371a69e8a2a8f235e45b91296a5bdb3fd310",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 28
+    },
+    {
+      "name": "bash",
+      "count": 19
+    },
+    {
+      "name": "write",
+      "count": 3
+    }
+  ],
+  "fallback_reason": "auth",
+  "attempts": 2,
+  "deadline": "2026-09-21T11:22:34.529725Z",
+  "created_at": "2026-09-21T11:12:34.529725Z",
+  "updated_at": "2026-09-21T11:17:51.55197Z",
+  "completed_at": "2026-09-21T11:17:51.551942Z"
+}
