@@ -1,0 +1,57 @@
+{
+  "run_id": "run_20260921T163035Z_vuln-tracker_8dab05",
+  "skill": "vuln-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "vuln-tracker|2026-09-21T16:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5",
+      "reason": "error"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": false,
+  "publish": "published",
+  "notify": "skipped",
+  "score_status": "skipped",
+  "score": null,
+  "usage": {
+    "input_tokens": 127,
+    "output_tokens": 42236,
+    "cache_read_input_tokens": 5093200,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.883104999999998
+  },
+  "error": "omp exit 1 (partial result kept): exit status 1",
+  "scope_violations": [
+    "added:.pending-notify-temp"
+  ],
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/vuln-tracker/run_20260921T163035Z_vuln-tracker_8dab05.md",
+  "result_hash": "sha256:61c17e6ce1a583d9147dc2cd2a336532a32e51cdb74c81d56b2cc71351ab1944",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 66
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "vuln-tracker|2026-09-21T16:30:00Z",
+  "scheduled_at": "2026-09-21T16:30:00Z",
+  "deadline": "2026-09-21T16:40:35.329113935Z",
+  "created_at": "2026-09-21T16:30:35.329113935Z",
+  "updated_at": "2026-09-21T16:40:38.109356204Z",
+  "completed_at": "2026-09-21T16:40:38.109351217Z"
+}
