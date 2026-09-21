@@ -30,8 +30,8 @@ def step(name):
     return m.group(1)
 
 
-if "if: ${{ !startsWith(inputs.dispatch_id, 'prove-') }}" not in step("Push publication"):
-    raise SystemExit("Push publication must be skipped for prove- dispatches")
+if "if: ${{ !cancelled() && !startsWith(inputs.dispatch_id, 'prove-') }}" not in step("Push publication"):
+    raise SystemExit("Push publication must run after a failed skill and be skipped for prove- dispatches")
 if "startsWith(inputs.dispatch_id, 'prove-')" not in step("Show proof output"):
     raise SystemExit("Show proof output must run only for prove- dispatches")
 

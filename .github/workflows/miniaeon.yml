@@ -197,7 +197,9 @@ jobs:
 
       - name: Push publication
         id: publish
-        if: ${{ !startsWith(inputs.dispatch_id, 'prove-') }}
+        # !cancelled(), not success(): one failed skill must not discard the
+        # commits every other skill in the tick already made.
+        if: ${{ !cancelled() && !startsWith(inputs.dispatch_id, 'prove-') }}
         working-directory: ${{ env.MINIAEON_WORKSPACE }}
         run: |
           set -euo pipefail
