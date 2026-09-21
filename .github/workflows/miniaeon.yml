@@ -1,10 +1,22 @@
 name: MiniAeon
+run-name: ${{ inputs.dispatch_id || 'MiniAeon' }}
 
 on:
   workflow_dispatch:
     inputs:
       skill:
         description: Skill to run. Empty runs every due skill.
+        required: false
+        default: ""
+      var:
+        description: Operator var for the selected skill.
+        required: false
+        default: ""
+      dispatch_id:
+        description: >-
+          Run title, so a caller can find this exact run. A prove- prefix runs the
+          skill without committing, pushing or notifying, so the branch under proof
+          keeps the head SHA being proved.
         required: false
         default: ""
   schedule:
@@ -128,6 +140,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
           INPUT_SKILL: ${{ inputs.skill }}
+          INPUT_VAR: ${{ inputs.var }}
+          INPUT_DISPATCH_ID: ${{ inputs.dispatch_id }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           # Extra skill secrets: add a line here and list the name in that
           # skill's skill.toml secrets = []. Channel tokens stay out of omp.
@@ -144,8 +158,21 @@ jobs:
           if [ "$EVENT" = "repository_dispatch" ]; then
             "$BIN" run-due
           elif [ "$EVENT" = "schedule" ] || [ "$EVENT" = "workflow_dispatch" ]; then
+            args=()
+            if [ -n "${INPUT_VAR:-}" ]; then
+              args+=(--var "$INPUT_VAR")
+            fi
+            case "${INPUT_DISPATCH_ID:-}" in
+              prove-*)
+                if [ -z "${INPUT_SKILL:-}" ]; then
+                  echo "a prove- dispatch must name the skill it proves" >&2
+                  exit 1
+                fi
+                args+=(--no-git --no-notify)
+                ;;
+            esac
             if [ -n "${INPUT_SKILL:-}" ]; then
-              "$BIN" run "$INPUT_SKILL"
+              "$BIN" run "$INPUT_SKILL" ${args[@]+"${args[@]}"}
             else
               "$BIN" run-due
             fi
@@ -153,8 +180,20 @@ jobs:
             "$BIN" run-event
           fi
 
+      - name: Show proof output
+        if: always() && startsWith(inputs.dispatch_id, 'prove-')
+        working-directory: ${{ env.MINIAEON_WORKSPACE }}
+        env:
+          INPUT_SKILL: ${{ inputs.skill }}
+        run: |
+          out="output/${INPUT_SKILL}/latest.md"
+          echo "--- ${out}"
+          if [ -s "$out" ]; then cat "$out"; else echo "_No output captured._"; fi
+          echo "--- end ${out}"
+
       - name: Push publication
         id: publish
+        if: ${{ !startsWith(inputs.dispatch_id, 'prove-') }}
         working-directory: ${{ env.MINIAEON_WORKSPACE }}
         run: |
           set -euo pipefail
