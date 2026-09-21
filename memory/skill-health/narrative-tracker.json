@@ -1,19 +1,11 @@
 {
   "skill": "narrative-tracker",
-  "last_analyzed": "2026-09-20T20:50:12Z",
-  "quality_score": 2,
-  "assessment": "Produced a concise status, but it lacks evidence, narrative details, and explicit position calls, making the claimed lack of transitions minimally useful and difficult to verify.",
-  "flags": [
-    "low_quality"
-  ],
-  "avg_score": 2.7,
+  "last_analyzed": "2026-09-21T00:33:46Z",
+  "quality_score": 4,
+  "assessment": "Strong conclusion-first, decision-grade narrative map with explicit positioning, caveats, freshness window, and source links; some transition and catalyst claims rely on weak fallback evidence and are not fully traceable to primary sources.",
+  "flags": [],
+  "avg_score": 2.77,
   "history": [
-    {
-      "date": "2026-09-10",
-      "score": 2,
-      "ts": "2026-09-10T20:09:15Z",
-      "harness": "codex"
-    },
     {
       "date": "2026-09-11",
       "score": 2,
@@ -186,6 +178,12 @@
       "date": "2026-09-20",
       "score": 2,
       "ts": "2026-09-20T20:50:12Z",
+      "harness": "codex"
+    },
+    {
+      "date": "2026-09-21",
+      "score": 4,
+      "ts": "2026-09-21T00:33:46Z",
       "harness": "codex"
     }
   ]
