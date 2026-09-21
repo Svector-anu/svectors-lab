@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260921T092902Z_heartbeat_6b7afa",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 2,
+  "strategy_alignment": 2,
+  "evidence": 2,
+  "scope_compliance": 2,
+  "memory_hygiene": 1,
+  "channel_formatting": 1,
+  "flags": [
+    "incomplete-output",
+    "missing-token-usage",
+    "missing-memory-log",
+    "run-state-inconsistent",
+    "not-a-decision-card"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

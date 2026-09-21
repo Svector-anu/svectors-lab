@@ -30,8 +30,24 @@
     ]
   },
   {
-    "skill": "fear-divergence",
+    "skill": "heartbeat",
     "rank": 3,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 2,
+    "scored_runs": 1,
+    "last_score": 2,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T092902Z_heartbeat_6b7afa",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "fear-divergence",
+    "rank": 4,
     "runs": 1,
     "successes": 1,
     "failures": 0,

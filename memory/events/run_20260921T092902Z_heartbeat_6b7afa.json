@@ -1,0 +1,67 @@
+{
+  "run_id": "run_20260921T092902Z_heartbeat_6b7afa",
+  "skill": "heartbeat",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "heartbeat|2026-09-21T08:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-haiku-4-5-20251001",
+  "actual_model": "anthropic/claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "incomplete-output",
+    "missing-token-usage",
+    "missing-memory-log",
+    "run-state-inconsistent",
+    "not-a-decision-card"
+  ],
+  "usage": {
+    "input_tokens": 329,
+    "output_tokens": 12364,
+    "cache_read_input_tokens": 2415781,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.4644231000000002
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/heartbeat/run_20260921T092902Z_heartbeat_6b7afa.md",
+  "result_hash": "sha256:bb0ccb225620090bad0830e780bc644ae584a2b6e4fa312577e7b6cf447b4b38",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 12
+    },
+    {
+      "name": "web_search",
+      "count": 30
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "heartbeat|2026-09-21T08:00:00Z",
+  "scheduled_at": "2026-09-21T08:00:00Z",
+  "deadline": "2026-09-21T09:34:02.868998855Z",
+  "created_at": "2026-09-21T09:29:02.868998855Z",
+  "updated_at": "2026-09-21T09:34:32.281056197Z",
+  "completed_at": "2026-09-21T09:34:32.28104737Z"
+}
