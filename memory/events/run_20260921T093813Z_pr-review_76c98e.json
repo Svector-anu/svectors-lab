@@ -1,0 +1,61 @@
+{
+  "run_id": "run_20260921T093813Z_pr-review_76c98e",
+  "skill": "pr-review",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "pr-review|2026-09-21T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "event_file_shows_running_status_not_completed",
+    "pr_review_log_section_missing_from_memory_logs",
+    "no_gh_command_output_shown",
+    "no_evidence_watched_repos_file_read",
+    "contract_requires_memory_md_and_watched_repos_md_read_not_shown",
+    "skill_success_and_scope_ok_null_in_event_file",
+    "log_excerpt_cuts_off_mid_message_incomplete"
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1689,
+    "cache_read_input_tokens": 157726,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.33019980000000004
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/pr-review/run_20260921T093813Z_pr-review_76c98e.md",
+  "result_hash": "sha256:81ff926a99c661d16136534da08bbc23becd7ba2ab90c85133e407ab90be9e95",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 4
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "pr-review|2026-09-21T09:00:00Z",
+  "scheduled_at": "2026-09-21T09:00:00Z",
+  "deadline": "2026-09-21T09:48:13.839223391Z",
+  "created_at": "2026-09-21T09:38:13.839223391Z",
+  "updated_at": "2026-09-21T09:39:03.495955233Z",
+  "completed_at": "2026-09-21T09:39:03.495947058Z"
+}

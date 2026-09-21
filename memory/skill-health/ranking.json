@@ -60,8 +60,24 @@
     ]
   },
   {
-    "skill": "fear-divergence",
+    "skill": "pr-review",
     "rank": 5,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 2,
+    "scored_runs": 1,
+    "last_score": 2,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T093813Z_pr-review_76c98e",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "fear-divergence",
+    "rank": 6,
     "runs": 1,
     "successes": 1,
     "failures": 0,
