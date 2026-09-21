@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260921T091615Z_defi-overview_b29e3e",
+  "score": 2,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 5,
+  "evidence": 4,
+  "scope_compliance": 2,
+  "memory_hygiene": 1,
+  "channel_formatting": 3,
+  "flags": [
+    "wrong_log_skill_name—logged as 'narrative-tracker' (### narrative-tracker) instead of 'defi-overview'; health scorer will misattribute this run",
+    "unresolved_memory_split—market-context.md exists at both memory/topics/ and memory/skills/defi-overview/; write went to skills/ but run only flagged the split as a follow-up instead of reconciling it; downstream skills (token-pick, narrative-tracker) consuming memory/topics/ will miss the refresh",
+    "incomplete_artifact_visibility—Telegram and Slack render sections truncated with '...', cannot verify full output matches canonical result or was delivered via notify",
+    "no_notify_delivery_proof—no evidence in artifacts that ./notify was invoked or succeeded; skill summary claims notification sent but no log/status artifact confirms channel delivery",
+    "scope_violation_unresolved—summary acknowledges the memory architecture divergence as 'flagged for operator confirmation' but contract requires clean cutover with no split paths; issue should have been fixed in-run, not deferred"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

@@ -1,0 +1,67 @@
+{
+  "run_id": "run_20260921T091615Z_defi-overview_b29e3e",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-21T06:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "wrong_log_skill_name—logged as 'narrative-tracker' (### narrative-tracker) instead of 'defi-overview'; health scorer will misattribute this run",
+    "unresolved_memory_split—market-context.md exists at both memory/topics/ and memory/skills/defi-overview/; write went to skills/ but run only flagged the split as a follow-up instead of reconciling it; downstream skills (token-pick, narrative-tracker) consuming memory/topics/ will miss the refresh",
+    "incomplete_artifact_visibility—Telegram and Slack render sections truncated with '...', cannot verify full output matches canonical result or was delivered via notify",
+    "no_notify_delivery_proof—no evidence in artifacts that ./notify was invoked or succeeded; skill summary claims notification sent but no log/status artifact confirms channel delivery",
+    "scope_violation_unresolved—summary acknowledges the memory architecture divergence as 'flagged for operator confirmation' but contract requires clean cutover with no split paths; issue should have been fixed in-run, not deferred"
+  ],
+  "usage": {
+    "input_tokens": 73,
+    "output_tokens": 46108,
+    "cache_read_input_tokens": 2451233,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.0317149
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260921T091615Z_defi-overview_b29e3e.md",
+  "result_hash": "sha256:ce9b87462204544dfa6979b4ea22ff237323f654fbc30755531c7431bd6337f8",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 37
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-21T06:00:00Z",
+  "scheduled_at": "2026-09-21T06:00:00Z",
+  "deadline": "2026-09-21T09:26:15.815633245Z",
+  "created_at": "2026-09-21T09:16:15.815633245Z",
+  "updated_at": "2026-09-21T09:24:35.801135296Z",
+  "completed_at": "2026-09-21T09:24:35.80112676Z"
+}

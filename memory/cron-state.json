@@ -1,367 +1,108 @@
 {
-  "heartbeat": {
-    "last_dispatch": "2026-09-20T11:54:15Z",
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:46:29Z",
-    "total_runs": 369,
-    "total_successes": 45,
-    "total_failures": 324,
-    "consecutive_failures": 0,
-    "success_rate": 0.12,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-da34-7881-9ad2-4887ed2d2258\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-20T11:57:04Z"
-  },
-  "defi-overview": {
-    "last_status": "success",
-    "last_success": "2026-09-21T00:35:41Z",
-    "total_runs": 442,
-    "total_successes": 115,
-    "total_failures": 327,
-    "consecutive_failures": 0,
-    "success_rate": 0.26,
-    "last_quality_score": 4,
-    "last_dispatch": "2026-09-21T00:31:09Z",
-    "last_failed": "2026-09-17T06:45:29Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-efc5-7d00-9ec0-7b39cf69abc1\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "narrative-tracker": {
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:45:37Z",
-    "total_runs": 499,
-    "total_successes": 128,
-    "total_failures": 371,
-    "consecutive_failures": 0,
-    "success_rate": 0.26,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-0400-7c93-bf41-408414860808\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-21T00:33:49Z",
-    "last_quality_score": 4,
-    "last_dispatch": "2026-09-21T00:31:09Z"
-  },
-  "token-movers": {
-    "last_status": "success",
-    "last_success": "2026-07-07T18:08:23Z",
-    "total_runs": 1,
-    "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 4
-  },
-  "fear-divergence": {
-    "last_status": "success",
-    "last_success": "2026-09-20T11:55:42Z",
-    "total_runs": 353,
-    "total_successes": 41,
-    "total_failures": 312,
-    "consecutive_failures": 0,
-    "success_rate": 0.12,
-    "last_quality_score": 3,
-    "last_dispatch": "2026-09-20T11:54:15Z",
-    "last_failed": "2026-09-17T06:46:05Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-7b60-7a51-a0ea-6b95108d4b3d\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "x402-monitor": {
-    "last_status": "success",
-    "last_success": "2026-09-17T12:12:20Z",
-    "total_runs": 274,
-    "total_successes": 11,
-    "total_failures": 263,
-    "consecutive_failures": 0,
-    "success_rate": 0.04,
-    "last_quality_score": 2,
-    "last_failed": "2026-09-17T06:45:53Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-4cae-7883-acb3-6b1c3a5f2833\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_dispatch": "2026-09-17T12:08:35Z"
-  },
-  "picks-tracker": {
-    "last_status": "success",
-    "last_success": "2026-09-20T11:56:27Z",
-    "total_runs": 199,
-    "total_successes": 9,
-    "total_failures": 190,
-    "consecutive_failures": 0,
-    "success_rate": 0.05,
-    "last_quality_score": 3,
-    "last_dispatch": "2026-09-20T11:54:15Z",
-    "last_failed": "2026-08-23T09:14:02Z",
-    "last_error": "d9cca1\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"s"
-  },
-  "token-pick": {
-    "last_status": "success",
-    "last_success": "2026-09-20T15:11:48Z",
-    "total_runs": 320,
-    "total_successes": 40,
-    "total_failures": 280,
-    "consecutive_failures": 0,
-    "success_rate": 0.13,
-    "last_quality_score": 2,
-    "last_dispatch": "2026-09-20T15:08:45Z",
-    "last_failed": "2026-09-17T06:45:34Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-f88b-7f61-9b27-19a0e173127f\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "skill-health": {
-    "last_dispatch": "2026-09-20T18:11:28Z",
-    "last_status": "success",
-    "last_success": "2026-09-20T18:14:24Z",
-    "total_runs": 343,
-    "total_successes": 43,
-    "total_failures": 300,
-    "consecutive_failures": 0,
-    "success_rate": 0.13,
-    "last_failed": "2026-09-17T06:45:42Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-2456-7213-9a95-7ceec2aa583f\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "soul-builder": {
-    "last_status": "success",
-    "last_failed": "2026-08-27T09:19:04Z",
-    "total_runs": 10,
-    "total_successes": 5,
-    "total_failures": 5,
-    "consecutive_failures": 0,
-    "success_rate": 0.5,
-    "last_error": "ad_id\":\"01a04283-fdc4-75f0-85d6-e7a9ce35e75e\"} {\"type\":\"turn.started\"} {\"type\":\"error\",\"message\":\"You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.c",
-    "last_success": "2026-08-28T03:57:08Z",
-    "last_quality_score": 2
-  },
-  "price-alert": {
-    "last_dispatch": "2026-07-30T16:27:18Z",
-    "last_status": "dispatched",
-    "last_success": "2026-07-28T15:36:09Z",
-    "total_runs": 150,
-    "total_successes": 10,
-    "total_failures": 140,
-    "consecutive_failures": 8,
-    "success_rate": 0.07,
-    "last_quality_score": 4,
-    "last_failed": "2026-07-29T00:40:24Z",
-    "last_error": "4f65bd7\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
-  },
-  "github-trending": {
-    "last_dispatch": "2026-09-20T15:08:45Z",
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:45:27Z",
-    "total_runs": 165,
-    "total_successes": 36,
-    "total_failures": 129,
-    "consecutive_failures": 0,
-    "success_rate": 0.22,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-e2aa-75d0-9853-2eca7773ea24\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-20T15:11:42Z",
-    "last_quality_score": 3
-  },
-  "digest": {
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:45:39Z",
-    "total_runs": 209,
-    "total_successes": 46,
-    "total_failures": 163,
-    "consecutive_failures": 0,
-    "success_rate": 0.22,
-    "last_dispatch": "2026-09-20T15:08:45Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-1ac2-7841-935a-ad0e2e9e0145\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-20T15:11:37Z",
-    "last_quality_score": 2
-  },
-  "verdikta-hunter": {
-    "last_status": "success",
-    "last_failed": "2026-07-24T16:14:54Z",
-    "total_runs": 2,
-    "total_successes": 1,
-    "total_failures": 1,
-    "consecutive_failures": 0,
-    "success_rate": 0.5,
-    "last_success": "2026-08-25T09:24:16Z",
-    "last_quality_score": 1
-  },
-  "vuln-scanner": {
-    "last_status": "failed",
-    "last_failed": "2026-09-21T05:23:23Z",
-    "total_runs": 259,
-    "total_successes": 76,
-    "total_failures": 183,
-    "consecutive_failures": 37,
-    "success_rate": 0.29,
-    "last_dispatch": "2026-09-21T05:21:39Z",
-    "last_error": "Error: Couldn't set model 'grok-4.5': Invalid params: \"unknown model id\". Run 'grok models' to see available models. grok exited 1: {\"type\":\"error\",\"message\":\"Couldn't set model 'grok-4.5': Invalid pa",
-    "last_success": "2026-09-10T23:44:07Z",
-    "last_quality_score": 2
-  },
-  "auto-merge": {
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:45:22Z",
-    "total_runs": 51,
-    "total_successes": 35,
-    "total_failures": 16,
-    "consecutive_failures": 0,
-    "success_rate": 0.69,
-    "last_dispatch": "2026-09-20T15:08:45Z",
-    "last_success": "2026-09-20T15:10:19Z",
-    "last_quality_score": 3,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-d725-7832-be47-9a469ad42d4e\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "hunter-22": {
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:45:55Z",
-    "total_runs": 58,
-    "total_successes": 37,
-    "total_failures": 21,
-    "consecutive_failures": 0,
-    "success_rate": 0.64,
-    "last_dispatch": "2026-09-20T11:54:15Z",
-    "last_success": "2026-09-20T11:57:09Z",
-    "last_quality_score": 2,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-5776-7981-a2f8-21d25e764c62\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "memory-flush": {
-    "last_status": "success",
-    "last_success": "2026-09-21T00:33:53Z",
-    "total_runs": 45,
-    "total_successes": 28,
-    "total_failures": 17,
-    "consecutive_failures": 0,
-    "success_rate": 0.62,
-    "last_dispatch": "2026-09-21T00:31:09Z",
-    "last_failed": "2026-09-17T06:46:15Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-a472-7162-aa16-11d0243c34c2\"} {\"type\":\"turn.started\"} {\"typ"
-  },
   "aeon-doctor": {
+    "last_dispatch": "2026-09-14T16:34:31Z",
     "last_status": "success",
     "last_success": "2026-09-14T16:37:43Z",
     "total_runs": 5,
     "total_successes": 5,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 4,
-    "last_dispatch": "2026-09-14T16:34:31Z"
-  },
-  "create-skill": {
-    "last_status": "success",
-    "last_success": "2026-08-25T01:03:58Z",
-    "total_runs": 1,
-    "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 1
-  },
-  "autoresearch": {
-    "last_status": "success",
-    "last_success": "2026-08-25T01:04:39Z",
-    "total_runs": 1,
-    "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 1
-  },
-  "search-skill": {
-    "last_status": "success",
-    "last_success": "2026-09-20T15:10:59Z",
-    "total_runs": 52,
-    "total_successes": 35,
-    "total_failures": 17,
-    "consecutive_failures": 0,
-    "success_rate": 0.67,
-    "last_quality_score": 3,
-    "last_dispatch": "2026-09-20T15:08:45Z",
-    "last_failed": "2026-09-17T06:45:39Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-16d0-7372-a9e0-4b3a6ce3b88c\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "skill-repair": {
-    "last_status": "success",
-    "last_success": "2026-08-25T01:12:09Z",
-    "total_runs": 1,
-    "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 4
-  },
-  "shiplog": {
-    "last_status": "success",
-    "last_success": "2026-09-14T10:46:03Z",
-    "total_runs": 4,
-    "total_successes": 4,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 2,
-    "last_dispatch": "2026-09-14T10:42:22Z"
-  },
-  "auto-workflow": {
-    "last_status": "success",
-    "last_success": "2026-08-25T09:26:20Z",
-    "total_runs": 1,
-    "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 3
-  },
-  "rightstack": {
-    "last_status": "success",
-    "last_success": "2026-08-31T11:53:57Z",
-    "total_runs": 8,
-    "total_successes": 8,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 3
-  },
-  "vuln-tracker": {
-    "last_dispatch": "2026-09-20T18:11:28Z",
-    "last_status": "success",
-    "last_success": "2026-09-20T18:17:53Z",
-    "total_runs": 44,
-    "total_successes": 30,
-    "total_failures": 14,
-    "consecutive_failures": 0,
-    "success_rate": 0.68,
-    "last_quality_score": 2,
-    "last_failed": "2026-09-17T06:46:22Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-beaa-7e02-a737-96adf474dff2\"} {\"type\":\"turn.started\"} {\"typ"
-  },
-  "self-improve": {
-    "last_dispatch": "2026-09-19T19:29:37Z",
-    "last_status": "success",
-    "last_failed": "2026-09-17T06:45:44Z",
-    "total_runs": 37,
-    "total_successes": 15,
-    "total_failures": 22,
-    "consecutive_failures": 0,
-    "success_rate": 0.41,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-2e6b-7ee3-ac54-6ce6946d47c0\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-19T19:32:47Z",
-    "last_quality_score": 3
+    "total_failures": 0
   },
   "aeon-update": {
     "last_status": "success",
     "last_success": "2026-08-27T03:36:46Z",
     "total_runs": 1,
     "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 2
+    "total_failures": 0
   },
-  "write-tweet": {
-    "last_dispatch": "2026-09-20T22:43:58Z",
+  "auto-merge": {
+    "last_dispatch": "2026-09-20T15:08:45Z",
     "last_status": "success",
-    "last_success": "2026-09-20T22:46:02Z",
-    "total_runs": 50,
-    "total_successes": 27,
-    "total_failures": 23,
-    "consecutive_failures": 0,
-    "success_rate": 0.54,
-    "last_quality_score": 1,
-    "last_failed": "2026-09-17T06:46:02Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-7315-7d81-9261-fec59b507e36\"} {\"type\":\"turn.started\"} {\"typ"
+    "last_success": "2026-09-20T15:10:19Z",
+    "last_failed": "2026-09-17T06:45:22Z",
+    "total_runs": 51,
+    "total_successes": 35,
+    "total_failures": 16
+  },
+  "auto-workflow": {
+    "last_status": "success",
+    "last_success": "2026-08-25T09:26:20Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0
+  },
+  "autoresearch": {
+    "last_status": "success",
+    "last_success": "2026-08-25T01:04:39Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0
+  },
+  "chain:dev-loop": {
+    "last_dispatch": "2026-09-20T11:54:15Z",
+    "last_status": "dispatched",
+    "last_success": "2026-09-17T18:06:45Z",
+    "last_failed": "2026-09-18T10:00:33Z",
+    "total_runs": 0,
+    "total_successes": 0,
+    "total_failures": 0
   },
   "chain:web3-stack-watch": {
+    "last_dispatch": "2026-08-31T11:51:55Z",
     "last_status": "success",
     "last_success": "2026-08-31T11:58:39Z",
-    "last_dispatch": "2026-08-31T11:51:55Z"
+    "total_runs": 0,
+    "total_successes": 0,
+    "total_failures": 0
+  },
+  "create-skill": {
+    "last_status": "success",
+    "last_success": "2026-08-25T01:03:58Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0
+  },
+  "defi-overview": {
+    "last_run_id": "run_20260921T091615Z_defi-overview_b29e3e",
+    "last_dispatch": "2026-09-21T09:16:16.448364372Z",
+    "last_status": "completed",
+    "last_success": "2026-09-21T09:24:35.80112676Z",
+    "last_failed": "2026-09-17T06:45:29Z",
+    "total_runs": 443,
+    "total_successes": 116,
+    "total_failures": 327
+  },
+  "deploy-uni-hook": {
+    "last_status": "success",
+    "last_success": "2026-09-02T15:25:03Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0
+  },
+  "digest": {
+    "last_dispatch": "2026-09-20T15:08:45Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T15:11:37Z",
+    "last_failed": "2026-09-17T06:45:39Z",
+    "total_runs": 209,
+    "total_successes": 46,
+    "total_failures": 163
+  },
+  "fear-divergence": {
+    "last_dispatch": "2026-09-20T11:54:15Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T11:55:42Z",
+    "last_failed": "2026-09-17T06:46:05Z",
+    "total_runs": 353,
+    "total_successes": 41,
+    "total_failures": 312
+  },
+  "feature": {
+    "last_status": "success",
+    "last_success": "2026-09-18T10:00:16Z",
+    "last_failed": "2026-09-16T17:56:47Z",
+    "total_runs": 16,
+    "total_successes": 14,
+    "total_failures": 2
   },
   "fork-fleet": {
     "last_dispatch": "2026-09-14T10:42:22Z",
@@ -369,73 +110,211 @@
     "last_success": "2026-09-14T10:48:03Z",
     "total_runs": 3,
     "total_successes": 3,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 2
+    "total_failures": 0
   },
-  "feature": {
+  "github-trending": {
+    "last_dispatch": "2026-09-20T15:08:45Z",
     "last_status": "success",
-    "last_failed": "2026-09-16T17:56:47Z",
-    "total_runs": 16,
-    "total_successes": 14,
-    "total_failures": 2,
-    "consecutive_failures": 0,
-    "success_rate": 0.88,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ab5d-2c5b-7ac0-b01e-69e920fedbf5\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-18T10:00:16Z",
-    "last_quality_score": 4
+    "last_success": "2026-09-20T15:11:42Z",
+    "last_failed": "2026-09-17T06:45:27Z",
+    "total_runs": 165,
+    "total_successes": 36,
+    "total_failures": 129
+  },
+  "heartbeat": {
+    "last_dispatch": "2026-09-20T11:54:15Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T11:57:04Z",
+    "last_failed": "2026-09-17T06:46:29Z",
+    "total_runs": 369,
+    "total_successes": 45,
+    "total_failures": 324
+  },
+  "hunter-22": {
+    "last_dispatch": "2026-09-20T11:54:15Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T11:57:09Z",
+    "last_failed": "2026-09-17T06:45:55Z",
+    "total_runs": 58,
+    "total_successes": 37,
+    "total_failures": 21
+  },
+  "memory-flush": {
+    "last_dispatch": "2026-09-21T00:31:09Z",
+    "last_status": "success",
+    "last_success": "2026-09-21T00:33:53Z",
+    "last_failed": "2026-09-17T06:46:15Z",
+    "total_runs": 45,
+    "total_successes": 28,
+    "total_failures": 17
+  },
+  "narrative-tracker": {
+    "last_dispatch": "2026-09-21T00:31:09Z",
+    "last_status": "success",
+    "last_success": "2026-09-21T00:33:49Z",
+    "last_failed": "2026-09-17T06:45:37Z",
+    "total_runs": 499,
+    "total_successes": 128,
+    "total_failures": 371
+  },
+  "picks-tracker": {
+    "last_dispatch": "2026-09-20T11:54:15Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T11:56:27Z",
+    "last_failed": "2026-08-23T09:14:02Z",
+    "total_runs": 199,
+    "total_successes": 9,
+    "total_failures": 190
   },
   "pr-review": {
+    "last_dispatch": "2026-09-20T15:08:45Z",
     "last_status": "success",
+    "last_success": "2026-09-20T15:10:23Z",
     "last_failed": "2026-09-17T06:45:08Z",
     "total_runs": 103,
     "total_successes": 69,
-    "total_failures": 34,
-    "consecutive_failures": 0,
-    "success_rate": 0.67,
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1c-9f7c-7550-9a37-daeddba51084\"} {\"type\":\"turn.started\"} {\"typ",
-    "last_success": "2026-09-20T15:10:23Z",
-    "last_quality_score": 3,
-    "last_dispatch": "2026-09-20T15:08:45Z"
+    "total_failures": 34
   },
-  "chain:dev-loop": {
+  "price-alert": {
+    "last_dispatch": "2026-07-30T16:27:18Z",
     "last_status": "dispatched",
-    "last_failed": "2026-09-18T10:00:33Z",
-    "last_success": "2026-09-17T18:06:45Z",
-    "last_dispatch": "2026-09-20T11:54:15Z"
+    "last_success": "2026-07-28T15:36:09Z",
+    "last_failed": "2026-07-29T00:40:24Z",
+    "total_runs": 150,
+    "total_successes": 10,
+    "total_failures": 140
   },
-  "deploy-uni-hook": {
+  "rightstack": {
     "last_status": "success",
-    "last_success": "2026-09-02T15:25:03Z",
-    "total_runs": 1,
-    "total_successes": 1,
-    "total_failures": 0,
-    "consecutive_failures": 0,
-    "success_rate": 1,
-    "last_quality_score": 4
+    "last_success": "2026-08-31T11:53:57Z",
+    "total_runs": 8,
+    "total_successes": 8,
+    "total_failures": 0
   },
-  "slop-watch": {
-    "last_dispatch": "2026-09-20T11:54:15Z",
+  "search-skill": {
+    "last_dispatch": "2026-09-20T15:08:45Z",
     "last_status": "success",
-    "last_success": "2026-09-20T11:57:32Z",
-    "total_runs": 32,
+    "last_success": "2026-09-20T15:10:59Z",
+    "last_failed": "2026-09-17T06:45:39Z",
+    "total_runs": 52,
+    "total_successes": 35,
+    "total_failures": 17
+  },
+  "self-improve": {
+    "last_dispatch": "2026-09-19T19:29:37Z",
+    "last_status": "success",
+    "last_success": "2026-09-19T19:32:47Z",
+    "last_failed": "2026-09-17T06:45:44Z",
+    "total_runs": 37,
     "total_successes": 15,
-    "total_failures": 17,
-    "consecutive_failures": 0,
-    "success_rate": 0.47,
-    "last_quality_score": 2,
-    "last_failed": "2026-09-17T06:46:01Z",
-    "last_error": "P error: 401 Unauthorized, url: wss://chatgpt.com/backend-api/codex/responses codex exited 1: {\"type\":\"thread.started\",\"thread_id\":\"01a0ae1d-6c19-7b13-a4e5-2a14da3918c4\"} {\"type\":\"turn.started\"} {\"typ"
+    "total_failures": 22
   },
   "send-email": {
     "last_status": "failed",
     "last_failed": "2026-09-16T13:45:30Z",
     "total_runs": 2,
     "total_successes": 0,
-    "total_failures": 2,
-    "consecutive_failures": 2,
-    "success_rate": 0,
-    "last_error": "kimi exited 1: error: failed to run prompt: auth.login_required: OAuth provider \"managed:kimi-code\" requires login before it can be used. See log: /tmp/run-harness.qfbegk/kimi-home/logs/kimi-code.log "
+    "total_failures": 2
+  },
+  "shiplog": {
+    "last_dispatch": "2026-09-14T10:42:22Z",
+    "last_status": "success",
+    "last_success": "2026-09-14T10:46:03Z",
+    "total_runs": 4,
+    "total_successes": 4,
+    "total_failures": 0
+  },
+  "skill-health": {
+    "last_dispatch": "2026-09-20T18:11:28Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T18:14:24Z",
+    "last_failed": "2026-09-17T06:45:42Z",
+    "total_runs": 343,
+    "total_successes": 43,
+    "total_failures": 300
+  },
+  "skill-repair": {
+    "last_status": "success",
+    "last_success": "2026-08-25T01:12:09Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0
+  },
+  "slop-watch": {
+    "last_dispatch": "2026-09-20T11:54:15Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T11:57:32Z",
+    "last_failed": "2026-09-17T06:46:01Z",
+    "total_runs": 32,
+    "total_successes": 15,
+    "total_failures": 17
+  },
+  "soul-builder": {
+    "last_status": "success",
+    "last_success": "2026-08-28T03:57:08Z",
+    "last_failed": "2026-08-27T09:19:04Z",
+    "total_runs": 10,
+    "total_successes": 5,
+    "total_failures": 5
+  },
+  "token-movers": {
+    "last_status": "success",
+    "last_success": "2026-07-07T18:08:23Z",
+    "total_runs": 1,
+    "total_successes": 1,
+    "total_failures": 0
+  },
+  "token-pick": {
+    "last_dispatch": "2026-09-20T15:08:45Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T15:11:48Z",
+    "last_failed": "2026-09-17T06:45:34Z",
+    "total_runs": 320,
+    "total_successes": 40,
+    "total_failures": 280
+  },
+  "verdikta-hunter": {
+    "last_status": "success",
+    "last_success": "2026-08-25T09:24:16Z",
+    "last_failed": "2026-07-24T16:14:54Z",
+    "total_runs": 2,
+    "total_successes": 1,
+    "total_failures": 1
+  },
+  "vuln-scanner": {
+    "last_dispatch": "2026-09-21T05:21:39Z",
+    "last_status": "failed",
+    "last_success": "2026-09-10T23:44:07Z",
+    "last_failed": "2026-09-21T05:23:23Z",
+    "total_runs": 259,
+    "total_successes": 76,
+    "total_failures": 183
+  },
+  "vuln-tracker": {
+    "last_dispatch": "2026-09-20T18:11:28Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T18:17:53Z",
+    "last_failed": "2026-09-17T06:46:22Z",
+    "total_runs": 44,
+    "total_successes": 30,
+    "total_failures": 14
+  },
+  "write-tweet": {
+    "last_dispatch": "2026-09-20T22:43:58Z",
+    "last_status": "success",
+    "last_success": "2026-09-20T22:46:02Z",
+    "last_failed": "2026-09-17T06:46:02Z",
+    "total_runs": 50,
+    "total_successes": 27,
+    "total_failures": 23
+  },
+  "x402-monitor": {
+    "last_dispatch": "2026-09-17T12:08:35Z",
+    "last_status": "success",
+    "last_success": "2026-09-17T12:12:20Z",
+    "last_failed": "2026-09-17T06:45:53Z",
+    "total_runs": 274,
+    "total_successes": 11,
+    "total_failures": 263
   }
 }

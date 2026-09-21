@@ -1,1 +1,18 @@
-null
+[
+  {
+    "skill": "defi-overview",
+    "rank": 1,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 2,
+    "scored_runs": 1,
+    "last_score": 2,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T091615Z_defi-overview_b29e3e",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  }
+]
