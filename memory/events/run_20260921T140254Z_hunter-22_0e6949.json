@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260921T140254Z_hunter-22_0e6949",
+  "skill": "hunter-22",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "hunter-22|2026-09-21T10:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-haiku-4-5-20251001",
+  "actual_model": "anthropic/claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": false,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "scope_violation: wrote memory/events/run_*.json outside allowed scope (only output/hunter-22/ and memory/skills/hunter-22/ permitted); scope_ok=false confirms",
+    "missing_seen_json_update: contract requires updating memory/skills/hunter-22/seen.json with all 25 bounties; no update found on disk",
+    "missing_log_entry: contract requires appending ### hunter-22 section to memory/logs/2026-09-21.md; file shows only ### narrative-tracker entry (different skill)",
+    "unexplained_error_tag: channel renders show [ERROR] hunter-22 but run status=completed; suggests notification system detected issue not reflected in output files",
+    "incomplete_contract: core dedup + API logic executed correctly (200 OK, 25 returned, all seen), but 3 of 4 memory/log requirements unmet"
+  ],
+  "usage": {
+    "input_tokens": 177,
+    "output_tokens": 6031,
+    "cache_read_input_tokens": 400858,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.11857579999999998
+  },
+  "scope_violations": [
+    "modified:memory/topics/hunter-22-seen.json"
+  ],
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/hunter-22/run_20260921T140254Z_hunter-22_0e6949.md",
+  "result_hash": "sha256:af658b35b803965eff582cc9c6f612f0438c883ce787e67f205f40cbc5bbcb87",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 16
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "hunter-22|2026-09-21T10:00:00Z",
+  "scheduled_at": "2026-09-21T10:00:00Z",
+  "deadline": "2026-09-21T14:07:54.091750989Z",
+  "created_at": "2026-09-21T14:02:54.091750989Z",
+  "updated_at": "2026-09-21T14:04:35.171951497Z",
+  "completed_at": "2026-09-21T14:04:35.171943961Z"
+}

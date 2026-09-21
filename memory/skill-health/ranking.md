@@ -10,8 +10,9 @@
 | 6 | defi-overview | 2 | 2 | 0 | 2.5 | 3 | low_score |
 | 7 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 8 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 9 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
-| 10 | create-prove | 1 | 0 | 1 | - | - | - |
-| 11 | feature | 1 | 0 | 1 | - | - | - |
-| 12 | fork-fleet | 1 | 0 | 1 | - | - | - |
+| 9 | hunter-22 | 1 | 0 | 1 | 2.0 | 2 | low_score |
+| 10 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
+| 11 | create-prove | 1 | 0 | 1 | - | - | - |
+| 12 | feature | 1 | 0 | 1 | - | - | - |
+| 13 | fork-fleet | 1 | 0 | 1 | - | - | - |
 

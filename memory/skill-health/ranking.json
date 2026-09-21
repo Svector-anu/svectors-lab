@@ -118,8 +118,24 @@
     ]
   },
   {
-    "skill": "fear-divergence",
+    "skill": "hunter-22",
     "rank": 9,
+    "runs": 1,
+    "successes": 0,
+    "failures": 1,
+    "avg_score": 2,
+    "scored_runs": 1,
+    "last_score": 2,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T140254Z_hunter-22_0e6949",
+    "consecutive_fails": 1,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "fear-divergence",
+    "rank": 10,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -135,7 +151,7 @@
   },
   {
     "skill": "create-prove",
-    "rank": 10,
+    "rank": 11,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -149,7 +165,7 @@
   },
   {
     "skill": "feature",
-    "rank": 11,
+    "rank": 12,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -163,7 +179,7 @@
   },
   {
     "skill": "fork-fleet",
-    "rank": 12,
+    "rank": 13,
     "runs": 1,
     "successes": 0,
     "failures": 1,

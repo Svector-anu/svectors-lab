@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260921T140254Z_hunter-22_0e6949",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 3,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 1,
+  "memory_hygiene": 1,
+  "channel_formatting": 2,
+  "flags": [
+    "scope_violation: wrote memory/events/run_*.json outside allowed scope (only output/hunter-22/ and memory/skills/hunter-22/ permitted); scope_ok=false confirms",
+    "missing_seen_json_update: contract requires updating memory/skills/hunter-22/seen.json with all 25 bounties; no update found on disk",
+    "missing_log_entry: contract requires appending ### hunter-22 section to memory/logs/2026-09-21.md; file shows only ### narrative-tracker entry (different skill)",
+    "unexplained_error_tag: channel renders show [ERROR] hunter-22 but run status=completed; suggests notification system detected issue not reflected in output files",
+    "incomplete_contract: core dedup + API logic executed correctly (200 OK, 25 returned, all seen), but 3 of 4 memory/log requirements unmet"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "91db69a1a10222dadea4ca7f18bc547ebbe8f5ad"
+}
