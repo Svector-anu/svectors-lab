@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260921T093903Z_preference-profile_5483d0",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 2,
+  "strategy_alignment": 4,
+  "evidence": 2,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "CRITICAL: Event JSON shows status='running' and all scores/tokens null/pending, contradicting run completion status. Verify run finalized properly.",
+    "Core input unverified: skill contract requires 'Run `miniaeon profile` to read reaction/approval tally,' but no captured output of that command appears in artifacts. Claim of empty tally (0 up/down/approved/rejected) is not grounded.",
+    "Cannot verify `memory/me.md` current state from provided artifacts to confirm claim it 'already reflects this (all sections none inferred yet).'",
+    "Output is status-log format (nothing changed), not decision-grade. Correct per contract's silent-success pattern, but low actionability for operator.",
+    "No value this run: operator has given zero feedback, so profile correctly remains 'still forming.' Skill working as designed, but produces no signal or recommendation."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "91db69a1a10222dadea4ca7f18bc547ebbe8f5ad"
+}

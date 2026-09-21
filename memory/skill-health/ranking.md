@@ -4,8 +4,9 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | github-trending | 1 | 1 | 0 | 4.0 | 4 | - |
 | 2 | narrative-tracker | 1 | 1 | 0 | 3.0 | 3 | - |
-| 3 | defi-overview | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 4 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 5 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 6 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
+| 3 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
+| 4 | defi-overview | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 5 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 6 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 7 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
 
