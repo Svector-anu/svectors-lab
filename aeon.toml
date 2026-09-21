@@ -66,9 +66,9 @@ allow_prs = false
 # gap between ticks when the loop names none; daily_cost_cap_usd of 0 leaves
 # only the scheduler-wide cap.
 [heartbeat]
-enabled = false
+enabled = true
 default_wake_minutes = 30
-daily_cost_cap_usd = 0.0
+daily_cost_cap_usd = 10.0
 
 [grants.notify]
 capabilities = ["sends_notifications"]
