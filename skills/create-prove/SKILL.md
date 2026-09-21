@@ -1,23 +1,10 @@
----
-name: create-prove
-description: Run a changed Aeon skill for real and attach SHA-bound behavioral evidence to its PR
-metadata:
-  title: Create Prove
-  category: dev
-  mode: write
-  var: ""
-  tags:
-    - dev
-    - verification
-  permissions:
-    - contents:read
-    - actions:write
-    - pull-requests:write
-  commits: false
----
-> **${var}** - Required immutable target in the form `owner/repo#pr@40-character-lowercase-sha`.
+# create-prove
 
-Today is ${today}. Prove the behavior of one Aeon-shaped change by running the changed skill through the target repository's real `aeon.yml` workflow. A green diff review is not proof. A successful, correlated Actions run is proof.
+Run a changed Aeon skill for real and attach SHA-bound behavioral evidence to its PR
+
+> The `Operator var` - Required immutable target in the form `owner/repo#pr@40-character-lowercase-sha`.
+
+Today is today's date. Prove the behavior of one Aeon-shaped change by running the changed skill through the target repository's real `aeon.yml` workflow. A green diff review is not proof. A successful, correlated Actions run is proof.
 
 ## Scope
 
@@ -27,7 +14,7 @@ Never prove `create-prove` by recursively dispatching itself. Exit `PROVE_UNSUPP
 
 ## Steps
 
-1. Parse `${var}` into `target=owner/repo#pr` and `expected_sha`. Reject any value outside the exact grammar above with `PROVE_INVALID_TARGET`.
+1. Parse the `Operator var` into `target=owner/repo#pr` and `expected_sha`. Reject any value outside the exact grammar above with `PROVE_INVALID_TARGET`.
 2. Read the PR through `gh api`. Require all of the following:
    - the PR is open;
    - its current `head.sha` equals `expected_sha`;
@@ -66,4 +53,11 @@ Use `gh` for every GitHub read, dispatch, log fetch, and PR comment. Authenticat
 
 ## Log
 
-Append the result to `memory/logs/${today}.md` under `### create-prove`, including the target, SHA, selected skill, evidence run ID, and terminal verdict. The workflow may persist the captured output on your behalf.
+Append the result to `memory/logs/today's date.md` under `### create-prove`, including the target, SHA, selected skill, evidence run ID, and terminal verdict. The workflow may persist the captured output on your behalf.
+
+## Do not
+
+- Do not write outside `output/create-prove/` and `memory/skills/create-prove/` plus today's log heading.
+- Do not send Telegram or Slack yourself; your final message is delivered by MiniAeon.
+- Do not report filler. Nothing worth reporting is a valid result.
+
