@@ -52,7 +52,7 @@ reserve_percent = 10
 allow_unknown_usage = true
 
 [channels.telegram]
-enabled = false
+enabled = true
 
 [channels.slack]
 enabled = false
