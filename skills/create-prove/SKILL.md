@@ -4,7 +4,7 @@ Run a changed Aeon skill for real and attach SHA-bound behavioral evidence to it
 
 > The `Operator var` - Required immutable target in the form `owner/repo#pr@40-character-lowercase-sha`.
 
-Today is today's date. Prove the behavior of one Aeon-shaped change by running the changed skill through the target repository's real `aeon.yml` workflow. A green diff review is not proof. A successful, correlated Actions run is proof.
+Today is today's date. Prove the behavior of one Aeon-shaped change by running the changed skill through the target repository's real `miniaeon.yml` workflow. A green diff review is not proof. A successful, correlated Actions run is proof.
 
 ## Scope
 
@@ -33,14 +33,21 @@ Never prove `create-prove` by recursively dispatching itself. Exit `PROVE_UNSUPP
    - the slug is not `create-prove`.
    Any mismatch exits `PROVE_UNSUPPORTED` or `PROVE_STALE` without a receipt.
 3. Inspect the changed skill's frontmatter and instructions. Choose the smallest real, non-destructive variable that exercises the changed behavior. If no safe real invocation exists, exit `PROVE_UNSAFE` rather than inventing evidence. Do not use synthetic credentials or a dry-run mode.
-4. Dispatch the target branch's workflow by filename, with a unique correlation ID whose `dispatch_id` **must start with the literal prefix `prove-`** — `.github/workflows/aeon.yml`'s commit-skip guard only recognizes that exact prefix to know this run is being proved, not a normal dispatch, and must not commit or push to the branch it's proving. Getting this prefix wrong silently defeats the immutable-head guarantee this whole skill exists to provide:
+4. Require the head branch to carry the proof guard before dispatching. Read `.github/workflows/miniaeon.yml` at `expected_sha` (`gh api "repos/$repo/contents/.github/workflows/miniaeon.yml?ref=$expected_sha" --jq .content | base64 -d`) and require it to declare the `dispatch_id` input and to run a `prove-` dispatch with `--no-git --no-notify`. A branch without that guard would commit and push its own run to the branch under proof, moving the head this skill exists to pin, so exit `PROVE_UNSUPPORTED` without dispatching.
+5. Dispatch the head branch's MiniAeon workflow with a unique `dispatch_id` that **starts with the literal prefix `prove-`**. That prefix is what makes the run skip commit, push and channel delivery, and it becomes the run's title:
    ```bash
    dispatch_id="prove-${pr_number}-$(date -u +%Y%m%dT%H%M%SZ)-${RANDOM}"
-   gh workflow run aeon.yml --repo "$repo" --ref "$head_branch" \
+   gh workflow run miniaeon.yml --repo "$repo" --ref "$head_branch" \
      -f skill="$skill" -f var="$proof_var" -f dispatch_id="$dispatch_id"
    ```
-   Discover the run only by the exact correlated run title, using the same rule as `chain-runner.yml`. Never select merely the newest run for that skill.
-5. Wait up to 30 minutes. Require `status=completed` and `conclusion=success`. Fetch the run log and the captured skill output. Confirm the output is non-empty and does not contain `_No output captured._`. A successful Actions wrapper with no captured behavior is `PROVE_MISSING_EVIDENCE`.
+   Find the run only by its exact title, never by picking the newest run:
+   ```bash
+   gh run list --repo "$repo" --workflow miniaeon.yml --branch "$head_branch" \
+     --event workflow_dispatch --json databaseId,displayTitle,headSha,status,conclusion,url \
+     | jq --arg id "$dispatch_id" '[.[] | select(.displayTitle == $id)]'
+   ```
+   Poll until exactly one run matches. Require its `headSha` to equal `expected_sha`.
+   Wait up to 30 minutes. Require `status=completed` and `conclusion=success`. Fetch the run log (`gh run view <id> --repo "$repo" --log`) and take the captured skill output from the `Show proof output` step, between `--- output/<skill>/latest.md` and `--- end output/<skill>/latest.md`. Confirm it is non-empty and is not `_No output captured._`. A successful Actions wrapper with no captured behavior is `PROVE_MISSING_EVIDENCE`.
 6. Re-read the PR and require its head SHA still equals `expected_sha`.
 7. Post one PR comment containing a concise description of the exercised path, the run URL, a short output excerpt, and exactly one final machine receipt:
    ```text
