@@ -198,6 +198,8 @@ If nothing needs attention, log "HEARTBEAT_OK" (plus the overall status page ver
 
 **A bootstrapping / warming-up fleet counts as "nothing needs attention".** Still regenerate `docs/status.md` (verdict `🟢 OK`, warming-up note), log `HEARTBEAT_OK · STATUS_PAGE=OK (warming up)`, and **send no notification** — a fresh fork should be quiet, not a red alert. Warming-up skills are not "findings".
 
+Finish every file write (`docs/status.md`, then `memory/logs/today's date.md`) before composing the final message. The final message is only the canonical result — `HEARTBEAT_OK · STATUS_PAGE=...` or the findings — never narration of what you are about to do.
+
 If something needs attention:
 2. Log the findings and actions taken to memory/logs/today's date.md (under the shared `### heartbeat` heading — see [Log](#log) — with a `mode: ambient` discriminator line)
 3. Log one line with the status-page verdict, e.g. `STATUS_PAGE=DEGRADED — wrote docs/status.md`
