@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260921T141515Z_token-pick_9de04b",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 4,
+  "flags": [
+    "log file truncated: claimed TOKEN_PICK_DEDUP append to memory/logs/2026-09-21.md not verifiable from provided data",
+    "channel formatting prioritizes score/structure over narrative lead — strategy asks for 'conclusion first in 150 chars'; output leads with token name + conviction + price/vol numbers, then catalyst. works for a Skopos reader but de-prioritizes the signal"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

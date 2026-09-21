@@ -1,0 +1,64 @@
+{
+  "run_id": "run_20260921T141515Z_token-pick_9de04b",
+  "skill": "token-pick",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "token-pick|2026-09-21T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "log file truncated: claimed TOKEN_PICK_DEDUP append to memory/logs/2026-09-21.md not verifiable from provided data",
+    "channel formatting prioritizes score/structure over narrative lead — strategy asks for 'conclusion first in 150 chars'; output leads with token name + conviction + price/vol numbers, then catalyst. works for a Skopos reader but de-prioritizes the signal"
+  ],
+  "usage": {
+    "input_tokens": 29,
+    "output_tokens": 18356,
+    "cache_read_input_tokens": 531604,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.8236242
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/token-pick/run_20260921T141515Z_token-pick_9de04b.md",
+  "result_hash": "sha256:d22b64a74971c33695632a88af134ad41677a66e997c6a83f68fe29676366906",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 14
+    },
+    {
+      "name": "web_search",
+      "count": 6
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "token-pick|2026-09-21T12:00:00Z",
+  "scheduled_at": "2026-09-21T12:00:00Z",
+  "deadline": "2026-09-21T14:25:15.63994406Z",
+  "created_at": "2026-09-21T14:15:15.63994406Z",
+  "updated_at": "2026-09-21T14:20:16.106855224Z",
+  "completed_at": "2026-09-21T14:20:16.106846528Z"
+}
