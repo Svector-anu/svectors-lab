@@ -42,8 +42,22 @@
     "flags": []
   },
   {
-    "skill": "defi-overview",
+    "skill": "shiplog",
     "rank": 4,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 3,
+    "scored_runs": 1,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T093951Z_shiplog_3470b1",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "defi-overview",
+    "rank": 5,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -59,7 +73,7 @@
   },
   {
     "skill": "heartbeat",
-    "rank": 5,
+    "rank": 6,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -75,7 +89,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 6,
+    "rank": 7,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -91,7 +105,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 7,
+    "rank": 8,
     "runs": 1,
     "successes": 1,
     "failures": 0,

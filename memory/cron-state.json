@@ -231,11 +231,12 @@
     "total_failures": 2
   },
   "shiplog": {
-    "last_dispatch": "2026-09-14T10:42:22Z",
-    "last_status": "success",
-    "last_success": "2026-09-14T10:46:03Z",
-    "total_runs": 4,
-    "total_successes": 4,
+    "last_run_id": "run_20260921T093951Z_shiplog_3470b1",
+    "last_dispatch": "2026-09-21T09:39:52.596055128Z",
+    "last_status": "completed",
+    "last_success": "2026-09-21T09:43:59.076076222Z",
+    "total_runs": 5,
+    "total_successes": 5,
     "total_failures": 0
   },
   "skill-health": {

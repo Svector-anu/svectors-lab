@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260921T093951Z_shiplog_3470b1",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 4,
+  "scope_compliance": 3,
+  "memory_hygiene": 1,
+  "channel_formatting": 4,
+  "flags": [
+    "missing_memory_log_entry",
+    "memory_logs_wrong_skill",
+    "artifact_delivery_unclear"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
