@@ -1,7 +1,21 @@
 [
   {
-    "skill": "defi-overview",
+    "skill": "github-trending",
     "rank": 1,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 4,
+    "scored_runs": 1,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T092522Z_github-trending_e301ba",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "defi-overview",
+    "rank": 2,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -17,7 +31,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 2,
+    "rank": 3,
     "runs": 1,
     "successes": 1,
     "failures": 0,

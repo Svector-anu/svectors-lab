@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260921T092522Z_github-trending_e301ba",
+  "skill": "github-trending",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "github-trending|2026-09-21T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "Memory write claim unsupported: run summary states 'Wrote ### github-trending entry to memory/logs/2026-09-21.md' but actual file contains only ### narrative-tracker section; github-trending log entry absent",
+    "Channel positioning ambiguous on 2 survivors: both shown with full momentum tags and feature details but not explicitly positioned (watch for next run, fade as noise, or dismiss?); reader intent unclear"
+  ],
+  "usage": {
+    "input_tokens": 33,
+    "output_tokens": 14968,
+    "cache_read_input_tokens": 1124116,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1059278
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/github-trending/run_20260921T092522Z_github-trending_e301ba.md",
+  "result_hash": "sha256:4c8a3ac54f5ca10e76d0e82b70bbe23e632f32b6ae2f95f42f1850c33b396ea7",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 8
+    },
+    {
+      "name": "bash",
+      "count": 13
+    },
+    {
+      "name": "web_search",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "github-trending|2026-09-21T09:00:00Z",
+  "scheduled_at": "2026-09-21T09:00:00Z",
+  "deadline": "2026-09-21T09:35:22.303277104Z",
+  "created_at": "2026-09-21T09:25:22.303277104Z",
+  "updated_at": "2026-09-21T09:29:02.77571475Z",
+  "completed_at": "2026-09-21T09:29:02.775706916Z"
+}
