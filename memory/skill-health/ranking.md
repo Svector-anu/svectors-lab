@@ -12,7 +12,7 @@
 | 8 | auto-merge | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 9 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 10 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 11 | hunter-22 | 1 | 0 | 1 | 2.0 | 2 | low_score |
+| 11 | hunter-22 | 2 | 1 | 1 | 2.0 | 2 | low_score |
 | 12 | fear-divergence | 1 | 1 | 0 | 1.0 | 1 | low_score |
 | 13 | create-prove | 1 | 0 | 1 | - | - | - |
 | 14 | feature | 1 | 0 | 1 | - | - | - |

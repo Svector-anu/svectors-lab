@@ -150,15 +150,15 @@
   {
     "skill": "hunter-22",
     "rank": 11,
-    "runs": 1,
-    "successes": 0,
+    "runs": 2,
+    "successes": 1,
     "failures": 1,
     "avg_score": 2,
-    "scored_runs": 1,
+    "scored_runs": 2,
     "last_score": 2,
     "last_status": "completed",
-    "last_run_id": "run_20260921T140254Z_hunter-22_0e6949",
-    "consecutive_fails": 1,
+    "last_run_id": "run_20260921T143149Z_hunter-22_ef0b65",
+    "consecutive_fails": 0,
     "flags": [
       "low_score"
     ]

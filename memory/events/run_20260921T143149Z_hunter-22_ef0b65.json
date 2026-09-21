@@ -1,0 +1,63 @@
+{
+  "run_id": "run_20260921T143149Z_hunter-22_ef0b65",
+  "skill": "hunter-22",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "hunter-22|2026-09-21T10:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-haiku-4-5-20251001",
+  "actual_model": "anthropic/claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "api_call_unverifiable",
+    "no_api_logs_or_request_response_visible",
+    "memory_logging_incomplete_missing_hunter-22_section",
+    "output_appears_pre_written_or_test_fixture",
+    "no_audit_flagging_despite_spec_requirement"
+  ],
+  "usage": {
+    "input_tokens": 161,
+    "output_tokens": 7631,
+    "cache_read_input_tokens": 593450,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.173691
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/hunter-22/run_20260921T143149Z_hunter-22_ef0b65.md",
+  "result_hash": "sha256:c3ac0ed68192c8c8d26add790d72c2b7df5b8e688243175771e1e1f263b9687a",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 14
+    },
+    {
+      "name": "write",
+      "count": 3
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "hunter-22|2026-09-21T10:00:00Z",
+  "scheduled_at": "2026-09-21T10:00:00Z",
+  "deadline": "2026-09-21T14:36:49.358020745Z",
+  "created_at": "2026-09-21T14:31:49.358020745Z",
+  "updated_at": "2026-09-21T14:34:04.493611119Z",
+  "completed_at": "2026-09-21T14:34:04.49360306Z"
+}

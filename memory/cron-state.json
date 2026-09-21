@@ -151,15 +151,14 @@
     "total_failures": 324
   },
   "hunter-22": {
-    "last_run_id": "run_20260921T140254Z_hunter-22_0e6949",
-    "last_dispatch": "2026-09-21T14:02:54.698742608Z",
+    "last_run_id": "run_20260921T143149Z_hunter-22_ef0b65",
+    "last_dispatch": "2026-09-21T14:31:49.989455177Z",
     "last_status": "completed",
-    "last_success": "2026-09-20T11:57:09Z",
+    "last_success": "2026-09-21T14:34:04.49360306Z",
     "last_failed": "2026-09-21T14:04:35.171943961Z",
-    "total_runs": 59,
-    "total_successes": 37,
-    "total_failures": 22,
-    "consecutive_fails": 1
+    "total_runs": 60,
+    "total_successes": 38,
+    "total_failures": 22
   },
   "memory-flush": {
     "last_dispatch": "2026-09-21T00:31:09Z",
