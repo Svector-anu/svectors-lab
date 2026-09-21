@@ -4,7 +4,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | github-trending | 1 | 1 | 0 | 4.0 | 4 | - |
 | 2 | token-pick | 1 | 1 | 0 | 4.0 | 4 | - |
-| 3 | narrative-tracker | 2 | 2 | 0 | 3.0 | 3 | - |
+| 3 | narrative-tracker | 3 | 3 | 0 | 3.0 | 3 | - |
 | 4 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 5 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 6 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
