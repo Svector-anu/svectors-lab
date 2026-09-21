@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260921T092435Z_fear-divergence_a51ce7",
+  "score": 1,
+  "correctness": 1,
+  "usefulness": 1,
+  "strategy_alignment": 2,
+  "evidence": 1,
+  "scope_compliance": 2,
+  "memory_hygiene": 1,
+  "channel_formatting": 1,
+  "flags": [
+    "critical: log entry mismatch — run summary claims 'Logged FEAR_DIVERGENCE_SKIP to memory/logs/2026-09-21.md' but actual file shows ### narrative-tracker (different skill), no fear-divergence section present",
+    "critical: wrong skill output — memory/logs/2026-09-21.md contains full narrative-tracker report, not the expected fear-divergence skip log or signal synthesis",
+    "critical: claims-artifacts disconnect — run output asserts one behavior (skip, log to memory/logs) but disk state shows unrelated content; either skill did not execute or summary was not grounded in actual run",
+    "run metadata incomplete: skill_success=null, actual_model='', usage unknown=true suggests execution or reporting failure",
+    "no .pending-notify-temp file written (expected if signal were to be sent, though skip case should produce none)",
+    "log entry exists in correct path but carries wrong content — memory hygiene structure violated, skill namespace collision or cross-contamination"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

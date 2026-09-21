@@ -88,12 +88,13 @@
     "total_failures": 163
   },
   "fear-divergence": {
-    "last_dispatch": "2026-09-20T11:54:15Z",
-    "last_status": "success",
-    "last_success": "2026-09-20T11:55:42Z",
+    "last_run_id": "run_20260921T092435Z_fear-divergence_a51ce7",
+    "last_dispatch": "2026-09-21T09:24:36.522875742Z",
+    "last_status": "completed",
+    "last_success": "2026-09-21T09:25:22.208673828Z",
     "last_failed": "2026-09-17T06:46:05Z",
-    "total_runs": 353,
-    "total_successes": 41,
+    "total_runs": 354,
+    "total_successes": 42,
     "total_failures": 312
   },
   "feature": {

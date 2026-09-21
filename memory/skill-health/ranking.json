@@ -14,5 +14,21 @@
     "flags": [
       "low_score"
     ]
+  },
+  {
+    "skill": "fear-divergence",
+    "rank": 2,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 1,
+    "scored_runs": 1,
+    "last_score": 1,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T092435Z_fear-divergence_a51ce7",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
   }
 ]
