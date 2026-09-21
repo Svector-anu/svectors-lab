@@ -258,12 +258,13 @@
     "total_failures": 0
   },
   "skill-health": {
-    "last_dispatch": "2026-09-20T18:11:28Z",
-    "last_status": "success",
-    "last_success": "2026-09-20T18:14:24Z",
+    "last_run_id": "run_20260921T160033Z_skill-health_51a883",
+    "last_dispatch": "2026-09-21T16:00:33.906739014Z",
+    "last_status": "completed",
+    "last_success": "2026-09-21T16:03:33.021793839Z",
     "last_failed": "2026-09-17T06:45:42Z",
-    "total_runs": 343,
-    "total_successes": 43,
+    "total_runs": 344,
+    "total_successes": 44,
     "total_failures": 300
   },
   "skill-repair": {

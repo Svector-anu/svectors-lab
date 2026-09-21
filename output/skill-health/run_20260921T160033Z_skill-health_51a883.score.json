@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260921T160033Z_skill-health_51a883",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 2,
+  "strategy_alignment": 2,
+  "evidence": 2,
+  "scope_compliance": 2,
+  "memory_hygiene": 2,
+  "channel_formatting": 3,
+  "flags": [
+    "CRITICAL: No issue files written despite contract requirement. Canonical result claims ISS-005, ISS-006, ISS-003, ISS-007 exist and are managed, but memory/issues/ is absent from ground truth. This breaks the 'load-bearing self-healing view' contract.",
+    "CRITICAL: Log entry (memory/logs/2026-09-21.md) contains narrative-tracker output under ### narrative-tracker, not ### skill-health output as contract specifies. Wrong skill's content in the log.",
+    "Contract defect: Skill MUST 'file issues for new failures and resolve them when skills recover' and 'update on recovery'. Zero evidence of issue file creation or modification.",
+    "Evidentiary gap: Canonical result claims 4 open issues, persistent criticals, no changes this run—but provides no memory/issues/ISS-*.md files to verify state or transitions.",
+    "Completeness: last-report.json written and classification computed (good), but missing the issue-filing half of the health-view contract.",
+    "Channel formatting: Canonical result is diagnostic narrative (status log) rather than decision card—buries outcome in wall of subsections, makes no recommendation, provides no linked evidence (PR/diff/source)."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
