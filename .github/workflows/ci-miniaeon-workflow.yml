@@ -1,0 +1,26 @@
+name: ci-miniaeon-workflow
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/miniaeon.yml'
+      - '.github/workflows/ci-miniaeon-workflow.yml'
+      - 'scripts/tests/test_miniaeon_workflow.sh'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/miniaeon.yml'
+      - '.github/workflows/ci-miniaeon-workflow.yml'
+      - 'scripts/tests/test_miniaeon_workflow.sh'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: MiniAeon workflow dispatch tests
+        run: bash scripts/tests/test_miniaeon_workflow.sh

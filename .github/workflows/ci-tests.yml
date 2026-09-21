@@ -15,7 +15,6 @@ on:
       - 'harness-adapter/bin/**'
       - 'harness-adapter/harnesses.json'
       - '.github/workflows/ci-tests.yml'
-      - '.github/workflows/miniaeon.yml'
   push:
     branches: [main]
     paths:
@@ -25,7 +24,6 @@ on:
       - 'harness-adapter/adapters/**'
       - 'harness-adapter/bin/**'
       - 'harness-adapter/harnesses.json'
-      - '.github/workflows/miniaeon.yml'
   workflow_dispatch:
 
 permissions:
@@ -90,8 +88,6 @@ jobs:
         run: bash scripts/tests/test_resolve_harness.sh
       - name: workflow harness choice tests
         run: bash scripts/tests/test_workflow_harness_choices.sh
-      - name: MiniAeon workflow dispatch tests
-        run: bash scripts/tests/test_miniaeon_workflow.sh
       - name: harness install/config tests
         run: bash scripts/tests/test_install_harness.sh
       - name: run-harness sandbox-gate tests
