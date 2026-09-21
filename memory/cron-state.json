@@ -119,12 +119,15 @@
     "consecutive_fails": 1
   },
   "fork-fleet": {
-    "last_dispatch": "2026-09-14T10:42:22Z",
-    "last_status": "success",
+    "last_run_id": "run_20260921T135251Z_fork-fleet_3a4ffe",
+    "last_dispatch": "2026-09-21T13:52:52.029814483Z",
+    "last_status": "completed",
     "last_success": "2026-09-14T10:48:03Z",
-    "total_runs": 3,
+    "last_failed": "2026-09-21T14:02:53.967028105Z",
+    "total_runs": 4,
     "total_successes": 3,
-    "total_failures": 0
+    "total_failures": 1,
+    "consecutive_fails": 1
   },
   "github-trending": {
     "last_run_id": "run_20260921T092522Z_github-trending_e301ba",

@@ -1,0 +1,58 @@
+{
+  "run_id": "run_20260921T135251Z_fork-fleet_3a4ffe",
+  "skill": "fork-fleet",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "fork-fleet|2026-09-21T10:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5",
+      "reason": "error"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": false,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "skipped",
+  "score_status": "skipped",
+  "score": null,
+  "usage": {
+    "input_tokens": 95,
+    "output_tokens": 48762,
+    "cache_read_input_tokens": 3324434,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.4975792000000006
+  },
+  "error": "omp exit 1 (partial result kept): exit status 1",
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/fork-fleet/run_20260921T135251Z_fork-fleet_3a4ffe.md",
+  "result_hash": "sha256:612b0ecf68be6e2f892089c199eedc8539944307f109897b95cbe908496aeef2",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 42
+    },
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "fork-fleet|2026-09-21T10:00:00Z",
+  "scheduled_at": "2026-09-21T10:00:00Z",
+  "deadline": "2026-09-21T14:02:51.405148196Z",
+  "created_at": "2026-09-21T13:52:51.405148196Z",
+  "updated_at": "2026-09-21T14:02:53.967031553Z",
+  "completed_at": "2026-09-21T14:02:53.967028105Z"
+}

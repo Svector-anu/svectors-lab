@@ -160,5 +160,19 @@
     "last_run_id": "run_20260921T111234Z_feature_f67c3e",
     "consecutive_fails": 1,
     "flags": []
+  },
+  {
+    "skill": "fork-fleet",
+    "rank": 12,
+    "runs": 1,
+    "successes": 0,
+    "failures": 1,
+    "avg_score": 0,
+    "scored_runs": 0,
+    "last_score": 0,
+    "last_status": "completed",
+    "last_run_id": "run_20260921T135251Z_fork-fleet_3a4ffe",
+    "consecutive_fails": 1,
+    "flags": []
   }
 ]
