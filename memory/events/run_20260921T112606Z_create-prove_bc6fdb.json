@@ -23,7 +23,7 @@
   "write_scope": "own-memory",
   "skill_success": false,
   "scope_ok": true,
-  "publish": "pending",
+  "publish": "published",
   "notify": "skipped",
   "score_status": "skipped",
   "score": null,
@@ -37,6 +37,7 @@
   "error": "background job bash was not awaited before omp exited; a headless run cannot join a backgrounded job",
   "result_path": "/Users/mac/Desktop/coding and projects/svectors-lab/output/create-prove/run_20260921T112606Z_create-prove_bc6fdb.md",
   "result_hash": "sha256:71e83f0cf666f4237a8c76ce1a2620c16683bb396c63b32bd3161ee6f006ad82",
+  "commit_sha": "82322f9de805014754723b998edd0da0da7010ad",
   "tool_calls": [
     {
       "name": "read",
@@ -55,6 +56,6 @@
   "attempts": 2,
   "deadline": "2026-09-21T11:36:06.550991Z",
   "created_at": "2026-09-21T11:26:06.550991Z",
-  "updated_at": "2026-09-21T11:33:11.594327Z",
+  "updated_at": "2026-09-21T11:33:15.254744Z",
   "completed_at": "2026-09-21T11:33:11.594315Z"
 }
