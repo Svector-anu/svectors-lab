@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260921T140435Z_narrative-tracker_8aee43",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 3,
+  "memory_hygiene": 4,
+  "channel_formatting": 4,
+  "flags": [
+    "MISSING_PROOF_LINE: Skill contract requires 'echo \"xai http=$HTTP ...\"' in output as proof Path A ran. Not present. Narrative describes http=403 failure but no command-output line shown.",
+    "STATUS_INCONSISTENCY: Event JSON shows status='running' with null success/score/tokens, contradicting run header 'completed'.",
+    "SOURCE_AMBIGUITY: Narrative mentions WebSearch fallback (reason=http-403) but unclear which parts of output came from X, WebSearch, or prior memory. DefiLlama data is clear; narrative thread sourcing is not.",
+    "TOOLING_ISSUE: Canonical result notes './secretcurl runtime copy was missing this run' — suggests execution environment problem, not fully explained.",
+    "SCOPE_REDUCTION: Expected 12-15 narrative threads; produced 7-8 (regulated stocks, Avalanche, AI, DEX, stablecoins, privacy, payments, prediction markets). Treating as delta/continuation of morning report, but contract asks for fresh narrative discovery each run.",
+    "DECISION_QUALITY_INTACT: Despite sourcing ambiguity, DEX-to-FADE call is concrete (52.87%→36.02%, SEC catalyst aging), actionable, and correctly gated below threshold (ZetaChain, Blink). Trader can act on this."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

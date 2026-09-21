@@ -3,7 +3,7 @@
 | rank | skill | runs | ok | fail | avg | last | flags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | github-trending | 1 | 1 | 0 | 4.0 | 4 | - |
-| 2 | narrative-tracker | 1 | 1 | 0 | 3.0 | 3 | - |
+| 2 | narrative-tracker | 2 | 2 | 0 | 3.0 | 3 | - |
 | 3 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 4 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 5 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
