@@ -963,14 +963,22 @@
         "kind": "local",
         "ref": "skills/hunter-22"
       },
-      "capabilities": {},
+      "capabilities": {
+        "network": [
+          "clawhunter.fun"
+        ]
+      },
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "6a878c97d9d6aa91622692bd5ccb0ac8eaca830d649f378f1f9516f07c68578a"
+          "hash": "aad526f9c5fefd235f75eefdfdccd26039163abc7e11cea9c336b66cf91ababf"
+        },
+        {
+          "path": "skill.toml",
+          "hash": "c1f3e69f55b3c000e4e26a22d552c5fea2dcaff3ab1db644b6862366cbfbb55f"
         }
       ],
-      "contentHash": "sha256-455c9de849299360e3ec1bb1f29305c240367e946c74b0c551f1f335927cfa5b",
+      "contentHash": "sha256-a7fe0f2a2a31171c79d67eac0265e3329984e9aa72471fddecf1ffb7e1d16003",
       "discoveredFrom": "skills/hunter-22/SKILL.md"
     },
     {
