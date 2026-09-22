@@ -1012,14 +1012,18 @@
         "kind": "local",
         "ref": "skills/hunter-22"
       },
-      "capabilities": {},
+      "capabilities": {
+        "network": [
+          "clawhunter.fun"
+        ]
+      },
       "files": [
         {
           "path": "SKILL.md",
-          "hash": "6a878c97d9d6aa91622692bd5ccb0ac8eaca830d649f378f1f9516f07c68578a"
+          "hash": "9ae841931001eca46538a0783d489c1fe844c5cc17031edf2911fc08ab6631e3"
         }
       ],
-      "contentHash": "sha256-455c9de849299360e3ec1bb1f29305c240367e946c74b0c551f1f335927cfa5b",
+      "contentHash": "sha256-78a68c71a7350a39181cddde88671c27e3518b0df36705cd487764835845207d",
       "discoveredFrom": "skills/hunter-22/SKILL.md"
     },
     {
