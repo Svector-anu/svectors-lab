@@ -1,0 +1,16 @@
+{
+  "run_id": "run_20260922T122004Z_token-pick_b2c4f4",
+  "score": 5,
+  "correctness": 5,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 5,
+  "flags": [],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

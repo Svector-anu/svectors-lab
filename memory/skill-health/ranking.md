@@ -2,7 +2,7 @@
 
 | rank | skill | runs | ok | fail | avg | last | flags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | token-pick | 1 | 1 | 0 | 4.0 | 4 | - |
+| 1 | token-pick | 2 | 2 | 0 | 4.5 | 5 | - |
 | 2 | write-tweet | 1 | 1 | 0 | 4.0 | 4 | - |
 | 3 | github-trending | 2 | 2 | 0 | 3.5 | 3 | - |
 | 4 | slop-watch | 2 | 2 | 0 | 3.5 | 4 | - |
