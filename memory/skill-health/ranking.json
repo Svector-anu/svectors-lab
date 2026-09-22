@@ -126,8 +126,24 @@
     "flags": []
   },
   {
-    "skill": "heartbeat",
+    "skill": "hunter-22",
     "rank": 10,
+    "runs": 4,
+    "successes": 3,
+    "failures": 1,
+    "avg_score": 2.75,
+    "scored_runs": 4,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T125817Z_hunter-22_193a9c",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "heartbeat",
+    "rank": 11,
     "runs": 3,
     "successes": 3,
     "failures": 0,
@@ -136,22 +152,6 @@
     "last_score": 2,
     "last_status": "completed",
     "last_run_id": "run_20260922T120252Z_heartbeat_dd1135",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "hunter-22",
-    "rank": 11,
-    "runs": 3,
-    "successes": 2,
-    "failures": 1,
-    "avg_score": 2.3333333333333335,
-    "scored_runs": 3,
-    "last_score": 3,
-    "last_status": "completed",
-    "last_run_id": "run_20260922T100541Z_hunter-22_aa29cf",
     "consecutive_fails": 0,
     "flags": [
       "low_score"
