@@ -1,0 +1,58 @@
+{
+  "run_id": "run_20260922T090923Z_pr-review_fe11ab",
+  "skill": "pr-review",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "pr-review|2026-09-22T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "notify-contradiction: claims 'no notify triggered' but Telegram and Slack renders present — output contradicts itself",
+    "strategy-violation: sends empty status report to channels; strategy rule is 'Notify only on signal: a clean or no-change run should send nothing, not an empty report'",
+    "repetitive-formatting: identical three-paragraph message copied verbatim to Telegram/Slack/canonical; violates decision-card format (should lead with outcome, not status log)",
+    "channel-formatting-not-decision-grade: no action, no recommendation, no decision — just repeated confirmation of what the run checked"
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1615,
+    "cache_read_input_tokens": 133683,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.2960829
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/pr-review/run_20260922T090923Z_pr-review_fe11ab.md",
+  "result_hash": "sha256:3368d2d9044717dfb14851838c32cfa186a53146ed6ef91a854951ae07d4a07d",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 5
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "pr-review|2026-09-22T09:00:00Z",
+  "scheduled_at": "2026-09-22T09:00:00Z",
+  "deadline": "2026-09-22T09:19:23.340382857Z",
+  "created_at": "2026-09-22T09:09:23.340382857Z",
+  "updated_at": "2026-09-22T09:10:20.383904414Z",
+  "completed_at": "2026-09-22T09:10:20.383896566Z"
+}

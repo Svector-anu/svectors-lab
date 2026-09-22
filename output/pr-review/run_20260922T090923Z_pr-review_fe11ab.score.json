@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260922T090923Z_pr-review_fe11ab",
+  "score": 2,
+  "correctness": 3,
+  "usefulness": 2,
+  "strategy_alignment": 1,
+  "evidence": 2,
+  "scope_compliance": 4,
+  "memory_hygiene": 4,
+  "channel_formatting": 1,
+  "flags": [
+    "notify-contradiction: claims 'no notify triggered' but Telegram and Slack renders present — output contradicts itself",
+    "strategy-violation: sends empty status report to channels; strategy rule is 'Notify only on signal: a clean or no-change run should send nothing, not an empty report'",
+    "repetitive-formatting: identical three-paragraph message copied verbatim to Telegram/Slack/canonical; violates decision-card format (should lead with outcome, not status log)",
+    "channel-formatting-not-decision-grade: no action, no recommendation, no decision — just repeated confirmation of what the run checked"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
