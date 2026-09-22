@@ -339,13 +339,13 @@
     "consecutive_fails": 2
   },
   "write-tweet": {
-    "last_run_id": "run_20260921T214922Z_write-tweet_cfbf52",
-    "last_dispatch": "2026-09-21T21:49:23.509290192Z",
+    "last_run_id": "run_20260922T210142Z_write-tweet_189ad1",
+    "last_dispatch": "2026-09-22T21:01:43.075252328Z",
     "last_status": "completed",
-    "last_success": "2026-09-21T21:52:27.316286996Z",
+    "last_success": "2026-09-22T21:10:45.485398425Z",
     "last_failed": "2026-09-17T06:46:02Z",
-    "total_runs": 51,
-    "total_successes": 28,
+    "total_runs": 52,
+    "total_successes": 29,
     "total_failures": 23
   },
   "x402-monitor": {

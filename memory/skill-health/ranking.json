@@ -14,22 +14,8 @@
     "flags": []
   },
   {
-    "skill": "write-tweet",
-    "rank": 2,
-    "runs": 1,
-    "successes": 1,
-    "failures": 0,
-    "avg_score": 4,
-    "scored_runs": 1,
-    "last_score": 4,
-    "last_status": "completed",
-    "last_run_id": "run_20260921T214922Z_write-tweet_cfbf52",
-    "consecutive_fails": 0,
-    "flags": []
-  },
-  {
     "skill": "x402-monitor",
-    "rank": 3,
+    "rank": 2,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -43,7 +29,7 @@
   },
   {
     "skill": "github-trending",
-    "rank": 4,
+    "rank": 3,
     "runs": 2,
     "successes": 2,
     "failures": 0,
@@ -57,7 +43,7 @@
   },
   {
     "skill": "slop-watch",
-    "rank": 5,
+    "rank": 4,
     "runs": 2,
     "successes": 2,
     "failures": 0,
@@ -66,6 +52,20 @@
     "last_score": 4,
     "last_status": "completed",
     "last_run_id": "run_20260922T082553Z_slop-watch_621c29",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "write-tweet",
+    "rank": 5,
+    "runs": 2,
+    "successes": 2,
+    "failures": 0,
+    "avg_score": 3.5,
+    "scored_runs": 2,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T210142Z_write-tweet_189ad1",
     "consecutive_fails": 0,
     "flags": []
   },

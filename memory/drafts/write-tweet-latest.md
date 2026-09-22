@@ -1,49 +1,55 @@
-## Tweet Drafts: Polymarket's CFTC investigation
+## Tweet Drafts: AI agent token costs vs. autonomy
 
 ### Tier 1 — One-liner
 **1a. Hot take**
-> polymarket raised $1B at a $21B valuation the same week the CFTC opened a fraud investigation into it
+> your agent's real cost isn't the subscription, it's the token meter
 
-**1b. Sardonic/ironic**
-> "keep growing, pay the fine later" is not a compliance policy, it's a business model
+**1b. Data drop**
+> openai researchers went $162/day to $600/day on agent tokens. one month. 4x.
 
 ### Tier 2 — Two-punch
-**2a. Data drop**
-> checkout.com flagged over 80% of polymarket's incoming deposits as fraudulent at peak, vs ~1% industry norm. that's not a fraud wave, that's the front door being left open.
+**2a. Observation**
+> openai's own researchers 4x'd their token spend in a month chasing agent throughput. top 10% burn $7k/day and still need a human to close the task.
 
-**2b. Observation**
-> polymarket's compliance chief resigned in april after flagging the fraud. the CEO stayed. the valuation kept climbing. guess which one the market priced.
+**2b. Sardonic/ironic**
+> 3.1 agent-workdays per human day sounds great until you see the bill. someone's paying $7k/day just to babysit a subagent across the finish line.
 
 ### Tier 3 — Paragraph
-**3a. Structural critique**
-> a stolen-card ring drained $10M through polymarket's US accounts. the CEO's reported answer was to keep growing and eat the fine if regulators ever asked. the CCO quit, the US CEO got fired, and the company still closed a $21B round. the market rewarded the growth, not the fix.
+**3a. Reframe**
+> everyone benchmarks agent output against human output. nobody benchmarks agent output against agent cost. openai's heaviest users burn $7k/day in tokens, and over half the long tasks still need a human to land them. that's not autonomy, that's an expensive intern.
 
-**3b. Reframe**
-> everyone's asking if the CFTC probe kills polymarket's valuation. wrong question. the valuation already priced in zero consequences for ignoring an 80% fraud-flag rate. the real question is what else got waved through at that growth rate.
+**3b. Narrative**
+> watched a dev orchestrate 49 subagents in parallel for 2.5 hours. estimated cost: $8k-15k. a finance team let 23 subagents run unattended for 3 days and racked up $47k. the agents worked fine. nobody was watching the meter.
 
 ### Tier 4 — Long tweet
-**4a. Narrative**
-> february: fraudsters attach stolen debit cards to thousands of polymarket US accounts, checkout.com flags 80%+ of deposits as fraudulent. compliance escalates. CEO's answer, per WSJ: keep growing, pay the fine if it ever surfaces. april: CCO resigns. later: US CEO fired, heads of US reg and AML gone too. september: CFTC opens an investigation and orders records preserved — the same week the company closes a $1B raise at $21B. this is what reflexive valuation looks like: the market paid for growth velocity and got handed the bill for what that velocity skipped.
+**4a. Data-driven**
+> openai's median researcher now spends $600/day running coding agents against openai's own models, up from $162/day in july. the heaviest 10% burn past $7,000/day. openai frames this as 3.1 agent-workdays per human 8-hour day since june. the catch buried in their own numbers: over half of the successful long-running agent tasks still needed a human to land them. running a fleet of these things is less "hire an intern" and more "hire an intern who bills by the token and still needs you to sign off." the productivity is real. so is the invoice.
 
-**4b. Data drop**
-> 80%+ of polymarket's incoming US deposits flagged fraudulent at peak vs ~1% industry baseline. $10M stolen via debit-card fraud. CCO resigned, US CEO fired, AML and reg leads gone. CFTC now has a preservation order. and the raise closed at $21B anyway. prediction markets priced growth, not the debt that growth was quietly running up.
+**4b. Builder's breakdown**
+> a dev orchestrated 49 subagents in parallel for 2.5 hours and burned an estimated $8k-15k in one session. a finance team let 23 subagents run unattended for 3 days and racked up $47k. agent costs don't look like chat costs, they stack: parallel calls, thinking tokens billed at output rates, long context reruns. the fix isn't fewer agents, it's actually watching the meter while they run. learned this running my own fleet across a few harnesses. credits disappear faster than you'd think.
 
 ### Tier 5 — Thread opener
 **5a. Thesis-first**
-> polymarket's $21B valuation and its CFTC fraud investigation are the same story, not two separate ones.
+> openai's own researchers 4x'd their agent token spend in a month. the heaviest users now burn $7k/day. and over half their long tasks still need a human to close them out. the bill for "autonomous" agents is arriving before the autonomy is.
 ---
-- the fraud: $10M stolen via stolen debit cards, 80%+ of deposits flagged
-- the response: "keep growing, pay the fine later" (per WSJ)
-- the fallout: CCO resigns, US CEO fired, AML/reg leads gone
-- the CFTC opens a probe and orders records preserved
-- the raise closes at $21B in the same window
-- what this says about how prediction-market growth actually gets priced
+- the numbers: $162/day → $600/day median researcher spend, 4x in one month (july to now)
+- top 10% of users now burn past $7k/day
+- openai's framing: 3.1 "agent-workdays" logged per human 8-hour day since june
+- the catch buried in their own report: over half of successful 4-8hr agent tasks still needed a human to land them
+- outside proof it's not just openai: 49 subagents/2.5hrs = $8-15k one session, 23 unattended subagents/3 days = $47k
 
 **5b. Question**
-> if a platform's own compliance team says 80% of deposits are fraudulent and the CEO's answer is "keep growing," what exactly is a $21B valuation pricing in?
+> if an agent needs a human to land the task half the time, is it still autonomous, or just an expensive assistant with a token bill?
 ---
-- the WSJ timeline: fraud flagged, CCO ignored then gone
-- the people who left: CCO, US CEO, AML/reg heads
-- the CFTC preservation order, filed mid-raise
-- why "compliant per outside counsel" isn't the same as "safe"
-- what it means for anyone still treating polymarket as risk-free rails
+- openai's own admission: over half of successful 4-8hr agent tasks needed human intervention to close
+- meanwhile spend 4x'd in a month, top users now past $7k/day chasing throughput
+- real-world proof outside openai: 49 subagents/2.5hrs = $8-15k, 23 unattended subagents = $47k/3 days
+- the pattern: cost is scaling faster than autonomy is
+- running my own fleet across harnesses — the credits math matters as much as which model you pick
+
+---
+
+**Best overall:** 3a — sharpest reframe, fully self-contained, lands the "expensive intern" line without needing the numbers spelled out.
+**Best per tier:** 1a (one-liner, cleanest hook) · 2b (two-punch, sharpest wit) · 3a (paragraph) · 4b (long tweet, ties in personal fleet-operator experience) · 5a (thread opener, strongest concrete hook)
+
+**Sources:** OpenAI internal token-spend disclosure via Startup Fortune / IT Pro (median researcher $162→$600/day, top 10% >$7k/day, 3.1 agent-workdays/human-day since June, >50% of long tasks needed human intervention); CloudZero / Finout Claude Code pricing writeups (49-subagent $8-15k single session; 23-subagent $47k/3-day finance-team overrun). Path A (XAI x_search) attempted, failed http-403 billing-exhausted (10th+ consecutive failure today across the fleet) — fell back to WebSearch per skill fallback rules.

@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260922T210142Z_write-tweet_189ad1",
+  "skill": "write-tweet",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "write-tweet|2026-09-22T21:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "memory_log_duplication: '### write-tweet' section appears 3 times in memory/logs/2026-09-22.md tail (full entry, then two partial runid+status copies); over-appending",
+    "strategy_mismatch: topic (AI agent token costs) is infrastructure meta relevant to Aeon, not a crypto trading signal per north-star metric ('tradeable, correct crypto signal surfaced inside Skopos chat')",
+    "channel_formatting_as_decision_card: outputs 5 tiers × 2 options (studio format); requires operator selection. Per strategy, should lead with conclusion first (~150 chars) and single recommendation. Delivers a menu, not decision-grade output.",
+    "output_is_options_not_decision: run recommends tier 3a as 'best overall' but then lists all 10 options without narrowing. Matches skill contract (multi-format studio) but violates STRATEGY (decision-grade, single recommendation first)."
+  ],
+  "usage": {
+    "input_tokens": 29,
+    "output_tokens": 17457,
+    "cache_read_input_tokens": 877898,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9970733999999999
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/write-tweet/run_20260922T210142Z_write-tweet_189ad1.md",
+  "result_hash": "sha256:e882f4de0917ec2adb54a5b687a22d6fc20048f8b7a4099b5f429257eee55616",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 11
+    },
+    {
+      "name": "read",
+      "count": 3
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "write-tweet|2026-09-22T21:00:00Z",
+  "scheduled_at": "2026-09-22T21:00:00Z",
+  "deadline": "2026-09-22T21:11:42.308402691Z",
+  "created_at": "2026-09-22T21:01:42.308402691Z",
+  "updated_at": "2026-09-22T21:10:45.485407338Z",
+  "completed_at": "2026-09-22T21:10:45.485398425Z"
+}
