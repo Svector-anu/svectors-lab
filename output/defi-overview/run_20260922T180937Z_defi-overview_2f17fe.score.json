@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260922T180937Z_defi-overview_2f17fe",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 2,
+  "memory_hygiene": 5,
+  "channel_formatting": 2,
+  "flags": [
+    "error-prefix-blocks-delivery",
+    "scope-ok-false-mismatch-with-content",
+    "run-event-metadata-incomplete",
+    "missing-explicit-position-calls",
+    "model-attribution-missing"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

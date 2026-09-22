@@ -1,0 +1,102 @@
+{
+  "run_id": "run_20260922T180937Z_defi-overview_2f17fe",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-22T18:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": false,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "error-prefix-blocks-delivery",
+    "scope-ok-false-mismatch-with-content",
+    "run-event-metadata-incomplete",
+    "missing-explicit-position-calls",
+    "model-attribution-missing"
+  ],
+  "usage": {
+    "input_tokens": 109,
+    "output_tokens": 41819,
+    "cache_read_input_tokens": 3754251,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.3988693000000003
+  },
+  "scope_violations": [
+    "added:.tmp",
+    "added:.tmp/cg_global.json",
+    "added:.tmp/cg_markets.json",
+    "added:.tmp/cg_price.json",
+    "added:.tmp/cg_trending.json",
+    "added:.tmp/chains.json",
+    "added:.tmp/dexs.json",
+    "added:.tmp/fees.json",
+    "added:.tmp/fng.json",
+    "added:.tmp/hist_Arbitrum.json",
+    "added:.tmp/hist_Avalanche.json",
+    "added:.tmp/hist_BSC.json",
+    "added:.tmp/hist_Base.json",
+    "added:.tmp/hist_Bitcoin.json",
+    "added:.tmp/hist_Bittensor.json",
+    "added:.tmp/hist_Ethereum.json",
+    "added:.tmp/hist_Hyperliquid_L1.json",
+    "added:.tmp/hist_Ink.json",
+    "added:.tmp/hist_Monad.json",
+    "added:.tmp/hist_OP_Mainnet.json",
+    "added:.tmp/hist_Plasma.json",
+    "added:.tmp/hist_Polygon.json",
+    "added:.tmp/hist_Robinhood_Chain.json",
+    "added:.tmp/hist_Solana.json",
+    "added:.tmp/hist_Stellar.json",
+    "added:.tmp/hist_Sui.json",
+    "added:.tmp/hist_Tron.json",
+    "added:.tmp/hist_eth.json",
+    "added:.tmp/poly_liq.json",
+    "added:.tmp/poly_vol.json",
+    "added:.tmp/pools.json",
+    "added:.tmp/protocols.json",
+    "added:.tmp/stables.json"
+  ],
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260922T180937Z_defi-overview_2f17fe.md",
+  "result_hash": "sha256:ee04fa41a20c42d9c123d571c92ff585a8f8c7ce365ef375dba2d3bbf669c6d9",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 51
+    },
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-22T18:00:00Z",
+  "scheduled_at": "2026-09-22T18:00:00Z",
+  "deadline": "2026-09-22T18:19:37.909437431Z",
+  "created_at": "2026-09-22T18:09:37.909437431Z",
+  "updated_at": "2026-09-22T18:17:07.427612257Z",
+  "completed_at": "2026-09-22T18:17:07.42760311Z"
+}
