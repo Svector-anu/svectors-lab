@@ -6,7 +6,7 @@
 | 2 | write-tweet | 1 | 1 | 0 | 4.0 | 4 | - |
 | 3 | github-trending | 2 | 2 | 0 | 3.5 | 3 | - |
 | 4 | slop-watch | 2 | 2 | 0 | 3.5 | 4 | - |
-| 5 | defi-overview | 5 | 4 | 1 | 3.2 | 5 | - |
+| 5 | defi-overview | 6 | 5 | 1 | 3.5 | 5 | - |
 | 6 | narrative-tracker | 5 | 5 | 0 | 3.0 | 3 | - |
 | 7 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 8 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
