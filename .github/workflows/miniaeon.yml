@@ -34,7 +34,17 @@ on:
   #   types: [opened, synchronize, edited]
 
 concurrency:
-  group: miniaeon-${{ github.ref }}
+  # Scheduled ticks and pings share one group, so two ticks never overlap. A
+  # workflow_dispatch (manual run or a create-prove prove- dispatch) gets its
+  # own group keyed by its unique run id, so it never queues behind a tick and
+  # never gets evicted when a newer tick lands - live-observed 2026-09-21: a
+  # manual dispatch queued behind an in-progress ping, then a second ping
+  # arrived and cancelled the queued manual run before it ever started (GitHub
+  # Actions keeps only one queued run per group). Safe to split: the publish
+  # step's "miniaeon sync" already pulls --rebase and regenerates derived
+  # state on a push conflict, so a manual run racing a tick's own push
+  # self-heals instead of corrupting shared state.
+  group: miniaeon-${{ github.event_name == 'workflow_dispatch' && github.run_id || 'tick' }}
   cancel-in-progress: false
 
 permissions:

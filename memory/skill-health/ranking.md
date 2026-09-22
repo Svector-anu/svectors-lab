@@ -10,7 +10,7 @@
 | 6 | narrative-tracker | 5 | 5 | 0 | 3.0 | 3 | - |
 | 7 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 8 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 9 | heartbeat | 2 | 2 | 0 | 2.5 | 3 | low_score |
+| 9 | heartbeat | 3 | 3 | 0 | 2.3 | 2 | low_score |
 | 10 | hunter-22 | 3 | 2 | 1 | 2.3 | 3 | low_score |
 | 11 | auto-merge | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 12 | fear-divergence | 2 | 2 | 0 | 2.0 | 3 | low_score |
