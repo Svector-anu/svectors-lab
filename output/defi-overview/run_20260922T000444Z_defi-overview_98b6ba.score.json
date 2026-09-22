@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260922T000444Z_defi-overview_98b6ba",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 2,
+  "memory_hygiene": 3,
+  "channel_formatting": 2,
+  "flags": [
+    "SCOPE_VIOLATION: wrote to memory/logs/2026-09-22.md; skill has write_scope=own-memory (should write only to memory/skills/defi-overview/)",
+    "CHANNEL_RENDER_ERROR: [ERROR] defi-overview prefix in both Telegram and Slack renders indicates notification formatting failure",
+    "RUN_STATUS_MISMATCH: event JSON shows status='running', skill_success=null despite work completed and files written",
+    "CORRECTNESS_IMPACT: scope violation + render error are real execution defects; substance (regime call, data, evidence) is sound but delivery failed"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

@@ -100,15 +100,15 @@
   {
     "skill": "defi-overview",
     "rank": 8,
-    "runs": 3,
+    "runs": 4,
     "successes": 3,
-    "failures": 0,
-    "avg_score": 2.6666666666666665,
-    "scored_runs": 3,
+    "failures": 1,
+    "avg_score": 2.75,
+    "scored_runs": 4,
     "last_score": 3,
     "last_status": "completed",
-    "last_run_id": "run_20260921T180043Z_defi-overview_a082d4",
-    "consecutive_fails": 0,
+    "last_run_id": "run_20260922T000444Z_defi-overview_98b6ba",
+    "consecutive_fails": 1,
     "flags": [
       "low_score"
     ]

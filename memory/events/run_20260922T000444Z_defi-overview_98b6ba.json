@@ -1,0 +1,82 @@
+{
+  "run_id": "run_20260922T000444Z_defi-overview_98b6ba",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-22T00:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": false,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "SCOPE_VIOLATION: wrote to memory/logs/2026-09-22.md; skill has write_scope=own-memory (should write only to memory/skills/defi-overview/)",
+    "CHANNEL_RENDER_ERROR: [ERROR] defi-overview prefix in both Telegram and Slack renders indicates notification formatting failure",
+    "RUN_STATUS_MISMATCH: event JSON shows status='running', skill_success=null despite work completed and files written",
+    "CORRECTNESS_IMPACT: scope violation + render error are real execution defects; substance (regime call, data, evidence) is sound but delivery failed"
+  ],
+  "usage": {
+    "input_tokens": 65,
+    "output_tokens": 31118,
+    "cache_read_input_tokens": 2007412,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.6175586
+  },
+  "scope_violations": [
+    "added:.tmp",
+    "added:.tmp/cg_global.json",
+    "added:.tmp/cg_markets.json",
+    "added:.tmp/cg_price.json",
+    "added:.tmp/cg_trending.json",
+    "added:.tmp/chains.json",
+    "added:.tmp/dexs.json",
+    "added:.tmp/fees.json",
+    "added:.tmp/fng.json",
+    "added:.tmp/poly_liq.json",
+    "added:.tmp/poly_vol.json",
+    "added:.tmp/pools.json",
+    "added:.tmp/protocols.json",
+    "added:.tmp/stables.json"
+  ],
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260922T000444Z_defi-overview_98b6ba.md",
+  "result_hash": "sha256:6e945b6c064d2c23cb346d89c36c24d97663f28b8fcaa3ff8c46d25b4c4d1528",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 29
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-22T00:00:00Z",
+  "scheduled_at": "2026-09-22T00:00:00Z",
+  "deadline": "2026-09-22T00:14:44.633660622Z",
+  "created_at": "2026-09-22T00:04:44.633660622Z",
+  "updated_at": "2026-09-22T00:10:33.022228013Z",
+  "completed_at": "2026-09-22T00:10:33.022219968Z"
+}
