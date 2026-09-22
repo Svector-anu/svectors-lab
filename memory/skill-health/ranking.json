@@ -128,8 +128,24 @@
     ]
   },
   {
-    "skill": "heartbeat",
+    "skill": "fear-divergence",
     "rank": 10,
+    "runs": 2,
+    "successes": 2,
+    "failures": 0,
+    "avg_score": 2,
+    "scored_runs": 2,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T082032Z_fear-divergence_3b9991",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "heartbeat",
+    "rank": 11,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -145,7 +161,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 11,
+    "rank": 12,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -161,7 +177,7 @@
   },
   {
     "skill": "skill-health",
-    "rank": 12,
+    "rank": 13,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -177,7 +193,7 @@
   },
   {
     "skill": "hunter-22",
-    "rank": 13,
+    "rank": 14,
     "runs": 2,
     "successes": 1,
     "failures": 1,
@@ -186,22 +202,6 @@
     "last_score": 2,
     "last_status": "completed",
     "last_run_id": "run_20260921T143149Z_hunter-22_ef0b65",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "fear-divergence",
-    "rank": 14,
-    "runs": 1,
-    "successes": 1,
-    "failures": 0,
-    "avg_score": 1,
-    "scored_runs": 1,
-    "last_score": 1,
-    "last_status": "completed",
-    "last_run_id": "run_20260921T092435Z_fear-divergence_a51ce7",
     "consecutive_fails": 0,
     "flags": [
       "low_score"
