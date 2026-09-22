@@ -131,13 +131,13 @@
     "consecutive_fails": 1
   },
   "github-trending": {
-    "last_run_id": "run_20260921T092522Z_github-trending_e301ba",
-    "last_dispatch": "2026-09-21T09:25:22.937033389Z",
+    "last_run_id": "run_20260922T090532Z_github-trending_26d29d",
+    "last_dispatch": "2026-09-22T09:05:32.950067132Z",
     "last_status": "completed",
-    "last_success": "2026-09-21T09:29:02.775706916Z",
+    "last_success": "2026-09-22T09:09:23.279655544Z",
     "last_failed": "2026-09-17T06:45:27Z",
-    "total_runs": 166,
-    "total_successes": 37,
+    "total_runs": 167,
+    "total_successes": 38,
     "total_failures": 129
   },
   "heartbeat": {
