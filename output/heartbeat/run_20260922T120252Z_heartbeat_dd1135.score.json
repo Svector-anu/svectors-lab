@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260922T120252Z_heartbeat_dd1135",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 3,
+  "strategy_alignment": 2,
+  "evidence": 2,
+  "scope_compliance": 3,
+  "memory_hygiene": 2,
+  "channel_formatting": 1,
+  "flags": [
+    "notification_not_sent",
+    "incomplete_run_execution",
+    "token_usage_unknown",
+    "log_entry_truncated",
+    "stdout_output_missing",
+    "verdict_not_delivered_to_operator"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "383c6ab0f1d28da10e27749081797bf81127c8ad"
+}
