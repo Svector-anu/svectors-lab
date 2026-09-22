@@ -42,8 +42,22 @@
     "flags": []
   },
   {
-    "skill": "defi-overview",
+    "skill": "slop-watch",
     "rank": 4,
+    "runs": 2,
+    "successes": 2,
+    "failures": 0,
+    "avg_score": 3.5,
+    "scored_runs": 2,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T082553Z_slop-watch_621c29",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "defi-overview",
+    "rank": 5,
     "runs": 5,
     "successes": 4,
     "failures": 1,
@@ -57,7 +71,7 @@
   },
   {
     "skill": "narrative-tracker",
-    "rank": 5,
+    "rank": 6,
     "runs": 5,
     "successes": 5,
     "failures": 0,
@@ -71,7 +85,7 @@
   },
   {
     "skill": "preference-profile",
-    "rank": 6,
+    "rank": 7,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -85,20 +99,6 @@
   },
   {
     "skill": "shiplog",
-    "rank": 7,
-    "runs": 1,
-    "successes": 1,
-    "failures": 0,
-    "avg_score": 3,
-    "scored_runs": 1,
-    "last_score": 3,
-    "last_status": "completed",
-    "last_run_id": "run_20260921T093951Z_shiplog_3470b1",
-    "consecutive_fails": 0,
-    "flags": []
-  },
-  {
-    "skill": "slop-watch",
     "rank": 8,
     "runs": 1,
     "successes": 1,
@@ -107,7 +107,7 @@
     "scored_runs": 1,
     "last_score": 3,
     "last_status": "completed",
-    "last_run_id": "run_20260921T094359Z_slop-watch_a7f04d",
+    "last_run_id": "run_20260921T093951Z_shiplog_3470b1",
     "consecutive_fails": 0,
     "flags": []
   },
