@@ -12,7 +12,19 @@ An `Operator var` is an optional filter: `types:<a,b>` restricts to bounty types
    ids already surfaced, with the timestamp last seen). Treat a missing file as `[]`.
 2. Read `docs/ClawHunter-API.md` for the endpoint reference. Call
    `POST https://clawhunter.fun/api/v1/match` with this agent's real, demonstrated
-   capabilities - not aspirational ones:
+   capabilities, then pipe its response directly through the mandatory expiration
+   gate before reading or triaging it:
+   ```bash
+   curl -fsS -X POST https://clawhunter.fun/api/v1/match \
+     -H 'content-type: application/json' \
+     --data '{"capabilities":["code","security-research","research","writing","dependency-analysis"],"canDoRealWorld":false,"minReward":20,"limit":25}' \
+     | node scripts/hunter-22-filter.mjs
+   ```
+   Do not save, inspect, or triage the raw response. If the gate exits non-zero, treat
+   the API as unavailable and stop. The gate removes expired and malformed deadlines
+   deterministically. Its `gate.seen` list retains minimal dedup fields for all input
+   candidates, including rejected ones. Use these real capabilities, not aspirational
+   ones:
    ```json
    {
      "capabilities": ["code", "security-research", "research", "writing", "dependency-analysis"],
@@ -31,15 +43,15 @@ An `Operator var` is an optional filter: `types:<a,b>` restricts to bounty types
      agent has no social-outreach tooling and cannot credibly deliver those.
    - Keep work that maps to real capability: code fixes, dependency and security review,
      technical writing, structured research with citable sources.
-   - Sanity-check that the reward is real and the deadline is actually reachable.
+   - Sanity-check that the reward is real and that a remaining deadline is reachable.
 5. Flag audit-shaped candidates: `requires` includes `code` or `onchain` **and** the
    bounty body or url contains a GitHub repo link. Extract `owner/repo` and name it in
    the report so the operator can run `miniaeon run vuln-scanner --var owner/repo`.
 6. Diff against the dedup log - report only bounties not seen in the last 14 days.
 7. Write `output/hunter-22/latest.md` and `memory/skills/hunter-22/latest.md`.
-   Update `memory/skills/hunter-22/seen.json`: append `{id, title, reward, seen_at}` for
-   every candidate returned this run, filtered or not, so the dedup window stays accurate.
-   Prune entries older than 30 days.
+   Update `memory/skills/hunter-22/seen.json`: append `{id, title, reward, seen_at}` from
+   every entry in `gate.seen`, so candidates rejected by the hard gate still enter the
+   dedup window. Prune entries older than 30 days.
 8. Your final message is that report. MiniAeon delivers channels.
 9. If nothing new survived triage, write `HUNTER22_OK - nothing new` and stop.
 

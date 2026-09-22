@@ -149,6 +149,8 @@ jobs:
         run: bash scripts/tests/test_dry_run.sh
       - name: secretcurl argv-exposure tests
         run: bash scripts/tests/test_secretcurl.sh
+      - name: hunter-22 expiration gate tests
+        run: bash scripts/tests/test_hunter_22_filter.sh
       - name: vuln-scanner PoC gate tests
         run: bash scripts/tests/test_vuln_poc_gate.sh
       - name: vuln-scanner Riva dossier tests
