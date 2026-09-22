@@ -1,0 +1,64 @@
+{
+  "run_id": "run_20260922T183745Z_narrative-tracker_2fd66f",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-22T18:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "path-a-billing-exhausted-9-runs",
+    "proof-line-format-implicit"
+  ],
+  "usage": {
+    "input_tokens": 23,
+    "output_tokens": 12925,
+    "cache_read_input_tokens": 562867,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.7915161000000002
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260922T183745Z_narrative-tracker_2fd66f.md",
+  "result_hash": "sha256:c6b6369ef4138f9a53ea2f593de83bafa8eef2a5c30a93905012173a40343952",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 8
+    },
+    {
+      "name": "web_search",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-22T18:30:00Z",
+  "scheduled_at": "2026-09-22T18:30:00Z",
+  "deadline": "2026-09-22T18:47:45.530331022Z",
+  "created_at": "2026-09-22T18:37:45.530331022Z",
+  "updated_at": "2026-09-22T18:41:05.119594108Z",
+  "completed_at": "2026-09-22T18:41:05.119585522Z"
+}
