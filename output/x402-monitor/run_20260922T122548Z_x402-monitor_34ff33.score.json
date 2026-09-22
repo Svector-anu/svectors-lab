@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260922T122548Z_x402-monitor_34ff33",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 4,
+  "memory_hygiene": 4,
+  "channel_formatting": 4,
+  "flags": [
+    "memory_md_pointer_claim_unverified — canonical result claims MEMORY.md pointer refreshed, but shown file does not display top-level protocol-tracker index entry; logs/state files present but main index unclear",
+    "dedup_check_undocumented — skill contract requires scanning 3d of logs before run to avoid re-reporting signals; no evidence shown this was performed (results look fresh but process gap)",
+    "scoring_context_opaque — momentum score of 18 pts concrete but lacks denominator and prior-week comparison; operator cannot assess if breakout is real momentum shift vs routine variance"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

@@ -3,14 +3,19 @@ type: Reference
 title: x402 Ecosystem Tracker
 description: Per-run state for the x402 Protocol Monitor — known integrations, npm stats, GitHub repo counts, signal log.
 tags: [x402, protocol-monitor, micropayments, ai-agents]
-timestamp: 2026-09-17T00:00:00Z
+timestamp: 2026-09-22T00:00:00Z
 ---
 
 # x402 Ecosystem Tracker
 
-*Last run: 2026-09-17*
+*Last run: 2026-09-22*
 
 ## Known Integrations
+- EvolutionDeep/murmur (31★) — fruit-fly-themed autonomous agent swarm settling payments in USDC over x402 on Arc mainnet
+- nirholas/robinhood-chain-x402 (6★) — spec-conformant x402 payment rail for USDG on Robinhood Chain (chain ID 4663); gasless EIP-3009 middleware + facilitator
+- PayAINetwork/x402-batch-preview (0★) — PayAI's Solana batch-settlement preview release (2026-09-22), extending the EVM batch-settlement scheme to SVM
+- harrxzz/token-security-mcp (0★) — MCP gateway selling raw token-security data (honeypot, taxes, holders, liquidity) per-request via x402 on Arc mainnet
+- quantum-labs-tech/vat-oracle (0★) — autonomous machine-native EU VAT validation oracle on Base L2 priced via x402
 - cloudflare/agents (5234★) — official Cloudflare agents framework; x402 listed as native pay-per-call feature
 - x402-rs/x402-rs (277★) — Rust x402 toolkit; Permit2 + usage-based payments; multi-chain (EVM, Solana, Aptos)
 - voidly-ai/voidly-pay (11★) — off-chain credit ledger + hire marketplace for AI agents; x402 adapter included
@@ -56,11 +61,11 @@ timestamp: 2026-09-17T00:00:00Z
 - api-evangelist/social-fetch (1★) — hosted social-data API with MCP discovery and x402 pay-per-call access
 
 ## Key Stats
-- npm @coinbase/x402: 43,829 weekly downloads (-19,123 vs prior run; +5,695 vs 2026-07-08 baseline)
-- npm x402: 313,007 weekly downloads (+34,915 vs prior run; +67,066 vs 2026-07-08 baseline)
+- npm @coinbase/x402: 33,003 weekly downloads (-10,826 vs prior run; -4,301 vs 2026-07-08 baseline)
+- npm x402: 317,411 weekly downloads (+4,404 vs prior run; +72,404 vs 2026-07-08 baseline)
 - npm paykit: 404 (not found — skipped)
-- GitHub repos matching x402: 10,165 broad matches reported by GitHub search; 723 repositories matched x402 in README/description and were created since 2026-09-10. Five newly created integrations were retained after baseline and relevance checks.
-- Notable announcements: Cardano Foundation engineers added client, server, facilitator, and example support to the official x402 codebase; X Pay launched a Base-mainnet gateway; an independent seller-index audit found only 1,253 of 4,278 indexed sellers currently dispatchable by its measured router.
+- GitHub repos matching x402: 750 repositories matched x402 in README/description and were created since 2026-09-15; 70 matched the stricter "x402 protocol" phrase. Five newly created integrations were retained after baseline and relevance checks.
+- Notable announcements: Cardano Foundation formally announced (2026-09-21) that ADA has gone live with x402 — TypeScript SDK shipped, Python pending, price broke a multi-year resistance level on the news; Coinbase disclosed a cumulative milestone of 100M+ x402 payments across Base and Solana by September; a Robinhood Chain (chain ID 4663) sub-ecosystem sprouted this week — Stock402 (pay in tokenized-stock tokens like SPY), x402hood (compliance/audit layer), Hood x402, node402, and p402 all launched or updated around the same USDG rail.
 
 ## Signal Log
 - 2026-07-08: First run. 6+ new integrations in last 7d. cloudflare/agents (5234★) is highest-signal. x402=245k/wk, @coinbase/x402=38k/wk npm. Momentum: breakout (14pts).
@@ -71,6 +76,7 @@ timestamp: 2026-09-17T00:00:00Z
 - 2026-09-01 (third run): Five more integrations absent from both earlier baselines passed relevance review (+10), spanning conformance testing, a Zenon settlement experiment, paid informant markets, WebMCP admission, and a 25-tool MCP suite. npm's measurement window remained unchanged, so installs were flat for scoring. Alchemy's dated MCP payment builder guide added one tutorial signal (+1). Momentum: breakout (11pts). Read: x402 is spreading across both application experiments and interoperability tooling; watch whether conformance suites gain independent users and protocol alignment.
 - 2026-09-08: Five newly created integrations passed relevance review (+10), spanning serverless payment gates, recurring API access, paid crypto signals, agent trading, and housing proofs. Both npm packages declined and scored zero. A physical-goods purchase (+2), a fresh reliability report (+2), and an on-chain usage analysis (+1) brought momentum to breakout (15pts). Read: ride integration breadth, but watch conversion to verified delivery—13 of 715 monitored services have passed a paid fulfillment probe, while headline volume is still bridge-heavy.
 - 2026-09-17: Five newly created integrations passed relevance review (+10), spanning multi-rail payment middleware, paid-call delivery evidence, Nano settlement, Solana trade infrastructure, and social-data APIs. `x402` npm downloads rose (+3), while `@coinbase/x402` declined and scored zero. Native Cardano tooling (+2) and X Pay's Base-mainnet gateway (+2) brought momentum to breakout (17pts). Read: ride the widening chain and middleware surface; watch usable supply—the latest independent seller audit found only 1,253 of 4,278 indexed sellers dispatchable by its router.
+- 2026-09-22: Five newly created/newly-discovered integrations passed relevance review (+10): the highest-star new repo this cycle (31★ Arc-settled agent swarm), a dedicated Robinhood Chain payment rail (+new settlement chain), a Solana batch-settlement preview from PayAI, an MCP+x402 token-security gateway, and an EU VAT-compliance oracle. `x402` npm downloads rose (+3) while `@coinbase/x402` declined and scored zero. Cardano's formal go-live announcement (+2) and Coinbase's 100M-cumulative-payments milestone (+2) were retained as notable announcements; the Robinhood Chain sub-ecosystem sprouting five projects around one new USDG rail counted as one trending-context mention (+1). Momentum: breakout (18pts). Read: ride chain and use-case breadth — payments are reaching a new brokerage-adjacent settlement layer (tokenized stocks) and a new protocol capability (Solana batch settlement) in the same week; watch whether Robinhood Chain volume is real users or launch-week noise, same caveat that's dogged every low-star weekly cohort so far.
 
 # Citations
 - [GitHub repository search API](https://api.github.com/search/repositories?q=x402%20in%3Areadme%2Cdescription%20pushed%3A%3E%3D2026-08-18&sort=updated&order=desc&per_page=20)
@@ -102,3 +108,12 @@ timestamp: 2026-09-17T00:00:00Z
 - [Cardano gains native x402 integration](https://tangem.com/en/news/adoption/41324-cardano-gains-native-x402-integration-for-digital-payments/)
 - [X Pay Base-mainnet launch](https://www.globenewswire.com/news-release/2026/09/11/3360413/0/en/x-pay-is-live-on-mainnet.html)
 - [Measured audit of x402 seller payability](https://github.com/kairenndev/x402-unpayable)
+- [GitHub repository search API — broad x402 query, created since 2026-09-15](https://api.github.com/search/repositories?q=x402+in:readme,description+created:>=2026-09-15&sort=stars&order=desc&per_page=50)
+- [GitHub repository search API — strict "x402 protocol" query, created since 2026-09-15](https://api.github.com/search/repositories?q=%22x402+protocol%22+in:readme,description+created:>=2026-09-15&sort=stars&order=desc&per_page=50)
+- [npm downloads: @coinbase/x402 — week ending 2026-09-21](https://api.npmjs.org/downloads/point/last-week/@coinbase/x402)
+- [npm downloads: x402 — week ending 2026-09-20](https://api.npmjs.org/downloads/point/last-week/x402)
+- [Cardano (ADA) Integrates x402 Payment Protocol](https://blockonomi.com/cardano-ada-integrates-x402-payment-protocol-as-price-breaks-key-resistance-level)
+- [x402 Foundation background / Coinbase 100M-payment milestone](https://bitcoinethereumnews.com/tech/cardano-ada-integrates-x402-payment-protocol-as-price-breaks-key-resistance-level/)
+- [robinhood-chain-x402 payment rail](https://github.com/nirholas/robinhood-chain-x402)
+- [PayAI Solana batch-settlement preview release](https://github.com/PayAINetwork/x402-batch-preview/releases/tag/payai-batch-preview-20260922-seal)
+- [x402 batch-settlement scheme docs](https://docs.x402.org/schemes/batch-settlement)

@@ -35,7 +35,7 @@
 ## Active Topics
 - [cumora contribution plan](topics/cumora-contribution-plan.md) — paced, credited contribution strategy for yetone/cumora (deliberately not eliza-cadence)
 - [market context](topics/market-context.md) — chop with weak daily breadth and contracting DEX volume; Avalanche DeFi is rising while privacy and broad-alt momentum fade (refreshed 2026-09-20)
-- [x402 ecosystem tracker](topics/protocol-state-x402.md) — breakout chain and middleware breadth, while independently dispatchable sellers remain the adoption-quality constraint (refreshed 2026-09-17)
+- [x402 ecosystem tracker](topics/protocol-state-x402.md) — breakout (18pts): Cardano's formal go-live, Coinbase's 100M-payment milestone, and a new Robinhood Chain (tokenized-stock) settlement rail all landed the same week (refreshed 2026-09-22)
 
 ## Skills Built
 | Skill | Date | Notes |

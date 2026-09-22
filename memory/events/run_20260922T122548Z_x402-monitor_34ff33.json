@@ -1,0 +1,65 @@
+{
+  "run_id": "run_20260922T122548Z_x402-monitor_34ff33",
+  "skill": "x402-monitor",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "x402-monitor|2026-09-22T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "memory_md_pointer_claim_unverified — canonical result claims MEMORY.md pointer refreshed, but shown file does not display top-level protocol-tracker index entry; logs/state files present but main index unclear",
+    "dedup_check_undocumented — skill contract requires scanning 3d of logs before run to avoid re-reporting signals; no evidence shown this was performed (results look fresh but process gap)",
+    "scoring_context_opaque — momentum score of 18 pts concrete but lacks denominator and prior-week comparison; operator cannot assess if breakout is real momentum shift vs routine variance"
+  ],
+  "usage": {
+    "input_tokens": 31,
+    "output_tokens": 18623,
+    "cache_read_input_tokens": 1145022,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1910306
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/x402-monitor/run_20260922T122548Z_x402-monitor_34ff33.md",
+  "result_hash": "sha256:84b863d88a0d05f81145ff099c7a070504c1cefd63b65425835ff567fb6952ea",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 15
+    },
+    {
+      "name": "read",
+      "count": 7
+    },
+    {
+      "name": "web_search",
+      "count": 6
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "x402-monitor|2026-09-22T12:00:00Z",
+  "scheduled_at": "2026-09-22T12:00:00Z",
+  "deadline": "2026-09-22T12:35:48.463941139Z",
+  "created_at": "2026-09-22T12:25:48.463941139Z",
+  "updated_at": "2026-09-22T12:31:02.409781336Z",
+  "completed_at": "2026-09-22T12:31:02.409771538Z"
+}
