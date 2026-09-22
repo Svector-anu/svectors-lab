@@ -58,14 +58,14 @@
   {
     "skill": "narrative-tracker",
     "rank": 5,
-    "runs": 4,
-    "successes": 4,
+    "runs": 5,
+    "successes": 5,
     "failures": 0,
     "avg_score": 3,
-    "scored_runs": 3,
+    "scored_runs": 4,
     "last_score": 3,
     "last_status": "completed",
-    "last_run_id": "run_20260922T013721Z_narrative-tracker_2c08a3",
+    "last_run_id": "run_20260922T065356Z_narrative-tracker_415a7c",
     "consecutive_fails": 0,
     "flags": []
   },

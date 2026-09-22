@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260922T065356Z_narrative-tracker_415a7c",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 4,
+  "memory_hygiene": 4,
+  "channel_formatting": 4,
+  "flags": [
+    "PATH_A_WRONG_INVOCATION",
+    "MISSING_COMMAND_PROOF_LINE",
+    "API_BILLING_EXHAUSTED_7_RUNS",
+    "MISSING_NOTIFY_CALL_EVIDENCE"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

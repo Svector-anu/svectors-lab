@@ -6,7 +6,7 @@
 | 2 | token-pick | 1 | 1 | 0 | 4.0 | 4 | - |
 | 3 | write-tweet | 1 | 1 | 0 | 4.0 | 4 | - |
 | 4 | defi-overview | 5 | 4 | 1 | 3.2 | 5 | - |
-| 5 | narrative-tracker | 4 | 4 | 0 | 3.0 | 3 | - |
+| 5 | narrative-tracker | 5 | 5 | 0 | 3.0 | 3 | - |
 | 6 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 7 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 8 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
