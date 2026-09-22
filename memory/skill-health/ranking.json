@@ -112,8 +112,24 @@
     "flags": []
   },
   {
-    "skill": "auto-merge",
+    "skill": "heartbeat",
     "rank": 9,
+    "runs": 2,
+    "successes": 2,
+    "failures": 0,
+    "avg_score": 2.5,
+    "scored_runs": 2,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T082142Z_heartbeat_8b852c",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "auto-merge",
+    "rank": 10,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -129,7 +145,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 10,
+    "rank": 11,
     "runs": 2,
     "successes": 2,
     "failures": 0,
@@ -138,22 +154,6 @@
     "last_score": 3,
     "last_status": "completed",
     "last_run_id": "run_20260922T082032Z_fear-divergence_3b9991",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "heartbeat",
-    "rank": 11,
-    "runs": 1,
-    "successes": 1,
-    "failures": 0,
-    "avg_score": 2,
-    "scored_runs": 1,
-    "last_score": 2,
-    "last_status": "completed",
-    "last_run_id": "run_20260921T092902Z_heartbeat_6b7afa",
     "consecutive_fails": 0,
     "flags": [
       "low_score"

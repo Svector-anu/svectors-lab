@@ -1,0 +1,24 @@
+{
+  "run_id": "run_20260922T082142Z_heartbeat_8b852c",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 3,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "state-contradiction: prompt claims run 'completed', but event file shows status='running' with skill_success=null and score=null",
+    "heartbeat-self-reference: status page marks heartbeat as '⏳ dispatched' with 12% success rate immediately after run completes; unclear if self-sample should be excluded here",
+    "metadata-staleness: event shows publish/notify/score_status all 'pending' despite run claiming completion",
+    "unknown-token-usage: run metadata has usage.unknown=true",
+    "log-redundancy: heartbeat appears twice in same log with conflicting status ('running-complete' vs 'running current')",
+    "output-minimal: canonical result '…HEARTBEAT_OK · STATUS_PAGE=DEGRADED' doesn't explain degradation root or changed state; operator sees only conclusion without context for decision",
+    "notification-dedup-unclear: issues already known from 2026-09-21, so no new notification sent; correct if pattern is 'notify only on new findings', but degraded status might warrant re-alert"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "383c6ab0f1d28da10e27749081797bf81127c8ad"
+}
