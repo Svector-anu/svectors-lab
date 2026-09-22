@@ -1,0 +1,56 @@
+{
+  "run_id": "run_20260922T064650Z_defi-overview_2f5632",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-22T06:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 5,
+  "usage": {
+    "input_tokens": 83,
+    "output_tokens": 40681,
+    "cache_read_input_tokens": 2895803,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.1248169
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260922T064650Z_defi-overview_2f5632.md",
+  "result_hash": "sha256:dd7e0e5f7da9a7a9ece498d74fe460157cc22a0251027cc9adf46361be99a792",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 38
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-22T06:00:00Z",
+  "scheduled_at": "2026-09-22T06:00:00Z",
+  "deadline": "2026-09-22T06:56:50.874642194Z",
+  "created_at": "2026-09-22T06:46:50.874642194Z",
+  "updated_at": "2026-09-22T06:53:56.850134221Z",
+  "completed_at": "2026-09-22T06:53:56.850125716Z"
+}

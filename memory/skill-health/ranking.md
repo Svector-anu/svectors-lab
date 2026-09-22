@@ -5,11 +5,11 @@
 | 1 | github-trending | 1 | 1 | 0 | 4.0 | 4 | - |
 | 2 | token-pick | 1 | 1 | 0 | 4.0 | 4 | - |
 | 3 | write-tweet | 1 | 1 | 0 | 4.0 | 4 | - |
-| 4 | narrative-tracker | 4 | 4 | 0 | 3.0 | 3 | - |
-| 5 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
-| 6 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 7 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
-| 8 | defi-overview | 4 | 3 | 1 | 2.8 | 3 | low_score |
+| 4 | defi-overview | 5 | 4 | 1 | 3.2 | 5 | - |
+| 5 | narrative-tracker | 4 | 4 | 0 | 3.0 | 3 | - |
+| 6 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
+| 7 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
+| 8 | slop-watch | 1 | 1 | 0 | 3.0 | 3 | - |
 | 9 | auto-merge | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 10 | heartbeat | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 11 | pr-review | 1 | 1 | 0 | 2.0 | 2 | low_score |

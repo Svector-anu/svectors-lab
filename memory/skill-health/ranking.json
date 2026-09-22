@@ -42,8 +42,22 @@
     "flags": []
   },
   {
-    "skill": "narrative-tracker",
+    "skill": "defi-overview",
     "rank": 4,
+    "runs": 5,
+    "successes": 4,
+    "failures": 1,
+    "avg_score": 3.2,
+    "scored_runs": 5,
+    "last_score": 5,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T064650Z_defi-overview_2f5632",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "narrative-tracker",
+    "rank": 5,
     "runs": 4,
     "successes": 4,
     "failures": 0,
@@ -57,7 +71,7 @@
   },
   {
     "skill": "preference-profile",
-    "rank": 5,
+    "rank": 6,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -71,7 +85,7 @@
   },
   {
     "skill": "shiplog",
-    "rank": 6,
+    "rank": 7,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -85,7 +99,7 @@
   },
   {
     "skill": "slop-watch",
-    "rank": 7,
+    "rank": 8,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -96,22 +110,6 @@
     "last_run_id": "run_20260921T094359Z_slop-watch_a7f04d",
     "consecutive_fails": 0,
     "flags": []
-  },
-  {
-    "skill": "defi-overview",
-    "rank": 8,
-    "runs": 4,
-    "successes": 3,
-    "failures": 1,
-    "avg_score": 2.75,
-    "scored_runs": 4,
-    "last_score": 3,
-    "last_status": "completed",
-    "last_run_id": "run_20260922T000444Z_defi-overview_98b6ba",
-    "consecutive_fails": 1,
-    "flags": [
-      "low_score"
-    ]
   },
   {
     "skill": "auto-merge",

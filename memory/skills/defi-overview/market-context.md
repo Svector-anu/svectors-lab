@@ -1,63 +1,62 @@
 # Market Context (as of 2026-09-22)
 
-> **Take:** risk-on — BTC $86,496 (+6.39% 24h) with 17/20 top-cap breadth and Fear & Greed at 78 (Extreme Greed), up from 70. Conviction: high.
+> **Take:** risk-on — BTC $85,479 (+4.85% 24h) with 16/20 top-cap breadth and DEX volume surging +46.5% 24h to $13.6B, confirming the move. Conviction: high.
 
 ## Signal Snapshot
-- BTC $86,496 (+6.39% 24h, +10.26% 7d) · dominance 58.91% (-0.06 pp since last refresh)
-- ETH $2,772.05 (+4.38% 24h, +9.63% 7d) · ETH/BTC 0.03205
-- SOL $118.86 (+6.67% 24h, +15.57% 7d)
-- Total mcap $2.944T (+2.53% 24h) · DEX vol $9.29B 24h
-- Breadth: 17/20 green 24h · 15/20 green 7d
+- BTC $85,479 (+4.85% 24h, +10.17% 7d) · dominance 58.80% (-0.11 pp since last refresh)
+- ETH $2,733.77 (+2.77% 24h, +9.80% 7d) · ETH/BTC 0.03199
+- SOL $116.65 (+4.30% 24h, +15.48% 7d)
+- Total mcap $2.910T (+0.93% 24h) · DEX vol $13.60B 24h
+- Breadth: 16/20 green 24h · 15/20 green 7d
 - Fear & Greed: 78 (Extreme Greed) — yesterday 70
 
 ## What Changed Since Last Refresh
-- Fear & Greed jumped 70 → 78, crossing into Extreme Greed for the first time in this streak — every prior snapshot this week sat in the 70-71 Greed band.
-- BTC extended past $86K, a fresh high on top of yesterday's $85,855 close — 7th straight session with a positive print.
-- DEX volume is flat at $9.29B 24h (was $9.29B at the last refresh) despite the price extension — volume isn't confirming the move, a mild divergence worth watching.
-- HyperLend Pooled TVL fell -10.96% 1d, its third straight day clearing the -10% mover filter (-10.3% Sep 20, -10.3% and -6.3% on 9/21 passes) — a persistent bleed, not a one-off.
-- A Polymarket International vs. Polymarket US split emerged: International TVL -10.96% 1d while Polymarket US fees are +35.94% 1d / +32.46% 7d — looks like volume migrating to the US venue.
-- Bittensor's rising narrative accelerated rather than stalled: TAO is now CoinGecko's top trending coin (+19.07% 24h) with dTAO, Chutes, wTAO, and Tensorplex all +13-17% TVL 1d.
+- DEX 24h volume surged from $9.29B to $13.60B (+46.5% 1d) — the flat-volume divergence flagged in the prior snapshot has resolved; Uniswap V3 alone is +122% 1d.
+- Breadth softened slightly: 17/20 → 16/20 green 24h (still firmly risk-on).
+- HyperLend Pooled's TVL bleed decelerated sharply to -3.7% 1d, down from -11.0%/-10.3%/-6.3% on the prior three flagged days — no longer clears the -10% mover filter.
+- Pendle V2 fees +961.7% 7d against TVL +4.5% 7d ($1.3B TVL) — the clearest fees-outrunning-TVL signal in recent runs.
+- F&G held flat at 78 (Extreme Greed), unchanged since the prior refresh.
 
 ## Active Narratives
-- **Bittensor** — phase: rising. Evidence: TAO +19.1% 24h (top CoinGecko trending coin), dTAO +16.4%, Chutes +14.0%, wTAO +16.6%, Tensorplex +16.4% TVL 1d — broadest, most accelerating confirmation today.
-- **Sui** — phase: rising. Evidence: SUI +15.3% 24h (trending), Sui chain TVL +9.55% 1d / +21.3% 7d, Suilend +11.9% TVL 1d.
-- **Polymarket US migration** — phase: emerging. Evidence: Polymarket US fees +35.94% 1d / +32.46% 7d while Polymarket International TVL -10.96% 1d — first day this split shows up.
-- **HyperLend Pooled decline** — phase: fading. Evidence: TVL -10.96% 1d, third consecutive day clearing the -10% filter with no identified catalyst.
+- **Bittensor/TAO** — phase: rising. Evidence: TAO +19.5% 24h (top CoinGecko trending, up from +19.1% yesterday), Bittensor chain TVL +17.2% 1d, dTAO +16.8% 1d — accelerating into day 2.
+- **Sui** — phase: rising (decelerating). Evidence: Suilend +5.9% 1d/+29.2% 7d, SpringSui +5.1%/+38.7% 7d; chain TVL +3.5% 1d, down from yesterday's +9.6%.
+- **DEX volume surge** — phase: emerging. Evidence: DEX 24h volume +46.5% to $13.6B, Uniswap V3 volume +122% 1d — broad venue-level risk-on confirmation, first day this resolves the prior divergence flag.
+- **Pendle fee outperformance** — phase: emerging. Evidence: Pendle V2 fees +961.7% 7d vs TVL +4.5% 7d on $1.3B TVL — fee growth wildly outrunning deposits.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $27.17B (+9.72%)
-- Aave V3: $18.88B (+6.17%)
-- SSV Network: $14.55B (+8.82%)
-- Morpho Blue: $11.03B (+10.10%)
-- Binance staked ETH: $10.34B (+8.82%)
+- Lido: $26.82B (+10.54%)
+- Aave V3: $18.62B (+7.37%)
+- SSV Network: $14.32B (+9.23%)
+- Morpho Blue: $10.92B (+9.79%)
+- Binance staked ETH: $10.21B (+9.62%)
 
 ## Chain Flow (top 3 by TVL, 7d)
-- Ethereum: $62.25B (+15.24%)
-- Bitcoin: $23.59B (+10.93%)
-- Solana: $15.12B (+12.58%)
+- Ethereum: $61.66B (+7.62%)
+- Bitcoin: $23.33B (+11.99%)
+- Solana: $14.88B (+12.64%)
 
 ## Stablecoins
-Total: $312.15B (+0.38% 24h). USDT $183.49B · USDC $74.91B · USDS $6.52B · USDe $4.90B · combined share of mcap 10.6%. USDe was the only single issuer to clear the ±1% 24h filter (+1.19%).
+Total: $312.02B (+0.30% 24h). USDT $183.49B · USDC $74.78B · USDS $6.51B · USDe $4.91B · combined share of mcap 10.7%. USDD was the sharpest single-issuer move (+6.50% 1d, $1.51B); RLUSD +2.77%.
 
 ## Trending (CoinGecko)
-- TAO — +19.1% 24h, onchain data agrees (see Active Narratives) — the cleanest trending confirmation today
-- SUI — +15.3% 24h, also onchain-confirmed (chain TVL +9.55% 1d)
-- NEAR — +2.47% 24h, still on trending but a muted bounce after yesterday's fading call (Rhea Dex TVL -42.8% 1d) — not yet a reversal
+- TAO — +19.5% 24h, onchain-confirmed (see Active Narratives) — cleanest trending confirmation today, accelerating from yesterday
+- PEPE — +26.7% 24h trending, no DeFi TVL story — pure memecoin beta off the broad risk-on tape
+- PENGU — +12.6% 24h trending, no DeFi TVL tie — NFT-adjacent memecoin beta
 
 ## Prediction Markets (Polymarket, top by 24h vol)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Giants vs. Rams | 27.5% | $2.85m | $3.92m |
-| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 52.5% | $0.41m | $0.51m |
-| Will Ethereum dip to $2,250 by December 31, 2026? | 24.5% | $0.38m | $0.11m |
+| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 53.5% | $0.43m | $0.64m |
+| Will Ethereum dip to $2,250 by December 31, 2026? | 28.5% | $0.42m | $0.04m |
+| 2026 Balance of Power: R Senate, R House | 7.5% | $0.34m | $0.78m |
 
 ## Macro Catalysts (next 48h)
-- 81st UN General Assembly runs Sep 22-28 with Iranian leaders attending — geopolitical headline risk into a stretched, Extreme-Greed tape.
-- NY Fed President John Williams (permanent FOMC voter) speaks at the 2026 U.S. Treasury Market Conference today — rate-path signal ahead of the Sep 30 PCE report and Oct 2 jobs report.
+- Avalanche's Helicon upgrade executes today (Sep 22) — chain-level catalyst for AVAX/Avalanche DeFi; watch chain TVL over the next 24-48h for confirmation.
+- Polymarket prices 53.5% odds of a 25bp Fed hike after the Oct 2026 meeting — continued-hawkish-path expectation into the Sep 30 PCE and Oct 2 jobs prints.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor Bittensor/Sui exposure — both show multi-protocol TVL confirmation, not just price; treat DOGE's +14.1% 24h as BTC-beta momentum with no DeFi TVL story behind it.
-- **narrative-tracker:** watch the Polymarket US vs. International split for a full jurisdictional-migration call; confirm HyperLend Pooled's third straight down day as a durable fade, not noise.
+- **token-pick:** favor Bittensor exposure into day 2 of acceleration (broadest, multi-protocol TVL confirmation); treat PEPE/PENGU strength as pure risk-on beta, not standalone theses.
+- **narrative-tracker:** confirm whether the DEX-volume surge (Uniswap V3 +122% 1d) sustains into tomorrow as a durable venue-level signal vs a single-day spike; check HyperLend Pooled for a clean reversal call now that its bleed no longer clears the mover filter.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
