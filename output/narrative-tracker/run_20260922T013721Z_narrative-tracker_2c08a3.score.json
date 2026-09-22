@@ -1,0 +1,17 @@
+{
+  "run_id": "run_20260922T013721Z_narrative-tracker_2c08a3",
+  "score": 0,
+  "correctness": 0,
+  "usefulness": 0,
+  "strategy_alignment": 0,
+  "evidence": 0,
+  "scope_compliance": 0,
+  "memory_hygiene": 0,
+  "channel_formatting": 0,
+  "flags": [],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13",
+  "error": "scorer json: invalid character '`' after top-level value"
+}
