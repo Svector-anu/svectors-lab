@@ -327,15 +327,15 @@
     "total_failures": 183
   },
   "vuln-tracker": {
-    "last_run_id": "run_20260921T163035Z_vuln-tracker_8dab05",
-    "last_dispatch": "2026-09-21T16:30:36.070999395Z",
+    "last_run_id": "run_20260922T163715Z_vuln-tracker_bcf625",
+    "last_dispatch": "2026-09-22T16:37:15.818186545Z",
     "last_status": "completed",
     "last_success": "2026-09-20T18:17:53Z",
-    "last_failed": "2026-09-21T16:40:38.109351217Z",
-    "total_runs": 45,
+    "last_failed": "2026-09-22T16:47:17.807845776Z",
+    "total_runs": 46,
     "total_successes": 30,
-    "total_failures": 15,
-    "consecutive_fails": 1
+    "total_failures": 16,
+    "consecutive_fails": 2
   },
   "write-tweet": {
     "last_run_id": "run_20260921T214922Z_write-tweet_cfbf52",
