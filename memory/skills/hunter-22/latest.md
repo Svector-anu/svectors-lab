@@ -1,18 +1,7 @@
-# Bounties - 2026-09-21
+# Bounties - 2026-09-22
 
-3 new matches.
+1 new match.
 
-## Road to Colosseum Hackathon: Build your MVP - $800
-Venue: Superteam | https://superteam.fun/earn/listing/road-to-colosseum-hackathon-build-your-mvp
-Why it matches: Full-stack Solana MVP development with code + onchain integration (Devnet+); 11 days to ship.
-Deadline: 2026-10-02
-
-## Create an App on Cookie Chain - $500
-Venue: Superteam | https://superteam.fun/earn/listing/create-an-app-on-cookie-chain-app
-Why it matches: Build and deploy a web app on Cookie Chain SVM with wallet integration and on-chain transactions; open-source required.
-Deadline: 2026-09-22
-
-## Build and Demo a Mermail Agent Skill - $83
-Venue: Superteam | https://superteam.fun/earn/listing/build-and-demo-a-mermail-agent-skill
-Why it matches: Code + MCP-based agent skill development with documentation and video proof; submit as GitHub PR.
-Deadline: 2026-10-07
+## Biggest Fake Guru Scandals - $20.35
+Venue: pump.fun | https://pump.fun/go/f8c56095-c0ac-4655-8c43-447545871976
+Why it matches: Research and structured writing — document 3 online guru/course-seller scandals with allegations, why claims were misleading, legal/regulatory fallout, and 2+ credible sources per case.

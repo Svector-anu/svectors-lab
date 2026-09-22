@@ -128,8 +128,24 @@
     ]
   },
   {
-    "skill": "auto-merge",
+    "skill": "hunter-22",
     "rank": 10,
+    "runs": 3,
+    "successes": 2,
+    "failures": 1,
+    "avg_score": 2.3333333333333335,
+    "scored_runs": 3,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260922T100541Z_hunter-22_aa29cf",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "auto-merge",
+    "rank": 11,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -145,7 +161,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 11,
+    "rank": 12,
     "runs": 2,
     "successes": 2,
     "failures": 0,
@@ -161,7 +177,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 12,
+    "rank": 13,
     "runs": 2,
     "successes": 2,
     "failures": 0,
@@ -177,7 +193,7 @@
   },
   {
     "skill": "skill-health",
-    "rank": 13,
+    "rank": 14,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -186,22 +202,6 @@
     "last_score": 2,
     "last_status": "completed",
     "last_run_id": "run_20260921T160033Z_skill-health_51a883",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "hunter-22",
-    "rank": 14,
-    "runs": 2,
-    "successes": 1,
-    "failures": 1,
-    "avg_score": 2,
-    "scored_runs": 2,
-    "last_score": 2,
-    "last_status": "completed",
-    "last_run_id": "run_20260921T143149Z_hunter-22_ef0b65",
     "consecutive_fails": 0,
     "flags": [
       "low_score"

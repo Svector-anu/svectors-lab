@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260922T100541Z_hunter-22_aa29cf",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 2,
+  "scope_compliance": 5,
+  "memory_hygiene": 3,
+  "channel_formatting": 4,
+  "flags": [
+    "api-call-not-logged",
+    "seen-json-truncated",
+    "missing-triage-evidence",
+    "suspicious-timestamps-in-seen"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "91db69a1a10222dadea4ca7f18bc547ebbe8f5ad"
+}
