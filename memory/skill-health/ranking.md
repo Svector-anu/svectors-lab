@@ -9,11 +9,11 @@
 | 5 | slop-watch | 2 | 2 | 0 | 3.5 | 4 | - |
 | 6 | defi-overview | 6 | 5 | 1 | 3.5 | 5 | - |
 | 7 | narrative-tracker | 6 | 6 | 0 | 3.2 | 4 | - |
-| 8 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
-| 9 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 10 | hunter-22 | 4 | 3 | 1 | 2.8 | 4 | low_score |
-| 11 | heartbeat | 3 | 3 | 0 | 2.3 | 2 | low_score |
-| 12 | auto-merge | 1 | 1 | 0 | 2.0 | 2 | low_score |
+| 8 | auto-merge | 2 | 2 | 0 | 3.0 | 4 | - |
+| 9 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
+| 10 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
+| 11 | hunter-22 | 4 | 3 | 1 | 2.8 | 4 | low_score |
+| 12 | heartbeat | 3 | 3 | 0 | 2.3 | 2 | low_score |
 | 13 | fear-divergence | 2 | 2 | 0 | 2.0 | 3 | low_score |
 | 14 | pr-review | 2 | 2 | 0 | 2.0 | 2 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |

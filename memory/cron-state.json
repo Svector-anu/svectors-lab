@@ -15,13 +15,13 @@
     "total_failures": 0
   },
   "auto-merge": {
-    "last_run_id": "run_20260921T143016Z_auto-merge_af628d",
-    "last_dispatch": "2026-09-21T14:30:17.111515678Z",
+    "last_run_id": "run_20260922T140640Z_auto-merge_a455e6",
+    "last_dispatch": "2026-09-22T14:06:41.212352165Z",
     "last_status": "completed",
-    "last_success": "2026-09-21T14:31:49.288813872Z",
+    "last_success": "2026-09-22T14:07:43.293414154Z",
     "last_failed": "2026-09-17T06:45:22Z",
-    "total_runs": 52,
-    "total_successes": 36,
+    "total_runs": 53,
+    "total_successes": 37,
     "total_failures": 16
   },
   "auto-workflow": {

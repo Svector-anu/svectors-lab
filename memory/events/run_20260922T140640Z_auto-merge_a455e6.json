@@ -1,0 +1,57 @@
+{
+  "run_id": "run_20260922T140640Z_auto-merge_a455e6",
+  "skill": "auto-merge",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "auto-merge|2026-09-22T14:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "no_prs_to_process_expected_for_scheduled_run",
+    "low_signal_today_but_maintenance_correct",
+    "no_actionable_outcome_appropriate_for_dry_period"
+  ],
+  "usage": {
+    "input_tokens": 11,
+    "output_tokens": 2268,
+    "cache_read_input_tokens": 150302,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.2988036
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/auto-merge/run_20260922T140640Z_auto-merge_a455e6.md",
+  "result_hash": "sha256:30ec6402e527344628f827800ba4c69087ec7f24982b1c1b325a759a73d9b878",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 5
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "auto-merge|2026-09-22T14:00:00Z",
+  "scheduled_at": "2026-09-22T14:00:00Z",
+  "deadline": "2026-09-22T14:16:40.650720117Z",
+  "created_at": "2026-09-22T14:06:40.650720117Z",
+  "updated_at": "2026-09-22T14:07:43.293439202Z",
+  "completed_at": "2026-09-22T14:07:43.293414154Z"
+}
