@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260922T123618Z_narrative-tracker_43a1ff",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 5,
+  "flags": [
+    "JSON metadata incomplete: run status='running', skill_success/scope_ok/score null, actual_model empty. Suggests partial/uncommitted state.",
+    "Primary X.AI signal unavailable: http=403 billing-exhausted since 2026-09-21 14:04Z. Fallback to WebSearch+DefiLlama working but lower-fidelity. Persistent operational blocker.",
+    "No fresh X search narratives obtained: analysis lacks the primary signal the contract requires (x_search tool output). Relies on fallback sources + same-day defi-overview cross-check."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

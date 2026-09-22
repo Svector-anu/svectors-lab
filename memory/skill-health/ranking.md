@@ -8,7 +8,7 @@
 | 4 | github-trending | 2 | 2 | 0 | 3.5 | 3 | - |
 | 5 | slop-watch | 2 | 2 | 0 | 3.5 | 4 | - |
 | 6 | defi-overview | 6 | 5 | 1 | 3.5 | 5 | - |
-| 7 | narrative-tracker | 5 | 5 | 0 | 3.0 | 3 | - |
+| 7 | narrative-tracker | 6 | 6 | 0 | 3.2 | 4 | - |
 | 8 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 9 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 10 | heartbeat | 3 | 3 | 0 | 2.3 | 2 | low_score |
