@@ -1,0 +1,42 @@
+{
+  "run_id": "run_20260923T000215Z_defi-overview_9b91ce",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-23T00:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5",
+      "reason": "rate_limited"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "skipped",
+  "score_status": "skipped",
+  "score": null,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "unknown": true
+  },
+  "error": "omp exit 1: Provider requested 14260000ms wait, exceeds retry.maxDelayMs (300000ms). Original error: 429 {\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your account's rate limit. Please try again later.\"},\"request_id\":\"req_011CfKPb38CDZCnMGXmsMijd\"} retry-after-ms=14260000",
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-23T00:00:00Z",
+  "scheduled_at": "2026-09-23T00:00:00Z",
+  "deadline": "2026-09-23T00:12:15.912419451Z",
+  "created_at": "2026-09-23T00:02:15.912419451Z",
+  "updated_at": "2026-09-23T00:02:22.463811763Z",
+  "completed_at": "2026-09-23T00:02:22.463807046Z"
+}

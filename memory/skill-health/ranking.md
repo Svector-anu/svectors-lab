@@ -7,7 +7,7 @@
 | 3 | github-trending | 2 | 2 | 0 | 3.5 | 3 | - |
 | 4 | slop-watch | 2 | 2 | 0 | 3.5 | 4 | - |
 | 5 | write-tweet | 2 | 2 | 0 | 3.5 | 3 | - |
-| 6 | defi-overview | 7 | 5 | 2 | 3.4 | 3 | - |
+| 6 | defi-overview | 8 | 5 | 3 | 3.4 | 3 | failing |
 | 7 | narrative-tracker | 7 | 7 | 0 | 3.3 | 4 | - |
 | 8 | auto-merge | 2 | 2 | 0 | 3.0 | 4 | - |
 | 9 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
