@@ -156,8 +156,24 @@
     ]
   },
   {
-    "skill": "heartbeat",
+    "skill": "fear-divergence",
     "rank": 12,
+    "runs": 3,
+    "successes": 3,
+    "failures": 0,
+    "avg_score": 2.6666666666666665,
+    "scored_runs": 3,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260923T073439Z_fear-divergence_87270a",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "heartbeat",
+    "rank": 13,
     "runs": 3,
     "successes": 3,
     "failures": 0,
@@ -166,22 +182,6 @@
     "last_score": 2,
     "last_status": "completed",
     "last_run_id": "run_20260922T120252Z_heartbeat_dd1135",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "fear-divergence",
-    "rank": 13,
-    "runs": 2,
-    "successes": 2,
-    "failures": 0,
-    "avg_score": 2,
-    "scored_runs": 2,
-    "last_score": 3,
-    "last_status": "completed",
-    "last_run_id": "run_20260922T082032Z_fear-divergence_3b9991",
     "consecutive_fails": 0,
     "flags": [
       "low_score"

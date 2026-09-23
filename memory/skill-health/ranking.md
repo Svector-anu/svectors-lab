@@ -13,8 +13,8 @@
 | 9 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 10 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 11 | hunter-22 | 4 | 3 | 1 | 2.8 | 4 | low_score |
-| 12 | heartbeat | 3 | 3 | 0 | 2.3 | 2 | low_score |
-| 13 | fear-divergence | 2 | 2 | 0 | 2.0 | 3 | low_score |
+| 12 | fear-divergence | 3 | 3 | 0 | 2.7 | 4 | low_score |
+| 13 | heartbeat | 3 | 3 | 0 | 2.3 | 2 | low_score |
 | 14 | pr-review | 2 | 2 | 0 | 2.0 | 2 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 16 | create-prove | 1 | 0 | 1 | - | - | - |
