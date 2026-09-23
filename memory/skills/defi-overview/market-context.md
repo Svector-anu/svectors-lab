@@ -1,66 +1,64 @@
-# Market Context (as of 2026-09-22)
+# Market Context (as of 2026-09-23)
 
-> **Take:** risk-on, consolidating — BTC $86,560 has held a tight $85.5K-86.6K band for six-plus hours (3rd straight flat session) while breadth recovered to 15/20 from midday's 12/20 dip. Conviction: medium.
+> **Take:** risk-on, cooling — BTC $86,447 holds +1.3% 24h but DEX 24h volume fell 16.8% to $11.58B and Fear & Greed dropped 78→71 (Extreme Greed→Greed). Conviction: medium.
 
 ## Signal Snapshot
-- BTC $86,560 (+0.74% 24h, +13.43% 7d) · dominance 58.91% (~flat vs 58.88% this morning)
-- ETH $2,750.43 (+0.11% 24h, +13.77% 7d) · ETH/BTC 0.03178
-- SOL $117.90 (+0.45% 24h, +19.09% 7d)
-- Total mcap $2.947T (-1.73% 24h) · DEX vol $13.91B 24h
-- Breadth: 15/20 green 24h · 18/20 green 7d
-- Fear & Greed: 78 (Extreme Greed) — yesterday 70, unchanged since this morning's refresh (flat all day)
+- BTC $86,447 (+1.33% 24h, +14.01% 7d) · dominance 58.70% (-0.21 pp vs 58.91% last refresh)
+- ETH $2,755.38 (+0.96% 24h, +14.74% 7d) · ETH/BTC 0.03187
+- SOL $118.41 (+1.44% 24h, +21.70% 7d)
+- Total mcap $2.947T (-1.34% 24h) · DEX vol $11.58B 24h
+- Breadth: 16/20 green 24h · 19/20 green 7d
+- Fear & Greed: 71 (Greed) — yesterday 78 (Extreme Greed)
 
 ## What Changed Since Last Refresh
-- Breadth recovered: 12/20 green (midday snapshot) → 15/20 green now — the "concentration, not confirmation" divergence flagged at midday (total mcap -1.69% even as BTC held gains) is resolving, not deepening; total mcap still slightly negative (-1.73% 24h) but breadth is broadening back out.
-- Price action has flattened into a range: BTC $85,479 (06:46Z) → $85,950 (12:11Z) → $86,560 (now), a ~1.3% band all day after Monday's +6% spike — the institutional-ETF-inflow catalyst hasn't produced a fresh leg up, just held the gain.
-- Pendle V2's fees-outrunning-TVL divergence closed after 3 sessions: TVL 7d change crossed above the +5% filter threshold (now +5.97%, from +4.8%) — fees still elevated (+234.8% 7d) but TVL is catching up, the "sustainable-yield without sustainable growth" story is normalizing.
-- Ethena USDe remains on the fees-beating-TVL screen for a 3rd session (fees +92.6% 7d vs TVL +4.15% 7d, $4.90B TVL), though the fee-growth rate has decelerated from +183.0% this morning.
-- NEAR Bridge TVL accelerated further: +68.0% 1d ($77M→$130M), up from +46.3% this morning — ties directly into NEAR's confidential-perps launch (today's token-pick, NEAR +12.7% 24h, top CoinGecko trending).
-- HyperLend Pooled's TVL bleed has fully stalled (1d change now +0.04%, flat) after 4 sessions past the -10% mover filter.
-- DEX 24h volume ticked up modestly to $13.91B from $13.74B this morning — still on the same elevated plateau first flagged yesterday, not extending further.
+- Fear & Greed dropped 7 points (78→71), exiting Extreme Greed back into Greed for the first time in several sessions — sentiment cooling even as price holds.
+- DEX 24h volume fell 16.8% to $11.58B from $13.91B — Monday's volume surge (flagged repeatedly across the last two days) is unwinding, not extending.
+- Chain-level TVL flow went quiet: no chain cleared the ±5%/$500M mover filter today (Bittensor and NEAR both cleared it in the prior two sessions) — capital rotation across chains has stalled for now.
+- Bittensor/TAO turned negative for the first time in this tracked run: TAO -2.4% 24h ($313.95), Bittensor chain TVL -0.85% 1d — the 3-session deceleration (+19.1%→+13.5%→+11.9%) has now flipped into an outright reversal.
+- Zcash re-accelerated against the "fading/peak" call from narrative-tracker: ZEC +8.7% 24h / +40.8% 7d, the single best-performing top-20 coin today — contradicts the prior saturation read.
+- BlackRock's tokenized treasury fund (BUIDL) saw a real single-day redemption: -8.4% 1d to $2.10B — the largest single-issuer move in the stablecoin/RWA-adjacent set today.
+- **Data-source correction:** the headline TVL figure switches this run to DeFiLlama's canonical `/v2/historicalChainTvl` aggregate ($96.68B, +0.32% 1d, +12.41% 7d) instead of the prior "protocol-tracked" sum (last logged $613.1B). The protocol-sum figure double-counts re-hypothecated collateral across lending/staking protocols and never reproduced against any single canonical endpoint — same issue already flagged and fixed for Chain Flow on 2026-09-22 12:11Z. This is a methodology fix, not a market move; Chain Flow entries below were already on the canonical basis and are unaffected.
 
 ## Active Narratives
-- **NEAR ecosystem inflow** — phase: rising. Evidence: NEAR Bridge TVL +68.0% 1d ($130M), NEAR price +12.7% 24h (top CoinGecko trending), confidential-perps launch driving a $70M confidential-TVL milestone (today's token-pick).
-- **Bittensor/TAO** — phase: rising, decelerating (day 3). Evidence: TAO +11.9% 24h trending (down from +19.1%→+13.5%→+11.9% across today's three prior snapshots), Bittensor chain TVL +14.2% 1d ($532M→$607M), dTAO subnet +5.95% 1d — still confirming but momentum fading each session; memecoin-reflexivity caveat stands (Buttensor/$BUTT quote-asset demand, not Bittensor conviction).
-- **Institutional BTC accumulation** — phase: stalling. Evidence: the ~$1B Sep 21 ETF inflow (largest in 11mo) hasn't produced a fresh price leg — BTC has been flat for 6+ hours despite the catalyst still being the top macro headline; a single-day inflow spike often marks a local top rather than the start of a trend.
-- **Pendle fee outperformance** — phase: fading (from rising). Evidence: TVL 7d growth (+5.97%) has caught up past the fees-beating-TVL screen's +5% threshold after 3 sessions of qualifying — the fundamentals divergence is closing.
-- **Ethena USDe fee growth** — phase: rising, decelerating. Evidence: fees +92.6% 7d vs TVL +4.15% 7d on $4.90B TVL, down from +183.0% fee growth this morning but still clearing the screen for a 3rd session.
+- **Privacy/ZEC** — phase: rising (re-upgrade from fading). Evidence: ZEC +8.7% 24h / +40.8% 7d, top mover among the top-20 by market cap — the "saturated/Peak" call from the last two narrative-tracker passes is being contradicted by fresh price action.
+- **Bittensor/TAO** — phase: fading (downgrade from rising). Evidence: TAO -2.4% 24h ($313.95) and Bittensor chain TVL -0.85% 1d — first negative print after three sessions of decelerating gains; the memecoin-reflexivity bid (Buttensor/$BUTT) looks to be unwinding.
+- **NEAR ecosystem inflow** — phase: cooling (downgrade from rising). Evidence: NEAR price flat (-0.05% 24h) even as NEAR Bridge protocol TVL keeps growing (+37.0% 1d, $99M→$136M) — price and protocol-level TVL are diverging.
+- **Institutional BTC ETF accumulation** — phase: stalling (unchanged). Evidence: still no Sep-22 ETF print to confirm continuation of Monday's $999M inflow record; the story hasn't produced a second data point in over 24h.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $26.75B (+13.89%)
-- Aave V3: $18.62B (+10.38%)
-- SSV Network: $14.30B (+12.67%)
-- Morpho Blue: $10.98B (+11.77%)
-- Binance staked ETH: $10.18B (+13.05%)
+- Lido: $27.03B (+16.47%)
+- Aave V3: $18.87B (+12.38%)
+- SSV Network: $14.45B (+15.10%)
+- Morpho Blue: $11.13B (+13.19%)
+- Binance staked ETH: $10.38B (+15.82%)
 
 ## Chain Flow (top 3 by TVL, canonical DeFiLlama chain TVL, 1d/7d)
-- Ethereum: $54.19B (+1.55% 1d, +7.98% 7d)
-- Solana: $6.46B (+4.03% 1d, +9.07% 7d)
-- Base: $6.23B (+5.03% 1d, +10.32% 7d)
+- Ethereum: $54.79B (+0.58% 1d, +12.44% 7d)
+- Solana: $6.55B (+1.42% 1d, +14.42% 7d)
+- Base: $6.29B (+0.70% 1d, +14.39% 7d)
 
 ## Stablecoins
-Total: $312.69B (+0.50% 1d). USDT $183.52B · USDC $75.42B · USDS $6.51B · USDe $4.90B · combined share of mcap ~10.6%. USDD is the sharpest single-issuer move for a 3rd straight session (+6.50% 1d, $1.51B, unchanged from this morning's reading — likely a stale multi-hour print, not a fresh move).
+Total: $312.32B (-0.13% 1d, +0.60% 7d). USDT $183.38B · USDC $75.38B · USDS $6.52B · USDe $4.89B · combined share of mcap ~10.6%. BlackRock's BUIDL (tokenized T-bill fund) is the sharpest single-issuer move today: -8.4% 1d to $2.10B, a real redemption rather than a stale print. USDD continues its multi-session elevated read (+6.5% 1d, $1.51B).
 
 ## Trending (CoinGecko)
-- NEAR — +12.7% 24h trending, onchain-confirmed by NEAR Bridge TVL +68.0% 1d (see Active Narratives) — the cleanest multi-signal confirmation on the board right now
-- TAO — +11.9% 24h trending, decelerating for the 3rd straight snapshot (was +19.1% this morning) — still the broadest Bittensor-subnet confirmation but losing steam
-- PENGU — +10.3% 24h trending, no DeFi TVL story — NFT/collectibles-adjacent beta off the broad risk-on tape
+- PRL (Pearl) — +67.1% 24h trending, no DeFi TVL corroboration found — treat as narrow/speculative, not a broad signal
+- PONS — +18.9% 24h trending; Pons V2 fees fell -28.5% 1d / -41.4% 7d on DeFiLlama, a fee/price divergence worth watching
+- ARB — +12.3% 24h trending; Arbitrum chain TVL only +0.49% 1d / +8.88% 7d — price move is outrunning onchain confirmation so far
 
 ## Prediction Markets (Polymarket, top by 24h vol, crypto/macro-relevant)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 52.5% | $0.35m | $0.46m |
-| Will there be no change in Fed interest rates after the October 2026 meeting? | 45.5% | $0.40m | $0.36m |
-| Will Ethereum dip to $2,250 by December 31, 2026? | 27.0% | $0.31m | $0.05m |
+| Will Bitcoin reach $87,500 in September? | 80.5% | $0.92m | $0.88m |
+| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 53.5% | $0.32m | $0.69m |
+| Will there be no change in Fed interest rates after the October 2026 meeting? | 45.5% | $0.42m | $0.69m |
 
 ## Macro Catalysts (next 48h)
-- Fed-hike odds ticked back up: Polymarket's 25bp-hike-after-October market moved to 52.5% YES (from 49.5% this morning) even as risk assets held near highs — a divergence worth watching into the next Fed commentary.
-- US 10Y Treasury yield sits below 5%, Nasdaq at a record high, oil eased to ~$98.49/bbl — the supportive cross-asset backdrop from Monday is unchanged, not fresh.
-- Spot BTC ETF demand: $999M net inflow Sep 21 (largest in 11mo, 3-day total ~$1.6B) remains the dominant catalyst; no Sep 22 print yet to confirm continuation vs a one-off institutional spike.
+- Deribit's quarterly options expiry lands Sep 25 — quarter-end expiries carry substantially larger open interest than standard monthlies and are a known volatility trigger into month-end.
+- Spot BTC ETF flows: Monday's $999M inflow (largest in 11 months) is still the only data point — a Sep-22 print showing continuation vs. a one-off spike hasn't landed yet; watch for it to confirm or deflate the institutional-accumulation narrative.
 
 ## Implications for Downstream Skills
-- **token-pick:** NEAR's onchain confirmation (Bridge TVL +68% 1d, trending +12.7%) is the cleanest multi-signal setup on the board today; Bittensor/TAO momentum is decelerating for a 3rd session — treat as late-cycle, not a fresh entry.
-- **narrative-tracker:** flag Pendle V2's fees-beating-TVL divergence as closed (3-session streak ended, TVL 7d caught up past +5%) — downgrade from "rising" if still tracked; institutional-BTC-accumulation narrative is stalling (flat price 6+ hours post-catalyst), watch for a demote to fading if no Sep 22 ETF print follows through.
+- **token-pick:** ZEC's re-acceleration (+8.7% 24h/+40.8% 7d, top-20 leader) is the cleanest momentum signal today but directly conflicts with the standing "Peak/fading" narrative call — worth a fresh look before chasing; Bittensor/TAO has flipped negative, no longer a momentum candidate.
+- **narrative-tracker:** re-check Privacy/ZEC's phase — today's price action contradicts the last two "fading/saturated" calls; downgrade Bittensor/TAO from WATCH to FADE given the first negative daily TVL/price print after three decelerating sessions.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |

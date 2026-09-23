@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260923T060422Z_defi-overview_dce325",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "metadata_incomplete_at_capture: run_event.json shows status='running', skill_success/scope_ok/publish/notify/score_status=null, but work artifacts (market-context.md, logs) are present and complete",
+    "channel_density: output is detail-rich (many numeric tables, full protocol/chain/yield breakdowns) rather than terse decision-card; operator sees the full substance but must scan for the move"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
