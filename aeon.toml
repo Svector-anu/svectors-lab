@@ -25,8 +25,8 @@ max_run_cost_usd = 5.0
 # default branch. Change it with `miniaeon source set <owner/repo> [--ref x]`.
 # A private source_repo needs a MINIAEON_SOURCE_TOKEN secret with read access.
 [actions]
-source_repo = "Svector-anu/miniaeon-"
-source_ref = "instance"
+source_repo = "aaronjmars/miniaeon"
+source_ref = "main"
 
 [models]
 top = "anthropic/claude-sonnet-5"
