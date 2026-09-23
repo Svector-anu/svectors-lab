@@ -1,64 +1,68 @@
 # Market Context (as of 2026-09-23)
 
-> **Take:** chop, cooling — BTC turned red for the first time in the tracked run (-0.49% 24h, $85,531) as breadth fell to 10/20 green (from 16/20 this morning) and DEX volume extended its slide, -19.0% 1d to $11.28B. Conviction: low.
+> **Take:** risk-off drift — BTC -2.72% 24h to $84,247 with breadth cratering to 0/20 green (from 10/20 six hours ago), DEX volume flat at $11.28B on no bounce. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $85,531 (-0.49% 24h, +12.84% 7d) · dominance 58.69% (-0.01 pp vs 58.70% last refresh)
-- ETH $2,725.50 (-0.64% 24h, +13.48% 7d) · ETH/BTC 0.03187
-- SOL $117.00 (-0.27% 24h, +20.50% 7d)
-- Total mcap $2.922T (-2.80% 24h) · DEX vol $11.28B 24h
-- Breadth: 10/20 green 24h · 19/20 green 7d
-- Fear & Greed: 71 (Greed) — yesterday 78 (Extreme Greed) — index has not updated since the last refresh (daily cadence)
+- BTC $84,247 (-2.72% 24h, +11.31% 7d) · dominance 58.85% (+0.16 pp vs 58.69% last refresh)
+- ETH $2,665.23 (-3.19% 24h, +11.54% 7d) · ETH/BTC 0.03164
+- SOL $114.28 (-3.15% 24h, +17.82% 7d)
+- Total mcap $2.87T (-5.20% 24h) · DEX vol $11.28B 24h
+- Breadth: 0/20 green 24h · 19/20 green 7d
+- Fear & Greed: 71 (Greed) — yesterday 78 (Extreme Greed) — unchanged since this morning's read (daily index still hasn't caught today's selloff)
 
 ## What Changed Since Last Refresh
-- Breadth cratered intraday: 16/20 green this morning (06:04Z) → 10/20 green now — the sharpest same-day breadth deterioration in the tracked series; BTC, ETH, and SOL are all red for the first time this run.
-- DEX 24h volume kept falling: $11.58B (this morning) → $11.28B now, a second straight session of decline from Monday's $13.9B peak (change_1d -19.0%).
-- Polymarket's "Will Bitcoin reach $87,500 in September?" YES dropped from 80.5% (this morning) to 64.5% — a real repricing tracking BTC's pullback, not noise.
-- CME expanded its crypto futures lineup to include Bitcoin Cash and Uniswap: BCH +28.99% 24h (today's single best top-cap gainer) and UNI +11.9%/+15% 24h — a concrete, dated catalyst, not a coincidental pump.
-- Senate narrowly blocked the CLARITY Act, the bill that would give XRP permanent commodity status under federal law — the single legislative catalyst institutions were waiting on stalled.
-- NEAR Bridge (+20.4% 1d) and NEAR Intents (+10.3% 1d) are still the largest protocol-level TVL movers for a third straight session, though the magnitude is decelerating (was +37.0% yesterday).
+- Breadth went to zero: 10/20 green (12:12Z) → 0/20 green now — every top-20 major (BTC, ETH, SOL, XRP, ADA, DOGE, LINK, XLM) is red simultaneously for the first time this run.
+- BTC extended its slide: $85,531 (12:12Z, -0.49%) → $84,247 now (-2.72% vs 24h-ago) — first sub-$85K print this run; TVL bleed accelerated too, -0.24% 1d (12:12Z) → -1.79% 1d now.
+- NEAR Bridge flipped from a persistent 3-session inflow (+20.4% 1d at 12:12Z, +37.0% the session before) to -10.0% 1d now — first outflow session, reversing the standing NEAR-ecosystem-inflow narrative.
+- Polymarket "Will Bitcoin reach $87,500 in September?" YES kept falling: 64.5% (12:12Z) → 42.5% now, a real repricing tracking the continued pullback, not noise.
+- Polymarket Fed-October odds swung hawkish: "increase 25bps" YES 53.5% → 67.5%; "no change" YES 45.5% → 32.5% — a same-window repricing coincident with today's risk-off.
+- CME's BCH/UNI futures pop is already round-tripping intraday: BCH decelerated +28.99% → +4.0% 24h, UNI reversed from +11.9% to -0.97%.
+- DEX 24h volume held flat at $11.28B (matches 12:12Z reading almost exactly) — today's selling is a grind on steady volume, not a panic spike.
 
 ## Active Narratives
-- **CME Bitcoin Cash & Uniswap futures listing** — phase: emerging. Evidence: BCH +28.99% 24h (today's top-20 leader) and UNI +11.9% 24h/+15% per CME's own announcement — a same-day, named catalyst.
-- **NEAR ecosystem inflow** — phase: rising (3rd session). Evidence: NEAR Bridge protocol TVL +20.4% 1d, NEAR Intents +10.3% 1d, NEAR price +2.9% now confirming (was diverging from price two days ago).
-- **Privacy/ZEC** — phase: rising (2nd consecutive day). Evidence: ZEC +5.3% 24h, a top-7 CoinGecko trending coin — continues to contradict the standing narrative-tracker "fading/Peak" call.
-- **CLARITY Act legislative setback** — phase: emerging (bearish). Evidence: Senate blocked the bill granting XRP commodity status; no DeFi TVL move to confirm magnitude yet, but it's the dated catalyst behind today's macro read.
+- **Broad risk-off / flight-to-BTC** — phase: emerging. Evidence: 0/20 top-20 majors green 24h (from 16/20 this morning); BTC dominance +0.16pp to 58.85% as alts (XRP -4.85%, DOGE -7.49%, ADA -4.71%, LINK -5.81%) underperform BTC's -2.72%.
+- **NEAR ecosystem inflow** — phase: fading (demoted from rising). Evidence: NEAR Bridge TVL -10.0% 1d, first down session after a 3-day streak (+37.0%, then +20.4%); NEAR price -1.98% 24h.
+- **CME Bitcoin Cash & Uniswap futures listing** — phase: fading (from emerging). Evidence: BCH decelerated +28.99% → +4.0% 24h; UNI round-tripped to -0.97% (was +11.9%) — the same-day pop already unwinding.
+- **Fed hawkish repricing** — phase: emerging. Evidence: Polymarket "Fed +25bps Oct" YES jumped 53.5% → 67.5%, "no change" fell 45.5% → 32.5%, moving in the same window as today's selloff.
+- **Privacy/ZEC** — phase: cooling (from rising). Evidence: ZEC -1.15% 24h at $1,519.63, down from today's earlier $1,626 ATH; dropped out of CoinGecko's top-7 trending list.
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $26.74B (+14.49%)
-- Aave V3: $18.61B (+11.11%)
-- SSV Network: $14.30B (+13.28%)
-- Morpho Blue: $11.02B (+9.36%)
-- Binance staked ETH: $10.20B (+14.00%)
+- Lido: $26.08B (+12.43%)
+- Aave V3: $18.23B (+8.92%)
+- SSV Network: $14.00B (+11.71%)
+- Morpho Blue: $10.84B (+7.42%)
+- Binance staked ETH: $9.93B (+11.70%)
 
 ## Chain Flow (top 3 by TVL, canonical DeFiLlama chain TVL, 1d/7d)
-- Ethereum: $54.16B (-0.57% 1d, +11.15% 7d)
-- Solana: $6.51B (+0.83% 1d, +13.76% 7d)
-- Base: $6.26B (+0.22% 1d, +13.85% 7d)
+- Ethereum: $53.43B (-2.09% 1d, +9.45% 7d)
+- Solana: $6.39B (-1.00% 1d, +11.70% 7d)
+- Base: $6.15B (-1.55% 1d, +11.84% 7d)
 
 ## Stablecoins
-Total: $312.17B (-0.18% 1d, +0.55% 7d). USDT $183.37B · USDC $75.20B · USDS $6.54B · USDe $4.89B · combined share of mcap ~10.7%. BlackRock's BUIDL (tokenized T-bill fund) is still working off yesterday's redemption, -8.38% 1d cumulative to $2.10B. USDD remains elevated (+6.50% 1d, $1.50B, multi-session pattern continuing).
+Total: $311.90B (-0.27% 1d, +0.46% 7d). USDT $183.4B · USDC $75.14B · USDS $6.47B · USDe $4.88B · combined share of mcap ~10.9%. BUIDL (BlackRock tokenized T-bill fund) still working off redemption, -8.38% 1d to $2.10B. USDD remains elevated, +6.50% 1d — a multi-session pattern continuing from 12:12Z.
 
 ## Trending (CoinGecko)
-- BCH (Bitcoin Cash) — CME added BCH futures today; +28.99% 24h, today's single best top-20 performer
-- UNI (Uniswap) — same CME announcement added Uniswap futures; +11.9% 24h, TVL only +1.0-1.1% 1d (price outrunning on-chain confirmation so far)
-- ZEC (Zcash) — +5.3% 24h, top-7 trending; no DeFi TVL corroboration possible (privacy coin, not a DeFi asset) — treat as a price-only signal
+- NEAR — still trending despite today's TVL reversal; -1.98% 24h, $4.31
+- RAY (Raydium) — trending amid Solana DEX activity
+- PENGU — trending, no DeFi TVL corroboration (NFT/meme asset)
 
 ## Prediction Markets (Polymarket, top by 24h vol, crypto/macro-relevant)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Will Bitcoin reach $87,500 in September? | 64.5% | $0.11m | $0.10m |
-| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 53.5% | $0.18m | $0.48m |
-| Will there be no change in Fed interest rates after the October 2026 meeting? | 45.5% | $0.19m | $0.35m |
+| Will Bitcoin reach $87,500 in September? | 42.5% | $0.16m | $0.06m |
+| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 67.5% | $0.31m | $0.41m |
+| Will there be no change in Fed interest rates after the October 2026 meeting? | 32.5% | $0.40m | $0.43m |
+| Will Bitcoin dip to $70,000 by December 31, 2026? | 33.5% | $0.13m | $0.11m |
 
 ## Macro Catalysts (next 48h)
-- PCE report lands Sep 30 and the jobs report Oct 2 — both now flagged by market coverage as the next price catalysts after Monday's ETF-inflow spike faded from the headlines.
-- Deribit's quarterly options expiry lands Sep 25 — quarter-end expiries carry substantially larger open interest than standard monthlies and are a known volatility trigger into month-end.
-- Spot BTC ETF flows: still no confirmed Sep-22 print two days after Monday's $999M inflow (largest in 11 months) — the institutional-accumulation story hasn't produced a second data point; 2026 ETF flows remain net negative YTD ($450-464M outflow) despite the spike.
+- US initial jobless claims (week ending Sep 19) land Sep 24 — first fresh labor print since the selloff started.
+- Deribit's quarterly options expiry lands Sep 25 — quarter-end expiries carry substantially larger open interest than standard monthlies, a known volatility trigger.
+- Trump is hosting Xi in Washington this week — a geopolitical catalyst that could move broad risk sentiment either direction.
+- Spot BTC ETF flows: still no confirmed print since Monday's (Sep 21) $998.95M inflow (largest in 11 months, IBIT led $381M) — two days without a second data point to confirm the institutional-accumulation thesis, while today's breadth collapse argues against near-term continuation.
 
 ## Implications for Downstream Skills
-- **token-pick:** BCH/UNI's CME-futures-driven move is the cleanest fresh-catalyst momentum today, but both are majors already on every exchange — thin differentiated edge; NEAR's third-session TVL inflow is decelerating, no longer a fresh chase.
-- **narrative-tracker:** re-check Privacy/ZEC's phase for a second consecutive day — today's +5.3% again contradicts the "fading/Peak" call; flag the CLARITY Act Senate block as a new bearish regulatory input.
+- **token-pick:** no fresh differentiated long today — NEAR just reversed its 3-session inflow streak, and the BCH/UNI CME pop is already round-tripping intraday; wait for breadth to stabilize before chasing.
+- **narrative-tracker:** demote NEAR ecosystem inflow (rising → fading, TVL reversal confirmed); flag the Fed hawkish repricing (Polymarket 53.5% → 67.5%) as a new bearish macro input alongside today's breadth collapse.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
@@ -75,6 +79,7 @@ Total: $312.17B (-0.18% 1d, +0.55% 7d). USDT $183.37B · USDC $75.20B · USDS $6
 | 2026-09-20 | AVAX | $11.00 | NYSE testing disclosure supported institutional-tokenization momentum; Sep 21 unlock and reversal risk remain |
 | 2026-09-21 | ZAMA | $0.1010 | Capital rotating from saturated ZEC/privacy trade into FHE infra, 83% of supply staked, new ATH; source narrative already flagged Peak in narrative-tracker |
 | 2026-09-22 | NEAR | $4.60 | Confidential-perps launch (Hyperliquid-powered) + $70M confidential-TVL milestone triggering the NEAR@3.33 reward snapshot; risk is overbought RSI after an 80-91% weekly move, and this is the fifth straight momentum-chase HIGH pick in a row |
+| 2026-09-23 | BCH | $343.45 | CME Group's Sep 22 futures announcement (Oct 19 launch, pending regulatory review) triggered a catch-up rally; risk is sell-the-news reversal if the launch date slips — already decelerating from +27.4% to +4.0% 24h same-day |
 
 ---
 *Sources — btc/eth: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*

@@ -6,7 +6,7 @@
 | 2 | slop-watch | 3 | 3 | 0 | 4.0 | 5 | - |
 | 3 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
 | 4 | github-trending | 3 | 3 | 0 | 3.7 | 4 | - |
-| 5 | defi-overview | 10 | 7 | 3 | 3.6 | 4 | - |
+| 5 | defi-overview | 11 | 8 | 3 | 3.6 | 4 | - |
 | 6 | write-tweet | 2 | 2 | 0 | 3.5 | 3 | - |
 | 7 | narrative-tracker | 10 | 9 | 1 | 3.5 | 4 | - |
 | 8 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
