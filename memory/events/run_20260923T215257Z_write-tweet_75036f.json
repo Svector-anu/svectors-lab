@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260923T215257Z_write-tweet_75036f",
+  "skill": "write-tweet",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "write-tweet|2026-09-23T21:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "revision_offer_omitted: skill contract requires force-reply prompt for refinement; run skipped it citing 'MiniAeon has no send capability'. This is an environment constraint, but it's a contractual failure regardless.",
+    "strategy_alignment_gap: STRATEGY.md priority 2 requires 'decision-grade output with explicit position calls (front-run/ride/fade/watch)'. These drafts frame the observation ('pump then fade') but don't prescribe a trade (e.g., 'FADE: skip the headline run-up, re-enter at Oct 19 or after'). Closer to commentary than actionable regime call.",
+    "lead_could_tighten: decision-card format should lead with 'PICK: 4a' before enumeating all 10 options. Current structure is appropriate for the skill's 5-tier design but buries recommendation.",
+    "fleet_issue_noted: XAI x_search returned http-403 (billing exhausted, 15th+ consecutive failure since 2026-09-21). Already tracked elsewhere; not new to this run."
+  ],
+  "usage": {
+    "input_tokens": 25,
+    "output_tokens": 14299,
+    "cache_read_input_tokens": 639433,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.8147559
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/write-tweet/run_20260923T215257Z_write-tweet_75036f.md",
+  "result_hash": "sha256:7486558d76377757dcb0b9a7e036f0929f3f7e5aa4bddf2ff1ba7efdbfc1aef4",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 10
+    },
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "web_search",
+      "count": 1
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "write-tweet|2026-09-23T21:00:00Z",
+  "scheduled_at": "2026-09-23T21:00:00Z",
+  "deadline": "2026-09-23T22:02:57.508579007Z",
+  "created_at": "2026-09-23T21:52:57.508579007Z",
+  "updated_at": "2026-09-23T21:56:22.279057215Z",
+  "completed_at": "2026-09-23T21:56:22.27904731Z"
+}

@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260923T215257Z_write-tweet_75036f",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 5,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 3,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "revision_offer_omitted: skill contract requires force-reply prompt for refinement; run skipped it citing 'MiniAeon has no send capability'. This is an environment constraint, but it's a contractual failure regardless.",
+    "strategy_alignment_gap: STRATEGY.md priority 2 requires 'decision-grade output with explicit position calls (front-run/ride/fade/watch)'. These drafts frame the observation ('pump then fade') but don't prescribe a trade (e.g., 'FADE: skip the headline run-up, re-enter at Oct 19 or after'). Closer to commentary than actionable regime call.",
+    "lead_could_tighten: decision-card format should lead with 'PICK: 4a' before enumeating all 10 options. Current structure is appropriate for the skill's 5-tier design but buries recommendation.",
+    "fleet_issue_noted: XAI x_search returned http-403 (billing exhausted, 15th+ consecutive failure since 2026-09-21). Already tracked elsewhere; not new to this run."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
