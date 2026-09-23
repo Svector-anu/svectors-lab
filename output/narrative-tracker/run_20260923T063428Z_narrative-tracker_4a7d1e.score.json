@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260923T063428Z_narrative-tracker_4a7d1e",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 4,
+  "memory_hygiene": 3,
+  "channel_formatting": 3,
+  "flags": [
+    "xai-api-billing-exhausted-11-consecutive-runs-since-2026-09-21",
+    "proof-of-execution-format-non-standard: http-code-reported-in-narrative-not-as-echo-line",
+    "run-metadata-incomplete-at-file-write: score_status-pending-skill_success-null",
+    "fallback-sources-reduce-evidence-quality: websearch-deflllama-instead-of-x-search-volume",
+    "output-dense-for-decision-card-format: full-positioning-map-not-single-recommended-action"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

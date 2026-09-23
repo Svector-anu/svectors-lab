@@ -8,7 +8,7 @@
 | 4 | slop-watch | 2 | 2 | 0 | 3.5 | 4 | - |
 | 5 | write-tweet | 2 | 2 | 0 | 3.5 | 3 | - |
 | 6 | defi-overview | 9 | 6 | 3 | 3.5 | 4 | - |
-| 7 | narrative-tracker | 8 | 7 | 1 | 3.3 | 4 | - |
+| 7 | narrative-tracker | 9 | 8 | 1 | 3.4 | 4 | - |
 | 8 | auto-merge | 2 | 2 | 0 | 3.0 | 4 | - |
 | 9 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 10 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
