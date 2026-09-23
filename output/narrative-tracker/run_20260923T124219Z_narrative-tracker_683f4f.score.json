@@ -1,0 +1,25 @@
+{
+  "run_id": "run_20260923T124219Z_narrative-tracker_683f4f",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 4,
+  "memory_hygiene": 5,
+  "channel_formatting": 5,
+  "flags": [
+    "Minor: Bash command contract deviation. Skill specifies `echo \"xai http=$HTTP bytes=$(wc -c \u003c/tmp/xai-nt.json)\"` must appear as direct output line; run reports http codes (403 x3) in prose within Fetch status section instead. Proof is present but format is not exact. No functional impact.",
+    "Strong: Decision-grade output delivered. Leads with transitions (DEMOTED BTC ETF, PROMOTED ZEC, NEW CME/altseason), explicit position calls (RIDE/WATCH/FADE) on every narrative, evidence-backed (Polymarket odds swings, Grayscale flows $98.2M/week, DefiLlama 7D calibration deltas, CME Oct 19 date).",
+    "Strong: Strategy compliance. Correct \u003e comprehensive (notes Grok fallback loss frankly: 'Lower quality...no @handle-level driver granularity'). Decision-grade (not tables—position calls). Honest (admits path A failure reason: billing exhausted, not key missing). Conclusion-first phrasing.",
+    "Strong: Cross-checks vs prior run (06:34Z full re-classification, 12:12Z defi-overview same-day snapshot). Detects phase shifts correctly (BTC breadth 16/20→10/20 intraday, ZEC confirmed ATH $1,626 vs prior unconfirmed Sep 19 $1,594.94). Avoids re-reporting flat positions as news.",
+    "Strong: Memory appended correctly to memory/logs/2026-09-23.md under ### narrative-tracker; output files written to output/narrative-tracker/; evidence files preserved (/tmp/xai-nt-payload.json shows exact API payload sent).",
+    "Strong: No invented numbers. All figures cited: Polymarket BTC $87.5K contract 80.5%→64.5%, Grayscale ZCSH $98.2M/week inflow, ZEC prices $1,626 (+8.61% 24h, +37.93% 7d), DefiLlama 7D calibration points (AI 83.52%→80.99%, DEX 45.82%→40.34%), CME Oct 19 event date.",
+    "Technical: Fallback appropriately used (WebSearch + DefiLlama live page + defi-overview log) only after Path A failure (http=403 billing exhausted) confirmed. Honest: 'Lower quality than Path A — no @handle-level driver granularity available this run.'",
+    "Format: Telegram and Slack renders appear truncated in evidence (ending mid-sentence '...ending Sep 1' instead of '...ending Sep 18'), but canonical result and output/narrative-tracker files contain complete text."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
