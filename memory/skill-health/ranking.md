@@ -5,7 +5,7 @@
 | 1 | token-pick | 2 | 2 | 0 | 4.5 | 5 | - |
 | 2 | slop-watch | 3 | 3 | 0 | 4.0 | 5 | - |
 | 3 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
-| 4 | github-trending | 2 | 2 | 0 | 3.5 | 3 | - |
+| 4 | github-trending | 3 | 3 | 0 | 3.7 | 4 | - |
 | 5 | write-tweet | 2 | 2 | 0 | 3.5 | 3 | - |
 | 6 | defi-overview | 9 | 6 | 3 | 3.5 | 4 | - |
 | 7 | narrative-tracker | 9 | 8 | 1 | 3.4 | 4 | - |

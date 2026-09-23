@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260923T091125Z_github-trending_d1eefd",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 5,
+  "flags": [
+    "skill_scope_misaligned_with_operator_strategy_crypto_vs_github_trending",
+    "run_event_metadata_incomplete_at_scoring_time"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

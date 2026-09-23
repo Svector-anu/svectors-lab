@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260923T091125Z_github-trending_d1eefd",
+  "skill": "github-trending",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "github-trending|2026-09-23T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "skill_scope_misaligned_with_operator_strategy_crypto_vs_github_trending",
+    "run_event_metadata_incomplete_at_scoring_time"
+  ],
+  "usage": {
+    "input_tokens": 29,
+    "output_tokens": 23189,
+    "cache_read_input_tokens": 1001305,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.3199414999999999
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/github-trending/run_20260923T091125Z_github-trending_d1eefd.md",
+  "result_hash": "sha256:d7a4127286e8875f361cb771ed961dd90e46cfb2ff63b5e4d867d85b7da4fe16",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 7
+    },
+    {
+      "name": "bash",
+      "count": 10
+    },
+    {
+      "name": "web_search",
+      "count": 8
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "github-trending|2026-09-23T09:00:00Z",
+  "scheduled_at": "2026-09-23T09:00:00Z",
+  "deadline": "2026-09-23T09:21:25.102975758Z",
+  "created_at": "2026-09-23T09:11:25.102975758Z",
+  "updated_at": "2026-09-23T09:16:36.716933722Z",
+  "completed_at": "2026-09-23T09:16:36.716925246Z"
+}
