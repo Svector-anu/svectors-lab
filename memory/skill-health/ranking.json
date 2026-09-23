@@ -142,18 +142,16 @@
   {
     "skill": "hunter-22",
     "rank": 11,
-    "runs": 4,
-    "successes": 3,
+    "runs": 5,
+    "successes": 4,
     "failures": 1,
-    "avg_score": 2.75,
-    "scored_runs": 4,
+    "avg_score": 3,
+    "scored_runs": 5,
     "last_score": 4,
     "last_status": "completed",
-    "last_run_id": "run_20260922T125817Z_hunter-22_193a9c",
+    "last_run_id": "run_20260923T101019Z_hunter-22_aed26e",
     "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
+    "flags": []
   },
   {
     "skill": "fear-divergence",

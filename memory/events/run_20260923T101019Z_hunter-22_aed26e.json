@@ -1,0 +1,61 @@
+{
+  "run_id": "run_20260923T101019Z_hunter-22_aed26e",
+  "skill": "hunter-22",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "hunter-22|2026-09-23T10:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-haiku-4-5-20251001",
+  "actual_model": "anthropic/claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "bash_transcript_missing—cannot verify API call with gate filter actually executed",
+    "seen.json truncated in display—cannot verify new entry structurally valid or pruning occurred",
+    "triage decision sound but no rejected bounty details shown to operator"
+  ],
+  "usage": {
+    "input_tokens": 145,
+    "output_tokens": 4944,
+    "cache_read_input_tokens": 374551,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.1277481
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/hunter-22/run_20260923T101019Z_hunter-22_aed26e.md",
+  "result_hash": "sha256:8ed4b521d123492567817e57b5e84475bae9c687f237d4100e287a0a89422aff",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 12
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "hunter-22|2026-09-23T10:00:00Z",
+  "scheduled_at": "2026-09-23T10:00:00Z",
+  "deadline": "2026-09-23T10:15:19.387695542Z",
+  "created_at": "2026-09-23T10:10:19.387695542Z",
+  "updated_at": "2026-09-23T10:11:58.191086021Z",
+  "completed_at": "2026-09-23T10:11:58.191076012Z"
+}
