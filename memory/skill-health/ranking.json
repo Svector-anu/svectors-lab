@@ -70,8 +70,22 @@
     "flags": []
   },
   {
-    "skill": "write-tweet",
+    "skill": "narrative-tracker",
     "rank": 6,
+    "runs": 11,
+    "successes": 10,
+    "failures": 1,
+    "avg_score": 3.5555555555555554,
+    "scored_runs": 9,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260923T184339Z_narrative-tracker_e05f52",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "write-tweet",
+    "rank": 7,
     "runs": 2,
     "successes": 2,
     "failures": 0,
@@ -80,20 +94,6 @@
     "last_score": 3,
     "last_status": "completed",
     "last_run_id": "run_20260922T210142Z_write-tweet_189ad1",
-    "consecutive_fails": 0,
-    "flags": []
-  },
-  {
-    "skill": "narrative-tracker",
-    "rank": 7,
-    "runs": 10,
-    "successes": 9,
-    "failures": 1,
-    "avg_score": 3.5,
-    "scored_runs": 8,
-    "last_score": 4,
-    "last_status": "completed",
-    "last_run_id": "run_20260923T124219Z_narrative-tracker_683f4f",
     "consecutive_fails": 0,
     "flags": []
   },

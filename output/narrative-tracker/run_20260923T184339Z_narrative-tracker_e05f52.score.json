@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260923T184339Z_narrative-tracker_e05f52",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 4,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 2,
+  "flags": [
+    "CHANNEL_FORMATTING_VIOLATION: leads with 'Source confidence: lower — Path A failed' (data source caveats) instead of the actionable signal. Strategy requires 'Conclusion first, in first ~150 characters.' A trader opening this in Telegram sees a technical apology before any position call. Reorder: lead with the Fed hike → WATCH/FADE recommendations, then evidence, then source caveats.",
+    "PRESENTATION_STRUCTURE: skill contract requires the output to be a 'decision card' — outcome first, alternatives only on real uncertainty. This reads as narrative explanation (data source degradation, methodology notes) rather than 'trader sees the take and the move.' Content is substantive; packaging is backward.",
+    "XAI_INFRASTRUCTURE: X.AI API has failed 14+ consecutive runs since 2026-09-21 14:04Z with identical 403 (billing exhausted, same error body). Primary signal path is chronically degraded. Fallback (WebSearch + DefiLlama) is working and documented per spec, but systemic X.AI failure should be escalated separately.",
+    "DATA_CONFLICTS_UNFLAGGED_RESOLUTION: ZEC price disagreement (defi-overview -1.15% vs. WebSearch/Coinbase +5% 24h) kept RIDE with 'lowered conviction' but decision stands despite irresolvable source conflict. BCH stale snapshot noted but fresher read trusted (correct action, but adds ambiguity to a decision card). Both flagged (honest), not hidden (good), but for a trader reading once, the impact is unresolved."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

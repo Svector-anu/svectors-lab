@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260923T184339Z_narrative-tracker_e05f52",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-23T18:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "CHANNEL_FORMATTING_VIOLATION: leads with 'Source confidence: lower — Path A failed' (data source caveats) instead of the actionable signal. Strategy requires 'Conclusion first, in first ~150 characters.' A trader opening this in Telegram sees a technical apology before any position call. Reorder: lead with the Fed hike → WATCH/FADE recommendations, then evidence, then source caveats.",
+    "PRESENTATION_STRUCTURE: skill contract requires the output to be a 'decision card' — outcome first, alternatives only on real uncertainty. This reads as narrative explanation (data source degradation, methodology notes) rather than 'trader sees the take and the move.' Content is substantive; packaging is backward.",
+    "XAI_INFRASTRUCTURE: X.AI API has failed 14+ consecutive runs since 2026-09-21 14:04Z with identical 403 (billing exhausted, same error body). Primary signal path is chronically degraded. Fallback (WebSearch + DefiLlama) is working and documented per spec, but systemic X.AI failure should be escalated separately.",
+    "DATA_CONFLICTS_UNFLAGGED_RESOLUTION: ZEC price disagreement (defi-overview -1.15% vs. WebSearch/Coinbase +5% 24h) kept RIDE with 'lowered conviction' but decision stands despite irresolvable source conflict. BCH stale snapshot noted but fresher read trusted (correct action, but adds ambiguity to a decision card). Both flagged (honest), not hidden (good), but for a trader reading once, the impact is unresolved."
+  ],
+  "usage": {
+    "input_tokens": 25,
+    "output_tokens": 15502,
+    "cache_read_input_tokens": 637102,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.8801975999999999
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260923T184339Z_narrative-tracker_e05f52.md",
+  "result_hash": "sha256:a03f9a6cfc0def94eb1c14a6127dd5d54c7a4b9417563e26cf401eba06944a6c",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 6
+    },
+    {
+      "name": "bash",
+      "count": 8
+    },
+    {
+      "name": "web_search",
+      "count": 3
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-23T18:30:00Z",
+  "scheduled_at": "2026-09-23T18:30:00Z",
+  "deadline": "2026-09-23T18:53:39.080351461Z",
+  "created_at": "2026-09-23T18:43:39.080351461Z",
+  "updated_at": "2026-09-23T18:47:22.397258164Z",
+  "completed_at": "2026-09-23T18:47:22.397247784Z"
+}

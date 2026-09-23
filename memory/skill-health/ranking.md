@@ -7,8 +7,8 @@
 | 3 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
 | 4 | github-trending | 3 | 3 | 0 | 3.7 | 4 | - |
 | 5 | defi-overview | 11 | 8 | 3 | 3.6 | 4 | - |
-| 6 | write-tweet | 2 | 2 | 0 | 3.5 | 3 | - |
-| 7 | narrative-tracker | 10 | 9 | 1 | 3.5 | 4 | - |
+| 6 | narrative-tracker | 11 | 10 | 1 | 3.6 | 4 | - |
+| 7 | write-tweet | 2 | 2 | 0 | 3.5 | 3 | - |
 | 8 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 9 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 10 | hunter-22 | 5 | 4 | 1 | 3.0 | 4 | - |
