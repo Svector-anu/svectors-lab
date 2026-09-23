@@ -1,0 +1,58 @@
+{
+  "run_id": "run_20260923T141235Z_auto-merge_06f6a5",
+  "skill": "auto-merge",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "auto-merge|2026-09-23T14:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "Duplicate/truncated log entries: memory/logs/2026-09-23.md contains two `### auto-merge` sections with the same run_id; second entry is malformed (`status: running-compl` is incomplete)",
+    "Event metadata status is 'running' with null skill_success despite task header declaring 'Status: completed' — file appears stale",
+    "Silent-success by policy is correct (no PRs = nothing to report) but results in zero decision-grade output — operator learns only 'still empty', not why this matters or what to do",
+    "Core logic verified: state file correctly bumped, backup preserved, jq validation implied — but artifact corruption (duplicate log entry) indicates incomplete or race-condition logging"
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1802,
+    "cache_read_input_tokens": 94642,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.2148936
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/auto-merge/run_20260923T141235Z_auto-merge_06f6a5.md",
+  "result_hash": "sha256:29eabbd038864155c6495b74b503789cac24f8be6ac5ae958bbb3628ff7f8c2e",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 5
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "auto-merge|2026-09-23T14:00:00Z",
+  "scheduled_at": "2026-09-23T14:00:00Z",
+  "deadline": "2026-09-23T14:22:35.42456629Z",
+  "created_at": "2026-09-23T14:12:35.42456629Z",
+  "updated_at": "2026-09-23T14:13:39.806023362Z",
+  "completed_at": "2026-09-23T14:13:39.806014289Z"
+}
