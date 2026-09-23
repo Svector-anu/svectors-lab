@@ -1,0 +1,57 @@
+{
+  "run_id": "run_20260923T091636Z_pr-review_f98c0e",
+  "skill": "pr-review",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "pr-review|2026-09-23T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "event_json_status_stale: event file shows 'running' with null fields, but run header marks 'completed'—metadata lag or write incomplete",
+    "command_output_absent: run asserts 'gh pr list --state open returned empty' but does not display the actual command invocation or output; inference is safe for nil case but evidence chain incomplete",
+    "voice_not_matched: output is formal status-log style; STYLE.md and SOUL.md call for casual, builder-direct tone; nil case could close as 'pr-review: no open prs. repo clean. ✓' instead of the verbose summary format"
+  ],
+  "usage": {
+    "input_tokens": 7,
+    "output_tokens": 1378,
+    "cache_read_input_tokens": 100269,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.23934570000000002
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/pr-review/run_20260923T091636Z_pr-review_f98c0e.md",
+  "result_hash": "sha256:78309a45f216a8b836795df37c226ce11f199f3eaf7aa82d92b4917bb74ccf62",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 4
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "pr-review|2026-09-23T09:00:00Z",
+  "scheduled_at": "2026-09-23T09:00:00Z",
+  "deadline": "2026-09-23T09:26:36.820143798Z",
+  "created_at": "2026-09-23T09:16:36.820143798Z",
+  "updated_at": "2026-09-23T09:17:37.94255411Z",
+  "completed_at": "2026-09-23T09:17:37.942544932Z"
+}

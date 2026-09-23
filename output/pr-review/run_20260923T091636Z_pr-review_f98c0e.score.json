@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260923T091636Z_pr-review_f98c0e",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "event_json_status_stale: event file shows 'running' with null fields, but run header marks 'completed'—metadata lag or write incomplete",
+    "command_output_absent: run asserts 'gh pr list --state open returned empty' but does not display the actual command invocation or output; inference is safe for nil case but evidence chain incomplete",
+    "voice_not_matched: output is formal status-log style; STYLE.md and SOUL.md call for casual, builder-direct tone; nil case could close as 'pr-review: no open prs. repo clean. ✓' instead of the verbose summary format"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

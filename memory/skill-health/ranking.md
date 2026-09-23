@@ -14,8 +14,8 @@
 | 10 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 11 | hunter-22 | 4 | 3 | 1 | 2.8 | 4 | low_score |
 | 12 | fear-divergence | 3 | 3 | 0 | 2.7 | 4 | low_score |
-| 13 | heartbeat | 4 | 4 | 0 | 2.5 | 3 | low_score |
-| 14 | pr-review | 2 | 2 | 0 | 2.0 | 2 | low_score |
+| 13 | pr-review | 3 | 3 | 0 | 2.7 | 4 | low_score |
+| 14 | heartbeat | 4 | 4 | 0 | 2.5 | 3 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 16 | create-prove | 1 | 0 | 1 | - | - | - |
 | 17 | feature | 1 | 0 | 1 | - | - | - |
