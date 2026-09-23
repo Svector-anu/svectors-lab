@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260923T121210Z_defi-overview_6dba3f",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "Missing explicit position language (front-run/ride/fade/watch) in output — regime verdict ('chop, cooling, conviction low') and movers are clear, but trader action is inferred not stated, counter to STRATEGY.md priority on explicit position calls",
+    "Positions facet skipped cleanly (missing on-chain-watches.yml) per SKILL.md spec (not an error), but means skill ran at half capacity; recommend setting up position tracking for full end-to-end coverage"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

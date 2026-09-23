@@ -1,0 +1,64 @@
+{
+  "run_id": "run_20260923T121210Z_defi-overview_6dba3f",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-23T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "Missing explicit position language (front-run/ride/fade/watch) in output — regime verdict ('chop, cooling, conviction low') and movers are clear, but trader action is inferred not stated, counter to STRATEGY.md priority on explicit position calls",
+    "Positions facet skipped cleanly (missing on-chain-watches.yml) per SKILL.md spec (not an error), but means skill ran at half capacity; recommend setting up position tracking for full end-to-end coverage"
+  ],
+  "usage": {
+    "input_tokens": 79,
+    "output_tokens": 33685,
+    "cache_read_input_tokens": 2715696,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.9376208000000001
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260923T121210Z_defi-overview_6dba3f.md",
+  "result_hash": "sha256:13e86b0422be5ff43a47906035970cea825711e3cb8a05bce7d1ff78ce621a08",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 36
+    },
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-23T12:00:00Z",
+  "scheduled_at": "2026-09-23T12:00:00Z",
+  "deadline": "2026-09-23T12:22:10.805855609Z",
+  "created_at": "2026-09-23T12:12:10.805855609Z",
+  "updated_at": "2026-09-23T12:18:37.13660314Z",
+  "completed_at": "2026-09-23T12:18:37.136588528Z"
+}
