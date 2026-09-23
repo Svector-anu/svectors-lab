@@ -174,14 +174,14 @@
   {
     "skill": "heartbeat",
     "rank": 13,
-    "runs": 3,
-    "successes": 3,
+    "runs": 4,
+    "successes": 4,
     "failures": 0,
-    "avg_score": 2.3333333333333335,
-    "scored_runs": 3,
-    "last_score": 2,
+    "avg_score": 2.5,
+    "scored_runs": 4,
+    "last_score": 3,
     "last_status": "completed",
-    "last_run_id": "run_20260922T120252Z_heartbeat_dd1135",
+    "last_run_id": "run_20260923T080455Z_heartbeat_447c1b",
     "consecutive_fails": 0,
     "flags": [
       "low_score"
