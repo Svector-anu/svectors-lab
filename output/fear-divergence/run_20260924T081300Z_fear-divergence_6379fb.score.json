@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260924T081300Z_fear-divergence_6379fb",
+  "score": 3,
+  "correctness": 5,
+  "usefulness": 2,
+  "strategy_alignment": 4,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 4,
+  "flags": [
+    "blocked-by-upstream-dependency",
+    "no-signal-produced"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

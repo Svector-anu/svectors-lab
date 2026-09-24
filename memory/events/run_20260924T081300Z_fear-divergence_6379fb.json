@@ -1,0 +1,56 @@
+{
+  "run_id": "run_20260924T081300Z_fear-divergence_6379fb",
+  "skill": "fear-divergence",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "fear-divergence|2026-09-24T07:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "blocked-by-upstream-dependency",
+    "no-signal-produced"
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1070,
+    "cache_read_input_tokens": 76507,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.1607091
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/fear-divergence/run_20260924T081300Z_fear-divergence_6379fb.md",
+  "result_hash": "sha256:b0b87f334ef3b6c728cc7265098e20bc9b27fb827a75053e11c8e5d15b57c30a",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 3
+    },
+    {
+      "name": "bash",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "fear-divergence|2026-09-24T07:30:00Z",
+  "scheduled_at": "2026-09-24T07:30:00Z",
+  "deadline": "2026-09-24T08:23:00.547909954Z",
+  "created_at": "2026-09-24T08:13:00.547909954Z",
+  "updated_at": "2026-09-24T08:13:47.905214504Z",
+  "completed_at": "2026-09-24T08:13:47.905205347Z"
+}

@@ -140,8 +140,24 @@
     "flags": []
   },
   {
-    "skill": "auto-merge",
+    "skill": "fear-divergence",
     "rank": 11,
+    "runs": 4,
+    "successes": 4,
+    "failures": 0,
+    "avg_score": 2.75,
+    "scored_runs": 4,
+    "last_score": 3,
+    "last_status": "completed",
+    "last_run_id": "run_20260924T081300Z_fear-divergence_6379fb",
+    "consecutive_fails": 0,
+    "flags": [
+      "low_score"
+    ]
+  },
+  {
+    "skill": "auto-merge",
+    "rank": 12,
     "runs": 3,
     "successes": 3,
     "failures": 0,
@@ -150,22 +166,6 @@
     "last_score": 2,
     "last_status": "completed",
     "last_run_id": "run_20260923T141235Z_auto-merge_06f6a5",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "fear-divergence",
-    "rank": 12,
-    "runs": 3,
-    "successes": 3,
-    "failures": 0,
-    "avg_score": 2.6666666666666665,
-    "scored_runs": 3,
-    "last_score": 4,
-    "last_status": "completed",
-    "last_run_id": "run_20260923T073439Z_fear-divergence_87270a",
     "consecutive_fails": 0,
     "flags": [
       "low_score"
