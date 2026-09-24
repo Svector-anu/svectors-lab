@@ -8,7 +8,7 @@
 | 4 | defi-overview | 15 | 12 | 3 | 3.9 | 5 | - |
 | 5 | github-trending | 4 | 4 | 0 | 3.8 | 4 | - |
 | 6 | write-tweet | 3 | 3 | 0 | 3.7 | 4 | - |
-| 7 | narrative-tracker | 14 | 13 | 1 | 3.6 | 4 | - |
+| 7 | narrative-tracker | 15 | 14 | 1 | 3.6 | 4 | - |
 | 8 | hunter-22 | 6 | 5 | 1 | 3.3 | 5 | - |
 | 9 | auto-merge | 4 | 4 | 0 | 3.0 | 4 | - |
 | 10 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |

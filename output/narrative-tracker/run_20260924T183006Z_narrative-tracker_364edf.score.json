@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260924T183006Z_narrative-tracker_364edf",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 4,
+  "strategy_alignment": 3,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "strategy_violation: Lede buried. Output opens with 'API failed, fell back' (technical status) instead of actionable signal. Strategy mandates 'conclusion first, ~150 chars' — e.g. 'RIDE Nillion after supply unlock absorbed clean (+53% 24h); NEAR ecosystem trend reversal (+80% 7d); macro risk-off demoted to WATCH (breadth snapback 1/20→14/20).' A trader reading this in Skopos sees apparatus before trade call.",
+    "presentation_order: Optimal decision-card flow: (1) lead with position calls ranked by priority, (2) evidence, (3) caveats. Actual: (1) fetch status, (2) transitions, (3) reflexivity alerts, (4) positions changelist, (5) MAP. Well-organized for completeness, not for trader action.",
+    "missing_priority: Three major changes (NIL PROMOTED, NEAR PROMOTED, macro DEMOTED) carry equal weight; no indication which is most material for near-term position sizing.",
+    "note_minor: Full narrative state split across runs (this run = 'diff/addendum' to 12:41Z). Correct memory hygiene, but trader needs one canonical source for current regime."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

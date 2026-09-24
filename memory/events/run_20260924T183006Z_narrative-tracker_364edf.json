@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260924T183006Z_narrative-tracker_364edf",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-24T18:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "strategy_violation: Lede buried. Output opens with 'API failed, fell back' (technical status) instead of actionable signal. Strategy mandates 'conclusion first, ~150 chars' — e.g. 'RIDE Nillion after supply unlock absorbed clean (+53% 24h); NEAR ecosystem trend reversal (+80% 7d); macro risk-off demoted to WATCH (breadth snapback 1/20→14/20).' A trader reading this in Skopos sees apparatus before trade call.",
+    "presentation_order: Optimal decision-card flow: (1) lead with position calls ranked by priority, (2) evidence, (3) caveats. Actual: (1) fetch status, (2) transitions, (3) reflexivity alerts, (4) positions changelist, (5) MAP. Well-organized for completeness, not for trader action.",
+    "missing_priority: Three major changes (NIL PROMOTED, NEAR PROMOTED, macro DEMOTED) carry equal weight; no indication which is most material for near-term position sizing.",
+    "note_minor: Full narrative state split across runs (this run = 'diff/addendum' to 12:41Z). Correct memory hygiene, but trader needs one canonical source for current regime."
+  ],
+  "usage": {
+    "input_tokens": 33,
+    "output_tokens": 13874,
+    "cache_read_input_tokens": 923883,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9897518999999999
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260924T183006Z_narrative-tracker_364edf.md",
+  "result_hash": "sha256:dceeb4c400ef6110fcbb96aecc5fa7486bf4c17e43389ba42fe46a3d353624d2",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 11
+    },
+    {
+      "name": "web_search",
+      "count": 8
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-24T18:30:00Z",
+  "scheduled_at": "2026-09-24T18:30:00Z",
+  "deadline": "2026-09-24T18:40:06.568340547Z",
+  "created_at": "2026-09-24T18:30:06.568340547Z",
+  "updated_at": "2026-09-24T18:34:42.363096605Z",
+  "completed_at": "2026-09-24T18:34:42.363087718Z"
+}
