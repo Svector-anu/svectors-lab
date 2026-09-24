@@ -1,0 +1,65 @@
+{
+  "run_id": "run_20260924T124104Z_narrative-tracker_c68859",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-24T12:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "MISSING_REQUIRED_PROOF_ARTIFACT: Skill contract mandates 'echo \"xai http=$HTTP ...\"' line in output to prove Path A call ran. Run shows http=403 fact in prose ('returned http=403 x3') but lacks the required verbatim echo-line artifact. Contract is explicit: 'The `echo \"xai http=$HTTP ...\"` line **must appear in your output** — it is your proof the call ran.'",
+    "STATUS_AMBIGUITY: memory/events JSON shows status='running', skill_success=null, usage tokens all 0 ('unknown: true'), suggesting incomplete run state. Yet output/ files are populated and memory/logs entry shows 'running-complete'. State inconsistency unclear.",
+    "CHANNEL_RENDER_TRUNCATED: Telegram and Slack render examples in evidence are cut off mid-text ('...'), preventing full verification of channel formatting, chunking, and compliance with platform limits."
+  ],
+  "usage": {
+    "input_tokens": 25,
+    "output_tokens": 18448,
+    "cache_read_input_tokens": 602041,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9785313
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260924T124104Z_narrative-tracker_c68859.md",
+  "result_hash": "sha256:79021babaf93e50b7c2b366263c9b600e42539981557fef10de47ba882eb8ab5",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 8
+    },
+    {
+      "name": "web_search",
+      "count": 7
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-24T12:30:00Z",
+  "scheduled_at": "2026-09-24T12:30:00Z",
+  "deadline": "2026-09-24T12:51:04.176485192Z",
+  "created_at": "2026-09-24T12:41:04.176485192Z",
+  "updated_at": "2026-09-24T12:45:42.34755843Z",
+  "completed_at": "2026-09-24T12:45:42.347550205Z"
+}

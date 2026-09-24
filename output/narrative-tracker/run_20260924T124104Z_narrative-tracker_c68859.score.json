@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260924T124104Z_narrative-tracker_c68859",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 4,
+  "scope_compliance": 4,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "MISSING_REQUIRED_PROOF_ARTIFACT: Skill contract mandates 'echo \"xai http=$HTTP ...\"' line in output to prove Path A call ran. Run shows http=403 fact in prose ('returned http=403 x3') but lacks the required verbatim echo-line artifact. Contract is explicit: 'The `echo \"xai http=$HTTP ...\"` line **must appear in your output** — it is your proof the call ran.'",
+    "STATUS_AMBIGUITY: memory/events JSON shows status='running', skill_success=null, usage tokens all 0 ('unknown: true'), suggesting incomplete run state. Yet output/ files are populated and memory/logs entry shows 'running-complete'. State inconsistency unclear.",
+    "CHANNEL_RENDER_TRUNCATED: Telegram and Slack render examples in evidence are cut off mid-text ('...'), preventing full verification of channel formatting, chunking, and compliance with platform limits."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
