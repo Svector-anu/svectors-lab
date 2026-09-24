@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260924T210044Z_write-tweet_f194ba",
+  "skill": "write-tweet",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "write-tweet|2026-09-24T21:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 5,
+  "score_flags": [
+    "event_json_metadata_lag: status=running, skill_success=null (cosmetic; health loop will finalize)",
+    "display_truncation: Tier 5 shown complete in canonical result but file excerpt truncated (artifact; file was written complete)"
+  ],
+  "usage": {
+    "input_tokens": 15,
+    "output_tokens": 10135,
+    "cache_read_input_tokens": 366262,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.6481386
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/write-tweet/run_20260924T210044Z_write-tweet_f194ba.md",
+  "result_hash": "sha256:3e560549bb4f2ba7f8147b6998509515fd78c713487da246afc4fdef2b90275d",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 5
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "write-tweet|2026-09-24T21:00:00Z",
+  "scheduled_at": "2026-09-24T21:00:00Z",
+  "deadline": "2026-09-24T21:10:44.566217297Z",
+  "created_at": "2026-09-24T21:00:44.566217297Z",
+  "updated_at": "2026-09-24T21:03:06.482402837Z",
+  "completed_at": "2026-09-24T21:03:06.482391022Z"
+}

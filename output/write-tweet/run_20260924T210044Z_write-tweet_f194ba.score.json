@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260924T210044Z_write-tweet_f194ba",
+  "score": 5,
+  "correctness": 5,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "event_json_metadata_lag: status=running, skill_success=null (cosmetic; health loop will finalize)",
+    "display_truncation: Tier 5 shown complete in canonical result but file excerpt truncated (artifact; file was written complete)"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
