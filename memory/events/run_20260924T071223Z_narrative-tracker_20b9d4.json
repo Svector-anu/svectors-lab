@@ -1,0 +1,65 @@
+{
+  "run_id": "run_20260924T071223Z_narrative-tracker_20b9d4",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-24T06:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "memory/events.json metadata incomplete: status='running' + null skill_success/score despite run completion; usage shows 0 tokens + 'unknown':true",
+    "output is dense for chat context: trader must parse multiple sections to extract position calls; optimized for completeness over scannability in Telegram/Discord/Slack",
+    "cross-check against defi-overview 07:05Z (run_20260924T070533Z) — does not explain whether that prior run has same XAI billing issue; acceptable per strategy but limits closure"
+  ],
+  "usage": {
+    "input_tokens": 27,
+    "output_tokens": 16324,
+    "cache_read_input_tokens": 759150,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.007658
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260924T071223Z_narrative-tracker_20b9d4.md",
+  "result_hash": "sha256:3d97e293e1f6d904a084497c51211d69a1fdf857e8bbb84dcaa4d334b5cd6933",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 8
+    },
+    {
+      "name": "web_search",
+      "count": 9
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-24T06:30:00Z",
+  "scheduled_at": "2026-09-24T06:30:00Z",
+  "deadline": "2026-09-24T07:22:23.468854442Z",
+  "created_at": "2026-09-24T07:12:23.468854442Z",
+  "updated_at": "2026-09-24T07:16:54.526014847Z",
+  "completed_at": "2026-09-24T07:16:54.526007134Z"
+}

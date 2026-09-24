@@ -8,7 +8,7 @@
 | 4 | defi-overview | 13 | 10 | 3 | 3.8 | 5 | - |
 | 5 | github-trending | 3 | 3 | 0 | 3.7 | 4 | - |
 | 6 | write-tweet | 3 | 3 | 0 | 3.7 | 4 | - |
-| 7 | narrative-tracker | 12 | 11 | 1 | 3.5 | 3 | - |
+| 7 | narrative-tracker | 13 | 12 | 1 | 3.5 | 4 | - |
 | 8 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 9 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 10 | hunter-22 | 5 | 4 | 1 | 3.0 | 4 | - |
