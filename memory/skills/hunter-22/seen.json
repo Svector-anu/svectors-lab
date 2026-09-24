@@ -1,9 +1,27 @@
 [
   {
-    "id": "superteam_create-an-app-on-cookie-chain-app",
-    "title": "Create an App on Cookie Chain",
-    "reward": 500,
-    "seen_at": "2026-09-22T12:58:57.948Z"
+    "id": "superteam_explain-tokenization-supercycle-for-an-asset-category",
+    "title": "Explain Tokenization Supercycle for an Asset Category",
+    "reward": 550,
+    "seen_at": "2026-09-24T11:55:59.000Z"
+  },
+  {
+    "id": "superteam_explain-market-tokenization-in-your-country",
+    "title": "Explain Market Tokenization in Your Country",
+    "reward": 550,
+    "seen_at": "2026-09-24T11:55:59.000Z"
+  },
+  {
+    "id": "superteam_create-x-content-on-mentioneds-team-trading-competition",
+    "title": "Create X content on Mentioned's Team Trading Competition",
+    "reward": 100,
+    "seen_at": "2026-09-24T11:55:59.000Z"
+  },
+  {
+    "id": "bb4e8256-580b-4116-88a6-073a27a5e6a3",
+    "title": "Seeker Envelope Deep Dive Writing Bounty.",
+    "reward": 15.003428213359,
+    "seen_at": "2026-09-24T11:55:59.000Z"
   },
   {
     "id": "superteam_build-and-demo-a-mermail-agent-skill",
@@ -102,6 +120,18 @@
     "seen_at": "2026-09-23T00:00:00Z"
   },
   {
+    "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
+    "title": "Clive Bagworking Campaign",
+    "reward": 10.065,
+    "seen_at": "2026-09-23T00:00:00Z"
+  },
+  {
+    "id": "superteam_create-an-app-on-cookie-chain-app",
+    "title": "Create an App on Cookie Chain",
+    "reward": 500,
+    "seen_at": "2026-09-22T12:58:57.948Z"
+  },
+  {
     "id": "superteam_solana-summit-canada-creator-challenge-part-1",
     "title": "Solana Summit Canada Creator Challenge - part 1",
     "reward": 384.62,
@@ -148,11 +178,5 @@
     "title": "Refer a Notable Creator to Pump Bounty Bot",
     "reward": 1061.1,
     "seen_at": "2026-09-22T00:00:00+00:00"
-  },
-  {
-    "id": "shillz_90297398-997e-41a0-8611-a6b9f0433506",
-    "title": "Clive Bagworking Campaign",
-    "reward": 10.065,
-    "seen_at": "2026-09-23T00:00:00Z"
   }
 ]

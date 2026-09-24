@@ -98,8 +98,22 @@
     "flags": []
   },
   {
-    "skill": "preference-profile",
+    "skill": "hunter-22",
     "rank": 8,
+    "runs": 6,
+    "successes": 5,
+    "failures": 1,
+    "avg_score": 3.3333333333333335,
+    "scored_runs": 6,
+    "last_score": 5,
+    "last_status": "completed",
+    "last_run_id": "run_20260924T115559Z_hunter-22_ea0879",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "preference-profile",
+    "rank": 9,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -113,7 +127,7 @@
   },
   {
     "skill": "shiplog",
-    "rank": 9,
+    "rank": 10,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -122,20 +136,6 @@
     "last_score": 3,
     "last_status": "completed",
     "last_run_id": "run_20260921T093951Z_shiplog_3470b1",
-    "consecutive_fails": 0,
-    "flags": []
-  },
-  {
-    "skill": "hunter-22",
-    "rank": 10,
-    "runs": 5,
-    "successes": 4,
-    "failures": 1,
-    "avg_score": 3,
-    "scored_runs": 5,
-    "last_score": 4,
-    "last_status": "completed",
-    "last_run_id": "run_20260923T101019Z_hunter-22_aed26e",
     "consecutive_fails": 0,
     "flags": []
   },

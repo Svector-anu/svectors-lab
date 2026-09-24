@@ -9,9 +9,9 @@
 | 5 | defi-overview | 13 | 10 | 3 | 3.8 | 5 | - |
 | 6 | write-tweet | 3 | 3 | 0 | 3.7 | 4 | - |
 | 7 | narrative-tracker | 13 | 12 | 1 | 3.5 | 4 | - |
-| 8 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
-| 9 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 10 | hunter-22 | 5 | 4 | 1 | 3.0 | 4 | - |
+| 8 | hunter-22 | 6 | 5 | 1 | 3.3 | 5 | - |
+| 9 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
+| 10 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 11 | fear-divergence | 4 | 4 | 0 | 2.8 | 3 | low_score |
 | 12 | auto-merge | 3 | 3 | 0 | 2.7 | 2 | low_score |
 | 13 | pr-review | 4 | 4 | 0 | 2.5 | 2 | low_score |
