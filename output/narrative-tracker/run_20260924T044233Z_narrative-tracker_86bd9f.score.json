@@ -1,0 +1,27 @@
+{
+  "run_id": "run_20260924T044233Z_narrative-tracker_86bd9f",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 2,
+  "evidence": 2,
+  "scope_compliance": 4,
+  "memory_hygiene": 3,
+  "channel_formatting": 2,
+  "flags": [
+    "Missing xai http= proof line: skill contract explicitly requires 'echo \"xai http=\u003ccode\u003e...\" line **must appear in your output** — it is your proof the call ran.' Output claims Path A ran and failed (xai http=403 x3) but provides no shell execution log. Without this proof, fallback justification is incomplete.",
+    "Path A failure 'x3' claim unsubstantiated: output asserts 'xai http=403 x3' and '16th+ consecutive run with this exact failure' but no curl command logs or stderr capture shown. The jq payload file exists (/tmp/xai-nt-payload.json) but no evidence of ./secretcurl execution.",
+    "Strategy violation: not conclusion-first. Opens with 'Source confidence: lower — Path A (X search) failed...' (~200 chars of meta-narrative) instead of the signal. Strategy says 'Conclusion first, in the first ~150 characters.' Should be: 'cirBTC front-run (institutional $150M+ inflow), privacy RIDE (ZEC NU7 Sept 30), prediction markets FADE (CFTC escalating).'",
+    "Prices headlined despite strategy: TAO transition cites exact prices '$303-310,' '+41% over 7 days,' '$217,' and % moves. Strategy explicitly states 'Stay qualitative on live prices... Don't headline a hard price a user will trade on.' This violates the hard constraint.",
+    "Fallback path not justified per contract: skill contract says fallback WebSearch 'only after you have shown an `xai http=\u003ccode\u003e` line proving Path A actually ran and returned a non-2xx code.' The run claims fallback occurred but the xai http= line is missing, so contract-defined justification is absent.",
+    "Numbers not source-linked: cirBTC '$\u003e150M in lending deposits' cited as fact but no source URL provided (contrast: TAO cites 'Coinbase/CoinGecko/OKX/Kraken' by name, still unlinked). BlackRock/a16z funding figures also asserted without source proof. Strategy: 'Never invent numbers or catalysts. If a source fails and there's no prior value, write n/a.'",
+    "Memory read not evidenced: skill contract requires 'Read the last 3 days of memory/logs/ ... to (a) avoid re-reporting ... and (b) detect phase transitions.' Output claims a 'CORRECTED' TAO transition from prior 'FADE' call but doesn't cite *which* prior cycle or *how* memory reading informed the correction. The TAO 'correction' narrative assumes prior reasoning without showing it was read.",
+    "Channel formatting: not a decision card. Output is a full ~3000-word narrative report; the operator must scroll to the 'POSITIONS (full set)' section to extract the signal (front-run, ride, fade, watch). Meta-narrative (Path A down, fallback path, data-integrity catch) front-loaded instead of action. A proper card leads with the signal in ~150 chars, backs it with evidence, not the reverse.",
+    "Fallback source claims unclear: output cites 'same-day defi-overview cross-check (run_20260924T000048Z)' — is this run's own defi-overview output or a prior skill's output? No chain / consume metadata shown. If it's a sibling skill output, state how it was read; if it's parsed by this run, show the fetch.",
+    "Status field inconsistent: memory event JSON shows 'status: \"running\"' at write time, but memory/logs/ entry says 'status: running-complete.' If the run completed, the event should reflect that, not pending."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
