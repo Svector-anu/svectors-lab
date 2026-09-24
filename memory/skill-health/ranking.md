@@ -2,7 +2,7 @@
 
 | rank | skill | runs | ok | fail | avg | last | flags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | token-pick | 3 | 3 | 0 | 4.7 | 5 | - |
+| 1 | token-pick | 4 | 4 | 0 | 4.5 | 4 | - |
 | 2 | slop-watch | 4 | 4 | 0 | 4.0 | 4 | - |
 | 3 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
 | 4 | defi-overview | 14 | 11 | 3 | 3.8 | 4 | - |

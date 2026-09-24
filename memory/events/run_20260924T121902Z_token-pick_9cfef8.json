@@ -1,0 +1,69 @@
+{
+  "run_id": "run_20260924T121902Z_token-pick_9cfef8",
+  "skill": "token-pick",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "token-pick|2026-09-24T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "malformed_log_entries: memory/logs/2026-09-24.md has duplicate/truncated ### token-pick sections (one complete, one ending '...running-compl' without closure); violates append-only contract",
+    "run_metadata_sync_failure: run_20260924T121902Z_token-pick_9cfef8.json reports status='running', skill_success=null despite prompt listing 'completed'; inconsistent state",
+    "date_inconsistency_in_risk: risk narrative states 'ATH $0.40 on Sep 21, then -26% to $0.22 by Sep 14' — Sep 14 predates Sep 21; logic is reversed or poorly phrased",
+    "no_api_transcripts: output includes source status (cg=ok, dex=ok[no match], poly=ok) but no visible curl/WebFetch logs or raw API responses to ground the picks",
+    "dedup_tracking_in_logs: TOKEN_PICK_DEDUP line buried in daily log rather than structured memory artifact (e.g., memory/skills/token-pick/dedup.md); harder to query next run",
+    "maine_senate_scope: pick is sound but 50-50 crypto:prediction-market split may exceed operator's 'token-pick' expectation; still valid but worth noting",
+    "voice_mismatch_minor: output is polished/technical; doesn't strongly match 'anu' soul (builder-to-builder, casual, lowercase). Acceptable but not calibrated."
+  ],
+  "usage": {
+    "input_tokens": 45,
+    "output_tokens": 18017,
+    "cache_read_input_tokens": 1247823,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1720589
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/token-pick/run_20260924T121902Z_token-pick_9cfef8.md",
+  "result_hash": "sha256:961cd8599a6425638bcd722bf4ed4912861388e8d6422d0971c8c5edaadd8458",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 18
+    },
+    {
+      "name": "web_search",
+      "count": 3
+    },
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "token-pick|2026-09-24T12:00:00Z",
+  "scheduled_at": "2026-09-24T12:00:00Z",
+  "deadline": "2026-09-24T12:29:02.869238221Z",
+  "created_at": "2026-09-24T12:19:02.869238221Z",
+  "updated_at": "2026-09-24T12:23:23.278197899Z",
+  "completed_at": "2026-09-24T12:23:23.278189043Z"
+}

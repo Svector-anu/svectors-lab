@@ -1,0 +1,24 @@
+{
+  "run_id": "run_20260924T121902Z_token-pick_9cfef8",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 4,
+  "evidence": 4,
+  "scope_compliance": 4,
+  "memory_hygiene": 2,
+  "channel_formatting": 4,
+  "flags": [
+    "malformed_log_entries: memory/logs/2026-09-24.md has duplicate/truncated ### token-pick sections (one complete, one ending '...running-compl' without closure); violates append-only contract",
+    "run_metadata_sync_failure: run_20260924T121902Z_token-pick_9cfef8.json reports status='running', skill_success=null despite prompt listing 'completed'; inconsistent state",
+    "date_inconsistency_in_risk: risk narrative states 'ATH $0.40 on Sep 21, then -26% to $0.22 by Sep 14' — Sep 14 predates Sep 21; logic is reversed or poorly phrased",
+    "no_api_transcripts: output includes source status (cg=ok, dex=ok[no match], poly=ok) but no visible curl/WebFetch logs or raw API responses to ground the picks",
+    "dedup_tracking_in_logs: TOKEN_PICK_DEDUP line buried in daily log rather than structured memory artifact (e.g., memory/skills/token-pick/dedup.md); harder to query next run",
+    "maine_senate_scope: pick is sound but 50-50 crypto:prediction-market split may exceed operator's 'token-pick' expectation; still valid but worth noting",
+    "voice_mismatch_minor: output is polished/technical; doesn't strongly match 'anu' soul (builder-to-builder, casual, lowercase). Acceptable but not calibrated."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
