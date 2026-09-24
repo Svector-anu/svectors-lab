@@ -1,0 +1,65 @@
+{
+  "run_id": "run_20260924T000048Z_defi-overview_65be09",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-24T00:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "run_status_mismatch: json shows status=running with null skill_success, but header claims completed—likely timing artifact during scoring",
+    "notification_pending_vs_claimed_sent: log reports notification sent, but json shows notify=pending—probable timing gap, not a skill error",
+    "defi_llama_dex_fees_stale_6h_plus: honestly flagged and documented; follow-up per-protocol /summary/fees/{protocol} fallback suggested"
+  ],
+  "usage": {
+    "input_tokens": 77,
+    "output_tokens": 36763,
+    "cache_read_input_tokens": 3128148,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.2459764
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260924T000048Z_defi-overview_65be09.md",
+  "result_hash": "sha256:0c4b615c10fd79ea8009a5338701d632dea4359dc22a42c8f102adbc1e6545ee",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 36
+    },
+    {
+      "name": "web_search",
+      "count": 5
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-24T00:00:00Z",
+  "scheduled_at": "2026-09-24T00:00:00Z",
+  "deadline": "2026-09-24T00:10:48.857155992Z",
+  "created_at": "2026-09-24T00:00:48.857155992Z",
+  "updated_at": "2026-09-24T00:10:04.750344346Z",
+  "completed_at": "2026-09-24T00:10:04.750336875Z"
+}

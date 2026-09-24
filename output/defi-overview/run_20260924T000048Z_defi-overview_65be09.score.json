@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260924T000048Z_defi-overview_65be09",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "run_status_mismatch: json shows status=running with null skill_success, but header claims completed—likely timing artifact during scoring",
+    "notification_pending_vs_claimed_sent: log reports notification sent, but json shows notify=pending—probable timing gap, not a skill error",
+    "defi_llama_dex_fees_stale_6h_plus: honestly flagged and documented; follow-up per-protocol /summary/fees/{protocol} fallback suggested"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
