@@ -14,7 +14,7 @@
 | 10 | hunter-22 | 5 | 4 | 1 | 3.0 | 4 | - |
 | 11 | fear-divergence | 4 | 4 | 0 | 2.8 | 3 | low_score |
 | 12 | auto-merge | 3 | 3 | 0 | 2.7 | 2 | low_score |
-| 13 | pr-review | 3 | 3 | 0 | 2.7 | 4 | low_score |
+| 13 | pr-review | 4 | 4 | 0 | 2.5 | 2 | low_score |
 | 14 | heartbeat | 5 | 5 | 0 | 2.4 | 2 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 16 | create-prove | 1 | 0 | 1 | - | - | - |

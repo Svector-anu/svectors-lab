@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260924T090452Z_pr-review_315d82",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 3,
+  "strategy_alignment": 2,
+  "evidence": 1,
+  "scope_compliance": 3,
+  "memory_hygiene": 2,
+  "channel_formatting": 3,
+  "flags": [
+    "Token usage reports 'unknown: true' with all zeros — execution telemetry not captured or misreported",
+    "Run metadata status field shows 'running', contradicts header 'Status: completed'",
+    "No command output shown for claimed gh pr list execution — unverifiable claim",
+    "memory/logs entry shown truncated at 'status: running-compl' — cannot confirm append completed correctly",
+    "Skill is infrastructure/maintenance, not trader-facing; does not align with north-star crypto signal metric",
+    "No open PRs is valid state, but repeated across 2026-09-22, 2026-09-23, 2026-09-24 with no evidence variance — potential indication of stale/stub runs"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

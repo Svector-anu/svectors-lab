@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260924T090452Z_pr-review_315d82",
+  "skill": "pr-review",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "pr-review|2026-09-24T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "Token usage reports 'unknown: true' with all zeros — execution telemetry not captured or misreported",
+    "Run metadata status field shows 'running', contradicts header 'Status: completed'",
+    "No command output shown for claimed gh pr list execution — unverifiable claim",
+    "memory/logs entry shown truncated at 'status: running-compl' — cannot confirm append completed correctly",
+    "Skill is infrastructure/maintenance, not trader-facing; does not align with north-star crypto signal metric",
+    "No open PRs is valid state, but repeated across 2026-09-22, 2026-09-23, 2026-09-24 with no evidence variance — potential indication of stale/stub runs"
+  ],
+  "usage": {
+    "input_tokens": 7,
+    "output_tokens": 1435,
+    "cache_read_input_tokens": 101437,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.2477391
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/pr-review/run_20260924T090452Z_pr-review_315d82.md",
+  "result_hash": "sha256:ace5ed84ea438b9c85d6314571a2d1c457e8443919452f4809135f3d6fd82744",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 4
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "pr-review|2026-09-24T09:00:00Z",
+  "scheduled_at": "2026-09-24T09:00:00Z",
+  "deadline": "2026-09-24T09:14:52.101363593Z",
+  "created_at": "2026-09-24T09:04:52.101363593Z",
+  "updated_at": "2026-09-24T09:05:47.758298155Z",
+  "completed_at": "2026-09-24T09:05:47.758290291Z"
+}

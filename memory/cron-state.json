@@ -189,13 +189,13 @@
     "total_failures": 190
   },
   "pr-review": {
-    "last_run_id": "run_20260923T091636Z_pr-review_f98c0e",
-    "last_dispatch": "2026-09-23T09:16:37.474938824Z",
+    "last_run_id": "run_20260924T090452Z_pr-review_315d82",
+    "last_dispatch": "2026-09-24T09:04:52.759403816Z",
     "last_status": "completed",
-    "last_success": "2026-09-23T09:17:37.942544932Z",
+    "last_success": "2026-09-24T09:05:47.758290291Z",
     "last_failed": "2026-09-17T06:45:08Z",
-    "total_runs": 106,
-    "total_successes": 72,
+    "total_runs": 107,
+    "total_successes": 73,
     "total_failures": 34
   },
   "preference-profile": {
