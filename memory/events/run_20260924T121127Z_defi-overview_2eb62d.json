@@ -1,0 +1,61 @@
+{
+  "run_id": "run_20260924T121127Z_defi-overview_2eb62d",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-24T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "missing_explicit_position_call — verdict + conviction (risk-off deepens, medium) stated, but no trader action (watch/fade/ride/front-run) supplied; spec asks 'recommend one option'; read stops at regime read, leaving move implicit",
+    "run_metadata_lag — event JSON shows status='running', score=null, but actual run completed (files written, notification sent, market-context.md updated); metadata did not flush",
+    "formatting_density — after a strong lead, the card loads 8 data sections (movers, fees, yields, stables, narratives, macro prices). Decision-card spec favors 1–2 actionable signals first, then context; should prioritize breadth/sentiment divergence + Circle Bitcoin 4th acceleration as the reads, then offer detail below"
+  ],
+  "usage": {
+    "input_tokens": 105,
+    "output_tokens": 42394,
+    "cache_read_input_tokens": 3892582,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.4960575999999994
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260924T121127Z_defi-overview_2eb62d.md",
+  "result_hash": "sha256:1e6c88502d86f3e846422aefc9ea289292a13ee2e9f483f83b7ce35db205ae56",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 49
+    },
+    {
+      "name": "web_search",
+      "count": 2
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-24T12:00:00Z",
+  "scheduled_at": "2026-09-24T12:00:00Z",
+  "deadline": "2026-09-24T12:21:27.281287134Z",
+  "created_at": "2026-09-24T12:11:27.281287134Z",
+  "updated_at": "2026-09-24T12:19:02.552803777Z",
+  "completed_at": "2026-09-24T12:19:02.552795502Z"
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260924T121127Z_defi-overview_2eb62d",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "missing_explicit_position_call — verdict + conviction (risk-off deepens, medium) stated, but no trader action (watch/fade/ride/front-run) supplied; spec asks 'recommend one option'; read stops at regime read, leaving move implicit",
+    "run_metadata_lag — event JSON shows status='running', score=null, but actual run completed (files written, notification sent, market-context.md updated); metadata did not flush",
+    "formatting_density — after a strong lead, the card loads 8 data sections (movers, fees, yields, stables, narratives, macro prices). Decision-card spec favors 1–2 actionable signals first, then context; should prioritize breadth/sentiment divergence + Circle Bitcoin 4th acceleration as the reads, then offer detail below"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
