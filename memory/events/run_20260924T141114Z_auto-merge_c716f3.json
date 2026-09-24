@@ -1,0 +1,57 @@
+{
+  "run_id": "run_20260924T141114Z_auto-merge_c716f3",
+  "skill": "auto-merge",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "auto-merge|2026-09-24T14:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "zero-action run: no PRs to evaluate or merge; operator learns nothing actionable from this cycle",
+    "command-level evidence missing: run claims to check gh pr list but transcript does not show invocation or output",
+    "state file correctly updated (last_run 2026-09-23T14:12:55Z → 2026-09-24T14:11:35Z) and backed up before write"
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1743,
+    "cache_read_input_tokens": 93526,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.21163379999999998
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/auto-merge/run_20260924T141114Z_auto-merge_c716f3.md",
+  "result_hash": "sha256:1fd7a71ed864ef263f9c1f330e98706f7125f0de82241354f00b164872e1ec5b",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 4
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "auto-merge|2026-09-24T14:00:00Z",
+  "scheduled_at": "2026-09-24T14:00:00Z",
+  "deadline": "2026-09-24T14:21:14.573134785Z",
+  "created_at": "2026-09-24T14:11:14.573134785Z",
+  "updated_at": "2026-09-24T14:12:18.620617163Z",
+  "completed_at": "2026-09-24T14:12:18.620609597Z"
+}

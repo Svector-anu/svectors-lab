@@ -10,10 +10,10 @@
 | 6 | write-tweet | 3 | 3 | 0 | 3.7 | 4 | - |
 | 7 | narrative-tracker | 14 | 13 | 1 | 3.6 | 4 | - |
 | 8 | hunter-22 | 6 | 5 | 1 | 3.3 | 5 | - |
-| 9 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
-| 10 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 11 | fear-divergence | 4 | 4 | 0 | 2.8 | 3 | low_score |
-| 12 | auto-merge | 3 | 3 | 0 | 2.7 | 2 | low_score |
+| 9 | auto-merge | 4 | 4 | 0 | 3.0 | 4 | - |
+| 10 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
+| 11 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
+| 12 | fear-divergence | 4 | 4 | 0 | 2.8 | 3 | low_score |
 | 13 | pr-review | 4 | 4 | 0 | 2.5 | 2 | low_score |
 | 14 | heartbeat | 5 | 5 | 0 | 2.4 | 2 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |

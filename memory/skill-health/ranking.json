@@ -112,8 +112,22 @@
     "flags": []
   },
   {
-    "skill": "preference-profile",
+    "skill": "auto-merge",
     "rank": 9,
+    "runs": 4,
+    "successes": 4,
+    "failures": 0,
+    "avg_score": 3,
+    "scored_runs": 4,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260924T141114Z_auto-merge_c716f3",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "preference-profile",
+    "rank": 10,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -127,7 +141,7 @@
   },
   {
     "skill": "shiplog",
-    "rank": 10,
+    "rank": 11,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -141,7 +155,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 11,
+    "rank": 12,
     "runs": 4,
     "successes": 4,
     "failures": 0,
@@ -150,22 +164,6 @@
     "last_score": 3,
     "last_status": "completed",
     "last_run_id": "run_20260924T081300Z_fear-divergence_6379fb",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
-  },
-  {
-    "skill": "auto-merge",
-    "rank": 12,
-    "runs": 3,
-    "successes": 3,
-    "failures": 0,
-    "avg_score": 2.6666666666666665,
-    "scored_runs": 3,
-    "last_score": 2,
-    "last_status": "completed",
-    "last_run_id": "run_20260923T141235Z_auto-merge_06f6a5",
     "consecutive_fails": 0,
     "flags": [
       "low_score"
