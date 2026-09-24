@@ -42,8 +42,22 @@
     "flags": []
   },
   {
-    "skill": "defi-overview",
+    "skill": "github-trending",
     "rank": 4,
+    "runs": 4,
+    "successes": 4,
+    "failures": 0,
+    "avg_score": 3.75,
+    "scored_runs": 4,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260924T090014Z_github-trending_28fb91",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "defi-overview",
+    "rank": 5,
     "runs": 13,
     "successes": 10,
     "failures": 3,
@@ -52,20 +66,6 @@
     "last_score": 5,
     "last_status": "completed",
     "last_run_id": "run_20260924T070533Z_defi-overview_3426ac",
-    "consecutive_fails": 0,
-    "flags": []
-  },
-  {
-    "skill": "github-trending",
-    "rank": 5,
-    "runs": 3,
-    "successes": 3,
-    "failures": 0,
-    "avg_score": 3.6666666666666665,
-    "scored_runs": 3,
-    "last_score": 4,
-    "last_status": "completed",
-    "last_run_id": "run_20260923T091125Z_github-trending_d1eefd",
     "consecutive_fails": 0,
     "flags": []
   },
