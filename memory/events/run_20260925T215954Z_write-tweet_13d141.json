@@ -1,0 +1,61 @@
+{
+  "run_id": "run_20260925T215954Z_write-tweet_13d141",
+  "skill": "write-tweet",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "write-tweet|2026-09-25T21:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "notification_truncation_in_preview: both telegram and slack renders cut off mid-sentence at '5a. bitget's $388m hack just beca...'; event metadata says delivered=true, so likely a display artifact in scoring tool, but actual delivery completeness unconfirmed",
+    "character_count_minor_variance: run claimed 2a=123, actual=128; 3b=218, actual=232; all within acceptable range and well under tier limits, not a defect",
+    "revision_offer_not_sent: correctly withheld (first-gen drafts, not a revision), per skill contract; operator can manually request revise: if desired"
+  ],
+  "usage": {
+    "input_tokens": 21,
+    "output_tokens": 13289,
+    "cache_read_input_tokens": 591696,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.8206728
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/write-tweet/run_20260925T215954Z_write-tweet_13d141.md",
+  "result_hash": "sha256:9a4efeb8cf8a86499ab8d61cd910ba08cea32d13fb588fdef98a41c826514f3e",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 9
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "write-tweet|2026-09-25T21:00:00Z",
+  "scheduled_at": "2026-09-25T21:00:00Z",
+  "deadline": "2026-09-25T22:09:54.491091729Z",
+  "created_at": "2026-09-25T21:59:54.491091729Z",
+  "updated_at": "2026-09-25T22:03:49.707629907Z",
+  "completed_at": "2026-09-25T22:03:49.70762173Z"
+}

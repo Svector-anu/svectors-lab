@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260925T215954Z_write-tweet_13d141",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 5,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "notification_truncation_in_preview: both telegram and slack renders cut off mid-sentence at '5a. bitget's $388m hack just beca...'; event metadata says delivered=true, so likely a display artifact in scoring tool, but actual delivery completeness unconfirmed",
+    "character_count_minor_variance: run claimed 2a=123, actual=128; 3b=218, actual=232; all within acceptable range and well under tier limits, not a defect",
+    "revision_offer_not_sent: correctly withheld (first-gen drafts, not a revision), per skill contract; operator can manually request revise: if desired"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
