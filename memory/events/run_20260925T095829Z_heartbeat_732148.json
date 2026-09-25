@@ -1,0 +1,68 @@
+{
+  "run_id": "run_20260925T095829Z_heartbeat_732148",
+  "skill": "heartbeat",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "heartbeat|2026-09-25T08:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-haiku-4-5-20251001",
+  "actual_model": "anthropic/claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 2,
+  "score_flags": [
+    "artifact_truncation: docs/status.md ends mid-row at 'send-email | 2...' — primary deliverable is incomplete and unusable",
+    "malformed_log: memory/logs/2026-09-25.md contains duplicate '### heartbeat' entries and truncates mid-word ('running-compl') — file is corrupted",
+    "missing_cron_state: no evidence the run read or analyzed memory/cron-state.json despite contract requirement; P0 check claims unsupported",
+    "missing_p1_p2_p3_detail: run claims P1/P2/P3 checks completed but only P0 findings (pre-existing) are shown; no PR/issue analysis data in output",
+    "missing_dedup_evidence: claims 'all findings already in 2026-09-24 logs' but no dedup logic, cross-reference, or timestamp comparison shown",
+    "unverifiable_checks: contract requires checking for failed/stuck skills via cron-state.json; run output provides no trace of parsing that file or its contents"
+  ],
+  "usage": {
+    "input_tokens": 161,
+    "output_tokens": 16138,
+    "cache_read_input_tokens": 1348300,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.405103
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/heartbeat/run_20260925T095829Z_heartbeat_732148.md",
+  "result_hash": "sha256:e96dd249d43e59dbe20ba9deb5347cf624a246e4a9d53f5b2eac3d436f06ee73",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 9
+    },
+    {
+      "name": "bash",
+      "count": 18
+    },
+    {
+      "name": "web_search",
+      "count": 9
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "heartbeat|2026-09-25T08:00:00Z",
+  "scheduled_at": "2026-09-25T08:00:00Z",
+  "deadline": "2026-09-25T10:03:29.213235168Z",
+  "created_at": "2026-09-25T09:58:29.213235168Z",
+  "updated_at": "2026-09-25T10:02:41.698457313Z",
+  "completed_at": "2026-09-25T10:02:41.698448677Z"
+}

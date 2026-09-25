@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260925T095829Z_heartbeat_732148",
+  "score": 2,
+  "correctness": 2,
+  "usefulness": 2,
+  "strategy_alignment": 3,
+  "evidence": 1,
+  "scope_compliance": 3,
+  "memory_hygiene": 2,
+  "channel_formatting": 2,
+  "flags": [
+    "artifact_truncation: docs/status.md ends mid-row at 'send-email | 2...' — primary deliverable is incomplete and unusable",
+    "malformed_log: memory/logs/2026-09-25.md contains duplicate '### heartbeat' entries and truncates mid-word ('running-compl') — file is corrupted",
+    "missing_cron_state: no evidence the run read or analyzed memory/cron-state.json despite contract requirement; P0 check claims unsupported",
+    "missing_p1_p2_p3_detail: run claims P1/P2/P3 checks completed but only P0 findings (pre-existing) are shown; no PR/issue analysis data in output",
+    "missing_dedup_evidence: claims 'all findings already in 2026-09-24 logs' but no dedup logic, cross-reference, or timestamp comparison shown",
+    "unverifiable_checks: contract requires checking for failed/stuck skills via cron-state.json; run output provides no trace of parsing that file or its contents"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "383c6ab0f1d28da10e27749081797bf81127c8ad"
+}
