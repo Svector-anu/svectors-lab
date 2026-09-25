@@ -1,0 +1,68 @@
+{
+  "run_id": "run_20260925T131545Z_narrative-tracker_02b680",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-25T12:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "xai_api_failure_ongoing: x_search http=403 for 24+ consecutive runs since 2026-09-21 14:04Z (billing exhausted); primary signal source dead 4 days. Fallback to WebSearch+DefiLlama functional but degrades output depth.",
+    "intraday_delta_scope: output framed as 7h delta vs 06:33Z full run, not full narrative snapshot. Acceptable for freshness but traders re-checking may need prior runs for full context; single-day regime flip (PROMOTED altseason) on one-day breadth jump carries mean-reversion risk flagged but unresolved.",
+    "missing_signal_depth: contract requires '3-5 @handles' and '2-3 tweet permalinks' per narrative; most narratives (Circle/cirBTC, NEAR, RWA, etc.) show only numeric data, no tweet permalinks, and only Bitget cluster has named parties. Data source loss (X.AI x_search) is root cause, fallback does not recover this layer.",
+    "evidence_verifiability: run cites DefiLlama live, defi-overview 13:05Z, Benzinga, Farside/Trader T, CNBC. One CNBC link shown. WebSearch fallback queries not displayed; prior defi-overview snapshot sourcing unclear (another skill? manual?). Numeric claims traceable but not independently verified in output.",
+    "channel_formatting_sequencing: opens with 'Fetch status: Path A failed → fell back' before regime calls. For decision-card optimization, the regime flip (PROMOTED: altseason WATCH→RIDE) should lead in first ~150 chars, with fetch status as a footnote. Trades 'conclusion first' priority for technical transparency.",
+    "memory_log_truncation: memory/logs/2026-09-25.md shows 'running-complete' repeated 3x in the log entry tail, suggesting log append may have been interrupted or duplicated mid-write. Non-blocking (content intact) but hygiene artifact."
+  ],
+  "usage": {
+    "input_tokens": 25,
+    "output_tokens": 15655,
+    "cache_read_input_tokens": 655406,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9171618
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260925T131545Z_narrative-tracker_02b680.md",
+  "result_hash": "sha256:2c3f23e4de34b1931c4a5f2d8dafe85e0a652a89cf6e9722eb0dda7c828006fd",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 3
+    },
+    {
+      "name": "bash",
+      "count": 9
+    },
+    {
+      "name": "web_search",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-25T12:30:00Z",
+  "scheduled_at": "2026-09-25T12:30:00Z",
+  "deadline": "2026-09-25T13:25:45.02856916Z",
+  "created_at": "2026-09-25T13:15:45.02856916Z",
+  "updated_at": "2026-09-25T13:20:16.694904575Z",
+  "completed_at": "2026-09-25T13:20:16.694895999Z"
+}

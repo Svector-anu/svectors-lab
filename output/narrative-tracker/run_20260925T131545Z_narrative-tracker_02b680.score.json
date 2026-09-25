@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260925T131545Z_narrative-tracker_02b680",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 4,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "xai_api_failure_ongoing: x_search http=403 for 24+ consecutive runs since 2026-09-21 14:04Z (billing exhausted); primary signal source dead 4 days. Fallback to WebSearch+DefiLlama functional but degrades output depth.",
+    "intraday_delta_scope: output framed as 7h delta vs 06:33Z full run, not full narrative snapshot. Acceptable for freshness but traders re-checking may need prior runs for full context; single-day regime flip (PROMOTED altseason) on one-day breadth jump carries mean-reversion risk flagged but unresolved.",
+    "missing_signal_depth: contract requires '3-5 @handles' and '2-3 tweet permalinks' per narrative; most narratives (Circle/cirBTC, NEAR, RWA, etc.) show only numeric data, no tweet permalinks, and only Bitget cluster has named parties. Data source loss (X.AI x_search) is root cause, fallback does not recover this layer.",
+    "evidence_verifiability: run cites DefiLlama live, defi-overview 13:05Z, Benzinga, Farside/Trader T, CNBC. One CNBC link shown. WebSearch fallback queries not displayed; prior defi-overview snapshot sourcing unclear (another skill? manual?). Numeric claims traceable but not independently verified in output.",
+    "channel_formatting_sequencing: opens with 'Fetch status: Path A failed → fell back' before regime calls. For decision-card optimization, the regime flip (PROMOTED: altseason WATCH→RIDE) should lead in first ~150 chars, with fetch status as a footnote. Trades 'conclusion first' priority for technical transparency.",
+    "memory_log_truncation: memory/logs/2026-09-25.md shows 'running-complete' repeated 3x in the log entry tail, suggesting log append may have been interrupted or duplicated mid-write. Non-blocking (content intact) but hygiene artifact."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

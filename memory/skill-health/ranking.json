@@ -70,8 +70,22 @@
     "flags": []
   },
   {
-    "skill": "github-trending",
+    "skill": "narrative-tracker",
     "rank": 6,
+    "runs": 18,
+    "successes": 17,
+    "failures": 1,
+    "avg_score": 3.625,
+    "scored_runs": 16,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260925T131545Z_narrative-tracker_02b680",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "github-trending",
+    "rank": 7,
     "runs": 5,
     "successes": 5,
     "failures": 0,
@@ -80,20 +94,6 @@
     "last_score": 3,
     "last_status": "completed",
     "last_run_id": "run_20260925T095505Z_github-trending_46bc90",
-    "consecutive_fails": 0,
-    "flags": []
-  },
-  {
-    "skill": "narrative-tracker",
-    "rank": 7,
-    "runs": 17,
-    "successes": 16,
-    "failures": 1,
-    "avg_score": 3.6,
-    "scored_runs": 15,
-    "last_score": 4,
-    "last_status": "completed",
-    "last_run_id": "run_20260925T063315Z_narrative-tracker_85270f",
     "consecutive_fails": 0,
     "flags": []
   },
