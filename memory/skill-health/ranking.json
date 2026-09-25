@@ -112,8 +112,22 @@
     "flags": []
   },
   {
-    "skill": "auto-merge",
+    "skill": "fear-divergence",
     "rank": 9,
+    "runs": 5,
+    "successes": 5,
+    "failures": 0,
+    "avg_score": 3.2,
+    "scored_runs": 5,
+    "last_score": 5,
+    "last_status": "completed",
+    "last_run_id": "run_20260925T095410Z_fear-divergence_fca457",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "auto-merge",
+    "rank": 10,
     "runs": 4,
     "successes": 4,
     "failures": 0,
@@ -127,7 +141,7 @@
   },
   {
     "skill": "preference-profile",
-    "rank": 10,
+    "rank": 11,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -141,7 +155,7 @@
   },
   {
     "skill": "shiplog",
-    "rank": 11,
+    "rank": 12,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -152,22 +166,6 @@
     "last_run_id": "run_20260921T093951Z_shiplog_3470b1",
     "consecutive_fails": 0,
     "flags": []
-  },
-  {
-    "skill": "fear-divergence",
-    "rank": 12,
-    "runs": 4,
-    "successes": 4,
-    "failures": 0,
-    "avg_score": 2.75,
-    "scored_runs": 4,
-    "last_score": 3,
-    "last_status": "completed",
-    "last_run_id": "run_20260924T081300Z_fear-divergence_6379fb",
-    "consecutive_fails": 0,
-    "flags": [
-      "low_score"
-    ]
   },
   {
     "skill": "pr-review",
