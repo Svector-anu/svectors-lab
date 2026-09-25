@@ -7,7 +7,7 @@
 | 3 | write-tweet | 4 | 4 | 0 | 4.0 | 5 | - |
 | 4 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
 | 5 | defi-overview | 19 | 15 | 4 | 3.8 | 3 | - |
-| 6 | narrative-tracker | 18 | 17 | 1 | 3.6 | 4 | - |
+| 6 | narrative-tracker | 19 | 18 | 1 | 3.6 | 4 | - |
 | 7 | github-trending | 5 | 5 | 0 | 3.6 | 3 | - |
 | 8 | hunter-22 | 7 | 6 | 1 | 3.4 | 4 | - |
 | 9 | fear-divergence | 5 | 5 | 0 | 3.2 | 5 | - |

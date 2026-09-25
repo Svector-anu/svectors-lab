@@ -172,13 +172,13 @@
     "total_failures": 17
   },
   "narrative-tracker": {
-    "last_run_id": "run_20260925T131545Z_narrative-tracker_02b680",
-    "last_dispatch": "2026-09-25T13:15:45.693557963Z",
+    "last_run_id": "run_20260925T183545Z_narrative-tracker_62fc83",
+    "last_dispatch": "2026-09-25T18:35:45.968836625Z",
     "last_status": "completed",
-    "last_success": "2026-09-25T13:20:16.694895999Z",
+    "last_success": "2026-09-25T18:40:25.784203234Z",
     "last_failed": "2026-09-23T00:55:57.631050075Z",
-    "total_runs": 517,
-    "total_successes": 145,
+    "total_runs": 518,
+    "total_successes": 146,
     "total_failures": 372
   },
   "picks-tracker": {

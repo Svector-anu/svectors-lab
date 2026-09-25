@@ -1,0 +1,65 @@
+{
+  "run_id": "run_20260925T183545Z_narrative-tracker_62fc83",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-25T18:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "X.AI API key billing exhausted (25th+ consecutive failure since 2026-09-21 14:04Z). Run correctly fell back to WebSearch + defi-overview per contract, but primary signal path is unavailable. Operator must recharge API credits or rotate key.",
+    "NIL/Nillion narrative flagged as stale (several passes without re-check). Noted by the run but worth operator awareness.",
+    "Bitstamp CEX balance -21.2% 1d with no catalyst found—held as watchlist flag, not scored. Appropriate given Bitget backdrop, but worth next-pass re-check."
+  ],
+  "usage": {
+    "input_tokens": 43,
+    "output_tokens": 21014,
+    "cache_read_input_tokens": 871835,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9948615000000001
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260925T183545Z_narrative-tracker_62fc83.md",
+  "result_hash": "sha256:0ade7a68ebf8027d08c17584bf223cc72cb025d39179fa12059529f184344ec1",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 7
+    },
+    {
+      "name": "bash",
+      "count": 15
+    },
+    {
+      "name": "web_search",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-25T18:30:00Z",
+  "scheduled_at": "2026-09-25T18:30:00Z",
+  "deadline": "2026-09-25T18:45:45.395664232Z",
+  "created_at": "2026-09-25T18:35:45.395664232Z",
+  "updated_at": "2026-09-25T18:40:25.784211136Z",
+  "completed_at": "2026-09-25T18:40:25.784203234Z"
+}

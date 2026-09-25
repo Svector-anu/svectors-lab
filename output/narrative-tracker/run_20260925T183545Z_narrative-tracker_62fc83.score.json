@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260925T183545Z_narrative-tracker_62fc83",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "X.AI API key billing exhausted (25th+ consecutive failure since 2026-09-21 14:04Z). Run correctly fell back to WebSearch + defi-overview per contract, but primary signal path is unavailable. Operator must recharge API credits or rotate key.",
+    "NIL/Nillion narrative flagged as stale (several passes without re-check). Noted by the run but worth operator awareness.",
+    "Bitstamp CEX balance -21.2% 1d with no catalyst found—held as watchlist flag, not scored. Appropriate given Bitget backdrop, but worth next-pass re-check."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
