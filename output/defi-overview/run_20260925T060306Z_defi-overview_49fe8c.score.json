@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260925T060306Z_defi-overview_49fe8c",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "status_metadata_discrepancy: event JSON shows 'status:running' but run header shows 'Status:completed'",
+    "channel_output_density: comprehensive and sourced, but reads as detailed market report rather than tight decision card; granularity (top chains, all yields) crowds out ruthless signal prioritization per 'avoid: filler'",
+    "unverifiable_memory_reads: summary claims 'Read MEMORY.md' and 'last 2 days of logs to avoid repeating' but this reading and duplicate-detection logic is not shown in output for verification",
+    "market_context_excerpt_truncated: summary mentions 'Token Picks table preserved verbatim' but the file excerpt is cut off at Active Narratives; full structure and compliance unverifiable"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

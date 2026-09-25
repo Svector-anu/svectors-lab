@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260925T060306Z_defi-overview_49fe8c",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-25T06:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "status_metadata_discrepancy: event JSON shows 'status:running' but run header shows 'Status:completed'",
+    "channel_output_density: comprehensive and sourced, but reads as detailed market report rather than tight decision card; granularity (top chains, all yields) crowds out ruthless signal prioritization per 'avoid: filler'",
+    "unverifiable_memory_reads: summary claims 'Read MEMORY.md' and 'last 2 days of logs to avoid repeating' but this reading and duplicate-detection logic is not shown in output for verification",
+    "market_context_excerpt_truncated: summary mentions 'Token Picks table preserved verbatim' but the file excerpt is cut off at Active Narratives; full structure and compliance unverifiable"
+  ],
+  "usage": {
+    "input_tokens": 83,
+    "output_tokens": 40365,
+    "cache_read_input_tokens": 3221751,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.2620033
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260925T060306Z_defi-overview_49fe8c.md",
+  "result_hash": "sha256:5f43120baa313d1cd92f3e31f5fc328673f8bbc4d32bcde5aba6c32fdf8d43fd",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 42
+    },
+    {
+      "name": "web_search",
+      "count": 3
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-25T06:00:00Z",
+  "scheduled_at": "2026-09-25T06:00:00Z",
+  "deadline": "2026-09-25T06:13:06.950927754Z",
+  "created_at": "2026-09-25T06:03:06.950927754Z",
+  "updated_at": "2026-09-25T06:12:11.086390576Z",
+  "completed_at": "2026-09-25T06:12:11.086382832Z"
+}
