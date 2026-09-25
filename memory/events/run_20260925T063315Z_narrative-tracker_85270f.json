@@ -1,0 +1,63 @@
+{
+  "run_id": "run_20260925T063315Z_narrative-tracker_85270f",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-25T06:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "channel_formatting: leads with fetch status / api debug info instead of trading signal; traders reading this in Skopos see 'xai http=403 billing exhausted' before 'Bitget hack is a CEX-trust WATCH' — information is correct and complete, but wrong order for decision-card surface (should be signal→evidence→action, not diagnostic→transitions→positions)"
+  ],
+  "usage": {
+    "input_tokens": 29,
+    "output_tokens": 14259,
+    "cache_read_input_tokens": 793471,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9447932999999997
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260925T063315Z_narrative-tracker_85270f.md",
+  "result_hash": "sha256:e4a66ab724b7bad8bd4c4a8b5c027487fb44221511cd339db329410e7279b1b5",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 10
+    },
+    {
+      "name": "web_search",
+      "count": 5
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-25T06:30:00Z",
+  "scheduled_at": "2026-09-25T06:30:00Z",
+  "deadline": "2026-09-25T06:43:15.96175063Z",
+  "created_at": "2026-09-25T06:33:15.96175063Z",
+  "updated_at": "2026-09-25T06:37:15.567766038Z",
+  "completed_at": "2026-09-25T06:37:15.567756957Z"
+}

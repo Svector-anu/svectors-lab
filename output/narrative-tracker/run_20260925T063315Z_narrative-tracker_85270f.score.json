@@ -1,0 +1,18 @@
+{
+  "run_id": "run_20260925T063315Z_narrative-tracker_85270f",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 5,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "channel_formatting: leads with fetch status / api debug info instead of trading signal; traders reading this in Skopos see 'xai http=403 billing exhausted' before 'Bitget hack is a CEX-trust WATCH' — information is correct and complete, but wrong order for decision-card surface (should be signal→evidence→action, not diagnostic→transitions→positions)"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
