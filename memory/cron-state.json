@@ -74,14 +74,15 @@
     "total_failures": 0
   },
   "defi-overview": {
-    "last_run_id": "run_20260925T130513Z_defi-overview_f98999",
-    "last_dispatch": "2026-09-25T13:05:15.025152485Z",
+    "last_run_id": "run_20260925T180539Z_defi-overview_051681",
+    "last_dispatch": "2026-09-25T18:05:39.823942087Z",
     "last_status": "completed",
     "last_success": "2026-09-25T13:13:04.35559078Z",
-    "last_failed": "2026-09-23T00:02:22.463807046Z",
-    "total_runs": 460,
+    "last_failed": "2026-09-25T18:12:57.993683771Z",
+    "total_runs": 461,
     "total_successes": 130,
-    "total_failures": 330
+    "total_failures": 331,
+    "consecutive_fails": 1
   },
   "deploy-uni-hook": {
     "last_status": "success",
