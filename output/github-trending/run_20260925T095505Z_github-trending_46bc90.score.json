@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260925T095505Z_github-trending_46bc90",
+  "score": 3,
+  "correctness": 4,
+  "usefulness": 2,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 2,
+  "flags": [
+    "skill-strategy-mismatch: GitHub trending skill reports generic dev tools, but operator strategy targets crypto-trading signals for traders; run executed contract correctly but contract does not align operator's north-star metric",
+    "missing-position-calls: strategy requires explicit position calls (front-run/ride/fade/watch) per decision-grade output; canonical result delivers curated list, no trading recommendation",
+    "audience-mismatch: formatted for developer audience; strategy audience is crypto traders using Skopos; 2 of 3 picks (mvt spyware forensics, lap photo library) have zero crypto/trading relevance",
+    "channel-formatting-as-report: formatted well as a GitHub trending snapshot (categories, star counts, why-notable backed by data), weak as a crypto-trader decision card (no narrative anchor to market, no position, no trade consequence)"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

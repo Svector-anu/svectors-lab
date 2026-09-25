@@ -1,0 +1,62 @@
+{
+  "run_id": "run_20260925T095505Z_github-trending_46bc90",
+  "skill": "github-trending",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "github-trending|2026-09-25T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "skill-strategy-mismatch: GitHub trending skill reports generic dev tools, but operator strategy targets crypto-trading signals for traders; run executed contract correctly but contract does not align operator's north-star metric",
+    "missing-position-calls: strategy requires explicit position calls (front-run/ride/fade/watch) per decision-grade output; canonical result delivers curated list, no trading recommendation",
+    "audience-mismatch: formatted for developer audience; strategy audience is crypto traders using Skopos; 2 of 3 picks (mvt spyware forensics, lap photo library) have zero crypto/trading relevance",
+    "channel-formatting-as-report: formatted well as a GitHub trending snapshot (categories, star counts, why-notable backed by data), weak as a crypto-trader decision card (no narrative anchor to market, no position, no trade consequence)"
+  ],
+  "usage": {
+    "input_tokens": 27,
+    "output_tokens": 15123,
+    "cache_read_input_tokens": 734833,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.9395379
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/github-trending/run_20260925T095505Z_github-trending_46bc90.md",
+  "result_hash": "sha256:992100827f95828f7df8bfdd670d4caa9823d866161e0f19c9ffbb747485a277",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 12
+    },
+    {
+      "name": "read",
+      "count": 1
+    },
+    {
+      "name": "web_search",
+      "count": 5
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "github-trending|2026-09-25T09:00:00Z",
+  "scheduled_at": "2026-09-25T09:00:00Z",
+  "deadline": "2026-09-25T10:05:05.341094566Z",
+  "created_at": "2026-09-25T09:55:05.341094566Z",
+  "updated_at": "2026-09-25T09:58:28.998494795Z",
+  "completed_at": "2026-09-25T09:58:28.99848678Z"
+}
