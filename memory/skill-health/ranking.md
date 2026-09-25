@@ -14,7 +14,7 @@
 | 10 | auto-merge | 4 | 4 | 0 | 3.0 | 4 | - |
 | 11 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 12 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 13 | pr-review | 4 | 4 | 0 | 2.5 | 2 | low_score |
+| 13 | pr-review | 5 | 5 | 0 | 2.8 | 4 | low_score |
 | 14 | heartbeat | 6 | 6 | 0 | 2.3 | 2 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 16 | create-prove | 1 | 0 | 1 | - | - | - |
