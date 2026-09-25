@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260925T132016Z_token-pick_817e4e",
+  "skill": "token-pick",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "token-pick|2026-09-25T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 5,
+  "usage": {
+    "input_tokens": 47,
+    "output_tokens": 20832,
+    "cache_read_input_tokens": 1317853,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1833869000000001
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/token-pick/run_20260925T132016Z_token-pick_817e4e.md",
+  "result_hash": "sha256:35ed89a0ed224fa1b5886c87bd2a10b57e80358784def50e03cb926bcf691886",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 21
+    },
+    {
+      "name": "web_search",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "token-pick|2026-09-25T12:00:00Z",
+  "scheduled_at": "2026-09-25T12:00:00Z",
+  "deadline": "2026-09-25T13:30:16.928133989Z",
+  "created_at": "2026-09-25T13:20:16.928133989Z",
+  "updated_at": "2026-09-25T13:25:13.370300051Z",
+  "completed_at": "2026-09-25T13:25:13.370291625Z"
+}
