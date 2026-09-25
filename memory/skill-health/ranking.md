@@ -11,9 +11,9 @@
 | 7 | github-trending | 5 | 5 | 0 | 3.6 | 3 | - |
 | 8 | hunter-22 | 7 | 6 | 1 | 3.4 | 4 | - |
 | 9 | fear-divergence | 5 | 5 | 0 | 3.2 | 5 | - |
-| 10 | auto-merge | 4 | 4 | 0 | 3.0 | 4 | - |
-| 11 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
-| 12 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
+| 10 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
+| 11 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
+| 12 | auto-merge | 5 | 4 | 1 | 3.0 | 4 | - |
 | 13 | pr-review | 5 | 5 | 0 | 2.8 | 4 | low_score |
 | 14 | heartbeat | 6 | 6 | 0 | 2.3 | 2 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
