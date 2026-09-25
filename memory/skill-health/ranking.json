@@ -260,15 +260,15 @@
   {
     "skill": "vuln-tracker",
     "rank": 19,
-    "runs": 4,
+    "runs": 5,
     "successes": 0,
-    "failures": 4,
+    "failures": 5,
     "avg_score": 0,
     "scored_runs": 0,
     "last_score": 0,
     "last_status": "completed",
-    "last_run_id": "run_20260924T164149Z_vuln-tracker_783532",
-    "consecutive_fails": 4,
+    "last_run_id": "run_20260925T163513Z_vuln-tracker_0ff4d0",
+    "consecutive_fails": 5,
     "flags": [
       "failing"
     ]

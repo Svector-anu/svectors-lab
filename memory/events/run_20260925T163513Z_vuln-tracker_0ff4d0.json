@@ -1,0 +1,52 @@
+{
+  "run_id": "run_20260925T163513Z_vuln-tracker_0ff4d0",
+  "skill": "vuln-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "vuln-tracker|2026-09-25T16:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5",
+      "reason": "error"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "skipped",
+  "score_status": "skipped",
+  "score": null,
+  "usage": {
+    "input_tokens": 121,
+    "output_tokens": 52034,
+    "cache_read_input_tokens": 7883810,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 4.367478000000003
+  },
+  "error": "omp exit 1 (partial result kept): exit status 1",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 22
+    },
+    {
+      "name": "bash",
+      "count": 56
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "vuln-tracker|2026-09-25T16:30:00Z",
+  "scheduled_at": "2026-09-25T16:30:00Z",
+  "deadline": "2026-09-25T16:45:13.529461828Z",
+  "created_at": "2026-09-25T16:35:13.529461828Z",
+  "updated_at": "2026-09-25T16:45:16.798180291Z",
+  "completed_at": "2026-09-25T16:45:16.798175612Z"
+}
