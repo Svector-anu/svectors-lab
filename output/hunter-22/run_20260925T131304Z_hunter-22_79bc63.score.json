@@ -1,0 +1,16 @@
+{
+  "run_id": "run_20260925T131304Z_hunter-22_79bc63",
+  "score": 4,
+  "correctness": 5,
+  "usefulness": 2,
+  "strategy_alignment": 5,
+  "evidence": 3,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "326c96afd1eefd132d5a6e0d2c49da2f4457f7be"
+}
