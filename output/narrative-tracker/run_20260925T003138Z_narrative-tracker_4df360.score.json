@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260925T003138Z_narrative-tracker_4df360",
+  "score": 3,
+  "correctness": 4,
+  "usefulness": 3,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 2,
+  "flags": [
+    "XAI API billing-exhausted 22 consecutive runs (since 2026-09-21 14:04Z); primary X/Twitter signal source offline \u003e4 days, forcing fallback. Degrades freshness and confidence in narrative sourcing.",
+    "Conclusion-first north-star metric missed. Output leads with 'Intraday delta vs 2026-09-24 18:30Z re-classification' (procedural/status), not the signal. Strategy demands 'Conclusion first, in the first ~150 characters'—trader lands on Telegram and parses structure instead of seeing the take immediately.",
+    "Fallback data flow undocumented. Claims 'Fell back to WebSearch + DefiLlama narrative-tracker live page + defi-overview 00:00Z cross-check' but no WebSearch queries, results, or direct evidence shown. Fallback is correctly declared but not evidenced.",
+    "Specific claims lack direct sourcing. 'NIL/Nillion's self-sourced 228% 7d run' (self-sourced how?), 'NEAR@3.33 is a manufactured price-defense mechanism' (by whom?), 'Robinhood's 1:1 redemption commitment' (where's the link?). Numbers are solid but some assertions hang without links.",
+    "Soul/style application unclear. SOUL.md prescribes 'understated enthusiasm, casual, lowercase, fragments, builder-to-builder'; output is formal, title-cased section headers, longer paragraphs. May be appropriate for technical reports, but misalignment with operator's voice is visible."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

@@ -1,0 +1,67 @@
+{
+  "run_id": "run_20260925T003138Z_narrative-tracker_4df360",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-25T00:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "XAI API billing-exhausted 22 consecutive runs (since 2026-09-21 14:04Z); primary X/Twitter signal source offline \u003e4 days, forcing fallback. Degrades freshness and confidence in narrative sourcing.",
+    "Conclusion-first north-star metric missed. Output leads with 'Intraday delta vs 2026-09-24 18:30Z re-classification' (procedural/status), not the signal. Strategy demands 'Conclusion first, in the first ~150 characters'—trader lands on Telegram and parses structure instead of seeing the take immediately.",
+    "Fallback data flow undocumented. Claims 'Fell back to WebSearch + DefiLlama narrative-tracker live page + defi-overview 00:00Z cross-check' but no WebSearch queries, results, or direct evidence shown. Fallback is correctly declared but not evidenced.",
+    "Specific claims lack direct sourcing. 'NIL/Nillion's self-sourced 228% 7d run' (self-sourced how?), 'NEAR@3.33 is a manufactured price-defense mechanism' (by whom?), 'Robinhood's 1:1 redemption commitment' (where's the link?). Numbers are solid but some assertions hang without links.",
+    "Soul/style application unclear. SOUL.md prescribes 'understated enthusiasm, casual, lowercase, fragments, builder-to-builder'; output is formal, title-cased section headers, longer paragraphs. May be appropriate for technical reports, but misalignment with operator's voice is visible."
+  ],
+  "usage": {
+    "input_tokens": 29,
+    "output_tokens": 19287,
+    "cache_read_input_tokens": 867293,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1012798999999998
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260925T003138Z_narrative-tracker_4df360.md",
+  "result_hash": "sha256:9728b1fb15e68300cc77aaabac271cb9530bf50f95e85205f7691b6a590c8d3e",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 3
+    },
+    {
+      "name": "bash",
+      "count": 12
+    },
+    {
+      "name": "web_search",
+      "count": 6
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-25T00:30:00Z",
+  "scheduled_at": "2026-09-25T00:30:00Z",
+  "deadline": "2026-09-25T00:41:38.585509371Z",
+  "created_at": "2026-09-25T00:31:38.585509371Z",
+  "updated_at": "2026-09-25T00:37:04.169068657Z",
+  "completed_at": "2026-09-25T00:37:04.169059162Z"
+}
