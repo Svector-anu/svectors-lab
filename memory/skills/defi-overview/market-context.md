@@ -1,87 +1,86 @@
-# Market Context (as of 2026-09-24, 18:14Z)
+# Market Context (as of 2026-09-25, 00:01Z)
 
-> **Take:** rotation — BTC roughly flat (-0.04% 24h, $84,164) while breadth surged to 14/20 green top-20 (from just 1/20 six hours ago) and dominance slipped to 58.57%, alts leading the bounce. Conviction: medium.
+> **Take:** chop — BTC flat (-0.01% 24h, $84,375) with Fear & Greed stuck at 71 Greed for a 6th straight read and BTC dominance flat at 58.58%; no daily direction despite TVL still climbing on a 7d view. Conviction: medium.
 
 ## Signal Snapshot
-- BTC $84,164 (-0.04% 24h, +9.61% 7d) · dominance 58.57% (-0.17pp vs 58.74% at 12:11Z)
-- ETH $2,671.60 (+0.33% 24h, +8.12% 7d) · ETH/BTC 0.03175
-- SOL $116.91 (+2.44% 24h, +15.22% 7d)
-- Total mcap $2.886T (-2.42% 24h) · DEX vol $10.08B 24h (-10.1% 1d)
-- Breadth: 14/20 green 24h · 17/20 green 7d
-- Fear & Greed: 71 (Greed) — yesterday 71 (unchanged, 5th+ consecutive read)
+- BTC $84,375 (-0.01% 24h, +10.50% 7d) · dominance 58.58% (+0.01pp vs 58.57% yesterday)
+- ETH $2,687.12 (+0.10% 24h, +9.96% 7d) · ETH/BTC 0.03185
+- SOL $117.00 (+1.75% 24h, +15.47% 7d)
+- Total mcap $2.889T (CoinGecko reports -2.40% 24h, but this is an unchanged-to-2-decimals repeat of yesterday's -2.42% read while majors are flat/green — treat as a stale field, not a real move) · DEX vol $10.08B 24h (-10.1% 1d)
+- Breadth: 11/20 green 24h · 17/20 green 7d
+- Fear & Greed: 71 (Greed) — yesterday 71 (unchanged, 6th+ consecutive read)
 
 ## What Changed Since Last Refresh
-- Breadth reversed hard: 1/20 green (12:11Z) → 14/20 green now — the sharpest same-day swing this cycle, alts (XRP +2.3%, SOL +2.4%, LINK +6.2%, ADA +3.3%, DOGE +4.4%) doing the work while BTC stayed flat.
-- BTC recovered from -2.39% 24h to -0.04% 24h (price $83,477 → $84,164), erasing the midday risk-off deepening; WebSearch confirms an intraday low near $83,462 on 10Y Treasury yields hitting their highest since 2007, before the bounce.
-- BTC ETF flows confirmed net-positive for 2026 YTD for the first time since April: Sep 21 saw $998.95M in inflows (2026's biggest single day, led by IBIT/ARKB/FBTC), with >$2B in creations across Sep 18/21/22 — a fresh institutional-demand data point not in the 12:11Z snapshot.
-- NEAR Bridge protocol reversed from a 4-session outflow streak to +7.14% 1d ($117M→$125M); NEAR token price itself is now trending on CoinGecko at +8.3% 24h — price and TVL confirming each other, unlike the prior Bittensor divergence.
-- Fed Oct 25bp-hike odds eased to 65.5% (from 67.5%) on Polymarket; "BTC $87,500 in September" YES rose to 32.5% (from 27.5%) — both track the price bounce.
-- Circle/Arc cirBTC lending posted a 5th consecutive same-day acceleration read: TVL $264M→$271M (+115.8% 1d, up from +114.4%).
+- Regime flipped from yesterday's "rotation" call to "chop": breadth cooled from 14/20 to 11/20, BTC and dominance both flat, no fresh catalyst forcing a move.
+- Circle Bitcoin (cirBTC/Arc lending) kept accelerating: DefiLlama's own daily close series shows $233.8M → $338.3M today, +44.7% in a day (the API's self-reported change_1d of +114.6% is measuring off a stale ~36h-old base, an artifact of its near-vertical growth rate) — a 4th+ consecutive up session.
+- NEAR Bridge reversed higher after 3 straight down sessions: $117.4M → $126.6M (+7.9%), consistent with narrative-tracker's NEAR reversal call and NEAR's own +7.4% 24h price move.
+- Steakhouse Financial (Morpho Risk Curators vault) broke lower for the first time in days: $3.128B → $2.585B (-17.3%), after 3 sessions flat near $3.1B — no confirmed catalyst yet.
 
 ## Active Narratives
-- **Circle/Arc cirBTC lending** — phase: rising. Evidence: Circle Bitcoin protocol TVL +115.8% 1d to $271M, a 5th consecutive same-day acceleration read (32.9%→93.6%→114.4%→115.8%).
-- **Breadth/dominance rotation** — phase: emerging. Evidence: top-20 breadth 1/20→14/20 intraday, dominance -0.17pp, alts (XRP/SOL/LINK/ADA/DOGE) outperforming a flat BTC.
-- **BTC ETF inflow reversal** — phase: rising. Evidence: Sep 21's $998.95M inflow day, first YTD-net-positive flow since April, >$2B in creations over three sessions.
-- **NEAR ecosystem inflow (reversal)** — phase: rising, reversing prior fading call. Evidence: NEAR Bridge TVL +7.14% 1d after 4 straight down sessions; NEAR token price +8.3% 24h, now CoinGecko-trending.
-- **Bittensor bridge/pool TVL bleed** — phase: fading. Evidence: chain TVL -6.43% 1d to ~$580M, continuing outflow distinct from TAO's flat-at-highs token price (per narrative-tracker correction).
+- **Circle/Arc cirBTC lending** — phase: rising. Evidence: TVL $233.8M→$338.3M (+44.7% actual 1d), 4th+ consecutive accelerating session, now +493% over 7d per DefiLlama.
+- **NEAR ecosystem inflow (reversal, confirmed)** — phase: rising. Evidence: NEAR Bridge TVL +7.9% 1d after 3 straight down sessions; NEAR price +7.4% 24h, still CoinGecko-trending 2nd day running.
+- **Bittensor bridge/pool TVL bleed** — phase: fading. Evidence: chain TVL -5.04% 1d to $588.2M, continuing outflow distinct from TAO's flat-at-highs token price (~$305-310, per narrative-tracker's Peak call).
+- **RWA/ONDO tokenization** — phase: rising. Evidence: ONDO +26.6% 24h on CoinGecko trending, a 2nd straight day of 20%+ moves (was +23.1% yesterday).
 
 ## Top DeFi Protocols (TVL, 7d change)
-- Lido: $26.36B (+9.53%)
-- Aave V3: $18.31B (+7.48%)
-- SSV Network: $14.13B (+8.75%)
-- Morpho Blue: $10.93B (+6.30%)
-- Binance staked ETH: $10.04B (+9.04%)
+- Lido: $26.25B (+9.88%)
+- Aave V3: $18.27B (+7.40%)
+- SSV Network: $14.09B (+9.34%)
+- Morpho Blue: $10.85B (+5.60%)
+- Binance staked ETH: $9.99B (+9.41%)
 
 ## Chain Flow (top 3 by TVL, canonical DeFiLlama chain TVL, 1d/7d)
-- Ethereum: $53.62B (-1.39% 1d, +9.00% 7d)
-- Solana: $6.45B (-1.32% 1d, +11.52% 7d)
-- Base: $6.20B (-1.01% 1d, +11.75% 7d)
+- Ethereum: $53.52B (-1.57% 1d, +8.80% 7d)
+- Solana: $6.48B (-0.85% 1d, +12.05% 7d)
+- Base: $6.19B (-1.16% 1d, +11.59% 7d)
 
 ## Movers
-- Chains: no chain cleared the +5%/$500M up filter today. ↓ Bittensor -6.43% ($620M→$580M) — bridge/pool TVL outflow continuing, distinct from TAO's flat-at-highs token price (~$305-310, per narrative-tracker); Avalanche -4.88% ($643M→$611M), a near-miss, no confirmed catalyst.
-- Protocols: ↑ Circle Bitcoin +115.8% ($264M→$271M) — cirBTC/Arc BTC-collateralized lending demand, 5th consecutive same-day acceleration read. ↓ Steakhouse Financial -17.4% ($3.1B→$2.6B TVL, Risk Curators/Morpho vault) — no confirmed catalyst, first appearance as a down mover today.
+- Chains: no chain cleared the +5%/$500M up filter — Arc is closest at +21.3% ($378.9M→$459.6M) but still short of the $500M TVL floor. ↓ Bittensor -5.04% ($619.5M→$588.2M) — bridge/pool TVL outflow continuing, distinct from TAO's flat-at-highs token price; Avalanche -4.55% ($643.9M→$612.2M), a near-miss, no confirmed catalyst.
+- Protocols: ↑ Circle Bitcoin — see Active Narratives (4th+ consecutive accelerating session). ↓ Steakhouse Financial -17.3% ($3.128B→$2.585B TVL, Morpho Risk Curators vault) — first real break after 3 flat sessions, no confirmed catalyst. ↔ NEAR Bridge reversed to +7.9% (was -16.0%/-13.9% the prior two sessions) — see Active Narratives.
 
 ## Fundamentals — Fees
-- Leaders (24h): Tether $17.22M (-0.30%) · Circle USDC $7.17M (-0.08%) · PumpSwap $3.50M (+2.92%) — all three essentially unchanged from this morning, no fresh signal.
-- Fees beating TVL (7d): HyperLend Pooled — fees +236.4% / TVL -6.6% ($442.9M TVL, multi-session continuation); Grove Finance — fees +130.3% / TVL -0.8% ($1.26B TVL, TVL bleed easing from -7.9%)
+- Leaders (24h): Tether $17.22M (-0.30%) · Circle USDC $7.17M (-0.08%) · PumpSwap $3.50M (+2.92%) — all three numbers essentially identical to yesterday's read; this DefiLlama fees feed looks frozen again, no fresh signal.
+- Fees beating TVL (7d): HyperLend Pooled — fees +220.0% / TVL -8.5% ($439.6M TVL, 4th+ session continuation); Grove Finance — fees +130.3% / TVL -0.8% ($1.26B TVL, unchanged multi-session read)
 
 ## DEX Volume
-24h total: $10.08B (-10.1% 1d, -13.3% 7d) — still depressed, lagging today's price recovery. Top 3: Uniswap V3 $1.55B (+4.8%) · Uniswap V4 $1.39B (-9.1%) · PancakeSwap AMM V3 $0.75B (+3.3%).
+24h total: $10.08B (-10.1% 1d) — this figure is an exact repeat of yesterday's read; the feed appears stale/frozen, not a fresh data point. Top 3 (also carried over): Uniswap V3 $1.81B (+22.5%) · Uniswap V4 $1.46B (-5.0%) · PancakeSwap AMM V3 $0.75B (+3.3%).
 
 ## Stablecoins
-Total: $312.68B (roughly flat vs $312.90B at 12:11Z). USDT $183.51B · USDC $75.23B · USDS $6.59B · USDe $4.90B · combined share of mcap ~10.8%. USDD +6.50% 1d and PYUSD -5.78% 1d continue their standing single-issuer drifts; USDai -37.3% 1d, unchanged from noon — a stale multi-session read, not a fresh move.
+Total: $313.05B (+0.14% 1d, +0.82% 7d). USDT $183.55B · USDC $76.18B · USDS $6.61B · USDe $4.90B · combined share of mcap ~10.8%. USDD +6.50% 1d and PYUSD -5.78% 1d continue their standing single-issuer drifts; USDai -36.9% 1d is now a multi-session-stale read (unchanged pattern from prior cycles), not a fresh move.
 
 ## Yields
 
 **Real yield (sustainable, ≥$10M, filtered)**
-- raydium-amm WSOL-USDC (Solana) — 63.58% apyBase ($43.5M TVL) — volatile-pair LP, material IL risk; down sharply from 86.13% at 12:11Z, 3rd straight decline this cycle
-- uniswap-v4 ETH-LINK (Ethereum) — 57.33% apyBase ($22.8M TVL) — new entry, volatile-pair LP
-- uniswap-v3 WETH-USDT (Ethereum) — 48.43% apyBase ($108.5M TVL) — down slightly from 49.46%
+- uniswap-v3 WETH-USDT (Ethereum) — 62.77% apyBase ($108.5M TVL) — up sharply from yesterday's 48.43%, volatile-pair LP with material IL risk
+- uniswap-v4 ETH-USDT (Ethereum) — 57.66% apyBase ($31.4M TVL) — new entry, volatile-pair LP
+- uniswap-v4 ETH-LINK (Ethereum) — 57.31% apyBase ($22.9M TVL) — essentially unchanged from yesterday's 57.33%
+
+Note: raydium-amm WSOL-USDC (Solana) dropped out of the top 3 today — apyBase fell to 43.13% (from 63.58%), a 4th straight session of decline (86.13%→63.58%→43.13%).
 
 **Incentive yield (points / emissions, ≥$25M)**
-- Aerodrome USDC-AERO (Base) — 24.11% apy via AERO ($36.8M TVL)
-- Stake DAO SDCRV (Ethereum) — 12.65% apy via CRV/cvxCRV rewards ($41.8M TVL)
+- Aerodrome USDC-AERO (Base) — 24.36% apy via AERO ($35.5M TVL)
+- Stake DAO SDCRV (Ethereum) — 12.69% apy via CRV/cvxCRV rewards ($41.3M TVL)
 
 ## Trending (CoinGecko)
-- NEAR (NEAR Protocol) — +8.3% 24h to $4.67, tracking the NEAR Bridge TVL reversal (+7.14% 1d) — price and TVL confirming each other today.
-- ONDO (Ondo Finance) — +23.1% 24h to $0.51, part of the standing RWA-tokenization narrative (ARB/AVAX picks earlier this month).
-- LTC (Litecoin) — +18.4% 24h to $71.60, no confirmed catalyst found this cycle.
+- NEAR (NEAR Protocol) — +7.4% 24h to $4.61, tracking the confirmed NEAR Bridge TVL reversal (+7.9% 1d).
+- ONDO (Ondo Finance) — +26.6% 24h to $0.52, 2nd straight day of 20%+ moves on the RWA-tokenization narrative.
+- PEAQ (peaq) — +27.2% 24h, but its DePIN chain TVL is negligible ($0.9M) — no on-chain catalyst found, price move looks token-only.
 
 ## Prediction Markets (Polymarket, top by 24h vol, crypto/macro-relevant)
 | Market | YES% | 24h Vol | Liquidity |
 |--------|------|---------|-----------|
-| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 65.5% | $0.49m | $0.40m |
-| Will there be no change in Fed interest rates after the October 2026 meeting? | 33.5% | $0.38m | $0.34m |
-| Will Bitcoin reach $87,500 in September? | 32.5% | $0.12m | n/a |
+| Will the Fed increase interest rates by 25 bps after the October 2026 meeting? | 66.5% | $0.46m | $0.53m |
+| Will Bitcoin reach $87,500 in September? | 38.0% | $0.13m | $0.07m |
+| Will Ethereum dip to $2,600 in September? | 61.5% | $0.10m | $0.06m |
 
 ## Macro Catalysts (next 48h)
-- Deribit's quarterly options expiry lands Sep 25 (tomorrow) — quarter-end expiries carry outsized open interest vs a standard monthly expiry, a known volatility trigger.
-- Fed repricing remains the live driver: markets pricing in a 4-hike path by June 2027 per today's WebSearch scan, though Polymarket's Oct 25bp odds eased slightly (67.5%→65.5%) alongside today's price bounce.
-- 10-year Treasury yield hit its highest level since 2007 today — the proximate cause of the morning's crypto/equity selloff; watch for follow-through or reversal.
+- Two token unlocks land today (Sep 25): XPL unlocks 63.2% of circulating supply (~$158M) and H unlocks 7.34% (~$19.2M) — the XPL unlock is a large single-day supply overhang.
+- FOMC voter and Cleveland Fed President Beth Hammack speaks Sep 26 — next Fed-repricing input ahead of Oct meeting odds (currently 66.5% for a 25bp hike, up from 64.5% yesterday).
+- BTC pulled back from $87K to test $83.6-83.8K support before rebounding to today's $84.4K — that range is the near-term battle line.
 
 ## Implications for Downstream Skills
-- **token-pick:** favor the NEAR reversal (TVL and price now confirming) and Circle/Arc cirBTC's 5th consecutive acceleration read; avoid chasing the breadth spike itself — it reversed from 1/20 to 14/20 within six hours, a sign of low conviction/thin liquidity, not a durable trend change.
-- **narrative-tracker:** re-classify NEAR ecosystem from fading→rising (TVL and price both confirm today, reversing the prior 4-session outflow call); watch BTC ETF inflow narrative for a promotion from Watch→Rising given the first YTD-net-positive flow day.
+- **token-pick:** favor Circle/Arc cirBTC's confirmed 4th-session acceleration and NEAR's now-confirmed TVL+price reversal; treat ONDO's 2nd straight 20%+ day as chase risk, not a fresh entry.
+- **narrative-tracker:** watch today's XPL 63.2%-supply unlock for sell-pressure follow-through; Bittensor bridge/pool bleed continues (-5.04% 1d) distinct from TAO's already-flagged Peak token-price call.
 
 ## Token Picks Made
 | Date | Token | Price | Thesis |
@@ -103,4 +102,4 @@ Total: $312.68B (roughly flat vs $312.90B at 12:11Z). USDT $183.51B · USDC $75.
 
 ---
 *Sources — btc/eth: CoinGecko · defi: DeFiLlama · sentiment: alternative.me · markets: Polymarket*
-*Source status: coingecko=ok(direct, no key, secretcurl binary not present) defillama=ok(all fresh) fng=ok polymarket=ok websearch=ok*
+*Source status: coingecko=ok(direct, no key, secretcurl binary not present) defillama=ok(tvl/protocols/stables/yields fresh; dex+fees feeds appear frozen/stale, identical to yesterday's read) fng=ok polymarket=ok websearch=ok*
