@@ -156,15 +156,15 @@
   {
     "skill": "auto-merge",
     "rank": 12,
-    "runs": 5,
-    "successes": 4,
+    "runs": 6,
+    "successes": 5,
     "failures": 1,
     "avg_score": 3,
-    "scored_runs": 4,
-    "last_score": 4,
+    "scored_runs": 5,
+    "last_score": 3,
     "last_status": "completed",
-    "last_run_id": "run_20260925T140446Z_auto-merge_4ef9f8",
-    "consecutive_fails": 1,
+    "last_run_id": "run_20260926T140411Z_auto-merge_8b08ee",
+    "consecutive_fails": 0,
     "flags": []
   },
   {

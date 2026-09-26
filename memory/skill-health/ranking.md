@@ -13,7 +13,7 @@
 | 9 | fear-divergence | 6 | 6 | 0 | 3.3 | 4 | - |
 | 10 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 11 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
-| 12 | auto-merge | 5 | 4 | 1 | 3.0 | 4 | - |
+| 12 | auto-merge | 6 | 5 | 1 | 3.0 | 3 | - |
 | 13 | pr-review | 6 | 6 | 0 | 2.8 | 3 | low_score |
 | 14 | heartbeat | 7 | 7 | 0 | 2.4 | 3 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |

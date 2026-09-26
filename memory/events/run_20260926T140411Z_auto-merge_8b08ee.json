@@ -1,0 +1,54 @@
+{
+  "run_id": "run_20260926T140411Z_auto-merge_8b08ee",
+  "skill": "auto-merge",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "auto-merge|2026-09-26T14:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "log_duplication_or_corruption: memory/logs/2026-09-26.md contains two ### auto-merge entries with the same run_id; second entry is truncated at 'status: running-compl' (incomplete write, possible file I/O defect or race condition)",
+    "state_file_backup_and_update: otherwise correct (last_run bumped, jq validated, .bak written)",
+    "core_logic_sound: correctly identified 0 open PRs, did not attempt merges, did not notify (per policy)",
+    "no_fallback_on_log_failure: run did not detect or recover from apparent partial append to logs"
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1812,
+    "cache_read_input_tokens": 91113,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.20317890000000002
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/auto-merge/run_20260926T140411Z_auto-merge_8b08ee.md",
+  "result_hash": "sha256:c910b8067a4b5dde4dea06c78afb57987dad9766cf1157988f3e51204a4406f1",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 4
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "auto-merge|2026-09-26T14:00:00Z",
+  "scheduled_at": "2026-09-26T14:00:00Z",
+  "deadline": "2026-09-26T14:14:11.328091456Z",
+  "created_at": "2026-09-26T14:04:11.328091456Z",
+  "updated_at": "2026-09-26T14:05:08.421703887Z",
+  "completed_at": "2026-09-26T14:05:08.42168574Z"
+}
