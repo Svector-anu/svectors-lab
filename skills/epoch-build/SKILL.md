@@ -18,10 +18,14 @@ This skill declares `external_scratch`, so MiniAeon provisions a directory outsi
 
 Shell variables do not survive between tool calls. Read `$MINIAEON_SCAN_DIR` once, print it, and paste the absolute path into later commands.
 
+A full clone of a large repository exhausts the shell backend and kills the run, so clone blobless and shallow, with explicit timeouts:
+
 ```
 echo "$MINIAEON_SCAN_DIR"
-git -C "$MINIAEON_SCAN_DIR" clone --depth 20 https://github.com/<owner>/<repo>.git work
+timeout 600 git clone --filter=blob:none --depth 1 https://github.com/<owner>/<repo>.git work
 ```
+
+If the clone times out anyway, stop and report it. Do not open a PR you could not build and verify.
 
 ## Do
 
