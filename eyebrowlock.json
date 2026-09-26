@@ -1984,6 +1984,26 @@
       "discoveredFrom": "skills/create-prove/SKILL.md"
     },
     {
+      "id": "9a0504d5f68c778f",
+      "tool": "aeon",
+      "scope": "project:.",
+      "type": "skill",
+      "name": "dev-loop-runner",
+      "source": {
+        "kind": "local",
+        "ref": "skills/dev-loop-runner"
+      },
+      "capabilities": {},
+      "files": [
+        {
+          "path": "SKILL.md",
+          "hash": "9ceeb64e903a335be64ca3b598fa04941eecc20678ad478675758102e246424e"
+        }
+      ],
+      "contentHash": "sha256-9ceeb64e903a335be64ca3b598fa04941eecc20678ad478675758102e246424e",
+      "discoveredFrom": "skills/dev-loop-runner/SKILL.md"
+    },
+    {
       "id": "c87437853e0ee112",
       "tool": "aeon",
       "scope": "project:.",
