@@ -58,18 +58,16 @@
   {
     "skill": "defi-overview",
     "rank": 5,
-    "runs": 20,
-    "successes": 15,
+    "runs": 21,
+    "successes": 16,
     "failures": 5,
-    "avg_score": 3.789473684210526,
-    "scored_runs": 19,
-    "last_score": 3,
+    "avg_score": 3.8,
+    "scored_runs": 20,
+    "last_score": 4,
     "last_status": "completed",
-    "last_run_id": "run_20260926T002302Z_defi-overview_184371",
-    "consecutive_fails": 2,
-    "flags": [
-      "failing"
-    ]
+    "last_run_id": "run_20260926T095117Z_defi-overview_1c83e3",
+    "consecutive_fails": 0,
+    "flags": []
   },
   {
     "skill": "narrative-tracker",

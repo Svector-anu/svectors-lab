@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260926T095117Z_defi-overview_1c83e3",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "Position calls implicit, not explicit—trader must infer 'chop'/'sideways' to action (strategy requires 'front-run/ride/fade/watch' framing)",
+    "Conviction level 'medium' not mapped to actionable positioning framework",
+    "Summary mentions follow-up tasks (narrative-tracker re Backpack, token-pick re ENA) but these are narrator suggestions, not memory-embedded signals for downstream skills"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
