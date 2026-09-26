@@ -1,0 +1,52 @@
+{
+  "run_id": "run_20260926T100126Z_github-trending_5e3d57",
+  "skill": "github-trending",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "github-trending|2026-09-26T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 5,
+  "usage": {
+    "input_tokens": 31,
+    "output_tokens": 22850,
+    "cache_read_input_tokens": 993839,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.2401007000000002
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/github-trending/run_20260926T100126Z_github-trending_5e3d57.md",
+  "result_hash": "sha256:2a5ce58c44672d3276b86258832c7e9d3e21aabac5cb010d59cc46461317c1dd",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 13
+    },
+    {
+      "name": "web_search",
+      "count": 10
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "github-trending|2026-09-26T09:00:00Z",
+  "scheduled_at": "2026-09-26T09:00:00Z",
+  "deadline": "2026-09-26T10:11:26.40085571Z",
+  "created_at": "2026-09-26T10:01:26.40085571Z",
+  "updated_at": "2026-09-26T10:07:13.12359536Z",
+  "completed_at": "2026-09-26T10:07:13.123587447Z"
+}
