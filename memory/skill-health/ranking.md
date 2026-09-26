@@ -9,7 +9,7 @@
 | 5 | feature | 2 | 1 | 1 | 4.0 | 4 | - |
 | 6 | github-trending | 6 | 6 | 0 | 3.8 | 5 | - |
 | 7 | defi-overview | 23 | 16 | 7 | 3.8 | 4 | failing |
-| 8 | narrative-tracker | 22 | 21 | 1 | 3.6 | 3 | - |
+| 8 | narrative-tracker | 23 | 22 | 1 | 3.7 | 4 | - |
 | 9 | hunter-22 | 8 | 7 | 1 | 3.4 | 3 | - |
 | 10 | fear-divergence | 6 | 6 | 0 | 3.3 | 4 | - |
 | 11 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
