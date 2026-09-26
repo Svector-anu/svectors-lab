@@ -1,0 +1,110 @@
+{
+  "run_id": "run_20260926T002302Z_defi-overview_184371",
+  "skill": "defi-overview",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "defi-overview|2026-09-26T00:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": false,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "SCOPE_VIOLATION: wrote 40+ files to .tmp/ (cache artifacts: chains.json, hist_*.json, fees.json, etc.) when write_scope='own-memory' permits only memory/ and output/. scope_ok=false.",
+    "NOTIFY_DELIVERY_ERROR: Telegram and Slack renders show [ERROR] prefix and truncation; content truncated mid-word at 'HyperLe...' suggesting render-time failure or size/format issue.",
+    "OUTPUT_QUALITY_GAP: content itself is strong (specific numbers, catalysts sourced, narratives tracked, yields split real/incentive) — but scope violation prevents clean execution; the skill should not be caching intermediate API responses to .tmp/ under its write scope contract."
+  ],
+  "usage": {
+    "input_tokens": 109,
+    "output_tokens": 40990,
+    "cache_read_input_tokens": 4432122,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.6680476000000004
+  },
+  "scope_violations": [
+    "added:.tmp",
+    "added:.tmp/all_open.json",
+    "added:.tmp/cg_global.json",
+    "added:.tmp/cg_markets.json",
+    "added:.tmp/cg_price.json",
+    "added:.tmp/cg_trending.json",
+    "added:.tmp/chains.json",
+    "added:.tmp/dexs.json",
+    "added:.tmp/e1.json",
+    "added:.tmp/fed_event.json",
+    "added:.tmp/fees.json",
+    "added:.tmp/fng.json",
+    "added:.tmp/hist_Aptos.json",
+    "added:.tmp/hist_Arbitrum.json",
+    "added:.tmp/hist_Avalanche.json",
+    "added:.tmp/hist_BSC.json",
+    "added:.tmp/hist_Base.json",
+    "added:.tmp/hist_Berachain.json",
+    "added:.tmp/hist_Bitcoin.json",
+    "added:.tmp/hist_Bittensor.json",
+    "added:.tmp/hist_Ethereum.json",
+    "added:.tmp/hist_Hyperliquid_L1.json",
+    "added:.tmp/hist_Linea.json",
+    "added:.tmp/hist_Mantle.json",
+    "added:.tmp/hist_Monad.json",
+    "added:.tmp/hist_Plasma.json",
+    "added:.tmp/hist_Polygon.json",
+    "added:.tmp/hist_Solana.json",
+    "added:.tmp/hist_Sonic.json",
+    "added:.tmp/hist_Sui.json",
+    "added:.tmp/hist_TON.json",
+    "added:.tmp/hist_Tron.json",
+    "added:.tmp/hist_tvl.json",
+    "added:.tmp/m2589811.json",
+    "added:.tmp/poly_fed.json",
+    "added:.tmp/poly_fed2.json",
+    "added:.tmp/poly_fed3.json",
+    "added:.tmp/poly_liq.json",
+    "added:.tmp/poly_top100liq.json",
+    "added:.tmp/poly_top100vol.json",
+    "added:.tmp/poly_top20.json",
+    "added:.tmp/poly_vol.json",
+    "added:.tmp/pools.json",
+    "added:.tmp/protocols.json",
+    "added:.tmp/search1.json",
+    "added:.tmp/search2.json",
+    "added:.tmp/stables.json"
+  ],
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/defi-overview/run_20260926T002302Z_defi-overview_184371.md",
+  "result_hash": "sha256:1480e237d3a347b6042dfef7ee7afc28c97b9b812688a7fe9a8a0647d5fc68bc",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 56
+    },
+    {
+      "name": "web_search",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 2
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "defi-overview|2026-09-26T00:00:00Z",
+  "scheduled_at": "2026-09-26T00:00:00Z",
+  "deadline": "2026-09-26T00:33:02.352981796Z",
+  "created_at": "2026-09-26T00:23:02.352981796Z",
+  "updated_at": "2026-09-26T00:32:10.625071655Z",
+  "completed_at": "2026-09-26T00:32:10.625063189Z"
+}

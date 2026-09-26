@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260926T002302Z_defi-overview_184371",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 4,
+  "strategy_alignment": 5,
+  "evidence": 5,
+  "scope_compliance": 1,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "SCOPE_VIOLATION: wrote 40+ files to .tmp/ (cache artifacts: chains.json, hist_*.json, fees.json, etc.) when write_scope='own-memory' permits only memory/ and output/. scope_ok=false.",
+    "NOTIFY_DELIVERY_ERROR: Telegram and Slack renders show [ERROR] prefix and truncation; content truncated mid-word at 'HyperLe...' suggesting render-time failure or size/format issue.",
+    "OUTPUT_QUALITY_GAP: content itself is strong (specific numbers, catalysts sourced, narratives tracked, yields split real/incentive) — but scope violation prevents clean execution; the skill should not be caching intermediate API responses to .tmp/ under its write scope contract."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
