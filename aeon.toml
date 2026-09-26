@@ -526,3 +526,29 @@ role = "verifier"
 risk = "medium"
 write_scope = "own-memory"
 on_missed_run = "skip_stale"
+
+# Epoch stage 1: intent -> class -> Map + Spec + Work order + Candidate + Handoff.
+# shared-memory already grants memory/topics and memory/candidates, which is the
+# whole artifact surface; no extra permissions and no new store.
+[skills.epoch-spec]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "thinker"
+risk = "low"
+write_scope = "shared-memory"
+on_missed_run = "skip_stale"
+
+# Epoch stage 2: one work order -> isolated checkout -> code change -> PR ->
+# pull-request.json, which registered_pr turns into ProposalURL + a pending
+# approval. external_scratch (manifest) provisions the isolated clone dir.
+[skills.epoch-build]
+enabled = true
+schedule = ""
+runtime = "any"
+model = "standard"
+role = "worker"
+risk = "medium"
+write_scope = "own-memory"
+on_missed_run = "skip_stale"

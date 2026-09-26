@@ -1,0 +1,13 @@
+name = "epoch-build"
+entrypoint = "SKILL.md"
+runtime = "any"
+role = "worker"
+risk = "medium"
+model = "standard"
+write_scope = "own-memory"
+feedback_mode = "none"
+on_missed_run = "skip_stale"
+capabilities = ["repository_read", "repository_write"]
+tools = ["read", "write", "bash", "grep", "glob"]
+external_scratch = true
+timeout_minutes = 45
