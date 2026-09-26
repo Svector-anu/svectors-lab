@@ -1,0 +1,61 @@
+{
+  "run_id": "run_20260926T163606Z_vuln-tracker_6be61e",
+  "skill": "vuln-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "vuln-tracker|2026-09-26T16:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": false,
+  "scope_ok": false,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 1,
+  "score_flags": [
+    "scope-violation: added .pending-notify-temp/ (root-level ephemeral, not within own-memory)",
+    "contract-breach: skill produced fragment instead of lifecycle poll (PR/advisory/PVR/queue audit)",
+    "incomplete-output: '40 unique PRs. Now let's get the JSON scan history' reads as mid-execution interruption",
+    "no-decision: output is status line, not decision-grade (no conclusion first, no position calls, no recommendation)",
+    "memory-corruption: logs/2026-09-26.md entry truncated at 'running-compl'",
+    "no-signal: for crypto traders (stated audience), output is unusable — not a tradeable read",
+    "unverified-claim: '40 unique PRs' stated but no evidence (no PR count, no source, no link)"
+  ],
+  "usage": {
+    "input_tokens": 83,
+    "output_tokens": 34782,
+    "cache_read_input_tokens": 3733740,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 2.427513
+  },
+  "scope_violations": [
+    "added:.pending-notify-temp",
+    "added:.pending-notify-temp/vuln-tracker-2026-09-26.md"
+  ],
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/vuln-tracker/run_20260926T163606Z_vuln-tracker_6be61e.md",
+  "result_hash": "sha256:b62483b60f2d877aac1df121ad05fa3964e0502fc8bef16d5ecc5ca939bf8a6a",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 50
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "vuln-tracker|2026-09-26T16:30:00Z",
+  "scheduled_at": "2026-09-26T16:30:00Z",
+  "deadline": "2026-09-26T16:46:06.963567001Z",
+  "created_at": "2026-09-26T16:36:06.963567001Z",
+  "updated_at": "2026-09-26T16:46:34.469900481Z",
+  "completed_at": "2026-09-26T16:46:34.469891143Z"
+}

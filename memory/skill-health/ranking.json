@@ -216,8 +216,25 @@
     ]
   },
   {
-    "skill": "create-prove",
+    "skill": "vuln-tracker",
     "rank": 16,
+    "runs": 6,
+    "successes": 0,
+    "failures": 6,
+    "avg_score": 1,
+    "scored_runs": 1,
+    "last_score": 1,
+    "last_status": "completed",
+    "last_run_id": "run_20260926T163606Z_vuln-tracker_6be61e",
+    "consecutive_fails": 6,
+    "flags": [
+      "failing",
+      "low_score"
+    ]
+  },
+  {
+    "skill": "create-prove",
+    "rank": 17,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -231,7 +248,7 @@
   },
   {
     "skill": "feature",
-    "rank": 17,
+    "rank": 18,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -245,7 +262,7 @@
   },
   {
     "skill": "fork-fleet",
-    "rank": 18,
+    "rank": 19,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -259,7 +276,7 @@
   },
   {
     "skill": "vuln-scanner",
-    "rank": 19,
+    "rank": 20,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -270,21 +287,5 @@
     "last_run_id": "run_20260926T160449Z_vuln-scanner_49503b",
     "consecutive_fails": 1,
     "flags": []
-  },
-  {
-    "skill": "vuln-tracker",
-    "rank": 20,
-    "runs": 5,
-    "successes": 0,
-    "failures": 5,
-    "avg_score": 0,
-    "scored_runs": 0,
-    "last_score": 0,
-    "last_status": "completed",
-    "last_run_id": "run_20260925T163513Z_vuln-tracker_0ff4d0",
-    "consecutive_fails": 5,
-    "flags": [
-      "failing"
-    ]
   }
 ]

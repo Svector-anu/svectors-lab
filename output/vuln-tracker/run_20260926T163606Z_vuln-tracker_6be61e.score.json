@@ -1,0 +1,24 @@
+{
+  "run_id": "run_20260926T163606Z_vuln-tracker_6be61e",
+  "score": 1,
+  "correctness": 1,
+  "usefulness": 1,
+  "strategy_alignment": 1,
+  "evidence": 2,
+  "scope_compliance": 1,
+  "memory_hygiene": 2,
+  "channel_formatting": 1,
+  "flags": [
+    "scope-violation: added .pending-notify-temp/ (root-level ephemeral, not within own-memory)",
+    "contract-breach: skill produced fragment instead of lifecycle poll (PR/advisory/PVR/queue audit)",
+    "incomplete-output: '40 unique PRs. Now let's get the JSON scan history' reads as mid-execution interruption",
+    "no-decision: output is status line, not decision-grade (no conclusion first, no position calls, no recommendation)",
+    "memory-corruption: logs/2026-09-26.md entry truncated at 'running-compl'",
+    "no-signal: for crypto traders (stated audience), output is unusable — not a tradeable read",
+    "unverified-claim: '40 unique PRs' stated but no evidence (no PR count, no source, no link)"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

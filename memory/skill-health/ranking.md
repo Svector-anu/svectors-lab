@@ -17,9 +17,9 @@
 | 13 | pr-review | 6 | 6 | 0 | 2.8 | 3 | low_score |
 | 14 | heartbeat | 7 | 7 | 0 | 2.4 | 3 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
-| 16 | create-prove | 1 | 0 | 1 | - | - | - |
-| 17 | feature | 1 | 0 | 1 | - | - | - |
-| 18 | fork-fleet | 1 | 0 | 1 | - | - | - |
-| 19 | vuln-scanner | 1 | 0 | 1 | - | - | - |
-| 20 | vuln-tracker | 5 | 0 | 5 | - | - | failing |
+| 16 | vuln-tracker | 6 | 0 | 6 | 1.0 | 1 | failing,low_score |
+| 17 | create-prove | 1 | 0 | 1 | - | - | - |
+| 18 | feature | 1 | 0 | 1 | - | - | - |
+| 19 | fork-fleet | 1 | 0 | 1 | - | - | - |
+| 20 | vuln-scanner | 1 | 0 | 1 | - | - | - |
 
