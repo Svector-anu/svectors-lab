@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260926T100713Z_heartbeat_077ce3",
+  "score": 3,
+  "correctness": 3,
+  "usefulness": 3,
+  "strategy_alignment": 2,
+  "evidence": 3,
+  "scope_compliance": 4,
+  "memory_hygiene": 4,
+  "channel_formatting": 2,
+  "flags": [
+    "contradictory_header: 'HEARTBEAT_OK' contradicts 'STATUS_PAGE=WATCH' (yellow alert)",
+    "minimal_actionable_output: status snapshot with no position call or recommendation; outputs 'no new findings' but lists 4 critical pre-existing issues without explaining what trader should do",
+    "strategy_misalignment: outputs status log, not decision-grade card; does not lead with useful outcome, does not follow 'conclusion first' rule; audience is crypto traders expecting take+move, not fleet ops dashboard",
+    "evidence_not_cited: status.md was written but not linked or quoted in output; claims without grounding",
+    "terse_without_substance: 'ambient check completed' is narration, not conclusion; 3-bullet summary buries the actual status under meta-commentary about what was written"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "383c6ab0f1d28da10e27749081797bf81127c8ad"
+}

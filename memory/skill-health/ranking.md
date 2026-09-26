@@ -15,7 +15,7 @@
 | 11 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 12 | auto-merge | 5 | 4 | 1 | 3.0 | 4 | - |
 | 13 | pr-review | 5 | 5 | 0 | 2.8 | 4 | low_score |
-| 14 | heartbeat | 6 | 6 | 0 | 2.3 | 2 | low_score |
+| 14 | heartbeat | 7 | 7 | 0 | 2.4 | 3 | low_score |
 | 15 | skill-health | 1 | 1 | 0 | 2.0 | 2 | low_score |
 | 16 | create-prove | 1 | 0 | 1 | - | - | - |
 | 17 | feature | 1 | 0 | 1 | - | - | - |

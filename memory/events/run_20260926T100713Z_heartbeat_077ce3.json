@@ -1,0 +1,67 @@
+{
+  "run_id": "run_20260926T100713Z_heartbeat_077ce3",
+  "skill": "heartbeat",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "heartbeat|2026-09-26T08:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-haiku-4-5-20251001",
+  "actual_model": "anthropic/claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "contradictory_header: 'HEARTBEAT_OK' contradicts 'STATUS_PAGE=WATCH' (yellow alert)",
+    "minimal_actionable_output: status snapshot with no position call or recommendation; outputs 'no new findings' but lists 4 critical pre-existing issues without explaining what trader should do",
+    "strategy_misalignment: outputs status log, not decision-grade card; does not lead with useful outcome, does not follow 'conclusion first' rule; audience is crypto traders expecting take+move, not fleet ops dashboard",
+    "evidence_not_cited: status.md was written but not linked or quoted in output; claims without grounding",
+    "terse_without_substance: 'ambient check completed' is narration, not conclusion; 3-bullet summary buries the actual status under meta-commentary about what was written"
+  ],
+  "usage": {
+    "input_tokens": 203,
+    "output_tokens": 14579,
+    "cache_read_input_tokens": 1499661,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.38403210000000004
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/heartbeat/run_20260926T100713Z_heartbeat_077ce3.md",
+  "result_hash": "sha256:f55b82f375654f8e126ef62bebda2f6e509bea36d272327621d03fd27e5daec1",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 6
+    },
+    {
+      "name": "bash",
+      "count": 20
+    },
+    {
+      "name": "web_search",
+      "count": 15
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "heartbeat|2026-09-26T08:00:00Z",
+  "scheduled_at": "2026-09-26T08:00:00Z",
+  "deadline": "2026-09-26T10:12:13.293679883Z",
+  "created_at": "2026-09-26T10:07:13.293679883Z",
+  "updated_at": "2026-09-26T10:11:34.678910659Z",
+  "completed_at": "2026-09-26T10:11:34.678901572Z"
+}
