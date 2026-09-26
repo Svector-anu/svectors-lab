@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260926T101713Z_slop-watch_7669ae",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "HEADLINE_BURIES_ACTION: 'No new signal vs 2026-09-25' leads; 'Pick eliza' should lead. Trader skimming a QUIET run may not see the recommendation.",
+    "UNCHANGED_CLAIM_UNVERIFIED: Output claims 'All 8 tracked projects unchanged since 2026-09-25' but prior snapshot is not provided for verification. Internal state (state.json) is consistent and complete; claim is plausible but not independently verifiable in this scoring context.",
+    "MINOR_DENSITY: Report is information-dense (appropriate for configured style) but could surface 'work on eliza today' more aggressively in channel renders—currently embedded in a table + section body."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

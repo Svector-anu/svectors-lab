@@ -3,7 +3,7 @@
 | rank | skill | runs | ok | fail | avg | last | flags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | token-pick | 5 | 5 | 0 | 4.6 | 5 | - |
-| 2 | slop-watch | 5 | 5 | 0 | 4.2 | 5 | - |
+| 2 | slop-watch | 6 | 6 | 0 | 4.2 | 4 | - |
 | 3 | write-tweet | 5 | 5 | 0 | 4.0 | 4 | - |
 | 4 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
 | 5 | github-trending | 6 | 6 | 0 | 3.8 | 5 | - |
