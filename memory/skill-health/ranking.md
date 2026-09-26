@@ -20,5 +20,6 @@
 | 16 | create-prove | 1 | 0 | 1 | - | - | - |
 | 17 | feature | 1 | 0 | 1 | - | - | - |
 | 18 | fork-fleet | 1 | 0 | 1 | - | - | - |
-| 19 | vuln-tracker | 5 | 0 | 5 | - | - | failing |
+| 19 | vuln-scanner | 1 | 0 | 1 | - | - | - |
+| 20 | vuln-tracker | 5 | 0 | 5 | - | - | failing |
 

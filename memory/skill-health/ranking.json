@@ -258,8 +258,22 @@
     "flags": []
   },
   {
-    "skill": "vuln-tracker",
+    "skill": "vuln-scanner",
     "rank": 19,
+    "runs": 1,
+    "successes": 0,
+    "failures": 1,
+    "avg_score": 0,
+    "scored_runs": 0,
+    "last_score": 0,
+    "last_status": "completed",
+    "last_run_id": "run_20260926T160449Z_vuln-scanner_49503b",
+    "consecutive_fails": 1,
+    "flags": []
+  },
+  {
+    "skill": "vuln-tracker",
+    "rank": 20,
     "runs": 5,
     "successes": 0,
     "failures": 5,
