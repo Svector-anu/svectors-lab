@@ -1,0 +1,16 @@
+{
+  "run_id": "run_20260926T222142Z_epoch-build_51bffb",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 5,
+  "strategy_alignment": 4,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "eba00a2780a17298537dc1c25d38b685f1a9149a"
+}

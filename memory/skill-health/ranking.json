@@ -42,8 +42,22 @@
     "flags": []
   },
   {
-    "skill": "x402-monitor",
+    "skill": "epoch-build",
     "rank": 4,
+    "runs": 1,
+    "successes": 1,
+    "failures": 0,
+    "avg_score": 4,
+    "scored_runs": 1,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260926T222142Z_epoch-build_51bffb",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "x402-monitor",
+    "rank": 5,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -57,7 +71,7 @@
   },
   {
     "skill": "feature",
-    "rank": 5,
+    "rank": 6,
     "runs": 2,
     "successes": 1,
     "failures": 1,
@@ -71,7 +85,7 @@
   },
   {
     "skill": "github-trending",
-    "rank": 6,
+    "rank": 7,
     "runs": 6,
     "successes": 6,
     "failures": 0,
@@ -85,7 +99,7 @@
   },
   {
     "skill": "defi-overview",
-    "rank": 7,
+    "rank": 8,
     "runs": 23,
     "successes": 16,
     "failures": 7,
@@ -101,7 +115,7 @@
   },
   {
     "skill": "narrative-tracker",
-    "rank": 8,
+    "rank": 9,
     "runs": 23,
     "successes": 22,
     "failures": 1,
@@ -115,7 +129,7 @@
   },
   {
     "skill": "hunter-22",
-    "rank": 9,
+    "rank": 10,
     "runs": 8,
     "successes": 7,
     "failures": 1,
@@ -129,7 +143,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 10,
+    "rank": 11,
     "runs": 6,
     "successes": 6,
     "failures": 0,
@@ -143,7 +157,7 @@
   },
   {
     "skill": "preference-profile",
-    "rank": 11,
+    "rank": 12,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -157,7 +171,7 @@
   },
   {
     "skill": "shiplog",
-    "rank": 12,
+    "rank": 13,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -171,7 +185,7 @@
   },
   {
     "skill": "auto-merge",
-    "rank": 13,
+    "rank": 14,
     "runs": 6,
     "successes": 5,
     "failures": 1,
@@ -185,7 +199,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 14,
+    "rank": 15,
     "runs": 6,
     "successes": 6,
     "failures": 0,
@@ -201,7 +215,7 @@
   },
   {
     "skill": "heartbeat",
-    "rank": 15,
+    "rank": 16,
     "runs": 7,
     "successes": 7,
     "failures": 0,
@@ -217,7 +231,7 @@
   },
   {
     "skill": "skill-health",
-    "rank": 16,
+    "rank": 17,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -233,7 +247,7 @@
   },
   {
     "skill": "vuln-tracker",
-    "rank": 17,
+    "rank": 18,
     "runs": 6,
     "successes": 0,
     "failures": 6,
@@ -250,7 +264,7 @@
   },
   {
     "skill": "create-prove",
-    "rank": 18,
+    "rank": 19,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -264,7 +278,7 @@
   },
   {
     "skill": "fork-fleet",
-    "rank": 19,
+    "rank": 20,
     "runs": 1,
     "successes": 0,
     "failures": 1,
@@ -278,7 +292,7 @@
   },
   {
     "skill": "vuln-scanner",
-    "rank": 20,
+    "rank": 21,
     "runs": 1,
     "successes": 0,
     "failures": 1,
