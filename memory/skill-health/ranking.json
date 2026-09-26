@@ -56,8 +56,22 @@
     "flags": []
   },
   {
-    "skill": "github-trending",
+    "skill": "feature",
     "rank": 5,
+    "runs": 2,
+    "successes": 1,
+    "failures": 1,
+    "avg_score": 4,
+    "scored_runs": 1,
+    "last_score": 4,
+    "last_status": "completed",
+    "last_run_id": "run_20260926T172002Z_feature_442087",
+    "consecutive_fails": 0,
+    "flags": []
+  },
+  {
+    "skill": "github-trending",
+    "rank": 6,
     "runs": 6,
     "successes": 6,
     "failures": 0,
@@ -71,7 +85,7 @@
   },
   {
     "skill": "defi-overview",
-    "rank": 6,
+    "rank": 7,
     "runs": 22,
     "successes": 16,
     "failures": 6,
@@ -85,7 +99,7 @@
   },
   {
     "skill": "narrative-tracker",
-    "rank": 7,
+    "rank": 8,
     "runs": 22,
     "successes": 21,
     "failures": 1,
@@ -99,7 +113,7 @@
   },
   {
     "skill": "hunter-22",
-    "rank": 8,
+    "rank": 9,
     "runs": 8,
     "successes": 7,
     "failures": 1,
@@ -113,7 +127,7 @@
   },
   {
     "skill": "fear-divergence",
-    "rank": 9,
+    "rank": 10,
     "runs": 6,
     "successes": 6,
     "failures": 0,
@@ -127,7 +141,7 @@
   },
   {
     "skill": "preference-profile",
-    "rank": 10,
+    "rank": 11,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -141,7 +155,7 @@
   },
   {
     "skill": "shiplog",
-    "rank": 11,
+    "rank": 12,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -155,7 +169,7 @@
   },
   {
     "skill": "auto-merge",
-    "rank": 12,
+    "rank": 13,
     "runs": 6,
     "successes": 5,
     "failures": 1,
@@ -169,7 +183,7 @@
   },
   {
     "skill": "pr-review",
-    "rank": 13,
+    "rank": 14,
     "runs": 6,
     "successes": 6,
     "failures": 0,
@@ -185,7 +199,7 @@
   },
   {
     "skill": "heartbeat",
-    "rank": 14,
+    "rank": 15,
     "runs": 7,
     "successes": 7,
     "failures": 0,
@@ -201,7 +215,7 @@
   },
   {
     "skill": "skill-health",
-    "rank": 15,
+    "rank": 16,
     "runs": 1,
     "successes": 1,
     "failures": 0,
@@ -217,7 +231,7 @@
   },
   {
     "skill": "vuln-tracker",
-    "rank": 16,
+    "rank": 17,
     "runs": 6,
     "successes": 0,
     "failures": 6,
@@ -234,20 +248,6 @@
   },
   {
     "skill": "create-prove",
-    "rank": 17,
-    "runs": 1,
-    "successes": 0,
-    "failures": 1,
-    "avg_score": 0,
-    "scored_runs": 0,
-    "last_score": 0,
-    "last_status": "completed",
-    "last_run_id": "run_20260921T112606Z_create-prove_bc6fdb",
-    "consecutive_fails": 1,
-    "flags": []
-  },
-  {
-    "skill": "feature",
     "rank": 18,
     "runs": 1,
     "successes": 0,
@@ -256,7 +256,7 @@
     "scored_runs": 0,
     "last_score": 0,
     "last_status": "completed",
-    "last_run_id": "run_20260921T111234Z_feature_f67c3e",
+    "last_run_id": "run_20260921T112606Z_create-prove_bc6fdb",
     "consecutive_fails": 1,
     "flags": []
   },
