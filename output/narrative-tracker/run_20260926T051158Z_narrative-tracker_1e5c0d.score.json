@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260926T051158Z_narrative-tracker_1e5c0d",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 3,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "channel-formatting: leads with timing metadata (`Intraday delta vs...`) rather than conclusion in first 150 chars; strategy requires 'conclusion first' for traders scanning Skopos. headline should be narrative transitions + position calls, e.g., 'Bitget hack fading (Mandiant investigating, Oct2 restart), Sui/DeepBook emerging (thin $12.3M TVL), Circle/Arc cooling — FADE Bitget+Circle, WATCH Sui, RIDE Backpack' (captures all decisions in 150 chars, zero wasted meta-commentary)",
+    "xai-api-persistence: 26+ consecutive failures since 2026-09-21 14:04Z (5+ days billing exhaustion). run documents the degradation but does not escalate or flag as a system issue requiring operator attention. acceptable per 'honesty over completeness,' but a persistent primary-signal loss for 5 days is worth surfacing separately",
+    "freshness-mixed: several narratives marked 'unchanged, not re-checked this pass' (NEAR, Bittensor, Fed pivot, RWA, all Fading items). per contract this is valid ('not re-checked' is allowed), but output claims '~10.5h gap' freshness while carrying stale items from 2026-09-25 18:35Z. minor fidelity hit for a Skopos trader relying on intraday snapshots"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

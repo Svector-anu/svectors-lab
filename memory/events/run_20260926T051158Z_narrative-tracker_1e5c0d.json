@@ -1,0 +1,65 @@
+{
+  "run_id": "run_20260926T051158Z_narrative-tracker_1e5c0d",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-26T00:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "channel-formatting: leads with timing metadata (`Intraday delta vs...`) rather than conclusion in first 150 chars; strategy requires 'conclusion first' for traders scanning Skopos. headline should be narrative transitions + position calls, e.g., 'Bitget hack fading (Mandiant investigating, Oct2 restart), Sui/DeepBook emerging (thin $12.3M TVL), Circle/Arc cooling — FADE Bitget+Circle, WATCH Sui, RIDE Backpack' (captures all decisions in 150 chars, zero wasted meta-commentary)",
+    "xai-api-persistence: 26+ consecutive failures since 2026-09-21 14:04Z (5+ days billing exhaustion). run documents the degradation but does not escalate or flag as a system issue requiring operator attention. acceptable per 'honesty over completeness,' but a persistent primary-signal loss for 5 days is worth surfacing separately",
+    "freshness-mixed: several narratives marked 'unchanged, not re-checked this pass' (NEAR, Bittensor, Fed pivot, RWA, all Fading items). per contract this is valid ('not re-checked' is allowed), but output claims '~10.5h gap' freshness while carrying stale items from 2026-09-25 18:35Z. minor fidelity hit for a Skopos trader relying on intraday snapshots"
+  ],
+  "usage": {
+    "input_tokens": 29,
+    "output_tokens": 15233,
+    "cache_read_input_tokens": 1016851,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1567793
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260926T051158Z_narrative-tracker_1e5c0d.md",
+  "result_hash": "sha256:57627a126f0486a0d726ebad74858af552e9812e2e30d4592e6e2477996dfdf8",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 11
+    },
+    {
+      "name": "web_search",
+      "count": 6
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-26T00:30:00Z",
+  "scheduled_at": "2026-09-26T00:30:00Z",
+  "deadline": "2026-09-26T05:21:58.662814389Z",
+  "created_at": "2026-09-26T05:11:58.662814389Z",
+  "updated_at": "2026-09-26T05:16:08.994943055Z",
+  "completed_at": "2026-09-26T05:16:08.994935364Z"
+}
