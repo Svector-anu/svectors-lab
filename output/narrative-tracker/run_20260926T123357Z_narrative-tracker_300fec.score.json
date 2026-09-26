@@ -1,0 +1,23 @@
+{
+  "run_id": "run_20260926T123357Z_narrative-tracker_300fec",
+  "score": 3,
+  "correctness": 4,
+  "usefulness": 3,
+  "strategy_alignment": 4,
+  "evidence": 3,
+  "scope_compliance": 4,
+  "memory_hygiene": 3,
+  "channel_formatting": 2,
+  "flags": [
+    "X.AI API exhausted 29 consecutive runs (since 2026-09-21 14:04Z); skill now running on fallback sources only. Normalized as 'fell back' rather than escalated as critical operational blocker.",
+    "Channel output is a wall of technical detail (Fetch status, jq parsing, fallback explanation). Headline correct ('no phase transitions'), but body obscures trader decision. No single recommendation for action.",
+    "Bash proof format: contract specifies literal `echo \"xai http=$HTTP ...\"` line; run shows HTTP status as paraphrased summary ('returned xai http=403 x3'), not raw bash output.",
+    "Fallback paths (WebSearch, CoinGecko API) used but proof not shown. Only tool_calls count logged (web_search x6); no captured responses or sample CoinGecko calls shown for verification.",
+    "Systemic X.AI failure not escalated to memory/topics/ as persistent operational issue. Future runs will rediscover it rather than seeing it as a known blocker.",
+    "Output optimized for continuous watcher (confirmation pass of prior 10:11Z calls) rather than standalone reader. Cold-start trader cannot act on 'map unchanged' without prior context."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
