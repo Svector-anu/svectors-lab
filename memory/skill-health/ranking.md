@@ -10,7 +10,7 @@
 | 6 | narrative-tracker | 20 | 19 | 1 | 3.7 | 4 | - |
 | 7 | github-trending | 5 | 5 | 0 | 3.6 | 3 | - |
 | 8 | hunter-22 | 7 | 6 | 1 | 3.4 | 4 | - |
-| 9 | fear-divergence | 5 | 5 | 0 | 3.2 | 5 | - |
+| 9 | fear-divergence | 6 | 6 | 0 | 3.3 | 4 | - |
 | 10 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
 | 11 | shiplog | 1 | 1 | 0 | 3.0 | 3 | - |
 | 12 | auto-merge | 5 | 4 | 1 | 3.0 | 4 | - |

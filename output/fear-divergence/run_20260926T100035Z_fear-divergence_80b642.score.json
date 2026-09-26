@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260926T100035Z_fear-divergence_80b642",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 3,
+  "strategy_alignment": 4,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 3,
+  "flags": [
+    "F\u0026G value (74) inferred from defi-overview, not from specified market-context.md source — informational but violates data-source spec",
+    "Skip run: market-context skill not enabled, no signal produced (correct per contract)",
+    "Log entry properly appended per SKILL.md step 1; no unwanted files created",
+    "Output adequately explains skip reason and prerequisite (enable market-context upstream), but provides no actionable signal card for trader"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
