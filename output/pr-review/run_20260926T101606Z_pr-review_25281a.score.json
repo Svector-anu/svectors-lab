@@ -1,0 +1,22 @@
+{
+  "run_id": "run_20260926T101606Z_pr-review_25281a",
+  "score": 3,
+  "correctness": 5,
+  "usefulness": 2,
+  "strategy_alignment": 1,
+  "evidence": 5,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "Skill orthogonal to stated strategy: pr-review is code automation; STRATEGY.md is crypto signal/trader focus. Run executed contract perfectly but skill itself doesn't serve north-star.",
+    "Usefulness mismatch: 'no open PRs' is correct output for code review domain but not actionable for trader operator expecting crypto signals.",
+    "Channel formatting: output leads with status correctly but lacks 'why a trader cares' or next-step framing. Appropriate for code-review context, inappropriate for trader decision card.",
+    "Memory log duplication: memory/logs/2026-09-26.md shows two '### pr-review' sections (one summary-style, one with run_id). May be intentional pattern; verify if consistent.",
+    "Wording: 'No files written outside the log' misleading—output file was correctly written (expected), just phrased ambiguously."
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}

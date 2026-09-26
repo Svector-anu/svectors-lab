@@ -170,14 +170,14 @@
   {
     "skill": "pr-review",
     "rank": 13,
-    "runs": 5,
-    "successes": 5,
+    "runs": 6,
+    "successes": 6,
     "failures": 0,
-    "avg_score": 2.8,
-    "scored_runs": 5,
-    "last_score": 4,
+    "avg_score": 2.8333333333333335,
+    "scored_runs": 6,
+    "last_score": 3,
     "last_status": "completed",
-    "last_run_id": "run_20260925T100241Z_pr-review_1d9aa9",
+    "last_run_id": "run_20260926T101606Z_pr-review_25281a",
     "consecutive_fails": 0,
     "flags": [
       "low_score"

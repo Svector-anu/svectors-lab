@@ -1,0 +1,59 @@
+{
+  "run_id": "run_20260926T101606Z_pr-review_25281a",
+  "skill": "pr-review",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "pr-review|2026-09-26T09:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "shared-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 3,
+  "score_flags": [
+    "Skill orthogonal to stated strategy: pr-review is code automation; STRATEGY.md is crypto signal/trader focus. Run executed contract perfectly but skill itself doesn't serve north-star.",
+    "Usefulness mismatch: 'no open PRs' is correct output for code review domain but not actionable for trader operator expecting crypto signals.",
+    "Channel formatting: output leads with status correctly but lacks 'why a trader cares' or next-step framing. Appropriate for code-review context, inappropriate for trader decision card.",
+    "Memory log duplication: memory/logs/2026-09-26.md shows two '### pr-review' sections (one summary-style, one with run_id). May be intentional pattern; verify if consistent.",
+    "Wording: 'No files written outside the log' misleading—output file was correctly written (expected), just phrased ambiguously."
+  ],
+  "usage": {
+    "input_tokens": 9,
+    "output_tokens": 1364,
+    "cache_read_input_tokens": 132735,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.24231149999999999
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/pr-review/run_20260926T101606Z_pr-review_25281a.md",
+  "result_hash": "sha256:cb9f206df3594134cb9810293bec9d81e7ae6b7c28de685fa882374260c7b840",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 4
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "pr-review|2026-09-26T09:00:00Z",
+  "scheduled_at": "2026-09-26T09:00:00Z",
+  "deadline": "2026-09-26T10:26:06.430155048Z",
+  "created_at": "2026-09-26T10:16:06.430155048Z",
+  "updated_at": "2026-09-26T10:17:13.123161465Z",
+  "completed_at": "2026-09-26T10:17:13.123152467Z"
+}
