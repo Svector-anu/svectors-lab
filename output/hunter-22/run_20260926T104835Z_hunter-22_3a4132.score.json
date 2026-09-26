@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20260926T104835Z_hunter-22_3a4132",
+  "score": 3,
+  "correctness": 2,
+  "usefulness": 4,
+  "strategy_alignment": 3,
+  "evidence": 3,
+  "scope_compliance": 5,
+  "memory_hygiene": 4,
+  "channel_formatting": 3,
+  "flags": [
+    "missing-output-files: skill contract requires output/hunter-22/latest.md and memory/skills/hunter-22/latest.md; only timestamped run file written",
+    "core-execution-sound: API call, filter, dedup, and triage all functioned correctly; 16 matches returned, all previously seen, 0 new survivors",
+    "minimal-output: 'HUNTER22_OK - nothing new' is appropriate for no-new-signal but could lead with bounty count checked (16 reviewed)",
+    "audit-candidates-unconfirmed: no audit-shaped repo flags in output or logs despite requirement to name them; either zero present or detection not evidenced"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "326c96afd1eefd132d5a6e0d2c49da2f4457f7be"
+}
