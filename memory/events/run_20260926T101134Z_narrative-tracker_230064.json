@@ -1,0 +1,66 @@
+{
+  "run_id": "run_20260926T101134Z_narrative-tracker_230064",
+  "skill": "narrative-tracker",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "narrative-tracker|2026-09-26T06:30:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "XAI billing exhausted: 27th+ consecutive http=403 failure since 2026-09-21 14:04Z; primary x_search path forced to fallback",
+    "Channel formatting: output is comprehensive but context-leads instead of move-leads; position calls buried in table after ~1.5K chars of transitions/reflexivity; Telegram render shows truncation; decision-card should front RIDE/FADE/WATCH in 2-3 lines, then evidence",
+    "No explicit source URLs/links in output; trader cannot independently verify outlets cited (TokenPost, CoinMarketCap Top Stories, CryptoBriefing) without re-searching",
+    "Circle/Arc marked unstable (whipsawed twice in 5h) — correctly flagged, but traders should know the reversal lacks conviction"
+  ],
+  "usage": {
+    "input_tokens": 31,
+    "output_tokens": 14976,
+    "cache_read_input_tokens": 677138,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 0.8193144
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/narrative-tracker/run_20260926T101134Z_narrative-tracker_230064.md",
+  "result_hash": "sha256:97a31739a47684f34d308cab6be23f4be50fbcb1f251f2a19ef168b6d89d3e9e",
+  "tool_calls": [
+    {
+      "name": "read",
+      "count": 3
+    },
+    {
+      "name": "bash",
+      "count": 12
+    },
+    {
+      "name": "web_search",
+      "count": 6
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "narrative-tracker|2026-09-26T06:30:00Z",
+  "scheduled_at": "2026-09-26T06:30:00Z",
+  "deadline": "2026-09-26T10:21:34.834113972Z",
+  "created_at": "2026-09-26T10:11:34.834113972Z",
+  "updated_at": "2026-09-26T10:16:06.277447945Z",
+  "completed_at": "2026-09-26T10:16:06.277435492Z"
+}

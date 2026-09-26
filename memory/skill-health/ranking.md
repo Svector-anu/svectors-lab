@@ -8,7 +8,7 @@
 | 4 | x402-monitor | 1 | 1 | 0 | 4.0 | 4 | - |
 | 5 | github-trending | 6 | 6 | 0 | 3.8 | 5 | - |
 | 6 | defi-overview | 21 | 16 | 5 | 3.8 | 4 | - |
-| 7 | narrative-tracker | 20 | 19 | 1 | 3.7 | 4 | - |
+| 7 | narrative-tracker | 21 | 20 | 1 | 3.7 | 4 | - |
 | 8 | hunter-22 | 7 | 6 | 1 | 3.4 | 4 | - |
 | 9 | fear-divergence | 6 | 6 | 0 | 3.3 | 4 | - |
 | 10 | preference-profile | 1 | 1 | 0 | 3.0 | 3 | - |
