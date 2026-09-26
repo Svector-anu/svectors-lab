@@ -11,6 +11,14 @@ from or pin to; the template keeps serving the latest `main` to new forks.
 
 ### Added
 
+- **Epoch engineering lifecycle skills: `epoch-spec`, `epoch-build`, and
+  `epoch-review`.** `epoch-spec` turns an intent into durable project knowledge
+  (map, spec, work orders) and a ranked candidate, never touching product code;
+  `epoch-build` executes exactly one work order in an isolated checkout, proves
+  it locally against the order's VERIFY line, and opens one PR for operator
+  approval; `epoch-review` independently judges that PR against the order at a
+  pinned head SHA and posts a receipt-bearing GitHub review the gate can act
+  on.
 - **`./notify` moves behind a post-run delivery dispatcher (#912 Phase 2).** A
   skill call now writes one structured JSON payload to the notify queue instead of
   ever touching the wire; a new post-run `scripts/notify-deliver.sh` is the only
