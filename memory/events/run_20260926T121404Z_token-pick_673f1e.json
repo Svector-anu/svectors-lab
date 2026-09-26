@@ -1,0 +1,60 @@
+{
+  "run_id": "run_20260926T121404Z_token-pick_673f1e",
+  "skill": "token-pick",
+  "status": "completed",
+  "executor": "actions",
+  "trigger_kind": "schedule",
+  "trigger_ref": "token-pick|2026-09-26T12:00:00Z",
+  "requested_provider": "anthropic",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "actual_model": "anthropic/claude-sonnet-5",
+  "provider": "anthropic",
+  "attempt_log": [
+    {
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-5"
+    }
+  ],
+  "omp_version": "omp/18.1.21",
+  "write_scope": "own-memory",
+  "skill_success": true,
+  "scope_ok": true,
+  "publish": "published",
+  "notify": "delivered",
+  "score_status": "scored",
+  "score": 4,
+  "score_flags": [
+    "narrative-tracker ENA/USDe risk delta (ENA +24% vs TVL +0.76%) is internal-only; core catalyst (Ethena fee switch, CoinGecko #1 trending) is independently verifiable",
+    "Lula pick is political (not crypto), though Polymarket is crypto-native and skill contract explicitly covers prediction markets — acceptable under contract"
+  ],
+  "usage": {
+    "input_tokens": 39,
+    "output_tokens": 21105,
+    "cache_read_input_tokens": 1132518,
+    "cache_creation_input_tokens": 0,
+    "cost_usd": 1.1473913999999998
+  },
+  "result_path": "/home/runner/work/svectors-lab/svectors-lab/output/token-pick/run_20260926T121404Z_token-pick_673f1e.md",
+  "result_hash": "sha256:8951c8117565b432464a5360d818d56afaf6e5818c98a49bea58460022485067",
+  "tool_calls": [
+    {
+      "name": "bash",
+      "count": 16
+    },
+    {
+      "name": "web_search",
+      "count": 4
+    },
+    {
+      "name": "write",
+      "count": 1
+    }
+  ],
+  "attempts": 1,
+  "idempotency_key": "token-pick|2026-09-26T12:00:00Z",
+  "scheduled_at": "2026-09-26T12:00:00Z",
+  "deadline": "2026-09-26T12:24:04.496308366Z",
+  "created_at": "2026-09-26T12:14:04.496308366Z",
+  "updated_at": "2026-09-26T12:19:54.717277598Z",
+  "completed_at": "2026-09-26T12:19:54.717268865Z"
+}

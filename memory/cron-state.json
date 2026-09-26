@@ -302,13 +302,13 @@
     "total_failures": 0
   },
   "token-pick": {
-    "last_run_id": "run_20260925T132016Z_token-pick_817e4e",
-    "last_dispatch": "2026-09-25T13:20:17.590225487Z",
+    "last_run_id": "run_20260926T121404Z_token-pick_673f1e",
+    "last_dispatch": "2026-09-26T12:14:05.157598873Z",
     "last_status": "completed",
-    "last_success": "2026-09-25T13:25:13.370291625Z",
+    "last_success": "2026-09-26T12:19:54.717268865Z",
     "last_failed": "2026-09-17T06:45:34Z",
-    "total_runs": 325,
-    "total_successes": 45,
+    "total_runs": 326,
+    "total_successes": 46,
     "total_failures": 280
   },
   "verdikta-hunter": {

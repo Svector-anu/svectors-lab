@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20260926T121404Z_token-pick_673f1e",
+  "score": 4,
+  "correctness": 4,
+  "usefulness": 4,
+  "strategy_alignment": 4,
+  "evidence": 4,
+  "scope_compliance": 5,
+  "memory_hygiene": 5,
+  "channel_formatting": 4,
+  "flags": [
+    "narrative-tracker ENA/USDe risk delta (ENA +24% vs TVL +0.76%) is internal-only; core catalyst (Ethena fee switch, CoinGecko #1 trending) is independently verifiable",
+    "Lula pick is political (not crypto), though Polymarket is crypto-native and skill contract explicitly covers prediction markets — acceptable under contract"
+  ],
+  "rubric_version": "1",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "strategy_hash": "c361b50742110dbc",
+  "skill_commit": "173b8544c8577989b62cf85fb9f3aa4a0a526e13"
+}
